@@ -1,0 +1,262 @@
+extends Node2D
+## Ship navigation address and camera inspection are independent.
+## Touch-drag empty space to detach camera; recenter button returns instantly.
+## Distant starfield, subtle events and mini-map track the correct view.
+
+const StarfieldScene = preload("res://scripts/Starfield.gd")
+const ShipScene = preload("res://scripts/Ship.gd")
+const JoystickScene = preload("res://scripts/Joystick.gd")
+const ActionScene = preload("res://scripts/ActionButton.gd")
+const MiniMapScene = preload("res://scripts/MiniMap.gd")
+const WorldAddress = preload("res://scripts/WorldPosition.gd")
+const DiagnosticsClass = preload("res://scripts/Diagnostics.gd")
+const ReturnButtonScene = preload("res://scripts/ReturnToShip.gd")
+const DistantEventsScene = preload("res://scripts/DistantEvents.gd")
+
+const MAX_SPEED: float = 890.0
+const THRUST: float = 580.0
+const RELEASE_DECELERATION: float = 3200.0
+const STOP_EPSILON: float = 0.25
+const REPORT_INTERVAL: float = 25.0
+
+var velocity: Vector2 = Vector2.ZERO
+var current_input: Vector2 = Vector2.ZERO
+var starfield
+var ship
+var joystick
+var action_button
+var mini_map
+var return_button
+var distant_events
+var _camera_offset: Vector2 = Vector2.ZERO
+var _camera_following: bool = true
+var _look_touch: int = -1
+var _look_mouse_down: bool = false
+var _look_dragged: bool = false
+var navigator = WorldAddress.new()
+var diagnostics = DiagnosticsClass.new()
+var _ship_heading: float = 0.0
+var _report_timer: float = 0.0
+
+
+func _ready() -> void:
+	diagnostics.start()
+	starfield = StarfieldScene.new()
+	starfield.name = "ProceduralInfiniteStarfield"
+	add_child(starfield)
+
+	distant_events = DistantEventsScene.new()
+	distant_events.name = "SmallDistantPhenomena"
+	add_child(distant_events)
+
+	ship = ShipScene.new()
+	ship.name = "FixedScreenShip"
+	add_child(ship)
+
+	_build_controls()
+	mini_map.set_ship_location(navigator.sector, navigator.local, _ship_heading)
+	mini_map.set_camera_offset(_camera_offset)
+	get_viewport().size_changed.connect(_layout)
+	_layout()
+	diagnostics.write("map_ready", {"mode": "north_up", "follow_ship": true})
+
+
+func _physics_process(delta: float) -> void:
+	var keyboard := Vector2.ZERO
+	if Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_LEFT):
+		keyboard.x -= 1.0
+	if Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_RIGHT):
+		keyboard.x += 1.0
+	if Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_UP):
+		keyboard.y -= 1.0
+	if Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_DOWN):
+		keyboard.y += 1.0
+
+	var steer: Vector2 = current_input
+	if keyboard.length_squared() > 0.0:
+		steer = keyboard.normalized()
+
+	if steer.length_squared() > 0.005:
+		velocity += steer.limit_length(1.0) * THRUST * delta
+		velocity = velocity.limit_length(MAX_SPEED)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO, RELEASE_DECELERATION * delta)
+		if velocity.length_squared() < STOP_EPSILON * STOP_EPSILON:
+			velocity = Vector2.ZERO
+
+	# Optional hidden desktop shortcut retained from v0.2.
+	if Input.is_key_pressed(KEY_SPACE):
+		velocity = Vector2.ZERO
+
+	if velocity != Vector2.ZERO:
+		var displacement: Vector2 = velocity * delta
+		navigator.advance(displacement)
+		starfield.advance(displacement)
+		if not _camera_following:
+			# Keep the detached camera at its chosen absolute world location.
+			_camera_offset -= displacement
+			starfield.set_camera_look(_camera_offset)
+		else:
+			distant_events.advance_camera(displacement)
+		var desired: float = velocity.angle() + PI * 0.5
+		_ship_heading = lerp_angle(_ship_heading, desired, minf(1.0, delta * 3.5))
+		ship.rotation = _ship_heading
+	ship.throttle = clampf(velocity.length() / MAX_SPEED, 0.0, 1.0)
+	ship.position = get_viewport_rect().size * 0.5 - _camera_offset
+	mini_map.set_ship_location(navigator.sector, navigator.local, _ship_heading)
+	mini_map.set_camera_offset(_camera_offset)
+
+	_report_timer += delta
+	if _report_timer >= REPORT_INTERVAL:
+		_report_timer = 0.0
+		diagnostics.write("flight_heartbeat", {
+			"position": navigator.as_dictionary(),
+			"speed": snappedf(velocity.length(), 0.01),
+			"fps": Engine.get_frames_per_second(),
+			"camera_following": _camera_following,
+			"camera_offset": {"x": snappedf(_camera_offset.x, 0.1), "y": snappedf(_camera_offset.y, 0.1)}
+		})
+
+
+func _build_controls() -> void:
+	var ui := CanvasLayer.new()
+	ui.name = "OnScreenControls"
+	add_child(ui)
+
+	var root := Control.new()
+	root.name = "HUD"
+	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	ui.add_child(root)
+
+	mini_map = MiniMapScene.new()
+	mini_map.name = "NavigationMap_TopLeft"
+	root.add_child(mini_map)
+	mini_map.map_panned.connect(_on_map_panned)
+	mini_map.recentered.connect(_on_map_recentered)
+
+	return_button = ReturnButtonScene.new()
+	return_button.name = "ReturnToShip_TopRight"
+	root.add_child(return_button)
+	return_button.return_requested.connect(_center_camera_on_ship)
+
+	joystick = JoystickScene.new()
+	joystick.name = "RightJoystick"
+	root.add_child(joystick)
+	joystick.direction_changed.connect(_on_joystick_changed)
+
+	action_button = ActionScene.new()
+	action_button.name = "LeftContextAction"
+	root.add_child(action_button)
+	action_button.set_action_mode("use")
+	action_button.action_requested.connect(_on_action_requested)
+
+
+func _layout() -> void:
+	var view: Vector2 = get_viewport_rect().size
+	ship.position = view * 0.5 - _camera_offset
+	starfield.resize_field(view)
+	distant_events.resize_sky(view)
+	var control_scale: float = clampf(minf(view.x / 520.0, view.y / 340.0), 0.55, 1.0)
+	joystick.scale = Vector2.ONE * control_scale
+	action_button.scale = Vector2.ONE * control_scale
+	var visual_size: float = 184.0 * control_scale
+	var margin: float = 18.0 * control_scale
+	var bottom: float = maxf(margin, view.y - visual_size - margin)
+	action_button.position = Vector2(margin, bottom)
+	joystick.position = Vector2(view.x - visual_size - margin, bottom)
+
+	# No fixed-pixel assumptions: preserve the panel on compact mobile displays.
+	var map_scale: float = clampf(minf(view.x / 700.0, view.y / 490.0), 0.55, 1.0)
+	mini_map.scale = Vector2.ONE * map_scale
+	mini_map.position = Vector2(18.0 * map_scale, 18.0 * map_scale)
+	var return_scale: float = clampf(minf(view.x / 680.0, view.y / 400.0), 0.7, 1.0)
+	return_button.scale = Vector2.ONE * return_scale
+	return_button.position = Vector2(view.x - 90.0 * return_scale, 18.0 * return_scale)
+
+
+func _on_joystick_changed(direction: Vector2) -> void:
+	current_input = direction
+
+
+func _on_action_requested(mode: String) -> void:
+	print("ACTION_REQUESTED: ", mode, " (no nearby target in distant-space test)")
+	diagnostics.write("action_pressed", {"mode": mode, "position": navigator.as_dictionary()})
+
+
+func _on_map_panned() -> void:
+	diagnostics.write("map_panned", {"ship_position": navigator.as_dictionary()})
+
+
+func _on_map_recentered() -> void:
+	_center_camera_on_ship()
+	diagnostics.write("map_recentered", {"ship_position": navigator.as_dictionary()})
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	# The UI consumes its own events. Only touches beginning in the open
+	# starfield can drag the MAIN camera (not the small navigation map).
+	if event is InputEventScreenTouch:
+		if event.pressed and _look_touch == -1:
+			_look_touch = event.index
+			_look_dragged = false
+		elif not event.pressed and event.index == _look_touch:
+			_finish_camera_drag()
+			_look_touch = -1
+	elif event is InputEventScreenDrag and event.index == _look_touch:
+		_pan_camera(-event.relative)
+		_look_dragged = true
+		get_viewport().set_input_as_handled()
+	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			_look_mouse_down = true
+			_look_dragged = false
+		elif _look_mouse_down:
+			_finish_camera_drag()
+			_look_mouse_down = false
+	elif event is InputEventMouseMotion and _look_mouse_down:
+		_pan_camera(-event.relative)
+		_look_dragged = true
+		get_viewport().set_input_as_handled()
+	elif event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_HOME or event.keycode == KEY_R:
+			_center_camera_on_ship()
+
+
+func _pan_camera(world_delta: Vector2) -> void:
+	if world_delta.length_squared() < 0.001:
+		return
+	if _camera_following:
+		_camera_following = false
+		return_button.visible = true
+		diagnostics.write("camera_unfollowed", {"ship_position": navigator.as_dictionary()})
+	_camera_offset += world_delta
+	starfield.set_camera_look(_camera_offset)
+	distant_events.advance_camera(world_delta)
+	ship.position = get_viewport_rect().size * 0.5 - _camera_offset
+	mini_map.set_camera_offset(_camera_offset)
+
+
+func _finish_camera_drag() -> void:
+	if _look_dragged:
+		diagnostics.write("camera_drag_end", {
+			"offset_x": snappedf(_camera_offset.x, 0.1),
+			"offset_y": snappedf(_camera_offset.y, 0.1)
+		})
+	_look_dragged = false
+
+
+func _center_camera_on_ship() -> void:
+	var old_offset: Vector2 = _camera_offset
+	_camera_offset = Vector2.ZERO
+	_camera_following = true
+	return_button.visible = false
+	starfield.set_camera_look(_camera_offset)
+	distant_events.advance_camera(-old_offset)
+	ship.position = get_viewport_rect().size * 0.5
+	mini_map.set_camera_offset(_camera_offset)
+	diagnostics.write("camera_recentered", {"ship_position": navigator.as_dictionary()})
+
+
+func _exit_tree() -> void:
+	diagnostics.write("session_end", {"ship_position": navigator.as_dictionary()})

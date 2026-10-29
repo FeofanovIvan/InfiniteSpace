@@ -1,0 +1,1247 @@
+{
+  "version": "1.0",
+  "source": "MIKA_WORLD_ATLAS_V1(2).md",
+  "unlock_all_for_prototype": true,
+  "systems": [
+    {
+      "id": "mw",
+      "name_en": "Milky Way",
+      "name_ru": "Млечный Путь",
+      "sun_color": "#ffb66b",
+      "shape": "solar",
+      "planets": [
+        {
+          "id": "mw_p01",
+          "name_en": "Earth",
+          "name_ru": "Земля",
+          "type": "РЕАЛЬНАЯ ПЛАНЕТА; каменистая, умеренная. Родительская звезда: Солнце, G2V.",
+          "landing": "landing",
+          "story": true,
+          "moons": [
+            "Луна"
+          ],
+          "unique": "Ремонтная верфь и исследовательский город Земли будущего.",
+          "fiction": false,
+          "orbit": 245.0,
+          "period": 140.0,
+          "phase": 0.38,
+          "size": 118.0,
+          "palette": [
+            "#f8d2b2",
+            "#db986f",
+            "#fff4d8"
+          ],
+          "visual": "existing_solar"
+        },
+        {
+          "id": "mw_p02",
+          "name_en": "Mars",
+          "name_ru": "Марс",
+          "type": "РЕАЛЬНАЯ ПЛАНЕТА; каменистая, холодная. Родительская звезда: Солнце, G2V.",
+          "landing": "landing",
+          "story": true,
+          "moons": [
+            "Фобос",
+            "Деймос"
+          ],
+          "unique": "Полуподземная лаборатория двигателя.",
+          "fiction": false,
+          "orbit": 493.0,
+          "period": 229.0,
+          "phase": 2.78,
+          "size": 144.0,
+          "palette": [
+            "#f8d2b2",
+            "#db986f",
+            "#fff4d8"
+          ],
+          "visual": "existing_solar"
+        },
+        {
+          "id": "mw_p03",
+          "name_en": "Jupiter",
+          "name_ru": "Юпитер",
+          "type": "РЕАЛЬНАЯ ПЛАНЕТА; газовый гигант. Родительская звезда: Солнце, G2V.",
+          "landing": "orbit",
+          "story": true,
+          "moons": [
+            "Ио",
+            "Европа",
+            "Ганимед",
+            "Каллисто"
+          ],
+          "unique": "Атмосферная исследовательская платформа в безопасном игровом слое.",
+          "fiction": false,
+          "orbit": 741.0,
+          "period": 318.0,
+          "phase": 5.18,
+          "size": 130.0,
+          "palette": [
+            "#f8d2b2",
+            "#db986f",
+            "#fff4d8"
+          ],
+          "visual": "existing_solar"
+        },
+        {
+          "id": "mw_p04",
+          "name_en": "Saturn",
+          "name_ru": "Сатурн",
+          "type": "РЕАЛЬНАЯ ПЛАНЕТА; газовый гигант с кольцами. Родительская звезда: Солнце, G2V.",
+          "landing": "orbit",
+          "story": false,
+          "moons": [
+            "Титан",
+            "Энцелад",
+            "Мимас",
+            "Рея",
+            "Япет"
+          ],
+          "unique": "Брошенный пассажирский корабль в безопасном районе на орбите.",
+          "fiction": false,
+          "orbit": 989.0,
+          "period": 407.0,
+          "phase": 7.58,
+          "size": 160.0,
+          "palette": [
+            "#f8d2b2",
+            "#db986f",
+            "#fff4d8"
+          ],
+          "visual": "existing_solar"
+        },
+        {
+          "id": "mw_p05",
+          "name_en": "Uranus",
+          "name_ru": "Уран",
+          "type": "РЕАЛЬНАЯ ПЛАНЕТА; ледяной гигант. Родительская звезда: Солнце, G2V.",
+          "landing": "orbit",
+          "story": false,
+          "moons": [
+            "Миранда",
+            "Ариэль",
+            "Умбриэль",
+            "Титания",
+            "Оберон"
+          ],
+          "unique": "Орбитальная антенна-колесо.",
+          "fiction": false,
+          "orbit": 1237.0,
+          "period": 496.0,
+          "phase": 9.98,
+          "size": 174.0,
+          "palette": [
+            "#f8d2b2",
+            "#db986f",
+            "#fff4d8"
+          ],
+          "visual": "existing_solar"
+        },
+        {
+          "id": "mw_p06",
+          "name_en": "Neptune",
+          "name_ru": "Нептун",
+          "type": "РЕАЛЬНАЯ ПЛАНЕТА; ледяной гигант. Родительская звезда: Солнце, G2V.",
+          "landing": "orbit",
+          "story": false,
+          "moons": [
+            "Тритон",
+            "Протей",
+            "Нереида"
+          ],
+          "unique": "Автономный атмосферный зонд.",
+          "fiction": false,
+          "orbit": 1485.0,
+          "period": 585.0,
+          "phase": 12.38,
+          "size": 126.0,
+          "palette": [
+            "#f8d2b2",
+            "#db986f",
+            "#fff4d8"
+          ],
+          "visual": "existing_solar"
+        },
+        {
+          "id": "mw_p07",
+          "name_en": "Venus",
+          "name_ru": "Венера",
+          "type": "РЕАЛЬНАЯ ПЛАНЕТА; каменистая, экстремально горячая. Родительская звезда: Солнце, G2V.",
+          "landing": "orbit",
+          "story": false,
+          "moons": [],
+          "unique": "Дрейфующая высотная исследовательская станция.",
+          "fiction": false,
+          "orbit": 1733.0,
+          "period": 674.0,
+          "phase": 14.78,
+          "size": 146.0,
+          "palette": [
+            "#f8d2b2",
+            "#db986f",
+            "#fff4d8"
+          ],
+          "visual": "existing_solar"
+        },
+        {
+          "id": "mw_p08",
+          "name_en": "Mercury",
+          "name_ru": "Меркурий",
+          "type": "РЕАЛЬНАЯ ПЛАНЕТА; каменистая, малый мир. Родительская звезда: Солнце, G2V.",
+          "landing": "landing",
+          "story": false,
+          "moons": [],
+          "unique": "Солнечный энергетический коллектор у кратера.",
+          "fiction": false,
+          "orbit": 1981.0,
+          "period": 763.0,
+          "phase": 17.18,
+          "size": 132.0,
+          "palette": [
+            "#f8d2b2",
+            "#db986f",
+            "#fff4d8"
+          ],
+          "visual": "existing_solar"
+        }
+      ],
+      "station": {
+        "id": "st_mw",
+        "name_en": "Callisto Shipyard",
+        "name_ru": "Орбитальная верфь Каллисто",
+        "fiction": true
+      }
+    },
+    {
+      "id": "lmc",
+      "name_en": "Large Magellanic Cloud",
+      "name_ru": "Большое Магелланово Облако",
+      "sun_color": "#ffc38c",
+      "shape": "irregular",
+      "planets": [
+        {
+          "id": "lmc_p01",
+          "name_en": "Aera",
+          "name_ru": "Аэра",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; мини-нептун с плотной атмосферой. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "orbit",
+          "story": true,
+          "moons": [],
+          "unique": "Кольцо прозрачных аэростатических городов.",
+          "fiction": true,
+          "orbit": 245.0,
+          "period": 140.0,
+          "phase": 0.38,
+          "size": 118.0,
+          "palette": [
+            "#94d9b5",
+            "#d8bc72",
+            "#a3e4cf"
+          ],
+          "visual": "lmc_scene",
+          "visual_asset": "res://assets/atlas/planets/lmc_p01.png"
+        },
+        {
+          "id": "lmc_p02",
+          "name_en": "Thalas",
+          "name_ru": "Талас",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; гипотетический океанический мир. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": true,
+          "moons": [
+            "Ир"
+          ],
+          "unique": "Плавучие искусственные кольца.",
+          "fiction": true,
+          "orbit": 493.0,
+          "period": 229.0,
+          "phase": 2.78,
+          "size": 144.0,
+          "palette": [
+            "#092a6c",
+            "#148cc6",
+            "#c7f4f8"
+          ],
+          "visual": "lmc_scene",
+          "visual_asset": "res://assets/atlas/planets/lmc_p02.png"
+        },
+        {
+          "id": "lmc_p03",
+          "name_en": "Molia",
+          "name_ru": "Молия",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; каменистый углеродсодержащий мир. Родительская звезда: G/K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": true,
+          "moons": [],
+          "unique": "Сферический молекулярный город.",
+          "fiction": true,
+          "orbit": 741.0,
+          "period": 318.0,
+          "phase": 5.18,
+          "size": 130.0,
+          "palette": [
+            "#24222b",
+            "#9d533e",
+            "#57555e"
+          ],
+          "visual": "lmc_scene",
+          "visual_asset": "res://assets/atlas/planets/lmc_p03.png"
+        },
+        {
+          "id": "lmc_p04",
+          "name_en": "Cryona",
+          "name_ru": "Криона",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; ледяная суперземля. Родительская звезда: K-звезда, дальняя орбита.",
+          "landing": "landing",
+          "story": false,
+          "moons": [
+            "Мис",
+            "Фрост",
+            "Кла"
+          ],
+          "unique": "Цилиндрический корабль, застрявший во льду.",
+          "fiction": true,
+          "orbit": 989.0,
+          "period": 407.0,
+          "phase": 7.58,
+          "size": 160.0,
+          "palette": [
+            "#d8eefa",
+            "#66b4df",
+            "#b9e5fb"
+          ],
+          "visual": "lmc_scene",
+          "visual_asset": "res://assets/atlas/planets/lmc_p04.png"
+        },
+        {
+          "id": "lmc_p05",
+          "name_en": "Carbona",
+          "name_ru": "Карбона",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; ультрагорячий газовый гигант. Родительская звезда: F-звезда, близкая орбита.",
+          "landing": "orbit",
+          "story": false,
+          "moons": [],
+          "unique": "Автоматический сборщик проб.",
+          "fiction": true,
+          "orbit": 1237.0,
+          "period": 496.0,
+          "phase": 9.98,
+          "size": 174.0,
+          "palette": [
+            "#ba7856",
+            "#a66e38",
+            "#f5b77b"
+          ],
+          "visual": "lmc_scene",
+          "visual_asset": "res://assets/atlas/planets/lmc_p05.png"
+        },
+        {
+          "id": "lmc_p06",
+          "name_en": "Lux",
+          "name_ru": "Люкс",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; сверхлёгкий газовый мир super-puff. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "orbit",
+          "story": false,
+          "moons": [],
+          "unique": "Малая капсула в высоких атмосферных слоях.",
+          "fiction": true,
+          "orbit": 1485.0,
+          "period": 585.0,
+          "phase": 12.38,
+          "size": 126.0,
+          "palette": [
+            "#f1bad2",
+            "#d0b0cd",
+            "#e1cddd"
+          ],
+          "visual": "lmc_scene",
+          "visual_asset": "res://assets/atlas/planets/lmc_p06.png"
+        },
+        {
+          "id": "lmc_p07",
+          "name_en": "Ventra",
+          "name_ru": "Вентра",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; газовый гигант. Родительская звезда: G-звезда, дальняя орбита.",
+          "landing": "orbit",
+          "story": false,
+          "moons": [
+            "Дун",
+            "Вея",
+            "Бриз",
+            "Кулон",
+            "Тора"
+          ],
+          "unique": "Верфь на орбите третьей луны.",
+          "fiction": true,
+          "orbit": 1733.0,
+          "period": 674.0,
+          "phase": 14.78,
+          "size": 146.0,
+          "palette": [
+            "#6655b8",
+            "#33a7cf",
+            "#bec1ff"
+          ],
+          "visual": "lmc_scene",
+          "visual_asset": "res://assets/atlas/planets/lmc_p07.png"
+        },
+        {
+          "id": "lmc_p08",
+          "name_en": "Magneta",
+          "name_ru": "Магнета",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; ледяной гигант. Родительская звезда: M-звезда, дальняя орбита.",
+          "landing": "orbit",
+          "story": false,
+          "moons": [
+            "Полис"
+          ],
+          "unique": "Радиотелескопическая решётка.",
+          "fiction": true,
+          "orbit": 1981.0,
+          "period": 763.0,
+          "phase": 17.18,
+          "size": 132.0,
+          "palette": [
+            "#53acbb",
+            "#337680",
+            "#b5fdce"
+          ],
+          "visual": "lmc_scene",
+          "visual_asset": "res://assets/atlas/planets/lmc_p08.png"
+        }
+      ],
+      "station": {
+        "id": "st_lmc",
+        "name_en": "Tarantula Laboratory Ship",
+        "name_ru": "Лабораторный корабль «Тарантул»",
+        "fiction": true
+      }
+    },
+    {
+      "id": "smc",
+      "name_en": "Small Magellanic Cloud",
+      "name_ru": "Малое Магелланово Облако",
+      "sun_color": "#d0e8ff",
+      "shape": "irregular",
+      "planets": [
+        {
+          "id": "smc_p01",
+          "name_en": "Okea",
+          "name_ru": "Окея",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; водная планета. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": true,
+          "moons": [
+            "Риф"
+          ],
+          "unique": "Гигантский спиралевидный искусственный риф.",
+          "fiction": true,
+          "orbit": 245.0,
+          "period": 140.0,
+          "phase": 0.38,
+          "size": 118.0,
+          "palette": [
+            "#008e9c",
+            "#42ddca",
+            "#044f6b"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/smc_p01.png"
+        },
+        {
+          "id": "smc_p02",
+          "name_en": "Cela",
+          "name_ru": "Цела",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; холодная каменистая планета. Родительская звезда: G-звезда, дальняя орбита.",
+          "landing": "landing",
+          "story": true,
+          "moons": [],
+          "unique": "Лаборатория внутри кратера.",
+          "fiction": true,
+          "orbit": 493.0,
+          "period": 229.0,
+          "phase": 2.78,
+          "size": 144.0,
+          "palette": [
+            "#d5ece6",
+            "#528e75",
+            "#e7e8dc"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/smc_p02.png"
+        },
+        {
+          "id": "smc_p03",
+          "name_en": "Genora",
+          "name_ru": "Генора",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; океаническая каменистая планета. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": true,
+          "moons": [
+            "Вита",
+            "Руна"
+          ],
+          "unique": "Башня генетического архива как двойная спираль.",
+          "fiction": true,
+          "orbit": 741.0,
+          "period": 318.0,
+          "phase": 5.18,
+          "size": 130.0,
+          "palette": [
+            "#48296c",
+            "#9e61bf",
+            "#292438"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/smc_p03.png"
+        },
+        {
+          "id": "smc_p04",
+          "name_en": "Mycela",
+          "name_ru": "Мицела",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; влажная умеренная суперземля. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": false,
+          "moons": [],
+          "unique": "Поселение внутри огромного полого ствола.",
+          "fiction": true,
+          "orbit": 989.0,
+          "period": 407.0,
+          "phase": 7.58,
+          "size": 160.0,
+          "palette": [
+            "#3c5940",
+            "#8fb88b",
+            "#344037"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/smc_p04.png"
+        },
+        {
+          "id": "smc_p05",
+          "name_en": "Spira",
+          "name_ru": "Спира",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; приливно-захваченный каменистый мир. Родительская звезда: M-карлик, вымышленный.",
+          "landing": "landing",
+          "story": false,
+          "moons": [
+            "Лин"
+          ],
+          "unique": "Лентовидный город по линии терминатора.",
+          "fiction": true,
+          "orbit": 1237.0,
+          "period": 496.0,
+          "phase": 9.98,
+          "size": 174.0,
+          "palette": [
+            "#bb7334",
+            "#1c3a77",
+            "#deae53"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/smc_p05.png"
+        },
+        {
+          "id": "smc_p06",
+          "name_en": "Ambra",
+          "name_ru": "Амбра",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; холодный углеводородный мир. Родительская звезда: K-звезда, дальняя орбита.",
+          "landing": "landing",
+          "story": false,
+          "moons": [],
+          "unique": "Плавающий древний корабль на озере.",
+          "fiction": true,
+          "orbit": 1485.0,
+          "period": 585.0,
+          "phase": 12.38,
+          "size": 126.0,
+          "palette": [
+            "#b75c2c",
+            "#3f2926",
+            "#e4a55c"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/smc_p06.png"
+        },
+        {
+          "id": "smc_p07",
+          "name_en": "Silica",
+          "name_ru": "Силика",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; сухой каменистый минерализованный мир. Родительская звезда: G-звезда, вымышленная.",
+          "landing": "landing",
+          "story": false,
+          "moons": [
+            "Квар",
+            "Фил",
+            "Трис"
+          ],
+          "unique": "Лес гигантских геологических колонн.",
+          "fiction": true,
+          "orbit": 1733.0,
+          "period": 674.0,
+          "phase": 14.78,
+          "size": 146.0,
+          "palette": [
+            "#a95756",
+            "#c0ada0",
+            "#45445a"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/smc_p07.png"
+        },
+        {
+          "id": "smc_p08",
+          "name_en": "Biora",
+          "name_ru": "Биора",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; газовый гигант с обширной атмосферой. Родительская звезда: G-звезда, дальняя орбита.",
+          "landing": "orbit",
+          "story": false,
+          "moons": [
+            "Лист",
+            "Сид",
+            "Верн",
+            "Тепл",
+            "Зор"
+          ],
+          "unique": "Колоссальное плавучее существо-остров.",
+          "fiction": true,
+          "orbit": 1981.0,
+          "period": 763.0,
+          "phase": 17.18,
+          "size": 132.0,
+          "palette": [
+            "#a69c5c",
+            "#4f9f76",
+            "#d2bc58"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/smc_p08.png"
+        }
+      ],
+      "station": {
+        "id": "st_smc",
+        "name_en": "Living Archive",
+        "name_ru": "Живой архив",
+        "fiction": true
+      }
+    },
+    {
+      "id": "ngc6822",
+      "name_en": "Barnard's Galaxy",
+      "name_ru": "NGC 6822 — галактика Барнарда",
+      "sun_color": "#ffab69",
+      "shape": "irregular",
+      "planets": [
+        {
+          "id": "ngc6822_p01",
+          "name_en": "Archeon",
+          "name_ru": "Археон",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; сухой каменистый мир. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": true,
+          "moons": [],
+          "unique": "Кольцевой город в гигантском кратере.",
+          "fiction": true,
+          "orbit": 245.0,
+          "period": 140.0,
+          "phase": 0.38,
+          "size": 118.0,
+          "palette": [
+            "#bc7f56",
+            "#794a39",
+            "#e3b27e"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p01.png"
+        },
+        {
+          "id": "ngc6822_p02",
+          "name_en": "Quaria",
+          "name_ru": "Квария",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; минерализованная каменистая планета. Родительская звезда: G-звезда, вымышленная.",
+          "landing": "landing",
+          "story": true,
+          "moons": [
+            "Гран"
+          ],
+          "unique": "Кристаллическая пещера с городом.",
+          "fiction": true,
+          "orbit": 493.0,
+          "period": 229.0,
+          "phase": 2.78,
+          "size": 144.0,
+          "palette": [
+            "#a6a1b8",
+            "#7259a8",
+            "#ddd3e8"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p02.png"
+        },
+        {
+          "id": "ngc6822_p03",
+          "name_en": "Nocta",
+          "name_ru": "Нокта",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; приливно-захваченный сухой мир. Родительская звезда: M-звезда, вымышленная.",
+          "landing": "landing",
+          "story": true,
+          "moons": [],
+          "unique": "Гигантский разрушенный звездолёт в скале.",
+          "fiction": true,
+          "orbit": 741.0,
+          "period": 318.0,
+          "phase": 5.18,
+          "size": 130.0,
+          "palette": [
+            "#30313f",
+            "#ba9452",
+            "#9c8781"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p03.png"
+        },
+        {
+          "id": "ngc6822_p04",
+          "name_en": "Ferra",
+          "name_ru": "Ферра",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; железосодержащая каменистая планета. Родительская звезда: G-звезда, вымышленная.",
+          "landing": "landing",
+          "story": false,
+          "moons": [
+            "Пол",
+            "Маг"
+          ],
+          "unique": "Высокая статуя древнего механизма.",
+          "fiction": true,
+          "orbit": 989.0,
+          "period": 407.0,
+          "phase": 7.58,
+          "size": 160.0,
+          "palette": [
+            "#85483b",
+            "#594d51",
+            "#cb8364"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p04.png"
+        },
+        {
+          "id": "ngc6822_p05",
+          "name_en": "Duna",
+          "name_ru": "Дуна",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; двухзвёздный пустынный мир. Родительская звезда: Двойная система K+M (вымышленная).",
+          "landing": "landing",
+          "story": false,
+          "moons": [],
+          "unique": "Тёмная пирамида в подвижных дюнах.",
+          "fiction": true,
+          "orbit": 1237.0,
+          "period": 496.0,
+          "phase": 9.98,
+          "size": 174.0,
+          "palette": [
+            "#ddbc64",
+            "#a67c4f",
+            "#ffe0a6"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p05.png"
+        },
+        {
+          "id": "ngc6822_p06",
+          "name_en": "Runa",
+          "name_ru": "Руна",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; сухая солончаковая планета. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": false,
+          "moons": [
+            "Тесс"
+          ],
+          "unique": "Громадное поле плит с неизвестным письмом.",
+          "fiction": true,
+          "orbit": 1485.0,
+          "period": 585.0,
+          "phase": 12.38,
+          "size": 126.0,
+          "palette": [
+            "#eee0c7",
+            "#383f51",
+            "#ad9a81"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p06.png"
+        },
+        {
+          "id": "ngc6822_p07",
+          "name_en": "Geoda",
+          "name_ru": "Геода",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; вулканически активная каменистая планета. Родительская звезда: G-звезда, вымышленная.",
+          "landing": "landing",
+          "story": false,
+          "moons": [
+            "Ядра",
+            "Крист",
+            "Свод"
+          ],
+          "unique": "Подземный город над озером.",
+          "fiction": true,
+          "orbit": 1733.0,
+          "period": 674.0,
+          "phase": 14.78,
+          "size": 146.0,
+          "palette": [
+            "#a34239",
+            "#e2734b",
+            "#43444d"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p07.png"
+        },
+        {
+          "id": "ngc6822_p08",
+          "name_en": "Chrona",
+          "name_ru": "Хрона",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; осадочная каменистая планета. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": false,
+          "moons": [],
+          "unique": "Одинокая древняя башня на плато.",
+          "fiction": true,
+          "orbit": 1981.0,
+          "period": 763.0,
+          "phase": 17.18,
+          "size": 132.0,
+          "palette": [
+            "#c6ad7e",
+            "#895f3e",
+            "#ecd1a1"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p08.png"
+        }
+      ],
+      "station": {
+        "id": "st_ngc6822",
+        "name_en": "Titan Head Pirate Port",
+        "name_ru": "Голова Титана",
+        "fiction": true
+      }
+    },
+    {
+      "id": "m31",
+      "name_en": "Andromeda",
+      "name_ru": "Андромеда (M31)",
+      "sun_color": "#aad2ff",
+      "shape": "spiral",
+      "planets": [
+        {
+          "id": "m31_p01",
+          "name_en": "Lumena",
+          "name_ru": "Люмена",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; ультрагорячий газовый гигант. Родительская звезда: F-звезда, близкая орбита.",
+          "landing": "orbit",
+          "story": true,
+          "moons": [],
+          "unique": "Зеркальная обсерватория на дальней орбите.",
+          "fiction": true,
+          "orbit": 245.0,
+          "period": 140.0,
+          "phase": 0.38,
+          "size": 118.0,
+          "palette": [
+            "#347ed0",
+            "#d1edff",
+            "#4a56b3"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m31_p01.png"
+        },
+        {
+          "id": "m31_p02",
+          "name_en": "Gravis",
+          "name_ru": "Гравис",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; крупный газовый гигант с кольцами. Родительская звезда: G-звезда, дальняя орбита.",
+          "landing": "orbit",
+          "story": true,
+          "moons": [
+            "Орбис",
+            "Тяж",
+            "Арка",
+            "Век",
+            "Дуо"
+          ],
+          "unique": "Сеть сооружений на орбитах лун.",
+          "fiction": true,
+          "orbit": 493.0,
+          "period": 229.0,
+          "phase": 2.78,
+          "size": 144.0,
+          "palette": [
+            "#738d85",
+            "#d9d3aa",
+            "#4b5f59"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m31_p02.png"
+        },
+        {
+          "id": "m31_p03",
+          "name_en": "Phasis",
+          "name_ru": "Фазис",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; приливно-захваченный каменистый мир. Родительская звезда: M-звезда, близкая орбита.",
+          "landing": "landing",
+          "story": true,
+          "moons": [],
+          "unique": "Цепочка лабораторий в сумеречном поясе.",
+          "fiction": true,
+          "orbit": 741.0,
+          "period": 318.0,
+          "phase": 5.18,
+          "size": 130.0,
+          "palette": [
+            "#ea6c39",
+            "#162846",
+            "#ffb265"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m31_p03.png"
+        },
+        {
+          "id": "m31_p04",
+          "name_en": "Helion",
+          "name_ru": "Гелион",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; лавовая планета. Родительская звезда: K-звезда, экстремально близкая орбита.",
+          "landing": "orbit",
+          "story": false,
+          "moons": [],
+          "unique": "Роботизированный зонд над лавовым морем.",
+          "fiction": true,
+          "orbit": 989.0,
+          "period": 407.0,
+          "phase": 7.58,
+          "size": 160.0,
+          "palette": [
+            "#292832",
+            "#e16e22",
+            "#eaad60"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m31_p04.png"
+        },
+        {
+          "id": "m31_p05",
+          "name_en": "Synta",
+          "name_ru": "Синта",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; каменистая суперземля. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": false,
+          "moons": [
+            "Тетра"
+          ],
+          "unique": "Остановившийся гигантский механический город.",
+          "fiction": true,
+          "orbit": 1237.0,
+          "period": 496.0,
+          "phase": 9.98,
+          "size": 174.0,
+          "palette": [
+            "#f1f0da",
+            "#c1a256",
+            "#baafab"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m31_p05.png"
+        },
+        {
+          "id": "m31_p06",
+          "name_en": "Geona",
+          "name_ru": "Геона",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; вулканическая каменистая планета. Родительская звезда: G-звезда, вымышленная.",
+          "landing": "landing",
+          "story": false,
+          "moons": [
+            "Лит",
+            "Тект"
+          ],
+          "unique": "Геотермальные башни над кальдерой.",
+          "fiction": true,
+          "orbit": 1485.0,
+          "period": 585.0,
+          "phase": 12.38,
+          "size": 126.0,
+          "palette": [
+            "#5f5550",
+            "#f7824a",
+            "#9f9f9e"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m31_p06.png"
+        },
+        {
+          "id": "m31_p07",
+          "name_en": "Resona",
+          "name_ru": "Резона",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; каменистая планета с плотной атмосферой. Родительская звезда: G-звезда, вымышленная.",
+          "landing": "landing",
+          "story": false,
+          "moons": [],
+          "unique": "Горный лабиринт, звучащий на ветру.",
+          "fiction": true,
+          "orbit": 1733.0,
+          "period": 674.0,
+          "phase": 14.78,
+          "size": 146.0,
+          "palette": [
+            "#c0b5a0",
+            "#77949d",
+            "#b9b8be"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m31_p07.png"
+        },
+        {
+          "id": "m31_p08",
+          "name_en": "Quantia",
+          "name_ru": "Квантия",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; сверхлёгкий газовый гигант. Родительская звезда: G-звезда, вымышленная.",
+          "landing": "orbit",
+          "story": false,
+          "moons": [],
+          "unique": "Отдалённая орбитальная квантовая лаборатория.",
+          "fiction": true,
+          "orbit": 1981.0,
+          "period": 763.0,
+          "phase": 17.18,
+          "size": 132.0,
+          "palette": [
+            "#b9aedc",
+            "#d9c3e1",
+            "#9781c9"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m31_p08.png"
+        }
+      ],
+      "station": {
+        "id": "st_m31",
+        "name_en": "Inverted Pyramid",
+        "name_ru": "Перевёрнутая пирамида",
+        "fiction": true
+      }
+    },
+    {
+      "id": "m33",
+      "name_en": "Triangulum",
+      "name_ru": "Треугольник (M33)",
+      "sun_color": "#e4e9ff",
+      "shape": "spiral",
+      "planets": [
+        {
+          "id": "m33_p01",
+          "name_en": "Svetara",
+          "name_ru": "Светара",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; каменистая циркумбинарная планета. Родительская звезда: Двойная система G+K (вымышленная).",
+          "landing": "landing",
+          "story": true,
+          "moons": [],
+          "unique": "Поле зеркальных башен.",
+          "fiction": true,
+          "orbit": 245.0,
+          "period": 140.0,
+          "phase": 0.38,
+          "size": 118.0,
+          "palette": [
+            "#6b7686",
+            "#d1c2ac",
+            "#9ba8ba"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m33_p01.png"
+        },
+        {
+          "id": "m33_p02",
+          "name_en": "Orbita",
+          "name_ru": "Орбита",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; каменистая крупная планета. Родительская звезда: G-звезда, вымышленная.",
+          "landing": "landing",
+          "story": true,
+          "moons": [
+            "Круг",
+            "Эллипс",
+            "Века"
+          ],
+          "unique": "Орбитальная учебная обсерватория.",
+          "fiction": true,
+          "orbit": 493.0,
+          "period": 229.0,
+          "phase": 2.78,
+          "size": 144.0,
+          "palette": [
+            "#9d9080",
+            "#514843",
+            "#d2ba9e"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m33_p02.png"
+        },
+        {
+          "id": "m33_p03",
+          "name_en": "Tessera",
+          "name_ru": "Тессера",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; каменистая планета с плато. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": true,
+          "moons": [
+            "Грань"
+          ],
+          "unique": "Мегаструктура с проекцией тессеракта.",
+          "fiction": true,
+          "orbit": 741.0,
+          "period": 318.0,
+          "phase": 5.18,
+          "size": 130.0,
+          "palette": [
+            "#403454",
+            "#8453ab",
+            "#bc9bde"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m33_p03.png"
+        },
+        {
+          "id": "m33_p04",
+          "name_en": "Lentis",
+          "name_ru": "Лентис",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; холодный каменистый мир. Родительская звезда: G-звезда, дальняя орбита.",
+          "landing": "landing",
+          "story": false,
+          "moons": [],
+          "unique": "Большой линзирующий телескоп.",
+          "fiction": true,
+          "orbit": 989.0,
+          "period": 407.0,
+          "phase": 7.58,
+          "size": 160.0,
+          "palette": [
+            "#516b8a",
+            "#26364b",
+            "#b8cee8"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m33_p04.png"
+        },
+        {
+          "id": "m33_p05",
+          "name_en": "Paralla",
+          "name_ru": "Паралла",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; сухой каменистый мир. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": false,
+          "moons": [],
+          "unique": "Сеть огромных маяков на поверхности.",
+          "fiction": true,
+          "orbit": 1237.0,
+          "period": 496.0,
+          "phase": 9.98,
+          "size": 174.0,
+          "palette": [
+            "#b8a271",
+            "#656a6b",
+            "#decf9a"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m33_p05.png"
+        },
+        {
+          "id": "m33_p06",
+          "name_en": "Pulsa",
+          "name_ru": "Пульса",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; сухой мир около пульсара. Родительская звезда: Пульсар (вымышленная система).",
+          "landing": "orbit",
+          "story": false,
+          "moons": [
+            "Тон"
+          ],
+          "unique": "Защищённая подземная роботическая крепость.",
+          "fiction": true,
+          "orbit": 1485.0,
+          "period": 585.0,
+          "phase": 12.38,
+          "size": 126.0,
+          "palette": [
+            "#bc847e",
+            "#e6b4b1",
+            "#745662"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m33_p06.png"
+        },
+        {
+          "id": "m33_p07",
+          "name_en": "Eclipsa",
+          "name_ru": "Эклипса",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; каменистая планета с затмениями. Родительская звезда: K-звезда, вымышленная.",
+          "landing": "landing",
+          "story": false,
+          "moons": [
+            "Тень",
+            "Корона"
+          ],
+          "unique": "Башня небесного календаря.",
+          "fiction": true,
+          "orbit": 1733.0,
+          "period": 674.0,
+          "phase": 14.78,
+          "size": 146.0,
+          "palette": [
+            "#8199bd",
+            "#9c78b2",
+            "#d9ccd8"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m33_p07.png"
+        },
+        {
+          "id": "m33_p08",
+          "name_en": "Cykla",
+          "name_ru": "Цикла",
+          "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; планета-странник без звезды. Родительская звезда: Нет родительской звезды.",
+          "landing": "landing",
+          "story": false,
+          "moons": [],
+          "unique": "Одинокий корабль под ледяным куполом.",
+          "fiction": true,
+          "orbit": 1981.0,
+          "period": 763.0,
+          "phase": 17.18,
+          "size": 132.0,
+          "palette": [
+            "#a6a5af",
+            "#5c6e99",
+            "#d3c8e5"
+          ],
+          "visual": "prototype",
+          "visual_asset": "res://assets/atlas/planets/m33_p08.png"
+        }
+      ],
+      "station": {
+        "id": "st_m33",
+        "name_en": "Last Gate",
+        "name_ru": "Последние врата",
+        "fiction": true
+      }
+    },
+    {
+      "id": "crossroads",
+      "name_en": "Crossroads of Worlds",
+      "name_ru": "Перекрёсток миров",
+      "shape": "crossroads",
+      "sun_color": "#94caff",
+      "planets": [],
+      "station": null,
+      "gateway_from": "m33",
+      "status": "marker_only",
+      "note": "Not a seventh galaxy. Fictional separate destination through the Last Gate."
+    }
+  ]
+}

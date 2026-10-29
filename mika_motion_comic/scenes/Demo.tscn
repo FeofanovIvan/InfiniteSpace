@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://mika_motion_comic/scenes/MotionComicIntro.tscn" id="1_intro"]
+[ext_resource type="Script" path="res://mika_motion_comic/scripts/demo.gd" id="2_demo"]
+
+[node name="Demo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("2_demo")
+
+[node name="MotionComicIntro" parent="." instance=ExtResource("1_intro")]
+layout_mode = 1

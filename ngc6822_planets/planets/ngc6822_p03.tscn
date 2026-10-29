@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://ngc6822_planets/planet_2d.tscn" id="1"]
+
+[node name="ngc6822_p03" instance=ExtResource("1")]
+planet_id = "ngc6822_p03"
+diameter_pixels = 171.0

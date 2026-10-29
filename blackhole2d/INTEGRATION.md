@@ -1,0 +1,1 @@
+MIKO BlackHole2D: copy folder blackhole2d into your project root. Instantiate res://blackhole2d/black_hole_2d.tscn on the space/world layer after background but before ships and UI. See README_RU.md in full archive.

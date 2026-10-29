@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://station_overlays/assets/03_satellite_city_back.png" id="1_back"]
+[ext_resource type="Texture2D" path="res://station_overlays/assets/03_satellite_city_front.png" id="2_front"]
+
+[node name="OrbitalStation_03" type="Node2D"]
+
+[node name="Back" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_back")
+
+[node name="Front" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("2_front")
