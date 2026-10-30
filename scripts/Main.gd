@@ -780,6 +780,9 @@ func _arrive_new_region(region_id: String, new_spawn: Vector2) -> void:
 	asteroid_field.visible = region_id != "crossroads"
 	asteroid_field.process_mode = Node.PROCESS_MODE_INHERIT if region_id != "crossroads" else Node.PROCESS_MODE_DISABLED
 	var system_data: Dictionary = solar_system.get_system(region_id)
+	_landing_target_id = ""
+	_landing_target_name = ""
+	action_button.set_action_available(false)
 	goal_picker.set_region_destinations(region_id, system_data.get("planets", []), system_data.get("station", null))
 	goal_picker.visible = region_id != "crossroads"
 	mini_map.reset_for_region()
@@ -860,31 +863,46 @@ func _stop_autopilot(reason: String) -> void:
 
 
 func _update_landing_offer() -> void:
-	# No landing button in the intro, hyperspace, portals or a paused modal.
+	# Planetary landings only on explicitly inhabited worlds; stations are ports.
 	if _warp_active or _intro_comic_playing or _intro_space_flying or get_tree().paused:
 		return
 	var ship_world: Vector2 = _ship_world()
-	var planets: Array = solar_system.get_map_destinations()
-	var planet_positions: Dictionary = {}
+	var system_data: Dictionary = solar_system.get_system(solar_system.current_id)
+	var positions: Dictionary = {}
 	for body in solar_system.get_navigation_bodies():
-		planet_positions[str(body.get("name", ""))] = body.get("world", Vector2.ZERO)
+		positions[str(body.get("name", ""))] = body.get("world", Vector2.ZERO)
 	var closest_id: String = ""
 	var closest_name: String = ""
 	var nearest_ratio: float = INF
-	for planet in planets:
-		var name_en: String = str(planet.get("name_en", ""))
-		if not planet_positions.has(name_en):
+	for planet in system_data.get("planets", []):
+		if not bool(planet.get("inhabited", false)):
 			continue
-		var body_world: Vector2 = planet_positions[name_en]
-		var distance: float = ship_world.distance_to(body_world)
+		var name_en: String = str(planet.get("name_en", ""))
+		if not positions.has(name_en):
+			continue
+		var planet_world: Vector2 = positions[name_en]
+		var distance: float = ship_world.distance_to(planet_world)
 		var radius: float = LANDING_APPROACH_MARGIN + float(planet.get("size", 120.0)) * 0.5
-		# Small margin stops the icon flickering exactly at the threshold.
-		if str(planet.get("id", "")) == _landing_target_id:
+		var id: String = str(planet.get("id", ""))
+		if id == _landing_target_id:
 			radius += 12.0
 		if distance <= radius and distance / radius < nearest_ratio:
 			nearest_ratio = distance / radius
-			closest_id = str(planet.get("id", ""))
+			closest_id = id
 			closest_name = name_en
+	var station: Variant = system_data.get("station", null)
+	if station is Dictionary and bool(station.get("accessible", true)):
+		var station_id: String = str(station.get("id", ""))
+		var station_name: String = "EarthStation" if solar_system.current_id == "mw" else str(station.get("name_en", ""))
+		if positions.has(station_name):
+			var station_world: Vector2 = positions[station_name]
+			var station_distance: float = ship_world.distance_to(station_world)
+			var station_radius: float = LANDING_APPROACH_MARGIN + 65.0
+			if station_id == _landing_target_id:
+				station_radius += 12.0
+			if station_distance <= station_radius and station_distance / station_radius < nearest_ratio:
+				closest_id = station_id
+				closest_name = str(station.get("name_en", "Station"))
 	if closest_id == _landing_target_id:
 		return
 	_landing_target_id = closest_id
