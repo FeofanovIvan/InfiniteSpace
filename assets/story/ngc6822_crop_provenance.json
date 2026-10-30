@@ -1,0 +1,40 @@
+{
+  "source_name": "Futuristic Spaceship Concept Collection.png",
+  "source_dimensions": [
+    1536,
+    1024
+  ],
+  "method": "Five separate RGBA cut-outs from supplied image, keeping original subject pixels, no generated replacement",
+  "ships": [
+    {
+      "slot": "top-left",
+      "name": "ngc6822_cargo_01.png",
+      "role": "cargo",
+      "sha256": "edbcd5f557aad5447a95872fd5db5af871212d1c1ee534c055c6dacbec991933"
+    },
+    {
+      "slot": "top-middle",
+      "name": "ngc6822_interceptor_02.png",
+      "role": "interceptor",
+      "sha256": "c75f64f4ad8320f7e0d95ac451a5f52e63d96234d7e8c7d39c6bd2a13ec2000c"
+    },
+    {
+      "slot": "top-right",
+      "name": "ngc6822_patrol_03.png",
+      "role": "patrol",
+      "sha256": "1fe68e52e3bfb7a952d7d78b833b2fcc17f2878b6e361e261478616248dbfb67"
+    },
+    {
+      "slot": "bottom-left",
+      "name": "ngc6822_liner_04.png",
+      "role": "liner",
+      "sha256": "424268c0240ca141a2bccb8b918dd1fc7ab8ad77a6b28cdcce7a9d50dc1d390a"
+    },
+    {
+      "slot": "bottom-right",
+      "name": "ngc6822_merchant_05.png",
+      "role": "merchant",
+      "sha256": "7cfe05f39c026e5f472b5b799880d8f96f02b171c6f08058c203fe1d0b57bb5f"
+    }
+  ]
+}
