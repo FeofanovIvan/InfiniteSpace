@@ -1,6 +1,6 @@
 extends Control
 ## Picture-only destination selector for young players.
-## The six circular icons expand in ONE row to the LEFT of the preview.
+## Destinations appear in ONE scrollable row; counts differ by system.
 ## The strip scrolls horizontally on narrow mobile screens.
 signal target_selected(target_id: String)
 
@@ -11,7 +11,7 @@ const RAIL_GAP: float = 12.0
 const RAIL_PADDING: float = 8.0
 const RAIL_HEIGHT: float = 90.0
 const PREFERRED_WIDTH: float = 94.0 + 12.0 + 8.0 * 2.0 + 64.0 * 6.0 + 8.0 * 5.0
-const TARGETS: Array[String] = ["Venus", "Earth", "Mars", "Jupiter", "Neptune", "st_mw"]
+const TARGETS: Array[String] = ["Earth", "Mars", "st_mw"]
 const PREVIEWS: Dictionary = {
 	"Venus": preload("res://assets/destinations/venus.png"),
 	"Earth": preload("res://assets/destinations/earth.png"),
@@ -37,6 +37,7 @@ var _target_previews: Dictionary = PREVIEWS.duplicate()
 var _target_labels: Dictionary = {}
 var _total_width: float = PREFERRED_WIDTH
 var _rail_width: float = PREFERRED_WIDTH - TRIGGER_SIZE - RAIL_GAP
+var _available_width: float = PREFERRED_WIDTH
 var _shown_width: float = 0.0
 
 
@@ -66,7 +67,7 @@ func _ready() -> void:
 	_scroll.get_h_scroll_bar().modulate = Color.TRANSPARENT
 
 	_row = HBoxContainer.new()
-	_row.name = "SingleRowOfSixDestinations"
+	_row.name = "InhabitedWorldsAndStations"
 	_row.add_theme_constant_override("separation", TILE_GAP)
 	_row.mouse_filter = Control.MOUSE_FILTER_PASS
 	_scroll.add_child(_row)
@@ -109,7 +110,11 @@ func _process(delta: float) -> void:
 
 func set_available_width(available_width: float) -> void:
 	# Main.gd reserves space for the mini-map on the left, whenever possible.
-	_total_width = clampf(available_width, TRIGGER_SIZE + RAIL_GAP + 82.0, PREFERRED_WIDTH)
+	_available_width = available_width
+	var tiles: int = _target_ids.size()
+	var content_width: float = RAIL_PADDING * 2.0 + float(tiles) * TILE_SIZE + float(maxi(0, tiles - 1)) * TILE_GAP
+	var wanted: float = TRIGGER_SIZE + RAIL_GAP + maxf(82.0, content_width)
+	_total_width = clampf(available_width, TRIGGER_SIZE + RAIL_GAP + 82.0, wanted)
 	_rail_width = _total_width - TRIGGER_SIZE - RAIL_GAP
 	_shown_width = minf(_shown_width, _rail_width)
 	_update_geometry()
@@ -206,31 +211,37 @@ func _add_tile(id: String) -> void:
 
 
 func set_region_destinations(region_id: String, planets: Array, station: Variant) -> void:
-	# Existing Milky Way UI remains unchanged and limits flight to five
-	# inhabited planets plus the standalone station.
+	# One source of truth for every system. Not a fixed-size planet menu.
 	_target_ids.clear()
 	_target_previews.clear()
 	_target_labels.clear()
-	if region_id == "mw":
-		_target_ids = TARGETS.duplicate()
-		_target_previews = PREVIEWS.duplicate()
-	else:
-		for data in planets:
-			var id: String = str(data.get("id", ""))
-			_target_ids.append(id)
-			_target_labels[id] = str(data.get("name_en", id))
-			var path: String = str(data.get("visual_asset", ""))
-			if path != "":
-				_target_previews[id] = load(path) as Texture2D
-		if station is Dictionary:
-			var station_id: String = str(station.get("id", ""))
+	for data in planets:
+		if not bool(data.get("inhabited", false)):
+			continue
+		var id: String = str(data.get("name_en", "")) if region_id == "mw" else str(data.get("id", ""))
+		if id == "":
+			continue
+		var preview: Texture2D = PREVIEWS.get(id) as Texture2D
+		var path: String = str(data.get("visual_asset", ""))
+		if preview == null and path != "":
+			preview = load(path) as Texture2D
+		if preview == null:
+			continue
+		_target_ids.append(id)
+		_target_labels[id] = str(data.get("name_en", id))
+		_target_previews[id] = preview
+	if station is Dictionary and bool(station.get("accessible", true)):
+		var station_id: String = str(station.get("id", ""))
+		if station_id != "":
+			var station_preview: Texture2D = PREVIEWS.get(station_id) as Texture2D
+			var station_asset: String = str(station.get("visual_asset", ""))
+			if station_preview == null and station_asset != "":
+				station_preview = load(station_asset) as Texture2D
+			if station_preview == null:
+				station_preview = PREVIEWS["EarthStation"]
 			_target_ids.append(station_id)
 			_target_labels[station_id] = str(station.get("name_en", "Station"))
-			var station_asset: String = str(station.get("visual_asset", ""))
-			if station_asset != "":
-				_target_previews[station_id] = load(station_asset) as Texture2D
-			else:
-				_target_previews[station_id] = PREVIEWS["EarthStation"]
+			_target_previews[station_id] = station_preview
 	if _row == null:
 		return
 	for child in _row.get_children():
@@ -238,10 +249,9 @@ func set_region_destinations(region_id: String, planets: Array, station: Variant
 		child.queue_free()
 	_tiles.clear()
 	for id in _target_ids:
-		if _target_previews.has(id) and _target_previews[id] != null:
-			_add_tile(id)
+		_add_tile(id)
 	_preview_target = _target_ids[0] if not _target_ids.is_empty() else ""
-	if _preview_target != "" and _target_previews.has(_preview_target):
-		_trigger.icon = _target_previews[_preview_target]
+	_trigger.icon = _target_previews.get(_preview_target) as Texture2D
 	_open = false
 	_update_selection()
+	set_available_width(_available_width)
