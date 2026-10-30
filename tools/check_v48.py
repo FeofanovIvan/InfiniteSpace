@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import json
+import struct
 p=Path(__file__).resolve().parent.parent
 j=json.loads((p/'atlas/world_atlas.json').read_text())
 counts={}
@@ -8,7 +9,8 @@ for s in j['systems']:
     inhabited=[x for x in s.get('planets',[]) if x.get('inhabited') is True]
     assert all(x.get('landing')=='landing' for x in inhabited),s['id']
     counts[s['id']]=len(inhabited)+(1 if (s.get('station') or {}).get('accessible',False) else 0)
-assert counts['mw'] != 6 and counts['m33'] >= 2
+assert counts['mw']!=6
+assert counts['m33']>=2
 nav=(p/'scripts/NavigationMenu.gd').read_text()
 assert 'if not bool(data.get("inhabited", false)):' in nav
 assert 'set_available_width(_available_width)' in nav
@@ -26,5 +28,5 @@ assert 'if accessible_ports.has(str(body.get("name", ""))):' in npc
 for nm in ['civilian_01','merchant_02','courier_03','patrol_04','cargo_05']:
     b=(p/('assets/story/m33_'+nm+'.png')).read_bytes()
     assert b[:8] == b'\x89PNG\r\n\x1a\n'
-    assert b[25] == 6
+    assert b[25] == 6  # 8-bit RGBA
 print('v48 STATIC PASS',counts)

@@ -1,26 +1,17 @@
-# InfiniteSpace v48 — оригинальный флот Триангулума и динамические цели
+# InfiniteSpace v48 — Triangulum: original ships + inhabited destinations
 
-Исходное изображение: `Futuristic Pearl Pod Collection(1).png`, 1536×1024 RGBA.
+Five ships **cut unchanged** via Python connected-components from the provided RGBA collage 1536×1024 (positions TL, TR, ML, MR, bottom):
 
-Без генерации новых изображений вырезаны **ровно пять** объектов по исходному альфа-каналу (сохранены пиксели RGB/RGBA). Порядок на листе:
-1. Сверху слева — обычный гражданский/пассажирский корабль, `m33_civilian_01.png`.
-2. Сверху справа — торговый, `m33_merchant_02.png`.
-3. Посередине слева — дипломатический курьер, `m33_courier_03.png`.
-4. Посередине справа — патрульный, `m33_patrol_04.png`.
-5. Снизу — тяжёлый грузовой, `m33_cargo_05.png`.
+1. m33_civilian_01.png — standard passenger/civilian shuttle.
+2. m33_merchant_02.png — merchant/trading ship.
+3. m33_courier_03.png — fast diplomatic courier.
+4. m33_patrol_04.png — local security patrol.
+5. m33_cargo_05.png — heavy freighter.
 
-M33 теперь использует **ту же**, что SMC, машину состояний `ForeignTraffic.gd`: подлёт, зависание, посадка, стоянка, взлёт, удаление, полёт, гиперпрыжок. Флоты не смешиваются между системами. Для кораблей с противоположно направленным носом задан индивидуальный `nose_axis`.
+No generated or redesigned images. Original RGB and alpha retained; only isolated noise outside each object removed.
+SMC and M33 both use existing ForeignTraffic state machine (approach, hover, landing, dock, takeoff, depart, cruise, align_jump, charge, dash).
+Each system has its own ship art and roles; no inter-region traffic mixing.
 
-Навигация справа сверху не имеет фиксированного числа целей. Для каждой системы отображаются только планеты с `inhabited: true` и станции с `accessible: true`. Команда посадки игрока и NPC используют тот же каталог. Необитаемые планеты остаются на игровой карте.
+Navigation data: catalog field `inhabited` is explicitly configured for each existing world. Initial flags are deliberately conservative and inferred from *both* existing `story: true` and `landing: "landing"` — a provisional game-design setting, **not proof of real extraterrestrial life**. All existing world stations marked accessible. Future world design can update these flags without code changes. Both HUD destination menu and landing action enforce the same explicit flag; foreign NPC ports read it too. Solar NPC traffic additionally filters its own ports from the same catalog.
 
-**Временное допущение:** поскольку в прежнем каталоге не было подтверждённого поля `inhabited`, начальные значения назначены консервативно по двум прежним игровым признакам: `story: true` + `landing: "landing"`. Это не утверждение, что на настоящем Марсе есть инопланетная жизнь. Для уточнения игрового лора меняются только флаги каталога.
-
-Проверено извлечение всех пяти PNG (исходные пиксели совпадают), ZIP и тестовая установка поверх v47, а также повторная установка. Визуальную проверку F5 Godot предстоит провести на устройстве.
-
-Графика в ZIP, её сохранение в GitHub требует запуска включённой синхронизации установленного проекта: `sync_v48_to_github.sh`. Исходники и этот отчёт уже опубликованы в ветке `release/v48-triangulum-fleet-navigation`.
-
-## Пакет установки
-
-Файл: `InfiniteSpace_v48_Patch_Triangulum_OriginalFleet_InhabitedNavigation.zip`.
-SHA-256: `c2763e6f319f88f0f985e0bafa29766e7b2e1729688de621a1f43f9e30767462`.
-В комплекте пять обрезанных PNG и установленный Python-патчер; локальная синхронизация загружает бинарную графику в ветку `release/v48-installed-snapshot`. Без этой синхронизации исходная ветка v48 содержит скрипт вырезания и код, но не все бинарные изображения. Не следует считать эту ветку исполняемой полной сборкой до появления snapshot.
+Real Godot F5 tests are still required. Static project checks are not a substitute for animation QA.

@@ -1,0 +1,80 @@
+{
+  "source_file": "Futuristic Pearl Pod Collection(1).png",
+  "original_size": [
+    1536,
+    1024
+  ],
+  "method": "connected components alpha >20; dilate 4 pixels; retain original RGBA pixels",
+  "ships": [
+    {
+      "name": "m33_civilian_01.png",
+      "source_bbox": [
+        29,
+        96,
+        780,
+        303
+      ],
+      "cutout_size": [
+        804,
+        327
+      ],
+      "alpha_nonzero": 188779
+    },
+    {
+      "name": "m33_merchant_02.png",
+      "source_bbox": [
+        830,
+        134,
+        684,
+        249
+      ],
+      "cutout_size": [
+        708,
+        273
+      ],
+      "alpha_nonzero": 137223
+    },
+    {
+      "name": "m33_courier_03.png",
+      "source_bbox": [
+        62,
+        457,
+        869,
+        263
+      ],
+      "cutout_size": [
+        893,
+        287
+      ],
+      "alpha_nonzero": 160670
+    },
+    {
+      "name": "m33_patrol_04.png",
+      "source_bbox": [
+        985,
+        412,
+        488,
+        360
+      ],
+      "cutout_size": [
+        512,
+        384
+      ],
+      "alpha_nonzero": 142867
+    },
+    {
+      "name": "m33_cargo_05.png",
+      "source_bbox": [
+        102,
+        745,
+        1342,
+        231
+      ],
+      "cutout_size": [
+        1366,
+        255
+      ],
+      "alpha_nonzero": 245064
+    }
+  ]
+}
