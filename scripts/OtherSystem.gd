@@ -11,6 +11,8 @@ const ARCHIVE_TEXTURE: Texture2D = preload("res://assets/story/living_archive_lo
 const TITAN_SKULL_TEXTURE: Texture2D = preload("res://assets/story/titan_skull_ngc6822.png")
 const PYRAMID_TEXTURE: Texture2D = preload("res://assets/story/inverted_pyramid_m31.png")
 const LAST_GATE_TEXTURE: Texture2D = preload("res://assets/story/last_gate_m33.png")
+const LivingWorldStormScene: PackedScene = preload("res://living_world_storm_2d/living_world_storm_2d.tscn")
+const CROSSROADS_NEBULA_SHADER: Shader = preload("res://shaders/far_plasma.gdshader")
 const TITAN_ASTEROID_TEXTURES: Array[Texture2D] = [
 	preload("res://asteroid_assets/original/01_gray_cratered.png"),
 	preload("res://asteroid_assets/original/03_dark_fissured.png"),
@@ -115,6 +117,9 @@ var _archive_nebula: Array[ColorRect] = []
 var _titan_ring_rocks: Array[Dictionary] = []
 var _tarantula_thrusters: Node2D
 var _story_fx: Node2D
+var _crossroads_world: Node2D
+var _crossroads_nebulae: Array[ColorRect] = []
+var _crossroads_pulse_index: int = -1
 var _view: Vector2 = Vector2(1024, 576)
 var _camera_world: Vector2 = Vector2.ZERO
 var _time: float = 0.0
@@ -141,6 +146,9 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 	_titan_ring_rocks.clear()
 	_tarantula_thrusters = null
 	_story_fx = null
+	_crossroads_world = null
+	_crossroads_nebulae.clear()
+	_crossroads_pulse_index = -1
 	var star_index: int = ["lmc", "smc", "ngc6822", "m31", "m33"].find(str(region.get("id", "")))
 	if star_index >= 0:
 		var sun: RotatingSun2D = RotatingSunScene.new()
@@ -254,6 +262,40 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 		_archive_nebula.clear()
 		_tarantula_thrusters = null
 		_story_fx = null
+		_crossroads_world = LivingWorldStormScene.instantiate() as Node2D
+		if _crossroads_world != null:
+			_crossroads_world.name = "Crossroads_LivingWorld"
+			add_child(_crossroads_world)
+			_crossroads_world.call("update_diameter", 312.0)
+			_crossroads_world.call("set_mood", "listening")
+			_crossroads_world.call("set_storm_state", "communicating")
+			_crossroads_world.call("set_quality_low", false)
+			_crossroads_world.call("set_storm_enabled", true)
+		for info in [
+			{"size": Vector2(960.0, 720.0), "offset": Vector2(-250.0, -150.0), "angle": -0.35, "color": Color(0.42, 0.56, 1.0), "opacity": 0.20, "seed": 11.5, "style": 2.0},
+			{"size": Vector2(880.0, 660.0), "offset": Vector2(260.0, 110.0), "angle": 0.44, "color": Color(0.64, 0.38, 0.95), "opacity": 0.18, "seed": 17.8, "style": 1.0},
+			{"size": Vector2(740.0, 560.0), "offset": Vector2(0.0, -265.0), "angle": 0.12, "color": Color(0.44, 0.88, 1.0), "opacity": 0.14, "seed": 29.1, "style": 2.0},
+			{"size": Vector2(760.0, 600.0), "offset": Vector2(-40.0, 265.0), "angle": -0.58, "color": Color(0.95, 0.69, 1.0), "opacity": 0.12, "seed": 37.2, "style": 1.0}
+		]:
+			var cloud: ColorRect = ColorRect.new()
+			cloud.name = "Crossroads_Nebula_%d" % _crossroads_nebulae.size()
+			cloud.size = info["size"]
+			var cloud_offset: Vector2 = info["offset"]
+			cloud.position = cloud_offset - cloud.size * 0.5
+			cloud.pivot_offset = cloud.size * 0.5
+			cloud.rotation = float(info["angle"])
+			cloud.z_index = -6 + _crossroads_nebulae.size()
+			cloud.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			var material: ShaderMaterial = ShaderMaterial.new()
+			material.shader = CROSSROADS_NEBULA_SHADER
+			material.set_shader_parameter("cloud_color", info["color"])
+			material.set_shader_parameter("cloud_opacity", float(info["opacity"]))
+			material.set_shader_parameter("cloud_seed", float(info["seed"]))
+			material.set_shader_parameter("style", float(info["style"]))
+			material.set_shader_parameter("glow_strength", 0.62)
+			cloud.material = material
+			add_child(cloud)
+			_crossroads_nebulae.append(cloud)
 	_update_positions()
 
 func _add_archive_nebula() -> void:
@@ -445,6 +487,21 @@ func _update_positions() -> void:
 					nebula.modulate.a = 0.82 + 0.14 * sin(_time * 0.35 + float(i) * 1.5)
 		if _story_fx != null:
 			_story_fx.call("update_time", _time)
+	if _crossroads_world != null:
+		var half_cross: Vector2 = _view * 0.5
+		_crossroads_world.position = half_cross - _camera_world
+		_crossroads_world.rotation = _time * 0.018
+		_crossroads_world.call("set_storm_state", "surge" if sin(_time * 0.27) > 0.62 else "communicating")
+		_crossroads_world.call("react_to_voice", 0.32 + 0.30 * (0.5 + 0.5 * sin(_time * 0.83)))
+		var pulse_index: int = int(floor(_time / 3.6))
+		if pulse_index != _crossroads_pulse_index:
+			_crossroads_pulse_index = pulse_index
+			_crossroads_world.call("trigger_storm", Vector2.from_angle(_time * 0.55), 0.86)
+		for i in range(_crossroads_nebulae.size()):
+			var nebula: ColorRect = _crossroads_nebulae[i]
+			var base_rotation: float = -0.34 + float(i) * 0.28
+			nebula.rotation = base_rotation + _time * (0.0028 + float(i) * 0.0006) * (1.0 if i % 2 == 0 else -1.0)
+			nebula.modulate.a = 0.78 + 0.16 * sin(_time * (0.22 + float(i) * 0.05) + float(i) * 1.7)
 	queue_redraw()
 
 func _station_world() -> Vector2:
@@ -484,7 +541,7 @@ func get_target_state(target_id: String) -> Dictionary:
 func get_navigation_bodies() -> Array[Dictionary]:
 	var bodies: Array[Dictionary] = []
 	if str(_region.get("id", "")) == "crossroads":
-		bodies.append({"name": "Crossroads", "world": Vector2.ZERO, "color": Color(0.61, 0.82, 1.0), "orbit": 0.0})
+		bodies.append({"name": "LivingWorld", "world": Vector2.ZERO, "color": Color(0.76, 0.90, 1.0), "orbit": 0.0, "kind": "planet", "planet_id": "crossroads_core", "inhabited": false})
 		return bodies
 	bodies.append({"name": "Sun", "world": Vector2.ZERO, "color": _sun_color, "orbit": 0.0})
 	for body in _planets:
@@ -582,9 +639,14 @@ func _build_planet_orbital_ring(planet_root: Node2D, data: Dictionary, diameter:
 func _draw() -> void:
 	var center: Vector2 = _view * 0.5 - _camera_world
 	if str(_region.get("id", "")) == "crossroads":
-		for k in range(3):
-			draw_arc(center, 125.0 + k * 39.0, _time * 0.10 * (k + 1), _time * 0.10 * (k + 1) + TAU * 0.80, 100, Color(0.35 + k * 0.11, 0.70, 1.0, 0.6), 4.0, true)
-		draw_circle(center, 60.0, Color(0.12, 0.36, 0.66, 0.20))
+		for k in range(4):
+			var radius: float = 170.0 + k * 52.0 + 8.0 * sin(_time * 0.20 + float(k))
+			var arc_start: float = _time * 0.06 * (k + 1)
+			draw_arc(center, radius, arc_start, arc_start + TAU * 0.78, 120, Color(0.32 + k * 0.09, 0.66 + k * 0.04, 1.0, 0.30), 3.0, true)
+		for n in range(7):
+			var cloud_offset: Vector2 = Vector2.from_angle(_time * 0.08 + float(n) * TAU / 7.0) * (250.0 + 28.0 * sin(_time * 0.23 + float(n)))
+			draw_circle(center + cloud_offset, 6.0 + 2.0 * sin(_time * 0.7 + float(n)), Color(0.62, 0.86, 1.0, 0.24))
+		draw_circle(center, 96.0, Color(0.28, 0.46, 0.82, 0.10))
 		return
 	if center.distance_to(_view * 0.5) < 3500.0:
 		draw_circle(center, 84.0, Color(_sun_color.r, _sun_color.g, _sun_color.b, 0.06))

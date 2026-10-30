@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://living_world_storm_2d/living_world_storm_2d.gd" id="1"]
+[ext_resource type="PackedScene" path="res://living_world_2d/living_world_2d.tscn" id="2"]
+[ext_resource type="Script" path="res://living_world_storm_2d/storm_particles.gd" id="3"]
+
+[node name="LivingWorldStorm2D" type="Node2D"]
+script = ExtResource("1")
+
+[node name="BackMist" type="Sprite2D" parent="."]
+
+[node name="BackSwirls" type="Sprite2D" parent="."]
+
+[node name="WaveRings" type="Sprite2D" parent="."]
+
+[node name="World" parent="." instance=ExtResource("2")]
+
+[node name="FrontRibbons" type="Sprite2D" parent="."]
+
+[node name="ArcLightning" type="Sprite2D" parent="."]
+
+[node name="LiquidMotes" type="Node2D" parent="."]
+script = ExtResource("3")

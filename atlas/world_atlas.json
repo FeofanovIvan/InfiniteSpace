@@ -64,7 +64,7 @@
           "name_en": "Jupiter",
           "name_ru": "Юпитер",
           "type": "РЕАЛЬНАЯ ПЛАНЕТА; газовый гигант. Родительская звезда: Солнце, G2V.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": true,
           "moons": [
             "Ио",
@@ -84,7 +84,7 @@
             "#fff4d8"
           ],
           "visual": "existing_solar",
-          "inhabited": false
+          "inhabited": true
         },
         {
           "id": "mw_p04",
@@ -147,7 +147,7 @@
           "name_en": "Neptune",
           "name_ru": "Нептун",
           "type": "РЕАЛЬНАЯ ПЛАНЕТА; ледяной гигант. Родительская звезда: Солнце, G2V.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [
             "Тритон",
@@ -166,14 +166,14 @@
             "#fff4d8"
           ],
           "visual": "existing_solar",
-          "inhabited": false
+          "inhabited": true
         },
         {
           "id": "mw_p07",
           "name_en": "Venus",
           "name_ru": "Венера",
           "type": "РЕАЛЬНАЯ ПЛАНЕТА; каменистая, экстремально горячая. Родительская звезда: Солнце, G2V.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [],
           "unique": "Дрейфующая высотная исследовательская станция.",
@@ -188,7 +188,7 @@
             "#fff4d8"
           ],
           "visual": "existing_solar",
-          "inhabited": false
+          "inhabited": true
         },
         {
           "id": "mw_p08",
@@ -331,7 +331,7 @@
           ],
           "visual": "lmc_scene",
           "visual_asset": "res://assets/atlas/planets/lmc_p04.png",
-          "inhabited": false
+          "inhabited": true
         },
         {
           "id": "lmc_p05",
@@ -571,7 +571,7 @@
           ],
           "visual": "prototype",
           "visual_asset": "res://assets/atlas/planets/smc_p05.png",
-          "inhabited": false
+          "inhabited": true
         },
         {
           "id": "smc_p06",
@@ -765,7 +765,7 @@
           ],
           "visual": "prototype",
           "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p04.png",
-          "inhabited": false
+          "inhabited": true
         },
         {
           "id": "ngc6822_p05",
@@ -813,7 +813,7 @@
           ],
           "visual": "prototype",
           "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p06.png",
-          "inhabited": false
+          "inhabited": true
         },
         {
           "id": "ngc6822_p07",
@@ -1004,7 +1004,7 @@
           ],
           "visual": "prototype",
           "visual_asset": "res://assets/atlas/planets/m31_p05.png",
-          "inhabited": false
+          "inhabited": true
         },
         {
           "id": "m31_p06",
@@ -1030,7 +1030,7 @@
           ],
           "visual": "prototype",
           "visual_asset": "res://assets/atlas/planets/m31_p06.png",
-          "inhabited": false
+          "inhabited": true
         },
         {
           "id": "m31_p07",
@@ -1192,7 +1192,7 @@
           ],
           "visual": "prototype",
           "visual_asset": "res://assets/atlas/planets/m33_p04.png",
-          "inhabited": false
+          "inhabited": true
         },
         {
           "id": "m33_p05",
@@ -1311,8 +1311,8 @@
       "planets": [],
       "station": null,
       "gateway_from": "m33",
-      "status": "marker_only",
-      "note": "Not a seventh galaxy. Fictional separate destination through the Last Gate."
+      "status": "living_world_center",
+      "note": "Special finale region with a central living liquid world and surrounding nebulae."
     }
   ]
 }

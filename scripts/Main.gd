@@ -514,6 +514,7 @@ func _layout() -> void:
 	var lower_button_local_size: float = 42.0 * lower_button_extra
 	var rail_gap: float = 12.0
 	var right_button_center: float = joystick.position.x + visual_size * 0.5
+	var right_column_edge: float = joystick.position.x + visual_size
 	# On a very short landscape screen, fit the UPPER rail together rather
 	# than overlap the joystick. Standard screens preserve the exact +20% growth
 	# relative to v42, with fixed 12-screen-pixel gaps in every aspect ratio.
@@ -530,7 +531,7 @@ func _layout() -> void:
 	var menu_width: float = minf(available_units, NavigationMenuScene.PREFERRED_WIDTH)
 	goal_picker.set_available_width(menu_width)
 	goal_picker.position = Vector2(
-		right_button_center - (menu_width - NavigationMenuScene.TRIGGER_SIZE * 0.5) * goals_scale,
+		right_column_edge - menu_width * goals_scale,
 		safe.position.y + 12.0
 	)
 	status_hud.scale = Vector2.ONE * hud_scale
@@ -551,7 +552,7 @@ func _layout() -> void:
 	# The seven fuel sticks and the original blue asteroid fragment stay inside
 	# their existing bar. Its size grows with the entire upper-right HUD.
 	status_hud.position = Vector2(
-		right_button_center - (ResourceHudScene.HUD_WIDTH - 44.0 + 21.0) * hud_scale,
+		right_column_edge - ResourceHudScene.HUD_WIDTH * hud_scale,
 		goal_picker.position.y + NavigationMenuScene.TRIGGER_SIZE * goals_scale + rail_gap
 	)
 	galactic_map.size = view
