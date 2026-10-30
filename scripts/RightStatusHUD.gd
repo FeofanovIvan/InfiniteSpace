@@ -13,6 +13,8 @@ var fuel_segments: int = 7
 var crystal_count: int = 0
 var _bars: Array[Panel] = []
 var _crystal_icon: Sprite2D
+var _fuel_count_label: Label
+var _blink_time: float = 0.0
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -39,10 +41,18 @@ func _ready() -> void:
 	_crystal_icon.name = "BlueAsteroidFragment_InsideFuelPanel"
 	_crystal_icon.texture = CRYSTAL_ICON
 	_crystal_icon.centered = true
-	_crystal_icon.position = Vector2(100.0, 17.0)
-	_crystal_icon.scale = Vector2.ONE * 0.075
+	_crystal_icon.position = Vector2(95.0, 17.0)
+	_crystal_icon.scale = Vector2.ONE * 0.059
 	_crystal_icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 	panel.add_child(_crystal_icon)
+	_fuel_count_label = Label.new()
+	_fuel_count_label.name = "FuelCount_50Capacity"
+	_fuel_count_label.position = Vector2(101.0, 7.0)
+	_fuel_count_label.size = Vector2(23.0, 22.0)
+	_fuel_count_label.add_theme_font_size_override("font_size", 11)
+	_fuel_count_label.add_theme_color_override("font_color", Color(0.85, 0.96, 1.0))
+	_fuel_count_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	panel.add_child(_fuel_count_label)
 	_make_icon_button("GlobalFlight", GALAXY_ICON, 46.0, MobileLocale.t("galaxy_map"), _open_galaxy)
 	_make_ship_menu_button()
 	_refresh()
@@ -97,20 +107,34 @@ func _style(background: Color, outline: Color, corner: int, stroke: int) -> Styl
 	return s
 
 func set_fuel_segments(value: int) -> void:
-	fuel_segments = clampi(value, 0, 7)
+	var next_value: int = clampi(value, 0, 7)
+	if next_value == fuel_segments:
+		return
+	fuel_segments = next_value
 	if is_node_ready():
 		_refresh()
 
 func set_crystals(value: int) -> void:
-	crystal_count = maxi(0, value)
+	var next_value: int = maxi(0, value)
+	if next_value == crystal_count:
+		return
+	crystal_count = next_value
 	if is_node_ready():
 		_refresh()
 
+func _process(delta: float) -> void:
+	if fuel_segments <= 1:
+		_blink_time += delta
+		_refresh()
+
+
 func _refresh() -> void:
 	var lit: Color = Color("4bde80")
-	if fuel_segments <= 2:
-		lit = Color("fa585b")
-	elif fuel_segments <= 5:
+	if fuel_segments == 1:
+		lit = Color("fa3348") if sin(_blink_time * 10.0) > 0.0 else Color("641624")
+	elif fuel_segments == 2:
+		lit = Color("ef8260")
+	elif fuel_segments <= 4:
 		lit = Color("ffd459")
 	for i in range(_bars.size()):
 		var cell: Panel = _bars[i]
@@ -120,6 +144,9 @@ func _refresh() -> void:
 	# Keep it visible even at zero collected crystals.
 	if _crystal_icon != null:
 		_crystal_icon.modulate = Color.WHITE
+	if _fuel_count_label != null:
+		_fuel_count_label.text = str(crystal_count)
+		_fuel_count_label.add_theme_color_override("font_color", Color("fa585b") if fuel_segments <= 1 and sin(_blink_time * 10.0) > 0.0 else (Color("641624") if fuel_segments <= 1 else Color(0.86, 0.97, 1.0)))
 
 func _open_galaxy() -> void:
 	galaxy_requested.emit()
