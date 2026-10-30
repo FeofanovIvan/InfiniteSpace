@@ -120,6 +120,7 @@ var _story_fx: Node2D
 var _crossroads_world: Node2D
 var _crossroads_nebulae: Array[ColorRect] = []
 var _crossroads_pulse_index: int = -1
+var _crossroads_storm_flash_index: int = -1
 var _view: Vector2 = Vector2(1024, 576)
 var _camera_world: Vector2 = Vector2.ZERO
 var _time: float = 0.0
@@ -149,6 +150,7 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 	_crossroads_world = null
 	_crossroads_nebulae.clear()
 	_crossroads_pulse_index = -1
+	_crossroads_storm_flash_index = -1
 	var star_index: int = ["lmc", "smc", "ngc6822", "m31", "m33"].find(str(region.get("id", "")))
 	if star_index >= 0:
 		var sun: RotatingSun2D = RotatingSunScene.new()
@@ -272,10 +274,13 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 			_crossroads_world.call("set_quality_low", false)
 			_crossroads_world.call("set_storm_enabled", true)
 		for info in [
-			{"size": Vector2(960.0, 720.0), "offset": Vector2(-250.0, -150.0), "angle": -0.35, "color": Color(0.42, 0.56, 1.0), "opacity": 0.20, "seed": 11.5, "style": 2.0},
-			{"size": Vector2(880.0, 660.0), "offset": Vector2(260.0, 110.0), "angle": 0.44, "color": Color(0.64, 0.38, 0.95), "opacity": 0.18, "seed": 17.8, "style": 1.0},
-			{"size": Vector2(740.0, 560.0), "offset": Vector2(0.0, -265.0), "angle": 0.12, "color": Color(0.44, 0.88, 1.0), "opacity": 0.14, "seed": 29.1, "style": 2.0},
-			{"size": Vector2(760.0, 600.0), "offset": Vector2(-40.0, 265.0), "angle": -0.58, "color": Color(0.95, 0.69, 1.0), "opacity": 0.12, "seed": 37.2, "style": 1.0}
+			{"size": Vector2(1180.0, 860.0), "offset": Vector2(-320.0, -220.0), "angle": -0.48, "color": Color(0.33, 0.48, 1.0), "opacity": 0.24, "seed": 11.5, "style": 2.0},
+			{"size": Vector2(1120.0, 820.0), "offset": Vector2(340.0, -120.0), "angle": 0.36, "color": Color(0.84, 0.22, 0.48), "opacity": 0.22, "seed": 17.8, "style": 1.0},
+			{"size": Vector2(980.0, 760.0), "offset": Vector2(110.0, 280.0), "angle": 0.62, "color": Color(0.60, 0.24, 0.95), "opacity": 0.20, "seed": 23.4, "style": 2.0},
+			{"size": Vector2(920.0, 700.0), "offset": Vector2(-390.0, 170.0), "angle": -0.72, "color": Color(0.26, 0.82, 1.0), "opacity": 0.19, "seed": 31.9, "style": 1.0},
+			{"size": Vector2(780.0, 620.0), "offset": Vector2(0.0, -360.0), "angle": 0.10, "color": Color(0.92, 0.40, 0.18), "opacity": 0.16, "seed": 39.2, "style": 2.0},
+			{"size": Vector2(760.0, 580.0), "offset": Vector2(470.0, 250.0), "angle": -0.18, "color": Color(0.76, 0.34, 1.0), "opacity": 0.14, "seed": 44.4, "style": 1.0},
+			{"size": Vector2(760.0, 580.0), "offset": Vector2(-500.0, -40.0), "angle": 0.22, "color": Color(0.22, 0.66, 1.0), "opacity": 0.15, "seed": 52.1, "style": 2.0}
 		]:
 			var cloud: ColorRect = ColorRect.new()
 			cloud.name = "Crossroads_Nebula_%d" % _crossroads_nebulae.size()
@@ -284,7 +289,7 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 			cloud.position = cloud_offset - cloud.size * 0.5
 			cloud.pivot_offset = cloud.size * 0.5
 			cloud.rotation = float(info["angle"])
-			cloud.z_index = -6 + _crossroads_nebulae.size()
+			cloud.z_index = -8 + _crossroads_nebulae.size()
 			cloud.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			var material: ShaderMaterial = ShaderMaterial.new()
 			material.shader = CROSSROADS_NEBULA_SHADER
@@ -292,7 +297,7 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 			material.set_shader_parameter("cloud_opacity", float(info["opacity"]))
 			material.set_shader_parameter("cloud_seed", float(info["seed"]))
 			material.set_shader_parameter("style", float(info["style"]))
-			material.set_shader_parameter("glow_strength", 0.62)
+			material.set_shader_parameter("glow_strength", 0.74)
 			cloud.material = material
 			add_child(cloud)
 			_crossroads_nebulae.append(cloud)
@@ -490,18 +495,23 @@ func _update_positions() -> void:
 	if _crossroads_world != null:
 		var half_cross: Vector2 = _view * 0.5
 		_crossroads_world.position = half_cross - _camera_world
-		_crossroads_world.rotation = _time * 0.018
-		_crossroads_world.call("set_storm_state", "surge" if sin(_time * 0.27) > 0.62 else "communicating")
-		_crossroads_world.call("react_to_voice", 0.32 + 0.30 * (0.5 + 0.5 * sin(_time * 0.83)))
-		var pulse_index: int = int(floor(_time / 3.6))
+		_crossroads_world.rotation = _time * 0.024
+		_crossroads_world.call("set_storm_state", "surge" if sin(_time * 0.34) > 0.18 else "communicating")
+		_crossroads_world.call("set_mood", "curious" if sin(_time * 0.19) > 0.0 else "listening")
+		_crossroads_world.call("react_to_voice", 0.46 + 0.34 * (0.5 + 0.5 * sin(_time * 1.24)))
+		var pulse_index: int = int(floor(_time / 2.1))
 		if pulse_index != _crossroads_pulse_index:
 			_crossroads_pulse_index = pulse_index
-			_crossroads_world.call("trigger_storm", Vector2.from_angle(_time * 0.55), 0.86)
+			_crossroads_world.call("trigger_storm", Vector2.from_angle(_time * 0.82), 0.94)
+		var flash_index: int = int(floor(_time / 1.35))
+		if flash_index != _crossroads_storm_flash_index:
+			_crossroads_storm_flash_index = flash_index
+			_crossroads_world.call("trigger_storm", Vector2.from_angle(_time * 1.41 + PI * 0.33), 1.0)
 		for i in range(_crossroads_nebulae.size()):
 			var nebula: ColorRect = _crossroads_nebulae[i]
-			var base_rotation: float = -0.34 + float(i) * 0.28
-			nebula.rotation = base_rotation + _time * (0.0028 + float(i) * 0.0006) * (1.0 if i % 2 == 0 else -1.0)
-			nebula.modulate.a = 0.78 + 0.16 * sin(_time * (0.22 + float(i) * 0.05) + float(i) * 1.7)
+			var base_rotation: float = -0.46 + float(i) * 0.21
+			nebula.rotation = base_rotation + _time * (0.0036 + float(i) * 0.0009) * (1.0 if i % 2 == 0 else -1.0)
+			nebula.modulate.a = 0.82 + 0.18 * sin(_time * (0.31 + float(i) * 0.06) + float(i) * 1.9)
 	queue_redraw()
 
 func _station_world() -> Vector2:
@@ -639,14 +649,40 @@ func _build_planet_orbital_ring(planet_root: Node2D, data: Dictionary, diameter:
 func _draw() -> void:
 	var center: Vector2 = _view * 0.5 - _camera_world
 	if str(_region.get("id", "")) == "crossroads":
-		for k in range(4):
-			var radius: float = 170.0 + k * 52.0 + 8.0 * sin(_time * 0.20 + float(k))
-			var arc_start: float = _time * 0.06 * (k + 1)
-			draw_arc(center, radius, arc_start, arc_start + TAU * 0.78, 120, Color(0.32 + k * 0.09, 0.66 + k * 0.04, 1.0, 0.30), 3.0, true)
-		for n in range(7):
-			var cloud_offset: Vector2 = Vector2.from_angle(_time * 0.08 + float(n) * TAU / 7.0) * (250.0 + 28.0 * sin(_time * 0.23 + float(n)))
-			draw_circle(center + cloud_offset, 6.0 + 2.0 * sin(_time * 0.7 + float(n)), Color(0.62, 0.86, 1.0, 0.24))
-		draw_circle(center, 96.0, Color(0.28, 0.46, 0.82, 0.10))
+		var palette: Array[Color] = [Color(1.0, 0.28, 0.24, 0.72), Color(0.24, 0.72, 1.0, 0.72), Color(0.72, 0.32, 1.0, 0.72), Color(0.95, 0.46, 0.18, 0.66)]
+		for h in range(3):
+			draw_circle(center, 114.0 + float(h) * 22.0, Color(0.40 + float(h) * 0.08, 0.30 + float(h) * 0.08, 0.86, 0.035))
+		for n in range(18):
+			var drift_angle: float = _time * 0.12 + float(n) * TAU / 18.0
+			var ring_radius: float = 225.0 + 48.0 * sin(_time * 0.33 + float(n) * 1.7)
+			var cloud_offset: Vector2 = Vector2.from_angle(drift_angle) * ring_radius
+			draw_circle(center + cloud_offset, 7.0 + 3.0 * sin(_time * 0.95 + float(n)), palette[n % palette.size()].darkened(0.08))
+		for bolt in range(8):
+			var base_angle: float = _time * 0.34 + float(bolt) * TAU / 8.0
+			var origin: Vector2 = center + Vector2.from_angle(base_angle) * (132.0 + 18.0 * sin(_time * 0.9 + float(bolt)))
+			var mid: Vector2 = origin + Vector2.from_angle(base_angle + sin(_time * 2.7 + float(bolt)) * 0.55) * (32.0 + 12.0 * sin(_time * 1.4 + float(bolt)))
+			var tip: Vector2 = mid + Vector2.from_angle(base_angle + cos(_time * 1.9 + float(bolt)) * 0.42) * (22.0 + 14.0 * sin(_time * 2.1 + float(bolt)))
+			draw_line(origin, mid, palette[bolt % palette.size()], 2.2, true)
+			draw_line(mid, tip, Color(1.0, 1.0, 1.0, 0.65), 1.4, true)
+		for shard in range(24):
+			var color: Color = palette[shard % palette.size()]
+			var progress: float = fposmod(_time * (0.13 + float(shard % 5) * 0.03) + float(shard) * 0.17, 1.0)
+			var angle: float = float(shard) * 0.63 + sin(float(shard) * 1.7) * 0.45
+			var from_radius: float = 118.0 + float(shard % 3) * 10.0
+			var to_radius: float = 260.0 + float(shard % 6) * 28.0
+			var radius: float = lerpf(from_radius, to_radius, progress)
+			var dir: Vector2 = Vector2.from_angle(angle + _time * (0.08 + float(shard % 4) * 0.015))
+			var pos: Vector2 = center + dir * radius + Vector2(-dir.y, dir.x) * sin(progress * TAU + float(shard)) * 7.0
+			var tail: Vector2 = pos - dir * (14.0 + progress * 16.0)
+			draw_line(tail, pos, Color(color.r, color.g, color.b, 0.58), 2.0, true)
+			draw_circle(pos, 1.8 + float(shard % 3) * 0.9, Color(color.r, color.g, color.b, 0.82))
+		for burst in range(9):
+			var burst_angle: float = _time * 0.42 + float(burst) * TAU / 9.0
+			var burst_dir: Vector2 = Vector2.from_angle(burst_angle)
+			var base: Vector2 = center + burst_dir * (104.0 + 7.0 * sin(_time * 1.2 + float(burst)))
+			var splash: float = 10.0 + 16.0 * (0.5 + 0.5 * sin(_time * 2.9 + float(burst) * 1.8))
+			draw_line(base, base + burst_dir * splash, Color(1.0, 0.92, 0.98, 0.34), 2.8, true)
+		draw_circle(center, 102.0, Color(0.38, 0.28, 0.92, 0.08))
 		return
 	if center.distance_to(_view * 0.5) < 3500.0:
 		draw_circle(center, 84.0, Color(_sun_color.r, _sun_color.g, _sun_color.b, 0.06))
