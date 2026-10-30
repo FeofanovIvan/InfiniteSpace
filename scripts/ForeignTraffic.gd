@@ -223,7 +223,7 @@ func _choose_next_port(item: Dictionary, ports: Array[Dictionary]) -> int:
             return (current + 1) % n
         "cargo", "merchant", "freighter":
             return (current + 2) % n
-        "scout", "courier", "explorer":
+        "scout", "courier", "explorer", "interceptor":
             var furthest: int = (current + 1) % n
             var largest: float = -1.0
             for i in range(n):
