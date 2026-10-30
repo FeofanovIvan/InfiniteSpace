@@ -226,9 +226,11 @@ func _start_takeoff(npc: Dictionary, bodies: Array[Dictionary]) -> Dictionary:
 	else:
 		npc["target"] = _choose_destination(current_port, bodies)
 	var destination: Vector2 = Vector2(npc["exit_world"]) if bool(npc["outbound"]) else _body_pos(bodies, str(npc["target"]))
-	var heading: Vector2 = destination - here
-	if heading.length_squared() > 0.1:
-		npc["angle"] = heading.angle() + PI * 0.5
+	# Face the actual outward departure path first. Steering toward the
+	# next waypoint starts only after the ship has cleared the surface.
+	var launch_direction: Vector2 = Vector2(npc["anchor_dir"])
+	if launch_direction.length_squared() > 0.01:
+		npc["angle"] = launch_direction.angle() + PI * 0.5
 	npc["world"] = _anchor_world(npc, bodies)
 	npc["mode"] = "takeoff"
 	npc["timer"] = 0.0
@@ -256,7 +258,11 @@ func _process_port_animation(npc: Dictionary, bodies: Array[Dictionary], delta: 
 	match mode:
 		"approach":
 			var progress: float = clampf(elapsed / APPROACH_TIME, 0.0, 1.0)
-			npc["world"] = LandingMotion.anchored_approach(body_world, Vector2(npc["approach_offset"]), anchor_offset, progress)
+			var next_world: Vector2 = LandingMotion.anchored_approach(body_world, Vector2(npc["approach_offset"]), anchor_offset, progress)
+			var approach_direction: Vector2 = next_world - Vector2(npc["world"])
+			if approach_direction.length_squared() > 0.02:
+				npc["angle"] = lerp_angle(float(npc["angle"]), approach_direction.angle() + PI * 0.5, minf(1.0, delta * 5.0))
+			npc["world"] = next_world
 			if progress >= 1.0:
 				npc["mode"] = "hover"
 				npc["timer"] = 0.0
@@ -278,6 +284,10 @@ func _process_port_animation(npc: Dictionary, bodies: Array[Dictionary], delta: 
 				npc["mode"] = "depart"
 				npc["timer"] = 0.0
 		"depart":
+			# Local ship nose is -Y; the direction of motion MUST match the nose.
+			var depart_dir: Vector2 = Vector2(npc["anchor_dir"])
+			if depart_dir.length_squared() > 0.01:
+				npc["angle"] = depart_dir.angle() + PI * 0.5
 			var outward_progress: float = clampf(elapsed / DEPART_TIME, 0.0, 1.0)
 			var outward_distance: float = lerpf(_landing_offset(body_name), DEPART_DISTANCE, LandingMotion.smooth_step(outward_progress))
 			npc["world"] = body_world + Vector2(npc["anchor_dir"]) * outward_distance
@@ -323,6 +333,10 @@ func _physics_process(delta: float) -> void:
 			_ships[i] = npc
 			continue
 		if mode == "charge":
+			# Lock the jump vector to the visible nose before the dash begins.
+			var exit_direction: Vector2 = Vector2(npc["exit_world"]) - Vector2(npc["world"])
+			if exit_direction.length_squared() > 0.01:
+				npc["angle"] = lerp_angle(float(npc["angle"]), exit_direction.angle() + PI * 0.5, minf(1.0, delta * 12.0))
 			npc["timer"] = timer + delta
 			npc["velocity"] = Vector2(npc["velocity"]).move_toward(Vector2.ZERO, 340.0 * delta)
 			npc["world"] = Vector2(npc["world"]) + Vector2(npc["velocity"]) * delta
@@ -441,9 +455,20 @@ func _draw() -> void:
 			NpcJumpVisual.draw_charge(self, screen, charge_alpha, role["trail"])
 			speed_factor = 0.1
 		draw_set_transform(screen, angle, Vector2.ONE * size_factor)
+		if mode == "cruise" and speed_factor > 0.32 and str(role["id"]) in ["cargo", "passenger", "school", "miner"]:
+			_draw_motion_wake(role["trail"], speed_factor, float(npc["jitter"]))
 		_draw_thruster(role["trail"], speed_factor, float(npc["jitter"]))
 		draw_texture_rect(role["texture"], Rect2(Vector2(-256.0, -256.0), Vector2(512.0, 512.0)), false)
 		draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+
+
+func _draw_motion_wake(color: Color, strength: float, phase: float) -> void:
+	# Subtle slipstream lines follow the ship's local -Y nose.
+	var flicker: float = 0.86 + 0.14 * sin(_clock * 9.0 + phase)
+	for i in range(3):
+		var x: float = (float(i) - 1.0) * 122.0
+		var back: float = 180.0 + float(i % 2) * 35.0
+		draw_line(Vector2(x, back), Vector2(x * 1.18, back + 68.0 * strength * flicker), Color(color, 0.13 * strength), 2.0, true)
 
 
 func _draw_thruster(color: Color, strength: float, phase: float) -> void:
