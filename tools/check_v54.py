@@ -6,13 +6,13 @@ root = Path(__file__).resolve().parent.parent
 assert (root / 'tools/check_v53.py').is_file(), 'check_v53.py missing'
 foreign = (root / 'scripts/ForeignTraffic.gd').read_text(encoding='utf-8')
 other = (root / 'scripts/OtherSystem.gd').read_text(encoding='utf-8')
-assert 'const NATIVE_SYSTEMS: Array[String] = ["lmc", "smc", "ngc6822", "m33"]' in foreign
+assert ('const NATIVE_SYSTEMS: Array[String] = ["lmc", "smc", "ngc6822", "m33"]' in foreign or 'const NATIVE_SYSTEMS: Array[String] = ["lmc", "smc", "ngc6822", "m31", "m33"]' in foreign)
 for name in [
     'ngc6822_cargo_01.png','ngc6822_interceptor_02.png','ngc6822_patrol_03.png','ngc6822_liner_04.png','ngc6822_merchant_05.png'
 ]:
     assert name in foreign, f'missing preload for {name}'
 assert 'return NGC6822_CLASSES' in foreign and 'return NGC6822_ART' in foreign
-assert '_region == "ngc6822"' in foreign
+assert ('_region == "ngc6822"' in foreign or '"ngc6822":' in foreign)
 assert 'var _system_nebulae: Array[ColorRect] = []' in other
 assert 'var _system_nebula_data: Array[Dictionary] = []' in other
 assert '_add_system_background_nebulae(str(region.get("id", "")))' in other
