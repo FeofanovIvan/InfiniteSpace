@@ -1,12 +1,12 @@
 extends Node2D
-## v54: Native LMC, SMC, Barnard/NGC6822 and M33 share one anchored landing/takeoff flight controller.
-## Native sprites have +X or -X noses encoded per class; ships never move sideways.
+## v55: Native LMC, SMC, NGC6822, Andromeda/M31 and M33 share one anchored landing/takeoff controller.
+## Every sprite records its true local nose (including up-facing -Y artwork).
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const INNER_LIGHT: Shader = preload("res://shaders/alien_inner_light.gdshader")
 const ShipMotionFX = preload("res://scripts/ShipMotionFX.gd")
 const HyperjumpMotion = preload("res://scripts/HyperjumpMotion.gd")
 const NpcJumpVisual = preload("res://scripts/NpcJumpVisual.gd")
-const NATIVE_SYSTEMS: Array[String] = ["lmc", "smc", "ngc6822", "m33"]
+const NATIVE_SYSTEMS: Array[String] = ["lmc", "smc", "ngc6822", "m31", "m33"]
 const ALIEN_ART: Array[Texture2D] = [
     preload("res://assets/story/alien_ship_01.png"),
     preload("res://assets/story/alien_ship_02.png"),
@@ -66,6 +66,22 @@ const NGC6822_CLASSES: Array[Dictionary] = [
     {"role":"liner", "label":"Garden Passenger Liner", "speed":88.0, "turn":1.34, "size":0.111, "dwell":2.8, "light":Color(1.0,0.84,0.57), "glow":0.58, "nose_axis":0.0},
     {"role":"merchant", "label":"Trade Ring Vessel", "speed":76.0, "turn":1.18, "size":0.117, "dwell":3.6, "light":Color(1.0,0.79,0.49), "glow":0.60, "nose_axis":0.0}
 ]
+# Five original transparent RGBA cut-outs from the supplied Andromeda fleet sheet.
+# Scout/cargo point up (-Y), the other three point right (+X).
+const M31_ART: Array[Texture2D] = [
+    preload("res://assets/story/m31_scout_01.png"),
+    preload("res://assets/story/m31_liner_02.png"),
+    preload("res://assets/story/m31_freighter_03.png"),
+    preload("res://assets/story/m31_interceptor_04.png"),
+    preload("res://assets/story/m31_guardian_05.png")
+]
+const M31_CLASSES: Array[Dictionary] = [
+    {"role":"scout", "label":"Andromeda Deep-Space Scout", "speed":154.0, "turn":3.10, "size":0.152, "dwell":0.9, "light":Color(0.41,0.76,1.0), "glow":0.78, "nose_axis":-PI*0.5},
+    {"role":"liner", "label":"Andromeda Civilian Liner", "speed":92.0, "turn":1.42, "size":0.125, "dwell":3.0, "light":Color(0.51,0.71,1.0), "glow":0.64, "nose_axis":0.0},
+    {"role":"freighter", "label":"Andromeda Heavy Cargo Transport", "speed":57.0, "turn":0.82, "size":0.110, "dwell":4.9, "light":Color(0.42,0.68,1.0), "glow":0.58, "nose_axis":-PI*0.5},
+    {"role":"interceptor", "label":"Andromeda Fast Patrol Interceptor", "speed":162.0, "turn":3.40, "size":0.130, "dwell":0.8, "light":Color(0.54,0.63,1.0), "glow":0.89, "nose_axis":0.0},
+    {"role":"guardian", "label":"Andromeda Diplomatic Guardian", "speed":116.0, "turn":2.12, "size":0.104, "dwell":2.2, "light":Color(0.69,0.55,1.0), "glow":0.77, "nose_axis":0.0}
+]
 const LOCAL_SHIP_COUNT: int = 7
 const APPROACH_RADIUS: float = 250.0
 const APPROACH_SECONDS: float = 1.65
@@ -95,6 +111,8 @@ func _class_library() -> Array[Dictionary]:
             return LMC_CLASSES
         "ngc6822":
             return NGC6822_CLASSES
+        "m31":
+            return M31_CLASSES
         "m33":
             return M33_CLASSES
         _:
@@ -106,6 +124,8 @@ func _texture_library() -> Array[Texture2D]:
             return LMC_ART
         "ngc6822":
             return NGC6822_ART
+        "m31":
+            return M31_ART
         "m33":
             return M33_ART
         _:
@@ -122,7 +142,17 @@ func set_region(region_id: String) -> void:
     set_physics_process(visible)
     if not visible:
         return
-    _rng.seed = 409517 if _region == "smc" else (887221 if _region == "ngc6822" else (117309 if _region == "m33" else 552871))
+    match _region:
+        "smc":
+            _rng.seed = 409517
+        "ngc6822":
+            _rng.seed = 887221
+        "m31":
+            _rng.seed = 731198
+        "m33":
+            _rng.seed = 117309
+        _:
+            _rng.seed = 552871
     var ports: Array[Dictionary] = _available_ports()
     if ports.size() < 2:
         set_physics_process(false)
@@ -181,7 +211,12 @@ func _spawn_ship(art_id: int, index: int, ports: Array[Dictionary]) -> void:
     var wake: Node2D = ShipMotionFX.new()
     wake.name = "Wake_%02d" % index
     wake.z_index = -1
-    wake.scale.x = -1.0 if is_equal_approx(float(info.get("nose_axis", 0.0)), PI) else 1.0
+    if _region == "m31":
+        # The wake points toward local -X by default. Rotate it to the
+        # negative of the actual ship nose, including vertical (+/-Y) sprites.
+        wake.rotation = float(info.get("nose_axis", 0.0))
+    else:
+        wake.scale.x = -1.0 if is_equal_approx(float(info.get("nose_axis", 0.0)), PI) else 1.0
     image.add_child(wake)
     # Two ships begin docked, two begin inbound; all roles remain visible across the fleet.
     var target: int = (index * 3 + 2) % ports.size()
@@ -223,7 +258,7 @@ func _choose_next_port(item: Dictionary, ports: Array[Dictionary]) -> int:
             return (current + 1) % n
         "cargo", "merchant", "freighter":
             return (current + 2) % n
-        "scout", "courier", "explorer":
+        "scout", "courier", "explorer", "interceptor":
             var furthest: int = (current + 1) % n
             var largest: float = -1.0
             for i in range(n):
@@ -234,7 +269,7 @@ func _choose_next_port(item: Dictionary, ports: Array[Dictionary]) -> int:
                     largest = value
                     furthest = i
             return furthest
-        "guard", "patrol", "escort":
+        "guard", "patrol", "escort", "guardian":
             return (current + (1 if current % 2 == 0 else n - 1)) % n
         "diplomat":
             return n - 1 if current != n - 1 else _rng.randi_range(0, n - 2)
