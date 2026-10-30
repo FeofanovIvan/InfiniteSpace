@@ -119,6 +119,7 @@ var _tarantula_thrusters: Node2D
 var _story_fx: Node2D
 var _crossroads_world: Node2D
 var _crossroads_nebulae: Array[ColorRect] = []
+var _crossroads_nebula_data: Array[Dictionary] = []
 var _crossroads_pulse_index: int = -1
 var _crossroads_storm_flash_index: int = -1
 var _view: Vector2 = Vector2(1024, 576)
@@ -149,6 +150,7 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 	_story_fx = null
 	_crossroads_world = null
 	_crossroads_nebulae.clear()
+	_crossroads_nebula_data.clear()
 	_crossroads_pulse_index = -1
 	_crossroads_storm_flash_index = -1
 	var star_index: int = ["lmc", "smc", "ngc6822", "m31", "m33"].find(str(region.get("id", "")))
@@ -273,34 +275,59 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 			_crossroads_world.call("set_storm_state", "communicating")
 			_crossroads_world.call("set_quality_low", false)
 			_crossroads_world.call("set_storm_enabled", true)
-		for info in [
-			{"size": Vector2(1180.0, 860.0), "offset": Vector2(-320.0, -220.0), "angle": -0.48, "color": Color(0.33, 0.48, 1.0), "opacity": 0.24, "seed": 11.5, "style": 2.0},
-			{"size": Vector2(1120.0, 820.0), "offset": Vector2(340.0, -120.0), "angle": 0.36, "color": Color(0.84, 0.22, 0.48), "opacity": 0.22, "seed": 17.8, "style": 1.0},
-			{"size": Vector2(980.0, 760.0), "offset": Vector2(110.0, 280.0), "angle": 0.62, "color": Color(0.60, 0.24, 0.95), "opacity": 0.20, "seed": 23.4, "style": 2.0},
-			{"size": Vector2(920.0, 700.0), "offset": Vector2(-390.0, 170.0), "angle": -0.72, "color": Color(0.26, 0.82, 1.0), "opacity": 0.19, "seed": 31.9, "style": 1.0},
-			{"size": Vector2(780.0, 620.0), "offset": Vector2(0.0, -360.0), "angle": 0.10, "color": Color(0.92, 0.40, 0.18), "opacity": 0.16, "seed": 39.2, "style": 2.0},
-			{"size": Vector2(760.0, 580.0), "offset": Vector2(470.0, 250.0), "angle": -0.18, "color": Color(0.76, 0.34, 1.0), "opacity": 0.14, "seed": 44.4, "style": 1.0},
-			{"size": Vector2(760.0, 580.0), "offset": Vector2(-500.0, -40.0), "angle": 0.22, "color": Color(0.22, 0.66, 1.0), "opacity": 0.15, "seed": 52.1, "style": 2.0}
-		]:
+		# Crossroads uses the SAME torn-gas shader as Lotus / Living Archive.
+		# Deterministic world-space clumps: many near the core, fewer outward.
+		# These are actual gas layers, not drawn dots, spokes or orbit rings.
+		var cloud_count: int = 36
+		for i in range(cloud_count):
+			var band: int = 0 if i < 17 else (1 if i < 29 else 2)
+			var band_start: int = 0 if band == 0 else (17 if band == 1 else 29)
+			var band_count: int = 17 if band == 0 else (12 if band == 1 else 7)
+			var local_index: int = i - band_start
+			var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+			rng.seed = 485119 + i * 7919
+			var radius_min: float = 130.0 if band == 0 else (730.0 if band == 1 else 1560.0)
+			var radius_max: float = 760.0 if band == 0 else (1570.0 if band == 1 else 2650.0)
+			var radius: float = lerpf(radius_min, radius_max, (float(local_index) + rng.randf_range(0.1, 0.9)) / float(band_count))
+			var bearing: float = (float(local_index) + rng.randf_range(-0.28, 0.28)) * TAU / float(band_count) + float(band) * 0.31
+			var offset: Vector2 = Vector2.from_angle(bearing) * radius
+			var tint_choices: Array[Color] = [Color(0.29, 0.60, 1.0), Color(0.64, 0.34, 1.0), Color(0.96, 0.30, 0.51), Color(0.33, 0.84, 1.0), Color(0.92, 0.43, 0.76)]
+			var info: Dictionary = {
+				"offset": offset,
+				"size": Vector2(rng.randf_range(480.0, 790.0), rng.randf_range(340.0, 650.0)) * (1.0 if band == 0 else (1.10 if band == 1 else 1.22)),
+				"angle": rng.randf_range(-1.1, 1.1),
+				"color": tint_choices[i % tint_choices.size()],
+				"opacity": rng.randf_range(0.37, 0.51) if band == 0 else (rng.randf_range(0.25, 0.36) if band == 1 else rng.randf_range(0.17, 0.26)),
+				"seed": rng.randf_range(0.0, 80.0),
+				"style": float(1 + (i % 2)),
+				"spin": rng.randf_range(-0.0019, 0.0019),
+				"drift": rng.randf_range(8.0, 18.0)
+			}
 			var cloud: ColorRect = ColorRect.new()
-			cloud.name = "Crossroads_Nebula_%d" % _crossroads_nebulae.size()
+			cloud.name = "Crossroads_SystemNebula_%02d" % i
 			cloud.size = info["size"]
-			var cloud_offset: Vector2 = info["offset"]
-			cloud.position = cloud_offset - cloud.size * 0.5
+			cloud.color = Color.WHITE
+			cloud.position = offset - cloud.size * 0.5
 			cloud.pivot_offset = cloud.size * 0.5
 			cloud.rotation = float(info["angle"])
-			cloud.z_index = -8 + _crossroads_nebulae.size()
+			# Positive z is essential: Starfield draws an opaque black backdrop at 0.
+			# Negative z previously placed all clouds BEHIND that backdrop.
+			cloud.z_index = 1
 			cloud.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			var material: ShaderMaterial = ShaderMaterial.new()
-			material.shader = CROSSROADS_NEBULA_SHADER
-			material.set_shader_parameter("cloud_color", info["color"])
-			material.set_shader_parameter("cloud_opacity", float(info["opacity"]))
-			material.set_shader_parameter("cloud_seed", float(info["seed"]))
-			material.set_shader_parameter("style", float(info["style"]))
-			material.set_shader_parameter("glow_strength", 0.74)
-			cloud.material = material
+			var mat: ShaderMaterial = ShaderMaterial.new()
+			mat.shader = CROSSROADS_NEBULA_SHADER
+			mat.set_shader_parameter("cloud_color", info["color"])
+			mat.set_shader_parameter("cloud_opacity", float(info["opacity"]))
+			mat.set_shader_parameter("cloud_seed", float(info["seed"]))
+			mat.set_shader_parameter("style", float(info["style"]))
+			mat.set_shader_parameter("glow_strength", 0.65)
+			cloud.material = mat
 			add_child(cloud)
 			_crossroads_nebulae.append(cloud)
+			_crossroads_nebula_data.append(info)
+		# The living planet is above the gas, but below ships and HUD.
+		if _crossroads_world != null:
+			_crossroads_world.z_index = 3
 	_update_positions()
 
 func _add_archive_nebula() -> void:
@@ -509,9 +536,16 @@ func _update_positions() -> void:
 			_crossroads_world.call("trigger_storm", Vector2.from_angle(_time * 1.41 + PI * 0.33), 1.0)
 		for i in range(_crossroads_nebulae.size()):
 			var nebula: ColorRect = _crossroads_nebulae[i]
-			var base_rotation: float = -0.46 + float(i) * 0.21
-			nebula.rotation = base_rotation + _time * (0.0036 + float(i) * 0.0009) * (1.0 if i % 2 == 0 else -1.0)
-			nebula.modulate.a = 0.82 + 0.18 * sin(_time * (0.31 + float(i) * 0.06) + float(i) * 1.9)
+			var info: Dictionary = _crossroads_nebula_data[i]
+			var offset: Vector2 = info["offset"]
+			var seed: float = float(info["seed"])
+			var drift: float = float(info["drift"])
+			var motion: Vector2 = Vector2(sin(_time * 0.057 + seed), cos(_time * 0.046 + seed * 1.8)) * drift
+			var screen_center: Vector2 = half_cross - _camera_world + offset + motion
+			nebula.position = screen_center - nebula.size * 0.5
+			nebula.rotation = float(info["angle"]) + _time * float(info["spin"])
+			# Culling controls GPU load on mobile, without moving clouds with the HUD.
+			nebula.visible = absf(screen_center.x - half_cross.x) < half_cross.x + nebula.size.x * 0.70 and absf(screen_center.y - half_cross.y) < half_cross.y + nebula.size.y * 0.70
 	queue_redraw()
 
 func _station_world() -> Vector2:
@@ -649,40 +683,6 @@ func _build_planet_orbital_ring(planet_root: Node2D, data: Dictionary, diameter:
 func _draw() -> void:
 	var center: Vector2 = _view * 0.5 - _camera_world
 	if str(_region.get("id", "")) == "crossroads":
-		var palette: Array[Color] = [Color(1.0, 0.28, 0.24, 0.72), Color(0.24, 0.72, 1.0, 0.72), Color(0.72, 0.32, 1.0, 0.72), Color(0.95, 0.46, 0.18, 0.66)]
-		for h in range(3):
-			draw_circle(center, 114.0 + float(h) * 22.0, Color(0.40 + float(h) * 0.08, 0.30 + float(h) * 0.08, 0.86, 0.035))
-		for n in range(18):
-			var drift_angle: float = _time * 0.12 + float(n) * TAU / 18.0
-			var ring_radius: float = 225.0 + 48.0 * sin(_time * 0.33 + float(n) * 1.7)
-			var cloud_offset: Vector2 = Vector2.from_angle(drift_angle) * ring_radius
-			draw_circle(center + cloud_offset, 7.0 + 3.0 * sin(_time * 0.95 + float(n)), palette[n % palette.size()].darkened(0.08))
-		for bolt in range(8):
-			var base_angle: float = _time * 0.34 + float(bolt) * TAU / 8.0
-			var origin: Vector2 = center + Vector2.from_angle(base_angle) * (132.0 + 18.0 * sin(_time * 0.9 + float(bolt)))
-			var mid: Vector2 = origin + Vector2.from_angle(base_angle + sin(_time * 2.7 + float(bolt)) * 0.55) * (32.0 + 12.0 * sin(_time * 1.4 + float(bolt)))
-			var tip: Vector2 = mid + Vector2.from_angle(base_angle + cos(_time * 1.9 + float(bolt)) * 0.42) * (22.0 + 14.0 * sin(_time * 2.1 + float(bolt)))
-			draw_line(origin, mid, palette[bolt % palette.size()], 2.2, true)
-			draw_line(mid, tip, Color(1.0, 1.0, 1.0, 0.65), 1.4, true)
-		for shard in range(24):
-			var color: Color = palette[shard % palette.size()]
-			var progress: float = fposmod(_time * (0.13 + float(shard % 5) * 0.03) + float(shard) * 0.17, 1.0)
-			var angle: float = float(shard) * 0.63 + sin(float(shard) * 1.7) * 0.45
-			var from_radius: float = 118.0 + float(shard % 3) * 10.0
-			var to_radius: float = 260.0 + float(shard % 6) * 28.0
-			var radius: float = lerpf(from_radius, to_radius, progress)
-			var dir: Vector2 = Vector2.from_angle(angle + _time * (0.08 + float(shard % 4) * 0.015))
-			var pos: Vector2 = center + dir * radius + Vector2(-dir.y, dir.x) * sin(progress * TAU + float(shard)) * 7.0
-			var tail: Vector2 = pos - dir * (14.0 + progress * 16.0)
-			draw_line(tail, pos, Color(color.r, color.g, color.b, 0.58), 2.0, true)
-			draw_circle(pos, 1.8 + float(shard % 3) * 0.9, Color(color.r, color.g, color.b, 0.82))
-		for burst in range(9):
-			var burst_angle: float = _time * 0.42 + float(burst) * TAU / 9.0
-			var burst_dir: Vector2 = Vector2.from_angle(burst_angle)
-			var base: Vector2 = center + burst_dir * (104.0 + 7.0 * sin(_time * 1.2 + float(burst)))
-			var splash: float = 10.0 + 16.0 * (0.5 + 0.5 * sin(_time * 2.9 + float(burst) * 1.8))
-			draw_line(base, base + burst_dir * splash, Color(1.0, 0.92, 0.98, 0.34), 2.8, true)
-		draw_circle(center, 102.0, Color(0.38, 0.28, 0.92, 0.08))
 		return
 	if center.distance_to(_view * 0.5) < 3500.0:
 		draw_circle(center, 84.0, Color(_sun_color.r, _sun_color.g, _sun_color.b, 0.06))
