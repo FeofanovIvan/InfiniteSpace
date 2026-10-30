@@ -13,9 +13,7 @@ const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const LandingMotion = preload("res://scripts/LandingMotion.gd")
 const HyperjumpMotion = preload("res://scripts/HyperjumpMotion.gd")
 const NpcJumpVisual = preload("res://scripts/NpcJumpVisual.gd")
-# Only these inhabited worlds and the independent Earth station are landing ports.
-# Mercury, Saturn and Uranus remain visible but aren't active landing destinations.
-const LANDING_PORTS = ["Earth", "Venus", "Mars", "Jupiter", "Neptune", "EarthStation"]
+# Landing ports are selected dynamically from the current system catalog.
 const POPULATION: int = 14
 const OUTER_JUMP_RADIUS: float = 2500.0
 const CHARGE_TIME: float = 0.43
@@ -159,9 +157,17 @@ func _get_bodies() -> Array[Dictionary]:
 	var results: Array[Dictionary] = []
 	if _solar == null:
 		return [{"name":"Earth", "world":Vector2(565.0, 0.0)}]
+	var accessible_ports: Dictionary = {}
+	var catalog: Dictionary = _solar.get_system("mw")
+	for planet in catalog.get("planets", []):
+		if bool(planet.get("inhabited", false)):
+			accessible_ports[str(planet.get("name_en", ""))] = true
+	var station: Variant = catalog.get("station", null)
+	if station is Dictionary and bool(station.get("accessible", true)):
+		accessible_ports["EarthStation"] = true
 	var all_bodies: Array[Dictionary] = _solar.get_navigation_bodies()
 	for body in all_bodies:
-		if str(body["name"]) in LANDING_PORTS:
+		if accessible_ports.has(str(body.get("name", ""))):
 			results.append(body)
 	return results
 
