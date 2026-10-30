@@ -7,6 +7,7 @@ npc=(root/'scripts/NpcTraffic.gd').read_text()
 assert 'const HOME_SYSTEM: String = "smc"' in foreign
 assert all(('"'+mode+'"' in foreign) for mode in ['approach','hover','landing','docked','takeoff','depart','align_jump','charge','dash','waiting'])
 assert 'image.rotation = forward.angle()' in foreign
+assert '1 if index == 1 else 2 + index % 3' in foreign
 assert 'forward * HyperjumpMotion.dash_speed(t)' in foreign
 assert 'item["world"] = _anchor(item, ports)' in foreign
 assert 'image.rotation = outward.angle()' in foreign
