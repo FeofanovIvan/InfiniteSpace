@@ -4,6 +4,12 @@ extends Node2D
 ## The supplied MIKO asteroid/crystal sprites are drawn as lightweight batches.
 
 signal asteroid_impact(asteroid_type: int, target_name: String, world_position: Vector2)
+signal fuel_collected(units: int)
+
+const CRYSTAL_FUEL_VALUES: Array[int] = [0, 2, 1, 3]  # gray, red, blue, violet
+const MAGNET_RADIUS: float = 188.0
+const MAGNET_DURATION: float = 0.95
+const MAX_NEARBY_MINERALS: int = 11
 
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const MAX_ASTEROIDS: int = 1
@@ -29,6 +35,8 @@ var _camera_world: Vector2 = Vector2.ZERO
 var _ship_world: Vector2 = Vector2.ZERO
 var _view_size: Vector2 = Vector2(1280.0, 720.0)
 var _spawn_timer: float = 65.0
+var _mineral_spawn_timer: float = 6.0
+var _magnet_timer: float = 0.0
 var _time: float = 0.0
 var _f9_was_pressed: bool = false
 var _total_impacts: int = 0
@@ -58,6 +66,8 @@ func reset_for_region(region_id: String) -> void:
 	_asteroids.clear()
 	_debris.clear()
 	_spawn_timer = _rng.randf_range(5.0, 11.0) if region_id not in ["mw", "crossroads"] else _rng.randf_range(40.0, 65.0)
+	_mineral_spawn_timer = 5.5
+	_magnet_timer = 0.0
 	queue_redraw()
 
 
@@ -75,6 +85,75 @@ func fragment_count() -> int:
 
 func impact_count() -> int:
 	return _total_impacts
+
+
+func has_collectible_in_range(center: Vector2) -> bool:
+	for item in _debris:
+		if bool(item.get("collectible", false)) and Vector2(item["world"]).distance_squared_to(center) <= MAGNET_RADIUS * MAGNET_RADIUS:
+			return true
+	return false
+
+
+func start_magnet_capture(center: Vector2) -> bool:
+	if _magnet_timer > 0.0 or not has_collectible_in_range(center):
+		return false
+	_magnet_timer = MAGNET_DURATION
+	queue_redraw()
+	return true
+
+
+func _spawn_mineral_cluster() -> void:
+	# Loose crystals make the fuel prototype playable before any asteroid
+	# collision; barren gray rocks still yield zero fuel.
+	if _debris.size() >= MAX_DEBRIS - 5:
+		return
+	var nearby: int = 0
+	for fragment in _debris:
+		if bool(fragment.get("collectible", false)) and Vector2(fragment["world"]).distance_squared_to(_ship_world) < 340.0 * 340.0:
+			nearby += 1
+	if nearby >= MAX_NEARBY_MINERALS:
+		return
+	var bearing: float = _rng.randf_range(-PI, PI)
+	var center: Vector2 = _ship_world + Vector2.from_angle(bearing) * _rng.randf_range(112.0, 190.0)
+	var count: int = _rng.randi_range(2, 4)
+	for i in range(count):
+		var angle: float = TAU * float(i) / float(count) + bearing
+		var kind: int = _rng.randi_range(1, 3)
+		_debris.append({
+			"world": center + Vector2.from_angle(angle) * _rng.randf_range(8.0, 27.0),
+			"velocity": Vector2.ZERO,
+			"size": _rng.randf_range(23.0, 34.0),
+			"kind": kind,
+			"shape": _rng.randi_range(0, SHAPES.size() - 1),
+			"rotation": _rng.randf_range(-PI, PI),
+			"spin": _rng.randf_range(-0.55, 0.55),
+			"collectible": true
+		})
+
+
+func _advance_magnet(delta: float) -> void:
+	if _magnet_timer <= 0.0:
+		return
+	_magnet_timer = maxf(0.0, _magnet_timer - delta)
+	var elapsed: float = 1.0 - _magnet_timer / MAGNET_DURATION
+	var gathered: int = 0
+	for i in range(_debris.size() - 1, -1, -1):
+		var fragment: Dictionary = _debris[i]
+		if not bool(fragment.get("collectible", false)):
+			continue
+		var distance: float = Vector2(fragment["world"]).distance_to(_ship_world)
+		if distance > MAGNET_RADIUS:
+			continue
+		var speed: float = 80.0 + 820.0 * elapsed * elapsed
+		fragment["world"] = Vector2(fragment["world"]).move_toward(_ship_world, speed * delta)
+		fragment["velocity"] = Vector2.ZERO
+		if Vector2(fragment["world"]).distance_to(_ship_world) < 24.0:
+			gathered += CRYSTAL_FUEL_VALUES[int(fragment["kind"])]
+			_debris.remove_at(i)
+		else:
+			_debris[i] = fragment
+	if gathered > 0:
+		fuel_collected.emit(gathered)
 
 
 func _random_type() -> int:
@@ -176,6 +255,10 @@ func _flyby_position(rock: Dictionary, progress: float) -> Vector2:
 
 func _physics_process(delta: float) -> void:
 	_time += delta
+	_mineral_spawn_timer -= delta
+	if _mineral_spawn_timer <= 0.0:
+		_spawn_mineral_cluster()
+		_mineral_spawn_timer = _rng.randf_range(10.0, 16.0)
 	_spawn_timer -= delta
 	if _spawn_timer <= 0.0:
 		_spawn_asteroid()
@@ -244,6 +327,7 @@ func _physics_process(delta: float) -> void:
 			fragment["velocity"] = v.move_toward(Vector2.ZERO, 120.0 * delta)
 			fragment["rotation"] = float(fragment["rotation"]) + float(fragment["spin"]) * delta
 			_debris[i] = fragment
+	_advance_magnet(delta)
 	queue_redraw()
 
 
@@ -318,6 +402,12 @@ func _visible(screen: Vector2, extra: float = 70.0) -> bool:
 
 func _draw() -> void:
 	var screen_center: Vector2 = _view_size * 0.5
+	if _magnet_timer > 0.0:
+		var elapsed: float = 1.0 - _magnet_timer / MAGNET_DURATION
+		var radius: float = lerpf(MAGNET_RADIUS, 23.0, elapsed * elapsed * (3.0 - 2.0 * elapsed))
+		var center: Vector2 = _ship_world - _camera_world + screen_center
+		draw_circle(center, radius, Color(0.18, 0.57, 1.0, 0.045 * (1.0 - elapsed)))
+		draw_arc(center, radius, 0.0, TAU, 96, Color(0.39, 0.84, 1.0, 0.74 * (1.0 - elapsed * 0.6)), 2.6, true)
 	for fragment in _debris:
 		var screen: Vector2 = Vector2(fragment["world"]) - _camera_world + screen_center
 		if not _visible(screen):

@@ -112,8 +112,12 @@ var _intro_time: float = 0.0
 var _intro_landing_offset: Vector2 = Vector2.ZERO
 var _intro_landing_direction: Vector2 = Vector2.UP
 var _intro_approach_started: bool = false
-const INITIAL_CRYSTALS: int = 0
+# v57: tuneable normal-flight fuel. Hyperjumps and story flights remain free.
+const FUEL_CAPACITY: float = 50.0
+const FUEL_MAX_DRAIN_PER_SECOND: float = 1.8
+const INITIAL_CRYSTALS: int = 50
 const INITIAL_FUEL_SEGMENTS: int = 7
+var _fuel_units: float = FUEL_CAPACITY
 var _autopilot_target: String = ""
 var _autopilot_active: bool = false
 var _camera_offset: Vector2 = Vector2.ZERO
@@ -194,6 +198,7 @@ func _ready() -> void:
 	asteroid_field.configure(solar_system, npc_traffic)
 	add_child(asteroid_field)
 	asteroid_field.asteroid_impact.connect(_on_asteroid_impact)
+	asteroid_field.fuel_collected.connect(_on_fuel_collected)
 	ship = ShipScene.new()
 	ship.name = "FixedScreenShip"
 	ship.z_index = 15
@@ -272,6 +277,15 @@ func _physics_process(delta: float) -> void:
 		if Input.is_key_pressed(KEY_SPACE):
 			velocity = Vector2.ZERO
 
+	# Only normal flight consumes fuel; storyline flights and hyperjumps
+	# return earlier from this process, so they remain free.
+	if velocity.length_squared() > 1.0 and _fuel_units > 0.0:
+		_fuel_units = maxf(0.0, _fuel_units - FUEL_MAX_DRAIN_PER_SECOND * clampf(velocity.length() / MAX_SPEED, 0.0, 1.0) * delta)
+		_refresh_fuel_hud()
+	if _fuel_units <= 0.0:
+		if _autopilot_active:
+			_stop_autopilot("fuel_empty")
+		velocity = Vector2.ZERO
 	# Ship world position, camera world position and visual parallax are distinct.
 	# Even mid-return, the ship continues its usual physics without interruption.
 	var previous_offset: Vector2 = _camera_offset
@@ -560,6 +574,20 @@ func _layout() -> void:
 	galactic_map.size = view
 	main_menu.size = view
 	landing_preview.resize_preview(view)
+
+
+func _refresh_fuel_hud() -> void:
+	status_hud.set_fuel_segments(ceili((_fuel_units / FUEL_CAPACITY) * 7.0))
+	status_hud.set_crystals(floori(_fuel_units + 0.001))
+
+
+func _on_fuel_collected(units: int) -> void:
+	if units <= 0:
+		return
+	var previous: float = _fuel_units
+	_fuel_units = minf(FUEL_CAPACITY, _fuel_units + float(units))
+	_refresh_fuel_hud()
+	diagnostics.write("fuel_collected", {"received": units, "added": snappedf(_fuel_units - previous, 0.01), "fuel": snappedf(_fuel_units, 0.01)})
 
 
 func _on_asteroid_impact(asteroid_type: int, target_name: String, world_position: Vector2) -> void:
@@ -909,16 +937,25 @@ func _update_landing_offer() -> void:
 			if station_distance <= station_radius and station_distance / station_radius < nearest_ratio:
 				closest_id = station_id
 				closest_name = str(station.get("name_en", "Station"))
-	if closest_id == _landing_target_id:
+	# The existing left button becomes a magnet near loose fuel crystals.
+	# The landing prompt returns when no eligible crystals remain.
+	var can_collect: bool = _fuel_units < FUEL_CAPACITY and asteroid_field.has_collectible_in_range(ship_world)
+	var required_mode: String = "take" if can_collect else ("land" if closest_id != "" else "use")
+	var available: bool = can_collect or closest_id != ""
+	if closest_id == _landing_target_id and action_button.action_mode == required_mode and action_button.interaction_available == available:
 		return
 	_landing_target_id = closest_id
 	_landing_target_name = closest_name
-	action_button.set_action_mode("land" if closest_id != "" else "use")
-	action_button.set_action_available(closest_id != "")
+	action_button.set_action_mode(required_mode)
+	action_button.set_action_available(available)
 	diagnostics.write("landing_offer_updated", {"planet": closest_id, "available": closest_id != ""})
 
 
 func _on_action_requested(mode: String) -> void:
+	if mode == "take":
+		if not _warp_active and not _intro_comic_playing and not _intro_space_flying and not get_tree().paused and _fuel_units < FUEL_CAPACITY:
+			asteroid_field.start_magnet_capture(_ship_world())
+		return
 	if mode != "land" or _landing_target_id == "":
 		return
 	if _warp_active or _intro_comic_playing or _intro_space_flying or get_tree().paused:
@@ -1009,13 +1046,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			# Test shortcut only: inspect the secret region; ship stays put.
 			_on_map_navigate_requested(CosmicRegionScene.BLACK_HOLE_WORLD)
 		elif event.keycode == KEY_F and OS.has_feature("debug"):
-			# Debug preview only, not gameplay fuel consumption.
-			var step: int = 1 if event.shift_pressed else -1
-			status_hud.set_fuel_segments(status_hud.fuel_segments + step)
-			diagnostics.write("fuel_preview_changed", {"segments": status_hud.fuel_segments})
+			# Debug: F uses 5 fuel units; Shift+F adds 5.
+			_fuel_units = clampf(_fuel_units + (5.0 if event.shift_pressed else -5.0), 0.0, FUEL_CAPACITY)
+			_refresh_fuel_hud()
 		elif event.keycode == KEY_C and OS.has_feature("debug"):
-			status_hud.set_crystals(status_hud.crystal_count + 1)
-			diagnostics.write("crystal_preview_changed", {"count": status_hud.crystal_count})
+			_on_fuel_collected(3)
 
 
 func _pan_camera(world_delta: Vector2) -> void:
