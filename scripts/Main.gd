@@ -6,8 +6,10 @@ extends Node2D
 const StarfieldScene = preload("res://scripts/Starfield.gd")
 const ShipScene = preload("res://scripts/Ship.gd")
 const NpcTrafficScene = preload("res://scripts/NpcTraffic.gd")
+const ForeignTrafficScene = preload("res://scripts/ForeignTraffic.gd")
 const JoystickScene = preload("res://scripts/Joystick.gd")
 const ActionScene = preload("res://scripts/ActionButton.gd")
+const LandingPreviewScene = preload("res://scripts/LandingPreview.gd")
 const MiniMapScene = preload("res://scripts/MiniMap.gd")
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const DiagnosticsClass = preload("res://scripts/Diagnostics.gd")
@@ -48,6 +50,15 @@ const REPORT_INTERVAL: float = 25.0
 const CAMERA_RETURN_MIN_DURATION: float = 0.72
 const CAMERA_RETURN_MAX_DURATION: float = 1.40
 const CAMERA_RETURN_DISTANCE_SCALE: float = 1400.0
+const SYSTEM_ROAM_EXTRA_RADIUS: float = 260.0
+const SYSTEM_ROAM_SOFT_MARGIN: float = 90.0
+# v38: ONLY the two existing circular controls are 10% larger than v36.
+const CONTROL_SCALE_MULTIPLIER: float = 1.10
+# v43: uniformly grow the EXISTING upper-right destination/fuel/buttons rail
+# by another 20% from v42. The gaps stay 12 screen pixels, not 20% larger.
+const UPPER_RIGHT_UI_GROWTH: float = 1.20
+# Landing is offered only in approach range, not when a distant planet happens to be on screen.
+const LANDING_APPROACH_MARGIN: float = 140.0
 # The intro flies to Earth, then uses EXACTLY the NPC anchored landing
 # stages: approach, hover, scale-down. No crash or impact smoke.
 const STORY_CRUISE_END: float = 9.7
@@ -65,9 +76,13 @@ var current_input: Vector2 = Vector2.ZERO
 var starfield
 var ship
 var npc_traffic
+var foreign_traffic
 var asteroid_field
 var joystick
 var action_button
+var landing_preview
+var _landing_target_id: String = ""
+var _landing_target_name: String = ""
 var mini_map
 var distant_events
 var far_plasma
@@ -166,6 +181,12 @@ func _ready() -> void:
 	npc_traffic.hyperjump_started.connect(_on_npc_hyperjump_started)
 	npc_traffic.landing_completed.connect(_on_npc_landing_completed)
 	npc_traffic.takeoff_started.connect(_on_npc_takeoff_started)
+	foreign_traffic = ForeignTrafficScene.new()
+	foreign_traffic.name = "SMC_NativeFleet_FiveShipClasses"
+	foreign_traffic.z_index = 10
+	foreign_traffic.configure(solar_system)
+	add_child(foreign_traffic)
+	foreign_traffic.set_region("mw")
 
 	asteroid_field = AsteroidFieldScene.new()
 	asteroid_field.name = "MikoAsteroidsAndCrystals"
@@ -192,6 +213,7 @@ func _ready() -> void:
 	far_plasma.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	solar_system.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	npc_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
+	foreign_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_ship_world(Vector2(navigator.sector) * WorldAddress.SECTOR_SIZE + navigator.local)
 	_update_black_hole_position()
@@ -253,10 +275,17 @@ func _physics_process(delta: float) -> void:
 	# Ship world position, camera world position and visual parallax are distinct.
 	# Even mid-return, the ship continues its usual physics without interruption.
 	var previous_offset: Vector2 = _camera_offset
-	var displacement: Vector2 = velocity * delta
-	if displacement.length_squared() > 0.000001:
-		navigator.advance(displacement)
-		starfield.advance(displacement)
+	var requested_displacement: Vector2 = velocity * delta
+	var displacement: Vector2 = requested_displacement
+	var visual_star_displacement: Vector2 = requested_displacement
+	if requested_displacement.length_squared() > 0.000001:
+		var movement: Dictionary = _constrain_free_flight_displacement(requested_displacement)
+		displacement = movement.get("world", requested_displacement)
+		visual_star_displacement = movement.get("visual", requested_displacement)
+		if displacement.length_squared() > 0.000001:
+			navigator.advance(displacement)
+		if visual_star_displacement.length_squared() > 0.000001:
+			starfield.advance(visual_star_displacement)
 		var desired: float = velocity.angle() + PI * 0.5
 		_ship_heading = lerp_angle(_ship_heading, desired, minf(1.0, delta * 3.5))
 		ship.rotation = _ship_heading
@@ -281,6 +310,7 @@ func _physics_process(delta: float) -> void:
 	cosmic_region.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	solar_system.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	npc_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
+	foreign_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_ship_world(Vector2(navigator.sector) * WorldAddress.SECTOR_SIZE + navigator.local)
 	_update_black_hole_position()
@@ -289,6 +319,7 @@ func _physics_process(delta: float) -> void:
 	ship.position = get_viewport_rect().size * 0.5 - _camera_offset
 	mini_map.set_ship_location(navigator.sector, navigator.local, _ship_heading)
 	mini_map.set_camera_offset(_camera_offset)
+	_update_landing_offer()
 
 	_report_timer += delta
 	if _report_timer >= REPORT_INTERVAL:
@@ -310,6 +341,63 @@ func _physics_process(delta: float) -> void:
 			"camera_returning": _camera_returning,
 			"camera_offset": {"x": snappedf(_camera_offset.x, 0.1), "y": snappedf(_camera_offset.y, 0.1)}
 		})
+
+
+func _current_system_roam_radius() -> float:
+	if solar_system == null:
+		return HyperjumpMotion.OUTER_JUMP_RADIUS - SYSTEM_ROAM_SOFT_MARGIN
+	var region_id: String = str(solar_system.current_id)
+	if region_id == "crossroads":
+		return 980.0
+	if region_id == "mw":
+		# The lone repair shipyard sits outside Neptune, at radius ~2836.
+		# Manual exploration must reach it, yet remain finite and starfield-only past the rim.
+		return 3220.0
+	if ["lmc", "smc", "ngc6822", "m31", "m33"].has(region_id):
+		# SAME distance from system center as in the original Solar System.
+		# At radius 3220 the world position stops, while visual starfield
+		# continues moving: no artificial teleport or change to the warp rim.
+		return 3220.0
+	var orbit_limit: float = float(solar_system.OUTER_ORBIT_RADIUS) + SYSTEM_ROAM_EXTRA_RADIUS
+	return minf(orbit_limit, HyperjumpMotion.OUTER_JUMP_RADIUS - SYSTEM_ROAM_SOFT_MARGIN)
+
+func _clip_displacement_to_circle(start: Vector2, delta: Vector2, radius: float) -> Vector2:
+	var a: float = delta.dot(delta)
+	if a <= 0.000001:
+		return Vector2.ZERO
+	var b: float = 2.0 * start.dot(delta)
+	var c: float = start.dot(start) - radius * radius
+	var discriminant: float = b * b - 4.0 * a * c
+	if discriminant <= 0.0:
+		return Vector2.ZERO
+	var root: float = sqrt(discriminant)
+	var t1: float = (-b - root) / (2.0 * a)
+	var t2: float = (-b + root) / (2.0 * a)
+	var t: float = 0.0
+	if t1 >= 0.0 and t1 <= 1.0:
+		t = maxf(t, t1)
+	if t2 >= 0.0 and t2 <= 1.0:
+		t = maxf(t, t2)
+	if t <= 0.0:
+		return Vector2.ZERO
+	return delta * maxf(0.0, t - 0.002)
+
+func _constrain_free_flight_displacement(requested: Vector2) -> Dictionary:
+	if requested.length_squared() <= 0.000001:
+		return {"world": requested, "visual": requested}
+	if _autopilot_active:
+		return {"world": requested, "visual": requested}
+	var start: Vector2 = Vector2(navigator.sector) * WorldAddress.SECTOR_SIZE + navigator.local
+	var limit: float = _current_system_roam_radius()
+	var finish: Vector2 = start + requested
+	if finish.length() <= limit:
+		return {"world": requested, "visual": requested}
+	if start.length() >= limit and finish.length() < start.length():
+		return {"world": requested, "visual": requested}
+	if start.length() >= limit and finish.length() >= start.length():
+		return {"world": Vector2.ZERO, "visual": requested}
+	var clipped: Vector2 = _clip_displacement_to_circle(start, requested, limit)
+	return {"world": clipped, "visual": requested}
 
 
 func _build_controls() -> void:
@@ -373,6 +461,12 @@ func _build_controls() -> void:
 	root.add_child(main_menu)
 	main_menu.closed.connect(_on_modal_closed)
 
+	# v38: empty, localized landing-preview screen (no surface gameplay yet).
+	landing_preview = LandingPreviewScene.new()
+	landing_preview.name = "LandingPreview_EmptyScreen"
+	root.add_child(landing_preview)
+	landing_preview.closed.connect(_on_landing_preview_closed)
+
 	_warp_overlay = PlayerJumpFXScene.new()
 	_warp_overlay.name = "SharedNPCStylePlayerJumpFX"
 	_warp_overlay.z_index = 14
@@ -381,47 +475,88 @@ func _build_controls() -> void:
 
 func _layout() -> void:
 	var view: Vector2 = get_viewport_rect().size
+	var safe: Rect2 = MobileLocale.safe_rect(view)
 	ship.position = view * 0.5 - _camera_offset
 	starfield.resize_field(view)
 	far_plasma.resize_sky(view)
 	cosmic_region.resize_sky(view)
 	solar_system.resize_view(view)
 	npc_traffic.resize_view(view)
+	foreign_traffic.resize_view(view)
 	asteroid_field.resize_view(view)
 	_update_black_hole_position()
 	distant_events.resize_sky(view)
-	var control_scale: float = clampf(minf(view.x / 520.0, view.y / 340.0), 0.55, 1.0)
+	var base_control_scale: float = clampf(minf(view.x / 520.0, view.y / 340.0), 0.55, 1.0)
+	# Keep touch and visible circles in sync: enlarge the ENTIRE controls, not merely their artwork.
+	var control_scale: float = base_control_scale * CONTROL_SCALE_MULTIPLIER
 	joystick.scale = Vector2.ONE * control_scale
 	auto_stop_button.scale = Vector2.ONE * control_scale
 	action_button.scale = Vector2.ONE * control_scale
 	var visual_size: float = 184.0 * control_scale
-	var margin: float = 18.0 * control_scale
-	var bottom: float = maxf(margin, view.y - visual_size - margin)
-	action_button.position = Vector2(margin, bottom)
-	joystick.position = Vector2(view.x - visual_size - margin, bottom)
+	var margin: float = 18.0 * base_control_scale
+	var bottom: float = maxf(safe.position.y + margin, safe.end.y - visual_size - margin)
+	action_button.position = Vector2(safe.position.x + margin, bottom)
+	joystick.position = Vector2(safe.end.x - visual_size - margin, bottom)
 	auto_stop_button.position = joystick.position
 
 	# No fixed-pixel assumptions: preserve the panel on compact mobile displays.
 	var map_scale: float = clampf(minf(view.x / 700.0, view.y / 490.0), 0.55, 1.0)
 	mini_map.scale = Vector2.ONE * map_scale
 	mini_map.set_camera_view_size(view)
-	mini_map.position = Vector2(18.0 * map_scale, 18.0 * map_scale)
-	var goals_scale: float = clampf(minf(view.x / 720.0, view.y / 440.0), 0.58, 1.0)
+	mini_map.position = safe.position + Vector2(12.0 * map_scale, 12.0 * map_scale)
+	# v43: each existing upper-right element becomes 20% larger than v42:
+	# destination trigger + its six tiles, fuel with real blue fragment,
+	# and the two lower buttons. Their centre axis and 12px gaps do not change.
+	# The joystick and capture control retain their existing v38 size.
+	var goals_scale: float = clampf(minf(view.x / 720.0, view.y / 440.0), 0.58, 1.0) * 1.10 * UPPER_RIGHT_UI_GROWTH
+	var hud_scale: float = clampf(minf(view.x / 700.0, view.y / 490.0), 0.52, 1.0) * 1.10 * UPPER_RIGHT_UI_GROWTH
+	var lower_button_extra: float = 1.20 / 1.10
+	var lower_button_local_size: float = 42.0 * lower_button_extra
+	var rail_gap: float = 12.0
+	var right_button_center: float = joystick.position.x + visual_size * 0.5
+	# On a very short landscape screen, fit the UPPER rail together rather
+	# than overlap the joystick. Standard screens preserve the exact +20% growth
+	# relative to v42, with fixed 12-screen-pixel gaps in every aspect ratio.
+	var desired_content_height: float = NavigationMenuScene.TRIGGER_SIZE * goals_scale + 34.0 * hud_scale + 2.0 * lower_button_local_size * hud_scale
+	var usable_content_height: float = joystick.position.y - safe.position.y - 12.0 - 8.0 - rail_gap * 3.0
+	var compact_fit: float = clampf(usable_content_height / maxf(1.0, desired_content_height), 0.10, 1.0)
+	goals_scale *= compact_fit
+	hud_scale *= compact_fit
 	goal_picker.scale = Vector2.ONE * goals_scale
-	# Keep the whole rail in one row. Reserve the mini-map area; on narrow
-	# phones the strip scrolls horizontally instead of wrapping to a grid.
+	# Preserve the scrollable single row of six destinations on narrow phones.
 	var map_right: float = mini_map.position.x + 260.0 * map_scale + 12.0
-	var available_px: float = view.x - map_right - 16.0
+	var available_px: float = right_button_center + NavigationMenuScene.TRIGGER_SIZE * goals_scale * 0.5 - map_right - 12.0
 	var available_units: float = maxf(190.0, available_px / goals_scale)
 	var menu_width: float = minf(available_units, NavigationMenuScene.PREFERRED_WIDTH)
 	goal_picker.set_available_width(menu_width)
-	goal_picker.position = Vector2(view.x - menu_width * goals_scale - 16.0, 16.0)
-	# Icons stay below the destination selector, in a compact right-side column.
-	var hud_scale: float = clampf(minf(view.x / 700.0, view.y / 490.0), 0.52, 1.0)
+	goal_picker.position = Vector2(
+		right_button_center - (menu_width - NavigationMenuScene.TRIGGER_SIZE * 0.5) * goals_scale,
+		safe.position.y + 12.0
+	)
 	status_hud.scale = Vector2.ONE * hud_scale
-	status_hud.position = Vector2(view.x - ResourceHudScene.HUD_WIDTH * hud_scale - 16.0, 126.0 * goals_scale)
+	# Scale the two EXISTING children, including their clickable Control areas.
+	# Position them by the CENTER (x=103), not by the HUD container's right edge.
+	var lower_button_center_local: float = ResourceHudScene.HUD_WIDTH - 44.0 + 21.0
+	var galaxy_button: Button = status_hud.get_node("GlobalFlight") as Button
+	var ship_menu_button: TextureButton = status_hud.get_node("MikoMainMenu") as TextureButton
+	var button_local_x: float = lower_button_center_local - lower_button_local_size * 0.5
+	var local_gap: float = rail_gap / hud_scale
+	var first_button_y: float = 34.0 + local_gap
+	var second_button_y: float = first_button_y + lower_button_local_size + local_gap
+	galaxy_button.scale = Vector2.ONE * lower_button_extra
+	galaxy_button.position = Vector2(button_local_x, first_button_y)
+	ship_menu_button.scale = Vector2.ONE * lower_button_extra
+	ship_menu_button.position = Vector2(button_local_x, second_button_y)
+	status_hud.size = Vector2(ResourceHudScene.HUD_WIDTH, second_button_y + lower_button_local_size)
+	# The seven fuel sticks and the original blue asteroid fragment stay inside
+	# their existing bar. Its size grows with the entire upper-right HUD.
+	status_hud.position = Vector2(
+		right_button_center - (ResourceHudScene.HUD_WIDTH - 44.0 + 21.0) * hud_scale,
+		goal_picker.position.y + NavigationMenuScene.TRIGGER_SIZE * goals_scale + rail_gap
+	)
 	galactic_map.size = view
 	main_menu.size = view
+	landing_preview.resize_preview(view)
 
 
 func _on_asteroid_impact(asteroid_type: int, target_name: String, world_position: Vector2) -> void:
@@ -549,8 +684,15 @@ func _advance_warp(delta: float) -> void:
 			_warp_velocity = _warp_velocity.move_toward(Vector2.ZERO, 340.0 * delta)
 			_story_move_to(here + _warp_velocity * delta)
 			ship.throttle = 0.1
+			# v47: finish aligning the visible nose (-Y) to the real jump vector.
+			var intended_heading: float = _warp_direction.angle() + PI * 0.5
+			_ship_heading = lerp_angle(_ship_heading, intended_heading, minf(1.0, delta * 9.0))
+			ship.rotation = _ship_heading
+			var heading_error: float = absf(wrapf(intended_heading - _ship_heading, -PI, PI))
 			_warp_overlay.show_charge(clampf(_warp_time / HyperjumpMotion.CHARGE_TIME, 0.0, 1.0), ship.position)
-			if _warp_time >= HyperjumpMotion.CHARGE_TIME:
+			if _warp_time >= HyperjumpMotion.CHARGE_TIME and heading_error < 0.015:
+				_ship_heading = intended_heading
+				ship.rotation = intended_heading
 				_warp_phase = "dash_out"
 				_warp_time = 0.0
 				_gameplay_hud.visible = false
@@ -561,7 +703,9 @@ func _advance_warp(delta: float) -> void:
 			# and scale-increase. No translucent tunnel or fade/shrink.
 			_warp_time += delta
 			var departure_progress: float = clampf(_warp_time / HyperjumpMotion.DASH_TIME, 0.0, 1.0)
-			_story_move_to(here + _warp_direction * HyperjumpMotion.dash_speed(departure_progress) * delta)
+			ship.rotation = _ship_heading
+			var nose_forward: Vector2 = Vector2.from_angle(_ship_heading - PI * 0.5)
+			_story_move_to(here + nose_forward * HyperjumpMotion.dash_speed(departure_progress) * delta)
 			ship.scale = Vector2.ONE * NpcJumpVisual.dash_ship_scale(departure_progress)
 			ship.modulate = Color.WHITE
 			ship.throttle = 1.0
@@ -590,7 +734,9 @@ func _advance_warp(delta: float) -> void:
 		"dash_in":
 			_warp_time += delta
 			var arrival_progress: float = clampf(_warp_time / HyperjumpMotion.DASH_TIME, 0.0, 1.0)
-			_story_move_to(here + _warp_direction * HyperjumpMotion.dash_speed(arrival_progress) * delta)
+			ship.rotation = _ship_heading
+			var arrival_nose: Vector2 = Vector2.from_angle(_ship_heading - PI * 0.5)
+			_story_move_to(here + arrival_nose * HyperjumpMotion.dash_speed(arrival_progress) * delta)
 			ship.scale = Vector2.ONE * NpcJumpVisual.dash_ship_scale(arrival_progress)
 			ship.modulate = Color.WHITE
 			ship.throttle = 1.0
@@ -628,8 +774,11 @@ func _arrive_new_region(region_id: String, new_spawn: Vector2) -> void:
 	var home: bool = region_id == "mw"
 	npc_traffic.visible = home
 	npc_traffic.process_mode = Node.PROCESS_MODE_INHERIT if home else Node.PROCESS_MODE_DISABLED
-	asteroid_field.visible = home
-	asteroid_field.process_mode = Node.PROCESS_MODE_INHERIT if home else Node.PROCESS_MODE_DISABLED
+	foreign_traffic.set_region(region_id)
+	# Dynamic asteroids exist in all real systems; Crossroads is not a star system.
+	asteroid_field.reset_for_region(region_id)
+	asteroid_field.visible = region_id != "crossroads"
+	asteroid_field.process_mode = Node.PROCESS_MODE_INHERIT if region_id != "crossroads" else Node.PROCESS_MODE_DISABLED
 	var system_data: Dictionary = solar_system.get_system(region_id)
 	goal_picker.set_region_destinations(region_id, system_data.get("planets", []), system_data.get("station", null))
 	goal_picker.visible = region_id != "crossroads"
@@ -640,6 +789,7 @@ func _arrive_new_region(region_id: String, new_spawn: Vector2) -> void:
 	mini_map.set_camera_offset(Vector2.ZERO)
 	ship.position = get_viewport_rect().size * 0.5
 	npc_traffic.set_camera_address(navigator.sector, navigator.local, Vector2.ZERO)
+	foreign_traffic.set_camera_address(navigator.sector, navigator.local, Vector2.ZERO)
 	asteroid_field.set_camera_address(navigator.sector, navigator.local, Vector2.ZERO)
 	asteroid_field.set_ship_world(new_spawn)
 	cosmic_region.set_camera_address(navigator.sector, navigator.local, Vector2.ZERO)
@@ -709,9 +859,62 @@ func _stop_autopilot(reason: String) -> void:
 	diagnostics.write("autopilot_stopped", {"reason": reason, "target": previous_target, "ship": navigator.as_dictionary()})
 
 
+func _update_landing_offer() -> void:
+	# No landing button in the intro, hyperspace, portals or a paused modal.
+	if _warp_active or _intro_comic_playing or _intro_space_flying or get_tree().paused:
+		return
+	var ship_world: Vector2 = _ship_world()
+	var planets: Array = solar_system.get_map_destinations()
+	var planet_positions: Dictionary = {}
+	for body in solar_system.get_navigation_bodies():
+		planet_positions[str(body.get("name", ""))] = body.get("world", Vector2.ZERO)
+	var closest_id: String = ""
+	var closest_name: String = ""
+	var nearest_ratio: float = INF
+	for planet in planets:
+		var name_en: String = str(planet.get("name_en", ""))
+		if not planet_positions.has(name_en):
+			continue
+		var body_world: Vector2 = planet_positions[name_en]
+		var distance: float = ship_world.distance_to(body_world)
+		var radius: float = LANDING_APPROACH_MARGIN + float(planet.get("size", 120.0)) * 0.5
+		# Small margin stops the icon flickering exactly at the threshold.
+		if str(planet.get("id", "")) == _landing_target_id:
+			radius += 12.0
+		if distance <= radius and distance / radius < nearest_ratio:
+			nearest_ratio = distance / radius
+			closest_id = str(planet.get("id", ""))
+			closest_name = name_en
+	if closest_id == _landing_target_id:
+		return
+	_landing_target_id = closest_id
+	_landing_target_name = closest_name
+	action_button.set_action_mode("land" if closest_id != "" else "use")
+	action_button.set_action_available(closest_id != "")
+	diagnostics.write("landing_offer_updated", {"planet": closest_id, "available": closest_id != ""})
+
+
 func _on_action_requested(mode: String) -> void:
-	print("ACTION_REQUESTED: ", mode, " (no nearby target in distant-space test)")
-	diagnostics.write("action_pressed", {"mode": mode, "position": navigator.as_dictionary()})
+	if mode != "land" or _landing_target_id == "":
+		return
+	if _warp_active or _intro_comic_playing or _intro_space_flying or get_tree().paused:
+		return
+	if _autopilot_active:
+		_stop_autopilot("landing_preview")
+	velocity = Vector2.ZERO
+	current_input = Vector2.ZERO
+	joystick.clear_input()
+	landing_preview.open_preview(_landing_target_name)
+	get_tree().paused = true
+	diagnostics.write("landing_preview_opened", {"planet": _landing_target_id, "scene": "placeholder_only"})
+
+
+func _on_landing_preview_closed() -> void:
+	get_tree().paused = false
+	joystick.clear_input()
+	current_input = Vector2.ZERO
+	diagnostics.write("landing_preview_closed", {"planet": _landing_target_id})
+	_update_landing_offer()
 
 
 func _on_map_tracking_mode_changed(mode: String) -> void:
@@ -810,6 +1013,7 @@ func _pan_camera(world_delta: Vector2) -> void:
 	cosmic_region.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	solar_system.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	npc_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
+	foreign_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_ship_world(Vector2(navigator.sector) * WorldAddress.SECTOR_SIZE + navigator.local)
 	_update_black_hole_position()
@@ -1015,6 +1219,7 @@ func _story_move_to(world_position: Vector2) -> void:
 	cosmic_region.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	solar_system.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	npc_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
+	foreign_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_ship_world(world_position)
 	_update_black_hole_position()

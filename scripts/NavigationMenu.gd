@@ -11,14 +11,17 @@ const RAIL_GAP: float = 12.0
 const RAIL_PADDING: float = 8.0
 const RAIL_HEIGHT: float = 90.0
 const PREFERRED_WIDTH: float = 94.0 + 12.0 + 8.0 * 2.0 + 64.0 * 6.0 + 8.0 * 5.0
-const TARGETS: Array[String] = ["Venus", "Earth", "Mars", "Jupiter", "Neptune", "EarthStation"]
+const TARGETS: Array[String] = ["Venus", "Earth", "Mars", "Jupiter", "Neptune", "st_mw"]
 const PREVIEWS: Dictionary = {
 	"Venus": preload("res://assets/destinations/venus.png"),
 	"Earth": preload("res://assets/destinations/earth.png"),
 	"Mars": preload("res://assets/destinations/mars.png"),
 	"Jupiter": preload("res://assets/destinations/jupiter.png"),
 	"Neptune": preload("res://assets/destinations/neptune.png"),
-	"EarthStation": preload("res://assets/destinations/earth_station.png")
+	"EarthStation": preload("res://assets/destinations/earth_station.png"),
+	"st_mw": preload("res://assets/story/callisto_shipyard.png"),
+	"st_ngc6822": preload("res://assets/story/titan_skull_ngc6822.png"),
+	"st_m31": preload("res://assets/story/inverted_pyramid_m31.png")
 }
 
 var _trigger: Button
@@ -53,7 +56,7 @@ func _ready() -> void:
 
 	_scroll = ScrollContainer.new()
 	_scroll.name = "HorizontalDestinationScroller"
-	_scroll.position = Vector2(RAIL_PADDING, 5.0)
+	_scroll.position = Vector2(RAIL_PADDING, (RAIL_HEIGHT - TILE_SIZE) * 0.5)
 	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
 	_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	_scroll.follow_focus = false
@@ -77,7 +80,7 @@ func _ready() -> void:
 	_trigger.icon = _target_previews[_preview_target]
 	_trigger.expand_icon = true
 	_trigger.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_trigger.tooltip_text = "Выбрать направление"
+	_trigger.tooltip_text = MobileLocale.t("pick_destination")
 	_trigger.focus_mode = Control.FOCUS_NONE
 	_trigger.add_theme_stylebox_override("normal", _style(Color(0.025, 0.15, 0.28, 0.98), Color(0.44, 0.87, 1.0, 0.92), 47, 2))
 	_trigger.add_theme_stylebox_override("hover", _style(Color(0.045, 0.24, 0.37, 0.99), Color(0.71, 0.96, 1.0), 47, 2))
@@ -86,6 +89,8 @@ func _ready() -> void:
 	add_child(_trigger)
 	_update_selection()
 	_update_geometry()
+	MobileLocale.language_changed.connect(_refresh_locale)
+	_refresh_locale(MobileLocale.language)
 
 
 func _process(delta: float) -> void:
@@ -117,7 +122,7 @@ func _update_geometry() -> void:
 	_trigger.position = Vector2(_total_width - TRIGGER_SIZE, 0.0)
 	_rail.size = Vector2(_shown_width, RAIL_HEIGHT)
 	_rail.position = Vector2(_trigger.position.x - RAIL_GAP - _shown_width, 2.0)
-	_scroll.size = Vector2(maxf(0.0, _shown_width - RAIL_PADDING * 2.0), RAIL_HEIGHT - 10.0)
+	_scroll.size = Vector2(maxf(0.0, _shown_width - RAIL_PADDING * 2.0), RAIL_HEIGHT - _scroll.position.y)
 
 
 func _toggle_menu() -> void:
@@ -159,19 +164,22 @@ func _style(bg: Color, stroke: Color, radius: int, border_width: int) -> StyleBo
 	return s
 
 
-func _hint(id: String) -> String:
-	match id:
-		"Mercury": return "Меркурий"
-		"Venus": return "Венера"
-		"Earth": return "Земля"
-		"Mars": return "Марс"
-		"Jupiter": return "Юпитер"
-		"Saturn": return "Сатурн"
-		"Uranus": return "Уран"
-		"Neptune": return "Нептун"
-		"EarthStation": return "Орбитальная станция"
-	return str(_target_labels.get(id, id))
+func _refresh_locale(_new_locale: String) -> void:
+	if _trigger != null:
+		_trigger.tooltip_text = MobileLocale.t("pick_destination")
+	for id in _target_ids:
+		var tile: Button = _tiles.get(id) as Button
+		if tile != null:
+			tile.tooltip_text = _hint(id)
 
+func _hint(id: String) -> String:
+	if ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"].has(id):
+		return MobileLocale.t("planet_" + id)
+	if id == "EarthStation":
+		return MobileLocale.t("orbit_station")
+	if id == "st_mw":
+		return MobileLocale.t("shipyard")
+	return str(_target_labels.get(id, id))
 
 func set_autopilot_status(active: bool, target_id: String = "") -> void:
 	_active_target = target_id if active else ""
@@ -218,7 +226,11 @@ func set_region_destinations(region_id: String, planets: Array, station: Variant
 			var station_id: String = str(station.get("id", ""))
 			_target_ids.append(station_id)
 			_target_labels[station_id] = str(station.get("name_en", "Station"))
-			_target_previews[station_id] = PREVIEWS["EarthStation"]
+			var station_asset: String = str(station.get("visual_asset", ""))
+			if station_asset != "":
+				_target_previews[station_id] = load(station_asset) as Texture2D
+			else:
+				_target_previews[station_id] = PREVIEWS["EarthStation"]
 	if _row == null:
 		return
 	for child in _row.get_children():

@@ -4,7 +4,7 @@ extends Control
 signal galaxy_requested
 signal main_menu_requested
 
-const CRYSTAL_ICON: Texture2D = preload("res://assets/ui/crystal.png")
+const CRYSTAL_ICON: Texture2D = preload("res://asteroid_assets/fragments/04_blue/crystal_wedge.png")
 const GALAXY_ICON: Texture2D = preload("res://assets/ui/galaxy_button.png")
 const PLAYER_SHIP_BUTTON: Texture2D = preload("res://assets/ui/miko_ship_menu_circle.png")
 
@@ -12,15 +12,17 @@ const HUD_WIDTH: float = 126.0
 var fuel_segments: int = 7
 var crystal_count: int = 0
 var _bars: Array[Panel] = []
-var _crystal_icon: TextureRect
+var _crystal_icon: Sprite2D
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	size = Vector2(HUD_WIDTH, 132.0)
+	size = Vector2(HUD_WIDTH, 142.0)
 	var panel: Panel = Panel.new()
 	panel.name = "FuelSticksAndBlueCrystal"
 	panel.size = Vector2(HUD_WIDTH, 34.0)
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	# A hard clip prevents any icon from spilling out over the gameplay field.
+	panel.clip_contents = true
 	panel.add_theme_stylebox_override("panel", _style(Color(0.016, 0.10, 0.17, 0.91), Color(0.28, 0.64, 0.87, 0.70), 14, 1))
 	add_child(panel)
 	for i in range(7):
@@ -31,11 +33,24 @@ func _ready() -> void:
 		seg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		panel.add_child(seg)
 		_bars.append(seg)
-	_crystal_icon = _add_icon(panel, CRYSTAL_ICON, Vector2(84.0, 4.0), Vector2(26.0, 26.0))
-	_crystal_icon.name = "BlueCrystal_NoDigits"
-	_make_icon_button("GlobalFlight", GALAXY_ICON, 43.0, "Галактическая карта", _open_galaxy)
+	# The exact blue crystal used by the asteroid shatter/debris system.
+	# Sprite2D uses an explicit fixed scale, preventing texture auto-sizing.
+	_crystal_icon = Sprite2D.new()
+	_crystal_icon.name = "BlueAsteroidFragment_InsideFuelPanel"
+	_crystal_icon.texture = CRYSTAL_ICON
+	_crystal_icon.centered = true
+	_crystal_icon.position = Vector2(100.0, 17.0)
+	_crystal_icon.scale = Vector2.ONE * 0.075
+	_crystal_icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+	panel.add_child(_crystal_icon)
+	_make_icon_button("GlobalFlight", GALAXY_ICON, 46.0, MobileLocale.t("galaxy_map"), _open_galaxy)
 	_make_ship_menu_button()
 	_refresh()
+	MobileLocale.language_changed.connect(_refresh_locale)
+
+func _refresh_locale(_code: String) -> void:
+	(get_node("GlobalFlight") as Button).tooltip_text = MobileLocale.t("galaxy_map")
+	(get_node("MikoMainMenu") as TextureButton).tooltip_text = MobileLocale.t("main_menu")
 
 func _make_icon_button(node_name: String, icon: Texture2D, top: float, description: String, callback: Callable) -> void:
 	var button: Button = Button.new()
@@ -61,28 +76,17 @@ func _make_ship_menu_button() -> void:
 	# the native 512px ship outside its 42px parent on narrow phone displays.
 	var button: TextureButton = TextureButton.new()
 	button.name = "MikoMainMenu"
-	button.position = Vector2(HUD_WIDTH - 44.0, 90.0)
+	button.position = Vector2(HUD_WIDTH - 44.0, 100.0)
 	button.size = Vector2(42.0, 42.0)
 	button.ignore_texture_size = true
 	button.stretch_mode = TextureButton.STRETCH_SCALE
 	button.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 	button.texture_normal = PLAYER_SHIP_BUTTON
-	button.tooltip_text = "Главное меню Мико"
+	button.tooltip_text = MobileLocale.t("main_menu")
 	button.focus_mode = Control.FOCUS_NONE
 	button.mouse_filter = Control.MOUSE_FILTER_STOP
 	button.pressed.connect(_open_main_menu)
 	add_child(button)
-
-func _add_icon(parent: Node, texture: Texture2D, at: Vector2, dimensions: Vector2) -> TextureRect:
-	var icon: TextureRect = TextureRect.new()
-	icon.texture = texture
-	icon.position = at
-	icon.size = dimensions
-	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	parent.add_child(icon)
-	return icon
 
 func _style(background: Color, outline: Color, corner: int, stroke: int) -> StyleBoxFlat:
 	var s: StyleBoxFlat = StyleBoxFlat.new()
@@ -112,10 +116,10 @@ func _refresh() -> void:
 		var cell: Panel = _bars[i]
 		var active: bool = i < fuel_segments
 		cell.add_theme_stylebox_override("panel", _style(lit if active else Color(0.10, 0.20, 0.27, 0.93), Color(0.8, 0.95, 1.0, 0.4) if active else Color(0.24, 0.35, 0.44, 0.7), 3, 1))
-	# The crystal icon, not a number, is always present. Brightness reflects
-	# whether at least one collectible has been added to the future inventory.
+	# This is a pictogram inside the bar, not a count or a spawned world object.
+	# Keep it visible even at zero collected crystals.
 	if _crystal_icon != null:
-		_crystal_icon.modulate = Color(0.53, 0.70, 0.85, 0.78) if crystal_count == 0 else Color.WHITE
+		_crystal_icon.modulate = Color.WHITE
 
 func _open_galaxy() -> void:
 	galaxy_requested.emit()

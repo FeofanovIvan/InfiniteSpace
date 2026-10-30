@@ -23,6 +23,8 @@ var _shop: TextureButton
 var _detail_art: TextureRect
 var _detail_title: Label
 var _settings_title: Label
+var _language_bar: HBoxContainer
+var _lang_buttons: Dictionary = {}
 var _detail_tint: ColorRect
 var _close_button: TextureButton
 var _settings_button: TextureButton
@@ -50,6 +52,8 @@ func _ready() -> void:
 	visible = false
 	_build_scene()
 	resized.connect(_reflow)
+	MobileLocale.language_changed.connect(_refresh_locale)
+	_refresh_locale(MobileLocale.language)
 	_reflow()
 
 func _build_scene() -> void:
@@ -115,7 +119,21 @@ func _build_scene() -> void:
 	_settings_title.add_theme_font_size_override("font_size", 22)
 	_settings_title.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_detail.add_child(_settings_title)
-	_detail_back_button = _make_image_button(_detail, "BackToBridge", BACK_TEXTURE, "Назад в корабль", _back_to_hub)
+	_language_bar = HBoxContainer.new()
+	_language_bar.name = "SixLanguageSelector"
+	_language_bar.alignment = BoxContainer.ALIGNMENT_CENTER
+	_language_bar.add_theme_constant_override("separation", 9)
+	_detail.add_child(_language_bar)
+	for code in ["en", "ru", "fr", "de", "es", "pt_BR"]:
+		var language_button: Button = Button.new()
+		language_button.text = "PT-BR" if code == "pt_BR" else code.to_upper()
+		language_button.custom_minimum_size = Vector2(76, 52)
+		language_button.add_theme_font_size_override("font_size", 17)
+		language_button.focus_mode = Control.FOCUS_NONE
+		language_button.pressed.connect(_select_language.bind(code))
+		_language_bar.add_child(language_button)
+		_lang_buttons[code] = language_button
+	_detail_back_button = _make_image_button(_detail, "BackToBridge", BACK_TEXTURE, MobileLocale.t("back_bridge"), _back_to_hub)
 	_detail.visible = false
 
 func _add_optional_character(parent: Control, path: String, node_name: String) -> TextureRect:
@@ -226,16 +244,45 @@ func _open_detail(mode: String) -> void:
 	_hub.visible = false
 	_top.visible = false
 	_detail.visible = true
+	_language_bar.visible = mode == "settings"
 	_settings_title.visible = mode == "settings"
 	_detail_art.visible = mode != "settings"
 	_detail_title.visible = mode != "settings"
 	if mode == "simulator":
 		_detail_art.texture = SIMULATOR_TEXTURE
-		_detail_title.text = "СИМУЛЯТОР  ·  СКОРО"
+		_detail_title.text = MobileLocale.t("sim_soon")
 	elif mode == "shop":
 		_detail_art.texture = SHOP_TEXTURE
-		_detail_title.text = "МАГАЗИН  ·  СКОРО"
+		_detail_title.text = MobileLocale.t("shop_soon")
 	_reflow()
+
+func _select_language(code: String) -> void:
+	MobileLocale.set_language(code)
+
+func _refresh_locale(_code: String) -> void:
+	if _settings_title != null:
+		_settings_title.text = MobileLocale.t("settings") + "\n\n" + MobileLocale.t("settings_description")
+	if _close_button != null:
+		_close_button.tooltip_text = MobileLocale.t("bridge_flight")
+	if _settings_button != null:
+		_settings_button.tooltip_text = MobileLocale.t("bridge_settings")
+	if _detail_back_button != null:
+		_detail_back_button.tooltip_text = MobileLocale.t("back_bridge")
+	if _simulator != null:
+		_simulator.tooltip_text = MobileLocale.t("bridge_sim")
+	if _shop != null:
+		_shop.tooltip_text = MobileLocale.t("bridge_shop")
+	for key in _lang_buttons:
+		var button: Button = _lang_buttons[key] as Button
+		button.modulate = Color(1.0, 0.94, 0.50) if key == MobileLocale.language else Color.WHITE
+	for pair in [["FuelCrystals", "crystals"], ["CrystalCapacity", "capacity"], ["ShipSpeed", "speed"]]:
+		var stat: Panel = _top.get_node_or_null(pair[0]) as Panel
+		if stat != null:
+			(stat.get_node("Kind") as Label).text = MobileLocale.t(pair[1])
+	if _mode == "simulator":
+		_detail_title.text = MobileLocale.t("sim_soon")
+	elif _mode == "shop":
+		_detail_title.text = MobileLocale.t("shop_soon")
 
 func _back_to_hub() -> void:
 	_mode = "hub"
@@ -247,6 +294,7 @@ func _reflow() -> void:
 	if _bridge_background == null:
 		return
 	var view: Vector2 = size
+	var safe: Rect2 = MobileLocale.safe_rect(view)
 	if view.x <= 0.0 or view.y <= 0.0:
 		return
 	_bridge_background.position = Vector2.ZERO
@@ -282,9 +330,9 @@ func _reflow() -> void:
 	# Leave the middle of the header for cockpit scenery, not a wall of data.
 	var corner: float = 63.0 * s
 	_close_button.size = Vector2.ONE * corner
-	_close_button.position = Vector2(13.0 * s, 10.0 * s)
+	_close_button.position = safe.position + Vector2(6.0 * s, 6.0 * s)
 	_settings_button.size = Vector2.ONE * corner
-	_settings_button.position = Vector2(view.x - corner - 13.0 * s, 10.0 * s)
+	_settings_button.position = Vector2(safe.end.x - corner - 6.0 * s, safe.position.y + 6.0 * s)
 	var gutter: float = 12.0 * s
 	var stat_total_width: float = minf(view.x - 2.0 * (corner + 26.0 * s), 835.0 * s)
 	var stat_width: float = (stat_total_width - 2.0 * gutter) / 3.0
@@ -306,7 +354,7 @@ func _reflow() -> void:
 		value.size = Vector2(47.0, 31.0) * s
 		value.add_theme_font_size_override("font_size", maxi(14, int(26.0 * s)))
 	# Larger screen graphics, but a small and clear top-left return button.
-	_detail_back_button.position = Vector2(15.0 * s, 12.0 * s)
+	_detail_back_button.position = safe.position + Vector2(6.0 * s, 6.0 * s)
 	_detail_back_button.size = Vector2.ONE * 63.0 * s
 	_detail_art.size = Vector2(minf(view.x * 0.86, view.y * 1.23), view.y * 0.78)
 	_detail_art.position = (view - _detail_art.size) * 0.5 + Vector2(0.0, 26.0 * s)
@@ -314,5 +362,11 @@ func _reflow() -> void:
 	_detail_title.size = Vector2(view.x, 40.0 * s)
 	_detail_title.add_theme_font_size_override("font_size", maxi(14, int(23.0 * s)))
 	_settings_title.size = view * Vector2(0.78, 0.42)
-	_settings_title.position = (view - _settings_title.size) * 0.5
+	_settings_title.position = Vector2((view.x - _settings_title.size.x) * 0.5, view.y * 0.25)
 	_settings_title.add_theme_font_size_override("font_size", maxi(14, int(22.0 * s)))
+	_language_bar.size = Vector2(minf(view.x * 0.90, 680.0 * s), 62.0 * s)
+	_language_bar.position = Vector2((view.x - _language_bar.size.x) * 0.5, view.y * 0.62)
+	var button_size: float = maxf(48.0, (_language_bar.size.x - 45.0) / 6.0)
+	for code in _lang_buttons:
+		var button: Button = _lang_buttons[code] as Button
+		button.custom_minimum_size = Vector2(button_size, maxf(46.0, 52.0 * s))

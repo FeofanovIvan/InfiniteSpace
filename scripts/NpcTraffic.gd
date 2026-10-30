@@ -332,14 +332,19 @@ func _physics_process(delta: float) -> void:
 			_ships[i] = npc
 			continue
 		if mode == "charge":
-			# Lock the jump vector to the visible nose before the dash begins.
+			# v47: verify nose alignment before accelerating into hyperspace.
+			# For Solar craft the visible nose is local -Y.
 			var exit_direction: Vector2 = Vector2(npc["exit_world"]) - Vector2(npc["world"])
-			if exit_direction.length_squared() > 0.01:
-				npc["angle"] = lerp_angle(float(npc["angle"]), exit_direction.angle() + PI * 0.5, minf(1.0, delta * 12.0))
+			if exit_direction.length_squared() < 0.01:
+				exit_direction = Vector2(npc["world"]).normalized()
+			var jump_heading: float = exit_direction.angle() + PI * 0.5
+			npc["angle"] = lerp_angle(float(npc["angle"]), jump_heading, minf(1.0, delta * 12.0))
+			var heading_error: float = absf(wrapf(jump_heading - float(npc["angle"]), -PI, PI))
 			npc["timer"] = timer + delta
 			npc["velocity"] = Vector2(npc["velocity"]).move_toward(Vector2.ZERO, 340.0 * delta)
 			npc["world"] = Vector2(npc["world"]) + Vector2(npc["velocity"]) * delta
-			if float(npc["timer"]) >= CHARGE_TIME:
+			if float(npc["timer"]) >= CHARGE_TIME and heading_error < 0.015:
+				npc["angle"] = jump_heading
 				npc["mode"] = "dash"
 				npc["timer"] = 0.0
 				_jump_counter += 1

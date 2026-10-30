@@ -14,13 +14,15 @@ var _all: Dictionary = {}
 var _original
 var _other
 var _extra_moons: Array[Dictionary] = []
-var _callisto_shipyard: Node2D
-var _callisto_world: Vector2 = Vector2.ZERO
+var _repair_shipyard: Node2D
+var _repair_shipyard_world: Vector2 = Vector2.ZERO
 var _elapsed: float = 0.0
-const MOON_TEXTURE: Texture2D = preload("res://assets/solar/moon_surface.png")
+const MoonLibrary = preload("res://scripts/MoonLibrary.gd")
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
-const LandmarkClass = preload("res://scripts/AtlasLandmark.gd")
-const StationScene: PackedScene = preload("res://station2d/orbital_station_2d.tscn")
+const REPAIR_SHIPYARD_TEXTURE: Texture2D = preload("res://assets/story/callisto_shipyard.png")
+# This is the single distant repair shipyard; it is NOT attached to Callisto.
+const REPAIR_SHIPYARD_SCALE: float = 0.255
+const REPAIR_SHIPYARD_SPIN_SPEED: float = 0.045
 var _camera_sector: Vector2i = Vector2i.ZERO
 var _camera_local: Vector2 = INITIAL_SHIP_POSITION
 var _camera_offset: Vector2 = Vector2.ZERO
@@ -40,12 +42,19 @@ func _ready() -> void:
 	_other.visible = false
 	_other.process_mode = Node.PROCESS_MODE_DISABLED
 	_build_home_moons()
-	_callisto_shipyard = StationScene.instantiate() as Node2D
-	_callisto_shipyard.name = "StoryLocation_CallistoShipyard_MIKA_Atlas"
-	_callisto_shipyard.call("set_station_diameter", 76.0)
-	_callisto_shipyard.call("set_spin_period", 54.0)
-	_callisto_shipyard.call("set_module_count", 8)
-	add_child(_callisto_shipyard)
+	_repair_shipyard_world = _original.station_world_position()
+	_repair_shipyard = Node2D.new()
+	_repair_shipyard.name = "OuterRepairShipyard_OneStandaloneStation"
+	var shipyard_sprite: Sprite2D = Sprite2D.new()
+	shipyard_sprite.name = "OuterRepairShipyardSprite"
+	shipyard_sprite.texture = REPAIR_SHIPYARD_TEXTURE
+	shipyard_sprite.centered = true
+	shipyard_sprite.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+	shipyard_sprite.scale = Vector2.ONE * REPAIR_SHIPYARD_SCALE
+	shipyard_sprite.z_index = 1
+	_repair_shipyard.add_child(shipyard_sprite)
+	_repair_shipyard.z_index = 4
+	add_child(_repair_shipyard)
 
 func set_region(id: String) -> bool:
 	if not _all.has(id):
@@ -59,8 +68,8 @@ func set_region(id: String) -> bool:
 	if not is_home:
 		_other.configure_region(_all[id], _elapsed)
 	for moon in _extra_moons:
-		(moon["sprite"] as Sprite2D).visible = is_home
-	_callisto_shipyard.visible = is_home
+		(moon["sprite"] as Node2D).visible = is_home
+	_repair_shipyard.visible = is_home
 	set_camera_address(_camera_sector, _camera_local, _camera_offset)
 	resize_view(_viewport_size)
 	return true
@@ -96,12 +105,12 @@ func get_navigation_bodies() -> Array[Dictionary]:
 	var found: Array[Dictionary] = _original.get_navigation_bodies()
 	for moon in _extra_moons:
 		found.append({"name": str(moon["name"]), "world": moon["world"], "orbit": 0.0, "color": Color(0.72, 0.79, 0.92)})
-	found.append({"name": "CallistoShipyard", "world": _callisto_world, "orbit": 0.0, "color": Color(0.98, 0.79, 0.42)})
 	return found
 
 func get_target_state(target_id: String) -> Dictionary:
 	if current_id == "mw" and target_id == "st_mw":
-		return {"valid": true, "world": _callisto_world, "velocity": Vector2.ZERO, "arrival_radius": 78.0}
+		# Navigation icon and NPC EarthStation alias point to the SAME station.
+		return _original.get_target_state("EarthStation")
 	return _original.get_target_state(target_id) if current_id == "mw" else _other.get_target_state(target_id)
 
 func earth_world_position() -> Vector2:
@@ -123,13 +132,22 @@ func _build_home_moons() -> void:
 			continue
 		var moons: Array = planet.get("moons", [])
 		for i in range(moons.size()):
-			var sprite: Sprite2D = Sprite2D.new()
-			sprite.name = "Moon_" + str(moons[i])
-			sprite.texture = MOON_TEXTURE
-			sprite.scale = Vector2.ONE * ((18.0 + float(i % 3) * 6.0) / float(MOON_TEXTURE.get_width()))
-			sprite.modulate = Color(0.80, 0.82, 0.90) if i % 2 == 0 else Color(0.87, 0.76, 0.63)
-			add_child(sprite)
-			_extra_moons.append({"sprite": sprite, "name": str(moons[i]), "home": parent, "phase": float(index) * 2.22, "radius": 115.0 + float(i) * 40.0, "world": Vector2.ZERO})
+			var moon_id: String = str(planet["id"]) + ("_m%02d" % (i + 1))
+			var diameter: float = 31.0 + float((i + index) % 4) * 5.0
+			var moon_node: Node2D = MoonLibrary.make_moon(moon_id, diameter)
+			if moon_node == null:
+				continue
+			add_child(moon_node)
+			var parent_bonus: float = 0.0
+			if parent == "Mars":
+				parent_bonus = 52.0
+			elif parent == "Jupiter":
+				parent_bonus = 86.0
+			elif parent == "Saturn":
+				parent_bonus = 98.0
+			elif parent == "Neptune":
+				parent_bonus = 72.0
+			_extra_moons.append({"sprite": moon_node, "moon_id": moon_id, "name": str(moons[i]), "home": parent, "phase": float(index) * 2.22, "radius": 140.0 + float(i) * 46.0 + parent_bonus, "world": Vector2.ZERO})
 			index += 1
 
 func _process(delta: float) -> void:
@@ -145,10 +163,16 @@ func _process(delta: float) -> void:
 		var home: Vector2 = bodies.get(str(m["home"]), Vector2.ZERO)
 		var phase: float = float(m["phase"]) + _elapsed * (0.036 + float(i % 5) * 0.012)
 		var position: Vector2 = home + Vector2.from_angle(phase) * float(m["radius"])
-		(m["sprite"] as Sprite2D).position = position - camera + _viewport_size * 0.5
+		var moon_node: Node2D = m["sprite"] as Node2D
+		var screen_position: Vector2 = position - camera + _viewport_size * 0.5
+		moon_node.position = screen_position
+		moon_node.visible = absf(screen_position.x - _viewport_size.x * 0.5) < _viewport_size.x * 0.5 + 100.0 and absf(screen_position.y - _viewport_size.y * 0.5) < _viewport_size.y * 0.5 + 100.0
+		if moon_node.visible:
+			var sun_vector: Vector2 = (-position).normalized()
+			moon_node.call("set_light_direction", Vector3(sun_vector.x * 0.7, sun_vector.y * 0.7, 0.72))
 		m["world"] = position
 		_extra_moons[i] = m
-		if str(m["name"]) == "Каллисто":
-			_callisto_world = position + Vector2(36.0, -18.0)
-	if _callisto_shipyard != null:
-		_callisto_shipyard.position = _callisto_world - camera + _viewport_size * 0.5
+	if _repair_shipyard != null:
+		_repair_shipyard.position = _repair_shipyard_world - camera + _viewport_size * 0.5
+		_repair_shipyard.rotation = wrapf(_repair_shipyard.rotation + delta * REPAIR_SHIPYARD_SPIN_SPEED, 0.0, TAU)
+		_repair_shipyard.visible = absf(_repair_shipyard.position.x - _viewport_size.x * 0.5) < _viewport_size.x * 0.5 + 260.0 and absf(_repair_shipyard.position.y - _viewport_size.y * 0.5) < _viewport_size.y * 0.5 + 260.0

@@ -1,5 +1,6 @@
 .godot/
 .import/
+builds/
 __pycache__/
 *.py[cod]
 *.tmp
