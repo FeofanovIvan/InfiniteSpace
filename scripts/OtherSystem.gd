@@ -114,6 +114,8 @@ var _moons: Array[Dictionary] = []
 var _station_sprite: Sprite2D
 var _story_station_root: Node2D
 var _archive_nebula: Array[ColorRect] = []
+var _system_nebulae: Array[ColorRect] = []
+var _system_nebula_data: Array[Dictionary] = []
 var _titan_ring_rocks: Array[Dictionary] = []
 var _tarantula_thrusters: Node2D
 var _story_fx: Node2D
@@ -145,6 +147,8 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 	_story_station_root = null
 	_station_sprite = null
 	_archive_nebula.clear()
+	_system_nebulae.clear()
+	_system_nebula_data.clear()
 	_titan_ring_rocks.clear()
 	_tarantula_thrusters = null
 	_story_fx = null
@@ -168,14 +172,18 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 		sun.set_activity(0.22 + float(star_index) * 0.06)
 		sun.set_tint(_sun_color)
 		_star_orb = sun
+		_star_orb.z_index = 2
 		add_child(_star_orb)
 	if str(region.get("id", "")) != "crossroads":
+		# Background gas layers belong to this system and stay behind its planets.
+		_add_system_background_nebulae(str(region.get("id", "")))
 		# Select at most one ring per world; repeat visits keep the same layout.
 		var ring_assignments: Dictionary = _choose_system_ring_stations(region)
 		for i in range(region.get("planets", []).size()):
 			var source: Dictionary = region["planets"][i]
 			var root: Node2D = Node2D.new()
 			root.name = str(source["id"]) + "_Globe"
+			root.z_index = 3
 			add_child(root)
 			var diameter: float = float(source.get("size", 140.0))
 			var region_id: String = str(region.get("id", ""))
@@ -212,6 +220,7 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 		var station_region_id: String = str(region.get("id", ""))
 		_story_station_root = Node2D.new()
 		_story_station_root.name = "SingleStoryStation_" + station_region_id
+		_story_station_root.z_index = 3
 		add_child(_story_station_root)
 		# No generic concentric dark halo on Tarantula or the Living Archive.
 		# The first has exactly three locally anchored engines; only the
@@ -416,6 +425,69 @@ func _add_titan_nebula() -> void:
 		_story_station_root.add_child(nebula)
 		_archive_nebula.append(nebula)
 
+func _system_nebula_palette(region_id: String) -> Array[Color]:
+	match region_id:
+		"mw":
+			return [Color(0.22, 0.42, 0.68), Color(0.46, 0.35, 0.72), Color(0.69, 0.34, 0.55)]
+		"lmc":
+			return [Color(0.18, 0.72, 0.98), Color(0.59, 0.34, 0.94), Color(0.95, 0.38, 0.67)]
+		"smc":
+			return [Color(0.23, 0.60, 0.96), Color(0.62, 0.33, 0.90), Color(0.86, 0.52, 0.91)]
+		"ngc6822":
+			return [Color(0.58, 0.69, 0.80), Color(0.54, 0.47, 0.72), Color(0.78, 0.62, 0.52)]
+		"m31":
+			return [Color(0.34, 0.84, 1.0), Color(0.76, 0.35, 0.94), Color(1.0, 0.64, 0.39)]
+		"m33":
+			return [Color(0.20, 0.42, 0.95), Color(0.52, 0.26, 0.89), Color(0.85, 0.55, 0.98)]
+		_:
+			return [Color(0.24, 0.66, 1.0), Color(0.65, 0.38, 0.95), Color(0.95, 0.48, 0.76)]
+
+func _add_system_background_nebulae(region_id: String) -> void:
+	var palette: Array[Color] = _system_nebula_palette(region_id)
+	var cloud_count: int = 16
+	for i in range(cloud_count):
+		var band: int = 0 if i < 6 else (1 if i < 12 else 2)
+		var band_start: int = 0 if band == 0 else (6 if band == 1 else 12)
+		var band_count: int = 6 if band == 0 else (6 if band == 1 else 4)
+		var local_index: int = i - band_start
+		var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+		rng.seed = ("miko_system_nebula:" + region_id + ":" + str(i)).hash()
+		var radius_min: float = 440.0 if band == 0 else (1320.0 if band == 1 else 2380.0)
+		var radius_max: float = 1240.0 if band == 0 else (2360.0 if band == 1 else 3360.0)
+		var radius: float = lerpf(radius_min, radius_max, (float(local_index) + rng.randf_range(0.12, 0.88)) / float(maxi(1, band_count)))
+		var bearing: float = (float(local_index) + rng.randf_range(-0.32, 0.32)) * TAU / float(maxi(1, band_count)) + float(band) * 0.37
+		var info: Dictionary = {
+			"offset": Vector2.from_angle(bearing) * radius,
+			"size": Vector2(rng.randf_range(420.0, 760.0), rng.randf_range(280.0, 620.0)) * (1.0 if band == 0 else (1.12 if band == 1 else 1.20)),
+			"angle": rng.randf_range(-1.05, 1.05),
+			"color": palette[i % palette.size()],
+			"opacity": rng.randf_range(0.22, 0.34) if band == 0 else (rng.randf_range(0.15, 0.25) if band == 1 else rng.randf_range(0.10, 0.18)),
+			"seed": rng.randf_range(0.0, 90.0),
+			"style": float(1 + (i % 2)),
+			"spin": rng.randf_range(-0.0012, 0.0012),
+			"drift": rng.randf_range(5.0, 13.0)
+		}
+		var cloud: ColorRect = ColorRect.new()
+		cloud.name = "%s_SystemNebula_%02d" % [region_id.to_upper(), i]
+		cloud.size = info["size"]
+		cloud.color = Color.WHITE
+		cloud.position = Vector2(info["offset"]) - cloud.size * 0.5
+		cloud.pivot_offset = cloud.size * 0.5
+		cloud.rotation = float(info["angle"])
+		cloud.z_index = 1
+		cloud.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		var mat: ShaderMaterial = ShaderMaterial.new()
+		mat.shader = CROSSROADS_NEBULA_SHADER
+		mat.set_shader_parameter("cloud_color", info["color"])
+		mat.set_shader_parameter("cloud_opacity", float(info["opacity"]))
+		mat.set_shader_parameter("cloud_seed", float(info["seed"]))
+		mat.set_shader_parameter("style", float(info["style"]))
+		mat.set_shader_parameter("glow_strength", 0.56)
+		cloud.material = mat
+		add_child(cloud)
+		_system_nebulae.append(cloud)
+		_system_nebula_data.append(info)
+
 func _build_titan_asteroid_ring() -> void:
 	# Detached orbital debris, not painted on the skull. Motion follows the
 	# story station because these are CHILDREN of its translated root.
@@ -461,6 +533,17 @@ func _update_positions() -> void:
 	var half: Vector2 = _view * 0.5
 	if _star_orb != null:
 		_star_orb.position = half - _camera_world
+	for i in range(_system_nebulae.size()):
+		var nebula: ColorRect = _system_nebulae[i]
+		var info: Dictionary = _system_nebula_data[i]
+		var offset: Vector2 = info["offset"]
+		var seed: float = float(info["seed"])
+		var drift: float = float(info["drift"])
+		var motion: Vector2 = Vector2(sin(_time * 0.043 + seed), cos(_time * 0.036 + seed * 1.7)) * drift
+		var screen_center: Vector2 = half - _camera_world + offset + motion
+		nebula.position = screen_center - nebula.size * 0.5
+		nebula.rotation = float(info["angle"]) + _time * float(info["spin"])
+		nebula.visible = absf(screen_center.x - half.x) < half.x + nebula.size.x * 0.72 and absf(screen_center.y - half.y) < half.y + nebula.size.y * 0.72
 	for i in range(_planets.size()):
 		var body: Dictionary = _planets[i]
 		var data: Dictionary = body["data"]
