@@ -124,8 +124,10 @@ func set_crystals(value: int) -> void:
 
 func _process(delta: float) -> void:
 	if fuel_segments <= 1:
+		var was_bright: bool = sin(_blink_time * 10.0) > 0.0
 		_blink_time += delta
-		_refresh()
+		if was_bright != (sin(_blink_time * 10.0) > 0.0):
+			_refresh()
 
 
 func _refresh() -> void:
