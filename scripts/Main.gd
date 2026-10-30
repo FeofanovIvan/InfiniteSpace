@@ -514,8 +514,7 @@ func _layout() -> void:
 	var lower_button_local_size: float = 42.0 * lower_button_extra
 	var rail_gap: float = 12.0
 	var right_button_center: float = joystick.position.x + visual_size * 0.5
-	var right_column_edge: float = joystick.position.x + visual_size
-	# On a very short landscape screen, fit the UPPER rail together rather
+		# On a very short landscape screen, fit the UPPER rail together rather
 	# than overlap the joystick. Standard screens preserve the exact +20% growth
 	# relative to v42, with fixed 12-screen-pixel gaps in every aspect ratio.
 	var desired_content_height: float = NavigationMenuScene.TRIGGER_SIZE * goals_scale + 34.0 * hud_scale + 2.0 * lower_button_local_size * hud_scale
@@ -530,8 +529,11 @@ func _layout() -> void:
 	var available_units: float = maxf(190.0, available_px / goals_scale)
 	var menu_width: float = minf(available_units, NavigationMenuScene.PREFERRED_WIDTH)
 	goal_picker.set_available_width(menu_width)
+	# Anchor the actual round preview to the physical joystick centre.
+	# The menu width changes between regions: use its measured size, never
+	# the old requested width or the right edge of the screen.
 	goal_picker.position = Vector2(
-		right_column_edge - menu_width * goals_scale,
+		right_button_center - (goal_picker.size.x - NavigationMenuScene.TRIGGER_SIZE * 0.5) * goals_scale,
 		safe.position.y + 12.0
 	)
 	status_hud.scale = Vector2.ONE * hud_scale
@@ -552,7 +554,7 @@ func _layout() -> void:
 	# The seven fuel sticks and the original blue asteroid fragment stay inside
 	# their existing bar. Its size grows with the entire upper-right HUD.
 	status_hud.position = Vector2(
-		right_column_edge - ResourceHudScene.HUD_WIDTH * hud_scale,
+		right_button_center - lower_button_center_local * hud_scale,
 		goal_picker.position.y + NavigationMenuScene.TRIGGER_SIZE * goals_scale + rail_gap
 	)
 	galactic_map.size = view
@@ -785,6 +787,9 @@ func _arrive_new_region(region_id: String, new_spawn: Vector2) -> void:
 	_landing_target_name = ""
 	action_button.set_action_available(false)
 	goal_picker.set_region_destinations(region_id, system_data.get("planets", []), system_data.get("station", null))
+	# Destination counts change the menu's actual width. Re-anchor the preview
+	# immediately after every inter-system arrival, not only on window resize.
+	_layout()
 	goal_picker.visible = region_id != "crossroads"
 	mini_map.reset_for_region()
 	solar_system.set_camera_address(navigator.sector, navigator.local, Vector2.ZERO)
