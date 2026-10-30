@@ -128,7 +128,7 @@ func _spawn_ship(art_id: int, index: int, ports: Array[Dictionary]) -> void:
         "speed":float(info["speed"]) * _rng.randf_range(0.94, 1.06),
         "turn":float(info["turn"]), "dwell":float(info["dwell"]),
         "timer":0.0, "mode":"cruise", "anchor_dir":outward,
-        "approach_offset":outward * 310.0, "stops_left":2 + index % 3,
+        "approach_offset":outward * 310.0, "stops_left":(1 if index == 1 else 2 + index % 3),
         "outbound":false, "exit_world":Vector2.ZERO, "jump_direction":Vector2.RIGHT,
         "phase":float(index) * 1.91
     }
