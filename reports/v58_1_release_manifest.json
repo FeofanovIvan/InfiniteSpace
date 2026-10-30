@@ -1,0 +1,16 @@
+{
+  "version": "v58.1",
+  "base_branch": "release/v57-installed-snapshot",
+  "source_dir": "/Users/ivanfeofanov/citysafekids/",
+  "installer_archive": "InfiniteSpace_v58_1_Patch_PlayTown_Tarantula.zip",
+  "archive_sha256": "3a90ad28cdbe57ea3f229a6bef19b9fe76debb41ae44c153f8947c86c247bfba",
+  "texture_path": "assets/story/tarantula_lab_ship.png",
+  "texture_sha256": "b639efa725a849c06576a4eb783d4f9f686fb642df91c48dd470288757aaca1c",
+  "texture_size": [
+    1254,
+    1254
+  ],
+  "source_blob": "cab1a911dcd80c51dafd25a0eead24280f3e9d95",
+  "other_script_blob": "0cd49e9b67ea51bd3ab4574d9f3c6a5e21542e55",
+  "notes": "Binary PNG and complete PlayTown copy are supplied by ZIP and local Mac; synchronized after installation."
+}
