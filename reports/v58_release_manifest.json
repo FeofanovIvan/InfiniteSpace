@@ -1,0 +1,19 @@
+{
+  "version": "v58",
+  "requires": "release/v57-installed-snapshot",
+  "patch_filename": "InfiniteSpace_v58_Patch_PlayTown_EducationalGames.zip",
+  "patch_sha256": "9943c20f2bef24b208d11afdbeecac1ad9b08df0b5e8d71bae46f77de06f2bef",
+  "source": "FeofanovIvan/safecitykids (local original copy on Mac)",
+  "source_file_copy": "Installed by Mac script; binary images are NOT embedded in ZIP",
+  "game_count": 19,
+  "exclude": [
+    "scooter_race"
+  ],
+  "base_git_blobs": {
+    "scripts/Main.gd": "259f6ec127206276062de0e0d43e506e5cf534a1",
+    "scripts/MikoMainMenu.gd": "c44c190ba520ebce16d3685c70d2b8a00dec29bd",
+    "project.godot": "b500569aa9721a1d1915e4b22b8eb012b8a7e167"
+  },
+  "destination_branch": "release/v58-installed-snapshot",
+  "runtime_validation": "not yet tested in Godot editor; static installer tests run using local mock source"
+}
