@@ -1,12 +1,12 @@
 extends Node2D
-## v48: Native SMC and M33 ships share the anchored landing/takeoff state machine.
+## v51: Native LMC, SMC and M33 share one anchored landing/takeoff flight controller.
 ## Native sprites have +X or -X noses encoded per class; ships never move sideways.
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const INNER_LIGHT: Shader = preload("res://shaders/alien_inner_light.gdshader")
 const ShipMotionFX = preload("res://scripts/ShipMotionFX.gd")
 const HyperjumpMotion = preload("res://scripts/HyperjumpMotion.gd")
 const NpcJumpVisual = preload("res://scripts/NpcJumpVisual.gd")
-const NATIVE_SYSTEMS: Array[String] = ["smc", "m33"]
+const NATIVE_SYSTEMS: Array[String] = ["lmc", "smc", "m33"]
 const ALIEN_ART: Array[Texture2D] = [
     preload("res://assets/story/alien_ship_01.png"),
     preload("res://assets/story/alien_ship_02.png"),
@@ -36,6 +36,22 @@ const M33_CLASSES: Array[Dictionary] = [
     {"role":"patrol", "label":"Local Patrol Craft", "speed":118.0, "turn":2.9, "size":0.205, "dwell":1.0, "light":Color(0.94,0.82,1.0), "glow":0.66, "nose_axis":0.0},
     {"role":"cargo", "label":"Heavy Freight Carrier", "speed":58.0, "turn":0.92, "size":0.093, "dwell":4.5, "light":Color(1.0,0.70,0.42), "glow":0.52, "nose_axis":PI}
 ]
+# Five ORIGINAL alpha-cut-out sprites from Alien Biomechanical Starship Showcase.png.
+# Nose directions are defined per sprite: 0.0 right, PI left.
+const LMC_ART: Array[Texture2D] = [
+    preload("res://assets/story/lmc_merchant_01.png"),
+    preload("res://assets/story/lmc_shuttle_02.png"),
+    preload("res://assets/story/lmc_freighter_03.png"),
+    preload("res://assets/story/lmc_explorer_04.png"),
+    preload("res://assets/story/lmc_escort_05.png")
+]
+const LMC_CLASSES: Array[Dictionary] = [
+    {"role":"merchant", "label":"Biomechanical Merchant", "speed":79.0, "turn":1.25, "size":0.136, "dwell":3.5, "light":Color(1.0,0.59,0.26), "glow":0.48, "nose_axis":PI},
+    {"role":"shuttle", "label":"Civilian Biopod Shuttle", "speed":108.0, "turn":1.9, "size":0.160, "dwell":2.1, "light":Color(1.0,0.73,0.34), "glow":0.50, "nose_axis":0.0},
+    {"role":"freighter", "label":"Long-range Organic Freighter", "speed":54.0, "turn":0.85, "size":0.097, "dwell":4.8, "light":Color(1.0,0.53,0.17), "glow":0.42, "nose_axis":PI},
+    {"role":"explorer", "label":"Biomechanical Explorer", "speed":146.0, "turn":2.9, "size":0.123, "dwell":1.2, "light":Color(1.0,0.76,0.46), "glow":0.61, "nose_axis":0.0},
+    {"role":"escort", "label":"Living Escort / Patrol", "speed":123.0, "turn":2.45, "size":0.127, "dwell":1.4, "light":Color(1.0,0.68,0.38), "glow":0.62, "nose_axis":PI}
+]
 const LOCAL_SHIP_COUNT: int = 7
 const APPROACH_RADIUS: float = 250.0
 const APPROACH_SECONDS: float = 1.65
@@ -59,6 +75,24 @@ var _time: float = 0.0
 func configure(atlas: Node) -> void:
     _atlas = atlas
 
+func _class_library() -> Array[Dictionary]:
+    match _region:
+        "lmc":
+            return LMC_CLASSES
+        "m33":
+            return M33_CLASSES
+        _:
+            return SHIP_CLASSES
+
+func _texture_library() -> Array[Texture2D]:
+    match _region:
+        "lmc":
+            return LMC_ART
+        "m33":
+            return M33_ART
+        _:
+            return ALIEN_ART
+
 func set_region(region_id: String) -> void:
     _region = region_id
     for item in _ships:
@@ -70,12 +104,12 @@ func set_region(region_id: String) -> void:
     set_physics_process(visible)
     if not visible:
         return
-    _rng.seed = 409517 if _region == "smc" else 117309
+    _rng.seed = 409517 if _region == "smc" else (117309 if _region == "m33" else 552871)
     var ports: Array[Dictionary] = _available_ports()
     if ports.size() < 2:
         set_physics_process(false)
         return
-    var art_count: int = ALIEN_ART.size() if _region == "smc" else M33_ART.size()
+    var art_count: int = _texture_library().size()
     for i in range(LOCAL_SHIP_COUNT):
         _spawn_ship(i % art_count, i, ports)
     _update_images()
@@ -112,10 +146,10 @@ func _anchor(item: Dictionary, ports: Array[Dictionary]) -> Vector2:
     return _port_world(ports, int(item["port_index"])) + Vector2(item["anchor_dir"]) * _landing_offset(ports, int(item["port_index"]))
 
 func _spawn_ship(art_id: int, index: int, ports: Array[Dictionary]) -> void:
-    var info: Dictionary = SHIP_CLASSES[art_id] if _region == "smc" else M33_CLASSES[art_id]
+    var info: Dictionary = _class_library()[art_id]
     var image: Sprite2D = Sprite2D.new()
     image.name = "%s_%s_%02d" % [_region.to_upper(), str(info["role"]), index]
-    image.texture = ALIEN_ART[art_id] if _region == "smc" else M33_ART[art_id]
+    image.texture = _texture_library()[art_id]
     image.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
     image.z_index = 1
     var material: ShaderMaterial = ShaderMaterial.new()
@@ -167,11 +201,11 @@ func _choose_next_port(item: Dictionary, ports: Array[Dictionary]) -> int:
     var n: int = ports.size()
     var current: int = int(item["port_index"]) % n
     match str(item["role"]):
-        "liner", "civilian":
+        "liner", "civilian", "shuttle":
             return (current + 1) % n
-        "cargo", "merchant":
+        "cargo", "merchant", "freighter":
             return (current + 2) % n
-        "scout", "courier":
+        "scout", "courier", "explorer":
             var furthest: int = (current + 1) % n
             var largest: float = -1.0
             for i in range(n):
@@ -182,7 +216,7 @@ func _choose_next_port(item: Dictionary, ports: Array[Dictionary]) -> int:
                     largest = value
                     furthest = i
             return furthest
-        "guard", "patrol":
+        "guard", "patrol", "escort":
             return (current + (1 if current % 2 == 0 else n - 1)) % n
         "diplomat":
             return n - 1 if current != n - 1 else _rng.randi_range(0, n - 2)
@@ -328,7 +362,7 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
             item["timer"] = REENTRY_SECONDS + _rng.randf_range(0.0, 1.2)
             item["velocity"] = Vector2.ZERO
         return
-    # Cruise: movement is ALWAYS in the current nose (+X) direction.
+    # Cruise uses the true sprite nose for both +X and -X native textures.
     var target: Vector2 = Vector2(item["exit_world"]) if bool(item["outbound"]) else _port_world(ports, int(item["target_index"]))
     var towards: Vector2 = target - world
     var arrive_radius: float = 88.0 if bool(item["outbound"]) else APPROACH_RADIUS
@@ -377,7 +411,7 @@ func _draw() -> void:
         if mode == "charge":
             NpcJumpVisual.draw_charge(self, screen, clampf(float(item["timer"]) / CHARGE_SECONDS, 0.0, 1.0), glow)
         elif mode == "dash":
-            # NpcJumpVisual uses -Y noses; SMC top views point +X.
+            # FX rotation uses nose_axis; Solar FX code expects local -Y.
             NpcJumpVisual.draw_dash(self, screen, (item["image"] as Sprite2D).rotation + float(item["nose_axis"]) + PI * 0.5, clampf(float(item["timer"]) / DASH_SECONDS, 0.0, 1.0), glow)
         else:
             var lift: float = 1.0 if mode == "hover" else 0.65
@@ -389,7 +423,7 @@ func _update_images() -> void:
         var mode: String = str(item["mode"])
         var screen: Vector2 = Vector2(item["world"]) - _camera_world + _view * 0.5
         image.position = screen
-        var data: Dictionary = SHIP_CLASSES[int(item["class_id"])] if _region == "smc" else M33_CLASSES[int(item["class_id"])]
+        var data: Dictionary = _class_library()[int(item["class_id"])]
         var base_scale: float = float(data["size"])
         var factor: float = 1.0
         if mode == "approach":
