@@ -490,7 +490,7 @@ func get_navigation_bodies() -> Array[Dictionary]:
 	for body in _planets:
 		var data: Dictionary = body["data"]
 		var p_color: Color = Color.html(str(data.get("palette", ["#82aadd"])[0]))
-		bodies.append({"name": str(data["name_en"]), "world": body["world"], "color": p_color, "orbit": _display_orbit_radius(int(body.get("index", 0)), data)})
+		bodies.append({"name": str(data["name_en"]), "world": body["world"], "color": p_color, "orbit": _display_orbit_radius(int(body.get("index", 0)), data), "kind": "planet", "planet_id": str(data.get("id", "")), "inhabited": bool(data.get("inhabited", false))})
 	if _station_sprite != null:
 		var story_station: Dictionary = _region.get("station", {})
 		bodies.append({"name": str(story_station.get("name_en", "Station")),
