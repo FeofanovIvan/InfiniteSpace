@@ -1,12 +1,12 @@
 extends Node2D
-## v51: Native LMC, SMC and M33 share one anchored landing/takeoff flight controller.
+## v54: Native LMC, SMC, Barnard/NGC6822 and M33 share one anchored landing/takeoff flight controller.
 ## Native sprites have +X or -X noses encoded per class; ships never move sideways.
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const INNER_LIGHT: Shader = preload("res://shaders/alien_inner_light.gdshader")
 const ShipMotionFX = preload("res://scripts/ShipMotionFX.gd")
 const HyperjumpMotion = preload("res://scripts/HyperjumpMotion.gd")
 const NpcJumpVisual = preload("res://scripts/NpcJumpVisual.gd")
-const NATIVE_SYSTEMS: Array[String] = ["lmc", "smc", "m33"]
+const NATIVE_SYSTEMS: Array[String] = ["lmc", "smc", "ngc6822", "m33"]
 const ALIEN_ART: Array[Texture2D] = [
     preload("res://assets/story/alien_ship_01.png"),
     preload("res://assets/story/alien_ship_02.png"),
@@ -52,6 +52,20 @@ const LMC_CLASSES: Array[Dictionary] = [
     {"role":"explorer", "label":"Biomechanical Explorer", "speed":146.0, "turn":2.9, "size":0.123, "dwell":1.2, "light":Color(1.0,0.76,0.46), "glow":0.61, "nose_axis":0.0},
     {"role":"escort", "label":"Living Escort / Patrol", "speed":123.0, "turn":2.45, "size":0.127, "dwell":1.4, "light":Color(1.0,0.68,0.38), "glow":0.62, "nose_axis":PI}
 ]
+const NGC6822_ART: Array[Texture2D] = [
+    preload("res://assets/story/ngc6822_cargo_01.png"),
+    preload("res://assets/story/ngc6822_interceptor_02.png"),
+    preload("res://assets/story/ngc6822_patrol_03.png"),
+    preload("res://assets/story/ngc6822_liner_04.png"),
+    preload("res://assets/story/ngc6822_merchant_05.png")
+]
+const NGC6822_CLASSES: Array[Dictionary] = [
+    {"role":"cargo", "label":"Heavy Cargo Hauler", "speed":55.0, "turn":0.82, "size":0.128, "dwell":4.4, "light":Color(1.0,0.61,0.24), "glow":0.52, "nose_axis":PI * 0.5},
+    {"role":"interceptor", "label":"Needle Interceptor", "speed":154.0, "turn":3.25, "size":0.118, "dwell":0.9, "light":Color(1.0,0.72,0.30), "glow":0.76, "nose_axis":0.0},
+    {"role":"patrol", "label":"Frontier Patrol Ship", "speed":122.0, "turn":2.55, "size":0.123, "dwell":1.2, "light":Color(0.96,0.77,0.36), "glow":0.68, "nose_axis":PI * 0.5},
+    {"role":"liner", "label":"Garden Passenger Liner", "speed":88.0, "turn":1.34, "size":0.111, "dwell":2.8, "light":Color(1.0,0.84,0.57), "glow":0.58, "nose_axis":0.0},
+    {"role":"merchant", "label":"Trade Ring Vessel", "speed":76.0, "turn":1.18, "size":0.117, "dwell":3.6, "light":Color(1.0,0.79,0.49), "glow":0.60, "nose_axis":0.0}
+]
 const LOCAL_SHIP_COUNT: int = 7
 const APPROACH_RADIUS: float = 250.0
 const APPROACH_SECONDS: float = 1.65
@@ -79,6 +93,8 @@ func _class_library() -> Array[Dictionary]:
     match _region:
         "lmc":
             return LMC_CLASSES
+        "ngc6822":
+            return NGC6822_CLASSES
         "m33":
             return M33_CLASSES
         _:
@@ -88,6 +104,8 @@ func _texture_library() -> Array[Texture2D]:
     match _region:
         "lmc":
             return LMC_ART
+        "ngc6822":
+            return NGC6822_ART
         "m33":
             return M33_ART
         _:
@@ -104,7 +122,7 @@ func set_region(region_id: String) -> void:
     set_physics_process(visible)
     if not visible:
         return
-    _rng.seed = 409517 if _region == "smc" else (117309 if _region == "m33" else 552871)
+    _rng.seed = 409517 if _region == "smc" else (887221 if _region == "ngc6822" else (117309 if _region == "m33" else 552871))
     var ports: Array[Dictionary] = _available_ports()
     if ports.size() < 2:
         set_physics_process(false)
