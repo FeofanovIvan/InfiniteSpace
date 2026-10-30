@@ -1,12 +1,12 @@
 extends Node2D
-## v47: Native SMC ships use Solar NPC-style anchored landing/takeoff + nose-first hyperjump.
-## Ship textures point +X, unlike Solar NPC textures (-Y). No inter-system fleet leakage.
+## v48: Native SMC and M33 ships share the anchored landing/takeoff state machine.
+## Native sprites have +X or -X noses encoded per class; ships never move sideways.
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const INNER_LIGHT: Shader = preload("res://shaders/alien_inner_light.gdshader")
 const ShipMotionFX = preload("res://scripts/ShipMotionFX.gd")
 const HyperjumpMotion = preload("res://scripts/HyperjumpMotion.gd")
 const NpcJumpVisual = preload("res://scripts/NpcJumpVisual.gd")
-const HOME_SYSTEM: String = "smc"
+const NATIVE_SYSTEMS: Array[String] = ["smc", "m33"]
 const ALIEN_ART: Array[Texture2D] = [
     preload("res://assets/story/alien_ship_01.png"),
     preload("res://assets/story/alien_ship_02.png"),
@@ -20,6 +20,21 @@ const SHIP_CLASSES: Array[Dictionary] = [
     {"role":"cargo", "label":"Cloud Cargo Carrier", "speed":53.0, "turn":0.84, "size":0.115, "dwell":4.0, "light":Color(1.0,0.65,0.25), "glow":0.76},
     {"role":"guard", "label":"Twin-Wing Guardian", "speed":127.0, "turn":2.85, "size":0.097, "dwell":0.8, "light":Color(0.42,0.72,1.0), "glow":0.84},
     {"role":"diplomat", "label":"Pearl Diplomatic Vessel", "speed":91.0, "turn":1.65, "size":0.105, "dwell":2.5, "light":Color(0.49,1.0,0.83), "glow":0.66}
+]
+const M33_ART: Array[Texture2D] = [
+    preload("res://assets/story/m33_civilian_01.png"),
+    preload("res://assets/story/m33_merchant_02.png"),
+    preload("res://assets/story/m33_courier_03.png"),
+    preload("res://assets/story/m33_patrol_04.png"),
+    preload("res://assets/story/m33_cargo_05.png")
+]
+# Defined by position on original 1536x1024 sheet. nose_axis: 0 = right, PI = left.
+const M33_CLASSES: Array[Dictionary] = [
+    {"role":"civilian", "label":"Common Civilian Shuttle", "speed":92.0, "turn":1.65, "size":0.135, "dwell":2.0, "light":Color(1.0,0.84,0.62), "glow":0.56, "nose_axis":PI},
+    {"role":"merchant", "label":"Merchant Trading Vessel", "speed":78.0, "turn":1.30, "size":0.148, "dwell":3.4, "light":Color(1.0,0.79,0.45), "glow":0.60, "nose_axis":0.0},
+    {"role":"courier", "label":"Fast Diplomatic Courier", "speed":142.0, "turn":2.45, "size":0.128, "dwell":1.3, "light":Color(1.0,0.92,0.70), "glow":0.72, "nose_axis":0.0},
+    {"role":"patrol", "label":"Local Patrol Craft", "speed":118.0, "turn":2.9, "size":0.205, "dwell":1.0, "light":Color(0.94,0.82,1.0), "glow":0.66, "nose_axis":0.0},
+    {"role":"cargo", "label":"Heavy Freight Carrier", "speed":58.0, "turn":0.92, "size":0.093, "dwell":4.5, "light":Color(1.0,0.70,0.42), "glow":0.52, "nose_axis":PI}
 ]
 const LOCAL_SHIP_COUNT: int = 7
 const APPROACH_RADIUS: float = 250.0
@@ -51,17 +66,18 @@ func set_region(region_id: String) -> void:
         image.queue_free()
     _ships.clear()
     _time = 0.0
-    visible = _region == HOME_SYSTEM
+    visible = NATIVE_SYSTEMS.has(_region)
     set_physics_process(visible)
     if not visible:
         return
-    _rng.seed = 409517
+    _rng.seed = 409517 if _region == "smc" else 117309
     var ports: Array[Dictionary] = _available_ports()
     if ports.size() < 2:
         set_physics_process(false)
         return
+    var art_count: int = ALIEN_ART.size() if _region == "smc" else M33_ART.size()
     for i in range(LOCAL_SHIP_COUNT):
-        _spawn_ship(i % ALIEN_ART.size(), i, ports)
+        _spawn_ship(i % art_count, i, ports)
     _update_images()
 
 func set_camera_address(sector: Vector2i, local_position: Vector2, camera_offset: Vector2) -> void:
@@ -77,7 +93,7 @@ func _available_ports() -> Array[Dictionary]:
     if _atlas == null:
         return ports
     for body in _atlas.get_navigation_bodies():
-        if str(body.get("name", "")) == "Sun" or str(body.get("kind", "")) == "moon":
+        if not bool(body.get("inhabited", false)) and str(body.get("kind", "")) != "station":
             continue
         ports.append(body)
     return ports
@@ -96,10 +112,10 @@ func _anchor(item: Dictionary, ports: Array[Dictionary]) -> Vector2:
     return _port_world(ports, int(item["port_index"])) + Vector2(item["anchor_dir"]) * _landing_offset(ports, int(item["port_index"]))
 
 func _spawn_ship(art_id: int, index: int, ports: Array[Dictionary]) -> void:
-    var info: Dictionary = SHIP_CLASSES[art_id]
+    var info: Dictionary = SHIP_CLASSES[art_id] if _region == "smc" else M33_CLASSES[art_id]
     var image: Sprite2D = Sprite2D.new()
-    image.name = "SMC_%s_%02d" % [str(info["role"]), index]
-    image.texture = ALIEN_ART[art_id]
+    image.name = "%s_%s_%02d" % [_region.to_upper(), str(info["role"]), index]
+    image.texture = ALIEN_ART[art_id] if _region == "smc" else M33_ART[art_id]
     image.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
     image.z_index = 1
     var material: ShaderMaterial = ShaderMaterial.new()
@@ -113,16 +129,18 @@ func _spawn_ship(art_id: int, index: int, ports: Array[Dictionary]) -> void:
     var wake: Node2D = ShipMotionFX.new()
     wake.name = "Wake_%02d" % index
     wake.z_index = -1
+    wake.scale.x = -1.0 if is_equal_approx(float(info.get("nose_axis", 0.0)), PI) else 1.0
     image.add_child(wake)
     # Two ships begin docked, two begin inbound; all roles remain visible across the fleet.
     var target: int = (index * 3 + 2) % ports.size()
     var outward: Vector2 = Vector2.from_angle(float(index) * 1.9 + 0.7)
     var origin: Vector2 = _port_world(ports, target) + outward * (310.0 + 32.0 * float(index % 3))
+    var nose_axis: float = float(info.get("nose_axis", 0.0))
     var heading: float = (-outward).angle()
-    image.rotation = heading
+    image.rotation = heading - nose_axis
     var item: Dictionary = {
         "image":image, "wake":wake, "light_color":info["light"],
-        "role":info["role"], "label":info["label"], "class_id":art_id,
+        "role":info["role"], "label":info["label"], "class_id":art_id, "nose_axis":nose_axis,
         "world":origin, "velocity":Vector2.ZERO,
         "target_index":target, "port_index":target,
         "speed":float(info["speed"]) * _rng.randf_range(0.94, 1.06),
@@ -142,18 +160,18 @@ func _spawn_ship(art_id: int, index: int, ports: Array[Dictionary]) -> void:
     else:
         # Remaining vessels sail toward other ports using their nose +X.
         item["target_index"] = (target + 1 + index % 2) % ports.size()
-        image.rotation = (_port_world(ports, int(item["target_index"])) - origin).angle()
+        image.rotation = (_port_world(ports, int(item["target_index"])) - origin).angle() - nose_axis
     _ships.append(item)
 
 func _choose_next_port(item: Dictionary, ports: Array[Dictionary]) -> int:
     var n: int = ports.size()
     var current: int = int(item["port_index"]) % n
     match str(item["role"]):
-        "liner":
+        "liner", "civilian":
             return (current + 1) % n
-        "cargo":
+        "cargo", "merchant":
             return (current + 2) % n
-        "scout":
+        "scout", "courier":
             var furthest: int = (current + 1) % n
             var largest: float = -1.0
             for i in range(n):
@@ -164,7 +182,7 @@ func _choose_next_port(item: Dictionary, ports: Array[Dictionary]) -> int:
                     largest = value
                     furthest = i
             return furthest
-        "guard":
+        "guard", "patrol":
             return (current + (1 if current % 2 == 0 else n - 1)) % n
         "diplomat":
             return n - 1 if current != n - 1 else _rng.randi_range(0, n - 2)
@@ -200,12 +218,12 @@ func _start_takeoff(item: Dictionary, ports: Array[Dictionary]) -> void:
     item["timer"] = 0.0
     item["velocity"] = Vector2.ZERO
     # During lift-off, nose always faces outward from the port.
-    (item["image"] as Sprite2D).rotation = Vector2(item["anchor_dir"]).angle()
+    (item["image"] as Sprite2D).rotation = Vector2(item["anchor_dir"]).angle() - float(item["nose_axis"])
 
-func _turn_nose(image: Sprite2D, desired: Vector2, speed: float, delta: float) -> float:
+func _turn_nose(image: Sprite2D, desired: Vector2, speed: float, delta: float, nose_axis: float = 0.0) -> float:
     if desired.length_squared() < 0.001:
         return 0.0
-    var desired_angle: float = desired.angle()
+    var desired_angle: float = desired.angle() - nose_axis
     image.rotation = lerp_angle(image.rotation, desired_angle, minf(1.0, maxf(0.0, speed) * delta))
     return absf(wrapf(desired_angle - image.rotation, -PI, PI))
 
@@ -215,6 +233,7 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
     var world: Vector2 = item["world"]
     var velocity: Vector2 = item["velocity"]
     var elapsed: float = float(item["timer"]) + delta
+    var nose_axis: float = float(item["nose_axis"])
     var port: int = int(item["port_index"])
     if mode == "docked":
         item["world"] = _anchor(item, ports)
@@ -233,7 +252,7 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
             item["mode"] = "docked"
             item["timer"] = 0.55
             item["world"] = _anchor(item, ports)
-            image.rotation = Vector2(item["anchor_dir"]).angle()
+            image.rotation = Vector2(item["anchor_dir"]).angle() - nose_axis
             item["velocity"] = Vector2.ZERO
         return
     if mode in ["approach", "hover", "landing", "takeoff", "depart"]:
@@ -247,7 +266,7 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
                 var next_world: Vector2 = port_world + Vector2(item["approach_offset"]).lerp(Vector2(item["anchor_dir"]) * _landing_offset(ports, port), progress)
                 var direction: Vector2 = next_world - world
                 if direction.length_squared() > 0.001:
-                    _turn_nose(image, direction, 6.0, delta)
+                    _turn_nose(image, direction, 6.0, delta, nose_axis)
                 item["world"] = next_world
                 if elapsed >= APPROACH_SECONDS:
                     item["mode"] = "hover"
@@ -264,13 +283,13 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
                     item["timer"] = 1.5 + float(item["dwell"])
             "takeoff":
                 item["world"] = anchor
-                image.rotation = Vector2(item["anchor_dir"]).angle()
+                image.rotation = Vector2(item["anchor_dir"]).angle() - nose_axis
                 if elapsed >= TAKEOFF_SECONDS:
                     item["mode"] = "depart"
                     item["timer"] = 0.0
             "depart":
                 var outward: Vector2 = Vector2(item["anchor_dir"])
-                image.rotation = outward.angle()
+                image.rotation = outward.angle() - nose_axis
                 var distance: float = lerpf(_landing_offset(ports, port), DEPART_RADIUS, _smooth(elapsed / DEPART_SECONDS))
                 item["world"] = port_world + outward * distance
                 if elapsed >= DEPART_SECONDS:
@@ -281,18 +300,18 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
     if mode == "align_jump":
         # No positional motion during alignment; the ship must point its nose at the exit.
         var to_exit: Vector2 = Vector2(item["exit_world"]) - world
-        var error: float = _turn_nose(image, to_exit, 6.0, delta)
+        var error: float = _turn_nose(image, to_exit, 6.0, delta, nose_axis)
         item["velocity"] = Vector2.ZERO
         item["timer"] = elapsed
         if error < 0.025:
-            item["jump_direction"] = Vector2.from_angle(image.rotation)
+            item["jump_direction"] = Vector2.from_angle(image.rotation + nose_axis)
             item["mode"] = "charge"
             item["timer"] = 0.0
         return
     if mode == "charge":
         item["timer"] = elapsed
         item["velocity"] = Vector2.ZERO
-        image.rotation = Vector2(item["jump_direction"]).angle()
+        image.rotation = Vector2(item["jump_direction"]).angle() - nose_axis
         if elapsed >= CHARGE_SECONDS:
             item["mode"] = "dash"
             item["timer"] = 0.0
@@ -300,7 +319,7 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
     if mode == "dash":
         var t: float = clampf(elapsed / DASH_SECONDS, 0.0, 1.0)
         var forward: Vector2 = Vector2(item["jump_direction"])
-        image.rotation = forward.angle()
+        image.rotation = forward.angle() - nose_axis
         item["world"] = world + forward * HyperjumpMotion.dash_speed(t) * delta
         item["velocity"] = forward * HyperjumpMotion.dash_speed(t)
         item["timer"] = elapsed
@@ -321,8 +340,8 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
         else:
             _begin_approach(item, ports)
         return
-    var error_angle: float = _turn_nose(image, towards, float(item["turn"]), delta)
-    var forward: Vector2 = Vector2.from_angle(image.rotation)
+    var error_angle: float = _turn_nose(image, towards, float(item["turn"]), delta, nose_axis)
+    var forward: Vector2 = Vector2.from_angle(image.rotation + nose_axis)
     var alignment: float = maxf(0.0, cos(error_angle))
     var desired_speed: float = float(item["speed"]) * alignment
     var speed_now: float = move_toward(velocity.length(), desired_speed, 150.0 * delta)
@@ -331,7 +350,7 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
     item["timer"] = elapsed
 
 func _physics_process(delta: float) -> void:
-    if _region != HOME_SYSTEM:
+    if not NATIVE_SYSTEMS.has(_region):
         return
     _time += delta
     var ports: Array[Dictionary] = _available_ports()
@@ -345,7 +364,7 @@ func _physics_process(delta: float) -> void:
     queue_redraw()
 
 func _draw() -> void:
-    if _region != HOME_SYSTEM:
+    if not NATIVE_SYSTEMS.has(_region):
         return
     for item in _ships:
         var mode: String = str(item["mode"])
@@ -359,7 +378,7 @@ func _draw() -> void:
             NpcJumpVisual.draw_charge(self, screen, clampf(float(item["timer"]) / CHARGE_SECONDS, 0.0, 1.0), glow)
         elif mode == "dash":
             # NpcJumpVisual uses -Y noses; SMC top views point +X.
-            NpcJumpVisual.draw_dash(self, screen, (item["image"] as Sprite2D).rotation + PI * 0.5, clampf(float(item["timer"]) / DASH_SECONDS, 0.0, 1.0), glow)
+            NpcJumpVisual.draw_dash(self, screen, (item["image"] as Sprite2D).rotation + float(item["nose_axis"]) + PI * 0.5, clampf(float(item["timer"]) / DASH_SECONDS, 0.0, 1.0), glow)
         else:
             var lift: float = 1.0 if mode == "hover" else 0.65
             draw_arc(screen, 18.0 + 4.0 * sin(_time * 2.2), 0.0, TAU, 30, Color(glow, 0.20 * lift), 1.5, true)
@@ -370,7 +389,8 @@ func _update_images() -> void:
         var mode: String = str(item["mode"])
         var screen: Vector2 = Vector2(item["world"]) - _camera_world + _view * 0.5
         image.position = screen
-        var base_scale: float = float(SHIP_CLASSES[int(item["class_id"])]["size"])
+        var data: Dictionary = SHIP_CLASSES[int(item["class_id"])] if _region == "smc" else M33_CLASSES[int(item["class_id"])]
+        var base_scale: float = float(data["size"])
         var factor: float = 1.0
         if mode == "approach":
             factor = 1.0 - 0.18 * _smooth(float(item["timer"]) / APPROACH_SECONDS)
@@ -391,4 +411,4 @@ func _update_images() -> void:
             moving = 0.0
         var wake: Node2D = item["wake"]
         wake.call("update_motion", _time, clampf(moving, 0.0, 1.0), item["light_color"])
-        image.visible = _region == HOME_SYSTEM and mode not in ["docked", "waiting"] and screen.x > -330.0 and screen.y > -330.0 and screen.x < _view.x + 330.0 and screen.y < _view.y + 330.0
+        image.visible = NATIVE_SYSTEMS.has(_region) and mode not in ["docked", "waiting"] and screen.x > -330.0 and screen.y > -330.0 and screen.x < _view.x + 330.0 and screen.y < _view.y + 330.0
