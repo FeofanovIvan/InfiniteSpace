@@ -22,16 +22,17 @@
           ],
           "unique": "Ремонтная верфь и исследовательский город Земли будущего.",
           "fiction": false,
-          "orbit": 245.0,
-          "period": 140.0,
+          "orbit": 245,
+          "period": 140,
           "phase": 0.38,
-          "size": 118.0,
+          "size": 118,
           "palette": [
             "#f8d2b2",
             "#db986f",
             "#fff4d8"
           ],
-          "visual": "existing_solar"
+          "visual": "existing_solar",
+          "inhabited": true
         },
         {
           "id": "mw_p02",
@@ -46,16 +47,17 @@
           ],
           "unique": "Полуподземная лаборатория двигателя.",
           "fiction": false,
-          "orbit": 493.0,
-          "period": 229.0,
+          "orbit": 493,
+          "period": 229,
           "phase": 2.78,
-          "size": 144.0,
+          "size": 144,
           "palette": [
             "#f8d2b2",
             "#db986f",
             "#fff4d8"
           ],
-          "visual": "existing_solar"
+          "visual": "existing_solar",
+          "inhabited": true
         },
         {
           "id": "mw_p03",
@@ -72,16 +74,17 @@
           ],
           "unique": "Атмосферная исследовательская платформа в безопасном игровом слое.",
           "fiction": false,
-          "orbit": 741.0,
-          "period": 318.0,
+          "orbit": 741,
+          "period": 318,
           "phase": 5.18,
-          "size": 130.0,
+          "size": 130,
           "palette": [
             "#f8d2b2",
             "#db986f",
             "#fff4d8"
           ],
-          "visual": "existing_solar"
+          "visual": "existing_solar",
+          "inhabited": false
         },
         {
           "id": "mw_p04",
@@ -99,16 +102,17 @@
           ],
           "unique": "Брошенный пассажирский корабль в безопасном районе на орбите.",
           "fiction": false,
-          "orbit": 989.0,
-          "period": 407.0,
+          "orbit": 989,
+          "period": 407,
           "phase": 7.58,
-          "size": 160.0,
+          "size": 160,
           "palette": [
             "#f8d2b2",
             "#db986f",
             "#fff4d8"
           ],
-          "visual": "existing_solar"
+          "visual": "existing_solar",
+          "inhabited": false
         },
         {
           "id": "mw_p05",
@@ -126,16 +130,17 @@
           ],
           "unique": "Орбитальная антенна-колесо.",
           "fiction": false,
-          "orbit": 1237.0,
-          "period": 496.0,
+          "orbit": 1237,
+          "period": 496,
           "phase": 9.98,
-          "size": 174.0,
+          "size": 174,
           "palette": [
             "#f8d2b2",
             "#db986f",
             "#fff4d8"
           ],
-          "visual": "existing_solar"
+          "visual": "existing_solar",
+          "inhabited": false
         },
         {
           "id": "mw_p06",
@@ -151,16 +156,17 @@
           ],
           "unique": "Автономный атмосферный зонд.",
           "fiction": false,
-          "orbit": 1485.0,
-          "period": 585.0,
+          "orbit": 1485,
+          "period": 585,
           "phase": 12.38,
-          "size": 126.0,
+          "size": 126,
           "palette": [
             "#f8d2b2",
             "#db986f",
             "#fff4d8"
           ],
-          "visual": "existing_solar"
+          "visual": "existing_solar",
+          "inhabited": false
         },
         {
           "id": "mw_p07",
@@ -172,16 +178,17 @@
           "moons": [],
           "unique": "Дрейфующая высотная исследовательская станция.",
           "fiction": false,
-          "orbit": 1733.0,
-          "period": 674.0,
+          "orbit": 1733,
+          "period": 674,
           "phase": 14.78,
-          "size": 146.0,
+          "size": 146,
           "palette": [
             "#f8d2b2",
             "#db986f",
             "#fff4d8"
           ],
-          "visual": "existing_solar"
+          "visual": "existing_solar",
+          "inhabited": false
         },
         {
           "id": "mw_p08",
@@ -193,16 +200,17 @@
           "moons": [],
           "unique": "Солнечный энергетический коллектор у кратера.",
           "fiction": false,
-          "orbit": 1981.0,
-          "period": 763.0,
+          "orbit": 1981,
+          "period": 763,
           "phase": 17.18,
-          "size": 132.0,
+          "size": 132,
           "palette": [
             "#f8d2b2",
             "#db986f",
             "#fff4d8"
           ],
-          "visual": "existing_solar"
+          "visual": "existing_solar",
+          "inhabited": false
         }
       ],
       "station": {
@@ -216,7 +224,8 @@
           "y": 1850,
           "primary_body": "Sun",
           "gameplay_override": "User-directed relocation from Callisto orbit to outer system; not a moon satellite."
-        }
+        },
+        "accessible": true
       }
     },
     {
@@ -236,17 +245,18 @@
           "moons": [],
           "unique": "Кольцо прозрачных аэростатических городов.",
           "fiction": true,
-          "orbit": 245.0,
-          "period": 140.0,
+          "orbit": 245,
+          "period": 140,
           "phase": 0.38,
-          "size": 118.0,
+          "size": 118,
           "palette": [
             "#94d9b5",
             "#d8bc72",
             "#a3e4cf"
           ],
           "visual": "lmc_scene",
-          "visual_asset": "res://assets/atlas/planets/lmc_p01.png"
+          "visual_asset": "res://assets/atlas/planets/lmc_p01.png",
+          "inhabited": false
         },
         {
           "id": "lmc_p02",
@@ -260,17 +270,18 @@
           ],
           "unique": "Плавучие искусственные кольца.",
           "fiction": true,
-          "orbit": 493.0,
-          "period": 229.0,
+          "orbit": 493,
+          "period": 229,
           "phase": 2.78,
-          "size": 144.0,
+          "size": 144,
           "palette": [
             "#092a6c",
             "#148cc6",
             "#c7f4f8"
           ],
           "visual": "lmc_scene",
-          "visual_asset": "res://assets/atlas/planets/lmc_p02.png"
+          "visual_asset": "res://assets/atlas/planets/lmc_p02.png",
+          "inhabited": true
         },
         {
           "id": "lmc_p03",
@@ -282,17 +293,18 @@
           "moons": [],
           "unique": "Сферический молекулярный город.",
           "fiction": true,
-          "orbit": 741.0,
-          "period": 318.0,
+          "orbit": 741,
+          "period": 318,
           "phase": 5.18,
-          "size": 130.0,
+          "size": 130,
           "palette": [
             "#24222b",
             "#9d533e",
             "#57555e"
           ],
           "visual": "lmc_scene",
-          "visual_asset": "res://assets/atlas/planets/lmc_p03.png"
+          "visual_asset": "res://assets/atlas/planets/lmc_p03.png",
+          "inhabited": true
         },
         {
           "id": "lmc_p04",
@@ -308,17 +320,18 @@
           ],
           "unique": "Цилиндрический корабль, застрявший во льду.",
           "fiction": true,
-          "orbit": 989.0,
-          "period": 407.0,
+          "orbit": 989,
+          "period": 407,
           "phase": 7.58,
-          "size": 160.0,
+          "size": 160,
           "palette": [
             "#d8eefa",
             "#66b4df",
             "#b9e5fb"
           ],
           "visual": "lmc_scene",
-          "visual_asset": "res://assets/atlas/planets/lmc_p04.png"
+          "visual_asset": "res://assets/atlas/planets/lmc_p04.png",
+          "inhabited": false
         },
         {
           "id": "lmc_p05",
@@ -330,17 +343,18 @@
           "moons": [],
           "unique": "Автоматический сборщик проб.",
           "fiction": true,
-          "orbit": 1237.0,
-          "period": 496.0,
+          "orbit": 1237,
+          "period": 496,
           "phase": 9.98,
-          "size": 174.0,
+          "size": 174,
           "palette": [
             "#ba7856",
             "#a66e38",
             "#f5b77b"
           ],
           "visual": "lmc_scene",
-          "visual_asset": "res://assets/atlas/planets/lmc_p05.png"
+          "visual_asset": "res://assets/atlas/planets/lmc_p05.png",
+          "inhabited": false
         },
         {
           "id": "lmc_p06",
@@ -352,17 +366,18 @@
           "moons": [],
           "unique": "Малая капсула в высоких атмосферных слоях.",
           "fiction": true,
-          "orbit": 1485.0,
-          "period": 585.0,
+          "orbit": 1485,
+          "period": 585,
           "phase": 12.38,
-          "size": 126.0,
+          "size": 126,
           "palette": [
             "#f1bad2",
             "#d0b0cd",
             "#e1cddd"
           ],
           "visual": "lmc_scene",
-          "visual_asset": "res://assets/atlas/planets/lmc_p06.png"
+          "visual_asset": "res://assets/atlas/planets/lmc_p06.png",
+          "inhabited": false
         },
         {
           "id": "lmc_p07",
@@ -380,17 +395,18 @@
           ],
           "unique": "Верфь на орбите третьей луны.",
           "fiction": true,
-          "orbit": 1733.0,
-          "period": 674.0,
+          "orbit": 1733,
+          "period": 674,
           "phase": 14.78,
-          "size": 146.0,
+          "size": 146,
           "palette": [
             "#6655b8",
             "#33a7cf",
             "#bec1ff"
           ],
           "visual": "lmc_scene",
-          "visual_asset": "res://assets/atlas/planets/lmc_p07.png"
+          "visual_asset": "res://assets/atlas/planets/lmc_p07.png",
+          "inhabited": false
         },
         {
           "id": "lmc_p08",
@@ -404,17 +420,18 @@
           ],
           "unique": "Радиотелескопическая решётка.",
           "fiction": true,
-          "orbit": 1981.0,
-          "period": 763.0,
+          "orbit": 1981,
+          "period": 763,
           "phase": 17.18,
-          "size": 132.0,
+          "size": 132,
           "palette": [
             "#53acbb",
             "#337680",
             "#b5fdce"
           ],
           "visual": "lmc_scene",
-          "visual_asset": "res://assets/atlas/planets/lmc_p08.png"
+          "visual_asset": "res://assets/atlas/planets/lmc_p08.png",
+          "inhabited": false
         }
       ],
       "station": {
@@ -423,7 +440,8 @@
         "name_ru": "Лабораторный корабль «Тарантул»",
         "fiction": true,
         "visual_asset": "res://assets/story/tarantula_lab_ship.png",
-        "placement": "free_deep_space"
+        "placement": "free_deep_space",
+        "accessible": true
       }
     },
     {
@@ -445,17 +463,18 @@
           ],
           "unique": "Гигантский спиралевидный искусственный риф.",
           "fiction": true,
-          "orbit": 245.0,
-          "period": 140.0,
+          "orbit": 245,
+          "period": 140,
           "phase": 0.38,
-          "size": 118.0,
+          "size": 118,
           "palette": [
             "#008e9c",
             "#42ddca",
             "#044f6b"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/smc_p01.png"
+          "visual_asset": "res://assets/atlas/planets/smc_p01.png",
+          "inhabited": true
         },
         {
           "id": "smc_p02",
@@ -467,17 +486,18 @@
           "moons": [],
           "unique": "Лаборатория внутри кратера.",
           "fiction": true,
-          "orbit": 493.0,
-          "period": 229.0,
+          "orbit": 493,
+          "period": 229,
           "phase": 2.78,
-          "size": 144.0,
+          "size": 144,
           "palette": [
             "#d5ece6",
             "#528e75",
             "#e7e8dc"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/smc_p02.png"
+          "visual_asset": "res://assets/atlas/planets/smc_p02.png",
+          "inhabited": true
         },
         {
           "id": "smc_p03",
@@ -492,17 +512,18 @@
           ],
           "unique": "Башня генетического архива как двойная спираль.",
           "fiction": true,
-          "orbit": 741.0,
-          "period": 318.0,
+          "orbit": 741,
+          "period": 318,
           "phase": 5.18,
-          "size": 130.0,
+          "size": 130,
           "palette": [
             "#48296c",
             "#9e61bf",
             "#292438"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/smc_p03.png"
+          "visual_asset": "res://assets/atlas/planets/smc_p03.png",
+          "inhabited": true
         },
         {
           "id": "smc_p04",
@@ -514,17 +535,18 @@
           "moons": [],
           "unique": "Поселение внутри огромного полого ствола.",
           "fiction": true,
-          "orbit": 989.0,
-          "period": 407.0,
+          "orbit": 989,
+          "period": 407,
           "phase": 7.58,
-          "size": 160.0,
+          "size": 160,
           "palette": [
             "#3c5940",
             "#8fb88b",
             "#344037"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/smc_p04.png"
+          "visual_asset": "res://assets/atlas/planets/smc_p04.png",
+          "inhabited": false
         },
         {
           "id": "smc_p05",
@@ -538,17 +560,18 @@
           ],
           "unique": "Лентовидный город по линии терминатора.",
           "fiction": true,
-          "orbit": 1237.0,
-          "period": 496.0,
+          "orbit": 1237,
+          "period": 496,
           "phase": 9.98,
-          "size": 174.0,
+          "size": 174,
           "palette": [
             "#bb7334",
             "#1c3a77",
             "#deae53"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/smc_p05.png"
+          "visual_asset": "res://assets/atlas/planets/smc_p05.png",
+          "inhabited": false
         },
         {
           "id": "smc_p06",
@@ -560,17 +583,18 @@
           "moons": [],
           "unique": "Плавающий древний корабль на озере.",
           "fiction": true,
-          "orbit": 1485.0,
-          "period": 585.0,
+          "orbit": 1485,
+          "period": 585,
           "phase": 12.38,
-          "size": 126.0,
+          "size": 126,
           "palette": [
             "#b75c2c",
             "#3f2926",
             "#e4a55c"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/smc_p06.png"
+          "visual_asset": "res://assets/atlas/planets/smc_p06.png",
+          "inhabited": false
         },
         {
           "id": "smc_p07",
@@ -586,17 +610,18 @@
           ],
           "unique": "Лес гигантских геологических колонн.",
           "fiction": true,
-          "orbit": 1733.0,
-          "period": 674.0,
+          "orbit": 1733,
+          "period": 674,
           "phase": 14.78,
-          "size": 146.0,
+          "size": 146,
           "palette": [
             "#a95756",
             "#c0ada0",
             "#45445a"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/smc_p07.png"
+          "visual_asset": "res://assets/atlas/planets/smc_p07.png",
+          "inhabited": false
         },
         {
           "id": "smc_p08",
@@ -614,17 +639,18 @@
           ],
           "unique": "Колоссальное плавучее существо-остров.",
           "fiction": true,
-          "orbit": 1981.0,
-          "period": 763.0,
+          "orbit": 1981,
+          "period": 763,
           "phase": 17.18,
-          "size": 132.0,
+          "size": 132,
           "palette": [
             "#a69c5c",
             "#4f9f76",
             "#d2bc58"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/smc_p08.png"
+          "visual_asset": "res://assets/atlas/planets/smc_p08.png",
+          "inhabited": false
         }
       ],
       "station": {
@@ -633,7 +659,8 @@
         "name_ru": "Живой архив",
         "fiction": true,
         "visual_asset": "res://assets/story/living_archive_lotus.png",
-        "placement": "free_deep_space_with_haze"
+        "placement": "free_deep_space_with_haze",
+        "accessible": true
       }
     },
     {
@@ -653,17 +680,18 @@
           "moons": [],
           "unique": "Кольцевой город в гигантском кратере.",
           "fiction": true,
-          "orbit": 245.0,
-          "period": 140.0,
+          "orbit": 245,
+          "period": 140,
           "phase": 0.38,
-          "size": 118.0,
+          "size": 118,
           "palette": [
             "#bc7f56",
             "#794a39",
             "#e3b27e"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p01.png"
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p01.png",
+          "inhabited": true
         },
         {
           "id": "ngc6822_p02",
@@ -677,17 +705,18 @@
           ],
           "unique": "Кристаллическая пещера с городом.",
           "fiction": true,
-          "orbit": 493.0,
-          "period": 229.0,
+          "orbit": 493,
+          "period": 229,
           "phase": 2.78,
-          "size": 144.0,
+          "size": 144,
           "palette": [
             "#a6a1b8",
             "#7259a8",
             "#ddd3e8"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p02.png"
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p02.png",
+          "inhabited": true
         },
         {
           "id": "ngc6822_p03",
@@ -699,17 +728,18 @@
           "moons": [],
           "unique": "Гигантский разрушенный звездолёт в скале.",
           "fiction": true,
-          "orbit": 741.0,
-          "period": 318.0,
+          "orbit": 741,
+          "period": 318,
           "phase": 5.18,
-          "size": 130.0,
+          "size": 130,
           "palette": [
             "#30313f",
             "#ba9452",
             "#9c8781"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p03.png"
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p03.png",
+          "inhabited": true
         },
         {
           "id": "ngc6822_p04",
@@ -724,17 +754,18 @@
           ],
           "unique": "Высокая статуя древнего механизма.",
           "fiction": true,
-          "orbit": 989.0,
-          "period": 407.0,
+          "orbit": 989,
+          "period": 407,
           "phase": 7.58,
-          "size": 160.0,
+          "size": 160,
           "palette": [
             "#85483b",
             "#594d51",
             "#cb8364"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p04.png"
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p04.png",
+          "inhabited": false
         },
         {
           "id": "ngc6822_p05",
@@ -746,17 +777,18 @@
           "moons": [],
           "unique": "Тёмная пирамида в подвижных дюнах.",
           "fiction": true,
-          "orbit": 1237.0,
-          "period": 496.0,
+          "orbit": 1237,
+          "period": 496,
           "phase": 9.98,
-          "size": 174.0,
+          "size": 174,
           "palette": [
             "#ddbc64",
             "#a67c4f",
             "#ffe0a6"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p05.png"
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p05.png",
+          "inhabited": false
         },
         {
           "id": "ngc6822_p06",
@@ -770,17 +802,18 @@
           ],
           "unique": "Громадное поле плит с неизвестным письмом.",
           "fiction": true,
-          "orbit": 1485.0,
-          "period": 585.0,
+          "orbit": 1485,
+          "period": 585,
           "phase": 12.38,
-          "size": 126.0,
+          "size": 126,
           "palette": [
             "#eee0c7",
             "#383f51",
             "#ad9a81"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p06.png"
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p06.png",
+          "inhabited": false
         },
         {
           "id": "ngc6822_p07",
@@ -796,17 +829,18 @@
           ],
           "unique": "Подземный город над озером.",
           "fiction": true,
-          "orbit": 1733.0,
-          "period": 674.0,
+          "orbit": 1733,
+          "period": 674,
           "phase": 14.78,
-          "size": 146.0,
+          "size": 146,
           "palette": [
             "#a34239",
             "#e2734b",
             "#43444d"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p07.png"
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p07.png",
+          "inhabited": false
         },
         {
           "id": "ngc6822_p08",
@@ -818,17 +852,18 @@
           "moons": [],
           "unique": "Одинокая древняя башня на плато.",
           "fiction": true,
-          "orbit": 1981.0,
-          "period": 763.0,
+          "orbit": 1981,
+          "period": 763,
           "phase": 17.18,
-          "size": 132.0,
+          "size": 132,
           "palette": [
             "#c6ad7e",
             "#895f3e",
             "#ecd1a1"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p08.png"
+          "visual_asset": "res://assets/atlas/previews/ngc6822/ngc6822_p08.png",
+          "inhabited": false
         }
       ],
       "station": {
@@ -837,7 +872,8 @@
         "name_ru": "Голова Титана",
         "fiction": true,
         "visual_asset": "res://assets/story/titan_skull_ngc6822.png",
-        "placement": "remote_asteroid_port_with_ring"
+        "placement": "remote_asteroid_port_with_ring",
+        "accessible": true
       }
     },
     {
@@ -857,17 +893,18 @@
           "moons": [],
           "unique": "Зеркальная обсерватория на дальней орбите.",
           "fiction": true,
-          "orbit": 245.0,
-          "period": 140.0,
+          "orbit": 245,
+          "period": 140,
           "phase": 0.38,
-          "size": 118.0,
+          "size": 118,
           "palette": [
             "#347ed0",
             "#d1edff",
             "#4a56b3"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m31_p01.png"
+          "visual_asset": "res://assets/atlas/planets/m31_p01.png",
+          "inhabited": false
         },
         {
           "id": "m31_p02",
@@ -885,17 +922,18 @@
           ],
           "unique": "Сеть сооружений на орбитах лун.",
           "fiction": true,
-          "orbit": 493.0,
-          "period": 229.0,
+          "orbit": 493,
+          "period": 229,
           "phase": 2.78,
-          "size": 144.0,
+          "size": 144,
           "palette": [
             "#738d85",
             "#d9d3aa",
             "#4b5f59"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m31_p02.png"
+          "visual_asset": "res://assets/atlas/planets/m31_p02.png",
+          "inhabited": false
         },
         {
           "id": "m31_p03",
@@ -907,17 +945,18 @@
           "moons": [],
           "unique": "Цепочка лабораторий в сумеречном поясе.",
           "fiction": true,
-          "orbit": 741.0,
-          "period": 318.0,
+          "orbit": 741,
+          "period": 318,
           "phase": 5.18,
-          "size": 130.0,
+          "size": 130,
           "palette": [
             "#ea6c39",
             "#162846",
             "#ffb265"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m31_p03.png"
+          "visual_asset": "res://assets/atlas/planets/m31_p03.png",
+          "inhabited": true
         },
         {
           "id": "m31_p04",
@@ -929,17 +968,18 @@
           "moons": [],
           "unique": "Роботизированный зонд над лавовым морем.",
           "fiction": true,
-          "orbit": 989.0,
-          "period": 407.0,
+          "orbit": 989,
+          "period": 407,
           "phase": 7.58,
-          "size": 160.0,
+          "size": 160,
           "palette": [
             "#292832",
             "#e16e22",
             "#eaad60"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m31_p04.png"
+          "visual_asset": "res://assets/atlas/planets/m31_p04.png",
+          "inhabited": false
         },
         {
           "id": "m31_p05",
@@ -953,17 +993,18 @@
           ],
           "unique": "Остановившийся гигантский механический город.",
           "fiction": true,
-          "orbit": 1237.0,
-          "period": 496.0,
+          "orbit": 1237,
+          "period": 496,
           "phase": 9.98,
-          "size": 174.0,
+          "size": 174,
           "palette": [
             "#f1f0da",
             "#c1a256",
             "#baafab"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m31_p05.png"
+          "visual_asset": "res://assets/atlas/planets/m31_p05.png",
+          "inhabited": false
         },
         {
           "id": "m31_p06",
@@ -978,17 +1019,18 @@
           ],
           "unique": "Геотермальные башни над кальдерой.",
           "fiction": true,
-          "orbit": 1485.0,
-          "period": 585.0,
+          "orbit": 1485,
+          "period": 585,
           "phase": 12.38,
-          "size": 126.0,
+          "size": 126,
           "palette": [
             "#5f5550",
             "#f7824a",
             "#9f9f9e"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m31_p06.png"
+          "visual_asset": "res://assets/atlas/planets/m31_p06.png",
+          "inhabited": false
         },
         {
           "id": "m31_p07",
@@ -1000,17 +1042,18 @@
           "moons": [],
           "unique": "Горный лабиринт, звучащий на ветру.",
           "fiction": true,
-          "orbit": 1733.0,
-          "period": 674.0,
+          "orbit": 1733,
+          "period": 674,
           "phase": 14.78,
-          "size": 146.0,
+          "size": 146,
           "palette": [
             "#c0b5a0",
             "#77949d",
             "#b9b8be"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m31_p07.png"
+          "visual_asset": "res://assets/atlas/planets/m31_p07.png",
+          "inhabited": false
         },
         {
           "id": "m31_p08",
@@ -1022,17 +1065,18 @@
           "moons": [],
           "unique": "Отдалённая орбитальная квантовая лаборатория.",
           "fiction": true,
-          "orbit": 1981.0,
-          "period": 763.0,
+          "orbit": 1981,
+          "period": 763,
           "phase": 17.18,
-          "size": 132.0,
+          "size": 132,
           "palette": [
             "#b9aedc",
             "#d9c3e1",
             "#9781c9"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m31_p08.png"
+          "visual_asset": "res://assets/atlas/planets/m31_p08.png",
+          "inhabited": false
         }
       ],
       "station": {
@@ -1041,7 +1085,8 @@
         "name_ru": "Перевёрнутая пирамида",
         "fiction": true,
         "visual_asset": "res://assets/story/inverted_pyramid_m31.png",
-        "placement": "independent_outer_sector_structure"
+        "placement": "independent_outer_sector_structure",
+        "accessible": true
       }
     },
     {
@@ -1061,17 +1106,18 @@
           "moons": [],
           "unique": "Поле зеркальных башен.",
           "fiction": true,
-          "orbit": 245.0,
-          "period": 140.0,
+          "orbit": 245,
+          "period": 140,
           "phase": 0.38,
-          "size": 118.0,
+          "size": 118,
           "palette": [
             "#6b7686",
             "#d1c2ac",
             "#9ba8ba"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m33_p01.png"
+          "visual_asset": "res://assets/atlas/planets/m33_p01.png",
+          "inhabited": true
         },
         {
           "id": "m33_p02",
@@ -1087,17 +1133,18 @@
           ],
           "unique": "Орбитальная учебная обсерватория.",
           "fiction": true,
-          "orbit": 493.0,
-          "period": 229.0,
+          "orbit": 493,
+          "period": 229,
           "phase": 2.78,
-          "size": 144.0,
+          "size": 144,
           "palette": [
             "#9d9080",
             "#514843",
             "#d2ba9e"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m33_p02.png"
+          "visual_asset": "res://assets/atlas/planets/m33_p02.png",
+          "inhabited": true
         },
         {
           "id": "m33_p03",
@@ -1111,17 +1158,18 @@
           ],
           "unique": "Мегаструктура с проекцией тессеракта.",
           "fiction": true,
-          "orbit": 741.0,
-          "period": 318.0,
+          "orbit": 741,
+          "period": 318,
           "phase": 5.18,
-          "size": 130.0,
+          "size": 130,
           "palette": [
             "#403454",
             "#8453ab",
             "#bc9bde"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m33_p03.png"
+          "visual_asset": "res://assets/atlas/planets/m33_p03.png",
+          "inhabited": true
         },
         {
           "id": "m33_p04",
@@ -1133,17 +1181,18 @@
           "moons": [],
           "unique": "Большой линзирующий телескоп.",
           "fiction": true,
-          "orbit": 989.0,
-          "period": 407.0,
+          "orbit": 989,
+          "period": 407,
           "phase": 7.58,
-          "size": 160.0,
+          "size": 160,
           "palette": [
             "#516b8a",
             "#26364b",
             "#b8cee8"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m33_p04.png"
+          "visual_asset": "res://assets/atlas/planets/m33_p04.png",
+          "inhabited": false
         },
         {
           "id": "m33_p05",
@@ -1155,17 +1204,18 @@
           "moons": [],
           "unique": "Сеть огромных маяков на поверхности.",
           "fiction": true,
-          "orbit": 1237.0,
-          "period": 496.0,
+          "orbit": 1237,
+          "period": 496,
           "phase": 9.98,
-          "size": 174.0,
+          "size": 174,
           "palette": [
             "#b8a271",
             "#656a6b",
             "#decf9a"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m33_p05.png"
+          "visual_asset": "res://assets/atlas/planets/m33_p05.png",
+          "inhabited": false
         },
         {
           "id": "m33_p06",
@@ -1179,17 +1229,18 @@
           ],
           "unique": "Защищённая подземная роботическая крепость.",
           "fiction": true,
-          "orbit": 1485.0,
-          "period": 585.0,
+          "orbit": 1485,
+          "period": 585,
           "phase": 12.38,
-          "size": 126.0,
+          "size": 126,
           "palette": [
             "#bc847e",
             "#e6b4b1",
             "#745662"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m33_p06.png"
+          "visual_asset": "res://assets/atlas/planets/m33_p06.png",
+          "inhabited": false
         },
         {
           "id": "m33_p07",
@@ -1204,17 +1255,18 @@
           ],
           "unique": "Башня небесного календаря.",
           "fiction": true,
-          "orbit": 1733.0,
-          "period": 674.0,
+          "orbit": 1733,
+          "period": 674,
           "phase": 14.78,
-          "size": 146.0,
+          "size": 146,
           "palette": [
             "#8199bd",
             "#9c78b2",
             "#d9ccd8"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m33_p07.png"
+          "visual_asset": "res://assets/atlas/planets/m33_p07.png",
+          "inhabited": false
         },
         {
           "id": "m33_p08",
@@ -1226,17 +1278,18 @@
           "moons": [],
           "unique": "Одинокий корабль под ледяным куполом.",
           "fiction": true,
-          "orbit": 1981.0,
-          "period": 763.0,
+          "orbit": 1981,
+          "period": 763,
           "phase": 17.18,
-          "size": 132.0,
+          "size": 132,
           "palette": [
             "#a6a5af",
             "#5c6e99",
             "#d3c8e5"
           ],
           "visual": "prototype",
-          "visual_asset": "res://assets/atlas/planets/m33_p08.png"
+          "visual_asset": "res://assets/atlas/planets/m33_p08.png",
+          "inhabited": false
         }
       ],
       "station": {
@@ -1245,7 +1298,8 @@
         "name_ru": "Последние врата",
         "fiction": true,
         "visual_asset": "res://assets/story/last_gate_m33.png",
-        "placement": "free_outer_sector_final_gateway_before_crossroads"
+        "placement": "free_outer_sector_final_gateway_before_crossroads",
+        "accessible": true
       }
     },
     {
