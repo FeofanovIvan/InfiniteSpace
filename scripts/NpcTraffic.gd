@@ -225,7 +225,6 @@ func _start_takeoff(npc: Dictionary, bodies: Array[Dictionary]) -> Dictionary:
 		npc["exit_world"] = _jump_point(here)
 	else:
 		npc["target"] = _choose_destination(current_port, bodies)
-	var destination: Vector2 = Vector2(npc["exit_world"]) if bool(npc["outbound"]) else _body_pos(bodies, str(npc["target"]))
 	# Face the actual outward departure path first. Steering toward the
 	# next waypoint starts only after the ship has cleared the surface.
 	var launch_direction: Vector2 = Vector2(npc["anchor_dir"])
