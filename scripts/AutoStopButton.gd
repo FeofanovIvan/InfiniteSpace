@@ -7,6 +7,7 @@ const CENTER: Vector2 = Vector2(92.0, 92.0)
 const HIT_RADIUS: float = 84.0
 var _touch_id: int = -1
 var _mouse_down: bool = false
+var _caption: Label
 
 
 func _ready() -> void:
@@ -14,7 +15,9 @@ func _ready() -> void:
     mouse_filter = Control.MOUSE_FILTER_IGNORE
     visible = false
     var caption: Label = Label.new()
-    caption.text = "СТОП"
+    caption.text = MobileLocale.t("stop")
+    _caption = caption
+    MobileLocale.language_changed.connect(_refresh_locale)
     caption.position = Vector2(47.0, 127.0)
     caption.size = Vector2(90.0, 24.0)
     caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -24,6 +27,10 @@ func _ready() -> void:
     add_child(caption)
     queue_redraw()
 
+
+func _refresh_locale(_code: String) -> void:
+    if _caption != null:
+        _caption.text = MobileLocale.t("stop")
 
 func _input(event: InputEvent) -> void:
     if not is_visible_in_tree():

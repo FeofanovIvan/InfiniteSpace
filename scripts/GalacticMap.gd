@@ -113,7 +113,17 @@ func _ready() -> void:
 	_close.pressed.connect(hide_map)
 	add_child(_close)
 	resized.connect(_reflow)
+	MobileLocale.language_changed.connect(_refresh_locale)
+	_refresh_locale(MobileLocale.language)
 	_reflow()
+
+func _refresh_locale(_new_locale: String) -> void:
+	if _title != null:
+		_title.text = MobileLocale.t("map_title")
+	if _footer != null:
+		_footer.text = MobileLocale.t("map_footer")
+	if _close != null:
+		_close.tooltip_text = MobileLocale.t("back_to_flight")
 
 func _process(delta: float) -> void:
 	if not visible:
@@ -159,6 +169,7 @@ func _reflow() -> void:
 	if _buttons.is_empty():
 		return
 	var view: Vector2 = size
+	var safe: Rect2 = MobileLocale.safe_rect(view)
 	_scale_factor = clampf(minf(view.x / 900.0, view.y / 540.0), 0.50, 1.18)
 	_node_size = 74.0 * _scale_factor
 	_positions.clear()
@@ -178,12 +189,12 @@ func _reflow() -> void:
 		var selected: bool = str(_systems[i]["id"]) == _current
 		_buttons[i].modulate = Color(1.0, 1.0, 1.0, 1.0) if selected else Color(0.92, 0.96, 1.0, 0.92)
 		_labels[i].add_theme_color_override("font_color", Color(1.0, 0.88, 0.52) if selected else Color(0.82, 0.92, 1.0))
-	_title.position = Vector2(0.0, maxf(2.0, view.y * 0.035))
+	_title.position = Vector2(0.0, maxf(safe.position.y, view.y * 0.035))
 	_title.size = Vector2(view.x, 32.0)
-	_footer.position = Vector2(0.0, view.y - 34.0)
+	_footer.position = Vector2(0.0, safe.end.y - 34.0)
 	_footer.size = Vector2(view.x, 30.0)
 	_close.size = Vector2.ONE * (50.0 * _scale_factor)
-	_close.position = Vector2(view.x - 58.0 * _scale_factor, 6.0 * _scale_factor)
+	_close.position = Vector2(safe.end.x - 54.0 * _scale_factor, safe.position.y + 3.0 * _scale_factor)
 	queue_redraw()
 
 func _draw() -> void:

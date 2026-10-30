@@ -7,6 +7,7 @@ signal asteroid_impact(asteroid_type: int, target_name: String, world_position: 
 
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const MAX_ASTEROIDS: int = 1
+const MAX_ASTEROIDS_FOREIGN: int = 4
 const MAX_DEBRIS: int = 350
 const ROCK_TYPES: Array[int] = [1, 3, 4, 6]
 const ROCK_TEXTURES: Array[Texture2D] = [
@@ -52,6 +53,13 @@ func set_camera_address(sector: Vector2i, local_position: Vector2, camera_offset
 func set_ship_world(ship_position: Vector2) -> void:
 	_ship_world = ship_position
 
+func reset_for_region(region_id: String) -> void:
+	# Never carry asteroid and collectible world coordinates across galaxies.
+	_asteroids.clear()
+	_debris.clear()
+	_spawn_timer = _rng.randf_range(5.0, 11.0) if region_id not in ["mw", "crossroads"] else _rng.randf_range(40.0, 65.0)
+	queue_redraw()
+
 
 func resize_view(view_size: Vector2) -> void:
 	_view_size = view_size
@@ -81,7 +89,8 @@ func _random_type() -> int:
 
 
 func _spawn_asteroid() -> void:
-	if _asteroids.size() >= MAX_ASTEROIDS:
+	var max_rocks: int = MAX_ASTEROIDS if _solar.current_id == "mw" else MAX_ASTEROIDS_FOREIGN
+	if _asteroids.size() >= max_rocks:
 		return
 	# Rare solar fly-by: a fixed, predictable arc around the Sun.
 	# It approaches, swings past the Sun outside its collision radius,
@@ -170,7 +179,7 @@ func _physics_process(delta: float) -> void:
 	_spawn_timer -= delta
 	if _spawn_timer <= 0.0:
 		_spawn_asteroid()
-		_spawn_timer = _rng.randf_range(60.0, 120.0)
+		_spawn_timer = _rng.randf_range(60.0, 120.0) if _solar.current_id == "mw" else _rng.randf_range(12.0, 23.0)
 	# One asteroid per F9 key press (no repeats while the key is held).
 	var f9_pressed: bool = Input.is_key_pressed(KEY_F9)
 	if f9_pressed and not _f9_was_pressed:
@@ -260,7 +269,7 @@ func _find_contact(position: Vector2, radius: float, bodies: Array[Dictionary]) 
 			body_radius = 96.0
 		if position.distance_squared_to(Vector2(body["world"])) <= pow(radius + body_radius, 2.0):
 			return name
-	if _npc != null and _npc.try_asteroid_impact(position, radius):
+	if _solar.current_id == "mw" and _npc != null and _npc.try_asteroid_impact(position, radius):
 		return "NPC"
 	return ""
 

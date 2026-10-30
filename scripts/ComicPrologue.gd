@@ -30,7 +30,7 @@ func _ready() -> void:
 	_skip = Button.new()
 	_skip.name = "SkipIntro"
 	_skip.text = "»"
-	_skip.tooltip_text = "Пропустить вступление"
+	_skip.tooltip_text = MobileLocale.t("skip")
 	_skip.add_theme_font_size_override("font_size", 36)
 	_skip.add_theme_color_override("font_color", Color(0.92, 0.97, 1.0))
 	var style: StyleBoxFlat = StyleBoxFlat.new()
@@ -45,6 +45,7 @@ func _ready() -> void:
 	_skip.pressed.connect(_request_skip)
 	_root.add_child(_skip)
 	get_viewport().size_changed.connect(_layout)
+	MobileLocale.language_changed.connect(_update_locale)
 	visible = false
 	_layout()
 
@@ -92,6 +93,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			_request_skip()
 			get_viewport().set_input_as_handled()
 
+func _update_locale(_locale: String) -> void:
+	_skip.tooltip_text = MobileLocale.t("skip")
+
 func _layout() -> void:
 	if not is_instance_valid(_root):
 		return
@@ -102,4 +106,5 @@ func _layout() -> void:
 		_intro.position = Vector2.ZERO
 		_intro.size = _view_size
 	_skip.size = Vector2(55.0, 52.0)
-	_skip.position = Vector2(_view_size.x - 68.0, 13.0)
+	var safe: Rect2 = MobileLocale.safe_rect(_view_size)
+	_skip.position = Vector2(safe.end.x - _skip.size.x - 6.0, safe.position.y + 6.0)

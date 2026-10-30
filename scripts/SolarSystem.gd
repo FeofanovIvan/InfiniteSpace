@@ -19,7 +19,6 @@ const SUN_BODY_SHADER: Shader = preload("res://solar/sun/sun_body.gdshader")
 const SUN_CORONA_SHADER: Shader = preload("res://solar/sun/sun_corona.gdshader")
 const SUN_TEXTURE: Texture2D = preload("res://solar/sun/sun_surface_1536x768.png")
 const SUN_FLOW: Texture2D = preload("res://solar/sun/sun_plasma_flow_512x256.png")
-const StationScene: PackedScene = preload("res://station2d/orbital_station_2d.tscn")
 # Station shells are anchored to planet CENTERS, not to the rotating surface.
 # All 8 planets remain visible. Only five worlds have inhabited infrastructure.
 const STATION_SHELL_SCENES: Dictionary = {
@@ -40,14 +39,15 @@ const SUN_DIAMETER: float = 186.0
 const CORONA_DIAMETER: float = 300.0
 const EARTH_DIAMETER: float = 120.0
 const MOON_DIAMETER: float = 38.0
-const MOON_ORBIT_RADIUS: float = 116.0
+const MOON_ORBIT_RADIUS: float = 136.0
 const MOON_ORBIT_PERIOD_SECONDS: float = 48.0
-const MOON_TEXTURE: Texture2D = preload("res://assets/solar/moon_surface.png")
+const MoonLibrary = preload("res://scripts/MoonLibrary.gd")
 const OUTER_ORBIT_RADIUS: float = 1950.0
 const INITIAL_SHIP_POSITION: Vector2 = Vector2(650.0, 35.0)
-const STATION_LOCAL_ORBIT: float = 210.0
-const STATION_PERIOD_SECONDS: float = 95.0
-const STATION_DIAMETER: float = 114.0
+# One standalone repair shipyard, placed beyond the outer planet/moon envelope.
+# This is a game-layout coordinate, not an astronomical location claim.
+const REMOTE_SHIPYARD_WORLD: Vector2 = Vector2(-2150.0, 1850.0)
+const REMOTE_SHIPYARD_ARRIVAL_RADIUS: float = 165.0
 
 # Compressed gameplay orbits remain identical to v0.9; graphics now use MIKO V3.
 # The 'spin' values match the signed demo spin periods provided by MIKO V3.
@@ -63,10 +63,8 @@ const PLANET_ORBITS = [
 
 var _sun: Node2D
 var _earth
-var _moon: Sprite2D
+var _moon: Node2D
 var _moon_phase: float = 2.40
-var _station: Node2D
-var _station_phase: float = 1.30
 var _orbit_phase: float = 0.0
 var _camera_world: Vector2 = INITIAL_SHIP_POSITION
 var _view_size: Vector2 = Vector2(1280.0, 720.0)
@@ -84,12 +82,6 @@ func _ready() -> void:
 	_earth.set_rotation_period(55.0)
 	_earth.set_atmosphere(0.8)
 	_build_moon()
-	_station = StationScene.instantiate() as Node2D
-	_station.name = "EarthOrbitalStation_MIKO"
-	add_child(_station)
-	_station.call("set_station_diameter", STATION_DIAMETER)
-	_station.call("set_spin_period", 68.0)
-	_station.call("set_module_count", 12)
 	for definition in PLANET_ORBITS:
 		var data: Dictionary = definition.duplicate()
 		var planet_name: String = str(data["name"])
@@ -112,12 +104,12 @@ func _ready() -> void:
 func _build_moon() -> void:
 	# One lightweight sprite; the orbital POSITION moves while the Moon's
 	# appearance itself does not need a heavy extra planet shader.
-	_moon = Sprite2D.new()
-	_moon.name = "MoonOrbitingEarth"
-	_moon.texture = MOON_TEXTURE
-	_moon.centered = true
-	_moon.scale = Vector2.ONE * (MOON_DIAMETER / float(MOON_TEXTURE.get_width()))
-	_moon.z_index = 0
+	_moon = MoonLibrary.make_moon("mw_p01_m01", MOON_DIAMETER + 9.0)
+	if _moon == null:
+		push_error("Cannot instantiate supplied Earth Moon")
+		return
+	_moon.name = "MoonOrbitingEarth_mw_p01_m01"
+	_moon.z_index = 4
 	add_child(_moon)
 
 
@@ -183,7 +175,6 @@ func _build_sun() -> void:
 
 func _process(delta: float) -> void:
 	_orbit_phase = wrapf(_orbit_phase + TAU * delta / ORBIT_PERIOD_SECONDS, 0.0, TAU)
-	_station_phase = wrapf(_station_phase + TAU * delta / STATION_PERIOD_SECONDS, 0.0, TAU)
 	_moon_phase = wrapf(_moon_phase + TAU * delta / MOON_ORBIT_PERIOD_SECONDS, 0.0, TAU)
 	for i in range(_planet_data.size()):
 		var data: Dictionary = _planet_data[i]
@@ -196,7 +187,10 @@ func earth_world_position() -> Vector2:
 
 
 func station_world_position() -> Vector2:
-	return earth_world_position() + Vector2(cos(_station_phase), sin(_station_phase)) * STATION_LOCAL_ORBIT
+	# The retired EarthOrbitStation sprite is deliberately NOT instantiated.
+	# Legacy EarthStation NPC routes and the new st_mw destination refer to
+	# exactly the same remote shipyard; no duplicate visual station is created.
+	return REMOTE_SHIPYARD_WORLD
 
 
 func get_target_state(target_id: String) -> Dictionary:
@@ -209,10 +203,8 @@ func get_target_state(target_id: String) -> Dictionary:
 		var earth_pos: Vector2 = earth_world_position()
 		return {"valid": true, "world": earth_pos, "velocity": Vector2(-earth_pos.y, earth_pos.x) * TAU / ORBIT_PERIOD_SECONDS, "arrival_radius": 76.0}
 	if target_id == "EarthStation":
-		var earth_state: Dictionary = get_target_state("Earth")
-		var station_relative: Vector2 = Vector2(cos(_station_phase), sin(_station_phase)) * STATION_LOCAL_ORBIT
-		return {"valid": true, "world": earth_world_position() + station_relative,
-			"velocity": earth_state["velocity"] + Vector2(-station_relative.y, station_relative.x) * TAU / STATION_PERIOD_SECONDS, "arrival_radius": 67.0}
+		return {"valid": true, "world": REMOTE_SHIPYARD_WORLD,
+			"velocity": Vector2.ZERO, "arrival_radius": REMOTE_SHIPYARD_ARRIVAL_RADIUS}
 	for data in _planet_data:
 		if str(data["name"]) == target_id:
 			var orbit_radius: float = float(data["orbit"])
@@ -255,16 +247,16 @@ func _update_visual_positions() -> void:
 	var sun_screen: Vector2 = SUN_WORLD - _camera_world + viewport_center
 	var earth_world: Vector2 = earth_world_position()
 	var earth_screen: Vector2 = earth_world - _camera_world + viewport_center
-	var station_screen: Vector2 = station_world_position() - _camera_world + viewport_center
-	_station.position = station_screen
-	_station.visible = _is_visible(station_screen, STATION_DIAMETER)
 	_sun.position = sun_screen
 	_earth.position = earth_screen
 	_sun.visible = _is_visible(sun_screen, CORONA_DIAMETER)
 	_earth.visible = _is_visible(earth_screen, EARTH_DIAMETER)
 	var moon_screen: Vector2 = moon_world_position() - _camera_world + viewport_center
 	_moon.position = moon_screen
-	_moon.visible = _is_visible(moon_screen, MOON_DIAMETER)
+	_moon.visible = _is_visible(moon_screen, MOON_DIAMETER + 9.0)
+	if _moon.visible:
+		var moon_sun_dir: Vector2 = (SUN_WORLD - moon_world_position()).normalized()
+		_moon.call("set_light_direction", Vector3(moon_sun_dir.x * 0.7, moon_sun_dir.y * 0.7, 0.72))
 	if _station_shells.has("Earth"):
 		var earth_shell: Node2D = _station_shells["Earth"] as Node2D
 		earth_shell.position = earth_screen

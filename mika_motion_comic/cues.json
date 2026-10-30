@@ -1,0 +1,199 @@
+[
+  {
+    "id": "01_world",
+    "start": 0.65,
+    "end": 5.35,
+    "style": "title",
+    "speaker": "NARRATOR",
+    "voice": "Aerelia. A world above the clouds.",
+    "text": "AERELIA",
+    "secondary": "A WORLD ABOVE THE CLOUDS",
+    "x": 70,
+    "y": 498,
+    "image_path": "res://mika_motion_comic/captions/01_world.png"
+  },
+  {
+    "id": "02_peace",
+    "start": 5.9,
+    "end": 9.75,
+    "style": "caption",
+    "speaker": "NARRATOR",
+    "voice": "A place where life floated in the sky.",
+    "text": "A PLACE WHERE LIFE",
+    "secondary": "FLOATED IN THE SKY.",
+    "x": 55,
+    "y": 555,
+    "image_path": "res://mika_motion_comic/captions/02_peace.png"
+  },
+  {
+    "id": "03_mika",
+    "start": 9.9,
+    "end": 12.9,
+    "style": "balloon",
+    "speaker": "MIKA",
+    "voice": "What is happening?",
+    "text": "WHAT'S HAPPENING?",
+    "x": 55,
+    "y": 78,
+    "w": 575,
+    "tail": [
+      810,
+      380
+    ],
+    "image_path": "res://mika_motion_comic/captions/03_mika.png"
+  },
+  {
+    "id": "04_alert",
+    "start": 13.55,
+    "end": 19.85,
+    "style": "radio",
+    "speaker": "BROADCASTER",
+    "voice": "Emergency! A Chronostorm is approaching Aerelia!",
+    "text": "EMERGENCY TRANSMISSION",
+    "secondary": "A CHRONOSTORM IS COMING!",
+    "x": 63,
+    "y": 490,
+    "w": 820,
+    "image_path": "res://mika_motion_comic/captions/04_alert.png"
+  },
+  {
+    "id": "05_space",
+    "start": 21.15,
+    "end": 25.75,
+    "style": "caption",
+    "speaker": "BROADCASTER",
+    "voice": "It bends space...",
+    "text": "IT BENDS SPACE...",
+    "x": 63,
+    "y": 52,
+    "image_path": "res://mika_motion_comic/captions/05_space.png"
+  },
+  {
+    "id": "06_time",
+    "start": 26.45,
+    "end": 30.45,
+    "style": "caption",
+    "speaker": "BROADCASTER",
+    "voice": "...and fractures time!",
+    "text": "...AND FRACTURES TIME!",
+    "x": 63,
+    "y": 52,
+    "image_path": "res://mika_motion_comic/captions/06_time.png"
+  },
+  {
+    "id": "07_danger",
+    "start": 30.65,
+    "end": 35.3,
+    "style": "urgent",
+    "speaker": "BROADCASTER",
+    "voice": "Our world is breaking apart!",
+    "text": "OUR WORLD IS",
+    "secondary": "BREAKING APART!",
+    "x": 65,
+    "y": 516,
+    "image_path": "res://mika_motion_comic/captions/07_danger.png"
+  },
+  {
+    "id": "08_question",
+    "start": 37.2,
+    "end": 41.05,
+    "style": "balloon",
+    "speaker": "MIKA",
+    "voice": "What can we do?",
+    "text": "WHAT CAN WE DO?",
+    "x": 62,
+    "y": 50,
+    "w": 550,
+    "tail": [
+      535,
+      465
+    ],
+    "image_path": "res://mika_motion_comic/captions/08_question.png"
+  },
+  {
+    "id": "09_answer",
+    "start": 41.25,
+    "end": 46.65,
+    "style": "balloon",
+    "speaker": "FRIEND",
+    "voice": "Find the Crossroads of Worlds!",
+    "text": "FIND THE CROSSROADS",
+    "secondary": "OF WORLDS!",
+    "x": 620,
+    "y": 485,
+    "w": 602,
+    "tail": [
+      928,
+      415
+    ],
+    "image_path": "res://mika_motion_comic/captions/09_answer.png"
+  },
+  {
+    "id": "10_depart",
+    "start": 48.55,
+    "end": 52.4,
+    "style": "balloon",
+    "speaker": "MIKA",
+    "voice": "I'll find it!",
+    "text": "I'LL FIND IT!",
+    "x": 67,
+    "y": 69,
+    "w": 478,
+    "tail": [
+      640,
+      300
+    ],
+    "image_path": "res://mika_motion_comic/captions/10_depart.png"
+  },
+  {
+    "id": "11_quest",
+    "start": 52.6,
+    "end": 55.2,
+    "style": "caption",
+    "speaker": "NARRATOR",
+    "voice": "And so, Mika set off into the unknown.",
+    "text": "INTO THE UNKNOWN...",
+    "x": 66,
+    "y": 560,
+    "image_path": "res://mika_motion_comic/captions/11_quest.png"
+  },
+  {
+    "id": "12_follow",
+    "start": 57.05,
+    "end": 61.55,
+    "style": "caption",
+    "speaker": "NARRATOR",
+    "voice": "But the storm was faster.",
+    "text": "BUT THE STORM",
+    "secondary": "WAS FASTER.",
+    "x": 65,
+    "y": 52,
+    "image_path": "res://mika_motion_comic/captions/12_follow.png"
+  },
+  {
+    "id": "13_caught",
+    "start": 62.8,
+    "end": 67.3,
+    "style": "balloon",
+    "speaker": "MIKA",
+    "voice": "No! It found me!",
+    "text": "NO! IT FOUND ME!",
+    "x": 720,
+    "y": 477,
+    "w": 512,
+    "tail": null,
+    "image_path": "res://mika_motion_comic/captions/13_caught.png"
+  },
+  {
+    "id": "14_scream",
+    "start": 67.8,
+    "end": 70.6,
+    "style": "scream",
+    "speaker": "MIKA",
+    "voice": "Aaaah!",
+    "text": "AAAAAAH!",
+    "x": 750,
+    "y": 450,
+    "image_path": "res://mika_motion_comic/captions/14_scream.png"
+  }
+]

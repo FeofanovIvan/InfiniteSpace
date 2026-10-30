@@ -207,9 +207,16 @@
       ],
       "station": {
         "id": "st_mw",
-        "name_en": "Callisto Shipyard",
-        "name_ru": "Орбитальная верфь Каллисто",
-        "fiction": true
+        "name_en": "Outer Repair Shipyard",
+        "name_ru": "Дальняя ремонтная верфь",
+        "fiction": true,
+        "placement": {
+          "mode": "fixed_outer_solar_system",
+          "x": -2150,
+          "y": 1850,
+          "primary_body": "Sun",
+          "gameplay_override": "User-directed relocation from Callisto orbit to outer system; not a moon satellite."
+        }
       }
     },
     {
@@ -414,7 +421,9 @@
         "id": "st_lmc",
         "name_en": "Tarantula Laboratory Ship",
         "name_ru": "Лабораторный корабль «Тарантул»",
-        "fiction": true
+        "fiction": true,
+        "visual_asset": "res://assets/story/tarantula_lab_ship.png",
+        "placement": "free_deep_space"
       }
     },
     {
@@ -622,7 +631,9 @@
         "id": "st_smc",
         "name_en": "Living Archive",
         "name_ru": "Живой архив",
-        "fiction": true
+        "fiction": true,
+        "visual_asset": "res://assets/story/living_archive_lotus.png",
+        "placement": "free_deep_space_with_haze"
       }
     },
     {
@@ -824,7 +835,9 @@
         "id": "st_ngc6822",
         "name_en": "Titan Head Pirate Port",
         "name_ru": "Голова Титана",
-        "fiction": true
+        "fiction": true,
+        "visual_asset": "res://assets/story/titan_skull_ngc6822.png",
+        "placement": "remote_asteroid_port_with_ring"
       }
     },
     {
@@ -1026,7 +1039,9 @@
         "id": "st_m31",
         "name_en": "Inverted Pyramid",
         "name_ru": "Перевёрнутая пирамида",
-        "fiction": true
+        "fiction": true,
+        "visual_asset": "res://assets/story/inverted_pyramid_m31.png",
+        "placement": "independent_outer_sector_structure"
       }
     },
     {
@@ -1228,7 +1243,9 @@
         "id": "st_m33",
         "name_en": "Last Gate",
         "name_ru": "Последние врата",
-        "fiction": true
+        "fiction": true,
+        "visual_asset": "res://assets/story/last_gate_m33.png",
+        "placement": "free_outer_sector_final_gateway_before_crossroads"
       }
     },
     {
