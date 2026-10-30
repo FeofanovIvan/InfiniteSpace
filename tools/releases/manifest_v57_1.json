@@ -1,0 +1,18 @@
+{
+  "version": "v57.1",
+  "requires": "release/v56-installed-snapshot",
+  "source_git_blobs": {
+    "scripts/Main.gd": "9fdfd8d99886ea923b4a322de15eea6a2a9a697a",
+    "scripts/AsteroidField.gd": "a3282080ceaa78c0905062e1bc2c1c5d5c18bdbe",
+    "scripts/RightStatusHUD.gd": "62ce460ad97d97bd9dffccf12347856df908bfe9"
+  },
+  "target_git_blobs": {
+    "scripts/Main.gd": "259f6ec127206276062de0e0d43e506e5cf534a1",
+    "scripts/AsteroidField.gd": "f0094e514a44003cff95928582a6db1840dc00a7",
+    "scripts/RightStatusHUD.gd": "621852a83a3038e2ee073e5af4dd97d58a5ee9e0"
+  },
+  "extra_files": {
+    "reports/V57_CRYSTAL_FUEL_MAGNET_RU.md": "5afb153264e0624f07c3cab22d8b883f275c1785f8b31618e8de9db29276ea64",
+    "tools/check_v57.py": "abd2549b4fdd430eaf80357f1ba1068435740429168a48917c17fe435347576e"
+  }
+}
