@@ -1,5 +1,5 @@
 extends Node2D
-## v55: Native LMC, SMC, NGC6822, Andromeda/M31 and M33 share one anchored landing/takeoff controller.
+## v56: Adjacent-system cargo and passenger exchange, retaining native fleets and nose-first warps.
 ## Every sprite records its true local nose (including up-facing -Y artwork).
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const INNER_LIGHT: Shader = preload("res://shaders/alien_inner_light.gdshader")
@@ -82,6 +82,22 @@ const M31_CLASSES: Array[Dictionary] = [
     {"role":"interceptor", "label":"Andromeda Fast Patrol Interceptor", "speed":162.0, "turn":3.40, "size":0.130, "dwell":0.8, "light":Color(0.54,0.63,1.0), "glow":0.89, "nose_axis":0.0},
     {"role":"guardian", "label":"Andromeda Diplomatic Guardian", "speed":116.0, "turn":2.12, "size":0.104, "dwell":2.2, "light":Color(0.69,0.55,1.0), "glow":0.77, "nose_axis":0.0}
 ]
+# Trade links are gameplay adjacency, not a claim about precise astronomical distance.
+# Only civilian merchant/freight/passenger classes may transfer.
+const TRADE_NEIGHBORS: Dictionary = {
+    "mw": ["lmc", "ngc6822"],
+    "lmc": ["smc", "mw"],
+    "smc": ["lmc"],
+    "ngc6822": ["mw"],
+    "m31": ["m33"],
+    "m33": ["m31"]
+}
+const TRADE_ROLES: Array[String] = ["cargo", "freighter", "merchant", "liner", "shuttle"]
+const MAX_ACTIVE_TRADE_TRIPS: int = 2
+const TRADE_LAUNCH_INTERVAL: float = 65.0
+const TRANSFER_HYPERSPACE_DELAY: float = 5.0
+const TRANSFER_OFFSCREEN_TTL: float = 95.0
+const WARP_ARRIVAL_TIME: float = 0.68
 const LOCAL_SHIP_COUNT: int = 7
 const APPROACH_RADIUS: float = 250.0
 const APPROACH_SECONDS: float = 1.65
@@ -101,12 +117,200 @@ var _rng: RandomNumberGenerator = RandomNumberGenerator.new()
 var _view: Vector2 = Vector2(1280.0, 720.0)
 var _camera_world: Vector2 = Vector2.ZERO
 var _time: float = 0.0
+# These remain alive across set_region() and hold real origin/class identity.
+# Records contain source, destination, home, art_id, id, eta and expiry.
+var _trade_manifest: Array[Dictionary] = []
+var _trade_trip_seq: int = 1
+var _active_trade_ids: Dictionary = {}
+var _last_trade_departure: float = -10000.0
+var _last_offscreen_trade: Dictionary = {}
+
+func _wall_seconds() -> float:
+    return float(Time.get_ticks_msec()) / 1000.0
+
+func _eligible_for_trade(item: Dictionary) -> bool:
+    return TRADE_ROLES.has(str(item.get("role", ""))) and not bool(item.get("is_visitor", false))
+
+func _trade_neighbor(home: String) -> String:
+    var options: Array = TRADE_NEIGHBORS.get(home, [])
+    if options.is_empty():
+        return ""
+    return str(options[_rng.randi_range(0, options.size() - 1)])
+
+func _reserve_trade(item: Dictionary) -> String:
+    if not _eligible_for_trade(item):
+        return ""
+    if _active_trade_ids.size() >= MAX_ACTIVE_TRADE_TRIPS:
+        return ""
+    if _wall_seconds() - _last_trade_departure < TRADE_LAUNCH_INTERVAL:
+        return ""
+    # Ordinary routes dominate; only one outbound candidate per window.
+    if _rng.randf() >= 0.48:
+        return ""
+    var neighbor: String = _trade_neighbor(_region)
+    if neighbor == "":
+        return ""
+    var new_id: int = _trade_trip_seq
+    _trade_trip_seq += 1
+    item["trip_id"] = new_id
+    _active_trade_ids[new_id] = true
+    _last_trade_departure = _wall_seconds()
+    return neighbor
+
+func _queue_transfer(item: Dictionary, destination: String, returning: bool) -> void:
+    if destination == "" or not TRADE_NEIGHBORS.has(destination):
+        return
+    var now: float = _wall_seconds()
+    _trade_manifest.append({
+        "id": int(item["trip_id"]),
+        "source": _region,
+        "destination": destination,
+        "home": str(item["home_system"]),
+        "art_id": int(item["class_id"]),
+        "returning": returning,
+        "eta": now + TRANSFER_HYPERSPACE_DELAY,
+        "expires": now + TRANSFER_OFFSCREEN_TTL
+    })
+
+func _prune_offscreen_transfers() -> void:
+    var now: float = _wall_seconds()
+    for index in range(_trade_manifest.size() - 1, -1, -1):
+        var record: Dictionary = _trade_manifest[index]
+        if now < float(record["expires"]):
+            continue
+        if bool(record["returning"]):
+            # Safety net: restore a ship if no one visited its home in time.
+            if _region == str(record["home"]):
+                for item in _ships:
+                    if int(item.get("trip_id", 0)) == int(record["id"]) and str(item.get("mode", "")) == "offworld":
+                        item["mode"] = "waiting"
+                        item["timer"] = 0.7
+                        item["transfer_to"] = ""
+                        item["trip_id"] = 0
+                        break
+            _active_trade_ids.erase(int(record["id"]))
+            _trade_manifest.remove_at(index)
+        else:
+            # If the player never visited the destination, the remote delivery
+            # happened off-screen; its return becomes eligible in its home world.
+            record["source"] = str(record["destination"])
+            record["destination"] = str(record["home"])
+            record["returning"] = true
+            record["eta"] = now + TRANSFER_HYPERSPACE_DELAY
+            record["expires"] = now + TRANSFER_OFFSCREEN_TTL
+            _trade_manifest[index] = record
+
+func _save_departing_visitors() -> void:
+    # Persist a visitor's return even when a system change interrupts its stay.
+    for item in _ships:
+        if not bool(item.get("is_visitor", false)):
+            continue
+        if str(item.get("mode", "")) == "offworld":
+            continue
+        if bool(item.get("returning", false)):
+            # It already arrived home; its trip is complete.
+            _active_trade_ids.erase(int(item["trip_id"]))
+            continue
+        _queue_transfer(item, str(item["home_system"]), true)
+
+func _start_warp_arrival(item: Dictionary, ports: Array[Dictionary]) -> void:
+    var port: int = int(item["target_index"])
+    var direction: Vector2 = Vector2.from_angle(float(item["trip_id"]) * 1.39 + 0.61)
+    item["entry_direction"] = direction
+    item["entry_outer"] = _port_world(ports, port) + direction * 1550.0
+    item["entry_inner"] = _port_world(ports, port) + direction * 485.0
+    item["world"] = item["entry_outer"]
+    item["mode"] = "warp_in"
+    item["timer"] = 0.0
+    item["velocity"] = Vector2.ZERO
+    (item["image"] as Sprite2D).rotation = (-direction).angle() - float(item["nose_axis"])
+
+func _spawn_trade_arrivals(ports: Array[Dictionary]) -> void:
+    var now: float = _wall_seconds()
+    var started: int = 0
+    for index in range(_trade_manifest.size() - 1, -1, -1):
+        var record: Dictionary = _trade_manifest[index]
+        if str(record["destination"]) != _region or now < float(record["eta"]):
+            continue
+        if started >= MAX_ACTIVE_TRADE_TRIPS:
+            break
+        var trip_id: int = int(record["id"])
+        var ship: Dictionary = {}
+        if bool(record["returning"]):
+            for item in _ships:
+                if int(item.get("trip_id", 0)) == trip_id and str(item.get("mode", "")) == "offworld":
+                    ship = item
+                    break
+        if ship.is_empty():
+            var before: int = _ships.size()
+            _spawn_ship(int(record["art_id"]), 4 + before, ports, str(record["home"]))
+            ship = _ships.back()
+        ship["home_system"] = str(record["home"])
+        ship["is_visitor"] = str(record["home"]) != _region
+        ship["returning"] = bool(record["returning"])
+        ship["trip_id"] = trip_id
+        ship["transfer_to"] = str(record["home"]) if bool(ship["is_visitor"]) else ""
+        ship["stops_left"] = 1 if bool(ship["is_visitor"]) else 2
+        ship["target_index"] = int(trip_id) % ports.size()
+        ship["port_index"] = int(ship["target_index"])
+        _start_warp_arrival(ship, ports)
+        if bool(record["returning"]):
+            _active_trade_ids.erase(trip_id)
+        _trade_manifest.remove_at(index)
+        started += 1
+
+func _spawn_ambient_trader(ports: Array[Dictionary]) -> void:
+    # Distant systems can have a trade arrival even when the departure happened
+    # entirely off-camera. At most one such arrival per region per 120 seconds.
+    if _region == "crossroads" or _active_trade_ids.size() >= MAX_ACTIVE_TRADE_TRIPS:
+        return
+    for item in _ships:
+        if bool(item.get("is_visitor", false)) and str(item.get("mode", "")) != "offworld":
+            return
+    var now: float = _wall_seconds()
+    if now - float(_last_offscreen_trade.get(_region, -10000.0)) < 120.0:
+        return
+    var partners: Array = TRADE_NEIGHBORS.get(_region, [])
+    if partners.is_empty():
+        return
+    # Never swamp newly selected systems; one visiting trader is sufficient.
+    var source: String = str(partners[_rng.randi_range(0, partners.size() - 1)])
+    if source == "mw":
+        # The Solar native sprites are driven separately; show nearby LMC/NGC
+        # exports instead of inventing a new Solar ship art family.
+        return
+    var classes: Array[Dictionary] = _class_library_for(source)
+    var eligible: Array[int] = []
+    for i in range(classes.size()):
+        if TRADE_ROLES.has(str(classes[i]["role"])):
+            eligible.append(i)
+    if eligible.is_empty():
+        return
+    var trip_id: int = _trade_trip_seq
+    _trade_trip_seq += 1
+    _active_trade_ids[trip_id] = true
+    _last_offscreen_trade[_region] = now
+    var art_id: int = eligible[_rng.randi_range(0, eligible.size()-1)]
+    _spawn_ship(art_id, 4 + _ships.size(), ports, source)
+    var ship: Dictionary = _ships.back()
+    ship["home_system"] = source
+    ship["is_visitor"] = true
+    ship["returning"] = false
+    ship["trip_id"] = trip_id
+    ship["transfer_to"] = source
+    ship["stops_left"] = 1
+    ship["target_index"] = trip_id % ports.size()
+    ship["port_index"] = int(ship["target_index"])
+    _start_warp_arrival(ship, ports)
 
 func configure(atlas: Node) -> void:
     _atlas = atlas
 
 func _class_library() -> Array[Dictionary]:
-    match _region:
+    return _class_library_for(_region)
+
+func _class_library_for(system_id: String) -> Array[Dictionary]:
+    match system_id:
         "lmc":
             return LMC_CLASSES
         "ngc6822":
@@ -119,7 +323,10 @@ func _class_library() -> Array[Dictionary]:
             return SHIP_CLASSES
 
 func _texture_library() -> Array[Texture2D]:
-    match _region:
+    return _texture_library_for(_region)
+
+func _texture_library_for(system_id: String) -> Array[Texture2D]:
+    match system_id:
         "lmc":
             return LMC_ART
         "ngc6822":
@@ -132,13 +339,15 @@ func _texture_library() -> Array[Texture2D]:
             return ALIEN_ART
 
 func set_region(region_id: String) -> void:
+    _save_departing_visitors()
+    _prune_offscreen_transfers()
     _region = region_id
     for item in _ships:
         var image: Sprite2D = item["image"]
         image.queue_free()
     _ships.clear()
     _time = 0.0
-    visible = NATIVE_SYSTEMS.has(_region)
+    visible = NATIVE_SYSTEMS.has(_region) or _region == "mw"
     set_physics_process(visible)
     if not visible:
         return
@@ -157,9 +366,13 @@ func set_region(region_id: String) -> void:
     if ports.size() < 2:
         set_physics_process(false)
         return
-    var art_count: int = _texture_library().size()
-    for i in range(LOCAL_SHIP_COUNT):
-        _spawn_ship(i % art_count, i, ports)
+    if NATIVE_SYSTEMS.has(_region):
+        var art_count: int = _texture_library().size()
+        for i in range(LOCAL_SHIP_COUNT):
+            _spawn_ship(i % art_count, i, ports)
+    _spawn_trade_arrivals(ports)
+    if _trade_manifest.is_empty():
+        _spawn_ambient_trader(ports)
     _update_images()
 
 func set_camera_address(sector: Vector2i, local_position: Vector2, camera_offset: Vector2) -> void:
@@ -193,11 +406,12 @@ func _smooth(value: float) -> float:
 func _anchor(item: Dictionary, ports: Array[Dictionary]) -> Vector2:
     return _port_world(ports, int(item["port_index"])) + Vector2(item["anchor_dir"]) * _landing_offset(ports, int(item["port_index"]))
 
-func _spawn_ship(art_id: int, index: int, ports: Array[Dictionary]) -> void:
-    var info: Dictionary = _class_library()[art_id]
+func _spawn_ship(art_id: int, index: int, ports: Array[Dictionary], home_system: String = "") -> void:
+    var source_system: String = home_system if home_system != "" else _region
+    var info: Dictionary = _class_library_for(source_system)[art_id]
     var image: Sprite2D = Sprite2D.new()
-    image.name = "%s_%s_%02d" % [_region.to_upper(), str(info["role"]), index]
-    image.texture = _texture_library()[art_id]
+    image.name = "%s_%s_%02d" % [source_system.to_upper(), str(info["role"]), index]
+    image.texture = _texture_library_for(source_system)[art_id]
     image.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
     image.z_index = 1
     var material: ShaderMaterial = ShaderMaterial.new()
@@ -211,7 +425,7 @@ func _spawn_ship(art_id: int, index: int, ports: Array[Dictionary]) -> void:
     var wake: Node2D = ShipMotionFX.new()
     wake.name = "Wake_%02d" % index
     wake.z_index = -1
-    if _region == "m31":
+    if source_system == "m31":
         # The wake points toward local -X by default. Rotate it to the
         # negative of the actual ship nose, including vertical (+/-Y) sprites.
         wake.rotation = float(info.get("nose_axis", 0.0))
@@ -228,6 +442,8 @@ func _spawn_ship(art_id: int, index: int, ports: Array[Dictionary]) -> void:
     var item: Dictionary = {
         "image":image, "wake":wake, "light_color":info["light"],
         "role":info["role"], "label":info["label"], "class_id":art_id, "nose_axis":nose_axis,
+        "home_system":source_system, "is_visitor":false, "returning":false,
+        "transfer_to":"", "trip_id":0,
         "world":origin, "velocity":Vector2.ZERO,
         "target_index":target, "port_index":target,
         "speed":float(info["speed"]) * _rng.randf_range(0.94, 1.06),
@@ -295,6 +511,10 @@ func _jump_destination(from_world: Vector2) -> Vector2:
 func _start_takeoff(item: Dictionary, ports: Array[Dictionary]) -> void:
     item["stops_left"] = int(item["stops_left"]) - 1
     item["outbound"] = int(item["stops_left"]) <= 0
+    if bool(item["outbound"]) and bool(item.get("is_visitor", false)):
+        item["transfer_to"] = str(item["home_system"])
+    elif bool(item["outbound"]) and not bool(item.get("returning", false)):
+        item["transfer_to"] = _reserve_trade(item)
     var port: int = int(item["port_index"])
     if bool(item["outbound"]):
         item["exit_world"] = _jump_destination(_port_world(ports, port))
@@ -327,6 +547,22 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
         item["timer"] = float(item["timer"]) - delta
         if float(item["timer"]) <= 0.0:
             _start_takeoff(item, ports)
+        return
+    if mode == "offworld":
+        # Original ship is absent until its manifest brings it home.
+        return
+    if mode == "warp_in":
+        var entry_t: float = _smooth(elapsed / WARP_ARRIVAL_TIME)
+        var entry_a: Vector2 = item["entry_outer"]
+        var entry_b: Vector2 = item["entry_inner"]
+        var entry_direction: Vector2 = (entry_b - entry_a).normalized()
+        image.rotation = entry_direction.angle() - nose_axis
+        item["world"] = entry_a.lerp(entry_b, entry_t)
+        item["velocity"] = entry_direction * HyperjumpMotion.dash_speed(entry_t) * 0.12
+        item["timer"] = elapsed
+        if elapsed >= WARP_ARRIVAL_TIME:
+            item["mode"] = "cruise"
+            item["timer"] = 0.0
         return
     if mode == "waiting":
         item["timer"] = float(item["timer"]) - delta
@@ -411,9 +647,15 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
         item["velocity"] = forward * HyperjumpMotion.dash_speed(t)
         item["timer"] = elapsed
         if t >= 1.0:
-            item["mode"] = "waiting"
-            item["timer"] = REENTRY_SECONDS + _rng.randf_range(0.0, 1.2)
-            item["velocity"] = Vector2.ZERO
+            var next_system: String = str(item.get("transfer_to", ""))
+            if next_system != "":
+                _queue_transfer(item, next_system, bool(item.get("is_visitor", false)))
+                item["mode"] = "offworld"
+                item["velocity"] = Vector2.ZERO
+            else:
+                item["mode"] = "waiting"
+                item["timer"] = REENTRY_SECONDS + _rng.randf_range(0.0, 1.2)
+                item["velocity"] = Vector2.ZERO
         return
     # Cruise uses the true sprite nose for both +X and -X native textures.
     var target: Vector2 = Vector2(item["exit_world"]) if bool(item["outbound"]) else _port_world(ports, int(item["target_index"]))
@@ -437,12 +679,14 @@ func _process_ship(item: Dictionary, ports: Array[Dictionary], delta: float) -> 
     item["timer"] = elapsed
 
 func _physics_process(delta: float) -> void:
-    if not NATIVE_SYSTEMS.has(_region):
+    if not visible:
         return
     _time += delta
+    _prune_offscreen_transfers()
     var ports: Array[Dictionary] = _available_ports()
     if ports.size() < 2:
         return
+    _spawn_trade_arrivals(ports)
     for i in range(_ships.size()):
         var item: Dictionary = _ships[i]
         _process_ship(item, ports, delta)
@@ -451,11 +695,11 @@ func _physics_process(delta: float) -> void:
     queue_redraw()
 
 func _draw() -> void:
-    if not NATIVE_SYSTEMS.has(_region):
+    if not visible:
         return
     for item in _ships:
         var mode: String = str(item["mode"])
-        if mode not in ["charge", "dash", "hover", "landing", "takeoff"]:
+        if mode not in ["charge", "dash", "warp_in", "hover", "landing", "takeoff"]:
             continue
         var screen: Vector2 = Vector2(item["world"]) - _camera_world + _view * 0.5
         if screen.x < -300.0 or screen.y < -300.0 or screen.x > _view.x + 300.0 or screen.y > _view.y + 300.0:
@@ -463,9 +707,9 @@ func _draw() -> void:
         var glow: Color = item["light_color"]
         if mode == "charge":
             NpcJumpVisual.draw_charge(self, screen, clampf(float(item["timer"]) / CHARGE_SECONDS, 0.0, 1.0), glow)
-        elif mode == "dash":
+        elif mode in ["dash", "warp_in"]:
             # FX rotation uses nose_axis; Solar FX code expects local -Y.
-            NpcJumpVisual.draw_dash(self, screen, (item["image"] as Sprite2D).rotation + float(item["nose_axis"]) + PI * 0.5, clampf(float(item["timer"]) / DASH_SECONDS, 0.0, 1.0), glow)
+            NpcJumpVisual.draw_dash(self, screen, (item["image"] as Sprite2D).rotation + float(item["nose_axis"]) + PI * 0.5, clampf(float(item["timer"]) / (WARP_ARRIVAL_TIME if mode == "warp_in" else DASH_SECONDS), 0.0, 1.0), glow)
         else:
             var lift: float = 1.0 if mode == "hover" else 0.65
             draw_arc(screen, 18.0 + 4.0 * sin(_time * 2.2), 0.0, TAU, 30, Color(glow, 0.20 * lift), 1.5, true)
@@ -476,7 +720,7 @@ func _update_images() -> void:
         var mode: String = str(item["mode"])
         var screen: Vector2 = Vector2(item["world"]) - _camera_world + _view * 0.5
         image.position = screen
-        var data: Dictionary = _class_library()[int(item["class_id"])]
+        var data: Dictionary = _class_library_for(str(item["home_system"]))[int(item["class_id"])]
         var base_scale: float = float(data["size"])
         var factor: float = 1.0
         if mode == "approach":
@@ -491,11 +735,18 @@ func _update_images() -> void:
             factor = 0.82 + 0.18 * _smooth(float(item["timer"]) / DEPART_SECONDS)
         elif mode == "dash":
             factor = 1.0 + 0.45 * _smooth(float(item["timer"]) / DASH_SECONDS)
+        elif mode == "warp_in":
+            factor = 1.35 - 0.35 * _smooth(float(item["timer"]) / WARP_ARRIVAL_TIME)
         image.scale = Vector2.ONE * base_scale * maxf(0.0, factor)
-        image.modulate.a = 1.0 if mode != "dash" else 1.0 - 0.72 * _smooth(float(item["timer"]) / DASH_SECONDS)
+        if mode == "dash":
+            image.modulate.a = 1.0 - 0.72 * _smooth(float(item["timer"]) / DASH_SECONDS)
+        elif mode == "warp_in":
+            image.modulate.a = 0.35 + 0.65 * _smooth(float(item["timer"]) / WARP_ARRIVAL_TIME)
+        else:
+            image.modulate.a = 1.0
         var moving: float = Vector2(item["velocity"]).length() / maxf(1.0, float(item["speed"]))
         if mode in ["approach", "hover", "landing", "docked", "takeoff", "waiting", "align_jump", "charge"]:
             moving = 0.0
         var wake: Node2D = item["wake"]
         wake.call("update_motion", _time, clampf(moving, 0.0, 1.0), item["light_color"])
-        image.visible = NATIVE_SYSTEMS.has(_region) and mode not in ["docked", "waiting"] and screen.x > -330.0 and screen.y > -330.0 and screen.x < _view.x + 330.0 and screen.y < _view.y + 330.0
+        image.visible = visible and mode not in ["docked", "waiting", "offworld"] and screen.x > -330.0 and screen.y > -330.0 and screen.x < _view.x + 330.0 and screen.y < _view.y + 330.0
