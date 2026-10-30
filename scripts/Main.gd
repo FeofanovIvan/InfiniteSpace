@@ -684,8 +684,15 @@ func _advance_warp(delta: float) -> void:
 			_warp_velocity = _warp_velocity.move_toward(Vector2.ZERO, 340.0 * delta)
 			_story_move_to(here + _warp_velocity * delta)
 			ship.throttle = 0.1
+			# v47: finish aligning the visible nose (-Y) to the real jump vector.
+			var intended_heading: float = _warp_direction.angle() + PI * 0.5
+			_ship_heading = lerp_angle(_ship_heading, intended_heading, minf(1.0, delta * 9.0))
+			ship.rotation = _ship_heading
+			var heading_error: float = absf(wrapf(intended_heading - _ship_heading, -PI, PI))
 			_warp_overlay.show_charge(clampf(_warp_time / HyperjumpMotion.CHARGE_TIME, 0.0, 1.0), ship.position)
-			if _warp_time >= HyperjumpMotion.CHARGE_TIME:
+			if _warp_time >= HyperjumpMotion.CHARGE_TIME and heading_error < 0.015:
+				_ship_heading = intended_heading
+				ship.rotation = intended_heading
 				_warp_phase = "dash_out"
 				_warp_time = 0.0
 				_gameplay_hud.visible = false
@@ -696,7 +703,9 @@ func _advance_warp(delta: float) -> void:
 			# and scale-increase. No translucent tunnel or fade/shrink.
 			_warp_time += delta
 			var departure_progress: float = clampf(_warp_time / HyperjumpMotion.DASH_TIME, 0.0, 1.0)
-			_story_move_to(here + _warp_direction * HyperjumpMotion.dash_speed(departure_progress) * delta)
+			ship.rotation = _ship_heading
+			var nose_forward: Vector2 = Vector2.from_angle(_ship_heading - PI * 0.5)
+			_story_move_to(here + nose_forward * HyperjumpMotion.dash_speed(departure_progress) * delta)
 			ship.scale = Vector2.ONE * NpcJumpVisual.dash_ship_scale(departure_progress)
 			ship.modulate = Color.WHITE
 			ship.throttle = 1.0
@@ -725,7 +734,9 @@ func _advance_warp(delta: float) -> void:
 		"dash_in":
 			_warp_time += delta
 			var arrival_progress: float = clampf(_warp_time / HyperjumpMotion.DASH_TIME, 0.0, 1.0)
-			_story_move_to(here + _warp_direction * HyperjumpMotion.dash_speed(arrival_progress) * delta)
+			ship.rotation = _ship_heading
+			var arrival_nose: Vector2 = Vector2.from_angle(_ship_heading - PI * 0.5)
+			_story_move_to(here + arrival_nose * HyperjumpMotion.dash_speed(arrival_progress) * delta)
 			ship.scale = Vector2.ONE * NpcJumpVisual.dash_ship_scale(arrival_progress)
 			ship.modulate = Color.WHITE
 			ship.throttle = 1.0
