@@ -1,350 +1,428 @@
-@tool
 extends Control
-## Separate interactive translator/tablet. All frames, keyboard keys and
-## bubbles are native Godot controls. No background screenshot is embedded.
-## Example exercise: press P, R, I, V, E, T -> displayed Cyrillic "Привет".
-
-signal progress_changed(character_count: int)
+## v60: full-height chat in the RIGHT HALF of the screen.
+## Upper half is message history; lower half is a genuine six-layout, on-screen
+## keyboard. Free input is always allowed; bright keys suggest sample answers.
 signal message_sent(phrase: String)
+signal progress_changed(character_count: int)
 
-@export var representative_name: String = "Представитель Земли"
-@export var representative_role: String = "Учёный Земного Союза"
-@export var target_phrase: String = "Привет"
-@export var key_sequence: String = "PRIVET"
+const LANGUAGES: Array[String] = ["ru", "en", "fr", "de", "es", "pt_BR"]
+const LANGUAGE_NAMES: Dictionary = {"ru":"РУС", "en":"ENG", "fr":"FRA", "de":"DEU", "es":"ESP", "pt_BR":"POR"}
+const GREETINGS: Dictionary = {"ru":"Привет!", "en":"Hello!", "fr":"Bonjour !", "de":"Hallo!", "es":"¡Hola!", "pt_BR":"Olá!"}
+# v60: localized response to a wrong answer. An incorrect answer must not
+# advance the current exercise or silently accept arbitrary text.
+const NOT_UNDERSTOOD: Dictionary = {
+	"ru": "Я тебя не понимаю. Повтори.",
+	"en": "I don't understand you. Please try again.",
+	"fr": "Je ne te comprends pas. Répète, s'il te plaît.",
+	"de": "Ich verstehe dich nicht. Wiederhole bitte.",
+	"es": "No te entiendo. Repítelo, por favor.",
+	"pt_BR": "Não entendo você. Repita, por favor."
+}
+const COLOR_SAMPLES: Dictionary = {"ru":"голубой", "en":"light blue", "fr":"bleu clair", "de":"hellblau", "es":"azul claro", "pt_BR":"azul-claro"}
+const KEYBOARD_ROWS: Dictionary = {
+	"ru": ["йцукенгшщзх", "фывапролджэ", "ячсмитьбюё"],
+	"en": ["qwertyuiop", "asdfghjkl", "zxcvbnm"],
+	"fr": ["azertyuiop", "qsdfghjklm", "wxcvbnéèàù"],
+	"de": ["qwertzuiopü", "asdfghjklöä", "yxcvbnmß"],
+	"es": ["qwertyuiop", "asdfghjklñ", "zxcvbnmáéíóú"],
+	"pt_BR": ["qwertyuiop", "asdfghjklç", "zxcvbnmáéíóú"]
+}
+const NUMBER_ROWS: Array[String] = ["1234567890", "-/:;()$&@\"", ".,?!'+=%#*", ""]
+const PHRASES: Dictionary = {
+	"ru": {"send":"➤", "reset":"Заново", "space":"пробел", "letters":"АБВ", "numbers":"123", "hint":"Подсказка:", "typing":"печатает…", "you":"Ты", "done":"Спасибо! Теперь мы знакомы.", "ask":"Расскажи мне о себе!", "free":"Можешь написать любой ответ"},
+	"en": {"send":"➤", "reset":"Restart", "space":"space", "letters":"ABC", "numbers":"123", "hint":"Try:", "typing":"typing…", "you":"You", "done":"Thank you! Nice to meet you.", "ask":"Tell me about yourself!", "free":"You may write any answer"},
+	"fr": {"send":"➤", "reset":"Recommencer", "space":"espace", "letters":"ABC", "numbers":"123", "hint":"Essaie :", "typing":"écrit…", "you":"Toi", "done":"Merci ! Enchanté.", "ask":"Parle-moi de toi !", "free":"Tu peux écrire ce que tu veux"},
+	"de": {"send":"➤", "reset":"Neu", "space":"Leer", "letters":"ABC", "numbers":"123", "hint":"Tipp:", "typing":"schreibt…", "you":"Du", "done":"Danke! Schön, dich kennenzulernen.", "ask":"Erzähl mir von dir!", "free":"Du kannst frei antworten"},
+	"es": {"send":"➤", "reset":"Reiniciar", "space":"espacio", "letters":"ABC", "numbers":"123", "hint":"Pista:", "typing":"escribiendo…", "you":"Tú", "done":"¡Gracias! Encantado.", "ask":"¡Cuéntame sobre ti!", "free":"Puedes escribir libremente"},
+	"pt_BR": {"send":"➤", "reset":"Reiniciar", "space":"espaço", "letters":"ABC", "numbers":"123", "hint":"Dica:", "typing":"digitando…", "you":"Você", "done":"Obrigado! Prazer em conhecer você.", "ask":"Conte um pouco sobre você!", "free":"Pode escrever livremente"}
+}
 
-var _message_scroll: ScrollContainer
-var _messages: VBoxContainer
-var _name_label: Label
-var _role_label: Label
-var _input_label: Label
-var _status_label: Label
+var _chat_scroll: ScrollContainer
+var _chat_messages: VBoxContainer
+var _input: LineEdit
 var _send_button: Button
-var _reset_button: Button
-var _voice_button: Button
-var _key_rows: Array = []
-var _key_buttons: Dictionary = {}
-var _typed_count: int = 0
-var _completed: bool = false
-var _entered: String = ""
-
-const LAYOUT_ROWS: Array = [
-    ["Q","W","E","R","T","Y","U","I","O","P"],
-    ["A","S","D","F","G","H","J","K","L"],
-    ["Z","X","C","V","B","N","M","⌫"]
-]
+var _hint: Label
+var _typing_indicator: Label
+var _locale_buttons: Array[Button] = []
+var _key_rows: Array[HBoxContainer] = []
+var _keyboard_buttons: Array[Button] = []
+var _row_containers: Array[HBoxContainer] = []
+var _keyboard: Control
+var _keyboard_mode: String = "letters"
+var _shift: bool = false
+var _locale: String = "ru"
+var _turn: int = 0
+var _pending_text: String = ""
+var _typing_seconds: float = 0.0
+var _profile: Dictionary = {}
+var _questions: Array = []
+var _ready_ui: bool = false
 
 func _ready() -> void:
-    mouse_filter = Control.MOUSE_FILTER_STOP
-    _name_label = _label("RepresentativeName", representative_name, 23, Color("eef9ff"))
-    _role_label = _label("RepresentativeRole", representative_role, 16, Color("9ec6e4"))
-    _message_scroll = ScrollContainer.new()
-    _message_scroll.name = "ChatHistory"
-    _message_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-    _message_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
-    _message_scroll.clip_contents = true
-    add_child(_message_scroll)
-    _messages = VBoxContainer.new()
-    _messages.name = "Messages"
-    _messages.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-    _messages.add_theme_constant_override("separation", 12)
-    _message_scroll.add_child(_messages)
-    _input_label = _label("TypedText", "", 27, Color("062441"))
-    _status_label = _label("TypingStatus", "", 15, Color("91cdec"))
-    _voice_button = _make_button("VoiceButton", "▶", false)
-    _voice_button.tooltip_text = "Озвучивание — следующий этап разработки"
-    _voice_button.pressed.connect(_on_voice_pressed)
-    for row_values in LAYOUT_ROWS:
-        var buttons: Array = []
-        for key in row_values:
-            var key_button: Button = _make_button("Key_" + key, str(key), true)
-            key_button.pressed.connect(_on_key_pressed.bind(str(key)))
-            if key == "⌫":
-                key_button.tooltip_text = "Удалить последнюю букву"
-            else:
-                _key_buttons[str(key)] = key_button
-            buttons.append(key_button)
-        _key_rows.append(buttons)
-    _reset_button = _make_button("ResetExercise", "ЗАНОВО", true)
-    _reset_button.pressed.connect(reset_exercise)
-    _send_button = _make_button("SendMessage", "➤  ОТПРАВИТЬ", true)
-    _send_button.pressed.connect(_on_send)
-    resized.connect(_relayout)
-    reset_exercise()
-    _relayout()
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	_build_ui()
+	var loc: Node = get_node_or_null("/root/MobileLocale")
+	_locale = str(loc.get("language")) if loc != null else "ru"
+	if not LANGUAGES.has(_locale):
+		_locale = "en"
+	var db: Node = get_node_or_null("/root/ChildProfileStore")
+	if db != null:
+		_profile = db.get("profile")
+		_questions = db.call("get_questions")
+	if _profile.is_empty():
+		_profile = {"name":"Алися", "age":3, "favorite_color":"голубой"}
+	_ready_ui = true
+	resized.connect(_relayout)
+	reset_exercise()
+	_relayout()
 
-func _label(node_name: String, value: String, font_px: int, color_value: Color) -> Label:
-    var label: Label = Label.new()
-    label.name = node_name
-    label.text = value
-    label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-    label.add_theme_font_size_override("font_size", font_px)
-    label.add_theme_color_override("font_color", color_value)
-    label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-    label.clip_text = true
-    add_child(label)
-    return label
+func _build_ui() -> void:
+	_chat_scroll = ScrollContainer.new()
+	_chat_scroll.name = "ChatHistory"
+	_chat_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_chat_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	_chat_scroll.clip_contents = true
+	_chat_scroll.mouse_filter = Control.MOUSE_FILTER_STOP
+	add_child(_chat_scroll)
+	_chat_messages = VBoxContainer.new()
+	_chat_messages.name = "Messages"
+	_chat_messages.add_theme_constant_override("separation", 10)
+	_chat_messages.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_chat_scroll.add_child(_chat_messages)
+	_typing_indicator = Label.new()
+	_typing_indicator.name = "RepresentativeTyping"
+	_typing_indicator.add_theme_color_override("font_color", Color("8ed4f9"))
+	_typing_indicator.add_theme_font_size_override("font_size", 17)
+	_typing_indicator.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_typing_indicator)
+	_input = LineEdit.new()
+	_input.name = "FreeTextEntry"
+	_input.placeholder_text = "Напиши сообщение…"
+	_input.max_length = 160
+	_input.virtual_keyboard_enabled = false
+	_input.add_theme_font_size_override("font_size", 21)
+	_input.add_theme_color_override("font_color", Color("eaf8ff"))
+	_input.text_changed.connect(_on_text_changed)
+	_input.text_submitted.connect(func(_v: String): _on_send())
+	var field_style := StyleBoxFlat.new()
+	field_style.bg_color = Color("10243b")
+	field_style.border_color = Color("4599cb")
+	field_style.set_border_width_all(1)
+	field_style.set_corner_radius_all(12)
+	field_style.set_content_margin_all(12)
+	_input.add_theme_stylebox_override("normal", field_style)
+	_input.add_theme_stylebox_override("focus", field_style)
+	add_child(_input)
+	_send_button = _make_key("SendMessage", "➤")
+	_send_button.add_theme_color_override("font_color", Color.WHITE)
+	_send_button.pressed.connect(_on_send)
+	add_child(_send_button)
+	_hint = Label.new()
+	_hint.name = "SuggestedAnswer"
+	_hint.add_theme_color_override("font_color", Color("f7d894"))
+	_hint.add_theme_font_size_override("font_size", 15)
+	_hint.clip_text = true
+	_hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_hint)
+	_keyboard = Control.new()
+	_keyboard.name = "SixLanguageKeyboard"
+	_keyboard.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_keyboard)
+	for lang in LANGUAGES:
+		var lang_button: Button = _make_key("Language_" + lang, str(LANGUAGE_NAMES[lang]))
+		lang_button.pressed.connect(_change_language.bind(lang))
+		_keyboard.add_child(lang_button)
+		_locale_buttons.append(lang_button)
+	for i in range(4):
+		var row := HBoxContainer.new()
+		row.name = "KeysRow_%d" % i
+		row.add_theme_constant_override("separation", 4)
+		_keyboard.add_child(row)
+		_row_containers.append(row)
+	_rebuild_keyboard()
 
-func _make_button(node_name: String, value: String, strong: bool) -> Button:
-    var button: Button = Button.new()
-    button.name = node_name
-    button.text = value
-    button.focus_mode = Control.FOCUS_NONE
-    button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-    button.add_theme_font_size_override("font_size", 23 if strong else 19)
-    button.add_theme_color_override("font_color", Color("f2faff"))
-    button.add_theme_color_override("font_hover_color", Color.WHITE)
-    add_child(button)
-    return button
+func _make_key(node_name: String, key_label: String) -> Button:
+	var b: Button = Button.new()
+	b.name = node_name
+	b.text = key_label
+	b.focus_mode = Control.FOCUS_NONE
+	b.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	b.add_theme_font_size_override("font_size", 20)
+	b.add_theme_color_override("font_color", Color("e8f5ff"))
+	b.add_theme_color_override("font_hover_color", Color.WHITE)
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color("244564")
+	style.border_color = Color("3a6f99")
+	style.set_border_width_all(1)
+	style.set_corner_radius_all(7)
+	b.add_theme_stylebox_override("normal", style)
+	var hover: StyleBoxFlat = style.duplicate() as StyleBoxFlat
+	hover.bg_color = Color("37688c")
+	b.add_theme_stylebox_override("hover", hover)
+	b.add_theme_stylebox_override("pressed", hover)
+	b.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	return b
 
-func _button_style(button: Button, highlighted: bool = false, variant: String = "key") -> void:
-    var base: StyleBoxFlat = StyleBoxFlat.new()
-    base.set_corner_radius_all(8)
-    base.set_border_width_all(2)
-    if variant == "send":
-        base.bg_color = Color("0566d6") if not button.disabled else Color("193f61")
-        base.border_color = Color("39d6ff") if not button.disabled else Color("396d8b")
-    elif variant == "small":
-        base.bg_color = Color("0a395f")
-        base.border_color = Color("2e83b6")
-    elif highlighted:
-        base.bg_color = Color("d97918")
-        base.border_color = Color("ffe695")
-        base.shadow_color = Color(1.0,0.46,0.10,0.78)
-        base.shadow_size = 7
-    else:
-        base.bg_color = Color("0a335f")
-        base.border_color = Color("246eaa")
-    button.add_theme_stylebox_override("normal",base)
-    var hover: StyleBoxFlat = base.duplicate() as StyleBoxFlat
-    hover.bg_color = base.bg_color.lightened(0.22)
-    button.add_theme_stylebox_override("hover",hover)
-    var pressed: StyleBoxFlat = base.duplicate() as StyleBoxFlat
-    pressed.bg_color = base.bg_color.darkened(0.22)
-    button.add_theme_stylebox_override("pressed",pressed)
-    button.add_theme_stylebox_override("focus",StyleBoxEmpty.new())
-    var disabled_style: StyleBoxFlat = base.duplicate() as StyleBoxFlat
-    disabled_style.bg_color = Color("142e4b")
-    disabled_style.border_color = Color("284c6f")
-    button.add_theme_stylebox_override("disabled",disabled_style)
-    button.add_theme_color_override("font_disabled_color",Color("6f94b0"))
+func _rebuild_keyboard() -> void:
+	for row in _row_containers:
+		for child in row.get_children():
+			row.remove_child(child)
+			child.queue_free()
+	_keyboard_buttons.clear()
+	var rows: Array = NUMBER_ROWS if _keyboard_mode == "numbers" else KEYBOARD_ROWS[_locale]
+	for i in range(3):
+		var sequence: String = str(rows[i])
+		for j in range(sequence.length()):
+			var character: String = sequence.substr(j, 1)
+			var display: String = character.to_upper() if _shift else character
+			var b: Button = _make_key("Key_%d_%d" % [i,j], display)
+			b.pressed.connect(_on_key.bind(display))
+			_row_containers[i].add_child(b)
+			_keyboard_buttons.append(b)
+	var controls: Array[String] = ["123" if _keyboard_mode == "letters" else str(_labels().get("letters", "ABC")), "⇧", ",", " ", ".", "⌫"]
+	for c in controls:
+		var b: Button = _make_key("Control_" + str(c.unicode_at(0)), c)
+		b.pressed.connect(_on_key.bind(c))
+		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		if c == " ":
+			b.size_flags_stretch_ratio = 4.0
+			b.text = str(PHRASES.get(_locale, PHRASES["ru"]).get("space"))
+		_row_containers[3].add_child(b)
+		_keyboard_buttons.append(b)
+	_relayout()
+	_refresh_hint()
+
+func _change_language(lang: String) -> void:
+	_locale = lang
+	_keyboard_mode = "letters"
+	_shift = false
+	_rebuild_keyboard()
+	_refresh_hint()
+
+func _on_key(c: String) -> void:
+	match c:
+		"123", "АБВ", "ABC":
+			_keyboard_mode = "numbers" if _keyboard_mode == "letters" else "letters"
+			_rebuild_keyboard()
+			return
+		"⇧":
+			_shift = not _shift
+			_rebuild_keyboard()
+			return
+		"⌫":
+			var pos: int = _input.caret_column
+			if pos > 0:
+				_input.text = _input.text.substr(0, pos - 1) + _input.text.substr(pos)
+				_input.caret_column = pos - 1
+		" ":
+			_insert_at_cursor(" ")
+		_:
+			_insert_at_cursor(c)
+	_refresh_hint()
+
+func _insert_at_cursor(character: String) -> void:
+	var pos: int = _input.caret_column
+	_input.text = _input.text.substr(0, pos) + character + _input.text.substr(pos)
+	_input.caret_column = pos + character.length()
+
+func _on_text_changed(_content: String) -> void:
+	_refresh_hint()
+
+func _labels() -> Dictionary:
+	return PHRASES.get(_locale, PHRASES["en"])
+
+func _sample_answer() -> String:
+	match _turn:
+		0:
+			return str(GREETINGS.get(_locale, GREETINGS["en"])).trim_suffix("!").trim_prefix("¡")
+		1:
+			return str(_profile.get("name", "Алися"))
+		2:
+			return str(_profile.get("age", 3))
+		3:
+			return str(COLOR_SAMPLES.get(_locale, "голубой"))
+	return ""
+
+func _refresh_hint() -> void:
+	if _hint == null:
+		return
+	var target: String = _sample_answer()
+	_hint.text = (str(_labels().get("hint")) + " " + target) if not target.is_empty() else str(_labels().get("free"))
+	var entered: String = _input.text.to_lower()
+	var hint_word: String = target.to_lower()
+	var next_letter: String = hint_word.substr(entered.length(), 1) if hint_word.begins_with(entered) and entered.length() < hint_word.length() else ""
+	for button in _keyboard_buttons:
+		var old: StyleBoxFlat = button.get_theme_stylebox("normal") as StyleBoxFlat
+		if old == null:
+			continue
+		old.bg_color = Color("ab7327") if button.text.to_lower() == next_letter and not next_letter.is_empty() else Color("244564")
+		button.add_theme_stylebox_override("normal", old)
+	progress_changed.emit(entered.length())
+
+func _add_message(text: String, from_child: bool) -> void:
+	var row := HBoxContainer.new()
+	row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var spacer := Control.new()
+	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	if from_child:
+		row.add_child(spacer)
+	var panel := PanelContainer.new()
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color("175b8e") if from_child else Color("243b55")
+	style.set_corner_radius_all(13)
+	style.set_content_margin_all(12)
+	panel.add_theme_stylebox_override("panel", style)
+	var label := Label.new()
+	label.text = text
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.add_theme_font_size_override("font_size", 19)
+	label.add_theme_color_override("font_color", Color.WHITE)
+	label.custom_minimum_size.x = maxf(130.0, size.x * 0.65)
+	panel.add_child(label)
+	row.add_child(panel)
+	if not from_child:
+		row.add_child(spacer)
+	_chat_messages.add_child(row)
+	_chat_scroll.call_deferred("set", "scroll_vertical", 999999)
 
 func reset_exercise() -> void:
-    if _messages == null:
-        return
-    _entered = ""
-    _typed_count = 0
-    _completed = false
-    for child in _messages.get_children():
-        _messages.remove_child(child)
-        child.queue_free()
-    _add_bubble("Привет!", "Hello!", false)
-    _status_label.text = "Ввод с подсказкой · латиница → русский"
-    _refresh_entry()
+	_turn = 0
+	_typing_seconds = 0.0
+	_pending_text = ""
+	_input.text = ""
+	for node in _chat_messages.get_children():
+		_chat_messages.remove_child(node)
+		node.queue_free()
+	_queue_npc(str(GREETINGS.get(_locale, GREETINGS["en"])))
+	_refresh_hint()
 
-func _add_bubble(message: String, translated: String, sent_by_player: bool) -> void:
-    var row: HBoxContainer = HBoxContainer.new()
-    row.name = "PlayerMessage" if sent_by_player else "RepresentativeMessage"
-    row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-    row.add_theme_constant_override("separation", 5)
-    var spacer: Control = Control.new()
-    spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-    if sent_by_player:
-        row.add_child(spacer)
-    var bubble: PanelContainer = PanelContainer.new()
-    bubble.name = "MessageBubble"
-    var panel_style: StyleBoxFlat = StyleBoxFlat.new()
-    panel_style.bg_color = Color("104e83") if sent_by_player else Color("385a80")
-    panel_style.border_color = Color("37baff") if sent_by_player else Color("6b9ac6")
-    panel_style.set_border_width_all(1)
-    panel_style.set_corner_radius_all(14)
-    panel_style.content_margin_left = 18
-    panel_style.content_margin_right = 18
-    panel_style.content_margin_top = 10
-    panel_style.content_margin_bottom = 10
-    bubble.add_theme_stylebox_override("panel",panel_style)
-    var content: VBoxContainer = VBoxContainer.new()
-    content.add_theme_constant_override("separation", 4)
-    var original: Label = Label.new()
-    original.text = message
-    original.add_theme_color_override("font_color",Color.WHITE)
-    original.add_theme_font_size_override("font_size",21)
-    content.add_child(original)
-    var translation: Label = Label.new()
-    translation.text = translated
-    translation.add_theme_color_override("font_color",Color("b8d7f0"))
-    translation.add_theme_font_size_override("font_size",16)
-    content.add_child(translation)
-    bubble.add_child(content)
-    row.add_child(bubble)
-    if not sent_by_player:
-        row.add_child(spacer)
-    _messages.add_child(row)
-    _messages.queue_sort()
-    if not Engine.is_editor_hint():
-        call_deferred("_scroll_to_latest")
+func _queue_npc(message: String) -> void:
+	_pending_text = message
+	_typing_seconds = 0.9 + minf(float(message.length()) * 0.025, 1.1)
+	_typing_indicator.text = "● ● ●   " + str(_labels().get("typing"))
+	_send_button.disabled = true
 
-func _scroll_to_latest() -> void:
-    if is_instance_valid(_message_scroll):
-        _message_scroll.scroll_vertical = int(_message_scroll.get_v_scroll_bar().max_value)
+func _process(delta: float) -> void:
+	if _typing_seconds <= 0.0:
+		return
+	_typing_seconds -= delta
+	if _typing_seconds <= 0.0:
+		_add_message(_pending_text, false)
+		_pending_text = ""
+		_typing_indicator.text = ""
+		_send_button.disabled = false
 
-func _on_key_pressed(key: String) -> void:
-    if key == "⌫":
-        _delete_last()
-    else:
-        _type_letter(key)
+# Only a known answer to the current prompt advances the scripted exercise.
+# Normalization tolerates case, punctuation and repeated spaces. Children may
+# still type ANY text; unrecognized answers receive a friendly immediate reply.
+func _normalize_answer(value: String) -> String:
+	var normalized: String = value.to_lower().strip_edges()
+	for mark in ["!", "?", ".", ",", ";", ":", "¡", "¿", "…", "«", "»", "'"]:
+		normalized = normalized.replace(mark, "")
+	while normalized.contains("  "):
+		normalized = normalized.replace("  ", " ")
+	return normalized.strip_edges()
 
-func _type_letter(key: String) -> void:
-    if _completed or _typed_count >= target_phrase.length():
-        return
-    var expected: String = key_sequence.substr(_typed_count,1).to_upper()
-    if key.to_upper() != expected:
-        _status_label.text = "Следующая клавиша: " + expected
-        return
-    _typed_count += 1
-    _entered = target_phrase.substr(0,_typed_count)
-    _status_label.text = "Отлично! Продолжай" if _typed_count < target_phrase.length() else "Фраза набрана — можно отправлять!"
-    _refresh_entry()
 
-func _delete_last() -> void:
-    if _completed or _typed_count == 0:
-        return
-    _typed_count -= 1
-    _entered = target_phrase.substr(0,_typed_count)
-    _status_label.text = "Последний символ удалён"
-    _refresh_entry()
+func _answer_matches_expected(answer: String) -> bool:
+	# Conversation can become free-form after the initial four prompts.
+	if _turn >= 4:
+		return true
+	var typed: String = _normalize_answer(answer)
+	var expected: String = _normalize_answer(_sample_answer())
+	if typed.is_empty():
+		return false
+	if typed == expected:
+		return true
+	match _turn:
+		0:
+			# Greetings in any of the six languages are meaningful.
+			for greeting in GREETINGS.values():
+				if typed == _normalize_answer(str(greeting)):
+					return true
+		1:
+			# Accept a name alone or a simple first-person introduction.
+			for prefix in ["меня зовут ", "my name is ", "je m'appelle ", "ich heiße ", "me llamo ", "meu nome é "]:
+				if typed == _normalize_answer(prefix + expected):
+					return true
+		2:
+			# Accept a bare number or a simple age phrase, but not another age.
+			for form in ["мне %s", "%s года", "%s лет", "i am %s", "%s years old", "tengo %s años", "tenho %s anos", "j'ai %s ans", "ich bin %s"]:
+				if typed == _normalize_answer(form % expected):
+					return true
+		3:
+			# The saved child's preferred colour is also a valid answer.
+			return typed == _normalize_answer(str(_profile.get("favorite_color", "голубой")))
+	return false
 
-func _refresh_entry() -> void:
-    if _input_label == null:
-        return
-    _input_label.text = (_entered + "│") if not _completed else "Сообщение отправлено ✓"
-    _send_button.disabled = (_typed_count != target_phrase.length()) or _completed
-    _button_style(_send_button,false,"send")
-    _button_style(_reset_button,false,"small")
-    _button_style(_voice_button,false,"small")
-    var expected_key: String = ""
-    if not _completed and _typed_count < key_sequence.length():
-        expected_key = key_sequence.substr(_typed_count,1).to_upper()
-    for key in _key_buttons.keys():
-        _button_style(_key_buttons[key],str(key)==expected_key)
-    for row in _key_rows:
-        for key_button in row:
-            key_button.disabled = _completed
-    progress_changed.emit(_typed_count)
 
 func _on_send() -> void:
-    if _completed or _typed_count != target_phrase.length():
-        return
-    _add_bubble(target_phrase,"Сообщение отправлено",true)
-    _add_bubble("Рада знакомству!","Nice to meet you!",false)
-    _completed = true
-    _status_label.text = "Диалог начат · нажми «Заново» для повторения"
-    _refresh_entry()
-    message_sent.emit(target_phrase)
-
-func _on_voice_pressed() -> void:
-    if Engine.is_editor_hint():
-        return
-    var dialog: AcceptDialog = AcceptDialog.new()
-    dialog.title = "Озвучивание"
-    dialog.dialog_text = "Здесь позже будет воспроизведение речи представителя планеты."
-    add_child(dialog)
-    dialog.confirmed.connect(dialog.queue_free)
-    dialog.canceled.connect(dialog.queue_free)
-    dialog.popup_centered(Vector2i(430,175))
-
-func _unhandled_key_input(event: InputEvent) -> void:
-    if Engine.is_editor_hint() or not visible:
-        return
-    if event is InputEventKey and event.pressed and not event.echo:
-        if event.keycode == KEY_BACKSPACE:
-            _delete_last()
-            get_viewport().set_input_as_handled()
-        elif event.keycode == KEY_ENTER or event.keycode == KEY_KP_ENTER:
-            _on_send()
-            get_viewport().set_input_as_handled()
-        elif event.unicode > 0:
-            var value: String = char(event.unicode).to_upper()
-            if value.length() == 1 and "ABCDEFGHIJKLMNOPQRSTUVWXYZ".contains(value):
-                _type_letter(value)
-                get_viewport().set_input_as_handled()
+	var text: String = _input.text.strip_edges()
+	if text.is_empty() or _typing_seconds > 0.0:
+		return
+	_add_message(text, true)
+	message_sent.emit(text)
+	_input.text = ""
+	if not _answer_matches_expected(text):
+		# Reply immediately; do not proceed to the next question.
+		_add_message(str(NOT_UNDERSTOOD.get(_locale, NOT_UNDERSTOOD["ru"])), false)
+		_refresh_hint()
+		return
+	_turn += 1
+	if _turn >= 4:
+		_queue_npc(str(_labels().get("done")))
+	else:
+		var field: Dictionary = _questions[_turn - 1] if _turn - 1 < _questions.size() else {}
+		_queue_npc(str(field.get(_locale, field.get("ru", str(_labels().get("ask"))))))
+	_refresh_hint()
 
 func _relayout() -> void:
-    if _messages == null:
-        return
-    var w: float = size.x
-    var h: float = size.y
-    var s: float = minf(w/800.0,h/730.0)
-    var inset: float = 39.0*s
-    var inner_width: float = w-2*inset
-    _name_label.position = Vector2(inset+64*s,31*s)
-    _name_label.size = Vector2(inner_width-160*s,35*s)
-    _name_label.add_theme_font_size_override("font_size",maxi(14,int(23*s)))
-    _role_label.position = Vector2(inset+64*s,70*s)
-    _role_label.size = Vector2(inner_width-170*s,25*s)
-    _role_label.add_theme_font_size_override("font_size",maxi(11,int(16*s)))
-    _voice_button.position = Vector2(w-93*s,55*s)
-    _voice_button.size = Vector2(47*s,43*s)
-    _voice_button.add_theme_font_size_override("font_size",maxi(12,int(18*s)))
-    var keyboard_top: float = h-257*s
-    _message_scroll.position = Vector2(inset,120*s)
-    _message_scroll.size = Vector2(inner_width, maxf(60*s,keyboard_top-234*s))
-    _messages.custom_minimum_size.x = inner_width-12*s
-    _input_label.position = Vector2(inset+19*s, keyboard_top-100*s)
-    _input_label.size = Vector2(inner_width-38*s,61*s)
-    _input_label.add_theme_font_size_override("font_size",maxi(16,int(27*s)))
-    _status_label.position = Vector2(inset+13*s,keyboard_top-39*s)
-    _status_label.size = Vector2(inner_width-26*s,31*s)
-    _status_label.add_theme_font_size_override("font_size",maxi(10,int(15*s)))
-    var key_gap: float = 6*s
-    var key_height: float = 47*s
-    for ridx in range(_key_rows.size()):
-        var row: Array = _key_rows[ridx]
-        var count: int = row.size()
-        var key_width: float = (inner_width-key_gap*9)/10.0
-        var total_width: float = float(count)*key_width + float(count-1)*key_gap
-        var start_x: float = inset+(inner_width-total_width)*0.5
-        var key_y: float = keyboard_top+(ridx*55)*s
-        for idx in range(count):
-            var button: Button = row[idx]
-            button.position = Vector2(start_x+idx*(key_width+key_gap), key_y)
-            button.size = Vector2(key_width,key_height)
-            button.add_theme_font_size_override("font_size",maxi(13,int(22*s)))
-    var bottom_y: float = keyboard_top+166*s
-    _reset_button.position = Vector2(inset,bottom_y)
-    _reset_button.size = Vector2(135*s,51*s)
-    _reset_button.add_theme_font_size_override("font_size",maxi(11,int(18*s)))
-    _send_button.position = Vector2(inset+152*s,bottom_y)
-    _send_button.size = Vector2(inner_width-152*s,51*s)
-    _send_button.add_theme_font_size_override("font_size",maxi(12,int(19*s)))
-    queue_redraw()
+	if not _ready_ui or size.x < 100 or size.y < 100:
+		return
+	var w: float = size.x
+	var h: float = size.y
+	var padding: float = maxf(7.0, h * 0.017)
+	_chat_scroll.position = Vector2(padding, padding)
+	_chat_scroll.size = Vector2(w - padding * 2.0, h * 0.475 - padding)
+	_chat_messages.custom_minimum_size.x = _chat_scroll.size.x - 6
+	_typing_indicator.position = Vector2(padding + 10, h * 0.445)
+	_typing_indicator.size = Vector2(w - padding * 2, h * 0.04)
+	var input_y: float = h * 0.495
+	_input.position = Vector2(padding, input_y)
+	_input.size = Vector2(w - padding * 3 - maxf(54.0, w * 0.105), h * 0.067)
+	_send_button.position = Vector2(_input.position.x + _input.size.x + padding, input_y)
+	_send_button.size = Vector2(w - (_input.position.x + _input.size.x + padding) - padding, _input.size.y)
+	_hint.position = Vector2(padding + 3, h * 0.565)
+	_hint.size = Vector2(w - 2 * padding, h * 0.037)
+	_keyboard.position = Vector2(padding, h * 0.607)
+	_keyboard.size = Vector2(w - 2 * padding, h * 0.385)
+	var locale_width: float = (_keyboard.size.x - 5.0 * 4.0) / 6.0
+	var locale_height: float = _keyboard.size.y * 0.12
+	for i in range(_locale_buttons.size()):
+		var button: Button = _locale_buttons[i]
+		button.position = Vector2(i * (locale_width + 4), 0)
+		button.size = Vector2(locale_width, locale_height)
+		button.add_theme_font_size_override("font_size", maxi(10, roundi(locale_height * 0.44)))
+		var style: StyleBoxFlat = button.get_theme_stylebox("normal") as StyleBoxFlat
+		style.bg_color = Color("187da9") if LANGUAGES[i] == _locale else Color("244564")
+		button.add_theme_stylebox_override("normal", style)
+	var rows_top: float = locale_height + 5
+	var row_gap: float = maxf(3.0, h * 0.004)
+	var row_h: float = (_keyboard.size.y - rows_top - 3.0 * row_gap) * 0.25
+	for i in range(_row_containers.size()):
+		var row: HBoxContainer = _row_containers[i]
+		row.position = Vector2.ZERO + Vector2(0, rows_top + i * (row_h + row_gap))
+		row.size = Vector2(_keyboard.size.x, row_h)
+		for key in row.get_children():
+			if key is Button:
+				key.custom_minimum_size.x = 0.0
+				key.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+				key.add_theme_font_size_override("font_size", maxi(13, roundi(row_h * 0.47)))
+	queue_redraw()
 
 func _draw() -> void:
-    var w: float = size.x
-    var h: float = size.y
-    if w < 8 or h < 8:
-        return
-    var s: float = minf(w/800.0,h/730.0)
-    var frame: PackedVector2Array = PackedVector2Array([
-        Vector2(44*s,5*s),Vector2(w-44*s,5*s),Vector2(w-5*s,43*s),
-        Vector2(w-5*s,h-42*s),Vector2(w-43*s,h-5*s),Vector2(44*s,h-5*s),
-        Vector2(5*s,h-43*s),Vector2(5*s,44*s)])
-    draw_colored_polygon(frame,Color("152338"))
-    var outline: PackedVector2Array = frame.duplicate()
-    outline.append(frame[0])
-    draw_polyline(outline,Color(0.02,0.40,0.92,0.3),12*s,true)
-    draw_polyline(outline,Color("579fc8"),3.0*s,true)
-    var inner: Rect2 = Rect2(24*s,21*s,w-48*s,h-43*s)
-    draw_rect(inner,Color("06152b"))
-    draw_rect(inner,Color(0.05,0.62,1.0,0.83),false,2*s)
-    # Native monitor, avatar status, input monitor and keyboard recess.
-    draw_rect(Rect2(37*s,113*s,w-74*s,h-370*s),Color("06162d"))
-    draw_rect(Rect2(37*s,113*s,w-74*s,h-370*s),Color(0.08,0.48,0.8,0.60),false,2*s)
-    draw_rect(Rect2(36*s,h-360*s,w-72*s,71*s),Color("d4effb"))
-    draw_rect(Rect2(36*s,h-360*s,w-72*s,71*s),Color(0.25,0.79,1,0.89),false,2*s)
-    draw_rect(Rect2(34*s,h-265*s,w-68*s,222*s),Color("071b34"))
-    draw_line(Vector2(48*s,108*s),Vector2(w-48*s,108*s),Color(0.18,0.66,1.0,0.63),2*s,true)
-    draw_line(Vector2(60*s,h-21*s),Vector2(w-60*s,h-21*s),Color(0.18,0.71,1.0,0.72),3*s,true)
-    draw_circle(Vector2(75*s,68*s),22*s,Color(0.07,0.39,0.67,0.82))
-    draw_arc(Vector2(75*s,68*s),15*s,0,TAU,32,Color("7ad8ff"),2*s,true)
-    draw_line(Vector2(60*s,68*s),Vector2(90*s,68*s),Color("7ad8ff"),1.5*s,true)
-    draw_line(Vector2(75*s,54*s),Vector2(75*s,83*s),Color("7ad8ff"),1.5*s,true)
+	var panel: Rect2 = Rect2(Vector2.ZERO, size)
+	draw_rect(panel, Color("0a1e34"))
+	draw_line(Vector2(0, 0), Vector2(0, size.y), Color("60bfe9"), 3, true)
+	draw_line(Vector2(10, size.y * 0.485), Vector2(size.x - 10, size.y * 0.485), Color("326f98"), 2, true)

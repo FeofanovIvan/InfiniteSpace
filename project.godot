@@ -30,6 +30,7 @@ BillingService="*res://education/playtown/src/core/billing_service.gd"
 AccessService="*res://education/playtown/src/core/access_service.gd"
 LanguageService="*res://education/playtown/src/core/localization/language_service.gd"
 MobileLocale="*res://scripts/MobileLocale.gd"
+ChildProfileStore="*res://planet_hub/scripts/child_profile_store.gd"
 
 [display]
 
