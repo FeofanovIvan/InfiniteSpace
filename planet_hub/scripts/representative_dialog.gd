@@ -14,7 +14,7 @@ var _back_button: Button
 var _setup: bool = false
 var _current_planet_id: String = ""
 
-func configure_for_planet(planet_id: String, planet_name: String, background_path: String, portrait_path: String) -> void:
+func configure_for_planet(planet_id: String, _planet_name: String, background_path: String, portrait_path: String) -> void:
 	_current_planet_id = planet_id
 	planet_background = background_path
 	if character != null:
@@ -70,7 +70,7 @@ func _layout_ui() -> void:
 	tablet.size = Vector2(w - split, h)
 	_back_button.position = Vector2(maxf(10, w * 0.009), maxf(10, h * 0.018))
 	_back_button.size = Vector2(clampf(w * 0.05, 45, 68), clampf(h * 0.09, 42, 64))
-	_back_button.raise()
+	_back_button.move_to_front()
 	queue_redraw()
 
 func _go_back() -> void:
