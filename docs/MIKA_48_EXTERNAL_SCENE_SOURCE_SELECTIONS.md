@@ -66,3 +66,17 @@
 5. Папка 6 космических станций не входит в этот список 48 планет.
 
 **Полная художественная спецификация:** [MIKA_SURFACE_BACKGROUNDS_48_PLANETS.md](MIKA_SURFACE_BACKGROUNDS_48_PLANETS.md).
+
+## Загрузка исходников на macOS (Terminal)
+
+Скрипт: [scripts/download_mika_scene_sources.py](../scripts/download_mika_scene_sources.py).
+
+В Терминале вставить:
+
+```bash
+mkdir -p "$HOME/Downloads/MIKA_48_PLANETS" && curl -fL "https://raw.githubusercontent.com/FeofanovIvan/InfiniteSpace/main/scripts/download_mika_scene_sources.py" -o "$HOME/Downloads/MIKA_48_PLANETS/download_mika_scene_sources.py" && python3 "$HOME/Downloads/MIKA_48_PLANETS/download_mika_scene_sources.py"
+```
+
+Автоматически скачиваются доступные CC0-файлы с OpenGameArt, каталог 48 планет, создаются отчёт и папка исходников. Три набора itch.io требуют посещения браузерной страницы **Download Now → No thanks, just take me to the downloads** (файлы выбранного разрешения в RAR). После ручного сохранения RAR в обычные «Загрузки» повторно выполнить `python3 "$HOME/Downloads/MIKA_48_PLANETS/download_mika_scene_sources.py"` — скрипт скопирует архивы и при наличии `unar` распакует. При отсутствии `unar`: `brew install unar` (если Homebrew установлен).
+
+**Ограничение:** скрипт собирает исходные наборы и оригиналы, но **не объявляет 48 иллюстраций готовыми** без просмотра и утверждения каждого конкретного кадра. Если сайт возвращает HTTP 403, файл пропускается с записью в `DOWNLOAD_REPORT.json`.
