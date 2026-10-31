@@ -11,3 +11,5 @@
 **Установка:** архив `InfiniteSpace_v60_Patch_ChildProfile_FullHeightChat.zip` обновляет только `planet_hub/scripts/representative_dialog.gd`, `planet_hub/scripts/translator_tablet.gd`, добавляет `planet_hub/scripts/child_profile_store.gd`, `data/child_profile_seed.json`, статическую проверку, отчёт и добавляет отдельную автозагрузку к `project.godot`. SHA256 каждого payload, Git blob защитных исходных скриптов, резервная копия, rollback, повторный запуск, GitHub sync в `release/v60-installed-snapshot`, запуск Godot 4.7.1.
 
 **Проверено:** целостность/установка на v59.2.1, повторная установка, защита локально изменённого скрипта. **Godot F5 не выполнялся**, поэтому настоящую работу в интерфейсе и Android нужно проверить после установки на Mac.
+
+**Патч ZIP:** `InfiniteSpace_v60_Patch_ChildProfile_FullHeightChat.zip` (17 868 байт), SHA-256 `20f5f8f4027245cf8b598cd9f515d055cfd6b88adad5533947ab035dd12c11a8`.
