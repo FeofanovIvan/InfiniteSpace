@@ -12,7 +12,7 @@
 
 **Проверено:** целостность/установка на v59.2.1, повторная установка, защита локально изменённого скрипта. **Godot F5 не выполнялся**, поэтому настоящую работу в интерфейсе и Android нужно проверить после установки на Mac.
 
-**Патч ZIP (обновлённый в той же версии):** `InfiniteSpace_v60_Patch_ChildProfile_FullHeightChat.zip` (20 176 байт), SHA-256 `ce1f3c323b9193cb69879d0137f5d2a93a3b9ecfa059c7dfaeb79dd7fc2a69cf`.
+**Патч ZIP (обновлённый в той же версии):** `InfiniteSpace_v60_Patch_ChildProfile_FullHeightChat.zip` (20 175 байт), SHA-256 `27b95ee7e2f0ebaf5d4e1dc6233f2abdb79ae40c96660198ab7ea306ee20f0ec`.
 
 ## Дополнение: неверный ответ
 
