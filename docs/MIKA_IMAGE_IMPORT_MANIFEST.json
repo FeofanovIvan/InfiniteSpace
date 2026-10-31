@@ -1,6 +1,6 @@
 {
   "format": "mika-original-image-source-import-v1",
-  "import_date_utc": "2026-10-31T17:36:11.550137+00:00",
+  "import_date_utc": "2026-10-31T17:39:46.466877+00:00",
   "target_branch": "assets/mika-planet-source-images",
   "approved_originals": [
     {
@@ -3022,6 +3022,1063 @@
       "sha256": "1eee173d04338010de36cd0014e5f5e71eaabb31b6716ce2f0eeb25b0cdf0c52",
       "size_bytes": 4500,
       "license_note": "Источник из скачанного набора — проверить лицензию конкретного файла"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Alpine Planet 1280x720/Alpine_Dry-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b817c46ce7f7_Alpine_Dry-1280x720.png",
+      "sha256": "b817c46ce7f7dabafecf864091d6b4a43a6dcb54475867b3f9b7398f1405f8d3",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Alpine Planet 1280x720/Alpine_Wet-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/f5135d58882c_Alpine_Wet-1280x720.png",
+      "sha256": "f5135d58882c78eb2fc3d7ffb490c28671f030b633b9344227f2318c6f7d4ab1",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Cracked Planet 1280x720/Cracked_Dry-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/5478279f49d3_Cracked_Dry-1280x720.png",
+      "sha256": "5478279f49d30badf9658aae0ca5f54423bba06904e2e6493f5b5772f454e71f",
+      "size_bytes": 1962040,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Cracked Planet 1280x720/Cracked_Wet-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/694991c58294_Cracked_Wet-1280x720.png",
+      "sha256": "694991c5829464765d280d4fef7c4aa07423af95fddb2dc8c369565e19291803",
+      "size_bytes": 1905656,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Desert Planet 1280x720/Desert_Dry-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/97f3d263cbe7_Desert_Dry-1280x720.png",
+      "sha256": "97f3d263cbe7a238589c1fcee6885a4f75ad84f823c54536ed3d2b56e454618e",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Desert Planet 1280x720/Desert_Wet-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/f7d79f34f852_Desert_Wet-1280x720.png",
+      "sha256": "f7d79f34f8526698fee39a1fe8a3db82282d6c8b93bb18411d2d859d8b3f98f5",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Ice Planet 1280x720/Ice_Planet_Dry-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/58308c062411_Ice_Planet_Dry-1280x720.png",
+      "sha256": "58308c06241119e6f16b593a2c42b248cc98479f94c87cf15a17bb97679925db",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Ice Planet 1280x720/Ice_Planet_Wet-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/0ed06ab728c6_Ice_Planet_Wet-1280x720.png",
+      "sha256": "0ed06ab728c69bb3e81ff7f3b3ae6741da454f47f837b057723e83a5ad0bbc0a",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Moon Planet 1280x720/Moon_01-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/4307a6593f50_Moon_01-1280x720.png",
+      "sha256": "4307a6593f50a45d1bf5f6a85eaa916ccb33ee206e489e6c44b6e63eceb5e09e",
+      "size_bytes": 2046216,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Moon Planet 1280x720/Moon_02-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/0368269e52f1_Moon_02-1280x720.png",
+      "sha256": "0368269e52f18f76b6fb98ca532ddd78a8c50d85f3a9efed12fd80b3a75cd52e",
+      "size_bytes": 2064887,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Ocean Planet 1280x720/Ocean_Dry-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/672d3771e610_Ocean_Dry-1280x720.png",
+      "sha256": "672d3771e6107b7befb0bef7e59998b3cff889a1310e57e8f021569ad6c626a6",
+      "size_bytes": 6302468,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Ocean Planet 1280x720/Ocean_Wet-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/39c0f196ec06_Ocean_Wet-1280x720.png",
+      "sha256": "39c0f196ec06fc7af4b8da1cba92c3fbda76c7899d2072656b3b6ea0a302f957",
+      "size_bytes": 6302468,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Poison Planet 1280x720/Poison_Dry-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b16e5fc8b901_Poison_Dry-1280x720.png",
+      "sha256": "b16e5fc8b9015869e22d728ca208dfd2879154afc334eea22c2dd675173aa6c0",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Poison Planet 1280x720/Poison_Wet-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/92560f6ae88a_Poison_Wet-1280x720.png",
+      "sha256": "92560f6ae88a93c533b4493478a097be95cf64eadb67bfd82420fdf649494433",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Radiated Planet 1280x720/Radiated_Dry-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/372bd326f9a8_Radiated_Dry-1280x720.png",
+      "sha256": "372bd326f9a8e7070b06141554e4e3082757f17d509d21be7acf2a487ec651f8",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Radiated Planet 1280x720/Radiated_Wet-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/7f392b63a0f8_Radiated_Wet-1280x720.png",
+      "sha256": "7f392b63a0f8c3c53b7298000586f549ea8f336d066cc4342236197c035e93df",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Red Planet 1280x720/Red_Planet_Dry-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/cc84241f1f74_Red_Planet_Dry-1280x720.png",
+      "sha256": "cc84241f1f74496cb7650465c8cfd64240e54f1077af895d0a52f561181242e8",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Red Planet 1280x720/Red_Planet_Wet-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b4ada5619706_Red_Planet_Wet-1280x720.png",
+      "sha256": "b4ada5619706e0d15b7618167c613264aba5d110a0bcc117e635e35cae423d83",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Rocky Planet 1280x720/Rocky_Dry-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/990ccf2c6cce_Rocky_Dry-1280x720.png",
+      "sha256": "990ccf2c6cce182a2c0ecab4078936fb970cb46c58e574612cfb46aa0abad919",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Rocky Planet 1280x720/Rocky_Wet-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/acbfd11e02cb_Rocky_Wet-1280x720.png",
+      "sha256": "acbfd11e02cb77d1dff2ef19caaca6ff1fce087fdaf755b2b4577c2f283c6cd0",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Tropical Planet 1280x720/Tropical_Dry-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/1202e7a1708b_Tropical_Dry-1280x720.png",
+      "sha256": "1202e7a1708b14bdbd76ba7e2788b0205d56d4987bb814fe26fd11bdc6e121e3",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Tropical Planet 1280x720/Tropical_Wet-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/7886f8903952_Tropical_Wet-1280x720.png",
+      "sha256": "7886f89039527058443c59830d23c1dac483d1bf84a11f9cadba2674115f6c09",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Backgrounds_-_1280x720__429876be11a0/SBS - Planet Backgrounds - 1280x720/Volcanic Planet 1280x720/Volcanic_01-1280x720.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/cf0a298e1a61_Volcanic_01-1280x720.png",
+      "sha256": "cf0a298e1a6142041f9fc6756da6020ef95dead10b3f43a08f70ff8b38bace8c",
+      "size_bytes": 7385508,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Cratered_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/315ab4ddfd75_Cratered_01-1024x768.png",
+      "sha256": "315ab4ddfd75d3100e2b135483e27cd1598a21895ef83a397fd6f71dc7639ca1",
+      "size_bytes": 1104944,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Cratered_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/483801267f06_Cratered_02-1024x768.png",
+      "sha256": "483801267f06862818d48afc43772407ae01f2d239535566a1b576280f4d05b0",
+      "size_bytes": 773462,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Desert_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/227234feb4d2_Desert_01-1024x768.png",
+      "sha256": "227234feb4d286c324d27e5e1c84130ba9a4a45c9b8ad123543e06365129018b",
+      "size_bytes": 736492,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Desert_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/d81a48bbafa7_Desert_02-1024x768.png",
+      "sha256": "d81a48bbafa747b224a2c9989142286b479cdb42913475ad9dedfa1079c1b7ad",
+      "size_bytes": 776374,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Hazy_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/a4d7a8cf8231_Hazy_01-1024x768.png",
+      "sha256": "a4d7a8cf8231f099a4b6e124eab957f098f230899ae5bdd9bd2654ca9ed681a6",
+      "size_bytes": 805913,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Hazy_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/327babc24a17_Hazy_02-1024x768.png",
+      "sha256": "327babc24a17052c3ef4e0e7c2efd96d3d3d2ec0b8e35c19f5d564c8fe4f96bc",
+      "size_bytes": 729147,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Icy_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/3aac9d68bc3e_Icy_01-1024x768.png",
+      "sha256": "3aac9d68bc3e93bae036f8994beb7464ba5be567af34bd80d68af9ed136efc5c",
+      "size_bytes": 1238649,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Icy_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/19c8b2fbf365_Icy_02-1024x768.png",
+      "sha256": "19c8b2fbf3655b10603eda863ea75d4119bca1727b2bfe3ddbb2db974e24a642",
+      "size_bytes": 1221092,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Island_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/79f085a7f1b7_Island_01-1024x768.png",
+      "sha256": "79f085a7f1b746bef344b95e91981a9111ef350b4afdd026ce959df1e475b167",
+      "size_bytes": 972796,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Island_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/112189372aa9_Island_02-1024x768.png",
+      "sha256": "112189372aa937fb2d009ad32381c8aedf7cee6c359dae9468241ab09dd01ada",
+      "size_bytes": 706110,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Lava_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/44e514febe18_Lava_01-1024x768.png",
+      "sha256": "44e514febe1842a1a7e76b05e1edb6958603bc9daa07bde00b0ae79753d48288",
+      "size_bytes": 489059,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Lava_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/dbb14c6c70f0_Lava_02-1024x768.png",
+      "sha256": "dbb14c6c70f04a2e277104e59875d9432ec7de6cfae9f198ac9b88cdec648f37",
+      "size_bytes": 808317,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Lush_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/819ee9535614_Lush_01-1024x768.png",
+      "sha256": "819ee95356141b82736cdd03c87f49f7df92e20077618fa2c2071731d61b9552",
+      "size_bytes": 773343,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Lush_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b223d50bc511_Lush_02-1024x768.png",
+      "sha256": "b223d50bc5118e0d46f3777e084aaf9d4fa55bb42ec1b861880a6b151e6593d1",
+      "size_bytes": 884097,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Mars_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/8d255b94aa5d_Mars_01-1024x768.png",
+      "sha256": "8d255b94aa5da1e463ad170dcb63b13b18423893cffe8a84e8091f585c053383",
+      "size_bytes": 1032030,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Mars_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/95587cdd507d_Mars_02-1024x768.png",
+      "sha256": "95587cdd507d4b8109a4fc9b2d74ac1b910fa6c43ae0197fa3370c48f1b7b65a",
+      "size_bytes": 1164223,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Methane_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/7fef647262cf_Methane_01-1024x768.png",
+      "sha256": "7fef647262cff38570baec464a2cbce1f01b7bdae20dde54a4c2ac8401821af8",
+      "size_bytes": 691963,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Methane_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/2385cbf7a435_Methane_02-1024x768.png",
+      "sha256": "2385cbf7a4358b4d25dda24c79f043c245ef0b9e45b1fa3a1d5cab38a7a85871",
+      "size_bytes": 562058,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Ocean_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/cfb4dce34361_Ocean_01-1024x768.png",
+      "sha256": "cfb4dce3436115a22579cbc9246c008666cf269a0089618ac86114d0ee98dc82",
+      "size_bytes": 1245221,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Ocean_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/e1531e7b41d0_Ocean_02-1024x768.png",
+      "sha256": "e1531e7b41d03a8d72c3486235766abfe57163fc49e5a00ec20c2b0a01e9c9a9",
+      "size_bytes": 1007952,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Plains_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/8ba36b9254b3_Plains_01-1024x768.png",
+      "sha256": "8ba36b9254b3d2f78ff97260e71ffab682393166651bfc0ca223057b0bb2c2af",
+      "size_bytes": 972353,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Plains_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/007886b57419_Plains_02-1024x768.png",
+      "sha256": "007886b57419a333658996e3f3847158ae14758887939666033dddbe70250599",
+      "size_bytes": 738292,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Red_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/e1be41f3ff8f_Red_01-1024x768.png",
+      "sha256": "e1be41f3ff8f979bb8680899caab609a3f9fa1977fd248d8819156b518c73e12",
+      "size_bytes": 838208,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Red_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/255144ac4a6b_Red_02-1024x768.png",
+      "sha256": "255144ac4a6ba241defbdd6a0f9fc4a6584ce6afff57b3017f3db19da22f55cb",
+      "size_bytes": 707097,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Rocky_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/a065d36cfbb9_Rocky_01-1024x768.png",
+      "sha256": "a065d36cfbb945ccd92394a4b49290d8061a255715ddff53eeb68369d2a3f830",
+      "size_bytes": 1257456,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Rocky_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/79855e2da4b7_Rocky_02-1024x768.png",
+      "sha256": "79855e2da4b7154b19a68032950f6055c5e230a25802e0890e2c159f1ce03ccb",
+      "size_bytes": 992359,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Snowy_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/c915813d5df0_Snowy_01-1024x768.png",
+      "sha256": "c915813d5df0bf1c66754f15a5ecb0defac909d5940f50dfa55a84a80212a247",
+      "size_bytes": 1071332,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Snowy_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/fd00b2817df8_Snowy_02-1024x768.png",
+      "sha256": "fd00b2817df8bf4195b87b394585ae08967b49f3547c07723346224495d04b56",
+      "size_bytes": 938632,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Temperate_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/c237b7545433_Temperate_01-1024x768.png",
+      "sha256": "c237b754543335029b2ff2f2acaf16ea94fc812ba8138dccf4fa0930f7c265d4",
+      "size_bytes": 1247865,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Temperate_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/3c8fb0643467_Temperate_02-1024x768.png",
+      "sha256": "3c8fb0643467097201de71bb5d74e2c31fcdc6a273e4fe8f32e68ab2f9215975",
+      "size_bytes": 769030,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Tropical_01-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/0240fea946e9_Tropical_01-1024x768.png",
+      "sha256": "0240fea946e9251fe248082dfea4609f841b27675f6e477cba9820a34418f94d",
+      "size_bytes": 1239309,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Planet_Surface_Backgrounds_2_-_1024x768__2a05cf19ccb9/SBS - Planet Surface Backgrounds 2 - 1024x768/1024x768/Tropical_02-1024x768.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/c58670a11ac5_Tropical_02-1024x768.png",
+      "sha256": "c58670a11ac5da36cfb4ac3b913813e8a415e50d9fcf5f515cb78e95b32b7442",
+      "size_bytes": 1098187,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Blue_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/cd806427f20f_Bumpy_Sky-Blue_01-1024x512.png",
+      "sha256": "cd806427f20f280486f9e270fc4196fea46095dbb33dfbdc4b47d4e8fad9c62b",
+      "size_bytes": 644639,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Blue_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/0a827264fcab_Bumpy_Sky-Blue_02-1024x512.png",
+      "sha256": "0a827264fcab5263a50ae30f7d5909bd71873245007430e3e919a9aab11e57b4",
+      "size_bytes": 643419,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Blue_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/4804f7c319aa_Bumpy_Sky-Blue_03-1024x512.png",
+      "sha256": "4804f7c319aa6af171fa14cbd9596cd821e90f63ec11370fd34f4856dbf2770e",
+      "size_bytes": 430584,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Blue_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/496160ed19a0_Bumpy_Sky-Blue_04-1024x512.png",
+      "sha256": "496160ed19a018e26fcbc3262f0cbb0c61a809acf539e0ec51e346cea211c719",
+      "size_bytes": 561886,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Night_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/e263f08ca667_Bumpy_Sky-Night_01-1024x512.png",
+      "sha256": "e263f08ca667f50f6e0414e5ba4e974ce1908ff5b6a4204c2df44e692ad01124",
+      "size_bytes": 793310,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Night_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/6d738bb9b327_Bumpy_Sky-Night_02-1024x512.png",
+      "sha256": "6d738bb9b327a2bf54aae1f7c8745066bf535012dc43cfd12baeb4c5dcea8bce",
+      "size_bytes": 761313,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Night_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/473341e71d1c_Bumpy_Sky-Night_03-1024x512.png",
+      "sha256": "473341e71d1c2cf3220e6ae0fe43b3bba66a2a59d010b9437b13f680e70998d0",
+      "size_bytes": 757250,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Night_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/4d347196ae22_Bumpy_Sky-Night_04-1024x512.png",
+      "sha256": "4d347196ae22b0ee73dacd60d3b0bfe30646bfcc1073107d8645e2ff22b57c0d",
+      "size_bytes": 810914,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Sunset_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/cb6c4bfac470_Bumpy_Sky-Sunset_01-1024x512.png",
+      "sha256": "cb6c4bfac47032f51d9c9999785db54b82f620d1a78297b2b535cb087779315d",
+      "size_bytes": 659475,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Sunset_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/1f024fcb8ac1_Bumpy_Sky-Sunset_02-1024x512.png",
+      "sha256": "1f024fcb8ac13695577f52d54f1947cead99160e03568e4029a8875be0f003a6",
+      "size_bytes": 654574,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Sunset_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/437e72361d87_Bumpy_Sky-Sunset_03-1024x512.png",
+      "sha256": "437e72361d873d263e96a553a773f2fad83bcad80687a3639949d5579a2929c7",
+      "size_bytes": 441233,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Bumpy Sky/Bumpy_Sky-Sunset_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/01ab0dd5c86f_Bumpy_Sky-Sunset_04-1024x512.png",
+      "sha256": "01ab0dd5c86f218686b9985da37119023d3dd5b1c3f4ed111f8626a091eb7d1d",
+      "size_bytes": 752877,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Blue_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b20dad8364c8_Cloudy_Sky-Blue_01-1024x512.png",
+      "sha256": "b20dad8364c8c62c0c13ffd5dc9a890eb506f03983295d6e66911309f58db824",
+      "size_bytes": 435785,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Blue_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/d7bf769a5e72_Cloudy_Sky-Blue_02-1024x512.png",
+      "sha256": "d7bf769a5e7204b5657e69685f5eaa72bd44b8b9fa7210f61c8225cf2ef9ffef",
+      "size_bytes": 459891,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Blue_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/e38dfe5255e8_Cloudy_Sky-Blue_03-1024x512.png",
+      "sha256": "e38dfe5255e8ffb20434e50bf37227f31961f46e574d527ef7081fc997588e8c",
+      "size_bytes": 512168,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Blue_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/552e97e90c89_Cloudy_Sky-Blue_04-1024x512.png",
+      "sha256": "552e97e90c8999af053f27a3fe853a4af8b33348dba3e90ee58962e1f8c627c3",
+      "size_bytes": 611858,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Night_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/c009f132c304_Cloudy_Sky-Night_01-1024x512.png",
+      "sha256": "c009f132c304e3b573aa3925df9987b5bce9dd9f498a81bb7f29e234bbe85e40",
+      "size_bytes": 487778,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Night_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b97411ea2458_Cloudy_Sky-Night_02-1024x512.png",
+      "sha256": "b97411ea245842fb1277918e0bb1b42b5609b6fd8f1e68dae1924b37de295a70",
+      "size_bytes": 511361,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Night_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/e6c5c29af981_Cloudy_Sky-Night_03-1024x512.png",
+      "sha256": "e6c5c29af981ccb94ae982a73f26cab21328077dedb098e43fb33b71badb8879",
+      "size_bytes": 542522,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Night_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b89d3d380372_Cloudy_Sky-Night_04-1024x512.png",
+      "sha256": "b89d3d380372fe977ea4589401d9fd679e9f78db0d105151cd54da4ed0d8aa16",
+      "size_bytes": 492911,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Sunset_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/f1e348afc74c_Cloudy_Sky-Sunset_01-1024x512.png",
+      "sha256": "f1e348afc74c1b3d1fe5102366767c7ac3ce623d9377c95b49581b5f4a7df9a2",
+      "size_bytes": 451257,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Sunset_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/8f2fb6823643_Cloudy_Sky-Sunset_02-1024x512.png",
+      "sha256": "8f2fb6823643c73390d29c06053088e61faef5b972c7b21f8dfa24022192259a",
+      "size_bytes": 446035,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Sunset_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/c2b673932443_Cloudy_Sky-Sunset_03-1024x512.png",
+      "sha256": "c2b6739324436561ef073936e064da82d263e06e22c24a1d01204775b4cf80a6",
+      "size_bytes": 491262,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Cloudy Sky/Cloudy_Sky-Sunset_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/25977d64c75b_Cloudy_Sky-Sunset_04-1024x512.png",
+      "sha256": "25977d64c75b06bec86e7cdc24f82e223a695f42b80bff0e62890676f3e99860",
+      "size_bytes": 509449,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Blue_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/33c701fa086f_Fading_Sky-Blue_01-1024x512.png",
+      "sha256": "33c701fa086f69c6a211a39e25a8bdcfd10eb9bcf2ffa1799433a1cd9b6ed4fd",
+      "size_bytes": 537147,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Blue_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/c6f88512b1f7_Fading_Sky-Blue_02-1024x512.png",
+      "sha256": "c6f88512b1f7fbada5dd933a6f5682cb1668dcc4226d6e0f6a21f828cbf52d0e",
+      "size_bytes": 457246,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Blue_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/3b82349befab_Fading_Sky-Blue_03-1024x512.png",
+      "sha256": "3b82349befab69d6d7b8cb4008b6bf963756c246d737a0bad54e9a029053456d",
+      "size_bytes": 555533,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Blue_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/3152096f9b1c_Fading_Sky-Blue_04-1024x512.png",
+      "sha256": "3152096f9b1c3ac161dfab9379dfe0bdc3a20844bb1327c0d720540056785566",
+      "size_bytes": 504476,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Night_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/41e3ebb445e4_Fading_Sky-Night_01-1024x512.png",
+      "sha256": "41e3ebb445e43ec0ddbaf26aa012b4faf5455f64c080926a3c81fd30ea726901",
+      "size_bytes": 411956,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Night_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/f04aed96aa5b_Fading_Sky-Night_02-1024x512.png",
+      "sha256": "f04aed96aa5bfc6378144b7cd24072102deb5435231574e8e74721c0b314dbec",
+      "size_bytes": 385571,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Night_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/da45654761d4_Fading_Sky-Night_03-1024x512.png",
+      "sha256": "da45654761d4d795ddcde6f8a2e052829b423f3bafa4ae0371bec9ce449e0928",
+      "size_bytes": 422989,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Night_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/30a450d08a31_Fading_Sky-Night_04-1024x512.png",
+      "sha256": "30a450d08a31bd43842bb1eada68b7e526ed0bdf763822d8fe05fd1c24e08a3a",
+      "size_bytes": 434056,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Sunset_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/90f1fa79c3da_Fading_Sky-Sunset_01-1024x512.png",
+      "sha256": "90f1fa79c3dad5eee99dd7885cfd247148d89bfae0913cd49e617a688140d08c",
+      "size_bytes": 507502,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Sunset_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/1591063de06f_Fading_Sky-Sunset_02-1024x512.png",
+      "sha256": "1591063de06fb238f16ec97eaca5a1853d04c2d91d2bde352d3799b845e1e41a",
+      "size_bytes": 481864,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Sunset_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/aef0d0596889_Fading_Sky-Sunset_03-1024x512.png",
+      "sha256": "aef0d0596889d719672cd40f7bba69697d34b8a1b47d3bd4ffa3df01b5f2a911",
+      "size_bytes": 451205,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fading Sky/Fading_Sky-Sunset_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b5822e916060_Fading_Sky-Sunset_04-1024x512.png",
+      "sha256": "b5822e916060e0bf8ab9df7ff6e10a7b13868bf349c5773ceec5903953c6b8d2",
+      "size_bytes": 580820,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Blue_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/acf3179ac280_Fuzzy_Sky-Blue_01-1024x512.png",
+      "sha256": "acf3179ac28034563b7c69031a62294da82d0a3f251554758f782fe84099c49d",
+      "size_bytes": 741579,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Blue_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/3d22d856dc96_Fuzzy_Sky-Blue_02-1024x512.png",
+      "sha256": "3d22d856dc96f2d38afb11d8fb71f8d36b18403d82ede333fd629d8b7ec0f48f",
+      "size_bytes": 689466,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Blue_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/eb0f015dce9d_Fuzzy_Sky-Blue_03-1024x512.png",
+      "sha256": "eb0f015dce9d2adf15b14e1de55eafbef9ea5f5fa552efea0b1905b9007ab890",
+      "size_bytes": 483611,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Blue_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/3f12a9dcd623_Fuzzy_Sky-Blue_04-1024x512.png",
+      "sha256": "3f12a9dcd6233c2ca5676180f87c5222a2e5f727f9899b3b9fcd90f2d978f9c0",
+      "size_bytes": 456850,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Night_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/becf0c4694bc_Fuzzy_Sky-Night_01-1024x512.png",
+      "sha256": "becf0c4694bccdeedcb09e80855f52085791710ca1634eb28d24053bc25c1a1c",
+      "size_bytes": 698346,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Night_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/689964e4b4e1_Fuzzy_Sky-Night_02-1024x512.png",
+      "sha256": "689964e4b4e1311c5bf6f44575fa7e04056821b951cd5cfe63eb91ff935a8a1c",
+      "size_bytes": 587356,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Night_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/cffbb1548073_Fuzzy_Sky-Night_03-1024x512.png",
+      "sha256": "cffbb1548073d93e8314f56749fb480c4e4fda70de7d172940f91188a0d3f3c0",
+      "size_bytes": 704112,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Night_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/9e3c36c958c9_Fuzzy_Sky-Night_04-1024x512.png",
+      "sha256": "9e3c36c958c96e0643cfd6d193e860645aa30e10e43600780ef78c92e86d696f",
+      "size_bytes": 650902,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Sunset_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/420a06cc7f07_Fuzzy_Sky-Sunset_01-1024x512.png",
+      "sha256": "420a06cc7f075beff1790bfbad3c936391d1fb36182e12e522577b87f88ef370",
+      "size_bytes": 535156,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Sunset_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b885deeabb38_Fuzzy_Sky-Sunset_02-1024x512.png",
+      "sha256": "b885deeabb383d69df0fc4c741e5b46187af421d87d526314509036c35574a87",
+      "size_bytes": 523216,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Sunset_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/1a1913e8790c_Fuzzy_Sky-Sunset_03-1024x512.png",
+      "sha256": "1a1913e8790cf61e0829fed5152f0a9ef2702d3722ab2637bce137ae311924e5",
+      "size_bytes": 575445,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Fuzzy Sky/Fuzzy_Sky-Sunset_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/5d53df49030c_Fuzzy_Sky-Sunset_04-1024x512.png",
+      "sha256": "5d53df49030c4f95e64d98eb4906e9db0c445f59deb442ee09fea71908a5f261",
+      "size_bytes": 530121,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Blue_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/ccdff634c9ff_Gradient_Sky-Blue_01-1024x512.png",
+      "sha256": "ccdff634c9ff977918e4a498ae165f7ff2b88fb8aa2ece2ece5022d48124c3c4",
+      "size_bytes": 375604,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Blue_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/bcc5a4245e9f_Gradient_Sky-Blue_02-1024x512.png",
+      "sha256": "bcc5a4245e9f1d2036dc30939a6a58f1729ece4957ad8498d4110d008ad1e9c5",
+      "size_bytes": 496827,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Blue_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/7e613617ec62_Gradient_Sky-Blue_03-1024x512.png",
+      "sha256": "7e613617ec62b1382692f491bdd5b497555b0236cb952b766c780b8f87f359e2",
+      "size_bytes": 337577,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Blue_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/fca200e3feed_Gradient_Sky-Blue_04-1024x512.png",
+      "sha256": "fca200e3feed02596da95f72eddb9a957514253f4fd743fc378aeac417d76f8d",
+      "size_bytes": 309440,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Foggy_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/e0a4c6a51408_Gradient_Sky-Foggy_01-1024x512.png",
+      "sha256": "e0a4c6a51408811369a7c0cb2ca74f828ba8ebf9ba31458c22dc45ab43ce0f29",
+      "size_bytes": 389015,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Foggy_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/a1a472b0ff0b_Gradient_Sky-Foggy_02-1024x512.png",
+      "sha256": "a1a472b0ff0be999c6d3d6abe190d770ca70c46eaf2969a8cd9a7c51c845eefb",
+      "size_bytes": 375657,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Night_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/6d531b7be11f_Gradient_Sky-Night_01-1024x512.png",
+      "sha256": "6d531b7be11fad22f89bcd859333fb17fa9ca418e89c501461acc77330d11758",
+      "size_bytes": 462662,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Night_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/964c5ad98837_Gradient_Sky-Night_02-1024x512.png",
+      "sha256": "964c5ad98837b40822a6682805e5c28d3529b8204b3aba2ef05f084f32f99aa3",
+      "size_bytes": 326715,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Overcast_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/775d233181b6_Gradient_Sky-Overcast_01-1024x512.png",
+      "sha256": "775d233181b6df94e05497a7462fa95c27e713a865a4b416615bdac67c84f2ea",
+      "size_bytes": 393367,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Overcast_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/5c323aec9976_Gradient_Sky-Overcast_02-1024x512.png",
+      "sha256": "5c323aec997608b5a459458d65db6e99af3e35d4d1d4327a80efe2415d4e60b5",
+      "size_bytes": 400787,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Sunset_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/8f0e763140d0_Gradient_Sky-Sunset_01-1024x512.png",
+      "sha256": "8f0e763140d0834d96735ec0b9a8ce8a221a35880cb6813246b4a8e400ac898c",
+      "size_bytes": 364530,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Gradient Sky/Gradient_Sky-Sunset_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/f1e7ecb52337_Gradient_Sky-Sunset_02-1024x512.png",
+      "sha256": "f1e7ecb52337e20b2e21c3f837abea7f49a1ccd4f9e9b4ec6eafd119918b7c56",
+      "size_bytes": 441387,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Blue_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/90d73e18330b_Puffy_Sky-Blue_01-1024x512.png",
+      "sha256": "90d73e18330b3e0f3dd7d882a6cdc7fcbf7f900bafac985bad96414e61c3d04c",
+      "size_bytes": 526048,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Blue_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/2deea4dc1b10_Puffy_Sky-Blue_02-1024x512.png",
+      "sha256": "2deea4dc1b1053caab9c0de3d56267cc1b322bd6a50d36feaff1976350d5e6b1",
+      "size_bytes": 459383,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Blue_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b8c85bfb6e69_Puffy_Sky-Blue_03-1024x512.png",
+      "sha256": "b8c85bfb6e6976fd0fc0d92f62bc4e363515da32d3839a0ee7ca1d2cad0b21bb",
+      "size_bytes": 570739,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Blue_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/780ddc65c275_Puffy_Sky-Blue_04-1024x512.png",
+      "sha256": "780ddc65c2750b0f0d37665e0069829e1ec978c7a7b34ed2cbaf3b931aaca801",
+      "size_bytes": 478578,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Evening_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b42a8a6965be_Puffy_Sky-Evening_01-1024x512.png",
+      "sha256": "b42a8a6965be2bd0cc82bc38a63e2c1bf550dd5fa172e5d17a2c49a88f13caf8",
+      "size_bytes": 411410,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Evening_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/7202fb97fb3e_Puffy_Sky-Evening_02-1024x512.png",
+      "sha256": "7202fb97fb3ed77266babff2562c90e427299f87d66f99c158a8e4ed90c663c3",
+      "size_bytes": 496300,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Evening_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/366663dd6bcf_Puffy_Sky-Evening_03-1024x512.png",
+      "sha256": "366663dd6bcf8e94b3849ba6110941cab4b5cb16104ccc1c9241e12da3ac826e",
+      "size_bytes": 476624,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Evening_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/bc9a59ea5840_Puffy_Sky-Evening_04-1024x512.png",
+      "sha256": "bc9a59ea58409712ee16bddfe4331863c67638962337bcc66ff31918ba86a8bd",
+      "size_bytes": 555772,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Night_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/a52288bd5aea_Puffy_Sky-Night_01-1024x512.png",
+      "sha256": "a52288bd5aeaf7da1cd24b5010c095523c9965a0aa9df7dc4fb116c2bf14fc5b",
+      "size_bytes": 577459,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Night_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b2e1d05a2063_Puffy_Sky-Night_02-1024x512.png",
+      "sha256": "b2e1d05a2063096ca9c7ab9694e5b79d41dc442e39fe88353024097534e1ea8e",
+      "size_bytes": 487338,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Sunset_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/b6b74ff3f821_Puffy_Sky-Sunset_01-1024x512.png",
+      "sha256": "b6b74ff3f821db52d116a428a153c469d63a73a89204b9942bdcbb7e8a3b8fcc",
+      "size_bytes": 419137,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Puffy Sky/Puffy_Sky-Sunset_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/7c555716c77d_Puffy_Sky-Sunset_02-1024x512.png",
+      "sha256": "7c555716c77d5685c283dcaebb8ac085c68fc7ef3d8f2519d4ee7ad08bd85f52",
+      "size_bytes": 463727,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Blue_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/461bb09a68ce_Simple_Sky-Blue_01-1024x512.png",
+      "sha256": "461bb09a68ce509dfd31a7054eee94efc5391db6e9804ad14a17bd547c101851",
+      "size_bytes": 413218,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Blue_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/a3a67d052173_Simple_Sky-Blue_02-1024x512.png",
+      "sha256": "a3a67d052173aa33cfaf0869dd31a6593fd0a36fb40b22dbbc758d741702d349",
+      "size_bytes": 413086,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Blue_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/023141a78984_Simple_Sky-Blue_03-1024x512.png",
+      "sha256": "023141a78984d2f0fbeb4e491e5bb42ee20bdbd513fdb65a9a46cd441978cc51",
+      "size_bytes": 310336,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Blue_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/65fa133ac65a_Simple_Sky-Blue_04-1024x512.png",
+      "sha256": "65fa133ac65a45a6f8968d73f72e0d92b21e83e4376a18a55f018d3187fc321f",
+      "size_bytes": 293694,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Night_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/8b79ecb1414f_Simple_Sky-Night_01-1024x512.png",
+      "sha256": "8b79ecb1414f0d3fc333a2a285df790c5f75242ad719e3d4927a21d1fbe77213",
+      "size_bytes": 531028,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Night_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/c2de86b8b946_Simple_Sky-Night_02-1024x512.png",
+      "sha256": "c2de86b8b94635abafe631fce9de0a6a5a9ec5d5d4eaebabd3da1691b3234b8d",
+      "size_bytes": 557180,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Night_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/8c238e783342_Simple_Sky-Night_03-1024x512.png",
+      "sha256": "8c238e783342f81869a838f3c057acd6db26108336502671c447a9014493c0e0",
+      "size_bytes": 461217,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Night_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/39f2d0472210_Simple_Sky-Night_04-1024x512.png",
+      "sha256": "39f2d047221085fdd3c403ab21df713c23a249e9c405f6c0de82ff033075bcdd",
+      "size_bytes": 477933,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Sunset_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/4a56e7644d17_Simple_Sky-Sunset_01-1024x512.png",
+      "sha256": "4a56e7644d1727a0689e50727be80fe5164825931add45e4f7722756301a134d",
+      "size_bytes": 326537,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Sunset_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/a3e877181770_Simple_Sky-Sunset_02-1024x512.png",
+      "sha256": "a3e8771817702b4eff8bceaffdab2b971d912f6c2a8009c663bd6273de7e310f",
+      "size_bytes": 332813,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Sunset_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/ffce00020aae_Simple_Sky-Sunset_03-1024x512.png",
+      "sha256": "ffce00020aae45911f710a82b6a40cb84900ad62360f651db4be6557516ea85f",
+      "size_bytes": 401792,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Simple Sky/Simple_Sky-Sunset_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/5d09f7cc156a_Simple_Sky-Sunset_04-1024x512.png",
+      "sha256": "5d09f7cc156a47ce3e3ad99515334fc6acf32405faf2cd3a8b4a9673d765f757",
+      "size_bytes": 363069,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Blue_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/6d16ca57d7bd_Wispy_Sky-Blue_01-1024x512.png",
+      "sha256": "6d16ca57d7bd598b74433bb78355ad2da34a4ad4fc8ace1f604d53208da2eec4",
+      "size_bytes": 415754,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Blue_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/5c83a08af34a_Wispy_Sky-Blue_02-1024x512.png",
+      "sha256": "5c83a08af34a7c558145dc1ad2e2ed3ebcf86f0de2696214fd26767eba474354",
+      "size_bytes": 398015,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Blue_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/ac7bd1f9312e_Wispy_Sky-Blue_03-1024x512.png",
+      "sha256": "ac7bd1f9312ee36a1b0d49a107379612ef365ec0debd682b623ef1b79a59d69e",
+      "size_bytes": 454320,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Blue_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/4687e88953c7_Wispy_Sky-Blue_04-1024x512.png",
+      "sha256": "4687e88953c755f54246347acc395e96eb05078521a0366707bf90cba1f2b060",
+      "size_bytes": 403524,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Night_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/582466b50e13_Wispy_Sky-Night_01-1024x512.png",
+      "sha256": "582466b50e130a1499945dc9d26eedf09b68a0e685eab43a1e2e51a755dc3931",
+      "size_bytes": 487077,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Night_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/e5beab4a823f_Wispy_Sky-Night_02-1024x512.png",
+      "sha256": "e5beab4a823f5eb62da63bf4b7408f4220063bdec2d0735cadd14ed3a21fdbdf",
+      "size_bytes": 395625,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Night_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/5ac032d1c008_Wispy_Sky-Night_03-1024x512.png",
+      "sha256": "5ac032d1c008fefd211bd0b0541b241a82aef7c22d7e8d729e47383a0a83fca1",
+      "size_bytes": 467851,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Night_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/3675548ca9a5_Wispy_Sky-Night_04-1024x512.png",
+      "sha256": "3675548ca9a59a5803ddfc54cc9a10856df9de335d20387a2b047509acdabb79",
+      "size_bytes": 422989,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Sunset_01-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/4e1599f1e584_Wispy_Sky-Sunset_01-1024x512.png",
+      "sha256": "4e1599f1e584b693393eab1baca134e08162d6e07f2f0e4aa97e17f21b86ff3a",
+      "size_bytes": 417393,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Sunset_02-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/70f2ce3ce1c3_Wispy_Sky-Sunset_02-1024x512.png",
+      "sha256": "70f2ce3ce1c3489b6ce4f88944700271fdb80794c70e8364fc10b6594ba82bcf",
+      "size_bytes": 364494,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Sunset_03-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/a057faf66332_Wispy_Sky-Sunset_03-1024x512.png",
+      "sha256": "a057faf663327c1cd2bbd0aa15e467b748887af36b19c371f548c045a23dce21",
+      "size_bytes": 411312,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
+    },
+    {
+      "source_path": "_RAR_EXTRACTED_FOR_GITHUB/SBS_-_Seamless_Sky_Backgrounds_-_1024x512__683b53c9df1c/SBS - Seamless Sky Backgrounds - 1024x512/1024x512/Wispy Sky/Wispy_Sky-Sunset_04-1024x512.png",
+      "github_path": "assets/backgrounds/planet_reference_sources/e56fb0eba52e_Wispy_Sky-Sunset_04-1024x512.png",
+      "sha256": "e56fb0eba52ed4f6425f3b03e942f0be7d87c49a448d572110f4a850fae954a9",
+      "size_bytes": 373718,
+      "license_note": "itch.io — условия CC0 заявлены для выбранных наборов; проверить файл"
     },
     {
       "source_path": "_ZIP_IMAGES_FOR_GITHUB/Sideview_Fantasy_Patreon_Collection__1db88b2871/00948687537a_0007_Layer-8.png",
@@ -7312,8 +8369,6 @@
       "sha256": "75c0218ec2d442253d3cf2fe6c1c598cf3953b6ddb121fb8450f5a183473c69b"
     }
   ],
-  "warnings": [
-    "Найдены RAR, но нет unar/7z. Для macOS: brew install unar; затем повторите команду."
-  ],
+  "warnings": [],
   "note": "Images are reference candidates, not yet matched to 48 planet IDs; confirm per-file licenses."
 }
