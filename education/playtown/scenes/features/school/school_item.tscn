@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccdgsd16v0ygw"]
+
+[ext_resource type="Script" uid="uid://c8tnqnfwsb3ic" path="res://education/playtown/src/features/school/school_item.gd" id="1_p5s08"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5s08"]
+size = Vector2(61, 85)
+
+[node name="SchoolItem" type="Area2D"]
+script = ExtResource("1_p5s08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_p5s08")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://nm3m26asvakv"]
+
+[ext_resource type="Script" uid="uid://c0nyc5wuhpgfk" path="res://education/playtown/src/features/school/school_game.gd" id="1_game"]
+[ext_resource type="PackedScene" uid="uid://ccdgsd16v0ygw" path="res://education/playtown/scenes/features/school/school_item.tscn" id="2_letter"]
+
+[node name="SchoolGame" type="Node2D"]
+script = ExtResource("1_game")
+letter_scene = ExtResource("2_letter")

@@ -474,6 +474,7 @@ func _build_controls() -> void:
 	main_menu.name = "MikoMainMenuPlaceholder"
 	root.add_child(main_menu)
 	main_menu.closed.connect(_on_modal_closed)
+	main_menu.crystals_earned.connect(_on_educational_crystals_earned)
 
 	# v38: empty, localized landing-preview screen (no surface gameplay yet).
 	landing_preview = LandingPreviewScene.new()
@@ -624,6 +625,11 @@ func _on_main_menu_requested() -> void:
 	main_menu.open_menu(get_viewport_rect().size)
 	get_tree().paused = true
 	diagnostics.write("miko_main_menu_opened", {"screen": "bridge", "flight_crystals": status_hud.crystal_count, "crystal_capacity": 0, "ship_speed": 0})
+
+
+func _on_educational_crystals_earned(units: int) -> void:
+	# Correct answers in locally copied Play Town games refill the fuel tank.
+	_on_fuel_collected(units)
 
 
 func _on_modal_closed() -> void:

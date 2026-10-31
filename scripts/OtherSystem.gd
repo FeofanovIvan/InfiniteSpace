@@ -237,7 +237,7 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 		_station_sprite.z_index = 1
 		if station_region_id == "lmc":
 			_station_sprite.texture = TARANTULA_TEXTURE
-			_station_sprite.scale = Vector2.ONE * 0.24
+			_station_sprite.scale = Vector2.ONE * 0.294
 		elif station_region_id == "smc":
 			_station_sprite.texture = ARCHIVE_TEXTURE
 			_station_sprite.scale = Vector2.ONE * 0.30
@@ -261,13 +261,7 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 			_story_station_root.add_child(_story_fx)
 		if station_region_id == "ngc6822":
 			_build_titan_asteroid_ring()
-		if station_region_id == "lmc":
-			# Flames are CHILDREN of the rotating ship, located at the three
-			# real nozzle positions in the original source-art coordinates.
-			_tarantula_thrusters = TarantulaThrusters.new()
-			_tarantula_thrusters.name = "ThreeBlueThrusters_AttachedToTarantula"
-			_tarantula_thrusters.z_index = -1
-			_station_sprite.add_child(_tarantula_thrusters)
+		# v58.1: radial Tarantula artwork has no left-edge thruster nozzles.
 		# Exactly ONE story landmark per region. No fake luminous orb.
 	else:
 		_story_station_root = null
