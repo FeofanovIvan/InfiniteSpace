@@ -81,6 +81,8 @@ var asteroid_field
 var joystick
 var action_button
 var landing_preview
+var _planet_hub: Control
+var _planet_landing_active: bool = false
 var _landing_target_id: String = ""
 var _landing_target_name: String = ""
 var mini_map
@@ -234,6 +236,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if _planet_landing_active:
+		return
 	if _warp_active:
 		_advance_warp(delta)
 		return
@@ -574,6 +578,8 @@ func _layout() -> void:
 	)
 	galactic_map.size = view
 	main_menu.size = view
+	if is_instance_valid(_planet_hub):
+		_planet_hub.size = view
 	landing_preview.resize_preview(view)
 
 
@@ -633,6 +639,10 @@ func _on_educational_crystals_earned(units: int) -> void:
 
 
 func _on_modal_closed() -> void:
+	if _planet_landing_active and is_instance_valid(_planet_hub):
+		_planet_hub.visible = true
+		get_tree().paused = true
+		return
 	get_tree().paused = false
 	diagnostics.write("flight_overlay_closed", {})
 
@@ -915,7 +925,7 @@ func _update_landing_offer() -> void:
 	var closest_name: String = ""
 	var nearest_ratio: float = INF
 	for planet in system_data.get("planets", []):
-		if not bool(planet.get("inhabited", false)):
+		if str(planet.get("landing", "orbit")) != "landing":
 			continue
 		var name_en: String = str(planet.get("name_en", ""))
 		if not positions.has(name_en):
@@ -965,6 +975,9 @@ func _on_action_requested(mode: String) -> void:
 	if mode != "land" or _landing_target_id == "":
 		return
 	if _warp_active or _intro_comic_playing or _intro_space_flying or get_tree().paused:
+		return
+	if _landing_target_id.contains("_p"):
+		_begin_planet_landing(_landing_target_id, _landing_target_name)
 		return
 	if _autopilot_active:
 		_stop_autopilot("landing_preview")
@@ -1308,6 +1321,7 @@ func _finish_story_flight() -> void:
 	_story_move_to(solar_system.earth_world_position() + Vector2(160.0, -80.0))
 	_gameplay_hud.visible = true
 	diagnostics.write("prologue_complete", {"landing": "Earth", "playable": true, "flight": "npc_style_hover_and_landing"})
+	call_deferred("_open_initial_earth_hub")
 
 
 func _exit_tree() -> void:
@@ -1340,3 +1354,81 @@ func _on_npc_landing_completed(role: String, destination: String) -> void:
 
 func _on_npc_takeoff_started(role: String, destination: String) -> void:
 	diagnostics.write("npc_takeoff", {"role": role, "origin": destination})
+
+# v59.1: one shared planet landing screen for every landable world.
+# Planet surface backgrounds and card art can be provided by asset ID later.
+func _ensure_planet_hub() -> Control:
+	if is_instance_valid(_planet_hub):
+		return _planet_hub
+	var path: String = "res://planet_hub/scenes/planet_hub_overlay.tscn"
+	var scene: PackedScene = load(path) as PackedScene
+	if scene == null:
+		push_error("Missing v59.1 planet hub scene: " + path)
+		return null
+	_planet_hub = scene.instantiate() as Control
+	_planet_hub.name = "PlanetHubOverlay"
+	_planet_hub.process_mode = Node.PROCESS_MODE_ALWAYS
+	_gameplay_hud.add_child(_planet_hub)
+	_planet_hub.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_planet_hub.size = get_viewport_rect().size
+	_planet_hub.connect("flight_requested", Callable(self, "_on_planet_hub_flight_requested"))
+	_planet_hub.connect("simulator_requested", Callable(self, "_on_planet_hub_simulator_requested"))
+	return _planet_hub
+
+
+func _begin_planet_landing(planet_id: String, display_name: String, with_animation: bool = true) -> void:
+	if _planet_landing_active:
+		return
+	var hub: Control = _ensure_planet_hub()
+	if hub == null:
+		return
+	_planet_landing_active = true
+	if _autopilot_active:
+		_stop_autopilot("landing_on_planet")
+	velocity = Vector2.ZERO
+	current_input = Vector2.ZERO
+	joystick.clear_input()
+	ship.throttle = 0.0
+	if with_animation:
+		var tw: Tween = create_tween()
+		tw.tween_property(ship, "scale", Vector2.ZERO, 0.42).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+		await tw.finished
+	ship.visible = false
+	hub.size = get_viewport_rect().size
+	hub.call("show_for_planet", planet_id, display_name, floori(_fuel_units + 0.001))
+	get_tree().paused = true
+	diagnostics.write("planet_hub_opened", {"planet": planet_id, "inhabited": true})
+
+
+func _on_planet_hub_flight_requested() -> void:
+	if not _planet_landing_active:
+		return
+	_planet_hub.visible = false
+	_planet_landing_active = false
+	get_tree().paused = false
+	ship.visible = true
+	ship.scale = Vector2.ZERO
+	ship.modulate = Color.WHITE
+	ship.throttle = 0.0
+	var tw: Tween = create_tween()
+	tw.tween_property(ship, "scale", Vector2.ONE, 0.33).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	joystick.clear_input()
+	current_input = Vector2.ZERO
+	_update_landing_offer()
+	diagnostics.write("planet_hub_launch_requested", {})
+
+
+func _on_planet_hub_simulator_requested() -> void:
+	if not _planet_landing_active:
+		return
+	_planet_hub.visible = false
+	main_menu.set_stats(status_hud.crystal_count, 0, 0.0)
+	main_menu.open_menu(get_viewport_rect().size)
+	# The normal ship simulator is unchanged; returning opens the planet hub.
+	get_tree().paused = true
+	diagnostics.write("planet_hub_simulator_opened", {})
+
+
+func _open_initial_earth_hub() -> void:
+	_begin_planet_landing("mw_p01", "Земля", false)
+

@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://planet_hub/scripts/planet_hub_overlay.gd" id="1_hub"]
+[ext_resource type="Script" path="res://planet_hub/scripts/planet_card.gd" id="2_card"]
+[ext_resource type="Script" path="res://planet_hub/scripts/bottom_hud.gd" id="3_hud"]
+
+[node name="PlanetHubOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hub")
+
+[node name="CardScroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 116.0
+offset_right = 1340.0
+offset_bottom = 660.0
+horizontal_scroll_mode = 1
+vertical_scroll_mode = 0
+
+[node name="CardRow" type="HBoxContainer" parent="CardScroll"]
+layout_mode = 2
+theme_override_constants/separation = 46
+
+[node name="RepresentativeCard" type="Control" parent="CardScroll/CardRow"]
+custom_minimum_size = Vector2(430, 540)
+layout_mode = 2
+script = ExtResource("2_card")
+card_title = "Представитель планеты"
+card_subtitle = "Имя: здесь будет имя"
+card_description = "Здесь должно быть описание представителя планеты."
+
+[node name="MissionCard" type="Control" parent="CardScroll/CardRow"]
+custom_minimum_size = Vector2(430, 540)
+layout_mode = 2
+script = ExtResource("2_card")
+card_title = "Задание планеты"
+card_subtitle = "Название задания"
+card_description = "Здесь должно быть описание доступного задания."
+accent = Color(0.16, 0.75, 1.0, 1.0)
+
+[node name="BottomHUD" type="Control" parent="."]
+layout_mode = 0
+offset_top = 722.0
+offset_right = 1728.0
+offset_bottom = 864.0
+script = ExtResource("3_hud")
+crystal_count = 509
