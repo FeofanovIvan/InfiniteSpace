@@ -22,6 +22,7 @@ var _planet_id: String = ""
 var _planet_name: String = ""
 var _meta: Dictionary = {}
 var _background_texture: Texture2D
+var _background_path: String = ""
 var _is_setup: bool = false
 
 func _ready() -> void:
@@ -33,9 +34,41 @@ func _ready() -> void:
 	if hud != null:
 		hud.connect("simulator_pressed", Callable(self, "_on_simulator_pressed"))
 		hud.connect("flight_pressed", Callable(self, "_on_flight_pressed"))
+	_setup_representative_card_button()
 	resized.connect(_layout_ui)
 	_layout_ui()
 	queue_redraw()
+
+func _setup_representative_card_button() -> void:
+	# Invisible input surface; the original card artwork remains unchanged.
+	var open_button: Button = Button.new()
+	open_button.name = "OpenRepresentativeDialog"
+	open_button.flat = true
+	open_button.focus_mode = Control.FOCUS_NONE
+	open_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	open_button.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	for state in ["normal", "hover", "pressed", "disabled", "focus"]:
+		open_button.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+	representative.add_child(open_button)
+	open_button.pressed.connect(_on_representative_card_pressed)
+
+
+func _on_representative_card_pressed() -> void:
+	if bool(_meta.get("inhabited", false)) and not _planet_id.is_empty():
+		representative_requested.emit(_planet_id)
+
+
+func get_dialog_background_path() -> String:
+	return _background_path
+
+
+func get_dialog_portrait_path() -> String:
+	return _resolve_first_existing([
+		CARD_ROOT + _planet_id + "_representative_dialog.png",
+		CARD_ROOT + _planet_id + "_representative_dialog.webp",
+		CARD_ROOT + _planet_id + "_representative.png",
+	])
+
 
 func show_for_planet(planet_id: String, display_name: String = "", crystals: int = 0) -> void:
 	_planet_id = planet_id
@@ -91,6 +124,7 @@ func _resolve_first_existing(paths: Array[String]) -> String:
 
 func _reload_background() -> void:
 	_background_texture = null
+	_background_path = ""
 	var system_id: String = String(_meta.get("system_id", ""))
 	var bg_path: String = _resolve_first_existing([
 		BACKGROUND_ROOT + _planet_id + ".png",
@@ -101,6 +135,7 @@ func _reload_background() -> void:
 		BACKGROUND_ROOT + "default.png",
 	])
 	if not bg_path.is_empty():
+		_background_path = bg_path
 		_background_texture = load(bg_path) as Texture2D
 	queue_redraw()
 
@@ -112,7 +147,7 @@ func _apply_card_content() -> void:
 		representative.set("card_subtitle", _planet_name)
 		var rep_text: String = "Связь с представителем планеты будет добавлена следующим этапом."
 		if inhabited:
-			rep_text = "На этой планете есть разумная жизнь. Экран представителя уже зарезервирован и будет подключён следующим этапом."
+			rep_text = "Нажми на карточку, чтобы связаться с представителем планеты через планшет-переводчик."
 		representative.set("card_description", rep_text)
 		representative.set("image_path", _resolve_first_existing([
 			CARD_ROOT + _planet_id + "_representative.png",

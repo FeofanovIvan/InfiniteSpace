@@ -82,6 +82,7 @@ var joystick
 var action_button
 var landing_preview
 var _planet_hub: Control
+var _representative_dialog: Control
 var _planet_landing_active: bool = false
 var _landing_target_id: String = ""
 var _landing_target_name: String = ""
@@ -580,6 +581,8 @@ func _layout() -> void:
 	main_menu.size = view
 	if is_instance_valid(_planet_hub):
 		_planet_hub.size = view
+	if is_instance_valid(_representative_dialog):
+		_representative_dialog.size = view
 	landing_preview.resize_preview(view)
 
 
@@ -1373,7 +1376,55 @@ func _ensure_planet_hub() -> Control:
 	_planet_hub.size = get_viewport_rect().size
 	_planet_hub.connect("flight_requested", Callable(self, "_on_planet_hub_flight_requested"))
 	_planet_hub.connect("simulator_requested", Callable(self, "_on_planet_hub_simulator_requested"))
+	_planet_hub.connect("representative_requested", Callable(self, "_on_planet_representative_requested"))
 	return _planet_hub
+
+
+func _ensure_representative_dialog() -> Control:
+	if is_instance_valid(_representative_dialog):
+		return _representative_dialog
+	var path: String = "res://planet_hub/scenes/representative_dialog.tscn"
+	var scene: PackedScene = load(path) as PackedScene
+	if scene == null:
+		push_error("Missing representative dialog: " + path)
+		return null
+	_representative_dialog = scene.instantiate() as Control
+	_representative_dialog.name = "PlanetRepresentativeConversation"
+	_representative_dialog.visible = false
+	_representative_dialog.process_mode = Node.PROCESS_MODE_ALWAYS
+	_gameplay_hud.add_child(_representative_dialog)
+	_representative_dialog.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_representative_dialog.size = get_viewport_rect().size
+	_representative_dialog.connect("return_requested", Callable(self, "_on_representative_return_requested"))
+	return _representative_dialog
+
+
+func _on_planet_representative_requested(planet_id: String) -> void:
+	if not _planet_landing_active or not is_instance_valid(_planet_hub):
+		return
+	var planet_meta: Dictionary = _planet_hub.get("_meta")
+	if not bool(planet_meta.get("inhabited", false)):
+		return
+	var dialog: Control = _ensure_representative_dialog()
+	if dialog == null:
+		return
+	var planet_name: String = str(_planet_hub.get("_planet_name"))
+	var background_path: String = str(_planet_hub.call("get_dialog_background_path"))
+	var portrait_path: String = str(_planet_hub.call("get_dialog_portrait_path"))
+	dialog.call("configure_for_planet", planet_id, planet_name, background_path, portrait_path)
+	_planet_hub.visible = false
+	dialog.visible = true
+	get_tree().paused = true
+	diagnostics.write("representative_dialog_opened", {"planet": planet_id})
+
+
+func _on_representative_return_requested() -> void:
+	if is_instance_valid(_representative_dialog):
+		_representative_dialog.visible = false
+	if _planet_landing_active and is_instance_valid(_planet_hub):
+		_planet_hub.visible = true
+	get_tree().paused = _planet_landing_active
+	diagnostics.write("representative_dialog_closed", {})
 
 
 func _begin_planet_landing(planet_id: String, display_name: String, with_animation: bool = true) -> void:
@@ -1431,4 +1482,3 @@ func _on_planet_hub_simulator_requested() -> void:
 
 func _open_initial_earth_hub() -> void:
 	_begin_planet_landing("mw_p01", "Земля", false)
-
