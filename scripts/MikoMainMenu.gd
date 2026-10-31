@@ -16,6 +16,11 @@ const PET_FRAMES_PATH: String = "res://education/playtown/assets/pet/pet_frames.
 # Running dog on the main ship screen is the actual Play Town animated character.
 # The original dog sprites, puppy mini-games and sounds are copied locally.
 const PET_WALK_SPEED: float = 65.0
+# v58.6: sizes relative to the previous Play Town ship screen.
+const PUPPY_VISUAL_MULTIPLIER: float = 3.0
+const EDUCATIONAL_CARD_MULTIPLIER: float = 0.85
+const PUPPY_SOURCE_FRAME: float = 512.0
+const PUPPY_OLD_SCALE: float = 0.26
 
 var _background: TextureRect
 var _header: Control
@@ -380,7 +385,9 @@ func _advance_puppy(delta: float) -> void:
 	if _pet_sprite == null or _pet_click_area == null or size.x < 120.0:
 		return
 	var ui_scale: float = clampf(minf(size.x / 1280.0, size.y / 720.0), 0.62, 1.28)
-	var inset: float = 82.0 * ui_scale
+	# Increase the margins to keep the entire 3x puppy visible at both edges.
+	var puppy_half_extent: float = PUPPY_SOURCE_FRAME * PUPPY_OLD_SCALE * PUPPY_VISUAL_MULTIPLIER * 0.5
+	var inset: float = (puppy_half_extent + 14.0) * ui_scale
 	var left: float = inset
 	var right: float = maxf(left + 1.0, size.x - inset)
 	if _pet_initial_position:
@@ -397,11 +404,14 @@ func _advance_puppy(delta: float) -> void:
 	if _pet_sprite.sprite_frames != null and _pet_sprite.sprite_frames.has_animation(anim):
 		if _pet_sprite.animation != anim:
 			_pet_sprite.play(anim)
-	var anchor: Vector2 = Vector2(_pet_walk_x, size.y - 60.0 * ui_scale)
+	# Keep the puppy's feet at the bottom after enlarging the 512px frame.
+	# Anchoring it at the old y - 60 would clip almost half the enlarged image.
+	var anchor: Vector2 = Vector2(_pet_walk_x, size.y - (puppy_half_extent + 8.0) * ui_scale)
 	_pet_sprite.position = anchor
-	_pet_sprite.scale = Vector2.ONE * (0.26 * ui_scale)
-	_pet_click_area.position = anchor - Vector2(68.0, 70.0) * ui_scale
-	_pet_click_area.size = Vector2(136.0, 140.0) * ui_scale
+	_pet_sprite.scale = Vector2.ONE * (PUPPY_OLD_SCALE * PUPPY_VISUAL_MULTIPLIER * ui_scale)
+	var tap_size: Vector2 = Vector2(136.0, 140.0) * PUPPY_VISUAL_MULTIPLIER * ui_scale
+	_pet_click_area.position = anchor - tap_size * 0.5
+	_pet_click_area.size = tap_size
 
 
 func _process(delta: float) -> void:
@@ -434,13 +444,16 @@ func _reflow() -> void:
 	crystal.position = Vector2(view.x * 0.5 - 60.0 * scale, 17.0 * scale)
 	_counter.position = Vector2(view.x * 0.5 + 5.0 * scale, 18.0 * scale)
 	_counter.size = Vector2(100.0, 45.0) * scale
-	var card_height: float = clampf(view.y * 0.61, 166.0, 440.0)
+	# Scale the entire original card rectangle, not just its height.
+	var original_card_height: float = clampf(view.y * 0.61, 166.0, 440.0)
+	var card_height: float = original_card_height * EDUCATIONAL_CARD_MULTIPLIER
 	for child in _strip.get_children():
 		var button: TextureButton = child as TextureButton
 		if button == null or button.texture_normal == null:
 			continue
 		var aspect: float = float(button.texture_normal.get_width()) / maxf(1.0, float(button.texture_normal.get_height()))
-		var card_width: float = clampf(card_height * aspect, 112.0 * scale, minf(480.0 * scale, view.x * 0.75))
+		var original_card_width: float = clampf(original_card_height * aspect, 112.0 * scale, minf(480.0 * scale, view.x * 0.75))
+		var card_width: float = original_card_width * EDUCATIONAL_CARD_MULTIPLIER
 		button.custom_minimum_size = Vector2(card_width, card_height)
 	var margin: float = maxf(14.0, 22.0 * scale)
 	_gallery.position = Vector2(margin, 100.0 * scale)
