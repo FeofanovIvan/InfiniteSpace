@@ -237,7 +237,10 @@ func _sample_answer() -> String:
 		0:
 			return str(GREETINGS.get(_locale, GREETINGS["en"])).trim_suffix("!").trim_prefix("¡")
 		1:
-			return str(_profile.get("name", "Алися"))
+			var store: Node = get_node_or_null("/root/ChildProfileStore")
+			if store != null and store.has_method("get_display_name"):
+				return str(store.call("get_display_name", _locale))
+			return str(_profile.get("name_cyrillic" if _locale == "ru" else "name_latin", "Алися" if _locale == "ru" else "Alisya"))
 		2:
 			return str(_profile.get("age", 3))
 		3:
@@ -342,10 +345,19 @@ func _answer_matches_expected(answer: String) -> bool:
 				if typed == _normalize_answer(str(greeting)):
 					return true
 		1:
-			# Accept a name alone or a simple first-person introduction.
-			for prefix in ["меня зовут ", "my name is ", "je m'appelle ", "ich heiße ", "me llamo ", "meu nome é "]:
-				if typed == _normalize_answer(prefix + expected):
+			# The same name may be typed in Cyrillic or Latin in ANY locale.
+			# Proper names are transliterated, not translated into six names.
+			var names: Array[String] = [
+				str(_profile.get("name_cyrillic", "Алися")),
+				str(_profile.get("name_latin", "Alisya"))
+			]
+			for candidate in names:
+				var normalized_candidate: String = _normalize_answer(candidate)
+				if typed == normalized_candidate:
 					return true
+				for prefix in ["меня зовут ", "my name is ", "je m'appelle ", "ich heiße ", "me llamo ", "meu nome é "]:
+					if typed == _normalize_answer(prefix + normalized_candidate):
+						return true
 		2:
 			# Accept a bare number or a simple age phrase, but not another age.
 			for form in ["мне %s", "%s года", "%s лет", "i am %s", "%s years old", "tengo %s años", "tenho %s anos", "j'ai %s ans", "ich bin %s"]:
