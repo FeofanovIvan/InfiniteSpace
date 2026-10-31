@@ -13,7 +13,7 @@
 
 ## Установка
 ZIP: `InfiniteSpace_v58_2_Patch_TransparentSwipeCards.zip`.
-SHA256: `0727c12196296c2c2686cf4b91d92e73fe1e63fb1d97fb767430b52a6954f7bf`.
+SHA256: `21cbe195c3b9d2707881eac75539a47550fdbb9e625575628641a50c0c23880f`.
 
 В ZIP: `scripts/MikoMainMenu.gd`, `install_v58_2.py`, `install_and_launch_v58_2.sh`, `sync_v58_2_to_github.sh`, манифест, новый статический тест и этот отчёт.
 
