@@ -1,0 +1,299 @@
+[gd_scene load_steps=44 format=3 uid="uid://w84jpcu88qoj"]
+
+[ext_resource type="Script" uid="uid://xmf6pun7wpef" path="res://education/playtown/src/features/race/scooter_race.gd" id="1_u3wra"]
+[ext_resource type="Script" uid="uid://dn04p6x4pbfi6" path="res://education/playtown/src/features/race/race_player.gd" id="2_la0j7"]
+[ext_resource type="Script" uid="uid://bcywxrj85fvw1" path="res://education/playtown/src/features/race/race_scenery_controller.gd" id="2_o28a7"]
+[ext_resource type="Texture2D" uid="uid://cmabm67dl4k3a" path="res://education/playtown/assets/race/left_grass_patch.png" id="2_vuo5i"]
+[ext_resource type="Script" uid="uid://b2xh0cg8kg1g7" path="res://education/playtown/src/features/race/left_roadside_scenery.gd" id="3_yyh66"]
+[ext_resource type="Script" uid="uid://bxqfeomv5bewt" path="res://education/playtown/src/features/race/delayed_left_roadside_scenery.gd" id="5_38atv"]
+[ext_resource type="Texture2D" uid="uid://biit1auhp1ggb" path="res://education/playtown/assets/race/right_grass_patch.png" id="6_e8f5p"]
+[ext_resource type="Texture2D" uid="uid://hkqfc8jdmjst" path="res://education/playtown/assets/race/left_road_sign.png" id="7_38atv"]
+[ext_resource type="Script" uid="uid://bjkp581fml3ug" path="res://education/playtown/src/features/race/delayed_right_roadside_scenery.gd" id="7_cb5ud"]
+[ext_resource type="Script" uid="uid://ry2xj1bm5h0o" path="res://education/playtown/src/features/race/race_road_controller.gd" id="7_qsu71"]
+[ext_resource type="Script" uid="uid://l6foq6vmxpq6" path="res://education/playtown/src/features/race/left_road_sign.gd" id="7_ru8p4"]
+[ext_resource type="Texture2D" uid="uid://f4jyyu4wx8eh" path="res://education/playtown/assets/race/right_road_sign.png" id="9_cb5ud"]
+[ext_resource type="Script" uid="uid://bny6vai6lp2xn" path="res://education/playtown/src/features/race/right_road_sign.gd" id="10_wu8cu"]
+[ext_resource type="Texture2D" uid="uid://hko2sr5e4jmv" path="res://education/playtown/assets/race/road_barrier.png" id="11_qsu71"]
+[ext_resource type="Script" uid="uid://c24fd4ovuw32g" path="res://education/playtown/src/features/race/left_barrier_obstacle.gd" id="12_sk02v"]
+[ext_resource type="Texture2D" uid="uid://eokhurjmii0f" path="res://education/playtown/assets/race/unicorn.png" id="13_1l8ah"]
+[ext_resource type="Texture2D" uid="uid://clwikd8v4q0se" path="res://education/playtown/assets/race/puddle.png" id="13_ou17f"]
+[ext_resource type="Script" uid="uid://vef3a40k2cgg" path="res://education/playtown/src/features/race/puddle_obstacle.gd" id="14_blofi"]
+[ext_resource type="Script" uid="uid://v7kynpr8n3i0" path="res://education/playtown/src/world/npcs/unicorn_npc.gd" id="14_deuor"]
+[ext_resource type="Texture2D" uid="uid://c2oc5xrog2d7r" path="res://education/playtown/assets/race/horse.png" id="15_ak4y7"]
+[ext_resource type="Script" uid="uid://ckbrcechukyuw" path="res://education/playtown/src/features/race/right_barrier_obstacle.gd" id="15_blofi"]
+[ext_resource type="Script" uid="uid://vqcudmta8g0l" path="res://education/playtown/src/world/npcs/horse_npc.gd" id="16_3s1h0"]
+[ext_resource type="Texture2D" uid="uid://cd66aagf2d76d" path="res://education/playtown/assets/race/rainbow.png" id="18_uo7q5"]
+[ext_resource type="Texture2D" uid="uid://dfqq5r750sw5d" path="res://education/playtown/assets/race/grass_tuft.png" id="19_nb46v"]
+[ext_resource type="Texture2D" uid="uid://bnc8ukxrfsvrp" path="res://education/playtown/assets/race/cow.png" id="27_3s1h0"]
+[ext_resource type="Script" uid="uid://2hsi28ltsnw6" path="res://education/playtown/src/features/race/race_coin.gd" id="28_ikf15"]
+[ext_resource type="Texture2D" uid="uid://27ir3u7fldxc" path="res://education/playtown/assets/race/coin/coin_01.png" id="29_cvc2a"]
+[ext_resource type="Texture2D" uid="uid://dwas6mrf3yqor" path="res://education/playtown/assets/race/coin/coin_02.png" id="30_ln5kk"]
+[ext_resource type="Texture2D" uid="uid://d2kelrr6k4ih4" path="res://education/playtown/assets/race/coin/coin_03.png" id="31_w2gkg"]
+[ext_resource type="Texture2D" uid="uid://b0g6ny8yaffir" path="res://education/playtown/assets/race/coin/coin_04.png" id="32_x2vd1"]
+[ext_resource type="Texture2D" uid="uid://dvj0ec3i5ltwn" path="res://education/playtown/assets/race/coin/coin_05.png" id="33_7fq7h"]
+[ext_resource type="Script" uid="uid://bfspc4eentb2y" path="res://education/playtown/src/world/npcs/cow_npc.gd" id="43_2kw1f"]
+[ext_resource type="AudioStream" uid="uid://dj5paeu2vqvoo" path="res://education/playtown/audio/music/race_theme.ogg" id="59_82vgs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blofi"]
+size = Vector2(196.667, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efiwj"]
+size = Vector2(363.334, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o28a7"]
+size = Vector2(366.667, 49.9999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76uyx"]
+size = Vector2(20, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stjhl"]
+size = Vector2(20, 133.333)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_07fvj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_cvc2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ln5kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_w2gkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_x2vd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_7fq7h")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ussou"]
+radius = 77.8173
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3s1h0"]
+size = Vector2(510, 350)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dko3"]
+size = Vector2(79, 108)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_la0j7"]
+size = Vector2(80, 109)
+
+[node name="ClassmateGame" type="Node2D"]
+script = ExtResource("1_u3wra")
+player_path = NodePath("CanvasLayer/PlayerControl/Control/Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="World" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_o28a7")
+
+[node name="grass" type="Sprite2D" parent="CanvasLayer/World"]
+position = Vector2(-357, 9)
+texture = ExtResource("2_vuo5i")
+script = ExtResource("3_yyh66")
+
+[node name="grass2" type="Sprite2D" parent="CanvasLayer/World"]
+position = Vector2(-608, 21)
+texture = ExtResource("2_vuo5i")
+script = ExtResource("5_38atv")
+
+[node name="grass3" type="Sprite2D" parent="CanvasLayer/World"]
+position = Vector2(323, 18)
+texture = ExtResource("6_e8f5p")
+script = ExtResource("7_cb5ud")
+
+[node name="unicorn" type="Sprite2D" parent="CanvasLayer/World"]
+position = Vector2(453, 0)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_1l8ah")
+script = ExtResource("14_deuor")
+angle_deg = 30.0
+
+[node name="horse" type="Sprite2D" parent="CanvasLayer/World"]
+position = Vector2(-478, -15)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("15_ak4y7")
+flip_h = true
+script = ExtResource("16_3s1h0")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/World"]
+modulate = Color(1, 1, 1, 0.235294)
+position = Vector2(-69, -207)
+scale = Vector2(0.3, 0.285)
+texture = ExtResource("18_uo7q5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/World"]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(292, -254)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("19_nb46v")
+
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/World"]
+position = Vector2(-350, -160)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_nb46v")
+
+[node name="road" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_qsu71")
+
+[node name="puddle" type="Sprite2D" parent="CanvasLayer/road"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("13_ou17f")
+script = ExtResource("14_blofi")
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/road/puddle" groups=["puddle"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/road/puddle/Area2D"]
+shape = SubResource("RectangleShape2D_blofi")
+
+[node name="beam_left" type="Sprite2D" parent="CanvasLayer/road"]
+position = Vector2(-74, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("11_qsu71")
+script = ExtResource("12_sk02v")
+side = "left"
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/road/beam_left" groups=["obstacle"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/road/beam_left/Area2D"]
+shape = SubResource("RectangleShape2D_efiwj")
+
+[node name="beam_right" type="Sprite2D" parent="CanvasLayer/road"]
+position = Vector2(76, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("11_qsu71")
+script = ExtResource("15_blofi")
+side = "right"
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/road/beam_right" groups=["obstacle"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/road/beam_right/Area2D"]
+shape = SubResource("RectangleShape2D_o28a7")
+
+[node name="sign" type="Sprite2D" parent="CanvasLayer/road"]
+position = Vector2(-109, -57)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_38atv")
+script = ExtResource("7_ru8p4")
+side = "left"
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/road/sign" groups=["obstacle"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/road/sign/Area2D"]
+position = Vector2(0, 65)
+shape = SubResource("RectangleShape2D_76uyx")
+
+[node name="sign2" type="Sprite2D" parent="CanvasLayer/road"]
+position = Vector2(102, -58)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_cb5ud")
+script = ExtResource("10_wu8cu")
+side = "left"
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/road/sign2" groups=["obstacle"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/road/sign2/Area2D"]
+position = Vector2(0, 70)
+shape = SubResource("RectangleShape2D_stjhl")
+
+[node name="coin" type="Sprite2D" parent="CanvasLayer/road"]
+position = Vector2(2, 0)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("28_ikf15")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/road/coin"]
+sprite_frames = SubResource("SpriteFrames_07fvj")
+animation = &"spin"
+frame_progress = 0.0729008
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/road/coin" groups=["coin"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/road/coin/Area2D"]
+shape = SubResource("CircleShape2D_ussou")
+
+[node name="cow" type="Sprite2D" parent="CanvasLayer/road"]
+position = Vector2(198, -32)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("27_3s1h0")
+script = ExtResource("43_2kw1f")
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/road/cow" groups=["obstacle"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/road/cow/Area2D"]
+position = Vector2(20, 190)
+shape = SubResource("RectangleShape2D_3s1h0")
+
+[node name="PlayerControl" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/PlayerControl"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Player" type="CharacterBody2D" parent="CanvasLayer/PlayerControl/Control" groups=["player"]]
+position = Vector2(0, -40)
+script = ExtResource("2_la0j7")
+player_control_path = NodePath("../..")
+road_path = NodePath("../../../road")
+world_path = NodePath("../../../World")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/PlayerControl/Control/Player"]
+position = Vector2(1, -59)
+scale = Vector2(0.215869, 0.218522)
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer/PlayerControl/Control/Player"]
+position = Vector2(-636, -617)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PlayerControl/Control/Player/Area2D"]
+position = Vector2(637.5, 631)
+shape = SubResource("RectangleShape2D_6dko3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/PlayerControl/Control/Player"]
+position = Vector2(1, 13.5)
+shape = SubResource("RectangleShape2D_la0j7")
+one_way_collision_margin = 0.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("59_82vgs")
+volume_db = 2.0
+autoplay = true
+parameters/looping = true

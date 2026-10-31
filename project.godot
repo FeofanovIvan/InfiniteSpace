@@ -22,6 +22,12 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/ships/miko_player_ship.png"
 
 [autoload]
+PlayTownPortal="*res://scripts/PlayTownPortal.gd"
+GameState="*res://education/playtown/src/core/game_state.gd"
+SFX="*res://education/playtown/src/core/sound_service.gd"
+BillingService="*res://education/playtown/src/core/billing_service.gd"
+AccessService="*res://education/playtown/src/core/access_service.gd"
+LanguageService="*res://education/playtown/src/core/localization/language_service.gd"
 
 MobileLocale="*res://scripts/MobileLocale.gd"
 

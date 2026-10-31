@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfbhk4nh7dq3j"]
+
+[ext_resource type="Script" uid="uid://b1igexol3c2g" path="res://education/playtown/src/features/grocery/grocery_game.gd" id="1_game"]
+[ext_resource type="PackedScene" uid="uid://cvdh0b4si3umh" path="res://education/playtown/scenes/features/grocery/grocery_item.tscn" id="2_item"]
+
+[node name="GroceryGame" type="Node2D"]
+script = ExtResource("1_game")
+product_scene = ExtResource("2_item")
