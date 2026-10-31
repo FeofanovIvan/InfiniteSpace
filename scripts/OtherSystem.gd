@@ -261,7 +261,11 @@ func configure_region(region: Dictionary, simulation_time: float = 0.0) -> void:
 			_story_station_root.add_child(_story_fx)
 		if station_region_id == "ngc6822":
 			_build_titan_asteroid_ring()
-		# v58.1: radial Tarantula artwork has no left-edge thruster nozzles.
+		if station_region_id == "lmc":
+			_tarantula_thrusters = TarantulaThrusters.new()
+			_tarantula_thrusters.name = "ThreeBlueThrusters_AttachedToTarantula"
+			_tarantula_thrusters.z_index = -1
+			_station_sprite.add_child(_tarantula_thrusters)
 		# Exactly ONE story landmark per region. No fake luminous orb.
 	else:
 		_story_station_root = null

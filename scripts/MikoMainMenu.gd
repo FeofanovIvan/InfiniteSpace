@@ -11,6 +11,11 @@ const SHIP_TEXTURE: Texture2D = preload("res://assets/ui/miko_ship_menu_circle.p
 const BACK_TEXTURE: Texture2D = preload("res://assets/ui/bridge_back.png")
 const CATALOG_PATH: String = "res://education/playtown_catalog.json"
 const ART_ROOT: String = "res://education/playtown/"
+const PET_SCENE_PATH: String = "res://education/playtown/scenes/features/pet/pet_home_miko.tscn"
+const PET_FRAMES_PATH: String = "res://education/playtown/assets/pet/pet_frames.tres"
+# Running dog on the main ship screen is the actual Play Town animated character.
+# The original dog sprites, puppy mini-games and sounds are copied locally.
+const PET_WALK_SPEED: float = 65.0
 
 var _background: TextureRect
 var _header: Control
@@ -36,6 +41,11 @@ var _cards: Array[Dictionary] = []
 var _crystal_balance: int = 0
 var _last_playtown_coins: int = 0
 var _playing: bool = false
+var _pet_sprite: AnimatedSprite2D
+var _pet_click_area: Button
+var _pet_walk_x: float = 0.0
+var _pet_direction: float = 1.0
+var _pet_initial_position: bool = true
 
 
 func _ready() -> void:
@@ -103,6 +113,26 @@ func _ready() -> void:
 	_gesture_layer.mouse_filter = Control.MOUSE_FILTER_STOP
 	_gesture_layer.clip_contents = true
 	add_child(_gesture_layer)
+	# A real walking Play Town puppy, not a generic icon or a pet-shop button.
+	var frames: SpriteFrames = load(PET_FRAMES_PATH) as SpriteFrames
+	_pet_sprite = AnimatedSprite2D.new()
+	_pet_sprite.name = "PlayTownPuppy_WalkingBottom"
+	_pet_sprite.sprite_frames = frames
+	_pet_sprite.centered = true
+	_pet_sprite.z_index = 10
+	add_child(_pet_sprite)
+	if frames != null and frames.has_animation("walk_right"):
+		_pet_sprite.animation = "walk_right"
+		_pet_sprite.play()
+	_pet_click_area = Button.new()
+	_pet_click_area.name = "TapTheRunningPuppy_ToPetHome"
+	_pet_click_area.text = ""
+	_pet_click_area.focus_mode = Control.FOCUS_NONE
+	_pet_click_area.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	for style_name in ["normal", "hover", "pressed", "disabled", "focus"]:
+		_pet_click_area.add_theme_stylebox_override(style_name, StyleBoxEmpty.new())
+	_pet_click_area.pressed.connect(_open_pet_home)
+	add_child(_pet_click_area)
 	_game_layer = Control.new()
 	_game_layer.name = "PlayTownOriginalGameRunner"
 	_game_layer.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -189,6 +219,14 @@ func close_menu() -> void:
 	closed.emit()
 
 
+func _open_pet_home() -> void:
+	# Use the original Play Town PetHome scene and all original gameplay actions.
+	# The Miko-specific duplicate unlocks pet actions without Play Town shop stock.
+	if _playing:
+		return
+	_open_game(PET_SCENE_PATH)
+
+
 func _open_game(scene_path: String) -> void:
 	if _playing or not ResourceLoader.exists(scene_path):
 		return
@@ -215,6 +253,8 @@ func _open_game(scene_path: String) -> void:
 	_playing = true
 	_gallery.visible = false
 	_gesture_layer.visible = false
+	_pet_sprite.visible = false
+	_pet_click_area.visible = false
 	_pointer_kind = ""
 	_fling_speed = 0.0
 	_header.visible = false
@@ -243,6 +283,8 @@ func _return_to_cards() -> void:
 	_game_layer.visible = false
 	_gallery.visible = true
 	_gesture_layer.visible = true
+	_pet_sprite.visible = true
+	_pet_click_area.visible = true
 	_pointer_kind = ""
 	_fling_speed = 0.0
 	_header.visible = true
@@ -334,7 +376,37 @@ func _input(event: InputEvent) -> void:
 			_fling_speed = 0.0
 
 
+func _advance_puppy(delta: float) -> void:
+	if _pet_sprite == null or _pet_click_area == null or size.x < 120.0:
+		return
+	var ui_scale: float = clampf(minf(size.x / 1280.0, size.y / 720.0), 0.62, 1.28)
+	var inset: float = 82.0 * ui_scale
+	var left: float = inset
+	var right: float = maxf(left + 1.0, size.x - inset)
+	if _pet_initial_position:
+		_pet_walk_x = (left + right) * 0.5
+		_pet_initial_position = false
+	_pet_walk_x += PET_WALK_SPEED * ui_scale * _pet_direction * delta
+	if _pet_walk_x >= right:
+		_pet_walk_x = right
+		_pet_direction = -1.0
+	elif _pet_walk_x <= left:
+		_pet_walk_x = left
+		_pet_direction = 1.0
+	var anim: StringName = &"walk_right" if _pet_direction > 0.0 else &"walk_left"
+	if _pet_sprite.sprite_frames != null and _pet_sprite.sprite_frames.has_animation(anim):
+		if _pet_sprite.animation != anim:
+			_pet_sprite.play(anim)
+	var anchor: Vector2 = Vector2(_pet_walk_x, size.y - 60.0 * ui_scale)
+	_pet_sprite.position = anchor
+	_pet_sprite.scale = Vector2.ONE * (0.26 * ui_scale)
+	_pet_click_area.position = anchor - Vector2(68.0, 70.0) * ui_scale
+	_pet_click_area.size = Vector2(136.0, 140.0) * ui_scale
+
+
 func _process(delta: float) -> void:
+	if visible and not _playing:
+		_advance_puppy(delta)
 	if not visible or _playing or _pointer_kind != "" or absf(_fling_speed) < 8.0:
 		return
 	var max_scroll: int = maxi(0, roundi(_strip.size.x - _gallery.size.x))
@@ -384,4 +456,7 @@ func _reflow() -> void:
 	_viewport_container.size = Vector2(1536.0, 768.0)
 	_viewport_container.position = (view - _viewport_container.size * playtown_scale) * 0.5
 	_game_back.position = Vector2(12.0, 12.0) * scale
-	_game_back.size = Vector2.ONE * 54.0 * scale
+	_game_back.size = Vector2.ONE * 48.0 * scale
+	# A compact top-left return-to-flight button; no pet-shop top-right icon.
+	_back.size = Vector2.ONE * 51.0 * scale
+	_advance_puppy(0.0)
