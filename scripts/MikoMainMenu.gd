@@ -1,372 +1,387 @@
 extends Control
-## MIKO bridge: actual supplied cockpit artwork + touchable holographic consoles.
-## This screen is opened from the tiny ship button while space flight is paused.
-## Original Miko appears in the central foreground; crew seats remain separate slots.
-
+## v58 educational game carousel: original Play Town cards and minigames.
+## The cockpit background is retained, but Miko, crew, simulator, shop,
+## capacity and speed cards are intentionally absent.
 signal closed
+signal crystals_earned(units: int)
 
 const BRIDGE_TEXTURE: Texture2D = preload("res://assets/bridge/bridge_cockpit.png")
-const SIMULATOR_TEXTURE: Texture2D = preload("res://assets/bridge/simulator_console.png")
-const SHOP_TEXTURE: Texture2D = preload("res://assets/bridge/shop_console.png")
-const CRYSTAL_TEXTURE: Texture2D = preload("res://assets/ui/crystal.png")
+const CRYSTAL_TEXTURE: Texture2D = preload("res://asteroid_assets/fragments/04_blue/crystal_wedge.png")
 const SHIP_TEXTURE: Texture2D = preload("res://assets/ui/miko_ship_menu_circle.png")
 const BACK_TEXTURE: Texture2D = preload("res://assets/ui/bridge_back.png")
-const SETTINGS_TEXTURE: Texture2D = preload("res://assets/ui/bridge_settings.png")
-const CHAR_DIR: String = "res:/" + "/assets/characters/"
+const CATALOG_PATH: String = "res://education/playtown_catalog.json"
+const ART_ROOT: String = "res://education/playtown/"
 
-var _bridge_background: TextureRect
-var _hub: Control
-var _detail: Control
-var _top: Control
-var _simulator: TextureButton
-var _shop: TextureButton
-var _detail_art: TextureRect
-var _detail_title: Label
-var _settings_title: Label
-var _language_bar: HBoxContainer
-var _lang_buttons: Dictionary = {}
-var _detail_tint: ColorRect
-var _close_button: TextureButton
-var _settings_button: TextureButton
-var _back_button: TextureButton
-var _detail_back_button: TextureButton
-var _fly_crystals_label: Label
-var _capacity_label: Label
-var _speed_label: Label
-var _crystals: int = 0
-var _capacity: int = 0
-var _ship_speed: float = 0.0
-var _mode: String = "hub"
-var _miko_sprite: TextureRect
-var _crew: Array[TextureRect] = []
-var _crew_paths: Array[String] = [
-	"crew_left_1.png",
-	"crew_left_2.png",
-	"crew_right_1.png",
-	"crew_right_2.png"
-]
+var _background: TextureRect
+var _header: Control
+var _counter: Label
+var _gallery: ScrollContainer
+var _strip: HBoxContainer
+var _back: TextureButton
+var _gesture_layer: Control
+var _pointer_kind: String = ""
+var _pointer_index: int = -1
+var _pointer_origin: Vector2 = Vector2.ZERO
+var _pointer_last: Vector2 = Vector2.ZERO
+var _pointer_moved: bool = false
+var _pressed_card: TextureButton
+var _fling_speed: float = 0.0
+const DRAG_THRESHOLD: float = 14.0
+const MAX_FLING_SPEED: float = 1550.0
+var _game_layer: Control
+var _viewport_container: SubViewportContainer
+var _game_viewport: SubViewport
+var _game_back: Button
+var _cards: Array[Dictionary] = []
+var _crystal_balance: int = 0
+var _last_playtown_coins: int = 0
+var _playing: bool = false
+
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	visible = false
-	_build_scene()
+	_background = TextureRect.new()
+	_background.texture = BRIDGE_TEXTURE
+	_background.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_background.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_background)
+	var dark: ColorRect = ColorRect.new()
+	dark.name = "ReadableCardGalleryTint"
+	dark.color = Color(0.005, 0.015, 0.045, 0.40)
+	dark.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	dark.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(dark)
+	_header = Control.new()
+	_header.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_header)
+	_back = TextureButton.new()
+	_back.texture_normal = SHIP_TEXTURE
+	_back.ignore_texture_size = true
+	_back.stretch_mode = TextureButton.STRETCH_SCALE
+	_back.focus_mode = Control.FOCUS_NONE
+	_back.tooltip_text = "Вернуться к полёту"
+	_back.pressed.connect(close_menu)
+	_header.add_child(_back)
+	var crystal: TextureRect = TextureRect.new()
+	crystal.name = "ActualBlueCrystal"
+	crystal.texture = CRYSTAL_TEXTURE
+	crystal.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	crystal.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	crystal.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_header.add_child(crystal)
+	_counter = Label.new()
+	_counter.name = "CrystalBalanceOnly"
+	_counter.add_theme_font_size_override("font_size", 31)
+	_counter.add_theme_color_override("font_color", Color(0.82, 0.96, 1.0))
+	_counter.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_counter.text = "0"
+	_header.add_child(_counter)
+	_gallery = ScrollContainer.new()
+	_gallery.name = "OriginalPlayTownCards_HorizontalSwipe"
+	# The gallery is a fully transparent swipe surface with no navigation arrows
+	# or scrolling chrome. Touch and mouse gestures use the same controller.
+	_gallery.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
+	_gallery.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_gallery.follow_focus = false
+	_gallery.clip_contents = true
+	_gallery.mouse_filter = Control.MOUSE_FILTER_STOP
+	add_child(_gallery)
+	_strip = HBoxContainer.new()
+	_strip.name = "PlayTownEducation_CardStrip"
+	_strip.alignment = BoxContainer.ALIGNMENT_BEGIN
+	_strip.add_theme_constant_override("separation", 20)
+	_gallery.add_child(_strip)
+	_strip.add_theme_constant_override("separation", 28)
+	_load_original_catalog()
+	# Transparent hit layer above every card: it differentiates swipes from taps,
+	# so dragging a card cannot accidentally launch its mini-game.
+	_gesture_layer = Control.new()
+	_gesture_layer.name = "TransparentSwipeAndTapArea"
+	_gesture_layer.mouse_filter = Control.MOUSE_FILTER_STOP
+	_gesture_layer.clip_contents = true
+	add_child(_gesture_layer)
+	_game_layer = Control.new()
+	_game_layer.name = "PlayTownOriginalGameRunner"
+	_game_layer.mouse_filter = Control.MOUSE_FILTER_STOP
+	_game_layer.visible = false
+	add_child(_game_layer)
+	_viewport_container = SubViewportContainer.new()
+	_viewport_container.name = "GameViewportInputForwarding"
+	_viewport_container.stretch = false
+	_viewport_container.mouse_filter = Control.MOUSE_FILTER_STOP
+	_game_layer.add_child(_viewport_container)
+	_game_viewport = SubViewport.new()
+	_game_viewport.name = "OriginalPlayTownGameViewport"
+	_game_viewport.size = Vector2i(1536, 768)
+	_game_viewport.handle_input_locally = true
+	_game_viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+	_viewport_container.add_child(_game_viewport)
+	_game_back = Button.new()
+	_game_back.name = "ReturnToEducationalCards"
+	_game_back.text = "❮"
+	_game_back.focus_mode = Control.FOCUS_NONE
+	_game_back.add_theme_font_size_override("font_size", 25)
+	_game_back.pressed.connect(_return_to_cards)
+	_game_layer.add_child(_game_back)
+	var portal: Node = get_node_or_null("/root/PlayTownPortal")
+	if portal != null and portal.has_signal("game_finished"):
+		portal.connect("game_finished", _return_to_cards)
+	var coins: Node = get_node_or_null("/root/GameState")
+	if coins != null and coins.has_signal("coin_balance_changed"):
+		coins.connect("coin_balance_changed", _on_coins_changed)
 	resized.connect(_reflow)
-	MobileLocale.language_changed.connect(_refresh_locale)
-	_refresh_locale(MobileLocale.language)
 	_reflow()
 
-func _build_scene() -> void:
-	_bridge_background = TextureRect.new()
-	_bridge_background.name = "OriginalMikoBridgeBackground"
-	_bridge_background.texture = BRIDGE_TEXTURE
-	_bridge_background.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	_bridge_background.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
-	_bridge_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(_bridge_background)
 
-	_hub = Control.new()
-	_hub.name = "BridgeWithSimulatorAndShop"
-	_hub.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(_hub)
+func _load_original_catalog() -> void:
+	if not FileAccess.file_exists(CATALOG_PATH):
+		push_error("Missing educational card catalog: " + CATALOG_PATH)
+		return
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(CATALOG_PATH))
+	if not parsed is Array:
+		push_error("Invalid educational card catalog")
+		return
+	for entry in parsed:
+		if not entry is Dictionary:
+			continue
+		var info: Dictionary = entry
+		var art_path: String = ART_ROOT + str(info.get("texture", ""))
+		var scene_path: String = ART_ROOT + str(info.get("scene", ""))
+		if not ResourceLoader.exists(art_path) or not ResourceLoader.exists(scene_path):
+			push_warning("Incomplete local Play Town copy: " + art_path + " or " + scene_path)
+			continue
+		_cards.append(info)
+		# Each original card image IS the complete clickable block. No Panel,
+		# StyleBox, label, dark rectangle or border behind it.
+		var button: TextureButton = TextureButton.new()
+		button.name = "PlayTownCard_" + str(info.get("id", "unknown"))
+		button.texture_normal = load(art_path) as Texture2D
+		button.ignore_texture_size = true
+		button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		button.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+		button.focus_mode = Control.FOCUS_NONE
+		button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		button.tooltip_text = str(info.get("name_ru", ""))
+		button.custom_minimum_size = Vector2(255.0, 315.0)
+		button.pressed.connect(_open_game.bind(scene_path))
+		_strip.add_child(button)
 
-	# Crew are behind the interactive holograms. The character PNGs are optional.
-	for i in range(_crew_paths.size()):
-		var crew_image: TextureRect = _add_optional_character(_hub, _crew_paths[i], "CrewSeat_%d" % (i + 1))
-		_crew.append(crew_image)
-	_miko_sprite = _add_optional_character(_hub, "miko.png", "OriginalMikoCharacter")
 
-	_simulator = _make_console(_hub, "SimulatorConsole", SIMULATOR_TEXTURE, "Учебный симулятор", _open_simulator)
-	_shop = _make_console(_hub, "UpgradeShopConsole", SHOP_TEXTURE, "Магазин корабля", _open_shop)
+func set_stats(flight_crystals: int, _capacity: int, _ship_speed: float) -> void:
+	_crystal_balance = maxi(0, flight_crystals)
+	if _counter != null:
+		_counter.text = str(_crystal_balance)
 
-	_top = Control.new()
-	_top.name = "BridgeFlightStats"
-	_top.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(_top)
-	_close_button = _make_image_button(_top, "FlyBackToSpace", SHIP_TEXTURE, "Вернуться в полёт", close_menu)
-	_settings_button = _make_image_button(_top, "Settings", SETTINGS_TEXTURE, "Настройки", _open_settings)
-	# Three compact HUD cards: fuel crystals, crystal capacity and ship speed.
-	_fly_crystals_label = _make_stat(_top, "FuelCrystals", CRYSTAL_TEXTURE, "КРИСТАЛЛЫ", "0")
-	_capacity_label = _make_stat(_top, "CrystalCapacity", CRYSTAL_TEXTURE, "ВМЕСТИМОСТЬ", "0")
-	_speed_label = _make_stat(_top, "ShipSpeed", SHIP_TEXTURE, "СКОРОСТЬ", "0")
-
-	_detail = Control.new()
-	_detail.name = "SimulatorShopOrSettingsScreen"
-	_detail.mouse_filter = Control.MOUSE_FILTER_STOP
-	add_child(_detail)
-	_detail_tint = ColorRect.new()
-	_detail_tint.color = Color(0.002, 0.014, 0.035, 0.79)
-	_detail_tint.mouse_filter = Control.MOUSE_FILTER_STOP
-	_detail.add_child(_detail_tint)
-	_detail_art = TextureRect.new()
-	_detail_art.name = "SelectedInteractiveStation"
-	_detail_art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	_detail_art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	_detail_art.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_detail.add_child(_detail_art)
-	_detail_title = Label.new()
-	_detail_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_detail_title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	_detail_title.add_theme_color_override("font_color", Color(0.94, 0.98, 1.0))
-	_detail_title.add_theme_font_size_override("font_size", 24)
-	_detail_title.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_detail.add_child(_detail_title)
-	_settings_title = Label.new()
-	_settings_title.text = "НАСТРОЙКИ\n\nСкоро здесь появятся настройки звука и управления"
-	_settings_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_settings_title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	_settings_title.add_theme_color_override("font_color", Color(0.82, 0.95, 1.0))
-	_settings_title.add_theme_font_size_override("font_size", 22)
-	_settings_title.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_detail.add_child(_settings_title)
-	_language_bar = HBoxContainer.new()
-	_language_bar.name = "SixLanguageSelector"
-	_language_bar.alignment = BoxContainer.ALIGNMENT_CENTER
-	_language_bar.add_theme_constant_override("separation", 9)
-	_detail.add_child(_language_bar)
-	for code in ["en", "ru", "fr", "de", "es", "pt_BR"]:
-		var language_button: Button = Button.new()
-		language_button.text = "PT-BR" if code == "pt_BR" else code.to_upper()
-		language_button.custom_minimum_size = Vector2(76, 52)
-		language_button.add_theme_font_size_override("font_size", 17)
-		language_button.focus_mode = Control.FOCUS_NONE
-		language_button.pressed.connect(_select_language.bind(code))
-		_language_bar.add_child(language_button)
-		_lang_buttons[code] = language_button
-	_detail_back_button = _make_image_button(_detail, "BackToBridge", BACK_TEXTURE, MobileLocale.t("back_bridge"), _back_to_hub)
-	_detail.visible = false
-
-func _add_optional_character(parent: Control, path: String, node_name: String) -> TextureRect:
-	var avatar: TextureRect = TextureRect.new()
-	avatar.name = node_name
-	avatar.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	avatar.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	avatar.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var full_path: String = CHAR_DIR + path
-	if ResourceLoader.exists(full_path):
-		avatar.texture = load(full_path) as Texture2D
-		avatar.visible = avatar.texture != null
-	else:
-		avatar.visible = false
-	parent.add_child(avatar)
-	return avatar
-
-func _make_console(parent: Control, node_name: String, picture: Texture2D, tip: String, callback: Callable) -> TextureButton:
-	var button: TextureButton = TextureButton.new()
-	button.name = node_name
-	button.texture_normal = picture
-	button.ignore_texture_size = true
-	button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-	button.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
-	button.focus_mode = Control.FOCUS_NONE
-	button.tooltip_text = tip
-	button.pressed.connect(callback)
-	parent.add_child(button)
-	return button
-
-func _make_image_button(parent: Control, node_name: String, picture: Texture2D, tip: String, callback: Callable) -> TextureButton:
-	var button: TextureButton = TextureButton.new()
-	button.name = node_name
-	button.texture_normal = picture
-	button.ignore_texture_size = true
-	button.stretch_mode = TextureButton.STRETCH_SCALE
-	button.focus_mode = Control.FOCUS_NONE
-	button.tooltip_text = tip
-	button.pressed.connect(callback)
-	parent.add_child(button)
-	return button
-
-func _make_stat(parent: Control, node_name: String, picture: Texture2D, title: String, initial: String) -> Label:
-	var panel: Panel = Panel.new()
-	panel.name = node_name
-	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var box_style: StyleBoxFlat = StyleBoxFlat.new()
-	box_style.bg_color = Color(0.005, 0.044, 0.105, 0.94)
-	box_style.border_color = Color(0.26, 0.72, 1.0, 0.90)
-	box_style.set_border_width_all(2)
-	box_style.set_corner_radius_all(18)
-	panel.add_theme_stylebox_override("panel", box_style)
-	parent.add_child(panel)
-	var icon: TextureRect = TextureRect.new()
-	icon.name = "IndicatorIcon"
-	icon.texture = picture
-	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	panel.add_child(icon)
-	var title_node: Label = Label.new()
-	title_node.name = "Kind"
-	title_node.text = title
-	title_node.add_theme_color_override("font_color", Color(0.66, 0.88, 1.0))
-	title_node.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	panel.add_child(title_node)
-	var value: Label = Label.new()
-	value.name = "Value"
-	value.text = initial
-	value.add_theme_color_override("font_color", Color.WHITE)
-	value.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	value.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	panel.add_child(value)
-	return value
-
-func set_stats(flight_crystals: int, capacity: int, ship_speed: float) -> void:
-	_crystals = maxi(0, flight_crystals)
-	_capacity = maxi(0, capacity)
-	_ship_speed = maxf(0.0, ship_speed)
-	if _fly_crystals_label != null:
-		_fly_crystals_label.text = str(_crystals)
-	if _capacity_label != null:
-		_capacity_label.text = str(_capacity)
-	if _speed_label != null:
-		_speed_label.text = str(int(round(_ship_speed)))
 
 func open_menu(view: Vector2) -> void:
 	size = view
 	visible = true
-	_back_to_hub()
+	_return_to_cards()
 	_reflow()
 
+
 func close_menu() -> void:
+	_return_to_cards()
 	visible = false
 	closed.emit()
 
-func _open_simulator() -> void:
-	_open_detail("simulator")
 
-func _open_shop() -> void:
-	_open_detail("shop")
-
-func _open_settings() -> void:
-	_open_detail("settings")
-
-func _open_detail(mode: String) -> void:
-	_mode = mode
-	_hub.visible = false
-	_top.visible = false
-	_detail.visible = true
-	_language_bar.visible = mode == "settings"
-	_settings_title.visible = mode == "settings"
-	_detail_art.visible = mode != "settings"
-	_detail_title.visible = mode != "settings"
-	if mode == "simulator":
-		_detail_art.texture = SIMULATOR_TEXTURE
-		_detail_title.text = MobileLocale.t("sim_soon")
-	elif mode == "shop":
-		_detail_art.texture = SHOP_TEXTURE
-		_detail_title.text = MobileLocale.t("shop_soon")
+func _open_game(scene_path: String) -> void:
+	if _playing or not ResourceLoader.exists(scene_path):
+		return
+	var packed: PackedScene = load(scene_path) as PackedScene
+	if packed == null:
+		push_error("Cannot load original Play Town game: " + scene_path)
+		return
+	# Reuse the language selected in Miko for the real Play Town lessons.
+	var language: Node = get_node_or_null("/root/LanguageService")
+	if language != null:
+		var locale: String = str(MobileLocale.language)
+		if locale == "pt_BR":
+			locale = "pt"
+		language.call("set_locale", locale, false)
+	var coins: Node = get_node_or_null("/root/GameState")
+	if coins != null:
+		_last_playtown_coins = int(coins.call("get_coin_balance"))
+	var portal: Node = get_node_or_null("/root/PlayTownPortal")
+	if portal != null:
+		portal.call("start_game", scene_path)
+	var original: Node = packed.instantiate()
+	original.name = "UnchangedGameFromSafeCityKids"
+	_game_viewport.add_child(original)
+	_playing = true
+	_gallery.visible = false
+	_gesture_layer.visible = false
+	_pointer_kind = ""
+	_fling_speed = 0.0
+	_header.visible = false
+	_game_layer.visible = true
 	_reflow()
 
-func _select_language(code: String) -> void:
-	MobileLocale.set_language(code)
 
-func _refresh_locale(_code: String) -> void:
-	if _settings_title != null:
-		_settings_title.text = MobileLocale.t("settings") + "\n\n" + MobileLocale.t("settings_description")
-	if _close_button != null:
-		_close_button.tooltip_text = MobileLocale.t("bridge_flight")
-	if _settings_button != null:
-		_settings_button.tooltip_text = MobileLocale.t("bridge_settings")
-	if _detail_back_button != null:
-		_detail_back_button.tooltip_text = MobileLocale.t("back_bridge")
-	if _simulator != null:
-		_simulator.tooltip_text = MobileLocale.t("bridge_sim")
-	if _shop != null:
-		_shop.tooltip_text = MobileLocale.t("bridge_shop")
-	for key in _lang_buttons:
-		var button: Button = _lang_buttons[key] as Button
-		button.modulate = Color(1.0, 0.94, 0.50) if key == MobileLocale.language else Color.WHITE
-	for pair in [["FuelCrystals", "crystals"], ["CrystalCapacity", "capacity"], ["ShipSpeed", "speed"]]:
-		var stat: Panel = _top.get_node_or_null(pair[0]) as Panel
-		if stat != null:
-			(stat.get_node("Kind") as Label).text = MobileLocale.t(pair[1])
-	if _mode == "simulator":
-		_detail_title.text = MobileLocale.t("sim_soon")
-	elif _mode == "shop":
-		_detail_title.text = MobileLocale.t("shop_soon")
+func _on_coins_changed(balance: int) -> void:
+	if not _playing:
+		return
+	var gained: int = maxi(0, balance - _last_playtown_coins)
+	_last_playtown_coins = balance
+	if gained > 0:
+		crystals_earned.emit(gained)
+		_crystal_balance = mini(50, _crystal_balance + gained)
+		_counter.text = str(_crystal_balance)
 
-func _back_to_hub() -> void:
-	_mode = "hub"
-	_detail.visible = false
-	_hub.visible = true
-	_top.visible = true
+
+func _return_to_cards() -> void:
+	_playing = false
+	var portal: Node = get_node_or_null("/root/PlayTownPortal")
+	if portal != null:
+		portal.call("stop_game")
+	for child in _game_viewport.get_children():
+		child.queue_free()
+	_game_layer.visible = false
+	_gallery.visible = true
+	_gesture_layer.visible = true
+	_pointer_kind = ""
+	_fling_speed = 0.0
+	_header.visible = true
+
+
+func _card_under_point(screen_point: Vector2) -> TextureButton:
+	for child in _strip.get_children():
+		var card: TextureButton = child as TextureButton
+		if card != null and card.get_global_rect().has_point(screen_point):
+			return card
+	return null
+
+
+func _gesture_begin(kind: String, pointer_index: int, screen_point: Vector2) -> void:
+	if _pointer_kind != "" or not _gesture_layer.get_global_rect().has_point(screen_point):
+		return
+	_pointer_kind = kind
+	_pointer_index = pointer_index
+	_pointer_origin = screen_point
+	_pointer_last = screen_point
+	_pointer_moved = false
+	_pressed_card = _card_under_point(screen_point)
+	_fling_speed = 0.0
+
+
+func _gesture_move(screen_point: Vector2) -> void:
+	if _pointer_kind == "":
+		return
+	var delta_x: float = screen_point.x - _pointer_last.x
+	if screen_point.distance_to(_pointer_origin) > DRAG_THRESHOLD:
+		_pointer_moved = true
+	if _pointer_moved:
+		var max_scroll: int = maxi(0, roundi(_strip.size.x - _gallery.size.x))
+		var next_scroll: int = clampi(roundi(float(_gallery.scroll_horizontal) - delta_x), 0, max_scroll)
+		_gallery.scroll_horizontal = next_scroll
+		_fling_speed = clampf(-delta_x / maxf(get_process_delta_time(), 0.016), -MAX_FLING_SPEED, MAX_FLING_SPEED)
+	_pointer_last = screen_point
+
+
+func _gesture_end(screen_point: Vector2) -> void:
+	if _pointer_kind == "":
+		return
+	var clicked: TextureButton = _pressed_card
+	var was_swipe: bool = _pointer_moved
+	_pointer_kind = ""
+	_pointer_index = -1
+	_pressed_card = null
+	if not was_swipe and clicked != null and clicked == _card_under_point(screen_point):
+		_fling_speed = 0.0
+		# The original TextureButton owns the signal and launches its game.
+		clicked.pressed.emit()
+	elif not was_swipe:
+		_fling_speed = 0.0
+
+
+func _input(event: InputEvent) -> void:
+	if not visible or _playing or not _gesture_layer.visible:
+		return
+	# Input positions are in viewport coordinates, including when the cursor
+	# leaves the gallery during a drag. The transparent input area prevents
+	# duplicate TextureButton clicks or unwanted releases.
+	if event is InputEventScreenTouch:
+		var touch: InputEventScreenTouch = event
+		if touch.pressed:
+			_gesture_begin("touch", touch.index, touch.position)
+		elif _pointer_kind == "touch" and _pointer_index == touch.index:
+			_gesture_end(touch.position)
+	elif event is InputEventScreenDrag:
+		var drag: InputEventScreenDrag = event
+		if _pointer_kind == "touch" and _pointer_index == drag.index:
+			_gesture_move(drag.position)
+	elif event is InputEventMouseButton:
+		var mouse_button: InputEventMouseButton = event
+		if mouse_button.button_index == MOUSE_BUTTON_LEFT:
+			if mouse_button.pressed:
+				_gesture_begin("mouse", 0, mouse_button.position)
+			elif _pointer_kind == "mouse":
+				_gesture_end(mouse_button.position)
+	elif event is InputEventMouseMotion:
+		var motion: InputEventMouseMotion = event
+		if _pointer_kind == "mouse" and (motion.button_mask & MOUSE_BUTTON_MASK_LEFT) != 0:
+			_gesture_move(motion.position)
+	elif event is InputEventPanGesture:
+		# Two-finger trackpad swipes on Mac work without dragging a mouse.
+		var pan: InputEventPanGesture = event
+		if _pointer_kind == "" and _gesture_layer.get_global_rect().has_point(pan.position):
+			var max_scroll: int = maxi(0, roundi(_strip.size.x - _gallery.size.x))
+			_gallery.scroll_horizontal = clampi(roundi(float(_gallery.scroll_horizontal) + pan.delta.x * 45.0), 0, max_scroll)
+			_fling_speed = 0.0
+
+
+func _process(delta: float) -> void:
+	if not visible or _playing or _pointer_kind != "" or absf(_fling_speed) < 8.0:
+		return
+	var max_scroll: int = maxi(0, roundi(_strip.size.x - _gallery.size.x))
+	var next_scroll: int = clampi(roundi(float(_gallery.scroll_horizontal) + _fling_speed * delta), 0, max_scroll)
+	if next_scroll == _gallery.scroll_horizontal:
+		_fling_speed = 0.0
+	else:
+		_gallery.scroll_horizontal = next_scroll
+		_fling_speed *= exp(-6.0 * delta)
+
 
 func _reflow() -> void:
-	if _bridge_background == null:
+	if _background == null or size.x < 10.0 or size.y < 10.0:
 		return
 	var view: Vector2 = size
-	var safe: Rect2 = MobileLocale.safe_rect(view)
-	if view.x <= 0.0 or view.y <= 0.0:
-		return
-	_bridge_background.position = Vector2.ZERO
-	_bridge_background.size = view
-	_hub.position = Vector2.ZERO
-	_hub.size = view
-	_top.position = Vector2.ZERO
-	_top.size = view
-	_detail.position = Vector2.ZERO
-	_detail.size = view
-	_detail_tint.position = Vector2.ZERO
-	_detail_tint.size = view
-	# All positions are proportional to the viewport, suitable for mobile landscape.
-	var s: float = clampf(minf(view.x / 1280.0, view.y / 720.0), 0.58, 1.35)
-	var podium_width: float = minf(view.x * 0.39, 490.0 * s)
-	var podium_height: float = podium_width * 2.0 / 3.0
-	var podium_y: float = view.y - podium_height - 3.0 * s
-	_simulator.position = Vector2(view.x * 0.015, podium_y)
-	_simulator.size = Vector2(podium_width, podium_height)
-	_shop.position = Vector2(view.x - podium_width - view.x * 0.015, podium_y)
-	_shop.size = Vector2(podium_width, podium_height)
-	# Original MIKO sprite is drawn only if the matching PNG is present.
-	_miko_sprite.size = Vector2(176.0, 242.0) * s
-	_miko_sprite.position = Vector2(view.x * 0.5 - _miko_sprite.size.x * 0.5, view.y * 0.89 - _miko_sprite.size.y)
-	var seat_centers: Array[Vector2] = [
-		Vector2(0.225, 0.48), Vector2(0.375, 0.48),
-		Vector2(0.625, 0.48), Vector2(0.775, 0.48)
-	]
-	for i in range(_crew.size()):
-		var figure: TextureRect = _crew[i]
-		figure.size = Vector2(92.0, 143.0) * s
-		figure.position = seat_centers[i] * view - figure.size * Vector2(0.5, 0.58)
-	# Leave the middle of the header for cockpit scenery, not a wall of data.
-	var corner: float = 63.0 * s
-	_close_button.size = Vector2.ONE * corner
-	_close_button.position = safe.position + Vector2(6.0 * s, 6.0 * s)
-	_settings_button.size = Vector2.ONE * corner
-	_settings_button.position = Vector2(safe.end.x - corner - 6.0 * s, safe.position.y + 6.0 * s)
-	var gutter: float = 12.0 * s
-	var stat_total_width: float = minf(view.x - 2.0 * (corner + 26.0 * s), 835.0 * s)
-	var stat_width: float = (stat_total_width - 2.0 * gutter) / 3.0
-	var first_x: float = (view.x - stat_total_width) * 0.5
-	var panel_names: Array[String] = ["FuelCrystals", "CrystalCapacity", "ShipSpeed"]
-	for i in range(3):
-		var panel: Panel = _top.get_node(panel_names[i]) as Panel
-		panel.position = Vector2(first_x + i * (stat_width + gutter), 14.0 * s)
-		panel.size = Vector2(stat_width, 56.0 * s)
-		var indicator_icon: TextureRect = panel.get_node("IndicatorIcon") as TextureRect
-		indicator_icon.position = Vector2(9.0, 6.0) * s
-		indicator_icon.size = Vector2(40.0, 40.0) * s
-		var label: Label = panel.get_node("Kind") as Label
-		label.position = Vector2(52.0, 7.0) * s
-		label.size = Vector2(maxf(80.0, stat_width / s - 115.0), 20.0) * s
-		label.add_theme_font_size_override("font_size", maxi(10, int(14.0 * s)))
-		var value: Label = panel.get_node("Value") as Label
-		value.position = Vector2(stat_width - 60.0 * s, 13.0 * s)
-		value.size = Vector2(47.0, 31.0) * s
-		value.add_theme_font_size_override("font_size", maxi(14, int(26.0 * s)))
-	# Larger screen graphics, but a small and clear top-left return button.
-	_detail_back_button.position = safe.position + Vector2(6.0 * s, 6.0 * s)
-	_detail_back_button.size = Vector2.ONE * 63.0 * s
-	_detail_art.size = Vector2(minf(view.x * 0.86, view.y * 1.23), view.y * 0.78)
-	_detail_art.position = (view - _detail_art.size) * 0.5 + Vector2(0.0, 26.0 * s)
-	_detail_title.position = Vector2(0.0, view.y - 57.0 * s)
-	_detail_title.size = Vector2(view.x, 40.0 * s)
-	_detail_title.add_theme_font_size_override("font_size", maxi(14, int(23.0 * s)))
-	_settings_title.size = view * Vector2(0.78, 0.42)
-	_settings_title.position = Vector2((view.x - _settings_title.size.x) * 0.5, view.y * 0.25)
-	_settings_title.add_theme_font_size_override("font_size", maxi(14, int(22.0 * s)))
-	_language_bar.size = Vector2(minf(view.x * 0.90, 680.0 * s), 62.0 * s)
-	_language_bar.position = Vector2((view.x - _language_bar.size.x) * 0.5, view.y * 0.62)
-	var button_size: float = maxf(48.0, (_language_bar.size.x - 45.0) / 6.0)
-	for code in _lang_buttons:
-		var button: Button = _lang_buttons[code] as Button
-		button.custom_minimum_size = Vector2(button_size, maxf(46.0, 52.0 * s))
+	var scale: float = clampf(minf(view.x / 1280.0, view.y / 720.0), 0.62, 1.28)
+	_background.position = Vector2.ZERO
+	_background.size = view
+	_header.position = Vector2.ZERO
+	_header.size = view
+	_back.size = Vector2.ONE * 58.0 * scale
+	_back.position = Vector2(23.0, 18.0) * scale
+	var crystal: TextureRect = _header.get_node("ActualBlueCrystal") as TextureRect
+	crystal.size = Vector2.ONE * 57.0 * scale
+	crystal.position = Vector2(view.x * 0.5 - 60.0 * scale, 17.0 * scale)
+	_counter.position = Vector2(view.x * 0.5 + 5.0 * scale, 18.0 * scale)
+	_counter.size = Vector2(100.0, 45.0) * scale
+	var card_height: float = clampf(view.y * 0.61, 166.0, 440.0)
+	for child in _strip.get_children():
+		var button: TextureButton = child as TextureButton
+		if button == null or button.texture_normal == null:
+			continue
+		var aspect: float = float(button.texture_normal.get_width()) / maxf(1.0, float(button.texture_normal.get_height()))
+		var card_width: float = clampf(card_height * aspect, 112.0 * scale, minf(480.0 * scale, view.x * 0.75))
+		button.custom_minimum_size = Vector2(card_width, card_height)
+	var margin: float = maxf(14.0, 22.0 * scale)
+	_gallery.position = Vector2(margin, 100.0 * scale)
+	_gallery.size = Vector2(maxf(100.0, view.x - margin * 2.0), minf(view.y - 116.0 * scale, card_height + 20.0 * scale))
+	_gesture_layer.position = _gallery.position
+	_gesture_layer.size = _gallery.size
+	_game_layer.position = Vector2.ZERO
+	_game_layer.size = view
+	# Original games were authored at 1536x768: preserve their real
+	# coordinates and scale the whole viewport to fit every landscape screen.
+	var playtown_scale: float = minf(view.x / 1536.0, view.y / 768.0)
+	_viewport_container.scale = Vector2.ONE * playtown_scale
+	_viewport_container.size = Vector2(1536.0, 768.0)
+	_viewport_container.position = (view - _viewport_container.size * playtown_scale) * 0.5
+	_game_back.position = Vector2(12.0, 12.0) * scale
+	_game_back.size = Vector2.ONE * 54.0 * scale

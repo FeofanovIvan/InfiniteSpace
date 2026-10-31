@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd4w40slfb7c3"]
+
+[ext_resource type="Script" uid="uid://dcbqaj5hno71n" path="res://education/playtown/src/features/counting/count_pick_game.gd" id="1_cpg"]
+
+[node name="CountPickGame" type="Node2D"]
+script = ExtResource("1_cpg")

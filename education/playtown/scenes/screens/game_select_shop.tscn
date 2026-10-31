@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://education/playtown/src/screens/game_select.gd" id="1_gs"]
+
+[node name="GameSelectShop" type="Node2D"]
+script = ExtResource("1_gs")
+back_scene_path = "res://education/playtown/scenes/world/city_world.tscn"
+cards_data = [{
+"scene": "res://education/playtown/scenes/features/counting/count_pick_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/shop/normalized/pick_number.webp"
+}, {
+"scene": "res://education/playtown/scenes/features/grocery/grocery_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/shop/normalized/buy_groceries.webp"
+}, {
+"scene": "res://education/playtown/scenes/features/counting/count_trace_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/shop/normalized/count_groceries.webp"
+}, {
+"scene": "res://education/playtown/scenes/features/product_count/product_count_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/shop/normalized/product_count.webp"
+}, {
+"scene": "res://education/playtown/scenes/features/pizza_fraction/pizza_fraction_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/shop/normalized/pizza.webp"
+}]
