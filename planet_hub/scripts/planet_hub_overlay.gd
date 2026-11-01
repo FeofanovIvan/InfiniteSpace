@@ -186,7 +186,7 @@ func _layout_ui() -> void:
 		return
 	var scale_ui: float = minf(sh / 864.0, sw / 1450.0)
 	scale_ui = clampf(scale_ui, 0.40, 2.0)
-	var bottom_h: float = 142.0 * scale_ui
+	var bottom_h: float = 158.0 * (sh / 864.0)
 	hud.position = Vector2(0, sh - bottom_h)
 	hud.size = Vector2(sw, bottom_h)
 	var cards: Array[Control] = _visible_cards()
@@ -230,7 +230,7 @@ func _draw() -> void:
 		var font: Font = ThemeDB.fallback_font
 		draw_string(font, Vector2(40, 58), _planet_name if not _planet_name.is_empty() else "Планета", HORIZONTAL_ALIGNMENT_LEFT, -1, 24, Color(0.75, 0.9, 1.0, 0.8))
 	draw_rect(Rect2(0, 0, sw, sh), Color(0.0, 0.03, 0.08, 0.18))
-	var bottom_h: float = 142.0 * clampf(minf(sh / 864.0, sw / 1450.0), 0.40, 2.0)
+	var bottom_h: float = 158.0 * (sh / 864.0)
 	draw_rect(Rect2(0, sh - bottom_h - 10.0, sw, bottom_h + 10.0), Color(0.0, 0.02, 0.06, 0.25))
 
 func _on_simulator_pressed() -> void:
