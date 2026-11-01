@@ -9,7 +9,6 @@ signal fuel_collected(units: int)
 const CRYSTAL_FUEL_VALUES: Array[int] = [0, 2, 1, 3]  # gray, red, blue, violet
 const MAGNET_RADIUS: float = 188.0
 const MAGNET_DURATION: float = 0.95
-const MAX_NEARBY_MINERALS: int = 11
 
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const MAX_ASTEROIDS: int = 1
@@ -35,7 +34,6 @@ var _camera_world: Vector2 = Vector2.ZERO
 var _ship_world: Vector2 = Vector2.ZERO
 var _view_size: Vector2 = Vector2(1280.0, 720.0)
 var _spawn_timer: float = 65.0
-var _mineral_spawn_timer: float = 6.0
 var _magnet_timer: float = 0.0
 var _time: float = 0.0
 var _f9_was_pressed: bool = false
@@ -66,7 +64,6 @@ func reset_for_region(region_id: String) -> void:
 	_asteroids.clear()
 	_debris.clear()
 	_spawn_timer = _rng.randf_range(5.0, 11.0) if region_id not in ["mw", "crossroads"] else _rng.randf_range(40.0, 65.0)
-	_mineral_spawn_timer = 5.5
 	_magnet_timer = 0.0
 	queue_redraw()
 
@@ -100,35 +97,6 @@ func start_magnet_capture(center: Vector2) -> bool:
 	_magnet_timer = MAGNET_DURATION
 	queue_redraw()
 	return true
-
-
-func _spawn_mineral_cluster() -> void:
-	# Loose crystals make the fuel prototype playable before any asteroid
-	# collision; barren gray rocks still yield zero fuel.
-	if _debris.size() >= MAX_DEBRIS - 5:
-		return
-	var nearby: int = 0
-	for fragment in _debris:
-		if bool(fragment.get("collectible", false)) and Vector2(fragment["world"]).distance_squared_to(_ship_world) < 340.0 * 340.0:
-			nearby += 1
-	if nearby >= MAX_NEARBY_MINERALS:
-		return
-	var bearing: float = _rng.randf_range(-PI, PI)
-	var center: Vector2 = _ship_world + Vector2.from_angle(bearing) * _rng.randf_range(112.0, 190.0)
-	var count: int = _rng.randi_range(2, 4)
-	for i in range(count):
-		var angle: float = TAU * float(i) / float(count) + bearing
-		var kind: int = _rng.randi_range(1, 3)
-		_debris.append({
-			"world": center + Vector2.from_angle(angle) * _rng.randf_range(8.0, 27.0),
-			"velocity": Vector2.ZERO,
-			"size": _rng.randf_range(23.0, 34.0),
-			"kind": kind,
-			"shape": _rng.randi_range(0, SHAPES.size() - 1),
-			"rotation": _rng.randf_range(-PI, PI),
-			"spin": _rng.randf_range(-0.55, 0.55),
-			"collectible": true
-		})
 
 
 func _advance_magnet(delta: float) -> void:
@@ -255,10 +223,6 @@ func _flyby_position(rock: Dictionary, progress: float) -> Vector2:
 
 func _physics_process(delta: float) -> void:
 	_time += delta
-	_mineral_spawn_timer -= delta
-	if _mineral_spawn_timer <= 0.0:
-		_spawn_mineral_cluster()
-		_mineral_spawn_timer = _rng.randf_range(10.0, 16.0)
 	_spawn_timer -= delta
 	if _spawn_timer <= 0.0:
 		_spawn_asteroid()
