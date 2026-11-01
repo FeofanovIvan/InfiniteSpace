@@ -39,6 +39,7 @@ var _total_width: float = PREFERRED_WIDTH
 var _rail_width: float = PREFERRED_WIDTH - TRIGGER_SIZE - RAIL_GAP
 var _available_width: float = PREFERRED_WIDTH
 var _shown_width: float = 0.0
+var _mouse_dragging: bool = false
 
 
 func _ready() -> void:
@@ -58,7 +59,7 @@ func _ready() -> void:
 	_scroll = ScrollContainer.new()
 	_scroll.name = "HorizontalDestinationScroller"
 	_scroll.position = Vector2(RAIL_PADDING, (RAIL_HEIGHT - TILE_SIZE) * 0.5)
-	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
 	_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	_scroll.follow_focus = false
 	_scroll.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -92,6 +93,20 @@ func _ready() -> void:
 	_update_geometry()
 	MobileLocale.language_changed.connect(_refresh_locale)
 	_refresh_locale(MobileLocale.language)
+
+
+func _input(event: InputEvent) -> void:
+	# Touch swiping stays native to ScrollContainer; additionally support mouse drag.
+	if not _open or not is_instance_valid(_scroll):
+		_mouse_dragging = false
+		return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			_mouse_dragging = _scroll.get_global_rect().has_point(event.position)
+		else:
+			_mouse_dragging = false
+	elif event is InputEventMouseMotion and _mouse_dragging and (event.button_mask & MOUSE_BUTTON_MASK_LEFT) != 0:
+		_scroll.scroll_horizontal = maxi(0, _scroll.scroll_horizontal - roundi(event.relative.x))
 
 
 func _process(delta: float) -> void:
