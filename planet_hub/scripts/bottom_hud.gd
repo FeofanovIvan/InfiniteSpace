@@ -1,6 +1,6 @@
 @tool
 extends Control
-## v63: fully procedural, language-aware sci-fi planetary bottom HUD.
+## v66: mirror-wing pastel controls and very dark rounded crystal counter.
 ## Only the *icons* are raster resources; there is no panel background image.
 signal simulator_pressed
 signal flight_pressed
@@ -123,114 +123,168 @@ func _on_language_changed(_locale: String) -> void:
     _layout_items()
 
 func _layout_items() -> void:
-    if sim_button == null or size.x < 160 or size.y < 38:
+    if sim_button == null or size.x < 160.0 or size.y < 38.0:
         return
     var w: float = size.x
     var h: float = size.y
     var s: float = h / 158.0
     _scale = s
-    var center_width: float = minf(360.0 * s, w * 0.35)
-    var gap: float = 15.0 * s
-    var button_width: float = minf(450.0 * s, (w - center_width - 2.0 * gap - 16.0 * s) * 0.5)
-    button_width = maxf(50.0, button_width)
+
+    # The source screen is landscape; protect the centered crystal counter first.
+    # Buttons remain hard-anchored to left and right edges at every aspect ratio.
+    var center_width: float = minf(354.0 * s, w * 0.38)
+    var side_margin: float = 7.0 * s
+    var gap: float = 13.0 * s
+    var available_side: float = maxf(0.0, (w - center_width) * 0.5 - gap - side_margin)
+    var button_width: float = minf(464.0 * s, available_side)
     var button_height: float = 104.0 * s
-    var y: float = 23.0 * s
-    # Keep the dynamic resource center aligned; place action buttons at edges.
-    var side_margin: float = 8.0 * s
+    var y: float = 22.0 * s
     _left_rect = Rect2(side_margin, y, button_width, button_height)
     _right_rect = Rect2(w - side_margin - button_width, y, button_width, button_height)
-    _center_rect = Rect2(w * 0.5 - center_width * 0.5, 21.0 * s, center_width, 108.0 * s)
+    _center_rect = Rect2((w - center_width) * 0.5, 20.0 * s, center_width, 109.0 * s)
     sim_button.position = _left_rect.position
     sim_button.size = _left_rect.size
     flight_button.position = _right_rect.position
     flight_button.size = _right_rect.size
-    var icon_w: float = minf(85.0 * s, button_width * 0.30)
-    var icon_h: float = 80.0 * s
-    sim_icon.position = Vector2(18.0 * s, (button_height - icon_h) * 0.5)
-    sim_icon.size = Vector2(icon_w, icon_h)
-    flight_icon.position = Vector2(18.0 * s, (button_height - icon_h) * 0.5)
-    flight_icon.size = Vector2(icon_w, icon_h)
-    var text_start: float = 24.0 * s + icon_w
-    var text_width: float = maxf(2.0, button_width - text_start - 14.0 * s)
-    sim_label.position = Vector2(text_start, 0)
-    sim_label.size = Vector2(text_width, button_height)
-    flight_label.position = Vector2(text_start, 0)
-    flight_label.size = Vector2(text_width, button_height)
+
+    # Wider outer ends carry the icon and label, pointed ends face the counter.
+    # Text color is dark so it is readable on the pastel button surfaces.
+    var icon_width: float = minf(78.0 * s, button_width * 0.25)
+    var icon_height: float = minf(79.0 * s, button_height * 0.79)
+    var icon_y: float = (button_height - icon_height) * 0.5
+    var left_margin: float = 18.0 * s
+    sim_icon.position = Vector2(left_margin, icon_y)
+    sim_icon.size = Vector2(icon_width, icon_height)
+    var sim_text_start: float = left_margin + icon_width + 5.0 * s
+    sim_label.position = Vector2(sim_text_start, 0.0)
+    sim_label.size = Vector2(maxf(2.0, button_width * 0.72 - sim_text_start), button_height)
+
+    flight_icon.position = Vector2(button_width - left_margin - icon_width, icon_y)
+    flight_icon.size = Vector2(icon_width, icon_height)
+    flight_label.position = Vector2(button_width * 0.27, 0.0)
+    flight_label.size = Vector2(maxf(2.0, button_width * 0.73 - icon_width - left_margin - 5.0 * s), button_height)
     for lbl in [sim_label, flight_label]:
-        var font_size: int = maxi(12, int(28.0 * s))
-        var needed: float = maxf(1.0, float(lbl.text.length()))
-        # German/French/Portuguese labels remain legible without clipping.
+        lbl.add_theme_color_override("font_color", Color("092a42"))
+        lbl.add_theme_color_override("font_outline_color", Color(1.0, 1.0, 1.0, 0.26))
+        lbl.add_theme_constant_override("outline_size", maxi(0, int(1.0 * s)))
+        var font_size: int = maxi(11, int(27.0 * s))
+        var needed: float = maxf(8.0, float(lbl.text.length()))
         if needed > 10.0:
             font_size = maxi(10, int(float(font_size) * 10.0 / needed))
         lbl.add_theme_font_size_override("font_size", font_size)
+
+    # Existing shard icon and live crystal balance; never bake into artwork.
+    var icon_size: float = minf(_center_rect.size.y * 0.72, _center_rect.size.x * 0.31)
     var cx: float = _center_rect.position.x
     var cy: float = _center_rect.position.y
-    var icon_size: float = minf(_center_rect.size.y * 0.76, _center_rect.size.x * 0.33)
-    crystal_icon.position = Vector2(cx + 13.0 * s, cy + (_center_rect.size.y - icon_size) * 0.5)
+    crystal_icon.position = Vector2(cx + 15.0*s, cy + (_center_rect.size.y - icon_size)*0.5)
     crystal_icon.size = Vector2(icon_size, icon_size)
-    count_label.position = Vector2(cx + icon_size + 12.0 * s, cy + 4.0 * s)
-    count_label.size = Vector2(maxf(5.0, _center_rect.size.x - icon_size - 30.0 * s), _center_rect.size.y - 8.0 * s)
-    count_label.add_theme_font_size_override("font_size", maxi(20, int(53.0 * s)))
+    count_label.position = Vector2(cx + icon_size + 17.0*s, cy + 4.0*s)
+    count_label.size = Vector2(maxf(1.0, _center_rect.size.x - icon_size - 32.0*s), _center_rect.size.y - 8.0*s)
+    count_label.add_theme_font_size_override("font_size", maxi(20, int(54.0*s)))
+    count_label.add_theme_color_override("font_color", Color.WHITE)
     queue_redraw()
 
 func _draw() -> void:
     if size.x < 160.0 or size.y < 38.0:
         return
+    var s: float = _scale
     var w: float = size.x
     var h: float = size.y
-    var s: float = _scale
-    # Main alloy rail: deep-blue body, faceted upper seam and restrained glow.
-    draw_rect(Rect2(0, 18.0*s, w, h - 18.0*s), Color("07172c"))
-    draw_rect(Rect2(0, 23.0*s, w, h - 33.0*s), Color("0d2946"))
-    draw_rect(Rect2(0, 41.0*s, w, h - 49.0*s), Color("091d37"))
-    draw_line(Vector2(0, 19.0*s), Vector2(w, 19.0*s), Color(0.22, 0.79, 1.0, 0.16), 10.0*s, true)
-    draw_line(Vector2(0, 19.0*s), Vector2(w, 19.0*s), Color("43c6ff"), 2.0*s, true)
-    draw_line(Vector2(0, h - 11.0*s), Vector2(w, h - 11.0*s), Color("1f5a81"), 3.0*s, true)
-    # Subtle repeating ribs give the bar an engineered, not flat, appearance.
-    for i in range(1, 24):
-        var xx: float = w * float(i) / 24.0
-        draw_line(Vector2(xx, 24.0*s), Vector2(xx + 11.0*s, 32.0*s), Color(0.14, 0.44, 0.67, 0.16), 1.0*s, true)
-    _draw_button_plate(_left_rect, Color("39bfff"), _over_sim, _press_sim)
-    _draw_button_plate(_right_rect, Color("ffa633"), _over_flight, _press_flight)
+    # Low-profile grounding rail. Avoid another massive, boxy sprite background.
+    draw_rect(Rect2(0.0, 60.0*s, w, h - 60.0*s), Color(0.014, 0.053, 0.105, 0.76))
+    draw_line(Vector2(0.0, 62.0*s), Vector2(w, 62.0*s), Color(0.18, 0.60, 0.78, 0.18), 2.0*s, true)
+    draw_line(Vector2(0.0, h - 9.0*s), Vector2(w, h - 9.0*s), Color(0.20, 0.74, 1.0, 0.24), 2.0*s, true)
+
+    # Left and right are inverse rounded triangular wings, not rectangles.
+    _draw_wing(_left_rect, true, _over_sim, _press_sim)
+    _draw_wing(_right_rect, false, _over_flight, _press_flight)
     _draw_counter()
 
-func _draw_button_plate(r: Rect2, accent: Color, hovering: bool, pressed: bool) -> void:
+func _draw_wing(r: Rect2, points_right: bool, hovering: bool, pressed: bool) -> void:
     var s: float = _scale
-    var poly: PackedVector2Array = _facets(r, 23.0*s)
-    var inner: PackedVector2Array = _facets(r.grow(-6.0*s), 20.0*s)
-    _outline(poly, Color(accent.r, accent.g, accent.b, 0.17), 13.0*s)
-    draw_colored_polygon(poly, Color("041326"))
-    draw_colored_polygon(inner, Color("113d60") if hovering else Color("0b2b49"))
-    if pressed:
-        draw_colored_polygon(inner, Color(accent.r * 0.3, accent.g * 0.34, accent.b * 0.3, 0.43))
-    _outline(poly, Color(accent.r, accent.g, accent.b, 0.96), 3.2*s)
-    _outline(inner, Color(accent.r, accent.g, accent.b, 0.33), 1.2*s)
-    var y: float = r.position.y + 8.0*s
-    draw_line(Vector2(r.position.x + 52.0*s, y), Vector2(r.end.x - 52.0*s, y), Color(accent.r, accent.g, accent.b, 0.76), 2.3*s, true)
-    draw_line(Vector2(r.position.x + 53.0*s, r.end.y - 7.0*s), Vector2(r.end.x - 53.0*s, r.end.y - 7.0*s), Color(accent.r, accent.g, accent.b, 0.35), 1.6*s, true)
+    if r.size.x <= 4.0 or r.size.y <= 4.0:
+        return
+    var base: Color = Color("cbeaf4") if points_right else Color("edddc8")
+    var highlight: Color = Color("ecf9fd") if points_right else Color("f9efdf")
+    var pushed: Color = Color("a8d2e2") if points_right else Color("dbc6ab")
+    var fill: Color = pushed if pressed else (highlight if hovering else base)
+    var halo: PackedVector2Array = _wing_points(r.grow(4.0*s), points_right)
+    var outer: PackedVector2Array = _wing_points(r, points_right)
+    var inner: PackedVector2Array = _wing_points(r.grow(-5.5*s), points_right)
+    # Multi-layer glow, cyan-beveled rim and smooth pastel colored face.
+    _stroke(halo, Color(0.18, 0.76, 1.0, 0.13), 10.0*s)
+    draw_colored_polygon(outer, Color("063153"))
+    draw_colored_polygon(inner, fill)
+    _stroke(outer, Color("5bd2ff"), 2.6*s)
+    _stroke(inner, Color(1.0, 1.0, 1.0, 0.48), 1.2*s)
+    # Gentle reflection on the long, straight upper edge.
+    var inner_start: float = r.position.x + (24.0*s if points_right else r.size.x*0.32)
+    var inner_end: float = r.end.x - (r.size.x*0.32 if points_right else 24.0*s)
+    if inner_end > inner_start:
+        draw_line(Vector2(inner_start, r.position.y + 11.0*s), Vector2(inner_end, r.position.y + 11.0*s), Color(1.0, 1.0, 1.0, 0.42), 2.0*s, true)
 
 func _draw_counter() -> void:
-    var r: Rect2 = _center_rect
     var s: float = _scale
-    var poly: PackedVector2Array = _facets(r, 26.0*s)
-    var inner: PackedVector2Array = _facets(r.grow(-7.0*s), 22.0*s)
-    _outline(poly, Color(0.06, 0.68, 1.0, 0.20), 14.0*s)
-    draw_colored_polygon(poly, Color("051528"))
-    draw_colored_polygon(inner, Color("0a3152"))
-    _outline(poly, Color("35c9ff"), 2.5*s)
-    _outline(inner, Color(0.18, 0.68, 0.98, 0.5), 1.3*s)
-    draw_line(Vector2(r.position.x + 42.0*s, r.position.y + 5.0*s), Vector2(r.end.x - 42.0*s, r.position.y + 5.0*s), Color(0.32, 0.86, 1.0, 0.8), 2.0*s, true)
+    var r: Rect2 = _center_rect
+    if r.size.x <= 4.0 or r.size.y <= 4.0:
+        return
+    # Rounded rectangle, deliberately almost-black saturated midnight blue.
+    var shadow := StyleBoxFlat.new()
+    shadow.bg_color = Color(0.01, 0.11, 0.21, 0.88)
+    shadow.border_color = Color(0.10, 0.59, 0.91, 0.25)
+    shadow.set_border_width_all(maxi(1, roundi(9.0*s)))
+    shadow.set_corner_radius_all(maxi(5, roundi(31.0*s)))
+    draw_style_box(shadow, r.grow(6.0*s))
 
-func _facets(r: Rect2, c: float) -> PackedVector2Array:
-    c = minf(c, minf(r.size.x, r.size.y) * 0.30)
-    return PackedVector2Array([
-        r.position + Vector2(c, 0), Vector2(r.end.x - c, r.position.y),
-        Vector2(r.end.x, r.position.y + c), Vector2(r.end.x, r.end.y - c),
-        r.end - Vector2(c, 0), Vector2(r.position.x + c, r.end.y),
-        Vector2(r.position.x, r.end.y - c), r.position + Vector2(0, c)
-    ])
+    var plate := StyleBoxFlat.new()
+    plate.bg_color = Color("03142b")
+    plate.border_color = Color("61cbed")
+    plate.set_border_width_all(maxi(1, roundi(2.6*s)))
+    plate.set_corner_radius_all(maxi(4, roundi(26.0*s)))
+    draw_style_box(plate, r)
 
-func _outline(p: PackedVector2Array, color: Color, width: float) -> void:
-    var points: PackedVector2Array = p.duplicate()
-    points.append(p[0])
-    draw_polyline(points, color, width, true)
+    var inner := StyleBoxFlat.new()
+    inner.bg_color = Color("061d39")
+    inner.border_color = Color(0.31, 0.66, 0.91, 0.37)
+    inner.set_border_width_all(maxi(1, roundi(1.0*s)))
+    inner.set_corner_radius_all(maxi(4, roundi(20.0*s)))
+    draw_style_box(inner, r.grow(-7.0*s))
+
+    var edge: float = minf(r.size.x * 0.12, 35.0*s)
+    draw_line(Vector2(r.position.x+edge, r.position.y+7.0*s), Vector2(r.end.x-edge, r.position.y+7.0*s), Color(0.69, 0.91, 1.0, 0.20), 1.4*s, true)
+
+func _wing_points(r: Rect2, points_right: bool) -> PackedVector2Array:
+    # Normalized Bézier-like rounded corners, rounded triangular inner tip.
+    # Both wings share the same geometry, mirrored horizontally.
+    var p: PackedVector2Array = PackedVector2Array()
+    _add_point(p, r, Vector2(0.085, 0.035), points_right)
+    _add_point(p, r, Vector2(0.690, 0.035), points_right)
+    _add_curve(p, r, Vector2(0.690, 0.035), Vector2(0.765, 0.035), Vector2(0.814, 0.155), points_right)
+    _add_point(p, r, Vector2(0.974, 0.414), points_right)
+    _add_curve(p, r, Vector2(0.974, 0.414), Vector2(1.035, 0.50), Vector2(0.974, 0.586), points_right)
+    _add_point(p, r, Vector2(0.814, 0.845), points_right)
+    _add_curve(p, r, Vector2(0.814, 0.845), Vector2(0.765, 0.965), Vector2(0.690, 0.965), points_right)
+    _add_point(p, r, Vector2(0.085, 0.965), points_right)
+    _add_curve(p, r, Vector2(0.085, 0.965), Vector2(0.010, 0.965), Vector2(0.010, 0.86), points_right)
+    _add_point(p, r, Vector2(0.010, 0.14), points_right)
+    _add_curve(p, r, Vector2(0.010, 0.14), Vector2(0.010, 0.035), Vector2(0.085, 0.035), points_right)
+    return p
+
+func _add_point(points: PackedVector2Array, r: Rect2, uv: Vector2, points_right: bool) -> void:
+    var x: float = uv.x if points_right else 1.0 - uv.x
+    points.append(r.position + Vector2(x*r.size.x, uv.y*r.size.y))
+
+func _add_curve(points: PackedVector2Array, r: Rect2, begin: Vector2, control: Vector2, end: Vector2, points_right: bool) -> void:
+    for i in range(1, 9):
+        var t: float = float(i)/8.0
+        var u: float = 1.0-t
+        var uv: Vector2 = begin*(u*u) + control*(2.0*u*t) + end*(t*t)
+        _add_point(points, r, uv, points_right)
+
+func _stroke(points: PackedVector2Array, color: Color, width: float) -> void:
+    if points.size() < 3:
+        return
+    var loop: PackedVector2Array = points.duplicate()
+    loop.append(points[0])
+    draw_polyline(loop, color, width, true)
