@@ -19,6 +19,11 @@ extends Control
     set(value):
         image_path = value
         _refresh()
+# "portrait_top" shows the head and shoulders; "contain" retains the whole alien.
+@export var image_fit_mode: String = "cover":
+    set(value):
+        image_fit_mode = value
+        _refresh()
 @export var accent: Color = Color("20a8ff"):
     set(value):
         accent = value
@@ -30,6 +35,7 @@ var title_label: Label
 var subtitle_label: Label
 var description_label: Label
 var _loaded_image_path: String = ""
+var _source_texture: Texture2D
 
 func _ready() -> void:
     mouse_filter = Control.MOUSE_FILTER_STOP
@@ -82,11 +88,43 @@ func _refresh() -> void:
     description_label.text = card_description
     if image_path != _loaded_image_path:
         _loaded_image_path = image_path
-        artwork.texture = null
+        _source_texture = null
         if not image_path.is_empty() and ResourceLoader.exists(image_path):
-            artwork.texture = load(image_path) as Texture2D
-    image_hint.visible = artwork.texture == null
+            _source_texture = load(image_path) as Texture2D
+    _update_artwork_fit()
+    image_hint.visible = _source_texture == null
     queue_redraw()
+
+func _update_artwork_fit() -> void:
+    if artwork == null:
+        return
+    if _source_texture == null:
+        artwork.texture = null
+        return
+    if image_fit_mode == "contain":
+        # Non-human, irregular and gaseous life forms must stay fully visible.
+        artwork.texture = _source_texture
+        artwork.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+    elif image_fit_mode == "portrait_top" and artwork.size.x > 1.0 and artwork.size.y > 1.0:
+        # Crop the *lower* part of tall humanoid art, keeping the face visible.
+        # AtlasTexture is a live Godot resource; the source PNG is untouched.
+        var tex_size: Vector2 = _source_texture.get_size()
+        var aspect: float = artwork.size.x / artwork.size.y
+        var region: Rect2 = Rect2(Vector2.ZERO, tex_size)
+        if tex_size.x / tex_size.y < aspect:
+            region.size.y = minf(tex_size.y, tex_size.x / aspect)
+            region.position.y = minf(tex_size.y - region.size.y, tex_size.y * 0.025)
+        else:
+            region.size.x = minf(tex_size.x, tex_size.y * aspect)
+            region.position.x = (tex_size.x - region.size.x) * 0.5
+        var cropped := AtlasTexture.new()
+        cropped.atlas = _source_texture
+        cropped.region = region
+        artwork.texture = cropped
+        artwork.stretch_mode = TextureRect.STRETCH_SCALE
+    else:
+        artwork.texture = _source_texture
+        artwork.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 
 func _layout_content() -> void:
     if artwork == null:
@@ -98,6 +136,7 @@ func _layout_content() -> void:
     var plaque_y: float = h * 0.685
     artwork.position = Vector2(pad, pad)
     artwork.size = Vector2(w - 2.0 * pad, plaque_y - pad)
+    _update_artwork_fit()
     image_hint.position = Vector2(pad, plaque_y-115.0*s)
     image_hint.size = Vector2(w-2.0*pad, 75.0*s)
 

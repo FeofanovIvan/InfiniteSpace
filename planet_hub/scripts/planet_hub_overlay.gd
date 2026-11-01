@@ -172,20 +172,42 @@ func _reload_background() -> void:
 		_background_texture = load(bg_path) as Texture2D
 	queue_redraw()
 
+func _station_description(station_id: String) -> String:
+    match station_id:
+        "st_mw":
+            return "Дальняя ремонтная верфь: космическая станция для обслуживания и ремонта кораблей во внешней части Солнечной системы."
+        "st_lmc":
+            return "Лабораторный корабль «Тарантул»: исследовательская станция, расположенная в свободном космическом пространстве."
+        "st_smc":
+            return "Живой архив: станция в глубоком космосе, окружённая необычной атмосферной дымкой."
+        "st_ngc6822":
+            return "Голова Титана: удалённый космический порт среди астероидов и окружающих его колец."
+        "st_m31":
+            return "Перевёрнутая пирамида: отдельная загадочная конструкция во внешнем секторе галактики."
+        "st_m33":
+            return "Последние врата: межгалактический переход во внешнем секторе перед Перекрёстком миров."
+        _:
+            return "Исследуй станцию и узнай, как она устроена."
+
 func _apply_card_content() -> void:
 	var inhabited: bool = bool(_meta.get("inhabited", false))
 	if representative != null:
 		representative.visible = inhabited
 		var is_station: bool = bool(_meta.get("is_station", false))
 		representative.set("card_title", "Представитель станции" if is_station else "Представитель планеты")
-		var entry: Dictionary = _representative_entry()
-		var representative_name: String = String(entry.get("name_ru", ""))
-		representative.set("card_subtitle", (representative_name + " · " + _planet_name) if not representative_name.is_empty() else _planet_name)
-		var rep_text: String = "Связь с представителем планеты будет добавлена следующим этапом."
-		if inhabited:
-			rep_text = "Нажми на карточку, чтобы связаться с представителем планеты через планшет-переводчик."
+		# A location card, not an identity card: do not display character names.
+		representative.set("card_subtitle", _planet_name)
+		var rep_text: String = String(_meta.get("unique", ""))
+		if is_station:
+			rep_text = _station_description(_planet_id)
+		elif rep_text.is_empty():
+			rep_text = "Познакомься с этим миром и узнай, кто здесь живёт."
 		representative.set("card_description", rep_text)
-		representative.set("image_path", get_dialog_portrait_path())
+		var portrait_path: String = get_dialog_portrait_path()
+		var portrait_name: String = portrait_path.get_file()
+		var humanoid: bool = portrait_name.begins_with("05_human_") or portrait_name.begins_with("06_human_") or portrait_name.begins_with("01_reptile_") or portrait_name.begins_with("02_reptile_")
+		representative.set("image_fit_mode", "portrait_top" if humanoid else "contain")
+		representative.set("image_path", portrait_path)
 	if mission != null:
 		mission.visible = true
 		mission.set("card_title", "Задание станции" if bool(_meta.get("is_station", false)) else "Задание планеты")

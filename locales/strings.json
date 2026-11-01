@@ -36,7 +36,9 @@
     "planet_Neptune": "Neptune",
     "orbit_station": "Orbital station",
     "landing_title": "LANDING",
-    "landing_empty": "Landing area coming soon"
+    "landing_empty": "Landing area coming soon",
+    "planet_simulator": "Simulator",
+    "planet_depart": "Launch"
   },
   "ru": {
     "skip": "Пропустить вступление",
@@ -75,7 +77,9 @@
     "planet_Neptune": "Нептун",
     "orbit_station": "Орбитальная станция",
     "landing_title": "ПОСАДКА",
-    "landing_empty": "Экран посадки пока пуст"
+    "landing_empty": "Экран посадки пока пуст",
+    "planet_simulator": "Симулятор",
+    "planet_depart": "Вылет"
   },
   "fr": {
     "skip": "Passer l’intro",
@@ -114,7 +118,9 @@
     "planet_Neptune": "Neptune",
     "orbit_station": "Station orbitale",
     "landing_title": "ATTERRISSAGE",
-    "landing_empty": "Zone d’atterrissage bientôt disponible"
+    "landing_empty": "Zone d’atterrissage bientôt disponible",
+    "planet_simulator": "Simulateur",
+    "planet_depart": "Décoller"
   },
   "de": {
     "skip": "Intro überspringen",
@@ -153,7 +159,9 @@
     "planet_Neptune": "Neptun",
     "orbit_station": "Orbitalstation",
     "landing_title": "LANDUNG",
-    "landing_empty": "Landebereich folgt in Kürze"
+    "landing_empty": "Landebereich folgt in Kürze",
+    "planet_simulator": "Simulator",
+    "planet_depart": "Abflug"
   },
   "es": {
     "skip": "Saltar introducción",
@@ -192,7 +200,9 @@
     "planet_Neptune": "Neptuno",
     "orbit_station": "Estación orbital",
     "landing_title": "ATERRIZAJE",
-    "landing_empty": "Zona de aterrizaje próximamente"
+    "landing_empty": "Zona de aterrizaje próximamente",
+    "planet_simulator": "Simulador",
+    "planet_depart": "Despegar"
   },
   "pt_BR": {
     "skip": "Pular introdução",
@@ -231,6 +241,8 @@
     "planet_Neptune": "Netuno",
     "orbit_station": "Estação orbital",
     "landing_title": "POUSO",
-    "landing_empty": "Área de pouso em breve"
+    "landing_empty": "Área de pouso em breve",
+    "planet_simulator": "Simulador",
+    "planet_depart": "Decolar"
   }
 }
