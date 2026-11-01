@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3]
-
-[ext_resource type="PackedScene" path="res://smc_planets/planet_2d.tscn" id="1"]
-
-[node name="smc_p02" instance=ExtResource("1")]
-planet_id = "smc_p02"
-diameter_pixels = 169.0
