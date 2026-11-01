@@ -135,10 +135,10 @@ func _layout_items() -> void:
     button_width = maxf(50.0, button_width)
     var button_height: float = 104.0 * s
     var y: float = 23.0 * s
-    var row_width: float = 2.0 * button_width + center_width + 2.0 * gap
-    var row_left: float = (w - row_width) * 0.5
-    _left_rect = Rect2(row_left, y, button_width, button_height)
-    _right_rect = Rect2(w - row_left - button_width, y, button_width, button_height)
+    # Keep the dynamic resource center aligned; place action buttons at edges.
+    var side_margin: float = 8.0 * s
+    _left_rect = Rect2(side_margin, y, button_width, button_height)
+    _right_rect = Rect2(w - side_margin - button_width, y, button_width, button_height)
     _center_rect = Rect2(w * 0.5 - center_width * 0.5, 21.0 * s, center_width, 108.0 * s)
     sim_button.position = _left_rect.position
     sim_button.size = _left_rect.size
