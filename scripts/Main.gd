@@ -900,8 +900,8 @@ func _update_autopilot(delta: float) -> void:
 	velocity = velocity.move_toward(desired_velocity.limit_length(MAX_SPEED), AUTO_STEERING_ACCEL * delta)
 
 
-# Only explicit landable PLANETS trigger automatic landing at autopilot arrival.
-# Accessible stations and orbit-only worlds keep their previous behavior.
+# Every planet is landable by default, independently of population or missions.
+# Stations remain independent destinations with their existing behavior.
 func _resolve_autopilot_planet(target_id: String) -> Dictionary:
 	var system_data: Dictionary = solar_system.get_system(solar_system.current_id)
 	for item in system_data.get("planets", []):
@@ -909,7 +909,7 @@ func _resolve_autopilot_planet(target_id: String) -> Dictionary:
 			continue
 		if target_id != str(item.get("id", "")) and target_id != str(item.get("name_en", "")):
 			continue
-		return item if str(item.get("landing", "orbit")) == "landing" else {}
+		return item if bool(item.get("landable", true)) else {}
 	return {}
 
 
@@ -933,7 +933,7 @@ func _stop_autopilot(reason: String) -> void:
 
 
 func _update_landing_offer() -> void:
-	# Planetary landings only on explicitly inhabited worlds; stations are ports.
+	# Every planet offers landing on approach; inhabitants only control the representative card.
 	if _warp_active or _intro_comic_playing or _intro_space_flying or get_tree().paused:
 		return
 	var ship_world: Vector2 = _ship_world()
@@ -945,7 +945,7 @@ func _update_landing_offer() -> void:
 	var closest_name: String = ""
 	var nearest_ratio: float = INF
 	for planet in system_data.get("planets", []):
-		if str(planet.get("landing", "orbit")) != "landing":
+		if not bool(planet.get("landable", true)):
 			continue
 		var name_en: String = str(planet.get("name_en", ""))
 		if not positions.has(name_en):
@@ -1469,7 +1469,8 @@ func _begin_planet_landing(planet_id: String, display_name: String, with_animati
 	hub.size = get_viewport_rect().size
 	hub.call("show_for_planet", planet_id, display_name, floori(_fuel_units + 0.001))
 	get_tree().paused = true
-	diagnostics.write("planet_hub_opened", {"planet": planet_id, "inhabited": true})
+	var landing_meta: Dictionary = hub.get("_meta")
+	diagnostics.write("planet_hub_opened", {"planet": planet_id, "inhabited": bool(landing_meta.get("inhabited", false))})
 
 
 func _on_planet_hub_flight_requested() -> void:
