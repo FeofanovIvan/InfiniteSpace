@@ -10,6 +10,8 @@ signal representative_requested(planet_id: String)
 const ATLAS_PATH: String = "res://atlas/world_atlas.json"
 const BACKGROUND_ROOT: String = "res://planet_hub/backgrounds/"
 const CARD_ROOT: String = "res://planet_hub/cards/"
+const CHARACTER_ROOT: String = "res://planet_hub/characters/"
+const ROSTER_PATH: String = "res://planet_hub/data/representatives.json"
 
 @onready var scroll: ScrollContainer = $CardScroll
 @onready var card_row: HBoxContainer = $CardScroll/CardRow
@@ -18,6 +20,7 @@ const CARD_ROOT: String = "res://planet_hub/cards/"
 @onready var hud: Control = $BottomHUD
 
 var _atlas: Dictionary = {}
+var _representative_roster: Dictionary = {}
 var _planet_id: String = ""
 var _planet_name: String = ""
 var _meta: Dictionary = {}
@@ -30,6 +33,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	visible = false
 	_load_atlas()
+	_load_representative_roster()
 	_is_setup = true
 	if hud != null:
 		hud.connect("simulator_pressed", Callable(self, "_on_simulator_pressed"))
@@ -63,6 +67,12 @@ func get_dialog_background_path() -> String:
 
 
 func get_dialog_portrait_path() -> String:
+	var entry: Dictionary = _representative_entry()
+	var asset_name: String = String(entry.get("asset", ""))
+	if not asset_name.is_empty():
+		var candidate: String = CHARACTER_ROOT + asset_name
+		if ResourceLoader.exists(candidate):
+			return candidate
 	return _resolve_first_existing([
 		CARD_ROOT + _planet_id + "_representative_dialog.png",
 		CARD_ROOT + _planet_id + "_representative_dialog.webp",
@@ -73,7 +83,7 @@ func get_dialog_portrait_path() -> String:
 func show_for_planet(planet_id: String, display_name: String = "", crystals: int = 0) -> void:
 	_planet_id = planet_id
 	_meta = _find_planet_meta(planet_id)
-	_planet_name = display_name if not display_name.is_empty() else String(_meta.get("name_ru", planet_id))
+	_planet_name = String(_meta.get("name_ru", display_name)) if bool(_meta.get("is_station", false)) else (display_name if not display_name.is_empty() else String(_meta.get("name_ru", planet_id)))
 	if hud != null:
 		hud.set("crystal_count", crystals)
 	_apply_card_content()
@@ -114,7 +124,30 @@ func _find_planet_meta(planet_id: String) -> Dictionary:
 				result["system_id"] = String(system_data.get("id", ""))
 				result["system_name_ru"] = String(system_data.get("name_ru", ""))
 				return result
+		var station: Variant = system_data.get("station", null)
+		if station is Dictionary and String(station.get("id", "")) == planet_id:
+			var result: Dictionary = station.duplicate(true)
+			result["inhabited"] = bool(station.get("accessible", true))
+			result["is_station"] = true
+			result["unique"] = "Изучи устройство станции и познакомься с её экипажем."
+			result["system_id"] = String(system_data.get("id", ""))
+			result["system_name_ru"] = String(system_data.get("name_ru", ""))
+			return result
 	return {}
+
+func _load_representative_roster() -> void:
+	_representative_roster.clear()
+	if not FileAccess.file_exists(ROSTER_PATH):
+		return
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(ROSTER_PATH))
+	if parsed is Dictionary:
+		var assignments: Variant = parsed.get("assignments", {})
+		if assignments is Dictionary:
+			_representative_roster = assignments
+
+func _representative_entry() -> Dictionary:
+	var entry: Variant = _representative_roster.get(_planet_id, {})
+	return entry if entry is Dictionary else {}
 
 func _resolve_first_existing(paths: Array[String]) -> String:
 	for path in paths:
@@ -143,19 +176,19 @@ func _apply_card_content() -> void:
 	var inhabited: bool = bool(_meta.get("inhabited", false))
 	if representative != null:
 		representative.visible = inhabited
-		representative.set("card_title", "Представитель планеты")
-		representative.set("card_subtitle", _planet_name)
+		var is_station: bool = bool(_meta.get("is_station", false))
+		representative.set("card_title", "Представитель станции" if is_station else "Представитель планеты")
+		var entry: Dictionary = _representative_entry()
+		var representative_name: String = String(entry.get("name_ru", ""))
+		representative.set("card_subtitle", (representative_name + " · " + _planet_name) if not representative_name.is_empty() else _planet_name)
 		var rep_text: String = "Связь с представителем планеты будет добавлена следующим этапом."
 		if inhabited:
 			rep_text = "Нажми на карточку, чтобы связаться с представителем планеты через планшет-переводчик."
 		representative.set("card_description", rep_text)
-		representative.set("image_path", _resolve_first_existing([
-			CARD_ROOT + _planet_id + "_representative.png",
-			CARD_ROOT + _planet_id + "_representative.jpg",
-		]))
+		representative.set("image_path", get_dialog_portrait_path())
 	if mission != null:
 		mission.visible = true
-		mission.set("card_title", "Задание планеты")
+		mission.set("card_title", "Задание станции" if bool(_meta.get("is_station", false)) else "Задание планеты")
 		var unique_text: String = String(_meta.get("unique", ""))
 		mission.set("card_subtitle", ("Экспедиция: " + _planet_name) if unique_text.is_empty() else _planet_name)
 		var mission_text: String = unique_text
