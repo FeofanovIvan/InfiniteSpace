@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "assignment_policy": "provisional; multiple planets may share interplanetary representatives",
+  "excluded_from_dialogues": [
+    "03_reptile_raks",
+    "04_human_professor_elias_braun"
+  ],
+  "assignments": {
+    "mw_p01": {
+      "asset": "05_human_amara_cole.png",
+      "name_ru": "Амара Коул"
+    },
+    "mw_p02": {
+      "asset": "06_human_lin_kai.png",
+      "name_ru": "Линь Кай"
+    },
+    "mw_p03": {
+      "asset": "05_human_amara_cole.png",
+      "name_ru": "Амара Коул"
+    },
+    "mw_p06": {
+      "asset": "06_human_lin_kai.png",
+      "name_ru": "Линь Кай"
+    },
+    "mw_p07": {
+      "asset": "05_human_amara_cole.png",
+      "name_ru": "Амара Коул"
+    },
+    "st_mw": {
+      "asset": "06_human_lin_kai.png",
+      "name_ru": "Линь Кай"
+    },
+    "lmc_p02": {
+      "asset": "01_reptile_liri.png",
+      "name_ru": "Лири"
+    },
+    "lmc_p03": {
+      "asset": "02_reptile_taro.png",
+      "name_ru": "Таро"
+    },
+    "lmc_p04": {
+      "asset": "01_reptile_liri.png",
+      "name_ru": "Лири"
+    },
+    "st_lmc": {
+      "asset": "02_reptile_taro.png",
+      "name_ru": "Таро"
+    },
+    "smc_p01": {
+      "asset": "07_mold_form_archive.png",
+      "name_ru": "Архивная форма"
+    },
+    "smc_p02": {
+      "asset": "08_mold_form_cluster.png",
+      "name_ru": "Кластерная форма"
+    },
+    "smc_p03": {
+      "asset": "07_mold_form_archive.png",
+      "name_ru": "Архивная форма"
+    },
+    "smc_p05": {
+      "asset": "08_mold_form_cluster.png",
+      "name_ru": "Кластерная форма"
+    },
+    "st_smc": {
+      "asset": "07_mold_form_archive.png",
+      "name_ru": "Архивная форма"
+    },
+    "ngc6822_p01": {
+      "asset": "14_magnetic_engineer.png",
+      "name_ru": "Магнитный инженер"
+    },
+    "ngc6822_p02": {
+      "asset": "13_magnetic_ring.png",
+      "name_ru": "Кольцевая форма"
+    },
+    "ngc6822_p03": {
+      "asset": "14_magnetic_engineer.png",
+      "name_ru": "Магнитный инженер"
+    },
+    "ngc6822_p04": {
+      "asset": "13_magnetic_ring.png",
+      "name_ru": "Кольцевая форма"
+    },
+    "ngc6822_p06": {
+      "asset": "14_magnetic_engineer.png",
+      "name_ru": "Магнитный инженер"
+    },
+    "st_ngc6822": {
+      "asset": "14_magnetic_engineer.png",
+      "name_ru": "Магнитный инженер"
+    },
+    "m31_p03": {
+      "asset": "10_phase_crystal.png",
+      "name_ru": "Кристаллическая форма"
+    },
+    "m31_p05": {
+      "asset": "11_phase_gas.png",
+      "name_ru": "Газовая форма"
+    },
+    "m31_p06": {
+      "asset": "12_phase_liquid.png",
+      "name_ru": "Жидкая форма"
+    },
+    "st_m31": {
+      "asset": "10_phase_crystal.png",
+      "name_ru": "Кристаллическая форма"
+    },
+    "m33_p01": {
+      "asset": "16_neural_historian.png",
+      "name_ru": "Хранительница памяти"
+    },
+    "m33_p02": {
+      "asset": "17_neural_researcher.png",
+      "name_ru": "Исследователь вероятностей"
+    },
+    "m33_p03": {
+      "asset": "18_neural_guide.png",
+      "name_ru": "Эон"
+    },
+    "m33_p04": {
+      "asset": "16_neural_historian.png",
+      "name_ru": "Хранительница памяти"
+    },
+    "st_m33": {
+      "asset": "18_neural_guide.png",
+      "name_ru": "Эон"
+    }
+  },
+  "not_landing_backgrounds": [
+    "mw_p04",
+    "mw_p05"
+  ]
+}

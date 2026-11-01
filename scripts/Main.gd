@@ -982,6 +982,10 @@ func _on_action_requested(mode: String) -> void:
 	if _landing_target_id.contains("_p"):
 		_begin_planet_landing(_landing_target_id, _landing_target_name)
 		return
+	# v62: accessible stations use the existing planet hub + translator.
+	if _landing_target_id.begins_with("st_"):
+		_begin_planet_landing(_landing_target_id, _landing_target_name)
+		return
 	if _autopilot_active:
 		_stop_autopilot("landing_preview")
 	velocity = Vector2.ZERO
