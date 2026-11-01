@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "assignment_policy": "provisional; multiple planets may share interplanetary representatives",
+  "schema_version": 2,
+  "assignment_policy": "Per-system canonical races; station crew may originate within its system; exact person assignments provisional.",
   "excluded_from_dialogues": [
     "03_reptile_raks",
     "04_human_professor_elias_braun"
@@ -31,80 +31,80 @@
       "name_ru": "Линь Кай"
     },
     "lmc_p02": {
-      "asset": "01_reptile_liri.png",
-      "name_ru": "Лири"
+      "asset": "07_mold_form_archive.png",
+      "name_ru": "Архивная форма"
     },
     "lmc_p03": {
-      "asset": "02_reptile_taro.png",
-      "name_ru": "Таро"
+      "asset": "08_mold_form_cluster.png",
+      "name_ru": "Кластерная форма"
     },
     "lmc_p04": {
-      "asset": "01_reptile_liri.png",
-      "name_ru": "Лири"
+      "asset": "07_mold_form_archive.png",
+      "name_ru": "Архивная форма"
     },
     "st_lmc": {
-      "asset": "02_reptile_taro.png",
-      "name_ru": "Таро"
+      "asset": "08_mold_form_cluster.png",
+      "name_ru": "Кластерная форма"
     },
     "smc_p01": {
-      "asset": "07_mold_form_archive.png",
-      "name_ru": "Архивная форма"
-    },
-    "smc_p02": {
-      "asset": "08_mold_form_cluster.png",
-      "name_ru": "Кластерная форма"
-    },
-    "smc_p03": {
-      "asset": "07_mold_form_archive.png",
-      "name_ru": "Архивная форма"
-    },
-    "smc_p05": {
-      "asset": "08_mold_form_cluster.png",
-      "name_ru": "Кластерная форма"
-    },
-    "st_smc": {
-      "asset": "07_mold_form_archive.png",
-      "name_ru": "Архивная форма"
-    },
-    "ngc6822_p01": {
-      "asset": "14_magnetic_engineer.png",
-      "name_ru": "Магнитный инженер"
-    },
-    "ngc6822_p02": {
-      "asset": "13_magnetic_ring.png",
-      "name_ru": "Кольцевая форма"
-    },
-    "ngc6822_p03": {
-      "asset": "14_magnetic_engineer.png",
-      "name_ru": "Магнитный инженер"
-    },
-    "ngc6822_p04": {
-      "asset": "13_magnetic_ring.png",
-      "name_ru": "Кольцевая форма"
-    },
-    "ngc6822_p06": {
-      "asset": "14_magnetic_engineer.png",
-      "name_ru": "Магнитный инженер"
-    },
-    "st_ngc6822": {
-      "asset": "14_magnetic_engineer.png",
-      "name_ru": "Магнитный инженер"
-    },
-    "m31_p03": {
       "asset": "10_phase_crystal.png",
       "name_ru": "Кристаллическая форма"
     },
-    "m31_p05": {
+    "smc_p02": {
       "asset": "11_phase_gas.png",
       "name_ru": "Газовая форма"
     },
-    "m31_p06": {
+    "smc_p03": {
       "asset": "12_phase_liquid.png",
       "name_ru": "Жидкая форма"
     },
-    "st_m31": {
+    "smc_p05": {
       "asset": "10_phase_crystal.png",
       "name_ru": "Кристаллическая форма"
+    },
+    "st_smc": {
+      "asset": "11_phase_gas.png",
+      "name_ru": "Газовая форма"
+    },
+    "ngc6822_p01": {
+      "asset": "01_reptile_liri.png",
+      "name_ru": "Лири"
+    },
+    "ngc6822_p02": {
+      "asset": "02_reptile_taro.png",
+      "name_ru": "Таро"
+    },
+    "ngc6822_p03": {
+      "asset": "01_reptile_liri.png",
+      "name_ru": "Лири"
+    },
+    "ngc6822_p04": {
+      "asset": "02_reptile_taro.png",
+      "name_ru": "Таро"
+    },
+    "ngc6822_p06": {
+      "asset": "01_reptile_liri.png",
+      "name_ru": "Лири"
+    },
+    "st_ngc6822": {
+      "asset": "02_reptile_taro.png",
+      "name_ru": "Таро"
+    },
+    "m31_p03": {
+      "asset": "13_magnetic_ring.png",
+      "name_ru": "Кольцевая форма"
+    },
+    "m31_p05": {
+      "asset": "14_magnetic_engineer.png",
+      "name_ru": "Магнитный инженер"
+    },
+    "m31_p06": {
+      "asset": "15_magnetic_companion.png",
+      "name_ru": "Магнитный спутник"
+    },
+    "st_m31": {
+      "asset": "13_magnetic_ring.png",
+      "name_ru": "Кольцевая форма"
     },
     "m33_p01": {
       "asset": "16_neural_historian.png",
@@ -123,12 +123,20 @@
       "name_ru": "Хранительница памяти"
     },
     "st_m33": {
-      "asset": "18_neural_guide.png",
-      "name_ru": "Эон"
+      "asset": "17_neural_researcher.png",
+      "name_ru": "Исследователь вероятностей"
     }
   },
   "not_landing_backgrounds": [
     "mw_p04",
     "mw_p05"
-  ]
+  ],
+  "race_by_system": {
+    "mw": "humans",
+    "lmc": "mold",
+    "smc": "phase",
+    "ngc6822": "reptiles",
+    "m31": "magnetic",
+    "m33": "neural"
+  }
 }
