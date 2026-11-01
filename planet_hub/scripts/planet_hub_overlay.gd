@@ -12,6 +12,7 @@ const BACKGROUND_ROOT: String = "res://planet_hub/backgrounds/"
 const CARD_ROOT: String = "res://planet_hub/cards/"
 const CHARACTER_ROOT: String = "res://planet_hub/characters/"
 const ROSTER_PATH: String = "res://planet_hub/data/representatives.json"
+const MISSION_PATH: String = "res://planet_hub/data/missions.json"
 
 @onready var scroll: ScrollContainer = $CardScroll
 @onready var card_row: HBoxContainer = $CardScroll/CardRow
@@ -21,6 +22,8 @@ const ROSTER_PATH: String = "res://planet_hub/data/representatives.json"
 
 var _atlas: Dictionary = {}
 var _representative_roster: Dictionary = {}
+var _mission_records: Dictionary = {}
+var _mouse_scroll_drag: bool = false
 var _planet_id: String = ""
 var _planet_name: String = ""
 var _meta: Dictionary = {}
@@ -34,6 +37,9 @@ func _ready() -> void:
 	visible = false
 	_load_atlas()
 	_load_representative_roster()
+	_load_missions()
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
+	scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	_is_setup = true
 	if hud != null:
 		hud.connect("simulator_pressed", Callable(self, "_on_simulator_pressed"))
@@ -145,6 +151,43 @@ func _load_representative_roster() -> void:
 		if assignments is Dictionary:
 			_representative_roster = assignments
 
+func _load_missions() -> void:
+	_mission_records.clear()
+	if not FileAccess.file_exists(MISSION_PATH):
+		return
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(MISSION_PATH))
+	if parsed is Dictionary:
+		var records: Variant = parsed.get("missions", {})
+		if records is Dictionary:
+			_mission_records = records
+
+func _mission_entry() -> Dictionary:
+	var record: Variant = _mission_records.get(_planet_id, {})
+	if record is Dictionary and bool(record.get("enabled", false)):
+		return record
+	return {}
+
+func _localized_mission_field(record: Dictionary, field: String, default_text: String = "") -> String:
+	var value: Variant = record.get(field, default_text)
+	if value is Dictionary:
+		var language: String = "ru" if Engine.is_editor_hint() else MobileLocale.language
+		return str(value.get(language, value.get("ru", value.get("en", default_text))))
+	return str(value)
+
+func _input(event: InputEvent) -> void:
+	# ScrollContainer already handles touch swipes; support mouse dragging too.
+	# No scrollbar is displayed on mobile or desktop.
+	if not visible or not is_instance_valid(scroll):
+		_mouse_scroll_drag = false
+		return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			_mouse_scroll_drag = scroll.get_global_rect().has_point(event.position)
+		else:
+			_mouse_scroll_drag = false
+	elif event is InputEventMouseMotion and _mouse_scroll_drag and (event.button_mask & MOUSE_BUTTON_MASK_LEFT) != 0:
+		scroll.scroll_horizontal = maxi(0, scroll.scroll_horizontal - roundi(event.relative.x))
+
 func _representative_entry() -> Dictionary:
 	var entry: Variant = _representative_roster.get(_planet_id, {})
 	return entry if entry is Dictionary else {}
@@ -209,20 +252,19 @@ func _apply_card_content() -> void:
 		representative.set("image_fit_mode", "portrait_top" if humanoid else "contain")
 		representative.set("image_path", portrait_path)
 	if mission != null:
-		mission.visible = true
-		mission.set("card_title", "Задание станции" if bool(_meta.get("is_station", false)) else "Задание планеты")
-		var unique_text: String = String(_meta.get("unique", ""))
-		mission.set("card_subtitle", ("Экспедиция: " + _planet_name) if unique_text.is_empty() else _planet_name)
-		var mission_text: String = unique_text
-		if mission_text.is_empty():
-			mission_text = "Исследуй особенности мира, собери материалы, изучи окружение и подготовься к следующим сюжетным заданиям."
-		if not inhabited:
-			mission_text += "\n\nНа этой планете нет представителя, поэтому доступно автономное исследование."
-		mission.set("card_description", mission_text)
-		mission.set("image_path", _resolve_first_existing([
-			CARD_ROOT + _planet_id + "_mission.png",
-			CARD_ROOT + _planet_id + "_mission.jpg",
-		]))
+		var assignment: Dictionary = _mission_entry()
+		# A mission card is absent unless an explicit enabled DB row exists.
+		mission.visible = not assignment.is_empty()
+		if mission.visible:
+			var is_station: bool = bool(_meta.get("is_station", false))
+			var default_title: String = "Задание станции" if is_station else "Задание планеты"
+			mission.set("card_title", _localized_mission_field(assignment, "title", default_title))
+			mission.set("card_subtitle", _localized_mission_field(assignment, "subtitle", _planet_name))
+			mission.set("card_description", _localized_mission_field(assignment, "description"))
+			var image: String = _localized_mission_field(assignment, "image", "")
+			if not image.is_empty() and not ResourceLoader.exists(image):
+				image = ""
+			mission.set("image_path", image)
 	_layout_ui()
 
 func _visible_cards() -> Array[Control]:
@@ -257,7 +299,7 @@ func _layout_ui() -> void:
 	card_row.custom_minimum_size = Vector2(row_w, card_h)
 	scroll.position = Vector2(maxf(12 * scale_ui, (sw - row_w) * 0.5), maxf(12 * scale_ui, (sh - bottom_h - card_h) * 0.5 + 24 * scale_ui))
 	scroll.size = Vector2(minf(row_w, sw - 24 * scale_ui), card_h + 4 * scale_ui)
-	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
 	scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	queue_redraw()
 
