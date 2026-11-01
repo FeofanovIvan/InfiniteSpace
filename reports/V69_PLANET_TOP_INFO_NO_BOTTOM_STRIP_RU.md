@@ -1,6 +1,6 @@
 # InfiniteSpace v69 — верхняя панель планеты/станции, прозрачный нижний HUD
 
-Локальный Mac ZIP: `InfiniteSpace_v69_TopInfo_NoBottomStrip.zip`, SHA-256 `1618ef5f282d90fc20083eb9300f789f0e091400cbc94367f5309856db307d7a` (15 530 байт).
+Локальный Mac ZIP: `InfiniteSpace_v69_TopInfo_NoBottomStrip.zip`, SHA-256 `2dadbe91d2dba865419c1cc091e613b073b279d520b3bd4701ea7e6b1615bdc6` (15 651 байт).
 
 - В `planet_hub/scripts/planet_hub_overlay.gd` хирургически добавляется верхняя панель; удаляется только отдельная полупрозрачная полоса под нижним HUD; фоновый затемняющий слой экранов не меняется.
 - Новый `planet_hub/scripts/top_info_panel.gd`: название планеты/станции, штатный атласный эскиз планеты `visual_asset` или реальный спрайт станции из `assets/story`, форма жизни либо «Жизнь не обнаружена», название системы и компактная процедурная схема системы из данных атласа. Шесть языков (ru/en/fr/de/es/pt_BR), текущая обитаемость определяется `inhabited`, раса — `planet_hub/data/representatives.json`.
