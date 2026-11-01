@@ -884,7 +884,11 @@ func _update_autopilot(delta: float) -> void:
 	var distance: float = approach.length()
 	var arrival_radius: float = float(state["arrival_radius"])
 	if distance <= arrival_radius:
+		var arrived_target: String = _autopilot_target
 		_stop_autopilot("arrived")
+		var landing_planet: Dictionary = _resolve_autopilot_planet(arrived_target)
+		if not landing_planet.is_empty():
+			_begin_planet_landing(str(landing_planet.get("id", "")), str(landing_planet.get("name_ru", landing_planet.get("name_en", ""))))
 		return
 	# Predict the moving body's future location. Lead time diminishes near it.
 	var lead_seconds: float = clampf((distance - arrival_radius) / AUTO_CRUISE_SPEED, 0.0, 1.25)
@@ -894,6 +898,19 @@ func _update_autopilot(delta: float) -> void:
 	var desired_speed: float = minf(AUTO_CRUISE_SPEED, sqrt(2.0 * AUTO_BRAKE_ACCEL * remaining))
 	var desired_velocity: Vector2 = aim * desired_speed + target_velocity
 	velocity = velocity.move_toward(desired_velocity.limit_length(MAX_SPEED), AUTO_STEERING_ACCEL * delta)
+
+
+# Only explicit landable PLANETS trigger automatic landing at autopilot arrival.
+# Accessible stations and orbit-only worlds keep their previous behavior.
+func _resolve_autopilot_planet(target_id: String) -> Dictionary:
+	var system_data: Dictionary = solar_system.get_system(solar_system.current_id)
+	for item in system_data.get("planets", []):
+		if not (item is Dictionary):
+			continue
+		if target_id != str(item.get("id", "")) and target_id != str(item.get("name_en", "")):
+			continue
+		return item if str(item.get("landing", "orbit")) == "landing" else {}
+	return {}
 
 
 func _on_auto_stop_pressed() -> void:
