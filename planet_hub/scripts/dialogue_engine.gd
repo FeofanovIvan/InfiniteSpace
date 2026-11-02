@@ -111,7 +111,7 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	_state["locations"] = places
 	_save()
 	choices = _options("greeting")
-	var hello: String = _ui("hello")
+	var hello: String = _ui("hello") + " " + _localized(_race.get("greeting", {}))
 	var nickname: String = _profile_get("name")
 	if int(_visited.get("visits", 0)) > 1 and not nickname.is_empty():
 		hello += (" С возвращением, %s!" if language == "ru" else " Welcome back, %s!") % nickname
