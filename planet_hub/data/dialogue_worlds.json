@@ -17,7 +17,11 @@
       "ability_ru": "Мы строим, изучаем и изобретаем.",
       "ability_en": "We build, study, and invent.",
       "energy_ru": "Мы едим пищу и пьём воду.",
-      "energy_en": "We eat food and drink water."
+      "energy_en": "We eat food and drink water.",
+      "greeting": {
+        "ru": "Рад видеть нового исследователя среди звёзд!",
+        "en": "It's great to meet a new space explorer!"
+      }
     },
     "mold": {
       "ru": "разумная плесень",
@@ -27,7 +31,11 @@
       "ability_ru": "Мы можем соединяться волокнами и делиться сигналами.",
       "ability_en": "We can connect with fibers and share signals.",
       "energy_ru": "Мы получаем вещества и энергию из окружающей среды.",
-      "energy_en": "We gather nutrients and energy from our surroundings."
+      "energy_en": "We gather nutrients and energy from our surroundings.",
+      "greeting": {
+        "ru": "Наша сеть почувствовала твоё приближение. Добро пожаловать!",
+        "en": "Our living network sensed your arrival. Welcome!"
+      }
     },
     "phase": {
       "ru": "фазовые существа",
@@ -37,7 +45,11 @@
       "ability_ru": "Мы можем изменять состояние и прозрачность своей формы.",
       "ability_en": "We can change our form and transparency.",
       "energy_ru": "Мы получаем энергию из окружающей среды, а не едим как люди.",
-      "energy_en": "We gather energy from our environment instead of eating like humans."
+      "energy_en": "We gather energy from our environment instead of eating like humans.",
+      "greeting": {
+        "ru": "Мы меняем форму, чтобы поприветствовать тебя!",
+        "en": "We are changing form to welcome you!"
+      }
     },
     "reptile": {
       "ru": "разумные ящеры",
@@ -47,7 +59,11 @@
       "ability_ru": "Мы исследуем каменные миры и умеем строить большие города.",
       "ability_en": "We explore rocky worlds and build large cities.",
       "energy_ru": "Мы питаемся, как живые организмы, но наши любимые продукты ещё предстоит изучить.",
-      "energy_en": "We eat as living organisms do, but our favorite foods remain to be discovered."
+      "energy_en": "We eat as living organisms do, but our favorite foods remain to be discovered.",
+      "greeting": {
+        "ru": "Привет! Здесь всегда рады любознательным путешественникам.",
+        "en": "Hello! Curious travelers are always welcome here."
+      }
     },
     "magnetic": {
       "ru": "магнитная жидкометаллическая раса",
@@ -57,7 +73,11 @@
       "ability_ru": "Мы меняем форму с помощью электромагнитных взаимодействий.",
       "ability_en": "We reshape ourselves using electromagnetic interactions.",
       "energy_ru": "Мы взаимодействуем с полями и веществом; человеческая еда нам не нужна.",
-      "energy_en": "We interact with fields and matter; we do not need human food."
+      "energy_en": "We interact with fields and matter; we do not need human food.",
+      "greeting": {
+        "ru": "Мои магнитные волны приветствуют твою экспедицию.",
+        "en": "My magnetic waves welcome your expedition."
+      }
     },
     "neural": {
       "ru": "нейронные существа",
@@ -67,7 +87,11 @@
       "ability_ru": "Мы используем телекинез и исследуем сложные связи.",
       "ability_en": "We use telekinesis and study complex connections.",
       "energy_ru": "Наши тела защищены питательной средой.",
-      "energy_en": "Our bodies are protected by a nourishing medium."
+      "energy_en": "Our bodies are protected by a nourishing medium.",
+      "greeting": {
+        "ru": "Мы заметили новый любопытный разум. Здравствуй!",
+        "en": "We noticed a curious new mind. Greetings!"
+      }
     }
   },
   "worlds": {
