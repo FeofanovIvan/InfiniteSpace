@@ -108,7 +108,11 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	_state["locations"] = places
 	_save()
 	choices = _options("greeting")
-	return {"accepted": true, "npc": _ui("hello"), "choices": choices.duplicate(), "available": true}
+	var hello: String = _ui("hello")
+	var nickname: String = _profile_get("name")
+	if int(_visited.get("visits", 0)) > 1 and not nickname.is_empty():
+		hello += (" С возвращением, %s!" if language == "ru" else " Welcome back, %s!") % nickname
+	return {"accepted": true, "npc": hello, "choices": choices.duplicate(), "available": true}
 
 func get_choices() -> Array[String]:
 	return choices.duplicate()
@@ -125,10 +129,15 @@ func _topic_for(text: String) -> String:
 		var record: Dictionary = topics.get(key, {})
 		var variants: Array = record.get(language, record.get("en", []))
 		var english: Array = record.get("en", [])
-		for candidate in variants + english:
+		var station_variants: Array = _words.get("station_world", {}).get(language, []) if topic_is_station(key) else []
+		var station_english: Array = _words.get("station_world", {}).get("en", []) if topic_is_station(key) else []
+		for candidate in variants + english + station_variants + station_english:
 			if normalized == _clean(str(candidate)):
 				return key
 	return ""
+
+func topic_is_station(key: String) -> bool:
+	return key == "world" and bool(_world.get("is_station", false))
 
 func _topic_options() -> Array[String]:
 	var topics: Dictionary = _words.get("topics", {})
@@ -146,8 +155,12 @@ func _topic_options() -> Array[String]:
 			break
 		var record: Dictionary = topics.get(topic, {})
 		var variants: Array = record.get(language, record.get("en", []))
+		if topic_is_station(topic):
+			variants = _words.get("station_world", {}).get(language, _words.get("station_world", {}).get("en", variants))
 		if variants.size() > 0:
-			var variant_index: int = (int(_visited.get("response_counter", 0)) + selected.size()) % variants.size()
+			var age_text: String = _profile_get("age")
+			var young: bool = age_text.is_valid_int() and int(age_text) <= 6
+			var variant_index: int = 0 if young else (int(_visited.get("response_counter", 0)) + selected.size()) % variants.size()
 			selected.append(str(variants[variant_index]))
 	return selected
 
@@ -170,13 +183,39 @@ func _name() -> String:
 func _world_name() -> String:
 	return _localized(_world.get("name", {}))
 
+func _favorite_color_line(description: String) -> String:
+	var color_id: String = _profile_get("favorite_color")
+	if color_id.is_empty():
+		return ""
+	var patterns: Dictionary = {
+		"red": ["крас", "багров", "ржав", "red", "crimson", "rust"],
+		"blue": ["син", "голуб", "бирюз", "blue", "turquoise"],
+		"green": ["зел", "green"],
+		"yellow": ["жёл", "золот", "yellow", "golden"],
+		"orange": ["оранж", "orange"],
+		"purple": ["фиолет", "сирен", "purple", "violet", "lavender", "lilac"],
+		"pink": ["розов", "pink"],
+		"black": ["чёрн", "черн", "black"]
+	}
+	var mentioned: bool = false
+	for pattern in patterns.get(color_id, []):
+		if description.to_lower().contains(str(pattern)):
+			mentioned = true
+			break
+	if not mentioned:
+		return ""
+	var label: String = color_id
+	for entry in _words.get("colors", []):
+		if str(entry.get("id", "")) == color_id:
+			label = str(entry.get("labels", {}).get(language, entry.get("labels", {}).get("en", color_id)))
+			break
+	return ("Ты рассказывал, что любишь цвет «%s». Здесь тоже можно его увидеть!" if language == "ru" else "You told me you like %s. You can spot that color here too!") % label
+
 func _response(topic: String) -> String:
 	var ru: bool = language == "ru"
 	var name: String = _name()
 	var world: String = _world_name()
-	var race_name: String = _race_fact("ru") if ru else _race_fact("en")
-	# Race label keys are 'ru' and 'en', not 'race_ru' or 'race_en'.
-	race_name = str(_race.get("ru" if ru else "en", ""))
+	var race_name: String = str(_race.get("ru" if ru else "en", ""))
 	var description: String = _localized(_world.get("world", {}))
 	var structure: String = _localized(_world.get("structure", {}))
 	var variant: int = int(_visited.get("response_counter", 0)) % 3
@@ -195,23 +234,61 @@ func _response(topic: String) -> String:
 			])
 			answer = str(clauses[variant])
 		"age":
-			answer = ("Мы не все измеряем возраст земными годами. Лучше спроси, чем я занимаюсь!" if ru else "Not all of us measure age in Earth years. Ask me what I do!") if str(_world.get("race", "")) != "human" else ("Я предпочитаю не называть точный возраст, но с радостью расскажу о своей работе." if ru else "I prefer not to give my exact age, but I can tell you about my work.")
+			var nonhuman: bool = str(_world.get("race", "")) != "human"
+			var responses: Array = ([
+				"Мы не все измеряем возраст земными годами.",
+				"У разных рас свои способы измерять время жизни.",
+				"Мой возраст трудно перевести в земные годы."
+			] if ru else [
+				"Not all of us measure age in Earth years.",
+				"Different species measure the passage of a lifetime differently.",
+				"My age is hard to translate into Earth years."
+			]) if nonhuman else ([
+				"Я предпочитаю не называть точный возраст.",
+				"Не будем считать мои годы — давай лучше изучать планеты!",
+				"Возраст — личная информация, но я с радостью расскажу о своей работе."
+			] if ru else [
+				"I prefer not to give my exact age.",
+				"Let's explore planets instead of counting my years!",
+				"Age is personal, but I can tell you about my work."
+			])
+			answer = str(responses[variant])
 		"race":
-			answer = ("Мой народ называется: %s." if ru else "My species is called %s.") % race_name
+			var patterns: Array = ([
+				"Мой народ называется «%s».", "Мы называем себя «%s».", "Перед тобой представитель расы «%s»."
+			] if ru else [
+				"My species is called %s.", "We call ourselves %s.", "You are talking to a member of the %s species."
+			])
+			answer = str(patterns[variant]) % race_name
 		"race_about":
-			answer = _race_fact("about")
+			var intro: Array = ["", "Вот что я расскажу: ", "Наш народ необычен. "] if ru else ["", "Here is something to know: ", "Our people are unusual. "]
+			answer = str(intro[variant]) + _race_fact("about")
 		"origin":
-			answer = ("Сейчас мой дом здесь, на %s. Наша цивилизация живёт на разных мирах." if ru else "My home is here at %s for now. Our civilization lives across many worlds.") % world
+			var patterns: Array = ([
+				"Сейчас мой дом здесь, на %s. Наш народ живёт в разных мирах.",
+				"Я встретил тебя на %s. Но моя цивилизация исследует много планет.",
+				"Сейчас мы на %s. Представители моей расы путешествуют между мирами."
+			] if ru else [
+				"My home is at %s for now. My people live across many worlds.",
+				"You met me at %s, but my civilization explores many planets.",
+				"We are at %s now. My species travels among worlds."
+			])
+			answer = str(patterns[variant]) % world
 		"world":
 			answer = description
 			if variant == 1 and not structure.is_empty():
 				answer += " " + structure
 			elif variant == 2:
 				answer = (("Посмотри вокруг! " if ru else "Look around! ") + description)
+			var color_comment: String = _favorite_color_line(description)
+			if not color_comment.is_empty():
+				answer += " " + color_comment
 		"ability":
-			answer = _race_fact("ability")
+			var intro: Array = ["", "Да, и это интересно: ", "Знаешь, что мы умеем? "] if ru else ["", "Here is something interesting: ", "Do you know what we can do? "]
+			answer = str(intro[variant]) + _race_fact("ability")
 		"energy":
-			answer = _race_fact("energy")
+			var intro: Array = ["", "У каждого вида свои потребности. ", "Мы совсем не обязаны питаться одинаково. "] if ru else ["", "Each species has different needs. ", "Not all life eats in the same way. "]
+			answer = str(intro[variant]) + _race_fact("energy")
 		"work":
 			answer = structure if not structure.is_empty() else description
 			if variant == 1:
