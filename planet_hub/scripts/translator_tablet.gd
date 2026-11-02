@@ -1,4 +1,5 @@
 extends Control
+const DialogueEngine = preload("res://planet_hub/scripts/dialogue_engine.gd")
 ## v60: full-height chat in the RIGHT HALF of the screen.
 ## Upper half is message history; lower half is a genuine six-layout, on-screen
 ## keyboard. Free input is always allowed; bright keys suggest sample answers.
@@ -57,6 +58,11 @@ var _typing_seconds: float = 0.0
 var _profile: Dictionary = {}
 var _questions: Array = []
 var _ready_ui: bool = false
+var _engine: RefCounted
+var _current_place_id: String = ""
+var _choice_panel: VBoxContainer
+var _choice_buttons: Array[Button] = []
+var _selected_index: int = 0
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
@@ -70,8 +76,7 @@ func _ready() -> void:
 	if db != null:
 		_profile = db.get("profile")
 		_questions = db.call("get_questions")
-	if _profile.is_empty():
-		_profile = {"name":"Алися", "age":3, "favorite_color":"голубой"}
+	_engine = DialogueEngine.new()
 	_ready_ui = true
 	resized.connect(_relayout)
 	reset_exercise()
@@ -125,6 +130,18 @@ func _build_ui() -> void:
 	_hint.clip_text = true
 	_hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_hint)
+	_choice_panel = VBoxContainer.new()
+	_choice_panel.name = "ThreeSuggestedPhrases"
+	_choice_panel.add_theme_constant_override("separation", 4)
+	add_child(_choice_panel)
+	for i in range(3):
+		var option: Button = _make_key("Suggestion_%d" % i, "")
+		option.alignment = HORIZONTAL_ALIGNMENT_LEFT
+		option.clip_text = true
+		option.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		option.pressed.connect(_on_option_pressed.bind(i))
+		_choice_panel.add_child(option)
+		_choice_buttons.append(option)
 	_keyboard = Control.new()
 	_keyboard.name = "SixLanguageKeyboard"
 	_keyboard.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -198,6 +215,7 @@ func _change_language(lang: String) -> void:
 	_keyboard_mode = "letters"
 	_shift = false
 	_rebuild_keyboard()
+	reset_exercise()
 	_refresh_hint()
 
 func _on_key(c: String) -> void:
@@ -232,20 +250,42 @@ func _on_text_changed(_content: String) -> void:
 func _labels() -> Dictionary:
 	return PHRASES.get(_locale, PHRASES["en"])
 
+func configure_for_world(world_id: String) -> void:
+	_current_place_id = world_id
+	if _ready_ui:
+		reset_exercise()
+
 func _sample_answer() -> String:
-	match _turn:
-		0:
-			return str(GREETINGS.get(_locale, GREETINGS["en"])).trim_suffix("!").trim_prefix("¡")
-		1:
-			var store: Node = get_node_or_null("/root/ChildProfileStore")
-			if store != null and store.has_method("get_display_name"):
-				return str(store.call("get_display_name", _locale))
-			return str(_profile.get("name_cyrillic" if _locale == "ru" else "name_latin", "Алися" if _locale == "ru" else "Alisya"))
-		2:
-			return str(_profile.get("age", 3))
-		3:
-			return str(COLOR_SAMPLES.get(_locale, "голубой"))
+	if _engine != null:
+		return str(_engine.call("get_hint", _selected_index))
 	return ""
+
+func _on_option_pressed(index: int) -> void:
+	if index < 0 or index >= _choice_buttons.size() or not _choice_buttons[index].visible:
+		return
+	_selected_index = index
+	_refresh_option_styles()
+	_refresh_hint()
+
+func _show_choices(available: Array) -> void:
+	_selected_index = 0
+	for i in range(_choice_buttons.size()):
+		var b: Button = _choice_buttons[i]
+		b.visible = i < available.size()
+		if b.visible:
+			b.text = str(available[i])
+	_refresh_option_styles()
+	_refresh_hint()
+
+func _refresh_option_styles() -> void:
+	for i in range(_choice_buttons.size()):
+		var b: Button = _choice_buttons[i]
+		var base: StyleBoxFlat = b.get_theme_stylebox("normal") as StyleBoxFlat
+		if base != null:
+			var copy: StyleBoxFlat = base.duplicate() as StyleBoxFlat
+			copy.bg_color = Color("36568e") if i == _selected_index else Color("244564")
+			copy.border_color = Color("f5d28e") if i == _selected_index else Color("3a6f99")
+			b.add_theme_stylebox_override("normal", copy)
 
 func _refresh_hint() -> void:
 	if _hint == null:
@@ -290,14 +330,23 @@ func _add_message(text: String, from_child: bool) -> void:
 	_chat_scroll.call_deferred("set", "scroll_vertical", 999999)
 
 func reset_exercise() -> void:
-	_turn = 0
+	if not _ready_ui:
+		return
 	_typing_seconds = 0.0
 	_pending_text = ""
 	_input.text = ""
+	_typing_indicator.text = ""
+	_send_button.disabled = false
 	for node in _chat_messages.get_children():
 		_chat_messages.remove_child(node)
 		node.queue_free()
-	_queue_npc(str(GREETINGS.get(_locale, GREETINGS["en"])))
+	if _engine == null:
+		_engine = DialogueEngine.new()
+	var store: Node = get_node_or_null("/root/ChildProfileStore")
+	var starting: Dictionary = _engine.call("begin", _current_place_id, _locale, store)
+	_show_choices(starting.get("choices", []))
+	if bool(starting.get("available", false)):
+		_queue_npc(str(starting.get("npc", "")))
 	_refresh_hint()
 
 func _queue_npc(message: String) -> void:
@@ -316,77 +365,22 @@ func _process(delta: float) -> void:
 		_typing_indicator.text = ""
 		_send_button.disabled = false
 
-# Only a known answer to the current prompt advances the scripted exercise.
-# Normalization tolerates case, punctuation and repeated spaces. Children may
-# still type ANY text; unrecognized answers receive a friendly immediate reply.
-func _normalize_answer(value: String) -> String:
-	var normalized: String = value.to_lower().strip_edges()
-	for mark in ["!", "?", ".", ",", ";", ":", "¡", "¿", "…", "«", "»", "'"]:
-		normalized = normalized.replace(mark, "")
-	while normalized.contains("  "):
-		normalized = normalized.replace("  ", " ")
-	return normalized.strip_edges()
-
-
-func _answer_matches_expected(answer: String) -> bool:
-	# Conversation can become free-form after the initial four prompts.
-	if _turn >= 4:
-		return true
-	var typed: String = _normalize_answer(answer)
-	var expected: String = _normalize_answer(_sample_answer())
-	if typed.is_empty():
-		return false
-	if typed == expected:
-		return true
-	match _turn:
-		0:
-			# Greetings in any of the six languages are meaningful.
-			for greeting in GREETINGS.values():
-				if typed == _normalize_answer(str(greeting)):
-					return true
-		1:
-			# The same name may be typed in Cyrillic or Latin in ANY locale.
-			# Proper names are transliterated, not translated into six names.
-			var names: Array[String] = [
-				str(_profile.get("name_cyrillic", "Алися")),
-				str(_profile.get("name_latin", "Alisya"))
-			]
-			for candidate in names:
-				var normalized_candidate: String = _normalize_answer(candidate)
-				if typed == normalized_candidate:
-					return true
-				for prefix in ["меня зовут ", "my name is ", "je m'appelle ", "ich heiße ", "me llamo ", "meu nome é "]:
-					if typed == _normalize_answer(prefix + normalized_candidate):
-						return true
-		2:
-			# Accept a bare number or a simple age phrase, but not another age.
-			for form in ["мне %s", "%s года", "%s лет", "i am %s", "%s years old", "tengo %s años", "tenho %s anos", "j'ai %s ans", "ich bin %s"]:
-				if typed == _normalize_answer(form % expected):
-					return true
-		3:
-			# The saved child's preferred colour is also a valid answer.
-			return typed == _normalize_answer(str(_profile.get("favorite_color", "голубой")))
-	return false
-
-
+# Validation is independent from the selected hint; the engine knows all
+# three alternatives and the other authorized formulations for each intent.
 func _on_send() -> void:
 	var text: String = _input.text.strip_edges()
-	if text.is_empty() or _typing_seconds > 0.0:
+	if text.is_empty() or _typing_seconds > 0.0 or _current_place_id.is_empty():
 		return
 	_add_message(text, true)
 	message_sent.emit(text)
 	_input.text = ""
-	if not _answer_matches_expected(text):
-		# Reply immediately; do not proceed to the next question.
-		_add_message(str(NOT_UNDERSTOOD.get(_locale, NOT_UNDERSTOOD["ru"])), false)
+	var outcome: Dictionary = _engine.call("accept", text)
+	if not bool(outcome.get("accepted", false)):
+		_add_message(str(outcome.get("npc", NOT_UNDERSTOOD.get(_locale, NOT_UNDERSTOOD["en"]))), false)
 		_refresh_hint()
 		return
-	_turn += 1
-	if _turn >= 4:
-		_queue_npc(str(_labels().get("done")))
-	else:
-		var field: Dictionary = _questions[_turn - 1] if _turn - 1 < _questions.size() else {}
-		_queue_npc(str(field.get(_locale, field.get("ru", str(_labels().get("ask"))))))
+	_show_choices(outcome.get("choices", []))
+	_queue_npc(str(outcome.get("npc", "")))
 	_refresh_hint()
 
 func _relayout() -> void:
@@ -396,9 +390,14 @@ func _relayout() -> void:
 	var h: float = size.y
 	var padding: float = maxf(7.0, h * 0.017)
 	_chat_scroll.position = Vector2(padding, padding)
-	_chat_scroll.size = Vector2(w - padding * 2.0, h * 0.475 - padding)
+	_chat_scroll.size = Vector2(w - padding * 2.0, h * 0.31 - padding)
 	_chat_messages.custom_minimum_size.x = _chat_scroll.size.x - 6
-	_typing_indicator.position = Vector2(padding + 10, h * 0.445)
+	_typing_indicator.position = Vector2(padding + 10, h * 0.31)
+	_choice_panel.position = Vector2(padding, h * 0.35)
+	_choice_panel.size = Vector2(w - padding * 2.0, h * 0.135)
+	for b in _choice_buttons:
+		b.custom_minimum_size.y = h * 0.040
+		b.add_theme_font_size_override("font_size", maxi(11, roundi(h * 0.019)))
 	_typing_indicator.size = Vector2(w - padding * 2, h * 0.04)
 	var input_y: float = h * 0.495
 	_input.position = Vector2(padding, input_y)
@@ -437,4 +436,4 @@ func _draw() -> void:
 	var panel: Rect2 = Rect2(Vector2.ZERO, size)
 	draw_rect(panel, Color("0a1e34"))
 	draw_line(Vector2(0, 0), Vector2(0, size.y), Color("60bfe9"), 3, true)
-	draw_line(Vector2(10, size.y * 0.485), Vector2(size.x - 10, size.y * 0.485), Color("326f98"), 2, true)
+	draw_line(Vector2(10, size.y * 0.335), Vector2(size.x - 10, size.y * 0.335), Color("326f98"), 2, true)
