@@ -1013,5 +1013,68 @@
         "en": "It is a passage toward the mysterious Crossroads of Worlds."
       }
     }
-  }
+  },
+  "character_ages": {
+    "05_human_amara_cole.png": {
+      "ru": "34 земных года",
+      "en": "34 Earth years"
+    },
+    "06_human_lin_kai.png": {
+      "ru": "31 земной год",
+      "en": "31 Earth years"
+    },
+    "07_mold_form_archive.png": {
+      "ru": "120 циклов роста",
+      "en": "120 growth cycles"
+    },
+    "08_mold_form_cluster.png": {
+      "ru": "86 циклов роста",
+      "en": "86 growth cycles"
+    },
+    "10_phase_crystal.png": {
+      "ru": "75 фазовых циклов",
+      "en": "75 phase cycles"
+    },
+    "11_phase_gas.png": {
+      "ru": "43 фазовых цикла",
+      "en": "43 phase cycles"
+    },
+    "12_phase_liquid.png": {
+      "ru": "61 фазовый цикл",
+      "en": "61 phase cycles"
+    },
+    "01_reptile_liri.png": {
+      "ru": "24 местных года",
+      "en": "24 local years"
+    },
+    "02_reptile_taro.png": {
+      "ru": "29 местных лет",
+      "en": "29 local years"
+    },
+    "13_magnetic_ring.png": {
+      "ru": "152 магнитных цикла",
+      "en": "152 magnetic cycles"
+    },
+    "14_magnetic_engineer.png": {
+      "ru": "187 магнитных циклов",
+      "en": "187 magnetic cycles"
+    },
+    "15_magnetic_companion.png": {
+      "ru": "64 магнитных цикла",
+      "en": "64 magnetic cycles"
+    },
+    "16_neural_historian.png": {
+      "ru": "420 циклов памяти",
+      "en": "420 memory cycles"
+    },
+    "17_neural_researcher.png": {
+      "ru": "190 циклов памяти",
+      "en": "190 memory cycles"
+    },
+    "18_neural_guide.png": {
+      "ru": "68 циклов памяти",
+      "en": "68 memory cycles"
+    }
+  },
+  "character_age_status": "Provisional fiction for dialogue, not established by the v1.4 glossary; may be revised as character canon develops."
 }
