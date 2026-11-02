@@ -257,17 +257,17 @@ func _response(topic: String) -> String:
 			])
 			answer = str(responses[variant])
 		"race":
-			var patterns: Array = ([
+			var race_patterns: Array = ([
 				"Мой народ называется «%s».", "Мы называем себя «%s».", "Перед тобой представитель расы «%s»."
 			] if ru else [
 				"My species is called %s.", "We call ourselves %s.", "You are talking to a member of the %s species."
 			])
-			answer = str(patterns[variant]) % race_name
+			answer = str(race_patterns[variant]) % race_name
 		"race_about":
-			var intro: Array = ["", "Вот что я расскажу: ", "Наш народ необычен. "] if ru else ["", "Here is something to know: ", "Our people are unusual. "]
-			answer = str(intro[variant]) + _race_fact("about")
+			var race_intro: Array = ["", "Вот что я расскажу: ", "Наш народ необычен. "] if ru else ["", "Here is something to know: ", "Our people are unusual. "]
+			answer = str(race_intro[variant]) + _race_fact("about")
 		"origin":
-			var patterns: Array = ([
+			var origin_patterns: Array = ([
 				"Сейчас мой дом здесь, на %s. Наш народ живёт в разных мирах.",
 				"Я встретил тебя на %s. Но моя цивилизация исследует много планет.",
 				"Сейчас мы на %s. Представители моей расы путешествуют между мирами."
@@ -276,7 +276,7 @@ func _response(topic: String) -> String:
 				"You met me at %s, but my civilization explores many planets.",
 				"We are at %s now. My species travels among worlds."
 			])
-			answer = str(patterns[variant]) % world
+			answer = str(origin_patterns[variant]) % world
 		"world":
 			answer = description
 			if variant == 1 and not structure.is_empty():
@@ -287,11 +287,11 @@ func _response(topic: String) -> String:
 			if not color_comment.is_empty():
 				answer += " " + color_comment
 		"ability":
-			var intro: Array = ["", "Да, и это интересно: ", "Знаешь, что мы умеем? "] if ru else ["", "Here is something interesting: ", "Do you know what we can do? "]
-			answer = str(intro[variant]) + _race_fact("ability")
+			var ability_intro: Array = ["", "Да, и это интересно: ", "Знаешь, что мы умеем? "] if ru else ["", "Here is something interesting: ", "Do you know what we can do? "]
+			answer = str(ability_intro[variant]) + _race_fact("ability")
 		"energy":
-			var intro: Array = ["", "У каждого вида свои потребности. ", "Мы совсем не обязаны питаться одинаково. "] if ru else ["", "Each species has different needs. ", "Not all life eats in the same way. "]
-			answer = str(intro[variant]) + _race_fact("energy")
+			var energy_intro: Array = ["", "У каждого вида свои потребности. ", "Мы совсем не обязаны питаться одинаково. "] if ru else ["", "Each species has different needs. ", "Not all life eats in the same way. "]
+			answer = str(energy_intro[variant]) + _race_fact("energy")
 		"work":
 			answer = structure if not structure.is_empty() else description
 			if variant == 1:
