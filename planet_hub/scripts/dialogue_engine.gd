@@ -8,6 +8,7 @@ const PHRASES_PATH := "res://planet_hub/data/dialogue_phrases.json"
 const ROSTER_PATH := "res://planet_hub/data/representatives.json"
 const SAVE_PATH := "user://miko_dialogue_progress.json"
 const TOPIC_ORDER := ["self", "world", "race", "race_about", "origin", "ability", "work", "energy", "age", "learn"]
+const MATH_CHALLENGES := [[1, 2], [2, 3], [3, 1], [4, 2], [5, 1], [3, 3], [2, 5], [4, 4]]
 
 var language: String = "ru"
 var place_id: String = ""
@@ -23,6 +24,8 @@ var _profile: Node
 var _topic_count: int = 0
 var _pending_personal: String = ""
 var _current_math_topic: String = ""
+var _math_a: int = 1
+var _math_b: int = 2
 var _enabled: bool = false
 
 func _read(path: String) -> Dictionary:
@@ -336,11 +339,36 @@ func _skip(text: String) -> bool:
 			return true
 	return false
 
+func _begin_math() -> Dictionary:
+	# Fixed per world/visit, but different challenges between worlds and visits.
+	var offset: int = absi(hash(place_id) + int(_visited.get("visits", 0)) + _topic_count) % MATH_CHALLENGES.size()
+	_math_a = int(MATH_CHALLENGES[offset][0])
+	_math_b = int(MATH_CHALLENGES[offset][1])
+	var value: int = _math_a + _math_b
+	var dictionary: Dictionary = _words.get("math_number_words", {})
+	var label: String = str(dictionary.get(str(value), {}).get(language, dictionary.get(str(value), {}).get("en", str(value))))
+	choices = [str(value), label.capitalize(), "%d + %d = %d" % [_math_a, _math_b, value]]
+	stage = "math"
+	var format: String = str(_words.get("math_formats", {}).get(language, _words.get("math_formats", {}).get("en", "What is %d + %d?")))
+	return {"accepted": true, "npc": format % [_math_a, _math_b], "choices": choices.duplicate()}
+
+func _accept_math(text: String) -> bool:
+	if _clean(text) == str(_math_a + _math_b):
+		return true
+	if _matches(text, choices):
+		return true
+	var dictionary: Dictionary = _words.get("math_number_words", {})
+	var number: Dictionary = dictionary.get(str(_math_a + _math_b), {})
+	for translated in number.values():
+		if _clean(text) == _clean(str(translated)):
+			return true
+	return false
+
 func _color_id(text: String) -> String:
 	var normalized: String = " " + _clean(text) + " "
 	for entry in _words.get("colors", []):
 		var labels: Dictionary = entry.get("labels", {})
-		for value in labels.values():
+		for value in labels.values() + entry.get("aliases", []):
 			if normalized.contains(" " + _clean(str(value)) + " "):
 				return str(entry.get("id", ""))
 	return ""
@@ -412,7 +440,7 @@ func accept(text: String) -> Dictionary:
 			next["npc"] = _ui("skip") if _skip(text) else _ui("thanks")
 			return next
 		"math":
-			if not _matches(text, _options("math")) and _clean(text) not in ["3", "three", "три", "trois", "drei", "tres", "três"]:
+			if not _accept_math(text):
 				return {"accepted": false, "npc": _ui("math_bad"), "choices": choices.duplicate()}
 			var math_result: Dictionary = _choose_next()
 			math_result["npc"] = _ui("math_ok") + " " + _ui("choose")
@@ -428,9 +456,7 @@ func accept(text: String) -> Dictionary:
 			_topic_count += 1
 			_store_location()
 			if topic == "learn":
-				stage = "math"
-				choices = _options("math")
-				return {"accepted": true, "npc": _ui("math_q"), "choices": choices.duplicate()}
+				return _begin_math()
 			var response: String = _response(topic)
 			var personal: Dictionary = _personal_turn()
 			if not personal.is_empty():
