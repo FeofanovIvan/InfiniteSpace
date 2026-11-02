@@ -441,7 +441,16 @@
         "de": "blau",
         "es": "azul",
         "pt_BR": "azul"
-      }
+      },
+      "aliases": [
+        "голубой",
+        "голубая",
+        "light blue",
+        "bleu clair",
+        "hellblau",
+        "azul claro",
+        "azul-claro"
+      ]
     },
     {
       "id": "green",
@@ -703,5 +712,71 @@
       "Para que serve esta estação?",
       "O que esta estação tem de especial?"
     ]
+  },
+  "math_formats": {
+    "ru": "Сколько будет %d + %d?",
+    "en": "What is %d + %d?",
+    "fr": "Combien font %d + %d ?",
+    "de": "Was ist %d + %d?",
+    "es": "¿Cuánto es %d + %d?",
+    "pt_BR": "Quanto é %d + %d?"
+  },
+  "math_number_words": {
+    "2": {
+      "ru": "два",
+      "en": "two",
+      "fr": "deux",
+      "de": "zwei",
+      "es": "dos",
+      "pt_BR": "dois"
+    },
+    "3": {
+      "ru": "три",
+      "en": "three",
+      "fr": "trois",
+      "de": "drei",
+      "es": "tres",
+      "pt_BR": "três"
+    },
+    "4": {
+      "ru": "четыре",
+      "en": "four",
+      "fr": "quatre",
+      "de": "vier",
+      "es": "cuatro",
+      "pt_BR": "quatro"
+    },
+    "5": {
+      "ru": "пять",
+      "en": "five",
+      "fr": "cinq",
+      "de": "fünf",
+      "es": "cinco",
+      "pt_BR": "cinco"
+    },
+    "6": {
+      "ru": "шесть",
+      "en": "six",
+      "fr": "six",
+      "de": "sechs",
+      "es": "seis",
+      "pt_BR": "seis"
+    },
+    "7": {
+      "ru": "семь",
+      "en": "seven",
+      "fr": "sept",
+      "de": "sieben",
+      "es": "siete",
+      "pt_BR": "sete"
+    },
+    "8": {
+      "ru": "восемь",
+      "en": "eight",
+      "fr": "huit",
+      "de": "acht",
+      "es": "ocho",
+      "pt_BR": "oito"
+    }
   }
 }
