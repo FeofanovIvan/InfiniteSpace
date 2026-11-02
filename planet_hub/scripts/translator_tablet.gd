@@ -77,6 +77,7 @@ func _ready() -> void:
 		_profile = db.get("profile")
 		_questions = db.call("get_questions")
 	_engine = DialogueEngine.new()
+	_rebuild_keyboard()
 	_ready_ui = true
 	resized.connect(_relayout)
 	reset_exercise()
@@ -146,11 +147,6 @@ func _build_ui() -> void:
 	_keyboard.name = "SixLanguageKeyboard"
 	_keyboard.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_keyboard)
-	for lang in LANGUAGES:
-		var lang_button: Button = _make_key("Language_" + lang, str(LANGUAGE_NAMES[lang]))
-		lang_button.pressed.connect(_change_language.bind(lang))
-		_keyboard.add_child(lang_button)
-		_locale_buttons.append(lang_button)
 	for i in range(4):
 		var row := HBoxContainer.new()
 		row.name = "KeysRow_%d" % i
@@ -252,6 +248,13 @@ func _labels() -> Dictionary:
 
 func configure_for_world(world_id: String) -> void:
 	_current_place_id = world_id
+	var locale_store: Node = get_node_or_null("/root/MobileLocale")
+	if locale_store != null:
+		var preferred: String = str(locale_store.get("language"))
+		if LANGUAGES.has(preferred) and _locale != preferred:
+			_locale = preferred
+			_keyboard_mode = "letters"
+			_rebuild_keyboard()
 	if _ready_ui:
 		reset_exercise()
 
@@ -409,7 +412,7 @@ func _relayout() -> void:
 	_keyboard.position = Vector2(padding, h * 0.607)
 	_keyboard.size = Vector2(w - 2 * padding, h * 0.385)
 	var locale_width: float = (_keyboard.size.x - 5.0 * 4.0) / 6.0
-	var locale_height: float = _keyboard.size.y * 0.12
+	var locale_height: float = 0.0 # Language is selected in global game settings.
 	for i in range(_locale_buttons.size()):
 		var button: Button = _locale_buttons[i]
 		button.position = Vector2(i * (locale_width + 4), 0)
