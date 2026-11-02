@@ -671,5 +671,37 @@
         "Um mais dois são três."
       ]
     }
+  },
+  "station_world": {
+    "ru": [
+      "Расскажи об этой станции.",
+      "Для чего нужна эта станция?",
+      "Что интересного на этой станции?"
+    ],
+    "en": [
+      "Tell me about this station.",
+      "What is this station for?",
+      "What is special about this station?"
+    ],
+    "fr": [
+      "Parle-moi de cette station.",
+      "À quoi sert cette station ?",
+      "Qu'a-t-elle de spécial ?"
+    ],
+    "de": [
+      "Erzähl mir von dieser Station.",
+      "Wozu dient diese Station?",
+      "Was ist besonders an dieser Station?"
+    ],
+    "es": [
+      "Háblame de esta estación.",
+      "¿Para qué sirve esta estación?",
+      "¿Qué tiene de especial esta estación?"
+    ],
+    "pt_BR": [
+      "Fale sobre esta estação.",
+      "Para que serve esta estação?",
+      "O que esta estação tem de especial?"
+    ]
   }
 }
