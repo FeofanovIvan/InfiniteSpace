@@ -1,0 +1,993 @@
+{
+  "schema_version": 1,
+  "source": "MIKA_GLOSSARY_PLANETS_STATIONS_RACES_V1_4 (2026-11-02)",
+  "rules": {
+    "worlds": 48,
+    "inhabited": 24,
+    "nature_only": 24,
+    "stations": 6,
+    "undiscovered_aliens_on_nature_worlds": false
+  },
+  "races": {
+    "human": {
+      "ru": "люди",
+      "en": "humans",
+      "about_ru": "Мы исследуем космос с помощью кораблей, научных станций и технологий.",
+      "about_en": "We explore space using ships, research stations, and technology.",
+      "ability_ru": "Мы строим, изучаем и изобретаем.",
+      "ability_en": "We build, study, and invent.",
+      "energy_ru": "Мы едим пищу и пьём воду.",
+      "energy_en": "We eat food and drink water."
+    },
+    "mold": {
+      "ru": "разумная плесень",
+      "en": "sentient mold",
+      "about_ru": "Мы живые сети из волокон и мембран. Наши постройки тоже растут.",
+      "about_en": "We are living networks of fibers and membranes. Our buildings grow too.",
+      "ability_ru": "Мы можем соединяться волокнами и делиться сигналами.",
+      "ability_en": "We can connect with fibers and share signals.",
+      "energy_ru": "Мы получаем вещества и энергию из окружающей среды.",
+      "energy_en": "We gather nutrients and energy from our surroundings."
+    },
+    "phase": {
+      "ru": "фазовые существа",
+      "en": "phase beings",
+      "about_ru": "Наши тела могут переходить между газообразным, жидким и кристаллическим состояниями.",
+      "about_en": "Our bodies can shift between gas, liquid, and crystal forms.",
+      "ability_ru": "Мы можем изменять состояние и прозрачность своей формы.",
+      "ability_en": "We can change our form and transparency.",
+      "energy_ru": "Мы получаем энергию из окружающей среды, а не едим как люди.",
+      "energy_en": "We gather energy from our environment instead of eating like humans."
+    },
+    "reptile": {
+      "ru": "разумные ящеры",
+      "en": "intelligent reptiles",
+      "about_ru": "Мы похожи на древних земных динозавров, но создали космическую цивилизацию.",
+      "about_en": "We resemble Earth's ancient dinosaurs, but we built a space civilization.",
+      "ability_ru": "Мы исследуем каменные миры и умеем строить большие города.",
+      "ability_en": "We explore rocky worlds and build large cities.",
+      "energy_ru": "Мы питаемся, как живые организмы, но наши любимые продукты ещё предстоит изучить.",
+      "energy_en": "We eat as living organisms do, but our favorite foods remain to be discovered."
+    },
+    "magnetic": {
+      "ru": "магнитная жидкометаллическая раса",
+      "en": "magnetic liquid-metal beings",
+      "about_ru": "Мы — цельные живые массы металла, которые управляют своей формой.",
+      "about_en": "We are living masses of metal that can control our shapes.",
+      "ability_ru": "Мы меняем форму с помощью электромагнитных взаимодействий.",
+      "ability_en": "We reshape ourselves using electromagnetic interactions.",
+      "energy_ru": "Мы взаимодействуем с полями и веществом; человеческая еда нам не нужна.",
+      "energy_en": "We interact with fields and matter; we do not need human food."
+    },
+    "neural": {
+      "ru": "нейронные существа",
+      "en": "neural beings",
+      "about_ru": "Мы живые нейронные структуры со складчатым ядром. Мы бережём знания.",
+      "about_en": "We are living neural structures with folded cores. We cherish knowledge.",
+      "ability_ru": "Мы используем телекинез и исследуем сложные связи.",
+      "ability_en": "We use telekinesis and study complex connections.",
+      "energy_ru": "Наши тела защищены питательной средой.",
+      "energy_en": "Our bodies are protected by a nourishing medium."
+    }
+  },
+  "worlds": {
+    "mw_p01": {
+      "name": {
+        "ru": "Земля",
+        "en": "Earth"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "human",
+      "world": {
+        "ru": "Океаны, зелёные горы и светлые города с куполами, башнями и мостами.",
+        "en": "Oceans, green mountains, and bright cities with domes, towers, and bridges."
+      },
+      "structure": {
+        "ru": "Исследовательский город у водной долины.",
+        "en": "A research city by a watery valley."
+      }
+    },
+    "mw_p02": {
+      "name": {
+        "ru": "Марс",
+        "en": "Mars"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "human",
+      "world": {
+        "ru": "Красная пыльная пустыня, горы и герметичный купольный комплекс.",
+        "en": "A cold red desert with mountains and a sealed domed complex."
+      },
+      "structure": {
+        "ru": "Подземные дата-центры и сферический зал искусственного интеллекта.",
+        "en": "Underground data centers and a spherical AI hall."
+      }
+    },
+    "mw_p03": {
+      "name": {
+        "ru": "Юпитер",
+        "en": "Jupiter"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "human",
+      "world": {
+        "ru": "Газовый гигант с золотыми облачными полосами и могучими вихрями.",
+        "en": "A gas giant with golden cloud bands and powerful storms."
+      },
+      "structure": {
+        "ru": "Кольцевая исследовательская станция парит над атмосферой.",
+        "en": "A ring-shaped research station floats above the atmosphere."
+      }
+    },
+    "mw_p04": {
+      "name": {
+        "ru": "Сатурн",
+        "en": "Saturn"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Газовый гигант со светлыми кольцами и широкими золотистыми облаками.",
+        "en": "A gas giant with bright rings and broad golden clouds."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "mw_p05": {
+      "name": {
+        "ru": "Уран",
+        "en": "Uranus"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Ледяной гигант с бирюзовой атмосферой и светлыми слоями облаков.",
+        "en": "An icy giant with a turquoise atmosphere and pale cloud layers."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "mw_p06": {
+      "name": {
+        "ru": "Нептун",
+        "en": "Neptune"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "human",
+      "world": {
+        "ru": "Ледяной гигант с глубокими синими облаками и сильными ветрами.",
+        "en": "An icy giant with deep blue clouds and strong winds."
+      },
+      "structure": {
+        "ru": "Исследовательская платформа с прозрачными куполами и антенной парит над облаками.",
+        "en": "A research platform with clear domes and an antenna floats above the clouds."
+      }
+    },
+    "mw_p07": {
+      "name": {
+        "ru": "Венера",
+        "en": "Venus"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "human",
+      "world": {
+        "ru": "Очень горячий мир с оранжевыми скалами и густой атмосферой.",
+        "en": "A very hot world with orange rocks and a dense atmosphere."
+      },
+      "structure": {
+        "ru": "Герметичная научная станция с куполом и технической башней.",
+        "en": "A sealed science station with a dome and a service tower."
+      }
+    },
+    "mw_p08": {
+      "name": {
+        "ru": "Меркурий",
+        "en": "Mercury"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Безвоздушный серый мир с кратерами, пылью и глубокими тенями.",
+        "en": "An airless gray world with craters, dust, and deep shadows."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "lmc_p01": {
+      "name": {
+        "ru": "Аэра",
+        "en": "Aera"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Газово-ледяной мир с голубыми облачными полосами и белой грядой облаков.",
+        "en": "A gas-and-ice world with blue cloud bands and a high white cloud ridge."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "lmc_p02": {
+      "name": {
+        "ru": "Талас",
+        "en": "Thalas"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "mold",
+      "world": {
+        "ru": "Планета глубокого синего океана и высоких волн.",
+        "en": "A planet of deep blue oceans and tall waves."
+      },
+      "structure": {
+        "ru": "Над морем растёт живой грибной город с куполами и ажурными мостами.",
+        "en": "A living fungal city with domes and delicate bridges grows above the sea."
+      }
+    },
+    "lmc_p03": {
+      "name": {
+        "ru": "Молия",
+        "en": "Molia"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "mold",
+      "world": {
+        "ru": "Сухая пепельная поверхность с кратерами и тёмными минералами.",
+        "en": "A dry ashen surface with craters and dark minerals."
+      },
+      "structure": {
+        "ru": "Город из грибоподобных герметичных биокуполов.",
+        "en": "A city of sealed fungus-like biodomes."
+      }
+    },
+    "lmc_p04": {
+      "name": {
+        "ru": "Криона",
+        "en": "Cryona"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "mold",
+      "world": {
+        "ru": "Ледяной мир с глубокими сияющими голубыми трещинами.",
+        "en": "An icy world with deep glowing blue cracks."
+      },
+      "structure": {
+        "ru": "Защищённые прозрачные биокупола с живыми ветвящимися структурами.",
+        "en": "Protected transparent biodomes with living branching structures."
+      }
+    },
+    "lmc_p05": {
+      "name": {
+        "ru": "Карбона",
+        "en": "Carbona"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Сверхгорячий газовый гигант с багровыми, оранжевыми и фиолетовыми штормами.",
+        "en": "A superhot gas giant with crimson, orange, and purple storms."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "lmc_p06": {
+      "name": {
+        "ru": "Люкс",
+        "en": "Lux"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Очень лёгкий газовый мир с розово-сиреневыми облаками, похожими на пену.",
+        "en": "A very light gas world with pink and lilac foam-like clouds."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "lmc_p07": {
+      "name": {
+        "ru": "Вентра",
+        "en": "Ventra"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Газовый гигант с золотистыми облачными валами и огромными вихрями.",
+        "en": "A gas giant with golden cloud banks and immense vortices."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "lmc_p08": {
+      "name": {
+        "ru": "Магнета",
+        "en": "Magneta"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Холодный гигант с бирюзовыми и ярко-синими атмосферными слоями.",
+        "en": "A cold giant with turquoise and bright blue atmospheric layers."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "smc_p01": {
+      "name": {
+        "ru": "Окея",
+        "en": "Okea"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "phase",
+      "world": {
+        "ru": "Мир ярко-синего океана.",
+        "en": "A world of brilliant blue ocean."
+      },
+      "structure": {
+        "ru": "Из воды поднимается прозрачный текучий город из волнообразных арок и куполов.",
+        "en": "A transparent flowing city of wave-shaped arches and domes rises from the water."
+      }
+    },
+    "smc_p02": {
+      "name": {
+        "ru": "Цела",
+        "en": "Tsela"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "phase",
+      "world": {
+        "ru": "Красная каменистая пустыня с высокими горами.",
+        "en": "A red rocky desert with tall mountains."
+      },
+      "structure": {
+        "ru": "Полупрозрачные жидкостные купола со светящимися опорами.",
+        "en": "Translucent liquid domes with glowing supports."
+      }
+    },
+    "smc_p03": {
+      "name": {
+        "ru": "Генора",
+        "en": "Genora"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "phase",
+      "world": {
+        "ru": "Сумеречный мир тёмных скал и водных разломов.",
+        "en": "A twilight world of dark cliffs and watery fractures."
+      },
+      "structure": {
+        "ru": "Прозрачные водные башни, купола и текучие переходы.",
+        "en": "Clear water towers, domes, and flowing walkways."
+      }
+    },
+    "smc_p04": {
+      "name": {
+        "ru": "Мицела",
+        "en": "Mycela"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Зелёные склоны, спокойное озеро и широкая природная долина.",
+        "en": "Green slopes, a calm lake, and a wide natural valley."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "smc_p05": {
+      "name": {
+        "ru": "Спира",
+        "en": "Spira"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "phase",
+      "world": {
+        "ru": "Мир на границе света и тьмы с чёрными скалами и красными отражениями.",
+        "en": "A world on the border of light and dark, with black rocks and red reflections."
+      },
+      "structure": {
+        "ru": "Полупрозрачная туманно-жидкая станция из плавных куполов.",
+        "en": "A translucent mist-and-liquid station made of smooth domes."
+      }
+    },
+    "smc_p06": {
+      "name": {
+        "ru": "Амбра",
+        "en": "Ambra"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Холодные тёмные озёра, лёд, скалы и оранжевое сияние горизонта.",
+        "en": "Cold dark lakes, ice, cliffs, and an orange glow at the horizon."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "smc_p07": {
+      "name": {
+        "ru": "Силика",
+        "en": "Silica"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Сухая рыжая пустыня с валунами и острыми горными хребтами.",
+        "en": "A dry rusty desert with boulders and sharp mountain ridges."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "smc_p08": {
+      "name": {
+        "ru": "Биора",
+        "en": "Biora"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Газовый гигант с золотистыми облачными гребнями и воронками.",
+        "en": "A gas giant with golden cloud crests and atmospheric funnels."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "ngc6822_p01": {
+      "name": {
+        "ru": "Археон",
+        "en": "Archeon"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "reptile",
+      "world": {
+        "ru": "Красная каменистая пустыня с крутыми горами.",
+        "en": "A red rocky desert with steep mountains."
+      },
+      "structure": {
+        "ru": "Большой герметичный кольцевой город с зелёными внутренними зонами.",
+        "en": "A large sealed ring city with green gardens inside."
+      }
+    },
+    "ngc6822_p02": {
+      "name": {
+        "ru": "Квария",
+        "en": "Quaria"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "reptile",
+      "world": {
+        "ru": "Серый минеральный мир с кратерами и кристаллическими породами.",
+        "en": "A gray mineral world with craters and crystal outcrops."
+      },
+      "structure": {
+        "ru": "В скале скрыта пещерная станция со светящимися куполами.",
+        "en": "A cave station with glowing domes is built into the rock."
+      }
+    },
+    "ngc6822_p03": {
+      "name": {
+        "ru": "Нокта",
+        "en": "Nocta"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "reptile",
+      "world": {
+        "ru": "Тёмная долина, чёрные скалы и красно-фиолетовое небо.",
+        "en": "A dark valley, black cliffs, and a red-purple sky."
+      },
+      "structure": {
+        "ru": "Промышленный космопорт с ангарами, башнями и мостами.",
+        "en": "An industrial spaceport with hangars, towers, and bridges."
+      }
+    },
+    "ngc6822_p04": {
+      "name": {
+        "ru": "Ферра",
+        "en": "Ferra"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "reptile",
+      "world": {
+        "ru": "Железистые ржаво-красные равнины и горы.",
+        "en": "Iron-rich rust-red plains and mountains."
+      },
+      "structure": {
+        "ru": "Металлургическая станция с корпусами, резервуарами и трубами.",
+        "en": "A metalworking station with industrial halls, tanks, and pipes."
+      }
+    },
+    "ngc6822_p05": {
+      "name": {
+        "ru": "Дуна",
+        "en": "Duna"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Оранжевый сухой мир с горными массивами, валунами и пылью.",
+        "en": "An orange dry world with mountains, boulders, and dust."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "ngc6822_p06": {
+      "name": {
+        "ru": "Руна",
+        "en": "Runa"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "reptile",
+      "world": {
+        "ru": "Сухая серо-белая равнина и кратеры.",
+        "en": "A dry pale gray plain with craters."
+      },
+      "structure": {
+        "ru": "Массивный ступенчатый архивный комплекс с широкой лестницей.",
+        "en": "A massive stepped archive complex with a broad staircase."
+      }
+    },
+    "ngc6822_p07": {
+      "name": {
+        "ru": "Геода",
+        "en": "Geoda"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Активные вулканы, лавовые поля и яркие оранжевые трещины.",
+        "en": "Active volcanoes, lava fields, and bright orange cracks."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "ngc6822_p08": {
+      "name": {
+        "ru": "Хрона",
+        "en": "Chrona"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Сухие красно-охристые горные гряды, уступы и выветренные скалы.",
+        "en": "Dry ocher-red mountain ridges, terraces, and weathered rocks."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m31_p01": {
+      "name": {
+        "ru": "Люмена",
+        "en": "Lumena"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Очень горячий газовый гигант с фиолетовыми вихрями и оранжевыми потоками.",
+        "en": "A very hot gas giant with violet storms and orange glowing streams."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m31_p02": {
+      "name": {
+        "ru": "Гравис",
+        "en": "Gravis"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Кольцевой газовый гигант с золотыми облаками и светлыми кольцами.",
+        "en": "A ringed gas giant with golden clouds and bright rings."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m31_p03": {
+      "name": {
+        "ru": "Фазис",
+        "en": "Phasis"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "magnetic",
+      "world": {
+        "ru": "Чёрные скалы, геотермальные озёра и красный горизонт.",
+        "en": "Black cliffs, geothermal lakes, and a red horizon."
+      },
+      "structure": {
+        "ru": "Зеркальные магнитные лаборатории с металлическими дугами и кольцевыми установками.",
+        "en": "Mirrorlike magnetic laboratories with metal arches and ring machines."
+      }
+    },
+    "m31_p04": {
+      "name": {
+        "ru": "Гелион",
+        "en": "Helion"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Чёрная каменная корка, раскалённая лава и светящиеся разломы.",
+        "en": "Black rocky crust, molten lava, and glowing fractures."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m31_p05": {
+      "name": {
+        "ru": "Синта",
+        "en": "Sinta"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "magnetic",
+      "world": {
+        "ru": "Светлая каменистая равнина с кратерами.",
+        "en": "A pale cratered rocky plain."
+      },
+      "structure": {
+        "ru": "Над глубоким механическим городом левитирует огромная почти чёрная сфера.",
+        "en": "A huge near-black sphere levitates above a deep mechanical city."
+      }
+    },
+    "m31_p06": {
+      "name": {
+        "ru": "Геона",
+        "en": "Geona"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "magnetic",
+      "world": {
+        "ru": "Вулканический мир с лавой и оранжевыми горами.",
+        "en": "A volcanic world with lava and orange mountains."
+      },
+      "structure": {
+        "ru": "Гигантская матово-чёрная перевёрнутая пирамида парит над раскалённой областью.",
+        "en": "A giant matte-black inverted pyramid floats over the hot ground."
+      }
+    },
+    "m31_p07": {
+      "name": {
+        "ru": "Резона",
+        "en": "Resona"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Глубокое синее озеро, зелёно-серые горы и розовые облака.",
+        "en": "A deep blue lake, gray-green mountains, and pink clouds."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m31_p08": {
+      "name": {
+        "ru": "Квантия",
+        "en": "Quantia"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Лёгкий газовый мир с мягкими лавандовыми и розовыми облаками.",
+        "en": "A light gas world with soft lavender and pink clouds."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m33_p01": {
+      "name": {
+        "ru": "Светара",
+        "en": "Svetara"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "neural",
+      "world": {
+        "ru": "Каменистые сиреневые холмы и необычный рельеф.",
+        "en": "Rocky lilac hills and unusual terrain."
+      },
+      "structure": {
+        "ru": "Зеркальная парящая станция со светящейся сферой и орбитальными кольцами.",
+        "en": "A floating mirror station with a glowing sphere and orbital rings."
+      }
+    },
+    "m33_p02": {
+      "name": {
+        "ru": "Орбита",
+        "en": "Orbita"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "neural",
+      "world": {
+        "ru": "Горы и широкое синее озеро.",
+        "en": "Mountains and a wide blue lake."
+      },
+      "structure": {
+        "ru": "Над водой парит учебная обсерватория с кольцами и прозрачным куполом.",
+        "en": "An educational observatory with rings and a clear dome floats above the water."
+      }
+    },
+    "m33_p03": {
+      "name": {
+        "ru": "Тессера",
+        "en": "Tessera"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "neural",
+      "world": {
+        "ru": "Серые каменистые кратеры и плато.",
+        "en": "Gray rocky craters and plateaus."
+      },
+      "structure": {
+        "ru": "Парящий математический комплекс из светящихся колец и геометрических проекций.",
+        "en": "A floating math complex of glowing rings and geometric projections."
+      }
+    },
+    "m33_p04": {
+      "name": {
+        "ru": "Лентис",
+        "en": "Lentis"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "neural",
+      "world": {
+        "ru": "Холодная вода, ледяные берега и тёмные скалы.",
+        "en": "Cold water, icy shores, and dark rocks."
+      },
+      "structure": {
+        "ru": "Парящая исследовательская станция с большим космическим телескопом.",
+        "en": "A floating research station with a large space telescope."
+      }
+    },
+    "m33_p05": {
+      "name": {
+        "ru": "Паралла",
+        "en": "Paralla"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Красно-охристые горы, валуны и широкое оранжевое небо.",
+        "en": "Ocher-red mountains, boulders, and a vast orange sky."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m33_p06": {
+      "name": {
+        "ru": "Пульса",
+        "en": "Pulsa"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Тёмные острые хребты, красные равнины и багровый туман.",
+        "en": "Dark sharp ridges, red plains, and crimson mist."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m33_p07": {
+      "name": {
+        "ru": "Эклипса",
+        "en": "Eclipsa"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Жёлто-рыжие каменные уступы и яркое солнце на тёмном небе.",
+        "en": "Yellow-rust rocky terraces and a bright sun in a dark sky."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m33_p08": {
+      "name": {
+        "ru": "Цикла",
+        "en": "Cykla"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Далёкий ледяной мир с голубыми равнинами и глубокими трещинами.",
+        "en": "A distant frozen world with blue plains and deep cracks."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "st_mw": {
+      "name": {
+        "ru": "Орбитальная верфь Каллисто",
+        "en": "Callisto Orbital Shipyard"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "human",
+      "world": {
+        "ru": "Космическая инженерная верфь с ангарами, доками и ремонтными площадками.",
+        "en": "A space engineering yard with hangars, docks, and repair areas."
+      },
+      "structure": {
+        "ru": "Здесь обслуживают и ремонтируют крупные корабли.",
+        "en": "Large ships are serviced and repaired here."
+      }
+    },
+    "st_lmc": {
+      "name": {
+        "ru": "Лабораторный корабль «Тарантул»",
+        "en": "Tarantula Laboratory Ship"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "mold",
+      "world": {
+        "ru": "Живой исследовательский корабль с влажной грибной сетью.",
+        "en": "A living research ship woven from a moist fungal network."
+      },
+      "structure": {
+        "ru": "Внутри работают органические биореакторы и сияют живые биокамеры.",
+        "en": "Inside are organic bioreactors and glowing living biochambers."
+      }
+    },
+    "st_smc": {
+      "name": {
+        "ru": "Живой архив",
+        "en": "Living Archive"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "phase",
+      "world": {
+        "ru": "Органическая станция с пористыми лотосоподобными формами.",
+        "en": "An organic station with porous lotus-like shapes."
+      },
+      "structure": {
+        "ru": "Её прозрачные резервуары соединяют жидкостные и газовые камеры.",
+        "en": "Its transparent reservoirs connect liquid and gas chambers."
+      }
+    },
+    "st_ngc6822": {
+      "name": {
+        "ru": "Голова Титана",
+        "en": "Titan's Head"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "reptile",
+      "world": {
+        "ru": "Космопорт внутри огромного черепа с каменными тоннелями и доками.",
+        "en": "A spaceport within a giant skull, with stone tunnels and docks."
+      },
+      "structure": {
+        "ru": "Здесь есть ангары, торговые помещения и голубые доковые кольца.",
+        "en": "There are hangars, trading areas, and blue docking rings."
+      }
+    },
+    "st_m31": {
+      "name": {
+        "ru": "Перевёрнутая пирамида",
+        "en": "Inverted Pyramid"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "magnetic",
+      "world": {
+        "ru": "Тёмная металлическая пирамида, обращённая вершиной вниз.",
+        "en": "A dark metal pyramid with its tip pointing downward."
+      },
+      "structure": {
+        "ru": "В храме науки металл превращается в нужные инструменты без экранов и кнопок.",
+        "en": "In this temple of science, metal forms tools without screens or buttons."
+      }
+    },
+    "st_m33": {
+      "name": {
+        "ru": "Последние врата",
+        "en": "Last Gates"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "neural",
+      "world": {
+        "ru": "Парящий комплекс сфер и порталов разных форм.",
+        "en": "A floating complex of spheres and portals of different shapes."
+      },
+      "structure": {
+        "ru": "Это путь к загадочному Перекрёстку миров.",
+        "en": "It is a passage toward the mysterious Crossroads of Worlds."
+      }
+    }
+  }
+}
