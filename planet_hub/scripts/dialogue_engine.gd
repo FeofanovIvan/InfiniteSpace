@@ -18,6 +18,7 @@ var _world: Dictionary = {}
 var _race: Dictionary = {}
 var _words: Dictionary = {}
 var _roster: Dictionary = {}
+var _ages: Dictionary = {}
 var _state: Dictionary = {}
 var _visited: Dictionary = {}
 var _profile: Node
@@ -93,6 +94,7 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	var world_database: Dictionary = _read(WORLDS_PATH)
 	_words = _read(PHRASES_PATH)
 	_roster = _read(ROSTER_PATH).get("assignments", {})
+	_ages = world_database.get("character_ages", {})
 	_world = world_database.get("worlds", {}).get(target, {})
 	_enabled = not _world.is_empty() and bool(_world.get("inhabited", false))
 	if not _enabled:
@@ -237,25 +239,19 @@ func _response(topic: String) -> String:
 			])
 			answer = str(clauses[variant])
 		"age":
-			var nonhuman: bool = str(_world.get("race", "")) != "human"
-			var responses: Array = ([
-				"Мы не все измеряем возраст земными годами.",
-				"У разных рас свои способы измерять время жизни.",
-				"Мой возраст трудно перевести в земные годы."
-			] if ru else [
-				"Not all of us measure age in Earth years.",
-				"Different species measure the passage of a lifetime differently.",
-				"My age is hard to translate into Earth years."
-			]) if nonhuman else ([
-				"Я предпочитаю не называть точный возраст.",
-				"Не будем считать мои годы — давай лучше изучать планеты!",
-				"Возраст — личная информация, но я с радостью расскажу о своей работе."
-			] if ru else [
-				"I prefer not to give my exact age.",
-				"Let's explore planets instead of counting my years!",
-				"Age is personal, but I can tell you about my work."
-			])
-			answer = str(responses[variant])
+			var character: Dictionary = _roster.get(place_id, {})
+			var saved_age: Dictionary = _ages.get(str(character.get("asset", "")), {})
+			var age_label: String = _localized(saved_age)
+			if not age_label.is_empty():
+				var age_patterns: Array = ([
+					"Мне %s.", "Я прожил уже %s.", "Мой возраст — %s."
+				] if ru else [
+					"I am %s old.", "I have lived for %s.", "My age is %s."
+				])
+				# A fictional local-cycle age, not necessarily Earth years.
+				answer = str(age_patterns[variant]) % age_label
+			else:
+				answer = "Мы измеряем возраст по-своему." if ru else "We measure age in our own way."
 		"race":
 			var race_patterns: Array = ([
 				"Мой народ называется «%s».", "Мы называем себя «%s».", "Перед тобой представитель расы «%s»."
