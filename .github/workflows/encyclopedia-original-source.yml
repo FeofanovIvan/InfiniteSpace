@@ -1,0 +1,21 @@
+name: Export v94 encyclopedia source archive
+on:
+  pull_request:
+    branches:
+      - feature/v94-crossroads-encyclopedia
+
+jobs:
+  export-original-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package original encyclopedia JSON and runtime
+        run: |
+          zip -q crossroads_v94_source.zip             planet_hub/data/crossroads_encyclopedia.json             planet_hub/scripts/crossroads_encyclopedia.gd
+      - name: Upload original source
+        uses: actions/upload-artifact@v4
+        with:
+          name: mika-v94-encyclopedia-source
+          path: crossroads_v94_source.zip
+          retention-days: 3
