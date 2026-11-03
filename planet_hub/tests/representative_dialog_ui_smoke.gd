@@ -33,20 +33,23 @@ func _run() -> void:
 		dock.get_node("ChoicesLayout/QuestionOption_1"),
 		dock.get_node("ChoicesLayout/QuestionOption_2")
 	]
-	_check(dock.visible, "three-choice panel visible beneath left character")
+	_check(dock.visible, "three floating choices visible above character")
 	_check(buttons.all(func(button: Button) -> bool: return button.visible), "three buttons visible at greeting")
 	_check(dock.position.x + dock.size.x <= tablet.position.x, "choices remain left of right tablet")
-	_check(dock.position.y >= character.position.y + character.size.y, "choices are beneath portrait")
+	_check(dock.position.y < character.position.y, "floating choices appear above the portrait")
+	_check(dock.get_theme_stylebox("panel") is StyleBoxEmpty, "no opaque box surrounding clouds")
+	_check(not dock.get_node("ChoicesLayout/ChoiceInstruction").visible, "no instruction banner above character")
+	_check(buttons.all(func(button: Button) -> bool: return button.get_script() != null), "each cloud has native vector-drawn style")
 	_check(tablet.get_node_or_null("ThreeSuggestedPhrases") == null, "old suggestions removed from chat tablet")
 	_check(tablet.get_node_or_null("SuggestedAnswer") == null, "no duplicate top hint in tablet")
 	var original_hint: String = str(tablet.call("_sample_answer"))
 	buttons[2].emit_signal("pressed")
 	_check(int(tablet.call("get_selected_suggestion")) == 2, "third left option selects one typing hint")
-	_check(str(tablet.call("_sample_answer")) == buttons[2].text, "typing hint matches selected option")
+	_check(str(tablet.call("_sample_answer")) == str(buttons[2].call("get_phrase")), "typing hint matches selected option")
 	_check(original_hint != str(tablet.call("_sample_answer")), "switching choices changes hint")
 	# Enter an alternative known greeting, not the selected text.
 	tablet.set("_typing_seconds", 0.0)
-	text_input.text = buttons[0].text
+	text_input.text = str(buttons[0].call("get_phrase"))
 	tablet.call("_on_send")
 	var engine: RefCounted = tablet.get("_engine")
 	_check(str(engine.get("stage")) == "choose", "alternate greeting accepted and dialogue advances")
