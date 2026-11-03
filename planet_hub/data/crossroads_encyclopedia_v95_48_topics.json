@@ -1,0 +1,2562 @@
+{
+  "schema_version": 1,
+  "entity_id": "crossroads_core",
+  "entity_name": {
+    "ru": "Живая планета",
+    "en": "Living World"
+  },
+  "age_target": "3-5",
+  "offline": true,
+  "groups": [
+    {
+      "id": "care",
+      "label": {
+        "ru": "Забота о мире",
+        "en": "Care for our world",
+        "fr": "Prendre soin du monde",
+        "de": "Die Welt schützen",
+        "es": "Cuidar nuestro mundo",
+        "pt_BR": "Cuidar do mundo"
+      },
+      "prompt": {
+        "ru": "Как беречь наш мир?",
+        "en": "How can we care for our world?",
+        "fr": "Comment protéger notre monde ?",
+        "de": "Wie schützen wir unsere Welt?",
+        "es": "¿Cómo cuidamos nuestro mundo?",
+        "pt_BR": "Como cuidar do nosso mundo?"
+      },
+      "topic_ids": [
+        "sorting",
+        "ancestors",
+        "resources",
+        "waste",
+        "clean_water",
+        "saving_water",
+        "trees",
+        "flowers",
+        "bees",
+        "animal_homes",
+        "clean_ocean",
+        "plastic",
+        "food_waste",
+        "repairing",
+        "helping_elders",
+        "sharing"
+      ]
+    },
+    {
+      "id": "science",
+      "label": {
+        "ru": "Маленькая наука",
+        "en": "Little science",
+        "fr": "Petite science",
+        "de": "Kleine Wissenschaft",
+        "es": "Pequeña ciencia",
+        "pt_BR": "Pequena ciência"
+      },
+      "prompt": {
+        "ru": "Как всё устроено?",
+        "en": "How do things work?",
+        "fr": "Comment fonctionnent les choses ?",
+        "de": "Wie funktionieren die Dinge?",
+        "es": "¿Cómo funcionan las cosas?",
+        "pt_BR": "Como as coisas funcionam?"
+      },
+      "topic_ids": [
+        "molecules",
+        "magnets",
+        "gravity",
+        "electricity",
+        "atoms",
+        "air",
+        "sound",
+        "light",
+        "shadows",
+        "heat_cold",
+        "floating_sinking",
+        "friction",
+        "rainbow",
+        "echoes",
+        "senses",
+        "energy"
+      ]
+    },
+    {
+      "id": "universe",
+      "label": {
+        "ru": "Тайны Вселенной",
+        "en": "Mysteries of the universe",
+        "fr": "Mystères de l'univers",
+        "de": "Geheimnisse des Universums",
+        "es": "Misterios del universo",
+        "pt_BR": "Mistérios do universo"
+      },
+      "prompt": {
+        "ru": "Что скрывает Вселенная?",
+        "en": "What does the universe hide?",
+        "fr": "Quels secrets cache l'univers ?",
+        "de": "Welche Geheimnisse hat das Universum?",
+        "es": "¿Qué secretos guarda el universo?",
+        "pt_BR": "Que segredos o universo guarda?"
+      },
+      "topic_ids": [
+        "neurons",
+        "space",
+        "phase_changes",
+        "states",
+        "sun",
+        "moon",
+        "earth",
+        "stars",
+        "planets",
+        "solar_system",
+        "day_night",
+        "seasons",
+        "comets",
+        "asteroids",
+        "galaxies",
+        "space_travel"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "sorting",
+      "group": "care",
+      "title": {
+        "ru": "Сортировка мусора",
+        "en": "Sorting waste"
+      },
+      "questions": {
+        "ru": [
+          "Зачем сортировать мусор?",
+          "Почему мусор кладут в разные баки?",
+          "Куда положить бумагу?"
+        ],
+        "en": [
+          "Why do we sort rubbish?",
+          "Why do we use different bins?",
+          "Where does paper go?"
+        ],
+        "fr": [
+          "Pourquoi trie-t-on les déchets ?"
+        ],
+        "de": [
+          "Warum trennen wir Müll?"
+        ],
+        "es": [
+          "¿Por qué separamos la basura?"
+        ],
+        "pt_BR": [
+          "Por que separamos o lixo?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Бумагу, стекло и другой мусор часто кладут отдельно. Так часть вещей можно переработать и сделать из них новые вещи.",
+          "Посмотри на коробку из бумаги. Её иногда можно превратить в новую коробку, если положить в нужный контейнер.",
+          "Разные баки помогают отделить материалы друг от друга. Но сначала узнай, какие правила сортировки есть у вас дома."
+        ],
+        "en": [
+          "We often put paper, glass and other rubbish in different bins. Some materials can become useful new things.",
+          "Think of a paper box. It can sometimes become another box when we place it in the correct recycling bin.",
+          "Different bins help separate materials. Ask a grown-up how recycling works where you live."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "ancestors",
+      "group": "care",
+      "title": {
+        "ru": "Предки и память семьи",
+        "en": "Ancestors and family memories"
+      },
+      "questions": {
+        "ru": [
+          "Кто такие предки?",
+          "Как помнить предков?",
+          "Зачем хранить семейные истории?"
+        ],
+        "en": [
+          "Who are our ancestors?",
+          "How can we remember our ancestors?",
+          "Why do family stories matter?"
+        ],
+        "fr": [
+          "Qui sont nos ancêtres ?"
+        ],
+        "de": [
+          "Wer sind unsere Vorfahren?"
+        ],
+        "es": [
+          "¿Quiénes fueron nuestros antepasados?"
+        ],
+        "pt_BR": [
+          "Quem foram nossos antepassados?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Предки — это люди, которые жили до нас, например прабабушки и прадедушки. Мы можем беречь память о них.",
+          "Фотографии и семейные истории помогают помнить тех, кто жил раньше. Можно спросить близкого взрослого о прошлом семьи.",
+          "Забота о памяти предков — это уважение к их жизни и истории. А живым старшим мы можем помогать и слушать их рассказы."
+        ],
+        "en": [
+          "Ancestors are people who lived before us, like great-grandparents. We can remember their stories.",
+          "Photos and family stories help us remember people from long ago. You can ask a trusted grown-up about family history.",
+          "Caring for our ancestors' memory means respecting their lives. We can also help older people who are with us today."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "resources",
+      "group": "care",
+      "title": {
+        "ru": "Ресурсы",
+        "en": "Resources"
+      },
+      "questions": {
+        "ru": [
+          "Что такое ресурсы?",
+          "Зачем беречь воду?",
+          "Почему нельзя тратить всё зря?"
+        ],
+        "en": [
+          "What are resources?",
+          "Why should we save water?",
+          "Why should we avoid waste?"
+        ],
+        "fr": [
+          "Pourquoi économiser l'eau ?"
+        ],
+        "de": [
+          "Warum sparen wir Wasser?"
+        ],
+        "es": [
+          "¿Por qué cuidamos el agua?"
+        ],
+        "pt_BR": [
+          "Por que economizamos água?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Вода, дерево и энергия помогают нам жить. Они важны, поэтому лучше брать только столько, сколько нужно.",
+          "Когда мы закрываем кран, вода не течёт зря. Маленькие добрые привычки помогают природе.",
+          "Ресурсы — это то, что мы используем: воду, свет, материалы. Бережное отношение помогает оставить их другим."
+        ],
+        "en": [
+          "Water, wood and energy help us live. They matter, so we should use only what we need.",
+          "Turning off a tap stops water from running for no reason. Small habits can help nature.",
+          "Resources are things we use: water, electricity and materials. Using them carefully helps everyone."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "waste",
+      "group": "care",
+      "title": {
+        "ru": "Отходы",
+        "en": "Waste and reuse"
+      },
+      "questions": {
+        "ru": [
+          "Что такое отходы?",
+          "Можно ли использовать вещи снова?",
+          "Что сделать со старой коробкой?"
+        ],
+        "en": [
+          "What is waste?",
+          "Can we use things again?",
+          "What can we do with an old box?"
+        ],
+        "fr": [
+          "Peut-on réutiliser les objets ?"
+        ],
+        "de": [
+          "Kann man Dinge wiederverwenden?"
+        ],
+        "es": [
+          "¿Podemos reutilizar cosas?"
+        ],
+        "pt_BR": [
+          "Podemos reutilizar as coisas?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Отходы — это вещи, которые нам больше не нужны. Иногда их можно использовать снова или переработать.",
+          "Пустая коробка может стать игрушечным домиком. Не всё старое нужно сразу выбрасывать.",
+          "Когда вещь сломалась, взрослый может помочь её починить. А то, что уже нельзя использовать, отправляют в подходящее место."
+        ],
+        "en": [
+          "Waste is stuff we no longer need. Sometimes we can reuse or recycle it.",
+          "An empty box can become a toy house. Not everything old needs to be thrown away.",
+          "When something breaks, a grown-up might help repair it. Things we cannot use can go in the proper bin."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "molecules",
+      "group": "science",
+      "title": {
+        "ru": "Молекулы",
+        "en": "Molecules"
+      },
+      "questions": {
+        "ru": [
+          "Что такое молекулы?",
+          "Из чего состоят вещи?",
+          "Молекулы маленькие?"
+        ],
+        "en": [
+          "What are molecules?",
+          "What are things made of?",
+          "Are molecules tiny?"
+        ],
+        "fr": [
+          "Qu'est-ce qu'une molécule ?"
+        ],
+        "de": [
+          "Was ist ein Molekül?"
+        ],
+        "es": [
+          "¿Qué es una molécula?"
+        ],
+        "pt_BR": [
+          "O que é uma molécula?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Многие вещи состоят из очень-очень маленьких частиц — атомов и молекул. Глазами по одной их не увидеть.",
+          "Представь крошечные невидимые детали. Из таких частиц устроены вода, воздух и множество вещей вокруг.",
+          "В капельке воды есть огромное число молекул воды. Даже маленькая капля состоит из множества частиц."
+        ],
+        "en": [
+          "Many things are made of tiny particles called atoms and molecules. We cannot see one with our eyes.",
+          "Imagine tiny invisible building pieces. Water, air and many things around us contain such particles.",
+          "A drop of water contains lots and lots of water molecules. Even a tiny drop has many particles."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "magnets",
+      "group": "science",
+      "title": {
+        "ru": "Магниты",
+        "en": "Magnets"
+      },
+      "questions": {
+        "ru": [
+          "Как работает магнит?",
+          "Что притягивает магнит?",
+          "Почему магниты липнут друг к другу?"
+        ],
+        "en": [
+          "How does a magnet work?",
+          "What can a magnet pull?",
+          "Why do magnets stick together?"
+        ],
+        "fr": [
+          "Comment marche un aimant ?"
+        ],
+        "de": [
+          "Wie funktioniert ein Magnet?"
+        ],
+        "es": [
+          "¿Cómo funciona un imán?"
+        ],
+        "pt_BR": [
+          "Como funciona um ímã?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Магнит может притянуть железную скрепку без верёвочки. Но он притягивает не все металлы.",
+          "У магнитов есть невидимое магнитное поле. Оно помогает им притягивать некоторые предметы.",
+          "Два магнита иногда притягиваются, а иногда отталкиваются. Всё зависит от того, какими сторонами их повернуть."
+        ],
+        "en": [
+          "A magnet can pull an iron paper clip without a string. But it does not pull every metal.",
+          "Magnets have an invisible magnetic field. It can attract certain objects.",
+          "Two magnets can pull together or push apart. It depends on which ends face each other."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "gravity",
+      "group": "science",
+      "title": {
+        "ru": "Гравитация",
+        "en": "Gravity"
+      },
+      "questions": {
+        "ru": [
+          "Что такое гравитация?",
+          "Почему мяч падает вниз?",
+          "Почему мы не улетаем с Земли?"
+        ],
+        "en": [
+          "What is gravity?",
+          "Why does a ball fall down?",
+          "Why don't we float off Earth?"
+        ],
+        "fr": [
+          "Qu'est-ce que la gravité ?"
+        ],
+        "de": [
+          "Was ist Schwerkraft?"
+        ],
+        "es": [
+          "¿Qué es la gravedad?"
+        ],
+        "pt_BR": [
+          "O que é a gravidade?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Земля притягивает нас и предметы к себе. Эта невидимая сила называется гравитацией.",
+          "Когда ты отпускаешь мяч, он падает. Его притягивает Земля — так действует гравитация.",
+          "Гравитация помогает нам стоять на земле. Она также притягивает Луну к Земле."
+        ],
+        "en": [
+          "Earth pulls us and other things toward it. That invisible pull is called gravity.",
+          "When you let go of a ball, it falls. Earth pulls it down with gravity.",
+          "Gravity helps us stay on the ground. It also pulls the Moon toward Earth."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "electricity",
+      "group": "science",
+      "title": {
+        "ru": "Электричество",
+        "en": "Electricity"
+      },
+      "questions": {
+        "ru": [
+          "Что такое электричество?",
+          "Почему лампа светится?",
+          "Откуда берётся свет в лампе?"
+        ],
+        "en": [
+          "What is electricity?",
+          "Why does a lamp shine?",
+          "How does a lamp get power?"
+        ],
+        "fr": [
+          "Qu'est-ce que l'électricité ?"
+        ],
+        "de": [
+          "Was ist Elektrizität?"
+        ],
+        "es": [
+          "¿Qué es la electricidad?"
+        ],
+        "pt_BR": [
+          "O que é eletricidade?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Электричество помогает зажечь лампу и включить приборы. Это движение электрических зарядов.",
+          "Нажимаешь выключатель — и лампа светит! Ей помогает электрическая энергия.",
+          "Электричество полезно, но розетки и провода трогают только взрослые. Мы изучаем его безопасно."
+        ],
+        "en": [
+          "Electricity helps lamps shine and devices work. It is the movement of electric charges.",
+          "Flip a switch and a lamp lights up! Electrical energy makes it possible.",
+          "Electricity is helpful, but sockets and wires are for grown-ups. We learn about it safely."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "neurons",
+      "group": "universe",
+      "title": {
+        "ru": "Нейроны",
+        "en": "Neurons"
+      },
+      "questions": {
+        "ru": [
+          "Что такое нейроны?",
+          "Как мозг разговаривает с телом?",
+          "Как мы чувствуем прикосновение?"
+        ],
+        "en": [
+          "What are neurons?",
+          "How does the brain talk to the body?",
+          "How can we feel a touch?"
+        ],
+        "fr": [
+          "Qu'est-ce qu'un neurone ?"
+        ],
+        "de": [
+          "Was ist eine Nervenzelle?"
+        ],
+        "es": [
+          "¿Qué es una neurona?"
+        ],
+        "pt_BR": [
+          "O que é um neurônio?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Нейроны — это маленькие клетки, которые передают сигналы в мозге и теле. Они помогают нам чувствовать и двигаться.",
+          "Когда ты трогаешь мягкую игрушку, сигналы бегут по нервам к мозгу. Так ты узнаёшь, что она мягкая.",
+          "В мозге много нейронов. Они передают друг другу сообщения и помогают нам учиться новому."
+        ],
+        "en": [
+          "Neurons are tiny cells that send messages in our brain and body. They help us feel and move.",
+          "When you touch a soft toy, nerve signals reach your brain. That helps you know it feels soft.",
+          "Your brain has lots of neurons. They send messages to each other and help you learn."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "space",
+      "group": "universe",
+      "title": {
+        "ru": "Космос",
+        "en": "Space"
+      },
+      "questions": {
+        "ru": [
+          "Что такое космос?",
+          "Что мы видим среди звёзд?",
+          "Земля живёт в космосе?"
+        ],
+        "en": [
+          "What is space?",
+          "What can we see among the stars?",
+          "Is Earth in space?"
+        ],
+        "fr": [
+          "Qu'est-ce que l'espace ?"
+        ],
+        "de": [
+          "Was ist das Weltall?"
+        ],
+        "es": [
+          "¿Qué es el espacio?"
+        ],
+        "pt_BR": [
+          "O que é o espaço?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Космос очень большой. В нём есть звёзды, планеты, луны и много удивительного.",
+          "Земля — планета в космосе. Солнце — наша звезда, а Луна — спутник Земли.",
+          "Ночью мы видим свет далёких звёзд. Они находятся очень-очень далеко от нас."
+        ],
+        "en": [
+          "Space is enormous. It holds stars, planets, moons and many amazing things.",
+          "Earth is a planet in space. The Sun is our star, and the Moon goes around Earth.",
+          "At night we can see light from faraway stars. They are very, very far away."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "phase_changes",
+      "group": "universe",
+      "title": {
+        "ru": "Превращения вещества",
+        "en": "Changing states"
+      },
+      "questions": {
+        "ru": [
+          "Почему лёд тает?",
+          "Как вода становится паром?",
+          "Может ли вода замёрзнуть?"
+        ],
+        "en": [
+          "Why does ice melt?",
+          "How can water become vapor?",
+          "Can water freeze?"
+        ],
+        "fr": [
+          "Pourquoi la glace fond-elle ?"
+        ],
+        "de": [
+          "Warum schmilzt Eis?"
+        ],
+        "es": [
+          "¿Por qué se derrite el hielo?"
+        ],
+        "pt_BR": [
+          "Por que o gelo derrete?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Когда лёд нагревается, он тает и превращается в воду. А вода на холоде может снова стать льдом.",
+          "Вода может медленно превращаться в невидимый водяной пар. Это называется испарением.",
+          "В нашем волшебном мире фазовые существа меняют форму. Настоящие вещества тоже могут переходить из одного состояния в другое."
+        ],
+        "en": [
+          "When ice warms up, it melts into water. When water gets cold enough, it can freeze into ice.",
+          "Water can slowly turn into invisible water vapor. This is called evaporation.",
+          "In our fantasy world, phase beings can change shape. Real materials can also change from one state to another."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": true
+    },
+    {
+      "id": "states",
+      "group": "universe",
+      "title": {
+        "ru": "Состояния вещества",
+        "en": "States of matter"
+      },
+      "questions": {
+        "ru": [
+          "Какие бывают состояния вещества?",
+          "Чем лёд отличается от воды?",
+          "Что такое газ?"
+        ],
+        "en": [
+          "What are the states of matter?",
+          "How is ice different from water?",
+          "What is a gas?"
+        ],
+        "fr": [
+          "Quels sont les états de la matière ?"
+        ],
+        "de": [
+          "Welche Aggregatzustände gibt es?"
+        ],
+        "es": [
+          "¿Cuáles son los estados de la materia?"
+        ],
+        "pt_BR": [
+          "Quais são os estados da matéria?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Лёд твёрдый, вода жидкая, а водяной пар — газ. Это разные состояния одного вещества.",
+          "Твёрдый кубик держит форму. Жидкая вода течёт. Газ может заполнить всё доступное пространство.",
+          "Представь лёд, воду и невидимый пар. Одно вещество может быть твёрдым, жидким или газообразным."
+        ],
+        "en": [
+          "Ice is solid, water is liquid, and water vapor is gas. These are different states of the same substance.",
+          "A solid block keeps its shape. Liquid water flows. Gas can spread to fill a space.",
+          "Think of ice, water and invisible vapor. One substance can be solid, liquid or gas."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "clean_water",
+      "group": "care",
+      "title": {
+        "ru": "Чистая вода",
+        "en": "Clean water"
+      },
+      "questions": {
+        "ru": [
+          "Почему вода должна быть чистой?",
+          "Можно ли пить воду из речки?",
+          "Как сделать воду безопасной?"
+        ],
+        "en": [
+          "Why do we need clean water?",
+          "Can we drink water from a river?",
+          "How do we get safe drinking water?"
+        ],
+        "fr": [
+          "Pourquoi faut-il de l’eau propre ?"
+        ],
+        "de": [
+          "Warum brauchen wir sauberes Wasser?"
+        ],
+        "es": [
+          "¿Por qué necesitamos agua limpia?"
+        ],
+        "pt_BR": [
+          "Por que precisamos de água limpa?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Чистая питьевая вода нужна людям и животным. В ней не должно быть опасных микробов и грязи.",
+          "Вода в речке может выглядеть прозрачной, но содержать микробы. Пей только воду, которую взрослые называют питьевой.",
+          "Воду очищают на специальных станциях. Дома взрослые знают, какую воду можно безопасно пить."
+        ],
+        "en": [
+          "People and animals need clean drinking water. It should be free from dangerous germs and dirt.",
+          "River water may look clear but still contain germs. Drink only water a trusted adult says is safe.",
+          "Water can be cleaned at treatment plants. At home, grown-ups know which water is safe to drink."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Посмотри на стакан питьевой воды и расскажи, для чего она нужна.",
+        "en": "Look at a glass of drinking water and name one way we use it."
+      }
+    },
+    {
+      "id": "saving_water",
+      "group": "care",
+      "title": {
+        "ru": "Экономия воды",
+        "en": "Saving water"
+      },
+      "questions": {
+        "ru": [
+          "Как не тратить воду зря?",
+          "Зачем закрывать кран?",
+          "Как беречь воду при чистке зубов?"
+        ],
+        "en": [
+          "How can we save water?",
+          "Why should we turn off the tap?",
+          "Can we save water when brushing teeth?"
+        ],
+        "fr": [
+          "Comment économiser l’eau ?"
+        ],
+        "de": [
+          "Wie können wir Wasser sparen?"
+        ],
+        "es": [
+          "¿Cómo podemos ahorrar agua?"
+        ],
+        "pt_BR": [
+          "Como podemos economizar água?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Когда вода не нужна, лучше закрывать кран. Так её меньше тратится впустую.",
+          "Пока мы намыливаем руки, можно выключить воду, если это удобно. Это маленькая полезная привычка.",
+          "Когда чистишь зубы, попроси взрослого помочь выключить кран на время чистки. Вода снова понадобится для полоскания."
+        ],
+        "en": [
+          "Turn off the tap when you do not need running water. That helps avoid wasting it.",
+          "While soaping your hands, you can turn off the tap when it is practical. Small habits can help.",
+          "When brushing your teeth, ask a grown-up to help turn off the tap until you need water to rinse."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Потренируйся закрывать кран после мытья рук со взрослым.",
+        "en": "Practice turning off the tap after washing your hands with a grown-up."
+      }
+    },
+    {
+      "id": "trees",
+      "group": "care",
+      "title": {
+        "ru": "Деревья",
+        "en": "Trees"
+      },
+      "questions": {
+        "ru": [
+          "Для чего нужны деревья?",
+          "Почему деревья дают тень?",
+          "Кто живёт на деревьях?"
+        ],
+        "en": [
+          "Why are trees important?",
+          "Why do trees give shade?",
+          "Who lives in trees?"
+        ],
+        "fr": [
+          "Pourquoi les arbres sont-ils importants ?"
+        ],
+        "de": [
+          "Warum sind Bäume wichtig?"
+        ],
+        "es": [
+          "¿Por qué son importantes los árboles?"
+        ],
+        "pt_BR": [
+          "Por que as árvores são importantes?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Деревья дают тень, помогают очищать воздух и становятся домом для многих животных.",
+          "Листья и ветки закрывают солнечные лучи. Поэтому под деревом бывает прохладнее.",
+          "На деревьях могут жить птицы, насекомые и другие животные. Давайте беречь их дом."
+        ],
+        "en": [
+          "Trees give shade, help keep the air healthy, and provide homes for many animals.",
+          "Leaves and branches block some sunlight. That can make it cooler under a tree.",
+          "Birds, insects and other animals may live in trees. We can help protect their homes."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Найди дерево и рассмотри форму его листьев, не ломая веток.",
+        "en": "Find a tree and look at its leaves without breaking branches."
+      }
+    },
+    {
+      "id": "flowers",
+      "group": "care",
+      "title": {
+        "ru": "Цветы",
+        "en": "Flowers"
+      },
+      "questions": {
+        "ru": [
+          "Зачем растениям цветы?",
+          "Почему цветы бывают разных цветов?",
+          "Как цветок превращается в плод?"
+        ],
+        "en": [
+          "Why do plants have flowers?",
+          "Why are flowers different colors?",
+          "Can flowers become fruit?"
+        ],
+        "fr": [
+          "Pourquoi les plantes ont-elles des fleurs ?"
+        ],
+        "de": [
+          "Warum haben Pflanzen Blüten?"
+        ],
+        "es": [
+          "¿Por qué las plantas tienen flores?"
+        ],
+        "pt_BR": [
+          "Por que as plantas têm flores?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "У многих растений цветы помогают появиться семенам. Из семян могут вырасти новые растения.",
+          "Яркие цветы часто привлекают насекомых-опылителей. Но не всем растениям нужны яркие цветы.",
+          "После опыления из некоторых цветов развиваются плоды с семенами. Например, так бывает у яблони."
+        ],
+        "en": [
+          "Flowers help many plants make seeds. New plants can grow from those seeds.",
+          "Bright flowers often attract insects that pollinate them. Not every plant needs bright flowers.",
+          "After pollination, some flowers become fruit with seeds. An apple tree is one example."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Сравни два цветка по форме, не срывая их.",
+        "en": "Compare the shapes of two flowers without picking them."
+      }
+    },
+    {
+      "id": "bees",
+      "group": "care",
+      "title": {
+        "ru": "Пчёлы",
+        "en": "Bees"
+      },
+      "questions": {
+        "ru": [
+          "Зачем нужны пчёлы?",
+          "Почему пчела садится на цветок?",
+          "Что пчёлы собирают с цветов?"
+        ],
+        "en": [
+          "Why do we need bees?",
+          "Why do bees visit flowers?",
+          "What do bees collect from flowers?"
+        ],
+        "fr": [
+          "Pourquoi les abeilles sont-elles utiles ?"
+        ],
+        "de": [
+          "Warum sind Bienen wichtig?"
+        ],
+        "es": [
+          "¿Por qué son importantes las abejas?"
+        ],
+        "pt_BR": [
+          "Por que as abelhas são importantes?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Пчёлы переносят пыльцу между цветами. Так они помогают многим растениям делать семена.",
+          "Пчела прилетает к цветку за нектаром и пыльцой. По пути она может перенести пыльцу на другой цветок.",
+          "Пчёлы собирают нектар и пыльцу. Наблюдать за ними лучше издалека, не трогая их."
+        ],
+        "en": [
+          "Bees carry pollen between flowers. This helps many plants make seeds.",
+          "A bee visits a flower for nectar and pollen. It may carry pollen to another flower.",
+          "Bees collect nectar and pollen. Watch them from a distance instead of touching them."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Поищи цветы для пчёл и посмотри на них издалека.",
+        "en": "Look for flowers bees might visit, while keeping a safe distance."
+      }
+    },
+    {
+      "id": "animal_homes",
+      "group": "care",
+      "title": {
+        "ru": "Дома животных",
+        "en": "Animal homes"
+      },
+      "questions": {
+        "ru": [
+          "Где живут дикие животные?",
+          "Почему нельзя ломать гнёзда?",
+          "Что такое дом животного?"
+        ],
+        "en": [
+          "Where do wild animals live?",
+          "Why should we leave nests alone?",
+          "What is an animal habitat?"
+        ],
+        "fr": [
+          "Où vivent les animaux sauvages ?"
+        ],
+        "de": [
+          "Wo leben wilde Tiere?"
+        ],
+        "es": [
+          "¿Dónde viven los animales salvajes?"
+        ],
+        "pt_BR": [
+          "Onde vivem os animais selvagens?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "У разных животных разные дома: гнёзда, норы, деревья или вода. Это места, где они находят укрытие.",
+          "В гнезде птица может выращивать птенцов. Лучше не трогать гнездо и не пугать птиц.",
+          "Дом животного — это место, где ему есть еда, вода и защита. Его называют средой обитания."
+        ],
+        "en": [
+          "Animals have different homes: nests, burrows, trees or water. These places help them stay safe.",
+          "Birds may raise their chicks in nests. We should not touch nests or frighten birds.",
+          "An animal habitat is a place with food, water and shelter. It helps the animal survive."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Вспомни два разных животных и назови их дома.",
+        "en": "Name two animals and imagine where each one lives."
+      }
+    },
+    {
+      "id": "clean_ocean",
+      "group": "care",
+      "title": {
+        "ru": "Чистый океан",
+        "en": "A clean ocean"
+      },
+      "questions": {
+        "ru": [
+          "Почему надо беречь океан?",
+          "Как мусор попадает в море?",
+          "Кому нужна чистая морская вода?"
+        ],
+        "en": [
+          "Why should we protect the ocean?",
+          "How does rubbish reach the sea?",
+          "Who needs a clean ocean?"
+        ],
+        "fr": [
+          "Pourquoi protéger l’océan ?"
+        ],
+        "de": [
+          "Warum müssen wir das Meer schützen?"
+        ],
+        "es": [
+          "¿Por qué debemos cuidar el océano?"
+        ],
+        "pt_BR": [
+          "Por que devemos cuidar do oceano?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "В океане живут рыбы, черепахи и множество других существ. Им нужна чистая вода.",
+          "Ветер и реки могут унести мусор в море. Поэтому не стоит бросать отходы на улице.",
+          "В чистом океане легче жить морским животным. Людям он тоже очень важен."
+        ],
+        "en": [
+          "Fish, turtles and many other creatures live in the ocean. They need clean water.",
+          "Wind and rivers can carry litter into the sea. That is why we should not litter.",
+          "A cleaner ocean helps sea animals. People need healthy oceans too."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "На рисунке найди животное, которое живёт в океане.",
+        "en": "Point to an animal in a picture that lives in the ocean."
+      }
+    },
+    {
+      "id": "plastic",
+      "group": "care",
+      "title": {
+        "ru": "Пластик",
+        "en": "Plastic"
+      },
+      "questions": {
+        "ru": [
+          "Что такое пластик?",
+          "Почему пакет нельзя бросать в море?",
+          "Можно ли использовать бутылку снова?"
+        ],
+        "en": [
+          "What is plastic?",
+          "Why should we keep bags out of the sea?",
+          "Can a bottle be used again?"
+        ],
+        "fr": [
+          "Qu’est-ce que le plastique ?"
+        ],
+        "de": [
+          "Was ist Plastik?"
+        ],
+        "es": [
+          "¿Qué es el plástico?"
+        ],
+        "pt_BR": [
+          "O que é plástico?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Пластик — материал, из которого делают игрушки и упаковку. Он бывает прочным и лёгким.",
+          "Пластиковый мусор может навредить животным. Его нужно выбрасывать правильно.",
+          "Некоторые пластиковые вещи можно использовать повторно или переработать. Спроси взрослого, что можно сделать с этой вещью."
+        ],
+        "en": [
+          "Plastic is a material used for toys and packaging. It can be light and strong.",
+          "Plastic litter can harm animals. We should put it in the correct place.",
+          "Some plastic items can be reused or recycled. Ask a grown-up what is safe for each item."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Найди дома предмет из пластика и назови его назначение.",
+        "en": "Find a plastic object and say what it is used for."
+      }
+    },
+    {
+      "id": "food_waste",
+      "group": "care",
+      "title": {
+        "ru": "Бережное отношение к еде",
+        "en": "Food waste"
+      },
+      "questions": {
+        "ru": [
+          "Почему не стоит выбрасывать еду?",
+          "Что сделать с остатками еды?",
+          "Как взять столько еды, сколько нужно?"
+        ],
+        "en": [
+          "Why should we avoid wasting food?",
+          "What can we do with leftovers?",
+          "How do we take only what we need?"
+        ],
+        "fr": [
+          "Pourquoi ne pas gaspiller la nourriture ?"
+        ],
+        "de": [
+          "Warum sollen wir Essen nicht verschwenden?"
+        ],
+        "es": [
+          "¿Por qué no debemos desperdiciar comida?"
+        ],
+        "pt_BR": [
+          "Por que não devemos desperdiçar comida?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Чтобы вырастить и приготовить еду, нужны вода, время и труд. Поэтому важно относиться к ней бережно.",
+          "Иногда остатки еды можно сохранить на потом. Только взрослый решает, как хранить их безопасно.",
+          "Можно сначала положить небольшую порцию, а потом попросить добавки. Не нужно заставлять себя доедать, если сыт."
+        ],
+        "en": [
+          "Growing and cooking food takes water, time and work. That is why food deserves care.",
+          "Sometimes leftovers can be saved for later. A grown-up can decide how to store them safely.",
+          "Start with a small serving and ask for more if you are hungry. You do not have to eat when you are full."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Вспомни один способ бережно обращаться с едой.",
+        "en": "Name one way to be careful with food."
+      }
+    },
+    {
+      "id": "repairing",
+      "group": "care",
+      "title": {
+        "ru": "Починка вещей",
+        "en": "Repairing things"
+      },
+      "questions": {
+        "ru": [
+          "Зачем чинить сломанные вещи?",
+          "Кто может починить игрушку?",
+          "Можно ли дать вещи вторую жизнь?"
+        ],
+        "en": [
+          "Why do we repair broken things?",
+          "Who can fix a toy?",
+          "Can we give an object a second life?"
+        ],
+        "fr": [
+          "Pourquoi réparer les objets ?"
+        ],
+        "de": [
+          "Warum reparieren wir Dinge?"
+        ],
+        "es": [
+          "¿Por qué reparamos las cosas?"
+        ],
+        "pt_BR": [
+          "Por que consertamos as coisas?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Если починить вещь, её можно использовать дольше. Это помогает не создавать лишний мусор.",
+          "Некоторые игрушки можно починить вместе со взрослым. Острые инструменты и электричество детям не подходят.",
+          "Иногда старую вещь можно превратить в полезную новую. Например, из коробки сделать домик для игрушки."
+        ],
+        "en": [
+          "A repaired object can last longer. Repairing can help create less waste.",
+          "A grown-up may be able to help fix a toy. Sharp tools and electricity are not for young children.",
+          "Some old things can become something useful. A box could become a toy house."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Придумай новое применение пустой картонной коробке.",
+        "en": "Think of a new use for an empty cardboard box."
+      }
+    },
+    {
+      "id": "helping_elders",
+      "group": "care",
+      "title": {
+        "ru": "Помощь старшим",
+        "en": "Helping older people"
+      },
+      "questions": {
+        "ru": [
+          "Как помочь бабушке или дедушке?",
+          "Почему важно слушать старших?",
+          "Что можно узнать у пожилого человека?"
+        ],
+        "en": [
+          "How can we help older people?",
+          "Why listen to older people?",
+          "What can older people teach us?"
+        ],
+        "fr": [
+          "Comment aider les personnes âgées ?"
+        ],
+        "de": [
+          "Wie helfen wir älteren Menschen?"
+        ],
+        "es": [
+          "¿Cómo ayudamos a las personas mayores?"
+        ],
+        "pt_BR": [
+          "Como ajudamos as pessoas mais velhas?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Можно предложить близкому старшему человеку помощь или просто посидеть рядом. Важно спросить, нужна ли она.",
+          "У старших бывают интересные истории и знания. Слушать их — хороший способ узнавать новое.",
+          "Пожилые люди могут рассказать о жизни раньше. У каждой семьи своя история, и рассказывать её можно по желанию."
+        ],
+        "en": [
+          "We can offer help to an older family member or spend time together. It is good to ask what they need.",
+          "Older people may know wonderful stories and useful things. Listening helps us learn.",
+          "Older people can tell us about life long ago. Every family is different, and stories are shared by choice."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Подумай, какой добрый вопрос можно задать старшему близкому человеку.",
+        "en": "Think of a kind question to ask an older person you trust."
+      }
+    },
+    {
+      "id": "sharing",
+      "group": "care",
+      "title": {
+        "ru": "Делиться и договариваться",
+        "en": "Sharing and taking turns"
+      },
+      "questions": {
+        "ru": [
+          "Зачем делиться игрушками?",
+          "Что делать, если двум детям нужна одна игра?",
+          "Как вежливо попросить игрушку?"
+        ],
+        "en": [
+          "Why do we share toys?",
+          "What if two children want the same toy?",
+          "How can I ask to use a toy?"
+        ],
+        "fr": [
+          "Pourquoi partager les jouets ?"
+        ],
+        "de": [
+          "Warum teilen wir Spielzeug?"
+        ],
+        "es": [
+          "¿Por qué compartimos los juguetes?"
+        ],
+        "pt_BR": [
+          "Por que compartilhamos brinquedos?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Делиться приятно, когда все согласны. Можно предложить поиграть по очереди.",
+          "Если двум детям нужна одна игрушка, можно договориться об очереди или найти совместную игру.",
+          "Скажи: «Можно мне, пожалуйста, поиграть после тебя?» И помни, что другой человек может пока не согласиться."
+        ],
+        "en": [
+          "Sharing can be fun when everyone agrees. Taking turns is one way to play fairly.",
+          "If two children want the same toy, they can take turns or find a game to play together.",
+          "Try asking, “May I have a turn when you are done?” Another person may not be ready yet."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Придумай добрую фразу, чтобы попросить поиграть по очереди.",
+        "en": "Think of a kind way to ask for a turn."
+      }
+    },
+    {
+      "id": "atoms",
+      "group": "science",
+      "title": {
+        "ru": "Атомы",
+        "en": "Atoms"
+      },
+      "questions": {
+        "ru": [
+          "Что такое атом?",
+          "Атом меньше песчинки?",
+          "Из чего делают молекулы?"
+        ],
+        "en": [
+          "What is an atom?",
+          "Is an atom smaller than sand?",
+          "What are molecules made of?"
+        ],
+        "fr": [
+          "Qu’est-ce qu’un atome ?"
+        ],
+        "de": [
+          "Was ist ein Atom?"
+        ],
+        "es": [
+          "¿Qué es un átomo?"
+        ],
+        "pt_BR": [
+          "O que é um átomo?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Атом — очень маленькая частица вещества. Многие атомы могут соединяться друг с другом.",
+          "Даже в крошечной песчинке огромное число атомов. По одному мы не можем увидеть их глазами.",
+          "Молекулы состоят из соединённых атомов. Например, молекула воды — из атомов водорода и кислорода."
+        ],
+        "en": [
+          "An atom is a very tiny piece of matter. Atoms can join together.",
+          "Even one tiny grain of sand contains very many atoms. We cannot see one with our eyes.",
+          "Molecules are made of atoms joined together. Water molecules contain hydrogen and oxygen atoms."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Представь, как три кубика могут соединиться в одну фигурку.",
+        "en": "Imagine three building blocks joining into one shape."
+      }
+    },
+    {
+      "id": "air",
+      "group": "science",
+      "title": {
+        "ru": "Воздух",
+        "en": "Air"
+      },
+      "questions": {
+        "ru": [
+          "Что такое воздух?",
+          "Почему мы не видим воздух?",
+          "Нужен ли нам воздух?"
+        ],
+        "en": [
+          "What is air?",
+          "Why can’t we see air?",
+          "Do we need air to breathe?"
+        ],
+        "fr": [
+          "Qu’est-ce que l’air ?"
+        ],
+        "de": [
+          "Was ist Luft?"
+        ],
+        "es": [
+          "¿Qué es el aire?"
+        ],
+        "pt_BR": [
+          "O que é o ar?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Воздух — смесь газов вокруг Земли. Он невидимый, но мы можем почувствовать ветер.",
+          "Обычный чистый воздух прозрачен. Ты можешь заметить его движение, когда качаются листья.",
+          "Для дыхания людям нужен кислород, который есть в воздухе. Поэтому воздух очень важен."
+        ],
+        "en": [
+          "Air is a mixture of gases around Earth. We cannot see it, but we can feel the wind.",
+          "Clean air is usually clear. You can notice it moving when leaves sway.",
+          "People need oxygen from the air to breathe. Air is very important to us."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Помаши ладонью перед лицом и почувствуй движение воздуха.",
+        "en": "Wave your hand near your face and feel the moving air."
+      }
+    },
+    {
+      "id": "sound",
+      "group": "science",
+      "title": {
+        "ru": "Звук",
+        "en": "Sound"
+      },
+      "questions": {
+        "ru": [
+          "Откуда берётся звук?",
+          "Почему звучит колокольчик?",
+          "Может ли звук идти через воду?"
+        ],
+        "en": [
+          "Where does sound come from?",
+          "Why does a bell ring?",
+          "Can sound travel through water?"
+        ],
+        "fr": [
+          "D’où vient le son ?"
+        ],
+        "de": [
+          "Woher kommt der Schall?"
+        ],
+        "es": [
+          "¿De dónde viene el sonido?"
+        ],
+        "pt_BR": [
+          "De onde vem o som?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Звук появляется, когда что-нибудь дрожит, или вибрирует. Эти колебания доходят до наших ушей.",
+          "Когда колокольчик звенит, его металл колеблется. Так воздух переносит звук.",
+          "Звук может проходить через воздух и воду. Но в пустом космосе ему не через что идти."
+        ],
+        "en": [
+          "Sound starts when something vibrates. The vibrations can travel to our ears.",
+          "A bell makes sound because its metal vibrates. The vibrations travel through the air.",
+          "Sound travels through air and water. In empty space there is no air to carry it."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Тихонько постучи пальцем по столу и послушай звук.",
+        "en": "Tap the table gently with a finger and listen."
+      }
+    },
+    {
+      "id": "light",
+      "group": "science",
+      "title": {
+        "ru": "Свет",
+        "en": "Light"
+      },
+      "questions": {
+        "ru": [
+          "Что такое свет?",
+          "Почему мы видим предметы?",
+          "Что светит ночью?"
+        ],
+        "en": [
+          "What is light?",
+          "How can we see things?",
+          "What can shine at night?"
+        ],
+        "fr": [
+          "Qu’est-ce que la lumière ?"
+        ],
+        "de": [
+          "Was ist Licht?"
+        ],
+        "es": [
+          "¿Qué es la luz?"
+        ],
+        "pt_BR": [
+          "O que é a luz?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Свет помогает нашим глазам видеть мир. Он приходит от Солнца и от ламп.",
+          "Мы видим многие вещи, потому что свет отражается от них и попадает в глаза.",
+          "Ночью могут светить звёзды, Луна и лампы. Луна не светит сама, а отражает солнечный свет."
+        ],
+        "en": [
+          "Light helps our eyes see the world. It comes from the Sun and lamps.",
+          "We can see many objects because light bounces off them and enters our eyes.",
+          "At night we can see stars, the Moon and lamps. The Moon reflects sunlight rather than making its own."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Посмотри, как свет падает на игрушку, не глядя на Солнце.",
+        "en": "See how light reaches a toy. Never stare at the Sun."
+      }
+    },
+    {
+      "id": "shadows",
+      "group": "science",
+      "title": {
+        "ru": "Тени",
+        "en": "Shadows"
+      },
+      "questions": {
+        "ru": [
+          "Откуда берётся тень?",
+          "Почему у меня есть тень?",
+          "Можно ли изменить форму тени?"
+        ],
+        "en": [
+          "How are shadows made?",
+          "Why do I have a shadow?",
+          "Can a shadow change shape?"
+        ],
+        "fr": [
+          "Comment se forme une ombre ?"
+        ],
+        "de": [
+          "Wie entsteht ein Schatten?"
+        ],
+        "es": [
+          "¿Cómo se forma una sombra?"
+        ],
+        "pt_BR": [
+          "Como se forma uma sombra?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Тень возникает, когда предмет заслоняет свет. За ним становится темнее.",
+          "Твоё тело может закрыть свет от лампы или Солнца. Тогда на земле появляется тень.",
+          "Если переместить предмет или источник света, тень изменит размер и форму."
+        ],
+        "en": [
+          "A shadow appears when something blocks light. The place behind it gets darker.",
+          "Your body can block sunlight or lamplight, making a shadow on the ground.",
+          "If an object or a lamp moves, the shadow can change size and shape."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "С фонариком и взрослым сделай тень игрушки на стене.",
+        "en": "With a grown-up, use a flashlight to make a toy shadow."
+      }
+    },
+    {
+      "id": "heat_cold",
+      "group": "science",
+      "title": {
+        "ru": "Тепло и холод",
+        "en": "Heat and cold"
+      },
+      "questions": {
+        "ru": [
+          "Что такое тепло?",
+          "Почему лёд холодный?",
+          "Почему руки согреваются?"
+        ],
+        "en": [
+          "What is heat?",
+          "Why is ice cold?",
+          "How do our hands warm up?"
+        ],
+        "fr": [
+          "Qu’est-ce que la chaleur ?"
+        ],
+        "de": [
+          "Was ist Wärme?"
+        ],
+        "es": [
+          "¿Qué es el calor?"
+        ],
+        "pt_BR": [
+          "O que é o calor?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Тепло передаётся от более тёплого к более холодному. Поэтому тёплая кружка может согревать руки.",
+          "Лёд обычно холоднее наших рук. Когда мы держим его, тепло переходит от рук ко льду.",
+          "Руки могут согреться под одеялом или в тёплой комнате. С горячими предметами нужна помощь взрослых."
+        ],
+        "en": [
+          "Heat moves from warmer things to cooler ones. A warm mug can warm our hands.",
+          "Ice is usually colder than our hands. Heat moves from our hands into the ice.",
+          "Hands can warm up under a blanket or in a warm room. Hot objects need adult care."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Потрогай безопасный прохладный и тёплый предмет и сравни ощущения.",
+        "en": "Compare a safely cool object with a gently warm one."
+      }
+    },
+    {
+      "id": "floating_sinking",
+      "group": "science",
+      "title": {
+        "ru": "Тонет или плавает",
+        "en": "Floating and sinking"
+      },
+      "questions": {
+        "ru": [
+          "Почему лодка плавает?",
+          "Почему камень тонет?",
+          "Может ли дерево плавать?"
+        ],
+        "en": [
+          "Why does a boat float?",
+          "Why does a stone sink?",
+          "Can wood float?"
+        ],
+        "fr": [
+          "Pourquoi un bateau flotte-t-il ?"
+        ],
+        "de": [
+          "Warum schwimmt ein Boot?"
+        ],
+        "es": [
+          "¿Por qué flota un barco?"
+        ],
+        "pt_BR": [
+          "Por que um barco flutua?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Вода поддерживает лодку снизу. Форма лодки помогает ей оставаться на поверхности.",
+          "Многие камни плотнее воды и тонут. Но некоторые очень лёгкие камни могут плавать.",
+          "Многие кусочки дерева плавают на воде. Всё зависит от материала и формы предмета."
+        ],
+        "en": [
+          "Water pushes up on a boat. Its shape helps it stay at the surface.",
+          "Many stones are denser than water, so they sink. But some very light rocks can float.",
+          "Many pieces of wood float. Floating depends on the material and shape of an object."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Со взрослым положи деревянный кубик в тазик и понаблюдай.",
+        "en": "With a grown-up, put a wooden block in a basin and watch."
+      }
+    },
+    {
+      "id": "friction",
+      "group": "science",
+      "title": {
+        "ru": "Трение",
+        "en": "Friction"
+      },
+      "questions": {
+        "ru": [
+          "Почему ботинки не скользят всегда?",
+          "Что такое трение?",
+          "Почему машинка останавливается?"
+        ],
+        "en": [
+          "Why don’t shoes always slip?",
+          "What is friction?",
+          "Why does a toy car slow down?"
+        ],
+        "fr": [
+          "Qu’est-ce que le frottement ?"
+        ],
+        "de": [
+          "Was ist Reibung?"
+        ],
+        "es": [
+          "¿Qué es la fricción?"
+        ],
+        "pt_BR": [
+          "O que é o atrito?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Подошва цепляется за пол благодаря трению. Оно помогает нам не скользить.",
+          "Трение появляется, когда поверхности трутся друг о друга. Оно может замедлять движение.",
+          "Игрушечная машинка постепенно останавливается из-за трения и сопротивления воздуха."
+        ],
+        "en": [
+          "Friction helps shoes grip the floor, so we do not always slip.",
+          "Friction happens when surfaces rub against each other. It can slow things down.",
+          "A toy car slows down because of friction and air resistance."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Проведи пальцем по гладкой и шероховатой поверхности.",
+        "en": "Feel a smooth surface and a rough one with a finger."
+      }
+    },
+    {
+      "id": "rainbow",
+      "group": "science",
+      "title": {
+        "ru": "Радуга",
+        "en": "Rainbows"
+      },
+      "questions": {
+        "ru": [
+          "Откуда берётся радуга?",
+          "Почему у радуги много цветов?",
+          "Когда можно увидеть радугу?"
+        ],
+        "en": [
+          "How does a rainbow appear?",
+          "Why does a rainbow have many colors?",
+          "When can we see a rainbow?"
+        ],
+        "fr": [
+          "Comment apparaît un arc-en-ciel ?"
+        ],
+        "de": [
+          "Wie entsteht ein Regenbogen?"
+        ],
+        "es": [
+          "¿Cómo aparece un arcoíris?"
+        ],
+        "pt_BR": [
+          "Como aparece um arco-íris?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Радуга может появиться, когда солнечный свет проходит через капли воды в воздухе.",
+          "Капли воды разделяют белый солнечный свет на разные цвета. Так мы видим красивую дугу.",
+          "Радугу часто можно заметить после дождя, когда светит Солнце. Не смотри прямо на Солнце."
+        ],
+        "en": [
+          "A rainbow can appear when sunlight passes through water drops in the air.",
+          "Water drops separate sunlight into different colors. That makes a beautiful rainbow.",
+          "Rainbows can appear after rain when the Sun is shining. Never look straight at the Sun."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Назови любимый цвет из радуги на рисунке.",
+        "en": "Name a favorite color in a rainbow picture."
+      }
+    },
+    {
+      "id": "echoes",
+      "group": "science",
+      "title": {
+        "ru": "Эхо",
+        "en": "Echoes"
+      },
+      "questions": {
+        "ru": [
+          "Что такое эхо?",
+          "Почему голос повторяется в горах?",
+          "Может ли стена вернуть звук?"
+        ],
+        "en": [
+          "What is an echo?",
+          "Why does a voice repeat in the mountains?",
+          "Can a wall bounce sound back?"
+        ],
+        "fr": [
+          "Qu’est-ce qu’un écho ?"
+        ],
+        "de": [
+          "Was ist ein Echo?"
+        ],
+        "es": [
+          "¿Qué es un eco?"
+        ],
+        "pt_BR": [
+          "O que é um eco?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Эхо — это звук, который отразился от поверхности и вернулся к нам.",
+          "Звук может отразиться от далёкой скалы. Тогда мы слышим повтор своего голоса.",
+          "Большая стена может отражать звук. Иногда отражение слышно как отдельное эхо."
+        ],
+        "en": [
+          "An echo is a sound that bounces off something and comes back to us.",
+          "Sound can bounce off a distant cliff. That is why a voice may seem to repeat.",
+          "A large wall can reflect sound. Sometimes we hear the reflection as a separate echo."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Хлопни тихонько в ладоши в большом пустом помещении и послушай.",
+        "en": "Clap softly in a large empty room and listen."
+      }
+    },
+    {
+      "id": "senses",
+      "group": "science",
+      "title": {
+        "ru": "Органы чувств",
+        "en": "Our senses"
+      },
+      "questions": {
+        "ru": [
+          "Как мы узнаём мир вокруг?",
+          "Для чего нужны уши?",
+          "Как мы чувствуем мягкое?"
+        ],
+        "en": [
+          "How do we learn about the world?",
+          "What do ears do?",
+          "How do we feel something soft?"
+        ],
+        "fr": [
+          "Comment découvrons-nous le monde ?"
+        ],
+        "de": [
+          "Wie nehmen wir die Welt wahr?"
+        ],
+        "es": [
+          "¿Cómo conocemos el mundo?"
+        ],
+        "pt_BR": [
+          "Como conhecemos o mundo?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Мы узнаём мир с помощью чувств: зрения, слуха, осязания, вкуса и запаха. У каждого человека они могут работать по-разному.",
+          "Уши помогают нам слышать звуки. Люди, которые слышат иначе, могут общаться и другими способами.",
+          "Кожа чувствует прикосновения. Благодаря этому мы узнаём, мягкий предмет или твёрдый."
+        ],
+        "en": [
+          "We learn through senses such as sight, hearing, touch, taste and smell. Our senses can work differently.",
+          "Ears help us hear sounds. People who hear differently may communicate in other ways.",
+          "Skin helps us feel touch. That lets us notice whether something feels soft or hard."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Не глядя, потрогай безопасную мягкую игрушку и опиши её.",
+        "en": "Touch a safe soft toy and describe how it feels."
+      }
+    },
+    {
+      "id": "energy",
+      "group": "science",
+      "title": {
+        "ru": "Энергия",
+        "en": "Energy"
+      },
+      "questions": {
+        "ru": [
+          "Что такое энергия?",
+          "Для чего нужна энергия?",
+          "Откуда берётся энергия для игры?"
+        ],
+        "en": [
+          "What is energy?",
+          "Why do we need energy?",
+          "Where do we get energy to play?"
+        ],
+        "fr": [
+          "Qu’est-ce que l’énergie ?"
+        ],
+        "de": [
+          "Was ist Energie?"
+        ],
+        "es": [
+          "¿Qué es la energía?"
+        ],
+        "pt_BR": [
+          "O que é energia?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Энергия нужна, чтобы двигаться, светить и нагревать. Её используют люди, машины и природа.",
+          "Лампе нужна электрическая энергия, а нам — энергия из пищи. Так вещи могут работать.",
+          "Наш организм получает энергию из еды. Она помогает бегать, играть и расти."
+        ],
+        "en": [
+          "Energy is needed to move, shine and warm things. People, machines and nature use it.",
+          "A lamp uses electrical energy, while our bodies get energy from food.",
+          "Our bodies get energy from food. It helps us run, play and grow."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Назови две вещи, которым нужна энергия.",
+        "en": "Name two things that need energy."
+      }
+    },
+    {
+      "id": "sun",
+      "group": "universe",
+      "title": {
+        "ru": "Солнце",
+        "en": "The Sun"
+      },
+      "questions": {
+        "ru": [
+          "Что такое Солнце?",
+          "Почему Солнце греет?",
+          "Солнце — это звезда?"
+        ],
+        "en": [
+          "What is the Sun?",
+          "Why is the Sun warm?",
+          "Is the Sun a star?"
+        ],
+        "fr": [
+          "Qu’est-ce que le Soleil ?"
+        ],
+        "de": [
+          "Was ist die Sonne?"
+        ],
+        "es": [
+          "¿Qué es el Sol?"
+        ],
+        "pt_BR": [
+          "O que é o Sol?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Солнце — наша ближайшая звезда. Оно даёт Земле свет и тепло.",
+          "Солнечный свет нагревает землю и воду. Поэтому днём на солнце может быть тепло.",
+          "Да, Солнце — звезда, как многие точки в ночном небе. Только оно гораздо ближе к нам."
+        ],
+        "en": [
+          "The Sun is our nearest star. It gives Earth light and warmth.",
+          "Sunlight warms the ground and water. That is why sunny places can be warm.",
+          "Yes, the Sun is a star, like many lights in the night sky. It is much closer to Earth."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Рассмотри рисунок Солнца. Никогда не смотри прямо на настоящее Солнце.",
+        "en": "Look at a picture of the Sun, never directly at the real Sun."
+      }
+    },
+    {
+      "id": "moon",
+      "group": "universe",
+      "title": {
+        "ru": "Луна",
+        "en": "The Moon"
+      },
+      "questions": {
+        "ru": [
+          "Что такое Луна?",
+          "Почему Луна меняет форму?",
+          "Луна светит сама?"
+        ],
+        "en": [
+          "What is the Moon?",
+          "Why does the Moon look different?",
+          "Does the Moon shine by itself?"
+        ],
+        "fr": [
+          "Qu’est-ce que la Lune ?"
+        ],
+        "de": [
+          "Was ist der Mond?"
+        ],
+        "es": [
+          "¿Qué es la Luna?"
+        ],
+        "pt_BR": [
+          "O que é a Lua?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Луна — естественный спутник Земли. Она движется вокруг нашей планеты.",
+          "Мы видим разную освещённую часть Луны. Поэтому иногда она похожа на кружок, а иногда на серп.",
+          "Луна отражает свет Солнца. Сама она не светится как звезда."
+        ],
+        "en": [
+          "The Moon is Earth’s natural satellite. It travels around our planet.",
+          "We see different amounts of the Moon’s sunlit half. It can look round or like a crescent.",
+          "The Moon reflects sunlight. It does not shine like a star."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Нарисуй круг и полумесяц. Это два вида Луны на небе.",
+        "en": "Draw a circle and a crescent to show two Moon shapes."
+      }
+    },
+    {
+      "id": "earth",
+      "group": "universe",
+      "title": {
+        "ru": "Земля",
+        "en": "Earth"
+      },
+      "questions": {
+        "ru": [
+          "Почему Земля особенная?",
+          "Что есть на Земле?",
+          "Есть ли вода на Земле?"
+        ],
+        "en": [
+          "Why is Earth special?",
+          "What can we find on Earth?",
+          "Does Earth have water?"
+        ],
+        "fr": [
+          "Pourquoi la Terre est-elle spéciale ?"
+        ],
+        "de": [
+          "Warum ist die Erde besonders?"
+        ],
+        "es": [
+          "¿Por qué es especial la Tierra?"
+        ],
+        "pt_BR": [
+          "Por que a Terra é especial?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "На Земле есть жидкая вода, воздух и множество живых существ. Это наш дом.",
+          "На Земле есть океаны, горы, леса и города. На ней живёт очень много разных организмов.",
+          "На Земле много воды — в океанах, реках и озёрах. Она нужна живым существам."
+        ],
+        "en": [
+          "Earth has liquid water, air and many living things. It is our home.",
+          "Earth has oceans, mountains, forests and cities. Many kinds of life live here.",
+          "Earth has a lot of water in oceans, rivers and lakes. Living things need it."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Покажи на рисунке Земли, где вода, а где суша.",
+        "en": "Point to water and land on a picture of Earth."
+      }
+    },
+    {
+      "id": "stars",
+      "group": "universe",
+      "title": {
+        "ru": "Звёзды",
+        "en": "Stars"
+      },
+      "questions": {
+        "ru": [
+          "Что такое звёзды?",
+          "Почему звёзды кажутся маленькими?",
+          "Все звёзды одинаковые?"
+        ],
+        "en": [
+          "What are stars?",
+          "Why do stars look tiny?",
+          "Are all stars the same?"
+        ],
+        "fr": [
+          "Qu’est-ce qu’une étoile ?"
+        ],
+        "de": [
+          "Was ist ein Stern?"
+        ],
+        "es": [
+          "¿Qué es una estrella?"
+        ],
+        "pt_BR": [
+          "O que é uma estrela?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Звёзды — огромные горячие шары газа. Они излучают свет и тепло.",
+          "Звёзды очень далеко. Поэтому с Земли они кажутся крошечными точками.",
+          "Звёзды бывают разного размера и цвета. Наше Солнце — одна из них."
+        ],
+        "en": [
+          "Stars are huge, hot balls of gas. They give off light and heat.",
+          "Stars are very far away. They look like tiny dots from Earth.",
+          "Stars can differ in size and color. Our Sun is one of them."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Нарисуй три звезды разного размера.",
+        "en": "Draw three stars in different sizes."
+      }
+    },
+    {
+      "id": "planets",
+      "group": "universe",
+      "title": {
+        "ru": "Планеты",
+        "en": "Planets"
+      },
+      "questions": {
+        "ru": [
+          "Что такое планета?",
+          "Все ли планеты похожи на Землю?",
+          "Почему планеты движутся?"
+        ],
+        "en": [
+          "What is a planet?",
+          "Are all planets like Earth?",
+          "Why do planets move?"
+        ],
+        "fr": [
+          "Qu’est-ce qu’une planète ?"
+        ],
+        "de": [
+          "Was ist ein Planet?"
+        ],
+        "es": [
+          "¿Qué es un planeta?"
+        ],
+        "pt_BR": [
+          "O que é um planeta?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Планета — большой мир, который движется вокруг звезды. Наша Земля тоже планета.",
+          "Одни планеты каменные, а другие состоят в основном из газа. Они очень разные.",
+          "Планеты движутся вокруг звёзд благодаря движению и притяжению. Такие пути называют орбитами."
+        ],
+        "en": [
+          "A planet is a large world that travels around a star. Earth is a planet too.",
+          "Some planets are rocky, while others are mostly gas. They can be very different.",
+          "Planets travel around stars because of motion and gravity. Their paths are called orbits."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Назови Землю и ещё одну знакомую планету.",
+        "en": "Name Earth and one more planet you know."
+      }
+    },
+    {
+      "id": "solar_system",
+      "group": "universe",
+      "title": {
+        "ru": "Солнечная система",
+        "en": "The Solar System"
+      },
+      "questions": {
+        "ru": [
+          "Что такое Солнечная система?",
+          "Сколько планет у Солнца?",
+          "Где находится Марс?"
+        ],
+        "en": [
+          "What is the Solar System?",
+          "How many planets orbit the Sun?",
+          "Where is Mars?"
+        ],
+        "fr": [
+          "Qu’est-ce que le Système solaire ?"
+        ],
+        "de": [
+          "Was ist das Sonnensystem?"
+        ],
+        "es": [
+          "¿Qué es el sistema solar?"
+        ],
+        "pt_BR": [
+          "O que é o Sistema Solar?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Солнечная система — это Солнце и объекты, которые движутся вокруг него: планеты, луны и другие тела.",
+          "Вокруг Солнца движутся восемь больших планет. Земля — третья от Солнца.",
+          "Марс — четвёртая планета от Солнца. Он известен своим красноватым цветом."
+        ],
+        "en": [
+          "The Solar System includes the Sun and things that go around it: planets, moons and other objects.",
+          "Eight major planets orbit the Sun. Earth is the third one out.",
+          "Mars is the fourth planet from the Sun. It often looks reddish."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Посчитай вместе со взрослым восемь планет на картинке.",
+        "en": "Count the eight planets in a picture with a grown-up."
+      }
+    },
+    {
+      "id": "day_night",
+      "group": "universe",
+      "title": {
+        "ru": "День и ночь",
+        "en": "Day and night"
+      },
+      "questions": {
+        "ru": [
+          "Почему наступает ночь?",
+          "Куда пропадает Солнце вечером?",
+          "Почему утром светло?"
+        ],
+        "en": [
+          "Why does night come?",
+          "Where does the Sun go at night?",
+          "Why is it bright in the morning?"
+        ],
+        "fr": [
+          "Pourquoi fait-il nuit ?"
+        ],
+        "de": [
+          "Warum wird es Nacht?"
+        ],
+        "es": [
+          "¿Por qué se hace de noche?"
+        ],
+        "pt_BR": [
+          "Por que fica de noite?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Земля вращается. Когда наша сторона отворачивается от Солнца, у нас ночь.",
+          "Солнце никуда не пропадает. Это Земля поворачивается, и мы перестаём его видеть.",
+          "Утром наша часть Земли снова поворачивается к Солнцу. Наступает день."
+        ],
+        "en": [
+          "Earth spins. When our side faces away from the Sun, it becomes night.",
+          "The Sun does not disappear. Earth turns, so we stop seeing it for a while.",
+          "In the morning, our part of Earth turns toward the Sun again. Day begins."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Поверни мяч рядом с лампой вместе со взрослым: так виден день и ночь.",
+        "en": "With a grown-up, turn a ball near a lamp to model day and night."
+      }
+    },
+    {
+      "id": "seasons",
+      "group": "universe",
+      "title": {
+        "ru": "Времена года",
+        "en": "Seasons"
+      },
+      "questions": {
+        "ru": [
+          "Почему бывают времена года?",
+          "Почему зимой бывает холоднее?",
+          "Земля наклонена?"
+        ],
+        "en": [
+          "Why do we have seasons?",
+          "Why is winter often cooler?",
+          "Is Earth tilted?"
+        ],
+        "fr": [
+          "Pourquoi y a-t-il des saisons ?"
+        ],
+        "de": [
+          "Warum gibt es Jahreszeiten?"
+        ],
+        "es": [
+          "¿Por qué existen las estaciones?"
+        ],
+        "pt_BR": [
+          "Por que existem as estações do ano?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Земля немного наклонена, когда летит вокруг Солнца. Поэтому в разные месяцы места получают разное количество солнечного света.",
+          "Зимой Солнце часто стоит ниже, а день короче. Поэтому земля обычно меньше нагревается.",
+          "Ось Земли наклонена. Это одна из главных причин, почему у нас бывают весна, лето, осень и зима."
+        ],
+        "en": [
+          "Earth is tilted as it travels around the Sun. Different places receive different amounts of sunlight during the year.",
+          "In winter, the Sun is often lower in the sky and days are shorter. The ground usually warms less.",
+          "Earth’s axis is tilted. That is a main reason we have spring, summer, autumn and winter."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Назови погоду сегодня и подумай, какое сейчас время года.",
+        "en": "Describe today’s weather and think about the season."
+      }
+    },
+    {
+      "id": "comets",
+      "group": "universe",
+      "title": {
+        "ru": "Кометы",
+        "en": "Comets"
+      },
+      "questions": {
+        "ru": [
+          "Что такое комета?",
+          "Почему у кометы хвост?",
+          "Комета состоит из льда?"
+        ],
+        "en": [
+          "What is a comet?",
+          "Why does a comet have a tail?",
+          "Does a comet contain ice?"
+        ],
+        "fr": [
+          "Qu’est-ce qu’une comète ?"
+        ],
+        "de": [
+          "Was ist ein Komet?"
+        ],
+        "es": [
+          "¿Qué es un cometa?"
+        ],
+        "pt_BR": [
+          "O que é um cometa?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Комета — небольшое небесное тело из льда, пыли и камня. Она путешествует вокруг Солнца.",
+          "Когда комета приближается к Солнцу, у неё может появиться хвост из газа и пыли.",
+          "В кометах часто есть лёд и пыль. Солнечное тепло может заставить лёд переходить в газ."
+        ],
+        "en": [
+          "A comet is a small icy, dusty and rocky object that travels around the Sun.",
+          "When a comet moves closer to the Sun, it can form a tail of gas and dust.",
+          "Comets often contain ice and dust. Sunlight can warm the ice until it turns into gas."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Нарисуй комету с яркой головой и длинным хвостом.",
+        "en": "Draw a comet with a bright head and a long tail."
+      }
+    },
+    {
+      "id": "asteroids",
+      "group": "universe",
+      "title": {
+        "ru": "Астероиды",
+        "en": "Asteroids"
+      },
+      "questions": {
+        "ru": [
+          "Что такое астероид?",
+          "Астероиды похожи на камни?",
+          "Где летают астероиды?"
+        ],
+        "en": [
+          "What is an asteroid?",
+          "Are asteroids like rocks?",
+          "Where do asteroids travel?"
+        ],
+        "fr": [
+          "Qu’est-ce qu’un astéroïde ?"
+        ],
+        "de": [
+          "Was ist ein Asteroid?"
+        ],
+        "es": [
+          "¿Qué es un asteroide?"
+        ],
+        "pt_BR": [
+          "O que é um asteroide?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Астероид — небольшое каменное или металлическое тело в космосе. Многие астероиды движутся вокруг Солнца.",
+          "Астероиды часто похожи на неровные космические камни. Они бывают очень разного размера.",
+          "Многие астероиды есть между Марсом и Юпитером. Но они встречаются и в других местах Солнечной системы."
+        ],
+        "en": [
+          "An asteroid is a rocky or metallic object in space. Many asteroids orbit the Sun.",
+          "Asteroids can look like lumpy space rocks. They come in many sizes.",
+          "Many asteroids travel between Mars and Jupiter, though others are found elsewhere."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Слепи неровный «космический камень» из пластилина.",
+        "en": "Make a lumpy space rock from modeling clay."
+      }
+    },
+    {
+      "id": "galaxies",
+      "group": "universe",
+      "title": {
+        "ru": "Галактики",
+        "en": "Galaxies"
+      },
+      "questions": {
+        "ru": [
+          "Что такое галактика?",
+          "Как называется наша галактика?",
+          "В галактике много звёзд?"
+        ],
+        "en": [
+          "What is a galaxy?",
+          "What is our galaxy called?",
+          "Does a galaxy have many stars?"
+        ],
+        "fr": [
+          "Qu’est-ce qu’une galaxie ?"
+        ],
+        "de": [
+          "Was ist eine Galaxie?"
+        ],
+        "es": [
+          "¿Qué es una galaxia?"
+        ],
+        "pt_BR": [
+          "O que é uma galáxia?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Галактика — огромное собрание звёзд, газа и пыли, связанных притяжением.",
+          "Наша галактика называется Млечный Путь. В ней находится и наше Солнце.",
+          "В галактике может быть очень много звёзд. Между ними огромные расстояния."
+        ],
+        "en": [
+          "A galaxy is a huge collection of stars, gas and dust held together by gravity.",
+          "Our galaxy is called the Milky Way. The Sun is part of it.",
+          "A galaxy can have a great many stars, separated by enormous distances."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Нарисуй спираль из точек — маленькую модель галактики.",
+        "en": "Draw a spiral of dots as a model of a galaxy."
+      }
+    },
+    {
+      "id": "space_travel",
+      "group": "universe",
+      "title": {
+        "ru": "Путешествие в космос",
+        "en": "Traveling to space"
+      },
+      "questions": {
+        "ru": [
+          "Как ракета летит в космос?",
+          "Зачем космонавту скафандр?",
+          "Можно ли дышать в открытом космосе?"
+        ],
+        "en": [
+          "How does a rocket reach space?",
+          "Why do astronauts wear suits?",
+          "Can we breathe in open space?"
+        ],
+        "fr": [
+          "Comment une fusée va-t-elle dans l’espace ?"
+        ],
+        "de": [
+          "Wie fliegt eine Rakete ins All?"
+        ],
+        "es": [
+          "¿Cómo llega un cohete al espacio?"
+        ],
+        "pt_BR": [
+          "Como um foguete vai ao espaço?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Ракета выбрасывает горячие газы вниз и движется вверх. Так она может подняться в космос.",
+          "Скафандр помогает космонавту дышать и защищаться от опасных условий космоса.",
+          "В открытом космосе нет воздуха для дыхания. Поэтому людям нужны специальные корабли и скафандры."
+        ],
+        "en": [
+          "A rocket pushes hot gases downward to move upward. That helps it reach space.",
+          "A spacesuit helps an astronaut breathe and stay protected in space.",
+          "There is no air to breathe in open space. People need special spacecraft and spacesuits."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false,
+      "activity": {
+        "ru": "Покажи руками, как ракета поднимается вверх.",
+        "en": "Use your hands to show a rocket going up."
+      }
+    }
+  ],
+  "ui": {
+    "ru": {
+      "greeting": "Привет, маленький исследователь! Я живая планета. Что ты хочешь узнать?",
+      "group_intro": "Я знаю много историй. Выбирай вопрос!",
+      "again": "А теперь о чём спросишь?",
+      "back": "Выбери другой раздел знаний.",
+      "misunderstood": "Я пока не поняла вопрос. Попробуй один из вариантов.",
+      "finished": "Как здорово учиться вместе!",
+      "back_choice": "Давай другую тему.",
+      "more_choice": "Расскажи ещё!",
+      "no_magic": "Я поделюсь тем, что знаю, простыми словами."
+    },
+    "en": {
+      "greeting": "Hello, little explorer! I am a living planet. What would you like to know?",
+      "group_intro": "I know many stories. Choose a question!",
+      "again": "What shall we explore next?",
+      "back": "Choose another world of knowledge.",
+      "misunderstood": "I don't understand yet. Try one of the questions.",
+      "finished": "Learning together is wonderful!",
+      "back_choice": "Let's change the subject.",
+      "more_choice": "Tell me more!",
+      "no_magic": "I'll share what I know in simple words."
+    },
+    "fr": {
+      "greeting": "Bonjour, petit explorateur ! Je suis une planète vivante. Que veux-tu savoir ?",
+      "group_intro": "Choisis une question !",
+      "again": "Que veux-tu apprendre ensuite ?",
+      "back": "Choisis un autre sujet.",
+      "misunderstood": "Je n'ai pas compris. Essaie une question.",
+      "finished": "C'est merveilleux d'apprendre ensemble !",
+      "back_choice": "Changeons de sujet.",
+      "more_choice": "Raconte-moi encore !"
+    },
+    "de": {
+      "greeting": "Hallo, kleiner Entdecker! Ich bin ein lebender Planet. Was möchtest du wissen?",
+      "group_intro": "Wähle eine Frage!",
+      "again": "Was möchtest du als Nächstes wissen?",
+      "back": "Wähle ein anderes Thema.",
+      "misunderstood": "Das habe ich noch nicht verstanden. Versuch eine Frage.",
+      "finished": "Gemeinsam lernen macht Spaß!",
+      "back_choice": "Ein anderes Thema, bitte.",
+      "more_choice": "Erzähl mir mehr!"
+    },
+    "es": {
+      "greeting": "¡Hola, pequeño explorador! Soy un planeta vivo. ¿Qué quieres aprender?",
+      "group_intro": "¡Elige una pregunta!",
+      "again": "¿Qué quieres saber ahora?",
+      "back": "Elige otro tema.",
+      "misunderstood": "Todavía no entiendo. Prueba una pregunta.",
+      "finished": "¡Aprender juntos es maravilloso!",
+      "back_choice": "Cambiemos de tema.",
+      "more_choice": "¡Cuéntame más!"
+    },
+    "pt_BR": {
+      "greeting": "Olá, pequeno explorador! Sou um planeta vivo. O que quer aprender?",
+      "group_intro": "Escolha uma pergunta!",
+      "again": "O que quer descobrir agora?",
+      "back": "Escolha outro assunto.",
+      "misunderstood": "Ainda não entendi. Experimente uma pergunta.",
+      "finished": "Aprender juntos é maravilhoso!",
+      "back_choice": "Vamos mudar de assunto.",
+      "more_choice": "Conte mais!"
+    }
+  },
+  "notes": "12 editorial-reviewed themes authored for ages 3–5; 3 alternative Russian/English questions and 3 concise Russian/English answers per topic. FR/DE/ES/PT-BR have primary question per topic and localized control text; science answers temporarily fall back to English.",
+  "expansion": {
+    "pack_version": "v95-48-topics",
+    "base_original_topic_count": 12,
+    "added_topics": 36,
+    "total_topics": 48,
+    "compatible_engine": "planet_hub/scripts/crossroads_encyclopedia.gd from v94",
+    "answer_languages": [
+      "ru",
+      "en"
+    ],
+    "primary_question_languages": [
+      "ru",
+      "en",
+      "fr",
+      "de",
+      "es",
+      "pt_BR"
+    ],
+    "note": "Original 12 topics are preserved byte-for-byte as JSON values; no migration of child progress."
+  }
+}
