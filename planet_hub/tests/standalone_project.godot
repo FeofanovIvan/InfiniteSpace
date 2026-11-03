@@ -1,0 +1,30 @@
+; Small standalone Godot project for reviewing the original representative dialog.
+; The full InfiniteSpace project is not required for this preview.
+config_version=5
+
+[application]
+
+config/name="MIKA — Representative Dialogue Preview"
+run/main_scene="res://planet_hub/tests/representative_dialog_preview.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[autoload]
+
+MobileLocale="*res://scripts/MobileLocale.gd"
+ChildProfileStore="*res://planet_hub/scripts/child_profile_store.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
