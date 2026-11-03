@@ -67,7 +67,7 @@ static func score(typed: String, reference: String) -> int:
 		return NO_MATCH
 	if _negative_set(cleaned_input) != _negative_set(cleaned_reference):
 		return NO_MATCH
-	var allowed: int = _budget(mini(a.length(), b.length()))
+	var allowed: int = _budget(maxi(a.length(), b.length())) if mini(a.length(), b.length()) >= 4 else 0
 	if allowed == 0 or absi(a.length() - b.length()) > allowed:
 		return NO_MATCH
 	# Optimal string-alignment edit distance: deletion, insertion,
