@@ -1,0 +1,706 @@
+{
+  "schema_version": 1,
+  "entity_id": "crossroads_core",
+  "entity_name": {
+    "ru": "Живая планета",
+    "en": "Living World"
+  },
+  "age_target": "3-5",
+  "offline": true,
+  "groups": [
+    {
+      "id": "care",
+      "label": {
+        "ru": "Забота о мире",
+        "en": "Care for our world",
+        "fr": "Prendre soin du monde",
+        "de": "Die Welt schützen",
+        "es": "Cuidar nuestro mundo",
+        "pt_BR": "Cuidar do mundo"
+      },
+      "prompt": {
+        "ru": "Как беречь наш мир?",
+        "en": "How can we care for our world?",
+        "fr": "Comment protéger notre monde ?",
+        "de": "Wie schützen wir unsere Welt?",
+        "es": "¿Cómo cuidamos nuestro mundo?",
+        "pt_BR": "Como cuidar do nosso mundo?"
+      },
+      "topic_ids": [
+        "sorting",
+        "ancestors",
+        "resources",
+        "waste"
+      ]
+    },
+    {
+      "id": "science",
+      "label": {
+        "ru": "Маленькая наука",
+        "en": "Little science",
+        "fr": "Petite science",
+        "de": "Kleine Wissenschaft",
+        "es": "Pequeña ciencia",
+        "pt_BR": "Pequena ciência"
+      },
+      "prompt": {
+        "ru": "Как всё устроено?",
+        "en": "How do things work?",
+        "fr": "Comment fonctionnent les choses ?",
+        "de": "Wie funktionieren die Dinge?",
+        "es": "¿Cómo funcionan las cosas?",
+        "pt_BR": "Como as coisas funcionam?"
+      },
+      "topic_ids": [
+        "molecules",
+        "magnets",
+        "gravity",
+        "electricity"
+      ]
+    },
+    {
+      "id": "universe",
+      "label": {
+        "ru": "Тайны Вселенной",
+        "en": "Mysteries of the universe",
+        "fr": "Mystères de l'univers",
+        "de": "Geheimnisse des Universums",
+        "es": "Misterios del universo",
+        "pt_BR": "Mistérios do universo"
+      },
+      "prompt": {
+        "ru": "Что скрывает Вселенная?",
+        "en": "What does the universe hide?",
+        "fr": "Quels secrets cache l'univers ?",
+        "de": "Welche Geheimnisse hat das Universum?",
+        "es": "¿Qué secretos guarda el universo?",
+        "pt_BR": "Que segredos o universo guarda?"
+      },
+      "topic_ids": [
+        "neurons",
+        "space",
+        "phase_changes",
+        "states"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "sorting",
+      "group": "care",
+      "title": {
+        "ru": "Сортировка мусора",
+        "en": "Sorting waste"
+      },
+      "questions": {
+        "ru": [
+          "Зачем сортировать мусор?",
+          "Почему мусор кладут в разные баки?",
+          "Куда положить бумагу?"
+        ],
+        "en": [
+          "Why do we sort rubbish?",
+          "Why do we use different bins?",
+          "Where does paper go?"
+        ],
+        "fr": [
+          "Pourquoi trie-t-on les déchets ?"
+        ],
+        "de": [
+          "Warum trennen wir Müll?"
+        ],
+        "es": [
+          "¿Por qué separamos la basura?"
+        ],
+        "pt_BR": [
+          "Por que separamos o lixo?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Бумагу, стекло и другой мусор часто кладут отдельно. Так часть вещей можно переработать и сделать из них новые вещи.",
+          "Посмотри на коробку из бумаги. Её иногда можно превратить в новую коробку, если положить в нужный контейнер.",
+          "Разные баки помогают отделить материалы друг от друга. Но сначала узнай, какие правила сортировки есть у вас дома."
+        ],
+        "en": [
+          "We often put paper, glass and other rubbish in different bins. Some materials can become useful new things.",
+          "Think of a paper box. It can sometimes become another box when we place it in the correct recycling bin.",
+          "Different bins help separate materials. Ask a grown-up how recycling works where you live."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "ancestors",
+      "group": "care",
+      "title": {
+        "ru": "Предки и память семьи",
+        "en": "Ancestors and family memories"
+      },
+      "questions": {
+        "ru": [
+          "Кто такие предки?",
+          "Как помнить предков?",
+          "Зачем хранить семейные истории?"
+        ],
+        "en": [
+          "Who are our ancestors?",
+          "How can we remember our ancestors?",
+          "Why do family stories matter?"
+        ],
+        "fr": [
+          "Qui sont nos ancêtres ?"
+        ],
+        "de": [
+          "Wer sind unsere Vorfahren?"
+        ],
+        "es": [
+          "¿Quiénes fueron nuestros antepasados?"
+        ],
+        "pt_BR": [
+          "Quem foram nossos antepassados?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Предки — это люди, которые жили до нас, например прабабушки и прадедушки. Мы можем беречь память о них.",
+          "Фотографии и семейные истории помогают помнить тех, кто жил раньше. Можно спросить близкого взрослого о прошлом семьи.",
+          "Забота о памяти предков — это уважение к их жизни и истории. А живым старшим мы можем помогать и слушать их рассказы."
+        ],
+        "en": [
+          "Ancestors are people who lived before us, like great-grandparents. We can remember their stories.",
+          "Photos and family stories help us remember people from long ago. You can ask a trusted grown-up about family history.",
+          "Caring for our ancestors' memory means respecting their lives. We can also help older people who are with us today."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "resources",
+      "group": "care",
+      "title": {
+        "ru": "Ресурсы",
+        "en": "Resources"
+      },
+      "questions": {
+        "ru": [
+          "Что такое ресурсы?",
+          "Зачем беречь воду?",
+          "Почему нельзя тратить всё зря?"
+        ],
+        "en": [
+          "What are resources?",
+          "Why should we save water?",
+          "Why should we avoid waste?"
+        ],
+        "fr": [
+          "Pourquoi économiser l'eau ?"
+        ],
+        "de": [
+          "Warum sparen wir Wasser?"
+        ],
+        "es": [
+          "¿Por qué cuidamos el agua?"
+        ],
+        "pt_BR": [
+          "Por que economizamos água?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Вода, дерево и энергия помогают нам жить. Они важны, поэтому лучше брать только столько, сколько нужно.",
+          "Когда мы закрываем кран, вода не течёт зря. Маленькие добрые привычки помогают природе.",
+          "Ресурсы — это то, что мы используем: воду, свет, материалы. Бережное отношение помогает оставить их другим."
+        ],
+        "en": [
+          "Water, wood and energy help us live. They matter, so we should use only what we need.",
+          "Turning off a tap stops water from running for no reason. Small habits can help nature.",
+          "Resources are things we use: water, electricity and materials. Using them carefully helps everyone."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "waste",
+      "group": "care",
+      "title": {
+        "ru": "Отходы",
+        "en": "Waste and reuse"
+      },
+      "questions": {
+        "ru": [
+          "Что такое отходы?",
+          "Можно ли использовать вещи снова?",
+          "Что сделать со старой коробкой?"
+        ],
+        "en": [
+          "What is waste?",
+          "Can we use things again?",
+          "What can we do with an old box?"
+        ],
+        "fr": [
+          "Peut-on réutiliser les objets ?"
+        ],
+        "de": [
+          "Kann man Dinge wiederverwenden?"
+        ],
+        "es": [
+          "¿Podemos reutilizar cosas?"
+        ],
+        "pt_BR": [
+          "Podemos reutilizar as coisas?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Отходы — это вещи, которые нам больше не нужны. Иногда их можно использовать снова или переработать.",
+          "Пустая коробка может стать игрушечным домиком. Не всё старое нужно сразу выбрасывать.",
+          "Когда вещь сломалась, взрослый может помочь её починить. А то, что уже нельзя использовать, отправляют в подходящее место."
+        ],
+        "en": [
+          "Waste is stuff we no longer need. Sometimes we can reuse or recycle it.",
+          "An empty box can become a toy house. Not everything old needs to be thrown away.",
+          "When something breaks, a grown-up might help repair it. Things we cannot use can go in the proper bin."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "molecules",
+      "group": "science",
+      "title": {
+        "ru": "Молекулы",
+        "en": "Molecules"
+      },
+      "questions": {
+        "ru": [
+          "Что такое молекулы?",
+          "Из чего состоят вещи?",
+          "Молекулы маленькие?"
+        ],
+        "en": [
+          "What are molecules?",
+          "What are things made of?",
+          "Are molecules tiny?"
+        ],
+        "fr": [
+          "Qu'est-ce qu'une molécule ?"
+        ],
+        "de": [
+          "Was ist ein Molekül?"
+        ],
+        "es": [
+          "¿Qué es una molécula?"
+        ],
+        "pt_BR": [
+          "O que é uma molécula?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Многие вещи состоят из очень-очень маленьких частиц — атомов и молекул. Глазами по одной их не увидеть.",
+          "Представь крошечные невидимые детали. Из таких частиц устроены вода, воздух и множество вещей вокруг.",
+          "В капельке воды есть огромное число молекул воды. Даже маленькая капля состоит из множества частиц."
+        ],
+        "en": [
+          "Many things are made of tiny particles called atoms and molecules. We cannot see one with our eyes.",
+          "Imagine tiny invisible building pieces. Water, air and many things around us contain such particles.",
+          "A drop of water contains lots and lots of water molecules. Even a tiny drop has many particles."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "magnets",
+      "group": "science",
+      "title": {
+        "ru": "Магниты",
+        "en": "Magnets"
+      },
+      "questions": {
+        "ru": [
+          "Как работает магнит?",
+          "Что притягивает магнит?",
+          "Почему магниты липнут друг к другу?"
+        ],
+        "en": [
+          "How does a magnet work?",
+          "What can a magnet pull?",
+          "Why do magnets stick together?"
+        ],
+        "fr": [
+          "Comment marche un aimant ?"
+        ],
+        "de": [
+          "Wie funktioniert ein Magnet?"
+        ],
+        "es": [
+          "¿Cómo funciona un imán?"
+        ],
+        "pt_BR": [
+          "Como funciona um ímã?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Магнит может притянуть железную скрепку без верёвочки. Но он притягивает не все металлы.",
+          "У магнитов есть невидимое магнитное поле. Оно помогает им притягивать некоторые предметы.",
+          "Два магнита иногда притягиваются, а иногда отталкиваются. Всё зависит от того, какими сторонами их повернуть."
+        ],
+        "en": [
+          "A magnet can pull an iron paper clip without a string. But it does not pull every metal.",
+          "Magnets have an invisible magnetic field. It can attract certain objects.",
+          "Two magnets can pull together or push apart. It depends on which ends face each other."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "gravity",
+      "group": "science",
+      "title": {
+        "ru": "Гравитация",
+        "en": "Gravity"
+      },
+      "questions": {
+        "ru": [
+          "Что такое гравитация?",
+          "Почему мяч падает вниз?",
+          "Почему мы не улетаем с Земли?"
+        ],
+        "en": [
+          "What is gravity?",
+          "Why does a ball fall down?",
+          "Why don't we float off Earth?"
+        ],
+        "fr": [
+          "Qu'est-ce que la gravité ?"
+        ],
+        "de": [
+          "Was ist Schwerkraft?"
+        ],
+        "es": [
+          "¿Qué es la gravedad?"
+        ],
+        "pt_BR": [
+          "O que é a gravidade?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Земля притягивает нас и предметы к себе. Эта невидимая сила называется гравитацией.",
+          "Когда ты отпускаешь мяч, он падает. Его притягивает Земля — так действует гравитация.",
+          "Гравитация помогает нам стоять на земле. Она также притягивает Луну к Земле."
+        ],
+        "en": [
+          "Earth pulls us and other things toward it. That invisible pull is called gravity.",
+          "When you let go of a ball, it falls. Earth pulls it down with gravity.",
+          "Gravity helps us stay on the ground. It also pulls the Moon toward Earth."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "electricity",
+      "group": "science",
+      "title": {
+        "ru": "Электричество",
+        "en": "Electricity"
+      },
+      "questions": {
+        "ru": [
+          "Что такое электричество?",
+          "Почему лампа светится?",
+          "Откуда берётся свет в лампе?"
+        ],
+        "en": [
+          "What is electricity?",
+          "Why does a lamp shine?",
+          "How does a lamp get power?"
+        ],
+        "fr": [
+          "Qu'est-ce que l'électricité ?"
+        ],
+        "de": [
+          "Was ist Elektrizität?"
+        ],
+        "es": [
+          "¿Qué es la electricidad?"
+        ],
+        "pt_BR": [
+          "O que é eletricidade?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Электричество помогает зажечь лампу и включить приборы. Это движение электрических зарядов.",
+          "Нажимаешь выключатель — и лампа светит! Ей помогает электрическая энергия.",
+          "Электричество полезно, но розетки и провода трогают только взрослые. Мы изучаем его безопасно."
+        ],
+        "en": [
+          "Electricity helps lamps shine and devices work. It is the movement of electric charges.",
+          "Flip a switch and a lamp lights up! Electrical energy makes it possible.",
+          "Electricity is helpful, but sockets and wires are for grown-ups. We learn about it safely."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "neurons",
+      "group": "universe",
+      "title": {
+        "ru": "Нейроны",
+        "en": "Neurons"
+      },
+      "questions": {
+        "ru": [
+          "Что такое нейроны?",
+          "Как мозг разговаривает с телом?",
+          "Как мы чувствуем прикосновение?"
+        ],
+        "en": [
+          "What are neurons?",
+          "How does the brain talk to the body?",
+          "How can we feel a touch?"
+        ],
+        "fr": [
+          "Qu'est-ce qu'un neurone ?"
+        ],
+        "de": [
+          "Was ist eine Nervenzelle?"
+        ],
+        "es": [
+          "¿Qué es una neurona?"
+        ],
+        "pt_BR": [
+          "O que é um neurônio?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Нейроны — это маленькие клетки, которые передают сигналы в мозге и теле. Они помогают нам чувствовать и двигаться.",
+          "Когда ты трогаешь мягкую игрушку, сигналы бегут по нервам к мозгу. Так ты узнаёшь, что она мягкая.",
+          "В мозге много нейронов. Они передают друг другу сообщения и помогают нам учиться новому."
+        ],
+        "en": [
+          "Neurons are tiny cells that send messages in our brain and body. They help us feel and move.",
+          "When you touch a soft toy, nerve signals reach your brain. That helps you know it feels soft.",
+          "Your brain has lots of neurons. They send messages to each other and help you learn."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "space",
+      "group": "universe",
+      "title": {
+        "ru": "Космос",
+        "en": "Space"
+      },
+      "questions": {
+        "ru": [
+          "Что такое космос?",
+          "Что мы видим среди звёзд?",
+          "Земля живёт в космосе?"
+        ],
+        "en": [
+          "What is space?",
+          "What can we see among the stars?",
+          "Is Earth in space?"
+        ],
+        "fr": [
+          "Qu'est-ce que l'espace ?"
+        ],
+        "de": [
+          "Was ist das Weltall?"
+        ],
+        "es": [
+          "¿Qué es el espacio?"
+        ],
+        "pt_BR": [
+          "O que é o espaço?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Космос очень большой. В нём есть звёзды, планеты, луны и много удивительного.",
+          "Земля — планета в космосе. Солнце — наша звезда, а Луна — спутник Земли.",
+          "Ночью мы видим свет далёких звёзд. Они находятся очень-очень далеко от нас."
+        ],
+        "en": [
+          "Space is enormous. It holds stars, planets, moons and many amazing things.",
+          "Earth is a planet in space. The Sun is our star, and the Moon goes around Earth.",
+          "At night we can see light from faraway stars. They are very, very far away."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    },
+    {
+      "id": "phase_changes",
+      "group": "universe",
+      "title": {
+        "ru": "Превращения вещества",
+        "en": "Changing states"
+      },
+      "questions": {
+        "ru": [
+          "Почему лёд тает?",
+          "Как вода становится паром?",
+          "Может ли вода замёрзнуть?"
+        ],
+        "en": [
+          "Why does ice melt?",
+          "How can water become vapor?",
+          "Can water freeze?"
+        ],
+        "fr": [
+          "Pourquoi la glace fond-elle ?"
+        ],
+        "de": [
+          "Warum schmilzt Eis?"
+        ],
+        "es": [
+          "¿Por qué se derrite el hielo?"
+        ],
+        "pt_BR": [
+          "Por que o gelo derrete?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Когда лёд нагревается, он тает и превращается в воду. А вода на холоде может снова стать льдом.",
+          "Вода может медленно превращаться в невидимый водяной пар. Это называется испарением.",
+          "В нашем волшебном мире фазовые существа меняют форму. Настоящие вещества тоже могут переходить из одного состояния в другое."
+        ],
+        "en": [
+          "When ice warms up, it melts into water. When water gets cold enough, it can freeze into ice.",
+          "Water can slowly turn into invisible water vapor. This is called evaporation.",
+          "In our fantasy world, phase beings can change shape. Real materials can also change from one state to another."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": true
+    },
+    {
+      "id": "states",
+      "group": "universe",
+      "title": {
+        "ru": "Состояния вещества",
+        "en": "States of matter"
+      },
+      "questions": {
+        "ru": [
+          "Какие бывают состояния вещества?",
+          "Чем лёд отличается от воды?",
+          "Что такое газ?"
+        ],
+        "en": [
+          "What are the states of matter?",
+          "How is ice different from water?",
+          "What is a gas?"
+        ],
+        "fr": [
+          "Quels sont les états de la matière ?"
+        ],
+        "de": [
+          "Welche Aggregatzustände gibt es?"
+        ],
+        "es": [
+          "¿Cuáles son los estados de la materia?"
+        ],
+        "pt_BR": [
+          "Quais são os estados da matéria?"
+        ]
+      },
+      "answers": {
+        "ru": [
+          "Лёд твёрдый, вода жидкая, а водяной пар — газ. Это разные состояния одного вещества.",
+          "Твёрдый кубик держит форму. Жидкая вода течёт. Газ может заполнить всё доступное пространство.",
+          "Представь лёд, воду и невидимый пар. Одно вещество может быть твёрдым, жидким или газообразным."
+        ],
+        "en": [
+          "Ice is solid, water is liquid, and water vapor is gas. These are different states of the same substance.",
+          "A solid block keeps its shape. Liquid water flows. Gas can spread to fill a space.",
+          "Think of ice, water and invisible vapor. One substance can be solid, liquid or gas."
+        ]
+      },
+      "reading_level": "age_3_5",
+      "fiction_marker": false
+    }
+  ],
+  "ui": {
+    "ru": {
+      "greeting": "Привет, маленький исследователь! Я живая планета. Что ты хочешь узнать?",
+      "group_intro": "Я знаю много историй. Выбирай вопрос!",
+      "again": "А теперь о чём спросишь?",
+      "back": "Выбери другой раздел знаний.",
+      "misunderstood": "Я пока не поняла вопрос. Попробуй один из вариантов.",
+      "finished": "Как здорово учиться вместе!",
+      "back_choice": "Давай другую тему.",
+      "more_choice": "Расскажи ещё!",
+      "no_magic": "Я поделюсь тем, что знаю, простыми словами."
+    },
+    "en": {
+      "greeting": "Hello, little explorer! I am a living planet. What would you like to know?",
+      "group_intro": "I know many stories. Choose a question!",
+      "again": "What shall we explore next?",
+      "back": "Choose another world of knowledge.",
+      "misunderstood": "I don't understand yet. Try one of the questions.",
+      "finished": "Learning together is wonderful!",
+      "back_choice": "Let's change the subject.",
+      "more_choice": "Tell me more!",
+      "no_magic": "I'll share what I know in simple words."
+    },
+    "fr": {
+      "greeting": "Bonjour, petit explorateur ! Je suis une planète vivante. Que veux-tu savoir ?",
+      "group_intro": "Choisis une question !",
+      "again": "Que veux-tu apprendre ensuite ?",
+      "back": "Choisis un autre sujet.",
+      "misunderstood": "Je n'ai pas compris. Essaie une question.",
+      "finished": "C'est merveilleux d'apprendre ensemble !",
+      "back_choice": "Changeons de sujet.",
+      "more_choice": "Raconte-moi encore !"
+    },
+    "de": {
+      "greeting": "Hallo, kleiner Entdecker! Ich bin ein lebender Planet. Was möchtest du wissen?",
+      "group_intro": "Wähle eine Frage!",
+      "again": "Was möchtest du als Nächstes wissen?",
+      "back": "Wähle ein anderes Thema.",
+      "misunderstood": "Das habe ich noch nicht verstanden. Versuch eine Frage.",
+      "finished": "Gemeinsam lernen macht Spaß!",
+      "back_choice": "Ein anderes Thema, bitte.",
+      "more_choice": "Erzähl mir mehr!"
+    },
+    "es": {
+      "greeting": "¡Hola, pequeño explorador! Soy un planeta vivo. ¿Qué quieres aprender?",
+      "group_intro": "¡Elige una pregunta!",
+      "again": "¿Qué quieres saber ahora?",
+      "back": "Elige otro tema.",
+      "misunderstood": "Todavía no entiendo. Prueba una pregunta.",
+      "finished": "¡Aprender juntos es maravilloso!",
+      "back_choice": "Cambiemos de tema.",
+      "more_choice": "¡Cuéntame más!"
+    },
+    "pt_BR": {
+      "greeting": "Olá, pequeno explorador! Sou um planeta vivo. O que quer aprender?",
+      "group_intro": "Escolha uma pergunta!",
+      "again": "O que quer descobrir agora?",
+      "back": "Escolha outro assunto.",
+      "misunderstood": "Ainda não entendi. Experimente uma pergunta.",
+      "finished": "Aprender juntos é maravilhoso!",
+      "back_choice": "Vamos mudar de assunto.",
+      "more_choice": "Conte mais!"
+    }
+  },
+  "notes": "12 editorial-reviewed themes authored for ages 3–5; 3 alternative Russian/English questions and 3 concise Russian/English answers per topic. FR/DE/ES/PT-BR have primary question per topic and localized control text; science answers temporarily fall back to English."
+}

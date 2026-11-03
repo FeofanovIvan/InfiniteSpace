@@ -1,4 +1,5 @@
 extends Control
+const LivingWorldScene = preload("res://living_world_storm_2d/living_world_storm_2d.tscn")
 ## v60: character LEFT HALF, full-height translator RIGHT HALF.
 ## No duplicate title, no inset tiny tablet; one native fullscreen chat scene.
 signal return_requested
@@ -13,12 +14,21 @@ var _background: Texture2D
 var _back_button: Button
 var _setup: bool = false
 var _current_planet_id: String = ""
+var _living_layer: Control
+var _living_world: Node2D
 
 func configure_for_planet(planet_id: String, _planet_name: String, background_path: String, portrait_path: String) -> void:
 	_current_planet_id = planet_id
 	planet_background = background_path
 	if character != null:
+		character.visible = planet_id != "crossroads_core"
 		character.set("portrait_path", portrait_path)
+	if _living_layer != null:
+		_living_layer.visible = planet_id == "crossroads_core"
+		_living_layer.process_mode = Node.PROCESS_MODE_ALWAYS if planet_id == "crossroads_core" else Node.PROCESS_MODE_DISABLED
+		if planet_id == "crossroads_core":
+			_ensure_living_world()
+			_layout_ui()
 	if tablet != null and tablet.has_method("configure_for_world"):
 		tablet.call("configure_for_world", planet_id)
 	queue_redraw()
@@ -46,11 +56,33 @@ func _ready() -> void:
 	_back_button.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
 	add_child(_back_button)
 	_back_button.pressed.connect(_go_back)
+	# Living World uses its existing animated liquid planet, not a human silhouette.
+	_living_layer = Control.new()
+	_living_layer.name = "LivingWorldEncyclopediaVisual"
+	_living_layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_living_layer.clip_contents = true
+	add_child(_living_layer)
+	move_child(_living_layer, character.get_index() + 1)
+	_living_layer.visible = _current_planet_id == "crossroads_core"
+	_living_layer.process_mode = Node.PROCESS_MODE_DISABLED
+	if tablet != null and tablet.has_signal("message_sent"):
+		tablet.connect("message_sent", Callable(self, "_on_living_world_message"))
 	# The hint is integrated inside the tablet above the on-screen keyboard.
 	hint.visible = false
 	_setup = true
 	resized.connect(_layout_ui)
 	_layout_ui()
+
+func _ensure_living_world() -> void:
+	if _living_world != null or _living_layer == null:
+		return
+	_living_world = LivingWorldScene.instantiate() as Node2D
+	if _living_world != null:
+		_living_world.name = "AnimatedLivingWorldSpeaker"
+		_living_layer.add_child(_living_world)
+		_living_world.call("set_mood", "curious")
+		_living_world.call("set_storm_state", "communicating")
+		_living_world.call("set_storm_enabled", true)
 
 func _load_background() -> void:
 	_background = null
@@ -68,10 +100,23 @@ func _layout_ui() -> void:
 	character.size = Vector2(split - 16, h * 0.965)
 	tablet.position = Vector2(split, 0)
 	tablet.size = Vector2(w - split, h)
+	if _living_layer != null:
+		_living_layer.position = Vector2.ZERO
+		_living_layer.size = Vector2(split, h)
+	if _living_world != null:
+		_living_world.position = Vector2(split * 0.5, h * 0.50)
+		_living_world.call("update_diameter", clampf(minf(split * 0.48, h * 0.36), 145.0, 350.0))
 	_back_button.position = Vector2(maxf(10, w * 0.009), maxf(10, h * 0.018))
 	_back_button.size = Vector2(clampf(w * 0.05, 45, 68), clampf(h * 0.09, 42, 64))
 	_back_button.move_to_front()
 	queue_redraw()
+
+func _on_living_world_message(_text: String) -> void:
+	if _current_planet_id != "crossroads_core" or _living_world == null:
+		return
+	_living_world.call("set_mood", "curious")
+	_living_world.call("react_to_voice", 0.85)
+	_living_world.call("trigger_storm", Vector2.UP, 0.58)
 
 func _go_back() -> void:
 	if not Engine.is_editor_hint():
