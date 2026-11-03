@@ -25,6 +25,10 @@ func configure_for_planet(planet_id: String, _planet_name: String, background_pa
 		character.set("portrait_path", portrait_path)
 	if _living_layer != null:
 		_living_layer.visible = planet_id == "crossroads_core"
+		_living_layer.process_mode = Node.PROCESS_MODE_ALWAYS if planet_id == "crossroads_core" else Node.PROCESS_MODE_DISABLED
+		if planet_id == "crossroads_core":
+			_ensure_living_world()
+			_layout_ui()
 	if tablet != null and tablet.has_method("configure_for_world"):
 		tablet.call("configure_for_world", planet_id)
 	queue_redraw()
@@ -60,13 +64,7 @@ func _ready() -> void:
 	add_child(_living_layer)
 	move_child(_living_layer, character.get_index() + 1)
 	_living_layer.visible = _current_planet_id == "crossroads_core"
-	_living_world = LivingWorldScene.instantiate() as Node2D
-	if _living_world != null:
-		_living_world.name = "AnimatedLivingWorldSpeaker"
-		_living_layer.add_child(_living_world)
-		_living_world.call("set_mood", "curious")
-		_living_world.call("set_storm_state", "communicating")
-		_living_world.call("set_storm_enabled", true)
+	_living_layer.process_mode = Node.PROCESS_MODE_DISABLED
 	if tablet != null and tablet.has_signal("message_sent"):
 		tablet.connect("message_sent", Callable(self, "_on_living_world_message"))
 	# The hint is integrated inside the tablet above the on-screen keyboard.
@@ -74,6 +72,17 @@ func _ready() -> void:
 	_setup = true
 	resized.connect(_layout_ui)
 	_layout_ui()
+
+func _ensure_living_world() -> void:
+	if _living_world != null or _living_layer == null:
+		return
+	_living_world = LivingWorldScene.instantiate() as Node2D
+	if _living_world != null:
+		_living_world.name = "AnimatedLivingWorldSpeaker"
+		_living_layer.add_child(_living_world)
+		_living_world.call("set_mood", "curious")
+		_living_world.call("set_storm_state", "communicating")
+		_living_world.call("set_storm_enabled", true)
 
 func _load_background() -> void:
 	_background = null
