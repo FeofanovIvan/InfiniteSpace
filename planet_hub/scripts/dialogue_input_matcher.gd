@@ -31,7 +31,13 @@ static func _has_digits(value: String) -> bool:
 	return false
 
 static func _negative_set(value: String) -> bool:
-	var tokens: Array = normalize(value).split(" ", false)
+	var cleaned: String = normalize(value)
+	# Punctuation normalization splits common contractions into two tokens.
+	# Treat both "don't" and "don t" as negation, never as a harmless typo.
+	for contraction in ["don t", "can t", "won t", "doesn t", "isn t", "aren t", "didn t"]:
+		if (" " + cleaned + " ").contains(" " + contraction + " "):
+			return true
+	var tokens: Array = cleaned.split(" ", false)
 	for token in tokens:
 		if NEGATORS.has(token):
 			return true
