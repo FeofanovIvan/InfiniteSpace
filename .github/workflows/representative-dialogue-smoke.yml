@@ -54,11 +54,11 @@ jobs:
       - name: Import isolated Godot preview
         run: ./godot --headless --editor --path preview --import --quit
       - name: Check world-dialogue content
-        run: ./godot --headless --path preview --script res://planet_hub/tests/dialogue_smoke.gd
+        run: timeout 45s ./godot --headless --path preview --script res://planet_hub/tests/dialogue_smoke.gd
       - name: Exercise actual dialogue scene layout and input
-        run: ./godot --headless --path preview --script res://planet_hub/tests/representative_dialog_ui_smoke.gd
+        run: timeout 45s ./godot --headless --path preview --script res://planet_hub/tests/representative_dialog_ui_smoke.gd
       - name: Validate typo tolerance and intent safety
-        run: ./godot --headless --path preview --script res://planet_hub/tests/dialogue_typing_tolerance_smoke.gd
+        run: timeout 45s ./godot --headless --path preview --script res://planet_hub/tests/dialogue_typing_tolerance_smoke.gd
       - name: Upload standalone scene project
         if: always()
         uses: actions/upload-artifact@v4
