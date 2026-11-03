@@ -89,7 +89,7 @@ func _choose_group() -> Dictionary:
 func _topic_choices() -> Array[String]:
 	# Three question strings total; after at least one answer, one is the
 	# explicit way back to the three encyclopedia categories.
-	var candidates: Array = []
+	var candidates: Array[String] = []
 	var seen: Dictionary = _progress.get("seen", {})
 	var group_topics: Array = []
 	for item in _data.get("topics", []):
@@ -115,7 +115,7 @@ func _topic_choices() -> Array[String]:
 		candidates.append(str(variants[variant_index]))
 	if room == 2:
 		candidates.append(_phrase("back_choice"))
-	return Array(candidates)
+	return candidates
 
 func _group_is_new() -> bool:
 	var seen: Dictionary = _progress.get("seen", {})
