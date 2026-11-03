@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "status": "design_only_not_wired_into_Main_or_settings",
+  "default_mode": "free_world",
+  "modes": {
+    "free_world": {
+      "label_ru": "Свободный мир",
+      "enabled_target": true,
+      "default": true,
+      "start_type": "direct_gameplay_without_story_prologue",
+      "story_missions_required": false,
+      "can_continue_after_story": true
+    },
+    "story": {
+      "label_ru": "Сюжет",
+      "enabled_target": false,
+      "default": false,
+      "start_type": "comic_cinematic_then_ordered_missions",
+      "development_status": "later",
+      "intro_reserved_for_story": true
+    }
+  },
+  "settings": {
+    "mode_selector_planned": true,
+    "should_persist_selected_mode": true,
+    "initial_ui_expose_only_free_world": true,
+    "do_not_delete_existing_intro_resources": true
+  },
+  "save_design": {
+    "status": "future_development_not_current_game_state",
+    "trigger": [
+      "after_mission_completion",
+      "after_location_change",
+      "on_exit",
+      "session_resume"
+    ],
+    "fields": [
+      "save_schema_version",
+      "selected_mode",
+      "galaxy_id",
+      "planet_or_station_id",
+      "ship_position",
+      "ship_direction",
+      "fuel_crystals",
+      "game_currency_crystals",
+      "mission_progress",
+      "story_completed",
+      "crossroads_unlocked",
+      "discovered_worlds",
+      "pet_state"
+    ],
+    "note_ru": "Кристаллы топлива и награды мини-игр — разные значения, если они разные в текущей реализации."
+  },
+  "crossroads": {
+    "entity_id": "crossroads_core",
+    "name_ru": "Перекрёсток миров — Живая планета",
+    "interaction": "talk_on_approach",
+    "landing_allowed": false,
+    "dialogue_trigger": "approach_and_press_talk",
+    "dialogue_scene_design": {
+      "background": "same_live_cosmic_background_as_flight",
+      "left": "living_world_planet_character",
+      "right": "existing_translator_tablet",
+      "character_is_the_planet": true,
+      "portrait_not_a_humanoid": true
+    },
+    "encyclopedia_path": "res://planet_hub/data/crossroads_encyclopedia_v95_48_topics.json",
+    "encyclopedia_topics": 48,
+    "groups": [
+      "care",
+      "science",
+      "universe"
+    ],
+    "unlock_design": {
+      "permanent_after_main_story_completed": true,
+      "persist_across_sessions": true,
+      "free_world_fresh_profile_access": "pending_game_design_decision",
+      "note_ru": "Нельзя делать сюжет обязательным для свободного мира; решение об открытии Перекрёстка в новом свободном профиле пока не задано."
+    }
+  },
+  "planet_game_policy": {
+    "unique_games_per_galaxy": 4,
+    "per_inhabited_planet": {
+      "min": 1,
+      "max": 2
+    },
+    "uninhabited_game": "common__pet_walk",
+    "uninhabited_only_pet_walk": true,
+    "stations": "no_games_assigned_yet",
+    "assignment_source": "res://planet_hub/data/planetary_games_draft_v1.json"
+  },
+  "implementation_safety": {
+    "changes_to_main_script": false,
+    "changes_to_settings_ui": false,
+    "changes_to_planet_hub": false,
+    "changes_to_existing_simulator": false,
+    "save_migrations": false
+  }
+}
