@@ -1,4 +1,5 @@
 extends RefCounted
+const CrossroadsEncyclopedia = preload("res://planet_hub/scripts/crossroads_encyclopedia.gd")
 ## v93: deterministic, offline, world-aware, child-friendly conversation engine.
 ## Only the SELECTED choice guides typing; validation accepts all matching intents.
 ## No onboarding form, no fabricated age/name/color. Stored locally on device.
@@ -28,6 +29,7 @@ var _current_math_topic: String = ""
 var _math_a: int = 1
 var _math_b: int = 2
 var _enabled: bool = false
+var _encyclopedia: RefCounted
 
 func _read(path: String) -> Dictionary:
 	if not FileAccess.file_exists(path):
@@ -83,6 +85,10 @@ func _profile_set(key: String, value: Variant) -> void:
 		_profile.call("remember_answer", key, value)
 
 func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
+	_encyclopedia = null
+	if target == "crossroads_core":
+		_encyclopedia = CrossroadsEncyclopedia.new()
+		return _encyclopedia.call("begin", target, locale, profile)
 	_profile = profile
 	language = locale
 	place_id = target
@@ -120,9 +126,13 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	return {"accepted": true, "npc": hello, "choices": choices.duplicate(), "available": true}
 
 func get_choices() -> Array[String]:
+	if _encyclopedia != null:
+		return _encyclopedia.call("get_choices")
 	return choices.duplicate()
 
 func get_hint(selected_index: int) -> String:
+	if _encyclopedia != null:
+		return str(_encyclopedia.call("get_hint", selected_index))
 	if selected_index >= 0 and selected_index < choices.size():
 		return choices[selected_index]
 	return ""
@@ -419,6 +429,8 @@ func _accept_personal(text: String) -> bool:
 	return false
 
 func accept(text: String) -> Dictionary:
+	if _encyclopedia != null:
+		return _encyclopedia.call("accept", text)
 	if not _enabled or _clean(text).is_empty():
 		return {"accepted": false, "npc": _ui("bad"), "choices": choices.duplicate(), "available": _enabled}
 	match stage:
