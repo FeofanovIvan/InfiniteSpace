@@ -77,7 +77,7 @@ func _draw() -> void:
 		base = bright
 	var bounds := Rect2(Vector2(size.x * 0.035, size.y * 0.045),
 		Vector2(size.x * 0.93, size.y * 0.82))
-	var shadow := _cloud_points(bounds.translated(Vector2(0, size.y * 0.035)))
+	var shadow := _cloud_points(Rect2(bounds.position + Vector2(0, size.y * 0.035), bounds.size))
 	draw_colored_polygon(shadow, Color(0.02, 0.08, 0.17, 0.40))
 	var halo := _cloud_points(bounds.grow(size.y * 0.04))
 	if chosen:
