@@ -1,0 +1,66 @@
+name: Representative dialogue scene smoke tests
+on:
+  pull_request:
+    branches:
+      - feature/v93-world-dialogues-personalization
+  workflow_dispatch:
+
+jobs:
+  godot-dialogue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Install current stable Godot 4 (Linux)
+        run: |
+          python3 - <<'PY'
+          import json, urllib.request, zipfile, os
+          req = urllib.request.Request(
+              "https://api.github.com/repos/godotengine/godot/releases/latest",
+              headers={"Accept": "application/vnd.github+json", "User-Agent": "Mika-dialogue-tests"})
+          with urllib.request.urlopen(req, timeout=30) as response:
+              release = json.load(response)
+          choices = [a for a in release.get("assets", [])
+                     if a["name"].startswith("Godot_v4.") and a["name"].endswith("_linux.x86_64.zip")]
+          if not choices:
+              raise SystemExit("Godot Linux x86_64 asset not found on latest stable release")
+          url = choices[0]["browser_download_url"]
+          print("Installing", choices[0]["name"])
+          urllib.request.urlretrieve(url, "godot.zip")
+          with zipfile.ZipFile("godot.zip") as zip_file:
+              zip_file.extractall("bin")
+          binary = [os.path.join("bin", f) for f in os.listdir("bin") if f.startswith("Godot_")][0]
+          os.chmod(binary, 0o755)
+          os.rename(binary, "godot")
+          PY
+      - name: Create isolated representative dialogue project
+        run: |
+          mkdir -p preview/planet_hub/{scripts,scenes,data,characters,tests} preview/scripts
+          cp planet_hub/tests/standalone_project.godot preview/project.godot
+          cp planet_hub/tests/PREVIEW_STANDALONE_RU.md preview/README_RU.md
+          cp planet_hub/scenes/representative_dialog.tscn preview/planet_hub/scenes/
+          cp planet_hub/scripts/{representative_dialog,dialog_character,dialog_hint,translator_tablet,dialogue_engine,child_profile_store}.gd preview/planet_hub/scripts/
+          cp planet_hub/data/{dialogue_worlds,dialogue_phrases,representatives}.json preview/planet_hub/data/
+          cp planet_hub/tests/{representative_dialog_preview.gd,representative_dialog_preview.tscn,representative_dialog_ui_smoke.gd,dialogue_smoke.gd} preview/planet_hub/tests/
+          cp scripts/MobileLocale.gd preview/scripts/
+          cp planet_hub/characters/{05_human_amara_cole,07_mold_form_archive,10_phase_crystal,01_reptile_liri,13_magnetic_ring,16_neural_historian}.png preview/planet_hub/characters/
+          mkdir -p preview/planet_hub/backgrounds
+          if test -f planet_hub/backgrounds/mw_p01.png; then
+            cp planet_hub/backgrounds/mw_p01.png preview/planet_hub/backgrounds/
+          fi
+          (cd preview && zip -qr ../MIKA_representative_dialog_v93_1.zip .)
+      - name: Import isolated Godot preview
+        run: ./godot --headless --editor --path preview --import --quit
+      - name: Check world-dialogue content
+        run: ./godot --headless --path preview --script res://planet_hub/tests/dialogue_smoke.gd
+      - name: Exercise actual dialogue scene layout and input
+        run: ./godot --headless --path preview --script res://planet_hub/tests/representative_dialog_ui_smoke.gd
+      - name: Upload standalone scene project
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: MIKA-representative-dialogue-v93-1
+          path: MIKA_representative_dialog_v93_1.zip
+          retention-days: 14
