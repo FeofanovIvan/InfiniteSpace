@@ -1,0 +1,749 @@
+{
+  "schema_version": 1,
+  "status": "planning_registry_only_no_runtime_hook",
+  "system_count": 6,
+  "unique_galaxy_games": 24,
+  "planned_game_availability_values": [
+    "existing_playtown_scene",
+    "existing_scene_requires_theme_adaptation",
+    "existing_scene_requires_mechanics_adaptation",
+    "local_v102_scene_requires_adaptation",
+    "new_game_required"
+  ],
+  "reusable_game": {
+    "id": "common__pet_walk",
+    "title_ru": "Прогулка с Бабблом",
+    "availability": "prototype_requires_integration",
+    "scene": null
+  },
+  "rules": {
+    "per_system_unique_games": 4,
+    "inhabited_planets_games_per_visit": {
+      "min": 1,
+      "max": 2
+    },
+    "uninhabited_planets_games_per_visit": 1,
+    "uninhabited_game_id": "common__pet_walk",
+    "stations_missions": "not_assigned",
+    "assignments_are_draft": true,
+    "mission_cards_cannot_be_enabled_without_scene": true
+  },
+  "systems": [
+    {
+      "id": "mw",
+      "name_ru": "Млечный Путь",
+      "race_id": "humans",
+      "inhabited_planet_ids": [
+        "mw_p01",
+        "mw_p02",
+        "mw_p03",
+        "mw_p06",
+        "mw_p07"
+      ],
+      "uninhabited_planet_ids": [
+        "mw_p04",
+        "mw_p05",
+        "mw_p08"
+      ]
+    },
+    {
+      "id": "lmc",
+      "name_ru": "Большое Магелланово Облако",
+      "race_id": "fungal_collective",
+      "inhabited_planet_ids": [
+        "lmc_p02",
+        "lmc_p03",
+        "lmc_p04"
+      ],
+      "uninhabited_planet_ids": [
+        "lmc_p01",
+        "lmc_p05",
+        "lmc_p06",
+        "lmc_p07",
+        "lmc_p08"
+      ]
+    },
+    {
+      "id": "smc",
+      "name_ru": "Малое Магелланово Облако",
+      "race_id": "phase_beings",
+      "inhabited_planet_ids": [
+        "smc_p01",
+        "smc_p02",
+        "smc_p03",
+        "smc_p05"
+      ],
+      "uninhabited_planet_ids": [
+        "smc_p04",
+        "smc_p06",
+        "smc_p07",
+        "smc_p08"
+      ]
+    },
+    {
+      "id": "ngc6822",
+      "name_ru": "Галактика Барнарда",
+      "race_id": "lizards",
+      "inhabited_planet_ids": [
+        "ngc6822_p01",
+        "ngc6822_p02",
+        "ngc6822_p03",
+        "ngc6822_p04",
+        "ngc6822_p06"
+      ],
+      "uninhabited_planet_ids": [
+        "ngc6822_p05",
+        "ngc6822_p07",
+        "ngc6822_p08"
+      ]
+    },
+    {
+      "id": "m31",
+      "name_ru": "Андромеда",
+      "race_id": "magnetic_liquid_metal",
+      "inhabited_planet_ids": [
+        "m31_p03",
+        "m31_p05",
+        "m31_p06"
+      ],
+      "uninhabited_planet_ids": [
+        "m31_p01",
+        "m31_p02",
+        "m31_p04",
+        "m31_p07",
+        "m31_p08"
+      ]
+    },
+    {
+      "id": "m33",
+      "name_ru": "Треугольник",
+      "race_id": "neurons",
+      "inhabited_planet_ids": [
+        "m33_p01",
+        "m33_p02",
+        "m33_p03",
+        "m33_p04"
+      ],
+      "uninhabited_planet_ids": [
+        "m33_p05",
+        "m33_p06",
+        "m33_p07",
+        "m33_p08"
+      ]
+    }
+  ],
+  "games": [
+    {
+      "id": "mw__puzzles",
+      "system_id": "mw",
+      "title_ru": "Puzzles",
+      "objective_ru": "Пазлы",
+      "source_scene": "res://education/playtown/scenes/features/puzzle/puzzle_game.tscn",
+      "availability": "existing_playtown_scene",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "mw__animal_habitat",
+      "system_id": "mw",
+      "title_ru": "Animal Habitat",
+      "objective_ru": "Среда обитания",
+      "source_scene": "res://education/playtown/scenes/features/animal_habitat/animal_habitat_game.tscn",
+      "availability": "existing_playtown_scene",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "mw__shopping_list",
+      "system_id": "mw",
+      "title_ru": "Shopping List",
+      "objective_ru": "Список покупок",
+      "source_scene": "res://education/playtown/scenes/features/grocery/grocery_game.tscn",
+      "availability": "existing_playtown_scene",
+      "notes": "Позже: вещи в дорогу, полезные предметы, снаряжение",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "mw__product_count",
+      "system_id": "mw",
+      "title_ru": "Product Count",
+      "objective_ru": "Подсчёт предметов",
+      "source_scene": "res://education/playtown/scenes/features/product_count/product_count_game.tscn",
+      "availability": "existing_playtown_scene",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "lmc__fungal_paths",
+      "system_id": "lmc",
+      "title_ru": "Грибные пути",
+      "objective_ru": "Проложить Бабблу путь по грибнице",
+      "source_scene": "res://education/playtown/scenes/features/path_builder/path_builder_game.tscn",
+      "availability": "existing_scene_requires_theme_adaptation",
+      "notes": "Нужна грибная сеть и Баббл",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "lmc__sunbeam_catcher",
+      "system_id": "lmc",
+      "title_ru": "Поймай солнечный луч",
+      "objective_ru": "Раскрыть листья на освещённых участках",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "lmc__eco_sort",
+      "system_id": "lmc",
+      "title_ru": "Эко-сортировка",
+      "objective_ru": "Распределить отходы по категориям",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "lmc__fungal_race",
+      "system_id": "lmc",
+      "title_ru": "Грибная гонка",
+      "objective_ru": "Рост колонии с ограниченными ресурсами",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "smc__build_molecule",
+      "system_id": "smc",
+      "title_ru": "Собери молекулу",
+      "objective_ru": "Собрать молекулу из атомов",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "smc__solutions_lab",
+      "system_id": "smc",
+      "title_ru": "Лаборатория растворов",
+      "objective_ru": "Смешивать вещества и наблюдать изменения",
+      "source_scene": "res://education/playtown/scenes/features/color_mix/color_mix_game.tscn",
+      "availability": "existing_scene_requires_mechanics_adaptation",
+      "notes": "Color Mix — смешение красок, не химические реакции",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "smc__resource_rush",
+      "system_id": "smc",
+      "title_ru": "Сбор ресурсов на скорость",
+      "objective_ru": "Быстро собрать нужные объекты",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "smc__icy_planet",
+      "system_id": "smc",
+      "title_ru": "Ледяная планета",
+      "objective_ru": "Нагрев и охлаждение за счёт ориентации к звезде",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "ngc6822__fossil_search",
+      "system_id": "ngc6822",
+      "title_ru": "Поиск древних останков",
+      "objective_ru": "Найти окаменелости, кости, артефакты",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "ngc6822__evolution_order",
+      "system_id": "ngc6822",
+      "title_ru": "Эволюция — кто за кем?",
+      "objective_ru": "Упорядочить простую последовательность развития",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "ngc6822__dinosaur_eggs",
+      "system_id": "ngc6822",
+      "title_ru": "Динозавровые яйца",
+      "objective_ru": "Сортировка яиц по виду и цвету",
+      "source_scene": "res://simulator_ui/scenes/sim_10_colorsort.tscn",
+      "availability": "local_v102_scene_requires_adaptation",
+      "notes": "Использовать механику Color Sort v102 после замены объектов на яйца",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "ngc6822__pizza_fraction",
+      "system_id": "ngc6822",
+      "title_ru": "Pizza Fraction",
+      "objective_ru": "Составить пиццу из долей",
+      "source_scene": "res://education/playtown/scenes/features/pizza_fraction/pizza_fraction_game.tscn",
+      "availability": "existing_playtown_scene",
+      "notes": "Возможная тематизация под местное блюдо",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "m31__roll_ball",
+      "system_id": "m31",
+      "title_ru": "Закати шарик",
+      "objective_ru": "Провести шарик через лабиринт",
+      "source_scene": "res://education/playtown/scenes/features/tilt_maze/tilt_maze_game.tscn",
+      "availability": "existing_playtown_scene",
+      "notes": "Нужен магнитный стиль",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "m31__magnetic_collector",
+      "system_id": "m31",
+      "title_ru": "Магнитный сборщик",
+      "objective_ru": "Управлять магнитом-манипулятором",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "m31__gravity_pinball",
+      "system_id": "m31",
+      "title_ru": "Гравитационный пинбол",
+      "objective_ru": "Гравитация меняет путь астероида",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "m31__electric_pulses",
+      "system_id": "m31",
+      "title_ru": "Электрические импульсы",
+      "objective_ru": "Повторить последовательность сигналов",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "m33__piano",
+      "system_id": "m33",
+      "title_ru": "Piano",
+      "objective_ru": "Ноты и мелодии",
+      "source_scene": "res://education/playtown/scenes/features/piano/piano_game.tscn",
+      "availability": "existing_playtown_scene",
+      "notes": "Уже используется в симуляторе",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "m33__matching_pairs",
+      "system_id": "m33",
+      "title_ru": "Matching Pairs",
+      "objective_ru": "Найти одинаковые пары карточек",
+      "source_scene": "res://education/playtown/scenes/features/matching_pairs/matching_pairs_game.tscn",
+      "availability": "existing_playtown_scene",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "m33__space_rebus",
+      "system_id": "m33",
+      "title_ru": "Space Rebus Adventures",
+      "objective_ru": "Разгадать английские ребусы",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    },
+    {
+      "id": "m33__neural_math",
+      "system_id": "m33",
+      "title_ru": "Нейронная математика",
+      "objective_ru": "Найти скрытое число в выражении",
+      "source_scene": null,
+      "availability": "new_game_required",
+      "planet_hub_connected": false
+    }
+  ],
+  "planet_assignments": {
+    "mw_p01": {
+      "system_id": "mw",
+      "inhabited": true,
+      "mission_game_ids": [
+        "mw__puzzles",
+        "mw__animal_habitat"
+      ],
+      "final_assignment": false
+    },
+    "mw_p02": {
+      "system_id": "mw",
+      "inhabited": true,
+      "mission_game_ids": [
+        "mw__shopping_list"
+      ],
+      "final_assignment": false
+    },
+    "mw_p03": {
+      "system_id": "mw",
+      "inhabited": true,
+      "mission_game_ids": [
+        "mw__product_count"
+      ],
+      "final_assignment": false
+    },
+    "mw_p06": {
+      "system_id": "mw",
+      "inhabited": true,
+      "mission_game_ids": [
+        "mw__puzzles"
+      ],
+      "final_assignment": false
+    },
+    "mw_p07": {
+      "system_id": "mw",
+      "inhabited": true,
+      "mission_game_ids": [
+        "mw__shopping_list"
+      ],
+      "final_assignment": false
+    },
+    "mw_p04": {
+      "system_id": "mw",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "mw_p05": {
+      "system_id": "mw",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "mw_p08": {
+      "system_id": "mw",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "lmc_p02": {
+      "system_id": "lmc",
+      "inhabited": true,
+      "mission_game_ids": [
+        "lmc__fungal_paths"
+      ],
+      "final_assignment": false
+    },
+    "lmc_p03": {
+      "system_id": "lmc",
+      "inhabited": true,
+      "mission_game_ids": [
+        "lmc__sunbeam_catcher",
+        "lmc__eco_sort"
+      ],
+      "final_assignment": false
+    },
+    "lmc_p04": {
+      "system_id": "lmc",
+      "inhabited": true,
+      "mission_game_ids": [
+        "lmc__fungal_race"
+      ],
+      "final_assignment": false
+    },
+    "lmc_p01": {
+      "system_id": "lmc",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "lmc_p05": {
+      "system_id": "lmc",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "lmc_p06": {
+      "system_id": "lmc",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "lmc_p07": {
+      "system_id": "lmc",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "lmc_p08": {
+      "system_id": "lmc",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "smc_p01": {
+      "system_id": "smc",
+      "inhabited": true,
+      "mission_game_ids": [
+        "smc__solutions_lab"
+      ],
+      "final_assignment": false
+    },
+    "smc_p02": {
+      "system_id": "smc",
+      "inhabited": true,
+      "mission_game_ids": [
+        "smc__build_molecule"
+      ],
+      "final_assignment": false
+    },
+    "smc_p03": {
+      "system_id": "smc",
+      "inhabited": true,
+      "mission_game_ids": [
+        "smc__resource_rush"
+      ],
+      "final_assignment": false
+    },
+    "smc_p05": {
+      "system_id": "smc",
+      "inhabited": true,
+      "mission_game_ids": [
+        "smc__icy_planet"
+      ],
+      "final_assignment": false
+    },
+    "smc_p04": {
+      "system_id": "smc",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "smc_p06": {
+      "system_id": "smc",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "smc_p07": {
+      "system_id": "smc",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "smc_p08": {
+      "system_id": "smc",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "ngc6822_p01": {
+      "system_id": "ngc6822",
+      "inhabited": true,
+      "mission_game_ids": [
+        "ngc6822__fossil_search"
+      ],
+      "final_assignment": false
+    },
+    "ngc6822_p02": {
+      "system_id": "ngc6822",
+      "inhabited": true,
+      "mission_game_ids": [
+        "ngc6822__evolution_order"
+      ],
+      "final_assignment": false
+    },
+    "ngc6822_p03": {
+      "system_id": "ngc6822",
+      "inhabited": true,
+      "mission_game_ids": [
+        "ngc6822__dinosaur_eggs"
+      ],
+      "final_assignment": false
+    },
+    "ngc6822_p04": {
+      "system_id": "ngc6822",
+      "inhabited": true,
+      "mission_game_ids": [
+        "ngc6822__pizza_fraction"
+      ],
+      "final_assignment": false
+    },
+    "ngc6822_p06": {
+      "system_id": "ngc6822",
+      "inhabited": true,
+      "mission_game_ids": [
+        "ngc6822__fossil_search"
+      ],
+      "final_assignment": false
+    },
+    "ngc6822_p05": {
+      "system_id": "ngc6822",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "ngc6822_p07": {
+      "system_id": "ngc6822",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "ngc6822_p08": {
+      "system_id": "ngc6822",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "m31_p03": {
+      "system_id": "m31",
+      "inhabited": true,
+      "mission_game_ids": [
+        "m31__roll_ball"
+      ],
+      "final_assignment": false
+    },
+    "m31_p05": {
+      "system_id": "m31",
+      "inhabited": true,
+      "mission_game_ids": [
+        "m31__magnetic_collector",
+        "m31__gravity_pinball"
+      ],
+      "final_assignment": false
+    },
+    "m31_p06": {
+      "system_id": "m31",
+      "inhabited": true,
+      "mission_game_ids": [
+        "m31__electric_pulses"
+      ],
+      "final_assignment": false
+    },
+    "m31_p01": {
+      "system_id": "m31",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "m31_p02": {
+      "system_id": "m31",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "m31_p04": {
+      "system_id": "m31",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "m31_p07": {
+      "system_id": "m31",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "m31_p08": {
+      "system_id": "m31",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "m33_p01": {
+      "system_id": "m33",
+      "inhabited": true,
+      "mission_game_ids": [
+        "m33__piano"
+      ],
+      "final_assignment": false
+    },
+    "m33_p02": {
+      "system_id": "m33",
+      "inhabited": true,
+      "mission_game_ids": [
+        "m33__matching_pairs"
+      ],
+      "final_assignment": false
+    },
+    "m33_p03": {
+      "system_id": "m33",
+      "inhabited": true,
+      "mission_game_ids": [
+        "m33__space_rebus"
+      ],
+      "final_assignment": false
+    },
+    "m33_p04": {
+      "system_id": "m33",
+      "inhabited": true,
+      "mission_game_ids": [
+        "m33__neural_math"
+      ],
+      "final_assignment": false
+    },
+    "m33_p05": {
+      "system_id": "m33",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "m33_p06": {
+      "system_id": "m33",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "m33_p07": {
+      "system_id": "m33",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    },
+    "m33_p08": {
+      "system_id": "m33",
+      "inhabited": false,
+      "mission_game_ids": [
+        "common__pet_walk"
+      ],
+      "final_assignment": false
+    }
+  }
+}
