@@ -35,9 +35,32 @@ jobs:
           os.chmod(binary, 0o755)
           os.rename(binary, "godot")
           PY
-      - name: Import Godot project
-        run: ./godot --headless --editor --path . --import --quit
+      - name: Create isolated representative dialogue project
+        run: |
+          mkdir -p preview/planet_hub/{scripts,scenes,data,characters,tests} preview/scripts
+          cp planet_hub/tests/standalone_project.godot preview/project.godot
+          cp planet_hub/tests/PREVIEW_STANDALONE_RU.md preview/README_RU.md
+          cp planet_hub/scenes/representative_dialog.tscn preview/planet_hub/scenes/
+          cp planet_hub/scripts/{representative_dialog,dialog_character,dialog_hint,translator_tablet,dialogue_engine,child_profile_store}.gd preview/planet_hub/scripts/
+          cp planet_hub/data/{dialogue_worlds,dialogue_phrases,representatives}.json preview/planet_hub/data/
+          cp planet_hub/tests/{representative_dialog_preview.gd,representative_dialog_preview.tscn,representative_dialog_ui_smoke.gd,dialogue_smoke.gd} preview/planet_hub/tests/
+          cp scripts/MobileLocale.gd preview/scripts/
+          cp planet_hub/characters/{05_human_amara_cole,07_mold_form_archive,10_phase_crystal,01_reptile_liri,13_magnetic_ring,16_neural_historian}.png preview/planet_hub/characters/
+          mkdir -p preview/planet_hub/backgrounds
+          if test -f planet_hub/backgrounds/mw_p01.png; then
+            cp planet_hub/backgrounds/mw_p01.png preview/planet_hub/backgrounds/
+          fi
+          (cd preview && zip -qr ../MIKA_representative_dialog_v93_1.zip .)
+      - name: Import isolated Godot preview
+        run: ./godot --headless --editor --path preview --import --quit
       - name: Check world-dialogue content
-        run: ./godot --headless --path . --script res://planet_hub/tests/dialogue_smoke.gd
+        run: ./godot --headless --path preview --script res://planet_hub/tests/dialogue_smoke.gd
       - name: Exercise actual dialogue scene layout and input
-        run: ./godot --headless --path . --script res://planet_hub/tests/representative_dialog_ui_smoke.gd
+        run: ./godot --headless --path preview --script res://planet_hub/tests/representative_dialog_ui_smoke.gd
+      - name: Upload standalone scene project
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: MIKA-representative-dialogue-v93-1
+          path: MIKA_representative_dialog_v93_1.zip
+          retention-days: 14
