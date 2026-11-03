@@ -19,8 +19,8 @@ func configure_for_planet(planet_id: String, _planet_name: String, background_pa
 	planet_background = background_path
 	if character != null:
 		character.set("portrait_path", portrait_path)
-	if tablet != null and tablet.has_method("reset_exercise"):
-		tablet.call("reset_exercise")
+	if tablet != null and tablet.has_method("configure_for_world"):
+		tablet.call("configure_for_world", planet_id)
 	queue_redraw()
 
 func _ready() -> void:

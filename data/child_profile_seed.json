@@ -1,51 +1,17 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "storage": "user://miko_child_profile.json",
-  "demo_profile": {
-    "name": "Алися",
-    "name_cyrillic": "Алися",
-    "name_latin": "Alisya",
-    "age": 3,
-    "favorite_color": "голубой"
-  },
-  "questions": [
-    {
-      "id": "name",
-      "type": "text",
-      "ru": "Как тебя зовут?",
-      "en": "What is your name?",
-      "fr": "Comment t'appelles-tu ?",
-      "de": "Wie heißt du?",
-      "es": "¿Cómo te llamas?",
-      "pt_BR": "Como você se chama?"
-    },
-    {
-      "id": "age",
-      "type": "integer",
-      "ru": "Сколько тебе лет?",
-      "en": "How old are you?",
-      "fr": "Quel âge as-tu ?",
-      "de": "Wie alt bist du?",
-      "es": "¿Cuántos años tienes?",
-      "pt_BR": "Quantos anos você tem?"
-    },
-    {
-      "id": "favorite_color",
-      "type": "text",
-      "ru": "Какой твой любимый цвет?",
-      "en": "What is your favourite colour?",
-      "fr": "Quelle est ta couleur préférée ?",
-      "de": "Was ist deine Lieblingsfarbe?",
-      "es": "¿Cuál es tu color favorito?",
-      "pt_BR": "Qual é a sua cor favorita?"
-    }
+  "profile_initially_empty": true,
+  "required_onboarding": false,
+  "allowed_favorite_colors": [
+    "red",
+    "blue",
+    "green",
+    "yellow",
+    "orange",
+    "purple",
+    "pink",
+    "black"
   ],
-  "name_display_by_locale": {
-    "ru": "Алися",
-    "en": "Alisya",
-    "fr": "Alisya",
-    "de": "Alisya",
-    "es": "Alisya",
-    "pt_BR": "Alisya"
-  }
+  "notes": "Preferences are remembered locally only after voluntary answers during dialogue. No seeded name, age, or favorite color."
 }

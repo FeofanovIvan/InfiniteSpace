@@ -1,10 +1,13 @@
 extends Node
-## v60.1: sample answers are available immediately. NO first-run questionnaire.
-## This is local prototype data; future child onboarding is a separate feature.
+## v93: consent-light local preference store.
+## Never create a demo child's name, age, or favorite color.
+## Values are learned only after the child voluntarily types a matching phrase.
 signal profile_ready
+signal answer_learned(key: String, value: Variant)
+
 const DB_PATH: String = "user://miko_child_profile.json"
-const SEED_PATH: String = "res://data/child_profile_seed.json"
-const DEFAULT_PROFILE: Dictionary = {
+const ALLOWED_COLORS := ["red", "blue", "green", "yellow", "orange", "purple", "pink", "black"]
+const OLD_DEMO: Dictionary = {
 	"name": "Алися",
 	"name_cyrillic": "Алися",
 	"name_latin": "Alisya",
@@ -15,47 +18,22 @@ var profile: Dictionary = {}
 var questions: Array = []
 
 func _ready() -> void:
-	# Do not pause the prologue, do not create any screen or modal.
-	var seed: Dictionary = _read_json(SEED_PATH)
-	questions = seed.get("questions", []).duplicate(true)
-	var initial: Dictionary = seed.get("demo_profile", DEFAULT_PROFILE)
-	profile = DEFAULT_PROFILE.duplicate(true)
-	for key in DEFAULT_PROFILE.keys():
-		if initial.has(key):
-			profile[key] = initial[key]
-	# Keep existing data from previous attempts instead of deleting a save.
-	var previous: Dictionary = _read_json(DB_PATH)
-	var saved: Variant = previous.get("answers", {})
-	if saved is Dictionary:
+	var old: Dictionary = _read_json(DB_PATH)
+	var answers: Dictionary = old.get("answers", {})
+	if int(old.get("schema_version", 0)) >= 3 and answers is Dictionary:
 		for key in ["name", "age", "favorite_color"]:
-			if saved.has(key) and str(saved[key]).strip_edges() != "":
-				profile[key] = saved[key]
-		for key in ["name_cyrillic", "name_latin"]:
-			if saved.has(key) and str(saved[key]).strip_edges() != "":
-				profile[key] = saved[key]
-	# v60 saved only `name`; provide two scripts for the sample name.
-	var name_value: String = str(profile.get("name", "Алися"))
-	if name_value != "Алися" and str(profile.get("name_cyrillic", "")) == "Алися":
-		profile["name_cyrillic"] = name_value
-		# For customized names the future onboarding will collect transliteration.
-		# Never silently change an unfamiliar name into "Alisya".
-		profile["name_latin"] = name_value
-	profile["name"] = str(profile.get("name_cyrillic", "Алися"))
-	if profile.get("age") is String and str(profile["age"]).is_valid_int():
-		profile["age"] = int(profile["age"])
-	# Make the demo record persistent even when the child has never opened a form.
-	var payload: Dictionary = {
-		"schema_version": 2,
-		"profile_initialized": true,
-		"answers": profile.duplicate(true)
-	}
-	if previous != payload:
-		var save_file: FileAccess = FileAccess.open(DB_PATH, FileAccess.WRITE)
-		if save_file != null:
-			save_file.store_string(JSON.stringify(payload, "  "))
-			save_file.close()
-		else:
-			push_warning("Miko child demo profile could not be persisted to user://")
+			if answers.has(key):
+				_set_validated(key, answers[key])
+	elif answers is Dictionary:
+		# v60.1 persisted a fabricated profile at first run.
+		# Keep only values clearly unlike the sample: ambiguous demo data is not user input.
+		for key in ["name", "age", "favorite_color"]:
+			if answers.has(key) and str(answers[key]) != str(OLD_DEMO.get(key, "")):
+				var value: Variant = answers[key]
+				if key == "favorite_color" and str(value).to_lower() == "голубой":
+					value = "blue"
+				_set_validated(key, value)
+	_save()
 	profile_ready.emit()
 
 func _read_json(path: String) -> Dictionary:
@@ -64,15 +42,53 @@ func _read_json(path: String) -> Dictionary:
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
 	return parsed if parsed is Dictionary else {}
 
+func _set_validated(key: String, value: Variant) -> bool:
+	match key:
+		"name":
+			var nickname: String = str(value).strip_edges()
+			if nickname.length() >= 2 and nickname.length() <= 24 and not nickname.contains("\n"):
+				profile["name"] = nickname
+				return true
+		"age":
+			var age: int = int(value) if str(value).is_valid_int() else -1
+			if age >= 1 and age <= 120:
+				profile["age"] = age
+				return true
+		"favorite_color":
+			var color_id: String = str(value).to_lower().strip_edges()
+			if ALLOWED_COLORS.has(color_id):
+				profile["favorite_color"] = color_id
+				return true
+	return false
+
+func remember_answer(key: String, value: Variant) -> bool:
+	if not _set_validated(key, value):
+		return false
+	_save()
+	answer_learned.emit(key, profile[key])
+	return true
+
+func _save() -> void:
+	var file: FileAccess = FileAccess.open(DB_PATH, FileAccess.WRITE)
+	if file != null:
+		file.store_string(JSON.stringify({
+			"schema_version": 3,
+			"profile_initialized": false,
+			"answers": profile
+		}, "  "))
+		file.close()
+
 func get_answer(field: String) -> String:
 	return str(profile.get(field, ""))
 
 func get_questions() -> Array:
-	# Retained for later scripted conversations with planet representatives.
+	# Legacy method retained; no first-run questionnaire.
 	return questions.duplicate(true)
 
-func get_display_name(locale: String = "ru") -> String:
-	# Russian uses Cyrillic; the other five supported locales use Latin.
-	if locale == "ru":
-		return str(profile.get("name_cyrillic", profile.get("name", "Алися")))
-	return str(profile.get("name_latin", "Alisya"))
+func get_display_name(_locale: String = "ru") -> String:
+	return str(profile.get("name", ""))
+
+func clear_answer(field: String) -> void:
+	if profile.has(field):
+		profile.erase(field)
+		_save()

@@ -1,0 +1,782 @@
+{
+  "schema_version": 1,
+  "topics": {
+    "self": {
+      "en": [
+        "Tell me about yourself.",
+        "Who are you?",
+        "Can you introduce yourself?"
+      ],
+      "ru": [
+        "Расскажи о себе.",
+        "Кто ты?",
+        "Можешь представиться?"
+      ],
+      "fr": [
+        "Parle-moi de toi.",
+        "Qui es-tu ?",
+        "Peux-tu te présenter ?"
+      ],
+      "de": [
+        "Erzähl mir von dir.",
+        "Wer bist du?",
+        "Kannst du dich vorstellen?"
+      ],
+      "es": [
+        "Háblame de ti.",
+        "¿Quién eres?",
+        "¿Puedes presentarte?"
+      ],
+      "pt_BR": [
+        "Fale sobre você.",
+        "Quem é você?",
+        "Pode se apresentar?"
+      ]
+    },
+    "age": {
+      "en": [
+        "How old are you?",
+        "What is your age?",
+        "How long have you lived?"
+      ],
+      "ru": [
+        "Сколько тебе лет?",
+        "Какой у тебя возраст?",
+        "Как давно ты живёшь?"
+      ],
+      "fr": [
+        "Quel âge as-tu ?",
+        "Tu as quel âge ?",
+        "Depuis combien de temps vis-tu ?"
+      ],
+      "de": [
+        "Wie alt bist du?",
+        "Was ist dein Alter?",
+        "Wie lange lebst du schon?"
+      ],
+      "es": [
+        "¿Cuántos años tienes?",
+        "¿Qué edad tienes?",
+        "¿Cuánto tiempo has vivido?"
+      ],
+      "pt_BR": [
+        "Quantos anos você tem?",
+        "Qual é a sua idade?",
+        "Há quanto tempo você vive?"
+      ]
+    },
+    "race": {
+      "en": [
+        "What is your species called?",
+        "What species are you?",
+        "What is your race called?"
+      ],
+      "ru": [
+        "Как называется твоя раса?",
+        "К какой расе ты относишься?",
+        "Как называют твой народ?"
+      ],
+      "fr": [
+        "Comment s'appelle ton espèce ?",
+        "De quelle espèce es-tu ?",
+        "Comment appelle-t-on ton peuple ?"
+      ],
+      "de": [
+        "Wie heißt deine Spezies?",
+        "Zu welcher Art gehörst du?",
+        "Wie heißt dein Volk?"
+      ],
+      "es": [
+        "¿Cómo se llama tu especie?",
+        "¿De qué especie eres?",
+        "¿Cómo se llama tu pueblo?"
+      ],
+      "pt_BR": [
+        "Como se chama sua espécie?",
+        "De que espécie você é?",
+        "Como se chama seu povo?"
+      ]
+    },
+    "race_about": {
+      "en": [
+        "Tell me about your species.",
+        "What is special about your people?",
+        "How does your species live?"
+      ],
+      "ru": [
+        "Расскажи о своей расе.",
+        "Что особенного в твоём народе?",
+        "Как живёт твоя раса?"
+      ],
+      "fr": [
+        "Parle-moi de ton espèce.",
+        "Qu'a de spécial ton peuple ?",
+        "Comment vit ton espèce ?"
+      ],
+      "de": [
+        "Erzähl mir von deiner Art.",
+        "Was ist besonders an deinem Volk?",
+        "Wie lebt deine Art?"
+      ],
+      "es": [
+        "Háblame de tu especie.",
+        "¿Qué tiene de especial tu pueblo?",
+        "¿Cómo vive tu especie?"
+      ],
+      "pt_BR": [
+        "Fale sobre sua espécie.",
+        "O que seu povo tem de especial?",
+        "Como sua espécie vive?"
+      ]
+    },
+    "origin": {
+      "en": [
+        "Where are you from?",
+        "Where is your home?",
+        "Which world is your home?"
+      ],
+      "ru": [
+        "Откуда ты?",
+        "Где твой дом?",
+        "Какой мир ты называешь домом?"
+      ],
+      "fr": [
+        "D'où viens-tu ?",
+        "Où est ta maison ?",
+        "Quel monde est ton foyer ?"
+      ],
+      "de": [
+        "Woher kommst du?",
+        "Wo ist dein Zuhause?",
+        "Welche Welt ist deine Heimat?"
+      ],
+      "es": [
+        "¿De dónde eres?",
+        "¿Dónde está tu hogar?",
+        "¿Qué mundo es tu hogar?"
+      ],
+      "pt_BR": [
+        "De onde você é?",
+        "Onde fica sua casa?",
+        "Qual mundo é seu lar?"
+      ]
+    },
+    "world": {
+      "en": [
+        "Tell me about this world.",
+        "What is this planet like?",
+        "Can you describe this place?"
+      ],
+      "ru": [
+        "Расскажи об этом мире.",
+        "Какая здесь планета?",
+        "Можешь описать это место?"
+      ],
+      "fr": [
+        "Parle-moi de ce monde.",
+        "Comment est cette planète ?",
+        "Peux-tu décrire cet endroit ?"
+      ],
+      "de": [
+        "Erzähl mir von dieser Welt.",
+        "Wie ist dieser Planet?",
+        "Kannst du diesen Ort beschreiben?"
+      ],
+      "es": [
+        "Háblame de este mundo.",
+        "¿Cómo es este planeta?",
+        "¿Puedes describir este lugar?"
+      ],
+      "pt_BR": [
+        "Fale sobre este mundo.",
+        "Como é este planeta?",
+        "Pode descrever este lugar?"
+      ]
+    },
+    "ability": {
+      "en": [
+        "What can you do?",
+        "Do you have special abilities?",
+        "What makes you special?"
+      ],
+      "ru": [
+        "Что ты умеешь?",
+        "У тебя есть особые способности?",
+        "Что в тебе необычного?"
+      ],
+      "fr": [
+        "Que sais-tu faire ?",
+        "As-tu des capacités spéciales ?",
+        "Qu'as-tu de spécial ?"
+      ],
+      "de": [
+        "Was kannst du tun?",
+        "Hast du besondere Fähigkeiten?",
+        "Was macht dich besonders?"
+      ],
+      "es": [
+        "¿Qué puedes hacer?",
+        "¿Tienes habilidades especiales?",
+        "¿Qué te hace especial?"
+      ],
+      "pt_BR": [
+        "O que você sabe fazer?",
+        "Você tem habilidades especiais?",
+        "O que faz você especial?"
+      ]
+    },
+    "energy": {
+      "en": [
+        "What do you eat?",
+        "Where do you get energy?",
+        "What keeps you alive?"
+      ],
+      "ru": [
+        "Что ты ешь?",
+        "Откуда ты берёшь энергию?",
+        "Что помогает тебе жить?"
+      ],
+      "fr": [
+        "Que manges-tu ?",
+        "D'où tires-tu ton énergie ?",
+        "Qu'est-ce qui te fait vivre ?"
+      ],
+      "de": [
+        "Was isst du?",
+        "Woher bekommst du Energie?",
+        "Was hält dich am Leben?"
+      ],
+      "es": [
+        "¿Qué comes?",
+        "¿De dónde obtienes energía?",
+        "¿Qué te mantiene con vida?"
+      ],
+      "pt_BR": [
+        "O que você come?",
+        "De onde você tira energia?",
+        "O que mantém você vivo?"
+      ]
+    },
+    "work": {
+      "en": [
+        "What do you do here?",
+        "What is this building for?",
+        "What happens here?"
+      ],
+      "ru": [
+        "Что ты здесь делаешь?",
+        "Для чего нужно это сооружение?",
+        "Что здесь происходит?"
+      ],
+      "fr": [
+        "Que fais-tu ici ?",
+        "À quoi sert ce bâtiment ?",
+        "Que se passe-t-il ici ?"
+      ],
+      "de": [
+        "Was machst du hier?",
+        "Wozu dient dieses Bauwerk?",
+        "Was passiert hier?"
+      ],
+      "es": [
+        "¿Qué haces aquí?",
+        "¿Para qué sirve este edificio?",
+        "¿Qué sucede aquí?"
+      ],
+      "pt_BR": [
+        "O que você faz aqui?",
+        "Para que serve este lugar?",
+        "O que acontece aqui?"
+      ]
+    },
+    "learn": {
+      "en": [
+        "Can you teach me something?",
+        "Do you know a fun puzzle?",
+        "Can we learn together?"
+      ],
+      "ru": [
+        "Можешь научить меня чему-нибудь?",
+        "Знаешь интересную загадку?",
+        "Давай поучимся вместе?"
+      ],
+      "fr": [
+        "Peux-tu m'apprendre quelque chose ?",
+        "Connais-tu une énigme amusante ?",
+        "On peut apprendre ensemble ?"
+      ],
+      "de": [
+        "Kannst du mir etwas beibringen?",
+        "Kennst du ein Rätsel?",
+        "Können wir zusammen lernen?"
+      ],
+      "es": [
+        "¿Puedes enseñarme algo?",
+        "¿Conoces un acertijo divertido?",
+        "¿Podemos aprender juntos?"
+      ],
+      "pt_BR": [
+        "Pode me ensinar algo?",
+        "Você conhece um enigma divertido?",
+        "Podemos aprender juntos?"
+      ]
+    }
+  },
+  "ui": {
+    "ru": {
+      "hello": "Привет, исследователь!",
+      "choose": "О чём ты хочешь спросить?",
+      "thanks": "Как интересно! О чём поговорим теперь?",
+      "done": "Мы многое узнали. До следующей встречи!",
+      "bad": "Пока не понял. Попробуй ещё раз или выбери фразу.",
+      "hint": "Подсказка",
+      "you": "Ты",
+      "color_q": "Какой твой любимый цвет?",
+      "name_q": "Как мне тебя называть?",
+      "age_q": "Сколько тебе лет? Можешь не отвечать.",
+      "math_q": "Сколько будет один плюс два?",
+      "math_ok": "Верно! Один плюс два — три.",
+      "math_bad": "Попробуй ещё раз: один плюс два.",
+      "skip": "Можно не отвечать. Давай поговорим о мире!"
+    },
+    "en": {
+      "hello": "Hello, explorer!",
+      "choose": "What would you like to ask?",
+      "thanks": "How interesting! What shall we talk about next?",
+      "done": "We learned so much. See you next time!",
+      "bad": "I don't quite understand. Try again or choose a phrase.",
+      "hint": "Hint",
+      "you": "You",
+      "color_q": "What is your favorite color?",
+      "name_q": "What should I call you?",
+      "age_q": "How old are you? You can skip this.",
+      "math_q": "What is one plus two?",
+      "math_ok": "Correct! One plus two is three.",
+      "math_bad": "Try again: one plus two.",
+      "skip": "You don't have to answer. Let's talk about this world!"
+    },
+    "fr": {
+      "hello": "Bonjour, explorateur !",
+      "choose": "Que veux-tu demander ?",
+      "thanks": "Intéressant ! De quoi parlons-nous maintenant ?",
+      "done": "Nous avons beaucoup appris. À bientôt !",
+      "bad": "Je ne comprends pas encore. Réessaie.",
+      "hint": "Indice",
+      "you": "Toi",
+      "color_q": "Quelle est ta couleur préférée ?",
+      "name_q": "Comment dois-je t'appeler ?",
+      "age_q": "Quel âge as-tu ? Tu peux passer.",
+      "math_q": "Combien font un plus deux ?",
+      "math_ok": "Exact ! Un plus deux font trois.",
+      "math_bad": "Essaie encore : un plus deux.",
+      "skip": "Tu n'es pas obligé de répondre."
+    },
+    "de": {
+      "hello": "Hallo, Entdecker!",
+      "choose": "Was möchtest du fragen?",
+      "thanks": "Interessant! Worüber sprechen wir als Nächstes?",
+      "done": "Wir haben viel gelernt. Bis bald!",
+      "bad": "Ich verstehe noch nicht. Versuch es erneut.",
+      "hint": "Tipp",
+      "you": "Du",
+      "color_q": "Was ist deine Lieblingsfarbe?",
+      "name_q": "Wie soll ich dich nennen?",
+      "age_q": "Wie alt bist du? Du kannst überspringen.",
+      "math_q": "Was ist eins plus zwei?",
+      "math_ok": "Richtig! Eins plus zwei ist drei.",
+      "math_bad": "Versuch es noch einmal: eins plus zwei.",
+      "skip": "Du musst nicht antworten."
+    },
+    "es": {
+      "hello": "¡Hola, explorador!",
+      "choose": "¿Qué te gustaría preguntar?",
+      "thanks": "¡Qué interesante! ¿De qué hablamos ahora?",
+      "done": "Aprendimos mucho. ¡Hasta la próxima!",
+      "bad": "Todavía no entiendo. Inténtalo de nuevo.",
+      "hint": "Pista",
+      "you": "Tú",
+      "color_q": "¿Cuál es tu color favorito?",
+      "name_q": "¿Cómo debo llamarte?",
+      "age_q": "¿Cuántos años tienes? Puedes omitirlo.",
+      "math_q": "¿Cuánto es uno más dos?",
+      "math_ok": "¡Correcto! Uno más dos son tres.",
+      "math_bad": "Inténtalo de nuevo: uno más dos.",
+      "skip": "No tienes que responder."
+    },
+    "pt_BR": {
+      "hello": "Olá, explorador!",
+      "choose": "O que você gostaria de perguntar?",
+      "thanks": "Que interessante! Sobre o que vamos conversar agora?",
+      "done": "Aprendemos muito. Até a próxima!",
+      "bad": "Ainda não entendi. Tente de novo.",
+      "hint": "Dica",
+      "you": "Você",
+      "color_q": "Qual é sua cor favorita?",
+      "name_q": "Como devo chamar você?",
+      "age_q": "Quantos anos você tem? Pode pular.",
+      "math_q": "Quanto é um mais dois?",
+      "math_ok": "Correto! Um mais dois são três.",
+      "math_bad": "Tente novamente: um mais dois.",
+      "skip": "Você não precisa responder."
+    }
+  },
+  "colors": [
+    {
+      "id": "red",
+      "labels": {
+        "ru": "красный",
+        "en": "red",
+        "fr": "rouge",
+        "de": "rot",
+        "es": "rojo",
+        "pt_BR": "vermelho"
+      }
+    },
+    {
+      "id": "blue",
+      "labels": {
+        "ru": "синий",
+        "en": "blue",
+        "fr": "bleu",
+        "de": "blau",
+        "es": "azul",
+        "pt_BR": "azul"
+      },
+      "aliases": [
+        "голубой",
+        "голубая",
+        "light blue",
+        "bleu clair",
+        "hellblau",
+        "azul claro",
+        "azul-claro"
+      ]
+    },
+    {
+      "id": "green",
+      "labels": {
+        "ru": "зелёный",
+        "en": "green",
+        "fr": "vert",
+        "de": "grün",
+        "es": "verde",
+        "pt_BR": "verde"
+      }
+    },
+    {
+      "id": "yellow",
+      "labels": {
+        "ru": "жёлтый",
+        "en": "yellow",
+        "fr": "jaune",
+        "de": "gelb",
+        "es": "amarillo",
+        "pt_BR": "amarelo"
+      }
+    },
+    {
+      "id": "orange",
+      "labels": {
+        "ru": "оранжевый",
+        "en": "orange",
+        "fr": "orange",
+        "de": "orange",
+        "es": "naranja",
+        "pt_BR": "laranja"
+      }
+    },
+    {
+      "id": "purple",
+      "labels": {
+        "ru": "фиолетовый",
+        "en": "purple",
+        "fr": "violet",
+        "de": "lila",
+        "es": "morado",
+        "pt_BR": "roxo"
+      }
+    },
+    {
+      "id": "pink",
+      "labels": {
+        "ru": "розовый",
+        "en": "pink",
+        "fr": "rose",
+        "de": "rosa",
+        "es": "rosa",
+        "pt_BR": "rosa"
+      }
+    },
+    {
+      "id": "black",
+      "labels": {
+        "ru": "чёрный",
+        "en": "black",
+        "fr": "noir",
+        "de": "schwarz",
+        "es": "negro",
+        "pt_BR": "preto"
+      }
+    }
+  ],
+  "personal": {
+    "greeting": {
+      "en": [
+        "Hi!",
+        "Hello!",
+        "Hey!"
+      ],
+      "ru": [
+        "Привет!",
+        "Здравствуйте!",
+        "Привет-привет!"
+      ],
+      "fr": [
+        "Salut !",
+        "Bonjour !",
+        "Coucou !"
+      ],
+      "de": [
+        "Hi!",
+        "Hallo!",
+        "Guten Tag!"
+      ],
+      "es": [
+        "¡Hola!",
+        "¡Buenas!",
+        "¡Hola, amigo!"
+      ],
+      "pt_BR": [
+        "Oi!",
+        "Olá!",
+        "Oi, amigo!"
+      ]
+    },
+    "color": {
+      "en": [
+        "I like blue.",
+        "My favorite color is red.",
+        "I like green."
+      ],
+      "ru": [
+        "Мне нравится синий.",
+        "Мой любимый цвет — красный.",
+        "Мне нравится зелёный."
+      ],
+      "fr": [
+        "J'aime le bleu.",
+        "Ma couleur préférée est le rouge.",
+        "J'aime le vert."
+      ],
+      "de": [
+        "Ich mag Blau.",
+        "Meine Lieblingsfarbe ist Rot.",
+        "Ich mag Grün."
+      ],
+      "es": [
+        "Me gusta el azul.",
+        "Mi color favorito es el rojo.",
+        "Me gusta el verde."
+      ],
+      "pt_BR": [
+        "Eu gosto de azul.",
+        "Minha cor favorita é vermelho.",
+        "Eu gosto de verde."
+      ]
+    },
+    "name": {
+      "en": [
+        "Call me Mika.",
+        "You can call me explorer.",
+        "I prefer not to say."
+      ],
+      "ru": [
+        "Зови меня Мика.",
+        "Можешь звать меня исследователем.",
+        "Я не хочу говорить."
+      ],
+      "fr": [
+        "Appelle-moi Mika.",
+        "Tu peux m'appeler explorateur.",
+        "Je préfère ne pas le dire."
+      ],
+      "de": [
+        "Nenn mich Mika.",
+        "Du kannst mich Entdecker nennen.",
+        "Das möchte ich nicht sagen."
+      ],
+      "es": [
+        "Llámame Mika.",
+        "Puedes llamarme explorador.",
+        "Prefiero no decirlo."
+      ],
+      "pt_BR": [
+        "Me chame de Mika.",
+        "Pode me chamar de explorador.",
+        "Prefiro não dizer."
+      ]
+    },
+    "age": {
+      "en": [
+        "I am eight years old.",
+        "I am ten years old.",
+        "I prefer not to say."
+      ],
+      "ru": [
+        "Мне восемь лет.",
+        "Мне десять лет.",
+        "Я не хочу говорить."
+      ],
+      "fr": [
+        "J'ai huit ans.",
+        "J'ai dix ans.",
+        "Je préfère ne pas le dire."
+      ],
+      "de": [
+        "Ich bin acht Jahre alt.",
+        "Ich bin zehn Jahre alt.",
+        "Das möchte ich nicht sagen."
+      ],
+      "es": [
+        "Tengo ocho años.",
+        "Tengo diez años.",
+        "Prefiero no decirlo."
+      ],
+      "pt_BR": [
+        "Tenho oito anos.",
+        "Tenho dez anos.",
+        "Prefiro não dizer."
+      ]
+    },
+    "math": {
+      "en": [
+        "Three.",
+        "3",
+        "One plus two is three."
+      ],
+      "ru": [
+        "Три.",
+        "3",
+        "Один плюс два — три."
+      ],
+      "fr": [
+        "Trois.",
+        "3",
+        "Un plus deux font trois."
+      ],
+      "de": [
+        "Drei.",
+        "3",
+        "Eins plus zwei ist drei."
+      ],
+      "es": [
+        "Tres.",
+        "3",
+        "Uno más dos son tres."
+      ],
+      "pt_BR": [
+        "Três.",
+        "3",
+        "Um mais dois são três."
+      ]
+    }
+  },
+  "station_world": {
+    "ru": [
+      "Расскажи об этой станции.",
+      "Для чего нужна эта станция?",
+      "Что интересного на этой станции?"
+    ],
+    "en": [
+      "Tell me about this station.",
+      "What is this station for?",
+      "What is special about this station?"
+    ],
+    "fr": [
+      "Parle-moi de cette station.",
+      "À quoi sert cette station ?",
+      "Qu'a-t-elle de spécial ?"
+    ],
+    "de": [
+      "Erzähl mir von dieser Station.",
+      "Wozu dient diese Station?",
+      "Was ist besonders an dieser Station?"
+    ],
+    "es": [
+      "Háblame de esta estación.",
+      "¿Para qué sirve esta estación?",
+      "¿Qué tiene de especial esta estación?"
+    ],
+    "pt_BR": [
+      "Fale sobre esta estação.",
+      "Para que serve esta estação?",
+      "O que esta estação tem de especial?"
+    ]
+  },
+  "math_formats": {
+    "ru": "Сколько будет %d + %d?",
+    "en": "What is %d + %d?",
+    "fr": "Combien font %d + %d ?",
+    "de": "Was ist %d + %d?",
+    "es": "¿Cuánto es %d + %d?",
+    "pt_BR": "Quanto é %d + %d?"
+  },
+  "math_number_words": {
+    "2": {
+      "ru": "два",
+      "en": "two",
+      "fr": "deux",
+      "de": "zwei",
+      "es": "dos",
+      "pt_BR": "dois"
+    },
+    "3": {
+      "ru": "три",
+      "en": "three",
+      "fr": "trois",
+      "de": "drei",
+      "es": "tres",
+      "pt_BR": "três"
+    },
+    "4": {
+      "ru": "четыре",
+      "en": "four",
+      "fr": "quatre",
+      "de": "vier",
+      "es": "cuatro",
+      "pt_BR": "quatro"
+    },
+    "5": {
+      "ru": "пять",
+      "en": "five",
+      "fr": "cinq",
+      "de": "fünf",
+      "es": "cinco",
+      "pt_BR": "cinco"
+    },
+    "6": {
+      "ru": "шесть",
+      "en": "six",
+      "fr": "six",
+      "de": "sechs",
+      "es": "seis",
+      "pt_BR": "seis"
+    },
+    "7": {
+      "ru": "семь",
+      "en": "seven",
+      "fr": "sept",
+      "de": "sieben",
+      "es": "siete",
+      "pt_BR": "sete"
+    },
+    "8": {
+      "ru": "восемь",
+      "en": "eight",
+      "fr": "huit",
+      "de": "acht",
+      "es": "ocho",
+      "pt_BR": "oito"
+    }
+  }
+}
