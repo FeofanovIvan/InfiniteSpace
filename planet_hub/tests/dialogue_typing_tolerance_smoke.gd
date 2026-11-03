@@ -1,7 +1,7 @@
 extends SceneTree
 ## godot --headless --path . --script res://planet_hub/tests/dialogue_typing_tolerance_smoke.gd
 const Matcher = preload("res://planet_hub/scripts/dialogue_input_matcher.gd")
-const Engine = preload("res://planet_hub/scripts/dialogue_engine.gd")
+const DialogueEngine = preload("res://planet_hub/scripts/dialogue_engine.gd")
 const SAVE_PATH := "user://miko_dialogue_progress.json"
 var failures: int = 0
 
@@ -40,7 +40,7 @@ func _run() -> void:
 	_check(not Matcher.matches("I do not like it", ["I do like it"]), "negation must not be dropped")
 	_check(not Matcher.matches("NO", ["Go"]), "short negative is not softened")
 	_check(not Matcher.matches("What do you eat?", ["What is your name?"]), "different intents not confused")
-	var e: RefCounted = Engine.new()
+	var e: RefCounted = DialogueEngine.new()
 	e.call("begin", "m31_p03", "en")
 	_check(bool(e.call("accept", "  hELo!!! ").get("accepted", false)), "engine accepts forgiving greeting")
 	_check(str(e.get("stage")) == "choose", "engine advances only after recognized greeting")
@@ -48,12 +48,12 @@ func _run() -> void:
 	_check(not bool(wrong.get("accepted", true)), "unknown input is rejected")
 	var question: Dictionary = e.call("accept", "Tell me about your specise.")
 	_check(bool(question.get("accepted", false)), "misordered letters in race question accepted")
-	var e2: RefCounted = Engine.new()
+	var e2: RefCounted = DialogueEngine.new()
 	e2.call("begin", "m33_p01", "ru")
 	_check(bool(e2.call("accept", "  ПРИВЕТ!!! ").get("accepted", false)), "Russian greeting ignores case/punctuation")
 	var ru_question: Dictionary = e2.call("accept", "РАССКАЖИ  ОБ  ЭТОМ МИРЕ!!!")
 	_check(bool(ru_question.get("accepted", false)), "Russian world question ignores case/spaces")
-	var e3: RefCounted = Engine.new()
+	var e3: RefCounted = DialogueEngine.new()
 	e3.call("begin", "mw_p01", "en")
 	e3.call("accept", "Hello")
 	var math: Dictionary = e3.call("accept", "Can you teach me something?")
