@@ -1,5 +1,6 @@
 extends Control
-## v93.1: character and three large suggestion buttons LEFT, chat/tablet RIGHT.
+const CloudChoiceButton = preload("res://planet_hub/scripts/cloud_choice_button.gd")
+## v93.2: three floating cartoon speech clouds ABOVE the character on the left.
 ## Only the selected question is a typing hint; other meaningful input stays valid.
 signal return_requested
 @export var planet_background: String = "":
@@ -72,52 +73,30 @@ func _build_choice_dock() -> void:
 	_choice_dock = PanelContainer.new()
 	_choice_dock.name = "LeftQuestionChoices"
 	_choice_dock.mouse_filter = Control.MOUSE_FILTER_STOP
-	var panel_style := StyleBoxFlat.new()
-	panel_style.bg_color = Color(0.035, 0.075, 0.15, 0.95)
-	panel_style.border_color = Color("519bc6")
-	panel_style.set_border_width_all(2)
-	panel_style.set_corner_radius_all(17)
-	panel_style.set_content_margin_all(12)
-	_choice_dock.add_theme_stylebox_override("panel", panel_style)
+	# No box behind the choices: each cloud is free-floating.
+	_choice_dock.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
 	add_child(_choice_dock)
 	var column := VBoxContainer.new()
 	column.name = "ChoicesLayout"
 	column.add_theme_constant_override("separation", 6)
 	_choice_dock.add_child(column)
+	# The options speak for themselves; no instruction banner above the character.
 	_choice_title = Label.new()
 	_choice_title.name = "ChoiceInstruction"
-	_choice_title.add_theme_color_override("font_color", Color("d8c5a3"))
-	_choice_title.add_theme_font_size_override("font_size", 16)
-	_choice_title.clip_text = true
+	_choice_title.visible = false
 	column.add_child(_choice_title)
 	for index in range(3):
-		var button := Button.new()
+		var button: Button = CloudChoiceButton.new()
 		button.name = "QuestionOption_%d" % index
-		button.focus_mode = Control.FOCUS_NONE
 		button.size_flags_vertical = Control.SIZE_EXPAND_FILL
-		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
-		button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		button.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
 		button.pressed.connect(_on_choice_pressed.bind(index))
 		column.add_child(button)
 		_choice_buttons.append(button)
 	_choice_dock.visible = false
 
 func _style_choice_button(button: Button, selected: bool) -> void:
-	var normal := StyleBoxFlat.new()
-	normal.bg_color = Color("34496b") if selected else Color("172b4b")
-	normal.border_color = Color("f3dcb0") if selected else Color("456a91")
-	normal.set_border_width_all(2 if selected else 1)
-	normal.set_corner_radius_all(11)
-	normal.set_content_margin_all(10)
-	var hover: StyleBoxFlat = normal.duplicate() as StyleBoxFlat
-	hover.bg_color = Color("456487") if selected else Color("244667")
-	button.add_theme_stylebox_override("normal", normal)
-	button.add_theme_stylebox_override("hover", hover)
-	button.add_theme_stylebox_override("pressed", hover)
-	button.add_theme_color_override("font_color", Color("fff0d1") if selected else Color("e0eefb"))
-	button.add_theme_color_override("font_hover_color", Color.WHITE)
+	# Cream/gold Launch style when selected; pastel blue Simulator style otherwise.
+	button.set("chosen", selected)
 
 func _on_suggestions_changed(options: Array) -> void:
 	if _choice_dock == null:
@@ -130,7 +109,7 @@ func _on_suggestions_changed(options: Array) -> void:
 		var button: Button = _choice_buttons[i]
 		button.visible = i < options.size()
 		if button.visible:
-			button.text = str(options[i])
+			button.call("set_phrase", str(options[i]))
 		_style_choice_button(button, i == _selected_option)
 	_layout_ui()
 
@@ -155,18 +134,17 @@ func _layout_ui() -> void:
 	var w: float = size.x
 	var h: float = size.y
 	var split: float = w * 0.50
-	character.position = Vector2(8, h * 0.02)
-	character.size = Vector2(split - 16, h * 0.60)
+	# The character fills the lower half: the clouds hover over its head.
+	character.position = Vector2(8, h * 0.36)
+	character.size = Vector2(split - 16, h * 0.615)
 	tablet.position = Vector2(split, 0)
 	tablet.size = Vector2(w - split, h)
 	if _choice_dock != null:
-		var margin: float = maxf(12.0, split * 0.035)
-		_choice_dock.position = Vector2(margin, h * 0.635)
-		_choice_dock.size = Vector2(split - margin * 2.0, h * 0.346)
-		_choice_title.add_theme_font_size_override("font_size", clampi(roundi(h * 0.022), 12, 18))
+		var margin: float = maxf(70.0, split * 0.115)
+		_choice_dock.position = Vector2(margin, h * 0.025)
+		_choice_dock.size = Vector2(split - margin - maxf(18.0, split * 0.035), h * 0.395)
 		for button in _choice_buttons:
-			button.custom_minimum_size.y = clampf(h * 0.074, 38.0, 70.0)
-			button.add_theme_font_size_override("font_size", clampi(roundi(h * 0.026), 13, 21))
+			button.custom_minimum_size.y = clampf(h * 0.112, 57.0, 96.0)
 	_back_button.position = Vector2(maxf(10, w * 0.009), maxf(10, h * 0.018))
 	_back_button.size = Vector2(clampf(w * 0.05, 45, 68), clampf(h * 0.09, 42, 64))
 	_back_button.move_to_front()
