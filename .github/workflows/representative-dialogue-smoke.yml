@@ -64,5 +64,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: MIKA-representative-cloud-dialogue-v93-2
-          path: MIKA_representative_dialog_v93_1.zip
+          path: MIKA_representative_cloud_dialog_v93_2.zip
           retention-days: 14
