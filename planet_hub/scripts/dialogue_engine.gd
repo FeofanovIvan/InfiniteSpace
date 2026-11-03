@@ -1,4 +1,5 @@
 extends RefCounted
+const InputMatcher = preload("res://planet_hub/scripts/dialogue_input_matcher.gd")
 ## v93: deterministic, offline, world-aware, child-friendly conversation engine.
 ## Only the SELECTED choice guides typing; validation accepts all matching intents.
 ## No onboarding form, no fabricated age/name/color. Stored locally on device.
@@ -60,18 +61,10 @@ func _options(kind: String) -> Array[String]:
 	return result
 
 func _clean(value: String) -> String:
-	var text: String = value.to_lower().strip_edges()
-	for mark in ["!", "?", ".", ",", ";", ":", "¡", "¿", "…", "«", "»", "\"", "“", "”", "—", "–"]:
-		text = text.replace(mark, " ")
-	while text.contains("  "):
-		text = text.replace("  ", " ")
-	return text.strip_edges()
+	return InputMatcher.normalize(value)
 
 func _matches(text: String, candidates: Array) -> bool:
-	for item in candidates:
-		if _clean(text) == _clean(str(item)):
-			return true
-	return false
+	return InputMatcher.matches(text, candidates)
 
 func _profile_get(key: String) -> String:
 	if _profile != null and _profile.has_method("get_answer"):
@@ -128,18 +121,29 @@ func get_hint(selected_index: int) -> String:
 	return ""
 
 func _topic_for(text: String) -> String:
-	var normalized: String = _clean(text)
 	var topics: Dictionary = _words.get("topics", {})
+	var winning_intent: String = ""
+	var best_score: int = InputMatcher.NO_MATCH
+	var ambiguous: bool = false
 	for key in TOPIC_ORDER:
 		var record: Dictionary = topics.get(key, {})
 		var variants: Array = record.get(language, record.get("en", []))
 		var english: Array = record.get("en", [])
 		var station_variants: Array = _words.get("station_world", {}).get(language, []) if topic_is_station(key) else []
 		var station_english: Array = _words.get("station_world", {}).get("en", []) if topic_is_station(key) else []
+		var intent_score: int = InputMatcher.NO_MATCH
 		for candidate in variants + english + station_variants + station_english:
-			if normalized == _clean(str(candidate)):
-				return key
-	return ""
+			intent_score = mini(intent_score, InputMatcher.score(text, str(candidate)))
+		if intent_score >= InputMatcher.NO_MATCH:
+			continue
+		if intent_score < best_score:
+			winning_intent = key
+			best_score = intent_score
+			ambiguous = false
+		elif intent_score == best_score and key != winning_intent:
+			# Two similar topics: don't guess which question the child meant.
+			ambiguous = true
+	return "" if ambiguous else winning_intent
 
 func topic_is_station(key: String) -> bool:
 	return key == "world" and bool(_world.get("is_station", false))
