@@ -1,8 +1,8 @@
 name: Representative dialogue scene smoke tests
 on:
-  push:
+  pull_request:
     branches:
-      - feature/v93_1-representative-left-choices
+      - feature/v93-world-dialogues-personalization
   workflow_dispatch:
 
 jobs:
