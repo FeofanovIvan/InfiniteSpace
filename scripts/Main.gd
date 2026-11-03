@@ -83,6 +83,7 @@ var action_button
 var landing_preview
 var _planet_hub: Control
 var _representative_dialog: Control
+var _crossroads_dialog_active: bool = false
 var _planet_landing_active: bool = false
 var _landing_target_id: String = ""
 var _landing_target_name: String = ""
@@ -973,10 +974,16 @@ func _update_landing_offer() -> void:
 			if station_distance <= station_radius and station_distance / station_radius < nearest_ratio:
 				closest_id = station_id
 				closest_name = str(station.get("name_en", "Station"))
+	# The central living planet is a conversation partner, not a landing port.
+	if str(solar_system.current_id) == "crossroads":
+		var talk_radius: float = LANDING_APPROACH_MARGIN + 155.0
+		if ship_world.distance_to(Vector2.ZERO) <= talk_radius:
+			closest_id = "crossroads_core"
+			closest_name = "Living World"
 	# The existing left button becomes a magnet near loose fuel crystals.
 	# The landing prompt returns when no eligible crystals remain.
 	var can_collect: bool = _fuel_units < FUEL_CAPACITY and asteroid_field.has_collectible_in_range(ship_world)
-	var required_mode: String = "take" if can_collect else ("land" if closest_id != "" else "use")
+	var required_mode: String = "take" if can_collect else ("talk" if closest_id == "crossroads_core" else ("land" if closest_id != "" else "use"))
 	var available: bool = can_collect or closest_id != ""
 	if closest_id == _landing_target_id and action_button.action_mode == required_mode and action_button.interaction_available == available:
 		return
@@ -988,6 +995,9 @@ func _update_landing_offer() -> void:
 
 
 func _on_action_requested(mode: String) -> void:
+	if mode == "talk" and _landing_target_id == "crossroads_core":
+		_open_crossroads_encyclopedia()
+		return
 	if mode == "take":
 		if not _warp_active and not _intro_comic_playing and not _intro_space_flying and not get_tree().paused and _fuel_units < FUEL_CAPACITY:
 			asteroid_field.start_magnet_capture(_ship_world())
@@ -1439,7 +1449,35 @@ func _on_planet_representative_requested(planet_id: String) -> void:
 	diagnostics.write("representative_dialog_opened", {"planet": planet_id})
 
 
+func _open_crossroads_encyclopedia() -> void:
+	if str(solar_system.current_id) != "crossroads" or _warp_active or get_tree().paused:
+		return
+	if _ship_world().distance_to(Vector2.ZERO) > LANDING_APPROACH_MARGIN + 155.0:
+		return
+	var dialog: Control = _ensure_representative_dialog()
+	if dialog == null:
+		return
+	if _autopilot_active:
+		_stop_autopilot("crossroads_encyclopedia")
+	velocity = Vector2.ZERO
+	current_input = Vector2.ZERO
+	joystick.clear_input()
+	ship.throttle = 0.0
+	dialog.call("configure_for_planet", "crossroads_core", "Живая планета", "", "")
+	_crossroads_dialog_active = true
+	dialog.visible = true
+	get_tree().paused = true
+	diagnostics.write("crossroads_encyclopedia_opened", {"world": "crossroads_core"})
+
 func _on_representative_return_requested() -> void:
+	if _crossroads_dialog_active:
+		_crossroads_dialog_active = false
+		if is_instance_valid(_representative_dialog):
+			_representative_dialog.visible = false
+		get_tree().paused = false
+		_update_landing_offer()
+		diagnostics.write("crossroads_encyclopedia_closed", {})
+		return
 	if is_instance_valid(_representative_dialog):
 		_representative_dialog.visible = false
 	if _planet_landing_active and is_instance_valid(_planet_hub):
