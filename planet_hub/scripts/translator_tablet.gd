@@ -5,6 +5,7 @@ const DialogueEngine = preload("res://planet_hub/scripts/dialogue_engine.gd")
 ## keyboard. Free input is always allowed; bright keys suggest sample answers.
 signal message_sent(phrase: String)
 signal progress_changed(character_count: int)
+signal suggestions_changed(options: Array)
 
 const LANGUAGES: Array[String] = ["ru", "en", "fr", "de", "es", "pt_BR"]
 const LANGUAGE_NAMES: Dictionary = {"ru":"РУС", "en":"ENG", "fr":"FRA", "de":"DEU", "es":"ESP", "pt_BR":"POR"}
@@ -42,7 +43,6 @@ var _chat_scroll: ScrollContainer
 var _chat_messages: VBoxContainer
 var _input: LineEdit
 var _send_button: Button
-var _hint: Label
 var _typing_indicator: Label
 var _locale_buttons: Array[Button] = []
 var _key_rows: Array[HBoxContainer] = []
@@ -60,8 +60,7 @@ var _questions: Array = []
 var _ready_ui: bool = false
 var _engine: RefCounted
 var _current_place_id: String = ""
-var _choice_panel: VBoxContainer
-var _choice_buttons: Array[Button] = []
+var _suggestions: Array[String] = []
 var _selected_index: int = 0
 
 func _ready() -> void:
@@ -124,25 +123,6 @@ func _build_ui() -> void:
 	_send_button.add_theme_color_override("font_color", Color.WHITE)
 	_send_button.pressed.connect(_on_send)
 	add_child(_send_button)
-	_hint = Label.new()
-	_hint.name = "SuggestedAnswer"
-	_hint.add_theme_color_override("font_color", Color("f7d894"))
-	_hint.add_theme_font_size_override("font_size", 15)
-	_hint.clip_text = true
-	_hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(_hint)
-	_choice_panel = VBoxContainer.new()
-	_choice_panel.name = "ThreeSuggestedPhrases"
-	_choice_panel.add_theme_constant_override("separation", 4)
-	add_child(_choice_panel)
-	for i in range(3):
-		var option: Button = _make_key("Suggestion_%d" % i, "")
-		option.alignment = HORIZONTAL_ALIGNMENT_LEFT
-		option.clip_text = true
-		option.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-		option.pressed.connect(_on_option_pressed.bind(i))
-		_choice_panel.add_child(option)
-		_choice_buttons.append(option)
 	_keyboard = Control.new()
 	_keyboard.name = "SixLanguageKeyboard"
 	_keyboard.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -263,38 +243,33 @@ func _sample_answer() -> String:
 		return str(_engine.call("get_hint", _selected_index))
 	return ""
 
-func _on_option_pressed(index: int) -> void:
-	if index < 0 or index >= _choice_buttons.size() or not _choice_buttons[index].visible:
+## The three suggestion buttons live below the character, outside this tablet.
+## This control manages only the selected hint and the input/keyboard.
+func get_suggestions() -> Array[String]:
+	return _suggestions.duplicate()
+
+func get_language() -> String:
+	return _locale
+
+func select_suggestion(index: int) -> void:
+	if index < 0 or index >= _suggestions.size():
 		return
 	_selected_index = index
-	_refresh_option_styles()
 	_refresh_hint()
+
+func get_selected_suggestion() -> int:
+	return _selected_index
 
 func _show_choices(available: Array) -> void:
+	_suggestions.clear()
+	for phrase in available:
+		_suggestions.append(str(phrase))
 	_selected_index = 0
-	for i in range(_choice_buttons.size()):
-		var b: Button = _choice_buttons[i]
-		b.visible = i < available.size()
-		if b.visible:
-			b.text = str(available[i])
-	_refresh_option_styles()
+	suggestions_changed.emit(_suggestions.duplicate())
 	_refresh_hint()
 
-func _refresh_option_styles() -> void:
-	for i in range(_choice_buttons.size()):
-		var b: Button = _choice_buttons[i]
-		var base: StyleBoxFlat = b.get_theme_stylebox("normal") as StyleBoxFlat
-		if base != null:
-			var copy: StyleBoxFlat = base.duplicate() as StyleBoxFlat
-			copy.bg_color = Color("36568e") if i == _selected_index else Color("244564")
-			copy.border_color = Color("f5d28e") if i == _selected_index else Color("3a6f99")
-			b.add_theme_stylebox_override("normal", copy)
-
 func _refresh_hint() -> void:
-	if _hint == null:
-		return
 	var target: String = _sample_answer()
-	_hint.text = (str(_labels().get("hint")) + " " + target) if not target.is_empty() else str(_labels().get("free"))
 	var entered: String = _input.text.to_lower()
 	var hint_word: String = target.to_lower()
 	var next_letter: String = hint_word.substr(entered.length(), 1) if hint_word.begins_with(entered) and entered.length() < hint_word.length() else ""
@@ -393,24 +368,17 @@ func _relayout() -> void:
 	var h: float = size.y
 	var padding: float = maxf(7.0, h * 0.017)
 	_chat_scroll.position = Vector2(padding, padding)
-	_chat_scroll.size = Vector2(w - padding * 2.0, h * 0.31 - padding)
+	_chat_scroll.size = Vector2(w - padding * 2.0, h * 0.49 - padding)
 	_chat_messages.custom_minimum_size.x = _chat_scroll.size.x - 6
-	_typing_indicator.position = Vector2(padding + 10, h * 0.31)
-	_choice_panel.position = Vector2(padding, h * 0.35)
-	_choice_panel.size = Vector2(w - padding * 2.0, h * 0.135)
-	for b in _choice_buttons:
-		b.custom_minimum_size.y = h * 0.040
-		b.add_theme_font_size_override("font_size", maxi(11, roundi(h * 0.019)))
-	_typing_indicator.size = Vector2(w - padding * 2, h * 0.04)
-	var input_y: float = h * 0.495
+	_typing_indicator.position = Vector2(padding + 10, h * 0.495)
+	_typing_indicator.size = Vector2(w - padding * 2, h * 0.038)
+	var input_y: float = h * 0.542
 	_input.position = Vector2(padding, input_y)
-	_input.size = Vector2(w - padding * 3 - maxf(54.0, w * 0.105), h * 0.067)
+	_input.size = Vector2(w - padding * 3 - maxf(54.0, w * 0.105), h * 0.073)
 	_send_button.position = Vector2(_input.position.x + _input.size.x + padding, input_y)
 	_send_button.size = Vector2(w - (_input.position.x + _input.size.x + padding) - padding, _input.size.y)
-	_hint.position = Vector2(padding + 3, h * 0.565)
-	_hint.size = Vector2(w - 2 * padding, h * 0.037)
-	_keyboard.position = Vector2(padding, h * 0.607)
-	_keyboard.size = Vector2(w - 2 * padding, h * 0.385)
+	_keyboard.position = Vector2(padding, h * 0.633)
+	_keyboard.size = Vector2(w - 2 * padding, h * 0.356)
 	var locale_width: float = (_keyboard.size.x - 5.0 * 4.0) / 6.0
 	var locale_height: float = 0.0 # Language is selected in global game settings.
 	for i in range(_locale_buttons.size()):
@@ -439,4 +407,4 @@ func _draw() -> void:
 	var panel: Rect2 = Rect2(Vector2.ZERO, size)
 	draw_rect(panel, Color("0a1e34"))
 	draw_line(Vector2(0, 0), Vector2(0, size.y), Color("60bfe9"), 3, true)
-	draw_line(Vector2(10, size.y * 0.335), Vector2(size.x - 10, size.y * 0.335), Color("326f98"), 2, true)
+	draw_line(Vector2(10, size.y * 0.525), Vector2(size.x - 10, size.y * 0.525), Color("326f98"), 2, true)
