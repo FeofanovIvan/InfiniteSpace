@@ -830,5 +830,199 @@
       ],
       "topic_trigger": "world"
     }
+  },
+  "reactions_by_race": {
+    "human": {
+      "ru": [
+        "Хорошо, что ты присмотрелся!",
+        "Вот почему мы это исследуем.",
+        "Давай попробуем вместе."
+      ],
+      "en": [
+        "You have a sharp eye!",
+        "That is why we study it.",
+        "Let's try together."
+      ],
+      "fr": [
+        "Tu as l'œil !",
+        "Voilà pourquoi nous l'étudions.",
+        "Essayons ensemble."
+      ],
+      "de": [
+        "Gut beobachtet!",
+        "Darum untersuchen wir das.",
+        "Probieren wir es zusammen."
+      ],
+      "es": [
+        "¡Qué bien has observado!",
+        "Por eso lo estudiamos.",
+        "Vamos a probarlo juntos."
+      ],
+      "pt_BR": [
+        "Você observou muito bem!",
+        "Por isso estudamos isso.",
+        "Vamos tentar juntos."
+      ]
+    },
+    "mold": {
+      "ru": [
+        "Наша сеть уловила твоё любопытство.",
+        "Наши волокна передают этот вопрос дальше.",
+        "Попробуем осторожно, все вместе."
+      ],
+      "en": [
+        "Our network sensed your curiosity.",
+        "Our fibers carry this question onward.",
+        "Let's try gently, together."
+      ],
+      "fr": [
+        "Notre réseau a senti ta curiosité.",
+        "Nos fibres transmettent cette question.",
+        "Essayons doucement, ensemble."
+      ],
+      "de": [
+        "Unser Netzwerk spürt deine Neugier.",
+        "Unsere Fasern leiten die Frage weiter.",
+        "Versuchen wir es vorsichtig zusammen."
+      ],
+      "es": [
+        "Nuestra red ha notado tu curiosidad.",
+        "Nuestras fibras transmiten esa pregunta.",
+        "Probemos con cuidado, juntos."
+      ],
+      "pt_BR": [
+        "Nossa rede percebeu sua curiosidade.",
+        "Nossas fibras transmitem essa pergunta.",
+        "Vamos tentar com cuidado, juntos."
+      ]
+    },
+    "phase": {
+      "ru": [
+        "Моя форма чуть дрогнула от интереса.",
+        "Сейчас я объясню, не меняя состояния.",
+        "Посмотри, как интересно всё меняется!"
+      ],
+      "en": [
+        "My shape rippled with curiosity.",
+        "Let me explain without changing form.",
+        "Watch how things can change!"
+      ],
+      "fr": [
+        "Ma forme ondule de curiosité.",
+        "Je t'explique sans changer de forme.",
+        "Regarde comme tout peut changer !"
+      ],
+      "de": [
+        "Meine Form kräuselt sich vor Neugier.",
+        "Ich erkläre es in dieser Form.",
+        "Sieh, wie sich alles verändern kann!"
+      ],
+      "es": [
+        "Mi forma ondula de curiosidad.",
+        "Te lo explicaré sin cambiar de forma.",
+        "¡Mira cómo pueden cambiar las cosas!"
+      ],
+      "pt_BR": [
+        "Minha forma ondulou de curiosidade.",
+        "Vou explicar sem mudar de forma.",
+        "Veja como as coisas podem mudar!"
+      ]
+    },
+    "reptile": {
+      "ru": [
+        "Ты заметил важную деталь.",
+        "Наш народ многое понял за долгие путешествия.",
+        "Отлично, исследователь!"
+      ],
+      "en": [
+        "You spotted an important detail.",
+        "Our people learned a lot on long journeys.",
+        "Well done, explorer!"
+      ],
+      "fr": [
+        "Tu as remarqué un détail important.",
+        "Nos voyages nous ont beaucoup appris.",
+        "Bravo, explorateur !"
+      ],
+      "de": [
+        "Dir ist ein wichtiges Detail aufgefallen.",
+        "Auf unseren Reisen haben wir viel gelernt.",
+        "Gut gemacht, Entdecker!"
+      ],
+      "es": [
+        "Has notado un detalle importante.",
+        "Nuestros viajes nos enseñaron mucho.",
+        "¡Bien hecho, explorador!"
+      ],
+      "pt_BR": [
+        "Você notou um detalhe importante.",
+        "Nossas viagens ensinaram muita coisa.",
+        "Muito bem, explorador!"
+      ]
+    },
+    "magnetic": {
+      "ru": [
+        "Мои поля откликнулись на твой вопрос.",
+        "Для равновесия важно понимать причину.",
+        "Исследуем это без спешки."
+      ],
+      "en": [
+        "My fields responded to your question.",
+        "Understanding why helps us keep balance.",
+        "Let's study it without rushing."
+      ],
+      "fr": [
+        "Mes champs réagissent à ta question.",
+        "Comprendre pourquoi aide à garder l'équilibre.",
+        "Observons cela sans nous presser."
+      ],
+      "de": [
+        "Meine Felder reagieren auf deine Frage.",
+        "Der Grund hilft uns, das Gleichgewicht zu halten.",
+        "Untersuchen wir es ganz in Ruhe."
+      ],
+      "es": [
+        "Mis campos responden a tu pregunta.",
+        "Entenderlo ayuda a mantener el equilibrio.",
+        "Vamos a observarlo con calma."
+      ],
+      "pt_BR": [
+        "Meus campos respondem à sua pergunta.",
+        "Entender a razão ajuda a manter o equilíbrio.",
+        "Vamos observar com calma."
+      ]
+    },
+    "neural": {
+      "ru": [
+        "Я сохранил твоё наблюдение в памяти.",
+        "Давай найдём между событиями связь.",
+        "Хороший повод для маленькой загадки!"
+      ],
+      "en": [
+        "I have kept your observation in memory.",
+        "Let's find a connection between events.",
+        "A perfect moment for a small riddle!"
+      ],
+      "fr": [
+        "J'ai gardé ton observation en mémoire.",
+        "Cherchons un lien entre les événements.",
+        "Voilà une bonne occasion pour une énigme !"
+      ],
+      "de": [
+        "Ich habe deine Beobachtung gespeichert.",
+        "Finden wir einen Zusammenhang.",
+        "Ein guter Moment für ein kleines Rätsel!"
+      ],
+      "es": [
+        "He guardado tu observación en mi memoria.",
+        "Busquemos una relación entre los hechos.",
+        "¡Es un buen momento para un acertijo!"
+      ],
+      "pt_BR": [
+        "Guardei sua observação na memória.",
+        "Vamos encontrar uma ligação entre os fatos.",
+        "Ótimo momento para uma pequena charada!"
+      ]
+    }
   }
 }
