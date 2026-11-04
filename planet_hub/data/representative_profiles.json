@@ -1,0 +1,526 @@
+{
+  "schema_version": 1,
+  "metadata_language": "en",
+  "fallback_language": "en",
+  "locales_supported": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "identity_policy": "One unique NPC per inhabited location; portrait is an interchangeable visual template. Gender intentionally unspecified. NPC ID is never derived from portrait filename.",
+  "characters": {
+    "mw_p01": {
+      "character_id": "npc_mw_p01",
+      "world_id": "mw_p01",
+      "name": "Ari",
+      "role": "Valley ecology researcher",
+      "work": "I study the water and gardens beside Earth's research city.",
+      "mystery": "A water sensor noticed an unexpected change near the valley.",
+      "share": "Let's share our observations with the people protecting the valley.",
+      "gender": null,
+      "portrait_template": "05_human_amara_cole.png",
+      "chapter_cues": [
+        "I study the water and gardens beside Earth's research city.",
+        "A water sensor noticed an unexpected change near the valley.",
+        "Another clue at my station: A water sensor noticed an unexpected change near the valley.",
+        "Let's share our observations with the people protecting the valley."
+      ]
+    },
+    "mw_p02": {
+      "character_id": "npc_mw_p02",
+      "world_id": "mw_p02",
+      "name": "Nevi",
+      "role": "Mars computer researcher",
+      "work": "I work beside the spherical computer core deep below Mars's red dust.",
+      "mystery": "Our computer detected unusual readings during a dust storm.",
+      "share": "Let's save the readings so the next team can check them.",
+      "gender": null,
+      "portrait_template": "06_human_lin_kai.png",
+      "chapter_cues": [
+        "I work beside the spherical computer core deep below Mars's red dust.",
+        "Our computer detected unusual readings during a dust storm.",
+        "Another clue at my station: Our computer detected unusual readings during a dust storm.",
+        "Let's save the readings so the next team can check them."
+      ]
+    },
+    "mw_p03": {
+      "character_id": "npc_mw_p03",
+      "world_id": "mw_p03",
+      "name": "Remi",
+      "role": "Jupiter storm observer",
+      "work": "I watch Jupiter's striped clouds from our protected floating station.",
+      "mystery": "A golden cloud band has grown wider since my last observation.",
+      "share": "Let's compare our findings with another research station.",
+      "gender": null,
+      "portrait_template": "05_human_amara_cole.png",
+      "chapter_cues": [
+        "I watch Jupiter's striped clouds from our protected floating station.",
+        "A golden cloud band has grown wider since my last observation.",
+        "Another clue at my station: A golden cloud band has grown wider since my last observation.",
+        "Let's compare our findings with another research station."
+      ]
+    },
+    "mw_p06": {
+      "character_id": "npc_mw_p06",
+      "world_id": "mw_p06",
+      "name": "Semi",
+      "role": "Neptune wind researcher",
+      "work": "I measure powerful winds above Neptune's blue clouds.",
+      "mystery": "The antenna detected a change in a distant storm.",
+      "share": "Let's send the wind report to other observers.",
+      "gender": null,
+      "portrait_template": "06_human_lin_kai.png",
+      "chapter_cues": [
+        "I measure powerful winds above Neptune's blue clouds.",
+        "The antenna detected a change in a distant storm.",
+        "Another clue at my station: The antenna detected a change in a distant storm.",
+        "Let's send the wind report to other observers."
+      ]
+    },
+    "mw_p07": {
+      "character_id": "npc_mw_p07",
+      "world_id": "mw_p07",
+      "name": "Keri",
+      "role": "Venus station safety researcher",
+      "work": "I inspect the protective dome of our station on hot Venus.",
+      "mystery": "The outside temperature sensor reported a new high reading.",
+      "share": "Let's share our checks with the station crew.",
+      "gender": null,
+      "portrait_template": "05_human_amara_cole.png",
+      "chapter_cues": [
+        "I inspect the protective dome of our station on hot Venus.",
+        "The outside temperature sensor reported a new high reading.",
+        "Another clue at my station: The outside temperature sensor reported a new high reading.",
+        "Let's share our checks with the station crew."
+      ]
+    },
+    "st_mw": {
+      "character_id": "npc_st_mw",
+      "world_id": "st_mw",
+      "name": "Evi",
+      "role": "Callisto shipyard technician",
+      "work": "I inspect ships and repair parts inside Callisto's orbital docks.",
+      "mystery": "One arriving vessel sent a faint repair signal.",
+      "share": "Let's tell the crew what our instruments discovered.",
+      "gender": null,
+      "portrait_template": "06_human_lin_kai.png",
+      "chapter_cues": [
+        "I inspect ships and repair parts inside Callisto's orbital docks.",
+        "One arriving vessel sent a faint repair signal.",
+        "Another clue at my station: One arriving vessel sent a faint repair signal.",
+        "Let's tell the crew what our instruments discovered."
+      ]
+    },
+    "lmc_p02": {
+      "character_id": "npc_lmc_p02",
+      "world_id": "lmc_p02",
+      "name": "Nomi",
+      "role": "Ocean network listener",
+      "work": "I listen to waves through the living fungal bridges of Thalas.",
+      "mystery": "A wave carried a strange rhythm through one bridge.",
+      "share": "Let's send the rhythm along the rest of our living network.",
+      "gender": null,
+      "portrait_template": "07_mold_form_archive.png",
+      "chapter_cues": [
+        "I listen to waves through the living fungal bridges of Thalas.",
+        "A wave carried a strange rhythm through one bridge.",
+        "Another clue at my station: A wave carried a strange rhythm through one bridge.",
+        "Let's send the rhythm along the rest of our living network."
+      ]
+    },
+    "lmc_p03": {
+      "character_id": "npc_lmc_p03",
+      "world_id": "lmc_p03",
+      "name": "Miori",
+      "role": "Living biodome grower",
+      "work": "I help living biodomes grow among Molia's dark mineral rocks.",
+      "mystery": "A fine crack appeared beside one of our protected domes.",
+      "share": "Let's share the discovery with other careful growers.",
+      "gender": null,
+      "portrait_template": "08_mold_form_cluster.png",
+      "chapter_cues": [
+        "I help living biodomes grow among Molia's dark mineral rocks.",
+        "A fine crack appeared beside one of our protected domes.",
+        "Another clue at my station: A fine crack appeared beside one of our protected domes.",
+        "Let's share the discovery with other careful growers."
+      ]
+    },
+    "lmc_p04": {
+      "character_id": "npc_lmc_p04",
+      "world_id": "lmc_p04",
+      "name": "Lomi",
+      "role": "Ice signal observer",
+      "work": "I sense tiny movements in the blue ice near Cryona's shelters.",
+      "mystery": "One glowing ice crack became brighter than before.",
+      "share": "Let's pass a gentle warning along our living fibers.",
+      "gender": null,
+      "portrait_template": "07_mold_form_archive.png",
+      "chapter_cues": [
+        "I sense tiny movements in the blue ice near Cryona's shelters.",
+        "One glowing ice crack became brighter than before.",
+        "Another clue at my station: One glowing ice crack became brighter than before.",
+        "Let's pass a gentle warning along our living fibers."
+      ]
+    },
+    "st_lmc": {
+      "character_id": "npc_st_lmc",
+      "world_id": "st_lmc",
+      "name": "Sori",
+      "role": "Tarantula living laboratory caretaker",
+      "work": "I care for the living corridors and biochambers aboard Tarantula.",
+      "mystery": "A signal faded inside one living chamber.",
+      "share": "Let's show the ship network which chamber needs attention.",
+      "gender": null,
+      "portrait_template": "08_mold_form_cluster.png",
+      "chapter_cues": [
+        "I care for the living corridors and biochambers aboard Tarantula.",
+        "A signal faded inside one living chamber.",
+        "Another clue at my station: A signal faded inside one living chamber.",
+        "Let's show the ship network which chamber needs attention."
+      ]
+    },
+    "smc_p01": {
+      "character_id": "npc_smc_p01",
+      "world_id": "smc_p01",
+      "name": "Aeri",
+      "role": "Ocean arch explorer",
+      "work": "I study transparent water arches rising from Okea's ocean.",
+      "mystery": "One arch changed shape when a large wave passed.",
+      "share": "Let's share our idea with the builders of flowing paths.",
+      "gender": null,
+      "portrait_template": "10_phase_crystal.png",
+      "chapter_cues": [
+        "I study transparent water arches rising from Okea's ocean.",
+        "One arch changed shape when a large wave passed.",
+        "Another clue at my station: One arch changed shape when a large wave passed.",
+        "Let's share our idea with the builders of flowing paths."
+      ]
+    },
+    "smc_p02": {
+      "character_id": "npc_smc_p02",
+      "world_id": "smc_p02",
+      "name": "Ili",
+      "role": "Light reflection researcher",
+      "work": "I watch red mountains reflected in Cela's clear liquid domes.",
+      "mystery": "One dome now reflects much more light than its neighbor.",
+      "share": "Let's show other phase beings how transparency changes.",
+      "gender": null,
+      "portrait_template": "11_phase_gas.png",
+      "chapter_cues": [
+        "I watch red mountains reflected in Cela's clear liquid domes.",
+        "One dome now reflects much more light than its neighbor.",
+        "Another clue at my station: One dome now reflects much more light than its neighbor.",
+        "Let's show other phase beings how transparency changes."
+      ]
+    },
+    "smc_p03": {
+      "character_id": "npc_smc_p03",
+      "world_id": "smc_p03",
+      "name": "Ori",
+      "role": "Liquid tower observer",
+      "work": "I study the flowing towers and watery fissures of Genora.",
+      "mystery": "A tower curved gently like an ocean wave.",
+      "share": "Let's explain the movement to those caring for the pathways.",
+      "gender": null,
+      "portrait_template": "12_phase_liquid.png",
+      "chapter_cues": [
+        "I study the flowing towers and watery fissures of Genora.",
+        "A tower curved gently like an ocean wave.",
+        "Another clue at my station: A tower curved gently like an ocean wave.",
+        "Let's explain the movement to those caring for the pathways."
+      ]
+    },
+    "smc_p05": {
+      "character_id": "npc_smc_p05",
+      "world_id": "smc_p05",
+      "name": "Keo",
+      "role": "Mist navigation guide",
+      "work": "I explore misty passages among Spira's dark rocks.",
+      "mystery": "The mist became thicker beside a bright ridge.",
+      "share": "Let's mark the clearest way for the next visitor.",
+      "gender": null,
+      "portrait_template": "10_phase_crystal.png",
+      "chapter_cues": [
+        "I explore misty passages among Spira's dark rocks.",
+        "The mist became thicker beside a bright ridge.",
+        "Another clue at my station: The mist became thicker beside a bright ridge.",
+        "Let's mark the clearest way for the next visitor."
+      ]
+    },
+    "st_smc": {
+      "character_id": "npc_st_smc",
+      "world_id": "st_smc",
+      "name": "Lie",
+      "role": "Living Archive memory keeper",
+      "work": "I protect memories inside the Archive's clear liquid and gas chambers.",
+      "mystery": "A transparent chamber displayed an unfamiliar old pattern.",
+      "share": "Let's preserve the pattern for future visitors.",
+      "gender": null,
+      "portrait_template": "11_phase_gas.png",
+      "chapter_cues": [
+        "I protect memories inside the Archive's clear liquid and gas chambers.",
+        "A transparent chamber displayed an unfamiliar old pattern.",
+        "Another clue at my station: A transparent chamber displayed an unfamiliar old pattern.",
+        "Let's preserve the pattern for future visitors."
+      ]
+    },
+    "ngc6822_p01": {
+      "character_id": "npc_ngc6822_p01",
+      "world_id": "ngc6822_p01",
+      "name": "Zeri",
+      "role": "Archeon garden guardian",
+      "work": "I care for green gardens inside Archeon's sealed ring city.",
+      "mystery": "A garden path disappeared beneath red desert dust.",
+      "share": "Let's show neighbors how to protect the garden paths.",
+      "gender": null,
+      "portrait_template": "01_reptile_liri.png",
+      "chapter_cues": [
+        "I care for green gardens inside Archeon's sealed ring city.",
+        "A garden path disappeared beneath red desert dust.",
+        "Another clue at my station: A garden path disappeared beneath red desert dust.",
+        "Let's show neighbors how to protect the garden paths."
+      ]
+    },
+    "ngc6822_p02": {
+      "character_id": "npc_ngc6822_p02",
+      "world_id": "ngc6822_p02",
+      "name": "Tevi",
+      "role": "Quaria cave explorer",
+      "work": "I map mineral caves and the sheltered domes of Quaria.",
+      "mystery": "A new light appeared in the passage behind a rocky wall.",
+      "share": "Let's give other explorers a clear map of safe passages.",
+      "gender": null,
+      "portrait_template": "02_reptile_taro.png",
+      "chapter_cues": [
+        "I map mineral caves and the sheltered domes of Quaria.",
+        "A new light appeared in the passage behind a rocky wall.",
+        "Another clue at my station: A new light appeared in the passage behind a rocky wall.",
+        "Let's give other explorers a clear map of safe passages."
+      ]
+    },
+    "ngc6822_p03": {
+      "character_id": "npc_ngc6822_p03",
+      "world_id": "ngc6822_p03",
+      "name": "Runi",
+      "role": "Nocta dock signal keeper",
+      "work": "I watch the ship signals in Nocta's twilight spaceport.",
+      "mystery": "Two dock lights began blinking in different rhythms.",
+      "share": "Let's tell incoming pilots which route is safe.",
+      "gender": null,
+      "portrait_template": "01_reptile_liri.png",
+      "chapter_cues": [
+        "I watch the ship signals in Nocta's twilight spaceport.",
+        "Two dock lights began blinking in different rhythms.",
+        "Another clue at my station: Two dock lights began blinking in different rhythms.",
+        "Let's tell incoming pilots which route is safe."
+      ]
+    },
+    "ngc6822_p04": {
+      "character_id": "npc_ngc6822_p04",
+      "world_id": "ngc6822_p04",
+      "name": "Deri",
+      "role": "Ferra mineral transport keeper",
+      "work": "I monitor the protected mineral transport lines on Ferra.",
+      "mystery": "One transport line began moving more slowly than expected.",
+      "share": "Let's help the team use metal without wasting resources.",
+      "gender": null,
+      "portrait_template": "02_reptile_taro.png",
+      "chapter_cues": [
+        "I monitor the protected mineral transport lines on Ferra.",
+        "One transport line began moving more slowly than expected.",
+        "Another clue at my station: One transport line began moving more slowly than expected.",
+        "Let's help the team use metal without wasting resources."
+      ]
+    },
+    "ngc6822_p06": {
+      "character_id": "npc_ngc6822_p06",
+      "world_id": "ngc6822_p06",
+      "name": "Seri",
+      "role": "Runa history archivist",
+      "work": "I preserve old explorer records inside Runa's stepped archive.",
+      "mystery": "An unfamiliar star symbol appeared in an ancient record.",
+      "share": "Let's save what we learned for the next generation.",
+      "gender": null,
+      "portrait_template": "01_reptile_liri.png",
+      "chapter_cues": [
+        "I preserve old explorer records inside Runa's stepped archive.",
+        "An unfamiliar star symbol appeared in an ancient record.",
+        "Another clue at my station: An unfamiliar star symbol appeared in an ancient record.",
+        "Let's save what we learned for the next generation."
+      ]
+    },
+    "st_ngc6822": {
+      "character_id": "npc_st_ngc6822",
+      "world_id": "st_ngc6822",
+      "name": "Oni",
+      "role": "Titan's Head dock guide",
+      "work": "I help visitors find safe passages through Titan's Head spaceport.",
+      "mystery": "A familiar stone tunnel is temporarily closed for repairs.",
+      "share": "Let's share the new route with everyone arriving at the docks.",
+      "gender": null,
+      "portrait_template": "02_reptile_taro.png",
+      "chapter_cues": [
+        "I help visitors find safe passages through Titan's Head spaceport.",
+        "A familiar stone tunnel is temporarily closed for repairs.",
+        "Another clue at my station: A familiar stone tunnel is temporarily closed for repairs.",
+        "Let's share the new route with everyone arriving at the docks."
+      ]
+    },
+    "m31_p03": {
+      "character_id": "npc_m31_p03",
+      "world_id": "m31_p03",
+      "name": "Atri",
+      "role": "Phasis magnetic field researcher",
+      "work": "I study shifting metal arches in Phasis's mirrored laboratories.",
+      "mystery": "One arch began to move differently from its twin.",
+      "share": "Let's give the laboratory a careful report of the change.",
+      "gender": null,
+      "portrait_template": "13_magnetic_ring.png",
+      "chapter_cues": [
+        "I study shifting metal arches in Phasis's mirrored laboratories.",
+        "One arch began to move differently from its twin.",
+        "Another clue at my station: One arch began to move differently from its twin.",
+        "Let's give the laboratory a careful report of the change."
+      ]
+    },
+    "m31_p05": {
+      "character_id": "npc_m31_p05",
+      "world_id": "m31_p05",
+      "name": "Neri",
+      "role": "Sinta levitation engineer",
+      "work": "I check the balance of the dark sphere floating above Sinta's city.",
+      "mystery": "Our floating sphere drifted slightly out of alignment.",
+      "share": "Let's show the city engineers what kept it steady.",
+      "gender": null,
+      "portrait_template": "14_magnetic_engineer.png",
+      "chapter_cues": [
+        "I check the balance of the dark sphere floating above Sinta's city.",
+        "Our floating sphere drifted slightly out of alignment.",
+        "Another clue at my station: Our floating sphere drifted slightly out of alignment.",
+        "Let's show the city engineers what kept it steady."
+      ]
+    },
+    "m31_p06": {
+      "character_id": "npc_m31_p06",
+      "world_id": "m31_p06",
+      "name": "Kori",
+      "role": "Geona science temple observer",
+      "work": "I study the dark inverted pyramid above Geona's volcanic vents.",
+      "mystery": "A tool appeared from the temple wall in a new shape.",
+      "share": "Let's share this transformation with our researchers.",
+      "gender": null,
+      "portrait_template": "15_magnetic_companion.png",
+      "chapter_cues": [
+        "I study the dark inverted pyramid above Geona's volcanic vents.",
+        "A tool appeared from the temple wall in a new shape.",
+        "Another clue at my station: A tool appeared from the temple wall in a new shape.",
+        "Let's share this transformation with our researchers."
+      ]
+    },
+    "st_m31": {
+      "character_id": "npc_st_m31",
+      "world_id": "st_m31",
+      "name": "Veli",
+      "role": "Inverted Pyramid metal scholar",
+      "work": "I work with transforming metal inside the quiet science temple.",
+      "mystery": "A curved metal instrument changed into a new measuring tool.",
+      "share": "Let's preserve what the material taught us.",
+      "gender": null,
+      "portrait_template": "13_magnetic_ring.png",
+      "chapter_cues": [
+        "I work with transforming metal inside the quiet science temple.",
+        "A curved metal instrument changed into a new measuring tool.",
+        "Another clue at my station: A curved metal instrument changed into a new measuring tool.",
+        "Let's preserve what the material taught us."
+      ]
+    },
+    "m33_p01": {
+      "character_id": "npc_m33_p01",
+      "world_id": "m33_p01",
+      "name": "Enu",
+      "role": "Svetara memory curator",
+      "work": "I study remembered patterns in Svetara's mirrored floating station.",
+      "mystery": "Two remembered star patterns began to look alike.",
+      "share": "Let's store their differences for future learners.",
+      "gender": null,
+      "portrait_template": "16_neural_historian.png",
+      "chapter_cues": [
+        "I study remembered patterns in Svetara's mirrored floating station.",
+        "Two remembered star patterns began to look alike.",
+        "Another clue at my station: Two remembered star patterns began to look alike.",
+        "Let's store their differences for future learners."
+      ]
+    },
+    "m33_p02": {
+      "character_id": "npc_m33_p02",
+      "world_id": "m33_p02",
+      "name": "Navi",
+      "role": "Orbita sky observation mentor",
+      "work": "I teach young explorers to compare shapes at Orbita's observatory.",
+      "mystery": "The lake reflected two different bright rings.",
+      "share": "Let's share our observation with the next class.",
+      "gender": null,
+      "portrait_template": "17_neural_researcher.png",
+      "chapter_cues": [
+        "I teach young explorers to compare shapes at Orbita's observatory.",
+        "The lake reflected two different bright rings.",
+        "Another clue at my station: The lake reflected two different bright rings.",
+        "Let's share our observation with the next class."
+      ]
+    },
+    "m33_p03": {
+      "character_id": "npc_m33_p03",
+      "world_id": "m33_p03",
+      "name": "Eli",
+      "role": "Tessera pattern researcher",
+      "work": "I study number and shape patterns at Tessera's floating math complex.",
+      "mystery": "One glowing shape did not follow the usual sequence.",
+      "share": "Let's leave a clear clue for the next visitor.",
+      "gender": null,
+      "portrait_template": "18_neural_guide.png",
+      "chapter_cues": [
+        "I study number and shape patterns at Tessera's floating math complex.",
+        "One glowing shape did not follow the usual sequence.",
+        "Another clue at my station: One glowing shape did not follow the usual sequence.",
+        "Let's leave a clear clue for the next visitor."
+      ]
+    },
+    "m33_p04": {
+      "character_id": "npc_m33_p04",
+      "world_id": "m33_p04",
+      "name": "Lumi",
+      "role": "Lentis telescope observer",
+      "work": "I look toward distant space through Lentis's enormous telescope.",
+      "mystery": "Our telescope received a small flicker from a distant object.",
+      "share": "Let's send the observation to another astronomy station.",
+      "gender": null,
+      "portrait_template": "16_neural_historian.png",
+      "chapter_cues": [
+        "I look toward distant space through Lentis's enormous telescope.",
+        "Our telescope received a small flicker from a distant object.",
+        "Another clue at my station: Our telescope received a small flicker from a distant object.",
+        "Let's send the observation to another astronomy station."
+      ]
+    },
+    "st_m33": {
+      "character_id": "npc_st_m33",
+      "world_id": "st_m33",
+      "name": "Eon",
+      "role": "Final Gates portal guardian",
+      "work": "I watch the different portal shapes on the path to the Crossroads.",
+      "mystery": "One gateway's light changed its familiar pattern.",
+      "share": "Let's help travelers recognize the correct route.",
+      "gender": null,
+      "portrait_template": "17_neural_researcher.png",
+      "chapter_cues": [
+        "I watch the different portal shapes on the path to the Crossroads.",
+        "One gateway's light changed its familiar pattern.",
+        "Another clue at my station: One gateway's light changed its familiar pattern.",
+        "Let's help travelers recognize the correct route."
+      ]
+    }
+  }
+}
