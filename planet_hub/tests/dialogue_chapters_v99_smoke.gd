@@ -129,10 +129,9 @@ func _verify() -> void:
 	var save: Dictionary = {
 		"locations": {},
 		"personal_asked": [],
-		"character_adventures": {
-			key: {"completed": 7, "last_episode": 1, "last_choice": 2, "history": [{"episode": 1, "choice": 2}]}
-		}
+		"character_adventures": {}
 	}
+	save["character_adventures"][key] = {"completed": 7, "last_episode": 1, "last_choice": 2, "history": [{"episode": 1, "choice": 2}]}
 	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file != null:
 		file.store_string(JSON.stringify(save))
