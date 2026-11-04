@@ -7,6 +7,7 @@ const InputMatcher = preload("res://planet_hub/scripts/dialogue_input_matcher.gd
 const WORLDS_PATH := "res://planet_hub/data/dialogue_worlds.json"
 const PHRASES_PATH := "res://planet_hub/data/dialogue_phrases.json"
 const STORIES_PATH := "res://planet_hub/data/dialogue_story_scenes.json"
+const STORY_QUIZZES_PATH := "res://planet_hub/data/dialogue_story_quizzes.json"
 const ROSTER_PATH := "res://planet_hub/data/representatives.json"
 const SAVE_PATH := "user://miko_dialogue_progress.json"
 const TOPIC_ORDER := ["self", "world", "race", "race_about", "origin", "ability", "work", "energy", "age", "learn"]
@@ -32,6 +33,7 @@ var _math_b: int = 2
 var _enabled: bool = false
 var _stories: Dictionary = {}
 var _story: Dictionary = {}
+var _story_quizzes: Dictionary = {}
 var _story_opened_this_visit: bool = false
 
 func _read(path: String) -> Dictionary:
@@ -93,6 +95,7 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	_words = _read(PHRASES_PATH)
 	_stories = _read(STORIES_PATH)
 	_story = _stories.get("scenes", {}).get(target, {})
+	_story_quizzes = _read(STORY_QUIZZES_PATH)
 	_roster = _read(ROSTER_PATH).get("assignments", {})
 	_ages = world_database.get("character_ages", {})
 	_world = world_database.get("worlds", {}).get(target, {})
@@ -189,6 +192,74 @@ func _choose_next() -> Dictionary:
 		message = _ui("done") + " " + _ui("choose")
 	return {"accepted": true, "npc": message, "choices": choices.duplicate(), "available": true}
 
+func _quiz_for_race() -> Dictionary:
+	var race_id: String = str(_world.get("race", ""))
+	return _story_quizzes.get("quizzes", {}).get(race_id, {})
+
+func _quiz_choices() -> Array[String]:
+	var q: Dictionary = _quiz_for_race()
+	var all_locales: Dictionary = q.get("options", {})
+	var raw: Array = all_locales.get(language, all_locales.get("en", []))
+	var result: Array[String] = []
+	for option in raw:
+		result.append(str(option))
+	return result
+
+func _quiz_choice_index(text: String) -> int:
+	var translations: Dictionary = _quiz_for_race().get("options", {})
+	var winning: int = -1
+	var best: int = InputMatcher.NO_MATCH
+	var tied: bool = false
+	for lang in translations:
+		var options: Array = translations[lang]
+		for i in range(options.size()):
+			var result: int = InputMatcher.score(text, str(options[i]))
+			if result >= InputMatcher.NO_MATCH:
+				continue
+			if result < best:
+				best = result
+				winning = i
+				tied = false
+			elif result == best and winning != i:
+				tied = true
+	return -1 if tied else winning
+
+func _begin_story_quiz(base_answer: String) -> Dictionary:
+	var quiz: Dictionary = _quiz_for_race()
+	var options: Array[String] = _quiz_choices()
+	if quiz.is_empty() or options.size() != 3:
+		var ordinary: Dictionary = _choose_next()
+		ordinary["npc"] = base_answer + "\n\n" + str(ordinary.get("npc", ""))
+		return ordinary
+	stage = "story_quiz"
+	choices = options
+	var question: String = _localized(quiz.get("question", {}))
+	return {"accepted": true, "available": true,
+		"npc": base_answer + "\n\n" + question, "choices": choices.duplicate()}
+
+func _accept_story_quiz(text: String) -> Dictionary:
+	if _skip(text):
+		var skipped: Dictionary = _choose_next()
+		skipped["npc"] = _localized(_story_quizzes.get("feedback", {}).get("skip", {})) + "\n\n" + str(skipped.get("npc", ""))
+		return skipped
+	var chosen: int = _quiz_choice_index(text)
+	if chosen < 0:
+		var other: String = _topic_for(text)
+		if not other.is_empty():
+			stage = "choose"
+			return accept(text)
+		return {"accepted": false, "available": true, "npc": _ui("bad"), "choices": choices.duplicate()}
+	var correct: int = int(_story_quizzes.get("correct_index", 0))
+	if chosen != correct:
+		return {"accepted": false, "available": true,
+			"npc": _localized(_story_quizzes.get("feedback", {}).get("retry", {})),
+			"choices": choices.duplicate()}
+	_visited["quiz_success"] = int(_visited.get("quiz_success", 0)) + 1
+	_store_location()
+	var next: Dictionary = _choose_next()
+	next["npc"] = _localized(_story_quizzes.get("feedback", {}).get("success", {})) + "\n\n" + str(next.get("npc", ""))
+	return next
+
 func _story_choices() -> Array[String]:
 	var results: Array[String] = []
 	var race_id: String = str(_world.get("race", ""))
@@ -265,6 +336,8 @@ func _accept_story(text: String) -> Dictionary:
 	_visited["story_turns"] = int(_visited.get("story_turns", 0)) + 1
 	_visited["story_last_choice"] = index
 	_store_location()
+	if index == 2:
+		return _begin_story_quiz(answer)
 	var next: Dictionary = _choose_next()
 	next["npc"] = answer + "\n\n" + str(next.get("npc", ""))
 	return next
@@ -521,6 +594,8 @@ func accept(text: String) -> Dictionary:
 			return _choose_next()
 		"story":
 			return _accept_story(text)
+		"story_quiz":
+			return _accept_story_quiz(text)
 		"personal":
 			if not _accept_personal(text):
 				return {"accepted": false, "npc": _ui("bad"), "choices": choices.duplicate()}
