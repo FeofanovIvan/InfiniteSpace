@@ -9,6 +9,7 @@ const PHRASES_PATH := "res://planet_hub/data/dialogue_phrases.json"
 const STORIES_PATH := "res://planet_hub/data/dialogue_story_scenes.json"
 const STORY_QUIZZES_PATH := "res://planet_hub/data/dialogue_story_quizzes.json"
 const ADVENTURES_PATH := "res://planet_hub/data/dialogue_adventures.json"
+const ADVENTURES_V99_PATH := "res://planet_hub/data/dialogue_adventures_v99.json"
 const ROSTER_PATH := "res://planet_hub/data/representatives.json"
 const SAVE_PATH := "user://miko_dialogue_progress.json"
 const TOPIC_ORDER := ["self", "world", "race", "race_about", "origin", "ability", "work", "energy", "age", "learn"]
@@ -36,6 +37,7 @@ var _stories: Dictionary = {}
 var _story: Dictionary = {}
 var _story_quizzes: Dictionary = {}
 var _adventures: Dictionary = {}
+var _adventures_v99: Dictionary = {}
 var _active_adventure: Dictionary = {}
 var _active_adventure_index: int = -1
 var _pending_adventure_quiz: bool = false
@@ -105,6 +107,7 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	_story = _stories.get("scenes", {}).get(target, {})
 	_story_quizzes = _read(STORY_QUIZZES_PATH)
 	_adventures = _read(ADVENTURES_PATH)
+	_adventures_v99 = _read(ADVENTURES_V99_PATH)
 	_roster = _read(ROSTER_PATH).get("assignments", {})
 	_ages = world_database.get("character_ages", {})
 	_world = world_database.get("worlds", {}).get(target, {})
@@ -284,7 +287,26 @@ func _adventure_memory() -> Dictionary:
 
 func _adventure_episodes() -> Array:
 	var race_id: String = str(_world.get("race", ""))
-	return _adventures.get("races", {}).get(race_id, [])
+	var episodes: Array = _adventures.get("races", {}).get(race_id, []).duplicate()
+	var additional: Array = _adventures_v99.get("races", {}).get(race_id, [])
+	episodes.append_array(additional)
+	return episodes
+
+func _migrate_chapters_if_needed() -> Dictionary:
+	var memory: Dictionary = _adventure_memory()
+	if memory.is_empty() or str(memory.get("chapter_set", "")) == "v99":
+		return memory
+	var count: int = maxi(0, int(memory.get("completed", 0)))
+	# v98 had only two episodes, so a high count meant replaying them.
+	# Offer chapters 3 and 4 next, without destroying any old choices/history.
+	memory["legacy_completed_v98"] = count
+	memory["completed"] = mini(count, 2)
+	memory["chapter_set"] = "v99"
+	var saved: Dictionary = _state.get("character_adventures", {})
+	saved[_adventure_memory_key()] = memory
+	_state["character_adventures"] = saved
+	_save()
+	return memory
 
 func _adventure_options(episode: Dictionary) -> Array[String]:
 	var options: Array[String] = []
@@ -300,7 +322,7 @@ func _begin_adventure(prelude: String, follow_with_quiz: bool) -> Dictionary:
 		var ordinary: Dictionary = _choose_next()
 		ordinary["npc"] = prelude + "\n\n" + str(ordinary.get("npc", ""))
 		return ordinary
-	var memory: Dictionary = _adventure_memory()
+	var memory: Dictionary = _migrate_chapters_if_needed()
 	var completed: int = maxi(0, int(memory.get("completed", 0)))
 	var index: int = completed % episodes.size()
 	_active_adventure_index = index
@@ -323,10 +345,15 @@ func _begin_adventure(prelude: String, follow_with_quiz: bool) -> Dictionary:
 			var previous: Dictionary = episodes[prior_episode]
 			var labels: Array = previous.get("choices", [])
 			if prior_choice >= 0 and prior_choice < labels.size():
-				var previous_phrase: String = _localized(labels[prior_choice])
-				var memory_format: String = _localized(_adventures.get("revisit_prefix", {}))
-				if memory_format.contains("%s"):
-					intro = (memory_format % previous_phrase) + "\n" + intro
+				var linked_to_previous: bool = str(_active_adventure.get("follows", "")) == str(previous.get("id", ""))
+				var echoes: Array = _active_adventure.get("callbacks", [])
+				if linked_to_previous and prior_choice < echoes.size():
+					intro = _localized(echoes[prior_choice]) + "\n" + intro
+				else:
+					var previous_phrase: String = _localized(labels[prior_choice])
+					var memory_format: String = _localized(_adventures.get("revisit_prefix", {}))
+					if memory_format.contains("%s"):
+						intro = (memory_format % previous_phrase) + "\n" + intro
 	return {"accepted": true, "available": true,
 		"npc": prelude + "\n\n" + intro, "choices": choices.duplicate()}
 
@@ -374,6 +401,7 @@ func _accept_adventure(text: String) -> Dictionary:
 	var memory: Dictionary = _adventure_memory()
 	var total: int = maxi(0, int(memory.get("completed", 0))) + 1
 	memory["completed"] = total
+	memory["chapter_set"] = "v99"
 	memory["last_episode"] = _active_adventure_index
 	memory["last_choice"] = selected
 	memory["last_place"] = place_id
