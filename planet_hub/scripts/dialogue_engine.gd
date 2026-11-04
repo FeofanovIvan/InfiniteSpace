@@ -6,6 +6,7 @@ const InputMatcher = preload("res://planet_hub/scripts/dialogue_input_matcher.gd
 
 const WORLDS_PATH := "res://planet_hub/data/dialogue_worlds.json"
 const PHRASES_PATH := "res://planet_hub/data/dialogue_phrases.json"
+const STORIES_PATH := "res://planet_hub/data/dialogue_story_scenes.json"
 const ROSTER_PATH := "res://planet_hub/data/representatives.json"
 const SAVE_PATH := "user://miko_dialogue_progress.json"
 const TOPIC_ORDER := ["self", "world", "race", "race_about", "origin", "ability", "work", "energy", "age", "learn"]
@@ -29,6 +30,9 @@ var _current_math_topic: String = ""
 var _math_a: int = 1
 var _math_b: int = 2
 var _enabled: bool = false
+var _stories: Dictionary = {}
+var _story: Dictionary = {}
+var _story_opened_this_visit: bool = false
 
 func _read(path: String) -> Dictionary:
 	if not FileAccess.file_exists(path):
@@ -82,10 +86,13 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	_topic_count = 0
 	_pending_personal = ""
 	_current_math_topic = ""
+	_story_opened_this_visit = false
 	stage = "greeting"
 	choices.clear()
 	var world_database: Dictionary = _read(WORLDS_PATH)
 	_words = _read(PHRASES_PATH)
+	_stories = _read(STORIES_PATH)
+	_story = _stories.get("scenes", {}).get(target, {})
 	_roster = _read(ROSTER_PATH).get("assignments", {})
 	_ages = world_database.get("character_ages", {})
 	_world = world_database.get("worlds", {}).get(target, {})
@@ -181,6 +188,81 @@ func _choose_next() -> Dictionary:
 	if seen.size() >= TOPIC_ORDER.size():
 		message = _ui("done") + " " + _ui("choose")
 	return {"accepted": true, "npc": message, "choices": choices.duplicate(), "available": true}
+
+func _story_choices() -> Array[String]:
+	var results: Array[String] = []
+	var race_id: String = str(_world.get("race", ""))
+	var translated: Dictionary = _stories.get("choices_by_race", {}).get(race_id, {})
+	var raw: Array = translated.get(language, translated.get("en", []))
+	for phrase in raw:
+		results.append(str(phrase))
+	return results
+
+func _open_story_if_possible(topic: String, base_answer: String) -> Dictionary:
+	if topic != "world" or _story.is_empty() or _story_opened_this_visit:
+		return {}
+	var new_choices: Array[String] = _story_choices()
+	if new_choices.size() != 3:
+		return {}
+	_story_opened_this_visit = true
+	stage = "story"
+	choices = new_choices
+	var intro: String = _localized(_story.get("hook", {}))
+	var prior_stories: int = int(_visited.get("story_turns", 0))
+	if prior_stories > 0:
+		var revisit_line: Dictionary = {
+			"ru": "Помнишь, мы уже рассматривали это место? Давай заметим что-нибудь ещё.",
+			"en": "Remember looking at this place before? Let's notice something new.",
+			"fr": "Tu te souviens de cet endroit ? Regardons encore.",
+			"de": "Erinnerst du dich an diesen Ort? Sehen wir noch einmal hin.",
+			"es": "¿Recuerdas este lugar? Observemos algo nuevo.",
+			"pt_BR": "Lembra deste lugar? Vamos observar algo novo."
+		}
+		intro = _localized(revisit_line) + " " + intro
+	return {"accepted": true, "available": true,
+		"npc": base_answer + "\n\n" + intro,
+		"choices": choices.duplicate()}
+
+func _story_choice_index(text: String) -> int:
+	var translated: Dictionary = _stories.get("choices_by_race", {}).get(str(_world.get("race", "")), {})
+	var best: int = InputMatcher.NO_MATCH
+	var result: int = -1
+	var tied: bool = false
+	# All known equivalent sentences, not only the highlighted hint, are valid.
+	for lang in translated.keys():
+		var variants: Array = translated[lang]
+		for i in range(mini(3, variants.size())):
+			var score: int = InputMatcher.score(text, str(variants[i]))
+			if score >= InputMatcher.NO_MATCH:
+				continue
+			if score < best:
+				best = score
+				result = i
+				tied = false
+			elif score == best and i != result:
+				tied = true
+	return -1 if tied else result
+
+func _accept_story(text: String) -> Dictionary:
+	var index: int = _story_choice_index(text)
+	if index < 0:
+		# Story questions are optional. A new recognized general question
+		# can take the place of a suggested follow-up, without dead-ending.
+		var ordinary_topic: String = _topic_for(text)
+		if not ordinary_topic.is_empty():
+			stage = "choose"
+			return accept(text)
+		return {"accepted": false, "npc": _ui("bad"), "choices": choices.duplicate()}
+	var responses: Array = _story.get("responses", [])
+	if index >= responses.size():
+		return {"accepted": false, "npc": _ui("bad"), "choices": choices.duplicate()}
+	var answer: String = _localized(responses[index])
+	_visited["story_turns"] = int(_visited.get("story_turns", 0)) + 1
+	_visited["story_last_choice"] = index
+	_store_location()
+	var next: Dictionary = _choose_next()
+	next["npc"] = answer + "\n\n" + str(next.get("npc", ""))
+	return next
 
 func _race_fact(field: String) -> String:
 	return str(_race.get(field + ("_ru" if language == "ru" else "_en"), ""))
@@ -432,6 +514,8 @@ func accept(text: String) -> Dictionary:
 				if not _matches(text, _words.get("personal", {}).get("greeting", {}).get("en", [])):
 					return {"accepted": false, "npc": _ui("bad"), "choices": choices.duplicate()}
 			return _choose_next()
+		"story":
+			return _accept_story(text)
 		"personal":
 			if not _accept_personal(text):
 				return {"accepted": false, "npc": _ui("bad"), "choices": choices.duplicate()}
@@ -458,6 +542,9 @@ func accept(text: String) -> Dictionary:
 			if topic == "learn":
 				return _begin_math()
 			var response: String = _response(topic)
+			var story: Dictionary = _open_story_if_possible(topic, response)
+			if not story.is_empty():
+				return story
 			var personal: Dictionary = _personal_turn()
 			if not personal.is_empty():
 				personal["npc"] = response + "\n\n" + str(personal.get("npc", ""))
