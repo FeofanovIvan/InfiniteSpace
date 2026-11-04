@@ -10,6 +10,7 @@ const STORIES_PATH := "res://planet_hub/data/dialogue_story_scenes.json"
 const STORY_QUIZZES_PATH := "res://planet_hub/data/dialogue_story_quizzes.json"
 const ADVENTURES_PATH := "res://planet_hub/data/dialogue_adventures.json"
 const ADVENTURES_V99_PATH := "res://planet_hub/data/dialogue_adventures_v99.json"
+const REPRESENTATIVE_PROFILES_PATH := "res://planet_hub/data/representative_profiles.json"
 const ROSTER_PATH := "res://planet_hub/data/representatives.json"
 const SAVE_PATH := "user://miko_dialogue_progress.json"
 const TOPIC_ORDER := ["self", "world", "race", "race_about", "origin", "ability", "work", "energy", "age", "learn"]
@@ -38,6 +39,7 @@ var _story: Dictionary = {}
 var _story_quizzes: Dictionary = {}
 var _adventures: Dictionary = {}
 var _adventures_v99: Dictionary = {}
+var _representative: Dictionary = {}
 var _active_adventure: Dictionary = {}
 var _active_adventure_index: int = -1
 var _pending_adventure_quiz: bool = false
@@ -108,6 +110,7 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	_story_quizzes = _read(STORY_QUIZZES_PATH)
 	_adventures = _read(ADVENTURES_PATH)
 	_adventures_v99 = _read(ADVENTURES_V99_PATH)
+	_representative = _read(REPRESENTATIVE_PROFILES_PATH).get("characters", {}).get(target, {})
 	_roster = _read(ROSTER_PATH).get("assignments", {})
 	_ages = world_database.get("character_ages", {})
 	_world = world_database.get("worlds", {}).get(target, {})
@@ -277,9 +280,9 @@ func _accept_story_quiz(text: String) -> Dictionary:
 ## One representative may appear on several planets. Progress is attached to
 ## their existing portrait assignment (never to a typed name or child data).
 func _adventure_memory_key() -> String:
-	var assignment: Dictionary = _roster.get(place_id, {})
-	var portrait: String = str(assignment.get("asset", ""))
-	return portrait if not portrait.is_empty() else place_id
+	# Portraits are reusable visual templates, not identities. Never share memory
+	# between two planets merely because they display the same PNG.
+	return str(_representative.get("character_id", "npc_" + place_id))
 
 func _adventure_memory() -> Dictionary:
 	var all: Dictionary = _state.get("character_adventures", {})
@@ -338,6 +341,9 @@ func _begin_adventure(prelude: String, follow_with_quiz: bool) -> Dictionary:
 		return next
 	stage = "story_adventure"
 	var intro: String = _localized(_active_adventure.get("intro", {}))
+	var cues: Array = _representative.get("chapter_cues", [])
+	if index < cues.size():
+		intro = str(cues[index]) + "\n" + intro
 	if completed > 0:
 		var prior_episode: int = int(memory.get("last_episode", -1))
 		var prior_choice: int = int(memory.get("last_choice", -1))
@@ -397,6 +403,8 @@ func _accept_adventure(text: String) -> Dictionary:
 		return {"accepted": false, "available": true,
 			"npc": _ui("bad"), "choices": choices.duplicate()}
 	var answer: String = _localized(outcomes[selected])
+	if _active_adventure_index == 3 and not _representative.is_empty():
+		answer += "\n" + str(_representative.get("share", ""))
 	# No numeric score or failure; the three choices tell different stories.
 	var memory: Dictionary = _adventure_memory()
 	var total: int = maxi(0, int(memory.get("completed", 0))) + 1
@@ -454,6 +462,8 @@ func _open_story_if_possible(topic: String, base_answer: String) -> Dictionary:
 			"pt_BR": "Lembra deste lugar? Vamos observar algo novo."
 		}
 		intro = _localized(revisit_line) + " " + intro
+	if not _representative.is_empty():
+		intro = "I'm " + _name() + ", " + _role() + ". " + str(_representative.get("mystery", "")) + "\n" + intro
 	return {"accepted": true, "available": true,
 		"npc": base_answer + "\n\n" + intro,
 		"choices": choices.duplicate()}
@@ -506,8 +516,16 @@ func _race_fact(field: String) -> String:
 	return str(_race.get(field + ("_ru" if language == "ru" else "_en"), ""))
 
 func _name() -> String:
+	if not _representative.is_empty():
+		return str(_representative.get("name", ""))
 	var entry: Dictionary = _roster.get(place_id, {})
-	return str(entry.get("name_ru", ""))
+	return str(entry.get("display_name", entry.get("name_ru", "")))
+
+func _role() -> String:
+	return str(_representative.get("role", ""))
+
+func _personal_work() -> String:
+	return str(_representative.get("work", ""))
 
 func _world_name() -> String:
 	return _localized(_world.get("name", {}))
@@ -551,31 +569,37 @@ func _response(topic: String) -> String:
 	var answer: String = ""
 	match topic:
 		"self":
-			var who: String = name if not name.is_empty() else ("представитель своей цивилизации" if ru else "a representative of my people")
-			var clauses: Array = ([
-				"Меня зовут %s. Сейчас мы находимся в мире %s." % [who, world],
-				"Рад встрече! Я %s. Здесь, на %s, много интересного." % [who, world],
-				"Ты встретил меня на %s. Можешь называть меня %s." % [world, who]
-			] if ru else [
-				"My name is %s. We are now at %s." % [who, world],
-				"Glad to meet you! I am %s. There is much to discover at %s." % [who, world],
-				"You met me at %s. You may call me %s." % [world, who]
-			])
-			answer = str(clauses[variant])
-		"age":
-			var character: Dictionary = _roster.get(place_id, {})
-			var saved_age: Dictionary = _ages.get(str(character.get("asset", "")), {})
-			var age_label: String = _localized(saved_age)
-			if not age_label.is_empty():
-				var age_patterns: Array = ([
-					"Мне %s.", "Я прожил уже %s.", "Мой возраст — %s."
-				] if ru else [
-					"I am %s old.", "I have lived for %s.", "My age is %s."
-				])
-				# A fictional local-cycle age, not necessarily Earth years.
-				answer = str(age_patterns[variant]) % age_label
+			if not _representative.is_empty():
+				answer = "I'm " + name + ", " + _role() + ". " + _personal_work()
 			else:
-				answer = "Мы измеряем возраст по-своему." if ru else "We measure age in our own way."
+				var who: String = name if not name.is_empty() else ("представитель своей цивилизации" if ru else "a representative of my people")
+				var clauses: Array = ([
+					"Меня зовут %s. Сейчас мы находимся в мире %s." % [who, world],
+					"Рад встрече! Я %s. Здесь, на %s, много интересного." % [who, world],
+					"Ты встретил меня на %s. Можешь называть меня %s." % [world, who]
+				] if ru else [
+					"My name is %s. We are now at %s." % [who, world],
+					"Glad to meet you! I am %s. There is much to discover at %s." % [who, world],
+					"You met me at %s. You may call me %s." % [world, who]
+				])
+				answer = str(clauses[variant])
+		"age":
+			if not _representative.is_empty():
+				answer = "I count my adventures, not my age in Earth years."
+			else:
+				var character: Dictionary = _roster.get(place_id, {})
+				var saved_age: Dictionary = _ages.get(str(character.get("asset", "")), {})
+				var age_label: String = _localized(saved_age)
+				if not age_label.is_empty():
+					var age_patterns: Array = ([
+						"Мне %s.", "Я прожил уже %s.", "Мой возраст — %s."
+					] if ru else [
+						"I am %s old.", "I have lived for %s.", "My age is %s."
+					])
+					# A fictional local-cycle age, not necessarily Earth years.
+					answer = str(age_patterns[variant]) % age_label
+				else:
+					answer = "Мы измеряем возраст по-своему." if ru else "We measure age in our own way."
 		"race":
 			var race_patterns: Array = ([
 				"Мой народ называется «%s».", "Мы называем себя «%s».", "Перед тобой представитель расы «%s»."
@@ -613,7 +637,7 @@ func _response(topic: String) -> String:
 			var energy_intro: Array = ["", "У каждого вида свои потребности. ", "Мы совсем не обязаны питаться одинаково. "] if ru else ["", "Each species has different needs. ", "Not all life eats in the same way. "]
 			answer = str(energy_intro[variant]) + _race_fact("energy")
 		"work":
-			answer = structure if not structure.is_empty() else description
+			answer = _personal_work() if not _representative.is_empty() else (structure if not structure.is_empty() else description)
 			if variant == 1:
 				answer = ("Здесь есть что исследовать. " if ru else "There is much to explore here. ") + answer
 			elif variant == 2:
