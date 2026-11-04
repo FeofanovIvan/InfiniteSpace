@@ -1,6 +1,6 @@
 {
-  "schema_version": 2,
-  "assignment_policy": "Per-system canonical races; station crew may originate within its system; exact person assignments provisional.",
+  "schema_version": 3,
+  "assignment_policy": "One unique character_id and gender-neutral identity per inhabited planet/station. Portrait asset is a reusable race visual template, NOT identity. Names and personal stories are independent of sprite/gender. Remaining fields keep prior compatibility.",
   "excluded_from_dialogues": [
     "03_reptile_raks",
     "04_human_professor_elias_braun"
@@ -8,63 +8,573 @@
   "assignments": {
     "mw_p01": {
       "asset": "05_human_amara_cole.png",
-      "name_ru": "Амара Коул"
+      "name_ru": "Ари",
+      "character_id": "npc_mw_p01",
+      "name": {
+        "ru": "Ари",
+        "en": "Ari",
+        "fr": "Ari",
+        "de": "Ari",
+        "es": "Ari",
+        "pt_BR": "Ari"
+      },
+      "activity": {
+        "ru": "Я наблюдаю за водой в долине рядом с исследовательским городом.",
+        "en": "I study the water beside our research city.",
+        "fr": "J'observe l'eau près de notre ville scientifique.",
+        "de": "Ich erforsche das Wasser bei unserer Forschungsstadt.",
+        "es": "Observo el agua junto a nuestra ciudad de investigación.",
+        "pt_BR": "Eu observo a água perto da nossa cidade de pesquisa."
+      },
+      "mystery": {
+        "ru": "Смотри, датчик заметил, как изменилось течение воды.",
+        "en": "Look, a sensor noticed a change in the water current.",
+        "fr": "Regarde, un capteur a remarqué un changement du courant.",
+        "de": "Sieh mal, ein Sensor hat die Strömung verändert gesehen.",
+        "es": "Mira, un sensor detectó un cambio en la corriente.",
+        "pt_BR": "Olhe, um sensor percebeu uma mudança na correnteza."
+      },
+      "share": {
+        "ru": "Хочу поделиться наблюдением с теми, кто заботится о долине.",
+        "en": "I want to share this with the people caring for our valley.",
+        "fr": "Je veux partager cela avec les personnes qui protègent notre vallée.",
+        "de": "Ich möchte das mit den Menschen teilen, die unser Tal schützen.",
+        "es": "Quiero compartirlo con quienes cuidan nuestro valle.",
+        "pt_BR": "Quero compartilhar isso com quem cuida do nosso vale."
+      },
+      "gender_policy": "unassigned"
     },
     "mw_p02": {
       "asset": "06_human_lin_kai.png",
-      "name_ru": "Линь Кай"
+      "name_ru": "Нэви",
+      "character_id": "npc_mw_p02",
+      "name": {
+        "ru": "Нэви",
+        "en": "Nevi",
+        "fr": "Nevi",
+        "de": "Nevi",
+        "es": "Nevi",
+        "pt_BR": "Nevi"
+      },
+      "activity": {
+        "ru": "Я изучаю работу шарообразного компьютерного ядра под красной пылью Марса.",
+        "en": "I study the round computer core beneath Mars's red dust.",
+        "fr": "J'étudie le noyau informatique rond sous la poussière rouge de Mars.",
+        "de": "Ich untersuche den runden Computerkern unter dem roten Marsstaub.",
+        "es": "Estudio el núcleo informático redondo bajo el polvo rojo de Marte.",
+        "pt_BR": "Eu estudo o núcleo redondo do computador sob a poeira vermelha de Marte."
+      },
+      "mystery": {
+        "ru": "Компьютер получил странные данные о пыльной буре. Проверим их.",
+        "en": "Our computer received unusual data about a dust storm. Let's check it.",
+        "fr": "L'ordinateur a reçu des données étranges sur une tempête de poussière.",
+        "de": "Der Computer hat seltsame Daten über einen Staubsturm empfangen.",
+        "es": "La computadora recibió datos extraños sobre una tormenta de polvo.",
+        "pt_BR": "O computador recebeu dados estranhos sobre uma tempestade de poeira."
+      },
+      "share": {
+        "ru": "Запишем результат, чтобы другие исследователи могли проверить его.",
+        "en": "Let's record the result so other researchers can check it.",
+        "fr": "Notons le résultat pour que d'autres puissent le vérifier.",
+        "de": "Wir halten das Ergebnis fest, damit andere es prüfen können.",
+        "es": "Anotemos el resultado para que otros puedan comprobarlo.",
+        "pt_BR": "Vamos anotar o resultado para que outras pessoas possam conferir."
+      },
+      "gender_policy": "unassigned"
     },
     "mw_p03": {
       "asset": "05_human_amara_cole.png",
-      "name_ru": "Амара Коул"
+      "name_ru": "Реми",
+      "character_id": "npc_mw_p03",
+      "name": {
+        "ru": "Реми",
+        "en": "Remi",
+        "fr": "Remi",
+        "de": "Remi",
+        "es": "Remi",
+        "pt_BR": "Remi"
+      },
+      "activity": {
+        "ru": "Я наблюдаю за вихрями Юпитера с защищённой станции над облаками.",
+        "en": "I watch Jupiter's storms from a protected station above the clouds.",
+        "fr": "J'observe les tempêtes de Jupiter depuis une station au-dessus des nuages.",
+        "de": "Ich beobachte Jupiters Stürme von einer geschützten Station über den Wolken.",
+        "es": "Observo las tormentas de Júpiter desde una estación sobre las nubes.",
+        "pt_BR": "Eu observo as tempestades de Júpiter de uma estação acima das nuvens."
+      },
+      "mystery": {
+        "ru": "Одна облачная полоса стала шире. Найдём, где она начинается.",
+        "en": "One cloud stripe became wider. Let's find where it begins.",
+        "fr": "Une bande de nuages s'élargit. Cherchons son début.",
+        "de": "Ein Wolkenband ist breiter geworden. Suchen wir seinen Anfang.",
+        "es": "Una franja de nubes se hizo más ancha. Busquemos dónde empieza.",
+        "pt_BR": "Uma faixa de nuvens ficou mais larga. Vamos achar onde começa."
+      },
+      "share": {
+        "ru": "Хочу отправить наблюдения другим станциям, чтобы сравнить облака.",
+        "en": "I want to send our observations to other stations to compare clouds.",
+        "fr": "Je veux envoyer nos observations aux autres stations.",
+        "de": "Ich möchte unsere Beobachtungen an andere Stationen senden.",
+        "es": "Quiero enviar nuestras observaciones a otras estaciones.",
+        "pt_BR": "Quero mandar nossas observações para outras estações."
+      },
+      "gender_policy": "unassigned"
     },
     "mw_p06": {
       "asset": "06_human_lin_kai.png",
-      "name_ru": "Линь Кай"
+      "name_ru": "Сэми",
+      "character_id": "npc_mw_p06",
+      "name": {
+        "ru": "Сэми",
+        "en": "Semi",
+        "fr": "Semi",
+        "de": "Semi",
+        "es": "Semi",
+        "pt_BR": "Semi"
+      },
+      "activity": {
+        "ru": "Я измеряю сильные ветры Нептуна с платформы над синими облаками.",
+        "en": "I measure Neptune's winds from a platform above its blue clouds.",
+        "fr": "Je mesure les vents de Neptune au-dessus de ses nuages bleus.",
+        "de": "Ich messe Neptuns Winde über den blauen Wolken.",
+        "es": "Mido los vientos de Neptuno desde una plataforma sobre las nubes azules.",
+        "pt_BR": "Eu meço os ventos de Netuno em uma plataforma acima das nuvens azuis."
+      },
+      "mystery": {
+        "ru": "Антенна заметила перемену ветра. Посмотрим на записи.",
+        "en": "The antenna noticed a wind change. Let's check the readings.",
+        "fr": "L'antenne a détecté un changement de vent. Regardons les mesures.",
+        "de": "Die Antenne bemerkt eine Windänderung. Prüfen wir die Werte.",
+        "es": "La antena detectó un cambio en el viento. Veamos los datos.",
+        "pt_BR": "A antena percebeu uma mudança no vento. Vamos olhar os dados."
+      },
+      "share": {
+        "ru": "Расскажу другим наблюдателям, как менялись облака и ветер.",
+        "en": "I'll tell other observers how the clouds and wind changed.",
+        "fr": "Je raconterai aux autres comment le vent et les nuages ont changé.",
+        "de": "Ich erzähle anderen, wie sich Wolken und Wind verändert haben.",
+        "es": "Contaré a otros cómo cambiaron las nubes y el viento.",
+        "pt_BR": "Vou contar a outras pessoas como as nuvens e o vento mudaram."
+      },
+      "gender_policy": "unassigned"
     },
     "mw_p07": {
       "asset": "05_human_amara_cole.png",
-      "name_ru": "Амара Коул"
+      "name_ru": "Кэри",
+      "character_id": "npc_mw_p07",
+      "name": {
+        "ru": "Кэри",
+        "en": "Keri",
+        "fr": "Keri",
+        "de": "Keri",
+        "es": "Keri",
+        "pt_BR": "Keri"
+      },
+      "activity": {
+        "ru": "Я проверяю защитный купол научной станции на горячей Венере.",
+        "en": "I check the protective dome of our science station on hot Venus.",
+        "fr": "Je vérifie le dôme protecteur de notre station sur Vénus.",
+        "de": "Ich prüfe die Schutzkuppel unserer Station auf der heißen Venus.",
+        "es": "Compruebo la cúpula protectora de nuestra estación en Venus.",
+        "pt_BR": "Eu verifico a cúpula de proteção da estação em Vênus."
+      },
+      "mystery": {
+        "ru": "За куполом стало ещё жарче. Сравним показания приборов.",
+        "en": "It's hotter outside the dome. Let's compare our instruments.",
+        "fr": "Il fait encore plus chaud dehors. Comparons les mesures.",
+        "de": "Draußen ist es heißer geworden. Vergleichen wir die Messwerte.",
+        "es": "Hace más calor fuera de la cúpula. Comparemos los datos.",
+        "pt_BR": "Está mais quente fora da cúpula. Vamos comparar as medidas."
+      },
+      "share": {
+        "ru": "Передадим результаты команде, чтобы станция оставалась защищённой.",
+        "en": "Let's share the readings with the team to keep the station safe.",
+        "fr": "Transmettons les mesures à l'équipe pour protéger la station.",
+        "de": "Teilen wir die Werte mit dem Team, damit die Station sicher bleibt.",
+        "es": "Compartamos los datos con el equipo para proteger la estación.",
+        "pt_BR": "Vamos passar as medidas à equipe para proteger a estação."
+      },
+      "gender_policy": "unassigned"
     },
     "st_mw": {
       "asset": "06_human_lin_kai.png",
-      "name_ru": "Линь Кай"
+      "name_ru": "Эви",
+      "character_id": "npc_st_mw",
+      "name": {
+        "ru": "Эви",
+        "en": "Evi",
+        "fr": "Evi",
+        "de": "Evi",
+        "es": "Evi",
+        "pt_BR": "Evi"
+      },
+      "activity": {
+        "ru": "Я слежу за ремонтом кораблей в доках орбитальной верфи Каллисто.",
+        "en": "I help inspect ships in the docks of Callisto Orbital Shipyard.",
+        "fr": "J'inspecte les vaisseaux dans les docks du chantier de Callisto.",
+        "de": "Ich prüfe Schiffe in den Docks der Callisto-Werft.",
+        "es": "Reviso naves en los muelles del astillero de Calisto.",
+        "pt_BR": "Eu inspeciono naves nas docas do estaleiro de Calisto."
+      },
+      "mystery": {
+        "ru": "Один корабль передал тихий сигнал. Проверим, нужна ли ему помощь.",
+        "en": "A spaceship sent a faint signal. Let's see if it needs help.",
+        "fr": "Un vaisseau émet un faible signal. Vérifions s'il a besoin d'aide.",
+        "de": "Ein Raumschiff sendet ein schwaches Signal. Braucht es Hilfe?",
+        "es": "Una nave envió una señal débil. Veamos si necesita ayuda.",
+        "pt_BR": "Uma nave enviou um sinal fraco. Vamos ver se precisa de ajuda."
+      },
+      "share": {
+        "ru": "Хочу передать экипажу всё, что мы узнали о его корабле.",
+        "en": "I want to share what we learned with the ship's crew.",
+        "fr": "Je veux partager nos observations avec l'équipage.",
+        "de": "Ich möchte unsere Beobachtungen mit der Besatzung teilen.",
+        "es": "Quiero compartir nuestros hallazgos con la tripulación.",
+        "pt_BR": "Quero compartilhar nossas descobertas com a tripulação."
+      },
+      "gender_policy": "unassigned"
     },
     "lmc_p02": {
       "asset": "07_mold_form_archive.png",
-      "name_ru": "Архивная форма"
+      "name_ru": "Номи",
+      "character_id": "npc_lmc_p02",
+      "name": {
+        "ru": "Номи",
+        "en": "Nomi",
+        "fr": "Nomi",
+        "de": "Nomi",
+        "es": "Nomi",
+        "pt_BR": "Nomi"
+      },
+      "activity": {
+        "ru": "Мои волокна исследуют влажный воздух и волны океана Таласа.",
+        "en": "My fibers explore the damp air and ocean waves of Thalas.",
+        "fr": "Mes fibres explorent l'air humide et les vagues de Thalas.",
+        "de": "Meine Fasern erforschen die feuchte Luft und die Wellen von Thalas.",
+        "es": "Mis fibras exploran el aire húmedo y las olas de Talas.",
+        "pt_BR": "Minhas fibras exploram o ar úmido e as ondas de Talas."
+      },
+      "mystery": {
+        "ru": "Волна принесла необычный ритм к живому мосту. Прислушаемся.",
+        "en": "A wave brought a new rhythm to a living bridge. Let's listen.",
+        "fr": "Une vague apporte un rythme étrange au pont vivant. Écoutons.",
+        "de": "Eine Welle bringt einen neuen Rhythmus zur lebenden Brücke.",
+        "es": "Una ola llevó un ritmo extraño al puente vivo. Escuchemos.",
+        "pt_BR": "Uma onda trouxe um ritmo diferente para a ponte viva."
+      },
+      "share": {
+        "ru": "Мы можем передать ритм по волокнам другим обитателям побережья.",
+        "en": "We can pass the rhythm through our fibers to others along the coast.",
+        "fr": "Nous pouvons transmettre ce rythme aux autres fibres de la côte.",
+        "de": "Wir können den Rhythmus über Fasern an andere an der Küste senden.",
+        "es": "Podemos transmitir el ritmo por las fibras a toda la costa.",
+        "pt_BR": "Podemos enviar o ritmo pelas fibras para a costa inteira."
+      },
+      "gender_policy": "unassigned"
     },
     "lmc_p03": {
       "asset": "08_mold_form_cluster.png",
-      "name_ru": "Кластерная форма"
+      "name_ru": "Миори",
+      "character_id": "npc_lmc_p03",
+      "name": {
+        "ru": "Миори",
+        "en": "Miori",
+        "fr": "Miori",
+        "de": "Miori",
+        "es": "Miori",
+        "pt_BR": "Miori"
+      },
+      "activity": {
+        "ru": "Я выращиваю живые биокупола среди тёмных камней Молии.",
+        "en": "I grow living biodomes among Molia's dark rocks.",
+        "fr": "Je fais pousser des biodômes vivants parmi les roches de Molia.",
+        "de": "Ich lasse lebende Biokuppeln zwischen den dunklen Felsen von Molia wachsen.",
+        "es": "Hago crecer biodomos vivos entre las rocas oscuras de Molia.",
+        "pt_BR": "Eu faço biodomos vivos crescerem entre as rochas escuras de Molia."
+      },
+      "mystery": {
+        "ru": "В тёмной породе появилась новая трещинка. Посмотрим, куда она ведёт.",
+        "en": "A new crack appeared in the dark rock. Let's see where it goes.",
+        "fr": "Une nouvelle fissure apparaît dans la roche sombre. Où mène-t-elle ?",
+        "de": "Im dunklen Gestein zeigt sich ein Riss. Wohin führt er?",
+        "es": "Apareció una grieta nueva en la roca oscura. ¿Adónde va?",
+        "pt_BR": "Uma rachadura surgiu na rocha escura. Aonde será que leva?"
+      },
+      "share": {
+        "ru": "Поделюсь находкой с частями сети, которые ухаживают за куполами.",
+        "en": "I'll share the discovery with the network tending our domes.",
+        "fr": "Je partagerai cela avec le réseau qui protège nos dômes.",
+        "de": "Ich teile die Entdeckung mit dem Netz, das unsere Kuppeln pflegt.",
+        "es": "Compartiré el hallazgo con la red que cuida las cúpulas.",
+        "pt_BR": "Vou compartilhar a descoberta com a rede que cuida das cúpulas."
+      },
+      "gender_policy": "unassigned"
     },
     "lmc_p04": {
       "asset": "07_mold_form_archive.png",
-      "name_ru": "Архивная форма"
+      "name_ru": "Ломи",
+      "character_id": "npc_lmc_p04",
+      "name": {
+        "ru": "Ломи",
+        "en": "Lomi",
+        "fr": "Lomi",
+        "de": "Lomi",
+        "es": "Lomi",
+        "pt_BR": "Lomi"
+      },
+      "activity": {
+        "ru": "Я чувствую движение льда рядом с живыми укрытиями Крионы.",
+        "en": "I sense the ice shifting beside Cryona's living shelters.",
+        "fr": "Je sens la glace bouger près des abris vivants de Cryona.",
+        "de": "Ich spüre Eisbewegungen neben den lebenden Schutzräumen von Cryona.",
+        "es": "Siento cómo se mueve el hielo junto a los refugios vivos de Criona.",
+        "pt_BR": "Eu sinto o gelo se mover perto dos abrigos vivos de Criona."
+      },
+      "mystery": {
+        "ru": "Одна голубая трещина стала ярче. Исследуем её осторожно.",
+        "en": "A blue crack glowed brighter. Let's study it carefully.",
+        "fr": "Une fissure bleue brille davantage. Observons-la doucement.",
+        "de": "Ein blauer Riss leuchtet stärker. Untersuchen wir ihn vorsichtig.",
+        "es": "Una grieta azul brilla más. Observémosla con cuidado.",
+        "pt_BR": "Uma rachadura azul está mais brilhante. Vamos observar com cuidado."
+      },
+      "share": {
+        "ru": "Отправим мягкий предупреждающий сигнал по всей живой сети.",
+        "en": "We'll send a gentle warning signal through the whole network.",
+        "fr": "Envoyons un petit signal d'avertissement dans tout le réseau.",
+        "de": "Senden wir ein sanftes Warnsignal durch das Netz.",
+        "es": "Enviaremos una señal de aviso a toda la red.",
+        "pt_BR": "Vamos enviar um aviso suave por toda a rede."
+      },
+      "gender_policy": "unassigned"
     },
     "st_lmc": {
       "asset": "08_mold_form_cluster.png",
-      "name_ru": "Кластерная форма"
+      "name_ru": "Сори",
+      "character_id": "npc_st_lmc",
+      "name": {
+        "ru": "Сори",
+        "en": "Sori",
+        "fr": "Sori",
+        "de": "Sori",
+        "es": "Sori",
+        "pt_BR": "Sori"
+      },
+      "activity": {
+        "ru": "Я поддерживаю живые волокна внутри лабораторного корабля «Тарантул».",
+        "en": "I care for the living fibers inside the Tarantula laboratory ship.",
+        "fr": "Je prends soin des fibres vivantes du vaisseau Tarentule.",
+        "de": "Ich pflege die lebenden Fasern im Laborschiff Tarantel.",
+        "es": "Cuido las fibras vivas de la nave laboratorio Tarántula.",
+        "pt_BR": "Eu cuido das fibras vivas da nave-laboratório Tarântula."
+      },
+      "mystery": {
+        "ru": "В одной биокамере затих сигнал. Посмотрим, что передают волокна.",
+        "en": "A signal went quiet in a biochamber. Let's check the fibers.",
+        "fr": "Un signal se tait dans une chambre vivante. Vérifions les fibres.",
+        "de": "In einer Biokammer ist ein Signal still. Prüfen wir die Fasern.",
+        "es": "Una señal se apagó en una biocámara. Revisemos las fibras.",
+        "pt_BR": "Um sinal ficou quieto em uma biocâmara. Vamos conferir as fibras."
+      },
+      "share": {
+        "ru": "Расскажу остальной сети корабля, как мы нашли нужную биокамеру.",
+        "en": "I'll tell the ship's network how we found the biochamber.",
+        "fr": "Je raconterai au réseau comment nous avons trouvé la chambre.",
+        "de": "Ich zeige dem Schiffsnetz, wie wir die Biokammer gefunden haben.",
+        "es": "Contaré a la red cómo encontramos la biocámara.",
+        "pt_BR": "Vou contar à rede como encontramos a biocâmara."
+      },
+      "gender_policy": "unassigned"
     },
     "smc_p01": {
       "asset": "10_phase_crystal.png",
-      "name_ru": "Кристаллическая форма"
+      "name_ru": "Аэри",
+      "character_id": "npc_smc_p01",
+      "name": {
+        "ru": "Аэри",
+        "en": "Aeri",
+        "fr": "Aeri",
+        "de": "Aeri",
+        "es": "Aeri",
+        "pt_BR": "Aeri"
+      },
+      "activity": {
+        "ru": "Я изучаю, как прозрачные водные арки вырастают из океана Океи.",
+        "en": "I study transparent water arches rising from Okea's ocean.",
+        "fr": "J'étudie les arches d'eau transparentes qui montent de l'océan d'Okea.",
+        "de": "Ich untersuche durchsichtige Wasserbögen im Ozean von Okea.",
+        "es": "Estudio los arcos de agua transparentes del océano de Okea.",
+        "pt_BR": "Eu estudo os arcos de água transparentes do oceano de Okea."
+      },
+      "mystery": {
+        "ru": "Одна арка изменила форму вместе с волной. Давай найдём её.",
+        "en": "One arch changed shape with a wave. Let's find it.",
+        "fr": "Une arche change de forme avec une vague. Cherchons-la.",
+        "de": "Ein Bogen ändert seine Form mit einer Welle. Suchen wir ihn.",
+        "es": "Un arco cambió de forma con una ola. Busquémoslo.",
+        "pt_BR": "Um arco mudou de forma com uma onda. Vamos achá-lo."
+      },
+      "share": {
+        "ru": "Расскажем об этой форме тем, кто строит новые водные переходы.",
+        "en": "Let's share this shape with those building new water paths.",
+        "fr": "Partageons cette forme avec ceux qui créent des passages d'eau.",
+        "de": "Teilen wir die Form mit denen, die neue Wasserwege bauen.",
+        "es": "Compartamos la forma con quienes crean pasajes de agua.",
+        "pt_BR": "Vamos compartilhar a forma com quem constrói passagens de água."
+      },
+      "gender_policy": "unassigned"
     },
     "smc_p02": {
       "asset": "11_phase_gas.png",
-      "name_ru": "Газовая форма"
+      "name_ru": "Или",
+      "character_id": "npc_smc_p02",
+      "name": {
+        "ru": "Или",
+        "en": "Ili",
+        "fr": "Ili",
+        "de": "Ili",
+        "es": "Ili",
+        "pt_BR": "Ili"
+      },
+      "activity": {
+        "ru": "Я наблюдаю за отражениями красных гор в прозрачных куполах Целы.",
+        "en": "I watch the red mountains reflected in Cela's clear domes.",
+        "fr": "J'observe le reflet des montagnes rouges dans les dômes de Cela.",
+        "de": "Ich sehe rote Berge in den durchsichtigen Kuppeln von Cela.",
+        "es": "Observo las montañas rojas reflejadas en las cúpulas de Cela.",
+        "pt_BR": "Eu observo o reflexo das montanhas vermelhas nas cúpulas de Cela."
+      },
+      "mystery": {
+        "ru": "В одном куполе отражение стало ярче. Сравним его с другим.",
+        "en": "One dome has a brighter reflection. Let's compare it with another.",
+        "fr": "Un dôme reflète plus de lumière. Comparons-le à un autre.",
+        "de": "Eine Kuppel spiegelt stärker. Vergleichen wir sie mit einer anderen.",
+        "es": "Una cúpula refleja más luz. Comparémosla con otra.",
+        "pt_BR": "Uma cúpula está refletindo mais luz. Vamos comparar com outra."
+      },
+      "share": {
+        "ru": "Хочу показать наш опыт другим существам, которые меняют прозрачность.",
+        "en": "I want to share this with others who change their transparency.",
+        "fr": "Je veux montrer cela aux êtres qui changent de transparence.",
+        "de": "Ich möchte dies anderen zeigen, die ihre Durchsichtigkeit ändern.",
+        "es": "Quiero mostrarlo a otros que cambian su transparencia.",
+        "pt_BR": "Quero mostrar isso a outros que mudam sua transparência."
+      },
+      "gender_policy": "unassigned"
     },
     "smc_p03": {
       "asset": "12_phase_liquid.png",
-      "name_ru": "Жидкая форма"
+      "name_ru": "Ори",
+      "character_id": "npc_smc_p03",
+      "name": {
+        "ru": "Ори",
+        "en": "Ori",
+        "fr": "Ori",
+        "de": "Ori",
+        "es": "Ori",
+        "pt_BR": "Ori"
+      },
+      "activity": {
+        "ru": "Я изучаю текучие башни и водные разломы Геноры.",
+        "en": "I study Genora's flowing towers and watery fissures.",
+        "fr": "J'étudie les tours fluides et les failles d'eau de Genora.",
+        "de": "Ich erforsche die fließenden Türme und Wasserspalten von Genora.",
+        "es": "Estudio las torres fluidas y las grietas de agua de Genora.",
+        "pt_BR": "Eu estudo as torres fluidas e as fendas com água de Genora."
+      },
+      "mystery": {
+        "ru": "Башня слегка изогнулась, как волна. Понаблюдаем за движением.",
+        "en": "A tower curved like a wave. Let's observe its movement.",
+        "fr": "Une tour se courbe comme une vague. Observons son mouvement.",
+        "de": "Ein Turm biegt sich wie eine Welle. Beobachten wir ihn.",
+        "es": "Una torre se dobló como una ola. Observemos su movimiento.",
+        "pt_BR": "Uma torre se curvou como uma onda. Vamos observar."
+      },
+      "share": {
+        "ru": "Поделимся наблюдением с теми, кто поддерживает жидкие переходы.",
+        "en": "Let's share it with those caring for the flowing passages.",
+        "fr": "Partageons-le avec ceux qui entretiennent les passages fluides.",
+        "de": "Teilen wir es mit denen, die die fließenden Wege pflegen.",
+        "es": "Compartámoslo con quienes cuidan los pasajes fluidos.",
+        "pt_BR": "Vamos compartilhar com quem cuida das passagens fluidas."
+      },
+      "gender_policy": "unassigned"
     },
     "smc_p05": {
       "asset": "10_phase_crystal.png",
-      "name_ru": "Кристаллическая форма"
+      "name_ru": "Кэо",
+      "character_id": "npc_smc_p05",
+      "name": {
+        "ru": "Кэо",
+        "en": "Keo",
+        "fr": "Keo",
+        "de": "Keo",
+        "es": "Keo",
+        "pt_BR": "Keo"
+      },
+      "activity": {
+        "ru": "Я исследую туманную станцию среди чёрных скал и красных отражений Спиры.",
+        "en": "I explore Spira's mist station among black rocks and red reflections.",
+        "fr": "J'explore la station de brume parmi les roches noires de Spira.",
+        "de": "Ich erkunde die Nebelstation zwischen schwarzen Felsen von Spira.",
+        "es": "Exploro la estación de niebla entre las rocas negras de Spira.",
+        "pt_BR": "Eu exploro a estação de névoa entre as rochas escuras de Spira."
+      },
+      "mystery": {
+        "ru": "Туман стал гуще у светлой границы. Найдём, откуда идёт свет.",
+        "en": "The mist thickened at the edge of the light. Let's find its source.",
+        "fr": "La brume devient plus dense près de la lumière. Cherchons la source.",
+        "de": "Am hellen Rand wird der Nebel dichter. Suchen wir das Licht.",
+        "es": "La niebla se espesó cerca de la luz. Busquemos su origen.",
+        "pt_BR": "A névoa ficou mais densa perto da luz. Vamos achar a origem."
+      },
+      "share": {
+        "ru": "Покажем другим путешественникам, как замечать путь в тумане.",
+        "en": "Let's show other travelers how to notice their path through the mist.",
+        "fr": "Montrons aux voyageurs comment repérer un chemin dans la brume.",
+        "de": "Zeigen wir Reisenden, wie man den Weg im Nebel erkennt.",
+        "es": "Mostremos a otros cómo encontrar el camino en la niebla.",
+        "pt_BR": "Vamos mostrar como encontrar o caminho na névoa."
+      },
+      "gender_policy": "unassigned"
     },
     "st_smc": {
       "asset": "11_phase_gas.png",
-      "name_ru": "Газовая форма"
+      "name_ru": "Лиэ",
+      "character_id": "npc_st_smc",
+      "name": {
+        "ru": "Лиэ",
+        "en": "Lie",
+        "fr": "Lie",
+        "de": "Lie",
+        "es": "Lie",
+        "pt_BR": "Lie"
+      },
+      "activity": {
+        "ru": "Я берегу истории нашей цивилизации в прозрачных камерах Живого архива.",
+        "en": "I protect our people's stories in the Living Archive's clear chambers.",
+        "fr": "Je protège nos histoires dans les chambres claires des Archives vivantes.",
+        "de": "Ich bewahre unsere Geschichten in den klaren Kammern des lebenden Archivs.",
+        "es": "Cuido nuestras historias en las cámaras transparentes del Archivo Vivo.",
+        "pt_BR": "Eu cuido das nossas histórias nas câmaras transparentes do Arquivo Vivo."
+      },
+      "mystery": {
+        "ru": "Одна камера отразила забытый узор. Посмотрим внимательнее.",
+        "en": "A chamber reflected a forgotten pattern. Let's look closely.",
+        "fr": "Une chambre montre un motif oublié. Regardons de près.",
+        "de": "Eine Kammer zeigt ein vergessenes Muster. Sehen wir genauer hin.",
+        "es": "Una cámara reflejó un dibujo olvidado. Miremos de cerca.",
+        "pt_BR": "Uma câmara refletiu um padrão esquecido. Vamos observar."
+      },
+      "share": {
+        "ru": "Хочу сохранить этот узор, чтобы другие могли узнать о нём.",
+        "en": "I want to preserve that pattern so others can learn from it.",
+        "fr": "Je veux préserver ce motif pour le partager.",
+        "de": "Ich möchte das Muster bewahren, damit andere es kennenlernen.",
+        "es": "Quiero guardar ese dibujo para que otros lo conozcan.",
+        "pt_BR": "Quero guardar esse padrão para que outros possam aprender."
+      },
+      "gender_policy": "unassigned"
     },
     "ngc6822_p01": {
       "asset": "01_reptile_liri.png",
