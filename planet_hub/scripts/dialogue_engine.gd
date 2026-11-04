@@ -257,6 +257,11 @@ func _accept_story(text: String) -> Dictionary:
 	if index >= responses.size():
 		return {"accepted": false, "npc": _ui("bad"), "choices": choices.duplicate()}
 	var answer: String = _localized(responses[index])
+	var race_id: String = str(_world.get("race", ""))
+	var reactions: Dictionary = _stories.get("reactions_by_race", {}).get(race_id, {})
+	var variants: Array = reactions.get(language, reactions.get("en", []))
+	if index < variants.size():
+		answer = str(variants[index]) + " " + answer
 	_visited["story_turns"] = int(_visited.get("story_turns", 0)) + 1
 	_visited["story_last_choice"] = index
 	_store_location()
