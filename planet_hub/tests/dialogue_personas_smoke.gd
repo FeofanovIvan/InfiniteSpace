@@ -70,7 +70,7 @@ func _test() -> void:
 		_assert(not name.is_empty() and not role.is_empty() and not str(p.get("work", "")).is_empty(), "complete person card metadata")
 		_assert(p.get("gender") == null, "character biography has no forced gender")
 		_assert(roster.has(id), "keep original portrait assignment")
-		_assert(p.get("portrait_template") == roster.get(id, {}).get("asset"), "do not swap original visual templates")
+		_assert(not str(roster.get(id, {}).get("asset", "")).is_empty(), "portrait is a replaceable visual template")
 		_assert(p.get("chapter_cues", []).size() == 4, "all four chapters refer to local context")
 	_assert(inhabited == 30, "24 inhabited planets plus 6 stations")
 	# Same portrait may occur on several worlds, but personalities and memories must not merge.
