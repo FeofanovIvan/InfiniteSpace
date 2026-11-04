@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "age_group": "3-5",
+  "language_codes": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "logic": "Two chapters per representative, one player-selected non-punitive resolution; remembered by representative asset and revisited on later conversations.",
+  "revisit_prefix": {
+    "ru": "Я помню наш прошлый выбор: «%s».",
+    "en": "I remember our last choice: “%s”.",
+    "fr": "Je me souviens de notre dernier choix : « %s ».",
+    "de": "Ich erinnere mich an unsere letzte Wahl: „%s“.",
+    "es": "Recuerdo nuestra última elección: «%s».",
+    "pt_BR": "Eu me lembro da nossa última escolha: “%s”."
+  },
+  "races": {
+    "human": [
+      {
+        "id": "beacon",
+        "intro": {
+          "ru": "У нас маленькая загадка: исследовательский маячок притих. Как узнать, что с ним всё хорошо?",
+          "en": "A little mystery: a research beacon went quiet. How can we check it?",
+          "fr": "Petit mystère : une balise ne répond plus. Comment la vérifier ?",
+          "de": "Ein Rätsel: Eine Forschungsboje ist still. Wie prüfen wir sie?",
+          "es": "Un misterio: una baliza dejó de responder. ¿Cómo la comprobamos?",
+          "pt_BR": "Um mistério: uma baliza de pesquisa ficou em silêncio. Como verificar?"
+        },
+        "choices": [
+          {
+            "ru": "Посмотрим на карту.",
+            "en": "Let's check the map.",
+            "fr": "Regardons la carte.",
+            "de": "Schauen wir auf die Karte.",
+            "es": "Miremos el mapa.",
+            "pt_BR": "Vamos olhar o mapa."
+          },
+          {
+            "ru": "Послушаем сигнал.",
+            "en": "Let's listen for a signal.",
+            "fr": "Écoutons le signal.",
+            "de": "Hören wir auf ein Signal.",
+            "es": "Escuchemos la señal.",
+            "pt_BR": "Vamos ouvir o sinal."
+          },
+          {
+            "ru": "Проверим огоньки.",
+            "en": "Let's check the lights.",
+            "fr": "Regardons les lumières.",
+            "de": "Prüfen wir die Lichter.",
+            "es": "Miremos las luces.",
+            "pt_BR": "Vamos verificar as luzes."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Вот точка на карте! Теперь мы знаем, где маячок.",
+            "en": "There is its dot on the map! Now we know where the beacon is.",
+            "fr": "Voilà son point sur la carte ! Nous savons où se trouve la balise.",
+            "de": "Da ist der Punkt auf der Karte! Jetzt kennen wir ihren Ort.",
+            "es": "¡Aquí está en el mapa! Sabemos dónde está la baliza.",
+            "pt_BR": "Olha o ponto no mapa! Agora sabemos onde está a baliza."
+          },
+          {
+            "ru": "Тихое «пи-пи»! Маячок ответил. Мы услышали его вместе.",
+            "en": "A tiny beep! The beacon answered. We heard it together.",
+            "fr": "Un petit bip ! La balise répond. Nous l'avons entendue ensemble.",
+            "de": "Ein leises Piepen! Die Boje antwortet. Wir haben es gemeinsam gehört.",
+            "es": "¡Un pitido suave! La baliza respondió. Lo oímos juntos.",
+            "pt_BR": "Um bipe baixinho! A baliza respondeu. Ouvimos juntos."
+          },
+          {
+            "ru": "Огонёк мигнул два раза! Значит, маячок работает.",
+            "en": "A light blinked twice! That means the beacon is working.",
+            "fr": "Une lumière clignote deux fois ! La balise fonctionne.",
+            "de": "Ein Licht blinkt zweimal! Die Boje funktioniert.",
+            "es": "¡Una luz parpadeó dos veces! La baliza funciona.",
+            "pt_BR": "A luz piscou duas vezes! A baliza está funcionando."
+          }
+        ]
+      },
+      {
+        "id": "planet_report",
+        "intro": {
+          "ru": "Маячок опять на связи. Что запишем в наш маленький научный дневник?",
+          "en": "The beacon is working again. What shall we put in our little science journal?",
+          "fr": "La balise fonctionne ! Que noter dans notre carnet scientifique ?",
+          "de": "Die Boje funktioniert wieder. Was schreiben wir ins Forschertagebuch?",
+          "es": "La baliza funciona otra vez. ¿Qué anotamos en nuestro diario?",
+          "pt_BR": "A baliza está funcionando. O que vamos anotar no diário de descobertas?"
+        },
+        "choices": [
+          {
+            "ru": "Нарисуем облако.",
+            "en": "Let's draw a cloud.",
+            "fr": "Dessinons un nuage.",
+            "de": "Zeichnen wir eine Wolke.",
+            "es": "Dibujemos una nube.",
+            "pt_BR": "Vamos desenhar uma nuvem."
+          },
+          {
+            "ru": "Посчитаем три звезды.",
+            "en": "Let's count three stars.",
+            "fr": "Comptons trois étoiles.",
+            "de": "Zählen wir drei Sterne.",
+            "es": "Contemos tres estrellas.",
+            "pt_BR": "Vamos contar três estrelas."
+          },
+          {
+            "ru": "Найдём круглый предмет.",
+            "en": "Let's find a round shape.",
+            "fr": "Cherchons une forme ronde.",
+            "de": "Suchen wir eine runde Form.",
+            "es": "Busquemos una forma redonda.",
+            "pt_BR": "Vamos procurar uma forma redonda."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Готово! Наше облако похоже на мягкую подушку.",
+            "en": "Done! Our cloud looks like a soft pillow.",
+            "fr": "Voilà ! Notre nuage ressemble à un coussin.",
+            "de": "Fertig! Unsere Wolke sieht aus wie ein weiches Kissen.",
+            "es": "¡Listo! Nuestra nube parece una almohada.",
+            "pt_BR": "Pronto! Nossa nuvem parece um travesseiro."
+          },
+          {
+            "ru": "Одна, две, три! Мы записали три яркие звезды.",
+            "en": "One, two, three! We recorded three bright stars.",
+            "fr": "Une, deux, trois ! Nous avons noté trois étoiles brillantes.",
+            "de": "Eins, zwei, drei! Wir haben drei helle Sterne notiert.",
+            "es": "¡Una, dos, tres! Anotamos tres estrellas brillantes.",
+            "pt_BR": "Uma, duas, três! Anotamos três estrelas brilhantes."
+          },
+          {
+            "ru": "Нашёлся круг! Теперь мы знаем, какую форму видели.",
+            "en": "We found a circle! Now we know the shape we saw.",
+            "fr": "Nous avons trouvé un rond ! Nous savons quelle forme nous avons vue.",
+            "de": "Wir haben einen Kreis gefunden! Jetzt kennen wir seine Form.",
+            "es": "¡Encontramos un círculo! Ya conocemos esa forma.",
+            "pt_BR": "Achamos um círculo! Agora conhecemos essa forma."
+          }
+        ]
+      }
+    ],
+    "mold": [
+      {
+        "id": "quiet_branch",
+        "intro": {
+          "ru": "Одна веточка нашей живой сети больше не посылает сигналы. Давай найдём её осторожно.",
+          "en": "One branch of our living network has gone quiet. Let's find it gently.",
+          "fr": "Une branche de notre réseau vivant est silencieuse. Retrouvons-la doucement.",
+          "de": "Ein Zweig unseres lebenden Netzes ist still geworden. Suchen wir ihn behutsam.",
+          "es": "Una rama de nuestra red viva quedó en silencio. Vamos a encontrarla.",
+          "pt_BR": "Um ramo da nossa rede viva ficou em silêncio. Vamos encontrá-lo com cuidado."
+        },
+        "choices": [
+          {
+            "ru": "Поищем светящуюся нить.",
+            "en": "Let's find a glowing fiber.",
+            "fr": "Cherchons un filament lumineux.",
+            "de": "Suchen wir eine leuchtende Faser.",
+            "es": "Busquemos una fibra brillante.",
+            "pt_BR": "Vamos achar uma fibra brilhante."
+          },
+          {
+            "ru": "Послушаем вибрацию.",
+            "en": "Let's feel a gentle vibration.",
+            "fr": "Sentons une petite vibration.",
+            "de": "Spüren wir ein sanftes Schwingen.",
+            "es": "Sintamos una vibración suave.",
+            "pt_BR": "Vamos sentir uma vibração suave."
+          },
+          {
+            "ru": "Попросим сеть о помощи.",
+            "en": "Let's ask the network for help.",
+            "fr": "Demandons de l'aide au réseau.",
+            "de": "Bitten wir das Netz um Hilfe.",
+            "es": "Pidamos ayuda a la red.",
+            "pt_BR": "Vamos pedir ajuda à rede."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Тонкая нить засветилась. Она показала путь к веточке!",
+            "en": "A thin fiber glowed and showed us the way to the branch!",
+            "fr": "Un filament brille et nous montre le chemin !",
+            "de": "Eine dünne Faser leuchtet und zeigt den Weg!",
+            "es": "Una fibra brilló y nos mostró el camino.",
+            "pt_BR": "Uma fibra brilhou e mostrou o caminho!"
+          },
+          {
+            "ru": "Тук-тук! Мы почувствовали слабый сигнал рядом.",
+            "en": "Tap, tap! We sensed a tiny signal nearby.",
+            "fr": "Toc, toc ! Nous sentons un petit signal tout près.",
+            "de": "Klopf, klopf! Wir spüren ein schwaches Signal.",
+            "es": "¡Toc, toc! Sentimos una señal muy cerca.",
+            "pt_BR": "Toc, toc! Sentimos um sinal bem perto."
+          },
+          {
+            "ru": "Другие нити ответили: «Мы здесь!» Вместе искать проще.",
+            "en": "The other fibers replied, “We're here!” Finding things is easier together.",
+            "fr": "Les autres filaments répondent : « Nous sommes là ! »",
+            "de": "Die anderen Fasern antworten: „Wir sind hier!“",
+            "es": "Las otras fibras respondieron: «¡Aquí estamos!».",
+            "pt_BR": "As outras fibras responderam: “Estamos aqui!”."
+          }
+        ]
+      },
+      {
+        "id": "new_growth",
+        "intro": {
+          "ru": "Наша веточка снова с нами! Где ей лучше наблюдать за этим миром?",
+          "en": "Our little branch is back! Where should it explore this world next?",
+          "fr": "Notre petite branche est revenue ! Où peut-elle explorer maintenant ?",
+          "de": "Unser Zweig ist wieder da! Wo soll er die Welt weiter erkunden?",
+          "es": "¡Nuestra ramita volvió! ¿Dónde explorará ahora?",
+          "pt_BR": "Nosso raminho voltou! Onde vai explorar agora?"
+        },
+        "choices": [
+          {
+            "ru": "У воды.",
+            "en": "Near the water.",
+            "fr": "Près de l'eau.",
+            "de": "Am Wasser.",
+            "es": "Cerca del agua.",
+            "pt_BR": "Perto da água."
+          },
+          {
+            "ru": "Рядом со светом.",
+            "en": "Beside a gentle light.",
+            "fr": "Près d'une lumière douce.",
+            "de": "Bei einem sanften Licht.",
+            "es": "Junto a una luz suave.",
+            "pt_BR": "Perto de uma luz suave."
+          },
+          {
+            "ru": "В тихом уголке.",
+            "en": "In a quiet corner.",
+            "fr": "Dans un coin tranquille.",
+            "de": "An einem stillen Ort.",
+            "es": "En un rincón tranquilo.",
+            "pt_BR": "Em um cantinho tranquilo."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Мы увидели, как вода движется волнами. Веточка передала сигнал!",
+            "en": "We watched water move in waves. The little branch sent a signal!",
+            "fr": "L'eau fait des vagues. La petite branche envoie un signal !",
+            "de": "Das Wasser macht Wellen. Der kleine Zweig sendet ein Signal!",
+            "es": "Vimos olas en el agua. ¡La ramita envió una señal!",
+            "pt_BR": "Vimos as ondas da água. O raminho enviou um sinal!"
+          },
+          {
+            "ru": "Мягкий свет помог разглядеть полупрозрачные волокна.",
+            "en": "Soft light helped us see the almost transparent fibers.",
+            "fr": "La lumière douce nous aide à voir les filaments.",
+            "de": "Sanftes Licht zeigt uns die feinen Fasern.",
+            "es": "La luz suave nos ayudó a ver las fibras transparentes.",
+            "pt_BR": "A luz suave ajudou a enxergar as fibras transparentes."
+          },
+          {
+            "ru": "В тишине мы заметили самый слабый сигнал. Вот это внимание!",
+            "en": "In the quiet, we noticed the faintest signal. What careful listening!",
+            "fr": "Dans le calme, nous percevons un tout petit signal.",
+            "de": "In der Stille spüren wir ein winziges Signal.",
+            "es": "En silencio notamos una señal pequeñita.",
+            "pt_BR": "No silêncio percebemos um sinal bem fraquinho."
+          }
+        ]
+      }
+    ],
+    "phase": [
+      {
+        "id": "little_drop",
+        "intro": {
+          "ru": "Маленькая капля потерялась среди водных арок. Как помочь ей найти дорогу?",
+          "en": "A little droplet is lost among the water arches. How can we help?",
+          "fr": "Une petite goutte est perdue entre des arches d'eau. Comment l'aider ?",
+          "de": "Ein Tropfen hat sich zwischen Wasserbögen verirrt. Wie helfen wir?",
+          "es": "Una gotita se perdió entre arcos de agua. ¿Cómo la ayudamos?",
+          "pt_BR": "Uma gotinha se perdeu entre arcos de água. Como ajudar?"
+        },
+        "choices": [
+          {
+            "ru": "Пойдём за волной.",
+            "en": "Let's follow a wave.",
+            "fr": "Suivons une vague.",
+            "de": "Folgen wir einer Welle.",
+            "es": "Sigamos una ola.",
+            "pt_BR": "Vamos seguir uma onda."
+          },
+          {
+            "ru": "Поищем отражение.",
+            "en": "Let's look for a reflection.",
+            "fr": "Cherchons un reflet.",
+            "de": "Suchen wir eine Spiegelung.",
+            "es": "Busquemos un reflejo.",
+            "pt_BR": "Vamos procurar um reflexo."
+          },
+          {
+            "ru": "Остановимся и осмотримся.",
+            "en": "Let's stop and look around.",
+            "fr": "Arrêtons-nous et regardons.",
+            "de": "Halten wir an und schauen.",
+            "es": "Paremos y miremos alrededor.",
+            "pt_BR": "Vamos parar e olhar em volta."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Волна мягко привела нас к знакомому мосту!",
+            "en": "A gentle wave led us to a familiar bridge!",
+            "fr": "Une vague nous mène à un pont familier !",
+            "de": "Eine sanfte Welle führte uns zu einer bekannten Brücke!",
+            "es": "¡Una ola nos llevó a un puente conocido!",
+            "pt_BR": "Uma onda nos levou até uma ponte conhecida!"
+          },
+          {
+            "ru": "В воде видна светящаяся арка. Мы узнали дорогу домой.",
+            "en": "A glowing arch appeared in the water. We found the way home.",
+            "fr": "Une arche brille dans l'eau. Nous retrouvons le chemin.",
+            "de": "Ein leuchtender Bogen erscheint im Wasser. Wir finden heim.",
+            "es": "Un arco brilla en el agua. ¡Encontramos el camino!",
+            "pt_BR": "Um arco brilha na água. Encontramos o caminho!"
+          },
+          {
+            "ru": "Мы осмотрелись и заметили нужный поворот. Можно не спешить!",
+            "en": "We looked around and found the right turn. No need to hurry!",
+            "fr": "Nous trouvons le bon virage. Pas besoin de se presser !",
+            "de": "Wir finden den richtigen Weg. Keine Eile!",
+            "es": "Vimos el camino correcto. ¡No hay prisa!",
+            "pt_BR": "Vimos o caminho certo. Não precisamos correr!"
+          }
+        ]
+      },
+      {
+        "id": "festival",
+        "intro": {
+          "ru": "Капля дома! Она зовёт нас на праздник форм. Какую форму выберем в нашей сказке?",
+          "en": "The droplet is home! It invites us to a festival of shapes. What shall we become in our story?",
+          "fr": "La goutte est rentrée ! Quelle forme choisir pour la fête imaginaire ?",
+          "de": "Der Tropfen ist daheim! Welche Form wählen wir für das Fest?",
+          "es": "¡La gotita llegó a casa! ¿Qué forma elegimos para la fiesta?",
+          "pt_BR": "A gotinha chegou em casa! Que forma vamos escolher para a festa?"
+        },
+        "choices": [
+          {
+            "ru": "Текучую струйку.",
+            "en": "Let's flow like a stream.",
+            "fr": "Coulons comme un ruisseau.",
+            "de": "Fließen wir wie ein Bach.",
+            "es": "Fluyamos como un arroyo.",
+            "pt_BR": "Vamos fluir como um riacho."
+          },
+          {
+            "ru": "Лёгкий туман.",
+            "en": "Let's become gentle mist.",
+            "fr": "Devenons une brume légère.",
+            "de": "Werden wir leichter Nebel.",
+            "es": "Seamos una bruma suave.",
+            "pt_BR": "Vamos virar uma névoa suave."
+          },
+          {
+            "ru": "Сияющий кристалл.",
+            "en": "Let's become a shining crystal.",
+            "fr": "Devenons un cristal brillant.",
+            "de": "Werden wir ein glänzender Kristall.",
+            "es": "Seamos un cristal brillante.",
+            "pt_BR": "Vamos ser um cristal brilhante."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Мы потекли, словно ручеёк. Какой извилистый путь!",
+            "en": "We flowed like a little stream along a winding path!",
+            "fr": "Nous coulons comme un petit ruisseau !",
+            "de": "Wir fließen wie ein kleiner Bach!",
+            "es": "Fluimos como un arroyo por un camino curvo.",
+            "pt_BR": "Fluímos como um riacho por um caminho cheio de curvas!"
+          },
+          {
+            "ru": "Мы мягко проплыли между арками, будто маленькое облачко.",
+            "en": "We drifted between the arches like a little cloud.",
+            "fr": "Nous flottons entre les arches comme un nuage.",
+            "de": "Wir schweben wie eine Wolke zwischen den Bögen.",
+            "es": "Flotamos entre los arcos como una nube.",
+            "pt_BR": "Flutuamos entre os arcos como uma nuvem."
+          },
+          {
+            "ru": "У кристалла появились блестящие грани. Они отражают свет!",
+            "en": "Shiny crystal faces appeared. They reflect the light!",
+            "fr": "Le cristal brille et reflète la lumière !",
+            "de": "Der Kristall glänzt und spiegelt das Licht!",
+            "es": "El cristal tiene caras brillantes que reflejan la luz.",
+            "pt_BR": "O cristal tem faces brilhantes que refletem a luz."
+          }
+        ]
+      }
+    ]
+  }
+}
