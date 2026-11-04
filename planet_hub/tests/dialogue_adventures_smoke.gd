@@ -116,7 +116,7 @@ func _verify() -> void:
 	human_a.call("accept", str(first_result["choices"][0]))
 	var human_same: RefCounted = _open_story("mw_p03", "en")
 	var same_result: Dictionary = human_same.call("accept", str(human_same.call("get_choices")[0]))
-	_check(str(same_result["npc"]).contains("I remember our last choice"), "same representative remembers across two planets")
+	_check(not str(same_result["npc"]).contains("I remember our last choice"), "same portrait is NOT the same person on different planets")
 	var human_other: RefCounted = _open_story("mw_p02", "en")
 	var other_result: Dictionary = human_other.call("accept", str(human_other.call("get_choices")[0]))
 	_check(not str(other_result["npc"]).contains("I remember our last choice"), "different representative does not inherit memory")
