@@ -1,0 +1,834 @@
+{
+  "schema_version": 1,
+  "context": "representative_dialog",
+  "entity": "six_species",
+  "age_target": "3-8",
+  "source": "authored fictional vignette additions grounded in existing v93 dialogue_worlds.json",
+  "notes": "30 unique location/character mini-scenes. Three follow-up question intents localized in six game languages, answers authored RU/EN with intentional EN fallback until editorial localization. Never treat uninhabited planets as NPC locations.",
+  "choices_by_race": {
+    "human": {
+      "ru": [
+        "Что ты здесь заметил?",
+        "Почему это важно?",
+        "Что я могу попробовать?"
+      ],
+      "en": [
+        "What did you notice here?",
+        "Why is it important?",
+        "What can I try?"
+      ],
+      "fr": [
+        "Qu'as-tu remarqué ici ?",
+        "Pourquoi est-ce important ?",
+        "Que puis-je essayer ?"
+      ],
+      "de": [
+        "Was hast du hier bemerkt?",
+        "Warum ist das wichtig?",
+        "Was kann ich ausprobieren?"
+      ],
+      "es": [
+        "¿Qué has observado aquí?",
+        "¿Por qué es importante?",
+        "¿Qué puedo probar?"
+      ],
+      "pt_BR": [
+        "O que você percebeu aqui?",
+        "Por que isso é importante?",
+        "O que posso experimentar?"
+      ]
+    },
+    "mold": {
+      "ru": [
+        "Что чувствует ваша сеть?",
+        "Зачем вы растёте вместе?",
+        "Как я могу помочь?"
+      ],
+      "en": [
+        "What can your network sense?",
+        "Why do you grow together?",
+        "How can I help?"
+      ],
+      "fr": [
+        "Que ressent votre réseau ?",
+        "Pourquoi grandissez-vous ensemble ?",
+        "Comment puis-je aider ?"
+      ],
+      "de": [
+        "Was spürt euer Netzwerk?",
+        "Warum wachst ihr zusammen?",
+        "Wie kann ich helfen?"
+      ],
+      "es": [
+        "¿Qué siente su red?",
+        "¿Por qué crecen juntos?",
+        "¿Cómo puedo ayudar?"
+      ],
+      "pt_BR": [
+        "O que sua rede percebe?",
+        "Por que vocês crescem juntos?",
+        "Como posso ajudar?"
+      ]
+    },
+    "phase": {
+      "ru": [
+        "Что происходит с твоей формой?",
+        "Зачем менять состояние?",
+        "Что мне понаблюдать?"
+      ],
+      "en": [
+        "What happens to your shape?",
+        "Why change your state?",
+        "What can I observe?"
+      ],
+      "fr": [
+        "Que devient ta forme ?",
+        "Pourquoi changer d'état ?",
+        "Que puis-je observer ?"
+      ],
+      "de": [
+        "Was passiert mit deiner Form?",
+        "Warum wechselst du deinen Zustand?",
+        "Was kann ich beobachten?"
+      ],
+      "es": [
+        "¿Qué ocurre con tu forma?",
+        "¿Por qué cambias de estado?",
+        "¿Qué puedo observar?"
+      ],
+      "pt_BR": [
+        "O que acontece com sua forma?",
+        "Por que você muda de estado?",
+        "O que posso observar?"
+      ]
+    },
+    "reptile": {
+      "ru": [
+        "Что ты здесь охраняешь?",
+        "Почему это нужно вашему городу?",
+        "Что мы можем исследовать?"
+      ],
+      "en": [
+        "What do you protect here?",
+        "Why does your city need it?",
+        "What can we explore?"
+      ],
+      "fr": [
+        "Que protèges-tu ici ?",
+        "Pourquoi ta ville en a-t-elle besoin ?",
+        "Que pouvons-nous explorer ?"
+      ],
+      "de": [
+        "Was beschützt du hier?",
+        "Warum braucht eure Stadt das?",
+        "Was können wir erforschen?"
+      ],
+      "es": [
+        "¿Qué proteges aquí?",
+        "¿Por qué lo necesita tu ciudad?",
+        "¿Qué podemos explorar?"
+      ],
+      "pt_BR": [
+        "O que você protege aqui?",
+        "Por que sua cidade precisa disso?",
+        "O que podemos explorar?"
+      ]
+    },
+    "magnetic": {
+      "ru": [
+        "Как движется металл?",
+        "Зачем нужны магнитные поля?",
+        "Что можно заметить?"
+      ],
+      "en": [
+        "How does the metal move?",
+        "Why do you need magnetic fields?",
+        "What can I notice?"
+      ],
+      "fr": [
+        "Comment le métal bouge-t-il ?",
+        "Pourquoi ces champs magnétiques ?",
+        "Que puis-je observer ?"
+      ],
+      "de": [
+        "Wie bewegt sich das Metall?",
+        "Wozu dienen die Magnetfelder?",
+        "Was kann ich beobachten?"
+      ],
+      "es": [
+        "¿Cómo se mueve el metal?",
+        "¿Para qué sirven los campos magnéticos?",
+        "¿Qué puedo observar?"
+      ],
+      "pt_BR": [
+        "Como o metal se move?",
+        "Para que servem os campos magnéticos?",
+        "O que posso observar?"
+      ]
+    },
+    "neural": {
+      "ru": [
+        "Что ты изучаешь?",
+        "Как ты это запоминаешь?",
+        "Могу я разгадать загадку?"
+      ],
+      "en": [
+        "What are you studying?",
+        "How do you remember it?",
+        "Can I solve a riddle?"
+      ],
+      "fr": [
+        "Qu'étudies-tu ?",
+        "Comment t'en souviens-tu ?",
+        "Puis-je résoudre une énigme ?"
+      ],
+      "de": [
+        "Was erforschst du?",
+        "Wie merkst du dir das?",
+        "Darf ich ein Rätsel lösen?"
+      ],
+      "es": [
+        "¿Qué estás estudiando?",
+        "¿Cómo lo recuerdas?",
+        "¿Puedo resolver un acertijo?"
+      ],
+      "pt_BR": [
+        "O que você está estudando?",
+        "Como se lembra disso?",
+        "Posso resolver um enigma?"
+      ]
+    }
+  },
+  "scenes": {
+    "mw_p01": {
+      "hook": {
+        "ru": "Смотри: у водной долины стоят светлые исследовательские здания. Здесь природу изучают, не переставая о ней заботиться.",
+        "en": "Look: bright research buildings stand by the water valley. Here people study nature and try to care for it."
+      },
+      "responses": [
+        {
+          "ru": "Я наблюдаю, как вода течёт между горами и городом. Она нужна и растениям, и людям.",
+          "en": "I watch the water flow between the mountains and the city. Plants and people both need it."
+        },
+        {
+          "ru": "Если мы загрязним воду, пострадают многие живые существа. Поэтому мы проверяем, чтобы она была чистой.",
+          "en": "If we pollute the water, many living things may suffer. That is why we check that it is clean."
+        },
+        {
+          "ru": "Посмотри вокруг: найдёшь что-то зелёное и что-то синее? Это поможет заметить природу рядом с городом.",
+          "en": "Look around: can you spot something green and something blue? That helps us notice nature beside the city."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "mw_p02": {
+      "hook": {
+        "ru": "Под красной пылью Марса спрятан зал с большим шарообразным компьютерным ядром. Он помогает исследователям искать ответы.",
+        "en": "Beneath Mars's red dust is a room with a huge round computer core. It helps researchers search for answers."
+      },
+      "responses": [
+        {
+          "ru": "Я задаю компьютеру вопросы о температуре и пыли, а потом проверяю ответы приборами.",
+          "en": "I ask the computer about temperature and dust, then check its answers with instruments."
+        },
+        {
+          "ru": "На Марсе холодно, а воздух слишком разрежен для дыхания без защиты. Поэтому наши помещения герметичны.",
+          "en": "Mars is cold and its air is too thin for us to breathe without protection. That is why our rooms are sealed."
+        },
+        {
+          "ru": "Можешь найти на картинке круг или шар? Наше компьютерное ядро именно такой формы.",
+          "en": "Can you find a circle or a sphere in the picture? Our computer core has that shape."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "mw_p03": {
+      "hook": {
+        "ru": "Мы смотрим на вихри Юпитера со станции, которая парит над облаками. Сам Юпитер — огромный газовый мир.",
+        "en": "We watch Jupiter's storms from a station floating above the clouds. Jupiter itself is a giant gas world."
+      },
+      "responses": [
+        {
+          "ru": "Облака здесь складываются в полосы, а некоторые вихри намного больше земных бурь.",
+          "en": "The clouds make stripes here, and some storms are much bigger than storms on Earth."
+        },
+        {
+          "ru": "У Юпитера нет такой твёрдой поверхности, как у Земли. Поэтому наши исследователи работают на защищённой станции.",
+          "en": "Jupiter does not have an Earth-like solid surface. That is why our researchers work on a protected station."
+        },
+        {
+          "ru": "Проведи пальцем вдоль одной облачной полосы на изображении. Она тянется прямо или изгибается?",
+          "en": "Trace one cloud stripe with your finger in the picture. Is it straight or curved?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "mw_p06": {
+      "hook": {
+        "ru": "Вокруг нашей станции на Нептуне клубятся синие облака. Ветер там сильнее многих бурь на Земле.",
+        "en": "Blue clouds swirl around our station at Neptune. The winds there can be stronger than many storms on Earth."
+      },
+      "responses": [
+        {
+          "ru": "Мы измеряем облака приборами и отправляем записи исследователям в другие миры.",
+          "en": "We measure the clouds with instruments and send records to researchers on other worlds."
+        },
+        {
+          "ru": "Станции нужны защитные оболочки: мы наблюдаем ледяной гигант с безопасного расстояния.",
+          "en": "Stations need protective shells: we observe this ice giant from a safe distance."
+        },
+        {
+          "ru": "Найди самый тёмный и самый светлый синий участок облаков. Они похожи друг на друга?",
+          "en": "Find the darkest and lightest blue patch of clouds. Do they look alike?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "mw_p07": {
+      "hook": {
+        "ru": "На Венере густые облака скрывают горячие скалы. Наш купол защищает исследователей от опасной среды.",
+        "en": "On Venus, thick clouds hide hot rocks. Our dome protects researchers from the dangerous environment."
+      },
+      "responses": [
+        {
+          "ru": "Я изучаю температуру за стенами станции. Там гораздо жарче, чем в комнате.",
+          "en": "I study the temperature outside the station. It is much hotter there than in this room."
+        },
+        {
+          "ru": "Нельзя выходить наружу без специальной защиты: Венера очень горячая, и её атмосфера опасна для человека.",
+          "en": "We cannot go outside without special protection: Venus is extremely hot and its atmosphere is dangerous for humans."
+        },
+        {
+          "ru": "Посмотри на купол и скажи, он больше похож на круг или на квадрат?",
+          "en": "Look at the dome: does it remind you more of a circle or a square?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_mw": {
+      "hook": {
+        "ru": "На верфи Каллисто корабли отдыхают от дальних путешествий. Здесь их осматривают и чинят.",
+        "en": "At Callisto Shipyard, spaceships rest after long journeys. Here we inspect and repair them."
+      },
+      "responses": [
+        {
+          "ru": "Я проверяю детали кораблей, прежде чем они снова отправятся в путь.",
+          "en": "I inspect spaceship parts before the ships travel again."
+        },
+        {
+          "ru": "Даже маленькая поломка в космосе может стать серьёзной. Поэтому мы проверяем всё внимательно.",
+          "en": "Even a small fault in space can become serious. That is why we check everything carefully."
+        },
+        {
+          "ru": "Найди на станции место, где мог бы поместиться большой корабль. Это наш док.",
+          "en": "Find a place on the station that could fit a big spaceship. That is our dock."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "lmc_p02": {
+      "hook": {
+        "ru": "На Таласе наша живая сеть растёт рядом с волнами океана. Она чувствует изменения вокруг себя.",
+        "en": "On Thalas, our living network grows beside the ocean waves. It senses changes around it."
+      },
+      "responses": [
+        {
+          "ru": "Когда волны усиливаются, наши чувствительные нити передают сигнал остальной сети.",
+          "en": "When the waves grow stronger, our sensitive fibers send a signal through the rest of the network."
+        },
+        {
+          "ru": "Мы соединены многими нитями. Так разные части нашего организма помогают друг другу.",
+          "en": "Many fibers connect us. That lets different parts of our organism help one another."
+        },
+        {
+          "ru": "Посмотри на живые мосты: можешь проследить, где одна ветка соединяется с другой?",
+          "en": "Look at the living bridges: can you follow where one branch joins another?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "lmc_p03": {
+      "hook": {
+        "ru": "На Молии тёмные скалы окружают наши мягкие живые купола. Мы растём там, где камень кажется неподвижным.",
+        "en": "On Molia, dark rocks surround our soft living domes. We grow where the stone seems motionless."
+      },
+      "responses": [
+        {
+          "ru": "Наши волокна исследуют маленькие трещины, но мы не спешим: рост требует времени.",
+          "en": "Our fibers explore tiny cracks, but we do not hurry: growing takes time."
+        },
+        {
+          "ru": "Купола берегут наш организм от сухого воздуха и помогают сохранять нужные условия.",
+          "en": "The domes protect our organism from dry air and help keep the conditions we need."
+        },
+        {
+          "ru": "Найди две разные поверхности: гладкий купол и неровный камень. Чем они отличаются?",
+          "en": "Find two different surfaces: a smooth dome and rough rock. How are they different?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "lmc_p04": {
+      "hook": {
+        "ru": "На Крионе подо льдом светятся голубые трещины. Мы укрываем нашу живую сеть в защищённых биокуполах.",
+        "en": "On Cryona, blue cracks glow beneath the ice. We shelter our living network inside protected biodomes."
+      },
+      "responses": [
+        {
+          "ru": "Мы чувствуем, когда лёд рядом немного сдвигается, и передаём предупреждение по нитям.",
+          "en": "We sense when nearby ice shifts a little and send a warning along our fibers."
+        },
+        {
+          "ru": "Лёд может трескаться, поэтому важно строить убежища и следить за изменениями поверхности.",
+          "en": "Ice can crack, so shelters and careful monitoring of the surface matter."
+        },
+        {
+          "ru": "Попробуй отыскать самую длинную голубую трещину на изображении.",
+          "en": "Try to find the longest blue crack in the picture."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_lmc": {
+      "hook": {
+        "ru": "«Тарантул» — не обычный железный корабль. Его внутренние комнаты растут вместе с нашей грибной сетью.",
+        "en": "The Tarantula is no ordinary metal ship. Its inner rooms grow with our fungal network."
+      },
+      "responses": [
+        {
+          "ru": "Мы передаём сообщения по живым волокнам — словно по множеству мягких дорожек.",
+          "en": "We pass messages through living fibers, like along many soft little paths."
+        },
+        {
+          "ru": "Живым частям корабля нужны подходящие температура и питательные вещества. Мы заботимся о них.",
+          "en": "The living parts of this ship need suitable temperatures and nutrients. We care for them."
+        },
+        {
+          "ru": "Представь две дорожки, соединяющиеся в одну. Так и наши сигналы могут встречаться внутри сети.",
+          "en": "Imagine two paths joining into one. Our signals can meet like that inside the network."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "smc_p01": {
+      "hook": {
+        "ru": "На Окее наши прозрачные постройки поднимаются прямо из воды. Я могу менять форму вместе с волнами.",
+        "en": "On Okea, our transparent buildings rise straight from the water. I can change shape with the waves."
+      },
+      "responses": [
+        {
+          "ru": "Сейчас я стал более текучим. Посмотри, как трудно удержать одну и ту же форму!",
+          "en": "I have become more fluid. Look how hard it is to keep just one shape!"
+        },
+        {
+          "ru": "Мы меняем состояние, чтобы приспосабливаться к условиям. Это необычная способность нашей сказочной цивилизации.",
+          "en": "We change state to adapt to conditions. That is a special ability of our fictional civilization."
+        },
+        {
+          "ru": "Посмотри, где вода встречается со станцией. Можешь найти границу между ними?",
+          "en": "Look where water meets the station. Can you find the boundary between them?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "smc_p02": {
+      "hook": {
+        "ru": "На Целе красные горы отражаются в прозрачных жидких куполах. Кажется, будто станция сияет изнутри.",
+        "en": "On Cela, red mountains reflect in transparent liquid domes. The station seems to glow from within."
+      },
+      "responses": [
+        {
+          "ru": "Я меняю прозрачность и могу стать заметнее на фоне красных скал.",
+          "en": "I change my transparency and can become easier to see against the red rocks."
+        },
+        {
+          "ru": "Купола помогают нашему народу сохранять подходящее состояние тела в этом мире.",
+          "en": "The domes help our people keep the body state we need on this world."
+        },
+        {
+          "ru": "Найди красную скалу за прозрачным куполом. Видишь ли ты её сквозь стенку?",
+          "en": "Find a red rock behind a clear dome. Can you see it through the wall?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "smc_p03": {
+      "hook": {
+        "ru": "На Геноре светится граница между водой и тёмными скалами. Наши жидкие башни похожи на застывшие волны.",
+        "en": "On Genora, the edge between water and dark rocks glows. Our liquid towers look like frozen waves."
+      },
+      "responses": [
+        {
+          "ru": "Я могу вытянуться как струя, а потом снова собраться в каплю.",
+          "en": "I can stretch like a stream and then gather back into a drop."
+        },
+        {
+          "ru": "Нам нужны разные формы для разных задач. Иногда удобно быть текучим, а иногда — плотным.",
+          "en": "Different tasks need different forms. Sometimes flowing helps, and sometimes a denser form is better."
+        },
+        {
+          "ru": "Покажи глазами, где на изображении скала, а где вода. Что выглядит более гладким?",
+          "en": "Point out the rock and the water in the picture. Which looks smoother?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "smc_p05": {
+      "hook": {
+        "ru": "На Спире свет и тень почти встречаются. Я превращаюсь в туман, чтобы мягко пройти через нашу станцию.",
+        "en": "On Spira, light and shadow almost meet. I turn misty to move gently through our station."
+      },
+      "responses": [
+        {
+          "ru": "В газообразной форме моё тело выглядит рассеянным, как туман. Потом я снова собираюсь вместе.",
+          "en": "In gas form, my body looks spread out like mist. Then I gather together again."
+        },
+        {
+          "ru": "Изменения формы зависят от условий и возможностей нашей необычной расы.",
+          "en": "Changes of form depend on the conditions and the abilities of our unusual species."
+        },
+        {
+          "ru": "Найди светлую и тёмную часть мира. Где туман заметнее?",
+          "en": "Find the bright and dark parts of this world. Where is the mist easier to see?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_smc": {
+      "hook": {
+        "ru": "В Живом архиве прозрачные камеры хранят знания нашей цивилизации. Некоторые наполнены жидкостью, другие — газом.",
+        "en": "In the Living Archive, clear chambers store knowledge of our civilization. Some hold liquid and others gas."
+      },
+      "responses": [
+        {
+          "ru": "Смотри: для каждого состояния тела у нас есть подходящее пространство.",
+          "en": "Look: we have spaces suited to each state of our bodies."
+        },
+        {
+          "ru": "Смена условий помогает хранить разные формы. Но мы делаем это осторожно и под наблюдением.",
+          "en": "Changing conditions helps preserve different forms. We do it carefully and with observation."
+        },
+        {
+          "ru": "Представь, как выглядел бы архив для капли воды, а как — для облака. Они были бы одинаковыми?",
+          "en": "Imagine an archive for a drop of water and another for a cloud. Would they look alike?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "ngc6822_p01": {
+      "hook": {
+        "ru": "На Археоне наше кольцо-убежище окружает зелёные сады. Снаружи — красная каменная пустыня.",
+        "en": "On Archeon, our shelter ring surrounds green gardens. Outside lies a red rocky desert."
+      },
+      "responses": [
+        {
+          "ru": "Я присматриваю за проходами между скалами и зелёными зонами.",
+          "en": "I watch the passages between the rocks and our green spaces."
+        },
+        {
+          "ru": "Зелень внутри города помогает делать жизнь приятнее. Герметичные стены защищают его от среды снаружи.",
+          "en": "Green spaces make city life more pleasant. Sealed walls protect the city from the environment outside."
+        },
+        {
+          "ru": "Найди зелёную часть города среди красных скал. Какой цвет видно лучше?",
+          "en": "Find the green part of the city among the red rocks. Which color stands out more?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "ngc6822_p02": {
+      "hook": {
+        "ru": "На Кварии мы укрыли станцию внутри горы. Снаружи видны лишь некоторые сияющие купола.",
+        "en": "On Quaria, we hid a station inside a mountain. Outside, only a few glowing domes are visible."
+      },
+      "responses": [
+        {
+          "ru": "Я исследую горные проходы и помогаю находить дорогу между пещерами.",
+          "en": "I explore the mountain tunnels and help others find their way between caves."
+        },
+        {
+          "ru": "Камень сверху защищает часть станции. А внутри можно строить спокойные комнаты и переходы.",
+          "en": "The rock overhead shelters part of the station. Inside, we can build quiet rooms and passages."
+        },
+        {
+          "ru": "Попробуй представить лабиринт из трёх тоннелей. Как найти выход, не теряя дорогу?",
+          "en": "Imagine a maze of three tunnels. How might you find the exit without getting lost?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "ngc6822_p03": {
+      "hook": {
+        "ru": "На Нокте небо тёмное, а космопорт светится в сумерках. Я слежу за прибытием кораблей.",
+        "en": "On Nocta, the sky is dark and the spaceport glows at dusk. I watch the arriving ships."
+      },
+      "responses": [
+        {
+          "ru": "Я замечаю огни доков и узнаю, к какому ангару направляется корабль.",
+          "en": "I notice the dock lights and work out which hangar a ship is heading toward."
+        },
+        {
+          "ru": "На космопорте важно соблюдать порядок. Так корабли могут прибывать и улетать безопаснее.",
+          "en": "Order matters at a spaceport. It helps ships arrive and leave more safely."
+        },
+        {
+          "ru": "Найди два разных огня космопорта. Они одинаковой яркости?",
+          "en": "Find two different lights in the spaceport. Are they equally bright?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "ngc6822_p04": {
+      "hook": {
+        "ru": "На Ферре мы работаем рядом с ржаво-красными железными горами. Здесь перерабатывают минералы.",
+        "en": "On Ferra, we work beside rusty-red mountains rich in iron. Minerals are processed here."
+      },
+      "responses": [
+        {
+          "ru": "Я проверяю, как материалы движутся по защищённым трубам и переходам.",
+          "en": "I check how materials travel through the protected pipes and passages."
+        },
+        {
+          "ru": "Металл нужен для кораблей и зданий. Но добыча требует бережного отношения к миру.",
+          "en": "We need metal for ships and buildings. But gathering it should respect the world around us."
+        },
+        {
+          "ru": "Попробуй найти на станции прямую трубу и круглый резервуар.",
+          "en": "Try to spot a straight pipe and a round tank in the station."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "ngc6822_p06": {
+      "hook": {
+        "ru": "На Руне хранится старый архив нашего народа. Его ступени ведут к залам с воспоминаниями.",
+        "en": "On Runa, an old archive of our people stands behind great steps. The stairs lead to rooms of memories."
+      },
+      "responses": [
+        {
+          "ru": "Я берегу записи путешествий, чтобы новые исследователи могли учиться у прошлых поколений.",
+          "en": "I protect travel records so new explorers can learn from earlier generations."
+        },
+        {
+          "ru": "Истории помогают не забывать открытия и ошибки. Мы хотим беречь память, а не повторять всё с нуля.",
+          "en": "Stories help us remember discoveries and mistakes. We keep memories so we need not start from nothing."
+        },
+        {
+          "ru": "Посчитай три ступени, начиная с самой нижней. Какая будет третьей?",
+          "en": "Count three steps, starting from the bottom. Which one is third?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_ngc6822": {
+      "hook": {
+        "ru": "Внутри «Головы Титана» есть доки и каменные тоннели. Этот необычный порт устроен в огромном черепе.",
+        "en": "Inside Titan's Head there are docks and stone tunnels. This unusual port is built within a giant skull."
+      },
+      "responses": [
+        {
+          "ru": "Я изучаю старые проходы и отмечаю путь к безопасным докам.",
+          "en": "I explore old passages and mark the route to safe docks."
+        },
+        {
+          "ru": "Здесь сходятся разные путешественники. Важно знать, где можно ходить, а где идут ремонтные работы.",
+          "en": "Many travelers meet here. It is important to know which paths are safe and where repairs are underway."
+        },
+        {
+          "ru": "Посмотри на круглые доковые огни. Можешь найти две одинаковые формы?",
+          "en": "Look at the round dock lights. Can you find two matching shapes?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m31_p03": {
+      "hook": {
+        "ru": "На Фазисе среди чёрных скал стоят зеркальные лаборатории. Металлические дуги могут менять положение.",
+        "en": "On Phasis, mirrored laboratories stand among black rocks. Metal arches can change position."
+      },
+      "responses": [
+        {
+          "ru": "Я превращаю часть себя в тонкую дугу и чувствую действие магнитных полей.",
+          "en": "I shape part of myself into a thin arch and sense the magnetic fields."
+        },
+        {
+          "ru": "Поля помогают нам управлять движением металла. Нам не всегда нужны обычные человеческие рычаги.",
+          "en": "Fields help us control how metal moves. We do not always need human-style levers."
+        },
+        {
+          "ru": "Найди дугу и кольцо. Чем они похожи, а чем отличаются?",
+          "en": "Find an arch and a ring. How are their shapes alike and different?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m31_p05": {
+      "hook": {
+        "ru": "На Синте над подземным городом парит большая тёмная сфера. Мы следим за её равновесием.",
+        "en": "On Sinta, a huge dark sphere floats above an underground city. We watch its balance."
+      },
+      "responses": [
+        {
+          "ru": "Я чувствую, как меняются поля вокруг сферы, и помогаю удерживать её в нужном положении.",
+          "en": "I sense how the fields around the sphere change and help hold it in place."
+        },
+        {
+          "ru": "Для нашего города важно, чтобы тяжёлая конструкция оставалась устойчивой. Это требует точных расчётов.",
+          "en": "Our city needs the great structure to remain stable. That takes careful calculations."
+        },
+        {
+          "ru": "Покажи, где шар, а где куб или плоская стена. Какая форма круглая?",
+          "en": "Point to the sphere and then to a cube or flat wall. Which shape is round?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m31_p06": {
+      "hook": {
+        "ru": "На Геоне над горячими разломами парит тёмная перевёрнутая пирамида. Это место научных размышлений.",
+        "en": "On Geona, a dark upside-down pyramid floats above hot fissures. This is a place for scientific thought."
+      },
+      "responses": [
+        {
+          "ru": "Внутри металл меняет форму и становится прибором, когда нам нужен инструмент.",
+          "en": "Inside, metal changes shape and becomes an instrument when we need a tool."
+        },
+        {
+          "ru": "Мы привыкли работать без кнопок и экранов: наши тела взаимодействуют с материалом напрямую.",
+          "en": "We work without buttons and screens: our bodies can interact with the material directly."
+        },
+        {
+          "ru": "Найди вершину пирамиды. В какую сторону она указывает: вверх или вниз?",
+          "en": "Find the pyramid's point. Does it face up or down?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_m31": {
+      "hook": {
+        "ru": "В храме науки «Перевёрнутая пирамида» стены не просто стены: они могут преобразиться в инструменты.",
+        "en": "In the Inverted Pyramid science temple, the walls are more than walls: they can become tools."
+      },
+      "responses": [
+        {
+          "ru": "Я касаюсь металлической поверхности, и она меняет форму под нашу задачу.",
+          "en": "I touch a metal surface, and it changes shape to suit our task."
+        },
+        {
+          "ru": "Так мы создаём приборы только тогда, когда они нужны. Лишних кнопок в этом храме нет.",
+          "en": "We make instruments only when they are needed. This temple has no extra buttons."
+        },
+        {
+          "ru": "Представь стену, которая стала ложкой или чашей. На что она была бы похожа?",
+          "en": "Imagine a wall turning into a spoon or bowl. What would it look like?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m33_p01": {
+      "hook": {
+        "ru": "На Светаре над сиреневыми холмами висит зеркальная станция. Мы собираем здесь знания о далёких мирах.",
+        "en": "On Svetara, a mirrored station floats above purple hills. We gather knowledge of faraway worlds."
+      },
+      "responses": [
+        {
+          "ru": "Я соединяю новые наблюдения со старыми воспоминаниями, чтобы ничего важного не потерять.",
+          "en": "I connect new observations with old memories, so important things are not lost."
+        },
+        {
+          "ru": "Память помогает учиться: мы сравниваем то, что видели раньше, с тем, что заметили теперь.",
+          "en": "Memory helps us learn: we compare what we saw before with what we notice now."
+        },
+        {
+          "ru": "Посмотри на кольца станции. Можешь найти самое большое?",
+          "en": "Look at the station's rings. Can you find the largest?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m33_p02": {
+      "hook": {
+        "ru": "На Орбите над синим озером парит учебная обсерватория. Мы учимся внимательно смотреть на небо.",
+        "en": "On Orbita, a teaching observatory floats above a blue lake. We practice looking carefully at the sky."
+      },
+      "responses": [
+        {
+          "ru": "Я сравниваю два наблюдения и спрашиваю себя, что в них одинаково.",
+          "en": "I compare two observations and ask myself what is the same in them."
+        },
+        {
+          "ru": "Замечать различия полезно для учёбы. Иногда маленькая деталь помогает понять большое событие.",
+          "en": "Spotting differences helps us learn. Sometimes a small detail helps explain a big event."
+        },
+        {
+          "ru": "Попробуй найти один круг на станции и другой круг рядом. Чем они различаются?",
+          "en": "Try to find one circle on the station and another nearby. How do they differ?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m33_p03": {
+      "hook": {
+        "ru": "На Тессере парит математический комплекс. Световые кольца здесь помогают нам представлять задачи.",
+        "en": "On Tessera, a floating math complex glows. Its light rings help us imagine problems."
+      },
+      "responses": [
+        {
+          "ru": "Я запоминаю последовательности фигур и ищу, какая появится следующей.",
+          "en": "I remember sequences of shapes and work out which one comes next."
+        },
+        {
+          "ru": "Когда мы замечаем порядок, нам легче решать головоломки и планировать путь.",
+          "en": "Finding a pattern helps us solve puzzles and plan a route."
+        },
+        {
+          "ru": "Представь ряд: круг, квадрат, круг, квадрат. Какая фигура будет следующей?",
+          "en": "Imagine a pattern: circle, square, circle, square. Which shape comes next?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m33_p04": {
+      "hook": {
+        "ru": "На Лентисе наш большой телескоп смотрит в дальний космос над ледяными берегами.",
+        "en": "On Lentis, our big telescope looks into faraway space above icy shores."
+      },
+      "responses": [
+        {
+          "ru": "Я собираю свет далёких объектов и сравниваю его с прежними наблюдениями.",
+          "en": "I gather light from distant objects and compare it with earlier observations."
+        },
+        {
+          "ru": "Свет идёт через космос долго. Телескоп помогает замечать объекты, которых не видно просто глазами.",
+          "en": "Light travels through space for a long time. A telescope helps us notice objects our eyes cannot see alone."
+        },
+        {
+          "ru": "Найди длинную трубу телескопа. Куда она направлена — к земле или в небо?",
+          "en": "Find the telescope's long tube. Is it pointing down or into the sky?"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_m33": {
+      "hook": {
+        "ru": "«Последние врата» окружены разными порталами. Мы охраняем путь к Перекрёстку миров.",
+        "en": "The Final Gates are surrounded by different portals. We watch over the path toward the Crossroads of Worlds."
+      },
+      "responses": [
+        {
+          "ru": "Я запоминаю, какой портал ведёт в какую сторону, чтобы путешественники не путали пути.",
+          "en": "I remember which portal leads where so travelers can follow the right path."
+        },
+        {
+          "ru": "Разные переходы нужны для разных маршрутов. Перед прыжком важно внимательно проверять направление.",
+          "en": "Different gateways serve different routes. Before a jump, we check the direction carefully."
+        },
+        {
+          "ru": "Найди два портала разных форм. Какой круглый, а какой больше похож на арку?",
+          "en": "Find two portals of different shapes. Which is round, and which looks more like an arch?"
+        }
+      ],
+      "topic_trigger": "world"
+    }
+  }
+}
