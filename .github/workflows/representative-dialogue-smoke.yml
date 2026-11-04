@@ -2,7 +2,7 @@ name: Representative dialogue scene smoke tests
 on:
   pull_request:
     branches:
-      - feature/v98-character-mini-adventures
+      - feature/v99-four-chapter-dialogue-arcs
   workflow_dispatch:
 
 jobs:
@@ -42,15 +42,15 @@ jobs:
           cp planet_hub/tests/PREVIEW_STANDALONE_RU.md preview/README_RU.md
           cp planet_hub/scenes/representative_dialog.tscn preview/planet_hub/scenes/
           cp planet_hub/scripts/{representative_dialog,dialog_character,dialog_hint,translator_tablet,dialogue_engine,child_profile_store,cloud_choice_button,dialogue_input_matcher}.gd preview/planet_hub/scripts/
-          cp planet_hub/data/{dialogue_worlds,dialogue_phrases,dialogue_story_scenes,dialogue_story_quizzes,dialogue_adventures,dialogue_adventures_v99,representatives}.json preview/planet_hub/data/
-          cp planet_hub/tests/{representative_dialog_preview.gd,representative_dialog_preview.tscn,representative_dialog_ui_smoke.gd,dialogue_smoke.gd,dialogue_typing_tolerance_smoke.gd,dialogue_stories_smoke.gd,dialogue_adventures_smoke.gd,dialogue_chapters_v99_smoke.gd} preview/planet_hub/tests/
+          cp planet_hub/data/{dialogue_worlds,dialogue_phrases,dialogue_story_scenes,dialogue_story_quizzes,dialogue_adventures,dialogue_adventures_v99,representative_profiles,representatives}.json preview/planet_hub/data/
+          cp planet_hub/tests/{representative_dialog_preview.gd,representative_dialog_preview.tscn,representative_dialog_ui_smoke.gd,dialogue_smoke.gd,dialogue_typing_tolerance_smoke.gd,dialogue_stories_smoke.gd,dialogue_adventures_smoke.gd,dialogue_chapters_v99_smoke.gd,dialogue_personas_smoke.gd} preview/planet_hub/tests/
           cp scripts/MobileLocale.gd preview/scripts/
           cp planet_hub/characters/{05_human_amara_cole,07_mold_form_archive,10_phase_crystal,01_reptile_liri,13_magnetic_ring,16_neural_historian}.png preview/planet_hub/characters/
           mkdir -p preview/planet_hub/backgrounds
           if test -f planet_hub/backgrounds/mw_p01.png; then
             cp planet_hub/backgrounds/mw_p01.png preview/planet_hub/backgrounds/
           fi
-          (cd preview && zip -qr ../MIKA_dialogues_four_chapters_v99.zip .)
+          (cd preview && zip -qr ../MIKA_dialogues_cumulative_v101.zip .)
       - name: Import isolated Godot preview
         run: ./godot --headless --editor --path preview --import --quit
       - name: Check world-dialogue content
@@ -65,10 +65,12 @@ jobs:
         run: timeout 90s ./godot --headless --path preview --script res://planet_hub/tests/dialogue_adventures_smoke.gd
       - name: Check four chapters per race, six languages and v98 save migration
         run: timeout 90s ./godot --headless --path preview --script res://planet_hub/tests/dialogue_chapters_v99_smoke.gd
+      - name: Validate world-bound characters and gender-neutral dialogue identity
+        run: timeout 90s ./godot --headless --path preview --script res://planet_hub/tests/dialogue_personas_smoke.gd
       - name: Upload standalone scene project
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: MIKA-dialogues-four-chapters-v99
-          path: MIKA_dialogues_four_chapters_v99.zip
+          name: MIKA-dialogues-cumulative-v101
+          path: MIKA_dialogues_cumulative_v101.zip
           retention-days: 14
