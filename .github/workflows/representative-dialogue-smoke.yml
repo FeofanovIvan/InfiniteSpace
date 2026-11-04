@@ -42,7 +42,7 @@ jobs:
           cp planet_hub/tests/PREVIEW_STANDALONE_RU.md preview/README_RU.md
           cp planet_hub/scenes/representative_dialog.tscn preview/planet_hub/scenes/
           cp planet_hub/scripts/{representative_dialog,dialog_character,dialog_hint,translator_tablet,dialogue_engine,child_profile_store,cloud_choice_button,dialogue_input_matcher}.gd preview/planet_hub/scripts/
-          cp planet_hub/data/{dialogue_worlds,dialogue_phrases,dialogue_story_scenes,representatives}.json preview/planet_hub/data/
+          cp planet_hub/data/{dialogue_worlds,dialogue_phrases,dialogue_story_scenes,dialogue_story_quizzes,representatives}.json preview/planet_hub/data/
           cp planet_hub/tests/{representative_dialog_preview.gd,representative_dialog_preview.tscn,representative_dialog_ui_smoke.gd,dialogue_smoke.gd,dialogue_typing_tolerance_smoke.gd,dialogue_stories_smoke.gd} preview/planet_hub/tests/
           cp scripts/MobileLocale.gd preview/scripts/
           cp planet_hub/characters/{05_human_amara_cole,07_mold_form_archive,10_phase_crystal,01_reptile_liri,13_magnetic_ring,16_neural_historian}.png preview/planet_hub/characters/
