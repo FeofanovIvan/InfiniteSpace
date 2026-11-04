@@ -13,6 +13,7 @@ const CATALOG_PATH: String = "res://education/playtown_catalog.json"
 const ART_ROOT: String = "res://education/playtown/"
 const PET_SCENE_PATH: String = "res://education/playtown/scenes/features/pet/pet_home_miko.tscn"
 const PET_FRAMES_PATH: String = "res://education/playtown/assets/pet/pet_frames.tres"
+const GLOSSARY_SCENE_PATH: String = "res://glossary/scenes/glossary_screen.tscn"
 # Running dog on the main ship screen is the actual Play Town animated character.
 # The original dog sprites, puppy mini-games and sounds are copied locally.
 const PET_WALK_SPEED: float = 65.0
@@ -51,6 +52,8 @@ var _pet_click_area: Button
 var _pet_walk_x: float = 0.0
 var _pet_direction: float = 1.0
 var _pet_initial_position: bool = true
+var _glossary_button: Button
+var _glossary_screen: Control
 
 
 func _ready() -> void:
@@ -161,6 +164,32 @@ func _ready() -> void:
 	_game_back.add_theme_font_size_override("font_size", 25)
 	_game_back.pressed.connect(_return_to_cards)
 	_game_layer.add_child(_game_back)
+	# The glossary is a separate full-screen page, not another educational game card.
+	_glossary_button = Button.new()
+	_glossary_button.name = "OpenWorldGlossary"
+	_glossary_button.text = "Глоссарий"
+	_glossary_button.tooltip_text = "Энциклопедия планет, цивилизаций и науки"
+	_glossary_button.focus_mode = Control.FOCUS_NONE
+	_glossary_button.add_theme_font_size_override("font_size", 20)
+	_glossary_button.add_theme_color_override("font_color", Color(0.86, 0.97, 1.0))
+	var glossary_style: StyleBoxFlat = StyleBoxFlat.new()
+	glossary_style.bg_color = Color(0.04, 0.17, 0.28, 0.95)
+	glossary_style.corner_radius_top_left = 16
+	glossary_style.corner_radius_top_right = 16
+	glossary_style.corner_radius_bottom_left = 16
+	glossary_style.corner_radius_bottom_right = 16
+	_glossary_button.add_theme_stylebox_override("normal", glossary_style)
+	_glossary_button.pressed.connect(_open_glossary)
+	add_child(_glossary_button)
+	var glossary_scene: PackedScene = load(GLOSSARY_SCENE_PATH) as PackedScene
+	if glossary_scene != null:
+		_glossary_screen = glossary_scene.instantiate() as Control
+		_glossary_screen.name = "WorldGlossaryFullScreen"
+		add_child(_glossary_screen)
+		_glossary_screen.connect("closed", Callable(self, "_on_glossary_closed"))
+		_glossary_screen.visible = false
+	else:
+		_glossary_button.disabled = true
 	var portal: Node = get_node_or_null("/root/PlayTownPortal")
 	if portal != null and portal.has_signal("game_finished"):
 		portal.connect("game_finished", _return_to_cards)
@@ -219,9 +248,34 @@ func open_menu(view: Vector2) -> void:
 
 
 func close_menu() -> void:
+	if _glossary_screen != null and _glossary_screen.visible:
+		_glossary_screen.call("close_glossary")
 	_return_to_cards()
 	visible = false
 	closed.emit()
+
+
+func _open_glossary() -> void:
+	if _playing or _glossary_screen == null:
+		return
+	_gallery.visible = false
+	_gesture_layer.visible = false
+	_pet_sprite.visible = false
+	_pet_click_area.visible = false
+	_header.visible = false
+	_glossary_button.visible = false
+	_glossary_screen.call("open_glossary", size)
+
+
+func _on_glossary_closed() -> void:
+	if _playing or not visible:
+		return
+	_gallery.visible = true
+	_gesture_layer.visible = true
+	_pet_sprite.visible = true
+	_pet_click_area.visible = true
+	_header.visible = true
+	_glossary_button.visible = true
 
 
 func _open_pet_home() -> void:
@@ -256,6 +310,7 @@ func _open_game(scene_path: String) -> void:
 	original.name = "UnchangedGameFromSafeCityKids"
 	_game_viewport.add_child(original)
 	_playing = true
+	_glossary_button.visible = false
 	_gallery.visible = false
 	_gesture_layer.visible = false
 	_pet_sprite.visible = false
@@ -280,6 +335,8 @@ func _on_coins_changed(balance: int) -> void:
 
 func _return_to_cards() -> void:
 	_playing = false
+	if _glossary_button != null:
+		_glossary_button.visible = true
 	var portal: Node = get_node_or_null("/root/PlayTownPortal")
 	if portal != null:
 		portal.call("stop_game")
@@ -469,6 +526,12 @@ func _reflow() -> void:
 	_viewport_container.size = Vector2(1536.0, 768.0)
 	_viewport_container.position = (view - _viewport_container.size * playtown_scale) * 0.5
 	_game_back.position = Vector2(12.0, 12.0) * scale
+	if _glossary_button != null:
+		_glossary_button.text = "Глоссарий" if str(MobileLocale.language) == "ru" else "Glossary"
+		_glossary_button.size = Vector2(166.0, 50.0) * scale
+		_glossary_button.position = Vector2(view.x - 188.0 * scale, 18.0 * scale)
+	if _glossary_screen != null:
+		_glossary_screen.size = view
 	_game_back.size = Vector2.ONE * 48.0 * scale
 	# A compact top-left return-to-flight button; no pet-shop top-right icon.
 	_back.size = Vector2.ONE * 51.0 * scale
