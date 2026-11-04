@@ -31,8 +31,9 @@ func _verify() -> void:
 	var dat: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://planet_hub/data/dialogue_story_scenes.json"))
 	var atlas: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://planet_hub/data/dialogue_worlds.json"))
 	var words: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://planet_hub/data/dialogue_phrases.json"))
-	_check(dat is Dictionary and atlas is Dictionary and words is Dictionary, "all three JSON files parse")
-	if not (dat is Dictionary and atlas is Dictionary and words is Dictionary):
+	var quizzes: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://planet_hub/data/dialogue_story_quizzes.json"))
+	_check(dat is Dictionary and atlas is Dictionary and words is Dictionary and quizzes is Dictionary, "all story JSON files parse")
+	if not (dat is Dictionary and atlas is Dictionary and words is Dictionary and quizzes is Dictionary):
 		return
 	var scenes: Dictionary = dat.get("scenes", {})
 	var places: Dictionary = atlas.get("worlds", {})
@@ -52,11 +53,16 @@ func _verify() -> void:
 			for response in scene.get("responses", []):
 				_check(not str(response.get(lang, "")).is_empty(), "branch answer: " + id + " " + lang)
 	var race_choices: Dictionary = dat.get("choices_by_race", {})
+	var race_reactions: Dictionary = dat.get("reactions_by_race", {})
+	var race_quizzes: Dictionary = quizzes.get("quizzes", {})
+	_check(race_reactions.size() == 6 and race_quizzes.size() == 6, "all six races have localized reactions and quiz data")
 	_check(race_choices.size() == 6, "six species personalities")
 	for race_id in race_choices:
 		for lang in LANGS:
 			var c: Array = race_choices[race_id].get(lang, [])
 			_check(c.size() == 3, "three localized prompts: " + race_id + " " + lang)
+			_check(race_reactions.get(race_id, {}).get(lang, []).size() == 3, "three reactions per locale: " + race_id + " " + lang)
+			_check(race_quizzes.get(race_id, {}).get("options", {}).get(lang, []).size() == 3, "three quiz options: " + race_id + " " + lang)
 			_check(c.size() == 3 and c[0] != c[1] and c[0] != c[2] and c[1] != c[2], "unique prompts per branch: " + race_id + " " + lang)
 	var run_count: int = 0
 	for id in playable:
@@ -81,7 +87,14 @@ func _verify() -> void:
 			# Every branch can be selected, regardless of the highlighted default.
 			var branch: Dictionary = e.call("accept", str(options[2]))
 			_check(bool(branch.get("accepted", false)), "third branch accepted: " + id + " " + lang)
-			_check(str(e.get("stage")) == "choose" and branch.get("choices", []).size() == 3, "story returns to normal questions: " + id + " " + lang)
+			_check(str(e.get("stage")) == "story_quiz" and branch.get("choices", []).size() == 3, "third story branch opens optional race quiz: " + id + " " + lang)
+			var quiz_options: Array = branch.get("choices", [])
+			if quiz_options.size() != 3:
+				continue
+			var quiz_wrong: Dictionary = e.call("accept", str(quiz_options[1]))
+			_check(not bool(quiz_wrong.get("accepted", true)) and str(e.get("stage")) == "story_quiz", "wrong quiz answer does not advance: " + id + " " + lang)
+			var quiz_ok: Dictionary = e.call("accept", str(quiz_options[0]))
+			_check(bool(quiz_ok.get("accepted", false)) and str(e.get("stage")) == "choose", "correct answer returns to conversation: " + id + " " + lang)
 			run_count += 1
 	_check(run_count == 180, "all 30 locations × 6 locales exercised")
 	# Returning to a familiar world should acknowledge the previous conversation.
