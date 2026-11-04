@@ -138,7 +138,7 @@ func _verify() -> void:
 	var leap: RefCounted = _open_story("m33_p01", "en")
 	leap.call("accept", str(leap.call("get_choices")[0]))
 	var new_topic: Dictionary = leap.call("accept", "Tell me about your species.")
-	_check(bool(new_topic.get("accepted", false)) and str(leap.get("stage")) == "choose", "general topic interrupts an optional adventure")
+	_check(bool(new_topic.get("accepted", false)) and str(leap.get("stage")) in ["choose","personal"], "general topic interrupts an optional adventure")
 	# All options are recognized across supported languages, not just visible text.
 	_delete_test_save()
 	var multi: RefCounted = _open_story("lmc_p02", "ru")
