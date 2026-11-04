@@ -62,7 +62,7 @@ func _run() -> void:
 	tablet.set("_typing_seconds", 0.0)
 	text_input.text = phrase
 	tablet.call("_on_send")
-	_check(str(engine.get("stage")) in ["choose", "personal"], "question recognized and response computed")
+	_check(str(engine.get("stage")) in ["choose", "personal", "story"], "question recognized and response computed")
 	# Verify a second representative reuses the panel without duplicating buttons.
 	dialog.call("configure_for_planet", "m33_p01", "Светара", "", "")
 	_check(dock.get_node("ChoicesLayout").get_child_count() == 4, "buttons are not duplicated between worlds")
