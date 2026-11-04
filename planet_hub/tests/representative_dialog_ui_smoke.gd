@@ -54,7 +54,7 @@ func _run() -> void:
 	var engine: RefCounted = tablet.get("_engine")
 	_check(str(engine.get("stage")) == "choose", "alternate greeting accepted and dialogue advances")
 	_check(buttons.all(func(button: Button) -> bool: return button.visible), "next three questions update on left")
-	var phrase: String = "Tell me about this planet."
+	var phrase: String = "Tell me about this world."
 	# Game language is RU by default; choose the Russian alternative from stored localization.
 	var locale: String = str(tablet.call("get_language"))
 	if locale == "ru":
