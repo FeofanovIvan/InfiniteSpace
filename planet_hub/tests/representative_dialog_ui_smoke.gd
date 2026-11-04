@@ -54,7 +54,7 @@ func _run() -> void:
 	var engine: RefCounted = tablet.get("_engine")
 	_check(str(engine.get("stage")) == "choose", "alternate greeting accepted and dialogue advances")
 	_check(buttons.all(func(button: Button) -> bool: return button.visible), "next three questions update on left")
-	var phrase: String = "Tell me about this planet."
+	var phrase: String = "Tell me about this world."
 	# Game language is RU by default; choose the Russian alternative from stored localization.
 	var locale: String = str(tablet.call("get_language"))
 	if locale == "ru":
@@ -62,7 +62,7 @@ func _run() -> void:
 	tablet.set("_typing_seconds", 0.0)
 	text_input.text = phrase
 	tablet.call("_on_send")
-	_check(str(engine.get("stage")) in ["choose", "personal"], "question recognized and response computed")
+	_check(str(engine.get("stage")) in ["choose", "personal", "story"], "question recognized and response computed")
 	# Verify a second representative reuses the panel without duplicating buttons.
 	dialog.call("configure_for_planet", "m33_p01", "Светара", "", "")
 	_check(dock.get_node("ChoicesLayout").get_child_count() == 4, "buttons are not duplicated between worlds")
