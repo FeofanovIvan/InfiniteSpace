@@ -402,6 +402,390 @@
           }
         ]
       }
+    ],
+    "reptile": [
+      {
+        "id": "lost_arrow",
+        "intro": {
+          "ru": "На старой карте пропала стрелка. Как нам найти нужный зал архива?",
+          "en": "An arrow is missing from our old map. How can we find the archive room?",
+          "fr": "Une flèche manque sur notre carte. Comment retrouver la salle des archives ?",
+          "de": "Auf unserer alten Karte fehlt ein Pfeil. Wie finden wir den Archivraum?",
+          "es": "Falta una flecha en el mapa antiguo. ¿Cómo encontramos la sala del archivo?",
+          "pt_BR": "Uma seta sumiu do mapa antigo. Como encontrar a sala do arquivo?"
+        },
+        "choices": [
+          {
+            "ru": "Поищем знаки на стене.",
+            "en": "Let's look for wall symbols.",
+            "fr": "Cherchons des signes sur les murs.",
+            "de": "Suchen wir Zeichen an der Wand.",
+            "es": "Busquemos símbolos en la pared.",
+            "pt_BR": "Vamos procurar sinais nas paredes."
+          },
+          {
+            "ru": "Сравним два коридора.",
+            "en": "Let's compare two corridors.",
+            "fr": "Comparons deux couloirs.",
+            "de": "Vergleichen wir zwei Gänge.",
+            "es": "Comparemos dos pasillos.",
+            "pt_BR": "Vamos comparar dois corredores."
+          },
+          {
+            "ru": "Посмотрим другую карту.",
+            "en": "Let's check another map.",
+            "fr": "Regardons une autre carte.",
+            "de": "Sehen wir uns eine andere Karte an.",
+            "es": "Miremos otro mapa.",
+            "pt_BR": "Vamos olhar outro mapa."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "На стене нашлась звезда — такой же знак стоит у нужной двери!",
+            "en": "We found a star on the wall, just like the sign on the right door!",
+            "fr": "Une étoile sur le mur correspond au signe de la bonne porte !",
+            "de": "Ein Stern an der Wand passt zum Zeichen an der richtigen Tür!",
+            "es": "¡Encontramos una estrella igual a la de la puerta correcta!",
+            "pt_BR": "Achamos uma estrela igual à da porta certa!"
+          },
+          {
+            "ru": "Один коридор ведёт к лестнице, другой к доку. Теперь знаем дорогу!",
+            "en": "One corridor leads to stairs and the other to a dock. Now we know the way!",
+            "fr": "Un couloir mène à l'escalier, l'autre au quai. Nous trouvons notre chemin !",
+            "de": "Ein Gang führt zur Treppe, der andere zum Dock. Jetzt kennen wir den Weg!",
+            "es": "Un pasillo lleva a la escalera y otro al muelle. ¡Ya sabemos por dónde ir!",
+            "pt_BR": "Um corredor vai para a escada, o outro para a doca. Sabemos o caminho!"
+          },
+          {
+            "ru": "На второй карте осталась маленькая стрелочка. Мы нашли нужный зал!",
+            "en": "A tiny arrow was still on the other map. We found the right room!",
+            "fr": "Une petite flèche figure sur l'autre carte. Nous avons trouvé la salle !",
+            "de": "Auf der zweiten Karte ist noch ein Pfeil. Wir haben den Raum gefunden!",
+            "es": "Quedaba una flecha pequeña en el otro mapa. ¡Encontramos la sala!",
+            "pt_BR": "Uma setinha ficou no outro mapa. Achamos a sala!"
+          }
+        ]
+      },
+      {
+        "id": "old_record",
+        "intro": {
+          "ru": "Мы дошли до архива! Здесь хранится запись первых путешественников. Что изучим?",
+          "en": "We reached the archive! Here is an old travel record. What shall we explore?",
+          "fr": "Nous sommes aux archives ! Que regarder dans ce vieux récit de voyage ?",
+          "de": "Wir sind im Archiv! Was sehen wir uns im alten Reisebericht an?",
+          "es": "¡Llegamos al archivo! ¿Qué miramos en un relato antiguo de viajes?",
+          "pt_BR": "Chegamos ao arquivo! O que vamos observar em um registro antigo?"
+        },
+        "choices": [
+          {
+            "ru": "Следы на камне.",
+            "en": "Let's examine the stone marks.",
+            "fr": "Observons les traces sur la pierre.",
+            "de": "Sehen wir uns die Spuren im Stein an.",
+            "es": "Miremos las marcas en la piedra.",
+            "pt_BR": "Vamos observar as marcas na pedra."
+          },
+          {
+            "ru": "Порядок событий.",
+            "en": "Let's look at what happened first.",
+            "fr": "Cherchons ce qui s'est passé en premier.",
+            "de": "Schauen wir, was zuerst geschah.",
+            "es": "Veamos qué ocurrió primero.",
+            "pt_BR": "Vamos descobrir o que aconteceu primeiro."
+          },
+          {
+            "ru": "Звёздный символ.",
+            "en": "Let's inspect the star symbol.",
+            "fr": "Regardons le symbole de l'étoile.",
+            "de": "Prüfen wir das Sternzeichen.",
+            "es": "Miremos el símbolo de estrella.",
+            "pt_BR": "Vamos olhar o símbolo da estrela."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Следы рассказывают, что здесь когда-то ходили исследователи!",
+            "en": "The marks show that explorers once walked here!",
+            "fr": "Les traces montrent que des explorateurs sont passés ici !",
+            "de": "Die Spuren zeigen: Hier waren einst Forschende!",
+            "es": "Las marcas cuentan que hubo exploradores aquí.",
+            "pt_BR": "As marcas mostram que exploradores passaram por aqui!"
+          },
+          {
+            "ru": "Сначала они построили укрытие, а потом нашли новую дорогу.",
+            "en": "First they built a shelter, then found a new path.",
+            "fr": "D'abord ils ont bâti un abri, puis trouvé un chemin.",
+            "de": "Erst bauten sie einen Unterschlupf, dann fanden sie einen Weg.",
+            "es": "Primero hicieron un refugio y después encontraron un camino.",
+            "pt_BR": "Primeiro fizeram um abrigo e depois acharam um caminho."
+          },
+          {
+            "ru": "Звезда напоминает о путешествии. Мы сохраним эту запись для других!",
+            "en": "The star recalls their journey. We'll keep the record safe for others!",
+            "fr": "L'étoile rappelle leur voyage. Nous garderons ce récit !",
+            "de": "Der Stern erinnert an die Reise. Wir bewahren den Bericht auf!",
+            "es": "La estrella recuerda su viaje. ¡Guardaremos el relato!",
+            "pt_BR": "A estrela lembra a viagem. Vamos guardar esse registro!"
+          }
+        ]
+      }
+    ],
+    "magnetic": [
+      {
+        "id": "stuck_sphere",
+        "intro": {
+          "ru": "Металлическая сфера остановилась между магнитными кольцами. Что попробуем?",
+          "en": "A little metal sphere has stopped between magnetic rings. What shall we try?",
+          "fr": "Une petite sphère de métal s'arrête entre des anneaux magnétiques. Que faire ?",
+          "de": "Eine kleine Metallkugel steht zwischen Magnetringen still. Was versuchen wir?",
+          "es": "Una esfera de metal se detuvo entre anillos magnéticos. ¿Qué hacemos?",
+          "pt_BR": "Uma esfera de metal parou entre anéis magnéticos. O que vamos fazer?"
+        },
+        "choices": [
+          {
+            "ru": "Изменим левое поле.",
+            "en": "Let's adjust the left field.",
+            "fr": "Réglons le champ de gauche.",
+            "de": "Ändern wir das linke Feld.",
+            "es": "Ajustemos el campo izquierdo.",
+            "pt_BR": "Vamos ajustar o campo da esquerda."
+          },
+          {
+            "ru": "Изменим правое поле.",
+            "en": "Let's adjust the right field.",
+            "fr": "Réglons le champ de droite.",
+            "de": "Ändern wir das rechte Feld.",
+            "es": "Ajustemos el campo derecho.",
+            "pt_BR": "Vamos ajustar o campo da direita."
+          },
+          {
+            "ru": "Измерим расстояние.",
+            "en": "Let's measure the distance.",
+            "fr": "Mesurons la distance.",
+            "de": "Messen wir den Abstand.",
+            "es": "Midamos la distancia.",
+            "pt_BR": "Vamos medir a distância."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Левое поле изменилось. Сфера мягко сдвинулась с места!",
+            "en": "The left field changed. The sphere moved gently!",
+            "fr": "Le champ de gauche change. La sphère avance doucement !",
+            "de": "Das linke Feld ändert sich. Die Kugel rollt sanft weiter!",
+            "es": "El campo izquierdo cambió. ¡La esfera se movió suavemente!",
+            "pt_BR": "O campo da esquerda mudou. A esfera se moveu devagar!"
+          },
+          {
+            "ru": "Правое поле помогло сфере выбраться. Мы следим за её движением!",
+            "en": "The right field helped the sphere move. We watch it carefully!",
+            "fr": "Le champ de droite aide la sphère à bouger. Observons-la !",
+            "de": "Das rechte Feld hilft der Kugel. Wir beobachten sie aufmerksam!",
+            "es": "El campo derecho ayudó a mover la esfera. ¡La observamos!",
+            "pt_BR": "O campo da direita ajudou a esfera a se mover!"
+          },
+          {
+            "ru": "Мы нашли свободный путь для сферы. Сначала наблюдать — хорошая идея!",
+            "en": "We found a clear path for the sphere. Observing first was smart!",
+            "fr": "Nous trouvons un passage libre. Observer d'abord était une bonne idée !",
+            "de": "Wir haben einen freien Weg gefunden. Erst beobachten ist klug!",
+            "es": "Encontramos un camino libre. ¡Observar primero ayuda!",
+            "pt_BR": "Encontramos um caminho livre. Observar primeiro ajuda!"
+          }
+        ]
+      },
+      {
+        "id": "shapes",
+        "intro": {
+          "ru": "Сфера добралась до мастерской. Давай создадим из металла новую форму!",
+          "en": "The sphere reached the workshop. Let's give the metal a new shape!",
+          "fr": "La sphère arrive à l'atelier. Donnons une nouvelle forme au métal !",
+          "de": "Die Kugel ist in der Werkstatt. Geben wir dem Metall eine neue Form!",
+          "es": "La esfera llegó al taller. ¡Demos otra forma al metal!",
+          "pt_BR": "A esfera chegou à oficina. Vamos dar uma nova forma ao metal!"
+        },
+        "choices": [
+          {
+            "ru": "Сделаем ровный шар.",
+            "en": "Let's make a round sphere.",
+            "fr": "Faisons une sphère ronde.",
+            "de": "Machen wir eine runde Kugel.",
+            "es": "Hagamos una esfera redonda.",
+            "pt_BR": "Vamos fazer uma esfera redonda."
+          },
+          {
+            "ru": "Создадим большое кольцо.",
+            "en": "Let's make a wide ring.",
+            "fr": "Faisons un grand anneau.",
+            "de": "Machen wir einen großen Ring.",
+            "es": "Hagamos un anillo grande.",
+            "pt_BR": "Vamos fazer um anel grande."
+          },
+          {
+            "ru": "Сложим гладкий куб.",
+            "en": "Let's make a smooth cube.",
+            "fr": "Faisons un cube lisse.",
+            "de": "Machen wir einen glatten Würfel.",
+            "es": "Hagamos un cubo liso.",
+            "pt_BR": "Vamos fazer um cubo lisinho."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Металл собрался в шар без углов. Он красиво отражает свет!",
+            "en": "The metal became a sphere with no corners. It reflects the light!",
+            "fr": "Le métal devient une sphère sans angles qui reflète la lumière !",
+            "de": "Das Metall wird zur Kugel ohne Ecken. Sie spiegelt das Licht!",
+            "es": "El metal se convirtió en una esfera que refleja la luz.",
+            "pt_BR": "O metal virou uma esfera sem cantos. Ela reflete a luz!"
+          },
+          {
+            "ru": "Широкое кольцо светится! В его середине видно звёзды.",
+            "en": "A wide ring shines! We can see stars through its middle.",
+            "fr": "Un large anneau brille ! On voit les étoiles à travers.",
+            "de": "Ein breiter Ring leuchtet. In seiner Mitte sieht man Sterne!",
+            "es": "¡Brilla un anillo grande! Se ven estrellas por el centro.",
+            "pt_BR": "Um anel largo brilha! Dá para ver estrelas pelo meio."
+          },
+          {
+            "ru": "Получился куб с шестью сторонами и мягкими уголками.",
+            "en": "It's a cube with six faces and soft corners!",
+            "fr": "Voici un cube à six faces et aux coins doux !",
+            "de": "Ein Würfel mit sechs Flächen und sanften Ecken ist entstanden!",
+            "es": "¡Es un cubo con seis caras y esquinas suaves!",
+            "pt_BR": "É um cubo com seis faces e cantos suaves!"
+          }
+        ]
+      }
+    ],
+    "neural": [
+      {
+        "id": "light_pattern",
+        "intro": {
+          "ru": "Три огонька потеряли свой порядок. Какую фигуру мы соберём из них?",
+          "en": "Three little lights lost their pattern. What shape shall we make?",
+          "fr": "Trois petites lumières ont perdu leur ordre. Quelle forme créer ?",
+          "de": "Drei Lichter haben ihre Ordnung verloren. Welche Form bauen wir?",
+          "es": "Tres luces perdieron su orden. ¿Qué figura hacemos?",
+          "pt_BR": "Três luzes perderam sua ordem. Que figura vamos formar?"
+        },
+        "choices": [
+          {
+            "ru": "Соберём круг.",
+            "en": "Let's make a circle.",
+            "fr": "Faisons un cercle.",
+            "de": "Bilden wir einen Kreis.",
+            "es": "Hagamos un círculo.",
+            "pt_BR": "Vamos fazer um círculo."
+          },
+          {
+            "ru": "Нарисуем спираль.",
+            "en": "Let's draw a spiral.",
+            "fr": "Dessinons une spirale.",
+            "de": "Zeichnen wir eine Spirale.",
+            "es": "Dibujemos una espiral.",
+            "pt_BR": "Vamos desenhar uma espiral."
+          },
+          {
+            "ru": "Сложим звезду.",
+            "en": "Let's make a little star.",
+            "fr": "Faisons une petite étoile.",
+            "de": "Bilden wir einen Stern.",
+            "es": "Hagamos una estrella.",
+            "pt_BR": "Vamos formar uma estrela."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Огоньки замкнулись в круг. Теперь начало встретилось с концом!",
+            "en": "The lights formed a circle. The last light meets the first!",
+            "fr": "Les lumières forment un cercle. La dernière rejoint la première !",
+            "de": "Die Lichter bilden einen Kreis. Ende und Anfang treffen sich!",
+            "es": "Las luces forman un círculo. ¡El final toca el principio!",
+            "pt_BR": "As luzes formam um círculo. O fim encontra o começo!"
+          },
+          {
+            "ru": "Огоньки закрутились по спирали. Они движутся от центра наружу.",
+            "en": "The lights turned into a spiral, moving away from the center.",
+            "fr": "Les lumières tournent en spirale en s'éloignant du centre.",
+            "de": "Die Lichter drehen sich in einer Spirale nach außen.",
+            "es": "Las luces forman una espiral que se aleja del centro.",
+            "pt_BR": "As luzes formam uma espiral que se afasta do centro."
+          },
+          {
+            "ru": "Лучики собрались в звёздочку. Мы создали сияющий узор!",
+            "en": "The lights formed a tiny star. We made a glowing pattern!",
+            "fr": "Les lumières dessinent une petite étoile brillante !",
+            "de": "Die Lichter bilden einen kleinen leuchtenden Stern!",
+            "es": "Las luces dibujan una estrella brillante.",
+            "pt_BR": "As luzes desenham uma estrela brilhante!"
+          }
+        ]
+      },
+      {
+        "id": "memory_gate",
+        "intro": {
+          "ru": "Огоньки снова сияют! Наши врата запомнили узор. Что проверим дальше?",
+          "en": "The lights shine again! Our gates remember the pattern. What shall we explore next?",
+          "fr": "Les lumières brillent ! Les portes gardent le motif en mémoire. Que faire ensuite ?",
+          "de": "Die Lichter leuchten! Unsere Tore merken sich das Muster. Was nun?",
+          "es": "¡Brillan las luces! Las puertas recuerdan el patrón. ¿Qué hacemos ahora?",
+          "pt_BR": "As luzes brilham! Os portais lembram o padrão. O que vamos fazer agora?"
+        },
+        "choices": [
+          {
+            "ru": "Найдём самый большой круг.",
+            "en": "Let's find the biggest circle.",
+            "fr": "Cherchons le plus grand cercle.",
+            "de": "Suchen wir den größten Kreis.",
+            "es": "Busquemos el círculo más grande.",
+            "pt_BR": "Vamos achar o maior círculo."
+          },
+          {
+            "ru": "Повторим ритм огоньков.",
+            "en": "Let's repeat the light rhythm.",
+            "fr": "Répétons le rythme des lumières.",
+            "de": "Wiederholen wir den Lichtrhythmus.",
+            "es": "Repitamos el ritmo de luces.",
+            "pt_BR": "Vamos repetir o ritmo das luzes."
+          },
+          {
+            "ru": "Сравним два портала.",
+            "en": "Let's compare two portals.",
+            "fr": "Comparons deux portails.",
+            "de": "Vergleichen wir zwei Portale.",
+            "es": "Comparemos dos portales.",
+            "pt_BR": "Vamos comparar dois portais."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Самый большой круг нашёлся! Он окружает маленькие огни.",
+            "en": "We found the biggest circle! It surrounds the tiny lights.",
+            "fr": "Voici le plus grand cercle ! Il entoure les petites lumières.",
+            "de": "Da ist der größte Kreis! Er umgibt die kleinen Lichter.",
+            "es": "¡Encontramos el círculo más grande! Rodea luces pequeñas.",
+            "pt_BR": "Achamos o maior círculo! Ele rodeia as luzes pequenas."
+          },
+          {
+            "ru": "Тук — тук — пауза! Мы точно повторили световой ритм.",
+            "en": "Tap, tap, pause! We repeated the light rhythm exactly.",
+            "fr": "Toc, toc, pause ! Nous avons reproduit le rythme.",
+            "de": "Klopf, klopf, Pause! Wir wiederholen den Rhythmus genau.",
+            "es": "¡Toc, toc, pausa! Repetimos el ritmo de las luces.",
+            "pt_BR": "Toc, toc, pausa! Repetimos o ritmo das luzes."
+          },
+          {
+            "ru": "Один портал круглый, другой похож на арку. Мы заметили различия!",
+            "en": "One portal is round; another looks like an arch. We spotted the difference!",
+            "fr": "Un portail est rond, l'autre ressemble à une arche. Nous voyons la différence !",
+            "de": "Ein Portal ist rund, das andere bogenförmig. Wir sehen den Unterschied!",
+            "es": "Un portal es redondo y otro parece un arco. ¡Vimos la diferencia!",
+            "pt_BR": "Um portal é redondo, outro parece um arco. Vimos a diferença!"
+          }
+        ]
+      }
     ]
   }
 }
