@@ -8,6 +8,7 @@ const WORLDS_PATH := "res://planet_hub/data/dialogue_worlds.json"
 const PHRASES_PATH := "res://planet_hub/data/dialogue_phrases.json"
 const STORIES_PATH := "res://planet_hub/data/dialogue_story_scenes.json"
 const STORY_QUIZZES_PATH := "res://planet_hub/data/dialogue_story_quizzes.json"
+const ADVENTURES_PATH := "res://planet_hub/data/dialogue_adventures.json"
 const ROSTER_PATH := "res://planet_hub/data/representatives.json"
 const SAVE_PATH := "user://miko_dialogue_progress.json"
 const TOPIC_ORDER := ["self", "world", "race", "race_about", "origin", "ability", "work", "energy", "age", "learn"]
@@ -34,6 +35,10 @@ var _enabled: bool = false
 var _stories: Dictionary = {}
 var _story: Dictionary = {}
 var _story_quizzes: Dictionary = {}
+var _adventures: Dictionary = {}
+var _active_adventure: Dictionary = {}
+var _active_adventure_index: int = -1
+var _pending_adventure_quiz: bool = false
 var _story_opened_this_visit: bool = false
 
 func _read(path: String) -> Dictionary:
@@ -89,6 +94,9 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	_pending_personal = ""
 	_current_math_topic = ""
 	_story_opened_this_visit = false
+	_active_adventure = {}
+	_active_adventure_index = -1
+	_pending_adventure_quiz = false
 	stage = "greeting"
 	choices.clear()
 	var world_database: Dictionary = _read(WORLDS_PATH)
@@ -96,6 +104,7 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	_stories = _read(STORIES_PATH)
 	_story = _stories.get("scenes", {}).get(target, {})
 	_story_quizzes = _read(STORY_QUIZZES_PATH)
+	_adventures = _read(ADVENTURES_PATH)
 	_roster = _read(ROSTER_PATH).get("assignments", {})
 	_ages = world_database.get("character_ages", {})
 	_world = world_database.get("worlds", {}).get(target, {})
@@ -109,6 +118,8 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 		_state["locations"] = {}
 	if not _state.has("personal_asked"):
 		_state["personal_asked"] = []
+	if not _state.has("character_adventures") or not (_state["character_adventures"] is Dictionary):
+		_state["character_adventures"] = {}
 	var places: Dictionary = _state["locations"]
 	_visited = places.get(target, {"visits": 0, "seen": [], "response_counter": 0})
 	_visited["visits"] = int(_visited.get("visits", 0)) + 1
@@ -260,6 +271,131 @@ func _accept_story_quiz(text: String) -> Dictionary:
 	next["npc"] = _localized(_story_quizzes.get("feedback", {}).get("success", {})) + "\n\n" + str(next.get("npc", ""))
 	return next
 
+## One representative may appear on several planets. Progress is attached to
+## their existing portrait assignment (never to a typed name or child data).
+func _adventure_memory_key() -> String:
+	var assignment: Dictionary = _roster.get(place_id, {})
+	var portrait: String = str(assignment.get("asset", ""))
+	return portrait if not portrait.is_empty() else place_id
+
+func _adventure_memory() -> Dictionary:
+	var all: Dictionary = _state.get("character_adventures", {})
+	return all.get(_adventure_memory_key(), {})
+
+func _adventure_episodes() -> Array:
+	var race_id: String = str(_world.get("race", ""))
+	return _adventures.get("races", {}).get(race_id, [])
+
+func _adventure_options(episode: Dictionary) -> Array[String]:
+	var options: Array[String] = []
+	for entry in episode.get("choices", []):
+		options.append(_localized(entry))
+	return options
+
+func _begin_adventure(prelude: String, follow_with_quiz: bool) -> Dictionary:
+	var episodes: Array = _adventure_episodes()
+	if episodes.is_empty():
+		if follow_with_quiz:
+			return _begin_story_quiz(prelude)
+		var ordinary: Dictionary = _choose_next()
+		ordinary["npc"] = prelude + "\n\n" + str(ordinary.get("npc", ""))
+		return ordinary
+	var memory: Dictionary = _adventure_memory()
+	var completed: int = maxi(0, int(memory.get("completed", 0)))
+	var index: int = completed % episodes.size()
+	_active_adventure_index = index
+	_active_adventure = episodes[index]
+	_pending_adventure_quiz = follow_with_quiz
+	choices = _adventure_options(_active_adventure)
+	if choices.size() != 3:
+		_active_adventure = {}
+		_active_adventure_index = -1
+		_pending_adventure_quiz = false
+		var next: Dictionary = _choose_next()
+		next["npc"] = prelude + "\n\n" + str(next.get("npc", ""))
+		return next
+	stage = "story_adventure"
+	var intro: String = _localized(_active_adventure.get("intro", {}))
+	if completed > 0:
+		var prior_episode: int = int(memory.get("last_episode", -1))
+		var prior_choice: int = int(memory.get("last_choice", -1))
+		if prior_episode >= 0 and prior_episode < episodes.size():
+			var previous: Dictionary = episodes[prior_episode]
+			var labels: Array = previous.get("choices", [])
+			if prior_choice >= 0 and prior_choice < labels.size():
+				var previous_phrase: String = _localized(labels[prior_choice])
+				var memory_format: String = _localized(_adventures.get("revisit_prefix", {}))
+				if memory_format.contains("%s"):
+					intro = (memory_format % previous_phrase) + "\n" + intro
+	return {"accepted": true, "available": true,
+		"npc": prelude + "\n\n" + intro, "choices": choices.duplicate()}
+
+func _adventure_choice_index(text: String) -> int:
+	var best: int = InputMatcher.NO_MATCH
+	var winning: int = -1
+	var tied: bool = false
+	var alternatives: Array = _active_adventure.get("choices", [])
+	for i in range(alternatives.size()):
+		var translations: Dictionary = alternatives[i]
+		for locale in translations.keys():
+			var quality: int = InputMatcher.score(text, str(translations[locale]))
+			if quality >= InputMatcher.NO_MATCH:
+				continue
+			if quality < best:
+				best = quality
+				winning = i
+				tied = false
+			elif quality == best and winning != i:
+				tied = true
+	return -1 if tied else winning
+
+func _accept_adventure(text: String) -> Dictionary:
+	if _skip(text):
+		_pending_adventure_quiz = false
+		var skipped: Dictionary = _choose_next()
+		skipped["npc"] = _ui("skip") + "\n\n" + str(skipped.get("npc", ""))
+		return skipped
+	var selected: int = _adventure_choice_index(text)
+	if selected < 0:
+		# The child may abandon any optional branch and ask a known topic.
+		var other_topic: String = _topic_for(text)
+		if not other_topic.is_empty():
+			_pending_adventure_quiz = false
+			stage = "choose"
+			return accept(text)
+		return {"accepted": false, "available": true,
+			"npc": _ui("bad"), "choices": choices.duplicate()}
+	var outcomes: Array = _active_adventure.get("outcomes", [])
+	if selected >= outcomes.size():
+		return {"accepted": false, "available": true,
+			"npc": _ui("bad"), "choices": choices.duplicate()}
+	var answer: String = _localized(outcomes[selected])
+	# No numeric score or failure; the three choices tell different stories.
+	var memory: Dictionary = _adventure_memory()
+	var total: int = maxi(0, int(memory.get("completed", 0))) + 1
+	memory["completed"] = total
+	memory["last_episode"] = _active_adventure_index
+	memory["last_choice"] = selected
+	memory["last_place"] = place_id
+	var history: Array = memory.get("history", [])
+	history.append({"episode": _active_adventure_index, "choice": selected})
+	if history.size() > 8:
+		history = history.slice(history.size() - 8)
+	memory["history"] = history
+	var all: Dictionary = _state.get("character_adventures", {})
+	all[_adventure_memory_key()] = memory
+	_state["character_adventures"] = all
+	_visited["adventures_completed"] = int(_visited.get("adventures_completed", 0)) + 1
+	_store_location()
+	var wants_quiz: bool = _pending_adventure_quiz
+	_pending_adventure_quiz = false
+	_active_adventure = {}
+	if wants_quiz:
+		return _begin_story_quiz(answer)
+	var next: Dictionary = _choose_next()
+	next["npc"] = answer + "\n\n" + str(next.get("npc", ""))
+	return next
+
 func _story_choices() -> Array[String]:
 	var results: Array[String] = []
 	var race_id: String = str(_world.get("race", ""))
@@ -336,11 +472,7 @@ func _accept_story(text: String) -> Dictionary:
 	_visited["story_turns"] = int(_visited.get("story_turns", 0)) + 1
 	_visited["story_last_choice"] = index
 	_store_location()
-	if index == 2:
-		return _begin_story_quiz(answer)
-	var next: Dictionary = _choose_next()
-	next["npc"] = answer + "\n\n" + str(next.get("npc", ""))
-	return next
+	return _begin_adventure(answer, index == 2)
 
 func _race_fact(field: String) -> String:
 	return str(_race.get(field + ("_ru" if language == "ru" else "_en"), ""))
@@ -594,6 +726,8 @@ func accept(text: String) -> Dictionary:
 			return _choose_next()
 		"story":
 			return _accept_story(text)
+		"story_adventure":
+			return _accept_adventure(text)
 		"story_quiz":
 			return _accept_story_quiz(text)
 		"personal":
