@@ -87,8 +87,13 @@ func _verify() -> void:
 			# Every branch can be selected, regardless of the highlighted default.
 			var branch: Dictionary = e.call("accept", str(options[2]))
 			_check(bool(branch.get("accepted", false)), "third branch accepted: " + id + " " + lang)
-			_check(str(e.get("stage")) == "story_quiz" and branch.get("choices", []).size() == 3, "third story branch opens optional race quiz: " + id + " " + lang)
-			var quiz_options: Array = branch.get("choices", [])
+			_check(str(e.get("stage")) == "story_adventure" and branch.get("choices", []).size() == 3, "third story branch opens character adventure: " + id + " " + lang)
+			var adventure_options: Array = branch.get("choices", [])
+			if adventure_options.size() != 3:
+				continue
+			var adventure_result: Dictionary = e.call("accept", str(adventure_options[1]))
+			_check(bool(adventure_result.get("accepted", false)) and str(e.get("stage")) == "story_quiz", "adventure resolves and continues to optional quiz: " + id + " " + lang)
+			var quiz_options: Array = adventure_result.get("choices", [])
 			if quiz_options.size() != 3:
 				continue
 			var quiz_wrong: Dictionary = e.call("accept", str(quiz_options[1]))
