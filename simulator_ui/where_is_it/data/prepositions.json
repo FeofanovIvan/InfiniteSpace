@@ -1,0 +1,38 @@
+{
+  "rounds": [
+    {"id": "basics", "keys": ["on", "under", "in", "left", "right"]},
+    {"id": "space", "keys": ["above", "front", "behind", "outside"]}
+  ],
+  "languages": [
+    {
+      "code":"en", "name":"English",
+      "words":{"on":"ON","under":"UNDER","in":"IN","left":"LEFT OF","right":"RIGHT OF","above":"ABOVE","front":"IN FRONT OF","behind":"BEHIND","outside":"OUTSIDE"},
+      "ui":{"title":"WHERE IS IT?", "subtitle":"Place each word around the cube", "round":"ROUND", "score":"SCORE", "rotate":"ROTATE THE CUBE", "rotate_hint":"Drag the scene to look around", "pick_hint":"Drag a word onto a glowing question mark", "tap_hint":"Word selected — now tap a question mark", "correct":"Great! Correct place.", "wrong":"Not quite. Try a different place!", "next":"NEXT ROUND", "done":"ALL 9 POSITIONS FOUND!", "restart":"PLAY AGAIN", "front_hint":"The golden triangle marks the FRONT face", "reset_view":"RESET VIEW", "instructions":"Explore a 3D cube and match each position", "tutorial":"Drag a word to a ? marker, or tap a word then a marker."}
+    },
+    {
+      "code":"ru", "name":"Русский",
+      "words":{"on":"НА","under":"ПОД","in":"ВНУТРИ","left":"СЛЕВА ОТ","right":"СПРАВА ОТ","above":"НАД","front":"ПЕРЕД","behind":"ЗА","outside":"СНАРУЖИ"},
+      "ui":{"title":"ГДЕ НАХОДИТСЯ?", "subtitle":"Расставь слова вокруг куба", "round":"РАУНД", "score":"ОЧКИ", "rotate":"ПОВЕРНИ КУБ", "rotate_hint":"Проведи пальцем, чтобы осмотреть", "pick_hint":"Перетащи слово на светящийся вопрос", "tap_hint":"Слово выбрано — нажми на знак вопроса", "correct":"Отлично! Верное место.", "wrong":"Пока не получилось. Попробуй ещё!", "next":"СЛЕДУЮЩИЙ РАУНД", "done":"ВСЕ 9 ПОЗИЦИЙ НАЙДЕНЫ!", "restart":"ИГРАТЬ ЕЩЁ", "front_hint":"Золотой треугольник указывает на ПЕРЕДНЮЮ грань", "reset_view":"СБРОСИТЬ ВИД", "instructions":"Осмотри объёмный куб и найди места", "tutorial":"Перетащи слово на знак ? или выбери слово и нажми на ?."}
+    },
+    {
+      "code":"pt", "name":"Português (BR)",
+      "words":{"on":"EM CIMA DE","under":"EMBAIXO DE","in":"DENTRO DE","left":"À ESQUERDA DE","right":"À DIREITA DE","above":"ACIMA DE","front":"NA FRENTE DE","behind":"ATRÁS DE","outside":"FORA DE"},
+      "ui":{"title":"ONDE ESTÁ?", "subtitle":"Coloque as palavras ao redor do cubo", "round":"RODADA", "score":"PONTOS", "rotate":"GIRE O CUBO", "rotate_hint":"Arraste a cena para explorar", "pick_hint":"Arraste uma palavra até o ponto de interrogação", "tap_hint":"Palavra selecionada — toque em ?", "correct":"Muito bem! Está certo.", "wrong":"Tente outra posição!", "next":"PRÓXIMA RODADA", "done":"AS 9 POSIÇÕES FORAM ENCONTRADAS!", "restart":"JOGAR DE NOVO", "front_hint":"O triângulo dourado marca a FRENTE", "reset_view":"REINICIAR VISTA", "instructions":"Explore o cubo em 3D e combine posições", "tutorial":"Arraste a palavra para ? ou toque na palavra e depois em ?."}
+    },
+    {
+      "code":"es", "name":"Español",
+      "words":{"on":"ENCIMA DE","under":"DEBAJO DE","in":"DENTRO DE","left":"A LA IZQUIERDA DE","right":"A LA DERECHA DE","above":"POR ENCIMA DE","front":"DELANTE DE","behind":"DETRÁS DE","outside":"FUERA DE"},
+      "ui":{"title":"¿DÓNDE ESTÁ?", "subtitle":"Coloca las palabras alrededor del cubo", "round":"RONDA", "score":"PUNTOS", "rotate":"GIRA EL CUBO", "rotate_hint":"Arrastra para mirar alrededor", "pick_hint":"Arrastra una palabra al signo de interrogación", "tap_hint":"Palabra elegida — toca un ?", "correct":"¡Muy bien!", "wrong":"Prueba otra posición", "next":"SIGUIENTE RONDA", "done":"¡ENCONTRASTE LAS 9 POSICIONES!", "restart":"JUGAR OTRA VEZ", "front_hint":"El triángulo dorado marca el FRENTE", "reset_view":"REINICIAR VISTA", "instructions":"Explora un cubo en 3D y sus posiciones", "tutorial":"Arrastra una palabra a ? o toca palabra y luego ?."}
+    },
+    {
+      "code":"de", "name":"Deutsch",
+      "words":{"on":"AUF","under":"UNTER","in":"IN","left":"LINKS VON","right":"RECHTS VON","above":"ÜBER","front":"VOR","behind":"HINTER","outside":"AUSSERHALB"},
+      "ui":{"title":"WO IST ES?", "subtitle":"Ordne die Wörter am Würfel zu", "round":"RUNDE", "score":"PUNKTE", "rotate":"WÜRFEL DREHEN", "rotate_hint":"Ziehe zum Umschauen", "pick_hint":"Ziehe ein Wort auf ein Fragezeichen", "tap_hint":"Wort gewählt — tippe auf ein ?", "correct":"Super! Richtig.", "wrong":"Versuche es noch einmal!", "next":"NÄCHSTE RUNDE", "done":"ALLE 9 POSITIONEN GEFUNDEN!", "restart":"NOCHMAL SPIELEN", "front_hint":"Das goldene Dreieck zeigt VORNE", "reset_view":"ANSICHT ZURÜCK", "instructions":"Entdecke die Positionen am 3D-Würfel", "tutorial":"Ziehe ein Wort auf ? oder tippe Wort und dann ?."}
+    },
+    {
+      "code":"fr", "name":"Français",
+      "words":{"on":"SUR","under":"SOUS","in":"DANS","left":"À GAUCHE DE","right":"À DROITE DE","above":"AU-DESSUS DE","front":"DEVANT","behind":"DERRIÈRE","outside":"EN DEHORS DE"},
+      "ui":{"title":"OÙ EST-CE?", "subtitle":"Place les mots autour du cube", "round":"MANCHE", "score":"POINTS", "rotate":"TOURNE LE CUBE", "rotate_hint":"Glisse pour regarder autour", "pick_hint":"Fais glisser un mot vers un ?", "tap_hint":"Mot choisi — touche un ?", "correct":"Bravo ! C'est juste.", "wrong":"Essaie une autre position !", "next":"MANCHE SUIVANTE", "done":"LES 9 POSITIONS SONT TROUVÉES !", "restart":"REJOUER", "front_hint":"Le triangle doré indique la face AVANT", "reset_view":"RÉINITIALISER", "instructions":"Explore un cube en 3D et ses positions", "tutorial":"Glisse un mot sur ? ou touche un mot puis un ?."}
+    }
+  ]
+}

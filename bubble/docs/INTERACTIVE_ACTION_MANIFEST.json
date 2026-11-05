@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "engine": "Godot 4.7.1",
+  "entry": "res://bubble/scenes/interaction_playroom.tscn",
+  "preserved_actions": 31,
+  "preserved_emotions": 17,
+  "modes": [
+    "shower_scrub",
+    "teeth_brushing",
+    "feed",
+    "drink",
+    "gas",
+    "cosmo_ball_fetch"
+  ],
+  "cosmo_ball_modes": [
+    "solid_bounce",
+    "air_hover"
+  ]
+}

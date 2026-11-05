@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://bubble/scripts/unified_lab.gd" id="1_lab"]
+[ext_resource type="Script" path="res://bubble/scripts/unified_background.gd" id="2_bg"]
+[ext_resource type="PackedScene" path="res://bubble/scenes/bubble_character.tscn" id="3_bubble"]
+
+[node name="BubbleUnifiedLab" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_lab")
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("2_bg")
+
+[node name="Bubble" parent="." instance=ExtResource("3_bubble")]
+position = Vector2(1060, 465)
+scale = Vector2(0.74, 0.74)
+
+[node name="HUD" type="CanvasLayer" parent="."]

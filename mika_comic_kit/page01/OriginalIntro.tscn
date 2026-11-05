@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://mika_comic_kit/page01/motion_comic_intro.gd" id="1_script"]
+[ext_resource type="Script" path="res://mika_comic_kit/page01/comic_lettering_legacy.gd" id="2_letter"]
+
+[node name="MotionComicIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+clip_contents = true
+script = ExtResource("1_script")
+
+[node name="ViewportFrame" type="Control" parent="."]
+layout_mode = 0
+clip_contents = true
+mouse_filter = 2
+
+[node name="Picture" type="Control" parent="ViewportFrame"]
+layout_mode = 0
+mouse_filter = 2
+
+[node name="Base" type="ColorRect" parent="ViewportFrame/Picture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(1, 1, 1, 1)
+
+[node name="Panel" type="ColorRect" parent="ViewportFrame/Picture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(1, 1, 1, 1)
+
+[node name="Transition" type="ColorRect" parent="ViewportFrame/Picture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(1, 1, 1, 1)
+
+[node name="Fade" type="ColorRect" parent="ViewportFrame/Picture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AdaptiveLettering" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("2_letter")

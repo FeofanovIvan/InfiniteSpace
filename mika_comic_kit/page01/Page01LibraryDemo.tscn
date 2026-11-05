@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://mika_comic_kit/page01/page01_bridge.gd" id="1"]
+[ext_resource type="PackedScene" path="res://mika_comic_kit/page01/OriginalIntro.tscn" id="2"]
+
+[node name="Page01LibraryDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+clip_contents = true
+script = ExtResource("1")
+
+[node name="OriginalIntro" parent="." instance=ExtResource("2")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+show_lettering = false
+
+[node name="TextLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2

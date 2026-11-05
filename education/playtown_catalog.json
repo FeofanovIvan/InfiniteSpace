@@ -1,0 +1,135 @@
+[
+  {
+    "section": "home",
+    "id": "puzzle",
+    "name_ru": "Пазлы",
+    "scene": "scenes/features/puzzle/puzzle_game.tscn",
+    "texture": "assets/ui/game_select/home/normalized/puzzle.webp"
+  },
+  {
+    "section": "home",
+    "id": "wardrobe",
+    "name_ru": "Сортировка одежды",
+    "scene": "scenes/features/wardrobe/wardrobe_game.tscn",
+    "texture": "assets/ui/game_select/home/normalized/wardrobe.webp"
+  },
+  {
+    "section": "home",
+    "id": "matching_pairs",
+    "name_ru": "Найди пары",
+    "scene": "scenes/features/matching_pairs/matching_pairs_game.tscn",
+    "texture": "assets/ui/game_select/home/normalized/matching_pairs.webp"
+  },
+  {
+    "section": "home",
+    "id": "animal_habitat",
+    "name_ru": "Среда обитания",
+    "scene": "scenes/features/animal_habitat/animal_habitat_game.tscn",
+    "texture": "assets/ui/game_select/home/normalized/animal_habitat.webp"
+  },
+  {
+    "section": "home",
+    "id": "profession",
+    "name_ru": "Профессии",
+    "scene": "scenes/features/profession_match/profession_match_game.tscn",
+    "texture": "assets/ui/game_select/home/normalized/profession.webp"
+  },
+  {
+    "section": "school",
+    "id": "letter_trace",
+    "name_ru": "Пиши буквы",
+    "scene": "scenes/features/tracing/letter_trace_game.tscn",
+    "texture": "assets/ui/game_select/school/normalized/letter_trace.webp"
+  },
+  {
+    "section": "school",
+    "id": "word_trace",
+    "name_ru": "Пиши слова",
+    "scene": "scenes/features/tracing/word_trace_game.tscn",
+    "texture": "assets/ui/game_select/school/normalized/word_trace.webp"
+  },
+  {
+    "section": "school",
+    "id": "word_build",
+    "name_ru": "Составь слово",
+    "scene": "scenes/features/school/school_game.tscn",
+    "texture": "assets/ui/game_select/school/normalized/word_build.webp"
+  },
+  {
+    "section": "school",
+    "id": "shape_build",
+    "name_ru": "Построй фигуру",
+    "scene": "scenes/features/tracing/shape_build_game.tscn",
+    "texture": "assets/ui/game_select/school/normalized/shape_build.webp"
+  },
+  {
+    "section": "school",
+    "id": "draw_this",
+    "name_ru": "Нарисуй",
+    "scene": "scenes/features/draw_this/draw_this_game.tscn",
+    "texture": "assets/ui/game_select/school/normalized/draw_this.webp"
+  },
+  {
+    "section": "shop",
+    "id": "pick_number",
+    "name_ru": "Выбери число",
+    "scene": "scenes/features/counting/count_pick_game.tscn",
+    "texture": "assets/ui/game_select/shop/normalized/pick_number.webp"
+  },
+  {
+    "section": "shop",
+    "id": "buy_groceries",
+    "name_ru": "Список покупок",
+    "scene": "scenes/features/grocery/grocery_game.tscn",
+    "texture": "assets/ui/game_select/shop/normalized/buy_groceries.webp"
+  },
+  {
+    "section": "shop",
+    "id": "count_groceries",
+    "name_ru": "Напиши число",
+    "scene": "scenes/features/counting/count_trace_game.tscn",
+    "texture": "assets/ui/game_select/shop/normalized/count_groceries.webp"
+  },
+  {
+    "section": "shop",
+    "id": "product_count",
+    "name_ru": "Посчитай продукты",
+    "scene": "scenes/features/product_count/product_count_game.tscn",
+    "texture": "assets/ui/game_select/shop/normalized/product_count.webp"
+  },
+  {
+    "section": "shop",
+    "id": "pizza",
+    "name_ru": "Пицца и дроби",
+    "scene": "scenes/features/pizza_fraction/pizza_fraction_game.tscn",
+    "texture": "assets/ui/game_select/shop/normalized/pizza.webp"
+  },
+  {
+    "section": "playground",
+    "id": "roll_ball",
+    "name_ru": "Лабиринт",
+    "scene": "scenes/features/tilt_maze/tilt_maze_game.tscn",
+    "texture": "assets/ui/game_select/playground/roll_the_ball.webp"
+  },
+  {
+    "section": "playground",
+    "id": "color_mix",
+    "name_ru": "Смешай краски",
+    "scene": "scenes/features/color_mix/color_mix_game.tscn",
+    "texture": "assets/ui/game_select/playground/color_mix.webp"
+  },
+  {
+    "section": "playground",
+    "id": "build_path",
+    "name_ru": "Построй путь",
+    "scene": "scenes/features/path_builder/path_builder_game.tscn",
+    "texture": "assets/ui/game_select/playground/build_path.webp"
+  },
+  {
+    "section": "playground",
+    "id": "piano",
+    "name_ru": "Пианино",
+    "scene": "scenes/features/piano/piano_game.tscn",
+    "texture": "assets/ui/game_select/playground/piano.webp"
+  }
+]

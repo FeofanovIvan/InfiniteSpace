@@ -1,0 +1,299 @@
+{
+  "version": "1.0",
+  "status": "implementation_map_not_animated_project",
+  "source_project": "MIKA_Intro_Landscape_COVER_Godot_Project.zip",
+  "duration_s": 71.0,
+  "reference_size": [
+    1280,
+    720
+  ],
+  "render": "landscape_cover_60fps_silent",
+  "scene_asset_order": [
+    "city",
+    "mica_balcony",
+    "news",
+    "disaster_red",
+    "disaster_magenta",
+    "conversation",
+    "ship_front",
+    "ship_rear",
+    "cockpit"
+  ],
+  "shot_descriptions": [
+    {
+      "order": 1,
+      "assets": [
+        "city.png"
+      ],
+      "panel_id": "P01",
+      "transition_ids": [
+        "X08"
+      ],
+      "priority_lettering": [
+        "L10",
+        "L01"
+      ]
+    },
+    {
+      "order": 2,
+      "assets": [
+        "city.png",
+        "mica_balcony.png"
+      ],
+      "panel_id": "P02",
+      "transition_ids": [
+        "X01",
+        "X02"
+      ],
+      "priority_lettering": [
+        "L02"
+      ]
+    },
+    {
+      "order": 3,
+      "assets": [
+        "news.png"
+      ],
+      "panel_id": "P04",
+      "transition_ids": [
+        "X04"
+      ],
+      "priority_lettering": [
+        "L05"
+      ]
+    },
+    {
+      "order": 4,
+      "assets": [
+        "disaster_red.png"
+      ],
+      "panel_id": "P01",
+      "transition_ids": [
+        "X08"
+      ],
+      "priority_lettering": [
+        "L01",
+        "L04"
+      ]
+    },
+    {
+      "order": 5,
+      "assets": [
+        "disaster_red.png",
+        "disaster_magenta.png"
+      ],
+      "panel_id": "P03",
+      "transition_ids": [
+        "X02"
+      ],
+      "priority_lettering": [
+        "L04"
+      ]
+    },
+    {
+      "order": 6,
+      "assets": [
+        "conversation.png"
+      ],
+      "panel_id": "P01",
+      "transition_ids": [
+        "X10"
+      ],
+      "priority_lettering": [
+        "L02"
+      ]
+    },
+    {
+      "order": 7,
+      "assets": [
+        "ship_front.png"
+      ],
+      "panel_id": "P01",
+      "transition_ids": [
+        "X04"
+      ],
+      "priority_lettering": [
+        "L01",
+        "L02"
+      ]
+    },
+    {
+      "order": 8,
+      "assets": [
+        "ship_rear.png"
+      ],
+      "panel_id": "P01",
+      "transition_ids": [
+        "X08",
+        "X09"
+      ],
+      "priority_lettering": [
+        "L01"
+      ]
+    },
+    {
+      "order": 9,
+      "assets": [
+        "ship_rear.png",
+        "cockpit.png"
+      ],
+      "panel_id": "P02",
+      "transition_ids": [
+        "X02",
+        "X09"
+      ],
+      "priority_lettering": [
+        "L02",
+        "L08"
+      ]
+    }
+  ],
+  "lettering_cues_current": [
+    {
+      "cue_id": "01_world",
+      "start": 0.65,
+      "end": 5.35,
+      "style_id": "L10",
+      "text": "AERELIA",
+      "secondary": "A WORLD ABOVE THE CLOUDS",
+      "speaker": "NARRATOR"
+    },
+    {
+      "cue_id": "02_peace",
+      "start": 5.9,
+      "end": 9.75,
+      "style_id": "L01",
+      "text": "A PLACE WHERE LIFE",
+      "secondary": "FLOATED IN THE SKY.",
+      "speaker": "NARRATOR"
+    },
+    {
+      "cue_id": "03_mika",
+      "start": 9.9,
+      "end": 12.9,
+      "style_id": "L02",
+      "text": "WHAT'S HAPPENING?",
+      "secondary": "",
+      "speaker": "MIKA"
+    },
+    {
+      "cue_id": "04_alert",
+      "start": 13.55,
+      "end": 19.85,
+      "style_id": "L05",
+      "text": "EMERGENCY TRANSMISSION",
+      "secondary": "A CHRONOSTORM IS COMING!",
+      "speaker": "BROADCASTER"
+    },
+    {
+      "cue_id": "05_space",
+      "start": 21.15,
+      "end": 25.75,
+      "style_id": "L01",
+      "text": "IT BENDS SPACE...",
+      "secondary": "",
+      "speaker": "BROADCASTER"
+    },
+    {
+      "cue_id": "06_time",
+      "start": 26.45,
+      "end": 30.45,
+      "style_id": "L01",
+      "text": "...AND FRACTURES TIME!",
+      "secondary": "",
+      "speaker": "BROADCASTER"
+    },
+    {
+      "cue_id": "07_danger",
+      "start": 30.65,
+      "end": 35.3,
+      "style_id": "L04",
+      "text": "OUR WORLD IS",
+      "secondary": "BREAKING APART!",
+      "speaker": "BROADCASTER"
+    },
+    {
+      "cue_id": "08_question",
+      "start": 37.2,
+      "end": 41.05,
+      "style_id": "L02",
+      "text": "WHAT CAN WE DO?",
+      "secondary": "",
+      "speaker": "MIKA"
+    },
+    {
+      "cue_id": "09_answer",
+      "start": 41.25,
+      "end": 46.65,
+      "style_id": "L02",
+      "text": "FIND THE CROSSROADS",
+      "secondary": "OF WORLDS!",
+      "speaker": "FRIEND"
+    },
+    {
+      "cue_id": "10_depart",
+      "start": 48.55,
+      "end": 52.4,
+      "style_id": "L02",
+      "text": "I'LL FIND IT!",
+      "secondary": "",
+      "speaker": "MIKA"
+    },
+    {
+      "cue_id": "11_quest",
+      "start": 52.6,
+      "end": 55.2,
+      "style_id": "L01",
+      "text": "INTO THE UNKNOWN...",
+      "secondary": "",
+      "speaker": "NARRATOR"
+    },
+    {
+      "cue_id": "12_follow",
+      "start": 57.05,
+      "end": 61.55,
+      "style_id": "L01",
+      "text": "BUT THE STORM",
+      "secondary": "WAS FASTER.",
+      "speaker": "NARRATOR"
+    },
+    {
+      "cue_id": "13_caught",
+      "start": 62.8,
+      "end": 67.3,
+      "style_id": "L02",
+      "text": "NO! IT FOUND ME!",
+      "secondary": "",
+      "speaker": "MIKA"
+    },
+    {
+      "cue_id": "14_scream",
+      "start": 67.8,
+      "end": 70.6,
+      "style_id": "L08",
+      "text": "AAAAAAH!",
+      "secondary": "",
+      "speaker": "MIKA"
+    }
+  ],
+  "protected_zones_status": "unmarked -- DO NOT assume empty; must annotate all 9 assets",
+  "protected_zones_template": {
+    "image_name.png": [
+      {
+        "kind": "face",
+        "bbox_normalized": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "priority": 100
+      }
+    ]
+  },
+  "notes": [
+    "Mica and speaker protected areas need manual annotation for each shot.",
+    "red first, magenta second (verified from previous shader timeline).",
+    "No music or voice implemented."
+  ]
+}

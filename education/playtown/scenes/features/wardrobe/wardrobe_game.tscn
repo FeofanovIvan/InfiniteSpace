@@ -1,0 +1,58 @@
+[gd_scene load_steps=19 format=3 uid="uid://ra4gd4dfqn4f"]
+
+[ext_resource type="Script" uid="uid://to5324nwans1" path="res://education/playtown/src/features/wardrobe/wardrobe_game.gd" id="1_game"]
+[ext_resource type="PackedScene" uid="uid://bfpq2hgwrxifx" path="res://education/playtown/scenes/features/wardrobe/wardrobe_item.tscn" id="2_item"]
+
+[ext_resource type="Texture2D" uid="uid://dei4qysyeyj3r" path="res://education/playtown/assets/wardrobe/items/shirt_blue.png" id="3_shirt_blue"]
+[ext_resource type="AudioStream" uid="uid://0o53yuab50fq" path="res://education/playtown/audio/sfx/clothes/shirt_purple.ogg" id="4_shirt_blue_voice"]
+[ext_resource type="Texture2D" uid="uid://dq7k7qrwejffg" path="res://education/playtown/assets/wardrobe/items/tshirt_blue.png" id="5_tshirt_blue"]
+[ext_resource type="AudioStream" path="res://education/playtown/audio/sfx/clothes/tshirt_blue.ogg" id="6_tshirt_blue_voice"]
+[ext_resource type="Texture2D" uid="uid://xk20q0dpgoll" path="res://education/playtown/assets/wardrobe/items/tshirt_red.png" id="7_tshirt_red"]
+[ext_resource type="AudioStream" uid="uid://j2o15rs8wv8h" path="res://education/playtown/audio/sfx/clothes/tshirt_black.ogg" id="8_tshirt_red_voice"]
+[ext_resource type="Texture2D" uid="uid://b74cfjassupmk" path="res://education/playtown/assets/wardrobe/items/tshirt_white.png" id="9_tshirt_white"]
+[ext_resource type="AudioStream" uid="uid://dyfhk024ba8cx" path="res://education/playtown/audio/sfx/clothes/tshirt_white.ogg" id="10_tshirt_white_voice"]
+[ext_resource type="Texture2D" uid="uid://caoyulexkbalu" path="res://education/playtown/assets/wardrobe/items/shirt_green.png" id="11_shirt_green"]
+[ext_resource type="AudioStream" uid="uid://bflrm5glv045l" path="res://education/playtown/audio/sfx/clothes/shirt_green.ogg" id="12_shirt_green_voice"]
+[ext_resource type="Texture2D" uid="uid://7pua6r8a4j17" path="res://education/playtown/assets/wardrobe/items/skirt_red.png" id="13_skirt_red"]
+[ext_resource type="AudioStream" uid="uid://gnoggtg8sb6h" path="res://education/playtown/audio/sfx/clothes/skirt_red.ogg" id="14_skirt_red_voice"]
+[ext_resource type="Texture2D" uid="uid://bjjlrv4ulhahs" path="res://education/playtown/assets/wardrobe/items/tshirt_green.png" id="15_tshirt_green"]
+[ext_resource type="AudioStream" uid="uid://ddoqoicg3jsgc" path="res://education/playtown/audio/sfx/clothes/tshirt_yellow.ogg" id="16_tshirt_green_voice"]
+[ext_resource type="Texture2D" uid="uid://p0rplarowaer" path="res://education/playtown/assets/wardrobe/items/skirt_blue.png" id="17_skirt_blue"]
+[ext_resource type="AudioStream" uid="uid://c6l15776jgda4" path="res://education/playtown/audio/sfx/clothes/skirt_purple.ogg" id="18_skirt_blue_voice"]
+
+[node name="WardrobeGame" type="Node2D"]
+script = ExtResource("1_game")
+item_scene = ExtResource("2_item")
+items_data = Array[Dictionary]([{
+"category": "shirt_blue",
+"texture": ExtResource("3_shirt_blue"),
+"voice": ExtResource("4_shirt_blue_voice")
+}, {
+"category": "tshirt_blue",
+"texture": ExtResource("5_tshirt_blue"),
+"voice": ExtResource("6_tshirt_blue_voice")
+}, {
+"category": "tshirt_red",
+"texture": ExtResource("7_tshirt_red"),
+"voice": ExtResource("8_tshirt_red_voice")
+}, {
+"category": "tshirt_white",
+"texture": ExtResource("9_tshirt_white"),
+"voice": ExtResource("10_tshirt_white_voice")
+}, {
+"category": "shirt_green",
+"texture": ExtResource("11_shirt_green"),
+"voice": ExtResource("12_shirt_green_voice")
+}, {
+"category": "skirt_red",
+"texture": ExtResource("13_skirt_red"),
+"voice": ExtResource("14_skirt_red_voice")
+}, {
+"category": "tshirt_green",
+"texture": ExtResource("15_tshirt_green"),
+"voice": ExtResource("16_tshirt_green_voice")
+}, {
+"category": "skirt_blue",
+"texture": ExtResource("17_skirt_blue"),
+"voice": ExtResource("18_skirt_blue_voice")
+}])

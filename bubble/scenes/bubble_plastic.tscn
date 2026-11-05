@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://bubble/scripts/bubble_plastic.gd" id="1_script"]
+[ext_resource type="Shader" path="res://bubble/shaders/bubble_metaball.gdshader" id="2_shader"]
+[ext_resource type="Texture2D" path="res://bubble/assets/face/eye_left.png" id="3_eye_l"]
+[ext_resource type="Texture2D" path="res://bubble/assets/face/eye_right.png" id="4_eye_r"]
+[ext_resource type="Texture2D" path="res://bubble/assets/face/mouth.png" id="5_mouth"]
+[ext_resource type="Script" path="res://bubble/scripts/gas_cloud.gd" id="6_gas"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bubble"]
+shader = ExtResource("2_shader")
+
+[node name="BubblePlastic" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Body" type="Node2D" parent="."]
+
+[node name="Surface" type="ColorRect" parent="Body"]
+offset_left = -400.0
+offset_top = -325.0
+offset_right = 400.0
+offset_bottom = 325.0
+mouse_filter = 2
+material = SubResource("ShaderMaterial_bubble")
+
+[node name="Face" type="Node2D" parent="Body"]
+
+[node name="EyeLeft" type="Sprite2D" parent="Body/Face"]
+position = Vector2(-68, -27)
+scale = Vector2(0.49, 0.49)
+texture = ExtResource("3_eye_l")
+
+[node name="EyeRight" type="Sprite2D" parent="Body/Face"]
+position = Vector2(68, -33)
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("4_eye_r")
+
+[node name="Mouth" type="Sprite2D" parent="Body/Face"]
+position = Vector2(16, 55)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("5_mouth")
+
+[node name="GasCloud" type="Node2D" parent="."]
+script = ExtResource("6_gas")

@@ -1,0 +1,477 @@
+{
+  "version": "1.0",
+  "status": "implemented_in_godot_library",
+  "lettering": {
+    "L01": {
+      "id": "L01",
+      "name": "Caption Narrator",
+      "semantic": "narrator",
+      "font_id": "F02",
+      "fill_color_id": "C05",
+      "text_color_id": "C01",
+      "outline_color_id": "C01",
+      "godot_node": "PanelContainer/StyleBoxFlat",
+      "tail_mode": "no_tail",
+      "entry_animation": "fade_slide",
+      "max_text_lines": 2,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0
+    },
+    "L02": {
+      "id": "L02",
+      "name": "Speech Balloon",
+      "semantic": "dialogue",
+      "font_id": "F01",
+      "fill_color_id": "C02",
+      "text_color_id": "C01",
+      "outline_color_id": "C01",
+      "godot_node": "Control/_draw ellipse+tail",
+      "tail_mode": "mouth_anchor",
+      "entry_animation": "pop",
+      "max_text_lines": 3,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0
+    },
+    "L03": {
+      "id": "L03",
+      "name": "Purple Info Block",
+      "semantic": "information",
+      "font_id": "F02",
+      "fill_color_id": "C03",
+      "text_color_id": "C12",
+      "outline_color_id": "C04",
+      "godot_node": "Control/_draw chamfered panel",
+      "tail_mode": "no_tail",
+      "entry_animation": "slide",
+      "max_text_lines": 3,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0,
+      "locked_semantics": "Always purple information block; do not reuse ID."
+    },
+    "L04": {
+      "id": "L04",
+      "name": "Emergency Alert",
+      "semantic": "urgent",
+      "font_id": "F02",
+      "fill_color_id": "C07",
+      "text_color_id": "C01",
+      "outline_color_id": "C01",
+      "godot_node": "Control/_draw double angular border",
+      "tail_mode": "no_tail",
+      "entry_animation": "impact_once",
+      "max_text_lines": 2,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0
+    },
+    "L05": {
+      "id": "L05",
+      "name": "Radio Hologram",
+      "semantic": "broadcast",
+      "font_id": "F02",
+      "fill_color_id": "C10",
+      "text_color_id": "C12",
+      "outline_color_id": "C09",
+      "godot_node": "Control/_draw tech frame+zigzag",
+      "tail_mode": "source_anchor",
+      "entry_animation": "quick_reveal",
+      "max_text_lines": 3,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0
+    },
+    "L06": {
+      "id": "L06",
+      "name": "Whisper Balloon",
+      "semantic": "whisper",
+      "font_id": "F04",
+      "fill_color_id": "C02",
+      "text_color_id": "C01",
+      "outline_color_id": "C04",
+      "godot_node": "Control/_draw dashed ellipse",
+      "tail_mode": "mouth_anchor",
+      "entry_animation": "fade",
+      "max_text_lines": 3,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0
+    },
+    "L07": {
+      "id": "L07",
+      "name": "Inner Thought",
+      "semantic": "thought",
+      "font_id": "F04",
+      "fill_color_id": "C04",
+      "text_color_id": "C01",
+      "outline_color_id": "C03",
+      "godot_node": "PanelContainer/StyleBoxFlat",
+      "tail_mode": "no_tail",
+      "entry_animation": "fade_slide",
+      "max_text_lines": 2,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0
+    },
+    "L08": {
+      "id": "L08",
+      "name": "Shout Burst",
+      "semantic": "scream",
+      "font_id": "F03",
+      "fill_color_id": "C08",
+      "text_color_id": "C01",
+      "outline_color_id": "C01",
+      "godot_node": "Control/_draw 14-20 polygon spikes",
+      "tail_mode": "mouth_anchor",
+      "entry_animation": "punch",
+      "max_text_lines": 2,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0
+    },
+    "L09": {
+      "id": "L09",
+      "name": "SFX Lettering",
+      "semantic": "sfx",
+      "font_id": "F03",
+      "fill_color_id": "C09",
+      "text_color_id": "C01",
+      "outline_color_id": "C01",
+      "godot_node": "Label/outline/rotation",
+      "tail_mode": "no_tail",
+      "entry_animation": "snap",
+      "max_text_lines": 1,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0
+    },
+    "L10": {
+      "id": "L10",
+      "name": "World Title",
+      "semantic": "title",
+      "font_id": "F03",
+      "fill_color_id": "C02",
+      "text_color_id": "C01",
+      "outline_color_id": "C03",
+      "godot_node": "Label + subtitle backed panel",
+      "tail_mode": "no_tail",
+      "entry_animation": "title_reveal",
+      "max_text_lines": 2,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0
+    },
+    "L11": {
+      "id": "L11",
+      "name": "Location Time Tag",
+      "semantic": "location",
+      "font_id": "F02",
+      "fill_color_id": "C10",
+      "text_color_id": "C12",
+      "outline_color_id": "C09",
+      "godot_node": "PanelContainer/StyleBoxFlat",
+      "tail_mode": "no_tail",
+      "entry_animation": "slide",
+      "max_text_lines": 1,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0
+    },
+    "L12": {
+      "id": "L12",
+      "name": "Offscreen Voice",
+      "semantic": "offscreen",
+      "font_id": "F02",
+      "fill_color_id": "C02",
+      "text_color_id": "C01",
+      "outline_color_id": "C01",
+      "godot_node": "Control/_draw corner tail",
+      "tail_mode": "panel_edge",
+      "entry_animation": "fade",
+      "max_text_lines": 3,
+      "padding_base": [
+        26,
+        22
+      ],
+      "place_in_screen_space": true,
+      "prevent_face_overlap": true,
+      "auto_wrap": true,
+      "allow_text_clipping": false,
+      "min_hold_seconds": 3.0
+    }
+  },
+  "panels": {
+    "P01": {
+      "id": "P01",
+      "name": "Full Bleed",
+      "godot_strategy": "PictureLayer / Cover with camera focus+zoom",
+      "maximum_layers": 1,
+      "needs_mask": false,
+      "requires_subject_cutout": false,
+      "cover": true
+    },
+    "P02": {
+      "id": "P02",
+      "name": "Diagonal Duo",
+      "godot_strategy": "2 PictureLayers / shader signed-distance angled seam",
+      "maximum_layers": 2,
+      "needs_mask": true,
+      "requires_subject_cutout": false,
+      "cover": true
+    },
+    "P03": {
+      "id": "P03",
+      "name": "News Split",
+      "godot_strategy": "2 PictureLayers / independent cover focus / coupled mask",
+      "maximum_layers": 2,
+      "needs_mask": true,
+      "requires_subject_cutout": false,
+      "cover": true
+    },
+    "P04": {
+      "id": "P04",
+      "name": "Inset Window",
+      "godot_strategy": "PictureLayer + small Control/TextureRect inset",
+      "maximum_layers": 2,
+      "needs_mask": true,
+      "requires_subject_cutout": false,
+      "cover": true
+    },
+    "P05": {
+      "id": "P05",
+      "name": "Stacked Strips",
+      "godot_strategy": "2 or 3 PictureLayers / horizontal mask",
+      "maximum_layers": 3,
+      "needs_mask": true,
+      "requires_subject_cutout": false,
+      "cover": true
+    },
+    "P06": {
+      "id": "P06",
+      "name": "Floating Cards",
+      "godot_strategy": "2 or 3 panels / individual transform & shadow",
+      "maximum_layers": 3,
+      "needs_mask": true,
+      "requires_subject_cutout": false,
+      "cover": true
+    },
+    "P07": {
+      "id": "P07",
+      "name": "Breakout Character",
+      "godot_strategy": "background + masked panel + extra subject RGBA cutout",
+      "maximum_layers": 3,
+      "needs_mask": true,
+      "requires_subject_cutout": true,
+      "cover": true
+    }
+  },
+  "transitions": {
+    "X01": {
+      "id": "X01",
+      "name": "Panel Slide",
+      "godot_strategy": "Control.position Tween/AnimationPlayer",
+      "duration_default": 0.5,
+      "duration_range": [
+        0.35,
+        0.65
+      ],
+      "deterministic_seek": true,
+      "subpixel": true,
+      "motion_sensitive": false
+    },
+    "X02": {
+      "id": "X02",
+      "name": "Diagonal Reveal",
+      "godot_strategy": "comic_layer.gdshader seam_px/slope",
+      "duration_default": 0.57,
+      "duration_range": [
+        0.4,
+        0.75
+      ],
+      "deterministic_seek": true,
+      "subpixel": true,
+      "motion_sensitive": false
+    },
+    "X03": {
+      "id": "X03",
+      "name": "Split Build",
+      "godot_strategy": "animated panel_rect and masking",
+      "duration_default": 0.7,
+      "duration_range": [
+        0.5,
+        0.9
+      ],
+      "deterministic_seek": true,
+      "subpixel": true,
+      "motion_sensitive": false
+    },
+    "X04": {
+      "id": "X04",
+      "name": "Push Zoom",
+      "godot_strategy": "shader focus/zoom float interpolation",
+      "duration_default": 0.75,
+      "duration_range": [
+        0.5,
+        1.0
+      ],
+      "deterministic_seek": true,
+      "subpixel": true,
+      "motion_sensitive": true
+    },
+    "X05": {
+      "id": "X05",
+      "name": "Match Cut",
+      "godot_strategy": "anchor/scale/angle matching + fast cut",
+      "duration_default": 0.28,
+      "duration_range": [
+        0.15,
+        0.4
+      ],
+      "deterministic_seek": true,
+      "subpixel": true,
+      "motion_sensitive": false
+    },
+    "X06": {
+      "id": "X06",
+      "name": "Mask Wipe",
+      "godot_strategy": "canvas_item shader shape mask",
+      "duration_default": 0.6,
+      "duration_range": [
+        0.4,
+        0.8
+      ],
+      "deterministic_seek": true,
+      "subpixel": true,
+      "motion_sensitive": false
+    },
+    "X07": {
+      "id": "X07",
+      "name": "Breakout Overlap",
+      "godot_strategy": "P07 + RGBA cutout + animated z-index",
+      "duration_default": 0.9,
+      "duration_range": [
+        0.6,
+        1.2
+      ],
+      "deterministic_seek": true,
+      "subpixel": true,
+      "motion_sensitive": true
+    },
+    "X08": {
+      "id": "X08",
+      "name": "Parallax Glide",
+      "godot_strategy": "separate depth layers, subpixel Tween",
+      "duration_default": 3.5,
+      "duration_range": [
+        2.0,
+        5.0
+      ],
+      "deterministic_seek": true,
+      "subpixel": true,
+      "motion_sensitive": true
+    },
+    "X09": {
+      "id": "X09",
+      "name": "Impact Cut Shake",
+      "godot_strategy": "cut + shake_px decay; no shake on text",
+      "duration_default": 0.25,
+      "duration_range": [
+        0.1,
+        0.4
+      ],
+      "deterministic_seek": true,
+      "subpixel": true,
+      "motion_sensitive": true
+    },
+    "X10": {
+      "id": "X10",
+      "name": "Soft Dissolve",
+      "godot_strategy": "ShaderMaterial/CanvasItem alpha fade",
+      "duration_default": 0.6,
+      "duration_range": [
+        0.4,
+        0.8
+      ],
+      "deterministic_seek": true,
+      "subpixel": true,
+      "motion_sensitive": false
+    }
+  },
+  "legacy_style_map": {
+    "title": "L10",
+    "caption": "L01",
+    "balloon": "L02",
+    "radio": "L05",
+    "urgent": "L04",
+    "scream": "L08"
+  },
+  "implemented_library_path": "res://mika_comic_kit/"
+}

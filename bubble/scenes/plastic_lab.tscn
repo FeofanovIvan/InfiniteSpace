@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://bubble/scripts/plastic_lab.gd" id="1_lab"]
+[ext_resource type="Script" path="res://bubble/scripts/studio_background.gd" id="2_bg"]
+[ext_resource type="Script" path="res://bubble/scripts/studio_markers.gd" id="3_mark"]
+[ext_resource type="PackedScene" path="res://bubble/scenes/bubble_plastic.tscn" id="4_bubble"]
+
+[node name="BodyPlasticLab" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_lab")
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource("2_bg")
+
+[node name="Markers" type="Node2D" parent="."]
+script = ExtResource("3_mark")
+
+[node name="Bubble" parent="." instance=ExtResource("4_bubble")]
+
+[node name="HUD" type="CanvasLayer" parent="."]

@@ -1,0 +1,157 @@
+[
+  {
+    "action_id": "idle",
+    "group": "idle",
+    "label": "Покой"
+  },
+  {
+    "action_id": "walk_forward",
+    "group": "movement",
+    "label": "Вперёд"
+  },
+  {
+    "action_id": "walk_backward",
+    "group": "movement",
+    "label": "Назад"
+  },
+  {
+    "action_id": "strafe_left",
+    "group": "movement",
+    "label": "Влево"
+  },
+  {
+    "action_id": "strafe_right",
+    "group": "movement",
+    "label": "Вправо"
+  },
+  {
+    "action_id": "accelerate",
+    "group": "movement",
+    "label": "Ускорение"
+  },
+  {
+    "action_id": "brake",
+    "group": "movement",
+    "label": "Торможение"
+  },
+  {
+    "action_id": "turn_45_left",
+    "group": "turn",
+    "label": "turn 45 left"
+  },
+  {
+    "action_id": "turn_45_right",
+    "group": "turn",
+    "label": "turn 45 right"
+  },
+  {
+    "action_id": "turn_90_left",
+    "group": "turn",
+    "label": "turn 90 left"
+  },
+  {
+    "action_id": "turn_90_right",
+    "group": "turn",
+    "label": "turn 90 right"
+  },
+  {
+    "action_id": "turn_180_left",
+    "group": "turn",
+    "label": "turn 180 left"
+  },
+  {
+    "action_id": "turn_180_right",
+    "group": "turn",
+    "label": "turn 180 right"
+  },
+  {
+    "action_id": "turn_move_left",
+    "group": "turn",
+    "label": "turn move left"
+  },
+  {
+    "action_id": "turn_move_right",
+    "group": "turn",
+    "label": "turn move right"
+  },
+  {
+    "action_id": "wave",
+    "group": "gesture",
+    "label": "Махание"
+  },
+  {
+    "action_id": "jump",
+    "group": "gesture",
+    "label": "Прыжок"
+  },
+  {
+    "action_id": "roll",
+    "group": "gesture",
+    "label": "Перекат"
+  },
+  {
+    "action_id": "float",
+    "group": "gesture",
+    "label": "Парение"
+  },
+  {
+    "action_id": "spin",
+    "group": "gesture",
+    "label": "Вращение"
+  },
+  {
+    "action_id": "look",
+    "group": "gesture",
+    "label": "Оглядывание"
+  },
+  {
+    "action_id": "detach",
+    "group": "plastic",
+    "label": "Отделение"
+  },
+  {
+    "action_id": "rejoin",
+    "group": "plastic",
+    "label": "Соединение"
+  },
+  {
+    "action_id": "stretch",
+    "group": "plastic",
+    "label": "Потягивание"
+  },
+  {
+    "action_id": "contract",
+    "group": "plastic",
+    "label": "Сжатие"
+  },
+  {
+    "action_id": "gas",
+    "group": "plastic",
+    "label": "Газ"
+  },
+  {
+    "action_id": "sleep",
+    "group": "plastic",
+    "label": "Сон"
+  },
+  {
+    "action_id": "eat",
+    "group": "care",
+    "label": "Еда"
+  },
+  {
+    "action_id": "drink",
+    "group": "care",
+    "label": "Питьё"
+  },
+  {
+    "action_id": "brush_teeth",
+    "group": "care",
+    "label": "Чистка зубов"
+  },
+  {
+    "action_id": "bath",
+    "group": "care",
+    "label": "Купание"
+  }
+]

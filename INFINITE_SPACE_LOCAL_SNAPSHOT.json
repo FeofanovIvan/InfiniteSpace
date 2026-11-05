@@ -1,0 +1,16 @@
+{
+  "purpose": "current local Godot project source snapshot for UI audit",
+  "created_utc": "2026-11-05T18:38:27.088170+00:00",
+  "repository": "FeofanovIvan/InfiniteSpace",
+  "branch": "sync/current-mac-20261105",
+  "project_folder": "InfiniteSpace_Godot",
+  "source_file_count": 5214,
+  "source_bytes": 554290376,
+  "skipped_reason_counts": {
+    "excluded_dir": 6,
+    "secret_or_os_file": 1,
+    "backup_file": 17,
+    "generated_or_sensitive_extension": 4008
+  },
+  "note": "No local project edits. .godot cache, .import sidecars, backups, APK and secrets excluded."
+}

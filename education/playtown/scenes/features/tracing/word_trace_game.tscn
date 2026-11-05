@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfiyre1y7ppvv"]
+
+[ext_resource type="Script" uid="uid://7qnne8aa2rap" path="res://education/playtown/src/features/tracing/word_trace_game.gd" id="1_wtg"]
+
+[node name="WordTraceGame" type="Node2D"]
+script = ExtResource("1_wtg")

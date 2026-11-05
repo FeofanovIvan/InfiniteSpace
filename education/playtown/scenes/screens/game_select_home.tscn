@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://education/playtown/src/screens/game_select.gd" id="1_gs"]
+
+[node name="GameSelectHome" type="Node2D"]
+script = ExtResource("1_gs")
+back_scene_path = "res://education/playtown/scenes/world/city_world.tscn"
+cards_data = [{
+"scene": "res://education/playtown/scenes/features/puzzle/puzzle_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/home/normalized/puzzle.webp"
+}, {
+"scene": "res://education/playtown/scenes/features/wardrobe/wardrobe_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/home/normalized/wardrobe.webp"
+}, {
+"scene": "res://education/playtown/scenes/features/matching_pairs/matching_pairs_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/home/normalized/matching_pairs.webp"
+}, {
+"scene": "res://education/playtown/scenes/features/animal_habitat/animal_habitat_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/home/normalized/animal_habitat.webp"
+}, {
+"scene": "res://education/playtown/scenes/features/profession_match/profession_match_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/home/normalized/profession.webp"
+}]

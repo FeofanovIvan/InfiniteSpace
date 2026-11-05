@@ -1,0 +1,135 @@
+{
+  "version": "1.0",
+  "page_id": "aerelia_01",
+  "page_size": "A4",
+  "source_art": "MIKA_Comic_Page_01_A4_300dpi.png",
+  "lettering": [
+    {
+      "cue_id": "01_world",
+      "style_id": "L10",
+      "speaker": "NARRATOR",
+      "text": "AERELIA",
+      "secondary": "A WORLD ABOVE THE CLOUDS",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "02_peace",
+      "style_id": "L01",
+      "speaker": "NARRATOR",
+      "text": "A PLACE WHERE LIFE",
+      "secondary": "FLOATED IN THE SKY.",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "03_mika",
+      "style_id": "L02",
+      "speaker": "MIKA",
+      "text": "WHAT'S HAPPENING?",
+      "secondary": "",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "04_alert",
+      "style_id": "L05",
+      "speaker": "BROADCASTER",
+      "text": "EMERGENCY TRANSMISSION",
+      "secondary": "A CHRONOSTORM IS COMING!",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "05_space",
+      "style_id": "L01",
+      "speaker": "BROADCASTER",
+      "text": "IT BENDS SPACE...",
+      "secondary": "",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "06_time",
+      "style_id": "L01",
+      "speaker": "BROADCASTER",
+      "text": "...AND FRACTURES TIME!",
+      "secondary": "",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "07_danger",
+      "style_id": "L04",
+      "speaker": "BROADCASTER",
+      "text": "OUR WORLD IS",
+      "secondary": "BREAKING APART!",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "08_question",
+      "style_id": "L02",
+      "speaker": "MIKA",
+      "text": "WHAT CAN WE DO?",
+      "secondary": "",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "09_answer",
+      "style_id": "L02",
+      "speaker": "FRIEND",
+      "text": "FIND THE CROSSROADS",
+      "secondary": "OF WORLDS!",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "10_depart",
+      "style_id": "L02",
+      "speaker": "MIKA",
+      "text": "I'LL FIND IT!",
+      "secondary": "",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "11_quest",
+      "style_id": "L01",
+      "speaker": "NARRATOR",
+      "text": "INTO THE UNKNOWN...",
+      "secondary": "",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "12_follow",
+      "style_id": "L01",
+      "speaker": "NARRATOR",
+      "text": "BUT THE STORM",
+      "secondary": "WAS FASTER.",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "13_caught",
+      "style_id": "L02",
+      "speaker": "MIKA",
+      "text": "NO! IT FOUND ME!",
+      "secondary": "",
+      "pdf_panel_index": null,
+      "position_mm": null
+    },
+    {
+      "cue_id": "14_scream",
+      "style_id": "L08",
+      "speaker": "MIKA",
+      "text": "AAAAAAH!",
+      "secondary": "",
+      "pdf_panel_index": null,
+      "position_mm": null
+    }
+  ],
+  "note": "PDF uses same IDs/text/colors, but print coordinates set by editor; do not render Godot screenshots."
+}

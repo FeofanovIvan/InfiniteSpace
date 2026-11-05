@@ -1,0 +1,14 @@
+{
+  "page_id": "example_new_page",
+  "duration_sec": 14.0,
+  "scene": "landscape_only_cover",
+  "shots": [
+    {"id": "shot_01", "start": 0.0, "duration": 7.0, "panel_id": "P01", "images": ["city"], "enter_transition_id": "X08", "transition_duration": 2.0},
+    {"id": "shot_02", "start": 7.0, "duration": 7.0, "panel_id": "P02", "images": ["city", "mica_balcony"], "enter_transition_id": "X02", "transition_duration": 0.65}
+  ],
+  "lettering": [
+    {"id": "cue_001", "start": 0.5, "duration": 5.5, "style_id": "L10", "speaker": "NARRATOR", "text": "AERELIA", "secondary": "A WORLD ABOVE THE CLOUDS", "preferred_anchor": "bottom_left", "protected_areas": []},
+    {"id": "cue_002", "start": 8.0, "duration": 5.0, "style_id": "L02", "speaker": "MIKA", "text": "What's happening?", "preferred_anchor": "top_left", "protected_areas": [[0.55,0.12,0.34,0.65]]}
+  ],
+  "notes": "IDs and words are shared with print manifest. Images are loaded separately; print pagination is editorial."
+}

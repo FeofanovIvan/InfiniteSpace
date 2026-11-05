@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://education/playtown/src/world/traffic/car_controller.gd" id="1_car"]
+[ext_resource type="AudioStream" path="res://education/playtown/audio/sfx/vehicle_engine.ogg" id="2_snd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(87, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sensor"]
+size = Vector2(83, 139)
+
+[node name="Car" type="CharacterBody2D" groups=["cars"]]
+script = ExtResource("1_car")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_body")
+
+[node name="FrontSensor" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontSensor"]
+position = Vector2(0, 157)
+shape = SubResource("RectangleShape2D_sensor")
+
+[node name="EngineSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_snd")
+volume_db = -80.0
+parameters/looping = true

@@ -1,0 +1,41 @@
+{
+  "id": "phase_v4_only",
+  "backup_dir": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_phase_v4_only_20261104_222041_864427",
+  "files": {
+    "phase_liquid_v4/PhaseLiquid3D.tscn": {
+      "before_sha": null,
+      "after_sha": "ec9fc916f945d37d9d4cc138fd424f12679254ff6d73cef9b55eb5e9d8de75a0",
+      "existed": false
+    },
+    "phase_liquid_v4/PhaseLiquid3D.gd": {
+      "before_sha": null,
+      "after_sha": "1b81fe2f1bc31a43e65210b215429d41883bd5461c5e9efd2f0f0acc2b58c476",
+      "existed": false
+    },
+    "phase_liquid_v4/phase_morph_3d.gdshader": {
+      "before_sha": null,
+      "after_sha": "a6f8b2121810e0f63969d2742e0405e963903b24806d9f08b03130f7c467002a",
+      "existed": false
+    },
+    "phase_liquid_v4/Demo.tscn": {
+      "before_sha": null,
+      "after_sha": "f7499541705e085bd9455f9b038ccd15b895b067333bcb81c213754f624d3993",
+      "existed": false
+    },
+    "phase_liquid_v4/Demo.gd": {
+      "before_sha": null,
+      "after_sha": "d444fdf1b3017c62b05df506536c29ee5f3bb83fb2e7942cd608c28b2bbafbb6",
+      "existed": false
+    },
+    "phase_liquid_v4/DialogueHooks.gd": {
+      "before_sha": null,
+      "after_sha": "f5e6ef4155abd2b3376e73fcadba6fa2d4fcc34f9038993d399c2b43d19a3a20",
+      "existed": false
+    },
+    "planet_hub/scripts/mika_phase_liquid_v1143_bridge.gd": {
+      "before_sha": "b85d3aa5a32c051ea192a7873809e08995e9c8cb392869801e87ea000ed54230",
+      "after_sha": "b222f4ce96560cadcae09fee116ac91ee347fdef158aa66b2de644a33800302d",
+      "existed": true
+    }
+  }
+}

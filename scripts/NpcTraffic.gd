@@ -13,9 +13,7 @@ const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const LandingMotion = preload("res://scripts/LandingMotion.gd")
 const HyperjumpMotion = preload("res://scripts/HyperjumpMotion.gd")
 const NpcJumpVisual = preload("res://scripts/NpcJumpVisual.gd")
-# Only these inhabited worlds and the independent Earth station are landing ports.
-# Mercury, Saturn and Uranus remain visible but aren't active landing destinations.
-const LANDING_PORTS = ["Earth", "Venus", "Mars", "Jupiter", "Neptune", "EarthStation"]
+# Landing ports are selected dynamically from the current system catalog.
 const POPULATION: int = 14
 const OUTER_JUMP_RADIUS: float = 2500.0
 const CHARGE_TIME: float = 0.43
@@ -159,9 +157,17 @@ func _get_bodies() -> Array[Dictionary]:
 	var results: Array[Dictionary] = []
 	if _solar == null:
 		return [{"name":"Earth", "world":Vector2(565.0, 0.0)}]
+	var accessible_ports: Dictionary = {}
+	var catalog: Dictionary = _solar.get_system("mw")
+	for planet in catalog.get("planets", []):
+		if bool(planet.get("inhabited", false)):
+			accessible_ports[str(planet.get("name_en", ""))] = true
+	var station: Variant = catalog.get("station", null)
+	if station is Dictionary and bool(station.get("accessible", true)):
+		accessible_ports["EarthStation"] = true
 	var all_bodies: Array[Dictionary] = _solar.get_navigation_bodies()
 	for body in all_bodies:
-		if str(body["name"]) in LANDING_PORTS:
+		if accessible_ports.has(str(body.get("name", ""))):
 			results.append(body)
 	return results
 
@@ -332,14 +338,19 @@ func _physics_process(delta: float) -> void:
 			_ships[i] = npc
 			continue
 		if mode == "charge":
-			# Lock the jump vector to the visible nose before the dash begins.
+			# v47: verify nose alignment before accelerating into hyperspace.
+			# For Solar craft the visible nose is local -Y.
 			var exit_direction: Vector2 = Vector2(npc["exit_world"]) - Vector2(npc["world"])
-			if exit_direction.length_squared() > 0.01:
-				npc["angle"] = lerp_angle(float(npc["angle"]), exit_direction.angle() + PI * 0.5, minf(1.0, delta * 12.0))
+			if exit_direction.length_squared() < 0.01:
+				exit_direction = Vector2(npc["world"]).normalized()
+			var jump_heading: float = exit_direction.angle() + PI * 0.5
+			npc["angle"] = lerp_angle(float(npc["angle"]), jump_heading, minf(1.0, delta * 12.0))
+			var heading_error: float = absf(wrapf(jump_heading - float(npc["angle"]), -PI, PI))
 			npc["timer"] = timer + delta
 			npc["velocity"] = Vector2(npc["velocity"]).move_toward(Vector2.ZERO, 340.0 * delta)
 			npc["world"] = Vector2(npc["world"]) + Vector2(npc["velocity"]) * delta
-			if float(npc["timer"]) >= CHARGE_TIME:
+			if float(npc["timer"]) >= CHARGE_TIME and heading_error < 0.015:
+				npc["angle"] = jump_heading
 				npc["mode"] = "dash"
 				npc["timer"] = 0.0
 				_jump_counter += 1

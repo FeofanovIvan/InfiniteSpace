@@ -1,0 +1,121 @@
+{
+  "version": "1.0",
+  "target_engine": "Godot 4.7.1",
+  "reference_size": [
+    1280,
+    720
+  ],
+  "orientation": "landscape_only",
+  "content_scaling": "COVER",
+  "screen_space_lettering": true,
+  "colors": {
+    "C01": {
+      "name": "Cosmic Ink",
+      "hex": "#231638",
+      "role": "ink/outlines"
+    },
+    "C02": {
+      "name": "Cloud Paper",
+      "hex": "#FFF8F1",
+      "role": "speech background"
+    },
+    "C03": {
+      "name": "Mika Violet",
+      "hex": "#6D4AD9",
+      "role": "L03 purple info"
+    },
+    "C04": {
+      "name": "Lavender",
+      "hex": "#E2D0FF",
+      "role": "thought/highlights"
+    },
+    "C05": {
+      "name": "Dream Pink",
+      "hex": "#FFD6EE",
+      "role": "narration caption"
+    },
+    "C06": {
+      "name": "Storm Magenta",
+      "hex": "#E93F91",
+      "role": "storm accent"
+    },
+    "C07": {
+      "name": "Warning Coral",
+      "hex": "#EF5678",
+      "role": "danger"
+    },
+    "C08": {
+      "name": "Mika Orange",
+      "hex": "#FFB347",
+      "role": "shout/action"
+    },
+    "C09": {
+      "name": "Holo Cyan",
+      "hex": "#59D7FF",
+      "role": "radio tech"
+    },
+    "C10": {
+      "name": "Deep Space",
+      "hex": "#1A2242",
+      "role": "dark radio panel"
+    },
+    "C11": {
+      "name": "Warm Highlight",
+      "hex": "#FFEEAA",
+      "role": "emphasis"
+    },
+    "C12": {
+      "name": "White",
+      "hex": "#FFFFFF",
+      "role": "light text"
+    }
+  },
+  "fonts": {
+    "F01": {
+      "family": "Comic Neue",
+      "weight": "Bold 700",
+      "base_px": 38,
+      "role": "speech",
+      "download": "https://github.com/crozynski/comicneue",
+      "license": "OFL-1.1"
+    },
+    "F02": {
+      "family": "Nunito Sans",
+      "weight": "SemiBold 600/Bold 700",
+      "base_px": 32,
+      "role": "captions/emergency/radio",
+      "download": "https://fonts.google.com/specimen/Nunito+Sans",
+      "license": "OFL-1.1"
+    },
+    "F03": {
+      "family": "Bangers",
+      "weight": "Regular display",
+      "base_px": 68,
+      "role": "titles/SFX/shouts",
+      "download": "https://github.com/googlefonts/bangers",
+      "license": "OFL-1.1"
+    },
+    "F04": {
+      "family": "Nunito Sans",
+      "weight": "Italic 600",
+      "base_px": 30,
+      "role": "thought/whisper",
+      "download": "https://fonts.google.com/specimen/Nunito+Sans",
+      "license": "OFL-1.1"
+    }
+  },
+  "global_default": {
+    "safe_margin_width_fraction": 0.04,
+    "safe_margin_height_fraction": 0.05,
+    "min_padding_at_720p_px": 22,
+    "preferred_padding_at_720p_px": 26,
+    "corner_radius_px": 22,
+    "outline_px": 4,
+    "default_shadow_offset_px": [
+      0,
+      5
+    ],
+    "minimum_voice_hold_seconds": 3.0,
+    "text_collision_no_face": true
+  }
+}

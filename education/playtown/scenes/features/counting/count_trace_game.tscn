@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7vs554hr5lhd"]
+
+[ext_resource type="Script" uid="uid://cqh41t7f0g73m" path="res://education/playtown/src/features/counting/count_trace_game.gd" id="1_ctg"]
+
+[node name="CountTraceGame" type="Node2D"]
+script = ExtResource("1_ctg")

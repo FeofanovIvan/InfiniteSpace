@@ -1,0 +1,1 @@
+Fonts intentionally NOT bundled. Add your licensed Comic Neue Bold as F01.ttf, Nunito Sans Bold as F02.ttf, Bangers as F03.ttf, Nunito Sans Italic as F04.ttf. Fallback to Godot built-in font works without these.

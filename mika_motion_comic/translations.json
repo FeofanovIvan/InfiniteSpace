@@ -1,0 +1,350 @@
+{
+  "en": {
+    "01_world": {
+      "text": "AERELIA",
+      "secondary": "A WORLD ABOVE THE CLOUDS"
+    },
+    "02_peace": {
+      "text": "A PLACE WHERE LIFE",
+      "secondary": "FLOATED IN THE SKY."
+    },
+    "03_mika": {
+      "text": "WHAT'S HAPPENING?",
+      "secondary": ""
+    },
+    "04_alert": {
+      "text": "EMERGENCY TRANSMISSION",
+      "secondary": "A CHRONOSTORM IS COMING!"
+    },
+    "05_space": {
+      "text": "IT BENDS SPACE...",
+      "secondary": ""
+    },
+    "06_time": {
+      "text": "...AND FRACTURES TIME!",
+      "secondary": ""
+    },
+    "07_danger": {
+      "text": "OUR WORLD IS",
+      "secondary": "BREAKING APART!"
+    },
+    "08_question": {
+      "text": "WHAT CAN WE DO?",
+      "secondary": ""
+    },
+    "09_answer": {
+      "text": "FIND THE CROSSROADS",
+      "secondary": "OF WORLDS!"
+    },
+    "10_depart": {
+      "text": "I'LL FIND IT!",
+      "secondary": ""
+    },
+    "11_quest": {
+      "text": "INTO THE UNKNOWN...",
+      "secondary": ""
+    },
+    "12_follow": {
+      "text": "BUT THE STORM",
+      "secondary": "WAS FASTER."
+    },
+    "13_caught": {
+      "text": "NO! IT FOUND ME!",
+      "secondary": ""
+    },
+    "14_scream": {
+      "text": "AAAAAAH!",
+      "secondary": ""
+    }
+  },
+  "ru": {
+    "01_world": {
+      "text": "АЭРЕЛИЯ",
+      "secondary": "МИР НАД ОБЛАКАМИ"
+    },
+    "02_peace": {
+      "text": "МЕСТО, ГДЕ ЖИЗНЬ",
+      "secondary": "ПАРИЛА В НЕБЕ."
+    },
+    "03_mika": {
+      "text": "ЧТО ПРОИСХОДИТ?",
+      "secondary": ""
+    },
+    "04_alert": {
+      "text": "ЭКСТРЕННОЕ СООБЩЕНИЕ",
+      "secondary": "ПРИБЛИЖАЕТСЯ ХРОНОШТОРМ!"
+    },
+    "05_space": {
+      "text": "ОН ИСКРИВЛЯЕТ ПРОСТРАНСТВО...",
+      "secondary": ""
+    },
+    "06_time": {
+      "text": "...И РАЗРУШАЕТ ВРЕМЯ!",
+      "secondary": ""
+    },
+    "07_danger": {
+      "text": "НАШ МИР",
+      "secondary": "РАЗРУШАЕТСЯ!"
+    },
+    "08_question": {
+      "text": "ЧТО НАМ ДЕЛАТЬ?",
+      "secondary": ""
+    },
+    "09_answer": {
+      "text": "НАЙДИ ПЕРЕКРЁСТОК",
+      "secondary": "МИРОВ!"
+    },
+    "10_depart": {
+      "text": "Я НАЙДУ ЕГО!",
+      "secondary": ""
+    },
+    "11_quest": {
+      "text": "НАВСТРЕЧУ НЕИЗВЕДАННОМУ...",
+      "secondary": ""
+    },
+    "12_follow": {
+      "text": "НО ШТОРМ",
+      "secondary": "БЫЛ БЫСТРЕЕ."
+    },
+    "13_caught": {
+      "text": "НЕТ! ОН НАШЁЛ МЕНЯ!",
+      "secondary": ""
+    },
+    "14_scream": {
+      "text": "А-А-А-А!",
+      "secondary": ""
+    }
+  },
+  "fr": {
+    "01_world": {
+      "text": "AERELIA",
+      "secondary": "UN MONDE AU-DESSUS DES NUAGES"
+    },
+    "02_peace": {
+      "text": "UN LIEU OÙ LA VIE",
+      "secondary": "FLOTTAIT DANS LE CIEL."
+    },
+    "03_mika": {
+      "text": "QUE SE PASSE-T-IL ?",
+      "secondary": ""
+    },
+    "04_alert": {
+      "text": "MESSAGE D’URGENCE",
+      "secondary": "UNE TEMPÊTE CHRONIQUE APPROCHE !"
+    },
+    "05_space": {
+      "text": "ELLE DÉFORME L’ESPACE...",
+      "secondary": ""
+    },
+    "06_time": {
+      "text": "...ET BRISE LE TEMPS !",
+      "secondary": ""
+    },
+    "07_danger": {
+      "text": "NOTRE MONDE",
+      "secondary": "SE DÉSINTÈGRE !"
+    },
+    "08_question": {
+      "text": "QUE POUVONS-NOUS FAIRE ?",
+      "secondary": ""
+    },
+    "09_answer": {
+      "text": "TROUVE LE CARREFOUR",
+      "secondary": "DES MONDES !"
+    },
+    "10_depart": {
+      "text": "JE VAIS LE TROUVER !",
+      "secondary": ""
+    },
+    "11_quest": {
+      "text": "VERS L’INCONNU...",
+      "secondary": ""
+    },
+    "12_follow": {
+      "text": "MAIS LA TEMPÊTE",
+      "secondary": "ÉTAIT PLUS RAPIDE."
+    },
+    "13_caught": {
+      "text": "NON ! ELLE M’A TROUVÉ !",
+      "secondary": ""
+    },
+    "14_scream": {
+      "text": "AAAAAH !",
+      "secondary": ""
+    }
+  },
+  "de": {
+    "01_world": {
+      "text": "AERELIA",
+      "secondary": "EINE WELT ÜBER DEN WOLKEN"
+    },
+    "02_peace": {
+      "text": "EIN ORT, AN DEM DAS LEBEN",
+      "secondary": "AM HIMMEL SCHWEBTE."
+    },
+    "03_mika": {
+      "text": "WAS IST LOS?",
+      "secondary": ""
+    },
+    "04_alert": {
+      "text": "NOTFALLMELDUNG",
+      "secondary": "EIN ZEITSTURM NÄHERT SICH!"
+    },
+    "05_space": {
+      "text": "ER VERZERRT DEN RAUM...",
+      "secondary": ""
+    },
+    "06_time": {
+      "text": "...UND ZERREISST DIE ZEIT!",
+      "secondary": ""
+    },
+    "07_danger": {
+      "text": "UNSERE WELT",
+      "secondary": "ZERBRICHT!"
+    },
+    "08_question": {
+      "text": "WAS KÖNNEN WIR TUN?",
+      "secondary": ""
+    },
+    "09_answer": {
+      "text": "FINDE DIE KREUZUNG",
+      "secondary": "DER WELTEN!"
+    },
+    "10_depart": {
+      "text": "ICH WERDE SIE FINDEN!",
+      "secondary": ""
+    },
+    "11_quest": {
+      "text": "INS UNBEKANNTE...",
+      "secondary": ""
+    },
+    "12_follow": {
+      "text": "DOCH DER STURM",
+      "secondary": "WAR SCHNELLER."
+    },
+    "13_caught": {
+      "text": "NEIN! ER HAT MICH GEFUNDEN!",
+      "secondary": ""
+    },
+    "14_scream": {
+      "text": "AAAAAH!",
+      "secondary": ""
+    }
+  },
+  "es": {
+    "01_world": {
+      "text": "AERELIA",
+      "secondary": "UN MUNDO SOBRE LAS NUBES"
+    },
+    "02_peace": {
+      "text": "UN LUGAR DONDE LA VIDA",
+      "secondary": "FLOTABA EN EL CIELO."
+    },
+    "03_mika": {
+      "text": "¿QUÉ ESTÁ PASANDO?",
+      "secondary": ""
+    },
+    "04_alert": {
+      "text": "TRANSMISIÓN DE EMERGENCIA",
+      "secondary": "¡SE ACERCA UNA CRONOTORMENTA!"
+    },
+    "05_space": {
+      "text": "DOBLA EL ESPACIO...",
+      "secondary": ""
+    },
+    "06_time": {
+      "text": "¡...Y FRACTURA EL TIEMPO!",
+      "secondary": ""
+    },
+    "07_danger": {
+      "text": "¡NUESTRO MUNDO",
+      "secondary": "SE ESTÁ ROMPIENDO!"
+    },
+    "08_question": {
+      "text": "¿QUÉ PODEMOS HACER?",
+      "secondary": ""
+    },
+    "09_answer": {
+      "text": "ENCUENTRA EL CRUCE",
+      "secondary": "DE LOS MUNDOS!"
+    },
+    "10_depart": {
+      "text": "¡LO ENCONTRARÉ!",
+      "secondary": ""
+    },
+    "11_quest": {
+      "text": "HACIA LO DESCONOCIDO...",
+      "secondary": ""
+    },
+    "12_follow": {
+      "text": "PERO LA TORMENTA",
+      "secondary": "FUE MÁS RÁPIDA."
+    },
+    "13_caught": {
+      "text": "¡NO! ¡ME HA ENCONTRADO!",
+      "secondary": ""
+    },
+    "14_scream": {
+      "text": "¡AAAAAH!",
+      "secondary": ""
+    }
+  },
+  "pt_BR": {
+    "01_world": {
+      "text": "AERELIA",
+      "secondary": "UM MUNDO ACIMA DAS NUVENS"
+    },
+    "02_peace": {
+      "text": "UM LUGAR ONDE A VIDA",
+      "secondary": "FLUTUAVA PELO CÉU."
+    },
+    "03_mika": {
+      "text": "O QUE ESTÁ ACONTECENDO?",
+      "secondary": ""
+    },
+    "04_alert": {
+      "text": "TRANSMISSÃO DE EMERGÊNCIA",
+      "secondary": "UMA CRONOTEMPESTADE SE APROXIMA!"
+    },
+    "05_space": {
+      "text": "ELA DISTORCE O ESPAÇO...",
+      "secondary": ""
+    },
+    "06_time": {
+      "text": "...E FRAGMENTA O TEMPO!",
+      "secondary": ""
+    },
+    "07_danger": {
+      "text": "NOSSO MUNDO",
+      "secondary": "ESTÁ SE DESPEDAÇANDO!"
+    },
+    "08_question": {
+      "text": "O QUE PODEMOS FAZER?",
+      "secondary": ""
+    },
+    "09_answer": {
+      "text": "ENCONTRE A ENCRUZILHADA",
+      "secondary": "DOS MUNDOS!"
+    },
+    "10_depart": {
+      "text": "EU VOU ENCONTRÁ-LA!",
+      "secondary": ""
+    },
+    "11_quest": {
+      "text": "RUMO AO DESCONHECIDO...",
+      "secondary": ""
+    },
+    "12_follow": {
+      "text": "MAS A TEMPESTADE",
+      "secondary": "FOI MAIS RÁPIDA."
+    },
+    "13_caught": {
+      "text": "NÃO! ELA ME ENCONTROU!",
+      "secondary": ""
+    },
+    "14_scream": {
+      "text": "AAAAAH!",
+      "secondary": ""
+    }
+  }
+}

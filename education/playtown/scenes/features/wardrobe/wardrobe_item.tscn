@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfpq2hgwrxifx"]
+
+[ext_resource type="Script" uid="uid://b8y2acb5oq6bq" path="res://education/playtown/src/features/wardrobe/wardrobe_item.gd" id="1_1y63t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ug0ke"]
+size = Vector2(261.5, 270.5)
+
+[node name="WardrobeItem" type="Area2D"]
+script = ExtResource("1_1y63t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ug0ke")

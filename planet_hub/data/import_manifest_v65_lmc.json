@@ -1,0 +1,47 @@
+{
+  "source_archives": [
+    "большое облако.zip"
+  ],
+  "assets": {
+    "planet_hub/backgrounds/lmc_p01.png": {
+      "source": "Аэра.png",
+      "sha256": "b41d4056be30401eb26c5515cf32f219bf42a28fc526cd8546debac997b197b9"
+    },
+    "planet_hub/backgrounds/lmc_p02.png": {
+      "source": "Вентра.png",
+      "sha256": "59ad5f9034a2bf375da6b5ee5ba16fd2fbea985370ccfa0b0ddc7a54cd5fd06a"
+    },
+    "planet_hub/backgrounds/lmc_p03.png": {
+      "source": "Карбона.png",
+      "sha256": "14f3877eb7047abf16b2b42d77072cd1ea2119996cb6abd60fc50fdafb383993"
+    },
+    "planet_hub/backgrounds/lmc_p04.png": {
+      "source": "Криона.png",
+      "sha256": "1317698deeeb13a48d33c32d0020bf90bf0135690708a7423098376525ed8fa4"
+    },
+    "planet_hub/backgrounds/lmc_p05.png": {
+      "source": "Люкс.png",
+      "sha256": "8b647524c42bed7ada21852860c1c25490df3522621871e737283b824b723ce4"
+    },
+    "planet_hub/backgrounds/lmc_p06.png": {
+      "source": "Магнета.png",
+      "sha256": "eaed8f776d9938246e0c44f4b43a5f1955dd4095a2ec23a2dbd45ad9cab826c2"
+    },
+    "planet_hub/backgrounds/lmc_p07.png": {
+      "source": "Молия.png",
+      "sha256": "b7bd406a5158e183bbfcbb8ede087c6c6a2896237e4c3f5ec34d0a2ddff24d5c"
+    },
+    "planet_hub/backgrounds/lmc_p08.png": {
+      "source": "Талас.png",
+      "sha256": "8525174d90dea458828c065cf23e608a967ca432d8475404b4bafe3ad277bfb2"
+    },
+    "planet_hub/backgrounds/st_lmc.png": {
+      "source": "Тарантул.png",
+      "sha256": "1e92c18d0ee9eeef0893ab1273de058b97af395f5f5a66be97a48e37052f8392"
+    }
+  },
+  "notes": {
+    "mapping": "Large Magellanic Cloud user-supplied backgrounds mapped to lmc_p01..lmc_p08 and st_lmc.",
+    "station_asset": "Тарантул.png -> st_lmc.png"
+  }
+}

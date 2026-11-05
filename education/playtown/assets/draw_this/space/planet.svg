@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<defs><linearGradient id="ball" x1="0.15" y1="0" x2="0.83" y2="0.95"><stop stop-color="#b5f2ff"/><stop offset="0.33" stop-color="#50c6e9"/><stop offset="0.68" stop-color="#6683cb"/><stop offset="1" stop-color="#322c78"/></linearGradient></defs>
+<!-- planetary ring behind -->
+<ellipse cx="256" cy="257" rx="228" ry="91" transform="rotate(-22 256 257)" fill="none" stroke="#50588d" stroke-width="39" opacity="0.8"/>
+<ellipse cx="256" cy="257" rx="228" ry="91" transform="rotate(-22 256 257)" fill="none" stroke="#f1d58c" stroke-width="27"/>
+<circle cx="256" cy="253" r="159" fill="url(#ball)" stroke="#2f5c99" stroke-width="11"/>
+<path d="M128 214 Q215 164 343 181" stroke="#d3f5fd" stroke-opacity="0.65" stroke-width="21" fill="none" stroke-linecap="round"/>
+<path d="M143 270 Q212 245 352 278" stroke="#185697" stroke-opacity="0.48" stroke-width="22" fill="none" stroke-linecap="round"/>
+<path d="M184 345 Q244 320 322 348" stroke="#b9edfc" stroke-opacity="0.5" stroke-width="17" fill="none" stroke-linecap="round"/>
+<!-- foreground ring arc -->
+<path d="M60 339 C 147 382 338 356 434 237" fill="none" stroke="#8964a4" stroke-width="40" opacity="0.85"/>
+<path d="M60 339 C 147 382 338 356 434 237" fill="none" stroke="#f6dca5" stroke-width="28"/>
+<ellipse cx="178" cy="132" rx="32" ry="15" transform="rotate(-27 178 132)" fill="#ffffff" opacity="0.60"/>
+</svg>

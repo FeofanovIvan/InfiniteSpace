@@ -1,0 +1,760 @@
+{
+  "version": 104,
+  "languages": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "format": "existing_cards_with_selective_game_launch_and_icons",
+  "games": {
+    "mw__puzzles": {
+      "id": "mw__puzzles",
+      "title": {
+        "ru": "Пазлы",
+        "en": "Puzzles",
+        "fr": "Puzzles",
+        "de": "Puzzles",
+        "es": "Rompecabezas",
+        "pt_BR": "Quebra-cabeças"
+      },
+      "description": {
+        "ru": "Собери картинку из частей.",
+        "en": "Put the picture pieces together.",
+        "fr": "Assemble les pièces de l’image.",
+        "de": "Setze das Bild aus Teilen zusammen.",
+        "es": "Une las piezas para formar la imagen.",
+        "pt_BR": "Junte as peças para formar a imagem."
+      },
+      "source_status": "playtown",
+      "source_scene": "res://education/playtown/scenes/features/puzzle/puzzle_game.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/mw__puzzles.png"
+    },
+    "mw__animal_habitat": {
+      "id": "mw__animal_habitat",
+      "title": {
+        "ru": "Среда обитания",
+        "en": "Animal Habitat",
+        "fr": "Habitat des animaux",
+        "de": "Lebensräume der Tiere",
+        "es": "Hábitats animales",
+        "pt_BR": "Habitat dos animais"
+      },
+      "description": {
+        "ru": "Помоги животным найти свой дом.",
+        "en": "Match animals with their homes.",
+        "fr": "Aide les animaux à trouver leur maison.",
+        "de": "Finde das richtige Zuhause für jedes Tier.",
+        "es": "Encuentra el hogar de cada animal.",
+        "pt_BR": "Encontre a casa de cada animal."
+      },
+      "source_status": "playtown",
+      "source_scene": "res://education/playtown/scenes/features/animal_habitat/animal_habitat_game.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/mw__animal_habitat.png"
+    },
+    "mw__shopping_list": {
+      "id": "mw__shopping_list",
+      "title": {
+        "ru": "Список покупок",
+        "en": "Shopping List",
+        "fr": "Liste de courses",
+        "de": "Einkaufsliste",
+        "es": "Lista de compras",
+        "pt_BR": "Lista de compras"
+      },
+      "description": {
+        "ru": "Собери предметы по списку.",
+        "en": "Find everything on the shopping list.",
+        "fr": "Trouve les objets de la liste.",
+        "de": "Finde alles auf der Liste.",
+        "es": "Encuentra los objetos de la lista.",
+        "pt_BR": "Encontre os itens da lista."
+      },
+      "source_status": "playtown",
+      "source_scene": "res://education/playtown/scenes/features/grocery/grocery_game.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/mw__shopping_list.png"
+    },
+    "mw__product_count": {
+      "id": "mw__product_count",
+      "title": {
+        "ru": "Посчитай предметы",
+        "en": "Product Count",
+        "fr": "Compte les objets",
+        "de": "Gegenstände zählen",
+        "es": "Cuenta los objetos",
+        "pt_BR": "Contar objetos"
+      },
+      "description": {
+        "ru": "Выбери нужное количество предметов.",
+        "en": "Count and choose the right amount.",
+        "fr": "Compte et choisis la bonne quantité.",
+        "de": "Zähle und wähle die richtige Anzahl.",
+        "es": "Cuenta y elige la cantidad correcta.",
+        "pt_BR": "Conte e escolha a quantidade certa."
+      },
+      "source_status": "playtown",
+      "source_scene": "res://education/playtown/scenes/features/product_count/product_count_game.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/mw__product_count.png"
+    },
+    "lmc__fungal_paths": {
+      "id": "lmc__fungal_paths",
+      "title": {
+        "ru": "Грибные пути",
+        "en": "Fungal Paths",
+        "fr": "Chemins du mycélium",
+        "de": "Pilzwege",
+        "es": "Caminos de hongos",
+        "pt_BR": "Caminhos de fungos"
+      },
+      "description": {
+        "ru": "Проложи Бабблу путь по грибнице.",
+        "en": "Guide Bubble through the fungal network.",
+        "fr": "Guide Bubble dans le réseau de champignons.",
+        "de": "Führe Bubble durch das Pilznetz.",
+        "es": "Guía a Bubble por la red de hongos.",
+        "pt_BR": "Guie Bubble pela rede de fungos."
+      },
+      "source_status": "adapt",
+      "source_scene": "res://education/playtown/scenes/features/path_builder/path_builder_game.tscn",
+      "launch_enabled": false,
+      "image_path": "res://planet_hub/cards/game_icons/lmc__fungal_paths.png"
+    },
+    "lmc__sunbeam_catcher": {
+      "id": "lmc__sunbeam_catcher",
+      "title": {
+        "ru": "Поймай солнечный луч",
+        "en": "Catch a Sunbeam",
+        "fr": "Attrape un rayon de soleil",
+        "de": "Fang den Sonnenstrahl",
+        "es": "Atrapa un rayo de sol",
+        "pt_BR": "Pegue um raio de sol"
+      },
+      "description": {
+        "ru": "Открой листья там, где светит Солнце.",
+        "en": "Open leaves where sunlight falls.",
+        "fr": "Ouvre les feuilles au soleil.",
+        "de": "Öffne Blätter im Sonnenlicht.",
+        "es": "Abre las hojas que reciben luz.",
+        "pt_BR": "Abra as folhas que recebem luz."
+      },
+      "source_status": "ready",
+      "source_scene": "res://planet_hub/games/catch_sunbeam/CatchSunbeam.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/lmc__sunbeam_catcher.png"
+    },
+    "lmc__eco_sort": {
+      "id": "lmc__eco_sort",
+      "title": {
+        "ru": "Эко-сортировка",
+        "en": "Eco Sorting",
+        "fr": "Tri écologique",
+        "de": "Öko-Sortieren",
+        "es": "Clasificación ecológica",
+        "pt_BR": "Separação ecológica"
+      },
+      "description": {
+        "ru": "Разложи отходы по правильным корзинам.",
+        "en": "Sort waste into the right bins.",
+        "fr": "Trie les déchets dans les bons bacs.",
+        "de": "Sortiere Abfälle in die richtigen Tonnen.",
+        "es": "Separa los residuos en sus contenedores.",
+        "pt_BR": "Separe os resíduos nas lixeiras certas."
+      },
+      "source_status": "missing",
+      "source_scene": "res://planet_hub/games/eco_sort/EcoSort.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/lmc__eco_sort.png"
+    },
+    "lmc__fungal_race": {
+      "id": "lmc__fungal_race",
+      "title": {
+        "ru": "Грибная гонка",
+        "en": "Fungal Race",
+        "fr": "Course des champignons",
+        "de": "Pilzrennen",
+        "es": "Carrera de hongos",
+        "pt_BR": "Corrida dos fungos"
+      },
+      "description": {
+        "ru": "Помоги колонии вырасти, распределяя пищу.",
+        "en": "Help the colony grow by sharing nutrients.",
+        "fr": "Aide la colonie à grandir avec ses nutriments.",
+        "de": "Hilf der Kolonie mit ihrer Nahrung zu wachsen.",
+        "es": "Ayuda a crecer a la colonia con nutrientes.",
+        "pt_BR": "Ajude a colônia a crescer com nutrientes."
+      },
+      "source_status": "missing",
+      "source_scene": "res://planet_hub/games/mycelium_race/MyceliumRace.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/lmc__fungal_race.png"
+    },
+    "smc__build_molecule": {
+      "id": "smc__build_molecule",
+      "title": {
+        "ru": "Собери молекулу",
+        "en": "Build a Molecule",
+        "fr": "Construis une molécule",
+        "de": "Baue ein Molekül",
+        "es": "Construye una molécula",
+        "pt_BR": "Monte uma molécula"
+      },
+      "description": {
+        "ru": "Соедини атомы в нужную молекулу.",
+        "en": "Join atoms to make a molecule.",
+        "fr": "Relie les atomes pour créer une molécule.",
+        "de": "Verbinde Atome zu einem Molekül.",
+        "es": "Une átomos para formar una molécula.",
+        "pt_BR": "Una átomos para formar uma molécula."
+      },
+      "source_status": "missing",
+      "source_scene": "res://planet_hub/games/molecule_builder/MoleculeBuilder.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/smc__build_molecule.png"
+    },
+    "smc__solutions_lab": {
+      "id": "smc__solutions_lab",
+      "title": {
+        "ru": "Лаборатория растворов",
+        "en": "Solutions Lab",
+        "fr": "Laboratoire des solutions",
+        "de": "Lösungslabor",
+        "es": "Laboratorio de soluciones",
+        "pt_BR": "Laboratório de soluções"
+      },
+      "description": {
+        "ru": "Смешивай жидкости и наблюдай цвета.",
+        "en": "Mix liquids and watch their colors.",
+        "fr": "Mélange des liquides et observe les couleurs.",
+        "de": "Mische Flüssigkeiten und beobachte Farben.",
+        "es": "Mezcla líquidos y observa sus colores.",
+        "pt_BR": "Misture líquidos e observe as cores."
+      },
+      "source_status": "adapt",
+      "source_scene": "res://education/playtown/scenes/features/color_mix/color_mix_game.tscn",
+      "launch_enabled": false,
+      "image_path": "res://planet_hub/cards/game_icons/smc__solutions_lab.png"
+    },
+    "smc__resource_rush": {
+      "id": "smc__resource_rush",
+      "title": {
+        "ru": "Сбор ресурсов на скорость",
+        "en": "Resource Rush",
+        "fr": "Course aux ressources",
+        "de": "Ressourcenjagd",
+        "es": "Carrera de recursos",
+        "pt_BR": "Corrida dos recursos"
+      },
+      "description": {
+        "ru": "Собери нужные ресурсы вовремя.",
+        "en": "Collect the right resources in time.",
+        "fr": "Ramasse vite les bonnes ressources.",
+        "de": "Sammle rechtzeitig die richtigen Dinge.",
+        "es": "Recoge los recursos correctos a tiempo.",
+        "pt_BR": "Colete os recursos certos a tempo."
+      },
+      "source_status": "missing",
+      "source_scene": null,
+      "launch_enabled": false,
+      "image_path": "res://planet_hub/cards/game_icons/smc__resource_rush.png"
+    },
+    "smc__icy_planet": {
+      "id": "smc__icy_planet",
+      "title": {
+        "ru": "Ледяная планета",
+        "en": "Icy Planet",
+        "fr": "Planète glacée",
+        "de": "Eisplanet",
+        "es": "Planeta helado",
+        "pt_BR": "Planeta gelado"
+      },
+      "description": {
+        "ru": "Поверни планету, чтобы лёд стал водой.",
+        "en": "Turn the planet to melt ice into water.",
+        "fr": "Tourne la planète pour faire fondre la glace.",
+        "de": "Drehe den Planeten, damit Eis schmilzt.",
+        "es": "Gira el planeta para derretir el hielo.",
+        "pt_BR": "Gire o planeta para derreter o gelo."
+      },
+      "source_status": "missing",
+      "source_scene": "res://planet_hub/games/ice_planet/IcePlanet.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/smc__icy_planet.png"
+    },
+    "ngc6822__fossil_search": {
+      "id": "ngc6822__fossil_search",
+      "title": {
+        "ru": "Поиск древних останков",
+        "en": "Fossil Hunt",
+        "fr": "Chasse aux fossiles",
+        "de": "Fossiliensuche",
+        "es": "Busca fósiles",
+        "pt_BR": "Caça aos fósseis"
+      },
+      "description": {
+        "ru": "Найди спрятанные кости и окаменелости.",
+        "en": "Find hidden bones and fossils.",
+        "fr": "Cherche des os et fossiles cachés.",
+        "de": "Finde versteckte Knochen und Fossilien.",
+        "es": "Encuentra huesos y fósiles ocultos.",
+        "pt_BR": "Encontre ossos e fósseis escondidos."
+      },
+      "source_status": "missing",
+      "source_scene": null,
+      "launch_enabled": false,
+      "image_path": "res://planet_hub/cards/game_icons/ngc6822__fossil_search.png"
+    },
+    "ngc6822__evolution_order": {
+      "id": "ngc6822__evolution_order",
+      "title": {
+        "ru": "Эволюция: кто за кем?",
+        "en": "Evolution: Who Comes Next?",
+        "fr": "Évolution : qui vient après ?",
+        "de": "Evolution: Wer kommt danach?",
+        "es": "Evolución: ¿quién sigue?",
+        "pt_BR": "Evolução: quem vem depois?"
+      },
+      "description": {
+        "ru": "Расставь существ в правильном порядке.",
+        "en": "Put the creatures in order.",
+        "fr": "Remets les êtres vivants dans l’ordre.",
+        "de": "Bringe die Lebewesen in die richtige Reihenfolge.",
+        "es": "Ordena los seres vivos.",
+        "pt_BR": "Coloque os seres vivos na ordem."
+      },
+      "source_status": "missing",
+      "source_scene": "res://planet_hub/games/evolution_timeline/EvolutionGame.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/ngc6822__evolution_order.png"
+    },
+    "ngc6822__dinosaur_eggs": {
+      "id": "ngc6822__dinosaur_eggs",
+      "title": {
+        "ru": "Динозавровые яйца",
+        "en": "Dinosaur Eggs",
+        "fr": "Œufs de dinosaures",
+        "de": "Dinosauriereier",
+        "es": "Huevos de dinosaurio",
+        "pt_BR": "Ovos de dinossauro"
+      },
+      "description": {
+        "ru": "Разложи яйца по цветам и видам.",
+        "en": "Sort eggs by color and kind.",
+        "fr": "Trie les œufs par couleur et type.",
+        "de": "Sortiere Eier nach Farbe und Art.",
+        "es": "Ordena huevos por color y tipo.",
+        "pt_BR": "Separe os ovos por cor e tipo."
+      },
+      "source_status": "adapt",
+      "source_scene": "res://planet_hub/games/dinosaur_eggs/DinosaurEggs.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/ngc6822__dinosaur_eggs.png"
+    },
+    "ngc6822__pizza_fraction": {
+      "id": "ngc6822__pizza_fraction",
+      "title": {
+        "ru": "Пицца и дроби",
+        "en": "Pizza Fractions",
+        "fr": "Fractions de pizza",
+        "de": "Pizza-Brüche",
+        "es": "Fracciones de pizza",
+        "pt_BR": "Frações de pizza"
+      },
+      "description": {
+        "ru": "Собери целое из кусочков пиццы.",
+        "en": "Make a whole pizza from slices.",
+        "fr": "Assemble une pizza avec ses parts.",
+        "de": "Setze eine Pizza aus Stücken zusammen.",
+        "es": "Forma una pizza con sus porciones.",
+        "pt_BR": "Monte uma pizza com suas fatias."
+      },
+      "source_status": "playtown",
+      "source_scene": "res://education/playtown/scenes/features/pizza_fraction/pizza_fraction_game.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/ngc6822__pizza_fraction.png"
+    },
+    "m31__roll_ball": {
+      "id": "m31__roll_ball",
+      "title": {
+        "ru": "Закати шарик",
+        "en": "Roll the Ball",
+        "fr": "Fais rouler la bille",
+        "de": "Rolle den Ball",
+        "es": "Haz rodar la bola",
+        "pt_BR": "Role a bola"
+      },
+      "description": {
+        "ru": "Проведи шарик через лабиринт.",
+        "en": "Guide the ball through the maze.",
+        "fr": "Guide la bille dans le labyrinthe.",
+        "de": "Führe die Kugel durchs Labyrinth.",
+        "es": "Guía la bola por el laberinto.",
+        "pt_BR": "Guie a bola pelo labirinto."
+      },
+      "source_status": "playtown",
+      "source_scene": "res://education/playtown/scenes/features/tilt_maze/tilt_maze_game.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/m31__roll_ball.png"
+    },
+    "m31__magnetic_collector": {
+      "id": "m31__magnetic_collector",
+      "title": {
+        "ru": "Магнитный сборщик",
+        "en": "Magnetic Collector",
+        "fr": "Collecteur magnétique",
+        "de": "Magnetischer Sammler",
+        "es": "Recolector magnético",
+        "pt_BR": "Coletor magnético"
+      },
+      "description": {
+        "ru": "Собери металлы магнитным манипулятором.",
+        "en": "Pick up metal with a moving magnet.",
+        "fr": "Ramasse le métal avec un aimant.",
+        "de": "Sammle Metall mit einem Magneten.",
+        "es": "Recoge metales con un imán.",
+        "pt_BR": "Recolha metais com um ímã."
+      },
+      "source_status": "missing",
+      "source_scene": "res://planet_hub/games/magnetic_collector/MagneticCollector.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/m31__magnetic_collector.png"
+    },
+    "m31__gravity_pinball": {
+      "id": "m31__gravity_pinball",
+      "title": {
+        "ru": "Гравитационный пинбол",
+        "en": "Gravity Pinball",
+        "fr": "Flipper gravitationnel",
+        "de": "Gravitations-Flipper",
+        "es": "Pinball gravitatorio",
+        "pt_BR": "Pinball gravitacional"
+      },
+      "description": {
+        "ru": "Запусти астероид между планетами.",
+        "en": "Launch an asteroid between planets.",
+        "fr": "Lance un astéroïde entre les planètes.",
+        "de": "Schieße einen Asteroiden zwischen Planeten.",
+        "es": "Lanza un asteroide entre planetas.",
+        "pt_BR": "Lance um asteroide entre planetas."
+      },
+      "source_status": "missing",
+      "source_scene": "res://planet_hub/games/gravity_pinball/GravityPinball.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/m31__gravity_pinball.png"
+    },
+    "m31__electric_pulses": {
+      "id": "m31__electric_pulses",
+      "title": {
+        "ru": "Электрические импульсы",
+        "en": "Electric Pulses",
+        "fr": "Impulsions électriques",
+        "de": "Elektrische Impulse",
+        "es": "Impulsos eléctricos",
+        "pt_BR": "Pulsos elétricos"
+      },
+      "description": {
+        "ru": "Повтори последовательность вспышек.",
+        "en": "Repeat the light-signal sequence.",
+        "fr": "Répète la suite de signaux lumineux.",
+        "de": "Wiederhole die Lichtfolge.",
+        "es": "Repite la secuencia de luces.",
+        "pt_BR": "Repita a sequência de luzes."
+      },
+      "source_status": "ready",
+      "source_scene": "res://planet_hub/games/electric_impulses/scenes/ElectricImpulses.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/m31__electric_pulses.png"
+    },
+    "m33__piano": {
+      "id": "m33__piano",
+      "title": {
+        "ru": "Пианино",
+        "en": "Piano",
+        "fr": "Piano",
+        "de": "Klavier",
+        "es": "Piano",
+        "pt_BR": "Piano"
+      },
+      "description": {
+        "ru": "Повторяй ноты и играй мелодии.",
+        "en": "Repeat notes and play simple tunes.",
+        "fr": "Répète des notes et joue des mélodies.",
+        "de": "Spiele Töne und einfache Melodien nach.",
+        "es": "Repite notas y toca melodías.",
+        "pt_BR": "Repita notas e toque melodias."
+      },
+      "source_status": "playtown",
+      "source_scene": "res://education/playtown/scenes/features/piano/piano_game.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/m33__piano.png"
+    },
+    "m33__matching_pairs": {
+      "id": "m33__matching_pairs",
+      "title": {
+        "ru": "Найди пары",
+        "en": "Matching Pairs",
+        "fr": "Trouve les paires",
+        "de": "Finde Paare",
+        "es": "Encuentra parejas",
+        "pt_BR": "Encontre os pares"
+      },
+      "description": {
+        "ru": "Открой карточки и найди одинаковые.",
+        "en": "Flip cards to find matching pairs.",
+        "fr": "Retourne les cartes pour trouver les paires.",
+        "de": "Decke Karten auf und finde Paare.",
+        "es": "Voltea cartas y busca parejas iguales.",
+        "pt_BR": "Vire as cartas e encontre os pares."
+      },
+      "source_status": "playtown",
+      "source_scene": "res://education/playtown/scenes/features/matching_pairs/matching_pairs_game.tscn",
+      "launch_enabled": true,
+      "image_path": "res://planet_hub/cards/game_icons/m33__matching_pairs.png"
+    },
+    "m33__space_rebus": {
+      "id": "m33__space_rebus",
+      "title": {
+        "ru": "Космические ребусы",
+        "en": "Space Rebus Adventures",
+        "fr": "Rébus de l’espace",
+        "de": "Weltraum-Bilderrätsel",
+        "es": "Rebus espaciales",
+        "pt_BR": "Rébus espaciais"
+      },
+      "description": {
+        "ru": "Разгадывай слова по картинкам и буквам.",
+        "en": "Solve word puzzles with pictures and letters.",
+        "fr": "Devine des mots grâce aux images et lettres.",
+        "de": "Löse Wortbilder mit Bildern und Buchstaben.",
+        "es": "Descifra palabras con dibujos y letras.",
+        "pt_BR": "Descubra palavras com imagens e letras."
+      },
+      "source_status": "missing",
+      "source_scene": null,
+      "launch_enabled": false,
+      "image_path": "res://planet_hub/cards/game_icons/m33__space_rebus.png"
+    },
+    "m33__neural_math": {
+      "id": "m33__neural_math",
+      "title": {
+        "ru": "Нейронная математика",
+        "en": "Neural Math",
+        "fr": "Maths neuronales",
+        "de": "Neuronen-Mathe",
+        "es": "Matemática neuronal",
+        "pt_BR": "Matemática neural"
+      },
+      "description": {
+        "ru": "Найди пропущенное число в примере.",
+        "en": "Find the missing number in an equation.",
+        "fr": "Trouve le nombre manquant.",
+        "de": "Finde die fehlende Zahl in der Rechnung.",
+        "es": "Encuentra el número que falta.",
+        "pt_BR": "Encontre o número que está faltando."
+      },
+      "source_status": "missing",
+      "source_scene": null,
+      "launch_enabled": false,
+      "image_path": "res://planet_hub/cards/game_icons/m33__neural_math.png"
+    },
+    "common__pet_walk": {
+      "id": "common__pet_walk",
+      "title": {
+        "ru": "Прогулка с Бабблом",
+        "en": "Walk with Bubble",
+        "fr": "Promenade avec Bubble",
+        "de": "Spaziergang mit Bubble",
+        "es": "Paseo con Bubble",
+        "pt_BR": "Passeio com Bubble"
+      },
+      "description": {
+        "ru": "Выгуляй питомца и исследуй окрестности.",
+        "en": "Take your pet for a walk and explore.",
+        "fr": "Promène ton compagnon et explore.",
+        "de": "Geh mit deinem Begleiter spazieren.",
+        "es": "Pasea a tu mascota y explora.",
+        "pt_BR": "Passeie com seu bichinho e explore."
+      },
+      "source_status": "adapt",
+      "source_scene": "res://education/playtown/scenes/features/pet/pet_home_miko.tscn",
+      "launch_enabled": false
+    }
+  },
+  "planet_cards": {
+    "mw_p01": [
+      "mw__puzzles",
+      "mw__animal_habitat"
+    ],
+    "mw_p02": [
+      "mw__shopping_list"
+    ],
+    "mw_p03": [
+      "mw__product_count"
+    ],
+    "mw_p06": [
+      "mw__puzzles"
+    ],
+    "mw_p07": [
+      "mw__shopping_list"
+    ],
+    "lmc_p02": [
+      "lmc__fungal_paths"
+    ],
+    "lmc_p03": [
+      "lmc__sunbeam_catcher",
+      "lmc__eco_sort"
+    ],
+    "lmc_p04": [
+      "lmc__fungal_race"
+    ],
+    "smc_p01": [
+      "smc__solutions_lab"
+    ],
+    "smc_p02": [
+      "smc__build_molecule"
+    ],
+    "smc_p03": [
+      "smc__resource_rush"
+    ],
+    "smc_p05": [
+      "smc__icy_planet"
+    ],
+    "ngc6822_p01": [
+      "ngc6822__fossil_search"
+    ],
+    "ngc6822_p02": [
+      "ngc6822__evolution_order"
+    ],
+    "ngc6822_p03": [
+      "ngc6822__dinosaur_eggs"
+    ],
+    "ngc6822_p04": [
+      "ngc6822__pizza_fraction"
+    ],
+    "ngc6822_p06": [
+      "ngc6822__fossil_search"
+    ],
+    "m31_p03": [
+      "m31__roll_ball"
+    ],
+    "m31_p05": [
+      "m31__magnetic_collector",
+      "m31__gravity_pinball"
+    ],
+    "m31_p06": [
+      "m31__electric_pulses"
+    ],
+    "m33_p01": [
+      "m33__piano"
+    ],
+    "m33_p02": [
+      "m33__matching_pairs"
+    ],
+    "m33_p03": [
+      "m33__space_rebus"
+    ],
+    "m33_p04": [
+      "m33__neural_math"
+    ],
+    "mw_p04": [
+      "common__pet_walk"
+    ],
+    "mw_p05": [
+      "common__pet_walk"
+    ],
+    "mw_p08": [
+      "common__pet_walk"
+    ],
+    "lmc_p01": [
+      "common__pet_walk"
+    ],
+    "lmc_p05": [
+      "common__pet_walk"
+    ],
+    "lmc_p06": [
+      "common__pet_walk"
+    ],
+    "lmc_p07": [
+      "common__pet_walk"
+    ],
+    "lmc_p08": [
+      "common__pet_walk"
+    ],
+    "smc_p04": [
+      "common__pet_walk"
+    ],
+    "smc_p06": [
+      "common__pet_walk"
+    ],
+    "smc_p07": [
+      "common__pet_walk"
+    ],
+    "smc_p08": [
+      "common__pet_walk"
+    ],
+    "ngc6822_p05": [
+      "common__pet_walk"
+    ],
+    "ngc6822_p07": [
+      "common__pet_walk"
+    ],
+    "ngc6822_p08": [
+      "common__pet_walk"
+    ],
+    "m31_p01": [
+      "common__pet_walk"
+    ],
+    "m31_p02": [
+      "common__pet_walk"
+    ],
+    "m31_p04": [
+      "common__pet_walk"
+    ],
+    "m31_p07": [
+      "common__pet_walk"
+    ],
+    "m31_p08": [
+      "common__pet_walk"
+    ],
+    "m33_p05": [
+      "common__pet_walk"
+    ],
+    "m33_p06": [
+      "common__pet_walk"
+    ],
+    "m33_p07": [
+      "common__pet_walk"
+    ],
+    "m33_p08": [
+      "common__pet_walk"
+    ],
+    "st_mw": [
+      "mw__shopping_list",
+      "mw__product_count"
+    ],
+    "st_lmc": [
+      "lmc__eco_sort",
+      "lmc__fungal_race"
+    ],
+    "st_smc": [
+      "smc__build_molecule",
+      "smc__icy_planet"
+    ],
+    "st_ngc6822": [
+      "ngc6822__pizza_fraction"
+    ],
+    "st_m31": [
+      "m31__roll_ball"
+    ],
+    "st_m33": [
+      "m33__piano",
+      "m33__matching_pairs"
+    ]
+  },
+  "availability_note": "Sources are not necessarily adapted or launchable from a planet; per-planet cards are previews only."
+}

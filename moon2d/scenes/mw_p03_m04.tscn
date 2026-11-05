@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="PackedScene" path="res://moon2d/moon_2d.tscn" id="1"]
+[node name="mw_p03_m04" instance=ExtResource("1")]
+moon_id = "mw_p03_m04"
+diameter_pixels = 110.0
