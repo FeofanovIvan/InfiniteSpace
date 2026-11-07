@@ -1,5 +1,7 @@
 @tool
 extends Control
+# MIKA_BUBBLE_BALL_PLANET_V8_5_1
+# MIKA_BUBBLE_BALL_CARD_CONNECT_V8_5_1_1
 # v69: Atlas top info, transparent lower HUD backdrop.
 const TopInfoPanel = preload("res://planet_hub/scripts/top_info_panel.gd")
 ## Planet landing hub overlay. Reuses the same lower HUD for every planet,
@@ -39,6 +41,11 @@ var _v1051_game_layer: Control
 var _v1051_viewport: SubViewport
 var _v1051_back: Button
 var _v1051_playing: bool = false
+var _bubble_ball_layer: Control
+var _bubble_ball_card: Control
+var _bubble_ball_active: bool = false
+var _bubble_ball_transition: bool = false
+var _bubble_ball_tween: Tween
 var _mouse_scroll_drag: bool = false
 var _planet_id: String = ""
 var _planet_name: String = ""
@@ -66,6 +73,7 @@ func _ready() -> void:
 		hud.connect("flight_pressed", Callable(self, "_on_flight_pressed"))
 	_setup_representative_card_button()
 	resized.connect(_layout_ui)
+	MobileLocale.language_changed.connect(_bubble_ball_refresh_card)
 	_top_info = TopInfoPanel.new()
 	_top_info.name = "AtlasTopInformationPanel"
 	_top_info.z_index = 25
@@ -111,6 +119,8 @@ func get_dialog_portrait_path() -> String:
 
 
 func show_for_planet(planet_id: String, display_name: String = "", crystals: int = 0) -> void:
+	_bubble_ball_force_clear()
+
 	_planet_id = planet_id
 	_meta = _find_planet_meta(planet_id)
 	_planet_name = String(_meta.get("name_ru", display_name)) if bool(_meta.get("is_station", false)) else (display_name if not display_name.is_empty() else String(_meta.get("name_ru", planet_id)))
@@ -126,6 +136,8 @@ func show_for_planet(planet_id: String, display_name: String = "", crystals: int
 	_layout_ui()
 
 func hide_hub(animate: bool = true) -> void:
+	_bubble_ball_force_clear()
+
 	if not visible:
 		return
 	if animate:
@@ -506,10 +518,186 @@ func _v104_refresh_game_cards() -> void:
 			card.add_child(hit)
 			hit.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 			hit.pressed.connect(_v1051_open_existing_game.bind(game_id))
+	_bubble_ball_make_card()
 
+
+
+# One reusable Bubble Ball card on every mapped EMPTY world. The original
+# V104 planet-card layout and card-size formulas remain entirely unchanged.
+const _BALL_TITLE: Dictionary = {
+	"ru":"Прогулка с Бабблом", "en":"Walk with Bubble", "fr":"Promenade avec Bubble",
+	"de":"Spaziergang mit Bubble", "es":"Paseo con Bubble", "pt_BR":"Passeio com Bubble"
+}
+const _BALL_DESC: Dictionary = {
+	"ru":"Брось мяч и посмотри, куда полетит Баббл.",
+	"en":"Throw a ball and watch Bubble chase it.",
+	"fr":"Lance la balle et regarde Bubble la suivre.",
+	"de":"Wirf den Ball und sieh Bubble hinterherlaufen.",
+	"es":"Lanza la pelota y mira a Bubble seguirla.",
+	"pt_BR":"Jogue a bola e veja Bubble correr atrás dela."
+}
+
+func _bubble_ball_text(values: Dictionary) -> String:
+	return str(values.get(str(MobileLocale.language),values.get("en","")))
+
+func _bubble_ball_allowed(id: String) -> bool:
+	if bool(_meta.get("inhabited",false)) or bool(_meta.get("is_station",false)):
+		return false
+	var file_name: String = "res://planet_hub/data/uninhabited_shared_backgrounds.json"
+	if not FileAccess.file_exists(file_name):
+		return false
+	var loaded: Variant = JSON.parse_string(FileAccess.get_file_as_string(file_name))
+	if not (loaded is Dictionary):
+		return false
+	var mapped: Dictionary = loaded.get("planet_to_background",{})
+	return mapped.has(id)
+
+func _bubble_ball_refresh_card(_unused_code: String = "") -> void:
+	if not is_instance_valid(_bubble_ball_card):
+		return
+	_bubble_ball_card.set("card_title",_bubble_ball_text(_BALL_TITLE))
+	_bubble_ball_card.set("card_description",_bubble_ball_text(_BALL_DESC))
+	var hit: Button = _bubble_ball_card.get_node_or_null("OpenBubbleBall") as Button
+	if hit != null:
+		hit.tooltip_text = _bubble_ball_text(_BALL_TITLE)
+
+func _bubble_ball_make_card() -> void:
+	# Reuse the existing v104 common__pet_walk card instead of creating a
+	# second, unconnected "Play with Bubble" card. This is what users click.
+	_bubble_ball_card = null
+	if not _bubble_ball_allowed(_planet_id):
+		return
+	var card: Control = card_row.get_node_or_null("GamePreview_common__pet_walk") as Control
+	if card == null:
+		push_warning("Bubble Ball: existing Walk with Bubble card not found")
+		return
+	_bubble_ball_card = card
+	card.set("card_title", _bubble_ball_text(_BALL_TITLE))
+	card.set("card_subtitle", "")
+	card.set("card_description", _bubble_ball_text(_BALL_DESC))
+	card.set("image_fit_mode", "contain")
+	card.set("image_path", "res://bubble/ball_play/assets/ball_card.png")
+	card.set("art_bay_enabled", true)
+	# The DB marks this old placeholder launch_enabled=false. Install the
+	# click area explicitly, independent of that placeholder status.
+	_v108_ensure_entry_arrow(card, false)
+	var existing: Button = card.get_node_or_null("OpenExistingGame") as Button
+	if existing != null:
+		existing.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		existing.queue_free()
+	var hit: Button = card.get_node_or_null("OpenBubbleBall") as Button
+	if hit == null:
+		hit = Button.new()
+		hit.name = "OpenBubbleBall"
+		hit.text = ""
+		hit.flat = true
+		hit.focus_mode = Control.FOCUS_NONE
+		hit.mouse_filter = Control.MOUSE_FILTER_STOP
+		hit.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		for state in ["normal", "hover", "pressed", "disabled", "focus"]:
+			hit.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+		card.add_child(hit)
+		hit.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		hit.pressed.connect(_bubble_ball_open)
+	hit.tooltip_text = _bubble_ball_text(_BALL_TITLE)
+	# Keep this hit area above internal artwork and the decorative arrow.
+	card.move_child(hit, card.get_child_count() - 1)
+
+func _bubble_ball_open() -> void:
+	if _bubble_ball_active or _bubble_ball_transition or _v1051_playing:
+		return
+	if not _bubble_ball_allowed(_planet_id):
+		return
+	var scene: PackedScene = load("res://bubble/ball_play/ball_play.tscn") as PackedScene
+	if scene == null:
+		push_error("MIKA Bubble Ball scene missing")
+		return
+	var game: Control = scene.instantiate() as Control
+	if game == null:
+		return
+	game.call("configure_planet",_planet_id,_background_path)
+	game.name = "BubbleBallOnCurrentPlanet"
+	game.z_index = 110
+	game.modulate.a = 0.0
+	add_child(game)
+	game.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	game.connect("exit_requested",Callable(self,"_bubble_ball_close"))
+	_bubble_ball_layer = game
+	_bubble_ball_active = true
+	_bubble_ball_transition = true
+	game.call("set_input_enabled",false)
+	var tw: Tween = create_tween()
+	_bubble_ball_tween = tw
+	tw.set_parallel(true)
+	tw.tween_property(scroll,"modulate:a",0.0,0.24)
+	tw.tween_property(hud,"modulate:a",0.0,0.24)
+	if is_instance_valid(_top_info):
+		tw.tween_property(_top_info,"modulate:a",0.0,0.24)
+	tw.tween_property(game,"modulate:a",1.0,0.32).set_delay(0.10)
+	tw.chain().tween_callback(Callable(self,"_bubble_ball_finish_open"))
+
+func _bubble_ball_finish_open() -> void:
+	if not is_instance_valid(_bubble_ball_layer):
+		return
+	scroll.hide()
+	hud.hide()
+	if is_instance_valid(_top_info):
+		_top_info.hide()
+	_bubble_ball_layer.call("set_input_enabled",true)
+	_bubble_ball_transition = false
+
+func _bubble_ball_close() -> void:
+	if not _bubble_ball_active or _bubble_ball_transition:
+		return
+	if not is_instance_valid(_bubble_ball_layer):
+		_bubble_ball_force_clear()
+		return
+	_bubble_ball_transition = true
+	_bubble_ball_layer.call("set_input_enabled",false)
+	scroll.show()
+	hud.show()
+	scroll.modulate.a = 0.0
+	hud.modulate.a = 0.0
+	if is_instance_valid(_top_info):
+		_top_info.show()
+		_top_info.modulate.a = 0.0
+	var tw: Tween = create_tween()
+	_bubble_ball_tween = tw
+	tw.set_parallel(true)
+	tw.tween_property(scroll,"modulate:a",1.0,0.24)
+	tw.tween_property(hud,"modulate:a",1.0,0.24)
+	if is_instance_valid(_top_info):
+		tw.tween_property(_top_info,"modulate:a",1.0,0.24)
+	tw.tween_property(_bubble_ball_layer,"modulate:a",0.0,0.22)
+	tw.chain().tween_callback(Callable(self,"_bubble_ball_finish_close"))
+
+func _bubble_ball_finish_close() -> void:
+	if is_instance_valid(_bubble_ball_layer):
+		_bubble_ball_layer.queue_free()
+	_bubble_ball_layer = null
+	_bubble_ball_active = false
+	_bubble_ball_transition = false
+	_layout_ui()
+
+func _bubble_ball_force_clear() -> void:
+	if _bubble_ball_tween != null and _bubble_ball_tween.is_running():
+		_bubble_ball_tween.kill()
+	if is_instance_valid(_bubble_ball_layer):
+		_bubble_ball_layer.queue_free()
+	_bubble_ball_layer = null
+	_bubble_ball_active = false
+	_bubble_ball_transition = false
+	scroll.show()
+	hud.show()
+	scroll.modulate.a = 1.0
+	hud.modulate.a = 1.0
+	if is_instance_valid(_top_info):
+		_top_info.show()
+		_top_info.modulate.a = 1.0
 
 # v105.1 uses the SAME full-screen SubViewport technique as MikoMainMenu.
 # This is a hidden game-runner, not a new PlanetHub card, selector or menu.
+
 func _v1051_setup_runner() -> void:
 	if is_instance_valid(_v1051_game_layer):
 		return

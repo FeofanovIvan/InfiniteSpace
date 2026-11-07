@@ -2,6 +2,7 @@ extends Node2D
 ## Visual room v8 bridge for the EXISTING Bubble Care scene.
 ## NEVER instantiates BubbleWalker; preserves the approved character and face rig.
 # MIKA_ROOM_V8_2_FEED_FLIGHT
+# MIKA_BUBBLE_CONTINUOUS_SHOWER_V8_3_9
 const ROOT := "res://bubble/room_v8/"
 const FX_SCRIPT := preload("res://bubble/room_v8/CareObjectFX.gd")
 const KEYS: Array[String] = ["shower", "grooming", "feeder", "drinker", "bed"]
@@ -54,7 +55,7 @@ func _ready() -> void:
         effect_nodes[key] = fx
         # Front layers contain ONLY the real front rim; original full overlays
         # incorrectly occluded Bubble inside a pod/shower.
-        if key == "shower" or key == "bed" or key == "feeder":
+        if key == "bed" or key == "feeder":
             var front: Texture2D = load(ROOT + "assets/" + key + "_lip.png")
             if front != null:
                 var lip := Sprite2D.new()

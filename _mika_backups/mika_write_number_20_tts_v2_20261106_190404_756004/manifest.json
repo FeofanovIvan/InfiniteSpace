@@ -1,0 +1,25 @@
+{
+  "patch": "write_number_20_tts_v2",
+  "files": {
+    "education/playtown/scenes/features/counting/count_trace_game.tscn": {
+      "existed": true,
+      "before": "f790d5aae2fd0ed92a0cf298d6328ecdaac404102f164dd54afb76b9ddbfc4ae",
+      "after": "0f37c5dcd5814692f43749267ecd8070469ebbe9f26754919b15e0a416f83ada"
+    },
+    "education/playtown/src/features/counting/mika_count_trace_native_v1.gd": {
+      "existed": false,
+      "before": null,
+      "after": "1e2e2838c4e8a32dc000d22405d4379388075805476414cce4ccc246e9f0540e"
+    },
+    "education/playtown/src/features/counting/mika_count_trace_native_v2_20_tts.gd": {
+      "existed": false,
+      "before": null,
+      "after": "141dc747c90f8c399bfb40e521c3db0f35b71641d2803625db0e55ea99275ab5"
+    },
+    "education/playtown/audio/VOICE_TODO_Write_Number_11_20.md": {
+      "existed": false,
+      "before": null,
+      "after": "661ef1104af30e7d7ce76dbda6bfd215cf003a08913cf159552e0703fc5daf38"
+    }
+  }
+}

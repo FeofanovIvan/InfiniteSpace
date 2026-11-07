@@ -1,0 +1,25 @@
+{
+  "version": "1.2",
+  "files": {
+    "education/playtown/scenes/features/tracing/letter_trace_game.tscn": {
+      "existed": true,
+      "before_sha256": "b8bd74dba236efcb78b8dc20e3ce4a22a4de699488a6e1dfeeb3dece02441d1c",
+      "after_sha256": "c818e838a00aa211450c6d7a48b807c22200fd59446ba5da9b7564d93e76b130"
+    },
+    "education/playtown/src/features/tracing/mika_letter_trace_v1_2.gd": {
+      "existed": false,
+      "before_sha256": null,
+      "after_sha256": "db5215fc4eec949032b165a4fb9901581127283c3716be5810247a4aba969da4"
+    },
+    "education/playtown/src/features/tracing/mika_neon_trace_hints_v12.gd": {
+      "existed": false,
+      "before_sha256": null,
+      "after_sha256": "9d99206fbe7a8d29cc326e6f54919b0c8e6639492d8ea0bfc33499d33968983b"
+    },
+    "simulator_ui/scripts/mika_minigame_nebula_layer.gd": {
+      "existed": false,
+      "before_sha256": null,
+      "after_sha256": "eddb31de67bac06dd3ddc3d055dd41abcfa94c895b7a13ddcdf9575dd38fd508"
+    }
+  }
+}

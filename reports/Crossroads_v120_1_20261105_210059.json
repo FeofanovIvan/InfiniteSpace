@@ -1,0 +1,12 @@
+{
+  "patch": "MIKA Crossroads v120.1",
+  "only_file": "planet_hub/scripts/crossroads_engine_v104_1.gd",
+  "before_sha256": "9c1d64ef86e04ac1a123f8005f73a8a58c492dc6baae8801359f5a5959f4ad9b",
+  "after_sha256": "182670ee729cad74a8277364f210e6dfed2a1972c144eecdcb53de134eea1fed",
+  "backup": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_crossroads_v120_1_20261105_210059",
+  "ui_unchanged": true,
+  "timestamp_local": "20261105_210059",
+  "godot": "PASS",
+  "godot_log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/Crossroads_v120_1_Godot_20261105_210059.log",
+  "github": "SKIPPED: local Git branch is not sync/current-mac-20261105"
+}

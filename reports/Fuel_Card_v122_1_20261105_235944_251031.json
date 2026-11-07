@@ -1,0 +1,27 @@
+{
+  "patch": "v122.1",
+  "project": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot",
+  "status": "INSTALLED_GODOT_PASS",
+  "timestamp": "20261105_235944_251031",
+  "files_modified": [
+    "addons/mika_fuel_empty_simulator/EmptyFuelSimulatorCard.gd"
+  ],
+  "files_added": [
+    "addons/mika_fuel_empty_simulator/assets/simulator_helmet_original.png"
+  ],
+  "main_gd_untouched": true,
+  "old_module_sha256": "9151b3b159f39b07e15e071fee29ea623a322a1696a24e825b457274701f2b27",
+  "new_module_sha256": "3fd62be79b294ae7e645852c999fff05104d23bcaa856f1d4d2c9912af9b833f",
+  "user_image_sha256": "5baadb6076ac3b8905b1259ddbd7131e1f58eca3a3b65d98a6e1f8c2b425a17e",
+  "godot_version": "4.7.1.stable.official.a13da4feb",
+  "github": "NOT MODIFIED",
+  "baseline_errors": {
+    "editor": [],
+    "runtime": []
+  },
+  "backup": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_fuel_card_v122_1_20261105_235944_251031",
+  "after_errors": {
+    "editor": [],
+    "runtime": []
+  }
+}

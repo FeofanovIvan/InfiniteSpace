@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "files": {
+    "education/playtown/scenes/features/tracing/word_trace_game.tscn": {
+      "existed": true,
+      "before_sha256": "7c61d1abbfab0c6109129d6e7852bce5c379c7cfd47d9b7e4c71c6f4ef890108",
+      "after_sha256": "a94b9bd22baacb8bba09f557a36d9a48ed78217793b62b627ed1ff928d7c6820"
+    },
+    "education/playtown/src/features/tracing/mika_word_trace_native_v1.gd": {
+      "existed": false,
+      "before_sha256": null,
+      "after_sha256": "daf513b76a07b4eacc396bc9a8c5ddb1183194ddcb8afa81b0766d1af38aec52"
+    }
+  }
+}

@@ -1,10 +1,17 @@
 extends Node2D
+# MIKA_PLAYTOWN_NATIVE_DENTAL_V8_5_9_8
+# MIKA_DENTAL_RESTORED_TO_V8_5_9_2_R1
+# v8.5.9.4: memoized bristle contact in ORIGINAL texture-local pixels.
+# Ellipse geometry is cached per original imported PlayTown PNG.
 ## MIKA Bubble Room: actions on the right, auto-walk inside polygon, smooth 2D camera,
 ## preserved procedural body, interactive scrub/teeth and manual joystick mode.
 ## Designed for Godot 4.7.1; no installation or upgrading code here.
 
 const ART_SIZE := Vector2(1672.0, 941.0)
+const PLAYTOWN_TEETH_ADAPTER = preload("res://bubble/scripts/room_playtown_teeth_v8598.gd")
+var _mika_playtown_teeth: Node2D = null
 const JOYSTICK_SCRIPT := preload("res://bubble/scripts/room_joystick.gd")
+const CONTEXT_ACTION_SCRIPT := preload("res://bubble/scripts/care_context_stop.gd")
 const FACE_SCENE := preload("res://bubble/scenes/bubble_face.tscn")
 # MIKA_ROOM_V8_INTEGRATION
 # MIKA_ROOM_V8_2_FEED_FLIGHT
@@ -13,6 +20,23 @@ const FACE_SCENE := preload("res://bubble/scenes/bubble_face.tscn")
 const FEED_ABSORPTION_SCRIPT = preload("res://bubble/room_v8/feed_absorption_fx.gd")
 # MIKA_BUBBLE_WATER_GAS_V8_3_7
 const WATER_ABSORPTION_SCRIPT = preload("res://bubble/room_v8/water_absorption_fx.gd")
+# MIKA_FEED_GAS_SAME_BUBBLE_V8_3_8
+# MIKA_BUBBLE_CONTINUOUS_SHOWER_V8_3_9
+# MIKA_BUBBLE_ADAPTIVE_SHOWER_V8_3_9_2
+# MIKA_BUBBLE_LIVE_DENTAL_V8_4_0
+# MIKA_BUBBLE_NATIVE_DENTAL_V8_4_1
+# MIKA_BUBBLE_FACERIG_DENTAL_V8_4_2
+# MIKA_BUBBLE_SEAMLESS_DENTAL_V8_4_3
+# MIKA_BUBBLE_PNG_TOOTH_ROLLBACK_V8_4_4
+# MIKA_BUBBLE_SMOOTH_LIPS_V8_4_5
+# MIKA_BUBBLE_CAMERA_SYNC_MOUTH_V8_4_6
+# MIKA_BUBBLE_SEAMLESS_SLEEP_V8_4_7
+# MIKA_BUBBLE_ALWAYS_FRONT_SLEEP_V8_4_7_1
+# MIKA_BUBBLE_CARE_HUD_V8_4_8
+# MIKA_BUBBLE_ICONS_FIRST_CARD_V8_4_9_2
+# MIKA_BUBBLE_CARE_MAIN_HUD_V8_5_0
+# MIKA_CARE_TOOLS_STOP_SOUND_V8_5_9
+const ROOM_GAS_ONLY_SCRIPT = preload("res://bubble/scripts/gas_cloud.gd")
 const WALK_SPEED := 255.0
 const ACCELERATION := 850.0
 const BRAKE_ACCELERATION := 1120.0
@@ -48,6 +72,8 @@ var ZONES: Array[Dictionary] = [
 
 var _hud: Control
 var _joystick
+var _context_use_action: Control
+var _care_sound: AudioStreamPlayer
 var _action_buttons: Dictionary = {}
 var _use_button: Button
 var _status: Label
@@ -81,6 +107,8 @@ var _v8_flight_t: float = 0.0
 var _v8_flight_start: Vector2 = Vector2.ZERO
 var _v8_flight_end: Vector2 = Vector2.ZERO
 var _v8_flight_kind: String = ""
+var _v8_entry_heading: float = 0.0
+var _v8_exit_heading: float = 0.0
 var _v8_action_queued: String = ""
 var _v8_care_clock: float = 0.0
 var _v8_eating: bool = false
@@ -88,6 +116,8 @@ const FEED_LIFT_SECONDS: float = 0.76
 const FEED_LOWER_SECONDS: float = 0.68
 const WATER_LIFT_SECONDS: float = 0.72
 const WATER_LOWER_SECONDS: float = 0.64
+const POST_FEED_GAS_DURATION: float = 3.55
+const POST_FEED_TURN_DURATION: float = 1.15
 var _feed_motion_t: float = 0.0
 var _feed_motion_from: Vector2 = Vector2.ZERO
 var _feed_motion_to: Vector2 = Vector2.ZERO
@@ -98,6 +128,8 @@ var _water_motion_t: float = 0.0
 var _water_motion_from: Vector2 = Vector2.ZERO
 var _water_absorption_fx: Node2D = null
 var _post_feed_gas_t: float = 0.0
+var _post_feed_turn_t: float = 0.0
+var _post_feed_cloud: Node2D = null
 var _velocity := Vector2.ZERO
 var _facing: float = 0.0
 var _last_heading: float = 0.0
@@ -109,6 +141,21 @@ var _mode: String = "free" # free, approach, focus, care
 var _target_id: String = ""
 var _route: Array[Vector2] = []
 var _focus_delay: float = 0.0
+var _dental_turn_from: float = 0.0
+var _dental_turn_elapsed: float = 0.0
+var _dental_close_elapsed: float = -1.0
+var _dental_camera_retreat: bool = false
+const DENTAL_TURN_SECONDS: float = 0.70
+const DENTAL_CAMERA_APPROACH_SECONDS: float = 1.60
+const BED_SLEEP_SECONDS: float = 5.0
+const BED_FRONT_Z: int = 13
+const BED_NORMAL_Z: int = BED_FRONT_Z
+var _bed_opaque_mix: float = 0.0
+var _bed_opaque_target: float = 0.0
+const DENTAL_MOUTH_OPEN_DELAY: float = 0.12
+const DENTAL_MOUTH_OPEN_SECONDS: float = 0.35
+const DENTAL_MOUTH_CLOSE_DELAY: float = 0.14
+const DENTAL_MOUTH_CLOSE_SECONDS: float = 0.32
 var _action_left: float = -1.0
 var _debug: bool = false
 # Explicit turns use an UNWRAPPED heading. lerp_angle() alone would turn a
@@ -123,6 +170,9 @@ var _idle_look_seconds: float = 0.0
 func _ready() -> void:
 	stage.position = Vector2.ZERO
 	stage.scale = Vector2.ONE
+	# The avatar is ALWAYS above the bed front lip (z=12). Never
+	# change its drawing order when an animation state changes.
+	avatar.z_index = BED_FRONT_Z
 	camera.make_current()
 	camera.position = Vector2(836.0, 440.0)
 	# Coordinates come from the separate v8 station PNGs, not old painted wall.
@@ -194,6 +244,68 @@ func _new_label(text_value: String, font_size: int, color: Color) -> Label:
 	l.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	return l
 
+func _care_button_label(action_id: String) -> String:
+	match action_id:
+		"shower": return "Душ"
+		"mirror": return "Почистить зубы"
+		"food": return "Покормить"
+		"water": return "Попоить"
+		"bed": return "Спать"
+	return action_id
+
+func _care_button_icon(action_id: String) -> String:
+	match action_id:
+		"mirror": return "tooth"
+		"bed": return "sleep"
+	return action_id
+
+func _decorate_care_button(button: Button, action_id: String) -> void:
+	# One actual Button with icon and text inside its clickable area.
+	button.text = ""
+	button.focus_mode = Control.FOCUS_NONE
+	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	var inner := HBoxContainer.new()
+	inner.name = "IconAndText"
+	inner.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	inner.alignment = BoxContainer.ALIGNMENT_CENTER
+	inner.add_theme_constant_override("separation", 7)
+	button.add_child(inner)
+	inner.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var icon := TextureRect.new()
+	icon.name = "ActivityIcon"
+	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	icon.texture = load("res://bubble/ui/care_icons/" + _care_button_icon(action_id) + ".svg") as Texture2D
+	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	icon.custom_minimum_size = Vector2(32, 32)
+	inner.add_child(icon)
+	button.tooltip_text = _care_button_label(action_id)
+
+func _set_manual_care_stop(enabled: bool) -> void:
+	if not is_instance_valid(_context_use_action):
+		return
+	_context_use_action.call("set_stop_active", enabled)
+	_context_use_action.call("set_action_available", enabled)
+
+func _care_play_sound(sound_name: String, pitch: float = 1.0) -> void:
+	if not is_instance_valid(_care_sound):
+		return
+	var path: String = "res://education/playtown/audio/sfx/" + sound_name
+	if not ResourceLoader.exists(path):
+		return
+	_care_sound.stop()
+	_care_sound.stream = load(path) as AudioStream
+	_care_sound.pitch_scale = pitch
+	_care_sound.play()
+
+func _on_context_use_pressed(_action_mode: String) -> void:
+	if _mode == "care" and _target_id in ["shower", "mirror"] and not _focus_finished:
+		_care_play_sound("connect_point.ogg", 0.78)
+		_stop_care(true)
+		return
+	if _mode == "free" and _nearest != "":
+		_request_action(_nearest)
+
 func _build_hud() -> void:
 	var layer := CanvasLayer.new()
 	layer.name = "OverlayHUD"
@@ -216,10 +328,17 @@ func _build_hud() -> void:
 	_joystick = JOYSTICK_SCRIPT.new()
 	_joystick.name = "RightJoystick"
 	_hud.add_child(_joystick)
+	_context_use_action = CONTEXT_ACTION_SCRIPT.new() as Control
+	_context_use_action.name = "LeftContextAction_FlightOriginal"
+	_hud.add_child(_context_use_action)
+	_context_use_action.call("set_action_mode", "use")
+	_context_use_action.call("set_stop_active", false)
+	_context_use_action.call("set_action_available", false)
+	_context_use_action.connect("action_requested", Callable(self, "_on_context_use_pressed"))
 	_use_button = _make_button("ИСПОЛЬЗОВАТЬ")
 	_use_button.pressed.connect(_use_or_cancel)
 	_use_button.visible = false
-	_hud.add_child(_use_button)
+	# The legacy rectangular Use Button remains a state holder, not on screen.
 	_title = _new_label("БАББЛ · КОМНАТА УХОДА", 22, Color(0.95,0.99,1))
 	_hud.add_child(_title)
 	_status = _new_label("Выбери действие справа или двигай Баббла джойстиком", 19, Color(0.94,0.99,1))
@@ -228,37 +347,74 @@ func _build_hud() -> void:
 	_hud.add_child(_hint)
 	for z in ZONES:
 		var id: String = str(z["id"])
-		var btn := _make_button(str(z["button"]))
+		var btn := _make_button("")
+		_decorate_care_button(btn, id)
 		btn.pressed.connect(_request_action.bind(id))
 		_hud.add_child(btn)
 		_action_buttons[id] = btn
 	_turn_180_button = _make_button("↶ 180°")
 	_turn_180_button.pressed.connect(_start_manual_turn.bind(PI))
 	_turn_180_button.add_theme_font_size_override("font_size", 17)
-	_hud.add_child(_turn_180_button)
+	# _turn_180_button is retained only for legacy state; no UI node mounted.
 	_turn_360_button = _make_button("↻ 360°")
 	_turn_360_button.pressed.connect(_start_manual_turn.bind(TAU))
 	_turn_360_button.add_theme_font_size_override("font_size", 17)
-	_hud.add_child(_turn_360_button)
+	# _turn_360_button is retained only for legacy state; no UI node mounted.
 	_emotion_button = _make_button("ЭМОЦИИ 1/23")
 	_emotion_button.add_theme_font_size_override("font_size", 15)
 	_emotion_button.pressed.connect(_next_room_emotion)
-	_hud.add_child(_emotion_button)
+	# _emotion_button is retained only for legacy state; no UI node mounted.
 	_debug_button = _make_button("F3 · Границы")
 	_debug_button.add_theme_font_size_override("font_size",15)
 	_debug_button.pressed.connect(_toggle_debug)
-	_hud.add_child(_debug_button)
+	# Keep F3 debugging in code without displaying a debug button.
 	_progress = ProgressBar.new()
+	# MIKA_CARE_PROGRESS_CAPSULE_V8_5_9_2
+	# Curved dark capsule with a softly glowing multicolor fill.
+	var progress_track: StyleBoxFlat = StyleBoxFlat.new()
+	progress_track.bg_color = Color("071b37")
+	progress_track.border_color = Color("54bbdf")
+	progress_track.set_border_width_all(2)
+	progress_track.set_corner_radius_all(14)
+	progress_track.shadow_color = Color(0.06, 0.53, 0.87, 0.34)
+	progress_track.shadow_size = 5
+	_progress.add_theme_stylebox_override("background", progress_track)
+	# Rounded RGBA nine-patch: curved LEFT and RIGHT caps even at 10%/100%.
+	# Former GradientTexture2D had square corners despite a rounded background.
+	var progress_fill: StyleBoxTexture = StyleBoxTexture.new()
+	progress_fill.texture = load("res://bubble/assets/interaction/care_progress_fill_rounded.png") as Texture2D
+	# Keep cap pixels intact; stretch only the middle across responsive widths.
+	progress_fill.texture_margin_left = 16.0
+	progress_fill.texture_margin_right = 16.0
+	progress_fill.texture_margin_top = 8.0
+	progress_fill.texture_margin_bottom = 8.0
+	# Prevent nine-patch borders from changing Control minimum size.
+	progress_fill.set_content_margin_all(0.0)
+	_progress.add_theme_stylebox_override("fill", progress_fill)
 	_progress.min_value = 0.0
 	_progress.max_value = 100.0
 	_progress.value = 0.0
-	_progress.show_percentage = true
+	_progress.show_percentage = false
 	_progress.visible = false
 	_hud.add_child(_progress)
 	_tool = Sprite2D.new()
 	_tool.visible = false
 	_tool.z_index = 25
 	_hud.add_child(_tool)
+	# Quiet reusable sound player: existing PlayTown clips only.
+	_care_sound = AudioStreamPlayer.new()
+	_care_sound.name = "BubbleCareShortSounds"
+	_care_sound.volume_db = -13.0
+	add_child(_care_sound)
+	# Gameplay can keep updating these labels/preview controls, but the
+	# player sees only the clean redesigned interface.
+	_title.hide()
+	_status.hide()
+	_hint.hide()
+	_turn_180_button.hide()
+	_turn_360_button.hide()
+	_emotion_button.hide()
+	_debug_button.hide()
 
 func _layout() -> void:
 	var size := get_viewport_rect().size
@@ -269,7 +425,7 @@ func _layout() -> void:
 			camera.zoom = Vector2.ONE * _base_zoom
 			camera.position = Vector2(836.0, 440.0)
 	elif _target_id != "":
-		_zoom_to = _base_zoom * float(_zone(_target_id)["zoom"])
+		_zoom_to = _base_zoom * (5.2 if _target_id == "mirror" else float(_zone(_target_id)["zoom"]))
 	if _hud == null:
 		return
 	_hud.size = size
@@ -301,10 +457,37 @@ func _layout() -> void:
 	_joystick.position = Vector2(size.x-199.0,size.y-207.0)
 	_use_button.position = Vector2(27.0,size.y-135.0)
 	_use_button.size = Vector2(231,72)
-	_progress.position = Vector2(27.0,size.y-197.0)
-	_progress.size = Vector2(240.0,32.0)
+	# Center the wash/teeth progress capsule above the scene.
+	var progress_w: float = clampf(size.x * 0.46, 190.0, 630.0)
+	var progress_h: float = clampf(size.y * 0.032, 18.0, 28.0)
+	_progress.position = Vector2((size.x - progress_w) * 0.5, maxf(14.0, size.y * 0.055))
+	_progress.size = Vector2(progress_w, progress_h)
 	_focus_face.position = Vector2(size.x*0.44,size.y*0.53)
 	_focus_face.scale = Vector2.ONE * clampf(size.y / 800.0,0.67,1.22)
+	# v8.4.8: place activity panel on the right joystick's centre axis.
+	# The left circle mirrors its physical size and lower-screen margin.
+	var side_margin: float = maxf(8.0, size.x - (_joystick.position.x + _joystick.size.x))
+	_context_use_action.position = Vector2(side_margin, _joystick.position.y)
+	_context_use_action.scale = _joystick.scale
+	var actions_axis_x: float = _joystick.position.x + _joystick.size.x * 0.5
+	# Square actions follow the REAL simulator-hub Back button scale.
+	# All five icons remain clickable within the same square hit areas.
+	var hub_scale: float = minf(size.y / 864.0, size.x / 1680.0)
+	var desired_side: float = 158.0 * hub_scale * 0.60
+	var activity_gap: float = clampf(size.y * 0.012, 5.0, 12.0)
+	var max_side: float = maxf(25.0, (_joystick.position.y - 38.0 - 4.0 * activity_gap) / 5.0)
+	var activity_side: float = maxf(25.0, minf(desired_side, max_side))
+	var activities_stack: float = 5.0 * activity_side + 4.0 * activity_gap
+	var max_top: float = maxf(8.0, _joystick.position.y - activities_stack - 16.0)
+	var activities_top: float = minf(max_top, maxf(8.0, size.y * 0.43 - activities_stack * 0.5))
+	for i in range(ZONES.size()):
+		var activity: Button = _action_buttons[str(ZONES[i]["id"])]
+		activity.size = Vector2.ONE * activity_side
+		var activity_icon: TextureRect = activity.get_node_or_null("IconAndText/ActivityIcon") as TextureRect
+		if activity_icon != null:
+			activity_icon.custom_minimum_size = Vector2.ONE * (activity_side * 0.61)
+		activity.position = Vector2(actions_axis_x - activity_side * 0.5,
+			activities_top + float(i) * (activity_side + activity_gap))
 	if not _tool_dragging:
 		_reset_tool_position()
 
@@ -328,15 +511,15 @@ func _keyboard_dir() -> Vector2:
 func _physics_process(delta: float) -> void:
 	# Water/gas v8.3.7: dispatch before old food_lower/other elif blocks.
 	# This avoids depending on their order or indentation in user patches.
-	if _mode in ["food_lower", "food_gas", "water_lift", "water_lower"] or (_target_id == "water" and _mode == "care"):
+	if _mode in ["food_lower", "food_gas", "food_turn", "water_lift", "water_lower"] or (_target_id == "water" and _mode == "care"):
 		_advance_water_gas(delta)
 		_velocity = Vector2.ZERO
 		_update_avatar(delta)
 		return
 
-	_turn_180_button.visible = _mode == "free"
-	_turn_360_button.visible = _mode == "free"
-	_emotion_button.visible = _mode == "free"
+	_turn_180_button.visible = false
+	_turn_360_button.visible = false
+	_emotion_button.visible = false
 	if _manual_turn_duration > 0.0 and _mode == "free":
 		_advance_manual_turn(delta)
 		_update_nearest()
@@ -371,22 +554,38 @@ func _physics_process(delta: float) -> void:
 	elif _mode == "platform_enter":
 		_v8_flight_t = minf(_v8_flight_t + delta / V8_ENTRY_SECONDS, 1.0)
 		avatar.position = _v8_flight_path(_v8_flight_start, _v8_flight_end, _v8_flight_t, _v8_flight_kind)
+		if _v8_flight_kind == "shower":
+			_v8_adapt_shower_heading(_v8_flight_t, true)
+		elif _v8_flight_kind == "bed":
+			_v8_bed_heading(_v8_flight_t, true)
 		if _v8_flight_t >= 1.0:
 			avatar.position = _v8_flight_end
 			_begin_care_action()
 	elif _mode == "returning":
 		_v8_leave_t = minf(_v8_leave_t + delta / V8_EXIT_SECONDS, 1.0)
 		avatar.position = _v8_flight_path(_v8_leave_from, _world_position, _v8_leave_t, _v8_flight_kind)
+		if _v8_flight_kind == "shower":
+			_v8_adapt_shower_heading(_v8_leave_t, false)
+		elif _v8_flight_kind == "bed":
+			_v8_bed_heading(_v8_leave_t, false)
 		if _v8_leave_t >= 1.0:
 			_mode = "free"
 			_joystick.visible = true
 			avatar.position = _world_position
-			bubble.play_action("idle")
+			if _v8_flight_kind == "bed":
+				avatar.z_index = BED_NORMAL_Z
+				_bed_set_solid(false)
+				bubble.set_room_sleep_pose(false)
+				bubble.set_room_locomotion("idle", 0.0, 0.0, 0.0)
+			else:
+				bubble.play_action("idle")
 			if _v8_action_queued != "":
 				var next_id: String = _v8_action_queued
 				_v8_action_queued = ""
 				call_deferred("_request_action", next_id)
 	elif _mode == "focus":
+		if _target_id == "mirror":
+			_advance_dental_turn(delta)
 		_focus_delay -= delta
 		if _focus_delay <= 0.0:
 			_begin_care()
@@ -396,8 +595,7 @@ func _physics_process(delta: float) -> void:
 			_action_left -= delta
 			if _action_left <= 0.0:
 				_finish_care()
-		elif _target_id == "bed" and bubble.finished and bubble.current_action != "sleep":
-			bubble.play_action("sleep")
+
 	if _mode != "free" and _mode != "approach":
 		_velocity = Vector2.ZERO
 	_update_avatar(delta)
@@ -514,9 +712,15 @@ func _update_avatar(delta: float) -> void:
 	# transform or alpha here: the old direction-based alpha hid both eyes.
 
 func _process(delta: float) -> void:
+	_bed_update_opacity(delta)
 	var zoom_lerp: float = 1.0-exp(-3.0*delta)
 	var z := lerpf(camera.zoom.x,_zoom_to,zoom_lerp)
 	camera.zoom = Vector2.ONE*maxf(0.01,z)
+	# Follow the mouth only during approach/cleaning, never during retreat.
+	if _target_id == "mirror" and _mode in ["focus", "care"] and not _dental_camera_retreat:
+		_camera_to = _mirror_focus_point()
+	if _dental_close_elapsed >= 0.0:
+		_advance_dental_close(delta)
 	var desired := _clamp_camera(_camera_to,z)
 	camera.position = camera.position.lerp(desired,1.0-exp(-2.6*delta))
 
@@ -551,6 +755,12 @@ func _follow_route(delta: float) -> void:
 	var goal: Vector2 = _route[0]
 	var offset: Vector2 = goal-_world_position
 	if offset.length() < 12.0:
+		# Avoid the last 0-12px positional snap before an adaptive shower flight.
+		if _target_id in ["shower", "bed"] and _route.size() == 1:
+			_route.remove_at(0)
+			_velocity = Vector2.ZERO
+			_start_camera_focus()
+			return
 		_world_position = goal
 		avatar.position = goal
 		_route.remove_at(0)
@@ -566,7 +776,7 @@ func _follow_route(delta: float) -> void:
 
 func _request_action(id: String) -> void:
 	if _zone(id).is_empty(): return
-	if _target_id == "food" and _mode in ["food_lift", "care", "food_lower", "food_gas"]:
+	if _target_id == "food" and _mode in ["food_lift", "care", "food_lower", "food_gas", "food_turn"]:
 		_v8_action_queued = id
 		if _mode in ["food_lift", "care"]:
 			_feed_begin_lower()
@@ -587,11 +797,16 @@ func _request_action(id: String) -> void:
 	_manual_turn_duration = 0.0
 	_idle_look_seconds = 0.0
 	bubble.set_room_turn_activity(0.0)
-	_stop_care(false)
+	# The free-room Bubble is already the correct persistent actor.
+	if not (id == "mirror" and _mode == "free"):
+		_stop_care(false)
 	avatar.position = _world_position
 	_mode = "free"
 	_target_id = id
+	if id == "bed":
+		_bed_set_solid(true)
 	_mode = "approach"
+	_context_use_action.call("set_action_available", false)
 	_joystick.clear_input()
 	_joystick.visible = false
 	_use_button.visible = true
@@ -600,28 +815,99 @@ func _request_action(id: String) -> void:
 	_hint.text = "Подход к объекту · Esc — отменить"
 	_camera_to = Vector2(836.0, 440.0)
 	_zoom_to = _base_zoom
-	_build_route(_zone(id)["point"])
+	# Two access modes: nearby E/use enters from the CURRENT position;
+	# distant HUD buttons walk from the CURRENT position and only then fly.
+	if id in ["shower", "bed"] and _world_position.distance_to(_zone(id)["point"]) <= float(_zone(id)["radius"]) + 18.0:
+		_route.clear()
+		_start_camera_focus()
+	else:
+		_build_route(_zone(id)["point"])
 	_highlight_buttons()
+
+func _mirror_focus_point() -> Vector2:
+	# Follow the *actual* live jaw; never aim camera at an avatar-relative forehead point.
+	var rig: MikaBubbleFace = bubble.get_face()
+	if is_instance_valid(rig):
+		var jaw: Node2D = rig.get_node_or_null("ContinuousJawRig") as Node2D
+		if jaw != null:
+			return jaw.global_position
+	return bubble.to_global(Vector2(0.0, 68.0))
 
 func _start_camera_focus() -> void:
 	_velocity = Vector2.ZERO
 	_mode = "focus"
+	if _target_id == "mirror":
+		zone_visual.visible = false
+		zone_visual.set("nearby_id", "")
 	# Feeder and fountain are approached from the FRONT of the equipment:
 	# Bubble's back faces the player while it eats or drinks.
 	var care_heading: float = PI if _target_id == "food" or _target_id == "water" else 0.0
-	_facing = care_heading
-	_last_heading = care_heading
-	bubble.set_room_heading(care_heading)
+	# Keep the *actual* incoming heading until the continuous shower flight.
+	if _target_id not in ["shower", "mirror", "bed"]:
+		_facing = care_heading
+		_last_heading = care_heading
+		bubble.set_room_heading(care_heading)
+	else:
+		_last_heading = _facing
 	_turn_left = 0.0
-	_focus_delay = 0.90
-	bubble.play_action("idle")
+	_focus_delay = DENTAL_CAMERA_APPROACH_SECONDS if _target_id == "mirror" else (0.0 if _target_id in ["shower", "bed"] else 0.90)
+	if _target_id in ["shower", "mirror", "bed"]:
+		bubble.set_room_locomotion("idle", 0.0, 0.0, 0.0)
+	else:
+		bubble.play_action("idle")
+	if _target_id == "mirror":
+		_dental_turn_from = _facing
+		_dental_turn_elapsed = 0.0
+		_dental_close_elapsed = -1.0
+		_dental_camera_retreat = false
 	_movement_action = ""
 	var zone: Dictionary = _zone(_target_id)
 	var target_point: Vector2 = zone["point"]
 	_camera_to = zone["focus"]
 	_zoom_to = _base_zoom*float(zone["zoom"])
-	_status.text = "Камера приближается: " + str(zone["name"])
-	_hint.text = "Выбранное действие начнётся после приближения"
+	if _target_id == "mirror":
+		_camera_to = _mirror_focus_point()
+		_zoom_to = _base_zoom * 5.2
+		_status.text = "Камера приближается: зубы Баббла"
+		_hint.text = "Баббл покажет зубы, затем можно чистить"
+	else:
+		_status.text = "Камера приближается: " + str(zone["name"])
+		_hint.text = "Выбранное действие начнётся после приближения"
+
+func _advance_dental_close(delta: float) -> void:
+	_dental_close_elapsed += delta
+	var t: float = _v8_smooth(clampf(
+		(_dental_close_elapsed - DENTAL_MOUTH_CLOSE_DELAY) / DENTAL_MOUTH_CLOSE_SECONDS,
+		0.0, 1.0))
+	# Holding the starting pose for 0.14s gives visible camera pullback.
+	bubble.set_mouth_open(1.0 - t)
+	if _dental_close_elapsed >= DENTAL_MOUTH_CLOSE_DELAY + DENTAL_MOUTH_CLOSE_SECONDS + 0.20:
+		# The existing FaceRig's smoothing has almost finished closing.
+		bubble.set_mouth_open(-1.0)
+		_dental_close_elapsed = -1.0
+
+func _advance_dental_turn(delta: float) -> void:
+	_dental_turn_elapsed = minf(_dental_turn_elapsed + delta, DENTAL_TURN_SECONDS)
+	var t: float = clampf(_dental_turn_elapsed / DENTAL_TURN_SECONDS, 0.0, 1.0)
+	var eased: float = _v8_smooth(t)
+	var new_heading: float = lerp_angle(_dental_turn_from, 0.0, eased)
+	var steer: float = wrapf(new_heading - _facing, -PI, PI)
+	_facing = new_heading
+	_last_heading = new_heading
+	bubble.set_room_heading(new_heading)
+	bubble.set_room_turn_activity(sin(PI * t) * 0.28)
+	bubble.set_room_locomotion("idle", 0.0, 0.0, steer)
+	# Native jaw opens DURING the camera approach instead of on a new animation frame.
+	# Start from the original face. Ease the existing mouth open for
+	# most of the camera approach; no discrete frame or second actor.
+	# The camera continues moving after this ~0.35s opening.
+	# The current FaceRig crossfades lips in response to jaw_open.
+	var opening: float = _v8_smooth(clampf(
+		(_dental_turn_elapsed - DENTAL_MOUTH_OPEN_DELAY) / DENTAL_MOUTH_OPEN_SECONDS,
+		0.0, 1.0))
+	bubble.set_mouth_open(opening)
+	if t >= 1.0:
+		bubble.set_room_turn_activity(0.0)
 
 func _begin_care() -> void:
 	if _target_id == "food":
@@ -664,10 +950,20 @@ func _begin_care() -> void:
 		_mode = "platform_enter"
 		_v8_inside = true
 		_v8_flight_kind = _target_id
+		if _target_id == "bed":
+			avatar.z_index = BED_FRONT_Z
+			bubble.set_room_sleep_pose(false)
+		# Sample the live actor pose at the actual moment flight starts.
 		_v8_flight_start = avatar.position
+		if _target_id in ["shower", "bed"]:
+			_v8_entry_heading = _facing
 		_v8_flight_end = _zone(_target_id)["activity_point"]
 		_v8_flight_t = 0.0
-		bubble.play_action("float")
+		if _target_id in ["shower", "bed"]:
+			# Keep springs, FaceRig and procedural body evolving continuously.
+			bubble.set_room_locomotion("idle", 0.0, 0.0, 0.0)
+		else:
+			bubble.play_action("float")
 		_status.text = "Баббл подлетает к платформе"
 		_hint.text = "Взлёт → над бортиком → плавное приземление"
 		return
@@ -678,6 +974,27 @@ func _v8_smooth(u: float) -> float:
 	return t*t*(3.0-2.0*t)
 
 func _v8_flight_path(start: Vector2, finish: Vector2, ratio: float, station_kind: String) -> Vector2:
+	# Shower: a single cubic Bezier with one global easing curve, not
+	# three independently restarted movement clips. Both endpoints
+	# are sampled at runtime (nearby access and distant button).
+	# A single monotone cubic curve, starting at the live Bubble position.
+	# No segmented takeoff/stop/restart and no upward overshoot at the rim.
+	if station_kind == "bed":
+		var t: float = _v8_smooth(ratio)
+		var q: float = 1.0 - t
+		var c1: Vector2 = Vector2(lerpf(start.x, finish.x, 0.30) - 17.0,
+			lerpf(start.y, finish.y, 0.30) - 8.0)
+		var c2: Vector2 = Vector2(lerpf(start.x, finish.x, 0.76) - 6.0,
+			lerpf(start.y, finish.y, 0.79) - 4.0)
+		return start * (q*q*q) + c1 * (3.0*q*q*t) + c2 * (3.0*q*t*t) + finish * (t*t*t)
+	if station_kind == "shower":
+		var t: float = _v8_smooth(ratio)
+		var inv: float = 1.0 - t
+		var upper_y: float = minf(start.y, finish.y) - 70.0
+		var c1: Vector2 = Vector2(lerpf(start.x, finish.x, 0.26), lerpf(start.y, upper_y, 0.91))
+		var c2: Vector2 = Vector2(lerpf(start.x, finish.x, 0.78), lerpf(finish.y, upper_y, 0.84))
+		return start * (inv * inv * inv) + c1 * (3.0 * inv * inv * t) + c2 * (3.0 * inv * t * t) + finish * (t * t * t)
+	# Other stations: keep their existing entry/exit choreography.
 	# Three distinct segments; do NOT move through a vertical front wall.
 	# The sprite foreground contains just the physical lip, not a whole prop.
 	var side: float = -48.0 if station_kind == "shower" else 52.0
@@ -690,22 +1007,83 @@ func _v8_flight_path(start: Vector2, finish: Vector2, ratio: float, station_kind
 		return takeoff.lerp(cruise,_v8_smooth((ratio-0.38)/0.27))
 	return cruise.lerp(finish,_v8_smooth((ratio-0.65)/0.35))
 
+func _v8_adapt_shower_heading(fraction: float, entering: bool) -> void:
+	# Keep the very same liquid body and FaceRig through a natural turn.
+	var t: float = _v8_smooth(clampf((fraction - 0.38) / 0.62, 0.0, 1.0)) if entering else _v8_smooth(clampf(fraction / 0.50, 0.0, 1.0))
+	var from_heading: float = _v8_entry_heading if entering else _v8_exit_heading
+	var toward: float = 0.0 if entering else PI
+	var heading: float = lerp_angle(from_heading, toward, t)
+	var steer: float = wrapf(heading - _facing, -PI, PI)
+	_facing = heading
+	_last_heading = heading
+	bubble.set_room_heading(heading)
+	bubble.set_room_turn_activity(sin(PI * t) if t > 0.0 and t < 1.0 else 0.0)
+	bubble.set_room_locomotion("idle", 0.0, 0.0, steer)
+
+func _v8_bed_heading(fraction: float, entering: bool) -> void:
+	# A turn is part of the same living body's continuous spring motion.
+	# Entry turns inside the bed; exit gradually turns towards the floor.
+	var t: float = _v8_smooth(clampf(
+		(fraction - 0.50) / 0.50 if entering else (fraction - 0.12) / 0.56,
+		0.0, 1.0))
+	var initial: float = _v8_entry_heading if entering else _v8_exit_heading
+	var target: float = 0.0 if entering else PI
+	var heading: float = lerp_angle(initial, target, t)
+	var steer: float = wrapf(heading - _facing, -PI, PI)
+	_facing = heading
+	_last_heading = heading
+	bubble.set_room_heading(heading)
+	bubble.set_room_turn_activity(0.42 * sin(PI * t))
+	bubble.set_room_locomotion("idle", 0.0, 0.0, steer)
+
+func _bed_set_solid(enabled: bool) -> void:
+	# Never pop the shader opacity during the approach->sleep transition.
+	# This sets a goal, updated continuously by _process() on the SAME actor.
+	_bed_opaque_target = 1.0 if enabled else 0.0
+
+func _bed_update_opacity(delta: float) -> void:
+	var old_mix: float = _bed_opaque_mix
+	_bed_opaque_mix = move_toward(_bed_opaque_mix, _bed_opaque_target, delta * 2.8)
+	# Touch the material only while the bed blend is active. This preserves
+	# existing feeding/water shader behavior outside a bed transition.
+	if _bed_opaque_mix <= 0.0 and _bed_opaque_target <= 0.0 and old_mix <= 0.0:
+		return
+	if not is_instance_valid(bubble._actor):
+		return
+	var surface: CanvasItem = bubble._actor.get_node_or_null("Body/Surface") as CanvasItem
+	if surface != null and surface.material is ShaderMaterial:
+		(surface.material as ShaderMaterial).set_shader_parameter("meal_opaque", _bed_opaque_mix)
+
 func _begin_care_action() -> void:
 	_mode = "care"
 	_tool_mode = ""
 	_tool_dragging = false
-	_action_left = -1.0 if _target_id == "food" else float(_zone(_target_id)["seconds"])
+	_action_left = BED_SLEEP_SECONDS if _target_id == "bed" else (-1.0 if _target_id == "food" else float(_zone(_target_id)["seconds"]))
 	_v8_care_clock = 0.0
 	_v8_eating = false
 	_status.text = "Баббл: " + str(_zone(_target_id)["button"])
 	room_v8.call("set_action_fx", _target_id, true)
-	bubble.clear_expression_override()
+	# Do not force a new face pose at the dental transition.
+	if _target_id != "mirror":
+		bubble.clear_expression_override()
 	if _target_id == "food" or _target_id == "water":
 		_facing = PI
 		_last_heading = PI
 		bubble.set_room_heading(PI)
 	# Food starts only after the feeder is FILLED, not during dispensing.
-	if _target_id == "water":
+	if _target_id == "shower":
+		# No replacement or idle-timer restart after crossing the rim.
+		bubble.set_room_locomotion("idle", 0.0, 0.0, 0.0)
+		bubble.set_room_turn_activity(0.0)
+	elif _target_id == "mirror":
+		# Preserve the renderer, spring state, current face and jaw.
+		bubble.set_room_locomotion("idle", 0.0, 0.0, 0.0)
+		bubble.set_room_turn_activity(0.0)
+	elif _target_id == "bed":
+		# Keep one living movement renderer, no play_action("sleep").
+		bubble.set_room_locomotion("idle", 0.0, 0.0, 0.0)
+		bubble.set_room_turn_activity(0.0)
+	elif _target_id == "water":
 		if bubble.current_action != "idle":
 			bubble.play_action("idle")
 	else:
@@ -716,22 +1094,29 @@ func _begin_care_action() -> void:
 			shower_fx.set_shower_on(true)
 			scrub_mask.start_scrubbing()
 			_tool_mode = "shower"
-			_show_tool("res://bubble/assets/interaction/soft_sponge.png",0.65)
+			_show_tool("res://education/playtown/assets/pet_home/wash/brush.png",0.37)
 			_progress.value = 0
 			_progress.visible = true
-			_hint.text = "Возьми губку и протри загрязнения на теле Баббла"
+			_hint.text = "Води губкой по пене на Баббле, заполняя шкалу мытья"
 		"mirror":
-			_tool_mode = "teeth"
-			_focus_dim.visible = true
-			_focus_face.visible = true
-			_focus_face.set_expression("calm")
-			_focus_face.reset_plaque()
-			_focus_face.set_jaw_open(0.0)
-			_focus_face.set_brushing_mode(true)
-			_show_tool("res://bubble/assets/toothbrush.png",0.67)
-			_progress.value = 0
+			# This is a care interaction, not a selected-world hotspot.
+			zone_visual.visible = false
+			# One Bubble, one existing FaceRig. The old overlay nodes are never created.
+			_tool_mode = "teeth_rig"
+			_focus_dim.visible = false
+			_focus_face.visible = false
+			# Keep expression from previous frame; mouth override handles jaw.
+			# Keep the heading achieved by the continuous approach.
+			var rig: MikaBubbleFace = bubble.get_face()
+			if is_instance_valid(rig):
+				rig.reset_plaque()
+			# Jaw is already open from _advance_dental_turn: no restart.
+			_camera_to = _mirror_focus_point()
+			_zoom_to = _base_zoom * 5.2
+			_show_tool("res://education/playtown/assets/pet_home/teeth/toothbrush.png",0.31)
+			_progress.value = 0.0
 			_progress.visible = true
-			_hint.text = "Возьми щётку и почисти 10 зубов · цель 92%"
+			_hint.text = "Чистим настоящие зубы Баббла — без зубных накладок"
 		"food":
 			# Old monolithic FeederFX is hidden; the v8 feeder owns the ONLY bowl.
 			_hint.text = "Корм в миске → Баббл ест спиной → миска пустеет"
@@ -739,7 +1124,15 @@ func _begin_care_action() -> void:
 			# The fountain in room_v8 always runs, even outside care mode.
 			_hint.text = "Баббл пьёт спиной · фонтан работает постоянно"
 		"bed":
-			_hint.text = "Баббл отдыхает в лежанке · нажми «ЗАВЕРШИТЬ»"
+			avatar.z_index = BED_FRONT_Z
+			_bed_set_solid(true)
+			bubble.set_room_sleep_pose(true)
+			_status.text = "Баббл спит — 5 секунд"
+			_hint.text = "Спокойный сон · через 5 секунд Баббл проснётся и выйдет"
+	# Only manually scrubbed bath and dental actions are stoppable.
+	var manual: bool = _target_id in ["shower", "mirror"] and _tool_mode in ["shower", "teeth"]
+	_set_manual_care_stop(manual)
+	_care_play_sound("connect_point.ogg")
 	_highlight_buttons()
 
 func _v8_update_station_care(delta: float) -> void:
@@ -797,10 +1190,29 @@ func _advance_water_gas(delta: float) -> void:
 			_feed_set_solid(false)
 			_start_post_feed_gas()
 	elif _mode == "food_gas":
-		_post_feed_gas_t += delta
+		# The single living Bubble remains the SAME actor from feeding.
+		_post_feed_gas_t = minf(_post_feed_gas_t + delta, POST_FEED_GAS_DURATION)
 		avatar.position = _world_position
 		bubble.set_room_heading(PI)
-		if (_post_feed_gas_t > 2.70 and bubble.finished) or _post_feed_gas_t >= 4.25:
+		if is_instance_valid(_post_feed_cloud):
+			_post_feed_cloud.call("update_phase", true, clampf(_post_feed_gas_t / 3.35, 0.0, 1.14), 1.0)
+		if _post_feed_gas_t >= POST_FEED_GAS_DURATION:
+			_clear_post_feed_gas()
+			_mode = "food_turn"
+			_post_feed_turn_t = 0.0
+	elif _mode == "food_turn":
+		# Smooth back -> front turn on the SAME mesh and face rig.
+		_post_feed_turn_t = minf(_post_feed_turn_t + delta / POST_FEED_TURN_DURATION, 1.0)
+		avatar.position = _world_position
+		_facing = PI + PI * _v8_smooth(_post_feed_turn_t)
+		_last_heading = _facing
+		bubble.set_room_heading(_facing)
+		bubble.set_room_turn_activity(sin(PI * _post_feed_turn_t))
+		if _post_feed_turn_t >= 1.0:
+			bubble.set_room_turn_activity(0.0)
+			_facing = 0.0
+			_last_heading = 0.0
+			bubble.set_room_heading(0.0)
 			_finish_care()
 			if _v8_action_queued != "":
 				var after_gas: String = _v8_action_queued
@@ -870,16 +1282,27 @@ func _start_post_feed_gas() -> void:
 	_post_feed_gas_t = 0.0
 	_facing = PI
 	_last_heading = PI
-	bubble.play_action("gas")
+	# Never call bubble.play_action("gas") here. That creates a second BODY.
+	# Attach only the original gas_cloud.gd renderer to the CURRENT actor.
+	_clear_post_feed_gas()
+	var living_visual: Node2D = bubble._actor as Node2D
+	if is_instance_valid(living_visual):
+		_post_feed_cloud = ROOM_GAS_ONLY_SCRIPT.new() as Node2D
+		_post_feed_cloud.name = "AfterFeedingGasOnly"
+		_post_feed_cloud.position = Vector2(64.0, -64.0)
+		_post_feed_cloud.rotation = PI * 0.5
+		_post_feed_cloud.z_index = 1
+		living_visual.add_child(_post_feed_cloud)
+		_post_feed_cloud.call("update_phase", true, 0.0, 1.14)
 	bubble.set_room_heading(PI)
-	var gas_visual: Node2D = bubble._actor as Node2D
-	if is_instance_valid(gas_visual):
-		var old_cloud: Node2D = gas_visual.get_node_or_null("GasCloud") as Node2D
-		if is_instance_valid(old_cloud):
-			old_cloud.rotation = PI * 0.5
-			old_cloud.position = Vector2(64.0, -64.0)
 	_status.text = "Баббл закончил есть"
-	_hint.text = "Баббл выпускает газ, затем развернётся"
+	_hint.text = "Выпускает газ, оставаясь спиной, затем поворачивается"
+
+func _clear_post_feed_gas() -> void:
+	if is_instance_valid(_post_feed_cloud):
+		_post_feed_cloud.call("update_phase", false, 1.0, 1.0)
+		_post_feed_cloud.queue_free()
+	_post_feed_cloud = null
 
 func _feed_set_solid(enabled: bool) -> void:
 	if not is_instance_valid(bubble._actor):
@@ -903,9 +1326,20 @@ func _feed_begin_lower() -> void:
 
 func _show_tool(path: String, scale_value: float) -> void:
 	_tool.texture = load(path)
-	_tool.scale = Vector2.ONE*scale_value
+	_tool.scale = Vector2.ONE * scale_value
 	_tool.visible = true
 	_reset_tool_position()
+	if _tool_mode == "teeth" and path.get_file() == "toothbrush.png":
+		# The real PlayTown mini-game owns its own texture, touch and eraser.
+		# Hide the former MIKA sprite and all former dental contacts.
+		_tool.visible = false
+		if not is_instance_valid(_mika_playtown_teeth):
+			_mika_playtown_teeth = PLAYTOWN_TEETH_ADAPTER.new()
+			_mika_playtown_teeth.name = "BubblePlayTownTeeth"
+			_hud.add_child(_mika_playtown_teeth)
+			_mika_playtown_teeth.progress_changed.connect(_update_progress)
+			_mika_playtown_teeth.completed.connect(_on_care_completed)
+		_mika_playtown_teeth_begin()
 
 func _update_progress(value: float) -> void:
 	if _mode != "care" or _focus_finished: return
@@ -914,8 +1348,12 @@ func _update_progress(value: float) -> void:
 		_on_care_completed()
 
 func _on_care_completed() -> void:
+	if is_instance_valid(_mika_playtown_teeth):
+		_mika_playtown_teeth.stop(true)
 	if _mode != "care" or _focus_finished: return
 	_focus_finished = true
+	_set_manual_care_stop(false)
+	_care_play_sound("correct.ogg", 1.06)
 	_tool.visible = false
 	_tool_dragging = false
 	_progress.value = 100.0
@@ -926,10 +1364,20 @@ func _on_care_completed() -> void:
 		scrub_mask.stop_scrubbing()
 		shower_fx.set_shower_on(false)
 	elif _target_id == "mirror":
-		_focus_face.set_expression("happy")
-		_focus_face.set_brushing_mode(false)
+		# Camera pulls away first; then the SAME mouth closes rapidly
+		# after a short delay, still within the camera movement.
+		_dental_camera_retreat = true
+		_dental_close_elapsed = 0.0
+		_camera_to = Vector2(836.0, 440.0)
+		_zoom_to = _base_zoom
+		bubble.set_room_emotion("happy", 1.8)
 
 func _stop_care(reset_camera: bool = true) -> void:
+	if is_instance_valid(_mika_playtown_teeth):
+		_mika_playtown_teeth.stop()
+	_set_manual_care_stop(false)
+
+	_clear_post_feed_gas()
 	if is_instance_valid(_feed_absorption_fx):
 		_feed_absorption_fx.call("stop_immediately")
 	if is_instance_valid(_water_absorption_fx):
@@ -947,11 +1395,26 @@ func _stop_care(reset_camera: bool = true) -> void:
 	if retreat:
 		_v8_leave_from = avatar.position
 		_v8_leave_t = 0.0
+		_v8_exit_heading = _facing
 	_v8_inside = false
 	if retreat:
 		_v8_flight_kind = _target_id
-		bubble.play_action("float")
+		if _target_id in ["shower", "bed"]:
+			# Do not restart the animation at the exit point either.
+			bubble.set_room_locomotion("idle", 0.0, 0.0, 0.0)
+		else:
+			bubble.play_action("float")
+	if _target_id == "mirror" and not _dental_camera_retreat:
+		_dental_camera_retreat = true
+		_dental_close_elapsed = 0.0
+	if _target_id == "bed":
+		bubble.set_room_sleep_pose(false)
+		if not retreat:
+			avatar.z_index = BED_NORMAL_Z
+			_bed_set_solid(false)
 	room_v8.call("stop_all_fx")
+	# The target is hidden only while brushing teeth.
+	zone_visual.visible = true
 	_manual_turn_duration = 0.0
 	_idle_look_seconds = 0.0
 	bubble.set_room_turn_activity(0.0)
@@ -964,6 +1427,10 @@ func _stop_care(reset_camera: bool = true) -> void:
 	_tool.visible = false
 	_tool_dragging = false
 	_focus_face.visible = false
+	# Preserve live mouth until retreat timing closes it, including
+	# manual exit; other care modes retain their original reset.
+	if not _dental_camera_retreat or _dental_close_elapsed < 0.0:
+		bubble.set_mouth_open(-1.0)
 	_focus_dim.visible = false
 	_progress.visible = false
 	_progress.value = 0.0
@@ -973,12 +1440,16 @@ func _stop_care(reset_camera: bool = true) -> void:
 	_velocity = Vector2.ZERO
 	_turn_left = 0.0
 	_target_id = ""
+	_context_use_action.call("set_action_available", false)
 	_mode = "returning" if retreat else "free"
 	_joystick.visible = not retreat
 	_joystick.clear_input()
 	if not retreat:
 		avatar.position = _world_position
-		bubble.play_action("idle")
+		if _target_id not in ["mirror", "bed"]:
+			bubble.play_action("idle")
+		else:
+			bubble.set_room_locomotion("idle", 0.0, 0.0, 0.0)
 	_movement_action = ""
 	if reset_camera:
 		_camera_to = Vector2(836.0, 440.0)
@@ -1008,12 +1479,15 @@ func _update_nearest() -> void:
 		if d < float(z["radius"]) and d < distance:
 			distance = d
 			id = str(z["id"])
-	if _nearest == id: return
+	if _nearest == id:
+		_context_use_action.call("set_action_available", id != "")
+		return
 	_nearest = id
 	zone_visual.set("nearby_id",id)
 	zone_visual.queue_redraw()
 	_use_button.visible = id != ""
 	_use_button.text = "ИСПОЛЬЗОВАТЬ"
+	_context_use_action.call("set_action_available", id != "")
 
 func _use_or_cancel() -> void:
 	if _mode == "free":
@@ -1067,6 +1541,8 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _input(event: InputEvent) -> void:
+	if _tool_mode == "teeth":
+		return # PlayTown owns dental touch, drag and erasing.
 	if _mode != "care" or _tool_mode == "" or _focus_finished:
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -1086,33 +1562,46 @@ func _input(event: InputEvent) -> void:
 
 func _try_begin_drag(screen_position: Vector2) -> void:
 	if not _tool.visible: return
-	var radius := 110.0 if _tool_mode == "teeth" else 82.0
-	if screen_position.distance_to(_tool.position) > radius: return
+	if _tool.texture == null: return
+	# The PlayTown tools are long: grab anywhere inside the actual sprite.
+	var local_point: Vector2 = _tool.get_global_transform_with_canvas().affine_inverse() * screen_position
+	var half_size: Vector2 = _tool.texture.get_size() * 0.5
+	if absf(local_point.x) > half_size.x or absf(local_point.y) > half_size.y: return
 	_tool_dragging = true
-	_drag_offset = screen_position-_tool.position
+	_drag_offset = screen_position - _tool.position
 	_last_tip = _tool_tip()
 	get_viewport().set_input_as_handled()
 
 func _tool_tip() -> Vector2:
-	if _tool_mode == "teeth":
-		return _tool.position+Vector2(-95.0,0.0)*_tool.scale.x
+	if _tool.texture == null:
+		return _tool.position
+	var tex_size: Vector2 = _tool.texture.get_size()
+	if _tool_mode == "shower":
+		return _tool.position + Vector2(-tex_size.x * 0.28, tex_size.y * 0.18) * _tool.scale.x
 	return _tool.position
 
 func _move_tool(screen_position: Vector2) -> void:
+	# Dental movement is handled by the ORIGINAL PlayTown pet minigame.
+	# Retain the original MIKA shower scrub implementation unchanged.
+	if _tool_mode == "teeth":
+		return
 	var sz := get_viewport_rect().size
-	var next := screen_position-_drag_offset
-	_tool.position = next.clamp(Vector2(25,125),sz-Vector2(35,35))
+	var next := screen_position - _drag_offset
+	_tool.position = next.clamp(Vector2(25,125), sz-Vector2(35,35))
 	var tip := _tool_tip()
 	var travel := tip.distance_to(_last_tip)
 	if travel > 1.5:
 		var steps := mini(30,maxi(1,int(ceil(travel/6.0))))
 		for i in range(1,steps+1):
 			var point := _last_tip.lerp(tip,float(i)/float(steps))
-			if _tool_mode == "teeth":
-				_focus_face.brush_at(point,17.0)
-			elif _tool_mode == "shower":
+			if _tool_mode == "shower":
 				var local_pt: Vector2 = avatar.get_global_transform_with_canvas().affine_inverse()*point
 				scrub_mask.scrub_at(local_pt,travel/float(steps)*3.0)
 			if _focus_finished: break
 	_last_tip = tip
 	get_viewport().set_input_as_handled()
+
+# Start the exact PlayTown pet dental minigame on Bubble's close-up face.
+func _mika_playtown_teeth_begin() -> void:
+	if is_instance_valid(_mika_playtown_teeth):
+		_mika_playtown_teeth.begin_with_bubble(_focus_face)

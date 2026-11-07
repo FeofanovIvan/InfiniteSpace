@@ -1,4 +1,9 @@
 extends Node2D
+# MIKA_FUEL_EMPTY_SIMULATOR_V122
+const EmptyFuelSimulatorCardScript: Script = preload("res://addons/mika_fuel_empty_simulator/EmptyFuelSimulatorCard.gd")
+# MIKA_BUBBLE_CARE_MAIN_HUD_V8_5_0
+# MIKA_BUBBLE_BALL_PLANET_V8_5_1
+# MIKA_BUBBLE_BOTH_CLICKS_V8_5_1_3
 ## Ship navigation address and camera inspection are independent.
 ## Touch-drag empty space to detach camera; return smoothly when flight resumes.
 ## Distant starfield, subtle events and mini-map track the correct view.
@@ -109,6 +114,8 @@ var _warp_exit_world: Vector2 = Vector2.ZERO
 var _warp_velocity: Vector2 = Vector2.ZERO
 var _warp_switched: bool = false
 var main_menu
+var _bubble_popup: Button
+var _bubble_attention_pending: bool = false
 var _gameplay_hud: Control
 var _comic_prologue
 var _story_smoke
@@ -240,6 +247,11 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# The reminder counts only in ordinary flight; other screens pause it.
+	if status_hud != null:
+		status_hud.call("set_bubble_timer_active", _bubble_flight_available())
+	_refresh_bubble_popup()
+
 	if _planet_landing_active:
 		return
 	if _warp_active:
@@ -294,6 +306,10 @@ func _physics_process(delta: float) -> void:
 		if _autopilot_active:
 			_stop_autopilot("fuel_empty")
 		velocity = Vector2.ZERO
+		# The empty tank stops translation, not the joystick's orientation.
+		if steer.length_squared() > 0.005:
+			_ship_heading = lerp_angle(_ship_heading, steer.angle() + PI * 0.5, minf(1.0, delta * 3.5))
+			ship.rotation = _ship_heading
 	# Ship world position, camera world position and visual parallax are distinct.
 	# Even mid-return, the ship continues its usual physics without interruption.
 	var previous_offset: Vector2 = _camera_offset
@@ -470,6 +486,8 @@ func _build_controls() -> void:
 	status_hud.set_crystals(INITIAL_CRYSTALS)
 	status_hud.galaxy_requested.connect(_on_galaxy_requested)
 	status_hud.main_menu_requested.connect(_on_main_menu_requested)
+	status_hud.bubble_care_requested.connect(_on_bubble_care_requested)
+	status_hud.bubble_reminder_ready.connect(_on_bubble_reminder_ready)
 
 	# Full-screen overlays are above the flight HUD and consume touch events.
 	galactic_map = GalacticMapScene.new()
@@ -483,6 +501,9 @@ func _build_controls() -> void:
 	root.add_child(main_menu)
 	main_menu.closed.connect(_on_modal_closed)
 	main_menu.crystals_earned.connect(_on_educational_crystals_earned)
+
+	_build_bubble_popup(root)
+	_v122_build_empty_fuel_card(root)
 
 	# v38: empty, localized landing-preview screen (no surface gameplay yet).
 	landing_preview = LandingPreviewScene.new()
@@ -540,9 +561,9 @@ func _layout() -> void:
 		# On a very short landscape screen, fit the UPPER rail together rather
 	# than overlap the joystick. Standard screens preserve the exact +20% growth
 	# relative to v42, with fixed 12-screen-pixel gaps in every aspect ratio.
-	var desired_content_height: float = NavigationMenuScene.TRIGGER_SIZE * goals_scale + 34.0 * hud_scale + 3.0 * lower_button_local_size * hud_scale
+	var desired_content_height: float = NavigationMenuScene.TRIGGER_SIZE * goals_scale + 34.0 * hud_scale + 4.0 * lower_button_local_size * hud_scale
 	# v84: third upper-right control below simulator fits above joystick.
-	var usable_content_height: float = joystick.position.y - safe.position.y - 12.0 - 8.0 - rail_gap * 4.0
+	var usable_content_height: float = joystick.position.y - safe.position.y - 12.0 - 8.0 - rail_gap * 5.0
 	var compact_fit: float = clampf(usable_content_height / maxf(1.0, desired_content_height), 0.10, 1.0)
 	goals_scale *= compact_fit
 	hud_scale *= compact_fit
@@ -567,18 +588,22 @@ func _layout() -> void:
 	var galaxy_button: Button = status_hud.get_node("GlobalFlight") as Button
 	var ship_menu_button: TextureButton = status_hud.get_node("MikoMainMenu") as TextureButton
 	var settings_button: Button = status_hud.get_node("SettingsBelowSimulator") as Button
+	var bubble_button: Button = status_hud.get_node("BubbleCareClock") as Button
 	var button_local_x: float = lower_button_center_local - lower_button_local_size * 0.5
 	var local_gap: float = rail_gap / hud_scale
 	var first_button_y: float = 34.0 + local_gap
 	var second_button_y: float = first_button_y + lower_button_local_size + local_gap
 	var third_button_y: float = second_button_y + lower_button_local_size + local_gap
+	var fourth_button_y: float = third_button_y + lower_button_local_size + local_gap
 	galaxy_button.scale = Vector2.ONE * lower_button_extra
 	galaxy_button.position = Vector2(button_local_x, first_button_y)
 	ship_menu_button.scale = Vector2.ONE * lower_button_extra
 	ship_menu_button.position = Vector2(button_local_x, second_button_y)
+	bubble_button.scale = Vector2.ONE * lower_button_extra
+	bubble_button.position = Vector2(button_local_x, third_button_y)
 	settings_button.scale = Vector2.ONE * lower_button_extra
-	settings_button.position = Vector2(button_local_x, third_button_y)
-	status_hud.size = Vector2(ResourceHudScene.HUD_WIDTH, third_button_y + lower_button_local_size)
+	settings_button.position = Vector2(button_local_x, fourth_button_y)
+	status_hud.size = Vector2(ResourceHudScene.HUD_WIDTH, fourth_button_y + lower_button_local_size)
 	# The seven fuel sticks and the original blue asteroid fragment stay inside
 	# their existing bar. Its size grows with the entire upper-right HUD.
 	status_hud.position = Vector2(
@@ -592,6 +617,7 @@ func _layout() -> void:
 	if is_instance_valid(_representative_dialog):
 		_representative_dialog.size = view
 	landing_preview.resize_preview(view)
+	_layout_bubble_popup(view)
 
 
 func _refresh_fuel_hud() -> void:
@@ -624,6 +650,9 @@ func _on_joystick_changed(direction: Vector2) -> void:
 
 
 func _on_galaxy_requested() -> void:
+	if is_instance_valid(_bubble_popup):
+		_bubble_popup.hide()
+
 	if _warp_active or _intro_comic_playing or _intro_space_flying:
 		return
 	if main_menu.visible:
@@ -633,7 +662,105 @@ func _on_galaxy_requested() -> void:
 	diagnostics.write("galactic_map_opened", {"current": solar_system.current_id, "destinations": 7})
 
 
+
+# The popup is a clickable care card, not a new simulator catalogue entry.
+
+const _BUBBLE_POPUP_CAPTIONS: Dictionary = {
+	"ru":"Баббл ждёт тебя", "en":"Bubble is waiting", "fr":"Bubble t'attend",
+	"de":"Bubble wartet", "es":"Bubble te espera", "pt_BR":"Bubble está esperando"
+}
+
+func _bubble_card_caption() -> String:
+	return str(_BUBBLE_POPUP_CAPTIONS.get(str(MobileLocale.language),_BUBBLE_POPUP_CAPTIONS["en"]))
+
+func _bubble_card_update_language(_locale: String) -> void:
+	if not is_instance_valid(_bubble_popup):
+		return
+	var card: Control = _bubble_popup.get_node_or_null("SameSimulatorPortraitCard") as Control
+	if card != null:
+		card.set("card_title",_bubble_card_caption())
+
+func _build_bubble_popup(root: Control) -> void:
+	# Actual card system from the simulator, with its same silhouette and glow.
+	# Unlike v8.5.0 this is NOT a plain rectangular picture button.
+	_bubble_popup = Button.new()
+	_bubble_popup.name = "BubbleCareCenterReminder"
+	_bubble_popup.text = ""
+	_bubble_popup.tooltip_text = "Bubble"
+	_bubble_popup.focus_mode = Control.FOCUS_NONE
+	_bubble_popup.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	for style_name in ["normal","hover","pressed","disabled","focus"]:
+		_bubble_popup.add_theme_stylebox_override(style_name,StyleBoxEmpty.new())
+	_bubble_popup.pressed.connect(_on_bubble_care_requested)
+	var card_script: Script = load("res://simulator_ui/scripts/approved_simulator_card.gd") as Script
+	var card: Control = card_script.new() as Control
+	card.name = "SameSimulatorPortraitCard"
+	card.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	card.set("card_title",_bubble_card_caption())
+	card.set("card_subtitle","")
+	card.set("card_description","")
+	card.set("image_fit_mode","contain")
+	card.set("image_path","res://simulator_ui/assets/approved_icons/sim_11_bubble_care.png")
+	_bubble_popup.add_child(card)
+	card.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	# v8.5.1.3: simulator card descendants may consume mouse/touch events.
+	# Put ONE invisible hit surface above them; reuse the direct-care callback.
+	var card_hit: Button = Button.new()
+	card_hit.name = "BubbleCareReminderFullCardHit"
+	card_hit.text = ""
+	card_hit.focus_mode = Control.FOCUS_NONE
+	card_hit.mouse_filter = Control.MOUSE_FILTER_STOP
+	card_hit.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	for hit_state in ["normal", "hover", "pressed", "disabled", "focus"]:
+		card_hit.add_theme_stylebox_override(hit_state, StyleBoxEmpty.new())
+	_bubble_popup.add_child(card_hit)
+	card_hit.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	card_hit.pressed.connect(_on_bubble_care_requested)
+	_bubble_popup.visible = false
+	root.add_child(_bubble_popup)
+	MobileLocale.language_changed.connect(_bubble_card_update_language)
+
+func _layout_bubble_popup(view: Vector2) -> void:
+	if not is_instance_valid(_bubble_popup):
+		return
+	var sc: float = clampf(minf(view.x/1280.0,view.y/720.0),0.44,0.92)
+	var portrait: Vector2 = Vector2(430.0,540.0)*sc
+	_bubble_popup.size = portrait
+	_bubble_popup.position = (view-portrait)*0.5
+	var card: Control = _bubble_popup.get_node_or_null("SameSimulatorPortraitCard") as Control
+	if card != null:
+		card.size = portrait
+
+func _bubble_flight_available() -> bool:
+	return (_gameplay_hud != null and _gameplay_hud.visible and not get_tree().paused
+		and not _warp_active and not _intro_comic_playing and not _intro_space_flying
+		and not _planet_landing_active and not main_menu.visible and not galactic_map.visible
+		and not status_hud.call("bubble_settings_open"))
+
+func _on_bubble_reminder_ready() -> void:
+	_bubble_attention_pending = true
+	_refresh_bubble_popup()
+
+func _refresh_bubble_popup() -> void:
+	if not is_instance_valid(_bubble_popup):
+		return
+	_bubble_popup.visible = _bubble_attention_pending and _bubble_flight_available() and _fuel_units > 0.0
+
+func _on_bubble_care_requested() -> void:
+	if not _bubble_flight_available():
+		return
+	_bubble_attention_pending = false
+	_bubble_popup.visible = false
+	main_menu.set_stats(status_hud.crystal_count, 0, 0.0)
+	main_menu.call("open_bubble_care_direct", get_viewport_rect().size)
+	if main_menu.visible:
+		status_hud.call("reset_bubble_clock")
+		get_tree().paused = true
+
 func _on_main_menu_requested() -> void:
+	if is_instance_valid(_bubble_popup):
+		_bubble_popup.hide()
+
 	if _warp_active or _intro_comic_playing or _intro_space_flying:
 		return
 	if galactic_map.visible:
@@ -1484,6 +1611,9 @@ func _on_representative_return_requested() -> void:
 
 
 func _begin_planet_landing(planet_id: String, display_name: String, with_animation: bool = true) -> void:
+	if is_instance_valid(_bubble_popup):
+		_bubble_popup.hide()
+
 	if _planet_landing_active:
 		return
 	var hub: Control = _ensure_planet_hub()
@@ -1526,6 +1656,9 @@ func _on_planet_hub_flight_requested() -> void:
 
 
 func _on_planet_hub_simulator_requested() -> void:
+	if is_instance_valid(_bubble_popup):
+		_bubble_popup.hide()
+
 	if not _planet_landing_active:
 		return
 	_planet_hub.visible = false
@@ -1572,3 +1705,15 @@ func _v104_close_crossroads_dialog() -> void:
 	joystick.clear_input()
 	current_input = Vector2.ZERO
 	_update_landing_offer()
+
+
+# v122: the approved Bubble-style simulator card is clickable but never modal.
+func _v122_build_empty_fuel_card(root: Control) -> void:
+	var popup: Button = EmptyFuelSimulatorCardScript.new() as Button
+	if popup == null:
+		push_error("Fuel-empty simulator reminder: could not create the existing card")
+		return
+	popup.name = "FuelEmptySimulatorCenterReminder"
+	root.add_child(popup)
+	popup.call("configure", self)
+	popup.connect("simulator_requested", Callable(self, "_on_main_menu_requested"))

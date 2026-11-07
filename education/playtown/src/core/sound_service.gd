@@ -4,6 +4,13 @@ var _master_was_muted := false
 var _last_praise := -1
 var _last_retry := -1
 
+# MIKA_PRAISE_PAUSED_SIMULATOR_V1
+func _ready() -> void:
+	# Miko keeps the simulator open while SceneTree.paused is true.
+	# Never freeze educational feedback; do not rely on returning to flight.
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	print("[MIKA AUDIO FIX] Praise and retry audio available while simulator is paused")
+
 func play_praise(position: Vector2, delay := 0.65) -> void:
 	_play_feedback("praise", 5, position, delay)
 
@@ -27,7 +34,20 @@ func _play_feedback(kind: String, count: int, position: Vector2, delay: float) -
 		return
 	if delay > 0.0:
 		await get_tree().create_timer(delay).timeout
-	_play_on_bus(load(path) as AudioStream, position, 0.0, "VOICE")
+	# UI feedback must be independent of the flight camera and its attenuation.
+	_play_feedback_ui(load(path) as AudioStream)
+
+func _play_feedback_ui(stream: AudioStream) -> void:
+	if stream == null:
+		return
+	var player := AudioStreamPlayer.new()
+	player.name = "MikaPauseSafeLocalizedFeedback"
+	player.process_mode = Node.PROCESS_MODE_ALWAYS
+	player.stream = stream
+	player.bus = "VOICE"
+	add_child(player)
+	player.finished.connect(player.queue_free)
+	player.play()
 
 func play_2d(stream: AudioStream, position: Vector2, volume_db := -6) -> void:
 	_play_on_bus(stream, position, volume_db, "SFX")
@@ -37,6 +57,7 @@ func _play_on_bus(stream: AudioStream, position: Vector2, volume_db: float, bus:
 	if stream == null:
 		return
 	var player := AudioStreamPlayer2D.new()
+	player.process_mode = Node.PROCESS_MODE_ALWAYS
 	player.stream = stream
 	player.bus = bus
 	player.volume_db = volume_db

@@ -1,0 +1,15 @@
+{
+  "patch": "write_number_pick_style_v2_1",
+  "files": {
+    "education/playtown/scenes/features/counting/count_trace_game.tscn": {
+      "existed": true,
+      "before": "0f37c5dcd5814692f43749267ecd8070469ebbe9f26754919b15e0a416f83ada",
+      "after": "877082d73e8d982111891e75c33c4d634fecd0b4270c0447009b433b1ed45df6"
+    },
+    "education/playtown/src/features/counting/mika_count_trace_native_v2_1_trace_style.gd": {
+      "existed": false,
+      "before": null,
+      "after": "d405a430512847a8f78ee22a5128716e167f0fc87c6053c05f888fe70e739e60"
+    }
+  }
+}

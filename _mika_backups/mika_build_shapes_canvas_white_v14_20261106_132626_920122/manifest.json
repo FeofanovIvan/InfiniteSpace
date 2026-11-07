@@ -1,0 +1,15 @@
+{
+  "patch": "build_shapes_v1_4",
+  "files": {
+    "education/playtown/scenes/features/tracing/shape_build_game.tscn": {
+      "existed": true,
+      "before": "a072ace234faf7193803279cd8fbc3e8855052326d093008fa8659c94034eb02",
+      "after": "e06631a4aaa5e76ececa2c565b949e19192cc99505bb6f329322ead9b506f29f"
+    },
+    "education/playtown/src/features/tracing/mika_shape_build_native_v1_4.gd": {
+      "existed": false,
+      "before": null,
+      "after": "c043acdbd119a48655db1cc32f5eee6c909abda0f61c0b431a9eaa41a120218e"
+    }
+  }
+}

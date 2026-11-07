@@ -1,0 +1,25 @@
+{
+  "patch": "trace_letters_native_v1.1",
+  "files": {
+    "education/playtown/scenes/features/tracing/letter_trace_game.tscn": {
+      "existed": true,
+      "before_sha256": "d07256a3e092007997f956404a2966e82678826ca1def6290f31ac7e015e08e7",
+      "after_sha256": "b8bd74dba236efcb78b8dc20e3ce4a22a4de699488a6e1dfeeb3dece02441d1c"
+    },
+    "education/playtown/src/core/game_state.gd": {
+      "existed": true,
+      "before_sha256": "587e497e10e6ed4c96a42adf7d05566ef9966d8d69066b242e252cc81d5e279a",
+      "after_sha256": "ddafbcd23b5ca47c91da627c79f7f7b449e2eab092e7dba320f8083e2d750432"
+    },
+    "education/playtown/src/features/tracing/mika_letter_trace_v1_1.gd": {
+      "existed": false,
+      "before_sha256": null,
+      "after_sha256": "e8bcb89aa9a80ad1c4463458e3841b69b606ec82f64dd9c54b0e9f42219acb15"
+    },
+    "simulator_ui/scripts/mika_minigame_ui_kit_v11.gd": {
+      "existed": false,
+      "before_sha256": null,
+      "after_sha256": "6faaef46905c774cb1460755993199f44ec5eb21a71bfad25e05db74d7ef6321"
+    }
+  }
+}

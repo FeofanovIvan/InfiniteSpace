@@ -1,0 +1,25 @@
+{
+  "version": "2.0",
+  "files": {
+    "education/playtown/scenes/features/school/school_game.tscn": {
+      "existed": true,
+      "sha_before": "dcef5b4532ae290e50f7c3b45ad587eaf62eaee1d793ec769b0ba22c0b2476b0",
+      "sha_after": "684169a2d8ff999d357664efb2cb4a1bec9f56dad41ce75562e4d9a0fd050855"
+    },
+    "education/playtown/src/features/school/mika_build_word_control_v2.gd": {
+      "existed": false,
+      "sha_before": null,
+      "sha_after": "6825671d8f79aa8a9fa94a35ec856beb4b1cd36fc534d4e1e7be56b8d988dbae"
+    },
+    "education/playtown/src/features/school/mika_word_tile_control_v2.gd": {
+      "existed": false,
+      "sha_before": null,
+      "sha_after": "76118a98e9cdf76929c4ad294f880d32ecfa78db2e39efa7cc706cd037d8fa80"
+    },
+    "education/playtown/src/features/school/mika_word_slot_control_v2.gd": {
+      "existed": false,
+      "sha_before": null,
+      "sha_after": "f603790fee1c3f978c6844fd0ccad59ef1e3016efee604ece036d72630f5c5f3"
+    }
+  }
+}

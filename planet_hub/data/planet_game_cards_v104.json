@@ -582,7 +582,8 @@
       },
       "source_status": "adapt",
       "source_scene": "res://education/playtown/scenes/features/pet/pet_home_miko.tscn",
-      "launch_enabled": false
+      "launch_enabled": false,
+      "image_path": "res://planet_hub/cards/game_icons/common__pet_walk.png"
     }
   },
   "planet_cards": {

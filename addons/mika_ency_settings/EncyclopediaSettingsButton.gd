@@ -41,6 +41,11 @@ func _ready() -> void:
 	set_process(true)
 	call_deferred("_refresh")
 
+# MIKA_ENC_V572_ADAPTER_REFRESH
+func refresh_now() -> void:
+	_elapsed = 0.0
+	_refresh()
+
 func _exit_tree() -> void:
 	_restore_sources()
 

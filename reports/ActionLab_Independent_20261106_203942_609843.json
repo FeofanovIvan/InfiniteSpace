@@ -1,0 +1,41 @@
+{
+  "version": "action-lab-neon-independent-1.0",
+  "old_script": "res://simulator_ui/action_cards/scripts/action_lab_v127.gd",
+  "new_script": "res://simulator_ui/action_cards/independent/action_lab_neon.gd",
+  "files_added": [
+    "simulator_ui/action_cards/independent/action_lab_neon.gd"
+  ],
+  "scene_before_sha256": "e368863ebd402d222b2832af53598f943506426fc97362718b5a622b9ecda5a2",
+  "scene_after_sha256": "0903ad16242b9480dc15513667d1963ed6714726149555e789225ebc5912d1c8",
+  "status": "INSTALLED_SCENE_SMOKE_PASS",
+  "before": {
+    "editor": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_Independent_20261106_203942_609843_BEFORE_editor.log"
+    },
+    "runtime": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_Independent_20261106_203942_609843_BEFORE_runtime.log"
+    }
+  },
+  "backup": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_ActionLab_Independent_20261106_203942_609843",
+  "after": {
+    "editor": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_Independent_20261106_203942_609843_AFTER_editor.log"
+    },
+    "runtime": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_Independent_20261106_203942_609843_AFTER_runtime.log"
+    }
+  },
+  "smoke": {
+    "code": 0,
+    "errors": [],
+    "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_Independent_20261106_203942_609843_smoke.log"
+  }
+}

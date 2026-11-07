@@ -6,7 +6,8 @@ extends Control
 ## This wrapper adds only topic selection + the living planet on the left.
 signal return_requested
 
-const LIBRARY_PATH: String = "res://planet_hub/data/crossroads_encyclopedia_v96_6_languages.json"
+const LIBRARY_PATH: String = "res://planet_hub/data/crossroads_v120_encyclopedia.json"
+# MIKA_CROSSROADS_V120_CONTENT_ONLY_EXISTING_UI
 const ORIGINAL_DIALOGUE: PackedScene = preload("res://planet_hub/scenes/representative_dialog.tscn")
 const CROSSROADS_ENGINE: Script = preload("res://planet_hub/scripts/crossroads_engine_v104_1.gd")
 const SKY_SCRIPT: Script = preload("res://simulator_ui/scripts/real_space_background.gd")
@@ -62,6 +63,8 @@ func _ready() -> void:
 	# The original v96.1 tablet delegates all replies to a RefCounted engine.
 	# Inject encyclopedia content: do NOT replace its design or controls.
 	_tablet.set("_v96_engine", _engine)
+	# Data engine only. Existing phrase blocks, their selected colors and speakers are untouched.
+	_tablet.connect("message_sent", Callable(self, "_v120_defer_sync"))
 	_sky = SKY_SCRIPT.new() as Control
 	_sky.name = "OriginalProceduralCosmos"
 	_sky.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -312,6 +315,20 @@ func _refresh_topics() -> void:
 		b.custom_minimum_size.y = 54.0
 		b.pressed.connect(_on_topic_button_pressed.bind(tid))
 		_topic_list.add_child(b)
+	# v120: new content entries inside the SAME existing dropdown, not a new UI.
+	var resume_text: String = str(_engine.call("get_resume_label"))
+	if not resume_text.is_empty():
+		var resume: Button = _topic_button(resume_text, false, 16)
+		resume.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		resume.custom_minimum_size.y = 54.0
+		resume.pressed.connect(_v120_resume_route)
+		_topic_list.add_child(resume)
+	for route_id in _engine.call("get_route_ids_for_group", _group_id):
+		var route: Button = _topic_button(str(_engine.call("get_route_label", str(route_id))), false, 16)
+		route.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		route.custom_minimum_size.y = 54.0
+		route.pressed.connect(_v120_start_route.bind(str(route_id)))
+		_topic_list.add_child(route)
 
 func _on_topic_button_pressed(topic_id: String) -> void:
 	if _suppress_topic_click:
@@ -423,3 +440,43 @@ func open_dialog() -> void:
 func _on_original_back_pressed() -> void:
 	visible = false
 	return_requested.emit()
+
+
+# v120: only route commands / topic selection synchronization; no drawing or layout.
+func _v120_defer_sync(_typed: String) -> void:
+	call_deferred("_v120_sync_topic")
+
+func _v120_sync_topic() -> void:
+	if _engine == null or _topic_list == null:
+		return
+	var new_topic: String = str(_engine.call("get_topic_id"))
+	if new_topic.is_empty() or new_topic == _topic_id:
+		return
+	_topic_id = new_topic
+	var new_group: String = str(_engine.call("get_group_id"))
+	if not new_group.is_empty():
+		_group_id = new_group
+	_refresh_groups()
+	_refresh_topics()
+
+func _v120_display_route() -> void:
+	_topic_id = str(_engine.call("get_topic_id"))
+	_group_id = str(_engine.call("get_group_id"))
+	_refresh_groups()
+	_refresh_topics()
+	_set_topic_list_open(false)
+	# Reset only existing chat content and hints; original controls stay in place.
+	if _tablet != null:
+		_tablet.call("configure_for_world", "crossroads_core")
+
+func _v120_start_route(route_id: String) -> void:
+	if _suppress_topic_click:
+		return
+	if bool(_engine.call("start_route", route_id)):
+		_v120_display_route()
+
+func _v120_resume_route() -> void:
+	if _suppress_topic_click:
+		return
+	if bool(_engine.call("resume_route")):
+		_v120_display_route()

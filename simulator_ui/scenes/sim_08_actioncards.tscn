@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://simulator_ui/action_cards/scripts/action_cards.gd" id="1_action"]
+[ext_resource type="Script" path="res://simulator_ui/action_cards/independent/action_lab_stable_frame_v4.gd" id="1_action"]
 
 [node name="Sim08_ActionCards" type="Control"]
 layout_mode = 3

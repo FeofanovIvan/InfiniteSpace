@@ -1,0 +1,30 @@
+{
+  "version": "MIKA Bubble Cards v121.1",
+  "project": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot",
+  "timestamp": "20261105_213229",
+  "changed": [
+    "planet_hub/data/planet_game_cards_v104.json",
+    "planet_hub/cards/game_icons/common__pet_walk.png",
+    "simulator_ui/assets/approved_icons/sim_11_bubble_care.png"
+  ],
+  "godot": "PREEXISTING_ERRORS_UNCHANGED",
+  "github": "SKIPPED: проект имеет существующие ошибки Godot; нужна отдельная диагностика",
+  "backup": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_Bubble_Cards_v121_1_20261105_213229",
+  "report": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/Bubble_Cards_v121_1_20261105_213229.json",
+  "status": "INSTALLED",
+  "godot_baseline_log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/Bubble_Cards_v121_1_20261105_213229_Godot_baseline.log",
+  "godot_after_log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/Bubble_Cards_v121_1_20261105_213229_Godot.log",
+  "assigned_uninhabited_planets": 24,
+  "godot_baseline_errors": [
+    "SCRIPT ERROR: Parse Error: Could not preload resource script \"res://scripts/MikoMainMenu.gd\".",
+    "SCRIPT ERROR: Parse Error: Could not resolve script \"res://scripts/MikoMainMenu.gd\".",
+    "ERROR: Failed to load script \"res://scripts/Main.gd\" with error \"Parse error\"."
+  ],
+  "godot_baseline_exit_code": 0,
+  "godot_after_errors": [
+    "SCRIPT ERROR: Parse Error: Could not preload resource script \"res://scripts/MikoMainMenu.gd\".",
+    "SCRIPT ERROR: Parse Error: Could not resolve script \"res://scripts/MikoMainMenu.gd\".",
+    "ERROR: Failed to load script \"res://scripts/Main.gd\" with error \"Parse error\"."
+  ],
+  "godot_after_exit_code": 0
+}

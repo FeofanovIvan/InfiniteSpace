@@ -1,598 +1,794 @@
 extends Control
-## MIKA / InfiniteSpace integrated encyclopedia 5.2.
-## Redesign pass: native-style top bar + vertical scrolling section list.
+## MIKA Encyclopedia v5.6 — viewport-adaptive layout, transparent title and real native images.
+## Reuses the live space background and simulator Back glyph.
+## No fixed content max width; content follows viewport and MobileLocale safe rect. JSON untouched.
 
 signal closed
 
-const BASE: String = "res://addons/mika_ency_reader/"
-const CATALOG_PATH: String = BASE + "data/catalog.json"
-const LOCALES_PATH: String = BASE + "data/article_localizations.json"
-const UI_PATH: String = BASE + "data/ui_localizations.json"
-const SECTION_IDS: Array[String] = ["planets", "stations", "races", "characters", "science", "terms"]
-const ACCENTS: Dictionary = {
-	"planets": Color("#74dcff"),
-	"stations": Color("#b5a3ff"),
-	"races": Color("#74ecb6"),
-	"characters": Color("#ffc987"),
-	"science": Color("#ff98bc"),
-	"terms": Color("#ffe28a")
-}
-const SECTION_IMAGE_PATHS: Dictionary = {
-	"planets": BASE + "assets/worlds/mw_p01.jpg",
-	"stations": BASE + "assets/stations/station_02.jpg",
-	"races": BASE + "assets/races/human_group.jpg",
-	"characters": BASE + "assets/races/mika.png",
-	"science": BASE + "assets/technology/crystal_variants.jpg",
-	"terms": BASE + "assets/technology/translator_tablet.jpg"
-}
-const BACK_NORMAL: String = BASE + "assets/ui/mika_back_normal.png"
-const BACK_HOVER: String = BASE + "assets/ui/mika_back_hover.png"
-const BACK_PRESSED: String = BASE + "assets/ui/mika_back_pressed.png"
-const TEXT_PRIMARY: Color = Color("#f5fbff")
-const TEXT_MUTED: Color = Color("#9fbcd6")
-const SURFACE: Color = Color(0.04, 0.12, 0.24, 0.88)
-const SURFACE_LIGHT: Color = Color(0.07, 0.18, 0.33, 0.92)
-const SURFACE_DEEP: Color = Color(0.03, 0.10, 0.20, 0.94)
-const EDGE: Color = Color("#2d6687")
+const ROOT: String = "res://addons/mika_ency_reader/"
+const CATALOG_FILE: String = ROOT + "data/catalog.json"
+const UI_FILE: String = ROOT + "data/ui_localizations.json"
+const TRANSLATIONS_FILE: String = ROOT + "data/article_localizations.json"
+const LIVE_SPACE = preload("res://simulator_ui/scripts/real_space_background.gd")
+const BACK_GLYPH = preload("res://simulator_ui/back_arrow_glyph.gd")
+const SEARCH_GLYPH = preload("res://addons/mika_ency_reader/search_glyph.gd")
 
-const FIELD_LABELS: Dictionary = {
-	"ru": {"nature": "Природа", "world_type": "Тип мира", "system": "Галактика", "race": "Жители", "building": "Сооружения", "science_fact": "Интересный факт", "appearance": "Как выглядит", "interior": "Внутри", "form": "Форма жизни", "communication": "Общение", "movement": "Движение", "environment": "Среда обитания", "science_link": "Наука и фантастика", "role": "Кто это", "work": "Чем занимается", "knowledge": "Что знает", "location": "Где живёт", "fun_fact": "Знаешь ли ты?", "where_in_game": "В игре", "principle": "Как работает", "details": "Подробнее", "status": "О чём это", "more": "Открой следующую страницу", "empty": "Изображение появится позже", "back_to_settings": "В настройки", "choose": "Выбери раздел", "all": "Все статьи", "section": "Раздел", "page": "Страница", "previous": "Назад", "next": "Далее"},
-	"en": {"nature": "Nature", "world_type": "World type", "system": "Galaxy", "race": "Inhabitants", "building": "Buildings", "science_fact": "Fun fact", "appearance": "Appearance", "interior": "Inside", "form": "Life form", "communication": "Communication", "movement": "Movement", "environment": "Habitat", "science_link": "Science & fiction", "role": "Who is this?", "work": "What they do", "knowledge": "What they know", "location": "Location", "fun_fact": "Did you know?", "where_in_game": "In the game", "principle": "How it works", "details": "More details", "status": "Type", "more": "Discover the next page", "empty": "Illustration coming later", "back_to_settings": "Settings", "choose": "Choose a section", "all": "All articles", "section": "Section", "page": "Page", "previous": "Previous", "next": "Next"},
-	"fr": {"nature": "Nature", "world_type": "Type de monde", "system": "Galaxie", "race": "Habitants", "building": "Bâtiments", "science_fact": "Le savais-tu ?", "appearance": "Apparence", "interior": "À l'intérieur", "form": "Forme de vie", "communication": "Communication", "movement": "Mouvement", "environment": "Habitat", "science_link": "Science et fiction", "role": "Qui est-ce ?", "work": "Activité", "knowledge": "Savoir", "location": "Lieu", "fun_fact": "Le savais-tu ?", "where_in_game": "Dans le jeu", "principle": "Fonctionnement", "details": "En détail", "status": "Type", "more": "Découvre la suite", "empty": "Image à venir", "back_to_settings": "Paramètres", "choose": "Choisis une rubrique", "all": "Tous les articles", "section": "Rubrique", "page": "Page", "previous": "Précédent", "next": "Suivant"},
-	"de": {"nature": "Natur", "world_type": "Welttyp", "system": "Galaxie", "race": "Bewohner", "building": "Bauwerke", "science_fact": "Schon gewusst?", "appearance": "Aussehen", "interior": "Im Inneren", "form": "Lebensform", "communication": "Kommunikation", "movement": "Bewegung", "environment": "Lebensraum", "science_link": "Wissenschaft und Fiktion", "role": "Wer ist das?", "work": "Aufgabe", "knowledge": "Wissen", "location": "Ort", "fun_fact": "Schon gewusst?", "where_in_game": "Im Spiel", "principle": "So funktioniert es", "details": "Mehr dazu", "status": "Typ", "more": "Weiter entdecken", "empty": "Bild folgt", "back_to_settings": "Einstellungen", "choose": "Wähle einen Bereich", "all": "Alle Artikel", "section": "Bereich", "page": "Seite", "previous": "Zurück", "next": "Weiter"},
-	"es": {"nature": "Naturaleza", "world_type": "Tipo de mundo", "system": "Galaxia", "race": "Habitantes", "building": "Edificios", "science_fact": "¿Sabías que...?", "appearance": "Aspecto", "interior": "Interior", "form": "Forma de vida", "communication": "Comunicación", "movement": "Movimiento", "environment": "Hábitat", "science_link": "Ciencia y ficción", "role": "¿Quién es?", "work": "Qué hace", "knowledge": "Qué sabe", "location": "Lugar", "fun_fact": "¿Sabías que...?", "where_in_game": "En el juego", "principle": "Cómo funciona", "details": "Detalles", "status": "Tipo", "more": "Descubre más", "empty": "Imagen próximamente", "back_to_settings": "Ajustes", "choose": "Elige una sección", "all": "Todos los artículos", "section": "Sección", "page": "Página", "previous": "Anterior", "next": "Siguiente"},
-	"pt_BR": {"nature": "Natureza", "world_type": "Tipo de mundo", "system": "Galáxia", "race": "Habitantes", "building": "Construções", "science_fact": "Você sabia?", "appearance": "Aparência", "interior": "Interior", "form": "Forma de vida", "communication": "Comunicação", "movement": "Movimento", "environment": "Habitat", "science_link": "Ciência e ficção", "role": "Quem é?", "work": "O que faz", "knowledge": "O que sabe", "location": "Local", "fun_fact": "Você sabia?", "where_in_game": "No jogo", "principle": "Como funciona", "details": "Detalhes", "status": "Tipo", "more": "Descubra mais", "empty": "Imagem em breve", "back_to_settings": "Configurações", "choose": "Escolha uma seção", "all": "Todos os artigos", "section": "Seção", "page": "Página", "previous": "Anterior", "next": "Próximo"}
+const SECTIONS: Array[String] = ["planets", "stations", "races", "characters", "science", "terms"]
+const SECTION_ICONS: Dictionary = {
+	"planets": "res://assets/destinations/earth.png",
+	"stations": "res://assets/story/callisto_shipyard.png",
+	"races": "res://planet_hub/characters/12_phase_liquid.png",
+	"characters": "res://planet_hub/characters/05_human_amara_cole.png",
+	"science": "res://planet_hub/assets/v68_neon/crystal_reference.png",
+	"terms": "res://planet_hub/assets/simulator_helmet.png"
+}
+const MW_ICONS: Dictionary = {
+	"mw_p01": "earth", "mw_p02": "mars", "mw_p03": "jupiter", "mw_p04": "saturn",
+	"mw_p05": "uranus", "mw_p06": "neptune", "mw_p07": "venus", "mw_p08": "mercury"
+}
+# Source illustrations of all 6 unique stations in the main game.
+const STATION_ART: Dictionary = {
+	"station_01": "res://assets/story/callisto_shipyard.png",
+	"station_02": "res://assets/story/tarantula_lab_ship.png",
+	"station_03": "res://assets/story/living_archive_lotus.png",
+	"station_04": "res://assets/story/titan_skull_ngc6822.png",
+	"station_05": "res://assets/story/inverted_pyramid_m31.png",
+	"station_06": "res://assets/story/last_gate_m33.png"
+}
+const NAVY: Color = Color("#061c38")
+const NAVY_HOVER: Color = Color("#103e63")
+const CYAN: Color = Color("#26dfff")
+const BRIGHT_CYAN: Color = Color("#a6eeff")
+const TEXT: Color = Color("#f3fbff")
+const MUTED: Color = Color("#9ec2db")
+const LABELS: Dictionary = {
+	"ru": {"system": "Система", "race": "Жители", "world_type": "Тип мира", "nature": "Природа", "building": "Сооружение", "science_fact": "Интересный факт", "station_type": "Тип станции", "location": "Расположение", "appearance": "Снаружи", "interior": "Внутри", "form": "Форма жизни", "anatomy": "Строение", "perception": "Восприятие", "movement": "Движение", "communication": "Общение", "environment": "Среда обитания", "science_link": "Наука и фантастика", "role": "Кто это", "work": "Чем занимается", "knowledge": "Что знает", "where_in_game": "Где в игре", "fun_fact": "Интересный факт", "status": "Тип", "principle": "Как работает", "details": "Подробнее", "related": "Связанные темы"},
+	"en": {"system": "System", "race": "Inhabitants", "world_type": "World type", "nature": "Nature", "building": "Buildings", "science_fact": "Fun fact", "station_type": "Station type", "location": "Location", "appearance": "Outside", "interior": "Inside", "form": "Life form", "anatomy": "Anatomy", "perception": "Perception", "movement": "Movement", "communication": "Communication", "environment": "Environment", "science_link": "Science and fiction", "role": "Who is this?", "work": "Activity", "knowledge": "Knowledge", "where_in_game": "In the game", "fun_fact": "Fun fact", "status": "Type", "principle": "How it works", "details": "More details", "related": "Related topics"},
+	"fr": {"system": "Système", "race": "Habitants", "world_type": "Type de monde", "nature": "Nature", "building": "Bâtiments", "science_fact": "Le savais-tu ?", "station_type": "Type de station", "location": "Lieu", "appearance": "Extérieur", "interior": "Intérieur", "form": "Forme de vie", "anatomy": "Anatomie", "perception": "Perception", "movement": "Mouvement", "communication": "Communication", "environment": "Habitat", "science_link": "Science et fiction", "role": "Qui est-ce ?", "work": "Activité", "knowledge": "Savoir", "where_in_game": "Dans le jeu", "fun_fact": "Le savais-tu ?", "status": "Type", "principle": "Fonctionnement", "details": "Détails", "related": "Liens"},
+	"de": {"system": "System", "race": "Bewohner", "world_type": "Welttyp", "nature": "Natur", "building": "Bauwerke", "science_fact": "Schon gewusst?", "station_type": "Stationstyp", "location": "Ort", "appearance": "Außen", "interior": "Innen", "form": "Lebensform", "anatomy": "Anatomie", "perception": "Wahrnehmung", "movement": "Bewegung", "communication": "Kommunikation", "environment": "Umgebung", "science_link": "Wissenschaft und Fiktion", "role": "Wer ist das?", "work": "Tätigkeit", "knowledge": "Wissen", "where_in_game": "Im Spiel", "fun_fact": "Schon gewusst?", "status": "Typ", "principle": "Funktionsweise", "details": "Details", "related": "Verwandt"},
+	"es": {"system": "Sistema", "race": "Habitantes", "world_type": "Tipo de mundo", "nature": "Naturaleza", "building": "Construcciones", "science_fact": "Dato curioso", "station_type": "Tipo de estación", "location": "Lugar", "appearance": "Exterior", "interior": "Interior", "form": "Forma de vida", "anatomy": "Anatomía", "perception": "Percepción", "movement": "Movimiento", "communication": "Comunicación", "environment": "Entorno", "science_link": "Ciencia y ficción", "role": "¿Quién es?", "work": "Actividad", "knowledge": "Conocimientos", "where_in_game": "En el juego", "fun_fact": "Dato curioso", "status": "Tipo", "principle": "Funcionamiento", "details": "Detalles", "related": "Relacionado"},
+	"pt_BR": {"system": "Sistema", "race": "Habitantes", "world_type": "Tipo de mundo", "nature": "Natureza", "building": "Construções", "science_fact": "Curiosidade", "station_type": "Tipo de estação", "location": "Local", "appearance": "Exterior", "interior": "Interior", "form": "Forma de vida", "anatomy": "Anatomia", "perception": "Percepção", "movement": "Movimento", "communication": "Comunicação", "environment": "Ambiente", "science_link": "Ciência e ficção", "role": "Quem é?", "work": "Atividade", "knowledge": "Conhecimentos", "where_in_game": "No jogo", "fun_fact": "Curiosidade", "status": "Tipo", "principle": "Como funciona", "details": "Detalhes", "related": "Relacionado"}
+}
+
+const FIELDS: Dictionary = {
+	"planets": ["system", "world_type", "nature", "race", "building", "science_fact"],
+	"stations": ["station_type", "location", "race", "appearance", "interior", "science_fact"],
+	"races": ["system", "form", "anatomy", "perception", "movement", "communication", "environment", "science_link"],
+	"characters": ["location", "role", "work", "knowledge"],
+	"science": ["status", "where_in_game", "fun_fact"],
+	"terms": ["status", "principle", "where_in_game", "details", "fun_fact", "related"]
 }
 
 var _catalog: Dictionary = {}
-var _locale_texts: Dictionary = {}
-var _localized_articles: Dictionary = {}
+var _ui_data: Dictionary = {}
+var _article_languages: Dictionary = {}
 var _locale: String = "ru"
 var _mode: String = "home"
 var _section: String = "planets"
-var _article_idx: int = 0
-var _search_open: bool = false
-var _search_query: String = ""
+var _article_id: String = ""
+var _query: String = ""
+var _search_visible: bool = false
 
-var _shell: VBoxContainer
-var _header_title: Label
-var _back_button: Control
+var _main_margin: MarginContainer
+var _header: HBoxContainer
+var _title: Label
+var _subtitle: Label
 var _search_button: Button
-var _body_scroll: ScrollContainer
-var _body: VBoxContainer
-var _last_compact: bool = false
+var _search_input: LineEdit
+var _scroll: ScrollContainer
+var _cards: VBoxContainer
+var _last_compact_layout: bool = false
+
+# Gesture state: a drag scrolls; a short release opens a card, never both.
+var _drag_target: String = ""
+var _drag_origin: Vector2 = Vector2.ZERO
+var _drag_distance: float = 0.0
+var _dragged: bool = false
+var _touch_id: int = -1
+var _pointer_type: String = ""
+var _ignore_mouse_until: int = 0
+var _last_open_ms: int = -1000
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	mouse_filter = Control.MOUSE_FILTER_STOP
-	_catalog = _json(CATALOG_PATH)
-	_locale_texts = _json(UI_PATH).get("translations", {})
-	_localized_articles = _json(LOCALES_PATH).get("articles", {})
+	_catalog = _read_json(CATALOG_FILE)
+	_ui_data = _read_json(UI_FILE).get("translations", {})
+	_article_languages = _read_json(TRANSLATIONS_FILE).get("articles", {})
 	_locale = _detect_locale()
-	_build_shell()
-	_last_compact = _compact()
-	_render()
-	resized.connect(_on_size_changed)
+	_build()
+	_last_compact_layout = _is_compact()
+	_show_page(true)
+	resized.connect(_on_viewport_resized)
+	if has_node("/root/MobileLocale"):
+		var mobile: Node = get_node("/root/MobileLocale")
+		if mobile.has_signal("language_changed"):
+			mobile.language_changed.connect(set_locale)
+	call_deferred("_layout")
 
 func set_locale(code: String) -> void:
-	var next: String = _normalize_locale(code)
-	if next.is_empty():
-		next = "ru"
-	if _locale != next:
-		_locale = next
-		_render()
+	var normalized: String = _normalize_locale(code)
+	if normalized.is_empty():
+		normalized = "ru"
+	if normalized != _locale:
+		_locale = normalized
+		_show_page(false)
 
 func _normalize_locale(code: String) -> String:
-	var value: String = code.strip_edges().to_lower().replace("-", "_")
-	if value.begins_with("pt"):
+	var val: String = code.to_lower().strip_edges().replace("-", "_")
+	if val.begins_with("pt"):
 		return "pt_BR"
 	for lang in ["ru", "en", "fr", "de", "es"]:
-		if value.begins_with(lang):
+		if val.begins_with(lang):
 			return lang
 	return ""
 
 func _detect_locale() -> String:
-	var cfg: ConfigFile = ConfigFile.new()
-	if cfg.load("user://mika_discovery.cfg") == OK:
-		var saved: String = _normalize_locale(str(cfg.get_value("settings", "language", "")))
-		if not saved.is_empty():
-			return saved
-	var server: String = _normalize_locale(TranslationServer.get_locale())
-	return server if not server.is_empty() else "ru"
+	if has_node("/root/MobileLocale"):
+		var mobile: Node = get_node("/root/MobileLocale")
+		var lang: String = _normalize_locale(str(mobile.get("language")))
+		if not lang.is_empty():
+			return lang
+	var fallback: String = _normalize_locale(TranslationServer.get_locale())
+	return fallback if not fallback.is_empty() else "ru"
 
-func _json(path: String) -> Dictionary:
+func _read_json(path: String) -> Dictionary:
 	if not FileAccess.file_exists(path):
-		push_error("MIKA Encyclopedia missing resource: " + path)
+		push_error("MIKA Encyclopedia: missing " + path)
 		return {}
-	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
-	if parsed is Dictionary:
-		return parsed
-	push_error("MIKA Encyclopedia invalid JSON: " + path)
+	var result: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
+	if result is Dictionary:
+		return result
+	push_error("MIKA Encyclopedia: invalid JSON " + path)
 	return {}
 
 func _ui(key: String) -> String:
-	var t: Dictionary = _locale_texts.get(_locale, _locale_texts.get("ru", {}))
-	var fallback: Dictionary = _locale_texts.get("ru", {})
-	return str(t.get(key, fallback.get(key, key)))
+	var local: Dictionary = _ui_data.get(_locale, _ui_data.get("ru", {}))
+	var fallback: Dictionary = _ui_data.get("ru", {})
+	return str(local.get(key, fallback.get(key, key)))
 
-func _word(key: String) -> String:
-	return str(FIELD_LABELS.get(_locale, FIELD_LABELS["ru"]).get(key, key))
+func _label_name(key: String) -> String:
+	return str(LABELS.get(_locale, LABELS["ru"]).get(key, key))
 
-func _section_name(section: String) -> String:
+func _section_title(section: String) -> String:
 	return _ui("category_" + section)
 
 func _entries(section: String) -> Array:
 	return _catalog.get("sections", {}).get(section, [])
 
-func _entry_text(section: String, data: Dictionary, key: String) -> String:
-	var identifier: String = str(data.get("id", ""))
+func _text_of(section: String, item: Dictionary, field: String) -> String:
 	if _locale != "ru":
-		var localized: Dictionary = _localized_articles.get(section + "/" + identifier, {}).get(_locale, {})
-		var translated: String = str(localized.get(key, "")).strip_edges()
+		var identifier: String = section + "/" + str(item.get("id", ""))
+		var localized: Dictionary = _article_languages.get(identifier, {}).get(_locale, {})
+		var translated: String = str(localized.get(field, "")).strip_edges()
 		if not translated.is_empty():
 			return translated
-	return str(data.get(key, "")).strip_edges()
+	return str(item.get(field, "")).strip_edges()
 
-func _entry_title(section: String, data: Dictionary) -> String:
-	return _entry_text(section, data, "title")
+func _texture_if_exists(path: String) -> Texture2D:
+	if not path.is_empty() and ResourceLoader.exists(path):
+		return load(path) as Texture2D
+	return null
 
-func _resolve_asset_path(path: String) -> String:
-	if path.begins_with("res://assets/"):
-		return BASE + path.trim_prefix("res://assets/")
-	return path
+func _planet_texture(identifier: String) -> Texture2D:
+	# Every world gets its own source image; no shared Earth fallback.
+	if MW_ICONS.has(identifier):
+		return _texture_if_exists("res://assets/destinations/" + str(MW_ICONS[identifier]) + ".png")
+	var asset: Texture2D = _texture_if_exists("res://assets/atlas/planets/" + identifier + ".png")
+	if asset != null:
+		return asset
+	return _texture_if_exists("res://assets/atlas/previews/ngc6822/" + identifier + ".png")
 
-func _load_image(path: String) -> Texture2D:
-	var resolved: String = _resolve_asset_path(path)
-	if resolved.is_empty() or not ResourceLoader.exists(resolved):
-		return null
-	return load(resolved) as Texture2D
+func _article_texture(section: String, item: Dictionary) -> Texture2D:
+	if section == "planets":
+		return _planet_texture(str(item.get("id", "")))
+	if section == "stations":
+		var station_texture: Texture2D = _texture_if_exists(str(STATION_ART.get(str(item.get("id", "")), "")))
+		if station_texture != null:
+			return station_texture
+	# The source portrait points to the native Planet Hub characters.
+	var keys: Array[String] = ["image", "portrait_target", "source_portrait", "fallback_illustration"]
+	if section == "characters":
+		keys = ["source_portrait", "portrait_target", "image", "fallback_illustration"]
+	for key in keys:
+		var path: String = str(item.get(key, ""))
+		var texture: Texture2D = _texture_if_exists(path)
+		if texture != null:
+			return texture
+		if path.begins_with("res://assets/"):
+			texture = _texture_if_exists(ROOT + path.trim_prefix("res://assets/"))
+			if texture != null:
+				return texture
+	return null
 
-func _image_for(section: String, entry: Dictionary) -> Texture2D:
-	for key in ["image", "portrait_target", "source_portrait", "fallback_illustration"]:
-		var path: String = str(entry.get(key, ""))
-		var found: Texture2D = _load_image(path)
-		if found != null:
-			return found
-	return _load_image(str(SECTION_IMAGE_PATHS.get(section, "")))
+func _rounded(bg: Color, edge: Color, radius: int, border: int, shadow: float = 0.18) -> StyleBoxFlat:
+	var style: StyleBoxFlat = StyleBoxFlat.new()
+	style.bg_color = bg
+	style.border_color = edge
+	style.set_border_width_all(border)
+	style.set_corner_radius_all(radius)
+	style.shadow_color = Color(0.04, 0.64, 1.0, shadow)
+	style.shadow_size = 5
+	style.anti_aliasing = true
+	return style
 
-func _box(color: Color, stroke: Color, radius: int = 20, width: int = 2, margin: int = 12) -> StyleBoxFlat:
-	var box: StyleBoxFlat = StyleBoxFlat.new()
-	box.bg_color = color
-	box.border_color = stroke
-	box.set_border_width_all(width)
-	box.set_corner_radius_all(radius)
-	box.content_margin_left = float(margin)
-	box.content_margin_right = float(margin)
-	box.content_margin_top = float(margin)
-	box.content_margin_bottom = float(margin)
-	return box
+func _make_text(value: String, font_size: int, tint: Color = TEXT) -> Label:
+	var label: Label = Label.new()
+	label.text = value
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.add_theme_font_size_override("font_size", font_size)
+	label.add_theme_color_override("font_color", tint)
+	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	return label
 
-func _style_button(button: Button, tint: Color = Color("#73daff"), font_px: int = 20) -> void:
-	button.add_theme_stylebox_override("normal", _box(SURFACE, tint.darkened(0.55), 18, 2))
-	button.add_theme_stylebox_override("hover", _box(SURFACE_LIGHT, tint, 18, 2))
-	button.add_theme_stylebox_override("pressed", _box(Color("#173452"), tint.lightened(0.15), 18, 2))
-	button.add_theme_stylebox_override("focus", _box(Color.TRANSPARENT, tint.lightened(0.15), 18, 2))
-	button.add_theme_stylebox_override("disabled", _box(Color("#0f2033"), Color("#29465f"), 18, 1))
-	button.add_theme_color_override("font_color", TEXT_PRIMARY)
-	button.add_theme_color_override("font_pressed_color", TEXT_PRIMARY)
-	button.add_theme_color_override("font_hover_color", TEXT_PRIMARY)
-	button.add_theme_color_override("font_disabled_color", Color("#5e7b94"))
-	button.add_theme_font_size_override("font_size", font_px)
-	button.focus_mode = Control.FOCUS_ALL
-	button.mouse_filter = Control.MOUSE_FILTER_STOP
+func _nav_button(glyph_script: Script) -> Button:
+	var button: Button = Button.new()
+	button.text = ""
+	button.custom_minimum_size = Vector2(66, 66)
+	button.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	button.focus_mode = Control.FOCUS_NONE
+	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	button.add_theme_stylebox_override("normal", _rounded(NAVY, CYAN, 18, 2, 0.24))
+	button.add_theme_stylebox_override("hover", _rounded(NAVY_HOVER, BRIGHT_CYAN, 18, 2, 0.38))
+	button.add_theme_stylebox_override("pressed", _rounded(Color("#174b70"), BRIGHT_CYAN, 18, 2, 0.18))
+	button.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	var glyph: Control = glyph_script.new()
+	glyph.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	button.add_child(glyph)
+	glyph.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	return button
 
-func _style_line_edit(line: LineEdit) -> void:
-	line.add_theme_stylebox_override("normal", _box(Color("#0f2139"), EDGE, 16, 2, 12))
-	line.add_theme_stylebox_override("focus", _box(Color("#152a45"), Color("#79ddff"), 16, 2, 12))
-	line.add_theme_color_override("font_color", TEXT_PRIMARY)
-	line.add_theme_color_override("font_placeholder_color", TEXT_MUTED)
-	line.add_theme_font_size_override("font_size", 18 if not _compact() else 16)
-	line.clear_button_enabled = true
+func _build() -> void:
+	var sky: Control = LIVE_SPACE.new()
+	add_child(sky)
+	sky.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var tint: ColorRect = ColorRect.new()
+	tint.color = Color(0.01, 0.03, 0.08, 0.13)
+	tint.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(tint)
+	tint.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
-func _label(text: String, px: int, color: Color = TEXT_PRIMARY) -> Label:
-	var result: Label = Label.new()
-	result.text = text
-	result.add_theme_font_size_override("font_size", px)
-	result.add_theme_color_override("font_color", color)
-	result.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	result.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	return result
+	_main_margin = MarginContainer.new()
+	add_child(_main_margin)
+	_main_margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var main: VBoxContainer = VBoxContainer.new()
+	main.add_theme_constant_override("separation", 16)
+	_main_margin.add_child(main)
 
-func _compact() -> bool:
-	return size.x < 840.0
+	# No pixel coordinates: three columns stay aligned before and after first layout.
+	_header = HBoxContainer.new()
+	_header.custom_minimum_size.y = 98
+	_header.add_theme_constant_override("separation", 18)
+	main.add_child(_header)
 
-func _build_shell() -> void:
-	var veil: ColorRect = ColorRect.new()
-	veil.color = Color(0.01, 0.04, 0.09, 0.24)
-	veil.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(veil)
-	veil.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var back: Button = _nav_button(BACK_GLYPH)
+	back.tooltip_text = _ui("back")
+	back.pressed.connect(_go_back)
+	_header.add_child(back)
 
-	_shell = VBoxContainer.new()
-	_shell.add_theme_constant_override("separation", 0)
-	add_child(_shell)
-	_shell.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var title_panel: PanelContainer = PanelContainer.new()
+	title_panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	# Transparent title container: no visible capsule or decorative outline.
+	title_panel.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
+	_header.add_child(title_panel)
+	var title_padding: MarginContainer = MarginContainer.new()
+	title_padding.add_theme_constant_override("margin_top", 6)
+	title_padding.add_theme_constant_override("margin_bottom", 6)
+	title_padding.add_theme_constant_override("margin_left", 8)
+	title_padding.add_theme_constant_override("margin_right", 8)
+	title_panel.add_child(title_padding)
+	var title_stack: VBoxContainer = VBoxContainer.new()
+	title_stack.alignment = BoxContainer.ALIGNMENT_CENTER
+	title_stack.add_theme_constant_override("separation", 2)
+	title_padding.add_child(title_stack)
+	_title = _make_text("", 32, TEXT)
+	_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_title.clip_text = true
+	_title.autowrap_mode = TextServer.AUTOWRAP_OFF
+	_title.add_theme_color_override("font_outline_color", Color("#07172d"))
+	_title.add_theme_constant_override("outline_size", 2)
+	title_stack.add_child(_title)
+	_subtitle = _make_text("", 16, CYAN)
+	_subtitle.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_subtitle.clip_text = true
+	_subtitle.autowrap_mode = TextServer.AUTOWRAP_OFF
+	title_stack.add_child(_subtitle)
 
-	var header: PanelContainer = PanelContainer.new()
-	header.custom_minimum_size = Vector2(0, 88 if _compact() else 98)
-	header.add_theme_stylebox_override("panel", _box(SURFACE_DEEP, Color("#1d4e70"), 0, 0, 0))
-	_shell.add_child(header)
-
-	var header_margin: MarginContainer = MarginContainer.new()
-	header_margin.add_theme_constant_override("margin_left", 14)
-	header_margin.add_theme_constant_override("margin_top", 10)
-	header_margin.add_theme_constant_override("margin_right", 14)
-	header_margin.add_theme_constant_override("margin_bottom", 10)
-	header.add_child(header_margin)
-
-	var row: HBoxContainer = HBoxContainer.new()
-	row.alignment = BoxContainer.ALIGNMENT_CENTER
-	row.add_theme_constant_override("separation", 12)
-	header_margin.add_child(row)
-
-	_back_button = _make_back_button()
-	row.add_child(_back_button)
-
-	var title_wrap: CenterContainer = CenterContainer.new()
-	title_wrap.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	row.add_child(title_wrap)
-
-	_header_title = _label("", 28 if not _compact() else 22)
-	_header_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_header_title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	_header_title.clip_text = true
-	title_wrap.add_child(_header_title)
-
-	_search_button = Button.new()
-	_search_button.text = "⌕"
+	_search_button = _nav_button(SEARCH_GLYPH)
 	_search_button.tooltip_text = _ui("search_default")
-	_search_button.custom_minimum_size = Vector2(56 if _compact() else 64, 56 if _compact() else 64)
-	_style_button(_search_button, Color("#7bdfff"), 28 if not _compact() else 24)
 	_search_button.pressed.connect(_toggle_search)
-	row.add_child(_search_button)
+	_header.add_child(_search_button)
 
-	var body_margin: MarginContainer = MarginContainer.new()
-	body_margin.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	body_margin.add_theme_constant_override("margin_left", 16 if _compact() else 22)
-	body_margin.add_theme_constant_override("margin_top", 16)
-	body_margin.add_theme_constant_override("margin_right", 16 if _compact() else 22)
-	body_margin.add_theme_constant_override("margin_bottom", 16)
-	_shell.add_child(body_margin)
+	# Exactly ONE search field. It is created once and never during rendering.
+	_search_input = LineEdit.new()
+	_search_input.visible = false
+	_search_input.clear_button_enabled = true
+	_search_input.custom_minimum_size.y = 54
+	_search_input.add_theme_stylebox_override("normal", _rounded(NAVY, Color("#2679a6"), 18, 2))
+	_search_input.add_theme_stylebox_override("focus", _rounded(NAVY_HOVER, CYAN, 18, 2))
+	_search_input.add_theme_color_override("font_color", TEXT)
+	_search_input.add_theme_color_override("font_placeholder_color", MUTED)
+	_search_input.add_theme_font_size_override("font_size", 19)
+	_search_input.text_changed.connect(_on_search_changed)
+	main.add_child(_search_input)
 
-	_body_scroll = ScrollContainer.new()
-	_body_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	_body_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
-	_body_scroll.follow_focus = true
-	_body_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_body_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	body_margin.add_child(_body_scroll)
+	_scroll = ScrollContainer.new()
+	_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
+	_scroll.follow_focus = false
+	_scroll.clip_contents = true
+	_scroll.mouse_filter = Control.MOUSE_FILTER_STOP
+	_scroll.gui_input.connect(_on_scroll_blank_input)
+	main.add_child(_scroll)
+	# Invisible bar: only swipe, mouse wheel, trackpad or mouse-drag can scroll.
+	_scroll.get_v_scroll_bar().modulate = Color(1.0, 1.0, 1.0, 0.0)
+	_scroll.get_v_scroll_bar().mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	_body = VBoxContainer.new()
-	_body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_body.add_theme_constant_override("separation", 14)
-	_body_scroll.add_child(_body)
+	_cards = VBoxContainer.new()
+	_cards.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_cards.add_theme_constant_override("separation", 13)
+	_scroll.add_child(_cards)
 
-func _make_back_button() -> Control:
-	var normal: Texture2D = _load_image(BACK_NORMAL)
-	if normal != null:
-		var tex: TextureButton = TextureButton.new()
-		tex.texture_normal = normal
-		tex.texture_hover = _load_image(BACK_HOVER)
-		tex.texture_pressed = _load_image(BACK_PRESSED)
-		tex.ignore_texture_size = true
-		tex.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-		tex.custom_minimum_size = Vector2(56 if _compact() else 64, 56 if _compact() else 64)
-		tex.tooltip_text = _word("back_to_settings")
-		tex.focus_mode = Control.FOCUS_ALL
-		tex.pressed.connect(_go_back)
-		return tex
-	var fallback: Button = Button.new()
-	fallback.text = "‹"
-	fallback.custom_minimum_size = Vector2(56 if _compact() else 64, 56 if _compact() else 64)
-	_style_button(fallback, Color("#7bdfff"), 34)
-	fallback.tooltip_text = _word("back_to_settings")
-	fallback.pressed.connect(_go_back)
-	return fallback
+func _safe_view_rect() -> Rect2:
+	# The *actual viewport* defines the available canvas. The encyclopedia
+	# is fullscreen, but still works during the first layout before size settles.
+	var view: Vector2 = get_viewport_rect().size
+	if view.x < 1.0 or view.y < 1.0:
+		view = size
+	var viewport_rect: Rect2 = Rect2(Vector2.ZERO, view)
+	var safe: Rect2 = viewport_rect
+	if has_node("/root/MobileLocale"):
+		var mobile: Node = get_node("/root/MobileLocale")
+		if mobile.has_method("safe_rect"):
+			var result: Variant = mobile.call("safe_rect", view)
+			if result is Rect2:
+				safe = result
+	# Defensive fallback: never lay out outside the current viewport.
+	safe = safe.intersection(viewport_rect)
+	if safe.size.x < 1.0 or safe.size.y < 1.0:
+		return viewport_rect
+	return safe
 
-func _on_size_changed() -> void:
-	var compact: bool = _compact()
-	if compact != _last_compact:
-		_last_compact = compact
-	call_deferred("_render")
+func _is_compact() -> bool:
+	return _safe_view_rect().size.x < 720.0
 
-func _clear_body() -> void:
-	for node in _body.get_children():
-		_body.remove_child(node)
-		node.queue_free()
-	_body_scroll.scroll_vertical = 0
+func _on_viewport_resized() -> void:
+	_layout()
+	# Recreate cards only if we switch between phone / larger screen layouts.
+	# Never recreate on every pixel change: that would reset touch scrolling.
+	var compact: bool = _is_compact()
+	if compact != _last_compact_layout:
+		_last_compact_layout = compact
+		_render_cards()
 
-func _render() -> void:
-	if not is_instance_valid(_body) or not is_inside_tree():
+func _layout() -> void:
+	if not is_instance_valid(_main_margin):
 		return
-	if is_instance_valid(_search_button):
-		_search_button.visible = _mode != "detail"
-		_search_button.tooltip_text = _ui("search_default")
-	_clear_body()
+	var view: Vector2 = get_viewport_rect().size
+	if view.x < 1.0 or view.y < 1.0:
+		view = size
+	var safe: Rect2 = _safe_view_rect()
+
+	# The user's layout rule: percentages of available SAFE screen space,
+	# not a centered fixed-width rectangle (no max_width anywhere).
+	# 3.2% on both sides, 2% top/bottom; small touchscreens keep >= 8 px.
+	var horizontal_inset: float = maxf(8.0, safe.size.x * 0.032)
+	var vertical_inset: float = maxf(8.0, safe.size.y * 0.020)
+	_main_margin.add_theme_constant_override("margin_left", roundi(safe.position.x + horizontal_inset))
+	_main_margin.add_theme_constant_override("margin_right", roundi(view.x - safe.end.x + horizontal_inset))
+	_main_margin.add_theme_constant_override("margin_top", roundi(safe.position.y + vertical_inset))
+	_main_margin.add_theme_constant_override("margin_bottom", roundi(view.y - safe.end.y + vertical_inset))
+
+	# Scale the header inside the available safe rectangle, preserving a
+	# symmetrical Back / Title / Search row on portrait and landscape screens.
+	var button_side: int = roundi(clampf(minf(safe.size.x * 0.13, safe.size.y * 0.105), 44.0, 76.0))
+	var header_height: int = roundi(clampf(safe.size.y * 0.118, 68.0, 114.0))
+	_header.custom_minimum_size.y = maxi(header_height, button_side + 10)
+	_header.add_theme_constant_override("separation", maxi(7, roundi(safe.size.x * 0.010)))
+	for button in [_header.get_child(0), _search_button]:
+		(button as Button).custom_minimum_size = Vector2(button_side, button_side)
+	var title_px: int = roundi(clampf(minf(safe.size.x * 0.040, safe.size.y * 0.054), 19.0, 39.0))
+	var subtitle_px: int = roundi(clampf(safe.size.x * 0.019, 12.0, 17.0))
+	_title.add_theme_font_size_override("font_size", title_px)
+	_subtitle.add_theme_font_size_override("font_size", subtitle_px)
+	_search_input.custom_minimum_size.y = roundi(clampf(safe.size.y * 0.071, 44.0, 60.0))
+	_search_input.add_theme_font_size_override("font_size", roundi(clampf(safe.size.x * 0.022, 15.0, 21.0)))
+
+	# Gaps follow the viewport as well. ScrollContainer retains the rest of
+	# VBoxContainer height automatically; no manual scroll viewport clipping.
+	var main: VBoxContainer = _main_margin.get_child(0) as VBoxContainer
+	if main != null:
+		main.add_theme_constant_override("separation", maxi(9, roundi(safe.size.y * 0.016)))
+	_cards.add_theme_constant_override("separation", maxi(9, roundi(safe.size.y * 0.015)))
+
+func _show_page(reset_scroll: bool) -> void:
+	if not is_instance_valid(_cards):
+		return
+	_search_input.placeholder_text = _ui("search_default")
+	_search_button.tooltip_text = _ui("search_default")
+	if _mode == "home":
+		_title.text = _ui("book_title")
+		_subtitle.text = _ui("book_subtitle")
+	elif _mode == "list":
+		_title.text = _section_title(_section)
+		_subtitle.text = _ui("book_subtitle")
+	else:
+		var found: Dictionary = _find_article(_section, _article_id)
+		_title.text = _text_of(_section, found, "title") if not found.is_empty() else _section_title(_section)
+		_subtitle.text = _section_title(_section)
+	_render_cards()
+	_layout()
+	if reset_scroll:
+		_scroll.set_deferred("scroll_vertical", 0)
+
+func _clear_cards() -> void:
+	for old in _cards.get_children():
+		_cards.remove_child(old)
+		old.queue_free()
+
+func _render_cards() -> void:
+	_clear_cards()
 	if _mode == "home":
 		_render_home()
 	elif _mode == "list":
-		_render_list()
+		_render_section()
 	else:
 		_render_article()
 
-func _render_search_field(placeholder: String) -> void:
-	if not _search_open and _search_query.strip_edges().is_empty():
-		return
-	var search_card: PanelContainer = PanelContainer.new()
-	search_card.add_theme_stylebox_override("panel", _box(Color(0.04, 0.11, 0.22, 0.72), EDGE, 18, 2, 10))
-	_body.add_child(search_card)
-	var line: LineEdit = LineEdit.new()
-	line.placeholder_text = placeholder
-	line.text = _search_query
-	_style_line_edit(line)
-	line.text_changed.connect(_on_search_changed)
-	search_card.add_child(line)
-	call_deferred("_focus_line", line)
-
-func _focus_line(line: LineEdit) -> void:
-	if is_instance_valid(line) and _search_open:
-		line.grab_focus()
-		line.caret_column = line.text.length()
-
-func _render_home() -> void:
-	_header_title.text = _ui("book_title")
-	if is_instance_valid(_back_button):
-		_back_button.tooltip_text = _word("back_to_settings")
-	_render_search_field(_ui("search_default"))
-
-	var sections: Array[String] = []
-	for section in SECTION_IDS:
-		if _home_section_visible(section):
-			sections.append(section)
-
-	for section in sections:
-		var entries: Array = _entries(section)
-		var card: Button = _make_list_button(ACCENTS[section], 106 if _compact() else 118)
-		card.pressed.connect(_choose_section.bind(section))
-		_body.add_child(card)
-
-		var row: HBoxContainer = HBoxContainer.new()
-		row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-		row.add_theme_constant_override("separation", 16)
-		row.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		card.add_child(row)
-
-		row.add_child(_thumb(_load_image(str(SECTION_IMAGE_PATHS[section])), 88 if _compact() else 94, true))
-
-		var texts: VBoxContainer = VBoxContainer.new()
-		texts.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		texts.add_theme_constant_override("separation", 4)
-		texts.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		row.add_child(texts)
-
-		texts.add_child(_label(_section_name(section), 22 if not _compact() else 18, TEXT_PRIMARY))
-		var teaser_key: String = "teaser_" + section
-		texts.add_child(_label(_ui(teaser_key), 14 if not _compact() else 13, TEXT_MUTED))
-
-		var meta: HBoxContainer = HBoxContainer.new()
-		meta.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		meta.add_theme_constant_override("separation", 8)
-		texts.add_child(meta)
-		meta.add_child(_pill(str(entries.size()), ACCENTS[section]))
-		meta.add_child(_label(_word("all"), 13, TEXT_MUTED))
-
-		row.add_child(_arrow_label(ACCENTS[section]))
-
-	if sections.is_empty():
-		_body.add_child(_empty_hint())
-
-func _home_section_visible(section: String) -> bool:
-	var query: String = _search_query.strip_edges().to_lower()
-	if query.is_empty():
-		return true
-	var text: String = (_section_name(section) + " " + _ui("teaser_" + section)).to_lower()
-	return text.find(query) != -1
-
-func _choose_section(section: String) -> void:
-	_section = section
-	_mode = "list"
-	_search_query = ""
-	_search_open = false
-	_render()
-
-func _render_list() -> void:
-	_header_title.text = _section_name(_section)
-	if is_instance_valid(_back_button):
-		_back_button.tooltip_text = _ui("back")
-	_render_search_field(_ui("search_article"))
-
-	var entries: Array = _filtered_entries(_section)
-	for i in range(entries.size()):
-		var wrapped: Dictionary = entries[i]
-		var entry: Dictionary = wrapped["entry"]
-		var idx: int = int(wrapped["index"])
-		var card: Button = _make_list_button(ACCENTS[_section], 118 if _compact() else 126)
-		card.pressed.connect(_open_article.bind(idx))
-		_body.add_child(card)
-
-		var row: HBoxContainer = HBoxContainer.new()
-		row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-		row.add_theme_constant_override("separation", 16)
-		row.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		card.add_child(row)
-
-		row.add_child(_thumb(_image_for(_section, entry), 88 if _compact() else 94, _section == "planets"))
-
-		var info: VBoxContainer = VBoxContainer.new()
-		info.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		info.add_theme_constant_override("separation", 5)
-		info.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		row.add_child(info)
-
-		info.add_child(_label(_entry_title(_section, entry), 21 if not _compact() else 17, TEXT_PRIMARY))
-		var short: String = _entry_text(_section, entry, "description")
-		var snippet: Label = _label(short, 14 if not _compact() else 13, TEXT_MUTED)
-		snippet.max_lines_visible = 2
-		snippet.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-		info.add_child(snippet)
-
-		row.add_child(_arrow_label(ACCENTS[_section]))
-
-	if entries.is_empty():
-		_body.add_child(_empty_hint())
-
-func _filtered_entries(section: String) -> Array:
-	var query: String = _search_query.strip_edges().to_lower()
-	var out: Array = []
-	var source: Array = _entries(section)
-	for i in range(source.size()):
-		var entry: Dictionary = source[i]
-		if query.is_empty():
-			out.append({"index": i, "entry": entry})
-			continue
-		var text: String = (_entry_title(section, entry) + " " + _entry_text(section, entry, "description")).to_lower()
-		if text.find(query) != -1:
-			out.append({"index": i, "entry": entry})
-	return out
-
-func _open_article(index: int) -> void:
-	_article_idx = index
-	_mode = "detail"
-	_search_open = false
-	_search_query = ""
-	_render()
-
-func _render_article() -> void:
-	var entries: Array = _entries(_section)
-	if entries.is_empty():
-		_mode = "list"
-		_render()
-		return
-	_article_idx = clampi(_article_idx, 0, entries.size() - 1)
-	var entry: Dictionary = entries[_article_idx]
-	_header_title.text = _entry_title(_section, entry)
-	if is_instance_valid(_back_button):
-		_back_button.tooltip_text = _ui("back")
-
-	var hero: PanelContainer = PanelContainer.new()
-	hero.add_theme_stylebox_override("panel", _box(SURFACE, ACCENTS[_section].darkened(0.45), 22, 2, 14))
-	_body.add_child(hero)
-
-	var wrap: BoxContainer = VBoxContainer.new() if _compact() else HBoxContainer.new()
-	wrap.add_theme_constant_override("separation", 18)
-	hero.add_child(wrap)
-
-	wrap.add_child(_thumb(_image_for(_section, entry), 210 if _compact() else 250, _section == "planets", true))
-
-	var text_col: VBoxContainer = VBoxContainer.new()
-	text_col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	text_col.add_theme_constant_override("separation", 10)
-	wrap.add_child(text_col)
-
-	var desc: String = _entry_text(_section, entry, "description")
-	if not desc.is_empty():
-		text_col.add_child(_label(desc, 18 if not _compact() else 16, TEXT_PRIMARY))
-
-	for field in _field_keys(_section):
-		var value: String = _entry_text(_section, entry, field)
-		if value.is_empty() or value == desc:
-			continue
-		text_col.add_child(_field_block(_word(field), value, ACCENTS[_section]))
-
-func _field_keys(section: String) -> Array[String]:
-	match section:
-		"planets":
-			return ["system", "world_type", "nature", "building", "science_fact"]
-		"stations":
-			return ["system", "race", "appearance", "interior", "science_fact"]
-		"races":
-			return ["form", "communication", "environment", "science_link"]
-		"characters":
-			return ["location", "role", "work", "knowledge"]
-		"science":
-			return ["fun_fact", "where_in_game"]
-		"terms":
-			return ["principle", "details", "fun_fact", "where_in_game"]
-	return []
-
-func _field_block(title: String, value: String, tint: Color) -> Control:
-	var block: PanelContainer = PanelContainer.new()
-	block.add_theme_stylebox_override("panel", _box(Color(0.05, 0.12, 0.23, 0.74), tint.darkened(0.35), 18, 1, 10))
-	var v: VBoxContainer = VBoxContainer.new()
-	v.add_theme_constant_override("separation", 4)
-	block.add_child(v)
-	v.add_child(_label(title.to_upper(), 12, tint))
-	v.add_child(_label(value, 16 if not _compact() else 15, TEXT_PRIMARY))
-	return block
-
-func _make_list_button(tint: Color, min_h: float) -> Button:
-	var card: Button = Button.new()
-	card.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	card.custom_minimum_size = Vector2(0, min_h)
-	_style_button(card, tint, 18)
-	card.text = ""
+func _make_card(height: int, name: String, route: String) -> PanelContainer:
+	var card: PanelContainer = PanelContainer.new()
+	card.name = name
+	card.custom_minimum_size = Vector2(0, height)
+	card.mouse_filter = Control.MOUSE_FILTER_STOP
+	card.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND if not route.is_empty() else Control.CURSOR_ARROW
+	card.add_theme_stylebox_override("panel", _rounded(Color(0.006, 0.055, 0.13, 0.92), Color("#2c9bc2"), 24, 2, 0.19))
+	if not route.is_empty():
+		card.gui_input.connect(_card_input.bind(card, route))
+		card.mouse_entered.connect(_card_hover.bind(card, true))
+		card.mouse_exited.connect(_card_hover.bind(card, false))
 	return card
 
-func _thumb(texture: Texture2D, size_px: int, contain: bool = false, allow_large: bool = false) -> Control:
-	var frame: PanelContainer = PanelContainer.new()
-	frame.custom_minimum_size = Vector2(size_px, size_px if not allow_large else max(size_px, int(size_px * 0.86)))
-	frame.add_theme_stylebox_override("panel", _box(Color(0.02, 0.06, 0.13, 0.52), Color("#24567b"), 18, 1, 4))
-	var pic: TextureRect = TextureRect.new()
-	pic.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	pic.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	pic.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED if contain else TextureRect.STRETCH_KEEP_ASPECT_COVERED
-	pic.texture = texture
-	frame.add_child(pic)
-	if texture == null:
-		var empty: Label = _label(_word("empty"), 14, TEXT_MUTED)
-		empty.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		empty.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-		frame.add_child(empty)
-	return frame
+func _card_hover(card: PanelContainer, hovered: bool) -> void:
+	if is_instance_valid(card):
+		var bg: Color = Color(0.018, 0.11, 0.22, 0.98) if hovered else Color(0.006, 0.055, 0.13, 0.92)
+		var edge: Color = BRIGHT_CYAN if hovered else Color("#2c9bc2")
+		card.add_theme_stylebox_override("panel", _rounded(bg, edge, 24, 2, 0.24 if hovered else 0.19))
 
-func _pill(text: String, tint: Color) -> Control:
-	var badge: PanelContainer = PanelContainer.new()
-	badge.add_theme_stylebox_override("panel", _box(tint.darkened(0.70), tint, 14, 1, 6))
-	var label: Label = _label(text, 13, Color.WHITE)
-	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	badge.add_child(label)
-	return badge
+func _card_padding(card: PanelContainer, pad: int) -> HBoxContainer:
+	var margins: MarginContainer = MarginContainer.new()
+	margins.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	margins.add_theme_constant_override("margin_left", pad)
+	margins.add_theme_constant_override("margin_right", pad)
+	margins.add_theme_constant_override("margin_top", 12)
+	margins.add_theme_constant_override("margin_bottom", 12)
+	card.add_child(margins)
+	var row: HBoxContainer = HBoxContainer.new()
+	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_theme_constant_override("separation", 16)
+	margins.add_child(row)
+	return row
 
-func _arrow_label(tint: Color) -> Label:
-	var arrow: Label = _label("›", 34 if not _compact() else 30, tint)
+func _icon(texture: Texture2D, side: int, transparent: bool = false) -> Control:
+	var icon_frame: PanelContainer = PanelContainer.new()
+	icon_frame.custom_minimum_size = Vector2(side, side)
+	icon_frame.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	icon_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	if transparent:
+		# Planet and station artwork should float inside the outer row, unframed.
+		icon_frame.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
+	else:
+		icon_frame.add_theme_stylebox_override("panel", _rounded(Color(0.035, 0.11, 0.21, 0.88), Color("#2474a0"), 17, 1, 0.0))
+	var inner: MarginContainer = MarginContainer.new()
+	inner.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var inset: int = 1 if transparent else 5
+	for margin in ["margin_left", "margin_right", "margin_top", "margin_bottom"]:
+		inner.add_theme_constant_override(margin, inset)
+	icon_frame.add_child(inner)
+	if texture != null:
+		var img: TextureRect = TextureRect.new()
+		img.texture = texture
+		img.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		img.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		inner.add_child(img)
+	return icon_frame
+
+func _card_lines(row: HBoxContainer, title_text: String, subtitle_text: String, count_text: String = "") -> void:
+	var col: VBoxContainer = VBoxContainer.new()
+	col.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	col.alignment = BoxContainer.ALIGNMENT_CENTER
+	col.add_theme_constant_override("separation", 4)
+	row.add_child(col)
+	var compact: bool = _is_compact()
+	var title_label: Label = _make_text(title_text, 21 if compact else 28)
+	title_label.clip_text = true
+	col.add_child(title_label)
+	if not subtitle_text.is_empty():
+		var short: Label = _make_text(subtitle_text, 14 if compact else 17, MUTED)
+		short.max_lines_visible = 2
+		short.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+		col.add_child(short)
+	if not count_text.is_empty():
+		col.add_child(_make_text(count_text, 13 if compact else 15, CYAN))
+	var arrow: Label = _make_text("›", 31 if compact else 38, BRIGHT_CYAN)
+	arrow.custom_minimum_size.x = 27 if compact else 40
 	arrow.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	return arrow
+	arrow.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	row.add_child(arrow)
 
-func _empty_hint() -> Control:
-	var box: PanelContainer = PanelContainer.new()
-	box.add_theme_stylebox_override("panel", _box(Color(0.04, 0.11, 0.22, 0.70), EDGE, 18, 2, 14))
-	box.custom_minimum_size = Vector2(0, 90)
-	box.add_child(_label(_ui("empty"), 18 if not _compact() else 16, TEXT_MUTED))
-	return box
+func _section_matches(section: String, needle: String) -> bool:
+	if needle.is_empty():
+		return true
+	var head: String = (_section_title(section) + " " + _ui("teaser_" + section)).to_lower()
+	if head.contains(needle):
+		return true
+	for item in _entries(section):
+		if item is Dictionary:
+			var article: Dictionary = item
+			if (_text_of(section, article, "title") + " " + _text_of(section, article, "description")).to_lower().contains(needle):
+				return true
+	return false
+
+func _render_home() -> void:
+	var needle: String = _query.strip_edges().to_lower()
+	var compact: bool = _is_compact()
+	for section in SECTIONS:
+		if not _section_matches(section, needle):
+			continue
+		var card: PanelContainer = _make_card(108 if compact else 124, "Section_" + section, "section:" + section)
+		_cards.add_child(card)
+		var row: HBoxContainer = _card_padding(card, 18 if compact else 24)
+		row.add_child(_icon(_texture_if_exists(str(SECTION_ICONS[section])), 70 if compact else 86, section == "planets" or section == "stations"))
+		var count: String = _ui("discoveries").replace("{count}", str(_entries(section).size()))
+		_card_lines(row, _section_title(section), _ui("teaser_" + section), count)
+	if _cards.get_child_count() == 0:
+		_render_empty()
+
+func _filtered_entries(section: String) -> Array:
+	var items: Array = []
+	var needle: String = _query.strip_edges().to_lower()
+	for candidate in _entries(section):
+		if not (candidate is Dictionary):
+			continue
+		var item: Dictionary = candidate
+		if needle.is_empty() or (_text_of(section, item, "title") + " " + _text_of(section, item, "description") + " " + _text_of(section, item, "system")).to_lower().contains(needle):
+			items.append(item)
+	return items
+
+func _render_section() -> void:
+	var compact: bool = _is_compact()
+	for item in _filtered_entries(_section):
+		var identifier: String = str(item.get("id", ""))
+		var card: PanelContainer = _make_card(96 if compact else 114, "Article_" + identifier, "article:" + identifier)
+		_cards.add_child(card)
+		var row: HBoxContainer = _card_padding(card, 18 if compact else 24)
+		var tex: Texture2D = _article_texture(_section, item)
+		row.add_child(_icon(tex, 66 if compact else 86, _section == "planets" or _section == "stations"))
+		var secondary: String = _text_of(_section, item, "system")
+		if secondary.is_empty():
+			secondary = _text_of(_section, item, "role")
+		if secondary.is_empty():
+			secondary = _text_of(_section, item, "description")
+		_card_lines(row, _text_of(_section, item, "title"), secondary)
+	if _cards.get_child_count() == 0:
+		_render_empty()
+
+func _find_article(section: String, identifier: String) -> Dictionary:
+	for raw in _entries(section):
+		if raw is Dictionary and str(raw.get("id", "")) == identifier:
+			return raw
+	return {}
+
+func _render_article() -> void:
+	var article: Dictionary = _find_article(_section, _article_id)
+	if article.is_empty():
+		_render_empty()
+		return
+	var visual: Texture2D = _article_texture(_section, article)
+	if visual != null:
+		var floating_art: bool = _section == "planets" or _section == "stations"
+		var visual_frame: PanelContainer = PanelContainer.new()
+		visual_frame.name = "ArticleImage"
+		visual_frame.custom_minimum_size = Vector2(0, 260 if _is_compact() else 350)
+		visual_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		if floating_art:
+			# No extra framed box behind the planet or the station picture.
+			visual_frame.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
+		else:
+			visual_frame.add_theme_stylebox_override("panel", _rounded(Color(0.006, 0.055, 0.13, 0.92), Color("#2c9bc2"), 24, 2, 0.19))
+		_cards.add_child(visual_frame)
+		var art_margin: MarginContainer = MarginContainer.new()
+		art_margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		for m in ["margin_left", "margin_right", "margin_top", "margin_bottom"]:
+			art_margin.add_theme_constant_override(m, 6 if floating_art else 18)
+		visual_frame.add_child(art_margin)
+		var art: TextureRect = TextureRect.new()
+		art.texture = visual
+		art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		art.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		art_margin.add_child(art)
+	var description: String = _text_of(_section, article, "description")
+	if not description.is_empty():
+		_add_reading_block("", description)
+	var keys: Array = FIELDS.get(_section, [])
+	for field in keys:
+		var field_name: String = str(field)
+		var body: String = _text_of(_section, article, field_name)
+		if not body.is_empty() and body != description:
+			_add_reading_block(_label_name(field_name), body)
+
+func _add_reading_block(heading: String, body: String) -> void:
+	var card: PanelContainer = _make_card(0, "ReadingBlock", "")
+	card.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_cards.add_child(card)
+	var margin: MarginContainer = MarginContainer.new()
+	for name in ["margin_left", "margin_right"]:
+		margin.add_theme_constant_override(name, 23)
+	for name in ["margin_top", "margin_bottom"]:
+		margin.add_theme_constant_override(name, 19)
+	card.add_child(margin)
+	var col: VBoxContainer = VBoxContainer.new()
+	col.add_theme_constant_override("separation", 9)
+	margin.add_child(col)
+	if not heading.is_empty():
+		col.add_child(_make_text(heading.to_upper(), 14, CYAN))
+	col.add_child(_make_text(body, 17 if _is_compact() else 20))
+
+func _render_empty() -> void:
+	_add_reading_block("", _ui("empty"))
 
 func _toggle_search() -> void:
-	_search_open = not _search_open
-	if not _search_open:
-		_search_query = ""
-	_render()
+	_search_visible = not _search_visible
+	_search_input.visible = _search_visible
+	if not _search_visible:
+		_query = ""
+		_search_input.clear()
+		_render_cards()
+	else:
+		_search_input.call_deferred("grab_focus")
+	# VBoxContainer immediately relayouts; there are no header coordinates to recalc.
 
 func _on_search_changed(value: String) -> void:
-	_search_query = value
-	if not _search_open and not value.is_empty():
-		_search_open = true
-	_render()
+	_query = value
+	if _mode == "article":
+		_mode = "list"
+		_show_page(true)
+	else:
+		# Never reset the LineEdit or instantiate another search field on typing.
+		_render_cards()
+		_scroll.set_deferred("scroll_vertical", 0)
 
 func _go_back() -> void:
-	_search_open = false
-	_search_query = ""
-	if _mode == "detail":
+	_drag_target = ""
+	if _mode == "article":
 		_mode = "list"
-		_render()
+		_show_page(true)
 	elif _mode == "list":
 		_mode = "home"
-		_render()
+		_query = ""
+		_search_input.clear()
+		_show_page(true)
 	else:
 		closed.emit()
+
+func _navigate_to(route: String) -> void:
+	var now: int = Time.get_ticks_msec()
+	if now - _last_open_ms < 220:
+		return
+	_last_open_ms = now
+	if route.begins_with("section:"):
+		_section = route.trim_prefix("section:")
+		_article_id = ""
+		_mode = "list"
+		# Opening a section without a search shows its entire native list.
+		_query = ""
+		_search_input.clear()
+		_search_visible = false
+		_search_input.visible = false
+	elif route.begins_with("article:"):
+		_article_id = route.trim_prefix("article:")
+		_mode = "article"
+		_query = ""
+		_search_input.clear()
+		_search_visible = false
+		_search_input.visible = false
+	_show_page(true)
+
+func _start_drag(route: String, origin: Vector2, kind: String, touch: int = -1) -> void:
+	_drag_target = route
+	_drag_origin = origin
+	_drag_distance = 0.0
+	_dragged = false
+	_pointer_type = kind
+	_touch_id = touch
+
+func _move_drag(delta: Vector2) -> void:
+	_drag_distance += delta.length()
+	if _drag_distance > 10.0:
+		_dragged = true
+	if _dragged:
+		_scroll.scroll_vertical -= roundi(delta.y)
+
+func _finish_drag(route: String, within: bool) -> void:
+	var open: bool = not _dragged and within and route == _drag_target and not route.is_empty()
+	_drag_target = ""
+	_touch_id = -1
+	_pointer_type = ""
+	_dragged = false
+	if open:
+		_navigate_to(route)
+
+func _card_input(event: InputEvent, card: PanelContainer, route: String) -> void:
+	if event is InputEventMouseButton:
+		var m: InputEventMouseButton = event
+		if m.button_index == MOUSE_BUTTON_WHEEL_DOWN or m.button_index == MOUSE_BUTTON_WHEEL_UP:
+			var unit: int = 75
+			_scroll.scroll_vertical += unit if m.button_index == MOUSE_BUTTON_WHEEL_DOWN else -unit
+			card.accept_event()
+			return
+		if Time.get_ticks_msec() < _ignore_mouse_until:
+			return
+		if m.button_index == MOUSE_BUTTON_LEFT:
+			if m.pressed:
+				_start_drag(route, m.position, "mouse")
+			elif _pointer_type == "mouse":
+				_finish_drag(route, Rect2(Vector2.ZERO, card.size).has_point(m.position))
+			card.accept_event()
+	elif event is InputEventMouseMotion:
+		var move: InputEventMouseMotion = event
+		if _pointer_type == "mouse" and _drag_target == route and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			_move_drag(move.relative)
+			card.accept_event()
+	elif event is InputEventScreenTouch:
+		var touch: InputEventScreenTouch = event
+		_ignore_mouse_until = Time.get_ticks_msec() + 300
+		if touch.pressed:
+			_start_drag(route, touch.position, "touch", touch.index)
+		elif _pointer_type == "touch" and _touch_id == touch.index:
+			_finish_drag(route, Rect2(Vector2.ZERO, card.size).has_point(touch.position))
+		card.accept_event()
+	elif event is InputEventScreenDrag:
+		var drag: InputEventScreenDrag = event
+		if _pointer_type == "touch" and _touch_id == drag.index and _drag_target == route:
+			_move_drag(drag.relative)
+			card.accept_event()
+	elif event is InputEventPanGesture:
+		var pan: InputEventPanGesture = event
+		_scroll.scroll_vertical += roundi(pan.delta.y * 65.0)
+		card.accept_event()
+
+func _on_scroll_blank_input(event: InputEvent) -> void:
+	# Same drag and wheel behavior when a gesture begins in the gap between cards.
+	if event is InputEventMouseButton:
+		var m: InputEventMouseButton = event
+		if m.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			_scroll.scroll_vertical += 75
+		elif m.button_index == MOUSE_BUTTON_WHEEL_UP:
+			_scroll.scroll_vertical -= 75
+		elif m.button_index == MOUSE_BUTTON_LEFT:
+			if m.pressed:
+				_start_drag("", m.position, "mouse")
+			elif _pointer_type == "mouse":
+				_finish_drag("", false)
+	elif event is InputEventMouseMotion:
+		var motion: InputEventMouseMotion = event
+		if _pointer_type == "mouse" and _drag_target.is_empty() and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			_move_drag(motion.relative)
+	elif event is InputEventScreenTouch:
+		var touch: InputEventScreenTouch = event
+		if touch.pressed:
+			_start_drag("", touch.position, "touch", touch.index)
+		elif _pointer_type == "touch" and _touch_id == touch.index:
+			_finish_drag("", false)
+	elif event is InputEventScreenDrag:
+		var drag: InputEventScreenDrag = event
+		if _pointer_type == "touch" and _touch_id == drag.index and _drag_target.is_empty():
+			_move_drag(drag.relative)
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):

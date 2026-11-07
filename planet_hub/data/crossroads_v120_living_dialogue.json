@@ -1,0 +1,778 @@
+{
+  "schema_version": 1,
+  "source": "crossroads_encyclopedia.json (v96, 48 approved subjects)",
+  "locales": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "ui": {
+    "ru": {
+      "welcome": "Я — живая планета Перекрёстка миров. Я общаюсь мягкими колебаниями, а планшет переводит их в слова. Спроси меня о природе, науке или космосе!",
+      "welcome_back": "Радостно, когда ты возвращаешься! Мы можем продолжить разговор или выбрать другую тему.",
+      "topic_intro": "Вот что я знаю об этой теме:",
+      "more_intro": "Я могу поделиться ещё одним фактом из нашей энциклопедии:",
+      "unclear": "Кажется, мой переводчик не уверен, о чём ты спрашиваешь. Попробуй назвать предмет вопроса или выбери облачко.",
+      "ambiguous": "Я могу понять вопрос по-разному. Какую тему ты имел в виду?",
+      "back_choice": "К разделам",
+      "another_topic": "Выберем другую тему?",
+      "group_intro": "Отлично! Выбери вопрос или спроси своими словами.",
+      "extra": "Хочешь узнать что-то ещё? Можно задать новый вопрос.",
+      "no_more": "Это всё, что я пока могу уверенно рассказать об этой теме. Выбери другой вопрос.",
+      "help": "Давай уточним вопрос. Я отвечаю только на то, что есть в нашей энциклопедии.",
+      "short_prompt": "Про что ты хочешь узнать больше? Назови тему вопроса.",
+      "remember_topic": "В прошлый раз мы исследовали тему «%s». Хочешь продолжить или выбрать другую?"
+    },
+    "en": {
+      "welcome": "I am the Living World at the Crossroads. I speak in gentle ripples, and your tablet turns them into words. Ask me about nature, science, or space!",
+      "welcome_back": "Welcome back! We can continue exploring or choose something new.",
+      "topic_intro": "Here is what I know about this topic:",
+      "more_intro": "Here is another fact from our encyclopedia:",
+      "unclear": "My translator isn't sure what you mean. Try naming the subject, or choose a question cloud.",
+      "ambiguous": "Your question could mean two things. Which topic did you mean?",
+      "back_choice": "Back to categories",
+      "another_topic": "Shall we explore something else?",
+      "group_intro": "Great! Choose a question or ask in your own words.",
+      "extra": "Would you like to explore more? You can ask another question.",
+      "no_more": "That's all I can confidently tell you about this topic for now. Choose another question.",
+      "help": "Let's make the question clearer. I only answer using our encyclopedia.",
+      "short_prompt": "What would you like to know more about? Please name the topic.",
+      "remember_topic": "Last time, we explored \"%s\". Shall we continue or choose something new?"
+    },
+    "fr": {
+      "welcome": "Je suis le Monde vivant du Carrefour des mondes. Je parle par de douces vibrations, et ta tablette les traduit en mots. Pose-moi des questions sur la nature, la science ou l’espace !",
+      "welcome_back": "Quel plaisir de te retrouver ! Continuons ou choisissons un nouveau sujet.",
+      "topic_intro": "Voici ce que je sais sur ce sujet :",
+      "more_intro": "Voici un autre fait tiré de notre encyclopédie :",
+      "unclear": "Mon traducteur n'est pas sûr d'avoir compris. Précise le sujet ou choisis une question.",
+      "ambiguous": "Je comprends ta question de deux façons. De quel sujet parles-tu ?",
+      "back_choice": "Retour aux thèmes",
+      "another_topic": "On explore un autre sujet ?",
+      "group_intro": "Super ! Choisis une question ou pose la tienne.",
+      "extra": "Tu veux en savoir plus ? Tu peux poser une autre question.",
+      "no_more": "C'est tout ce que je peux t'expliquer avec certitude pour le moment. Choisis un autre sujet.",
+      "help": "Précisons ta question. Je réponds uniquement à partir de notre encyclopédie.",
+      "short_prompt": "Quel sujet veux-tu approfondir ?",
+      "remember_topic": "La dernière fois, nous avons exploré « %s ». On continue ou on choisit autre chose ?"
+    },
+    "de": {
+      "welcome": "Ich bin die lebendige Welt an der Kreuzung der Welten. Ich spreche durch sanfte Schwingungen, die dein Tablet in Worte übersetzt. Frag mich nach Natur, Wissenschaft oder dem Weltraum!",
+      "welcome_back": "Schön, dass du wieder da bist! Wir können weitermachen oder etwas Neues entdecken.",
+      "topic_intro": "Das weiß ich über dieses Thema:",
+      "more_intro": "Hier ist noch eine Information aus unserem Lexikon:",
+      "unclear": "Mein Übersetzer ist sich nicht sicher. Nenne das Thema oder wähle eine Frage aus.",
+      "ambiguous": "Deine Frage könnte zwei Dinge bedeuten. Welches Thema meinst du?",
+      "back_choice": "Zurück zu den Themen",
+      "another_topic": "Wollen wir etwas anderes entdecken?",
+      "group_intro": "Toll! Wähle eine Frage oder stelle deine eigene.",
+      "extra": "Möchtest du noch mehr wissen? Du kannst weiterfragen.",
+      "no_more": "Mehr kann ich zu diesem Thema gerade nicht sicher erklären. Wähle eine andere Frage.",
+      "help": "Lass uns deine Frage genauer machen. Ich antworte nur mit Wissen aus unserem Lexikon.",
+      "short_prompt": "Über welches Thema möchtest du mehr wissen?",
+      "remember_topic": "Letztes Mal haben wir über „%s“ gesprochen. Machen wir weiter oder wählen wir etwas Neues?"
+    },
+    "es": {
+      "welcome": "Soy el Mundo Viviente del Cruce de los Mundos. Me comunico con suaves vibraciones, y tu tableta las convierte en palabras. ¡Pregúntame sobre la naturaleza, la ciencia o el espacio!",
+      "welcome_back": "¡Qué alegría verte de nuevo! Podemos continuar o elegir otro tema.",
+      "topic_intro": "Esto es lo que sé sobre este tema:",
+      "more_intro": "Aquí tienes otro dato de nuestra enciclopedia:",
+      "unclear": "Mi traductor no está seguro de entender. Dime el tema o elige una pregunta.",
+      "ambiguous": "Tu pregunta puede tener dos sentidos. ¿De qué tema hablas?",
+      "back_choice": "Volver a los temas",
+      "another_topic": "¿Exploramos otro tema?",
+      "group_intro": "¡Genial! Elige una pregunta o haz la tuya.",
+      "extra": "¿Quieres saber algo más? Puedes hacer otra pregunta.",
+      "no_more": "Por ahora, esto es todo lo que puedo explicar con seguridad. Elige otra pregunta.",
+      "help": "Vamos a aclarar tu pregunta. Solo respondo con datos de nuestra enciclopedia.",
+      "short_prompt": "¿Sobre qué tema quieres saber más?",
+      "remember_topic": "La última vez exploramos «%s». ¿Seguimos o elegimos otro tema?"
+    },
+    "pt_BR": {
+      "welcome": "Eu sou o Mundo Vivo do Encontro dos Mundos. Eu me comunico por vibrações suaves, e seu tablet as transforma em palavras. Pode perguntar sobre natureza, ciência ou espaço!",
+      "welcome_back": "Que bom que você voltou! Podemos continuar ou escolher outro assunto.",
+      "topic_intro": "Olha o que eu sei sobre esse assunto:",
+      "more_intro": "Aqui vai mais uma informação da nossa enciclopédia:",
+      "unclear": "Meu tradutor não tem certeza do que você quis dizer. Diga o assunto ou escolha uma pergunta.",
+      "ambiguous": "Sua pergunta pode ter dois sentidos. De qual assunto você está falando?",
+      "back_choice": "Voltar aos temas",
+      "another_topic": "Vamos explorar outro assunto?",
+      "group_intro": "Legal! Escolha uma pergunta ou pergunte com suas palavras.",
+      "extra": "Quer saber mais? Você pode fazer outra pergunta.",
+      "no_more": "Por enquanto, é só isso que posso explicar com segurança. Escolha outra pergunta.",
+      "help": "Vamos esclarecer sua pergunta. Eu só respondo com informações da nossa enciclopédia.",
+      "short_prompt": "Sobre qual assunto você quer saber mais?",
+      "remember_topic": "Da última vez, exploramos “%s”. Vamos continuar ou escolher outro assunto?"
+    }
+  },
+  "followups": {
+    "ru": {
+      "more": [
+        "расскажи ещё",
+        "еще",
+        "ещё",
+        "подробнее",
+        "а ещё",
+        "и ещё",
+        "что ещё"
+      ],
+      "why": [
+        "почему",
+        "а почему"
+      ],
+      "where": [
+        "где",
+        "а где"
+      ],
+      "how": [
+        "как",
+        "а как"
+      ],
+      "what": [
+        "что",
+        "а что"
+      ]
+    },
+    "en": {
+      "more": [
+        "tell me more",
+        "more",
+        "what else",
+        "and more"
+      ],
+      "why": [
+        "why",
+        "but why"
+      ],
+      "where": [
+        "where",
+        "where exactly"
+      ],
+      "how": [
+        "how",
+        "how come"
+      ],
+      "what": [
+        "what",
+        "what is that"
+      ]
+    },
+    "fr": {
+      "more": [
+        "encore",
+        "raconte encore",
+        "dis m en plus",
+        "et encore"
+      ],
+      "why": [
+        "pourquoi",
+        "mais pourquoi"
+      ],
+      "where": [
+        "où",
+        "mais où"
+      ],
+      "how": [
+        "comment",
+        "et comment"
+      ],
+      "what": [
+        "quoi",
+        "et quoi"
+      ]
+    },
+    "de": {
+      "more": [
+        "mehr",
+        "erzähl mehr",
+        "und weiter",
+        "was noch"
+      ],
+      "why": [
+        "warum",
+        "aber warum"
+      ],
+      "where": [
+        "wo",
+        "wo genau"
+      ],
+      "how": [
+        "wie",
+        "und wie"
+      ],
+      "what": [
+        "was",
+        "was ist das"
+      ]
+    },
+    "es": {
+      "more": [
+        "más",
+        "cuéntame más",
+        "qué más",
+        "y más"
+      ],
+      "why": [
+        "por qué",
+        "pero por qué"
+      ],
+      "where": [
+        "dónde",
+        "y dónde"
+      ],
+      "how": [
+        "cómo",
+        "y cómo"
+      ],
+      "what": [
+        "qué",
+        "y qué"
+      ]
+    },
+    "pt_BR": {
+      "more": [
+        "mais",
+        "me conte mais",
+        "o que mais",
+        "e mais"
+      ],
+      "why": [
+        "por que",
+        "mas por que"
+      ],
+      "where": [
+        "onde",
+        "e onde"
+      ],
+      "how": [
+        "como",
+        "e como"
+      ],
+      "what": [
+        "o que",
+        "e o que"
+      ]
+    }
+  },
+  "topic_aliases": {
+    "magnets": {
+      "ru": [
+        "магнит",
+        "магниты"
+      ],
+      "en": [
+        "magnet",
+        "magnets",
+        "magnetic"
+      ],
+      "fr": [
+        "aimant",
+        "aimants"
+      ],
+      "de": [
+        "magnet",
+        "magnete"
+      ],
+      "es": [
+        "imán",
+        "imanes"
+      ],
+      "pt_BR": [
+        "ímã",
+        "ímãs",
+        "ima"
+      ]
+    },
+    "gravity": {
+      "ru": [
+        "гравитация",
+        "сила тяжести",
+        "притяжение земли"
+      ],
+      "en": [
+        "gravity",
+        "gravitational pull"
+      ],
+      "fr": [
+        "gravité",
+        "pesanteur"
+      ],
+      "de": [
+        "schwerkraft",
+        "gravitation"
+      ],
+      "es": [
+        "gravedad"
+      ],
+      "pt_BR": [
+        "gravidade"
+      ]
+    },
+    "molecules": {
+      "ru": [
+        "молекула",
+        "молекулы"
+      ],
+      "en": [
+        "molecule",
+        "molecules"
+      ],
+      "fr": [
+        "molécule",
+        "molécules"
+      ],
+      "de": [
+        "molekül",
+        "moleküle"
+      ],
+      "es": [
+        "molécula",
+        "moléculas"
+      ],
+      "pt_BR": [
+        "molécula",
+        "moléculas"
+      ]
+    },
+    "neurons": {
+      "ru": [
+        "нейрон",
+        "нейроны",
+        "мозг"
+      ],
+      "en": [
+        "neuron",
+        "neurons",
+        "brain cells"
+      ],
+      "fr": [
+        "neurone",
+        "neurones"
+      ],
+      "de": [
+        "neuron",
+        "neuronen",
+        "nervenzellen"
+      ],
+      "es": [
+        "neurona",
+        "neuronas"
+      ],
+      "pt_BR": [
+        "neurônio",
+        "neurônios"
+      ]
+    },
+    "phase_changes": {
+      "ru": [
+        "таяние",
+        "испарение",
+        "замерзание"
+      ],
+      "en": [
+        "melting",
+        "freezing",
+        "evaporation"
+      ],
+      "fr": [
+        "fonte",
+        "évaporation"
+      ],
+      "de": [
+        "schmelzen",
+        "verdampfen"
+      ],
+      "es": [
+        "derretir",
+        "evaporación"
+      ],
+      "pt_BR": [
+        "derreter",
+        "evaporação"
+      ]
+    },
+    "sorting": {
+      "ru": [
+        "сортировка мусора",
+        "раздельный сбор"
+      ],
+      "en": [
+        "recycling bins",
+        "recycle rubbish",
+        "recycling"
+      ],
+      "fr": [
+        "tri des déchets",
+        "recyclage"
+      ],
+      "de": [
+        "mülltrennung",
+        "recycling"
+      ],
+      "es": [
+        "separar basura",
+        "reciclaje"
+      ],
+      "pt_BR": [
+        "separar o lixo",
+        "reciclagem"
+      ]
+    },
+    "clean_water": {
+      "ru": [
+        "чистая вода",
+        "питьевая вода"
+      ],
+      "en": [
+        "clean water",
+        "drinking water"
+      ],
+      "fr": [
+        "eau propre",
+        "eau potable"
+      ],
+      "de": [
+        "sauberes wasser",
+        "trinkwasser"
+      ],
+      "es": [
+        "agua limpia",
+        "agua potable"
+      ],
+      "pt_BR": [
+        "água limpa",
+        "água potável"
+      ]
+    },
+    "saving_water": {
+      "ru": [
+        "экономить воду",
+        "беречь воду"
+      ],
+      "en": [
+        "save water",
+        "saving water",
+        "waste water"
+      ],
+      "fr": [
+        "économiser l eau"
+      ],
+      "de": [
+        "wasser sparen"
+      ],
+      "es": [
+        "ahorrar agua"
+      ],
+      "pt_BR": [
+        "economizar água"
+      ]
+    },
+    "planets": {
+      "ru": [
+        "планета",
+        "планеты"
+      ],
+      "en": [
+        "planet",
+        "planets"
+      ],
+      "fr": [
+        "planète",
+        "planètes"
+      ],
+      "de": [
+        "planet",
+        "planeten"
+      ],
+      "es": [
+        "planeta",
+        "planetas"
+      ],
+      "pt_BR": [
+        "planeta",
+        "planetas"
+      ]
+    },
+    "galaxies": {
+      "ru": [
+        "галактика",
+        "галактики"
+      ],
+      "en": [
+        "galaxy",
+        "galaxies"
+      ],
+      "fr": [
+        "galaxie",
+        "galaxies"
+      ],
+      "de": [
+        "galaxie",
+        "galaxien"
+      ],
+      "es": [
+        "galaxia",
+        "galaxias"
+      ],
+      "pt_BR": [
+        "galáxia",
+        "galáxias"
+      ]
+    },
+    "stars": {
+      "ru": [
+        "звезда",
+        "звёзды",
+        "звезды"
+      ],
+      "en": [
+        "star",
+        "stars"
+      ],
+      "fr": [
+        "étoile",
+        "étoiles"
+      ],
+      "de": [
+        "stern",
+        "sterne"
+      ],
+      "es": [
+        "estrella",
+        "estrellas"
+      ],
+      "pt_BR": [
+        "estrela",
+        "estrelas"
+      ]
+    },
+    "asteroids": {
+      "ru": [
+        "астероид",
+        "астероиды"
+      ],
+      "en": [
+        "asteroid",
+        "asteroids"
+      ],
+      "fr": [
+        "astéroïde",
+        "astéroïdes"
+      ],
+      "de": [
+        "asteroid",
+        "asteroiden"
+      ],
+      "es": [
+        "asteroide",
+        "asteroides"
+      ],
+      "pt_BR": [
+        "asteroide",
+        "asteroides"
+      ]
+    },
+    "solar_system": {
+      "ru": [
+        "солнечная система"
+      ],
+      "en": [
+        "solar system"
+      ],
+      "fr": [
+        "système solaire"
+      ],
+      "de": [
+        "sonnensystem"
+      ],
+      "es": [
+        "sistema solar"
+      ],
+      "pt_BR": [
+        "sistema solar"
+      ]
+    },
+    "light": {
+      "ru": [
+        "свет",
+        "луч света"
+      ],
+      "en": [
+        "light",
+        "light rays"
+      ],
+      "fr": [
+        "lumière"
+      ],
+      "de": [
+        "licht"
+      ],
+      "es": [
+        "luz"
+      ],
+      "pt_BR": [
+        "luz"
+      ]
+    },
+    "electricity": {
+      "ru": [
+        "электричество",
+        "электрический ток"
+      ],
+      "en": [
+        "electricity",
+        "electric current"
+      ],
+      "fr": [
+        "électricité"
+      ],
+      "de": [
+        "strom",
+        "elektrizität"
+      ],
+      "es": [
+        "electricidad"
+      ],
+      "pt_BR": [
+        "eletricidade"
+      ]
+    },
+    "bees": {
+      "ru": [
+        "пчела",
+        "пчёлы",
+        "пчелы"
+      ],
+      "en": [
+        "bee",
+        "bees"
+      ],
+      "fr": [
+        "abeille",
+        "abeilles"
+      ],
+      "de": [
+        "biene",
+        "bienen"
+      ],
+      "es": [
+        "abeja",
+        "abejas"
+      ],
+      "pt_BR": [
+        "abelha",
+        "abelhas"
+      ]
+    }
+  },
+  "policies": {
+    "retain_raw_child_text": false,
+    "topics_locked_to_source": true,
+    "max_followups": 2,
+    "max_topics_in_memory": 48,
+    "max_saved_phrase_records_per_locale": 90,
+    "unknown_does_not_progress": true,
+    "never_guess_science": true,
+    "hint_age_floor": 7
+  },
+  "self_dialogue": {
+    "ru": {
+      "questions": [
+        "кто ты",
+        "ты живая планета",
+        "как ты говоришь",
+        "ты всё знаешь",
+        "как тебя зовут"
+      ],
+      "answers": [
+        "Я — живая планета Перекрёстка миров. Со мной можно разговаривать через планшет.",
+        "Да, в нашей истории я — живая жидкая планета. Я отвечаю колебаниями.",
+        "Я передаю мягкие колебания, а планшет превращает их в слова.",
+        "Я знаю много тем из нашей энциклопедии, но не всё на свете. Если я не уверена, я скажу об этом.",
+        "Меня называют Живой планетой Перекрёстка миров."
+      ]
+    },
+    "en": {
+      "questions": [
+        "who are you",
+        "are you a living planet",
+        "how do you speak",
+        "do you know everything",
+        "what is your name"
+      ],
+      "answers": [
+        "I'm the Living World at the Crossroads. You can talk to me through the tablet.",
+        "Yes. In our story, I'm a living, liquid planet. I answer using ripples.",
+        "I send gentle vibrations, and the tablet turns them into words.",
+        "I know many topics from our encyclopedia, but not everything. I will tell you when I am unsure.",
+        "You can call me the Living World of the Crossroads."
+      ]
+    },
+    "fr": {
+      "questions": [
+        "qui es tu",
+        "es tu une planète vivante",
+        "comment parles tu",
+        "sais tu tout",
+        "comment tu t appelles"
+      ],
+      "answers": [
+        "Je suis le Monde vivant du Carrefour des mondes. Tu peux me parler avec la tablette.",
+        "Oui. Dans notre histoire, je suis une planète liquide et vivante. Je réponds par des ondulations.",
+        "Je transmets de douces vibrations, et la tablette les transforme en mots.",
+        "Je connais beaucoup de sujets de notre encyclopédie, mais pas tout. Je te dirai si je ne sais pas.",
+        "Tu peux m’appeler le Monde vivant du Carrefour."
+      ]
+    },
+    "de": {
+      "questions": [
+        "wer bist du",
+        "bist du ein lebendiger planet",
+        "wie sprichst du",
+        "weißt du alles",
+        "wie heißt du"
+      ],
+      "answers": [
+        "Ich bin die lebendige Welt an der Kreuzung der Welten. Du kannst über das Tablet mit mir sprechen.",
+        "Ja. In unserer Geschichte bin ich ein lebendiger, flüssiger Planet. Ich antworte mit Wellen.",
+        "Ich sende sanfte Schwingungen. Das Tablet übersetzt sie in Worte.",
+        "Ich kenne viele Themen aus unserem Lexikon, aber nicht alles. Wenn ich etwas nicht weiß, sage ich es.",
+        "Du kannst mich die lebendige Welt nennen."
+      ]
+    },
+    "es": {
+      "questions": [
+        "quién eres",
+        "eres un planeta vivo",
+        "cómo hablas",
+        "lo sabes todo",
+        "cómo te llamas"
+      ],
+      "answers": [
+        "Soy el Mundo Viviente del Cruce de los Mundos. Puedes hablar conmigo con la tableta.",
+        "Sí. En nuestra historia, soy un planeta líquido y vivo. Respondo con ondulaciones.",
+        "Envío vibraciones suaves y la tableta las convierte en palabras.",
+        "Conozco muchos temas de nuestra enciclopedia, pero no todo. Te diré si no sé algo.",
+        "Puedes llamarme Mundo Viviente del Cruce."
+      ]
+    },
+    "pt_BR": {
+      "questions": [
+        "quem é você",
+        "você é um planeta vivo",
+        "como você fala",
+        "você sabe tudo",
+        "qual é o seu nome"
+      ],
+      "answers": [
+        "Eu sou o Mundo Vivo do Encontro dos Mundos. Você pode conversar comigo pelo tablet.",
+        "Sim. Na nossa história, sou um planeta líquido e vivo. Respondo com ondas.",
+        "Eu envio vibrações suaves, e o tablet as transforma em palavras.",
+        "Conheço muitos assuntos da nossa enciclopédia, mas não sei tudo. Se eu não souber, vou dizer.",
+        "Pode me chamar de Mundo Vivo do Encontro."
+      ]
+    }
+  }
+}

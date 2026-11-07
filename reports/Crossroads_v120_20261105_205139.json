@@ -1,0 +1,69 @@
+{
+  "patch": "MIKA Crossroads v120 content-only",
+  "source": "v119 RC1 content only",
+  "baseline_branch": "sync/current-mac-20261105",
+  "baseline_engine_git_sha": "a2c83b8cadd159f57ccfd4968e1bb25223156f15",
+  "changed": {
+    "planet_hub/scripts/crossroads_engine_v104_1.gd": {
+      "before": "2e262cff110da9bebba58cdfbeea42600a4a78b22d575b3317e31bc97cd5d7dd",
+      "after": "9c1d64ef86e04ac1a123f8005f73a8a58c492dc6baae8801359f5a5959f4ad9b",
+      "existed": true
+    },
+    "planet_hub/scripts/crossroads_dialog_v104.gd": {
+      "before": "a1b91a30bf423254d8a655175d131c217c556de11b4a067c9d3102c658107d33",
+      "after": "733e4667ea4de0ac9cb807de169e1cf0619f795cc88e4e8cd747ded8e26208fc",
+      "existed": true
+    },
+    "planet_hub/data/crossroads_v120_deep_dialogue.json": {
+      "before": null,
+      "after": "14663f6d8bf7cb78ca4f32fa742dfe2a9e54a7c7ad4430ce6e783b9f8d4e08f5",
+      "existed": false
+    },
+    "planet_hub/data/crossroads_v120_encyclopedia.json": {
+      "before": null,
+      "after": "0d4e4236946c57ba05d2d1b7dd0e6f8daef28124ed7117a1b1e34faeb017e404",
+      "existed": false
+    },
+    "planet_hub/data/crossroads_v120_investigations.json": {
+      "before": null,
+      "after": "9d951ddcd0bc3f6c6aafa0ea0f3d000ef5c3d1dd669d5f45f0c865c43b2b5b5c",
+      "existed": false
+    },
+    "planet_hub/data/crossroads_v120_knowledge_links.json": {
+      "before": null,
+      "after": "43ef18cbf79275138028bf83df6753fe4daf6d9a6a756ab644640de0b5695eea",
+      "existed": false
+    },
+    "planet_hub/data/crossroads_v120_learning.json": {
+      "before": null,
+      "after": "1425c22fc8f8a8dc9b0f79ef0d7e898d1e6e421ca29280e9358eb27ded37df4c",
+      "existed": false
+    },
+    "planet_hub/data/crossroads_v120_living_dialogue.json": {
+      "before": null,
+      "after": "ce97996b2889408404173b13a7d4bf6844b71a106b7fd9963415a8b708fd3ba4",
+      "existed": false
+    },
+    "planet_hub/data/crossroads_v120_routes.json": {
+      "before": null,
+      "after": "fee495ccdbf53c214a3456d22ce5d52063392f4a722ec6138c130845b69f26c1",
+      "existed": false
+    },
+    "planet_hub/tests/crossroads_v120_content_smoke.gd": {
+      "before": null,
+      "after": "ad52ceabae8a6a6a8d08740e948d66954b3af24781a668a42f8b9a51f3c85690",
+      "existed": false
+    }
+  },
+  "unchanged_ui_files": [
+    "planet_hub/scenes/representative_dialog.tscn",
+    "planet_hub/scripts/representative_dialog.gd",
+    "planet_hub/scripts/cloud_choice_button.gd",
+    "planet_hub/scripts/translator_tablet.gd",
+    "addons/mika_voice/MikaCloudChoiceSpeakers.gd"
+  ],
+  "backup_directory": "InfiniteSpace_backup_before_crossroads_v120_20261105_205139",
+  "godot": "FAIL: content smoke-test; inspect log",
+  "godot_log": "Crossroads_v120_godot_20261105_205139.log",
+  "github": "SKIPPED: validation pending or --no-github was selected"
+}

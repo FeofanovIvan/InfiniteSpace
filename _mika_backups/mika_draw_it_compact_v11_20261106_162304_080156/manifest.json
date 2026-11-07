@@ -1,0 +1,15 @@
+{
+  "patch": "draw_it_v1_1_compact_tools",
+  "files": {
+    "education/playtown/scenes/features/draw_this/draw_this_game.tscn": {
+      "existed": true,
+      "before": "b87d48ebabe118b2214d233be9985ff63d4dc8f0e19863c7f5c8fe787589c214",
+      "after": "30baaae118b76c2b841a2b1289191fb24919885f184540332f78e17f714cb982"
+    },
+    "education/playtown/src/features/draw_this/mika_draw_this_native_toolbar_v1_1.gd": {
+      "existed": false,
+      "before": null,
+      "after": "40bfd605ab92875c8bb05a1f0cae46e25a697ca2d07897754e5a9b142995d763"
+    }
+  }
+}

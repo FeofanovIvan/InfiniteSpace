@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "patch": "MIKA v117",
+  "base": "MIKA v116",
+  "locales": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "policy": {
+    "curious_min_age": 6,
+    "curious_min_distinct_visits": 2,
+    "explorer_min_age": 9,
+    "explorer_min_distinct_visits": 4,
+    "max_saved_topics_per_language": 48,
+    "max_distinct_visits": 99,
+    "max_extra_approved_pair": 1,
+    "young_children_full_hints": true,
+    "unknown_age_is_starter": true,
+    "count_only_distinct_visits": true,
+    "no_raw_child_text_in_progress": true,
+    "never_infer_new_science": true,
+    "no_penalties_or_grades": true,
+    "preserve_studies": true,
+    "preserve_three_clouds": true,
+    "keep_language_mastery_separate": true
+  },
+  "topic_guides": {
+    "sorting": {
+      "approved_question_index": 1
+    },
+    "ancestors": {
+      "approved_question_index": 1
+    },
+    "resources": {
+      "approved_question_index": 2
+    },
+    "waste": {
+      "approved_question_index": 1
+    },
+    "molecules": {
+      "approved_question_index": 1
+    },
+    "magnets": {
+      "approved_question_index": 2
+    },
+    "gravity": {
+      "approved_question_index": 1
+    },
+    "electricity": {
+      "approved_question_index": 2
+    },
+    "neurons": {
+      "approved_question_index": 1
+    },
+    "space": {
+      "approved_question_index": 2
+    },
+    "phase_changes": {
+      "approved_question_index": 1
+    },
+    "states": {
+      "approved_question_index": 2
+    },
+    "clean_water": {
+      "approved_question_index": 2
+    },
+    "saving_water": {
+      "approved_question_index": 2
+    },
+    "trees": {
+      "approved_question_index": 2
+    },
+    "flowers": {
+      "approved_question_index": 2
+    },
+    "bees": {
+      "approved_question_index": 1
+    },
+    "animal_homes": {
+      "approved_question_index": 2
+    },
+    "clean_ocean": {
+      "approved_question_index": 1
+    },
+    "plastic": {
+      "approved_question_index": 1
+    },
+    "food_waste": {
+      "approved_question_index": 1
+    },
+    "repairing": {
+      "approved_question_index": 2
+    },
+    "helping_elders": {
+      "approved_question_index": 2
+    },
+    "sharing": {
+      "approved_question_index": 1
+    },
+    "atoms": {
+      "approved_question_index": 2
+    },
+    "air": {
+      "approved_question_index": 2
+    },
+    "sound": {
+      "approved_question_index": 2
+    },
+    "light": {
+      "approved_question_index": 1
+    },
+    "shadows": {
+      "approved_question_index": 2
+    },
+    "heat_cold": {
+      "approved_question_index": 2
+    },
+    "floating_sinking": {
+      "approved_question_index": 1
+    },
+    "friction": {
+      "approved_question_index": 2
+    },
+    "rainbow": {
+      "approved_question_index": 1
+    },
+    "echoes": {
+      "approved_question_index": 2
+    },
+    "senses": {
+      "approved_question_index": 2
+    },
+    "energy": {
+      "approved_question_index": 2
+    },
+    "sun": {
+      "approved_question_index": 2
+    },
+    "moon": {
+      "approved_question_index": 2
+    },
+    "earth": {
+      "approved_question_index": 2
+    },
+    "stars": {
+      "approved_question_index": 1
+    },
+    "planets": {
+      "approved_question_index": 2
+    },
+    "solar_system": {
+      "approved_question_index": 1
+    },
+    "day_night": {
+      "approved_question_index": 1
+    },
+    "seasons": {
+      "approved_question_index": 2
+    },
+    "comets": {
+      "approved_question_index": 1
+    },
+    "asteroids": {
+      "approved_question_index": 2
+    },
+    "galaxies": {
+      "approved_question_index": 2
+    },
+    "space_travel": {
+      "approved_question_index": 2
+    }
+  },
+  "ui": {
+    "ru": {
+      "curious": "Хочешь разобраться подробнее? Выбери следующий вопрос в облачке.",
+      "extra": "А вот ещё один вопрос по этой теме:",
+      "age_unknown": "Начнём с простого объяснения."
+    },
+    "en": {
+      "curious": "Want to explore more? Choose another question in a cloud.",
+      "extra": "Here is another question about this topic:",
+      "age_unknown": "Let us start with a simple explanation."
+    },
+    "fr": {
+      "curious": "Tu veux en savoir plus ? Choisis une autre question dans un nuage.",
+      "extra": "Voici une autre question sur ce sujet :",
+      "age_unknown": "Commençons par une explication simple."
+    },
+    "de": {
+      "curious": "Möchtest du mehr erfahren? Wähle eine weitere Frage in einer Wolke.",
+      "extra": "Hier ist eine weitere Frage zu diesem Thema:",
+      "age_unknown": "Fangen wir mit einer einfachen Erklärung an."
+    },
+    "es": {
+      "curious": "¿Quieres saber más? Elige otra pregunta en una nube.",
+      "extra": "Aquí tienes otra pregunta sobre este tema:",
+      "age_unknown": "Empecemos con una explicación sencilla."
+    },
+    "pt_BR": {
+      "curious": "Quer saber mais? Escolha outra pergunta em uma nuvem.",
+      "extra": "Aqui vai outra pergunta sobre este assunto:",
+      "age_unknown": "Vamos começar com uma explicação simples."
+    }
+  },
+  "explanation": "v117 adds optional learning scaffolds and an extra explicitly-labeled, fully-approved Q/A pair only for familiar topics. It never rewrites science answers or masks math/prediction choices."
+}

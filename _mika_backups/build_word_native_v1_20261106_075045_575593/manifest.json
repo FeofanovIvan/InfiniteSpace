@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "files": {
+    "education/playtown/scenes/features/school/school_game.tscn": {
+      "existed": true,
+      "sha_before": "870cc7bf26c11c08090c498e98f18abf053d0bfc4d0ee7c08a7f4ed126a376ca",
+      "sha_after": "dcef5b4532ae290e50f7c3b45ad587eaf62eaee1d793ec769b0ba22c0b2476b0"
+    },
+    "education/playtown/src/features/school/mika_build_word_native_v1.gd": {
+      "existed": false,
+      "sha_before": null,
+      "sha_after": "a2938fc52a5fe24420a47d3d4100fa30df85952e23da23d5e045056b69d459e6"
+    }
+  }
+}

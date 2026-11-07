@@ -76,7 +76,7 @@ func _spend_coins(price: int) -> bool:
 	coin_balance_changed.emit(get_coin_balance())
 	return true
 func set_letters_traced(value: int) -> void:
-	letters_traced = clampi(value, 0, 26)
+	letters_traced = maxi(0, value)  # MIKA Trace Letters: all 6 alphabets
 	save_game()
 func set_words_traced(value: int) -> void:
 	words_traced = maxi(0, value)

@@ -1,0 +1,15 @@
+{
+  "version": "1.2.1",
+  "files": {
+    "education/playtown/scenes/features/tracing/letter_trace_game.tscn": {
+      "existed": true,
+      "before_sha256": "c818e838a00aa211450c6d7a48b807c22200fd59446ba5da9b7564d93e76b130",
+      "after_sha256": "a7cefa97422b6bda919e4d3c909147f7c6cb2e51d97b933e3147a425a9205fb8"
+    },
+    "education/playtown/src/features/tracing/mika_letter_trace_v1_2_1.gd": {
+      "existed": false,
+      "before_sha256": null,
+      "after_sha256": "e472eb4f6360995b4e84dc9708f1d8a47266559a96ed620a2738e3efc3bcd31c"
+    }
+  }
+}

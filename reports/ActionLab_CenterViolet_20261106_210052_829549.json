@@ -1,0 +1,41 @@
+{
+  "version": "action-lab-stable-frame-4.0",
+  "old_script": "res://simulator_ui/action_cards/independent/action_lab_plain_question_v3.gd",
+  "new_script": "res://simulator_ui/action_cards/independent/action_lab_stable_frame_v4.gd",
+  "files_added": [
+    "simulator_ui/action_cards/independent/action_lab_stable_frame_v4.gd"
+  ],
+  "scene_before_sha256": "4dfc5ab5cd5abf79d6991e9110c0e5bda571d10d30ad2ce3394fd7d326fbc572",
+  "scene_after_sha256": "9eaa4fa1ddc47019a387d8b0e4c3bd3408c125fd3e13be384ec8317d024b0156",
+  "status": "INSTALLED_SCENE_SMOKE_PASS",
+  "before": {
+    "editor": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_CenterViolet_20261106_210052_829549_BEFORE_editor.log"
+    },
+    "runtime": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_CenterViolet_20261106_210052_829549_BEFORE_runtime.log"
+    }
+  },
+  "backup": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_ActionLab_CenterViolet_20261106_210052_829549",
+  "after": {
+    "editor": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_CenterViolet_20261106_210052_829549_AFTER_editor.log"
+    },
+    "runtime": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_CenterViolet_20261106_210052_829549_AFTER_runtime.log"
+    }
+  },
+  "smoke": {
+    "code": 0,
+    "errors": [],
+    "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_CenterViolet_20261106_210052_829549_smoke.log"
+  }
+}

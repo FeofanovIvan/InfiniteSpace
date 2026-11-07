@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvydi1qjrguwy"]
+
+[ext_resource type="Script" path="res://education/playtown/src/features/tracing/mika_letter_trace_v1_2_1.gd" id="1_ltg"]
+
+[node name="LetterTraceGame" type="Node2D"]
+script = ExtResource("1_ltg")

@@ -1,0 +1,718 @@
+{
+  "schema_version": 1,
+  "basis": "Only official v96 question/answer variants from the existing 48 scientific articles; no generated science.",
+  "locales": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "ui": {
+    "ru": {
+      "unclear": "Я не знаю точного ответа на этот вопрос в нашей энциклопедии. Давай выберем другой вопрос.",
+      "explore": "Хочешь узнать об этом ещё? Выбери вопрос или задай свой.",
+      "fact_intro": "Вот что говорит наша энциклопедия:",
+      "related_intro": "Вот что в нашей энциклопедии сказано по близкому вопросу:",
+      "repeat_intro": "Конечно, повторяю:",
+      "new_topic": "Другая тема",
+      "review_choice": "Повтори то, что мы узнали",
+      "groups_choice": "Выбрать другой раздел",
+      "no_more": "Все три ответа из этой статьи мы уже посмотрели. Можно выбрать новую тему.",
+      "no_context": "Я пока не знаю, о каком явлении ты спрашиваешь. Выбери тему сначала."
+    },
+    "en": {
+      "unclear": "Our encyclopedia does not have a verified answer to that question yet. Let us choose another question.",
+      "explore": "Would you like to explore this topic? Choose a question or ask your own.",
+      "fact_intro": "Here is what our encyclopedia says:",
+      "related_intro": "Here is a related fact from our encyclopedia:",
+      "repeat_intro": "Of course, here it is again:",
+      "new_topic": "Another topic",
+      "review_choice": "Repeat what we learned",
+      "groups_choice": "Choose another section",
+      "no_more": "We have read all three answers in this entry. You can choose a new topic.",
+      "no_context": "I am not sure which idea you mean yet. Please choose a topic first."
+    },
+    "fr": {
+      "unclear": "Notre encyclopédie ne donne pas encore de réponse vérifiée à cette question. Choisissons une autre question.",
+      "explore": "Veux-tu approfondir ce sujet ? Choisis une question ou pose la tienne.",
+      "fact_intro": "Voici ce que dit notre encyclopédie :",
+      "related_intro": "Voici un fait lié à cette question dans notre encyclopédie :",
+      "repeat_intro": "Bien sûr, je répète :",
+      "new_topic": "Un autre sujet",
+      "review_choice": "Répète ce que nous avons appris",
+      "groups_choice": "Choisir une autre rubrique",
+      "no_more": "Nous avons lu les trois réponses de cet article. Tu peux choisir un autre sujet.",
+      "no_context": "Je ne sais pas encore de quoi tu parles. Choisis d’abord un sujet."
+    },
+    "de": {
+      "unclear": "Unsere Enzyklopädie hat darauf noch keine gesicherte Antwort. Wählen wir eine andere Frage.",
+      "explore": "Möchtest du mehr über dieses Thema erfahren? Wähle eine Frage oder stelle selbst eine.",
+      "fact_intro": "Das steht in unserer Enzyklopädie:",
+      "related_intro": "Das ist eine verwandte Information aus unserer Enzyklopädie:",
+      "repeat_intro": "Natürlich, hier noch einmal:",
+      "new_topic": "Ein anderes Thema",
+      "review_choice": "Wiederhole, was wir gelernt haben",
+      "groups_choice": "Einen anderen Bereich wählen",
+      "no_more": "Wir haben alle drei Antworten dieses Artikels gelesen. Du kannst ein neues Thema wählen.",
+      "no_context": "Ich weiß noch nicht, was du meinst. Wähle zuerst ein Thema."
+    },
+    "es": {
+      "unclear": "Nuestra enciclopedia todavía no tiene una respuesta comprobada para esa pregunta. Elijamos otra.",
+      "explore": "¿Quieres saber más sobre este tema? Elige una pregunta o haz la tuya.",
+      "fact_intro": "Esto dice nuestra enciclopedia:",
+      "related_intro": "Este es un dato relacionado de nuestra enciclopedia:",
+      "repeat_intro": "Claro, lo repito:",
+      "new_topic": "Otro tema",
+      "review_choice": "Repite lo que aprendimos",
+      "groups_choice": "Elegir otra sección",
+      "no_more": "Ya leímos las tres respuestas de este artículo. Puedes elegir otro tema.",
+      "no_context": "Todavía no sé a qué te refieres. Elige primero un tema."
+    },
+    "pt_BR": {
+      "unclear": "Nossa enciclopédia ainda não tem uma resposta confirmada para essa pergunta. Vamos escolher outra.",
+      "explore": "Quer descobrir mais sobre esse assunto? Escolha uma pergunta ou faça a sua.",
+      "fact_intro": "Veja o que diz nossa enciclopédia:",
+      "related_intro": "Aqui está um fato relacionado da nossa enciclopédia:",
+      "repeat_intro": "Claro, vou repetir:",
+      "new_topic": "Outro assunto",
+      "review_choice": "Repita o que aprendemos",
+      "groups_choice": "Escolher outra seção",
+      "no_more": "Já vimos as três respostas deste artigo. Você pode escolher outro assunto.",
+      "no_context": "Ainda não sei qual assunto você quer dizer. Escolha um tema primeiro."
+    }
+  },
+  "followups": {
+    "ru": {
+      "why": [
+        "Почему?",
+        "А почему?",
+        "Можешь объяснить причину?"
+      ],
+      "how": [
+        "Как это работает?",
+        "А как?",
+        "Как это происходит?"
+      ],
+      "where": [
+        "Где именно?",
+        "А где?",
+        "Где это бывает?"
+      ],
+      "what_if": [
+        "А что будет, если что-то изменится?",
+        "Что произойдёт, если…?",
+        "А если сделать по-другому?"
+      ],
+      "more": [
+        "Расскажи ещё",
+        "Что ещё ты знаешь?",
+        "Можно ещё один факт?"
+      ],
+      "repeat": [
+        "Повтори, пожалуйста",
+        "Повтори последнее",
+        "Можно ещё раз?"
+      ]
+    },
+    "en": {
+      "why": [
+        "Why?",
+        "But why?",
+        "Can you explain why?"
+      ],
+      "how": [
+        "How does that work?",
+        "How?",
+        "How does it happen?"
+      ],
+      "where": [
+        "Where exactly?",
+        "Where?",
+        "Where does that happen?"
+      ],
+      "what_if": [
+        "What happens if something changes?",
+        "What if?",
+        "And if we did it differently?"
+      ],
+      "more": [
+        "Tell me more",
+        "What else do you know?",
+        "One more fact, please"
+      ],
+      "repeat": [
+        "Please repeat that",
+        "Say it again",
+        "Could you repeat?"
+      ]
+    },
+    "fr": {
+      "why": [
+        "Pourquoi ?",
+        "Mais pourquoi ?",
+        "Peux-tu expliquer pourquoi ?"
+      ],
+      "how": [
+        "Comment ça marche ?",
+        "Comment ?",
+        "Comment cela se passe-t-il ?"
+      ],
+      "where": [
+        "Où exactement ?",
+        "Où ?",
+        "Où cela se passe-t-il ?"
+      ],
+      "what_if": [
+        "Que se passerait-il si quelque chose changeait ?",
+        "Et si ?",
+        "Et si on faisait autrement ?"
+      ],
+      "more": [
+        "Raconte-m’en plus",
+        "Que sais-tu d’autre ?",
+        "Encore un fait, s’il te plaît"
+      ],
+      "repeat": [
+        "Répète, s’il te plaît",
+        "Tu peux répéter ?",
+        "Encore une fois ?"
+      ]
+    },
+    "de": {
+      "why": [
+        "Warum?",
+        "Aber warum?",
+        "Kannst du erklären, warum?"
+      ],
+      "how": [
+        "Wie funktioniert das?",
+        "Wie?",
+        "Wie passiert das?"
+      ],
+      "where": [
+        "Wo genau?",
+        "Wo?",
+        "Wo passiert das?"
+      ],
+      "what_if": [
+        "Was passiert, wenn sich etwas ändert?",
+        "Was wäre, wenn…?",
+        "Und wenn wir es anders machen?"
+      ],
+      "more": [
+        "Erzähl mir mehr",
+        "Was weißt du noch?",
+        "Noch eine Tatsache, bitte"
+      ],
+      "repeat": [
+        "Bitte wiederholen",
+        "Sag es noch einmal",
+        "Kannst du das wiederholen?"
+      ]
+    },
+    "es": {
+      "why": [
+        "¿Por qué?",
+        "Pero ¿por qué?",
+        "¿Puedes explicar por qué?"
+      ],
+      "how": [
+        "¿Cómo funciona?",
+        "¿Cómo?",
+        "¿Cómo ocurre eso?"
+      ],
+      "where": [
+        "¿Dónde exactamente?",
+        "¿Dónde?",
+        "¿Dónde sucede eso?"
+      ],
+      "what_if": [
+        "¿Qué pasa si algo cambia?",
+        "¿Y si…?",
+        "¿Y si lo hacemos de otra manera?"
+      ],
+      "more": [
+        "Cuéntame más",
+        "¿Qué más sabes?",
+        "Otro dato, por favor"
+      ],
+      "repeat": [
+        "Repítelo, por favor",
+        "Dilo otra vez",
+        "¿Puedes repetir?"
+      ]
+    },
+    "pt_BR": {
+      "why": [
+        "Por quê?",
+        "Mas por quê?",
+        "Pode explicar por quê?"
+      ],
+      "how": [
+        "Como funciona?",
+        "Como?",
+        "Como isso acontece?"
+      ],
+      "where": [
+        "Onde exatamente?",
+        "Onde?",
+        "Onde isso acontece?"
+      ],
+      "what_if": [
+        "O que acontece se algo mudar?",
+        "E se…?",
+        "E se fizermos de outro jeito?"
+      ],
+      "more": [
+        "Me conta mais",
+        "O que mais você sabe?",
+        "Mais um fato, por favor"
+      ],
+      "repeat": [
+        "Repita, por favor",
+        "Fale de novo",
+        "Pode repetir?"
+      ]
+    }
+  },
+  "routing_by_topic": {
+    "sorting": {
+      "why": [
+        0,
+        1
+      ],
+      "how": [],
+      "where": [
+        2
+      ],
+      "what_if": []
+    },
+    "ancestors": {
+      "why": [
+        2
+      ],
+      "how": [
+        1
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "resources": {
+      "why": [
+        1,
+        2
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "waste": {
+      "why": [],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "molecules": {
+      "why": [],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "magnets": {
+      "why": [
+        2
+      ],
+      "how": [
+        0
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "gravity": {
+      "why": [
+        1,
+        2
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "electricity": {
+      "why": [
+        1
+      ],
+      "how": [
+        2
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "neurons": {
+      "why": [],
+      "how": [
+        1,
+        2
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "space": {
+      "why": [],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "phase_changes": {
+      "why": [
+        0
+      ],
+      "how": [
+        1
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "states": {
+      "why": [],
+      "how": [
+        1
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "clean_water": {
+      "why": [
+        0
+      ],
+      "how": [
+        2
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "saving_water": {
+      "why": [
+        1
+      ],
+      "how": [
+        0
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "trees": {
+      "why": [
+        0,
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "flowers": {
+      "why": [
+        0,
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "bees": {
+      "why": [
+        0,
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "animal_homes": {
+      "why": [
+        1
+      ],
+      "how": [],
+      "where": [
+        0
+      ],
+      "what_if": []
+    },
+    "clean_ocean": {
+      "why": [
+        0
+      ],
+      "how": [
+        1
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "plastic": {
+      "why": [
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "food_waste": {
+      "why": [
+        0
+      ],
+      "how": [
+        2
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "repairing": {
+      "why": [
+        0
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "helping_elders": {
+      "why": [
+        1
+      ],
+      "how": [
+        0
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "sharing": {
+      "why": [
+        0
+      ],
+      "how": [
+        2
+      ],
+      "where": [],
+      "what_if": [
+        1
+      ]
+    },
+    "atoms": {
+      "why": [],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "air": {
+      "why": [
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "sound": {
+      "why": [
+        1
+      ],
+      "how": [],
+      "where": [
+        0
+      ],
+      "what_if": []
+    },
+    "light": {
+      "why": [],
+      "how": [
+        1
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "shadows": {
+      "why": [
+        1
+      ],
+      "how": [
+        0
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "heat_cold": {
+      "why": [
+        1
+      ],
+      "how": [
+        2
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "floating_sinking": {
+      "why": [
+        0,
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "friction": {
+      "why": [
+        0,
+        2
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "rainbow": {
+      "why": [
+        1
+      ],
+      "how": [
+        0
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "echoes": {
+      "why": [
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "senses": {
+      "why": [],
+      "how": [
+        0,
+        2
+      ],
+      "where": [],
+      "what_if": []
+    },
+    "energy": {
+      "why": [
+        1
+      ],
+      "how": [],
+      "where": [
+        2
+      ],
+      "what_if": []
+    },
+    "sun": {
+      "why": [
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "moon": {
+      "why": [
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "earth": {
+      "why": [
+        0
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "stars": {
+      "why": [
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "planets": {
+      "why": [
+        2
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "solar_system": {
+      "why": [],
+      "how": [
+        1
+      ],
+      "where": [
+        2
+      ],
+      "what_if": []
+    },
+    "day_night": {
+      "why": [
+        0,
+        2
+      ],
+      "how": [],
+      "where": [
+        1
+      ],
+      "what_if": []
+    },
+    "seasons": {
+      "why": [
+        0,
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "comets": {
+      "why": [
+        1
+      ],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "asteroids": {
+      "why": [],
+      "how": [],
+      "where": [
+        2
+      ],
+      "what_if": []
+    },
+    "galaxies": {
+      "why": [],
+      "how": [],
+      "where": [],
+      "what_if": []
+    },
+    "space_travel": {
+      "why": [
+        1
+      ],
+      "how": [
+        0
+      ],
+      "where": [],
+      "what_if": []
+    }
+  },
+  "policies": {
+    "max_followups_per_topic": 3,
+    "no_source_answer_no_guess": true,
+    "retain_raw_child_text": false,
+    "exact_authorized_question_answer_index": true,
+    "allow_cross_language_questions": true,
+    "unknown_does_not_advance": true
+  }
+}

@@ -1,14 +1,18 @@
 extends Control
+# MIKA_BUBBLE_CARE_MAIN_HUD_V8_5_0
 ## MIKO compact HUD: seven fuel sticks, one blue crystal and two round buttons.
 ## No giant aircraft image or numerical resource labels on the child-facing HUD.
 signal galaxy_requested
 signal main_menu_requested
+signal bubble_care_requested
+signal bubble_reminder_ready
 
 const CRYSTAL_ICON: Texture2D = preload("res://asteroid_assets/fragments/04_blue/crystal_wedge.png")
 const GALAXY_ICON: Texture2D = preload("res://assets/ui/galaxy_button.png")
 # v77: simulator helmet badge from the planetary hub.
 const PLAYER_SHIP_BUTTON: Texture2D = preload("res://planet_hub/assets/v68_neon/simulator_badge.png")
 
+const BUBBLE_REMINDER_BUTTON: Script = preload("res://scripts/BubbleCareReminderButton.gd")
 const SETTINGS_GEAR_GLYPH: Script = preload("res://simulator_ui/settings_gear_glyph.gd")
 const SETTINGS_POPUP: Script = preload("res://scripts/SettingsLanguagePopup.gd")
 const HUD_WIDTH: float = 126.0
@@ -20,6 +24,7 @@ var _crystal_icon: Sprite2D
 var _fuel_count_label: Label
 var _blink_time: float = 0.0
 var _settings_popup: Control
+var _bubble_care_button: Button
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -60,6 +65,7 @@ func _ready() -> void:
 	panel.add_child(_fuel_count_label)
 	_make_icon_button("GlobalFlight", GALAXY_ICON, 46.0, MobileLocale.t("galaxy_map"), _open_galaxy)
 	_make_ship_menu_button()
+	_make_bubble_care_button()
 	_make_settings_button()
 	_refresh()
 	MobileLocale.language_changed.connect(_refresh_locale)
@@ -107,12 +113,40 @@ func _make_ship_menu_button() -> void:
 	button.pressed.connect(_open_main_menu)
 	add_child(button)
 
+
+func _make_bubble_care_button() -> void:
+	_bubble_care_button = BUBBLE_REMINDER_BUTTON.new() as Button
+	_bubble_care_button.name = "BubbleCareClock"
+	_bubble_care_button.position = Vector2(HUD_WIDTH - 44.0, 154.0)
+	_bubble_care_button.size = Vector2(42.0, 42.0)
+	_bubble_care_button.tooltip_text = "Bubble · забота"
+	_bubble_care_button.pressed.connect(_open_bubble_care)
+	_bubble_care_button.connect("reminder_ready", Callable(self, "_on_bubble_reminder_ready"))
+	add_child(_bubble_care_button)
+
+func _open_bubble_care() -> void:
+	bubble_care_requested.emit()
+
+func _on_bubble_reminder_ready() -> void:
+	bubble_reminder_ready.emit()
+
+func set_bubble_timer_active(active: bool) -> void:
+	if is_instance_valid(_bubble_care_button):
+		_bubble_care_button.call("set_flight_active", active)
+
+func reset_bubble_clock() -> void:
+	if is_instance_valid(_bubble_care_button):
+		_bubble_care_button.call("reset_clock")
+
+func bubble_settings_open() -> bool:
+	return is_instance_valid(_settings_popup) and _settings_popup.visible
+
 func _make_settings_button() -> void:
 	# Third compact circle below the simulator entry; Main.gd positions it safely.
 	var button: Button = Button.new()
 	button.name = "SettingsBelowSimulator"
 	button.text = ""
-	button.position = Vector2(HUD_WIDTH - 44.0, 154.0)
+	button.position = Vector2(HUD_WIDTH - 44.0, 208.0)
 	button.size = Vector2(42.0, 42.0)
 	button.focus_mode = Control.FOCUS_NONE
 	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND

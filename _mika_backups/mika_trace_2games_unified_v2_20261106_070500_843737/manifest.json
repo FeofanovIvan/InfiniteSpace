@@ -1,0 +1,30 @@
+{
+  "version": "2.0",
+  "files": {
+    "education/playtown/scenes/features/tracing/letter_trace_game.tscn": {
+      "existed": true,
+      "previous_sha256": "a7cefa97422b6bda919e4d3c909147f7c6cb2e51d97b933e3147a425a9205fb8",
+      "installed_sha256": "3d60e2c939a0692b949d543a1552cb46619d2d46234fa443d3d73126ef5974d6"
+    },
+    "education/playtown/scenes/features/tracing/word_trace_game.tscn": {
+      "existed": true,
+      "previous_sha256": "a94b9bd22baacb8bba09f557a36d9a48ed78217793b62b627ed1ff928d7c6820",
+      "installed_sha256": "5b474f15ca586870b5239498b10efb6842d70f90986da17f5c58e5c06e3c31d9"
+    },
+    "education/playtown/src/features/tracing/mika_letter_trace_toolbar_v2.gd": {
+      "existed": false,
+      "previous_sha256": null,
+      "installed_sha256": "3dc2068a553c31a4e8addc754d164b69ec4eff2e202254b3c593cc7c4d3b52c9"
+    },
+    "education/playtown/src/features/tracing/mika_word_trace_toolbar_v2.gd": {
+      "existed": false,
+      "previous_sha256": null,
+      "installed_sha256": "66e8c9272349f45b531df14f82da6627d4eb12ca8e093acde76b0c5aa130eeb6"
+    },
+    "simulator_ui/scripts/mika_shared_tracing_toolbar_v2.gd": {
+      "existed": false,
+      "previous_sha256": null,
+      "installed_sha256": "491c9dfc82ab95d3d19bcc27728da2de5de4aecb3a641200416eb03d84c6c89d"
+    }
+  }
+}

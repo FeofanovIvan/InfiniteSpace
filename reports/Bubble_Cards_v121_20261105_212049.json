@@ -1,0 +1,17 @@
+{
+  "version": "MIKA Bubble Cards v121",
+  "project": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot",
+  "timestamp": "20261105_212049",
+  "changed": [
+    "planet_hub/data/planet_game_cards_v104.json",
+    "planet_hub/cards/game_icons/common__pet_walk.png",
+    "simulator_ui/assets/approved_icons/sim_11_bubble_care.png"
+  ],
+  "godot": "NOT RUN",
+  "github": "SKIPPED",
+  "backup": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_Bubble_Cards_v121_20261105_212049",
+  "report": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/Bubble_Cards_v121_20261105_212049.json",
+  "status": "ROLLED BACK",
+  "assigned_uninhabited_planets": 24,
+  "error": "Проверка Godot FAILED (см. /Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/Bubble_Cards_v121_20261105_212049_Godot.log)"
+}

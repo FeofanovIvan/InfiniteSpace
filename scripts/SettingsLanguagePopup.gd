@@ -230,6 +230,10 @@ func _v104_unconfigured(key: String) -> void:
 func open_settings() -> void:
 	visible = true
 	_layout()
+	# MIKA_ENC_V572_SYNC_SETTINGS
+	var enc_actions: Node = get_node_or_null("/root/MikaEncyclopediaSettingsButton")
+	if enc_actions != null and enc_actions.has_method("refresh_now"):
+		enc_actions.call("refresh_now")
 
 func close_settings() -> void:
 	visible = false

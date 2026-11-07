@@ -42,17 +42,17 @@ const CATALOG_PATH: String = "res://education/playtown_catalog.json"
 # v94: first seven legacy lessons + three reserved future scenes.
 const V94_GAME_CARD = preload("res://simulator_ui/scripts/approved_simulator_card.gd")
 const V94_APPROVED_GAMES: Array[Dictionary] = [
-    {"id": "sim_01", "icon": "res://simulator_ui/assets/approved_icons/sim_01_trace_letters.png", "source_id": "letter_trace"},
-    {"id": "sim_02", "icon": "res://simulator_ui/assets/approved_icons/sim_02_write_words.png", "source_id": "word_trace"},
-    {"id": "sim_03", "icon": "res://simulator_ui/assets/approved_icons/sim_03_spell_words.png", "source_id": "word_build"},
-    {"id": "sim_04", "icon": "res://simulator_ui/assets/approved_icons/sim_04_match_shapes.png", "source_id": "shape_build"},
-    {"id": "sim_05", "icon": "res://simulator_ui/assets/approved_icons/sim_05_draw_rocket.png", "source_id": "draw_this"},
-    {"id": "sim_06", "icon": "res://simulator_ui/assets/approved_icons/sim_06_choose_number.png", "source_id": "pick_number"},
-    {"id": "sim_07", "icon": "res://simulator_ui/assets/approved_icons/sim_07_trace_numbers.png", "source_id": "count_groceries"},
-    {"id": "sim_08", "icon": "res://simulator_ui/assets/approved_icons/sim_08_daily_routine.png", "scene": "res://simulator_ui/scenes/sim_08_actioncards.tscn"},
-    {"id": "sim_09", "icon": "res://simulator_ui/assets/approved_icons/sim_09_reward_star.png", "scene": "res://simulator_ui/scenes/sim_09_whereisit.tscn"},
-    {"id": "sim_10", "icon": "res://simulator_ui/assets/approved_icons/sim_10_sort_shapes.png", "scene": "res://simulator_ui/scenes/sim_10_colorsort.tscn"},
-    {"id": "sim_11", "icon": "res://simulator_ui/assets/approved_icons/sim_11_bubble_care.png", "scene": "res://bubble/scenes/care_room_actions_camera.tscn"}
+	{"id": "sim_01", "icon": "res://simulator_ui/assets/approved_icons/sim_01_trace_letters.png", "source_id": "letter_trace"},
+	{"id": "sim_02", "icon": "res://simulator_ui/assets/approved_icons/sim_02_write_words.png", "source_id": "word_trace"},
+	{"id": "sim_03", "icon": "res://simulator_ui/assets/approved_icons/sim_03_spell_words.png", "source_id": "word_build"},
+	{"id": "sim_04", "icon": "res://simulator_ui/assets/approved_icons/sim_04_match_shapes.png", "source_id": "shape_build"},
+	{"id": "sim_05", "icon": "res://simulator_ui/assets/approved_icons/sim_05_draw_rocket.png", "source_id": "draw_this"},
+	{"id": "sim_06", "icon": "res://simulator_ui/assets/approved_icons/sim_06_choose_number.png", "source_id": "pick_number"},
+	{"id": "sim_07", "icon": "res://simulator_ui/assets/approved_icons/sim_07_trace_numbers.png", "source_id": "count_groceries"},
+	{"id": "sim_08", "icon": "res://simulator_ui/assets/approved_icons/sim_08_daily_routine.png", "scene": "res://simulator_ui/scenes/sim_08_actioncards.tscn"},
+	{"id": "sim_09", "icon": "res://simulator_ui/assets/approved_icons/sim_09_reward_star.png", "scene": "res://simulator_ui/scenes/sim_09_whereisit.tscn"},
+	{"id": "sim_10", "icon": "res://simulator_ui/assets/approved_icons/sim_10_sort_shapes.png", "scene": "res://simulator_ui/scenes/sim_10_colorsort.tscn"},
+	{"id": "sim_11", "icon": "res://simulator_ui/assets/approved_icons/sim_11_bubble_care.png", "scene": "res://bubble/scenes/care_room_actions_camera.tscn"}
 ]
 const V94_GAME_NAMES: Dictionary = {
 	"sim_01": {
@@ -148,7 +148,10 @@ const V94_GAME_NAMES: Dictionary = {
 const ART_ROOT: String = "res://education/playtown/"
 const PET_SCENE_PATH: String = "res://bubble/scenes/care_room_actions_camera.tscn"
 # v77: standalone Bubble replaces the PlayTown walking dog.
-const BUBBLE_SCENE: PackedScene = preload("res://simulator_ui/bubble/scenes/bubble.tscn")
+# Footer scene preload removed: sim_11 is the only entry to Bubble Care.
+# MIKA_BUBBLE_CARE_HUD_V8_4_8
+# MIKA_BUBBLE_ICONS_FIRST_CARD_V8_4_9_2
+# MIKA_BUBBLE_CARE_MAIN_HUD_V8_5_0
 # Running dog on the main ship screen is the actual Play Town animated character.
 # The original dog sprites, puppy mini-games and sounds are copied locally.
 const PET_WALK_SPEED: float = 65.0
@@ -187,10 +190,13 @@ var _cards: Array[Dictionary] = []
 var _crystal_balance: int = 0
 var _last_playtown_coins: int = 0
 var _playing: bool = false
+var _bubble_direct: bool = false
 var _pet_sprite: Node2D
 var _pet_click_area: Button
 var _pet_walk_x: float = 0.0
 var _pet_direction: float = 1.0
+var _pet_visual_heading: float = 0.0
+var _pet_emotion_clock: float = 0.0
 var _pet_initial_position: bool = true
 
 
@@ -271,6 +277,7 @@ func _ready() -> void:
 	_gallery.add_child(_strip)
 	_strip.add_theme_constant_override("separation", 28)
 	_load_original_catalog()
+	# Bubble Care now opens directly from the flight button.
 	_v1151p24_add_planet_cards()
 	MobileLocale.language_changed.connect(_v81_refresh_game_titles)
 	_v81_refresh_game_titles()
@@ -281,20 +288,9 @@ func _ready() -> void:
 	_gesture_layer.mouse_filter = Control.MOUSE_FILTER_STOP
 	_gesture_layer.clip_contents = true
 	add_child(_gesture_layer)
-	# Import the genuine, animated Bubble scene with its shader, eyes and mouth.
-	_pet_sprite = BUBBLE_SCENE.instantiate() as Node2D
-	_pet_sprite.name = "BubbleCreature_WalkingBottom"
-	_pet_sprite.z_index = 10
-	add_child(_pet_sprite)
-	_pet_click_area = Button.new()
-	_pet_click_area.name = "TapBubble_ToPetHome"
-	_pet_click_area.text = ""
-	_pet_click_area.focus_mode = Control.FOCUS_NONE
-	_pet_click_area.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	for style_name in ["normal", "hover", "pressed", "disabled", "focus"]:
-		_pet_click_area.add_theme_stylebox_override(style_name, StyleBoxEmpty.new())
-	_pet_click_area.pressed.connect(_open_pet_home)
-	add_child(_pet_click_area)
+	# v8.4.9: no footer Bubble or invisible touch hotspot; open care via card 1.
+	_pet_sprite = null
+	_pet_click_area = null
 	_game_layer = Control.new()
 	_game_layer.name = "PlayTownOriginalGameRunner"
 	_game_layer.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -415,62 +411,64 @@ func _v81_refresh_game_titles(_locale: String = "") -> void:
 
 
 func _load_original_catalog() -> void:
-    # v94: the original 19-game catalog is a *library*, never removed.
-    # Only the 10 approved cards are visible in the educational simulator.
-    if not FileAccess.file_exists(CATALOG_PATH):
-        push_error("Missing original Play Town catalog: " + CATALOG_PATH)
-        return
-    var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(CATALOG_PATH))
-    if not (parsed is Array):
-        push_error("Invalid original Play Town catalog")
-        return
-    var legacy_by_id: Dictionary = {}
-    for raw_info in parsed:
-        if raw_info is Dictionary:
-            legacy_by_id[str(raw_info.get("id", ""))] = raw_info
-    for specification in V94_APPROVED_GAMES:
-        var game_id: String = str(specification.get("id", ""))
-        var icon_path: String = str(specification.get("icon", ""))
-        var scene_path: String = str(specification.get("scene", ""))
-        var original_art: String = ""
-        var source_id: String = str(specification.get("source_id", ""))
-        if not source_id.is_empty():
-            var original: Dictionary = legacy_by_id.get(source_id, {})
-            if original.is_empty():
-                push_error("v94: missing source game " + source_id)
-                continue
-            scene_path = ART_ROOT + str(original.get("scene", ""))
-            original_art = ART_ROOT + str(original.get("texture", ""))
-        if not ResourceLoader.exists(scene_path) or not ResourceLoader.exists(icon_path):
-            push_error("v94: missing approved scene or icon: " + scene_path + " / " + icon_path)
-            continue
-        var info: Dictionary = specification.duplicate(true)
-        info["scene_path"] = scene_path
-        _cards.append(info)
-        var button := TextureButton.new()
-        button.name = "PlayTownCard_" + game_id
-        button.texture_normal = null
-        button.set_meta("game_id", game_id)
-        button.set_meta("original_art_path", original_art)
-        button.ignore_texture_size = true
-        button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-        button.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
-        button.focus_mode = Control.FOCUS_NONE
-        button.mouse_filter = Control.MOUSE_FILTER_IGNORE
-        button.tooltip_text = _v81_game_title(game_id)
-        button.custom_minimum_size = Vector2(255.0, 315.0)
-        button.pressed.connect(_open_game.bind(scene_path))
-        _strip.add_child(button)
-        var frame: Control = V94_GAME_CARD.new() as Control
-        frame.name = "PlanetHubGameFrame"
-        frame.set("card_title", _v81_game_title(game_id))
-        frame.set("card_subtitle", "")
-        frame.set("card_description", "")
-        frame.set("image_fit_mode", "contain")
-        frame.set("image_path", icon_path)
-        button.add_child(frame)
-        frame.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-        frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	# v94: the original 19-game catalog is a *library*, never removed.
+	# Only the 10 approved cards are visible in the educational simulator.
+	if not FileAccess.file_exists(CATALOG_PATH):
+		push_error("Missing original Play Town catalog: " + CATALOG_PATH)
+		return
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(CATALOG_PATH))
+	if not (parsed is Array):
+		push_error("Invalid original Play Town catalog")
+		return
+	var legacy_by_id: Dictionary = {}
+	for raw_info in parsed:
+		if raw_info is Dictionary:
+			legacy_by_id[str(raw_info.get("id", ""))] = raw_info
+	for specification in V94_APPROVED_GAMES:
+		if str(specification.get("id", "")) == "sim_11":
+			continue  # Bubble lives in the main flight HUD only.
+		var game_id: String = str(specification.get("id", ""))
+		var icon_path: String = str(specification.get("icon", ""))
+		var scene_path: String = str(specification.get("scene", ""))
+		var original_art: String = ""
+		var source_id: String = str(specification.get("source_id", ""))
+		if not source_id.is_empty():
+			var original: Dictionary = legacy_by_id.get(source_id, {})
+			if original.is_empty():
+				push_error("v94: missing source game " + source_id)
+				continue
+			scene_path = ART_ROOT + str(original.get("scene", ""))
+			original_art = ART_ROOT + str(original.get("texture", ""))
+		if not ResourceLoader.exists(scene_path) or not ResourceLoader.exists(icon_path):
+			push_error("v94: missing approved scene or icon: " + scene_path + " / " + icon_path)
+			continue
+		var info: Dictionary = specification.duplicate(true)
+		info["scene_path"] = scene_path
+		_cards.append(info)
+		var button := TextureButton.new()
+		button.name = "PlayTownCard_" + game_id
+		button.texture_normal = null
+		button.set_meta("game_id", game_id)
+		button.set_meta("original_art_path", original_art)
+		button.ignore_texture_size = true
+		button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		button.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+		button.focus_mode = Control.FOCUS_NONE
+		button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		button.tooltip_text = _v81_game_title(game_id)
+		button.custom_minimum_size = Vector2(255.0, 315.0)
+		button.pressed.connect(_open_game.bind(scene_path))
+		_strip.add_child(button)
+		var frame: Control = V94_GAME_CARD.new() as Control
+		frame.name = "PlanetHubGameFrame"
+		frame.set("card_title", _v81_game_title(game_id))
+		frame.set("card_subtitle", "")
+		frame.set("card_description", "")
+		frame.set("image_fit_mode", "contain")
+		frame.set("image_path", icon_path)
+		button.add_child(frame)
+		frame.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 
 func set_stats(flight_crystals: int, _capacity: int, _ship_speed: float) -> void:
@@ -481,11 +479,27 @@ func set_stats(flight_crystals: int, _capacity: int, _ship_speed: float) -> void
 
 
 func open_menu(view: Vector2) -> void:
+	_bubble_direct = false
 	size = view
 	visible = true
 	_return_to_cards()
 	_reflow()
 
+
+
+# Open the EXISTING Bubble Care scene using the simulator's actual SubViewport,
+# native back button, game exit, language and game-state wiring. No new actor.
+func open_bubble_care_direct(view: Vector2) -> void:
+	if _playing:
+		return
+	_bubble_direct = true
+	size = view
+	visible = true
+	_reflow()
+	_open_game(PET_SCENE_PATH)
+	if not _playing:
+		_bubble_direct = false
+		visible = false
 
 func close_menu() -> void:
 	_return_to_cards()
@@ -527,8 +541,7 @@ func _open_game(scene_path: String) -> void:
 	_playing = true
 	_gallery.visible = false
 	_gesture_layer.visible = false
-	_pet_sprite.visible = false
-	_pet_click_area.visible = false
+	# Footer Bubble removed; the care card still launches its original scene.
 	_pointer_kind = ""
 	_fling_speed = 0.0
 	_header.visible = false
@@ -549,6 +562,11 @@ func _on_coins_changed(balance: int) -> void:
 
 
 func _return_to_cards() -> void:
+	if _bubble_direct and _playing:
+		_bubble_direct = false
+		close_menu()
+		return
+
 	_playing = false
 	var portal: Node = get_node_or_null("/root/PlayTownPortal")
 	if portal != null:
@@ -558,8 +576,7 @@ func _return_to_cards() -> void:
 	_game_layer.visible = false
 	_gallery.visible = true
 	_gesture_layer.visible = true
-	_pet_sprite.visible = true
-	_pet_click_area.visible = true
+	# The gallery shows cards only; no footer character or click hotspot.
 	_pointer_kind = ""
 	_fling_speed = 0.0
 	_header.visible = true
@@ -651,38 +668,7 @@ func _input(event: InputEvent) -> void:
 			_fling_speed = 0.0
 
 
-func _advance_bubble(delta: float) -> void:
-	# Full procedural Bubble scene from the user's Godot 4 standalone project.
-	# Never generate replacement frames or distort the character's face.
-	if _pet_sprite == null or _pet_click_area == null or size.x < 120.0:
-		return
-	var ui_scale: float = clampf(minf(size.x / 1280.0, size.y / 720.0), 0.60, 1.35)
-	var bubble_scale: float = 0.368 * ui_scale  # v78: Bubble +15% vs v77 (0.32).
-	var extent: float = 375.0 * bubble_scale
-	var left: float = extent + 16.0 * ui_scale
-	var right: float = maxf(left + 1.0, size.x - extent - 16.0 * ui_scale)
-	if _pet_initial_position:
-		_pet_walk_x = (left + right) * 0.5
-		_pet_initial_position = false
-	_pet_walk_x += PET_WALK_SPEED * ui_scale * _pet_direction * delta
-	if _pet_walk_x >= right:
-		_pet_walk_x = right
-		_pet_direction = -1.0
-	elif _pet_walk_x <= left:
-		_pet_walk_x = left
-		_pet_direction = 1.0
-	_pet_sprite.set("travel_direction", _pet_direction)
-	_pet_sprite.set("walking_energy", 1.0)
-	# Keep the creature entirely visible above the bottom edge.
-	var anchor: Vector2 = Vector2(_pet_walk_x, size.y - extent - 8.0 * ui_scale)
-	_pet_sprite.position = anchor
-	_pet_sprite.scale = Vector2.ONE * bubble_scale
-	_pet_click_area.position = anchor - Vector2.ONE * extent
-	_pet_click_area.size = Vector2.ONE * extent * 2.0
-
 func _process(delta: float) -> void:
-	if visible and not _playing:
-		_advance_bubble(delta)
 	if not visible or _playing or _pointer_kind != "" or absf(_fling_speed) < 8.0:
 		return
 	var max_scroll: int = maxi(0, roundi(_strip.size.x - _gallery.size.x))
@@ -724,7 +710,7 @@ func _reflow() -> void:
 	var margin: float = maxf(14.0, 22.0 * scale)
 	var top_clearance: float = maxf(14.0, 21.0 * scale)
 	var cards_top: float = maxf(100.0 * scale, top_y + counter_h + top_clearance)
-	# Match _advance_bubble(): its upper extent is above the lower screen edge
+	# Preserve the previous reserved footer extent is above the lower screen edge
 	# by TWO creature half-extents, plus the 8-pixel resting clearance.
 	# Use its real +15% scale rather than an arbitrary percentage of screen height.
 	var bubble_ui_scale: float = clampf(minf(view.x / 1280.0, view.y / 720.0), 0.60, 1.35)
@@ -754,10 +740,11 @@ func _reflow() -> void:
 	_viewport_container.scale = Vector2.ONE
 	_viewport_container.position = Vector2.ZERO
 	_viewport_container.size = view
-	_game_back.position = Vector2(12.0, 12.0) * scale
-	_game_back.size = Vector2.ONE * 48.0 * scale
+	# Exact same style, position and actual pixel size as the hub Back.
+	_game_back.position = _back.position
+	_game_back.size = _back.size
 	# Keep the new 68px exit button; do not shrink it back to the rocket size.
-	_advance_bubble(0.0)
+	# Card dimensions and gallery positions intentionally unchanged.
 
 # MIKA TEMP24 / v115.1: append approved PLANET games to existing 11-card simulator.
 # This block does not modify any of the 11 original cards or their callbacks.
@@ -768,134 +755,133 @@ var _v1151p24_by_id: Dictionary = {}
 var _v1151p24_planet_scenes: Dictionary = {}
 
 func _v1151p24_locale() -> String:
-    var locale: String = str(MobileLocale.language)
-    if not ["ru", "en", "fr", "de", "es", "pt_BR"].has(locale):
-        return "ru"
-    return locale
+	var locale: String = str(MobileLocale.language)
+	if not ["ru", "en", "fr", "de", "es", "pt_BR"].has(locale):
+		return "ru"
+	return locale
 
 func _v1151p24_title(data: Dictionary, fallback: String) -> String:
-    return str(data.get(_v1151p24_locale(), data.get("ru", fallback)))
+	return str(data.get(_v1151p24_locale(), data.get("ru", fallback)))
 
 func _v1151p24_add_planet_cards() -> void:
-    if not FileAccess.file_exists(_V1151P24_CATALOG):
-        push_warning("MIKA temporary planet games registry missing")
-        return
-    var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(_V1151P24_CATALOG))
-    if not (parsed is Dictionary):
-        push_error("MIKA temporary planet games registry invalid")
-        return
-    var games: Array = (parsed as Dictionary).get("entries", [])
-    if games.size() != 24:
-        push_error("MIKA temporary planet games: expected 24")
-        return
-    if FileAccess.file_exists(_V1151P24_PLANETS):
-        var current: Variant = JSON.parse_string(FileAccess.get_file_as_string(_V1151P24_PLANETS))
-        if current is Dictionary:
-            _v1151p24_planet_scenes = (current as Dictionary).get("games", {})
-    _v1151p24_by_id.clear()
-    for raw in games:
-        if not (raw is Dictionary):
-            continue
-        var game: Dictionary = raw as Dictionary
-        var game_id: String = str(game.get("id", ""))
-        if game_id.is_empty() or _v1151p24_by_id.has(game_id):
-            continue
-        _v1151p24_by_id[game_id] = game
-        var art_path: String = _V1151P24_ART + game_id + ".png"
-        var art: Texture2D = load(art_path) as Texture2D
-        if art == null:
-            push_warning("MIKA missing temporary planet card art: " + art_path)
-            continue
-        var button: TextureButton = TextureButton.new()
-        button.name = "TemporaryPlanetCard_" + game_id
-        button.texture_normal = art
-        button.ignore_texture_size = true
-        button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-        button.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
-        button.focus_mode = Control.FOCUS_NONE
-        button.mouse_filter = Control.MOUSE_FILTER_IGNORE
-        button.custom_minimum_size = Vector2(255.0, 315.0)
-        var available: bool = not _v1151p24_find_scene(game).is_empty()
-        var title_text: String = _v1151p24_title(game.get("title", {}), game_id)
-        button.tooltip_text = title_text if available else title_text + " — сцена пока отсутствует"
-        var label: Label = Label.new()
-        label.name = "PlanetGameTitle"
-        label.anchor_left = 0.0
-        label.anchor_right = 1.0
-        label.anchor_top = 1.0
-        label.anchor_bottom = 1.0
-        label.offset_left = 0.0
-        label.offset_right = 0.0
-        label.offset_top = -42.0
-        label.offset_bottom = -1.0
-        label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-        label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-        label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-        label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-        label.add_theme_font_size_override("font_size", 16)
-        label.add_theme_color_override("font_color", Color("dff7ff") if available else Color("ffb69c"))
-        label.text = title_text
-        button.add_child(label)
-        button.pressed.connect(_v1151p24_open_card.bind(game_id))
-        _strip.add_child(button)
+	if not FileAccess.file_exists(_V1151P24_CATALOG):
+		push_warning("MIKA temporary planet games registry missing")
+		return
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(_V1151P24_CATALOG))
+	if not (parsed is Dictionary):
+		push_error("MIKA temporary planet games registry invalid")
+		return
+	var games: Array = (parsed as Dictionary).get("entries", [])
+	if games.size() != 24:
+		push_error("MIKA temporary planet games: expected 24")
+		return
+	if FileAccess.file_exists(_V1151P24_PLANETS):
+		var current: Variant = JSON.parse_string(FileAccess.get_file_as_string(_V1151P24_PLANETS))
+		if current is Dictionary:
+			_v1151p24_planet_scenes = (current as Dictionary).get("games", {})
+	_v1151p24_by_id.clear()
+	for raw in games:
+		if not (raw is Dictionary):
+			continue
+		var game: Dictionary = raw as Dictionary
+		var game_id: String = str(game.get("id", ""))
+		if game_id.is_empty() or _v1151p24_by_id.has(game_id):
+			continue
+		_v1151p24_by_id[game_id] = game
+		var art_path: String = _V1151P24_ART + game_id + ".png"
+		var art: Texture2D = load(art_path) as Texture2D
+		if art == null:
+			push_warning("MIKA missing temporary planet card art: " + art_path)
+			continue
+		var button: TextureButton = TextureButton.new()
+		button.name = "TemporaryPlanetCard_" + game_id
+		button.texture_normal = art
+		button.ignore_texture_size = true
+		button.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		button.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+		button.focus_mode = Control.FOCUS_NONE
+		button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		button.custom_minimum_size = Vector2(255.0, 315.0)
+		var available: bool = not _v1151p24_find_scene(game).is_empty()
+		var title_text: String = _v1151p24_title(game.get("title", {}), game_id)
+		button.tooltip_text = title_text if available else title_text + " — сцена пока отсутствует"
+		var label: Label = Label.new()
+		label.name = "PlanetGameTitle"
+		label.anchor_left = 0.0
+		label.anchor_right = 1.0
+		label.anchor_top = 1.0
+		label.anchor_bottom = 1.0
+		label.offset_left = 0.0
+		label.offset_right = 0.0
+		label.offset_top = -42.0
+		label.offset_bottom = -1.0
+		label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		label.add_theme_font_size_override("font_size", 16)
+		label.add_theme_color_override("font_color", Color("dff7ff") if available else Color("ffb69c"))
+		label.text = title_text
+		button.add_child(label)
+		button.pressed.connect(_v1151p24_open_card.bind(game_id))
+		_strip.add_child(button)
 
 func _v1151p24_find_scene(game: Dictionary) -> String:
-    var candidates: Array[String] = []
-    var current: Dictionary = _v1151p24_planet_scenes.get(str(game.get("id", "")), {})
-    var preferred: String = str(current.get("source_scene", ""))
-    if preferred.begins_with("res://"):
-        candidates.append(preferred)
-    for candidate in game.get("scene_candidates", []):
-        var path: String = str(candidate)
-        if path.begins_with("res://") and not candidates.has(path):
-            candidates.append(path)
-    for path in candidates:
-        if ResourceLoader.exists(path):
-            return path
-    return ""
+	var candidates: Array[String] = []
+	var current: Dictionary = _v1151p24_planet_scenes.get(str(game.get("id", "")), {})
+	var preferred: String = str(current.get("source_scene", ""))
+	if preferred.begins_with("res://"):
+		candidates.append(preferred)
+	for candidate in game.get("scene_candidates", []):
+		var path: String = str(candidate)
+		if path.begins_with("res://") and not candidates.has(path):
+			candidates.append(path)
+	for path in candidates:
+		if ResourceLoader.exists(path):
+			return path
+	return ""
 
 func _v1151p24_open_card(game_id: String) -> void:
-    if _playing or not _v1151p24_by_id.has(game_id):
-        return
-    var game: Dictionary = _v1151p24_by_id[game_id]
-    var scene_path: String = _v1151p24_find_scene(game)
-    if scene_path.is_empty():
-        var warning: AcceptDialog = AcceptDialog.new()
-        warning.title = "Игра ещё не подключена"
-        warning.dialog_text = _v1151p24_title(game.get("title", {}), game_id) + "\nСцена мини-игры отсутствует в текущей сборке."
-        warning.confirmed.connect(warning.queue_free)
-        warning.canceled.connect(warning.queue_free)
-        add_child(warning)
-        warning.popup_centered_ratio(0.32)
-        return
-    var packed: PackedScene = load(scene_path) as PackedScene
-    if packed == null:
-        push_error("MIKA cannot load planet game: " + scene_path)
-        return
-    # Reuse existing simulator viewport and Back button, without opening a second portal.
-    var language: Node = get_node_or_null("/root/LanguageService")
-    if language != null:
-        var locale: String = str(MobileLocale.language)
-        if locale == "pt_BR":
-            locale = "pt"
-        language.call("set_locale", locale, false)
-    var coins: Node = get_node_or_null("/root/GameState")
-    if coins != null:
-        _last_playtown_coins = int(coins.call("get_coin_balance"))
-    var instance: Node = packed.instantiate()
-    if instance == null:
-        push_error("MIKA could not instantiate planet game: " + scene_path)
-        return
-    instance.name = "TemporaryPlanetGame_" + game_id
-    _game_viewport.add_child(instance)
-    _playing = true
-    _gallery.visible = false
-    _gesture_layer.visible = false
-    _pet_sprite.visible = false
-    _pet_click_area.visible = false
-    _pointer_kind = ""
-    _fling_speed = 0.0
-    _header.visible = false
-    _game_layer.visible = true
-    _game_back.move_to_front()
-    _reflow()
+	if _playing or not _v1151p24_by_id.has(game_id):
+		return
+	var game: Dictionary = _v1151p24_by_id[game_id]
+	var scene_path: String = _v1151p24_find_scene(game)
+	if scene_path.is_empty():
+		var warning: AcceptDialog = AcceptDialog.new()
+		warning.title = "Игра ещё не подключена"
+		warning.dialog_text = _v1151p24_title(game.get("title", {}), game_id) + "\nСцена мини-игры отсутствует в текущей сборке."
+		warning.confirmed.connect(warning.queue_free)
+		warning.canceled.connect(warning.queue_free)
+		add_child(warning)
+		warning.popup_centered_ratio(0.32)
+		return
+	var packed: PackedScene = load(scene_path) as PackedScene
+	if packed == null:
+		push_error("MIKA cannot load planet game: " + scene_path)
+		return
+	# Reuse existing simulator viewport and Back button, without opening a second portal.
+	var language: Node = get_node_or_null("/root/LanguageService")
+	if language != null:
+		var locale: String = str(MobileLocale.language)
+		if locale == "pt_BR":
+			locale = "pt"
+		language.call("set_locale", locale, false)
+	var coins: Node = get_node_or_null("/root/GameState")
+	if coins != null:
+		_last_playtown_coins = int(coins.call("get_coin_balance"))
+	var instance: Node = packed.instantiate()
+	if instance == null:
+		push_error("MIKA could not instantiate planet game: " + scene_path)
+		return
+	instance.name = "TemporaryPlanetGame_" + game_id
+	_game_viewport.add_child(instance)
+	_playing = true
+	_gallery.visible = false
+	_gesture_layer.visible = false
+	# v8.4.9.2: footer Bubble was removed; planet games launch as usual.
+	_pointer_kind = ""
+	_fling_speed = 0.0
+	_header.visible = false
+	_game_layer.visible = true
+	_game_back.move_to_front()
+	_reflow()

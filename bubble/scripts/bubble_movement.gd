@@ -41,6 +41,13 @@ var _turn_lean: float = 0.0
 var _facing_heading: float = 0.0
 # Short turn impulses add elastic twist without resetting the gait or SDF.
 var _turn_activity: float = 0.0
+var _room_sleep_goal: bool = false
+var _room_sleep_blend: float = 0.0
+const BED_LOBE_OFFSETS: Array[Vector2] = [
+    Vector2(-30.0, 34.0), Vector2(26.0, 28.0),
+    Vector2(37.0, 21.0), Vector2(-35.0, 27.0), Vector2(-10.0, 71.0)
+]
+# MIKA_BUBBLE_SEAMLESS_SLEEP_V8_4_7
 var _sat_positions: Array[Vector2] = []
 var _sat_velocities: Array[Vector2] = []
 var _surface_mat: ShaderMaterial
@@ -80,6 +87,10 @@ func restart_motion(mode_id: String) -> void:
         _sat_velocities[i] = Vector2.ZERO
     _render_pose(0.0, true)
 
+func set_room_sleep_pose(enabled: bool) -> void:
+    # Goal-only change. Do not restart motion/springs/sprite/frame.
+    _room_sleep_goal = enabled
+
 func set_facing_heading(heading_rad: float) -> void:
     # The director already smooths yaw with lerp_angle. Never restart a gait
     # or reset spring state just because the heading changes.
@@ -111,6 +122,8 @@ func _process(delta: float) -> void:
     _render_pose(dt, false)
 
 func _render_pose(dt: float, initial: bool) -> void:
+    _room_sleep_blend = move_toward(_room_sleep_blend,
+        1.0 if _room_sleep_goal else 0.0, dt * 2.1)
     var target_energy: float = _room_speed if _room_speed >= 0.0 else (1.0 if moving else 0.0)
     if motion == "accelerate":
         target_energy *= 0.20 + 0.80 * progress
@@ -190,6 +203,13 @@ func _render_pose(dt: float, initial: bool) -> void:
             target_pos += Vector2(-8.0 * impact, -3.0 * bounce * energy)
             face_shift = Vector2(-10.0 * impact, 3.0 * impact)
 
+    # Keep the approved plastic sleep shape (wide and low) on this SAME
+    # movement body; the lobes below retain their live spring velocities.
+    var bed_breath: float = sin(elapsed * TAU / 5.9)
+    target_scale += Vector2(0.16, -0.20) * _room_sleep_blend
+    target_scale += Vector2(0.006, 0.006) * bed_breath * _room_sleep_blend
+    target_pos += Vector2(-6.0, 56.0) * _room_sleep_blend
+    spin += -0.09 * _room_sleep_blend
     # Steering bends a continuous liquid body, not an independent turn scene.
     spin += _turn_lean * 0.18 * maxf(energy, _turn_activity)
     # As the liquid turns in place, an asymmetrical wave travels through it.
@@ -201,14 +221,19 @@ func _render_pose(dt: float, initial: bool) -> void:
     body.rotation = lerp_angle(body.rotation, spin, blend)
     # Stable face socket. The FaceRig now places the eyes/lips separately on
     # the curved sphere, so no global squeeze, pop or whole-face visibility.
-    face.position = face.position.lerp(face_shift * 0.20 + Vector2(0.0, -1.8 * breath), blend)
-    face.scale = face.scale.lerp(Vector2.ONE, blend)
+    face.position = face.position.lerp(face_shift * 0.20 + Vector2(0.0, -1.8 * breath)
+        + Vector2(-4.0, 6.0) * _room_sleep_blend, blend)
+    var face_compensate: Vector2 = Vector2(
+        1.0 / maxf(target_scale.x, 0.20),
+        1.0 / maxf(target_scale.y, 0.20))
+    face.scale = face.scale.lerp(Vector2.ONE.lerp(face_compensate, _room_sleep_blend), blend)
     face.rotation = lerp_angle(face.rotation, 0.012 * sin(elapsed * 0.41), blend)
     face.visible = true
     face.z_index = 2
 
     _surface_mat.set_shader_parameter("anim_time", elapsed * (0.73 + energy * 0.28))
-    _surface_mat.set_shader_parameter("quiet_level", lerpf(0.58, 0.06, clampf(energy, 0.0, 1.0)))
+    _surface_mat.set_shader_parameter("quiet_level", lerpf(
+        lerpf(0.58, 0.06, clampf(energy, 0.0, 1.0)), 0.62, _room_sleep_blend))
     _surface_mat.set_shader_parameter("liquid_activity", lerpf(0.46, 0.96, clampf(energy, 0.0, 1.0)))
     _surface_mat.set_shader_parameter("core_radius", CORE_RADIUS)
     _surface_mat.set_shader_parameter("core_size", Vector2(
@@ -295,6 +320,7 @@ func _target_lobe(index: int, energy: float, horizontal: float, stride: float) -
     elif motion == "brake":
         var overshoot: float = 26.0 * exp(-1.6 * elapsed)
         target.x += overshoot * (1.0 + 0.22 * sin(elapsed * 8.0))
+    target += BED_LOBE_OFFSETS[index] * _room_sleep_blend
     # Rotate lobe *positions* around a virtual vertical 3D axis. A gentle
     # distance-driven roll adds sliding over the membrane while travelling.
     # This is not a screen-space roll: feet do not rotate onto the head.

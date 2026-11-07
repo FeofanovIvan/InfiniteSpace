@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://education/playtown/src/features/tracing/shape_trace_game.gd" id="1_st"]
+
+[node name="ShapeTraceGame" type="Node2D"]
+script = ExtResource("1_st")

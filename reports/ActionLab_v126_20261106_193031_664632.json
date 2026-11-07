@@ -1,0 +1,55 @@
+{
+  "version": "v126",
+  "before_scene_root": "res://simulator_ui/action_cards/scripts/action_lab_v125.gd",
+  "scene_before_sha256": "1edd0dd637517c8703c0dabfa6c8ddb889ef0cac00722ae270cad4c7d339fa30",
+  "scene_after_sha256": "8d339662e9911bac483983c52a5b2e4d24cd53b8c9126140f71d352ce5f964a5",
+  "script_added": true,
+  "github": "NOT MODIFIED",
+  "status": "INSTALLED_NO_NEW_ERRORS",
+  "before": {
+    "editor": {
+      "code": 0,
+      "errors": [
+        "ERROR: Failed to load script \"res://bubble/face_lab/face_lab.gd\" with error \"Parse error\".",
+        "ERROR: Failed to load script \"res://bubble/scripts/bubble_brain.gd\" with error \"Parse error\".",
+        "ERROR: Failed to load script \"res://bubble/scripts/bubble_face.gd\" with error \"Parse error\".",
+        "ERROR: Failed to load script \"res://bubble/scripts/care_room_director.gd\" with error \"Parse error\".",
+        "SCRIPT ERROR: Parse Error: Could not parse global class \"MikaBubbleFace\" from \"res://bubble/scripts/bubble_face.gd\".",
+        "SCRIPT ERROR: Parse Error: Could not resolve external class member \"get_face\".",
+        "SCRIPT ERROR: Parse Error: Used tab character for indentation instead of space as used before in the file."
+      ],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v126_20261106_193031_664632_BEFORE_editor.log"
+    },
+    "runtime": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v126_20261106_193031_664632_BEFORE_runtime.log"
+    }
+  },
+  "backup": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_ActionLab_v126_20261106_193031_664632",
+  "after": {
+    "editor": {
+      "code": 0,
+      "errors": [
+        "ERROR: Failed to load script \"res://bubble/face_lab/face_lab.gd\" with error \"Parse error\".",
+        "ERROR: Failed to load script \"res://bubble/scripts/bubble_brain.gd\" with error \"Parse error\".",
+        "ERROR: Failed to load script \"res://bubble/scripts/bubble_face.gd\" with error \"Parse error\".",
+        "ERROR: Failed to load script \"res://bubble/scripts/care_room_director.gd\" with error \"Parse error\".",
+        "SCRIPT ERROR: Parse Error: Could not parse global class \"MikaBubbleFace\" from \"res://bubble/scripts/bubble_face.gd\".",
+        "SCRIPT ERROR: Parse Error: Could not resolve external class member \"get_face\".",
+        "SCRIPT ERROR: Parse Error: Used tab character for indentation instead of space as used before in the file."
+      ],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v126_20261106_193031_664632_AFTER_editor.log"
+    },
+    "runtime": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v126_20261106_193031_664632_AFTER_runtime.log"
+    }
+  },
+  "smoke": {
+    "code": 0,
+    "errors": [],
+    "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v126_20261106_193031_664632_smoke.log"
+  }
+}

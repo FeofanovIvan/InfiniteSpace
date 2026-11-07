@@ -1,0 +1,41 @@
+{
+  "project": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot",
+  "patch": "v125",
+  "stamp": "20261106_184124_898815",
+  "changes": [
+    "simulator_ui/scenes/sim_08_actioncards.tscn",
+    "simulator_ui/action_cards/scripts/action_lab_v125.gd"
+  ],
+  "status": "INSTALLED_GODOT_PASS",
+  "github": "NOT MODIFIED",
+  "before": {
+    "editor": {
+      "status": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v125_20261106_184124_898815_BEFORE_editor.log"
+    },
+    "runtime": {
+      "status": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v125_20261106_184124_898815_BEFORE_runtime.log"
+    }
+  },
+  "backup": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_ActionLab_v125_20261106_184124_898815",
+  "after": {
+    "editor": {
+      "status": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v125_20261106_184124_898815_AFTER_editor.log"
+    },
+    "runtime": {
+      "status": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v125_20261106_184124_898815_AFTER_runtime.log"
+    }
+  },
+  "scene_load": {
+    "code": 0,
+    "errors": [],
+    "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v125_20261106_184124_898815_scene.log"
+  }
+}

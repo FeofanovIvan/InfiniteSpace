@@ -1,0 +1,15 @@
+{
+  "patch": "pick_number_uid_fix_v11",
+  "files": {
+    "education/playtown/scenes/features/counting/count_pick_game.tscn": {
+      "existed": true,
+      "before": "be8704c643bc655e034acc6d0016b21064e478d78eff46f6c14a1bcff45952b2",
+      "after": "9a4983cb43b9eb5f3c236ff77703b6f75eaae5bfed71f980140e6888e7ebc3fb"
+    },
+    "education/playtown/src/features/counting/mika_count_pick_native_v1_1.gd": {
+      "existed": false,
+      "before": null,
+      "after": "b3f67f7fb070cc04d1085b175c26a61a44521a47aa0b27f7e281d2173dae7afc"
+    }
+  }
+}

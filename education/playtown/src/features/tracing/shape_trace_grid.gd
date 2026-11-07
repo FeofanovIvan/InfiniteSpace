@@ -143,6 +143,11 @@ func _grid_to_local(p: Vector2) -> Vector2:
 func _draw() -> void:
 	if cell <= 0.0:
 		return
+	# MIKA_BUILD_SHAPES_OPAQUE_WHITE_V123
+	# Both grids were transparent; the parent scene/subviewport colored them blue.
+	# Paint an opaque white square FIRST, behind labels, lines and shapes.
+	var _mika_white_square_span_v123: float = margin + float(GRID_N) * cell
+	draw_rect(Rect2(Vector2.ZERO, Vector2(_mika_white_square_span_v123, _mika_white_square_span_v123)), Color(1.0, 1.0, 1.0, 1.0), true)
 	for k in range(GRID_N + 1):
 		var x := grid_origin.x + k * cell
 		draw_line(Vector2(x, grid_origin.y), Vector2(x, grid_origin.y + GRID_N * cell), GRID_LINE_COLOR, 2.0)

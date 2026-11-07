@@ -1,5 +1,6 @@
 extends Node2D
 ## Individual animation layer, aligned in ORIGINAL PNG pixel coordinates.
+# MIKA_BUBBLE_CONTINUOUS_SHOWER_V8_3_9
 ## Its parent scene gives it exactly the same position/scale as the sprite.
 ## It can be replaced without altering background or navigation/collision.
 
@@ -98,7 +99,7 @@ func _draw_shower() -> void:
             var t: float = float(j) / 18.0
             var y: float = lerpf(spray_top, spray_bottom, t)
             var wave: float = sin(t * 14.0 + _time * 4.5 + fi * 0.6) * (0.4 + t * 1.3)
-            pts.append(Vector2(sx + wave + spread * t * 0.13, y))
+            pts.append(Vector2(sx + wave + spread * t * 0.13 + 16.0 * t, y))
         draw_polyline(pts, Color(0.35, 0.88, 1.0, (0.20 + 0.08 * sin(fi * 2.1)) * f), 2.1, true)
         if i % 2 == 0:
             draw_polyline(pts, Color(0.85, 1.0, 1.0, 0.14 * f), 0.9, true)
@@ -107,17 +108,10 @@ func _draw_shower() -> void:
         var ya: float = maxf(spray_top, spray_top + phase - 20.0)
         var yb: float = minf(spray_bottom, ya + 30.0)
         if yb > ya:
-            draw_line(Vector2(sx, ya), Vector2(sx + spread * 0.10, yb), Color(0.88, 1.0, 1.0, 0.38 * f), 1.4, true)
-    # White-blue froth only inside the shower tray.
-    var swell: float = 1.0 + 0.03 * sin(_time * 2.2)
-    for i in range(66):
-        var fi2: float = float(i)
-        var xx: float = 310.0 + sin(fi2 * 13.2) * 105.0
-        var yy: float = 752.0 + cos(fi2 * 8.7) * 18.0
-        var r: float = (3.5 + float(i % 5) * 1.8) * swell
-        draw_circle(Vector2(xx, yy), r, Color(0.79, 0.97, 1.0, 0.27 * f), true)
-        if i % 4 == 0:
-            draw_arc(Vector2(xx, yy), r, 3.5, 5.7, 12, Color(1.0, 1.0, 1.0, 0.43 * f), 1.5, true)
+            var shift_a: float = 16.0 * clampf((ya - spray_top) / h, 0.0, 1.0)
+            var shift_b: float = 16.0 * clampf((yb - spray_top) / h, 0.0, 1.0)
+            draw_line(Vector2(sx + shift_a, ya), Vector2(sx + spread * 0.10 + shift_b, yb), Color(0.88, 1.0, 1.0, 0.38 * f), 1.4, true)
+    # Foam is painted ON the original Bubble by the wash mask, not on a second tray.
 
 func _draw_grooming() -> void:
     # Idle mirror sheen, active cleansing/moving brush glow and foam particles.

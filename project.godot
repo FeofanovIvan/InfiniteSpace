@@ -37,8 +37,8 @@ MobileLocale="*res://scripts/MobileLocale.gd"
 ChildProfileStore="*res://planet_hub/scripts/child_profile_store.gd"
 MikaVoice="*res://addons/mika_voice/MikaVoice.gd"
 MikaEncyclopediaBridge="*res://mika_encyclopedia_v18/scripts/encyclopedia_bridge.gd"
-
 MikaEncyclopediaSettingsButton="*res://addons/mika_ency_settings/EncyclopediaSettingsButton.gd"
+
 [display]
 
 window/size/viewport_width=1280

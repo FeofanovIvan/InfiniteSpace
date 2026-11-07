@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/mika_ency_reader/encyclopedia_ui.gd" id="1_reader"]
+[ext_resource type="Script" path="res://addons/mika_ency_reader/galaxy_i18n_v58.gd" id="1_reader"]
 
 [node name="MikaIntegratedEncyclopedia" type="Control"]
 layout_mode = 3

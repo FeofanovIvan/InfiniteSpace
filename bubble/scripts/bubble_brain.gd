@@ -60,6 +60,8 @@ var _room_emotion_left: float = 0.0
 var _room_emotion_clock: float = 0.0
 var _room_emotion_cycle: int = 0
 var _surface_heading: float = 0.0
+var _room_sleeping: bool = false
+# MIKA_BUBBLE_SEAMLESS_SLEEP_V8_4_7
 
 # Action intent is a separate layer, not an asset per motion.
 const FACE_BY_ACTION: Dictionary = {
@@ -225,6 +227,9 @@ func _update_face(p: float, delta: float) -> void:
         expression_id = _expression_override
     if _jaw_override >= 0.0 and current_action not in ["gas", "brush_teeth"]:
         opening = _jaw_override
+    if _room_sleeping and current_group in ["idle", "movement"]:
+        expression_id = "sleeping"
+        opening = 0.0
     _apply_expression(expression_id)
     var jaw_speed: float = 6.0 if current_action == "brush_teeth" else 9.0
     var lerp_factor: float = 1.0 if delta >= 0.9 else 1.0 - exp(-jaw_speed * delta)
@@ -246,6 +251,15 @@ func set_room_emotion(id: String, seconds: float = 3.0) -> void:
 func set_room_turn_activity(amount: float) -> void:
     if is_instance_valid(_actor) and _actor is MikaBubbleMovement:
         _actor.set_turn_activity(amount)
+
+func set_room_sleep_pose(enabled: bool) -> void:
+    # Preserve the current liquid renderer and FaceRig; only change its pose goal.
+    _room_sleeping = enabled
+    if enabled:
+        _room_emotion_left = 0.0
+        _expression_override = ""
+    if is_instance_valid(_actor) and _actor is MikaBubbleMovement:
+        _actor.set_room_sleep_pose(enabled)
 
 func set_room_heading(heading_rad: float) -> void:
     # Body yaw and face projection share one heading, even during the idle turn.

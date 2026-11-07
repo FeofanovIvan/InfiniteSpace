@@ -1,5 +1,8 @@
 extends Node2D
+# MIKA_DENTAL_RESTORED_TO_V8_5_9_2_R1
 class_name MikaBubbleFace
+# MIKA v8.5.9.6.2: fast room dental progress, independent per tooth.
+# The detailed pixel eraser (brush_at) remains for other demos, untouched.
 ## Bubble face V2: continuous procedural jaw plus individual paintable teeth.
 ## Compatible with Godot 4.7.1; no changes required to the body renderer.
 
@@ -33,6 +36,14 @@ var _cavity: Sprite2D
 var _upper_lip: Sprite2D
 var _lower_jaw: Node2D
 var _lower_lip: Sprite2D
+var _side_lip_left: Line2D
+var _side_lip_right: Line2D
+var _upper_lip_clip: Polygon2D
+var _lower_lip_clip: Polygon2D
+var _teeth_clip: Polygon2D
+var _mouth_fill: Polygon2D
+var _mouth_tongue: Polygon2D
+var _lip_contour: Line2D
 var _upper_teeth: Node2D
 var _lower_teeth: Node2D
 var _plaque_layers: Array[Dictionary] = []
@@ -96,15 +107,52 @@ func _build_layers() -> void:
     _jaw_root.position = Vector2(0, 88)
     add_child(_jaw_root)
     _cavity = _make_sprite(_jaw_root, "jaw_cavity", "Cavity", 0.52)
+    # MIKA_BUBBLE_SEAMLESS_DENTAL_V8_4_3
+    # MIKA_BUBBLE_PNG_TOOTH_ROLLBACK_V8_4_4
+    # MIKA_BUBBLE_SMOOTH_LIPS_V8_4_5: draw a coherent open-mouth cavity and lip in the same rig.
+    # The legacy cavity PNG remains as a reference/closed-jaw asset,
+    # but its mismatched colored rim must not compete with one lip.
+    _cavity.visible = true
+    _mouth_fill = Polygon2D.new()
+    _mouth_fill.name = "NativeJawInterior"
+    _mouth_fill.color = Color(0.19, 0.055, 0.23, 0.98)
+    _mouth_fill.antialiased = true
+    _jaw_root.add_child(_mouth_fill)
+    _mouth_fill.visible = false
+    _mouth_tongue = Polygon2D.new()
+    _mouth_tongue.name = "NativeJawTongue"
+    _mouth_tongue.color = Color(0.88, 0.45, 0.60, 0.94)
+    _mouth_tongue.antialiased = true
+    _jaw_root.add_child(_mouth_tongue)
+    _mouth_tongue.visible = false
+    _teeth_clip = Polygon2D.new()
+    _teeth_clip.name = "NativeLipInnerMask"
+    _teeth_clip.color = Color.WHITE
+    _teeth_clip.clip_children = CanvasItem.CLIP_CHILDREN_ONLY
+    _jaw_root.add_child(_teeth_clip)
     _upper_teeth = Node2D.new()
     _upper_teeth.name = "UpperTeeth"
-    _jaw_root.add_child(_upper_teeth)
+    # Upper teeth are children of their own mask, derived from the ORIGINAL
+    # upper-lip PNG alpha edge; not the synthetic replacement mouth polygon.
+    _upper_lip_clip = Polygon2D.new()
+    _upper_lip_clip.name = "UpperPNGTeethClip"
+    _upper_lip_clip.color = Color.WHITE
+    _upper_lip_clip.clip_children = CanvasItem.CLIP_CHILDREN_ONLY
+    _jaw_root.add_child(_upper_lip_clip)
+    _upper_lip_clip.add_child(_upper_teeth)
     _lower_jaw = Node2D.new()
     _lower_jaw.name = "LowerJaw"
     _jaw_root.add_child(_lower_jaw)
     _lower_teeth = Node2D.new()
     _lower_teeth.name = "LowerTeeth"
-    _lower_jaw.add_child(_lower_teeth)
+    # Lower row follows the ORIGINAL lower jaw and its lip, not a shared
+    # rigid mask. This keeps every tooth and its plaque mask synchronized.
+    _lower_lip_clip = Polygon2D.new()
+    _lower_lip_clip.name = "LowerPNGTeethClip"
+    _lower_lip_clip.color = Color.WHITE
+    _lower_lip_clip.clip_children = CanvasItem.CLIP_CHILDREN_ONLY
+    _lower_jaw.add_child(_lower_lip_clip)
+    _lower_lip_clip.add_child(_lower_teeth)
     for i in range(5):
         var number: int = i+1
         var upper := _make_sprite(_upper_teeth, "teeth/upper_%d" % number, "U%d" % number,0.30,Vector2(TEETH_X[i], -26))
@@ -113,6 +161,50 @@ func _build_layers() -> void:
         _add_plaque(lower, "lower", number)
     _upper_lip = _make_sprite(_jaw_root, "lip_upper", "UpperLip",0.54)
     _lower_lip = _make_sprite(_lower_jaw,"lip_lower","LowerLip",0.54)
+    # These old PNGs formed disconnected pieces of unequal color.
+    # The continuous native lip draws above the teeth and the cavity.
+    _upper_lip.visible = true
+    _lower_lip.visible = true
+    _lip_contour = Line2D.new()
+    _lip_contour.name = "UnifiedLips"
+    _lip_contour.closed = true
+    _lip_contour.width = 9.0
+    _lip_contour.antialiased = true
+    _lip_contour.joint_mode = Line2D.LINE_JOINT_ROUND
+    _lip_contour.round_precision = 10
+    _lip_contour.default_color = Color(0.71, 0.43, 0.82, 1.0)
+    var lip_width := Curve.new()
+    lip_width.max_value = 2.0
+    # Slim corners, organically fuller upper and lower centers.
+    for point in [Vector2(0.0, 0.65), Vector2(0.18, 0.95),
+                  Vector2(0.25, 1.36), Vector2(0.34, 0.95),
+                  Vector2(0.5, 0.65), Vector2(0.66, 1.00),
+                  Vector2(0.75, 1.53), Vector2(0.84, 1.00),
+                  Vector2(1.0, 0.65)]:
+        lip_width.add_point(point)
+    _lip_contour.width_curve = lip_width
+    _jaw_root.add_child(_lip_contour)
+    # Hide the v8.4.3 angular one-piece outline; return to the
+    # approved natural PNG lip art from v8.4.2.
+    _lip_contour.visible = false
+    # Side rim is behind the real upper/lower lip PNGs but in front of
+    # the paintable teeth. It lives inside the SAME continuous jaw rig.
+    var side_color: Color = _sample_lip_color(_upper_lip)
+    _side_lip_left = _new_side_lip("LeftSideLip", side_color)
+    _side_lip_right = _new_side_lip("RightSideLip", side_color)
+    # Explicit relative CanvasItem ordering across mask/lower-jaw children.
+    _cavity.z_index = 0
+    _upper_lip_clip.z_index = 0
+    _lower_jaw.z_index = 0
+    _lower_lip_clip.z_index = 0
+    _upper_teeth.z_index = 0
+    _lower_teeth.z_index = 0
+    _side_lip_left.z_index = 1
+    _side_lip_right.z_index = 1
+    _upper_lip.z_index = 2
+    _lower_lip.z_index = 2
+    _build_png_lip_clips()
+    _update_side_lips(0.0)
     # Facial parts have separate curved projections; teeth/paint masks remain
     # unshaded so the approved interactive dental collision mapping is intact.
     for e in _eyes:
@@ -171,12 +263,13 @@ func set_surface_heading(heading_rad: float) -> void:
     _mouth.position = Vector2(center.x, 88.0 + (1.0 - center.y) * 3.0)
     _mouth.scale = Vector2(_mouth_nominal_scale * mouth_width, _mouth_nominal_scale)
     _mouth.rotation = -0.04 * sin(_surface_yaw)
-    _mouth.visible = jaw_open <= 0.025 and center.y > 0.07
+    # Visibility and alpha derive from the same continuous jaw value.
+    _apply_continuous_mouth_visibility(center.y)
     _jaw_root.position = Vector2(center.x, 88.0 + (1.0 - center.y) * 3.0)
     var jaw_eased: float = jaw_open * jaw_open * (3.0 - 2.0 * jaw_open)
     _jaw_root.scale = Vector2(lerpf(0.74, 1.0, jaw_eased) * mouth_width, 1.0)
     _jaw_root.rotation = -0.04 * sin(_surface_yaw)
-    _jaw_root.visible = jaw_open > 0.025 and center.y > 0.07
+    # Jaw visibility was set together with closed-mouth alpha above.
     # Local UV curvature makes the eye/mouth texture bend slightly within
     # each feature as well as following the sphere's larger geometry.
     for sprite in _curved_sprites:
@@ -233,22 +326,197 @@ func _update_closed_mouth(mouth_type: String) -> void:
     _mouth.texture = load(FACE_DIR + "mouth_" + mouth_type + ".png")
     _mouth_nominal_scale = 0.61 if mouth_type in ["open","big_smile"] else 0.48
 
+func _sample_lip_color(lip: Sprite2D) -> Color:
+    # Sample the original approved lavender lip asset, rather than choosing a
+    # mismatched hardcoded shade for the lateral connecting line.
+    if lip.texture == null:
+        return Color(0.70, 0.48, 0.82, 0.98)
+    var img: Image = lip.texture.get_image()
+    if img == null or img.is_empty():
+        return Color(0.70, 0.48, 0.82, 0.98)
+    var total := Color(0.0, 0.0, 0.0, 0.0)
+    var count: float = 0.0
+    for y in range(0, img.get_height(), 7):
+        for x in range(0, img.get_width(), 7):
+            var c: Color = img.get_pixel(x, y)
+            if c.a > 0.35:
+                total += Color(c.r, c.g, c.b, 0.0)
+                count += 1.0
+    if count < 1.0:
+        return Color(0.70, 0.48, 0.82, 0.98)
+    return Color(total.r/count, total.g/count, total.b/count, 0.98)
+
+func _new_side_lip(part_name: String, tint: Color) -> Line2D:
+    var line := Line2D.new()
+    line.name = part_name
+    line.width = 5.4
+    line.default_color = tint
+    line.antialiased = true
+    line.joint_mode = Line2D.LINE_JOINT_ROUND
+    line.begin_cap_mode = Line2D.LINE_CAP_ROUND
+    line.end_cap_mode = Line2D.LINE_CAP_ROUND
+    _jaw_root.add_child(line)
+    return line
+
+func _update_side_lips(open_eased: float) -> void:
+    if not is_instance_valid(_side_lip_left) or not is_instance_valid(_side_lip_right):
+        return
+    # The anchors meet the genuine upper/lower PNG endpoints. The curved
+    # segments stretch with the SAME lower-jaw motion, not separate animation.
+    var top_y: float = lerpf(-11.0, -27.0, open_eased)
+    var bottom_y: float = lerpf(-25.0, 49.0, open_eased)
+    for side in range(2):
+        var direction: float = -1.0 if side == 0 else 1.0
+        var line: Line2D = _side_lip_left if side == 0 else _side_lip_right
+        var p := PackedVector2Array()
+        for i in range(13):
+            var u: float = float(i) / 12.0
+            var y: float = lerpf(top_y, bottom_y, u)
+            var bow: float = sin(PI * u) * 7.0 * open_eased
+            var x: float = direction * (61.0 + bow)
+            p.append(Vector2(x, y))
+        line.points = p
+        # Fade the small sides as the original mouth closes. Their stroke is
+        # always below both lip PNGs and never drawn on top of the enamel.
+        line.modulate.a = smoothstep(0.03, 0.30, jaw_open)
+
+func _apply_continuous_mouth_visibility(front_depth: float) -> void:
+    if not is_instance_valid(_mouth) or not is_instance_valid(_jaw_root):
+        return
+    # Old rig snapped visibility at 0.025 jaw opening: it looked like a new
+    # frame. Blend the closed-mouth expression and original open jaw instead.
+    var blend: float = smoothstep(0.015, 0.25, jaw_open)
+    _mouth.modulate.a = 1.0 - blend
+    _jaw_root.modulate.a = blend
+    var frontal: bool = front_depth > 0.07
+    _mouth.visible = frontal and blend < 0.999
+    _jaw_root.visible = frontal and blend > 0.001
+
+func _build_png_lip_clips() -> void:
+    _upper_lip_clip.polygon = _clip_from_real_lip(_upper_lip, true)
+    _lower_lip_clip.polygon = _clip_from_real_lip(_lower_lip, false)
+
+func _clip_from_real_lip(lip: Sprite2D, is_upper: bool) -> PackedVector2Array:
+    var boundary := PackedVector2Array()
+    var texture: Texture2D = lip.texture
+    if texture == null:
+        push_error("Bubble dental: original lip PNG is missing")
+        return boundary
+    var img: Image = texture.get_image()
+    if img == null or img.is_empty():
+        push_error("Bubble dental: lip PNG cannot be read")
+        return boundary
+    var w: int = img.get_width()
+    var h: int = img.get_height()
+    # Rendered lip PNGs cover about +/-60 units, with a small shape margin.
+    # The mask clips tooth enamel on the INTERNAL side of each real lip edge.
+    var half_width: float = 60.0
+    var columns: int = 60
+    var fallback_y: float = -31.0 if is_upper else 57.0
+    for step in range(columns + 1):
+        var x: float = -half_width + 2.0 * float(step)
+        var pixel_x: int = clampi(int(round((x - lip.position.x) / lip.scale.x + float(w) * 0.5)), 0, w - 1)
+        var edge_pixel: int = -1 if is_upper else h
+        for py in range(h):
+            if img.get_pixel(pixel_x, py).a >= 0.38:
+                if is_upper:
+                    edge_pixel = maxi(edge_pixel, py)  # bottom of upper lip
+                else:
+                    edge_pixel = mini(edge_pixel, py)  # top of lower lip
+        var lip_y: float = fallback_y
+        if (is_upper and edge_pixel >= 0) or (not is_upper and edge_pixel < h):
+            lip_y = lip.position.y + (float(edge_pixel) - float(h) * 0.5) * lip.scale.y
+        # Thin inward bleed so no enamel can cross the visible PNG lip line.
+        var inner_y: float = lip_y + (1.1 if is_upper else -1.1)
+        boundary.append(Vector2(x, inner_y))
+    if is_upper:
+        boundary.append(Vector2(half_width, 92.0))
+        boundary.append(Vector2(-half_width, 92.0))
+    else:
+        boundary.append(Vector2(half_width, -92.0))
+        boundary.append(Vector2(-half_width, -92.0))
+    return boundary
+
+func _update_native_mouth_shape(open_eased: float) -> void:
+    if not is_instance_valid(_teeth_clip) or not is_instance_valid(_lip_contour):
+        return
+    # All mouth parts are CHILDREN OF ContinuousJawRig, so they track the
+    # original face position, yaw and liquid body with zero new animation clip.
+    var stretch: float = lerpf(0.087, 1.0, open_eased)
+    var offset_y: float = lerpf(-18.0, 0.0, open_eased)
+    var mouth_outline := PackedVector2Array()
+    var inner_clip := PackedVector2Array()
+    for i in range(25):
+        var u: float = float(i) / 24.0
+        var x: float = lerpf(-70.0, 70.0, u)
+        var side: float = pow(absf(x) / 70.0, 2.2)
+        var top_y: float = -41.0 + 17.0 * side
+        mouth_outline.append(Vector2(x, offset_y + top_y * stretch))
+        var inner_x: float = x * 0.88
+        inner_clip.append(Vector2(inner_x, offset_y + (top_y + 7.5) * stretch))
+    for i in range(25):
+        var u: float = float(i) / 24.0
+        var x: float = lerpf(70.0, -70.0, u)
+        var side: float = pow(absf(x) / 70.0, 2.2)
+        var bottom_y: float = 63.0 - 23.0 * side
+        mouth_outline.append(Vector2(x, offset_y + bottom_y * stretch))
+        var inner_x: float = x * 0.88
+        inner_clip.append(Vector2(inner_x, offset_y + (bottom_y - 9.0) * stretch))
+    _mouth_fill.polygon = mouth_outline
+    _lip_contour.points = mouth_outline
+    _lip_contour.width = lerpf(5.0, 9.0, open_eased)
+    _teeth_clip.polygon = inner_clip
+    # A soft tongue inside the same silhouette, not a second mouth.
+    var tongue := PackedVector2Array()
+    var tongue_y: float = offset_y + 47.0 * stretch
+    for j in range(33):
+        var a: float = TAU * float(j) / 32.0
+        tongue.append(Vector2(cos(a) * 36.0, tongue_y + sin(a) * 10.0 * stretch))
+    _mouth_tongue.polygon = tongue
+    _mouth_tongue.visible = open_eased > 0.3
+
 func set_jaw_open(amount: float) -> void:
     jaw_open = clampf(amount,0.0,1.0)
     if not is_instance_valid(_jaw_root):
         return
     var eased: float = jaw_open * jaw_open * (3.0 - 2.0 * jaw_open)
-    _mouth.visible = jaw_open <= 0.025
-    _jaw_root.visible = jaw_open > 0.025
+    # Never swap mouth frames at 2.5% opening.
+    # The existing set_surface_heading() call below crossfades both.
     # Jaw is one smooth continuous animation — no texture frame switching.
     _cavity.scale = Vector2(0.52, lerpf(0.045,0.52,eased))
     _cavity.position.y = lerpf(-18.0,0.0,eased)
     _lower_jaw.position.y = lerpf(-94.0,0.0,eased)
+    # Lower teeth inherit the animated LowerJaw transform directly.
     _upper_teeth.position.y = lerpf(34.0,0.0,eased)
     _upper_teeth.modulate.a = clampf((jaw_open-0.10)/0.25,0.0,1.0)
     _lower_teeth.modulate.a = _upper_teeth.modulate.a
+    # MIKA_BUBBLE_FACERIG_DENTAL_V8_4_2
+    # Follow the original PNG lip curves with the ACTUAL face-rig teeth.
+    # Upper lip arcs upward at center; lower lip arcs downward at center.
+    # All plaque PNGs remain children of the original tooth Sprite2Ds.
+    for i in range(5):
+        var side: float = pow(absf(float(TEETH_X[i])) / 46.0, 2.0)
+        var upper: Node2D = _upper_teeth.get_node_or_null("U%d" % (i + 1)) as Node2D
+        var lower: Node2D = _lower_teeth.get_node_or_null("L%d" % (i + 1)) as Node2D
+        if upper != null:
+            # Return to the original short, rounded PNG tooth: no stretching.
+            # 10 percent UP relative to the approved v8.4.2 jaw arc.
+            var old_upper_y: float = -26.0 + eased * 8.0 * side
+            upper.position.y = old_upper_y * (1.0 + 0.10 * eased)
+            # Only widen the ORIGINAL PNG enough for a near-zero gap.
+            upper.scale = Vector2(lerpf(0.30, 0.38, eased), 0.30)
+        if lower != null:
+            # 15 percent DOWN on outer teeth, 10 percent on neighbours,
+            # and 5 percent on the middle tooth. Keep the old arc.
+            var old_lower_y: float = 27.0 + eased * (28.0 - 20.0 * side)
+            var offset_ratio: float = 0.05 if i == 2 else (0.15 if i == 0 or i == 4 else 0.10)
+            lower.position.y = old_lower_y * (1.0 + offset_ratio * eased)
+            lower.scale = Vector2(lerpf(0.30, 0.38, eased), 0.30)
     _upper_lip.position.y = lerpf(28.0,0.0,eased)
+    _upper_lip_clip.position.y = _upper_lip.position.y
     _lower_lip.position.y = lerpf(5.0,0.0,eased)
+    _lower_lip_clip.position.y = _lower_lip.position.y
+    _update_side_lips(eased)
     # Shape opening is preserved during a surface turn by reprojecting jaw.
     set_surface_heading(_surface_yaw)
 
@@ -302,6 +570,12 @@ func reset_plaque() -> void:
 func get_brushing_progress() -> float:
     return clampf(_plaque_removed / maxf(1.0,_plaque_total),0.0,1.0)
 
+# MIKA v8.5.9.6.2: shower-style room dental scrubbing. One update per
+# movement instead of dozens of per-pixel ImageTexture uploads per frame.
+# Start each dental session with fully visible plaque masks.
+# Older per-tooth fade logic changed Sprite2D.modulate.a, even when their
+# underlying PNG image alpha was intact. Reset that layer without replacing
+# the project's installed reset_plaque() implementation.
 func brush_at(global_point: Vector2, brush_radius: float = 14.0) -> float:
     if jaw_open < 0.85:
         return get_brushing_progress()

@@ -1,0 +1,25 @@
+{
+  "patch": "pick_number_v1.2_1_to_20",
+  "files": {
+    "education/playtown/scenes/features/counting/count_pick_game.tscn": {
+      "existed": true,
+      "before": "9a4983cb43b9eb5f3c236ff77703b6f75eaae5bfed71f980140e6888e7ebc3fb",
+      "after": "fa5af6f38794d563c67ee8ca8bcc634d6af028c6064df84f03a2e8f7ec575a7a"
+    },
+    "education/playtown/src/features/counting/mika_count_pick_native_v1_2.gd": {
+      "existed": false,
+      "before": null,
+      "after": "f7690df8e98355839fa70489752da918f5bcbf30c99da6e057aaffd5c8ff3cc6"
+    },
+    "education/playtown/audio/VOICE_TODO_Pick_Number_11_20.md": {
+      "existed": false,
+      "before": null,
+      "after": "71c75facbf6de4e8aa0c19f8fffe4276286a2106664436ed9cd54a71fba23d9a"
+    },
+    "education/playtown/audio/VOICE_TODO_Pick_Number_11_20.csv": {
+      "existed": false,
+      "before": null,
+      "after": "feb93c7367f6bb07533e629f516ed3b2d45a9df99cffb4ce1df8f1dd512fddaa"
+    }
+  }
+}

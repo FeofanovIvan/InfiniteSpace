@@ -1,0 +1,43 @@
+{
+  "version": "v127",
+  "before_scene_root": "res://simulator_ui/action_cards/scripts/action_lab_v126.gd",
+  "scene_before_sha256": "8d339662e9911bac483983c52a5b2e4d24cd53b8c9126140f71d352ce5f964a5",
+  "scene_after_sha256": "e368863ebd402d222b2832af53598f943506426fc97362718b5a622b9ecda5a2",
+  "script_added": true,
+  "github": "NOT MODIFIED",
+  "status": "ROLLED_BACK",
+  "before": {
+    "editor": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v127_20261106_195724_351488_BEFORE_editor.log"
+    },
+    "runtime": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v127_20261106_195724_351488_BEFORE_runtime.log"
+    }
+  },
+  "backup": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_ActionLab_v127_20261106_195724_351488",
+  "after": {
+    "editor": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v127_20261106_195724_351488_AFTER_editor.log"
+    },
+    "runtime": {
+      "code": 0,
+      "errors": [],
+      "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v127_20261106_195724_351488_AFTER_runtime.log"
+    }
+  },
+  "smoke": {
+    "code": 75,
+    "errors": [
+      "ERROR: ACTION_V127_OVERLAY_MISSING"
+    ],
+    "log": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v127_20261106_195724_351488_smoke.log"
+  },
+  "error": "Action Lab neon/card smoke check failed; see /Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot/reports/ActionLab_v127_20261106_195724_351488_smoke.log",
+  "conflicts": []
+}
