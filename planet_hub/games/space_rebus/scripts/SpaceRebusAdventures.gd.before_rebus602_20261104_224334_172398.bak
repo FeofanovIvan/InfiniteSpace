@@ -1,0 +1,613 @@
+extends Control
+## MIKA | Space Rebus Adventures | Triangulum | Godot 4.7.1
+## Six curated localized rebus decks, localized recorded voice hints, screen keyboard.
+## Source assets: Action Cards (3 Mika PNGs), Electric Impulses (sounds), InfiniteSpace (star_core).
+
+const LOCALES = ["ru", "en", "pt", "es", "de", "fr"]
+const CORE_TEXTURE = preload("res://planet_hub/games/space_rebus/assets/shared/star_core.png")
+const INK = Color("0b172d")
+const BG = Color("071221")
+const PANEL = Color("101f37")
+const PANEL2 = Color("142942")
+const BORDER = Color("32617e")
+const WHITE = Color("eefaff")
+const MUTED = Color("a0bed8")
+const CYAN = Color("79dfff")
+const MINT = Color("77f2ce")
+const GOLD = Color("ffe099")
+const PINK = Color("e2aaff")
+
+const KEY_ROWS = {
+	"en": ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM", ""],
+	"ru": ["ЙЦУКЕНГШЩЗХ", "ФЫВАПРОЛДЖЭ", "ЯЧСМИТЬБЮЁ", ""],
+	"pt": ["QWERTYUIOP", "ASDFGHJKLÇ", "ZXCVBNM", "ÁÃÂÉÊÍÓÔÕÚ"],
+	"es": ["QWERTYUIOP", "ASDFGHJKLÑ", "ZXCVBNM", "ÁÉÍÓÚÜ"],
+	"de": ["QWERTZUIOPÜ", "ASDFGHJKLÖÄ", "YXCVBNM", "ß"],
+	"fr": ["AZERTYUIOP", "QSDFGHJKLM", "WXCVBN", "ÀÂÇÉÈÊËÎÏÔÙÛÜŸ"]
+}
+
+var puzzle_data: Dictionary = {}
+var ui_data: Dictionary = {}
+var learning_locale := "en"
+var interface_locale := "en"
+var language_service: Node = null
+var deck: Array = []
+var puzzle_index := 0
+var score := 0
+var best := 0
+var solved := false
+var hint_used := false
+var finished := false
+var clock := 0.0
+var portal_strength := 0.0
+var stars: Array[Vector2] = []
+var nodes: Array[Vector2] = []
+
+var title_label: Label
+var subtitle_label: Label
+var score_label: Label
+var progress_label: Label
+var word_label: Label
+var instruction_label: Label
+var status_label: Label
+var answer_edit: LineEdit
+var hint_button: Button
+var check_button: Button
+var next_button: Button
+var language_bar: HBoxContainer
+var tile_row: HBoxContainer
+var keyboard_root: VBoxContainer
+var hint_player: AudioStreamPlayer
+var effect_player: AudioStreamPlayer
+
+func _ready() -> void:
+	mouse_filter = Control.MOUSE_FILTER_PASS
+	_load_data()
+	_prepare_background()
+	_read_settings()
+	_build_ui()
+	_build_keyboard()
+	_apply_locale()
+	_start_game()
+
+func _load_data() -> void:
+	var rebus_json: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://planet_hub/games/space_rebus/data/puzzles.json"))
+	if rebus_json is Dictionary:
+		puzzle_data = rebus_json
+	var interface_json: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://planet_hub/games/space_rebus/data/ui.json"))
+	if interface_json is Dictionary:
+		ui_data = interface_json
+
+func _read_settings() -> void:
+	var cfg := ConfigFile.new()
+	if cfg.load("user://space_rebus.cfg") == OK:
+		learning_locale = str(cfg.get_value("general", "language", "en"))
+	if not LOCALES.has(learning_locale):
+		learning_locale = "en"
+	interface_locale = learning_locale
+	language_service = get_node_or_null("/root/LanguageService")
+	if language_service == null or (language_service.get("interface_locale") == null and language_service.get("learning_locale") == null):
+		language_service = get_node_or_null("/root/MobileLocale")
+	if language_service != null:
+		_sync_project_languages()
+		if language_service.has_signal("language_changed"):
+			language_service.connect("language_changed", Callable(self, "_on_language_changed"))
+	_load_best()
+
+func _sync_project_languages() -> void:
+	if language_service == null:
+		return
+	var ui_code: String = str(language_service.get("language")) if language_service.name == "MobileLocale" else str(language_service.get("interface_locale"))
+	var game_code: String = str(language_service.get("language")) if language_service.name == "MobileLocale" else str(language_service.get("learning_locale"))
+	ui_code = "pt" if ui_code == "pt_BR" else ui_code
+	game_code = "pt" if game_code == "pt_BR" else game_code
+	if LOCALES.has(ui_code):
+		interface_locale = ui_code
+	if LOCALES.has(game_code):
+		learning_locale = game_code
+	_load_best()
+
+func _on_language_changed(_locale: String) -> void:
+	_sync_project_languages()
+	_build_keyboard()
+	_apply_locale()
+	_start_game()
+
+func _load_best() -> void:
+	var cfg := ConfigFile.new()
+	if cfg.load("user://space_rebus.cfg") == OK:
+		best = int(cfg.get_value("best", learning_locale, 0))
+	else:
+		best = 0
+
+func _save_settings() -> void:
+	var cfg := ConfigFile.new()
+	cfg.load("user://space_rebus.cfg")
+	cfg.set_value("general", "language", learning_locale)
+	cfg.set_value("best", learning_locale, best)
+	cfg.save("user://space_rebus.cfg")
+
+func _prepare_background() -> void:
+	var rng := RandomNumberGenerator.new()
+	rng.seed = 171154
+	for _i in range(112):
+		stars.append(Vector2(rng.randf_range(8, 1272), rng.randf_range(11, 703)))
+	nodes = [Vector2(65, 148), Vector2(151, 104), Vector2(266, 140), Vector2(927, 80), Vector2(1095, 147), Vector2(1202, 103), Vector2(1011, 427), Vector2(1203, 505), Vector2(77, 582), Vector2(208, 497)]
+
+func _label(text_size: int, color: Color, pos: Vector2, box_size: Vector2, weight: bool = false) -> Label:
+	var n := Label.new()
+	n.position = pos
+	n.size = box_size
+	n.add_theme_color_override("font_color", color)
+	n.add_theme_font_size_override("font_size", text_size)
+	if weight:
+		n.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.20))
+		n.add_theme_constant_override("shadow_offset_y", 2)
+	add_child(n)
+	return n
+
+func _style(fill: Color, outline: Color, radius: int = 15, thickness: int = 2) -> StyleBoxFlat:
+	var sb := StyleBoxFlat.new()
+	sb.bg_color = fill
+	sb.border_color = outline
+	sb.set_corner_radius_all(radius)
+	sb.set_border_width_all(thickness)
+	sb.content_margin_left = 10.0
+	sb.content_margin_right = 10.0
+	sb.content_margin_top = 4.0
+	sb.content_margin_bottom = 4.0
+	return sb
+
+func _button(pos: Vector2, box_size: Vector2, normal: Color, hover: Color, outline: Color, font_size: int = 17) -> Button:
+	var b := Button.new()
+	b.position = pos
+	b.size = box_size
+	b.custom_minimum_size = box_size
+	b.focus_mode = Control.FOCUS_NONE
+	b.add_theme_stylebox_override("normal", _style(normal, outline))
+	b.add_theme_stylebox_override("hover", _style(hover, WHITE))
+	b.add_theme_stylebox_override("pressed", _style(hover.darkened(0.17), outline))
+	b.add_theme_stylebox_override("disabled", _style(Color("152b3c"), Color("2e5363")))
+	b.add_theme_color_override("font_color", WHITE)
+	b.add_theme_color_override("font_hover_color", WHITE)
+	b.add_theme_color_override("font_pressed_color", WHITE)
+	b.add_theme_color_override("font_disabled_color", Color("738da2"))
+	b.add_theme_font_size_override("font_size", font_size)
+	add_child(b)
+	return b
+
+func _build_ui() -> void:
+	title_label = _label(28, WHITE, Vector2(38, 18), Vector2(760, 40), true)
+	subtitle_label = _label(14, MUTED, Vector2(40, 57), Vector2(890, 26))
+	score_label = _label(21, GOLD, Vector2(947, 22), Vector2(286, 35))
+	score_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	progress_label = _label(17, WHITE, Vector2(55, 160), Vector2(370, 38), true)
+	word_label = _label(16, MINT, Vector2(816, 164), Vector2(380, 35))
+	word_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	instruction_label = _label(17, MUTED, Vector2(53, 201), Vector2(1160, 27))
+	instruction_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	status_label = _label(17, MINT, Vector2(52, 378), Vector2(1110, 32))
+	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	
+	language_bar = HBoxContainer.new()
+	language_bar.position = Vector2(40, 97)
+	language_bar.size = Vector2(680, 36)
+	language_bar.add_theme_constant_override("separation", 9)
+	add_child(language_bar)
+	for code in LOCALES:
+		var b := Button.new()
+		b.text = code.to_upper()
+		b.custom_minimum_size = Vector2(79, 36)
+		b.focus_mode = Control.FOCUS_NONE
+		b.add_theme_font_size_override("font_size", 16)
+		b.pressed.connect(_switch_language.bind(code))
+		language_bar.add_child(b)
+	
+	tile_row = HBoxContainer.new()
+	tile_row.position = Vector2(74, 237)
+	tile_row.size = Vector2(1132, 127)
+	tile_row.alignment = BoxContainer.ALIGNMENT_CENTER
+	tile_row.add_theme_constant_override("separation", 14)
+	add_child(tile_row)
+
+	hint_button = _button(Vector2(48, 426), Vector2(221, 54), Color("24446b"), Color("355f90"), Color("82b9ed"), 15)
+	hint_button.pressed.connect(_play_hint)
+	
+	answer_edit = LineEdit.new()
+	answer_edit.position = Vector2(285, 426)
+	answer_edit.size = Vector2(674, 54)
+	answer_edit.max_length = 48
+	answer_edit.virtual_keyboard_enabled = false
+	answer_edit.add_theme_font_size_override("font_size", 25)
+	answer_edit.add_theme_color_override("font_color", WHITE)
+	answer_edit.add_theme_color_override("font_placeholder_color", MUTED)
+	answer_edit.add_theme_stylebox_override("normal", _style(Color("0a1b30"), Color("569ac9"), 16))
+	answer_edit.add_theme_stylebox_override("focus", _style(Color("102a41"), MINT, 16))
+	answer_edit.add_theme_color_override("caret_color", GOLD)
+	answer_edit.text_submitted.connect(func(_value: String): _check_answer())
+	add_child(answer_edit)
+	
+	check_button = _button(Vector2(975, 426), Vector2(255, 54), Color("1d6a71"), Color("258e86"), Color("8ff4d3"), 18)
+	check_button.pressed.connect(_check_answer)
+	
+	next_button = _button(Vector2(1002, 151), Vector2(202, 51), Color("416a71"), Color("518c87"), MINT, 17)
+	next_button.pressed.connect(_on_next_pressed)
+	next_button.visible = false
+	
+	keyboard_root = VBoxContainer.new()
+	keyboard_root.position = Vector2(40, 493)
+	keyboard_root.size = Vector2(1200, 196)
+	keyboard_root.alignment = BoxContainer.ALIGNMENT_CENTER
+	keyboard_root.add_theme_constant_override("separation", 7)
+	add_child(keyboard_root)
+	
+	hint_player = AudioStreamPlayer.new()
+	hint_player.volume_db = -3
+	add_child(hint_player)
+	effect_player = AudioStreamPlayer.new()
+	effect_player.volume_db = -12
+	add_child(effect_player)
+	language_bar.visible = language_service == null
+
+func _t(key: String) -> String:
+	var dictionary: Dictionary = ui_data.get(interface_locale, ui_data.get("en", {}))
+	return str(dictionary.get(key, key))
+
+func _apply_locale() -> void:
+	title_label.text = _t("title")
+	subtitle_label.text = _t("subtitle")
+	instruction_label.text = _t("help")
+	hint_button.text = "🔊 " + _t("hint")
+	check_button.text = _t("check")
+	answer_edit.placeholder_text = _t("input")
+	_update_labels()
+	for child in language_bar.get_children():
+		var b := child as Button
+		var code := str(b.text).to_lower()
+		b.add_theme_stylebox_override("normal", _style(Color("275b72") if code == learning_locale else Color("102941"), MINT if code == learning_locale else BORDER, 11))
+		b.add_theme_color_override("font_color", WHITE)
+
+func _switch_language(code: String) -> void:
+	if language_service != null:
+		return
+	if not LOCALES.has(code):
+		return
+	learning_locale = code
+	interface_locale = code
+	_load_best()
+	_save_settings()
+	_build_keyboard()
+	_apply_locale()
+	_start_game()
+
+func _start_game() -> void:
+	deck.clear()
+	var source: Array = puzzle_data.get(learning_locale, [])
+	for puzzle in source:
+		deck.append(puzzle)
+	deck.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return int(a.get("difficulty", 1)) < int(b.get("difficulty", 1)))
+	puzzle_index = 0
+	score = 0
+	finished = false
+	_show_puzzle()
+
+func _current_puzzle() -> Dictionary:
+	if deck.is_empty() or puzzle_index >= deck.size():
+		return {}
+	return deck[puzzle_index]
+
+func _show_puzzle() -> void:
+	solved = false
+	hint_used = false
+	portal_strength = 0.0
+	finished = false
+	hint_player.stop()
+	word_label.visible = true
+	answer_edit.editable = true
+	answer_edit.text = ""
+	status_label.text = ""
+	next_button.visible = false
+	check_button.disabled = false
+	hint_button.disabled = false
+	_draw_pieces(false)
+	_update_labels()
+	queue_redraw()
+
+func _update_labels() -> void:
+	if score_label == null:
+		return
+	score_label.text = "%s: %d   ★ %d" % [_t("score"), score, best]
+	if progress_label == null:
+		return
+	if finished:
+		progress_label.text = _t("done")
+	else:
+		progress_label.text = "%s  %d / %d" % [_t("level"), puzzle_index + 1, deck.size()]
+	if word_label != null and not finished:
+		word_label.text = "%s: %d" % [_t("words"), int(_current_puzzle().get("word_count", 1))]
+
+func _clear_pieces() -> void:
+	for n in tile_row.get_children():
+		tile_row.remove_child(n)
+		n.queue_free()
+
+func _draw_pieces(reveal: bool) -> void:
+	_clear_pieces()
+	var p := _current_puzzle()
+	if p.is_empty():
+		return
+	var diff := int(p.get("difficulty", 1))
+	var parts: Array = p.get("parts", [])
+	var total := parts.size()
+	var width := 175.0 if total <= 3 else 151.0
+	for i in range(parts.size()):
+		var piece: Dictionary = parts[i]
+		var label := str(piece.get("label", ""))
+		if i > 0 and not label.begins_with("−") and not label.begins_with("+"):
+			var joiner := Label.new()
+			joiner.text = "+"
+			joiner.custom_minimum_size = Vector2(30, 120)
+			joiner.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			joiner.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+			joiner.add_theme_font_size_override("font_size", 27)
+			joiner.add_theme_color_override("font_color", GOLD)
+			tile_row.add_child(joiner)
+		var panel := PanelContainer.new()
+		panel.custom_minimum_size = Vector2(width, 129)
+		var box := _style(Color("192e48"), Color("5e91b6"), 19)
+		box.content_margin_left = 10
+		box.content_margin_right = 10
+		box.content_margin_top = 9
+		box.content_margin_bottom = 5
+		panel.add_theme_stylebox_override("panel", box)
+		tile_row.add_child(panel)
+		var vbox := VBoxContainer.new()
+		vbox.alignment = BoxContainer.ALIGNMENT_CENTER
+		vbox.add_theme_constant_override("separation", 4)
+		panel.add_child(vbox)
+		if str(piece.get("kind", "text")) == "text":
+			var big := Label.new()
+			big.text = label
+			big.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			big.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+			big.custom_minimum_size = Vector2(0, 110)
+			big.add_theme_font_size_override("font_size", 30 if label.length() <= 7 else 23)
+			big.add_theme_color_override("font_color", GOLD)
+			vbox.add_child(big)
+		else:
+			var icon := TextureRect.new()
+			icon.custom_minimum_size = Vector2(width - 26, 96)
+			icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			icon.texture = _get_piece_image(piece)
+			icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			vbox.add_child(icon)
+			var label_below := Label.new()
+			label_below.text = label if diff == 1 or reveal else "?"
+			label_below.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			label_below.add_theme_color_override("font_color", MINT if reveal else MUTED)
+			label_below.add_theme_font_size_override("font_size", 13)
+			vbox.add_child(label_below)
+
+func _get_piece_image(piece: Dictionary) -> Texture2D:
+	var key := str(piece.get("icon", ""))
+	if piece.get("kind", "") == "action":
+		var action_path := "res://planet_hub/games/space_rebus/assets/mika/%s.png" % key
+		return load(action_path) as Texture2D
+	var override_path := "res://planet_hub/games/space_rebus/assets/overrides/%s.webp" % key
+	if ResourceLoader.exists(override_path):
+		return load(override_path) as Texture2D
+	var svg_path := "res://planet_hub/games/space_rebus/assets/icons/%s.svg" % key
+	if ResourceLoader.exists(svg_path):
+		return load(svg_path) as Texture2D
+	return null
+
+func _build_keyboard() -> void:
+	if keyboard_root == null:
+		return
+	for child in keyboard_root.get_children():
+		keyboard_root.remove_child(child)
+		child.queue_free()
+	var rows: Array = KEY_ROWS.get(learning_locale, KEY_ROWS["en"])
+	for i in range(4):
+		var h := HBoxContainer.new()
+		h.alignment = BoxContainer.ALIGNMENT_CENTER
+		h.custom_minimum_size = Vector2(0, 42)
+		h.add_theme_constant_override("separation", 5)
+		keyboard_root.add_child(h)
+		var s: String = str(rows[i])
+		var char_count := s.length()
+		var last := i == 3
+		var width := clampf(1100.0 / float(char_count + (3 if last else 0)), 44, 70)
+		for ix in range(char_count):
+			var ch := s.substr(ix, 1)
+			var b := _keyboard_button(ch, width)
+			h.add_child(b)
+		if last:
+			for sp in ["SPACE", "-", "⌫"]:
+				var bw := 165.0 if sp == "SPACE" else 72.0
+				var b := _keyboard_button(sp, bw)
+				h.add_child(b)
+
+func _keyboard_button(ch: String, width: float) -> Button:
+	var b := Button.new()
+	b.text = "␣" if ch == "SPACE" else ch
+	b.custom_minimum_size = Vector2(width, 41)
+	b.focus_mode = Control.FOCUS_NONE
+	b.add_theme_font_size_override("font_size", 20)
+	b.add_theme_color_override("font_color", WHITE)
+	b.add_theme_color_override("font_hover_color", WHITE)
+	b.add_theme_color_override("font_pressed_color", WHITE)
+	b.add_theme_stylebox_override("normal", _style(PANEL2, BORDER, 10))
+	b.add_theme_stylebox_override("hover", _style(Color("265471"), CYAN, 10))
+	b.add_theme_stylebox_override("pressed", _style(Color("2d5975"), MINT, 10))
+	b.pressed.connect(_on_key_pressed.bind(ch))
+	return b
+
+func _on_key_pressed(character: String) -> void:
+	if solved or finished:
+		return
+	if character == "⌫":
+		var col := answer_edit.caret_column
+		if col > 0:
+			answer_edit.text = answer_edit.text.substr(0, col - 1) + answer_edit.text.substr(col)
+			answer_edit.caret_column = col - 1
+	else:
+		var symbol := " " if character == "SPACE" else character
+		var col := answer_edit.caret_column
+		answer_edit.text = answer_edit.text.substr(0, col) + symbol + answer_edit.text.substr(col)
+		answer_edit.caret_column = col + symbol.length()
+	answer_edit.grab_focus()
+
+func _play_hint() -> void:
+	if finished:
+		return
+	hint_used = true
+	var p := _current_puzzle()
+	var file_path := "res://planet_hub/games/space_rebus/audio/hints/%s/%s.ogg" % [learning_locale, str(p.get("id", ""))]
+	if ResourceLoader.exists(file_path):
+		hint_player.stream = load(file_path) as AudioStream
+		hint_player.play()
+	else:
+		status_label.text = _t("help")
+
+func _normalize(value: String) -> String:
+	var s := value.strip_edges().to_lower()
+	for pair in [
+		["á", "a"], ["à", "a"], ["â", "a"], ["ã", "a"], ["ä", "a"],
+		["é", "e"], ["è", "e"], ["ê", "e"], ["ë", "e"], ["ё", "е"],
+		["í", "i"], ["î", "i"], ["ï", "i"],
+		["ó", "o"], ["ô", "o"], ["õ", "o"], ["ö", "o"],
+		["ú", "u"], ["ù", "u"], ["û", "u"], ["ü", "u"],
+		["ñ", "n"], ["ç", "c"], ["ß", "ss"], ["ÿ", "y"],
+		["‐", ""], ["‑", ""], ["–", ""], ["—", ""], ["-", ""],
+		[" ", ""], ["'", ""], ["’", ""], [".", ""], [",", ""]
+	]:
+		s = s.replace(pair[0], pair[1])
+	return s
+
+func _check_answer() -> void:
+	if solved or finished:
+		return
+	if answer_edit.text.strip_edges().is_empty():
+		status_label.text = _t("empty")
+		return
+	var target := str(_current_puzzle().get("answer", ""))
+	if _normalize(answer_edit.text) == _normalize(target):
+		solved = true
+		hint_player.stop()
+		score += 10 if hint_used else 20
+		best = maxi(best, score)
+		_save_settings()
+		status_label.text = _t("correct")
+		status_label.add_theme_color_override("font_color", MINT)
+		answer_edit.editable = false
+		check_button.disabled = true
+		hint_button.disabled = true
+		next_button.visible = true
+		word_label.visible = false
+		next_button.text = _t("next") if puzzle_index + 1 < deck.size() else _t("new")
+		_draw_pieces(true)
+		_play_effect(true)
+	else:
+		status_label.text = _t("wrong")
+		status_label.add_theme_color_override("font_color", GOLD)
+		_play_effect(false)
+	_update_labels()
+	queue_redraw()
+
+func _play_effect(ok: bool) -> void:
+	var audio_path := "res://planet_hub/games/space_rebus/audio/ui/correct.wav" if ok else "res://planet_hub/games/space_rebus/audio/ui/wrong.wav"
+	effect_player.stream = load(audio_path) as AudioStream
+	effect_player.play()
+
+func _next_puzzle() -> void:
+	if not solved:
+		return
+	puzzle_index += 1
+	if puzzle_index >= deck.size():
+		_show_finished()
+	else:
+		_show_puzzle()
+
+func _show_finished() -> void:
+	finished = true
+	solved = false
+	word_label.visible = true
+	portal_strength = 1.0
+	_clear_pieces()
+	progress_label.text = _t("done")
+	word_label.text = "★ %d" % score
+	status_label.text = _t("done")
+	status_label.add_theme_color_override("font_color", MINT)
+	answer_edit.text = ""
+	answer_edit.editable = false
+	check_button.disabled = true
+	hint_button.disabled = true
+	next_button.text = _t("new")
+	var final_label := Label.new()
+	final_label.text = _t("done") + "  ★ " + str(score)
+	final_label.custom_minimum_size = Vector2(750, 120)
+	final_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	final_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	final_label.add_theme_font_size_override("font_size", 30)
+	final_label.add_theme_color_override("font_color", MINT)
+	tile_row.add_child(final_label)
+	queue_redraw()
+
+func _on_next_pressed() -> void:
+	if finished:
+		_start_game()
+	else:
+		_next_puzzle()
+
+func _process(delta: float) -> void:
+	clock += delta
+	var target := 1.0 if solved or finished else 0.0
+	portal_strength = move_toward(portal_strength, target, delta * 1.3)
+	queue_redraw()
+
+func _draw() -> void:
+	draw_rect(Rect2(Vector2.ZERO, Vector2(1280, 720)), BG)
+	for i in range(stars.size()):
+		var pos: Vector2 = stars[i]
+		var alpha: float = 0.23 + 0.18 * sin(clock * 0.7 + float(i) * 0.39)
+		draw_circle(pos, 1.0 + float(i % 3) * 0.35, Color(0.81, 0.95, 1, alpha))
+	for i in range(nodes.size() - 1):
+		draw_line(nodes[i], nodes[i + 1], Color("4f86b6", 0.12), 1.6, true)
+		var v: Vector2 = nodes[i]
+		draw_circle(v, 4.5, Color("9bcbff", 0.18))
+	# stars, neural portal and subtle planetary/cosmic light
+	draw_circle(Vector2(1148, 92), 76, Color(0.30, 0.45, 0.84, 0.11))
+	draw_arc(Vector2(1148, 92), 66, 0, TAU, 66, Color("8099fe", 0.26), 2.5, true)
+	draw_arc(Vector2(1148, 92), 48, 0, TAU, 66, Color("6bd7f7", 0.34), 2.0, true)
+	draw_texture_rect(CORE_TEXTURE, Rect2(1121, 64, 54, 54), false, Color(1, 1, 1, 0.65))
+	# head rail, language section and rebus board
+	_draw_panel(Rect2(24, 10, 1232, 76), 22, Color("102139", 0.78), Color("325776", 0.75))
+	_draw_panel(Rect2(24, 91, 1232, 49), 15, Color("0d1d32", 0.72), Color("315771", 0.58))
+	_draw_panel(Rect2(24, 146, 1232, 262), 26, Color("12253f", 0.96), Color("4a7999", 0.92))
+	_draw_panel(Rect2(43, 218, 1194, 157), 21, Color("0c1b31", 0.95), Color("315d80", 0.65))
+	# embedded neural portal behind cards
+	var pcenter := Vector2(645, 294)
+	for radius in [68.0, 103.0, 134.0]:
+		draw_arc(pcenter, radius, 0.0, TAU, 96, Color(0.45, 0.92, 0.99, 0.035 + portal_strength * 0.08), 1.6 + portal_strength * 1.2, true)
+	for i in range(24):
+		var angle := (float(i) / 24.0) * TAU + clock * (0.1 + portal_strength * 0.36)
+		var a := pcenter + Vector2.from_angle(angle) * 170.0
+		var b := pcenter + Vector2.from_angle(angle) * 179.0
+		draw_line(a, b, Color(0.48, 0.94, 0.89, 0.08 + 0.45 * portal_strength), 3.0)
+	# keyboard platform separator
+	_draw_panel(Rect2(20, 489, 1240, 207), 23, Color("0c1d33", 0.88), Color("345a7c", 0.83))
+	# illuminated progress strip at bottom of rebus board
+	var total_count := max(deck.size(), 1)
+	for i in range(total_count):
+		var fill := MINT if i < puzzle_index or finished else (GOLD if i == puzzle_index else Color("375471"))
+		draw_circle(Vector2(517 + float(i) * 36, 396), 3.2, fill)
+
+func _draw_panel(rect: Rect2, radius: int, fill: Color, edge: Color) -> void:
+	var sb := StyleBoxFlat.new()
+	sb.bg_color = fill
+	sb.border_color = edge
+	sb.set_border_width_all(2)
+	sb.set_corner_radius_all(radius)
+	draw_style_box(sb, rect)

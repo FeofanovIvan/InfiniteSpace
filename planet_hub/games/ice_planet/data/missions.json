@@ -1,0 +1,6 @@
+[
+  {"id":"melt", "start_distance":0.88, "start_spin":0.12},
+  {"id":"cool", "start_distance":0.12, "start_spin":0.34},
+  {"id":"rotate", "start_distance":0.60, "start_spin":0.08},
+  {"id":"balance", "start_distance":0.85, "start_spin":0.08}
+]

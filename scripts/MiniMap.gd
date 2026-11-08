@@ -8,6 +8,11 @@ signal map_navigate_requested(world_position: Vector2)
 signal tracking_mode_changed(mode: String)
 
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
+const REPAIR_SHIPYARD_PREVIEW: Texture2D = preload("res://assets/story/callisto_shipyard.png")
+const TARANTULA_STATION_PREVIEW: Texture2D = preload("res://assets/story/tarantula_lab_ship.png")
+const LIVING_ARCHIVE_PREVIEW: Texture2D = preload("res://assets/story/living_archive_lotus.png")
+const TITAN_SKULL_PREVIEW: Texture2D = preload("res://assets/story/titan_skull_ngc6822.png")
+const PYRAMID_PREVIEW: Texture2D = preload("res://assets/story/inverted_pyramid_m31.png")
 # The round chart almost completely fills this SQUARE panel. The sight button
 # sits in the naturally unused lower-right corner, outside the chart circle.
 const PANEL: Vector2 = Vector2(260.0, 260.0)
@@ -83,6 +88,12 @@ func set_camera_view_size(view_world_size: Vector2) -> void:
 func set_solar_bodies(bodies: Array[Dictionary], outer_orbit_radius: float) -> void:
 	_solar_bodies = bodies
 	_outer_orbit_radius = outer_orbit_radius
+	# Include a real distant station in the overview, without moving the ship.
+	for body in bodies:
+		if str(body.get("kind", "")) == "station":
+			var station_world: Vector2 = body.get("world", Vector2.ZERO)
+			_outer_orbit_radius = maxf(_outer_orbit_radius, station_world.length() + 140.0)
+	_units_per_pixel = maxf(DEFAULT_UNITS_PER_PIXEL, (_outer_orbit_radius + 140.0) / (MAP_RADIUS - 15.0))
 	queue_redraw()
 
 
@@ -214,11 +225,28 @@ func _draw_planets() -> void:
 		var point: Vector2 = _world_to_map(world)
 		var name: String = str(body["name"])
 		var col: Color = body["color"]
-		if name == "EarthStation":
-			if not _in_disc(point, 6.0):
+		if str(body.get("kind", "")) == "station" or name == "EarthStation":
+			# A single story station pin shows its own visual asset, never the Earth fallback.
+			if not _in_disc(point, 9.0):
 				continue
-			draw_rect(Rect2(point - Vector2(3.5, 3.5), Vector2(7.0, 7.0)), Color(0.99, 0.81, 0.40), true)
-			draw_line(point + Vector2(-6.0, 0.0), point + Vector2(6.0, 0.0), Color(1.0, 0.95, 0.77), 1.2, true)
+			var station_id: String = str(body.get("station_id", ""))
+			var preview: Texture2D = REPAIR_SHIPYARD_PREVIEW
+			if station_id == "st_lmc":
+				preview = TARANTULA_STATION_PREVIEW
+			elif station_id == "st_smc":
+				preview = LIVING_ARCHIVE_PREVIEW
+			elif station_id == "st_ngc6822":
+				preview = TITAN_SKULL_PREVIEW
+			elif station_id == "st_m31":
+				preview = PYRAMID_PREVIEW
+			draw_circle(point, 9.0, Color(0.38, 0.84, 1.0, 0.25))
+			var preview_aspect: float = float(preview.get_width()) / maxf(1.0, float(preview.get_height()))
+			var station_extent: Vector2 = Vector2(15.0, 15.0)
+			if preview_aspect > 1.0:
+				station_extent.y /= preview_aspect
+			else:
+				station_extent.x *= preview_aspect
+			draw_texture_rect(preview, Rect2(point - station_extent * 0.5, station_extent), false)
 		elif name == "Sun":
 			if not _in_disc(point, 10.0):
 				continue

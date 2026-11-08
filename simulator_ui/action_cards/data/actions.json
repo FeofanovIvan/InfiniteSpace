@@ -1,0 +1,142 @@
+[
+  {
+    "id": "act_01",
+    "slug": "walk",
+    "title": "Walk",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_01_walk.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/walk.svg"
+  },
+  {
+    "id": "act_02",
+    "slug": "run",
+    "title": "Run",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_02_run.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/run.svg"
+  },
+  {
+    "id": "act_03",
+    "slug": "jump",
+    "title": "Jump",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_03_jump.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/jump.svg"
+  },
+  {
+    "id": "act_04",
+    "slug": "sit",
+    "title": "Sit",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_04_sit.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/sit.svg"
+  },
+  {
+    "id": "act_05",
+    "slug": "lie_down",
+    "title": "Lie Down",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_05_lie_down.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/lie_down.svg"
+  },
+  {
+    "id": "act_06",
+    "slug": "sleep",
+    "title": "Sleep",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_06_sleep.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/sleep.svg"
+  },
+  {
+    "id": "act_07",
+    "slug": "eat",
+    "title": "Eat",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_07_eat.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/eat.svg"
+  },
+  {
+    "id": "act_08",
+    "slug": "drink",
+    "title": "Drink",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_08_drink.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/drink.svg"
+  },
+  {
+    "id": "act_09",
+    "slug": "read",
+    "title": "Read",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_09_read.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/read.svg"
+  },
+  {
+    "id": "act_10",
+    "slug": "write",
+    "title": "Write",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_10_write.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/write.svg"
+  },
+  {
+    "id": "act_11",
+    "slug": "draw",
+    "title": "Draw",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_11_draw.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/draw.svg"
+  },
+  {
+    "id": "act_12",
+    "slug": "dance",
+    "title": "Dance",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_12_dance.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/dance.svg"
+  },
+  {
+    "id": "act_13",
+    "slug": "sing",
+    "title": "Sing",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_13_sing.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/sing.svg"
+  },
+  {
+    "id": "act_14",
+    "slug": "swim",
+    "title": "Swim",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_14_swim.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/swim.svg"
+  },
+  {
+    "id": "act_15",
+    "slug": "fly",
+    "title": "Fly",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_15_fly.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/fly.svg"
+  },
+  {
+    "id": "act_16",
+    "slug": "throw",
+    "title": "Throw",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_16_throw.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/throw.svg"
+  },
+  {
+    "id": "act_17",
+    "slug": "catch",
+    "title": "Catch",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_17_catch.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/catch.svg"
+  },
+  {
+    "id": "act_18",
+    "slug": "brush_teeth",
+    "title": "Brush Teeth",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_18_brush_teeth.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/brush_teeth.svg"
+  },
+  {
+    "id": "act_19",
+    "slug": "wash_hands",
+    "title": "Wash Hands",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_19_wash_hands.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/wash_hands.svg"
+  },
+  {
+    "id": "act_20",
+    "slug": "bite",
+    "title": "Bite",
+    "image": "res://simulator_ui/action_cards/assets/actions/act_20_bite.png",
+    "stage": "res://simulator_ui/action_cards/assets/stages/bite.svg"
+  }
+]

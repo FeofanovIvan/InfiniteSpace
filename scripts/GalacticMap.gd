@@ -5,7 +5,8 @@ signal closed
 signal travel_requested(region_id: String, travel_direction: Vector2)
 
 const CATALOG_PATH: String = "res://atlas/world_atlas.json"
-const CLOSE_ICON: Texture2D = preload("res://assets/ui/close.png")
+const NEON_CLOSE_GLYPH: Script = preload("res://simulator_ui/neon_close_glyph.gd")
+## v84: hide hyperspace connections and Crossroads semicircle; neon X.
 const SUN_TEXTURES: Array[Texture2D] = [
 	preload("res://assets/atlas/suns/sun_0.png"),
 	preload("res://assets/atlas/suns/sun_1.png"),
@@ -106,14 +107,46 @@ func _ready() -> void:
 	_footer.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_footer)
 	_close = Button.new()
-	_close.icon = CLOSE_ICON
-	_close.expand_icon = true
+	_close.text = ""
 	_close.focus_mode = Control.FOCUS_NONE
+	_style_neon_close(_close)
 	_close.tooltip_text = "Back to flight"
 	_close.pressed.connect(hide_map)
 	add_child(_close)
 	resized.connect(_reflow)
+	MobileLocale.language_changed.connect(_refresh_locale)
+	_refresh_locale(MobileLocale.language)
 	_reflow()
+
+func _style_neon_close(button: Button) -> void:
+	# Exact neon family of the existing PlanetHub/simulator back arrow.
+	button.focus_mode = Control.FOCUS_NONE
+	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	var style: StyleBoxFlat = StyleBoxFlat.new()
+	style.bg_color = Color("061c38")
+	style.border_color = Color("26dfff")
+	style.set_border_width_all(2)
+	style.set_corner_radius_all(18)
+	style.shadow_color = Color(0.04, 0.64, 1.0, 0.47)
+	style.shadow_size = 6
+	button.add_theme_stylebox_override("normal", style)
+	var hover: StyleBoxFlat = style.duplicate() as StyleBoxFlat
+	hover.bg_color = Color("113a60")	
+	button.add_theme_stylebox_override("hover", hover)
+	button.add_theme_stylebox_override("pressed", hover)
+	button.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	var glyph: Control = NEON_CLOSE_GLYPH.new() as Control
+	glyph.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	button.add_child(glyph)
+	glyph.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+
+func _refresh_locale(_new_locale: String) -> void:
+	if _title != null:
+		_title.text = MobileLocale.t("map_title")
+	if _footer != null:
+		_footer.text = MobileLocale.t("map_footer")
+	if _close != null:
+		_close.tooltip_text = MobileLocale.t("back_to_flight")
 
 func _process(delta: float) -> void:
 	if not visible:
@@ -159,6 +192,7 @@ func _reflow() -> void:
 	if _buttons.is_empty():
 		return
 	var view: Vector2 = size
+	var safe: Rect2 = MobileLocale.safe_rect(view)
 	_scale_factor = clampf(minf(view.x / 900.0, view.y / 540.0), 0.50, 1.18)
 	_node_size = 74.0 * _scale_factor
 	_positions.clear()
@@ -178,12 +212,12 @@ func _reflow() -> void:
 		var selected: bool = str(_systems[i]["id"]) == _current
 		_buttons[i].modulate = Color(1.0, 1.0, 1.0, 1.0) if selected else Color(0.92, 0.96, 1.0, 0.92)
 		_labels[i].add_theme_color_override("font_color", Color(1.0, 0.88, 0.52) if selected else Color(0.82, 0.92, 1.0))
-	_title.position = Vector2(0.0, maxf(2.0, view.y * 0.035))
+	_title.position = Vector2(0.0, maxf(safe.position.y, view.y * 0.035))
 	_title.size = Vector2(view.x, 32.0)
-	_footer.position = Vector2(0.0, view.y - 34.0)
+	_footer.position = Vector2(0.0, safe.end.y - 34.0)
 	_footer.size = Vector2(view.x, 30.0)
 	_close.size = Vector2.ONE * (50.0 * _scale_factor)
-	_close.position = Vector2(view.x - 58.0 * _scale_factor, 6.0 * _scale_factor)
+	_close.position = Vector2(safe.end.x - 54.0 * _scale_factor, safe.position.y + 3.0 * _scale_factor)
 	queue_redraw()
 
 func _draw() -> void:
@@ -193,19 +227,9 @@ func _draw() -> void:
 		var pos: Vector2 = _stars[i] * view
 		var alpha: float = 0.18 + float(i % 6) * 0.08
 		draw_circle(pos, (0.6 + float(i % 3) * 0.3) * _scale_factor, Color(0.62, 0.79, 1.0, alpha))
-	for edge in EDGES:
-		var first: Vector2 = _positions[edge.x]
-		var last: Vector2 = _positions[edge.y]
-		var difference: Vector2 = (last - first).normalized()
-		var a: Vector2 = first + difference * _node_size * 0.32
-		var b: Vector2 = last - difference * _node_size * 0.32
-		draw_line(a, b, Color(0.20, 0.59, 0.96, 0.12), 8.0 * _scale_factor, true)
-		draw_line(a, b, Color(0.34, 0.78, 1.0, 0.58), 1.6 * _scale_factor, true)
 	for i in range(_positions.size()):
 		if str(_systems[i]["id"]) == _current:
 			draw_arc(_positions[i], _node_size * 0.44, 0.0, TAU, 70, Color(1.0, 0.82, 0.38), 2.2, true)
-		if i == 6:
-			draw_arc(_positions[i], _node_size * 0.40, PI * 0.20, PI * 1.8, 45, Color(0.64, 0.94, 1.0), 2.0, true)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if visible and event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:

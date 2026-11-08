@@ -1,0 +1,697 @@
+extends Control
+## MIKA / SMC / Phase beings — molecule builder.
+## One self-contained Control scene. Chemistry data and six translations are external JSON.
+## Works with mouse and touchscreen; integrates with /root/LanguageService when present.
+
+const DESIGN := Vector2(1280.0, 720.0)
+const LANGUAGES := ["ru", "en", "pt", "es", "de", "fr"]
+const ELEMENTS := ["H", "O", "C", "N"]
+const ATOM_COLORS := {
+	"H": Color("e5f4fa"),
+	"O": Color("ff788e"),
+	"C": Color("344c70"),
+	"N": Color("6db8ff")
+}
+const ATOM_EDGES := {
+	"H": Color("ffffff"),
+	"O": Color("ffc1cc"),
+	"C": Color("b7d8fa"),
+	"N": Color("c5ecff")
+}
+const MOLECULE_ORIGIN := Vector2(635, 359)
+const LEFT_PANEL := Rect2(30, 145, 257, 404)
+const BOARD_PANEL := Rect2(302, 145, 652, 404)
+const RIGHT_PANEL := Rect2(969, 145, 281, 404)
+const BOTTOM_PANEL := Rect2(28, 566, 1224, 133)
+const PALETTE_RECTS := [
+	Rect2(166, 590, 213, 84),
+	Rect2(410, 590, 213, 84),
+	Rect2(654, 590, 213, 84),
+	Rect2(898, 590, 213, 84)
+]
+const STAR_ICON = preload("res://planet_hub/games/molecule_builder/star_core.png")
+
+var _translations: Dictionary = {}
+var _molecules: Array = []
+var _queue: Array = []
+var _model: Dictionary = {}
+var _placed: Array = []
+var _interface_lang := "en"
+var _learning_lang := "en"
+var _service: Node
+var _scale := 1.0
+var _origin := Vector2.ZERO
+var _time := 0.0
+var _round := 0
+var _score := 0
+var _errors := 0
+var _completed := false
+var _finished := false
+var _hint_slot := -1
+var _hint_remaining := 0.0
+var _selected_element := ""
+var _drag_element := ""
+var _drag_point := Vector2.ZERO
+var _drag_start := Vector2.ZERO
+var _hover_slot := -1
+var _drag_from_touch := false
+var _feedback_message := ""
+var _feedback_color := Color("bde9ff")
+var _feedback_timer := 0.0
+var _glow_effects: Array[Dictionary] = []
+
+var _title: Label
+var _subtitle: Label
+var _score_label: Label
+var _round_label: Label
+var _mission_label: Label
+var _name_label: Label
+var _formula_label: Label
+var _instruction_label: Label
+var _count_label: Label
+var _board_title: Label
+var _feedback_label: Label
+var _right_title: Label
+var _right_tip: Label
+var _counts: Array[Label] = []
+var _element_labels: Array[Label] = []
+var _language_picker: OptionButton
+var _restart_button: Button
+var _hint_button: Button
+var _next_button: Button
+
+func _ready() -> void:
+	mouse_filter = Control.MOUSE_FILTER_PASS
+	_read_data()
+	_make_controls()
+	_connect_language()
+	_layout()
+	get_viewport().size_changed.connect(_layout)
+	_new_game()
+
+func _read_data() -> void:
+	var parsed_strings = JSON.parse_string(FileAccess.get_file_as_string("res://planet_hub/games/molecule_builder/data/strings.json"))
+	var parsed_molecules = JSON.parse_string(FileAccess.get_file_as_string("res://planet_hub/games/molecule_builder/data/molecules.json"))
+	if typeof(parsed_strings) == TYPE_DICTIONARY:
+		_translations = parsed_strings
+	if typeof(parsed_molecules) == TYPE_ARRAY:
+		_molecules = parsed_molecules
+
+func _make_controls() -> void:
+	_title = _label(32, Color("f3fbff"), HORIZONTAL_ALIGNMENT_LEFT)
+	_subtitle = _label(15, Color("a3c9e2"), HORIZONTAL_ALIGNMENT_LEFT)
+	_score_label = _label(21, Color("f7fbff"), HORIZONTAL_ALIGNMENT_LEFT)
+	_round_label = _label(18, Color("c4e6ff"), HORIZONTAL_ALIGNMENT_LEFT)
+	_mission_label = _label(15, Color("a6d5eb"), HORIZONTAL_ALIGNMENT_CENTER)
+	_name_label = _label(24, Color("f4fffc"), HORIZONTAL_ALIGNMENT_CENTER)
+	_formula_label = _label(48, Color("fff0bf"), HORIZONTAL_ALIGNMENT_CENTER)
+	_count_label = _label(17, Color("c7e8f6"), HORIZONTAL_ALIGNMENT_CENTER)
+	_instruction_label = _label(16, Color("b9d9ef"), HORIZONTAL_ALIGNMENT_CENTER)
+	_board_title = _label(18, Color("c5ecff"), HORIZONTAL_ALIGNMENT_CENTER)
+	_feedback_label = _label(18, Color("b7f5d9"), HORIZONTAL_ALIGNMENT_CENTER)
+	_right_title = _label(17, Color("cdf2ff"), HORIZONTAL_ALIGNMENT_CENTER)
+	_right_tip = _label(15, Color("9bc0d9"), HORIZONTAL_ALIGNMENT_CENTER)
+	_right_tip.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	for _i in range(4):
+		_element_labels.append(_label(17, Color("e5f9ff"), HORIZONTAL_ALIGNMENT_LEFT))
+		_counts.append(_label(20, Color("f3fbff"), HORIZONTAL_ALIGNMENT_RIGHT))
+
+	_language_picker = OptionButton.new()
+	_language_picker.focus_mode = Control.FOCUS_NONE
+	for code in LANGUAGES:
+		_language_picker.add_item(str(_translations.get(code, {}).get("lang", code)))
+	_language_picker.item_selected.connect(_choose_language)
+	_skin_button(_language_picker, Color("153554"), Color("5eacdb"))
+	add_child(_language_picker)
+
+	_restart_button = _button("", Callable(self, "_new_game"))
+	_hint_button = _button("", Callable(self, "_show_hint"))
+	_next_button = _button("", Callable(self, "_advance"))
+	_next_button.visible = false
+	_skin_button(_next_button, Color("1e5b64"), Color("87f4d4"))
+
+func _label(font_size: int, color: Color, horizontal: HorizontalAlignment) -> Label:
+	var node := Label.new()
+	node.add_theme_font_size_override("font_size", font_size)
+	node.add_theme_color_override("font_color", color)
+	node.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	node.horizontal_alignment = horizontal
+	node.clip_text = true
+	node.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(node)
+	return node
+
+func _skin_button(button: BaseButton, bg: Color, edge: Color) -> void:
+	var style := StyleBoxFlat.new()
+	style.bg_color = bg
+	style.border_color = edge
+	style.set_border_width_all(2)
+	style.set_corner_radius_all(15)
+	style.content_margin_left = 12
+	style.content_margin_right = 12
+	style.content_margin_top = 6
+	style.content_margin_bottom = 6
+	var hover := style.duplicate() as StyleBoxFlat
+	hover.bg_color = bg.lightened(0.17)
+	hover.border_color = Color.WHITE
+	var pressed := style.duplicate() as StyleBoxFlat
+	pressed.bg_color = bg.darkened(0.17)
+	button.add_theme_stylebox_override("normal", style)
+	button.add_theme_stylebox_override("hover", hover)
+	button.add_theme_stylebox_override("pressed", pressed)
+	button.add_theme_color_override("font_color", Color("eafaff"))
+	button.add_theme_color_override("font_hover_color", Color.WHITE)
+	button.add_theme_font_size_override("font_size", 15)
+	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+
+func _button(label_text: String, callback: Callable) -> Button:
+	var button := Button.new()
+	button.text = label_text
+	button.focus_mode = Control.FOCUS_NONE
+	_skin_button(button, Color("173a59"), Color("6eb3da"))
+	button.pressed.connect(callback)
+	add_child(button)
+	return button
+
+func _put(control: Control, rect: Rect2) -> void:
+	control.position = _origin + rect.position * _scale
+	control.size = rect.size
+	control.scale = Vector2.ONE * _scale
+
+func _layout() -> void:
+	var viewport_size = size
+	if viewport_size.x <= 0.0 or viewport_size.y <= 0.0:
+		viewport_size = get_viewport_rect().size
+	_scale = minf(viewport_size.x / DESIGN.x, viewport_size.y / DESIGN.y)
+	_origin = (viewport_size - DESIGN * _scale) * 0.5
+	_put(_title, Rect2(42, 18, 653, 44))
+	_put(_subtitle, Rect2(43, 65, 715, 28))
+	_put(_round_label, Rect2(774, 21, 233, 29))
+	_put(_score_label, Rect2(774, 55, 233, 29))
+	_put(_language_picker, Rect2(1057, 15, 186, 40))
+	_put(_hint_button, Rect2(924, 94, 135, 38))
+	_put(_restart_button, Rect2(1070, 94, 173, 38))
+	_put(_mission_label, Rect2(49, 178, 218, 29))
+	_put(_name_label, Rect2(50, 226, 217, 39))
+	_put(_formula_label, Rect2(56, 275, 206, 73))
+	_put(_count_label, Rect2(48, 384, 221, 38))
+	_put(_board_title, Rect2(354, 166, 548, 30))
+	_put(_instruction_label, Rect2(314, 197, 630, 23))
+	_put(_feedback_label, Rect2(340, 513, 580, 27))
+	_put(_right_title, Rect2(994, 179, 234, 29))
+	_put(_right_tip, Rect2(993, 465, 233, 57))
+	for i in range(4):
+		_put(_element_labels[i], Rect2(1040, 243 + i * 55, 135, 38))
+		_put(_counts[i], Rect2(1171, 243 + i * 55, 55, 38))
+	_put(_next_button, Rect2(475, 606, 330, 61))
+	queue_redraw()
+
+func _connect_language() -> void:
+	_service = get_node_or_null("/root/LanguageService")
+	if _service != null:
+		_language_picker.hide()
+		if _service.has_signal("language_changed"):
+			_service.connect("language_changed", Callable(self, "_external_language_changed"))
+		_reload_service_languages()
+	else:
+		var cfg := ConfigFile.new()
+		var code := "en"
+		if cfg.load("user://mika_molecule_builder.cfg") == OK:
+			code = str(cfg.get_value("settings", "language", "en"))
+		_apply_languages(code, code)
+
+func _reload_service_languages() -> void:
+	if _service == null:
+		return
+	var interface_code := str(_service.get("interface_locale"))
+	var learning_code := str(_service.get("learning_locale"))
+	_apply_languages(interface_code, learning_code)
+
+func _external_language_changed(_unused: String) -> void:
+	_reload_service_languages()
+
+func _choose_language(index: int) -> void:
+	if index < 0 or index >= LANGUAGES.size():
+		return
+	var code: String = LANGUAGES[index]
+	if _service != null and _service.has_method("set_learning_locale"):
+		_service.call("set_learning_locale", code)
+	else:
+		var cfg := ConfigFile.new()
+		cfg.set_value("settings", "language", code)
+		cfg.save("user://mika_molecule_builder.cfg")
+	_apply_languages(code, code)
+
+func _apply_languages(interface_code: String, learning_code: String) -> void:
+	_interface_lang = interface_code if LANGUAGES.has(interface_code) else "en"
+	_learning_lang = learning_code if LANGUAGES.has(learning_code) else _interface_lang
+	if _language_picker != null:
+		_language_picker.select(LANGUAGES.find(_learning_lang))
+	_update_labels()
+
+func _tr(key: String) -> String:
+	var translations: Dictionary = _translations.get(_interface_lang, _translations.get("en", {}))
+	return str(translations.get(key, key))
+
+func _element_name(element: String) -> String:
+	var translations: Dictionary = _translations.get(_learning_lang, _translations.get("en", {}))
+	return str(translations.get("atom_" + element.to_lower(), element))
+
+func _molecule_name() -> String:
+	var names: Dictionary = _model.get("names", {})
+	return str(names.get(_learning_lang, names.get("en", "")))
+
+func _new_game() -> void:
+	_queue.clear()
+	var basics: Array = []
+	var advanced: Array = []
+	var water: Dictionary = {}
+	for molecule in _molecules:
+		if str(molecule.get("id", "")) == "water":
+			water = molecule
+		elif int(molecule.get("difficulty", 2)) == 1:
+			basics.append(molecule)
+		else:
+			advanced.append(molecule)
+	basics.shuffle()
+	advanced.shuffle()
+	if not water.is_empty():
+		_queue.append(water)
+	_queue.append_array(basics)
+	_queue.append_array(advanced)
+	_round = 0
+	_score = 0
+	_errors = 0
+	_finished = false
+	_go_to_round()
+
+func _go_to_round() -> void:
+	if _queue.is_empty() or _round >= _queue.size():
+		_finished = true
+		_completed = true
+		_next_button.show()
+		_update_labels()
+		return
+	_model = _queue[_round]
+	_placed.clear()
+	for _i in range(_model.get("atoms", []).size()):
+		_placed.append(false)
+	_completed = false
+	_finished = false
+	_hint_slot = -1
+	_hint_remaining = 0.0
+	_selected_element = ""
+	_drag_element = ""
+	_hover_slot = -1
+	_glow_effects.clear()
+	_next_button.hide()
+	_feedback_message = _tr("started")
+	_feedback_color = Color("bfe7ff")
+	_feedback_timer = 0.0
+	_update_labels()
+	queue_redraw()
+
+func _advance() -> void:
+	if _finished:
+		_new_game()
+		return
+	if not _completed:
+		return
+	_round += 1
+	_go_to_round()
+
+func _show_hint() -> void:
+	if _completed:
+		return
+	for i in range(_placed.size()):
+		if not _placed[i]:
+			_hint_slot = i
+			_hint_remaining = 5.0
+			var required := str(_model.get("atoms", [])[i].get("type", "H"))
+			_feedback_message = _tr("hint_message") % _element_name(required)
+			_feedback_color = Color("ffe6a3")
+			_feedback_timer = 5.0
+			_update_labels()
+			return
+
+func _required_count(element: String) -> int:
+	var quantity := 0
+	for atom in _model.get("atoms", []):
+		if str(atom.get("type", "")) == element:
+			quantity += 1
+	return quantity
+
+func _placed_count(element: String) -> int:
+	var count := 0
+	var atoms: Array = _model.get("atoms", [])
+	for i in range(_placed.size()):
+		if _placed[i] and str(atoms[i].get("type", "")) == element:
+			count += 1
+	return count
+
+func _update_labels() -> void:
+	if _title == null:
+		return
+	_title.text = _tr("title")
+	_subtitle.text = _tr("subtitle")
+	_round_label.text = "%s  %d / %d" % [_tr("level"), mini(_round + 1, _queue.size()), _queue.size()]
+	_score_label.text = "%s  %d" % [_tr("score"), _score]
+	_mission_label.text = _tr("mission")
+	_name_label.text = _molecule_name()
+	_formula_label.text = str(_model.get("formula", ""))
+	_board_title.text = _tr("collect")
+	_instruction_label.text = _tr("instruction")
+	_count_label.text = "%s   %d / %d" % [_tr("remaining"), _placed.count(true), _placed.size()]
+	_right_title.text = _tr("needed")
+	_right_tip.text = _tr("tap")
+	_hint_button.text = _tr("hint")
+	_restart_button.text = _tr("new")
+	_next_button.text = _tr("again") if _finished else _tr("next")
+	_feedback_label.text = _feedback_message
+	_feedback_label.add_theme_color_override("font_color", _feedback_color)
+	var visible_row := 0
+	for i in range(ELEMENTS.size()):
+		var element: String = ELEMENTS[i]
+		var required := _required_count(element)
+		if required > 0:
+			_put(_element_labels[i], Rect2(1040, 243 + visible_row * 55, 135, 38))
+			_put(_counts[i], Rect2(1171, 243 + visible_row * 55, 55, 38))
+			visible_row += 1
+		_element_labels[i].visible = required > 0
+		_counts[i].visible = required > 0
+		_element_labels[i].text = "%s  %s" % [element, _element_name(element)]
+		_counts[i].text = "%d/%d" % [_placed_count(element), required]
+		var label_color: Color = Color("baf9d5") if _placed_count(element) == required else Color("e9f8ff")
+		_counts[i].add_theme_color_override("font_color", label_color)
+
+func _to_design(screen_point: Vector2) -> Vector2:
+	return (screen_point - _origin) / maxf(_scale, 0.01)
+
+func _palette_at(point: Vector2) -> String:
+	for i in range(PALETTE_RECTS.size()):
+		if PALETTE_RECTS[i].has_point(point):
+			return ELEMENTS[i]
+	return ""
+
+func _slot_point(index: int) -> Vector2:
+	var atoms: Array = _model.get("atoms", [])
+	var item: Dictionary = atoms[index]
+	return MOLECULE_ORIGIN + Vector2(float(item.get("x", 0)), float(item.get("y", 0))) * 0.72
+
+func _closest_slot(point: Vector2) -> int:
+	var nearest := -1
+	var distance := 61.0
+	for i in range(_placed.size()):
+		if _placed[i]:
+			continue
+		var delta := point.distance_to(_slot_point(i))
+		if delta < distance:
+			nearest = i
+			distance = delta
+	return nearest
+
+func _begin_interaction(point: Vector2, is_touch: bool) -> void:
+	if _completed:
+		return
+	var hit_element := _palette_at(point)
+	if not hit_element.is_empty():
+		_drag_element = hit_element
+		_drag_start = point
+		_drag_point = point
+		_drag_from_touch = is_touch
+		_hover_slot = -1
+		queue_redraw()
+	elif not _selected_element.is_empty():
+		_try_placement(_selected_element, point)
+		queue_redraw()
+
+func _move_interaction(point: Vector2, is_touch: bool) -> void:
+	if _drag_element.is_empty() or _drag_from_touch != is_touch:
+		return
+	_drag_point = point
+	_hover_slot = _closest_slot(point)
+	queue_redraw()
+
+func _end_interaction(point: Vector2, is_touch: bool) -> void:
+	if _drag_element.is_empty() or _drag_from_touch != is_touch:
+		return
+	var element: String = _drag_element
+	_drag_element = ""
+	_hover_slot = -1
+	if point.distance_to(_drag_start) <= 23.0 and not _palette_at(point).is_empty():
+		_selected_element = element
+	else:
+		_try_placement(element, point)
+	queue_redraw()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		var point: Vector2 = _to_design(event.position)
+		if event.pressed:
+			_begin_interaction(point, false)
+		else:
+			_end_interaction(point, false)
+	elif event is InputEventMouseMotion:
+		_move_interaction(_to_design(event.position), false)
+	elif event is InputEventScreenTouch and event.index == 0:
+		var touch_point: Vector2 = _to_design(event.position)
+		if event.pressed:
+			_begin_interaction(touch_point, true)
+		else:
+			_end_interaction(touch_point, true)
+	elif event is InputEventScreenDrag and event.index == 0:
+		_move_interaction(_to_design(event.position), true)
+
+func _try_placement(element: String, point: Vector2) -> void:
+	if _completed:
+		return
+	var slot := _closest_slot(point)
+	if slot < 0:
+		return
+	var atoms: Array = _model.get("atoms", [])
+	if str(atoms[slot].get("type", "")) != element:
+		_errors += 1
+		_feedback_message = _tr("wrong")
+		_feedback_color = Color("ffabba")
+		_feedback_timer = 2.6
+		_update_labels()
+		_burst(_slot_point(slot), Color("ff9aa5"), 7)
+		return
+	_placed[slot] = true
+	_selected_element = ""
+	_score += 10
+	_hint_remaining = 0.0
+	_hint_slot = -1
+	_feedback_message = _tr("good")
+	_feedback_color = Color("99ffd0")
+	_feedback_timer = 3.0
+	_burst(_slot_point(slot), ATOM_EDGES[element], 16)
+	if _placed.count(true) == _placed.size():
+		_completed = true
+		_score += 30
+		_finished = _round == _queue.size() - 1
+		_feedback_message = _tr("finish") if _finished else _tr("complete")
+		_feedback_color = Color("ffecae")
+		_feedback_timer = 0.0
+		_next_button.show()
+		for i in range(_placed.size()):
+			_burst(_slot_point(i), Color("83ffee"), 8)
+	_update_labels()
+	queue_redraw()
+
+func _burst(center: Vector2, tone: Color, count: int) -> void:
+	for i in range(count):
+		var angle := randf() * TAU
+		var speed := randf_range(28.0, 100.0)
+		_glow_effects.append({
+			"point": center,
+			"velocity": Vector2(cos(angle), sin(angle)) * speed,
+			"life": randf_range(0.4, 1.1),
+			"max_life": 1.1,
+			"color": tone
+		})
+
+func _process(delta: float) -> void:
+	_time += delta
+	if _hint_remaining > 0.0:
+		_hint_remaining = maxf(0.0, _hint_remaining - delta)
+	if _feedback_timer > 0.0:
+		_feedback_timer -= delta
+		if _feedback_timer <= 0.0 and not _completed:
+			_feedback_message = ""
+			_feedback_label.text = ""
+	for i in range(_glow_effects.size() - 1, -1, -1):
+		var item: Dictionary = _glow_effects[i]
+		item["life"] = float(item.get("life", 0.0)) - delta
+		item["point"] = item.get("point", Vector2.ZERO) + item.get("velocity", Vector2.ZERO) * delta
+		if float(item["life"]) <= 0.0:
+			_glow_effects.remove_at(i)
+		else:
+			_glow_effects[i] = item
+	queue_redraw()
+
+func _draw() -> void:
+	draw_set_transform(_origin, 0.0, Vector2.ONE * _scale)
+	_draw_background()
+	_draw_panels()
+	_draw_molecule()
+	_draw_palette()
+	_draw_particles()
+	if not _drag_element.is_empty():
+		_draw_atom(_drag_point, _drag_element, 34.0, true)
+	draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+
+func _round_rect(rect: Rect2, background: Color, border: Color, radius: int = 18, border_size: int = 2) -> void:
+	var box := StyleBoxFlat.new()
+	box.bg_color = background
+	box.border_color = border
+	box.set_corner_radius_all(radius)
+	box.set_border_width_all(border_size)
+	draw_style_box(box, rect)
+
+func _draw_background() -> void:
+	draw_rect(Rect2(Vector2.ZERO, DESIGN), Color("07111f"), true)
+	# Stable dots: deterministic, so random locations do not flicker between frames.
+	for i in range(94):
+		var x := fmod(float(i * 173 + 49), DESIGN.x)
+		var y := fmod(float(i * 89 + 17), DESIGN.y)
+		draw_circle(Vector2(x, y), float((i % 3) + 1) * 0.57, Color(0.65, 0.86, 1.0, 0.17))
+	for radius in range(5, 0, -1):
+		draw_circle(Vector2(194, 362), float(radius) * 73.0, Color(0.13, 0.42, 0.64, 0.013))
+		draw_circle(Vector2(1050, 344), float(radius) * 70.0, Color(0.26, 0.24, 0.58, 0.012))
+	draw_texture_rect(STAR_ICON, Rect2(724, 24, 37, 37), false, Color(0.82, 0.97, 1.0, 0.84))
+	_draw_linework()
+
+func _draw_linework() -> void:
+	for i in range(9):
+		var x := 300.0 + float(i) * 82.0
+		draw_line(Vector2(x, 147), Vector2(x, 548), Color(0.30, 0.57, 0.67, 0.045), 1.0)
+	for i in range(6):
+		var y := 168.0 + float(i) * 75.0
+		draw_line(Vector2(302, y), Vector2(953, y), Color(0.30, 0.57, 0.67, 0.045), 1.0)
+
+func _draw_panels() -> void:
+	_round_rect(Rect2(LEFT_PANEL.position + Vector2(0, 7), LEFT_PANEL.size), Color(0, 0, 0, 0.23), Color.TRANSPARENT, 21, 0)
+	_round_rect(LEFT_PANEL, Color("0f213a"), Color("315b7b"), 21)
+	_round_rect(RIGHT_PANEL, Color("0f213a"), Color("315b7b"), 21)
+	_round_rect(BOARD_PANEL, Color("0c1b33"), Color("42748f"), 22)
+	_round_rect(BOTTOM_PANEL, Color("0f1e35"), Color("315879"), 21)
+	# top little bars in the style of other MIKA games
+	draw_line(Vector2(45, 126), Vector2(766, 126), Color("365b79"), 2.0)
+	draw_line(Vector2(770, 126), Vector2(905, 126), Color("58cbea"), 2.0)
+	draw_line(Vector2(1116, 126), Vector2(1233, 126), Color("365b79"), 2.0)
+	# mission card formula capsule
+	_round_rect(Rect2(52, 278, 212, 83), Color("1a3553"), Color("4e8fae"), 20)
+	_draw_progress()
+	# central translucent rings: phase-race laboratory, not a conventional classroom
+	for i in range(3):
+		var radius := 119.0 + float(i) * 65.0
+		var wave := 0.05 * sin(_time * 0.6 + float(i))
+		draw_arc(MOLECULE_ORIGIN, radius, 0.0, TAU, 100, Color(0.31, 0.77, 0.89, 0.11 + wave), 1.2)
+	for k in range(11):
+		var angle := TAU * float(k) / 11.0 + _time * 0.12
+		var pos := MOLECULE_ORIGIN + Vector2(cos(angle), sin(angle)) * 206.0
+		draw_circle(pos, 2.0, Color(0.55, 0.95, 1.0, 0.32))
+
+func _draw_progress() -> void:
+	var total := maxi(1, _placed.size())
+	var done := _placed.count(true)
+	var outer := Rect2(66, 431, 185, 17)
+	_round_rect(outer, Color("10243b"), Color("325a77"), 9)
+	if done > 0:
+		var amount := (float(done) / float(total)) * 179.0
+		_round_rect(Rect2(69, 434, amount, 11), Color("75f3c6"), Color.TRANSPARENT, 7, 0)
+	# show progress across all six molecules
+	for i in range(_queue.size()):
+		var circle_pos := Vector2(88.0 + float(i) * 28.0, 496.0)
+		var complete := i < _round or (i == _round and _completed)
+		var this_one := i == _round
+		draw_circle(circle_pos, 10.0, Color("73ebbf") if complete else (Color("417a9d") if this_one else Color("24425b")))
+		draw_arc(circle_pos, 10.0, 0.0, TAU, 22, Color("dcfff7") if this_one else Color("5a8dab"), 1.5)
+
+func _draw_molecule() -> void:
+	if _model.is_empty():
+		return
+	var atoms: Array = _model.get("atoms", [])
+	for bond in _model.get("bonds", []):
+		var a := int(bond.get("a", 0))
+		var b := int(bond.get("b", 0))
+		var order := int(bond.get("order", 1))
+		var done := _placed[a] and _placed[b]
+		var begin := _slot_point(a)
+		var end := _slot_point(b)
+		var along := (end - begin).normalized()
+		var perp := Vector2(-along.y, along.x)
+		var light := Color("91ffdb") if done else Color("5b8eaa")
+		var opacity := 0.96 if done else 0.28
+		var thickness := 7.0 if done else 4.0
+		for k in range(order):
+			var shift := perp * (float(k) - float(order - 1) * 0.5) * 12.0
+			draw_line(begin + shift, end + shift, Color(light.r, light.g, light.b, opacity * 0.18), 17.0)
+			draw_line(begin + shift, end + shift, Color(light.r, light.g, light.b, opacity), thickness)
+
+	for i in range(atoms.size()):
+		var center := _slot_point(i)
+		var element := str(atoms[i].get("type", ""))
+		if _placed[i]:
+			_draw_atom(center, element, 42.0, true)
+		else:
+			var highlighted := _hover_slot == i or (_hint_slot == i and _hint_remaining > 0.0)
+			var halo := Color("f5da88") if highlighted else Color("68b3d9")
+			draw_circle(center, 48.0, Color(halo.r, halo.g, halo.b, 0.09))
+			draw_circle(center, 41.0, Color("0a243f"))
+			draw_arc(center, 43.0, 0.0, TAU, 50, Color(halo.r, halo.g, halo.b, 0.94 if highlighted else 0.72), 3.0)
+			draw_arc(center, 51.0, _time, _time + 2.0, 36, Color(halo.r, halo.g, halo.b, 0.31), 2.0)
+			var text_value := element if (_hint_slot == i and _hint_remaining > 0.0) else "?"
+			_draw_center_text(center, text_value, 33, Color("fff0bb") if highlighted else Color("b8dff5"))
+
+	if _completed:
+		var banner := Rect2(420, 476, 430, 34)
+		_round_rect(banner, Color("1f504e"), Color("6cebc3"), 16)
+		_draw_drawn_text(Vector2(436, 499), _tr("finish") if _finished else _tr("complete"), 16, Color("edfff7"), 401.0)
+
+func _draw_palette() -> void:
+	if _completed:
+		# The finished molecule remains fully visible. The bottom tray becomes an action area.
+		for i in range(5):
+			var x := 279.0 + float(i) * 181.0
+			draw_circle(Vector2(x, 635), 12.0, Color(0.49, 0.89, 0.78, 0.15))
+			draw_texture_rect(STAR_ICON, Rect2(x - 16, 619, 32, 32), false, Color("a9f3e1", 0.58))
+		return
+	for i in range(ELEMENTS.size()):
+		var element: String = ELEMENTS[i]
+		var rect: Rect2 = PALETTE_RECTS[i]
+		var selected := _selected_element == element or _drag_element == element
+		var fill := Color("153756") if selected else Color("152a45")
+		var edge: Color = ATOM_EDGES[element] if selected else Color("417b9f")
+		_round_rect(rect, fill, edge, 17, 3 if selected else 2)
+		_draw_atom(rect.position + Vector2(47, 42), element, 28.0, true)
+		_draw_drawn_text(rect.position + Vector2(85, 36), _element_name(element), 16, Color("ecf9ff"), 119.0)
+		_draw_drawn_text(rect.position + Vector2(85, 61), element, 16, Color("9ad5f6"), 96.0)
+
+func _draw_atom(center: Vector2, element: String, radius: float, with_glow: bool) -> void:
+	var fill: Color = ATOM_COLORS.get(element, Color("deeaf6"))
+	var edge: Color = ATOM_EDGES.get(element, Color.WHITE)
+	if with_glow:
+		draw_circle(center, radius + 9.0, Color(edge.r, edge.g, edge.b, 0.085))
+		draw_circle(center, radius + 4.0, Color(edge.r, edge.g, edge.b, 0.12))
+	draw_circle(center + Vector2(2.0, 5.0), radius, Color(0, 0, 0, 0.24))
+	draw_circle(center, radius, fill)
+	draw_arc(center, radius, 0.0, TAU, 46, edge, 2.6)
+	draw_circle(center + Vector2(-radius * 0.28, -radius * 0.32), radius * 0.28, Color(1, 1, 1, 0.19))
+	_draw_center_text(center, element, 27 if radius >= 33 else 21, Color("112b3f") if element == "H" else Color.WHITE)
+
+func _draw_center_text(center: Vector2, value: String, font_size: int, color: Color) -> void:
+	var width := 100.0
+	var origin := center + Vector2(-width * 0.5, float(font_size) * 0.34)
+	draw_string(ThemeDB.fallback_font, origin, value, HORIZONTAL_ALIGNMENT_CENTER, width, font_size, color)
+
+func _draw_drawn_text(position: Vector2, value: String, font_size: int, color: Color, width: float) -> void:
+	draw_string(ThemeDB.fallback_font, position, value, HORIZONTAL_ALIGNMENT_LEFT, width, font_size, color)
+
+func _draw_particles() -> void:
+	for effect in _glow_effects:
+		var color: Color = effect.get("color", Color.WHITE)
+		var ratio := clampf(float(effect.get("life", 0.0)) / maxf(float(effect.get("max_life", 1.0)), 0.01), 0.0, 1.0)
+		var point: Vector2 = effect.get("point", Vector2.ZERO)
+		draw_circle(point, 2.0 + ratio * 2.3, Color(color.r, color.g, color.b, ratio * 0.84))

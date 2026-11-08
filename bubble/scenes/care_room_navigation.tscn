@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://bubble/scripts/care_room_navigation.gd" id="1_room"]
+[ext_resource type="Texture2D" path="res://bubble/addons/bubble_shower/assets/mika_room.png" id="2_bg"]
+[ext_resource type="PackedScene" path="res://bubble/scenes/bubble_character.tscn" id="3_bubble"]
+[ext_resource type="PackedScene" path="res://bubble/addons/bubble_shower/ShowerFX.tscn" id="4_shower"]
+[ext_resource type="PackedScene" path="res://bubble/addons/bubble_shower/DrinkerFX.tscn" id="5_drinker"]
+[ext_resource type="PackedScene" path="res://bubble/addons/bubble_shower/FeederFX.tscn" id="6_feeder"]
+[ext_resource type="Script" path="res://bubble/scripts/room_walk_area.gd" id="7_area"]
+[ext_resource type="Script" path="res://bubble/scripts/room_zones.gd" id="8_zones"]
+[ext_resource type="Script" path="res://bubble/scripts/room_avatar_shadow.gd" id="9_shadow"]
+
+[node name="BubbleCareRoomNavigation" type="Node2D"]
+script = ExtResource("1_room")
+
+[node name="Stage" type="Node2D" parent="."]
+
+[node name="RoomBackground" type="Sprite2D" parent="Stage"]
+texture = ExtResource("2_bg")
+centered = false
+z_index = 0
+
+[node name="WalkArea" type="Node2D" parent="Stage"]
+script = ExtResource("7_area")
+z_index = 12
+
+[node name="ZoneVisual" type="Node2D" parent="Stage"]
+script = ExtResource("8_zones")
+z_index = 14
+
+[node name="FeederFX" parent="Stage" instance=ExtResource("6_feeder")]
+autoplay_once = false
+allow_switch_click = false
+z_index = 5
+
+[node name="DrinkerFX" parent="Stage" instance=ExtResource("5_drinker")]
+fountain_on = true
+allow_switch_click = false
+z_index = 5
+
+[node name="BubbleAnchor" type="Node2D" parent="Stage"]
+position = Vector2(830, 690)
+scale = Vector2(0.35, 0.35)
+z_index = 7
+
+[node name="Shadow" type="Node2D" parent="Stage/BubbleAnchor"]
+script = ExtResource("9_shadow")
+z_index = -1
+
+[node name="Bubble" parent="Stage/BubbleAnchor" instance=ExtResource("3_bubble")]
+position = Vector2(0, -205)
+external_motion_control = true
+auto_return_idle = false
+
+[node name="ShowerFX" parent="Stage" instance=ExtResource("4_shower")]
+shower_on = false
+allow_switch_click = false
+z_index = 9

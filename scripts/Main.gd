@@ -1,4 +1,9 @@
 extends Node2D
+# MIKA_FUEL_EMPTY_SIMULATOR_V122
+const EmptyFuelSimulatorCardScript: Script = preload("res://addons/mika_fuel_empty_simulator/EmptyFuelSimulatorCard.gd")
+# MIKA_BUBBLE_CARE_MAIN_HUD_V8_5_0
+# MIKA_BUBBLE_BALL_PLANET_V8_5_1
+# MIKA_BUBBLE_BOTH_CLICKS_V8_5_1_3
 ## Ship navigation address and camera inspection are independent.
 ## Touch-drag empty space to detach camera; return smoothly when flight resumes.
 ## Distant starfield, subtle events and mini-map track the correct view.
@@ -6,8 +11,10 @@ extends Node2D
 const StarfieldScene = preload("res://scripts/Starfield.gd")
 const ShipScene = preload("res://scripts/Ship.gd")
 const NpcTrafficScene = preload("res://scripts/NpcTraffic.gd")
+const ForeignTrafficScene = preload("res://scripts/ForeignTraffic.gd")
 const JoystickScene = preload("res://scripts/Joystick.gd")
 const ActionScene = preload("res://scripts/ActionButton.gd")
+const LandingPreviewScene = preload("res://scripts/LandingPreview.gd")
 const MiniMapScene = preload("res://scripts/MiniMap.gd")
 const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const DiagnosticsClass = preload("res://scripts/Diagnostics.gd")
@@ -23,12 +30,15 @@ const AsteroidFieldScene = preload("res://scripts/AsteroidField.gd")
 const GalacticMapScene = preload("res://scripts/GalacticMap.gd")
 const PlayerJumpFXScene = preload("res://scripts/PlayerJumpFX.gd")
 const NpcJumpVisual = preload("res://scripts/NpcJumpVisual.gd")
-const MikoMainMenuScene = preload("res://scripts/MikoMainMenu.gd")
+const MikoMainMenuScene = preload("res://simulator_ui/menu/earth_playtown_original_v1.gd")
 const ComicPrologueScene = preload("res://scripts/ComicPrologue.gd")
 const StoryLandingSmokeScene = preload("res://scripts/StoryLandingSmoke.gd")
 const LandingMotion = preload("res://scripts/LandingMotion.gd")
 const HyperjumpMotion = preload("res://scripts/HyperjumpMotion.gd")
 
+const V104_CROSSROADS_UI: Script = preload("res://planet_hub/scripts/crossroads_dialog_v104.gd")
+var _v104_crossroads_dialog: Control
+# InfiniteSpace v104: free-world boot and Living World conversation
 const MAX_SPEED: float = 890.0
 const THRUST: float = 580.0
 const RELEASE_DECELERATION: float = 3200.0
@@ -48,6 +58,15 @@ const REPORT_INTERVAL: float = 25.0
 const CAMERA_RETURN_MIN_DURATION: float = 0.72
 const CAMERA_RETURN_MAX_DURATION: float = 1.40
 const CAMERA_RETURN_DISTANCE_SCALE: float = 1400.0
+const SYSTEM_ROAM_EXTRA_RADIUS: float = 260.0
+const SYSTEM_ROAM_SOFT_MARGIN: float = 90.0
+# v38: ONLY the two existing circular controls are 10% larger than v36.
+const CONTROL_SCALE_MULTIPLIER: float = 1.10
+# v43: uniformly grow the EXISTING upper-right destination/fuel/buttons rail
+# by another 20% from v42. The gaps stay 12 screen pixels, not 20% larger.
+const UPPER_RIGHT_UI_GROWTH: float = 1.20
+# Landing is offered only in approach range, not when a distant planet happens to be on screen.
+const LANDING_APPROACH_MARGIN: float = 140.0
 # The intro flies to Earth, then uses EXACTLY the NPC anchored landing
 # stages: approach, hover, scale-down. No crash or impact smoke.
 const STORY_CRUISE_END: float = 9.7
@@ -65,9 +84,16 @@ var current_input: Vector2 = Vector2.ZERO
 var starfield
 var ship
 var npc_traffic
+var foreign_traffic
 var asteroid_field
 var joystick
 var action_button
+var landing_preview
+var _planet_hub: Control
+var _representative_dialog: Control
+var _planet_landing_active: bool = false
+var _landing_target_id: String = ""
+var _landing_target_name: String = ""
 var mini_map
 var distant_events
 var far_plasma
@@ -88,6 +114,8 @@ var _warp_exit_world: Vector2 = Vector2.ZERO
 var _warp_velocity: Vector2 = Vector2.ZERO
 var _warp_switched: bool = false
 var main_menu
+var _bubble_popup: Button
+var _bubble_attention_pending: bool = false
 var _gameplay_hud: Control
 var _comic_prologue
 var _story_smoke
@@ -97,8 +125,12 @@ var _intro_time: float = 0.0
 var _intro_landing_offset: Vector2 = Vector2.ZERO
 var _intro_landing_direction: Vector2 = Vector2.UP
 var _intro_approach_started: bool = false
-const INITIAL_CRYSTALS: int = 0
+# v57: tuneable normal-flight fuel. Hyperjumps and story flights remain free.
+const FUEL_CAPACITY: float = 50.0
+const FUEL_MAX_DRAIN_PER_SECOND: float = 1.8
+const INITIAL_CRYSTALS: int = 50
 const INITIAL_FUEL_SEGMENTS: int = 7
+var _fuel_units: float = FUEL_CAPACITY
 var _autopilot_target: String = ""
 var _autopilot_active: bool = false
 var _camera_offset: Vector2 = Vector2.ZERO
@@ -166,6 +198,12 @@ func _ready() -> void:
 	npc_traffic.hyperjump_started.connect(_on_npc_hyperjump_started)
 	npc_traffic.landing_completed.connect(_on_npc_landing_completed)
 	npc_traffic.takeoff_started.connect(_on_npc_takeoff_started)
+	foreign_traffic = ForeignTrafficScene.new()
+	foreign_traffic.name = "SMC_NativeFleet_FiveShipClasses"
+	foreign_traffic.z_index = 10
+	foreign_traffic.configure(solar_system)
+	add_child(foreign_traffic)
+	foreign_traffic.set_region("mw")
 
 	asteroid_field = AsteroidFieldScene.new()
 	asteroid_field.name = "MikoAsteroidsAndCrystals"
@@ -173,6 +211,7 @@ func _ready() -> void:
 	asteroid_field.configure(solar_system, npc_traffic)
 	add_child(asteroid_field)
 	asteroid_field.asteroid_impact.connect(_on_asteroid_impact)
+	asteroid_field.fuel_collected.connect(_on_fuel_collected)
 	ship = ShipScene.new()
 	ship.name = "FixedScreenShip"
 	ship.z_index = 15
@@ -192,6 +231,7 @@ func _ready() -> void:
 	far_plasma.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	solar_system.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	npc_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
+	foreign_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_ship_world(Vector2(navigator.sector) * WorldAddress.SECTOR_SIZE + navigator.local)
 	_update_black_hole_position()
@@ -203,10 +243,17 @@ func _ready() -> void:
 	diagnostics.write("solar_system_ready", {"earth_orbit_radius": solar_system.ORBIT_RADIUS, "earth_period_s": solar_system.ORBIT_PERIOD_SECONDS, "planet_count": 8, "ship_spawn": navigator.as_dictionary()})
 	diagnostics.write("cosmic_region_ready", {"black_hole_world": {"x": CosmicRegionScene.BLACK_HOLE_WORLD.x, "y": CosmicRegionScene.BLACK_HOLE_WORLD.y}, "galaxy_center": {"x": CosmicRegionScene.GALAXY_CENTER.x, "y": CosmicRegionScene.GALAXY_CENTER.y}, "debug_map_marker": DEBUG_SHOW_BLACK_HOLE_ON_MAP})
 	diagnostics.write("far_plasma_ready", {"max_active": 5, "initial_visible": far_plasma.active_count(), "method": "bounded_fragment_shader"})
-	_start_story_comic()
+	_v104_free_world_boot()
 
 
 func _physics_process(delta: float) -> void:
+	# The reminder counts only in ordinary flight; other screens pause it.
+	if status_hud != null:
+		status_hud.call("set_bubble_timer_active", _bubble_flight_available())
+	_refresh_bubble_popup()
+
+	if _planet_landing_active:
+		return
 	if _warp_active:
 		_advance_warp(delta)
 		return
@@ -250,13 +297,33 @@ func _physics_process(delta: float) -> void:
 		if Input.is_key_pressed(KEY_SPACE):
 			velocity = Vector2.ZERO
 
+	# Only normal flight consumes fuel; storyline flights and hyperjumps
+	# return earlier from this process, so they remain free.
+	if velocity.length_squared() > 1.0 and _fuel_units > 0.0:
+		_fuel_units = maxf(0.0, _fuel_units - FUEL_MAX_DRAIN_PER_SECOND * clampf(velocity.length() / MAX_SPEED, 0.0, 1.0) * delta)
+		_refresh_fuel_hud()
+	if _fuel_units <= 0.0:
+		if _autopilot_active:
+			_stop_autopilot("fuel_empty")
+		velocity = Vector2.ZERO
+		# The empty tank stops translation, not the joystick's orientation.
+		if steer.length_squared() > 0.005:
+			_ship_heading = lerp_angle(_ship_heading, steer.angle() + PI * 0.5, minf(1.0, delta * 3.5))
+			ship.rotation = _ship_heading
 	# Ship world position, camera world position and visual parallax are distinct.
 	# Even mid-return, the ship continues its usual physics without interruption.
 	var previous_offset: Vector2 = _camera_offset
-	var displacement: Vector2 = velocity * delta
-	if displacement.length_squared() > 0.000001:
-		navigator.advance(displacement)
-		starfield.advance(displacement)
+	var requested_displacement: Vector2 = velocity * delta
+	var displacement: Vector2 = requested_displacement
+	var visual_star_displacement: Vector2 = requested_displacement
+	if requested_displacement.length_squared() > 0.000001:
+		var movement: Dictionary = _constrain_free_flight_displacement(requested_displacement)
+		displacement = movement.get("world", requested_displacement)
+		visual_star_displacement = movement.get("visual", requested_displacement)
+		if displacement.length_squared() > 0.000001:
+			navigator.advance(displacement)
+		if visual_star_displacement.length_squared() > 0.000001:
+			starfield.advance(visual_star_displacement)
 		var desired: float = velocity.angle() + PI * 0.5
 		_ship_heading = lerp_angle(_ship_heading, desired, minf(1.0, delta * 3.5))
 		ship.rotation = _ship_heading
@@ -281,6 +348,7 @@ func _physics_process(delta: float) -> void:
 	cosmic_region.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	solar_system.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	npc_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
+	foreign_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_ship_world(Vector2(navigator.sector) * WorldAddress.SECTOR_SIZE + navigator.local)
 	_update_black_hole_position()
@@ -289,6 +357,7 @@ func _physics_process(delta: float) -> void:
 	ship.position = get_viewport_rect().size * 0.5 - _camera_offset
 	mini_map.set_ship_location(navigator.sector, navigator.local, _ship_heading)
 	mini_map.set_camera_offset(_camera_offset)
+	_update_landing_offer()
 
 	_report_timer += delta
 	if _report_timer >= REPORT_INTERVAL:
@@ -310,6 +379,63 @@ func _physics_process(delta: float) -> void:
 			"camera_returning": _camera_returning,
 			"camera_offset": {"x": snappedf(_camera_offset.x, 0.1), "y": snappedf(_camera_offset.y, 0.1)}
 		})
+
+
+func _current_system_roam_radius() -> float:
+	if solar_system == null:
+		return HyperjumpMotion.OUTER_JUMP_RADIUS - SYSTEM_ROAM_SOFT_MARGIN
+	var region_id: String = str(solar_system.current_id)
+	if region_id == "crossroads":
+		return 980.0
+	if region_id == "mw":
+		# The lone repair shipyard sits outside Neptune, at radius ~2836.
+		# Manual exploration must reach it, yet remain finite and starfield-only past the rim.
+		return 3220.0
+	if ["lmc", "smc", "ngc6822", "m31", "m33"].has(region_id):
+		# SAME distance from system center as in the original Solar System.
+		# At radius 3220 the world position stops, while visual starfield
+		# continues moving: no artificial teleport or change to the warp rim.
+		return 3220.0
+	var orbit_limit: float = float(solar_system.OUTER_ORBIT_RADIUS) + SYSTEM_ROAM_EXTRA_RADIUS
+	return minf(orbit_limit, HyperjumpMotion.OUTER_JUMP_RADIUS - SYSTEM_ROAM_SOFT_MARGIN)
+
+func _clip_displacement_to_circle(start: Vector2, delta: Vector2, radius: float) -> Vector2:
+	var a: float = delta.dot(delta)
+	if a <= 0.000001:
+		return Vector2.ZERO
+	var b: float = 2.0 * start.dot(delta)
+	var c: float = start.dot(start) - radius * radius
+	var discriminant: float = b * b - 4.0 * a * c
+	if discriminant <= 0.0:
+		return Vector2.ZERO
+	var root: float = sqrt(discriminant)
+	var t1: float = (-b - root) / (2.0 * a)
+	var t2: float = (-b + root) / (2.0 * a)
+	var t: float = 0.0
+	if t1 >= 0.0 and t1 <= 1.0:
+		t = maxf(t, t1)
+	if t2 >= 0.0 and t2 <= 1.0:
+		t = maxf(t, t2)
+	if t <= 0.0:
+		return Vector2.ZERO
+	return delta * maxf(0.0, t - 0.002)
+
+func _constrain_free_flight_displacement(requested: Vector2) -> Dictionary:
+	if requested.length_squared() <= 0.000001:
+		return {"world": requested, "visual": requested}
+	if _autopilot_active:
+		return {"world": requested, "visual": requested}
+	var start: Vector2 = Vector2(navigator.sector) * WorldAddress.SECTOR_SIZE + navigator.local
+	var limit: float = _current_system_roam_radius()
+	var finish: Vector2 = start + requested
+	if finish.length() <= limit:
+		return {"world": requested, "visual": requested}
+	if start.length() >= limit and finish.length() < start.length():
+		return {"world": requested, "visual": requested}
+	if start.length() >= limit and finish.length() >= start.length():
+		return {"world": Vector2.ZERO, "visual": requested}
+	var clipped: Vector2 = _clip_displacement_to_circle(start, requested, limit)
+	return {"world": clipped, "visual": requested}
 
 
 func _build_controls() -> void:
@@ -360,6 +486,8 @@ func _build_controls() -> void:
 	status_hud.set_crystals(INITIAL_CRYSTALS)
 	status_hud.galaxy_requested.connect(_on_galaxy_requested)
 	status_hud.main_menu_requested.connect(_on_main_menu_requested)
+	status_hud.bubble_care_requested.connect(_on_bubble_care_requested)
+	status_hud.bubble_reminder_ready.connect(_on_bubble_reminder_ready)
 
 	# Full-screen overlays are above the flight HUD and consume touch events.
 	galactic_map = GalacticMapScene.new()
@@ -372,6 +500,16 @@ func _build_controls() -> void:
 	main_menu.name = "MikoMainMenuPlaceholder"
 	root.add_child(main_menu)
 	main_menu.closed.connect(_on_modal_closed)
+	main_menu.crystals_earned.connect(_on_educational_crystals_earned)
+
+	_build_bubble_popup(root)
+	_v122_build_empty_fuel_card(root)
+
+	# v38: empty, localized landing-preview screen (no surface gameplay yet).
+	landing_preview = LandingPreviewScene.new()
+	landing_preview.name = "LandingPreview_EmptyScreen"
+	root.add_child(landing_preview)
+	landing_preview.closed.connect(_on_landing_preview_closed)
 
 	_warp_overlay = PlayerJumpFXScene.new()
 	_warp_overlay.name = "SharedNPCStylePlayerJumpFX"
@@ -381,47 +519,119 @@ func _build_controls() -> void:
 
 func _layout() -> void:
 	var view: Vector2 = get_viewport_rect().size
+	var safe: Rect2 = MobileLocale.safe_rect(view)
 	ship.position = view * 0.5 - _camera_offset
 	starfield.resize_field(view)
 	far_plasma.resize_sky(view)
 	cosmic_region.resize_sky(view)
 	solar_system.resize_view(view)
 	npc_traffic.resize_view(view)
+	foreign_traffic.resize_view(view)
 	asteroid_field.resize_view(view)
 	_update_black_hole_position()
 	distant_events.resize_sky(view)
-	var control_scale: float = clampf(minf(view.x / 520.0, view.y / 340.0), 0.55, 1.0)
+	var base_control_scale: float = clampf(minf(view.x / 520.0, view.y / 340.0), 0.55, 1.0)
+	# Keep touch and visible circles in sync: enlarge the ENTIRE controls, not merely their artwork.
+	var control_scale: float = base_control_scale * CONTROL_SCALE_MULTIPLIER
 	joystick.scale = Vector2.ONE * control_scale
 	auto_stop_button.scale = Vector2.ONE * control_scale
 	action_button.scale = Vector2.ONE * control_scale
 	var visual_size: float = 184.0 * control_scale
-	var margin: float = 18.0 * control_scale
-	var bottom: float = maxf(margin, view.y - visual_size - margin)
-	action_button.position = Vector2(margin, bottom)
-	joystick.position = Vector2(view.x - visual_size - margin, bottom)
+	var margin: float = 18.0 * base_control_scale
+	var bottom: float = maxf(safe.position.y + margin, safe.end.y - visual_size - margin)
+	action_button.position = Vector2(safe.position.x + margin, bottom)
+	joystick.position = Vector2(safe.end.x - visual_size - margin, bottom)
 	auto_stop_button.position = joystick.position
 
 	# No fixed-pixel assumptions: preserve the panel on compact mobile displays.
 	var map_scale: float = clampf(minf(view.x / 700.0, view.y / 490.0), 0.55, 1.0)
 	mini_map.scale = Vector2.ONE * map_scale
 	mini_map.set_camera_view_size(view)
-	mini_map.position = Vector2(18.0 * map_scale, 18.0 * map_scale)
-	var goals_scale: float = clampf(minf(view.x / 720.0, view.y / 440.0), 0.58, 1.0)
+	mini_map.position = safe.position + Vector2(12.0 * map_scale, 12.0 * map_scale)
+	# v43: each existing upper-right element becomes 20% larger than v42:
+	# destination trigger + its six tiles, fuel with real blue fragment,
+	# and the two lower buttons. Their centre axis and 12px gaps do not change.
+	# The joystick and capture control retain their existing v38 size.
+	var goals_scale: float = clampf(minf(view.x / 720.0, view.y / 440.0), 0.58, 1.0) * 1.10 * UPPER_RIGHT_UI_GROWTH
+	var hud_scale: float = clampf(minf(view.x / 700.0, view.y / 490.0), 0.52, 1.0) * 1.10 * UPPER_RIGHT_UI_GROWTH
+	var lower_button_extra: float = 1.20 / 1.10
+	var lower_button_local_size: float = 42.0 * lower_button_extra
+	var rail_gap: float = 12.0
+	var right_button_center: float = joystick.position.x + visual_size * 0.5
+		# On a very short landscape screen, fit the UPPER rail together rather
+	# than overlap the joystick. Standard screens preserve the exact +20% growth
+	# relative to v42, with fixed 12-screen-pixel gaps in every aspect ratio.
+	var desired_content_height: float = NavigationMenuScene.TRIGGER_SIZE * goals_scale + 34.0 * hud_scale + 4.0 * lower_button_local_size * hud_scale
+	# v84: third upper-right control below simulator fits above joystick.
+	var usable_content_height: float = joystick.position.y - safe.position.y - 12.0 - 8.0 - rail_gap * 5.0
+	var compact_fit: float = clampf(usable_content_height / maxf(1.0, desired_content_height), 0.10, 1.0)
+	goals_scale *= compact_fit
+	hud_scale *= compact_fit
 	goal_picker.scale = Vector2.ONE * goals_scale
-	# Keep the whole rail in one row. Reserve the mini-map area; on narrow
-	# phones the strip scrolls horizontally instead of wrapping to a grid.
+	# Preserve the scrollable single row of six destinations on narrow phones.
 	var map_right: float = mini_map.position.x + 260.0 * map_scale + 12.0
-	var available_px: float = view.x - map_right - 16.0
+	var available_px: float = right_button_center + NavigationMenuScene.TRIGGER_SIZE * goals_scale * 0.5 - map_right - 12.0
 	var available_units: float = maxf(190.0, available_px / goals_scale)
 	var menu_width: float = minf(available_units, NavigationMenuScene.PREFERRED_WIDTH)
 	goal_picker.set_available_width(menu_width)
-	goal_picker.position = Vector2(view.x - menu_width * goals_scale - 16.0, 16.0)
-	# Icons stay below the destination selector, in a compact right-side column.
-	var hud_scale: float = clampf(minf(view.x / 700.0, view.y / 490.0), 0.52, 1.0)
+	# Anchor the actual round preview to the physical joystick centre.
+	# The menu width changes between regions: use its measured size, never
+	# the old requested width or the right edge of the screen.
+	goal_picker.position = Vector2(
+		right_button_center - (goal_picker.size.x - NavigationMenuScene.TRIGGER_SIZE * 0.5) * goals_scale,
+		safe.position.y + 12.0
+	)
 	status_hud.scale = Vector2.ONE * hud_scale
-	status_hud.position = Vector2(view.x - ResourceHudScene.HUD_WIDTH * hud_scale - 16.0, 126.0 * goals_scale)
+	# Scale the two EXISTING children, including their clickable Control areas.
+	# Position them by the CENTER (x=103), not by the HUD container's right edge.
+	var lower_button_center_local: float = ResourceHudScene.HUD_WIDTH - 44.0 + 21.0
+	var galaxy_button: Button = status_hud.get_node("GlobalFlight") as Button
+	var ship_menu_button: TextureButton = status_hud.get_node("MikoMainMenu") as TextureButton
+	var settings_button: Button = status_hud.get_node("SettingsBelowSimulator") as Button
+	var bubble_button: Button = status_hud.get_node("BubbleCareClock") as Button
+	var button_local_x: float = lower_button_center_local - lower_button_local_size * 0.5
+	var local_gap: float = rail_gap / hud_scale
+	var first_button_y: float = 34.0 + local_gap
+	var second_button_y: float = first_button_y + lower_button_local_size + local_gap
+	var third_button_y: float = second_button_y + lower_button_local_size + local_gap
+	var fourth_button_y: float = third_button_y + lower_button_local_size + local_gap
+	galaxy_button.scale = Vector2.ONE * lower_button_extra
+	galaxy_button.position = Vector2(button_local_x, first_button_y)
+	ship_menu_button.scale = Vector2.ONE * lower_button_extra
+	ship_menu_button.position = Vector2(button_local_x, second_button_y)
+	bubble_button.scale = Vector2.ONE * lower_button_extra
+	bubble_button.position = Vector2(button_local_x, third_button_y)
+	settings_button.scale = Vector2.ONE * lower_button_extra
+	settings_button.position = Vector2(button_local_x, fourth_button_y)
+	status_hud.size = Vector2(ResourceHudScene.HUD_WIDTH, fourth_button_y + lower_button_local_size)
+	# The seven fuel sticks and the original blue asteroid fragment stay inside
+	# their existing bar. Its size grows with the entire upper-right HUD.
+	status_hud.position = Vector2(
+		right_button_center - lower_button_center_local * hud_scale,
+		goal_picker.position.y + NavigationMenuScene.TRIGGER_SIZE * goals_scale + rail_gap
+	)
 	galactic_map.size = view
 	main_menu.size = view
+	if is_instance_valid(_planet_hub):
+		_planet_hub.size = view
+	if is_instance_valid(_representative_dialog):
+		_representative_dialog.size = view
+	landing_preview.resize_preview(view)
+	_layout_bubble_popup(view)
+
+
+func _refresh_fuel_hud() -> void:
+	status_hud.set_fuel_segments(ceili((_fuel_units / FUEL_CAPACITY) * 7.0))
+	status_hud.set_crystals(floori(_fuel_units + 0.001))
+
+
+func _on_fuel_collected(units: int) -> void:
+	if units <= 0:
+		return
+	var previous: float = _fuel_units
+	_fuel_units = minf(FUEL_CAPACITY, _fuel_units + float(units))
+	_refresh_fuel_hud()
+	diagnostics.write("fuel_collected", {"received": units, "added": snappedf(_fuel_units - previous, 0.01), "fuel": snappedf(_fuel_units, 0.01)})
 
 
 func _on_asteroid_impact(asteroid_type: int, target_name: String, world_position: Vector2) -> void:
@@ -440,6 +650,9 @@ func _on_joystick_changed(direction: Vector2) -> void:
 
 
 func _on_galaxy_requested() -> void:
+	if is_instance_valid(_bubble_popup):
+		_bubble_popup.hide()
+
 	if _warp_active or _intro_comic_playing or _intro_space_flying:
 		return
 	if main_menu.visible:
@@ -449,7 +662,105 @@ func _on_galaxy_requested() -> void:
 	diagnostics.write("galactic_map_opened", {"current": solar_system.current_id, "destinations": 7})
 
 
+
+# The popup is a clickable care card, not a new simulator catalogue entry.
+
+const _BUBBLE_POPUP_CAPTIONS: Dictionary = {
+	"ru":"Баббл ждёт тебя", "en":"Bubble is waiting", "fr":"Bubble t'attend",
+	"de":"Bubble wartet", "es":"Bubble te espera", "pt_BR":"Bubble está esperando"
+}
+
+func _bubble_card_caption() -> String:
+	return str(_BUBBLE_POPUP_CAPTIONS.get(str(MobileLocale.language),_BUBBLE_POPUP_CAPTIONS["en"]))
+
+func _bubble_card_update_language(_locale: String) -> void:
+	if not is_instance_valid(_bubble_popup):
+		return
+	var card: Control = _bubble_popup.get_node_or_null("SameSimulatorPortraitCard") as Control
+	if card != null:
+		card.set("card_title",_bubble_card_caption())
+
+func _build_bubble_popup(root: Control) -> void:
+	# Actual card system from the simulator, with its same silhouette and glow.
+	# Unlike v8.5.0 this is NOT a plain rectangular picture button.
+	_bubble_popup = Button.new()
+	_bubble_popup.name = "BubbleCareCenterReminder"
+	_bubble_popup.text = ""
+	_bubble_popup.tooltip_text = "Bubble"
+	_bubble_popup.focus_mode = Control.FOCUS_NONE
+	_bubble_popup.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	for style_name in ["normal","hover","pressed","disabled","focus"]:
+		_bubble_popup.add_theme_stylebox_override(style_name,StyleBoxEmpty.new())
+	_bubble_popup.pressed.connect(_on_bubble_care_requested)
+	var card_script: Script = load("res://simulator_ui/scripts/approved_simulator_card.gd") as Script
+	var card: Control = card_script.new() as Control
+	card.name = "SameSimulatorPortraitCard"
+	card.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	card.set("card_title",_bubble_card_caption())
+	card.set("card_subtitle","")
+	card.set("card_description","")
+	card.set("image_fit_mode","contain")
+	card.set("image_path","res://simulator_ui/assets/approved_icons/sim_11_bubble_care.png")
+	_bubble_popup.add_child(card)
+	card.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	# v8.5.1.3: simulator card descendants may consume mouse/touch events.
+	# Put ONE invisible hit surface above them; reuse the direct-care callback.
+	var card_hit: Button = Button.new()
+	card_hit.name = "BubbleCareReminderFullCardHit"
+	card_hit.text = ""
+	card_hit.focus_mode = Control.FOCUS_NONE
+	card_hit.mouse_filter = Control.MOUSE_FILTER_STOP
+	card_hit.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	for hit_state in ["normal", "hover", "pressed", "disabled", "focus"]:
+		card_hit.add_theme_stylebox_override(hit_state, StyleBoxEmpty.new())
+	_bubble_popup.add_child(card_hit)
+	card_hit.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	card_hit.pressed.connect(_on_bubble_care_requested)
+	_bubble_popup.visible = false
+	root.add_child(_bubble_popup)
+	MobileLocale.language_changed.connect(_bubble_card_update_language)
+
+func _layout_bubble_popup(view: Vector2) -> void:
+	if not is_instance_valid(_bubble_popup):
+		return
+	var sc: float = clampf(minf(view.x/1280.0,view.y/720.0),0.44,0.92)
+	var portrait: Vector2 = Vector2(430.0,540.0)*sc
+	_bubble_popup.size = portrait
+	_bubble_popup.position = (view-portrait)*0.5
+	var card: Control = _bubble_popup.get_node_or_null("SameSimulatorPortraitCard") as Control
+	if card != null:
+		card.size = portrait
+
+func _bubble_flight_available() -> bool:
+	return (_gameplay_hud != null and _gameplay_hud.visible and not get_tree().paused
+		and not _warp_active and not _intro_comic_playing and not _intro_space_flying
+		and not _planet_landing_active and not main_menu.visible and not galactic_map.visible
+		and not status_hud.call("bubble_settings_open"))
+
+func _on_bubble_reminder_ready() -> void:
+	_bubble_attention_pending = true
+	_refresh_bubble_popup()
+
+func _refresh_bubble_popup() -> void:
+	if not is_instance_valid(_bubble_popup):
+		return
+	_bubble_popup.visible = _bubble_attention_pending and _bubble_flight_available() and _fuel_units > 0.0
+
+func _on_bubble_care_requested() -> void:
+	if not _bubble_flight_available():
+		return
+	_bubble_attention_pending = false
+	_bubble_popup.visible = false
+	main_menu.set_stats(status_hud.crystal_count, 0, 0.0)
+	main_menu.call("open_bubble_care_direct", get_viewport_rect().size)
+	if main_menu.visible:
+		status_hud.call("reset_bubble_clock")
+		get_tree().paused = true
+
 func _on_main_menu_requested() -> void:
+	if is_instance_valid(_bubble_popup):
+		_bubble_popup.hide()
+
 	if _warp_active or _intro_comic_playing or _intro_space_flying:
 		return
 	if galactic_map.visible:
@@ -460,7 +771,16 @@ func _on_main_menu_requested() -> void:
 	diagnostics.write("miko_main_menu_opened", {"screen": "bridge", "flight_crystals": status_hud.crystal_count, "crystal_capacity": 0, "ship_speed": 0})
 
 
+func _on_educational_crystals_earned(units: int) -> void:
+	# Correct answers in locally copied Play Town games refill the fuel tank.
+	_on_fuel_collected(units)
+
+
 func _on_modal_closed() -> void:
+	if _planet_landing_active and is_instance_valid(_planet_hub):
+		_planet_hub.visible = true
+		get_tree().paused = true
+		return
 	get_tree().paused = false
 	diagnostics.write("flight_overlay_closed", {})
 
@@ -549,8 +869,15 @@ func _advance_warp(delta: float) -> void:
 			_warp_velocity = _warp_velocity.move_toward(Vector2.ZERO, 340.0 * delta)
 			_story_move_to(here + _warp_velocity * delta)
 			ship.throttle = 0.1
+			# v47: finish aligning the visible nose (-Y) to the real jump vector.
+			var intended_heading: float = _warp_direction.angle() + PI * 0.5
+			_ship_heading = lerp_angle(_ship_heading, intended_heading, minf(1.0, delta * 9.0))
+			ship.rotation = _ship_heading
+			var heading_error: float = absf(wrapf(intended_heading - _ship_heading, -PI, PI))
 			_warp_overlay.show_charge(clampf(_warp_time / HyperjumpMotion.CHARGE_TIME, 0.0, 1.0), ship.position)
-			if _warp_time >= HyperjumpMotion.CHARGE_TIME:
+			if _warp_time >= HyperjumpMotion.CHARGE_TIME and heading_error < 0.015:
+				_ship_heading = intended_heading
+				ship.rotation = intended_heading
 				_warp_phase = "dash_out"
 				_warp_time = 0.0
 				_gameplay_hud.visible = false
@@ -561,7 +888,9 @@ func _advance_warp(delta: float) -> void:
 			# and scale-increase. No translucent tunnel or fade/shrink.
 			_warp_time += delta
 			var departure_progress: float = clampf(_warp_time / HyperjumpMotion.DASH_TIME, 0.0, 1.0)
-			_story_move_to(here + _warp_direction * HyperjumpMotion.dash_speed(departure_progress) * delta)
+			ship.rotation = _ship_heading
+			var nose_forward: Vector2 = Vector2.from_angle(_ship_heading - PI * 0.5)
+			_story_move_to(here + nose_forward * HyperjumpMotion.dash_speed(departure_progress) * delta)
 			ship.scale = Vector2.ONE * NpcJumpVisual.dash_ship_scale(departure_progress)
 			ship.modulate = Color.WHITE
 			ship.throttle = 1.0
@@ -590,7 +919,9 @@ func _advance_warp(delta: float) -> void:
 		"dash_in":
 			_warp_time += delta
 			var arrival_progress: float = clampf(_warp_time / HyperjumpMotion.DASH_TIME, 0.0, 1.0)
-			_story_move_to(here + _warp_direction * HyperjumpMotion.dash_speed(arrival_progress) * delta)
+			ship.rotation = _ship_heading
+			var arrival_nose: Vector2 = Vector2.from_angle(_ship_heading - PI * 0.5)
+			_story_move_to(here + arrival_nose * HyperjumpMotion.dash_speed(arrival_progress) * delta)
 			ship.scale = Vector2.ONE * NpcJumpVisual.dash_ship_scale(arrival_progress)
 			ship.modulate = Color.WHITE
 			ship.throttle = 1.0
@@ -628,11 +959,21 @@ func _arrive_new_region(region_id: String, new_spawn: Vector2) -> void:
 	var home: bool = region_id == "mw"
 	npc_traffic.visible = home
 	npc_traffic.process_mode = Node.PROCESS_MODE_INHERIT if home else Node.PROCESS_MODE_DISABLED
-	asteroid_field.visible = home
-	asteroid_field.process_mode = Node.PROCESS_MODE_INHERIT if home else Node.PROCESS_MODE_DISABLED
+	foreign_traffic.set_region(region_id)
+	# Dynamic asteroids exist in all real systems; Crossroads is not a star system.
+	asteroid_field.reset_for_region(region_id)
+	asteroid_field.visible = region_id != "crossroads"
+	asteroid_field.process_mode = Node.PROCESS_MODE_INHERIT if region_id != "crossroads" else Node.PROCESS_MODE_DISABLED
 	var system_data: Dictionary = solar_system.get_system(region_id)
+	_landing_target_id = ""
+	_landing_target_name = ""
+	action_button.set_action_available(false)
 	goal_picker.set_region_destinations(region_id, system_data.get("planets", []), system_data.get("station", null))
-	goal_picker.visible = region_id != "crossroads"
+	# Destination counts change the menu's actual width. Re-anchor the preview
+	# immediately after every inter-system arrival, not only on window resize.
+	_layout()
+	goal_picker.visible = true
+	# InfiniteSpace v104.2: restore Crossroads destination picker
 	mini_map.reset_for_region()
 	solar_system.set_camera_address(navigator.sector, navigator.local, Vector2.ZERO)
 	mini_map.set_solar_bodies(solar_system.get_navigation_bodies(), solar_system.OUTER_ORBIT_RADIUS)
@@ -640,6 +981,7 @@ func _arrive_new_region(region_id: String, new_spawn: Vector2) -> void:
 	mini_map.set_camera_offset(Vector2.ZERO)
 	ship.position = get_viewport_rect().size * 0.5
 	npc_traffic.set_camera_address(navigator.sector, navigator.local, Vector2.ZERO)
+	foreign_traffic.set_camera_address(navigator.sector, navigator.local, Vector2.ZERO)
 	asteroid_field.set_camera_address(navigator.sector, navigator.local, Vector2.ZERO)
 	asteroid_field.set_ship_world(new_spawn)
 	cosmic_region.set_camera_address(navigator.sector, navigator.local, Vector2.ZERO)
@@ -678,7 +1020,11 @@ func _update_autopilot(delta: float) -> void:
 	var distance: float = approach.length()
 	var arrival_radius: float = float(state["arrival_radius"])
 	if distance <= arrival_radius:
+		var arrived_target: String = _autopilot_target
 		_stop_autopilot("arrived")
+		var landing_planet: Dictionary = _resolve_autopilot_destination(arrived_target)
+		if not landing_planet.is_empty():
+			_begin_planet_landing(str(landing_planet.get("id", "")), str(landing_planet.get("name_ru", landing_planet.get("name_en", ""))))
 		return
 	# Predict the moving body's future location. Lead time diminishes near it.
 	var lead_seconds: float = clampf((distance - arrival_radius) / AUTO_CRUISE_SPEED, 0.0, 1.25)
@@ -688,6 +1034,33 @@ func _update_autopilot(delta: float) -> void:
 	var desired_speed: float = minf(AUTO_CRUISE_SPEED, sqrt(2.0 * AUTO_BRAKE_ACCEL * remaining))
 	var desired_velocity: Vector2 = aim * desired_speed + target_velocity
 	velocity = velocity.move_toward(desired_velocity.limit_length(MAX_SPEED), AUTO_STEERING_ACCEL * delta)
+
+
+# v65: auto-landing resolves stations and any planet target.
+# Navigation still lists inhabited bodies only, but every planet may be landed on,
+# and accessible stations should open the same hub automatically after arrival.
+func _begin_autoland_payload(entry: Variant, fallback_id: String = "") -> Dictionary:
+	if not (entry is Dictionary):
+		return {}
+	var payload: Dictionary = entry.duplicate(true)
+	if String(payload.get("id", "")).is_empty():
+		payload["id"] = fallback_id
+	return payload
+
+func _resolve_autopilot_destination(target_id: String) -> Dictionary:
+	var system_data: Dictionary = solar_system.get_system(solar_system.current_id)
+	for item in system_data.get("planets", []):
+		if not (item is Dictionary):
+			continue
+		if target_id != str(item.get("id", "")) and target_id != str(item.get("name_en", "")):
+			continue
+		return _begin_autoland_payload(item, target_id)
+	var station: Variant = system_data.get("station", {})
+	if station is Dictionary:
+		if target_id == str(station.get("id", "")) or target_id == str(station.get("name_en", "")):
+			if bool(station.get("accessible", true)):
+				return _begin_autoland_payload(system_data.get("station", {}), target_id)
+	return {}
 
 
 func _on_auto_stop_pressed() -> void:
@@ -709,9 +1082,105 @@ func _stop_autopilot(reason: String) -> void:
 	diagnostics.write("autopilot_stopped", {"reason": reason, "target": previous_target, "ship": navigator.as_dictionary()})
 
 
+func _update_landing_offer() -> void:
+	# Planetary landings only on explicitly inhabited worlds; stations are ports.
+	if _warp_active or _intro_comic_playing or _intro_space_flying or get_tree().paused:
+		return
+	var ship_world: Vector2 = _ship_world()
+	if solar_system.current_id == "crossroads":
+		# The Living World is centered at world coordinates (0,0) in OtherSystem.gd.
+		var near_living_world: bool = ship_world.length() <= 620.0
+		_landing_target_id = "crossroads_core" if near_living_world else ""
+		_landing_target_name = "Living World" if near_living_world else ""
+		action_button.set_action_mode("talk" if near_living_world else "use")
+		action_button.set_action_available(near_living_world)
+		return
+	var system_data: Dictionary = solar_system.get_system(solar_system.current_id)
+	var positions: Dictionary = {}
+	for body in solar_system.get_navigation_bodies():
+		positions[str(body.get("name", ""))] = body.get("world", Vector2.ZERO)
+	var closest_id: String = ""
+	var closest_name: String = ""
+	var nearest_ratio: float = INF
+	for planet in system_data.get("planets", []):
+		if str(planet.get("landing", "orbit")) != "landing":
+			continue
+		var name_en: String = str(planet.get("name_en", ""))
+		if not positions.has(name_en):
+			continue
+		var planet_world: Vector2 = positions[name_en]
+		var distance: float = ship_world.distance_to(planet_world)
+		var radius: float = LANDING_APPROACH_MARGIN + float(planet.get("size", 120.0)) * 0.5
+		var id: String = str(planet.get("id", ""))
+		if id == _landing_target_id:
+			radius += 12.0
+		if distance <= radius and distance / radius < nearest_ratio:
+			nearest_ratio = distance / radius
+			closest_id = id
+			closest_name = name_en
+	var station: Variant = system_data.get("station", null)
+	if station is Dictionary and bool(station.get("accessible", true)):
+		var station_id: String = str(station.get("id", ""))
+		var station_name: String = "EarthStation" if solar_system.current_id == "mw" else str(station.get("name_en", ""))
+		if positions.has(station_name):
+			var station_world: Vector2 = positions[station_name]
+			var station_distance: float = ship_world.distance_to(station_world)
+			var station_radius: float = LANDING_APPROACH_MARGIN + 65.0
+			if station_id == _landing_target_id:
+				station_radius += 12.0
+			if station_distance <= station_radius and station_distance / station_radius < nearest_ratio:
+				closest_id = station_id
+				closest_name = str(station.get("name_en", "Station"))
+	# The existing left button becomes a magnet near loose fuel crystals.
+	# The landing prompt returns when no eligible crystals remain.
+	var can_collect: bool = _fuel_units < FUEL_CAPACITY and asteroid_field.has_collectible_in_range(ship_world)
+	var required_mode: String = "take" if can_collect else ("land" if closest_id != "" else "use")
+	var available: bool = can_collect or closest_id != ""
+	if closest_id == _landing_target_id and action_button.action_mode == required_mode and action_button.interaction_available == available:
+		return
+	_landing_target_id = closest_id
+	_landing_target_name = closest_name
+	action_button.set_action_mode(required_mode)
+	action_button.set_action_available(available)
+	diagnostics.write("landing_offer_updated", {"planet": closest_id, "available": closest_id != ""})
+
+
 func _on_action_requested(mode: String) -> void:
-	print("ACTION_REQUESTED: ", mode, " (no nearby target in distant-space test)")
-	diagnostics.write("action_pressed", {"mode": mode, "position": navigator.as_dictionary()})
+	if mode == "talk" and solar_system.current_id == "crossroads":
+		if _ship_world().length() <= 620.0 and not _warp_active and not get_tree().paused:
+			_v104_open_crossroads_dialog()
+		return
+	if mode == "take":
+		if not _warp_active and not _intro_comic_playing and not _intro_space_flying and not get_tree().paused and _fuel_units < FUEL_CAPACITY:
+			asteroid_field.start_magnet_capture(_ship_world())
+		return
+	if mode != "land" or _landing_target_id == "":
+		return
+	if _warp_active or _intro_comic_playing or _intro_space_flying or get_tree().paused:
+		return
+	if _landing_target_id.contains("_p"):
+		_begin_planet_landing(_landing_target_id, _landing_target_name)
+		return
+	# v62: accessible stations use the existing planet hub + translator.
+	if _landing_target_id.begins_with("st_"):
+		_begin_planet_landing(_landing_target_id, _landing_target_name)
+		return
+	if _autopilot_active:
+		_stop_autopilot("landing_preview")
+	velocity = Vector2.ZERO
+	current_input = Vector2.ZERO
+	joystick.clear_input()
+	landing_preview.open_preview(_landing_target_name)
+	get_tree().paused = true
+	diagnostics.write("landing_preview_opened", {"planet": _landing_target_id, "scene": "placeholder_only"})
+
+
+func _on_landing_preview_closed() -> void:
+	get_tree().paused = false
+	joystick.clear_input()
+	current_input = Vector2.ZERO
+	diagnostics.write("landing_preview_closed", {"planet": _landing_target_id})
+	_update_landing_offer()
 
 
 func _on_map_tracking_mode_changed(mode: String) -> void:
@@ -782,13 +1251,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			# Test shortcut only: inspect the secret region; ship stays put.
 			_on_map_navigate_requested(CosmicRegionScene.BLACK_HOLE_WORLD)
 		elif event.keycode == KEY_F and OS.has_feature("debug"):
-			# Debug preview only, not gameplay fuel consumption.
-			var step: int = 1 if event.shift_pressed else -1
-			status_hud.set_fuel_segments(status_hud.fuel_segments + step)
-			diagnostics.write("fuel_preview_changed", {"segments": status_hud.fuel_segments})
+			# Debug: F uses 5 fuel units; Shift+F adds 5.
+			_fuel_units = clampf(_fuel_units + (5.0 if event.shift_pressed else -5.0), 0.0, FUEL_CAPACITY)
+			_refresh_fuel_hud()
 		elif event.keycode == KEY_C and OS.has_feature("debug"):
-			status_hud.set_crystals(status_hud.crystal_count + 1)
-			diagnostics.write("crystal_preview_changed", {"count": status_hud.crystal_count})
+			_on_fuel_collected(3)
 
 
 func _pan_camera(world_delta: Vector2) -> void:
@@ -810,6 +1277,7 @@ func _pan_camera(world_delta: Vector2) -> void:
 	cosmic_region.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	solar_system.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	npc_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
+	foreign_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_ship_world(Vector2(navigator.sector) * WorldAddress.SECTOR_SIZE + navigator.local)
 	_update_black_hole_position()
@@ -1015,6 +1483,7 @@ func _story_move_to(world_position: Vector2) -> void:
 	cosmic_region.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	solar_system.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	npc_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
+	foreign_traffic.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_camera_address(navigator.sector, navigator.local, _camera_offset)
 	asteroid_field.set_ship_world(world_position)
 	_update_black_hole_position()
@@ -1038,6 +1507,7 @@ func _finish_story_flight() -> void:
 	_story_move_to(solar_system.earth_world_position() + Vector2(160.0, -80.0))
 	_gameplay_hud.visible = true
 	diagnostics.write("prologue_complete", {"landing": "Earth", "playable": true, "flight": "npc_style_hover_and_landing"})
+	call_deferred("_open_initial_earth_hub")
 
 
 func _exit_tree() -> void:
@@ -1070,3 +1540,180 @@ func _on_npc_landing_completed(role: String, destination: String) -> void:
 
 func _on_npc_takeoff_started(role: String, destination: String) -> void:
 	diagnostics.write("npc_takeoff", {"role": role, "origin": destination})
+
+# v59.1: one shared planet landing screen for every landable world.
+# Planet surface backgrounds and card art can be provided by asset ID later.
+func _ensure_planet_hub() -> Control:
+	if is_instance_valid(_planet_hub):
+		return _planet_hub
+	var path: String = "res://planet_hub/scenes/planet_hub_overlay.tscn"
+	var scene: PackedScene = load(path) as PackedScene
+	if scene == null:
+		push_error("Missing v59.1 planet hub scene: " + path)
+		return null
+	_planet_hub = scene.instantiate() as Control
+	_planet_hub.name = "PlanetHubOverlay"
+	_planet_hub.process_mode = Node.PROCESS_MODE_ALWAYS
+	_gameplay_hud.add_child(_planet_hub)
+	_planet_hub.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_planet_hub.size = get_viewport_rect().size
+	_planet_hub.connect("flight_requested", Callable(self, "_on_planet_hub_flight_requested"))
+	_planet_hub.connect("simulator_requested", Callable(self, "_on_planet_hub_simulator_requested"))
+	_planet_hub.connect("representative_requested", Callable(self, "_on_planet_representative_requested"))
+	return _planet_hub
+
+
+func _ensure_representative_dialog() -> Control:
+	if is_instance_valid(_representative_dialog):
+		return _representative_dialog
+	var path: String = "res://planet_hub/scenes/representative_dialog.tscn"
+	var scene: PackedScene = load(path) as PackedScene
+	if scene == null:
+		push_error("Missing representative dialog: " + path)
+		return null
+	_representative_dialog = scene.instantiate() as Control
+	_representative_dialog.name = "PlanetRepresentativeConversation"
+	_representative_dialog.visible = false
+	_representative_dialog.process_mode = Node.PROCESS_MODE_ALWAYS
+	_gameplay_hud.add_child(_representative_dialog)
+	_representative_dialog.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_representative_dialog.size = get_viewport_rect().size
+	_representative_dialog.connect("return_requested", Callable(self, "_on_representative_return_requested"))
+	return _representative_dialog
+
+
+func _on_planet_representative_requested(planet_id: String) -> void:
+	if not _planet_landing_active or not is_instance_valid(_planet_hub):
+		return
+	var planet_meta: Dictionary = _planet_hub.get("_meta")
+	if not bool(planet_meta.get("inhabited", false)):
+		return
+	var dialog: Control = _ensure_representative_dialog()
+	if dialog == null:
+		return
+	var planet_name: String = str(_planet_hub.get("_planet_name"))
+	var background_path: String = str(_planet_hub.call("get_dialog_background_path"))
+	var portrait_path: String = str(_planet_hub.call("get_dialog_portrait_path"))
+	dialog.call("configure_for_planet", planet_id, planet_name, background_path, portrait_path)
+	_planet_hub.visible = false
+	dialog.visible = true
+	get_tree().paused = true
+	diagnostics.write("representative_dialog_opened", {"planet": planet_id})
+
+
+func _on_representative_return_requested() -> void:
+	if is_instance_valid(_representative_dialog):
+		_representative_dialog.visible = false
+	if _planet_landing_active and is_instance_valid(_planet_hub):
+		_planet_hub.visible = true
+	get_tree().paused = _planet_landing_active
+	diagnostics.write("representative_dialog_closed", {})
+
+
+func _begin_planet_landing(planet_id: String, display_name: String, with_animation: bool = true) -> void:
+	if is_instance_valid(_bubble_popup):
+		_bubble_popup.hide()
+
+	if _planet_landing_active:
+		return
+	var hub: Control = _ensure_planet_hub()
+	if hub == null:
+		return
+	_planet_landing_active = true
+	if _autopilot_active:
+		_stop_autopilot("landing_on_planet")
+	velocity = Vector2.ZERO
+	current_input = Vector2.ZERO
+	joystick.clear_input()
+	ship.throttle = 0.0
+	if with_animation:
+		var tw: Tween = create_tween()
+		tw.tween_property(ship, "scale", Vector2.ZERO, 0.42).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+		await tw.finished
+	ship.visible = false
+	hub.size = get_viewport_rect().size
+	hub.call("show_for_planet", planet_id, display_name, floori(_fuel_units + 0.001))
+	get_tree().paused = true
+	diagnostics.write("planet_hub_opened", {"planet": planet_id, "inhabited": true})
+
+
+func _on_planet_hub_flight_requested() -> void:
+	if not _planet_landing_active:
+		return
+	_planet_hub.visible = false
+	_planet_landing_active = false
+	get_tree().paused = false
+	ship.visible = true
+	ship.scale = Vector2.ZERO
+	ship.modulate = Color.WHITE
+	ship.throttle = 0.0
+	var tw: Tween = create_tween()
+	tw.tween_property(ship, "scale", Vector2.ONE, 0.33).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	joystick.clear_input()
+	current_input = Vector2.ZERO
+	_update_landing_offer()
+	diagnostics.write("planet_hub_launch_requested", {})
+
+
+func _on_planet_hub_simulator_requested() -> void:
+	if is_instance_valid(_bubble_popup):
+		_bubble_popup.hide()
+
+	if not _planet_landing_active:
+		return
+	_planet_hub.visible = false
+	main_menu.set_stats(status_hud.crystal_count, 0, 0.0)
+	main_menu.open_menu(get_viewport_rect().size)
+	# The normal ship simulator is unchanged; returning opens the planet hub.
+	get_tree().paused = true
+	diagnostics.write("planet_hub_simulator_opened", {})
+
+
+func _open_initial_earth_hub() -> void:
+	_begin_planet_landing("mw_p01", "Земля", false)
+
+func _v104_free_world_boot() -> void:
+	# Story is hidden in settings until the mission chain is complete.
+	# Existing comic and cinematic assets remain untouched for future Story mode.
+	_skip_story()
+
+
+func _v104_open_crossroads_dialog() -> void:
+	if not is_instance_valid(_v104_crossroads_dialog):
+		_v104_crossroads_dialog = V104_CROSSROADS_UI.new() as Control
+		if _v104_crossroads_dialog == null:
+			push_error("Unable to instantiate the Crossroads conversation")
+			return
+		_v104_crossroads_dialog.name = "CrossroadsLivingPlanetConversation"
+		_v104_crossroads_dialog.process_mode = Node.PROCESS_MODE_ALWAYS
+		_gameplay_hud.add_child(_v104_crossroads_dialog)
+		_v104_crossroads_dialog.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		_v104_crossroads_dialog.connect("return_requested",Callable(self,"_v104_close_crossroads_dialog"))
+	if _autopilot_active:
+		_stop_autopilot("crossroads_dialog")
+	velocity = Vector2.ZERO
+	current_input = Vector2.ZERO
+	joystick.clear_input()
+	_v104_crossroads_dialog.call("open_dialog")
+	get_tree().paused = true
+
+
+func _v104_close_crossroads_dialog() -> void:
+	if is_instance_valid(_v104_crossroads_dialog):
+		_v104_crossroads_dialog.visible = false
+	get_tree().paused = false
+	joystick.clear_input()
+	current_input = Vector2.ZERO
+	_update_landing_offer()
+
+
+# v122: the approved Bubble-style simulator card is clickable but never modal.
+func _v122_build_empty_fuel_card(root: Control) -> void:
+	var popup: Button = EmptyFuelSimulatorCardScript.new() as Button
+	if popup == null:
+		push_error("Fuel-empty simulator reminder: could not create the existing card")
+		return
+	popup.name = "FuelEmptySimulatorCenterReminder"
+	root.add_child(popup)
+	popup.call("configure", self)
+	popup.connect("simulator_requested", Callable(self, "_on_main_menu_requested"))

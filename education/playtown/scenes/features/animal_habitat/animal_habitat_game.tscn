@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://simulator_ui/earth_backgrounds/habitat_earth_bg_v1.gd" id="1"]
+
+[node name="AnimalHabitatGame" type="Node2D"]
+script = ExtResource("1")

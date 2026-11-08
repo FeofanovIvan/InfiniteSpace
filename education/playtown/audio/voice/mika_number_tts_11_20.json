@@ -1,0 +1,79 @@
+{
+  "schema": "mika-number-tts-1",
+  "first_number": 11,
+  "last_number": 20,
+  "spoken_text": {
+    "ru": [
+      "одиннадцать",
+      "двенадцать",
+      "тринадцать",
+      "четырнадцать",
+      "пятнадцать",
+      "шестнадцать",
+      "семнадцать",
+      "восемнадцать",
+      "девятнадцать",
+      "двадцать"
+    ],
+    "en": [
+      "eleven",
+      "twelve",
+      "thirteen",
+      "fourteen",
+      "fifteen",
+      "sixteen",
+      "seventeen",
+      "eighteen",
+      "nineteen",
+      "twenty"
+    ],
+    "pt": [
+      "onze",
+      "doze",
+      "treze",
+      "quatorze",
+      "quinze",
+      "dezesseis",
+      "dezessete",
+      "dezoito",
+      "dezenove",
+      "vinte"
+    ],
+    "es": [
+      "once",
+      "doce",
+      "trece",
+      "catorce",
+      "quince",
+      "dieciséis",
+      "diecisiete",
+      "dieciocho",
+      "diecinueve",
+      "veinte"
+    ],
+    "fr": [
+      "onze",
+      "douze",
+      "treize",
+      "quatorze",
+      "quinze",
+      "seize",
+      "dix-sept",
+      "dix-huit",
+      "dix-neuf",
+      "vingt"
+    ],
+    "de": [
+      "elf",
+      "zwölf",
+      "dreizehn",
+      "vierzehn",
+      "fünfzehn",
+      "sechzehn",
+      "siebzehn",
+      "achtzehn",
+      "neunzehn",
+      "zwanzig"
+    ]
+  }
+}

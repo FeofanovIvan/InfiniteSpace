@@ -1,0 +1,154 @@
+{
+  "design_resolution": [
+    1672,
+    941
+  ],
+  "safe_rect": [
+    190,
+    58,
+    1292,
+    740
+  ],
+  "floor_polygon": [
+    [
+      164,
+      414
+    ],
+    [
+      1508,
+      414
+    ],
+    [
+      1670,
+      933
+    ],
+    [
+      2,
+      933
+    ]
+  ],
+  "player_start": [
+    836,
+    652
+  ],
+  "stations": {
+    "shower": {
+      "file": "shower.png",
+      "title": "Душевая",
+      "action": "Включить душ",
+      "rect": [
+        235.5,
+        93.8,
+        232.0,
+        371.2
+      ],
+      "focus": [
+        351.5,
+        279.4
+      ],
+      "zoom": 1.9,
+      "alpha_threshold": 0.6,
+      "contact_depth": "visible_base_contour",
+      "painted_width": 232.0,
+      "pixel_row": true
+    },
+    "grooming": {
+      "file": "grooming.png",
+      "title": "Умывание",
+      "action": "Почистить зубы",
+      "rect": [
+        495.5,
+        261.703,
+        231.0,
+        203.297
+      ],
+      "focus": [
+        611.0,
+        363.351
+      ],
+      "zoom": 2.1,
+      "alpha_threshold": 0.6,
+      "contact_depth": "visible_base_contour",
+      "painted_width": 231.0,
+      "pixel_row": true
+    },
+    "feeder": {
+      "file": "feeder.png",
+      "title": "Кормушка",
+      "action": "Насыпать корм",
+      "rect": [
+        754.5,
+        285.5023,
+        175.0,
+        179.4977
+      ],
+      "focus": [
+        842.0,
+        375.251
+      ],
+      "zoom": 2.35,
+      "alpha_threshold": 0.6,
+      "contact_depth": "visible_base_contour",
+      "painted_width": 175.0,
+      "pixel_row": true
+    },
+    "drinker": {
+      "file": "drinker.png",
+      "title": "Поилка",
+      "action": "Включить воду",
+      "rect": [
+        957.5,
+        295.2801,
+        146.0,
+        169.7199
+      ],
+      "focus": [
+        1030.5,
+        380.14
+      ],
+      "zoom": 2.55,
+      "alpha_threshold": 0.6,
+      "contact_depth": "visible_base_contour",
+      "painted_width": 146.0,
+      "pixel_row": true
+    },
+    "bed": {
+      "file": "bed.png",
+      "title": "Лежанка",
+      "action": "Уложить Баббла",
+      "rect": [
+        1131.5,
+        254.7573,
+        305.0,
+        210.2427
+      ],
+      "focus": [
+        1284.0,
+        359.879
+      ],
+      "zoom": 2.03,
+      "alpha_threshold": 0.6,
+      "contact_depth": "visible_base_contour",
+      "painted_width": 305.0,
+      "pixel_row": true
+    }
+  },
+  "version": "8.0-full-interactions-landscape",
+  "notes": "Five alpha-pixel-row props, all activity points/regions in sprite-local coords. Front collision on visible painted bases. Shower/bed enter via guided animation with player physics temporarily disabled.",
+  "pixel_row": {
+    "center_x": 836.0,
+    "floor_contact_y": 465.0,
+    "visible_gap": 28.0,
+    "edge_alpha_threshold": 0.08,
+    "max_visible_row_width": 1210.0,
+    "description_ru": "Одна линия по фактической альфа-заливке. Совпадает Y нижних пикселей всех спрайтов; равные зазоры между видимыми краями. Фон не управляет координатами объектов."
+  },
+  "background_asset": "assets/room_background.png",
+  "feeder_visual_state": {
+    "reservoir": "kibble_pellets_visible",
+    "bowl_on_start": "empty",
+    "bowl_on_feed": "individual_kibble_pellets",
+    "bowl_feed_duration_seconds": 3.2
+  },
+  "interaction_zones": "res://addons/mika_bubble_room/interaction_zones.json"
+}

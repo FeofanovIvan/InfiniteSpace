@@ -1,0 +1,38 @@
+[
+  {
+    "id": "water", "formula": "H₂O", "difficulty": 1,
+    "names": {"ru":"Вода","en":"Water","pt":"Água","es":"Agua","de":"Wasser","fr":"Eau"},
+    "atoms": [{"type":"O","x":0,"y":-18},{"type":"H","x":-120,"y":94},{"type":"H","x":120,"y":94}],
+    "bonds": [{"a":0,"b":1,"order":1},{"a":0,"b":2,"order":1}]
+  },
+  {
+    "id": "hydrogen", "formula": "H₂", "difficulty": 1,
+    "names": {"ru":"Водород","en":"Hydrogen","pt":"Hidrogênio","es":"Hidrógeno","de":"Wasserstoff","fr":"Hydrogène"},
+    "atoms": [{"type":"H","x":-91,"y":0},{"type":"H","x":91,"y":0}],
+    "bonds": [{"a":0,"b":1,"order":1}]
+  },
+  {
+    "id": "oxygen", "formula": "O₂", "difficulty": 1,
+    "names": {"ru":"Кислород","en":"Oxygen","pt":"Oxigênio","es":"Oxígeno","de":"Sauerstoff","fr":"Oxygène"},
+    "atoms": [{"type":"O","x":-91,"y":0},{"type":"O","x":91,"y":0}],
+    "bonds": [{"a":0,"b":1,"order":2}]
+  },
+  {
+    "id": "carbon_dioxide", "formula": "CO₂", "difficulty": 2,
+    "names": {"ru":"Углекислый газ","en":"Carbon dioxide","pt":"Dióxido de carbono","es":"Dióxido de carbono","de":"Kohlenstoffdioxid","fr":"Dioxyde de carbone"},
+    "atoms": [{"type":"O","x":-152,"y":0},{"type":"C","x":0,"y":0},{"type":"O","x":152,"y":0}],
+    "bonds": [{"a":0,"b":1,"order":2},{"a":1,"b":2,"order":2}]
+  },
+  {
+    "id": "ammonia", "formula": "NH₃", "difficulty": 2,
+    "names": {"ru":"Аммиак","en":"Ammonia","pt":"Amônia","es":"Amoníaco","de":"Ammoniak","fr":"Ammoniac"},
+    "atoms": [{"type":"N","x":0,"y":-55},{"type":"H","x":-142,"y":67},{"type":"H","x":0,"y":106},{"type":"H","x":142,"y":67}],
+    "bonds": [{"a":0,"b":1,"order":1},{"a":0,"b":2,"order":1},{"a":0,"b":3,"order":1}]
+  },
+  {
+    "id": "methane", "formula": "CH₄", "difficulty": 2,
+    "names": {"ru":"Метан","en":"Methane","pt":"Metano","es":"Metano","de":"Methan","fr":"Méthane"},
+    "atoms": [{"type":"C","x":0,"y":0},{"type":"H","x":-157,"y":0},{"type":"H","x":157,"y":0},{"type":"H","x":0,"y":-140},{"type":"H","x":0,"y":140}],
+    "bonds": [{"a":0,"b":1,"order":1},{"a":0,"b":2,"order":1},{"a":0,"b":3,"order":1},{"a":0,"b":4,"order":1}]
+  }
+]

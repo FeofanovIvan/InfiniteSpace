@@ -1,0 +1,27 @@
+{
+  "animation": "idle_collar",
+  "frame_size": [
+    512,
+    512
+  ],
+  "frame_count": 16,
+  "fps": 5.333333333333333,
+  "duration_seconds": 3.0,
+  "layout": {
+    "columns": 16,
+    "rows": 1
+  },
+  "collar_overlay_position": [
+    134,
+    232
+  ],
+  "collar_overlay_size": [
+    145,
+    88
+  ],
+  "blink_frames": [
+    12,
+    13,
+    14
+  ]
+}

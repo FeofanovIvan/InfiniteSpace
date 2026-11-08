@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvdh0b4si3umh"]
+
+[ext_resource type="Script" uid="uid://w2pg1feq52vs" path="res://education/playtown/src/features/grocery/grocery_item.gd" id="1_ahvmb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee3et"]
+size = Vector2(109, 110)
+
+[node name="GroceryItem" type="Area2D"]
+script = ExtResource("1_ahvmb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 2)
+shape = SubResource("RectangleShape2D_ee3et")

@@ -1,0 +1,46 @@
+{
+  "schema": 2,
+  "source_archive": "Пустые(1).zip",
+  "description": "User catalog 13 originals; near screen bottom x=15%..85%, far x=25%..75%. Conservative per-image far y prevents crossing scene horizon. Depth scale for ball and Bubble is 100% near ->78% far.",
+  "profiles_by_shared_background": {
+    "01": {
+      "far_y": 0.51
+    },
+    "02": {
+      "far_y": 0.43
+    },
+    "03": {
+      "far_y": 0.46
+    },
+    "04": {
+      "far_y": 0.43
+    },
+    "05": {
+      "far_y": 0.49
+    },
+    "06": {
+      "far_y": 0.51
+    },
+    "07": {
+      "far_y": 0.54
+    },
+    "08": {
+      "far_y": 0.65
+    },
+    "09": {
+      "far_y": 0.55
+    },
+    "10": {
+      "far_y": 0.56
+    },
+    "11": {
+      "far_y": 0.56
+    },
+    "12": {
+      "far_y": 0.61
+    },
+    "13": {
+      "far_y": 0.68
+    }
+  }
+}

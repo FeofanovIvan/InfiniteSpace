@@ -1,0 +1,42 @@
+{
+  "ru": {
+    "twinkle": {"title": "Ярко, ярко, светишь ты", "lines": ["Ярко, ярко, светишь ты", "Словно звёздочка в ночи", "Высоко над головой", "И сверкаешь надо мной", "Ярко, ярко, светишь ты", "Словно звёздочка в ночи"]},
+    "mary": {"title": "Маша и барашек", "lines": ["Маша, вот барашек твой", "Белый друг, белый друг", "Маша, вот барашек твой", "Шёрстка, как снежок зимой"]},
+    "frere_jacques": {"title": "Спишь ли, спишь ли?", "lines": ["Спишь ли, спишь ли?", "Спишь ли, спишь ли?", "Милый друг", "Милый друг", "Утром колокол звенит", "Утром колокол звенит", "Динь, дань, дон", "Динь, дань, дон"]},
+    "ode_to_joy": {"title": "Ода к радости", "lines": []},
+    "row_your_boat": {"title": "Плыви, лодочка", "lines": ["Плывь, плывь, лодочка вперёд", "Тихо по реке", "Весело, весело, весело, весело", "Это чудный день"]},
+    "old_macdonald": {"title": "У фермера был свой двор", "lines": ["У фермера был свой двор", "И-и, и-и, о!", "Там корова у него", "И-и, и-и, о!", "Му-му, му-му здесь", "Му-му, му-му там", "Тут му-му, там му-му", "Всюду му-му, му-му", "У фермера был свой двор", "И-и, и-и, о!"]}
+  },
+  "pt": {
+    "twinkle": {"title": "Brilha, brilha, estrela", "lines": ["Brilha, brilha, estrela", "Luz tão linda lá no céu", "Bem no alto sobre nós", "Sempre linda a brilhar", "Brilha, brilha, estrela", "Luz tão linda lá no céu"]},
+    "mary": {"title": "Maria e o cordeirinho", "lines": ["Maria e seu cordeirinho", "Bom amigo, bom amigo", "Maria e seu cordeirinho", "Branco como a neve assim"]},
+    "frere_jacques": {"title": "Dorme ainda?", "lines": ["Dorme ainda?", "Dorme ainda?", "Amigo", "Amigo", "Já toca o sino", "Já toca o sino", "Dim, dam, dom", "Dim, dam, dom"]},
+    "ode_to_joy": {"title": "Ode à Alegria", "lines": []},
+    "row_your_boat": {"title": "Rema o seu barquinho", "lines": ["Rema, rema o seu barquinho", "Calmo pelo rio", "Alegre, alegre, alegre, alegre", "Vamos navegar"]},
+    "old_macdonald": {"title": "Lá na fazenda", "lines": ["Lá na fazenda há animais", "Iá-iá-iô!", "Uma vaquinha vive lá", "Iá-iá-iô!", "Muuu aqui", "Muuu ali", "Aqui muuu, ali muuu", "Todo lado muuu, muuu", "Lá na fazenda há animais", "Iá-iá-iô!"]}
+  },
+  "es": {
+    "twinkle": {"title": "Brilla, brilla, estrellita", "lines": ["Brilla, brilla, estrellita", "Luz hermosa en el cielo", "Muy arriba sobre mí", "Siempre brillas para mí", "Brilla, brilla, estrellita", "Luz hermosa en el cielo"]},
+    "mary": {"title": "María y su corderito", "lines": ["María y su corderito", "Buen amigo, buen amigo", "María y su corderito", "Blanco como nieve es"]},
+    "frere_jacques": {"title": "¿Duermes todavía?", "lines": ["¿Duermes aún?", "¿Duermes aún?", "Amiguito", "Amiguito", "Ya suenan las campanas", "Ya suenan las campanas", "Din, dan, don", "Din, dan, don"]},
+    "ode_to_joy": {"title": "Oda a la Alegría", "lines": []},
+    "row_your_boat": {"title": "Rema tu barquito", "lines": ["Rema, rema tu barquito", "Suave por el río", "Alegre, alegre, alegre, alegre", "Vamos a navegar"]},
+    "old_macdonald": {"title": "En la granja", "lines": ["En la granja hay animales", "Ia-ia-ó", "Una vaquita vive allí", "Ia-ia-ó", "Muuu aquí", "Muuu allá", "Aquí muuu, allá muuu", "Por aquí y por allá, muuu sin parar", "En la granja hay animales", "Ia-ia-ó"]}
+  },
+  "fr": {
+    "twinkle": {"title": "Brille, brille, petite étoile", "lines": ["Brille, brille, petite étoile", "Douce lumière dans le ciel", "Tout là-haut au-dessus de nous", "Tu scintilles si joliment", "Brille, brille, petite étoile", "Douce lumière dans le ciel"]},
+    "mary": {"title": "Marie et son petit agneau", "lines": ["Marie a son petit agneau", "Bon ami, bon ami", "Marie a son petit agneau", "Blanc comme la neige en hiver"]},
+    "frere_jacques": {"title": "Frère Jacques", "lines": ["Frère Jacques", "Frère Jacques", "Dormez-vous ?", "Dormez-vous ?", "Sonnez les matines", "Sonnez les matines", "Ding, dang, dong", "Ding, dang, dong"]},
+    "ode_to_joy": {"title": "Ode à la joie", "lines": []},
+    "row_your_boat": {"title": "Rame, rame, ton bateau", "lines": ["Rame, rame, ton petit bateau", "Doucement sur l’eau", "Joyeux, joyeux, joyeux, joyeux", "Vogue au fil de l’eau"]},
+    "old_macdonald": {"title": "À la ferme", "lines": ["À la ferme, il y a des animaux", "Hi-ya-hi-ya-ho !", "Une petite vache vit là", "Hi-ya-hi-ya-ho !", "Meuh ici", "Meuh là-bas", "Ici meuh, là-bas meuh", "Partout meuh, meuh, meuh", "À la ferme, il y a des animaux", "Hi-ya-hi-ya-ho !"]}
+  },
+  "de": {
+    "twinkle": {"title": "Funkel, funkel, kleiner Stern", "lines": ["Funkel, funkel, kleiner Stern", "Leuchtest hell am Himmel fern", "Hoch dort oben über mir", "Strahlst so schön, ich seh dich hier", "Funkel, funkel, kleiner Stern", "Leuchtest hell am Himmel fern"]},
+    "mary": {"title": "Marie und ihr Lämmchen", "lines": ["Marie hat ein kleines Lamm", "Guter Freund, guter Freund", "Marie hat ein kleines Lamm", "Weiß wie Schnee und weich dazu"]},
+    "frere_jacques": {"title": "Bruder Jakob", "lines": ["Bruder Jakob", "Bruder Jakob", "Schläfst du noch?", "Schläfst du noch?", "Hörst du nicht die Glocken?", "Hörst du nicht die Glocken?", "Ding, dang, dong", "Ding, dang, dong"]},
+    "ode_to_joy": {"title": "Ode an die Freude", "lines": []},
+    "row_your_boat": {"title": "Ruder, ruder, kleines Boot", "lines": ["Ruder, ruder, kleines Boot", "Leise auf dem Fluss", "Fröhlich, fröhlich, fröhlich, fröhlich", "Fahr mit uns hinaus"]},
+    "old_macdonald": {"title": "Auf dem Bauernhof", "lines": ["Auf dem Hof sind viele Tiere", "I-a-i-a-o!", "Eine Kuh, die wohnt auch dort", "I-a-i-a-o!", "Muh hier", "Muh dort", "Hier ein muh, dort ein muh", "Überall hört man ein muh", "Auf dem Hof sind viele Tiere", "I-a-i-a-o!"]}
+  }
+}

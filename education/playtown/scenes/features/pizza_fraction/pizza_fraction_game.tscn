@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://education/playtown/src/features/pizza_fraction/pizza_fraction_game.gd" id="1_pizza"]
+
+[node name="PizzaFractionGame" type="Node2D"]
+script = ExtResource("1_pizza")

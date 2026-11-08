@@ -13,9 +13,7 @@ const WorldAddress = preload("res://scripts/WorldPosition.gd")
 const LandingMotion = preload("res://scripts/LandingMotion.gd")
 const HyperjumpMotion = preload("res://scripts/HyperjumpMotion.gd")
 const NpcJumpVisual = preload("res://scripts/NpcJumpVisual.gd")
-# Only these inhabited worlds and the independent Earth station are landing ports.
-# Mercury, Saturn and Uranus remain visible but aren't active landing destinations.
-const LANDING_PORTS = ["Earth", "Venus", "Mars", "Jupiter", "Neptune", "EarthStation"]
+# Landing ports are selected dynamically from the current system catalog.
 const POPULATION: int = 14
 const OUTER_JUMP_RADIUS: float = 2500.0
 const CHARGE_TIME: float = 0.43
@@ -159,9 +157,17 @@ func _get_bodies() -> Array[Dictionary]:
 	var results: Array[Dictionary] = []
 	if _solar == null:
 		return [{"name":"Earth", "world":Vector2(565.0, 0.0)}]
+	var accessible_ports: Dictionary = {}
+	var catalog: Dictionary = _solar.get_system("mw")
+	for planet in catalog.get("planets", []):
+		if bool(planet.get("inhabited", false)):
+			accessible_ports[str(planet.get("name_en", ""))] = true
+	var station: Variant = catalog.get("station", null)
+	if station is Dictionary and bool(station.get("accessible", true)):
+		accessible_ports["EarthStation"] = true
 	var all_bodies: Array[Dictionary] = _solar.get_navigation_bodies()
 	for body in all_bodies:
-		if str(body["name"]) in LANDING_PORTS:
+		if accessible_ports.has(str(body.get("name", ""))):
 			results.append(body)
 	return results
 
@@ -225,10 +231,11 @@ func _start_takeoff(npc: Dictionary, bodies: Array[Dictionary]) -> Dictionary:
 		npc["exit_world"] = _jump_point(here)
 	else:
 		npc["target"] = _choose_destination(current_port, bodies)
-	var destination: Vector2 = Vector2(npc["exit_world"]) if bool(npc["outbound"]) else _body_pos(bodies, str(npc["target"]))
-	var heading: Vector2 = destination - here
-	if heading.length_squared() > 0.1:
-		npc["angle"] = heading.angle() + PI * 0.5
+	# Face the actual outward departure path first. Steering toward the
+	# next waypoint starts only after the ship has cleared the surface.
+	var launch_direction: Vector2 = Vector2(npc["anchor_dir"])
+	if launch_direction.length_squared() > 0.01:
+		npc["angle"] = launch_direction.angle() + PI * 0.5
 	npc["world"] = _anchor_world(npc, bodies)
 	npc["mode"] = "takeoff"
 	npc["timer"] = 0.0
@@ -256,7 +263,11 @@ func _process_port_animation(npc: Dictionary, bodies: Array[Dictionary], delta: 
 	match mode:
 		"approach":
 			var progress: float = clampf(elapsed / APPROACH_TIME, 0.0, 1.0)
-			npc["world"] = LandingMotion.anchored_approach(body_world, Vector2(npc["approach_offset"]), anchor_offset, progress)
+			var next_world: Vector2 = LandingMotion.anchored_approach(body_world, Vector2(npc["approach_offset"]), anchor_offset, progress)
+			var approach_direction: Vector2 = next_world - Vector2(npc["world"])
+			if approach_direction.length_squared() > 0.02:
+				npc["angle"] = lerp_angle(float(npc["angle"]), approach_direction.angle() + PI * 0.5, minf(1.0, delta * 5.0))
+			npc["world"] = next_world
 			if progress >= 1.0:
 				npc["mode"] = "hover"
 				npc["timer"] = 0.0
@@ -278,6 +289,10 @@ func _process_port_animation(npc: Dictionary, bodies: Array[Dictionary], delta: 
 				npc["mode"] = "depart"
 				npc["timer"] = 0.0
 		"depart":
+			# Local ship nose is -Y; the direction of motion MUST match the nose.
+			var depart_dir: Vector2 = Vector2(npc["anchor_dir"])
+			if depart_dir.length_squared() > 0.01:
+				npc["angle"] = depart_dir.angle() + PI * 0.5
 			var outward_progress: float = clampf(elapsed / DEPART_TIME, 0.0, 1.0)
 			var outward_distance: float = lerpf(_landing_offset(body_name), DEPART_DISTANCE, LandingMotion.smooth_step(outward_progress))
 			npc["world"] = body_world + Vector2(npc["anchor_dir"]) * outward_distance
@@ -323,10 +338,19 @@ func _physics_process(delta: float) -> void:
 			_ships[i] = npc
 			continue
 		if mode == "charge":
+			# v47: verify nose alignment before accelerating into hyperspace.
+			# For Solar craft the visible nose is local -Y.
+			var exit_direction: Vector2 = Vector2(npc["exit_world"]) - Vector2(npc["world"])
+			if exit_direction.length_squared() < 0.01:
+				exit_direction = Vector2(npc["world"]).normalized()
+			var jump_heading: float = exit_direction.angle() + PI * 0.5
+			npc["angle"] = lerp_angle(float(npc["angle"]), jump_heading, minf(1.0, delta * 12.0))
+			var heading_error: float = absf(wrapf(jump_heading - float(npc["angle"]), -PI, PI))
 			npc["timer"] = timer + delta
 			npc["velocity"] = Vector2(npc["velocity"]).move_toward(Vector2.ZERO, 340.0 * delta)
 			npc["world"] = Vector2(npc["world"]) + Vector2(npc["velocity"]) * delta
-			if float(npc["timer"]) >= CHARGE_TIME:
+			if float(npc["timer"]) >= CHARGE_TIME and heading_error < 0.015:
+				npc["angle"] = jump_heading
 				npc["mode"] = "dash"
 				npc["timer"] = 0.0
 				_jump_counter += 1
@@ -441,9 +465,20 @@ func _draw() -> void:
 			NpcJumpVisual.draw_charge(self, screen, charge_alpha, role["trail"])
 			speed_factor = 0.1
 		draw_set_transform(screen, angle, Vector2.ONE * size_factor)
+		if mode == "cruise" and speed_factor > 0.32 and str(role["id"]) in ["cargo", "passenger", "school", "miner"]:
+			_draw_motion_wake(role["trail"], speed_factor, float(npc["jitter"]))
 		_draw_thruster(role["trail"], speed_factor, float(npc["jitter"]))
 		draw_texture_rect(role["texture"], Rect2(Vector2(-256.0, -256.0), Vector2(512.0, 512.0)), false)
 		draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+
+
+func _draw_motion_wake(color: Color, strength: float, phase: float) -> void:
+	# Subtle slipstream lines follow the ship's local -Y nose.
+	var flicker: float = 0.86 + 0.14 * sin(_clock * 9.0 + phase)
+	for i in range(3):
+		var x: float = (float(i) - 1.0) * 122.0
+		var back: float = 180.0 + float(i % 2) * 35.0
+		draw_line(Vector2(x, back), Vector2(x * 1.18, back + 68.0 * strength * flicker), Color(color, 0.13 * strength), 2.0, true)
 
 
 func _draw_thruster(color: Color, strength: float, phase: float) -> void:

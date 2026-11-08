@@ -1,0 +1,106 @@
+[
+  {
+    "id": "dinosaurs",
+    "accent": "#A8EFAF",
+    "stages": [
+      {
+        "id": "amniote",
+        "icon": "amniote",
+        "age_mya": 320
+      },
+      {
+        "id": "archosaur",
+        "icon": "archosaur",
+        "age_mya": 250
+      },
+      {
+        "id": "first_dinosaur",
+        "icon": "dinosaur",
+        "age_mya": 230
+      },
+      {
+        "id": "jurassic_dinosaur",
+        "icon": "sauropod",
+        "age_mya": 150
+      }
+    ]
+  },
+  {
+    "id": "birds",
+    "accent": "#FFCD85",
+    "stages": [
+      {
+        "id": "theropod",
+        "icon": "dinosaur",
+        "age_mya": 230
+      },
+      {
+        "id": "feathered_dino",
+        "icon": "featherdino",
+        "age_mya": 160
+      },
+      {
+        "id": "archaeopteryx",
+        "icon": "archaeopteryx",
+        "age_mya": 150
+      },
+      {
+        "id": "modern_bird",
+        "icon": "bird",
+        "age_mya": 0
+      }
+    ]
+  },
+  {
+    "id": "whales",
+    "accent": "#78CEFF",
+    "stages": [
+      {
+        "id": "pakicetus",
+        "icon": "pakicetus",
+        "age_mya": 48
+      },
+      {
+        "id": "ambulocetus",
+        "icon": "ambulocetus",
+        "age_mya": 47
+      },
+      {
+        "id": "basilosaurus",
+        "icon": "basilosaurus",
+        "age_mya": 40
+      },
+      {
+        "id": "modern_whale",
+        "icon": "whale",
+        "age_mya": 0
+      }
+    ]
+  },
+  {
+    "id": "life",
+    "accent": "#D7B0FF",
+    "stages": [
+      {
+        "id": "microbes",
+        "icon": "microbes",
+        "age_mya": 3500
+      },
+      {
+        "id": "complex_cells",
+        "icon": "cell",
+        "age_mya": 2000
+      },
+      {
+        "id": "sea_animals",
+        "icon": "jellyfish",
+        "age_mya": 560
+      },
+      {
+        "id": "land_plants",
+        "icon": "fern",
+        "age_mya": 470
+      }
+    ]
+  }
+]

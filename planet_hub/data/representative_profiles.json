@@ -1,0 +1,2986 @@
+{
+  "schema_version": 1,
+  "metadata_language": "en",
+  "fallback_language": "en",
+  "locales_supported": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "identity_policy": "One unique NPC per inhabited location; portrait is an interchangeable visual template. Gender intentionally unspecified. NPC ID is never derived from portrait filename.",
+  "characters": {
+    "mw_p01": {
+      "character_id": "npc_mw_p01",
+      "world_id": "mw_p01",
+      "name": "Ari",
+      "role": "Valley ecology researcher",
+      "work": "I study the water and gardens beside Earth's research city.",
+      "mystery": "A water sensor noticed an unexpected change near the valley.",
+      "share": "Let's share our observations with the people protecting the valley.",
+      "gender": null,
+      "portrait_template": "05_human_amara_cole.png",
+      "chapter_cues": [
+        "I study the water and gardens beside Earth's research city.",
+        "A water sensor noticed an unexpected change near the valley.",
+        "Another clue at my station: A water sensor noticed an unexpected change near the valley.",
+        "Let's share our observations with the people protecting the valley."
+      ],
+      "name_localized": {
+        "ru": "Ари",
+        "en": "Ari",
+        "fr": "Ari",
+        "de": "Ari",
+        "es": "Ari",
+        "pt_BR": "Ari"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Исследователь экологии долины",
+          "work": "Я наблюдаю за водой и зелёными садами возле земного научного города.",
+          "mystery": "Датчик показал, что течение реки немного изменилось. Давай проверим!",
+          "share": "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия.",
+          "chapter_cues": [
+            "Я наблюдаю за водой и зелёными садами возле земного научного города.",
+            "Датчик показал, что течение реки немного изменилось. Давай проверим!",
+            "Есть ещё одна подсказка. Датчик показал, что течение реки немного изменилось. Давай проверим!",
+            "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия."
+          ]
+        },
+        "en": {
+          "role": "Valley ecology researcher",
+          "work": "I study the water and gardens beside Earth's research city.",
+          "mystery": "A water sensor noticed an unexpected change near the valley.",
+          "share": "Let us share our observation with other researchers so they can check it too.",
+          "chapter_cues": [
+            "I study the water and gardens beside Earth's research city.",
+            "A water sensor noticed an unexpected change near the valley.",
+            "Here is another clue. A water sensor noticed an unexpected change near the valley.",
+            "Let us share our observation with other researchers so they can check it too."
+          ]
+        },
+        "fr": {
+          "role": "Étude de la nature de la vallée",
+          "work": "J'observe l'eau et les jardins près de notre ville scientifique sur Terre.",
+          "mystery": "Le courant de la rivière a changé. Regardons les mesures !",
+          "share": "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "chapter_cues": [
+            "J'observe l'eau et les jardins près de notre ville scientifique sur Terre.",
+            "Le courant de la rivière a changé. Regardons les mesures !",
+            "Voici un autre indice. Le courant de la rivière a changé. Regardons les mesures !",
+            "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !"
+          ]
+        },
+        "de": {
+          "role": "Forschung im grünen Tal",
+          "work": "Ich beobachte das Wasser und die Gärten bei unserer Forschungsstadt auf der Erde.",
+          "mystery": "Der Fluss fließt heute etwas anders. Prüfen wir die Messwerte!",
+          "share": "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "chapter_cues": [
+            "Ich beobachte das Wasser und die Gärten bei unserer Forschungsstadt auf der Erde.",
+            "Der Fluss fließt heute etwas anders. Prüfen wir die Messwerte!",
+            "Da ist noch ein Hinweis. Der Fluss fließt heute etwas anders. Prüfen wir die Messwerte!",
+            "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!"
+          ]
+        },
+        "es": {
+          "role": "Estudio de la naturaleza del valle",
+          "work": "Observo el agua y los jardines junto a nuestra ciudad científica de la Tierra.",
+          "mystery": "El río cambió un poco su corriente. ¡Veamos los datos!",
+          "share": "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "chapter_cues": [
+            "Observo el agua y los jardines junto a nuestra ciudad científica de la Tierra.",
+            "El río cambió un poco su corriente. ¡Veamos los datos!",
+            "Aquí hay otra pista. El río cambió un poco su corriente. ¡Veamos los datos!",
+            "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Pesquisa da natureza do vale",
+          "work": "Eu observo a água e os jardins perto da nossa cidade de pesquisas na Terra.",
+          "mystery": "A correnteza do rio mudou um pouquinho. Vamos conferir os dados!",
+          "share": "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!",
+          "chapter_cues": [
+            "Eu observo a água e os jardins perto da nossa cidade de pesquisas na Terra.",
+            "A correnteza do rio mudou um pouquinho. Vamos conferir os dados!",
+            "Aqui vai mais uma pista. A correnteza do rio mudou um pouquinho. Vamos conferir os dados!",
+            "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+          ]
+        }
+      }
+    },
+    "mw_p02": {
+      "character_id": "npc_mw_p02",
+      "world_id": "mw_p02",
+      "name": "Nevi",
+      "role": "Mars computer researcher",
+      "work": "I work beside the spherical computer core deep below Mars's red dust.",
+      "mystery": "Our computer detected unusual readings during a dust storm.",
+      "share": "Let's save the readings so the next team can check them.",
+      "gender": null,
+      "portrait_template": "06_human_lin_kai.png",
+      "chapter_cues": [
+        "I work beside the spherical computer core deep below Mars's red dust.",
+        "Our computer detected unusual readings during a dust storm.",
+        "Another clue at my station: Our computer detected unusual readings during a dust storm.",
+        "Let's save the readings so the next team can check them."
+      ],
+      "name_localized": {
+        "ru": "Нэви",
+        "en": "Nevi",
+        "fr": "Nevi",
+        "de": "Nevi",
+        "es": "Nevi",
+        "pt_BR": "Nevi"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Исследователь марсианских компьютеров",
+          "work": "Под красной пылью Марса я изучаю огромный шарообразный компьютер.",
+          "mystery": "Компьютер заметил необычные данные о пыльной буре. Посмотрим вместе!",
+          "share": "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия.",
+          "chapter_cues": [
+            "Под красной пылью Марса я изучаю огромный шарообразный компьютер.",
+            "Компьютер заметил необычные данные о пыльной буре. Посмотрим вместе!",
+            "Есть ещё одна подсказка. Компьютер заметил необычные данные о пыльной буре. Посмотрим вместе!",
+            "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия."
+          ]
+        },
+        "en": {
+          "role": "Mars computer researcher",
+          "work": "I work beside the spherical computer core deep below Mars's red dust.",
+          "mystery": "Our computer detected unusual readings during a dust storm.",
+          "share": "Let us share our observation with other researchers so they can check it too.",
+          "chapter_cues": [
+            "I work beside the spherical computer core deep below Mars's red dust.",
+            "Our computer detected unusual readings during a dust storm.",
+            "Here is another clue. Our computer detected unusual readings during a dust storm.",
+            "Let us share our observation with other researchers so they can check it too."
+          ]
+        },
+        "fr": {
+          "role": "Recherche informatique sur Mars",
+          "work": "Sous la poussière rouge de Mars, j'étudie un énorme ordinateur tout rond.",
+          "mystery": "L'ordinateur a repéré un détail étrange dans une tempête de poussière.",
+          "share": "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "chapter_cues": [
+            "Sous la poussière rouge de Mars, j'étudie un énorme ordinateur tout rond.",
+            "L'ordinateur a repéré un détail étrange dans une tempête de poussière.",
+            "Voici un autre indice. L'ordinateur a repéré un détail étrange dans une tempête de poussière.",
+            "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !"
+          ]
+        },
+        "de": {
+          "role": "Computerforschung auf dem Mars",
+          "work": "Unter dem roten Marsstaub erforsche ich einen riesigen kugelförmigen Computer.",
+          "mystery": "Der Computer hat seltsame Daten zu einem Staubsturm gefunden.",
+          "share": "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "chapter_cues": [
+            "Unter dem roten Marsstaub erforsche ich einen riesigen kugelförmigen Computer.",
+            "Der Computer hat seltsame Daten zu einem Staubsturm gefunden.",
+            "Da ist noch ein Hinweis. Der Computer hat seltsame Daten zu einem Staubsturm gefunden.",
+            "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!"
+          ]
+        },
+        "es": {
+          "role": "Investigación informática en Marte",
+          "work": "Bajo el polvo rojo de Marte, estudio una computadora enorme y redonda.",
+          "mystery": "La computadora detectó algo extraño en una tormenta de polvo.",
+          "share": "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "chapter_cues": [
+            "Bajo el polvo rojo de Marte, estudio una computadora enorme y redonda.",
+            "La computadora detectó algo extraño en una tormenta de polvo.",
+            "Aquí hay otra pista. La computadora detectó algo extraño en una tormenta de polvo.",
+            "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Pesquisa de computadores em Marte",
+          "work": "Debaixo da poeira vermelha de Marte, estudo um computador enorme e redondo.",
+          "mystery": "O computador percebeu algo diferente numa tempestade de poeira.",
+          "share": "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!",
+          "chapter_cues": [
+            "Debaixo da poeira vermelha de Marte, estudo um computador enorme e redondo.",
+            "O computador percebeu algo diferente numa tempestade de poeira.",
+            "Aqui vai mais uma pista. O computador percebeu algo diferente numa tempestade de poeira.",
+            "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+          ]
+        }
+      }
+    },
+    "mw_p03": {
+      "character_id": "npc_mw_p03",
+      "world_id": "mw_p03",
+      "name": "Remi",
+      "role": "Jupiter storm observer",
+      "work": "I watch Jupiter's striped clouds from our protected floating station.",
+      "mystery": "A golden cloud band has grown wider since my last observation.",
+      "share": "Let's compare our findings with another research station.",
+      "gender": null,
+      "portrait_template": "05_human_amara_cole.png",
+      "chapter_cues": [
+        "I watch Jupiter's striped clouds from our protected floating station.",
+        "A golden cloud band has grown wider since my last observation.",
+        "Another clue at my station: A golden cloud band has grown wider since my last observation.",
+        "Let's compare our findings with another research station."
+      ],
+      "name_localized": {
+        "ru": "Реми",
+        "en": "Remi",
+        "fr": "Remi",
+        "de": "Remi",
+        "es": "Remi",
+        "pt_BR": "Remi"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Наблюдатель бурь Юпитера",
+          "work": "Я наблюдаю за полосами облаков Юпитера с защищённой станции.",
+          "mystery": "Одна золотистая полоса облаков стала шире. Где её начало?",
+          "share": "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия.",
+          "chapter_cues": [
+            "Я наблюдаю за полосами облаков Юпитера с защищённой станции.",
+            "Одна золотистая полоса облаков стала шире. Где её начало?",
+            "Есть ещё одна подсказка. Одна золотистая полоса облаков стала шире. Где её начало?",
+            "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия."
+          ]
+        },
+        "en": {
+          "role": "Jupiter storm observer",
+          "work": "I watch Jupiter's striped clouds from our protected floating station.",
+          "mystery": "A golden cloud band has grown wider since my last observation.",
+          "share": "Let us share our observation with other researchers so they can check it too.",
+          "chapter_cues": [
+            "I watch Jupiter's striped clouds from our protected floating station.",
+            "A golden cloud band has grown wider since my last observation.",
+            "Here is another clue. A golden cloud band has grown wider since my last observation.",
+            "Let us share our observation with other researchers so they can check it too."
+          ]
+        },
+        "fr": {
+          "role": "Observation des tempêtes de Jupiter",
+          "work": "J'observe les bandes de nuages de Jupiter depuis une station protégée.",
+          "mystery": "Une bande de nuages dorés semble plus large. Où commence-t-elle ?",
+          "share": "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "chapter_cues": [
+            "J'observe les bandes de nuages de Jupiter depuis une station protégée.",
+            "Une bande de nuages dorés semble plus large. Où commence-t-elle ?",
+            "Voici un autre indice. Une bande de nuages dorés semble plus large. Où commence-t-elle ?",
+            "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !"
+          ]
+        },
+        "de": {
+          "role": "Beobachtung von Jupiters Stürmen",
+          "work": "Ich beobachte Jupiters Wolkenstreifen von unserer geschützten Station.",
+          "mystery": "Ein goldener Wolkenstreifen wird breiter. Wo fängt er an?",
+          "share": "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "chapter_cues": [
+            "Ich beobachte Jupiters Wolkenstreifen von unserer geschützten Station.",
+            "Ein goldener Wolkenstreifen wird breiter. Wo fängt er an?",
+            "Da ist noch ein Hinweis. Ein goldener Wolkenstreifen wird breiter. Wo fängt er an?",
+            "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!"
+          ]
+        },
+        "es": {
+          "role": "Observación de las tormentas de Júpiter",
+          "work": "Observo las franjas de nubes de Júpiter desde una estación protegida.",
+          "mystery": "Una franja dorada de nubes se hizo más ancha. ¿Dónde empieza?",
+          "share": "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "chapter_cues": [
+            "Observo las franjas de nubes de Júpiter desde una estación protegida.",
+            "Una franja dorada de nubes se hizo más ancha. ¿Dónde empieza?",
+            "Aquí hay otra pista. Una franja dorada de nubes se hizo más ancha. ¿Dónde empieza?",
+            "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Observação das tempestades de Júpiter",
+          "work": "Eu observo as faixas de nuvens de Júpiter de uma estação protegida.",
+          "mystery": "Uma faixa dourada ficou mais larga. Onde será que ela começa?",
+          "share": "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!",
+          "chapter_cues": [
+            "Eu observo as faixas de nuvens de Júpiter de uma estação protegida.",
+            "Uma faixa dourada ficou mais larga. Onde será que ela começa?",
+            "Aqui vai mais uma pista. Uma faixa dourada ficou mais larga. Onde será que ela começa?",
+            "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+          ]
+        }
+      }
+    },
+    "mw_p06": {
+      "character_id": "npc_mw_p06",
+      "world_id": "mw_p06",
+      "name": "Semi",
+      "role": "Neptune wind researcher",
+      "work": "I measure powerful winds above Neptune's blue clouds.",
+      "mystery": "The antenna detected a change in a distant storm.",
+      "share": "Let's send the wind report to other observers.",
+      "gender": null,
+      "portrait_template": "06_human_lin_kai.png",
+      "chapter_cues": [
+        "I measure powerful winds above Neptune's blue clouds.",
+        "The antenna detected a change in a distant storm.",
+        "Another clue at my station: The antenna detected a change in a distant storm.",
+        "Let's send the wind report to other observers."
+      ],
+      "name_localized": {
+        "ru": "Сэми",
+        "en": "Semi",
+        "fr": "Semi",
+        "de": "Semi",
+        "es": "Semi",
+        "pt_BR": "Semi"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Исследователь ветров Нептуна",
+          "work": "Я измеряю ветер над синими облаками Нептуна.",
+          "mystery": "Антенна заметила перемену в далёком шторме. Сравним записи?",
+          "share": "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия.",
+          "chapter_cues": [
+            "Я измеряю ветер над синими облаками Нептуна.",
+            "Антенна заметила перемену в далёком шторме. Сравним записи?",
+            "Есть ещё одна подсказка. Антенна заметила перемену в далёком шторме. Сравним записи?",
+            "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия."
+          ]
+        },
+        "en": {
+          "role": "Neptune wind researcher",
+          "work": "I measure powerful winds above Neptune's blue clouds.",
+          "mystery": "The antenna detected a change in a distant storm.",
+          "share": "Let us share our observation with other researchers so they can check it too.",
+          "chapter_cues": [
+            "I measure powerful winds above Neptune's blue clouds.",
+            "The antenna detected a change in a distant storm.",
+            "Here is another clue. The antenna detected a change in a distant storm.",
+            "Let us share our observation with other researchers so they can check it too."
+          ]
+        },
+        "fr": {
+          "role": "Étude des vents de Neptune",
+          "work": "Je mesure les vents au-dessus des nuages bleus de Neptune.",
+          "mystery": "Notre antenne signale un changement dans une tempête lointaine.",
+          "share": "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "chapter_cues": [
+            "Je mesure les vents au-dessus des nuages bleus de Neptune.",
+            "Notre antenne signale un changement dans une tempête lointaine.",
+            "Voici un autre indice. Notre antenne signale un changement dans une tempête lointaine.",
+            "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !"
+          ]
+        },
+        "de": {
+          "role": "Windforschung auf Neptun",
+          "work": "Über den blauen Wolken Neptuns messe ich die starken Winde.",
+          "mystery": "Die Antenne meldet eine Veränderung in einem fernen Sturm.",
+          "share": "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "chapter_cues": [
+            "Über den blauen Wolken Neptuns messe ich die starken Winde.",
+            "Die Antenne meldet eine Veränderung in einem fernen Sturm.",
+            "Da ist noch ein Hinweis. Die Antenne meldet eine Veränderung in einem fernen Sturm.",
+            "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!"
+          ]
+        },
+        "es": {
+          "role": "Estudio de los vientos de Neptuno",
+          "work": "Mido los vientos sobre las nubes azules de Neptuno.",
+          "mystery": "La antena detectó un cambio en una tormenta lejana.",
+          "share": "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "chapter_cues": [
+            "Mido los vientos sobre las nubes azules de Neptuno.",
+            "La antena detectó un cambio en una tormenta lejana.",
+            "Aquí hay otra pista. La antena detectó un cambio en una tormenta lejana.",
+            "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Pesquisa dos ventos de Netuno",
+          "work": "Eu meço os ventos acima das nuvens azuis de Netuno.",
+          "mystery": "A antena percebeu uma mudança numa tempestade distante.",
+          "share": "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!",
+          "chapter_cues": [
+            "Eu meço os ventos acima das nuvens azuis de Netuno.",
+            "A antena percebeu uma mudança numa tempestade distante.",
+            "Aqui vai mais uma pista. A antena percebeu uma mudança numa tempestade distante.",
+            "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+          ]
+        }
+      }
+    },
+    "mw_p07": {
+      "character_id": "npc_mw_p07",
+      "world_id": "mw_p07",
+      "name": "Keri",
+      "role": "Venus station safety researcher",
+      "work": "I inspect the protective dome of our station on hot Venus.",
+      "mystery": "The outside temperature sensor reported a new high reading.",
+      "share": "Let's share our checks with the station crew.",
+      "gender": null,
+      "portrait_template": "05_human_amara_cole.png",
+      "chapter_cues": [
+        "I inspect the protective dome of our station on hot Venus.",
+        "The outside temperature sensor reported a new high reading.",
+        "Another clue at my station: The outside temperature sensor reported a new high reading.",
+        "Let's share our checks with the station crew."
+      ],
+      "name_localized": {
+        "ru": "Кэри",
+        "en": "Keri",
+        "fr": "Keri",
+        "de": "Keri",
+        "es": "Keri",
+        "pt_BR": "Keri"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Специалист по безопасности Венеры",
+          "work": "Я проверяю защитный купол станции на очень горячей Венере.",
+          "mystery": "Прибор показал, что за куполом стало жарче. Всё ли в порядке?",
+          "share": "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия.",
+          "chapter_cues": [
+            "Я проверяю защитный купол станции на очень горячей Венере.",
+            "Прибор показал, что за куполом стало жарче. Всё ли в порядке?",
+            "Есть ещё одна подсказка. Прибор показал, что за куполом стало жарче. Всё ли в порядке?",
+            "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия."
+          ]
+        },
+        "en": {
+          "role": "Venus station safety researcher",
+          "work": "I inspect the protective dome of our station on hot Venus.",
+          "mystery": "The outside temperature sensor reported a new high reading.",
+          "share": "Let us share our observation with other researchers so they can check it too.",
+          "chapter_cues": [
+            "I inspect the protective dome of our station on hot Venus.",
+            "The outside temperature sensor reported a new high reading.",
+            "Here is another clue. The outside temperature sensor reported a new high reading.",
+            "Let us share our observation with other researchers so they can check it too."
+          ]
+        },
+        "fr": {
+          "role": "Sécurité de la station de Vénus",
+          "work": "Je vérifie le dôme qui protège notre station sur Vénus, une planète brûlante.",
+          "mystery": "Il fait encore plus chaud dehors. Comparons les mesures !",
+          "share": "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "chapter_cues": [
+            "Je vérifie le dôme qui protège notre station sur Vénus, une planète brûlante.",
+            "Il fait encore plus chaud dehors. Comparons les mesures !",
+            "Voici un autre indice. Il fait encore plus chaud dehors. Comparons les mesures !",
+            "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !"
+          ]
+        },
+        "de": {
+          "role": "Sicherheit auf der Venusstation",
+          "work": "Ich prüfe die Schutzkuppel unserer Station auf der heißen Venus.",
+          "mystery": "Außerhalb der Kuppel ist es noch heißer geworden. Prüfen wir das!",
+          "share": "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "chapter_cues": [
+            "Ich prüfe die Schutzkuppel unserer Station auf der heißen Venus.",
+            "Außerhalb der Kuppel ist es noch heißer geworden. Prüfen wir das!",
+            "Da ist noch ein Hinweis. Außerhalb der Kuppel ist es noch heißer geworden. Prüfen wir das!",
+            "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!"
+          ]
+        },
+        "es": {
+          "role": "Seguridad de la estación de Venus",
+          "work": "Reviso la cúpula que protege la estación en el caluroso Venus.",
+          "mystery": "Afuera de la cúpula hace aún más calor. ¡Comparemos los datos!",
+          "share": "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "chapter_cues": [
+            "Reviso la cúpula que protege la estación en el caluroso Venus.",
+            "Afuera de la cúpula hace aún más calor. ¡Comparemos los datos!",
+            "Aquí hay otra pista. Afuera de la cúpula hace aún más calor. ¡Comparemos los datos!",
+            "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Segurança da estação de Vênus",
+          "work": "Eu verifico a cúpula que protege nossa estação em Vênus, onde faz muito calor.",
+          "mystery": "Lá fora ficou ainda mais quente. Vamos comparar os dados!",
+          "share": "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!",
+          "chapter_cues": [
+            "Eu verifico a cúpula que protege nossa estação em Vênus, onde faz muito calor.",
+            "Lá fora ficou ainda mais quente. Vamos comparar os dados!",
+            "Aqui vai mais uma pista. Lá fora ficou ainda mais quente. Vamos comparar os dados!",
+            "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+          ]
+        }
+      }
+    },
+    "st_mw": {
+      "character_id": "npc_st_mw",
+      "world_id": "st_mw",
+      "name": "Evi",
+      "role": "Callisto shipyard technician",
+      "work": "I inspect ships and repair parts inside Callisto's orbital docks.",
+      "mystery": "One arriving vessel sent a faint repair signal.",
+      "share": "Let's tell the crew what our instruments discovered.",
+      "gender": null,
+      "portrait_template": "06_human_lin_kai.png",
+      "chapter_cues": [
+        "I inspect ships and repair parts inside Callisto's orbital docks.",
+        "One arriving vessel sent a faint repair signal.",
+        "Another clue at my station: One arriving vessel sent a faint repair signal.",
+        "Let's tell the crew what our instruments discovered."
+      ],
+      "name_localized": {
+        "ru": "Эви",
+        "en": "Evi",
+        "fr": "Evi",
+        "de": "Evi",
+        "es": "Evi",
+        "pt_BR": "Evi"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Техник космической верфи",
+          "work": "Я проверяю и чиню корабли в доках орбитальной верфи Каллисто.",
+          "mystery": "Один корабль подал тихий сигнал. Возможно, ему нужна помощь.",
+          "share": "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия.",
+          "chapter_cues": [
+            "Я проверяю и чиню корабли в доках орбитальной верфи Каллисто.",
+            "Один корабль подал тихий сигнал. Возможно, ему нужна помощь.",
+            "Есть ещё одна подсказка. Один корабль подал тихий сигнал. Возможно, ему нужна помощь.",
+            "Поделимся наблюдением с другими исследователями. Вместе легче проверять открытия."
+          ]
+        },
+        "en": {
+          "role": "Callisto shipyard technician",
+          "work": "I inspect ships and repair parts inside Callisto's orbital docks.",
+          "mystery": "One arriving vessel sent a faint repair signal.",
+          "share": "Let us share our observation with other researchers so they can check it too.",
+          "chapter_cues": [
+            "I inspect ships and repair parts inside Callisto's orbital docks.",
+            "One arriving vessel sent a faint repair signal.",
+            "Here is another clue. One arriving vessel sent a faint repair signal.",
+            "Let us share our observation with other researchers so they can check it too."
+          ]
+        },
+        "fr": {
+          "role": "Entretien des vaisseaux de Callisto",
+          "work": "Je vérifie et répare les vaisseaux dans les docks de Callisto.",
+          "mystery": "Un vaisseau envoie un petit signal. A-t-il besoin d'aide ?",
+          "share": "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "chapter_cues": [
+            "Je vérifie et répare les vaisseaux dans les docks de Callisto.",
+            "Un vaisseau envoie un petit signal. A-t-il besoin d'aide ?",
+            "Voici un autre indice. Un vaisseau envoie un petit signal. A-t-il besoin d'aide ?",
+            "Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !"
+          ]
+        },
+        "de": {
+          "role": "Raumschiffwartung auf Callisto",
+          "work": "In Callistos Docks untersuche und repariere ich Raumschiffe.",
+          "mystery": "Ein Schiff sendet ein leises Signal. Braucht es Hilfe?",
+          "share": "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "chapter_cues": [
+            "In Callistos Docks untersuche und repariere ich Raumschiffe.",
+            "Ein Schiff sendet ein leises Signal. Braucht es Hilfe?",
+            "Da ist noch ein Hinweis. Ein Schiff sendet ein leises Signal. Braucht es Hilfe?",
+            "Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!"
+          ]
+        },
+        "es": {
+          "role": "Reparación de naves en Calisto",
+          "work": "Reviso y reparo naves en los muelles orbitales de Calisto.",
+          "mystery": "Una nave envió una señal débil. ¿Necesita ayuda?",
+          "share": "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "chapter_cues": [
+            "Reviso y reparo naves en los muelles orbitales de Calisto.",
+            "Una nave envió una señal débil. ¿Necesita ayuda?",
+            "Aquí hay otra pista. Una nave envió una señal débil. ¿Necesita ayuda?",
+            "Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Manutenção de naves em Calisto",
+          "work": "Eu verifico e conserto naves nas docas orbitais de Calisto.",
+          "mystery": "Uma nave enviou um sinal bem fraquinho. Será que precisa de ajuda?",
+          "share": "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!",
+          "chapter_cues": [
+            "Eu verifico e conserto naves nas docas orbitais de Calisto.",
+            "Uma nave enviou um sinal bem fraquinho. Será que precisa de ajuda?",
+            "Aqui vai mais uma pista. Uma nave enviou um sinal bem fraquinho. Será que precisa de ajuda?",
+            "Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+          ]
+        }
+      }
+    },
+    "lmc_p02": {
+      "character_id": "npc_lmc_p02",
+      "world_id": "lmc_p02",
+      "name": "Nomi",
+      "role": "Ocean network listener",
+      "work": "I listen to waves through the living fungal bridges of Thalas.",
+      "mystery": "A wave carried a strange rhythm through one bridge.",
+      "share": "Let's send the rhythm along the rest of our living network.",
+      "gender": null,
+      "portrait_template": "07_mold_form_archive.png",
+      "chapter_cues": [
+        "I listen to waves through the living fungal bridges of Thalas.",
+        "A wave carried a strange rhythm through one bridge.",
+        "Another clue at my station: A wave carried a strange rhythm through one bridge.",
+        "Let's send the rhythm along the rest of our living network."
+      ],
+      "name_localized": {
+        "ru": "Номи",
+        "en": "Nomi",
+        "fr": "Nomi",
+        "de": "Nomi",
+        "es": "Nomi",
+        "pt_BR": "Nomi"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Слушатель океанской сети",
+          "work": "Мои живые нити чувствуют волны океана Таласа.",
+          "mystery": "Волна передала необычный ритм по живому мосту. Прислушаемся?",
+          "share": "Отправим сигнал по живой сети. Другие волокна тоже смогут узнать об этом.",
+          "chapter_cues": [
+            "Мои живые нити чувствуют волны океана Таласа.",
+            "Волна передала необычный ритм по живому мосту. Прислушаемся?",
+            "Есть ещё одна подсказка. Волна передала необычный ритм по живому мосту. Прислушаемся?",
+            "Отправим сигнал по живой сети. Другие волокна тоже смогут узнать об этом."
+          ]
+        },
+        "en": {
+          "role": "Ocean network listener",
+          "work": "I listen to waves through the living fungal bridges of Thalas.",
+          "mystery": "A wave carried a strange rhythm through one bridge.",
+          "share": "Let us send a signal through the living network so other fibers can learn.",
+          "chapter_cues": [
+            "I listen to waves through the living fungal bridges of Thalas.",
+            "A wave carried a strange rhythm through one bridge.",
+            "Here is another clue. A wave carried a strange rhythm through one bridge.",
+            "Let us send a signal through the living network so other fibers can learn."
+          ]
+        },
+        "fr": {
+          "role": "Écoute du réseau océanique",
+          "work": "Mes filaments vivants ressentent les vagues sur Thalas.",
+          "mystery": "Une vague a transmis un rythme étrange au pont vivant.",
+          "share": "Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi.",
+          "chapter_cues": [
+            "Mes filaments vivants ressentent les vagues sur Thalas.",
+            "Une vague a transmis un rythme étrange au pont vivant.",
+            "Voici un autre indice. Une vague a transmis un rythme étrange au pont vivant.",
+            "Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi."
+          ]
+        },
+        "de": {
+          "role": "Lauschen im Ozeannetz",
+          "work": "Meine lebenden Fasern spüren die Wellen im Ozean von Thalas.",
+          "mystery": "Eine Welle bringt einen seltsamen Rhythmus zur lebenden Brücke.",
+          "share": "Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern.",
+          "chapter_cues": [
+            "Meine lebenden Fasern spüren die Wellen im Ozean von Thalas.",
+            "Eine Welle bringt einen seltsamen Rhythmus zur lebenden Brücke.",
+            "Da ist noch ein Hinweis. Eine Welle bringt einen seltsamen Rhythmus zur lebenden Brücke.",
+            "Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern."
+          ]
+        },
+        "es": {
+          "role": "Escucha de la red oceánica",
+          "work": "Mis fibras vivas sienten las olas del océano de Thalas.",
+          "mystery": "Una ola transmitió un ritmo extraño al puente vivo. ¡Escuchemos!",
+          "share": "Enviemos la señal por nuestra red viva para que otras fibras también aprendan.",
+          "chapter_cues": [
+            "Mis fibras vivas sienten las olas del océano de Thalas.",
+            "Una ola transmitió un ritmo extraño al puente vivo. ¡Escuchemos!",
+            "Aquí hay otra pista. Una ola transmitió un ritmo extraño al puente vivo. ¡Escuchemos!",
+            "Enviemos la señal por nuestra red viva para que otras fibras también aprendan."
+          ]
+        },
+        "pt_BR": {
+          "role": "Escuta da rede do oceano",
+          "work": "Minhas fibras vivas sentem as ondas do oceano de Thalas.",
+          "mystery": "Uma onda trouxe um ritmo estranho até a ponte viva. Vamos escutar!",
+          "share": "Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender.",
+          "chapter_cues": [
+            "Minhas fibras vivas sentem as ondas do oceano de Thalas.",
+            "Uma onda trouxe um ritmo estranho até a ponte viva. Vamos escutar!",
+            "Aqui vai mais uma pista. Uma onda trouxe um ritmo estranho até a ponte viva. Vamos escutar!",
+            "Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender."
+          ]
+        }
+      }
+    },
+    "lmc_p03": {
+      "character_id": "npc_lmc_p03",
+      "world_id": "lmc_p03",
+      "name": "Miori",
+      "role": "Living biodome grower",
+      "work": "I help living biodomes grow among Molia's dark mineral rocks.",
+      "mystery": "A fine crack appeared beside one of our protected domes.",
+      "share": "Let's share the discovery with other careful growers.",
+      "gender": null,
+      "portrait_template": "08_mold_form_cluster.png",
+      "chapter_cues": [
+        "I help living biodomes grow among Molia's dark mineral rocks.",
+        "A fine crack appeared beside one of our protected domes.",
+        "Another clue at my station: A fine crack appeared beside one of our protected domes.",
+        "Let's share the discovery with other careful growers."
+      ],
+      "name_localized": {
+        "ru": "Миори",
+        "en": "Miori",
+        "fr": "Miori",
+        "de": "Miori",
+        "es": "Miori",
+        "pt_BR": "Miori"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Выращивание живых куполов",
+          "work": "Я помогаю живым куполам расти среди тёмных скал Молии.",
+          "mystery": "Рядом с одним куполом появилась тонкая трещина. Куда она ведёт?",
+          "share": "Отправим сигнал по живой сети. Другие волокна тоже смогут узнать об этом.",
+          "chapter_cues": [
+            "Я помогаю живым куполам расти среди тёмных скал Молии.",
+            "Рядом с одним куполом появилась тонкая трещина. Куда она ведёт?",
+            "Есть ещё одна подсказка. Рядом с одним куполом появилась тонкая трещина. Куда она ведёт?",
+            "Отправим сигнал по живой сети. Другие волокна тоже смогут узнать об этом."
+          ]
+        },
+        "en": {
+          "role": "Living biodome grower",
+          "work": "I help living biodomes grow among Molia's dark mineral rocks.",
+          "mystery": "A fine crack appeared beside one of our protected domes.",
+          "share": "Let us send a signal through the living network so other fibers can learn.",
+          "chapter_cues": [
+            "I help living biodomes grow among Molia's dark mineral rocks.",
+            "A fine crack appeared beside one of our protected domes.",
+            "Here is another clue. A fine crack appeared beside one of our protected domes.",
+            "Let us send a signal through the living network so other fibers can learn."
+          ]
+        },
+        "fr": {
+          "role": "Croissance des dômes vivants",
+          "work": "J'aide les biodômes vivants à pousser parmi les roches sombres de Molia.",
+          "mystery": "Une fissure est apparue près d'un dôme. Où mène-t-elle ?",
+          "share": "Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi.",
+          "chapter_cues": [
+            "J'aide les biodômes vivants à pousser parmi les roches sombres de Molia.",
+            "Une fissure est apparue près d'un dôme. Où mène-t-elle ?",
+            "Voici un autre indice. Une fissure est apparue près d'un dôme. Où mène-t-elle ?",
+            "Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi."
+          ]
+        },
+        "de": {
+          "role": "Pflege lebender Kuppeln",
+          "work": "Ich helfe lebenden Kuppeln, zwischen den dunklen Felsen von Molia zu wachsen.",
+          "mystery": "Neben einer Kuppel ist ein schmaler Riss aufgetaucht. Wohin führt er?",
+          "share": "Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern.",
+          "chapter_cues": [
+            "Ich helfe lebenden Kuppeln, zwischen den dunklen Felsen von Molia zu wachsen.",
+            "Neben einer Kuppel ist ein schmaler Riss aufgetaucht. Wohin führt er?",
+            "Da ist noch ein Hinweis. Neben einer Kuppel ist ein schmaler Riss aufgetaucht. Wohin führt er?",
+            "Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern."
+          ]
+        },
+        "es": {
+          "role": "Cuidado de cúpulas vivas",
+          "work": "Ayudo a crecer a las cúpulas vivas entre las rocas oscuras de Molia.",
+          "mystery": "Apareció una grieta fina junto a una cúpula. ¿Adónde llega?",
+          "share": "Enviemos la señal por nuestra red viva para que otras fibras también aprendan.",
+          "chapter_cues": [
+            "Ayudo a crecer a las cúpulas vivas entre las rocas oscuras de Molia.",
+            "Apareció una grieta fina junto a una cúpula. ¿Adónde llega?",
+            "Aquí hay otra pista. Apareció una grieta fina junto a una cúpula. ¿Adónde llega?",
+            "Enviemos la señal por nuestra red viva para que otras fibras también aprendan."
+          ]
+        },
+        "pt_BR": {
+          "role": "Cuidado dos domos vivos",
+          "work": "Eu ajudo domos vivos a crescer entre as rochas escuras de Molia.",
+          "mystery": "Apareceu uma rachadura fininha perto de um domo. Para onde ela vai?",
+          "share": "Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender.",
+          "chapter_cues": [
+            "Eu ajudo domos vivos a crescer entre as rochas escuras de Molia.",
+            "Apareceu uma rachadura fininha perto de um domo. Para onde ela vai?",
+            "Aqui vai mais uma pista. Apareceu uma rachadura fininha perto de um domo. Para onde ela vai?",
+            "Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender."
+          ]
+        }
+      }
+    },
+    "lmc_p04": {
+      "character_id": "npc_lmc_p04",
+      "world_id": "lmc_p04",
+      "name": "Lomi",
+      "role": "Ice signal observer",
+      "work": "I sense tiny movements in the blue ice near Cryona's shelters.",
+      "mystery": "One glowing ice crack became brighter than before.",
+      "share": "Let's pass a gentle warning along our living fibers.",
+      "gender": null,
+      "portrait_template": "07_mold_form_archive.png",
+      "chapter_cues": [
+        "I sense tiny movements in the blue ice near Cryona's shelters.",
+        "One glowing ice crack became brighter than before.",
+        "Another clue at my station: One glowing ice crack became brighter than before.",
+        "Let's pass a gentle warning along our living fibers."
+      ],
+      "name_localized": {
+        "ru": "Ломи",
+        "en": "Lomi",
+        "fr": "Lomi",
+        "de": "Lomi",
+        "es": "Lomi",
+        "pt_BR": "Lomi"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Наблюдатель ледяных сигналов",
+          "work": "Мои волокна чувствуют малейшее движение льда на Крионе.",
+          "mystery": "Одна голубая трещина стала светиться сильнее. Исследуем её осторожно.",
+          "share": "Отправим сигнал по живой сети. Другие волокна тоже смогут узнать об этом.",
+          "chapter_cues": [
+            "Мои волокна чувствуют малейшее движение льда на Крионе.",
+            "Одна голубая трещина стала светиться сильнее. Исследуем её осторожно.",
+            "Есть ещё одна подсказка. Одна голубая трещина стала светиться сильнее. Исследуем её осторожно.",
+            "Отправим сигнал по живой сети. Другие волокна тоже смогут узнать об этом."
+          ]
+        },
+        "en": {
+          "role": "Ice signal observer",
+          "work": "I sense tiny movements in the blue ice near Cryona's shelters.",
+          "mystery": "One glowing ice crack became brighter than before.",
+          "share": "Let us send a signal through the living network so other fibers can learn.",
+          "chapter_cues": [
+            "I sense tiny movements in the blue ice near Cryona's shelters.",
+            "One glowing ice crack became brighter than before.",
+            "Here is another clue. One glowing ice crack became brighter than before.",
+            "Let us send a signal through the living network so other fibers can learn."
+          ]
+        },
+        "fr": {
+          "role": "Observation des signaux de glace",
+          "work": "Mes fibres perçoivent les moindres mouvements de la glace sur Cryona.",
+          "mystery": "Une fissure bleue brille davantage. Observons-la avec prudence !",
+          "share": "Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi.",
+          "chapter_cues": [
+            "Mes fibres perçoivent les moindres mouvements de la glace sur Cryona.",
+            "Une fissure bleue brille davantage. Observons-la avec prudence !",
+            "Voici un autre indice. Une fissure bleue brille davantage. Observons-la avec prudence !",
+            "Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi."
+          ]
+        },
+        "de": {
+          "role": "Beobachtung von Eissignalen",
+          "work": "Meine Fasern spüren winzige Bewegungen im Eis auf Cryona.",
+          "mystery": "Ein blauer Spalt leuchtet stärker. Untersuchen wir ihn vorsichtig!",
+          "share": "Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern.",
+          "chapter_cues": [
+            "Meine Fasern spüren winzige Bewegungen im Eis auf Cryona.",
+            "Ein blauer Spalt leuchtet stärker. Untersuchen wir ihn vorsichtig!",
+            "Da ist noch ein Hinweis. Ein blauer Spalt leuchtet stärker. Untersuchen wir ihn vorsichtig!",
+            "Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern."
+          ]
+        },
+        "es": {
+          "role": "Observación de señales del hielo",
+          "work": "Mis fibras sienten hasta el movimiento más pequeño del hielo en Cryona.",
+          "mystery": "Una grieta azul brilla con más fuerza. Veámosla con cuidado.",
+          "share": "Enviemos la señal por nuestra red viva para que otras fibras también aprendan.",
+          "chapter_cues": [
+            "Mis fibras sienten hasta el movimiento más pequeño del hielo en Cryona.",
+            "Una grieta azul brilla con más fuerza. Veámosla con cuidado.",
+            "Aquí hay otra pista. Una grieta azul brilla con más fuerza. Veámosla con cuidado.",
+            "Enviemos la señal por nuestra red viva para que otras fibras también aprendan."
+          ]
+        },
+        "pt_BR": {
+          "role": "Observação dos sinais do gelo",
+          "work": "Minhas fibras percebem até os menores movimentos do gelo em Cryona.",
+          "mystery": "Uma rachadura azul está brilhando mais. Vamos olhar com cuidado.",
+          "share": "Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender.",
+          "chapter_cues": [
+            "Minhas fibras percebem até os menores movimentos do gelo em Cryona.",
+            "Uma rachadura azul está brilhando mais. Vamos olhar com cuidado.",
+            "Aqui vai mais uma pista. Uma rachadura azul está brilhando mais. Vamos olhar com cuidado.",
+            "Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender."
+          ]
+        }
+      }
+    },
+    "st_lmc": {
+      "character_id": "npc_st_lmc",
+      "world_id": "st_lmc",
+      "name": "Sori",
+      "role": "Tarantula living laboratory caretaker",
+      "work": "I care for the living corridors and biochambers aboard Tarantula.",
+      "mystery": "A signal faded inside one living chamber.",
+      "share": "Let's show the ship network which chamber needs attention.",
+      "gender": null,
+      "portrait_template": "08_mold_form_cluster.png",
+      "chapter_cues": [
+        "I care for the living corridors and biochambers aboard Tarantula.",
+        "A signal faded inside one living chamber.",
+        "Another clue at my station: A signal faded inside one living chamber.",
+        "Let's show the ship network which chamber needs attention."
+      ],
+      "name_localized": {
+        "ru": "Сори",
+        "en": "Sori",
+        "fr": "Sori",
+        "de": "Sori",
+        "es": "Sori",
+        "pt_BR": "Sori"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Хранитель живых лабораторий «Тарантула»",
+          "work": "Я забочусь о живых коридорах и биокамерах корабля «Тарантул».",
+          "mystery": "В одной биокамере пропал сигнал. Что скажут нам живые нити?",
+          "share": "Отправим сигнал по живой сети. Другие волокна тоже смогут узнать об этом.",
+          "chapter_cues": [
+            "Я забочусь о живых коридорах и биокамерах корабля «Тарантул».",
+            "В одной биокамере пропал сигнал. Что скажут нам живые нити?",
+            "Есть ещё одна подсказка. В одной биокамере пропал сигнал. Что скажут нам живые нити?",
+            "Отправим сигнал по живой сети. Другие волокна тоже смогут узнать об этом."
+          ]
+        },
+        "en": {
+          "role": "Tarantula living laboratory caretaker",
+          "work": "I care for the living corridors and biochambers aboard Tarantula.",
+          "mystery": "A signal faded inside one living chamber.",
+          "share": "Let us send a signal through the living network so other fibers can learn.",
+          "chapter_cues": [
+            "I care for the living corridors and biochambers aboard Tarantula.",
+            "A signal faded inside one living chamber.",
+            "Here is another clue. A signal faded inside one living chamber.",
+            "Let us send a signal through the living network so other fibers can learn."
+          ]
+        },
+        "fr": {
+          "role": "Soin du laboratoire vivant Tarentule",
+          "work": "Je prends soin des couloirs vivants et des chambres du vaisseau Tarentule.",
+          "mystery": "Un signal a disparu dans une chambre vivante. Écoutons les fibres !",
+          "share": "Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi.",
+          "chapter_cues": [
+            "Je prends soin des couloirs vivants et des chambres du vaisseau Tarentule.",
+            "Un signal a disparu dans une chambre vivante. Écoutons les fibres !",
+            "Voici un autre indice. Un signal a disparu dans une chambre vivante. Écoutons les fibres !",
+            "Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi."
+          ]
+        },
+        "de": {
+          "role": "Pflege des lebenden Laborschiffs",
+          "work": "Ich kümmere mich um die lebenden Gänge und Kammern des Schiffs Tarantel.",
+          "mystery": "In einer Biokammer fehlt ein Signal. Was sagen uns die Fasern?",
+          "share": "Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern.",
+          "chapter_cues": [
+            "Ich kümmere mich um die lebenden Gänge und Kammern des Schiffs Tarantel.",
+            "In einer Biokammer fehlt ein Signal. Was sagen uns die Fasern?",
+            "Da ist noch ein Hinweis. In einer Biokammer fehlt ein Signal. Was sagen uns die Fasern?",
+            "Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern."
+          ]
+        },
+        "es": {
+          "role": "Cuidado del laboratorio vivo Tarántula",
+          "work": "Cuido los pasillos vivos y las cámaras de la nave Tarántula.",
+          "mystery": "Se apagó una señal en una biocámara. ¿Qué nos dicen las fibras?",
+          "share": "Enviemos la señal por nuestra red viva para que otras fibras también aprendan.",
+          "chapter_cues": [
+            "Cuido los pasillos vivos y las cámaras de la nave Tarántula.",
+            "Se apagó una señal en una biocámara. ¿Qué nos dicen las fibras?",
+            "Aquí hay otra pista. Se apagó una señal en una biocámara. ¿Qué nos dicen las fibras?",
+            "Enviemos la señal por nuestra red viva para que otras fibras también aprendan."
+          ]
+        },
+        "pt_BR": {
+          "role": "Cuidado do laboratório vivo Tarântula",
+          "work": "Eu cuido dos corredores vivos e das câmaras da nave Tarântula.",
+          "mystery": "Um sinal sumiu numa biocâmara. O que as fibras vão nos contar?",
+          "share": "Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender.",
+          "chapter_cues": [
+            "Eu cuido dos corredores vivos e das câmaras da nave Tarântula.",
+            "Um sinal sumiu numa biocâmara. O que as fibras vão nos contar?",
+            "Aqui vai mais uma pista. Um sinal sumiu numa biocâmara. O que as fibras vão nos contar?",
+            "Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender."
+          ]
+        }
+      }
+    },
+    "smc_p01": {
+      "character_id": "npc_smc_p01",
+      "world_id": "smc_p01",
+      "name": "Aeri",
+      "role": "Ocean arch explorer",
+      "work": "I study transparent water arches rising from Okea's ocean.",
+      "mystery": "One arch changed shape when a large wave passed.",
+      "share": "Let's share our idea with the builders of flowing paths.",
+      "gender": null,
+      "portrait_template": "10_phase_crystal.png",
+      "chapter_cues": [
+        "I study transparent water arches rising from Okea's ocean.",
+        "One arch changed shape when a large wave passed.",
+        "Another clue at my station: One arch changed shape when a large wave passed.",
+        "Let's share our idea with the builders of flowing paths."
+      ],
+      "name_localized": {
+        "ru": "Аэри",
+        "en": "Aeri",
+        "fr": "Aeri",
+        "de": "Aeri",
+        "es": "Aeri",
+        "pt_BR": "Aeri"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Исследователь водных арок",
+          "work": "Я наблюдаю за прозрачными арками, поднимающимися из океана Океи.",
+          "mystery": "Большая волна изменила форму одной арки. Найдём её?",
+          "share": "Сохраним это открытие в памяти нашего народа. Оно может пригодиться другим.",
+          "chapter_cues": [
+            "Я наблюдаю за прозрачными арками, поднимающимися из океана Океи.",
+            "Большая волна изменила форму одной арки. Найдём её?",
+            "Есть ещё одна подсказка. Большая волна изменила форму одной арки. Найдём её?",
+            "Сохраним это открытие в памяти нашего народа. Оно может пригодиться другим."
+          ]
+        },
+        "en": {
+          "role": "Ocean arch explorer",
+          "work": "I study transparent water arches rising from Okea's ocean.",
+          "mystery": "One arch changed shape when a large wave passed.",
+          "share": "Let us preserve this discovery in our people’s memories for future visitors.",
+          "chapter_cues": [
+            "I study transparent water arches rising from Okea's ocean.",
+            "One arch changed shape when a large wave passed.",
+            "Here is another clue. One arch changed shape when a large wave passed.",
+            "Let us preserve this discovery in our people’s memories for future visitors."
+          ]
+        },
+        "fr": {
+          "role": "Étude des arches d'eau",
+          "work": "J'observe les arches transparentes qui montent de l'océan d'Okea.",
+          "mystery": "Une grosse vague a changé la forme d'une arche. Retrouvons-la !",
+          "share": "Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres.",
+          "chapter_cues": [
+            "J'observe les arches transparentes qui montent de l'océan d'Okea.",
+            "Une grosse vague a changé la forme d'une arche. Retrouvons-la !",
+            "Voici un autre indice. Une grosse vague a changé la forme d'une arche. Retrouvons-la !",
+            "Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres."
+          ]
+        },
+        "de": {
+          "role": "Erforschung der Wasserbögen",
+          "work": "Ich beobachte die durchsichtigen Bögen, die aus Okeas Meer aufsteigen.",
+          "mystery": "Eine große Welle hat einen Bogen verformt. Finden wir ihn?",
+          "share": "Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes.",
+          "chapter_cues": [
+            "Ich beobachte die durchsichtigen Bögen, die aus Okeas Meer aufsteigen.",
+            "Eine große Welle hat einen Bogen verformt. Finden wir ihn?",
+            "Da ist noch ein Hinweis. Eine große Welle hat einen Bogen verformt. Finden wir ihn?",
+            "Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes."
+          ]
+        },
+        "es": {
+          "role": "Estudio de arcos de agua",
+          "work": "Observo los arcos transparentes que suben del océano de Okea.",
+          "mystery": "Una ola grande cambió la forma de un arco. ¿Lo encontramos?",
+          "share": "Guardemos este descubrimiento en la memoria de nuestro pueblo.",
+          "chapter_cues": [
+            "Observo los arcos transparentes que suben del océano de Okea.",
+            "Una ola grande cambió la forma de un arco. ¿Lo encontramos?",
+            "Aquí hay otra pista. Una ola grande cambió la forma de un arco. ¿Lo encontramos?",
+            "Guardemos este descubrimiento en la memoria de nuestro pueblo."
+          ]
+        },
+        "pt_BR": {
+          "role": "Pesquisa dos arcos de água",
+          "work": "Eu observo os arcos transparentes que saem do oceano de Okea.",
+          "mystery": "Uma onda grande mudou a forma de um arco. Vamos encontrá-lo?",
+          "share": "Vamos guardar essa descoberta nas memórias do nosso povo.",
+          "chapter_cues": [
+            "Eu observo os arcos transparentes que saem do oceano de Okea.",
+            "Uma onda grande mudou a forma de um arco. Vamos encontrá-lo?",
+            "Aqui vai mais uma pista. Uma onda grande mudou a forma de um arco. Vamos encontrá-lo?",
+            "Vamos guardar essa descoberta nas memórias do nosso povo."
+          ]
+        }
+      }
+    },
+    "smc_p02": {
+      "character_id": "npc_smc_p02",
+      "world_id": "smc_p02",
+      "name": "Ili",
+      "role": "Light reflection researcher",
+      "work": "I watch red mountains reflected in Cela's clear liquid domes.",
+      "mystery": "One dome now reflects much more light than its neighbor.",
+      "share": "Let's show other phase beings how transparency changes.",
+      "gender": null,
+      "portrait_template": "11_phase_gas.png",
+      "chapter_cues": [
+        "I watch red mountains reflected in Cela's clear liquid domes.",
+        "One dome now reflects much more light than its neighbor.",
+        "Another clue at my station: One dome now reflects much more light than its neighbor.",
+        "Let's show other phase beings how transparency changes."
+      ],
+      "name_localized": {
+        "ru": "Или",
+        "en": "Ili",
+        "fr": "Ili",
+        "de": "Ili",
+        "es": "Ili",
+        "pt_BR": "Ili"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Исследователь отражений",
+          "work": "Я изучаю отражения красных гор в прозрачных куполах Целы.",
+          "mystery": "Один купол отражает больше света, чем другой. Почему?",
+          "share": "Сохраним это открытие в памяти нашего народа. Оно может пригодиться другим.",
+          "chapter_cues": [
+            "Я изучаю отражения красных гор в прозрачных куполах Целы.",
+            "Один купол отражает больше света, чем другой. Почему?",
+            "Есть ещё одна подсказка. Один купол отражает больше света, чем другой. Почему?",
+            "Сохраним это открытие в памяти нашего народа. Оно может пригодиться другим."
+          ]
+        },
+        "en": {
+          "role": "Light reflection researcher",
+          "work": "I watch red mountains reflected in Cela's clear liquid domes.",
+          "mystery": "One dome now reflects much more light than its neighbor.",
+          "share": "Let us preserve this discovery in our people’s memories for future visitors.",
+          "chapter_cues": [
+            "I watch red mountains reflected in Cela's clear liquid domes.",
+            "One dome now reflects much more light than its neighbor.",
+            "Here is another clue. One dome now reflects much more light than its neighbor.",
+            "Let us preserve this discovery in our people’s memories for future visitors."
+          ]
+        },
+        "fr": {
+          "role": "Étude des reflets",
+          "work": "J'observe les montagnes rouges dans les dômes transparents de Tsela.",
+          "mystery": "Un dôme renvoie plus de lumière qu'un autre. Pourquoi ?",
+          "share": "Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres.",
+          "chapter_cues": [
+            "J'observe les montagnes rouges dans les dômes transparents de Tsela.",
+            "Un dôme renvoie plus de lumière qu'un autre. Pourquoi ?",
+            "Voici un autre indice. Un dôme renvoie plus de lumière qu'un autre. Pourquoi ?",
+            "Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres."
+          ]
+        },
+        "de": {
+          "role": "Forschung über Spiegelungen",
+          "work": "Ich sehe die roten Berge in den durchsichtigen Kuppeln von Tsela.",
+          "mystery": "Eine Kuppel spiegelt mehr Licht als die andere. Warum wohl?",
+          "share": "Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes.",
+          "chapter_cues": [
+            "Ich sehe die roten Berge in den durchsichtigen Kuppeln von Tsela.",
+            "Eine Kuppel spiegelt mehr Licht als die andere. Warum wohl?",
+            "Da ist noch ein Hinweis. Eine Kuppel spiegelt mehr Licht als die andere. Warum wohl?",
+            "Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes."
+          ]
+        },
+        "es": {
+          "role": "Estudio de los reflejos",
+          "work": "Observo las montañas rojas reflejadas en las cúpulas de Tsela.",
+          "mystery": "Una cúpula refleja más luz que otra. ¿Por qué?",
+          "share": "Guardemos este descubrimiento en la memoria de nuestro pueblo.",
+          "chapter_cues": [
+            "Observo las montañas rojas reflejadas en las cúpulas de Tsela.",
+            "Una cúpula refleja más luz que otra. ¿Por qué?",
+            "Aquí hay otra pista. Una cúpula refleja más luz que otra. ¿Por qué?",
+            "Guardemos este descubrimiento en la memoria de nuestro pueblo."
+          ]
+        },
+        "pt_BR": {
+          "role": "Pesquisa dos reflexos",
+          "work": "Eu observo as montanhas vermelhas refletidas nos domos de Tsela.",
+          "mystery": "Um domo reflete mais luz que outro. Por quê?",
+          "share": "Vamos guardar essa descoberta nas memórias do nosso povo.",
+          "chapter_cues": [
+            "Eu observo as montanhas vermelhas refletidas nos domos de Tsela.",
+            "Um domo reflete mais luz que outro. Por quê?",
+            "Aqui vai mais uma pista. Um domo reflete mais luz que outro. Por quê?",
+            "Vamos guardar essa descoberta nas memórias do nosso povo."
+          ]
+        }
+      }
+    },
+    "smc_p03": {
+      "character_id": "npc_smc_p03",
+      "world_id": "smc_p03",
+      "name": "Ori",
+      "role": "Liquid tower observer",
+      "work": "I study the flowing towers and watery fissures of Genora.",
+      "mystery": "A tower curved gently like an ocean wave.",
+      "share": "Let's explain the movement to those caring for the pathways.",
+      "gender": null,
+      "portrait_template": "12_phase_liquid.png",
+      "chapter_cues": [
+        "I study the flowing towers and watery fissures of Genora.",
+        "A tower curved gently like an ocean wave.",
+        "Another clue at my station: A tower curved gently like an ocean wave.",
+        "Let's explain the movement to those caring for the pathways."
+      ],
+      "name_localized": {
+        "ru": "Ори",
+        "en": "Ori",
+        "fr": "Ori",
+        "de": "Ori",
+        "es": "Ori",
+        "pt_BR": "Ori"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Наблюдатель жидких башен",
+          "work": "Я изучаю текучие башни и водные трещины Геноры.",
+          "mystery": "Башня мягко изогнулась, как волна. Проследим за движением?",
+          "share": "Сохраним это открытие в памяти нашего народа. Оно может пригодиться другим.",
+          "chapter_cues": [
+            "Я изучаю текучие башни и водные трещины Геноры.",
+            "Башня мягко изогнулась, как волна. Проследим за движением?",
+            "Есть ещё одна подсказка. Башня мягко изогнулась, как волна. Проследим за движением?",
+            "Сохраним это открытие в памяти нашего народа. Оно может пригодиться другим."
+          ]
+        },
+        "en": {
+          "role": "Liquid tower observer",
+          "work": "I study the flowing towers and watery fissures of Genora.",
+          "mystery": "A tower curved gently like an ocean wave.",
+          "share": "Let us preserve this discovery in our people’s memories for future visitors.",
+          "chapter_cues": [
+            "I study the flowing towers and watery fissures of Genora.",
+            "A tower curved gently like an ocean wave.",
+            "Here is another clue. A tower curved gently like an ocean wave.",
+            "Let us preserve this discovery in our people’s memories for future visitors."
+          ]
+        },
+        "fr": {
+          "role": "Observation des tours liquides",
+          "work": "J'étudie les tours fluides et les fissures remplies d'eau de Genora.",
+          "mystery": "Une tour se courbe doucement comme une vague. Suivons son mouvement !",
+          "share": "Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres.",
+          "chapter_cues": [
+            "J'étudie les tours fluides et les fissures remplies d'eau de Genora.",
+            "Une tour se courbe doucement comme une vague. Suivons son mouvement !",
+            "Voici un autre indice. Une tour se courbe doucement comme une vague. Suivons son mouvement !",
+            "Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres."
+          ]
+        },
+        "de": {
+          "role": "Beobachtung fließender Türme",
+          "work": "Ich erforsche die fließenden Türme und Wasserspalten von Genora.",
+          "mystery": "Ein Turm biegt sich wie eine sanfte Welle. Beobachten wir ihn!",
+          "share": "Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes.",
+          "chapter_cues": [
+            "Ich erforsche die fließenden Türme und Wasserspalten von Genora.",
+            "Ein Turm biegt sich wie eine sanfte Welle. Beobachten wir ihn!",
+            "Da ist noch ein Hinweis. Ein Turm biegt sich wie eine sanfte Welle. Beobachten wir ihn!",
+            "Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes."
+          ]
+        },
+        "es": {
+          "role": "Observación de torres líquidas",
+          "work": "Estudio las torres fluidas y las grietas de agua de Genora.",
+          "mystery": "Una torre se dobló suavemente como una ola. ¡Miremos!",
+          "share": "Guardemos este descubrimiento en la memoria de nuestro pueblo.",
+          "chapter_cues": [
+            "Estudio las torres fluidas y las grietas de agua de Genora.",
+            "Una torre se dobló suavemente como una ola. ¡Miremos!",
+            "Aquí hay otra pista. Una torre se dobló suavemente como una ola. ¡Miremos!",
+            "Guardemos este descubrimiento en la memoria de nuestro pueblo."
+          ]
+        },
+        "pt_BR": {
+          "role": "Observação de torres líquidas",
+          "work": "Eu estudo as torres que fluem e as fendas de água de Genora.",
+          "mystery": "Uma torre se curvou como uma onda. Vamos acompanhar?",
+          "share": "Vamos guardar essa descoberta nas memórias do nosso povo.",
+          "chapter_cues": [
+            "Eu estudo as torres que fluem e as fendas de água de Genora.",
+            "Uma torre se curvou como uma onda. Vamos acompanhar?",
+            "Aqui vai mais uma pista. Uma torre se curvou como uma onda. Vamos acompanhar?",
+            "Vamos guardar essa descoberta nas memórias do nosso povo."
+          ]
+        }
+      }
+    },
+    "smc_p05": {
+      "character_id": "npc_smc_p05",
+      "world_id": "smc_p05",
+      "name": "Keo",
+      "role": "Mist navigation guide",
+      "work": "I explore misty passages among Spira's dark rocks.",
+      "mystery": "The mist became thicker beside a bright ridge.",
+      "share": "Let's mark the clearest way for the next visitor.",
+      "gender": null,
+      "portrait_template": "10_phase_crystal.png",
+      "chapter_cues": [
+        "I explore misty passages among Spira's dark rocks.",
+        "The mist became thicker beside a bright ridge.",
+        "Another clue at my station: The mist became thicker beside a bright ridge.",
+        "Let's mark the clearest way for the next visitor."
+      ],
+      "name_localized": {
+        "ru": "Кэо",
+        "en": "Keo",
+        "fr": "Keo",
+        "de": "Keo",
+        "es": "Keo",
+        "pt_BR": "Keo"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Проводник в тумане",
+          "work": "Я изучаю туманные переходы среди тёмных скал Спиры.",
+          "mystery": "Возле яркого света туман стал гуще. Откуда он идёт?",
+          "share": "Сохраним это открытие в памяти нашего народа. Оно может пригодиться другим.",
+          "chapter_cues": [
+            "Я изучаю туманные переходы среди тёмных скал Спиры.",
+            "Возле яркого света туман стал гуще. Откуда он идёт?",
+            "Есть ещё одна подсказка. Возле яркого света туман стал гуще. Откуда он идёт?",
+            "Сохраним это открытие в памяти нашего народа. Оно может пригодиться другим."
+          ]
+        },
+        "en": {
+          "role": "Mist navigation guide",
+          "work": "I explore misty passages among Spira's dark rocks.",
+          "mystery": "The mist became thicker beside a bright ridge.",
+          "share": "Let us preserve this discovery in our people’s memories for future visitors.",
+          "chapter_cues": [
+            "I explore misty passages among Spira's dark rocks.",
+            "The mist became thicker beside a bright ridge.",
+            "Here is another clue. The mist became thicker beside a bright ridge.",
+            "Let us preserve this discovery in our people’s memories for future visitors."
+          ]
+        },
+        "fr": {
+          "role": "Guidage dans la brume",
+          "work": "J'explore les passages brumeux parmi les roches sombres de Spira.",
+          "mystery": "La brume s'épaissit près d'une lumière. D'où vient-elle ?",
+          "share": "Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres.",
+          "chapter_cues": [
+            "J'explore les passages brumeux parmi les roches sombres de Spira.",
+            "La brume s'épaissit près d'une lumière. D'où vient-elle ?",
+            "Voici un autre indice. La brume s'épaissit près d'une lumière. D'où vient-elle ?",
+            "Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres."
+          ]
+        },
+        "de": {
+          "role": "Wegweisung im Nebel",
+          "work": "Ich erkunde neblige Wege zwischen Spiras dunklen Felsen.",
+          "mystery": "In der Nähe eines Lichts wird der Nebel dichter. Woher kommt er?",
+          "share": "Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes.",
+          "chapter_cues": [
+            "Ich erkunde neblige Wege zwischen Spiras dunklen Felsen.",
+            "In der Nähe eines Lichts wird der Nebel dichter. Woher kommt er?",
+            "Da ist noch ein Hinweis. In der Nähe eines Lichts wird der Nebel dichter. Woher kommt er?",
+            "Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes."
+          ]
+        },
+        "es": {
+          "role": "Guía de caminos entre la niebla",
+          "work": "Exploro caminos de niebla entre las rocas oscuras de Spira.",
+          "mystery": "La niebla se hizo más densa junto a una luz. ¿De dónde viene?",
+          "share": "Guardemos este descubrimiento en la memoria de nuestro pueblo.",
+          "chapter_cues": [
+            "Exploro caminos de niebla entre las rocas oscuras de Spira.",
+            "La niebla se hizo más densa junto a una luz. ¿De dónde viene?",
+            "Aquí hay otra pista. La niebla se hizo más densa junto a una luz. ¿De dónde viene?",
+            "Guardemos este descubrimiento en la memoria de nuestro pueblo."
+          ]
+        },
+        "pt_BR": {
+          "role": "Guia pelos caminhos de névoa",
+          "work": "Eu exploro caminhos de névoa entre as rochas escuras de Spira.",
+          "mystery": "A névoa ficou mais grossa perto de uma luz. De onde será que vem?",
+          "share": "Vamos guardar essa descoberta nas memórias do nosso povo.",
+          "chapter_cues": [
+            "Eu exploro caminhos de névoa entre as rochas escuras de Spira.",
+            "A névoa ficou mais grossa perto de uma luz. De onde será que vem?",
+            "Aqui vai mais uma pista. A névoa ficou mais grossa perto de uma luz. De onde será que vem?",
+            "Vamos guardar essa descoberta nas memórias do nosso povo."
+          ]
+        }
+      }
+    },
+    "st_smc": {
+      "character_id": "npc_st_smc",
+      "world_id": "st_smc",
+      "name": "Lie",
+      "role": "Living Archive memory keeper",
+      "work": "I protect memories inside the Archive's clear liquid and gas chambers.",
+      "mystery": "A transparent chamber displayed an unfamiliar old pattern.",
+      "share": "Let's preserve the pattern for future visitors.",
+      "gender": null,
+      "portrait_template": "11_phase_gas.png",
+      "chapter_cues": [
+        "I protect memories inside the Archive's clear liquid and gas chambers.",
+        "A transparent chamber displayed an unfamiliar old pattern.",
+        "Another clue at my station: A transparent chamber displayed an unfamiliar old pattern.",
+        "Let's preserve the pattern for future visitors."
+      ],
+      "name_localized": {
+        "ru": "Лиэ",
+        "en": "Lie",
+        "fr": "Lie",
+        "de": "Lie",
+        "es": "Lie",
+        "pt_BR": "Lie"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Хранитель Живого архива",
+          "work": "Я берегу истории нашей цивилизации в прозрачных камерах Живого архива.",
+          "mystery": "В одной камере появился забытый узор. Рассмотрим его?",
+          "share": "Сохраним это открытие в памяти нашего народа. Оно может пригодиться другим.",
+          "chapter_cues": [
+            "Я берегу истории нашей цивилизации в прозрачных камерах Живого архива.",
+            "В одной камере появился забытый узор. Рассмотрим его?",
+            "Есть ещё одна подсказка. В одной камере появился забытый узор. Рассмотрим его?",
+            "Сохраним это открытие в памяти нашего народа. Оно может пригодиться другим."
+          ]
+        },
+        "en": {
+          "role": "Living Archive memory keeper",
+          "work": "I protect memories inside the Archive's clear liquid and gas chambers.",
+          "mystery": "A transparent chamber displayed an unfamiliar old pattern.",
+          "share": "Let us preserve this discovery in our people’s memories for future visitors.",
+          "chapter_cues": [
+            "I protect memories inside the Archive's clear liquid and gas chambers.",
+            "A transparent chamber displayed an unfamiliar old pattern.",
+            "Here is another clue. A transparent chamber displayed an unfamiliar old pattern.",
+            "Let us preserve this discovery in our people’s memories for future visitors."
+          ]
+        },
+        "fr": {
+          "role": "Mémoire des Archives vivantes",
+          "work": "Je protège les récits de notre peuple dans les chambres transparentes des Archives.",
+          "mystery": "Un motif oublié apparaît dans une chambre. Regardons de plus près !",
+          "share": "Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres.",
+          "chapter_cues": [
+            "Je protège les récits de notre peuple dans les chambres transparentes des Archives.",
+            "Un motif oublié apparaît dans une chambre. Regardons de plus près !",
+            "Voici un autre indice. Un motif oublié apparaît dans une chambre. Regardons de plus près !",
+            "Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres."
+          ]
+        },
+        "de": {
+          "role": "Bewahrung des lebenden Archivs",
+          "work": "Ich bewahre unsere Geschichten in den durchsichtigen Kammern des Archivs.",
+          "mystery": "In einer Kammer erscheint ein vergessenes Muster. Sehen wir hin!",
+          "share": "Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes.",
+          "chapter_cues": [
+            "Ich bewahre unsere Geschichten in den durchsichtigen Kammern des Archivs.",
+            "In einer Kammer erscheint ein vergessenes Muster. Sehen wir hin!",
+            "Da ist noch ein Hinweis. In einer Kammer erscheint ein vergessenes Muster. Sehen wir hin!",
+            "Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes."
+          ]
+        },
+        "es": {
+          "role": "Cuidado de la memoria del Archivo Vivo",
+          "work": "Conservo historias en las cámaras transparentes del Archivo Vivo.",
+          "mystery": "Apareció un dibujo olvidado en una cámara. ¡Miremos de cerca!",
+          "share": "Guardemos este descubrimiento en la memoria de nuestro pueblo.",
+          "chapter_cues": [
+            "Conservo historias en las cámaras transparentes del Archivo Vivo.",
+            "Apareció un dibujo olvidado en una cámara. ¡Miremos de cerca!",
+            "Aquí hay otra pista. Apareció un dibujo olvidado en una cámara. ¡Miremos de cerca!",
+            "Guardemos este descubrimiento en la memoria de nuestro pueblo."
+          ]
+        },
+        "pt_BR": {
+          "role": "Cuidado da memória do Arquivo Vivo",
+          "work": "Eu guardo histórias nas câmaras transparentes do Arquivo Vivo.",
+          "mystery": "Um desenho antigo apareceu numa câmara. Vamos ver de perto!",
+          "share": "Vamos guardar essa descoberta nas memórias do nosso povo.",
+          "chapter_cues": [
+            "Eu guardo histórias nas câmaras transparentes do Arquivo Vivo.",
+            "Um desenho antigo apareceu numa câmara. Vamos ver de perto!",
+            "Aqui vai mais uma pista. Um desenho antigo apareceu numa câmara. Vamos ver de perto!",
+            "Vamos guardar essa descoberta nas memórias do nosso povo."
+          ]
+        }
+      }
+    },
+    "ngc6822_p01": {
+      "character_id": "npc_ngc6822_p01",
+      "world_id": "ngc6822_p01",
+      "name": "Zeri",
+      "role": "Archeon garden guardian",
+      "work": "I care for green gardens inside Archeon's sealed ring city.",
+      "mystery": "A garden path disappeared beneath red desert dust.",
+      "share": "Let's show neighbors how to protect the garden paths.",
+      "gender": null,
+      "portrait_template": "01_reptile_liri.png",
+      "chapter_cues": [
+        "I care for green gardens inside Archeon's sealed ring city.",
+        "A garden path disappeared beneath red desert dust.",
+        "Another clue at my station: A garden path disappeared beneath red desert dust.",
+        "Let's show neighbors how to protect the garden paths."
+      ],
+      "name_localized": {
+        "ru": "Зери",
+        "en": "Zeri",
+        "fr": "Zeri",
+        "de": "Zeri",
+        "es": "Zeri",
+        "pt_BR": "Zeri"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Хранитель садов Археона",
+          "work": "Я забочусь о садах внутри защищённого города-кольца на Археоне.",
+          "mystery": "Красная пыль засыпала дорожку в саду. Как найти путь?",
+          "share": "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу.",
+          "chapter_cues": [
+            "Я забочусь о садах внутри защищённого города-кольца на Археоне.",
+            "Красная пыль засыпала дорожку в саду. Как найти путь?",
+            "Есть ещё одна подсказка. Красная пыль засыпала дорожку в саду. Как найти путь?",
+            "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу."
+          ]
+        },
+        "en": {
+          "role": "Archeon garden guardian",
+          "work": "I care for green gardens inside Archeon's sealed ring city.",
+          "mystery": "A garden path disappeared beneath red desert dust.",
+          "share": "Let us show other travelers a safe route. That way we can help one another.",
+          "chapter_cues": [
+            "I care for green gardens inside Archeon's sealed ring city.",
+            "A garden path disappeared beneath red desert dust.",
+            "Here is another clue. A garden path disappeared beneath red desert dust.",
+            "Let us show other travelers a safe route. That way we can help one another."
+          ]
+        },
+        "fr": {
+          "role": "Soin des jardins d'Archeon",
+          "work": "Je veille sur les jardins à l'intérieur de notre ville en anneau, sur Archeon.",
+          "mystery": "La poussière rouge couvre un petit chemin du jardin. Où va-t-il ?",
+          "share": "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "chapter_cues": [
+            "Je veille sur les jardins à l'intérieur de notre ville en anneau, sur Archeon.",
+            "La poussière rouge couvre un petit chemin du jardin. Où va-t-il ?",
+            "Voici un autre indice. La poussière rouge couvre un petit chemin du jardin. Où va-t-il ?",
+            "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !"
+          ]
+        },
+        "de": {
+          "role": "Schutz der Gärten von Archeon",
+          "work": "Ich kümmere mich um die Gärten in Archeons geschützter Ringstadt.",
+          "mystery": "Roter Staub bedeckt einen Gartenweg. Wie finden wir ihn wieder?",
+          "share": "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "chapter_cues": [
+            "Ich kümmere mich um die Gärten in Archeons geschützter Ringstadt.",
+            "Roter Staub bedeckt einen Gartenweg. Wie finden wir ihn wieder?",
+            "Da ist noch ein Hinweis. Roter Staub bedeckt einen Gartenweg. Wie finden wir ihn wieder?",
+            "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!"
+          ]
+        },
+        "es": {
+          "role": "Cuidado de los jardines de Archeon",
+          "work": "Cuido los jardines dentro de la ciudad circular de Archeon.",
+          "mystery": "El polvo rojo tapó un sendero del jardín. ¿Cómo lo encontramos?",
+          "share": "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "chapter_cues": [
+            "Cuido los jardines dentro de la ciudad circular de Archeon.",
+            "El polvo rojo tapó un sendero del jardín. ¿Cómo lo encontramos?",
+            "Aquí hay otra pista. El polvo rojo tapó un sendero del jardín. ¿Cómo lo encontramos?",
+            "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Cuidado dos jardins de Archeon",
+          "work": "Eu cuido dos jardins dentro da cidade em anel de Archeon.",
+          "mystery": "A poeira vermelha cobriu uma trilha do jardim. Como achar o caminho?",
+          "share": "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!",
+          "chapter_cues": [
+            "Eu cuido dos jardins dentro da cidade em anel de Archeon.",
+            "A poeira vermelha cobriu uma trilha do jardim. Como achar o caminho?",
+            "Aqui vai mais uma pista. A poeira vermelha cobriu uma trilha do jardim. Como achar o caminho?",
+            "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+          ]
+        }
+      }
+    },
+    "ngc6822_p02": {
+      "character_id": "npc_ngc6822_p02",
+      "world_id": "ngc6822_p02",
+      "name": "Tevi",
+      "role": "Quaria cave explorer",
+      "work": "I map mineral caves and the sheltered domes of Quaria.",
+      "mystery": "A new light appeared in the passage behind a rocky wall.",
+      "share": "Let's give other explorers a clear map of safe passages.",
+      "gender": null,
+      "portrait_template": "02_reptile_taro.png",
+      "chapter_cues": [
+        "I map mineral caves and the sheltered domes of Quaria.",
+        "A new light appeared in the passage behind a rocky wall.",
+        "Another clue at my station: A new light appeared in the passage behind a rocky wall.",
+        "Let's give other explorers a clear map of safe passages."
+      ],
+      "name_localized": {
+        "ru": "Тэви",
+        "en": "Tevi",
+        "fr": "Tevi",
+        "de": "Tevi",
+        "es": "Tevi",
+        "pt_BR": "Tevi"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Исследователь пещер Кварии",
+          "work": "Я составляю карту пещер и защищённых куполов Кварии.",
+          "mystery": "За каменной стеной появился новый огонёк. Куда ведёт проход?",
+          "share": "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу.",
+          "chapter_cues": [
+            "Я составляю карту пещер и защищённых куполов Кварии.",
+            "За каменной стеной появился новый огонёк. Куда ведёт проход?",
+            "Есть ещё одна подсказка. За каменной стеной появился новый огонёк. Куда ведёт проход?",
+            "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу."
+          ]
+        },
+        "en": {
+          "role": "Quaria cave explorer",
+          "work": "I map mineral caves and the sheltered domes of Quaria.",
+          "mystery": "A new light appeared in the passage behind a rocky wall.",
+          "share": "Let us show other travelers a safe route. That way we can help one another.",
+          "chapter_cues": [
+            "I map mineral caves and the sheltered domes of Quaria.",
+            "A new light appeared in the passage behind a rocky wall.",
+            "Here is another clue. A new light appeared in the passage behind a rocky wall.",
+            "Let us show other travelers a safe route. That way we can help one another."
+          ]
+        },
+        "fr": {
+          "role": "Exploration des grottes de Quaria",
+          "work": "Je dessine la carte des grottes et des dômes de Quaria.",
+          "mystery": "Une lumière apparaît derrière une paroi rocheuse. Que cache-t-elle ?",
+          "share": "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "chapter_cues": [
+            "Je dessine la carte des grottes et des dômes de Quaria.",
+            "Une lumière apparaît derrière une paroi rocheuse. Que cache-t-elle ?",
+            "Voici un autre indice. Une lumière apparaît derrière une paroi rocheuse. Que cache-t-elle ?",
+            "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !"
+          ]
+        },
+        "de": {
+          "role": "Höhlenforschung auf Quaria",
+          "work": "Ich zeichne Karten der Höhlen und geschützten Kuppeln von Quaria.",
+          "mystery": "Hinter einer Felswand leuchtet etwas. Wohin führt der Gang?",
+          "share": "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "chapter_cues": [
+            "Ich zeichne Karten der Höhlen und geschützten Kuppeln von Quaria.",
+            "Hinter einer Felswand leuchtet etwas. Wohin führt der Gang?",
+            "Da ist noch ein Hinweis. Hinter einer Felswand leuchtet etwas. Wohin führt der Gang?",
+            "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!"
+          ]
+        },
+        "es": {
+          "role": "Exploración de cuevas de Quaria",
+          "work": "Hago mapas de las cuevas y cúpulas protegidas de Quaria.",
+          "mystery": "Una lucecita apareció detrás de una roca. ¿Adónde lleva el túnel?",
+          "share": "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "chapter_cues": [
+            "Hago mapas de las cuevas y cúpulas protegidas de Quaria.",
+            "Una lucecita apareció detrás de una roca. ¿Adónde lleva el túnel?",
+            "Aquí hay otra pista. Una lucecita apareció detrás de una roca. ¿Adónde lleva el túnel?",
+            "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Exploração das cavernas de Quaria",
+          "work": "Eu faço mapas das cavernas e dos domos protegidos de Quaria.",
+          "mystery": "Uma luzinha apareceu atrás de uma rocha. Para onde vai o túnel?",
+          "share": "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!",
+          "chapter_cues": [
+            "Eu faço mapas das cavernas e dos domos protegidos de Quaria.",
+            "Uma luzinha apareceu atrás de uma rocha. Para onde vai o túnel?",
+            "Aqui vai mais uma pista. Uma luzinha apareceu atrás de uma rocha. Para onde vai o túnel?",
+            "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+          ]
+        }
+      }
+    },
+    "ngc6822_p03": {
+      "character_id": "npc_ngc6822_p03",
+      "world_id": "ngc6822_p03",
+      "name": "Runi",
+      "role": "Nocta dock signal keeper",
+      "work": "I watch the ship signals in Nocta's twilight spaceport.",
+      "mystery": "Two dock lights began blinking in different rhythms.",
+      "share": "Let's tell incoming pilots which route is safe.",
+      "gender": null,
+      "portrait_template": "01_reptile_liri.png",
+      "chapter_cues": [
+        "I watch the ship signals in Nocta's twilight spaceport.",
+        "Two dock lights began blinking in different rhythms.",
+        "Another clue at my station: Two dock lights began blinking in different rhythms.",
+        "Let's tell incoming pilots which route is safe."
+      ],
+      "name_localized": {
+        "ru": "Руни",
+        "en": "Runi",
+        "fr": "Runi",
+        "de": "Runi",
+        "es": "Runi",
+        "pt_BR": "Runi"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Хранитель сигналов космопорта",
+          "work": "Я слежу за сигналами кораблей в сумеречном порту Нокты.",
+          "mystery": "Два огня в доках мигают в разном ритме. Что они сообщают?",
+          "share": "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу.",
+          "chapter_cues": [
+            "Я слежу за сигналами кораблей в сумеречном порту Нокты.",
+            "Два огня в доках мигают в разном ритме. Что они сообщают?",
+            "Есть ещё одна подсказка. Два огня в доках мигают в разном ритме. Что они сообщают?",
+            "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу."
+          ]
+        },
+        "en": {
+          "role": "Nocta dock signal keeper",
+          "work": "I watch the ship signals in Nocta's twilight spaceport.",
+          "mystery": "Two dock lights began blinking in different rhythms.",
+          "share": "Let us show other travelers a safe route. That way we can help one another.",
+          "chapter_cues": [
+            "I watch the ship signals in Nocta's twilight spaceport.",
+            "Two dock lights began blinking in different rhythms.",
+            "Here is another clue. Two dock lights began blinking in different rhythms.",
+            "Let us show other travelers a safe route. That way we can help one another."
+          ]
+        },
+        "fr": {
+          "role": "Signaux du port de Nocta",
+          "work": "Je surveille les signaux des vaisseaux dans le port sombre de Nocta.",
+          "mystery": "Deux lumières de quai clignotent à des rythmes différents.",
+          "share": "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "chapter_cues": [
+            "Je surveille les signaux des vaisseaux dans le port sombre de Nocta.",
+            "Deux lumières de quai clignotent à des rythmes différents.",
+            "Voici un autre indice. Deux lumières de quai clignotent à des rythmes différents.",
+            "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !"
+          ]
+        },
+        "de": {
+          "role": "Hafensignale auf Nocta",
+          "work": "Ich beobachte die Schiffssignale im dämmrigen Raumhafen von Nocta.",
+          "mystery": "Zwei Docklichter blinken unterschiedlich. Was wollen sie sagen?",
+          "share": "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "chapter_cues": [
+            "Ich beobachte die Schiffssignale im dämmrigen Raumhafen von Nocta.",
+            "Zwei Docklichter blinken unterschiedlich. Was wollen sie sagen?",
+            "Da ist noch ein Hinweis. Zwei Docklichter blinken unterschiedlich. Was wollen sie sagen?",
+            "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!"
+          ]
+        },
+        "es": {
+          "role": "Señales del puerto de Nocta",
+          "work": "Vigilo las señales de las naves en el puerto al atardecer de Nocta.",
+          "mystery": "Dos luces del muelle parpadean de forma distinta. ¿Qué dicen?",
+          "share": "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "chapter_cues": [
+            "Vigilo las señales de las naves en el puerto al atardecer de Nocta.",
+            "Dos luces del muelle parpadean de forma distinta. ¿Qué dicen?",
+            "Aquí hay otra pista. Dos luces del muelle parpadean de forma distinta. ¿Qué dicen?",
+            "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Sinais do porto espacial de Nocta",
+          "work": "Eu observo os sinais das naves no porto de Nocta, onde o céu é escuro.",
+          "mystery": "Duas luzes da doca piscam em ritmos diferentes. O que significam?",
+          "share": "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!",
+          "chapter_cues": [
+            "Eu observo os sinais das naves no porto de Nocta, onde o céu é escuro.",
+            "Duas luzes da doca piscam em ritmos diferentes. O que significam?",
+            "Aqui vai mais uma pista. Duas luzes da doca piscam em ritmos diferentes. O que significam?",
+            "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+          ]
+        }
+      }
+    },
+    "ngc6822_p04": {
+      "character_id": "npc_ngc6822_p04",
+      "world_id": "ngc6822_p04",
+      "name": "Deri",
+      "role": "Ferra mineral transport keeper",
+      "work": "I monitor the protected mineral transport lines on Ferra.",
+      "mystery": "One transport line began moving more slowly than expected.",
+      "share": "Let's help the team use metal without wasting resources.",
+      "gender": null,
+      "portrait_template": "02_reptile_taro.png",
+      "chapter_cues": [
+        "I monitor the protected mineral transport lines on Ferra.",
+        "One transport line began moving more slowly than expected.",
+        "Another clue at my station: One transport line began moving more slowly than expected.",
+        "Let's help the team use metal without wasting resources."
+      ],
+      "name_localized": {
+        "ru": "Дэри",
+        "en": "Deri",
+        "fr": "Deri",
+        "de": "Deri",
+        "es": "Deri",
+        "pt_BR": "Deri"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Хранитель перевозок минералов",
+          "work": "Я проверяю закрытые трубы для перевозки минералов на Ферре.",
+          "mystery": "По одной трубе груз идёт медленнее. Почему?",
+          "share": "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу.",
+          "chapter_cues": [
+            "Я проверяю закрытые трубы для перевозки минералов на Ферре.",
+            "По одной трубе груз идёт медленнее. Почему?",
+            "Есть ещё одна подсказка. По одной трубе груз идёт медленнее. Почему?",
+            "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу."
+          ]
+        },
+        "en": {
+          "role": "Ferra mineral transport keeper",
+          "work": "I monitor the protected mineral transport lines on Ferra.",
+          "mystery": "One transport line began moving more slowly than expected.",
+          "share": "Let us show other travelers a safe route. That way we can help one another.",
+          "chapter_cues": [
+            "I monitor the protected mineral transport lines on Ferra.",
+            "One transport line began moving more slowly than expected.",
+            "Here is another clue. One transport line began moving more slowly than expected.",
+            "Let us show other travelers a safe route. That way we can help one another."
+          ]
+        },
+        "fr": {
+          "role": "Transport des minéraux de Ferra",
+          "work": "Je vérifie les conduites qui transportent les minéraux sur Ferra.",
+          "mystery": "Une conduite avance moins vite que prévu. Pourquoi ?",
+          "share": "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "chapter_cues": [
+            "Je vérifie les conduites qui transportent les minéraux sur Ferra.",
+            "Une conduite avance moins vite que prévu. Pourquoi ?",
+            "Voici un autre indice. Une conduite avance moins vite que prévu. Pourquoi ?",
+            "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !"
+          ]
+        },
+        "de": {
+          "role": "Mineraltransport auf Ferra",
+          "work": "Ich prüfe die geschützten Leitungen für Minerale auf Ferra.",
+          "mystery": "In einer Leitung fließt die Fracht langsamer. Woran liegt das?",
+          "share": "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "chapter_cues": [
+            "Ich prüfe die geschützten Leitungen für Minerale auf Ferra.",
+            "In einer Leitung fließt die Fracht langsamer. Woran liegt das?",
+            "Da ist noch ein Hinweis. In einer Leitung fließt die Fracht langsamer. Woran liegt das?",
+            "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!"
+          ]
+        },
+        "es": {
+          "role": "Transporte de minerales de Ferra",
+          "work": "Reviso los tubos que transportan minerales por Ferra.",
+          "mystery": "La carga avanza más despacio en un tubo. ¿Qué habrá pasado?",
+          "share": "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "chapter_cues": [
+            "Reviso los tubos que transportan minerales por Ferra.",
+            "La carga avanza más despacio en un tubo. ¿Qué habrá pasado?",
+            "Aquí hay otra pista. La carga avanza más despacio en un tubo. ¿Qué habrá pasado?",
+            "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Transporte de minerais de Ferra",
+          "work": "Eu verifico os tubos que carregam minerais em Ferra.",
+          "mystery": "A carga ficou mais lenta num dos tubos. O que aconteceu?",
+          "share": "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!",
+          "chapter_cues": [
+            "Eu verifico os tubos que carregam minerais em Ferra.",
+            "A carga ficou mais lenta num dos tubos. O que aconteceu?",
+            "Aqui vai mais uma pista. A carga ficou mais lenta num dos tubos. O que aconteceu?",
+            "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+          ]
+        }
+      }
+    },
+    "ngc6822_p06": {
+      "character_id": "npc_ngc6822_p06",
+      "world_id": "ngc6822_p06",
+      "name": "Seri",
+      "role": "Runa history archivist",
+      "work": "I preserve old explorer records inside Runa's stepped archive.",
+      "mystery": "An unfamiliar star symbol appeared in an ancient record.",
+      "share": "Let's save what we learned for the next generation.",
+      "gender": null,
+      "portrait_template": "01_reptile_liri.png",
+      "chapter_cues": [
+        "I preserve old explorer records inside Runa's stepped archive.",
+        "An unfamiliar star symbol appeared in an ancient record.",
+        "Another clue at my station: An unfamiliar star symbol appeared in an ancient record.",
+        "Let's save what we learned for the next generation."
+      ],
+      "name_localized": {
+        "ru": "Сэри",
+        "en": "Seri",
+        "fr": "Seri",
+        "de": "Seri",
+        "es": "Seri",
+        "pt_BR": "Seri"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Хранитель истории Руны",
+          "work": "Я сохраняю старые записи путешественников в ступенчатом архиве Руны.",
+          "mystery": "На древней карте нашёлся незнакомый знак звезды. Что он значит?",
+          "share": "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу.",
+          "chapter_cues": [
+            "Я сохраняю старые записи путешественников в ступенчатом архиве Руны.",
+            "На древней карте нашёлся незнакомый знак звезды. Что он значит?",
+            "Есть ещё одна подсказка. На древней карте нашёлся незнакомый знак звезды. Что он значит?",
+            "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу."
+          ]
+        },
+        "en": {
+          "role": "Runa history archivist",
+          "work": "I preserve old explorer records inside Runa's stepped archive.",
+          "mystery": "An unfamiliar star symbol appeared in an ancient record.",
+          "share": "Let us show other travelers a safe route. That way we can help one another.",
+          "chapter_cues": [
+            "I preserve old explorer records inside Runa's stepped archive.",
+            "An unfamiliar star symbol appeared in an ancient record.",
+            "Here is another clue. An unfamiliar star symbol appeared in an ancient record.",
+            "Let us show other travelers a safe route. That way we can help one another."
+          ]
+        },
+        "fr": {
+          "role": "Mémoire des voyageurs de Runa",
+          "work": "Je garde les anciens récits de voyage dans les archives en escalier de Runa.",
+          "mystery": "Un étrange symbole d'étoile apparaît sur une vieille carte.",
+          "share": "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "chapter_cues": [
+            "Je garde les anciens récits de voyage dans les archives en escalier de Runa.",
+            "Un étrange symbole d'étoile apparaît sur une vieille carte.",
+            "Voici un autre indice. Un étrange symbole d'étoile apparaît sur une vieille carte.",
+            "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !"
+          ]
+        },
+        "de": {
+          "role": "Bewahrung der Geschichte von Runa",
+          "work": "Im Stufenarchiv von Runa bewahre ich alte Reiseberichte auf.",
+          "mystery": "Auf einer alten Karte steht ein unbekannter Stern. Was bedeutet er?",
+          "share": "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "chapter_cues": [
+            "Im Stufenarchiv von Runa bewahre ich alte Reiseberichte auf.",
+            "Auf einer alten Karte steht ein unbekannter Stern. Was bedeutet er?",
+            "Da ist noch ein Hinweis. Auf einer alten Karte steht ein unbekannter Stern. Was bedeutet er?",
+            "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!"
+          ]
+        },
+        "es": {
+          "role": "Historia de los viajeros de Runa",
+          "work": "Guardo los relatos antiguos en el archivo escalonado de Runa.",
+          "mystery": "Encontré una estrella extraña en un mapa antiguo. ¿Qué significa?",
+          "share": "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "chapter_cues": [
+            "Guardo los relatos antiguos en el archivo escalonado de Runa.",
+            "Encontré una estrella extraña en un mapa antiguo. ¿Qué significa?",
+            "Aquí hay otra pista. Encontré una estrella extraña en un mapa antiguo. ¿Qué significa?",
+            "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Histórias dos viajantes de Runa",
+          "work": "Eu guardo relatos antigos no arquivo de grandes degraus de Runa.",
+          "mystery": "Achei uma estrela diferente num mapa antigo. O que será que ela quer dizer?",
+          "share": "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!",
+          "chapter_cues": [
+            "Eu guardo relatos antigos no arquivo de grandes degraus de Runa.",
+            "Achei uma estrela diferente num mapa antigo. O que será que ela quer dizer?",
+            "Aqui vai mais uma pista. Achei uma estrela diferente num mapa antigo. O que será que ela quer dizer?",
+            "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+          ]
+        }
+      }
+    },
+    "st_ngc6822": {
+      "character_id": "npc_st_ngc6822",
+      "world_id": "st_ngc6822",
+      "name": "Oni",
+      "role": "Titan's Head dock guide",
+      "work": "I help visitors find safe passages through Titan's Head spaceport.",
+      "mystery": "A familiar stone tunnel is temporarily closed for repairs.",
+      "share": "Let's share the new route with everyone arriving at the docks.",
+      "gender": null,
+      "portrait_template": "02_reptile_taro.png",
+      "chapter_cues": [
+        "I help visitors find safe passages through Titan's Head spaceport.",
+        "A familiar stone tunnel is temporarily closed for repairs.",
+        "Another clue at my station: A familiar stone tunnel is temporarily closed for repairs.",
+        "Let's share the new route with everyone arriving at the docks."
+      ],
+      "name_localized": {
+        "ru": "Они",
+        "en": "Oni",
+        "fr": "Oni",
+        "de": "Oni",
+        "es": "Oni",
+        "pt_BR": "Oni"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Проводник доков «Головы Титана»",
+          "work": "Я помогаю путешественникам проходить по каменным тоннелям «Головы Титана».",
+          "mystery": "Один тоннель закрыт на ремонт. Найдём другой безопасный путь.",
+          "share": "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу.",
+          "chapter_cues": [
+            "Я помогаю путешественникам проходить по каменным тоннелям «Головы Титана».",
+            "Один тоннель закрыт на ремонт. Найдём другой безопасный путь.",
+            "Есть ещё одна подсказка. Один тоннель закрыт на ремонт. Найдём другой безопасный путь.",
+            "Покажем безопасный путь другим путешественникам. Так мы поможем друг другу."
+          ]
+        },
+        "en": {
+          "role": "Titan's Head dock guide",
+          "work": "I help visitors find safe passages through Titan's Head spaceport.",
+          "mystery": "A familiar stone tunnel is temporarily closed for repairs.",
+          "share": "Let us show other travelers a safe route. That way we can help one another.",
+          "chapter_cues": [
+            "I help visitors find safe passages through Titan's Head spaceport.",
+            "A familiar stone tunnel is temporarily closed for repairs.",
+            "Here is another clue. A familiar stone tunnel is temporarily closed for repairs.",
+            "Let us show other travelers a safe route. That way we can help one another."
+          ]
+        },
+        "fr": {
+          "role": "Guidage des docks de la Tête du Titan",
+          "work": "J'aide les visiteurs à traverser les tunnels de pierre de la Tête du Titan.",
+          "mystery": "Un tunnel est fermé pour travaux. Trouvons un autre passage sûr.",
+          "share": "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "chapter_cues": [
+            "J'aide les visiteurs à traverser les tunnels de pierre de la Tête du Titan.",
+            "Un tunnel est fermé pour travaux. Trouvons un autre passage sûr.",
+            "Voici un autre indice. Un tunnel est fermé pour travaux. Trouvons un autre passage sûr.",
+            "Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !"
+          ]
+        },
+        "de": {
+          "role": "Wege durch den Titanenkopf",
+          "work": "Ich zeige Gästen sichere Wege durch die Steintunnel im Titanenkopf.",
+          "mystery": "Ein Tunnel ist wegen Reparaturen gesperrt. Finden wir einen Umweg!",
+          "share": "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "chapter_cues": [
+            "Ich zeige Gästen sichere Wege durch die Steintunnel im Titanenkopf.",
+            "Ein Tunnel ist wegen Reparaturen gesperrt. Finden wir einen Umweg!",
+            "Da ist noch ein Hinweis. Ein Tunnel ist wegen Reparaturen gesperrt. Finden wir einen Umweg!",
+            "Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!"
+          ]
+        },
+        "es": {
+          "role": "Guía de los muelles de la Cabeza del Titán",
+          "work": "Ayudo a visitantes a recorrer los túneles de piedra de la Cabeza del Titán.",
+          "mystery": "Un túnel está cerrado por reparaciones. ¡Busquemos otra ruta!",
+          "share": "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "chapter_cues": [
+            "Ayudo a visitantes a recorrer los túneles de piedra de la Cabeza del Titán.",
+            "Un túnel está cerrado por reparaciones. ¡Busquemos otra ruta!",
+            "Aquí hay otra pista. Un túnel está cerrado por reparaciones. ¡Busquemos otra ruta!",
+            "Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!"
+          ]
+        },
+        "pt_BR": {
+          "role": "Guia das docas da Cabeça do Titã",
+          "work": "Eu ajudo visitantes a passar pelos túneis de pedra da Cabeça do Titã.",
+          "mystery": "Um túnel está fechado para conserto. Vamos achar outro caminho!",
+          "share": "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!",
+          "chapter_cues": [
+            "Eu ajudo visitantes a passar pelos túneis de pedra da Cabeça do Titã.",
+            "Um túnel está fechado para conserto. Vamos achar outro caminho!",
+            "Aqui vai mais uma pista. Um túnel está fechado para conserto. Vamos achar outro caminho!",
+            "Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+          ]
+        }
+      }
+    },
+    "m31_p03": {
+      "character_id": "npc_m31_p03",
+      "world_id": "m31_p03",
+      "name": "Atri",
+      "role": "Phasis magnetic field researcher",
+      "work": "I study shifting metal arches in Phasis's mirrored laboratories.",
+      "mystery": "One arch began to move differently from its twin.",
+      "share": "Let's give the laboratory a careful report of the change.",
+      "gender": null,
+      "portrait_template": "13_magnetic_ring.png",
+      "chapter_cues": [
+        "I study shifting metal arches in Phasis's mirrored laboratories.",
+        "One arch began to move differently from its twin.",
+        "Another clue at my station: One arch began to move differently from its twin.",
+        "Let's give the laboratory a careful report of the change."
+      ],
+      "name_localized": {
+        "ru": "Атри",
+        "en": "Atri",
+        "fr": "Atri",
+        "de": "Atri",
+        "es": "Atri",
+        "pt_BR": "Atri"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Исследователь магнитных полей",
+          "work": "Я изучаю меняющиеся металлические арки лабораторий Фазиса.",
+          "mystery": "Одна арка стала двигаться иначе, чем соседняя. Сравним их?",
+          "share": "Передадим результаты другим исследователям полей, чтобы они могли их проверить.",
+          "chapter_cues": [
+            "Я изучаю меняющиеся металлические арки лабораторий Фазиса.",
+            "Одна арка стала двигаться иначе, чем соседняя. Сравним их?",
+            "Есть ещё одна подсказка. Одна арка стала двигаться иначе, чем соседняя. Сравним их?",
+            "Передадим результаты другим исследователям полей, чтобы они могли их проверить."
+          ]
+        },
+        "en": {
+          "role": "Phasis magnetic field researcher",
+          "work": "I study shifting metal arches in Phasis's mirrored laboratories.",
+          "mystery": "One arch began to move differently from its twin.",
+          "share": "Let us send these measurements to other field researchers to double-check.",
+          "chapter_cues": [
+            "I study shifting metal arches in Phasis's mirrored laboratories.",
+            "One arch began to move differently from its twin.",
+            "Here is another clue. One arch began to move differently from its twin.",
+            "Let us send these measurements to other field researchers to double-check."
+          ]
+        },
+        "fr": {
+          "role": "Étude des champs magnétiques",
+          "work": "J'observe les arches métalliques changeantes des laboratoires de Phasis.",
+          "mystery": "Une arche bouge autrement que sa voisine. Comparons-les !",
+          "share": "Partageons nos mesures pour que les autres puissent les vérifier.",
+          "chapter_cues": [
+            "J'observe les arches métalliques changeantes des laboratoires de Phasis.",
+            "Une arche bouge autrement que sa voisine. Comparons-les !",
+            "Voici un autre indice. Une arche bouge autrement que sa voisine. Comparons-les !",
+            "Partageons nos mesures pour que les autres puissent les vérifier."
+          ]
+        },
+        "de": {
+          "role": "Erforschung magnetischer Felder",
+          "work": "Ich untersuche die beweglichen Metallbögen in den Laboren von Phasis.",
+          "mystery": "Ein Bogen bewegt sich anders als sein Nachbar. Vergleichen wir sie!",
+          "share": "Teilen wir unsere Messungen, damit andere sie prüfen können.",
+          "chapter_cues": [
+            "Ich untersuche die beweglichen Metallbögen in den Laboren von Phasis.",
+            "Ein Bogen bewegt sich anders als sein Nachbar. Vergleichen wir sie!",
+            "Da ist noch ein Hinweis. Ein Bogen bewegt sich anders als sein Nachbar. Vergleichen wir sie!",
+            "Teilen wir unsere Messungen, damit andere sie prüfen können."
+          ]
+        },
+        "es": {
+          "role": "Estudio de campos magnéticos",
+          "work": "Estudio los arcos de metal que cambian en los laboratorios de Phasis.",
+          "mystery": "Un arco se mueve de otra manera. ¿Lo comparamos con otro?",
+          "share": "Compartamos las mediciones para que otros equipos puedan revisarlas.",
+          "chapter_cues": [
+            "Estudio los arcos de metal que cambian en los laboratorios de Phasis.",
+            "Un arco se mueve de otra manera. ¿Lo comparamos con otro?",
+            "Aquí hay otra pista. Un arco se mueve de otra manera. ¿Lo comparamos con otro?",
+            "Compartamos las mediciones para que otros equipos puedan revisarlas."
+          ]
+        },
+        "pt_BR": {
+          "role": "Pesquisa dos campos magnéticos",
+          "work": "Eu estudo os arcos de metal que mudam de forma nos laboratórios de Phasis.",
+          "mystery": "Um arco está se movendo de um jeito diferente. Vamos comparar!",
+          "share": "Vamos compartilhar as medidas para outras equipes conferirem.",
+          "chapter_cues": [
+            "Eu estudo os arcos de metal que mudam de forma nos laboratórios de Phasis.",
+            "Um arco está se movendo de um jeito diferente. Vamos comparar!",
+            "Aqui vai mais uma pista. Um arco está se movendo de um jeito diferente. Vamos comparar!",
+            "Vamos compartilhar as medidas para outras equipes conferirem."
+          ]
+        }
+      }
+    },
+    "m31_p05": {
+      "character_id": "npc_m31_p05",
+      "world_id": "m31_p05",
+      "name": "Neri",
+      "role": "Sinta levitation engineer",
+      "work": "I check the balance of the dark sphere floating above Sinta's city.",
+      "mystery": "Our floating sphere drifted slightly out of alignment.",
+      "share": "Let's show the city engineers what kept it steady.",
+      "gender": null,
+      "portrait_template": "14_magnetic_engineer.png",
+      "chapter_cues": [
+        "I check the balance of the dark sphere floating above Sinta's city.",
+        "Our floating sphere drifted slightly out of alignment.",
+        "Another clue at my station: Our floating sphere drifted slightly out of alignment.",
+        "Let's show the city engineers what kept it steady."
+      ],
+      "name_localized": {
+        "ru": "Нэри",
+        "en": "Neri",
+        "fr": "Neri",
+        "de": "Neri",
+        "es": "Neri",
+        "pt_BR": "Neri"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Инженер левитации",
+          "work": "Я проверяю равновесие большой тёмной сферы над городом Синта.",
+          "mystery": "Парящая сфера немного сдвинулась. Как вернуть её на место?",
+          "share": "Передадим результаты другим исследователям полей, чтобы они могли их проверить.",
+          "chapter_cues": [
+            "Я проверяю равновесие большой тёмной сферы над городом Синта.",
+            "Парящая сфера немного сдвинулась. Как вернуть её на место?",
+            "Есть ещё одна подсказка. Парящая сфера немного сдвинулась. Как вернуть её на место?",
+            "Передадим результаты другим исследователям полей, чтобы они могли их проверить."
+          ]
+        },
+        "en": {
+          "role": "Sinta levitation engineer",
+          "work": "I check the balance of the dark sphere floating above Sinta's city.",
+          "mystery": "Our floating sphere drifted slightly out of alignment.",
+          "share": "Let us send these measurements to other field researchers to double-check.",
+          "chapter_cues": [
+            "I check the balance of the dark sphere floating above Sinta's city.",
+            "Our floating sphere drifted slightly out of alignment.",
+            "Here is another clue. Our floating sphere drifted slightly out of alignment.",
+            "Let us send these measurements to other field researchers to double-check."
+          ]
+        },
+        "fr": {
+          "role": "Équilibre des sphères flottantes",
+          "work": "Je vérifie la grande sphère sombre qui flotte au-dessus de la cité de Sinta.",
+          "mystery": "La sphère a légèrement bougé. Comment retrouver l'équilibre ?",
+          "share": "Partageons nos mesures pour que les autres puissent les vérifier.",
+          "chapter_cues": [
+            "Je vérifie la grande sphère sombre qui flotte au-dessus de la cité de Sinta.",
+            "La sphère a légèrement bougé. Comment retrouver l'équilibre ?",
+            "Voici un autre indice. La sphère a légèrement bougé. Comment retrouver l'équilibre ?",
+            "Partageons nos mesures pour que les autres puissent les vérifier."
+          ]
+        },
+        "de": {
+          "role": "Gleichgewicht schwebender Kugeln",
+          "work": "Ich prüfe die große dunkle Kugel, die über der Stadt Sinta schwebt.",
+          "mystery": "Die schwebende Kugel hat sich leicht verschoben. Wie helfen wir?",
+          "share": "Teilen wir unsere Messungen, damit andere sie prüfen können.",
+          "chapter_cues": [
+            "Ich prüfe die große dunkle Kugel, die über der Stadt Sinta schwebt.",
+            "Die schwebende Kugel hat sich leicht verschoben. Wie helfen wir?",
+            "Da ist noch ein Hinweis. Die schwebende Kugel hat sich leicht verschoben. Wie helfen wir?",
+            "Teilen wir unsere Messungen, damit andere sie prüfen können."
+          ]
+        },
+        "es": {
+          "role": "Equilibrio de esferas flotantes",
+          "work": "Reviso la enorme esfera oscura que flota sobre la ciudad de Sinta.",
+          "mystery": "La esfera se movió un poco. ¿Cómo devolvemos su equilibrio?",
+          "share": "Compartamos las mediciones para que otros equipos puedan revisarlas.",
+          "chapter_cues": [
+            "Reviso la enorme esfera oscura que flota sobre la ciudad de Sinta.",
+            "La esfera se movió un poco. ¿Cómo devolvemos su equilibrio?",
+            "Aquí hay otra pista. La esfera se movió un poco. ¿Cómo devolvemos su equilibrio?",
+            "Compartamos las mediciones para que otros equipos puedan revisarlas."
+          ]
+        },
+        "pt_BR": {
+          "role": "Equilíbrio de esferas flutuantes",
+          "work": "Eu verifico a enorme esfera escura que flutua acima da cidade de Sinta.",
+          "mystery": "A esfera se mexeu um pouquinho. Como devolver o equilíbrio?",
+          "share": "Vamos compartilhar as medidas para outras equipes conferirem.",
+          "chapter_cues": [
+            "Eu verifico a enorme esfera escura que flutua acima da cidade de Sinta.",
+            "A esfera se mexeu um pouquinho. Como devolver o equilíbrio?",
+            "Aqui vai mais uma pista. A esfera se mexeu um pouquinho. Como devolver o equilíbrio?",
+            "Vamos compartilhar as medidas para outras equipes conferirem."
+          ]
+        }
+      }
+    },
+    "m31_p06": {
+      "character_id": "npc_m31_p06",
+      "world_id": "m31_p06",
+      "name": "Kori",
+      "role": "Geona science temple observer",
+      "work": "I study the dark inverted pyramid above Geona's volcanic vents.",
+      "mystery": "A tool appeared from the temple wall in a new shape.",
+      "share": "Let's share this transformation with our researchers.",
+      "gender": null,
+      "portrait_template": "15_magnetic_companion.png",
+      "chapter_cues": [
+        "I study the dark inverted pyramid above Geona's volcanic vents.",
+        "A tool appeared from the temple wall in a new shape.",
+        "Another clue at my station: A tool appeared from the temple wall in a new shape.",
+        "Let's share this transformation with our researchers."
+      ],
+      "name_localized": {
+        "ru": "Кори",
+        "en": "Kori",
+        "fr": "Kori",
+        "de": "Kori",
+        "es": "Kori",
+        "pt_BR": "Kori"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Наблюдатель храма науки",
+          "work": "Я изучаю чёрную перевёрнутую пирамиду над горячими разломами Геоны.",
+          "mystery": "Стена храма превратилась в прибор новой формы. Как он работает?",
+          "share": "Передадим результаты другим исследователям полей, чтобы они могли их проверить.",
+          "chapter_cues": [
+            "Я изучаю чёрную перевёрнутую пирамиду над горячими разломами Геоны.",
+            "Стена храма превратилась в прибор новой формы. Как он работает?",
+            "Есть ещё одна подсказка. Стена храма превратилась в прибор новой формы. Как он работает?",
+            "Передадим результаты другим исследователям полей, чтобы они могли их проверить."
+          ]
+        },
+        "en": {
+          "role": "Geona science temple observer",
+          "work": "I study the dark inverted pyramid above Geona's volcanic vents.",
+          "mystery": "A tool appeared from the temple wall in a new shape.",
+          "share": "Let us send these measurements to other field researchers to double-check.",
+          "chapter_cues": [
+            "I study the dark inverted pyramid above Geona's volcanic vents.",
+            "A tool appeared from the temple wall in a new shape.",
+            "Here is another clue. A tool appeared from the temple wall in a new shape.",
+            "Let us send these measurements to other field researchers to double-check."
+          ]
+        },
+        "fr": {
+          "role": "Observation du temple scientifique",
+          "work": "J'étudie la pyramide noire renversée au-dessus des fissures chaudes de Geona.",
+          "mystery": "Un mur du temple s'est transformé en nouvel instrument. Pourquoi ?",
+          "share": "Partageons nos mesures pour que les autres puissent les vérifier.",
+          "chapter_cues": [
+            "J'étudie la pyramide noire renversée au-dessus des fissures chaudes de Geona.",
+            "Un mur du temple s'est transformé en nouvel instrument. Pourquoi ?",
+            "Voici un autre indice. Un mur du temple s'est transformé en nouvel instrument. Pourquoi ?",
+            "Partageons nos mesures pour que les autres puissent les vérifier."
+          ]
+        },
+        "de": {
+          "role": "Erforschung des Wissenschaftstempels",
+          "work": "Ich beobachte die umgedrehte schwarze Pyramide über Geonas heißen Spalten.",
+          "mystery": "Eine Tempelwand wurde zu einem neuen Messgerät. Wie funktioniert es?",
+          "share": "Teilen wir unsere Messungen, damit andere sie prüfen können.",
+          "chapter_cues": [
+            "Ich beobachte die umgedrehte schwarze Pyramide über Geonas heißen Spalten.",
+            "Eine Tempelwand wurde zu einem neuen Messgerät. Wie funktioniert es?",
+            "Da ist noch ein Hinweis. Eine Tempelwand wurde zu einem neuen Messgerät. Wie funktioniert es?",
+            "Teilen wir unsere Messungen, damit andere sie prüfen können."
+          ]
+        },
+        "es": {
+          "role": "Observación del templo de ciencia",
+          "work": "Estudio la pirámide negra invertida sobre las grietas calientes de Geona.",
+          "mystery": "Una pared del templo se transformó en un instrumento nuevo. ¿Cómo funciona?",
+          "share": "Compartamos las mediciones para que otros equipos puedan revisarlas.",
+          "chapter_cues": [
+            "Estudio la pirámide negra invertida sobre las grietas calientes de Geona.",
+            "Una pared del templo se transformó en un instrumento nuevo. ¿Cómo funciona?",
+            "Aquí hay otra pista. Una pared del templo se transformó en un instrumento nuevo. ¿Cómo funciona?",
+            "Compartamos las mediciones para que otros equipos puedan revisarlas."
+          ]
+        },
+        "pt_BR": {
+          "role": "Observação do templo da ciência",
+          "work": "Eu estudo a pirâmide preta de cabeça para baixo acima das fendas quentes de Geona.",
+          "mystery": "Uma parede do templo virou uma ferramenta nova. Como funciona?",
+          "share": "Vamos compartilhar as medidas para outras equipes conferirem.",
+          "chapter_cues": [
+            "Eu estudo a pirâmide preta de cabeça para baixo acima das fendas quentes de Geona.",
+            "Uma parede do templo virou uma ferramenta nova. Como funciona?",
+            "Aqui vai mais uma pista. Uma parede do templo virou uma ferramenta nova. Como funciona?",
+            "Vamos compartilhar as medidas para outras equipes conferirem."
+          ]
+        }
+      }
+    },
+    "st_m31": {
+      "character_id": "npc_st_m31",
+      "world_id": "st_m31",
+      "name": "Veli",
+      "role": "Inverted Pyramid metal scholar",
+      "work": "I work with transforming metal inside the quiet science temple.",
+      "mystery": "A curved metal instrument changed into a new measuring tool.",
+      "share": "Let's preserve what the material taught us.",
+      "gender": null,
+      "portrait_template": "13_magnetic_ring.png",
+      "chapter_cues": [
+        "I work with transforming metal inside the quiet science temple.",
+        "A curved metal instrument changed into a new measuring tool.",
+        "Another clue at my station: A curved metal instrument changed into a new measuring tool.",
+        "Let's preserve what the material taught us."
+      ],
+      "name_localized": {
+        "ru": "Вэли",
+        "en": "Veli",
+        "fr": "Veli",
+        "de": "Veli",
+        "es": "Veli",
+        "pt_BR": "Veli"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Исследователь изменяющегося металла",
+          "work": "В храме-пирамиде я создаю инструменты из металла, который меняет форму.",
+          "mystery": "Изогнутый инструмент превратился в новый измеритель. Почему?",
+          "share": "Передадим результаты другим исследователям полей, чтобы они могли их проверить.",
+          "chapter_cues": [
+            "В храме-пирамиде я создаю инструменты из металла, который меняет форму.",
+            "Изогнутый инструмент превратился в новый измеритель. Почему?",
+            "Есть ещё одна подсказка. Изогнутый инструмент превратился в новый измеритель. Почему?",
+            "Передадим результаты другим исследователям полей, чтобы они могли их проверить."
+          ]
+        },
+        "en": {
+          "role": "Inverted Pyramid metal scholar",
+          "work": "I work with transforming metal inside the quiet science temple.",
+          "mystery": "A curved metal instrument changed into a new measuring tool.",
+          "share": "Let us send these measurements to other field researchers to double-check.",
+          "chapter_cues": [
+            "I work with transforming metal inside the quiet science temple.",
+            "A curved metal instrument changed into a new measuring tool.",
+            "Here is another clue. A curved metal instrument changed into a new measuring tool.",
+            "Let us send these measurements to other field researchers to double-check."
+          ]
+        },
+        "fr": {
+          "role": "Recherche sur le métal vivant",
+          "work": "Dans ce temple-pyramide, je crée des instruments avec un métal qui change de forme.",
+          "mystery": "Un instrument courbé est devenu un outil de mesure. Observons-le !",
+          "share": "Partageons nos mesures pour que les autres puissent les vérifier.",
+          "chapter_cues": [
+            "Dans ce temple-pyramide, je crée des instruments avec un métal qui change de forme.",
+            "Un instrument courbé est devenu un outil de mesure. Observons-le !",
+            "Voici un autre indice. Un instrument courbé est devenu un outil de mesure. Observons-le !",
+            "Partageons nos mesures pour que les autres puissent les vérifier."
+          ]
+        },
+        "de": {
+          "role": "Forschung an wandelbarem Metall",
+          "work": "In diesem Pyramidentempel forme ich Werkzeuge aus wandelbarem Metall.",
+          "mystery": "Ein gebogenes Werkzeug wurde zu einem Messgerät. Warum wohl?",
+          "share": "Teilen wir unsere Messungen, damit andere sie prüfen können.",
+          "chapter_cues": [
+            "In diesem Pyramidentempel forme ich Werkzeuge aus wandelbarem Metall.",
+            "Ein gebogenes Werkzeug wurde zu einem Messgerät. Warum wohl?",
+            "Da ist noch ein Hinweis. Ein gebogenes Werkzeug wurde zu einem Messgerät. Warum wohl?",
+            "Teilen wir unsere Messungen, damit andere sie prüfen können."
+          ]
+        },
+        "es": {
+          "role": "Investigación del metal cambiante",
+          "work": "En este templo, creo instrumentos de metal que cambia de forma.",
+          "mystery": "Un instrumento curvo se convirtió en medidor. ¡Qué curioso!",
+          "share": "Compartamos las mediciones para que otros equipos puedan revisarlas.",
+          "chapter_cues": [
+            "En este templo, creo instrumentos de metal que cambia de forma.",
+            "Un instrumento curvo se convirtió en medidor. ¡Qué curioso!",
+            "Aquí hay otra pista. Un instrumento curvo se convirtió en medidor. ¡Qué curioso!",
+            "Compartamos las mediciones para que otros equipos puedan revisarlas."
+          ]
+        },
+        "pt_BR": {
+          "role": "Pesquisa do metal que muda de forma",
+          "work": "Neste templo, eu crio ferramentas com um metal que muda de forma.",
+          "mystery": "Uma ferramenta curva virou um medidor. Por que será?",
+          "share": "Vamos compartilhar as medidas para outras equipes conferirem.",
+          "chapter_cues": [
+            "Neste templo, eu crio ferramentas com um metal que muda de forma.",
+            "Uma ferramenta curva virou um medidor. Por que será?",
+            "Aqui vai mais uma pista. Uma ferramenta curva virou um medidor. Por que será?",
+            "Vamos compartilhar as medidas para outras equipes conferirem."
+          ]
+        }
+      }
+    },
+    "m33_p01": {
+      "character_id": "npc_m33_p01",
+      "world_id": "m33_p01",
+      "name": "Enu",
+      "role": "Svetara memory curator",
+      "work": "I study remembered patterns in Svetara's mirrored floating station.",
+      "mystery": "Two remembered star patterns began to look alike.",
+      "share": "Let's store their differences for future learners.",
+      "gender": null,
+      "portrait_template": "16_neural_historian.png",
+      "chapter_cues": [
+        "I study remembered patterns in Svetara's mirrored floating station.",
+        "Two remembered star patterns began to look alike.",
+        "Another clue at my station: Two remembered star patterns began to look alike.",
+        "Let's store their differences for future learners."
+      ],
+      "name_localized": {
+        "ru": "Эну",
+        "en": "Enu",
+        "fr": "Enu",
+        "de": "Enu",
+        "es": "Enu",
+        "pt_BR": "Enu"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Хранитель памяти Светары",
+          "work": "Я собираю и сравниваю воспоминания на парящей зеркальной станции Светары.",
+          "mystery": "Два звёздных узора кажутся почти одинаковыми. Найдём отличие?",
+          "share": "Запомним этот узор и расскажем о нём другим. Так знания растут.",
+          "chapter_cues": [
+            "Я собираю и сравниваю воспоминания на парящей зеркальной станции Светары.",
+            "Два звёздных узора кажутся почти одинаковыми. Найдём отличие?",
+            "Есть ещё одна подсказка. Два звёздных узора кажутся почти одинаковыми. Найдём отличие?",
+            "Запомним этот узор и расскажем о нём другим. Так знания растут."
+          ]
+        },
+        "en": {
+          "role": "Svetara memory curator",
+          "work": "I study remembered patterns in Svetara's mirrored floating station.",
+          "mystery": "Two remembered star patterns began to look alike.",
+          "share": "Let us remember this pattern and share it. That is how knowledge grows.",
+          "chapter_cues": [
+            "I study remembered patterns in Svetara's mirrored floating station.",
+            "Two remembered star patterns began to look alike.",
+            "Here is another clue. Two remembered star patterns began to look alike.",
+            "Let us remember this pattern and share it. That is how knowledge grows."
+          ]
+        },
+        "fr": {
+          "role": "Conservation des souvenirs de Svetara",
+          "work": "Je compare les souvenirs dans la station miroir flottante de Svetara.",
+          "mystery": "Deux dessins d'étoiles se ressemblent beaucoup. Trouvons une différence !",
+          "share": "Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage.",
+          "chapter_cues": [
+            "Je compare les souvenirs dans la station miroir flottante de Svetara.",
+            "Deux dessins d'étoiles se ressemblent beaucoup. Trouvons une différence !",
+            "Voici un autre indice. Deux dessins d'étoiles se ressemblent beaucoup. Trouvons une différence !",
+            "Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage."
+          ]
+        },
+        "de": {
+          "role": "Bewahrung von Svetaras Erinnerungen",
+          "work": "Ich vergleiche Erinnerungen auf der schwebenden Spiegelstation von Svetara.",
+          "mystery": "Zwei Sternmuster sehen fast gleich aus. Finden wir den Unterschied!",
+          "share": "Merken wir uns das Muster und erzählen davon. So wächst unser Wissen.",
+          "chapter_cues": [
+            "Ich vergleiche Erinnerungen auf der schwebenden Spiegelstation von Svetara.",
+            "Zwei Sternmuster sehen fast gleich aus. Finden wir den Unterschied!",
+            "Da ist noch ein Hinweis. Zwei Sternmuster sehen fast gleich aus. Finden wir den Unterschied!",
+            "Merken wir uns das Muster und erzählen davon. So wächst unser Wissen."
+          ]
+        },
+        "es": {
+          "role": "Cuidado de la memoria de Svetara",
+          "work": "Comparo recuerdos en la estación espejo que flota sobre Svetara.",
+          "mystery": "Dos dibujos de estrellas parecen iguales. ¡Busquemos una diferencia!",
+          "share": "Recordemos este patrón y compartámoslo. Así crece el conocimiento.",
+          "chapter_cues": [
+            "Comparo recuerdos en la estación espejo que flota sobre Svetara.",
+            "Dos dibujos de estrellas parecen iguales. ¡Busquemos una diferencia!",
+            "Aquí hay otra pista. Dos dibujos de estrellas parecen iguales. ¡Busquemos una diferencia!",
+            "Recordemos este patrón y compartámoslo. Así crece el conocimiento."
+          ]
+        },
+        "pt_BR": {
+          "role": "Cuidado das memórias de Svetara",
+          "work": "Eu comparo lembranças na estação espelhada que flutua sobre Svetara.",
+          "mystery": "Dois desenhos de estrelas parecem iguais. Vamos achar a diferença!",
+          "share": "Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce.",
+          "chapter_cues": [
+            "Eu comparo lembranças na estação espelhada que flutua sobre Svetara.",
+            "Dois desenhos de estrelas parecem iguais. Vamos achar a diferença!",
+            "Aqui vai mais uma pista. Dois desenhos de estrelas parecem iguais. Vamos achar a diferença!",
+            "Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce."
+          ]
+        }
+      }
+    },
+    "m33_p02": {
+      "character_id": "npc_m33_p02",
+      "world_id": "m33_p02",
+      "name": "Navi",
+      "role": "Orbita sky observation mentor",
+      "work": "I teach young explorers to compare shapes at Orbita's observatory.",
+      "mystery": "The lake reflected two different bright rings.",
+      "share": "Let's share our observation with the next class.",
+      "gender": null,
+      "portrait_template": "17_neural_researcher.png",
+      "chapter_cues": [
+        "I teach young explorers to compare shapes at Orbita's observatory.",
+        "The lake reflected two different bright rings.",
+        "Another clue at my station: The lake reflected two different bright rings.",
+        "Let's share our observation with the next class."
+      ],
+      "name_localized": {
+        "ru": "Нави",
+        "en": "Navi",
+        "fr": "Navi",
+        "de": "Navi",
+        "es": "Navi",
+        "pt_BR": "Navi"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Наставник небесных наблюдений",
+          "work": "Я помогаю юным исследователям смотреть на небо в обсерватории Орбиты.",
+          "mystery": "В озере отразились два светящихся кольца. Чем они отличаются?",
+          "share": "Запомним этот узор и расскажем о нём другим. Так знания растут.",
+          "chapter_cues": [
+            "Я помогаю юным исследователям смотреть на небо в обсерватории Орбиты.",
+            "В озере отразились два светящихся кольца. Чем они отличаются?",
+            "Есть ещё одна подсказка. В озере отразились два светящихся кольца. Чем они отличаются?",
+            "Запомним этот узор и расскажем о нём другим. Так знания растут."
+          ]
+        },
+        "en": {
+          "role": "Orbita sky observation mentor",
+          "work": "I teach young explorers to compare shapes at Orbita's observatory.",
+          "mystery": "The lake reflected two different bright rings.",
+          "share": "Let us remember this pattern and share it. That is how knowledge grows.",
+          "chapter_cues": [
+            "I teach young explorers to compare shapes at Orbita's observatory.",
+            "The lake reflected two different bright rings.",
+            "Here is another clue. The lake reflected two different bright rings.",
+            "Let us remember this pattern and share it. That is how knowledge grows."
+          ]
+        },
+        "fr": {
+          "role": "Accompagnement des observations du ciel",
+          "work": "J'aide les jeunes à observer le ciel depuis l'observatoire d'Orbita.",
+          "mystery": "Deux anneaux lumineux se reflètent dans le lac. Sont-ils identiques ?",
+          "share": "Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage.",
+          "chapter_cues": [
+            "J'aide les jeunes à observer le ciel depuis l'observatoire d'Orbita.",
+            "Deux anneaux lumineux se reflètent dans le lac. Sont-ils identiques ?",
+            "Voici un autre indice. Deux anneaux lumineux se reflètent dans le lac. Sont-ils identiques ?",
+            "Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage."
+          ]
+        },
+        "de": {
+          "role": "Lernen am Sternenhimmel",
+          "work": "Im Observatorium von Orbita helfe ich jungen Wesen, den Himmel zu beobachten.",
+          "mystery": "Zwei leuchtende Ringe spiegeln sich im See. Sind sie gleich?",
+          "share": "Merken wir uns das Muster und erzählen davon. So wächst unser Wissen.",
+          "chapter_cues": [
+            "Im Observatorium von Orbita helfe ich jungen Wesen, den Himmel zu beobachten.",
+            "Zwei leuchtende Ringe spiegeln sich im See. Sind sie gleich?",
+            "Da ist noch ein Hinweis. Zwei leuchtende Ringe spiegeln sich im See. Sind sie gleich?",
+            "Merken wir uns das Muster und erzählen davon. So wächst unser Wissen."
+          ]
+        },
+        "es": {
+          "role": "Guía para observar el cielo",
+          "work": "Ayudo a los pequeños a mirar el cielo desde el observatorio de Orbita.",
+          "mystery": "Dos anillos luminosos se reflejan en el lago. ¿Son iguales?",
+          "share": "Recordemos este patrón y compartámoslo. Así crece el conocimiento.",
+          "chapter_cues": [
+            "Ayudo a los pequeños a mirar el cielo desde el observatorio de Orbita.",
+            "Dos anillos luminosos se reflejan en el lago. ¿Son iguales?",
+            "Aquí hay otra pista. Dos anillos luminosos se reflejan en el lago. ¿Son iguales?",
+            "Recordemos este patrón y compartámoslo. Así crece el conocimiento."
+          ]
+        },
+        "pt_BR": {
+          "role": "Guia para observar o céu",
+          "work": "Eu ajudo crianças a observar o céu no observatório de Orbita.",
+          "mystery": "Dois anéis brilhantes aparecem refletidos no lago. São iguais?",
+          "share": "Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce.",
+          "chapter_cues": [
+            "Eu ajudo crianças a observar o céu no observatório de Orbita.",
+            "Dois anéis brilhantes aparecem refletidos no lago. São iguais?",
+            "Aqui vai mais uma pista. Dois anéis brilhantes aparecem refletidos no lago. São iguais?",
+            "Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce."
+          ]
+        }
+      }
+    },
+    "m33_p03": {
+      "character_id": "npc_m33_p03",
+      "world_id": "m33_p03",
+      "name": "Eli",
+      "role": "Tessera pattern researcher",
+      "work": "I study number and shape patterns at Tessera's floating math complex.",
+      "mystery": "One glowing shape did not follow the usual sequence.",
+      "share": "Let's leave a clear clue for the next visitor.",
+      "gender": null,
+      "portrait_template": "18_neural_guide.png",
+      "chapter_cues": [
+        "I study number and shape patterns at Tessera's floating math complex.",
+        "One glowing shape did not follow the usual sequence.",
+        "Another clue at my station: One glowing shape did not follow the usual sequence.",
+        "Let's leave a clear clue for the next visitor."
+      ],
+      "name_localized": {
+        "ru": "Эли",
+        "en": "Eli",
+        "fr": "Eli",
+        "de": "Eli",
+        "es": "Eli",
+        "pt_BR": "Eli"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Исследователь закономерностей",
+          "work": "В математическом комплексе Тессеры я ищу закономерности среди фигур.",
+          "mystery": "Одна фигура не подходит к светящемуся ряду. Какая?",
+          "share": "Запомним этот узор и расскажем о нём другим. Так знания растут.",
+          "chapter_cues": [
+            "В математическом комплексе Тессеры я ищу закономерности среди фигур.",
+            "Одна фигура не подходит к светящемуся ряду. Какая?",
+            "Есть ещё одна подсказка. Одна фигура не подходит к светящемуся ряду. Какая?",
+            "Запомним этот узор и расскажем о нём другим. Так знания растут."
+          ]
+        },
+        "en": {
+          "role": "Tessera pattern researcher",
+          "work": "I study number and shape patterns at Tessera's floating math complex.",
+          "mystery": "One glowing shape did not follow the usual sequence.",
+          "share": "Let us remember this pattern and share it. That is how knowledge grows.",
+          "chapter_cues": [
+            "I study number and shape patterns at Tessera's floating math complex.",
+            "One glowing shape did not follow the usual sequence.",
+            "Here is another clue. One glowing shape did not follow the usual sequence.",
+            "Let us remember this pattern and share it. That is how knowledge grows."
+          ]
+        },
+        "fr": {
+          "role": "Recherche des suites de formes",
+          "work": "Dans le complexe mathématique de Tessera, je cherche l'ordre des formes.",
+          "mystery": "Une forme ne suit pas la suite lumineuse. Laquelle ?",
+          "share": "Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage.",
+          "chapter_cues": [
+            "Dans le complexe mathématique de Tessera, je cherche l'ordre des formes.",
+            "Une forme ne suit pas la suite lumineuse. Laquelle ?",
+            "Voici un autre indice. Une forme ne suit pas la suite lumineuse. Laquelle ?",
+            "Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage."
+          ]
+        },
+        "de": {
+          "role": "Erforschung von Zahlenmustern",
+          "work": "Im Mathekomplex von Tessera suche ich Muster aus Formen und Zahlen.",
+          "mystery": "Eine Form passt nicht in die leuchtende Reihe. Welche?",
+          "share": "Merken wir uns das Muster und erzählen davon. So wächst unser Wissen.",
+          "chapter_cues": [
+            "Im Mathekomplex von Tessera suche ich Muster aus Formen und Zahlen.",
+            "Eine Form passt nicht in die leuchtende Reihe. Welche?",
+            "Da ist noch ein Hinweis. Eine Form passt nicht in die leuchtende Reihe. Welche?",
+            "Merken wir uns das Muster und erzählen davon. So wächst unser Wissen."
+          ]
+        },
+        "es": {
+          "role": "Estudio de patrones de figuras",
+          "work": "En el centro matemático de Tessera, busco patrones de formas y números.",
+          "mystery": "Una figura no sigue la secuencia brillante. ¿Cuál será?",
+          "share": "Recordemos este patrón y compartámoslo. Así crece el conocimiento.",
+          "chapter_cues": [
+            "En el centro matemático de Tessera, busco patrones de formas y números.",
+            "Una figura no sigue la secuencia brillante. ¿Cuál será?",
+            "Aquí hay otra pista. Una figura no sigue la secuencia brillante. ¿Cuál será?",
+            "Recordemos este patrón y compartámoslo. Así crece el conocimiento."
+          ]
+        },
+        "pt_BR": {
+          "role": "Pesquisa de padrões e formas",
+          "work": "No complexo matemático de Tessera, procuro padrões de formas e números.",
+          "mystery": "Uma forma não combina com a sequência de luz. Qual será?",
+          "share": "Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce.",
+          "chapter_cues": [
+            "No complexo matemático de Tessera, procuro padrões de formas e números.",
+            "Uma forma não combina com a sequência de luz. Qual será?",
+            "Aqui vai mais uma pista. Uma forma não combina com a sequência de luz. Qual será?",
+            "Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce."
+          ]
+        }
+      }
+    },
+    "m33_p04": {
+      "character_id": "npc_m33_p04",
+      "world_id": "m33_p04",
+      "name": "Lumi",
+      "role": "Lentis telescope observer",
+      "work": "I look toward distant space through Lentis's enormous telescope.",
+      "mystery": "Our telescope received a small flicker from a distant object.",
+      "share": "Let's send the observation to another astronomy station.",
+      "gender": null,
+      "portrait_template": "16_neural_historian.png",
+      "chapter_cues": [
+        "I look toward distant space through Lentis's enormous telescope.",
+        "Our telescope received a small flicker from a distant object.",
+        "Another clue at my station: Our telescope received a small flicker from a distant object.",
+        "Let's send the observation to another astronomy station."
+      ],
+      "name_localized": {
+        "ru": "Луми",
+        "en": "Lumi",
+        "fr": "Lumi",
+        "de": "Lumi",
+        "es": "Lumi",
+        "pt_BR": "Lumi"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Наблюдатель дальнего космоса",
+          "work": "Я изучаю далёкие объекты через большой телескоп Лентиса.",
+          "mystery": "Телескоп уловил слабый свет далёкого объекта. Проверим наблюдение?",
+          "share": "Запомним этот узор и расскажем о нём другим. Так знания растут.",
+          "chapter_cues": [
+            "Я изучаю далёкие объекты через большой телескоп Лентиса.",
+            "Телескоп уловил слабый свет далёкого объекта. Проверим наблюдение?",
+            "Есть ещё одна подсказка. Телескоп уловил слабый свет далёкого объекта. Проверим наблюдение?",
+            "Запомним этот узор и расскажем о нём другим. Так знания растут."
+          ]
+        },
+        "en": {
+          "role": "Lentis telescope observer",
+          "work": "I look toward distant space through Lentis's enormous telescope.",
+          "mystery": "Our telescope received a small flicker from a distant object.",
+          "share": "Let us remember this pattern and share it. That is how knowledge grows.",
+          "chapter_cues": [
+            "I look toward distant space through Lentis's enormous telescope.",
+            "Our telescope received a small flicker from a distant object.",
+            "Here is another clue. Our telescope received a small flicker from a distant object.",
+            "Let us remember this pattern and share it. That is how knowledge grows."
+          ]
+        },
+        "fr": {
+          "role": "Observation de l'espace lointain",
+          "work": "J'explore l'espace avec le grand télescope de Lentis.",
+          "mystery": "Le télescope a reçu une faible lumière lointaine. Vérifions-la !",
+          "share": "Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage.",
+          "chapter_cues": [
+            "J'explore l'espace avec le grand télescope de Lentis.",
+            "Le télescope a reçu une faible lumière lointaine. Vérifions-la !",
+            "Voici un autre indice. Le télescope a reçu une faible lumière lointaine. Vérifions-la !",
+            "Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage."
+          ]
+        },
+        "de": {
+          "role": "Beobachtung des fernen Weltraums",
+          "work": "Mit dem großen Teleskop von Lentis erforsche ich den fernen Weltraum.",
+          "mystery": "Das Teleskop hat ein schwaches Licht entdeckt. Prüfen wir es!",
+          "share": "Merken wir uns das Muster und erzählen davon. So wächst unser Wissen.",
+          "chapter_cues": [
+            "Mit dem großen Teleskop von Lentis erforsche ich den fernen Weltraum.",
+            "Das Teleskop hat ein schwaches Licht entdeckt. Prüfen wir es!",
+            "Da ist noch ein Hinweis. Das Teleskop hat ein schwaches Licht entdeckt. Prüfen wir es!",
+            "Merken wir uns das Muster und erzählen davon. So wächst unser Wissen."
+          ]
+        },
+        "es": {
+          "role": "Observación del espacio lejano",
+          "work": "Con el gran telescopio de Lentis observo objetos muy lejanos.",
+          "mystery": "El telescopio vio una lucecita lejana. ¿La comprobamos?",
+          "share": "Recordemos este patrón y compartámoslo. Así crece el conocimiento.",
+          "chapter_cues": [
+            "Con el gran telescopio de Lentis observo objetos muy lejanos.",
+            "El telescopio vio una lucecita lejana. ¿La comprobamos?",
+            "Aquí hay otra pista. El telescopio vio una lucecita lejana. ¿La comprobamos?",
+            "Recordemos este patrón y compartámoslo. Así crece el conocimiento."
+          ]
+        },
+        "pt_BR": {
+          "role": "Observação do espaço distante",
+          "work": "Eu observo objetos bem distantes com o grande telescópio de Lentis.",
+          "mystery": "O telescópio viu uma luzinha distante. Vamos conferir?",
+          "share": "Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce.",
+          "chapter_cues": [
+            "Eu observo objetos bem distantes com o grande telescópio de Lentis.",
+            "O telescópio viu uma luzinha distante. Vamos conferir?",
+            "Aqui vai mais uma pista. O telescópio viu uma luzinha distante. Vamos conferir?",
+            "Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce."
+          ]
+        }
+      }
+    },
+    "st_m33": {
+      "character_id": "npc_st_m33",
+      "world_id": "st_m33",
+      "name": "Eon",
+      "role": "Final Gates portal guardian",
+      "work": "I watch the different portal shapes on the path to the Crossroads.",
+      "mystery": "One gateway's light changed its familiar pattern.",
+      "share": "Let's help travelers recognize the correct route.",
+      "gender": null,
+      "portrait_template": "17_neural_researcher.png",
+      "chapter_cues": [
+        "I watch the different portal shapes on the path to the Crossroads.",
+        "One gateway's light changed its familiar pattern.",
+        "Another clue at my station: One gateway's light changed its familiar pattern.",
+        "Let's help travelers recognize the correct route."
+      ],
+      "name_localized": {
+        "ru": "Эон",
+        "en": "Eon",
+        "fr": "Eon",
+        "de": "Eon",
+        "es": "Eon",
+        "pt_BR": "Eon"
+      },
+      "i18n": {
+        "ru": {
+          "role": "Хранитель Последних врат",
+          "work": "Я слежу за порталами разных форм на пути к Перекрёстку миров.",
+          "mystery": "У одного портала изменился световой узор. Куда ведёт этот путь?",
+          "share": "Запомним этот узор и расскажем о нём другим. Так знания растут.",
+          "chapter_cues": [
+            "Я слежу за порталами разных форм на пути к Перекрёстку миров.",
+            "У одного портала изменился световой узор. Куда ведёт этот путь?",
+            "Есть ещё одна подсказка. У одного портала изменился световой узор. Куда ведёт этот путь?",
+            "Запомним этот узор и расскажем о нём другим. Так знания растут."
+          ]
+        },
+        "en": {
+          "role": "Final Gates portal guardian",
+          "work": "I watch the different portal shapes on the path to the Crossroads.",
+          "mystery": "One gateway's light changed its familiar pattern.",
+          "share": "Let us remember this pattern and share it. That is how knowledge grows.",
+          "chapter_cues": [
+            "I watch the different portal shapes on the path to the Crossroads.",
+            "One gateway's light changed its familiar pattern.",
+            "Here is another clue. One gateway's light changed its familiar pattern.",
+            "Let us remember this pattern and share it. That is how knowledge grows."
+          ]
+        },
+        "fr": {
+          "role": "Protection des Dernières Portes",
+          "work": "Je veille sur les portails de différentes formes menant au Carrefour des mondes.",
+          "mystery": "La lumière d'un portail a changé. Quel chemin indique-t-elle ?",
+          "share": "Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage.",
+          "chapter_cues": [
+            "Je veille sur les portails de différentes formes menant au Carrefour des mondes.",
+            "La lumière d'un portail a changé. Quel chemin indique-t-elle ?",
+            "Voici un autre indice. La lumière d'un portail a changé. Quel chemin indique-t-elle ?",
+            "Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage."
+          ]
+        },
+        "de": {
+          "role": "Wache an den Letzten Toren",
+          "work": "Ich beobachte die verschieden geformten Portale zum Kreuzweg der Welten.",
+          "mystery": "Ein Portal zeigt ein anderes Lichtmuster. Welcher Weg ist das?",
+          "share": "Merken wir uns das Muster und erzählen davon. So wächst unser Wissen.",
+          "chapter_cues": [
+            "Ich beobachte die verschieden geformten Portale zum Kreuzweg der Welten.",
+            "Ein Portal zeigt ein anderes Lichtmuster. Welcher Weg ist das?",
+            "Da ist noch ein Hinweis. Ein Portal zeigt ein anderes Lichtmuster. Welcher Weg ist das?",
+            "Merken wir uns das Muster und erzählen davon. So wächst unser Wissen."
+          ]
+        },
+        "es": {
+          "role": "Cuidado de las Últimas Puertas",
+          "work": "Vigilo los portales de distintas formas hacia el Cruce de los Mundos.",
+          "mystery": "La luz de un portal cambió su dibujo. ¿Qué camino indica?",
+          "share": "Recordemos este patrón y compartámoslo. Así crece el conocimiento.",
+          "chapter_cues": [
+            "Vigilo los portales de distintas formas hacia el Cruce de los Mundos.",
+            "La luz de un portal cambió su dibujo. ¿Qué camino indica?",
+            "Aquí hay otra pista. La luz de un portal cambió su dibujo. ¿Qué camino indica?",
+            "Recordemos este patrón y compartámoslo. Así crece el conocimiento."
+          ]
+        },
+        "pt_BR": {
+          "role": "Cuidado dos Últimos Portais",
+          "work": "Eu observo portais de várias formas no caminho para o Encontro dos Mundos.",
+          "mystery": "Um portal mudou seu desenho de luz. Para onde será que leva?",
+          "share": "Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce.",
+          "chapter_cues": [
+            "Eu observo portais de várias formas no caminho para o Encontro dos Mundos.",
+            "Um portal mudou seu desenho de luz. Para onde será que leva?",
+            "Aqui vai mais uma pista. Um portal mudou seu desenho de luz. Para onde será que leva?",
+            "Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce."
+          ]
+        }
+      }
+    }
+  }
+}

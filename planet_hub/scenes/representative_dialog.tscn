@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://planet_hub/scripts/representative_dialog.gd" id="1_dialog"]
+[ext_resource type="Script" path="res://planet_hub/scripts/dialog_character.gd" id="2_character"]
+[ext_resource type="Script" path="res://planet_hub/scripts/dialog_hint.gd" id="3_hint"]
+[ext_resource type="Script" path="res://planet_hub/scripts/translator_tablet.gd" id="4_tablet"]
+
+[node name="RepresentativeDialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dialog")
+
+[node name="RepresentativeCharacter" type="Control" parent="."]
+layout_mode = 0
+mouse_filter = 2
+script = ExtResource("2_character")
+
+[node name="PhraseHint" type="Control" parent="."]
+layout_mode = 0
+mouse_filter = 2
+script = ExtResource("3_hint")
+
+[node name="TranslatorTablet" type="Control" parent="."]
+layout_mode = 0
+script = ExtResource("4_tablet")

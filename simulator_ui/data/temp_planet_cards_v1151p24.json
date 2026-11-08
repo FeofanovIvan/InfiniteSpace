@@ -1,0 +1,400 @@
+{
+  "version": "v115.1+24",
+  "temporary": true,
+  "total": 24,
+  "entries": [
+    {
+      "id": "mw__puzzles",
+      "system": "mw",
+      "origin": "playtown",
+      "title": {
+        "ru": "Пазлы",
+        "en": "Puzzles",
+        "fr": "Puzzles",
+        "de": "Puzzles",
+        "es": "Rompecabezas",
+        "pt_BR": "Quebra-cabeças"
+      },
+      "scene_candidates": [
+        "res://education/playtown/scenes/features/puzzle/puzzle_game.tscn"
+      ]
+    },
+    {
+      "id": "mw__animal_habitat",
+      "system": "mw",
+      "origin": "playtown",
+      "title": {
+        "ru": "Среда обитания",
+        "en": "Animal Habitat",
+        "fr": "Habitat des animaux",
+        "de": "Lebensräume der Tiere",
+        "es": "Hábitats animales",
+        "pt_BR": "Habitat dos animais"
+      },
+      "scene_candidates": [
+        "res://education/playtown/scenes/features/animal_habitat/animal_habitat_game.tscn"
+      ]
+    },
+    {
+      "id": "mw__shopping_list",
+      "system": "mw",
+      "origin": "playtown",
+      "title": {
+        "ru": "Список покупок",
+        "en": "Shopping List",
+        "fr": "Liste de courses",
+        "de": "Einkaufsliste",
+        "es": "Lista de compras",
+        "pt_BR": "Lista de compras"
+      },
+      "scene_candidates": [
+        "res://education/playtown/scenes/features/grocery/grocery_game.tscn"
+      ]
+    },
+    {
+      "id": "mw__product_count",
+      "system": "mw",
+      "origin": "playtown",
+      "title": {
+        "ru": "Посчитай предметы",
+        "en": "Product Count",
+        "fr": "Compte les objets",
+        "de": "Gegenstände zählen",
+        "es": "Cuenta los objetos",
+        "pt_BR": "Contar objetos"
+      },
+      "scene_candidates": [
+        "res://education/playtown/scenes/features/product_count/product_count_game.tscn"
+      ]
+    },
+    {
+      "id": "lmc__fungal_paths",
+      "system": "lmc",
+      "origin": "playtown",
+      "title": {
+        "ru": "Грибные пути",
+        "en": "Fungal Paths",
+        "fr": "Chemins du mycélium",
+        "de": "Pilzwege",
+        "es": "Caminos de hongos",
+        "pt_BR": "Caminhos de fungos"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/fungal_paths/FungalPathsArtwork.tscn"
+      ]
+    },
+    {
+      "id": "lmc__sunbeam_catcher",
+      "system": "lmc",
+      "origin": "prototype",
+      "title": {
+        "ru": "Поймай солнечный луч",
+        "en": "Catch a Sunbeam",
+        "fr": "Attrape un rayon de soleil",
+        "de": "Fang den Sonnenstrahl",
+        "es": "Atrapa un rayo de sol",
+        "pt_BR": "Pegue um raio de sol"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/catch_sunbeam/CatchSunbeamArtV54.tscn"
+      ]
+    },
+    {
+      "id": "lmc__eco_sort",
+      "system": "lmc",
+      "origin": "prototype",
+      "title": {
+        "ru": "Эко-сортировка",
+        "en": "Eco Sorting",
+        "fr": "Tri écologique",
+        "de": "Öko-Sortieren",
+        "es": "Clasificación ecológica",
+        "pt_BR": "Separação ecológica"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/eco_sorting/MikaEcoSortingV5.tscn"
+      ]
+    },
+    {
+      "id": "lmc__fungal_race",
+      "system": "lmc",
+      "origin": "prototype",
+      "title": {
+        "ru": "Расти, деревце!",
+        "en": "Grow, Little Tree!",
+        "fr": "Pousse, petit arbre !",
+        "de": "Wachs, kleiner Baum!",
+        "es": "¡Crece, Arbolito!",
+        "pt_BR": "Cresça, Arvorezinha!"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/mycelium_race/grow_tree/GrowLittleTree.tscn"
+      ],
+      "description": {
+        "ru": "Посади семечко и помоги дереву вырасти.",
+        "en": "Plant a seed and help your tree grow.",
+        "pt_BR": "Plante uma semente e ajude sua árvore a crescer.",
+        "pt": "Plante uma semente e ajude sua árvore a crescer.",
+        "es": "Planta una semilla y ayuda al árbol a crecer.",
+        "de": "Pflanze einen Samen und hilf deinem Baum zu wachsen.",
+        "fr": "Plante une graine et aide ton arbre à grandir."
+      }
+    },
+    {
+      "id": "smc__build_molecule",
+      "system": "smc",
+      "origin": "prototype",
+      "title": {
+        "ru": "Собери молекулу",
+        "en": "Build a Molecule",
+        "fr": "Construis une molécule",
+        "de": "Baue ein Molekül",
+        "es": "Construye una molécula",
+        "pt_BR": "Monte uma molécula"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/molecule_builder/MoleculeBuilder.tscn"
+      ]
+    },
+    {
+      "id": "smc__solutions_lab",
+      "system": "smc",
+      "origin": "playtown",
+      "title": {
+        "ru": "Лаборатория растворов",
+        "en": "Solutions Lab",
+        "fr": "Laboratoire des solutions",
+        "de": "Lösungslabor",
+        "es": "Laboratorio de soluciones",
+        "pt_BR": "Laboratório de soluções"
+      },
+      "scene_candidates": [
+        "res://education/playtown/scenes/features/color_mix/color_mix_game.tscn"
+      ]
+    },
+    {
+      "id": "smc__resource_rush",
+      "system": "smc",
+      "origin": "playtown",
+      "title": {
+        "ru": "Сбор ресурсов на скорость",
+        "en": "Resource Rush",
+        "fr": "Course aux ressources",
+        "de": "Ressourcenjagd",
+        "es": "Carrera de recursos",
+        "pt_BR": "Corrida dos recursos"
+      },
+      "scene_candidates": [
+        "res://education/playtown/scenes/features/ice_cream/ice_cream_game.tscn"
+      ]
+    },
+    {
+      "id": "smc__icy_planet",
+      "system": "smc",
+      "origin": "prototype",
+      "title": {
+        "ru": "Ледяная планета",
+        "en": "Icy Planet",
+        "fr": "Planète glacée",
+        "de": "Eisplanet",
+        "es": "Planeta helado",
+        "pt_BR": "Planeta gelado"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/ice_planet/IcePlanet.tscn"
+      ]
+    },
+    {
+      "id": "ngc6822__fossil_search",
+      "system": "ngc6822",
+      "origin": "playtown",
+      "title": {
+        "ru": "Поиск древних останков",
+        "en": "Fossil Hunt",
+        "fr": "Chasse aux fossiles",
+        "de": "Fossiliensuche",
+        "es": "Busca fósiles",
+        "pt_BR": "Caça aos fósseis"
+      },
+      "scene_candidates": [
+        "res://education/playtown/scenes/features/house_search/house_search_game.tscn"
+      ]
+    },
+    {
+      "id": "ngc6822__evolution_order",
+      "system": "ngc6822",
+      "origin": "prototype",
+      "title": {
+        "ru": "Эволюция: кто за кем?",
+        "en": "Evolution: Who Comes Next?",
+        "fr": "Évolution : qui vient après ?",
+        "de": "Evolution: Wer kommt danach?",
+        "es": "Evolución: ¿quién sigue?",
+        "pt_BR": "Evolução: quem vem depois?"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/evolution_timeline/EvolutionGame.tscn"
+      ]
+    },
+    {
+      "id": "ngc6822__dinosaur_eggs",
+      "system": "ngc6822",
+      "origin": "prototype",
+      "title": {
+        "ru": "Динозавровые яйца",
+        "en": "Dinosaur Eggs",
+        "fr": "Œufs de dinosaures",
+        "de": "Dinosauriereier",
+        "es": "Huevos de dinosaurio",
+        "pt_BR": "Ovos de dinossauro"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/dinosaur_eggs/DinosaurEggs.tscn"
+      ]
+    },
+    {
+      "id": "ngc6822__pizza_fraction",
+      "system": "ngc6822",
+      "origin": "playtown",
+      "title": {
+        "ru": "Пицца и дроби",
+        "en": "Pizza Fractions",
+        "fr": "Fractions de pizza",
+        "de": "Pizza-Brüche",
+        "es": "Fracciones de pizza",
+        "pt_BR": "Frações de pizza"
+      },
+      "scene_candidates": [
+        "res://education/playtown/scenes/features/pizza_fraction/pizza_fraction_game.tscn"
+      ]
+    },
+    {
+      "id": "m31__roll_ball",
+      "system": "m31",
+      "origin": "playtown",
+      "title": {
+        "ru": "Закати шарик",
+        "en": "Roll the Ball",
+        "fr": "Fais rouler la bille",
+        "de": "Rolle den Ball",
+        "es": "Haz rodar la bola",
+        "pt_BR": "Role a bola"
+      },
+      "scene_candidates": [
+        "res://education/playtown/scenes/features/tilt_maze/tilt_maze_game.tscn"
+      ]
+    },
+    {
+      "id": "m31__magnetic_collector",
+      "system": "m31",
+      "origin": "prototype",
+      "title": {
+        "ru": "Магнитный сборщик",
+        "en": "Magnetic Collector",
+        "fr": "Collecteur magnétique",
+        "de": "Magnetischer Sammler",
+        "es": "Recolector magnético",
+        "pt_BR": "Coletor magnético"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/magnetic_collector/MagneticCollector.tscn"
+      ]
+    },
+    {
+      "id": "m31__gravity_pinball",
+      "system": "m31",
+      "origin": "prototype",
+      "title": {
+        "ru": "Гравитационный пинбол",
+        "en": "Gravity Pinball",
+        "fr": "Flipper gravitationnel",
+        "de": "Gravitations-Flipper",
+        "es": "Pinball gravitatorio",
+        "pt_BR": "Pinball gravitacional"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/gravity_pinball/GravityPinball.tscn"
+      ]
+    },
+    {
+      "id": "m31__electric_pulses",
+      "system": "m31",
+      "origin": "prototype",
+      "title": {
+        "ru": "Электрические импульсы",
+        "en": "Electric Pulses",
+        "fr": "Impulsions électriques",
+        "de": "Elektrische Impulse",
+        "es": "Impulsos eléctricos",
+        "pt_BR": "Pulsos elétricos"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/electric_impulses/scenes/ElectricImpulses.tscn"
+      ]
+    },
+    {
+      "id": "m33__piano",
+      "system": "m33",
+      "origin": "playtown",
+      "title": {
+        "ru": "Пианино",
+        "en": "Piano",
+        "fr": "Piano",
+        "de": "Klavier",
+        "es": "Piano",
+        "pt_BR": "Piano"
+      },
+      "scene_candidates": [
+        "res://education/playtown/scenes/features/piano/piano_game.tscn"
+      ]
+    },
+    {
+      "id": "m33__matching_pairs",
+      "system": "m33",
+      "origin": "playtown",
+      "title": {
+        "ru": "Найди пары",
+        "en": "Matching Pairs",
+        "fr": "Trouve les paires",
+        "de": "Finde Paare",
+        "es": "Encuentra parejas",
+        "pt_BR": "Encontre os pares"
+      },
+      "scene_candidates": [
+        "res://education/playtown/scenes/features/matching_pairs/matching_pairs_game.tscn"
+      ]
+    },
+    {
+      "id": "m33__space_rebus",
+      "system": "m33",
+      "origin": "prototype",
+      "title": {
+        "ru": "Космические ребусы",
+        "en": "Space Rebus Adventures",
+        "fr": "Rébus de l’espace",
+        "de": "Weltraum-Bilderrätsel",
+        "es": "Rebus espaciales",
+        "pt_BR": "Rébus espaciais"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/space_rebus/scenes/SpaceRebusAdventures.tscn"
+      ]
+    },
+    {
+      "id": "m33__neural_math",
+      "system": "m33",
+      "origin": "prototype",
+      "title": {
+        "ru": "Нейронная математика",
+        "en": "Neural Math",
+        "fr": "Maths neuronales",
+        "de": "Neuronen-Mathe",
+        "es": "Matemática neuronal",
+        "pt_BR": "Matemática neural"
+      },
+      "scene_candidates": [
+        "res://planet_hub/games/neural_math/scenes/NeuralMath.tscn"
+      ]
+    }
+  ]
+}

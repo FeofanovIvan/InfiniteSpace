@@ -1,0 +1,1152 @@
+{
+  "schema_version": 1,
+  "patch": "MIKA v116",
+  "basis": "Navigation links only between existing, manually reviewed v96 articles. The destination answer is always the original, approved question-0 answer; links do not generate facts.",
+  "locales": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "policies": {
+    "offline_only": true,
+    "no_generated_science": true,
+    "no_user_data_in_graph": true,
+    "no_score_for_recommendation": true,
+    "child_safety_first": true,
+    "preserve_three_clouds": true,
+    "studies_keep_their_cloud": true
+  },
+  "ui": {
+    "ru": {
+      "next": "Дальше: %s",
+      "teaser": "Можно перейти к другой теме: %s.",
+      "source": "Вот что рассказывает наша энциклопедия о новой теме:"
+    },
+    "en": {
+      "next": "Next: %s",
+      "teaser": "We can explore another topic: %s.",
+      "source": "Here is what our encyclopedia says about the new topic:"
+    },
+    "fr": {
+      "next": "Ensuite : %s",
+      "teaser": "Nous pouvons explorer un autre sujet : %s.",
+      "source": "Voici ce que dit notre encyclopédie sur ce nouveau sujet :"
+    },
+    "de": {
+      "next": "Weiter: %s",
+      "teaser": "Wir können ein anderes Thema erkunden: %s.",
+      "source": "Das sagt unser Lexikon über das neue Thema:"
+    },
+    "es": {
+      "next": "Siguiente: %s",
+      "teaser": "Podemos explorar otro tema: %s.",
+      "source": "Esto dice nuestra enciclopedia sobre el nuevo tema:"
+    },
+    "pt_BR": {
+      "next": "Próximo: %s",
+      "teaser": "Podemos explorar outro assunto: %s.",
+      "source": "Veja o que nossa enciclopédia diz sobre o novo assunto:"
+    }
+  },
+  "links": {
+    "air": [
+      {
+        "to": "sound",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "trees",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "molecules",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "space_travel",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "earth",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      },
+      {
+        "to": "states",
+        "kind": "related_encyclopedia_topic",
+        "rank": 5
+      }
+    ],
+    "ancestors": [
+      {
+        "to": "helping_elders",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      }
+    ],
+    "animal_homes": [
+      {
+        "to": "trees",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "clean_water",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "clean_ocean",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "earth",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "asteroids": [
+      {
+        "to": "comets",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "planets",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "solar_system",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "space",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "atoms": [
+      {
+        "to": "molecules",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "states",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      }
+    ],
+    "bees": [
+      {
+        "to": "flowers",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      }
+    ],
+    "clean_ocean": [
+      {
+        "to": "plastic",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "sorting",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "waste",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "clean_water",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "animal_homes",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      }
+    ],
+    "clean_water": [
+      {
+        "to": "saving_water",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "earth",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "animal_homes",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "clean_ocean",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "phase_changes",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      }
+    ],
+    "comets": [
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "solar_system",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "asteroids",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      }
+    ],
+    "day_night": [
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "light",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "shadows",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "moon",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "earth": [
+      {
+        "to": "air",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "clean_water",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "saving_water",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "animal_homes",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "floating_sinking",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      },
+      {
+        "to": "space",
+        "kind": "related_encyclopedia_topic",
+        "rank": 5
+      },
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 6
+      },
+      {
+        "to": "moon",
+        "kind": "related_encyclopedia_topic",
+        "rank": 7
+      },
+      {
+        "to": "solar_system",
+        "kind": "related_encyclopedia_topic",
+        "rank": 8
+      },
+      {
+        "to": "planets",
+        "kind": "related_encyclopedia_topic",
+        "rank": 9
+      },
+      {
+        "to": "seasons",
+        "kind": "related_encyclopedia_topic",
+        "rank": 10
+      }
+    ],
+    "echoes": [
+      {
+        "to": "sound",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "senses",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      }
+    ],
+    "electricity": [
+      {
+        "to": "energy",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "light",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      }
+    ],
+    "energy": [
+      {
+        "to": "electricity",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "resources",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "food_waste",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "heat_cold",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "friction",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      },
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 5
+      },
+      {
+        "to": "space_travel",
+        "kind": "related_encyclopedia_topic",
+        "rank": 6
+      }
+    ],
+    "floating_sinking": [
+      {
+        "to": "gravity",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "earth",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "states",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      }
+    ],
+    "flowers": [
+      {
+        "to": "bees",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "trees",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      }
+    ],
+    "food_waste": [
+      {
+        "to": "resources",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "waste",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "saving_water",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "energy",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "friction": [
+      {
+        "to": "energy",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      }
+    ],
+    "galaxies": [
+      {
+        "to": "stars",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "gravity",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "space",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      }
+    ],
+    "gravity": [
+      {
+        "to": "planets",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "magnets",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "moon",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "galaxies",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "floating_sinking",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      }
+    ],
+    "heat_cold": [
+      {
+        "to": "phase_changes",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "seasons",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "energy",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "helping_elders": [
+      {
+        "to": "ancestors",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "sharing",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      }
+    ],
+    "light": [
+      {
+        "to": "shadows",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "electricity",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "rainbow",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "moon",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      },
+      {
+        "to": "senses",
+        "kind": "related_encyclopedia_topic",
+        "rank": 5
+      },
+      {
+        "to": "day_night",
+        "kind": "related_encyclopedia_topic",
+        "rank": 6
+      },
+      {
+        "to": "stars",
+        "kind": "related_encyclopedia_topic",
+        "rank": 7
+      }
+    ],
+    "magnets": [
+      {
+        "to": "gravity",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      }
+    ],
+    "molecules": [
+      {
+        "to": "atoms",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "states",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "air",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "phase_changes",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "moon": [
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "gravity",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "light",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "earth",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "day_night",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      }
+    ],
+    "neurons": [
+      {
+        "to": "senses",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "sound",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      }
+    ],
+    "phase_changes": [
+      {
+        "to": "states",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "molecules",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "heat_cold",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "clean_water",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "planets": [
+      {
+        "to": "solar_system",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "gravity",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "space",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "earth",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "asteroids",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      }
+    ],
+    "plastic": [
+      {
+        "to": "clean_ocean",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "sorting",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "waste",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "repairing",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "rainbow": [
+      {
+        "to": "light",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      }
+    ],
+    "repairing": [
+      {
+        "to": "waste",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "plastic",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "resources",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "sharing",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "resources": [
+      {
+        "to": "saving_water",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "sorting",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "energy",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "waste",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "food_waste",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      },
+      {
+        "to": "repairing",
+        "kind": "related_encyclopedia_topic",
+        "rank": 5
+      }
+    ],
+    "saving_water": [
+      {
+        "to": "clean_water",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "resources",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "food_waste",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "earth",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "seasons": [
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "heat_cold",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "earth",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      }
+    ],
+    "senses": [
+      {
+        "to": "neurons",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "sound",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "light",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "echoes",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "shadows": [
+      {
+        "to": "light",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "trees",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "day_night",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "sharing": [
+      {
+        "to": "helping_elders",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "repairing",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      }
+    ],
+    "solar_system": [
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "earth",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "planets",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "comets",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "asteroids",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      },
+      {
+        "to": "space",
+        "kind": "related_encyclopedia_topic",
+        "rank": 5
+      }
+    ],
+    "sorting": [
+      {
+        "to": "waste",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "plastic",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "resources",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "clean_ocean",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "sound": [
+      {
+        "to": "echoes",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "air",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "senses",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "space",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "neurons",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      }
+    ],
+    "space": [
+      {
+        "to": "galaxies",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "sound",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "planets",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "space_travel",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "earth",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      },
+      {
+        "to": "stars",
+        "kind": "related_encyclopedia_topic",
+        "rank": 5
+      },
+      {
+        "to": "solar_system",
+        "kind": "related_encyclopedia_topic",
+        "rank": 6
+      },
+      {
+        "to": "asteroids",
+        "kind": "related_encyclopedia_topic",
+        "rank": 7
+      }
+    ],
+    "space_travel": [
+      {
+        "to": "space",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "air",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "energy",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      }
+    ],
+    "stars": [
+      {
+        "to": "sun",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "light",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "galaxies",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "space",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "states": [
+      {
+        "to": "phase_changes",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "molecules",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "atoms",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "floating_sinking",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "air",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      }
+    ],
+    "sun": [
+      {
+        "to": "day_night",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "light",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "shadows",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "heat_cold",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "rainbow",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      },
+      {
+        "to": "energy",
+        "kind": "related_encyclopedia_topic",
+        "rank": 5
+      },
+      {
+        "to": "stars",
+        "kind": "related_encyclopedia_topic",
+        "rank": 6
+      },
+      {
+        "to": "earth",
+        "kind": "related_encyclopedia_topic",
+        "rank": 7
+      },
+      {
+        "to": "seasons",
+        "kind": "related_encyclopedia_topic",
+        "rank": 8
+      },
+      {
+        "to": "solar_system",
+        "kind": "related_encyclopedia_topic",
+        "rank": 9
+      },
+      {
+        "to": "comets",
+        "kind": "related_encyclopedia_topic",
+        "rank": 10
+      },
+      {
+        "to": "moon",
+        "kind": "related_encyclopedia_topic",
+        "rank": 11
+      }
+    ],
+    "trees": [
+      {
+        "to": "animal_homes",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "shadows",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "air",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "flowers",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      }
+    ],
+    "waste": [
+      {
+        "to": "sorting",
+        "kind": "related_encyclopedia_topic",
+        "rank": 0
+      },
+      {
+        "to": "resources",
+        "kind": "related_encyclopedia_topic",
+        "rank": 1
+      },
+      {
+        "to": "plastic",
+        "kind": "related_encyclopedia_topic",
+        "rank": 2
+      },
+      {
+        "to": "repairing",
+        "kind": "related_encyclopedia_topic",
+        "rank": 3
+      },
+      {
+        "to": "clean_ocean",
+        "kind": "related_encyclopedia_topic",
+        "rank": 4
+      },
+      {
+        "to": "food_waste",
+        "kind": "related_encyclopedia_topic",
+        "rank": 5
+      }
+    ]
+  }
+}

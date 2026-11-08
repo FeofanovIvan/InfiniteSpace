@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://education/playtown/src/screens/game_select.gd" id="1_gs"]
+
+[node name="GameSelectPlayground" type="Node2D"]
+script = ExtResource("1_gs")
+back_scene_path = "res://education/playtown/scenes/world/city_world.tscn"
+cards_data = [{
+"scene": "res://education/playtown/scenes/features/race/scooter_race.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/playground/scooter_race.png"
+}, {
+"scene": "res://education/playtown/scenes/features/tilt_maze/tilt_maze_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/playground/roll_the_ball.webp"
+}, {
+"scene": "res://education/playtown/scenes/features/color_mix/color_mix_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/playground/color_mix.webp"
+}, {
+"scene": "res://education/playtown/scenes/features/path_builder/path_builder_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/playground/build_path.webp"
+}, {
+"scene": "res://education/playtown/scenes/features/piano/piano_game.tscn",
+"texture": "res://education/playtown/assets/ui/game_select/playground/piano.webp"
+}]
