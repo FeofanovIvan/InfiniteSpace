@@ -162,14 +162,14 @@
       "origin": "playtown",
       "title": {
         "ru": "Лаборатория растворов",
-        "en": "Solutions Lab",
-        "fr": "Laboratoire des solutions",
+        "en": "Solution Lab",
+        "fr": "Laboratoire de solutions",
         "de": "Lösungslabor",
-        "es": "Laboratorio de soluciones",
-        "pt_BR": "Laboratório de soluções"
+        "es": "Laboratorio de Soluciones",
+        "pt_BR": "Laboratório de Soluções"
       },
       "scene_candidates": [
-        "res://education/playtown/scenes/features/color_mix/color_mix_game.tscn"
+        "res://planet_hub/games/solution_lab/SolutionLab.tscn"
       ]
     },
     {

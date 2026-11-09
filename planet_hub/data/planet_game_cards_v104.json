@@ -221,23 +221,23 @@
       "id": "smc__solutions_lab",
       "title": {
         "ru": "Лаборатория растворов",
-        "en": "Solutions Lab",
-        "fr": "Laboratoire des solutions",
+        "en": "Solution Lab",
+        "fr": "Laboratoire de solutions",
         "de": "Lösungslabor",
-        "es": "Laboratorio de soluciones",
-        "pt_BR": "Laboratório de soluções"
+        "es": "Laboratorio de Soluciones",
+        "pt_BR": "Laboratório de Soluções"
       },
       "description": {
-        "ru": "Смешивай жидкости и наблюдай цвета.",
-        "en": "Mix liquids and watch their colors.",
-        "fr": "Mélange des liquides et observe les couleurs.",
-        "de": "Mische Flüssigkeiten und beobachte Farben.",
-        "es": "Mezcla líquidos y observa sus colores.",
-        "pt_BR": "Misture líquidos e observe as cores."
+        "ru": "Получи раствор нужного цвета, смешивая ингредиенты.",
+        "en": "Mix ingredients to make a solution in the target color.",
+        "fr": "Mélange des ingrédients pour obtenir la couleur cible.",
+        "de": "Mische Zutaten zu einer Lösung in der Zielfarbe.",
+        "es": "Mezcla ingredientes para preparar una solución del color indicado.",
+        "pt_BR": "Misture ingredientes para criar a solução da cor indicada."
       },
-      "source_status": "adapt",
-      "source_scene": "res://education/playtown/scenes/features/color_mix/color_mix_game.tscn",
-      "launch_enabled": false,
+      "source_status": "ready",
+      "source_scene": "res://planet_hub/games/solution_lab/SolutionLab.tscn",
+      "launch_enabled": true,
       "image_path": "res://planet_hub/cards/game_icons/smc__solutions_lab.png"
     },
     "smc__resource_rush": {
