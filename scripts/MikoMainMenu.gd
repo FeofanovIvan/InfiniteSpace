@@ -733,8 +733,6 @@ func _reflow() -> void:
 	# v88: fullscreen game viewport at native screen size (no framed subwindow).
 	_game_layer.position = Vector2.ZERO
 	_game_layer.size = view
-	_game_backdrop.position = Vector2.ZERO
-	_game_backdrop.size = view
 	# Godot automatically adapts the SubViewport's resolution to this Control.
 	# Do not multiply Control.scale: scaling causes blur and a letterboxed window.
 	_viewport_container.scale = Vector2.ONE
@@ -743,6 +741,17 @@ func _reflow() -> void:
 	# Exact same style, position and actual pixel size as the hub Back.
 	_game_back.position = _back.position
 	_game_back.size = _back.size
+	# MIKA_RESOURCE_RUSH_HOST_BACK_ALIGN_V1_2
+	# Keep the ORIGINAL simulator button, but occupy Resource Rush's exact
+	# toolbar slot instead of floating above/outside its caption.
+	if _playing and is_instance_valid(_game_viewport):
+		for running_game in _game_viewport.get_children():
+			if running_game.has_method("resource_rush_host_back_rect"):
+				var native_slot: Rect2 = running_game.call("resource_rush_host_back_rect")
+				if native_slot.size.x > 20.0 and native_slot.size.y > 20.0:
+					_game_back.position = native_slot.position
+					_game_back.size = native_slot.size
+				break
 	# Keep the new 68px exit button; do not shrink it back to the rocket size.
 	# Card dimensions and gallery positions intentionally unchanged.
 
@@ -893,6 +902,10 @@ func _v1151p24_open_card(game_id: String) -> void:
 		return
 	planet_portal.call("start_game", scene_path)
 	_game_viewport.add_child(instance)
+	# MIKA_PLANET_STORY_V1_SHARED_ENTRY
+	var story_overlay: CanvasLayer = load("res://planet_hub/game_stories/planet_story_overlay_v1.gd").new() as CanvasLayer
+	story_overlay.set("game_id", game_id)
+	instance.add_child(story_overlay)
 	_playing = true
 	_gallery.visible = false
 	_gesture_layer.visible = false

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://planet_hub/games/magnetic_collector/MagneticCollector.gd" id="1_main"]
+[ext_resource type="Script" path="res://planet_hub/games/magnetic_collector/magnetic_collector_mika_ui_v5.gd" id="1_main"]
 
 [node name="MagneticCollector" type="Control"]
 layout_mode = 3

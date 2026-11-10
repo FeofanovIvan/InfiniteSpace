@@ -1,0 +1,97 @@
+{
+  "16:9  YouTube": {
+    "screen": [
+      1280,
+      720
+    ],
+    "fit_scale": 1.0,
+    "original_rect": [
+      0.0,
+      0.0,
+      1280.0,
+      720.0
+    ],
+    "cropped_original_percent": 0,
+    "extension_margins": [
+      0.0,
+      0.0
+    ],
+    "method": "shader virtual canvas extension, no black borders"
+  },
+  "21:9  ultrawide": {
+    "screen": [
+      1260,
+      540
+    ],
+    "fit_scale": 0.75,
+    "original_rect": [
+      150.0,
+      0.0,
+      960.0,
+      540.0
+    ],
+    "cropped_original_percent": 0,
+    "extension_margins": [
+      150.0,
+      0.0
+    ],
+    "method": "shader virtual canvas extension, no black borders"
+  },
+  "20:9  phone": {
+    "screen": [
+      1200,
+      540
+    ],
+    "fit_scale": 0.75,
+    "original_rect": [
+      120.0,
+      0.0,
+      960.0,
+      540.0
+    ],
+    "cropped_original_percent": 0,
+    "extension_margins": [
+      120.0,
+      0.0
+    ],
+    "method": "shader virtual canvas extension, no black borders"
+  },
+  "16:10  laptop": {
+    "screen": [
+      1152,
+      720
+    ],
+    "fit_scale": 0.9,
+    "original_rect": [
+      0.0,
+      36.0,
+      1152.0,
+      648.0
+    ],
+    "cropped_original_percent": 0,
+    "extension_margins": [
+      0.0,
+      36.0
+    ],
+    "method": "shader virtual canvas extension, no black borders"
+  },
+  "4:3  tablet": {
+    "screen": [
+      960,
+      720
+    ],
+    "fit_scale": 0.75,
+    "original_rect": [
+      0.0,
+      90.0,
+      960.0,
+      540.0
+    ],
+    "cropped_original_percent": 0,
+    "extension_margins": [
+      0.0,
+      90.0
+    ],
+    "method": "shader virtual canvas extension, no black borders"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "animations": {
+    "walk_down": {
+      "path": "res://education/playtown/assets/ice_cream/resource_rush_mika/mika_walk_front_sheet.png",
+      "cols": 2,
+      "rows": 2,
+      "frames": 4
+    },
+    "walk_up": {
+      "path": "res://education/playtown/assets/ice_cream/resource_rush_mika/mika_walk_up_sheet.png",
+      "cols": 2,
+      "rows": 2,
+      "frames": 4
+    },
+    "walk_right": {
+      "path": "res://education/playtown/assets/ice_cream/resource_rush_mika/mika_walk_right_sheet.png",
+      "cols": 2,
+      "rows": 2,
+      "frames": 4
+    },
+    "walk_left": {
+      "path": "res://education/playtown/assets/ice_cream/resource_rush_mika/mika_walk_right_sheet.png",
+      "cols": 2,
+      "rows": 2,
+      "frames": 4
+    }
+  },
+  "mirror_left": true,
+  "cell_height": 480.0
+}

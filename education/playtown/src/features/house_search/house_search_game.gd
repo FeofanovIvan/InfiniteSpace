@@ -15,7 +15,39 @@ const HouseSearchPlayerScript := preload("res://education/playtown/src/features/
 const HouseSearchItemScript := preload("res://education/playtown/src/features/house_search/house_search_item.gd")
 const UseButtonScript := preload("res://education/playtown/src/features/house_search/use_button.gd")
 const GameExitButtonScript := preload("res://education/playtown/src/ui/game_exit_button.gd")
-const JoystickScript := preload("res://education/playtown/src/ui/child_joystick.gd")
+const JoystickScript := preload("res://scripts/Joystick.gd")
+const FossilActionScript := preload("res://education/playtown/src/features/house_search/fossil_flight_action_button_v1.gd")
+const NativeToolbarScript := preload("res://simulator_ui/scripts/mika_shared_tracing_toolbar_v2.gd")
+const NativeHudScript := preload("res://planet_hub/scripts/bottom_hud.gd")
+const NativeBackGlyph := preload("res://simulator_ui/back_arrow_glyph.gd")
+const NativeUiKit := preload("res://simulator_ui/scripts/mika_minigame_ui_kit_v11.gd")
+# MIKA_FOSSIL_HUNT_NATIVE_UI_V1
+# MIKA_FOSSIL_HUNT_CRYSTAL_CAVE_MIKA_V2
+# MIKA_FOSSIL_HUNT_DEPTH_COLLISION_GOAL_V3
+# MIKA_FOSSIL_HUNT_USER_ZONES_CLIMB_V4
+# MIKA_FOSSIL_HUNT_FOSSILS_YSORT_V5
+# MIKA_FOSSIL_HUNT_SPAWN_FIX_V5_1
+const FOSSIL_IDS_V5: Array[String] = ["01_ammonite", "02_trilobite", "03_fern_imprint", "04_fossil_fish", "05_dinosaur_tooth", "06_dinosaur_claw", "07_fossil_egg", "08_vertebra", "09_spiral_shell", "10_fossil_skull"]
+const FOSSIL_ART_DIR_V5 := "res://education/playtown/assets/house_search/fossil_items_v5/"
+const FossilMikaPlayerV4Script: Script = preload("res://education/playtown/src/features/house_search/fossil_mika_player_v4.gd")
+const CaveZonesV4: Script = preload("res://education/playtown/src/features/house_search/fossil_cave_zones_v4.gd")
+const CLIMB_ASSETS_V4 = [
+    "res://education/playtown/assets/house_search/fossil_climb_v4/MIKA_climb_01.png",
+    "res://education/playtown/assets/house_search/fossil_climb_v4/MIKA_climb_02.png",
+    "res://education/playtown/assets/house_search/fossil_climb_v4/MIKA_climb_03.png",
+    "res://education/playtown/assets/house_search/fossil_climb_v4/MIKA_climb_04.png",
+]
+const FossilMikaPlayerV3Script: Script = preload("res://education/playtown/src/features/house_search/fossil_mika_player_v3.gd")
+const FossilMikaFramesV3: Script = preload("res://education/playtown/src/features/house_search/fossil_mika_frames_v3.gd")
+const FossilGoalRingV3Script: Script = preload("res://education/playtown/src/features/house_search/fossil_goal_ring_v3.gd")
+const CAVE_BACKGROUND: Texture2D = preload("res://education/playtown/assets/house_search/fossil_crystal_cave_v2.png")
+const CAVE_CLIP_SHADER: Shader = preload("res://education/playtown/src/features/house_search/fossil_cave_corner_v2.gdshader")
+const FossilMikaFrames: Script = preload("res://education/playtown/src/features/house_search/fossil_mika_frames_v2.gd")
+const FossilMikaPlayerScript: Script = preload("res://education/playtown/src/features/house_search/fossil_mika_player_v2.gd")
+const CAVE_ART_WIDTH := 1683.0
+const CAVE_ART_HEIGHT := 935.0
+const UPPER_FLOOR_Y := 449.0
+const LOWER_FLOOR_Y := 744.0
 
 # Six non-kitchen and four kitchen items are selected each round. Kitchenware
 # comes from LearningObjectCatalog; food comes from ProductCatalog.
@@ -32,23 +64,22 @@ const PRODUCT_KEYS: Array[String] = [
 # Positions use the full 1536x1024 source-image coordinate system. They are
 # converted once to the cropped 1536x864 gameplay coordinate system.
 const SPAWN_POINTS := {
-	"bed_l": {"position": Vector2(370, 445), "floor": 2, "zone": "second"},
-	"bed_r": {"position": Vector2(445, 445), "floor": 2, "zone": "second"},
-	"desk_l": {"position": Vector2(935, 418), "floor": 2, "zone": "second"},
-	"desk_r": {"position": Vector2(1070, 418), "floor": 2, "zone": "second"},
-	"up_rug": {"position": Vector2(590, 515), "floor": 2, "zone": "second"},
-	"up_floor_r": {"position": Vector2(1260, 520), "floor": 2, "zone": "second"},
-	"sofa": {"position": Vector2(335, 752), "floor": 1, "zone": "living"},
-	"living_floor_l": {"position": Vector2(190, 842), "floor": 1, "zone": "living"},
-	"living_floor_c": {"position": Vector2(330, 842), "floor": 1, "zone": "living"},
-	"living_floor_r": {"position": Vector2(470, 842), "floor": 1, "zone": "living"},
-	"counter_l1": {"position": Vector2(955, 718), "floor": 1, "zone": "kitchen"},
-	"counter_l2": {"position": Vector2(1020, 718), "floor": 1, "zone": "kitchen"},
-	"counter_r1": {"position": Vector2(1235, 718), "floor": 1, "zone": "kitchen"},
-	"counter_r2": {"position": Vector2(1275, 718), "floor": 1, "zone": "kitchen"},
-	"table_l": {"position": Vector2(1075, 750), "floor": 1, "zone": "kitchen"},
-	"table_c": {"position": Vector2(1150, 750), "floor": 1, "zone": "kitchen"},
-	"table_r": {"position": Vector2(1225, 750), "floor": 1, "zone": "kitchen"},
+	# Source of truth: the 14 spawn markers in Fossil_Hunt_Cave_Zones.json.
+	# +HOUSE_CROP_Y because the existing _spawn_item subtracts that offset.
+	"bed_l": {"position": Vector2(271.9715, 513.3861), "floor": 2, "zone": "second"}, # zone-16
+	"bed_r": {"position": Vector2(353.1979, 447.7775), "floor": 2, "zone": "second"}, # zone-17
+	"desk_l": {"position": Vector2(566.7594, 422.8278), "floor": 2, "zone": "second"}, # zone-18
+	"desk_r": {"position": Vector2(881.6257, 471.8032), "floor": 2, "zone": "second"}, # zone-19
+	"up_rug": {"position": Vector2(986.5811, 442.2332), "floor": 2, "zone": "second"}, # zone-20
+	"up_floor_r": {"position": Vector2(1188.2781, 461.6385), "floor": 2, "zone": "second"}, # zone-21
+	"upper_bonus": {"position": Vector2(1278.6310, 520.7786), "floor": 2, "zone": "second"}, # zone-22
+	"sofa": {"position": Vector2(397.0053, 786.9091), "floor": 1, "zone": "living"}, # zone-9
+	"living_floor_l": {"position": Vector2(607.8289, 754.5668), "floor": 1, "zone": "living"}, # zone-14
+	"living_floor_c": {"position": Vector2(977.4545, 746.2503), "floor": 1, "zone": "living"}, # zone-11
+	"counter_l1": {"position": Vector2(663.5009, 880.2396), "floor": 1, "zone": "kitchen"}, # zone-13
+	"counter_r1": {"position": Vector2(901.7041, 843.2770), "floor": 1, "zone": "kitchen"}, # zone-15
+	"table_l": {"position": Vector2(1021.2620, 868.2267), "floor": 1, "zone": "kitchen"}, # zone-12
+	"table_r": {"position": Vector2(1160.8984, 733.3134), "floor": 1, "zone": "kitchen"}, # zone-10
 }
 
 const KITCHEN_SURFACES: Array[String] = [
@@ -59,36 +90,37 @@ const KITCHEN_TALL_SURFACES: Array[String] = [
 	"counter_l1", "counter_l2", "counter_r1", "counter_r2", "table_l", "table_r",
 ]
 const ITEM_ALLOWED_POINTS := {
-	"pencil": ["desk_l", "desk_r", "bed_l"],
-	"book": ["bed_l", "bed_r", "desk_l", "desk_r", "sofa"],
-	"ball": ["up_rug", "up_floor_r", "living_floor_l", "living_floor_c", "living_floor_r"],
-	"doll": ["bed_l", "bed_r", "sofa", "up_rug", "living_floor_c"],
-	"toy_car": ["up_rug", "up_floor_r", "living_floor_l", "living_floor_c", "living_floor_r"],
-	"cube": ["bed_l", "bed_r", "up_rug", "living_floor_l", "living_floor_c", "sofa"],
-	"backpack": ["up_floor_r", "living_floor_l", "living_floor_r"],
-	"clock": ["desk_l", "desk_r"],
-	"lamp": ["desk_l", "desk_r"],
-	"cup": KITCHEN_SURFACES,
-	"plate": ["counter_l1", "counter_l2", "counter_r1", "table_l", "table_c", "table_r"],
-	"spoon": ["counter_l1", "counter_l2", "counter_r1", "table_l", "table_c", "table_r"],
-	"hat": ["bed_l", "bed_r", "sofa", "desk_l"],
-	"socks": ["bed_l", "bed_r", "sofa", "up_rug", "living_floor_c"],
-	"boots": ["up_floor_r", "living_floor_l", "living_floor_r"],
-	"tshirt": ["bed_l", "bed_r"],
-	"jacket": ["bed_l", "bed_r", "sofa"],
-	"umbrella": ["up_floor_r", "living_floor_r"],
-	"apple": KITCHEN_SURFACES,
-	"banana": KITCHEN_SURFACES,
-	"orange": KITCHEN_SURFACES,
-	"pear": KITCHEN_SURFACES,
-	"grapes": KITCHEN_SURFACES,
-	"strawberry": KITCHEN_SURFACES,
-	"carrot": KITCHEN_SURFACES,
-	"milk": KITCHEN_TALL_SURFACES,
-	"bread": KITCHEN_SURFACES,
-	"cheese": KITCHEN_SURFACES,
-	"juice": KITCHEN_TALL_SURFACES,
-	"cookies": KITCHEN_SURFACES,
+	# Keep the current learning-object pool; assign it to mapped fossils spots.
+	"pencil": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"book": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"ball": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"doll": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"toy_car": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"cube": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"backpack": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"clock": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"lamp": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"hat": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"socks": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"boots": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"tshirt": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"jacket": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"umbrella": ["bed_l", "bed_r", "desk_l", "desk_r", "up_rug", "up_floor_r", "upper_bonus", "sofa", "living_floor_l", "living_floor_c"],
+	"cup": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"plate": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"spoon": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"apple": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"banana": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"orange": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"pear": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"grapes": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"strawberry": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"carrot": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"milk": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"bread": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"cheese": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"juice": ["counter_l1", "counter_r1", "table_l", "table_r"],
+	"cookies": ["counter_l1", "counter_r1", "table_l", "table_r"],
 }
 
 const ITEM_HEIGHTS := {
@@ -107,7 +139,7 @@ const SIZE_SAFETY_MARGINS := {"small": 9.0, "medium": 13.0, "large": 18.0}
 # Prevent two items in one narrow visual column when their anchors are
 # vertically staggered (e.g. sofa vs floor, counter vs table).
 # Keep same-height points governed by existing texture-bounds collision checks.
-const STACK_COLUMN_DISTANCE := 58.0
+const STACK_COLUMN_DISTANCE := 35.0
 const STACK_MIN_VERTICAL_DISTANCE := 18.0
 const STACK_MAX_VERTICAL_DISTANCE := 145.0
 
@@ -118,10 +150,18 @@ var second_floor_door: TextureRect
 var ui_root: Control
 var goal_icon: TextureButton
 var found_strip: HBoxContainer
-var score_label: Label
+var _stage_panel: Panel
+var _cave_background: TextureRect
+var _goal_ring: TextureRect
+var _native_back: Button
+var _native_hud: Control
+var _native_title_panel: Panel
+var _native_title: Label
+var _native_subtitle: Label
+var _host_back: Control
 var use_control: Control
-var use_button: Button
-var movement_joystick: ChildJoystick
+var use_button: Control
+var movement_joystick: Control
 var current_floor := 1
 var transitioning := false
 var round_completed := false
@@ -214,61 +254,97 @@ func _run_layout_self_test(generation_count: int) -> void:
 
 
 func _process(_delta: float) -> void:
-	if player == null:
+	if player == null or use_button == null:
 		return
 	nearby_item = _find_nearby_item()
-	var near_door := absf(player.position.x - DOOR_X) <= DOOR_DISTANCE
-	use_button.set_stairs_up(current_floor == 1)
-	use_button.set_door_mode(nearby_item == null and near_door)
-	use_control.visible = not transitioning and (nearby_item != null or near_door)
-
+	var near_door: bool = _near_ladder_v4()
+	var can_act: bool = not transitioning and not round_completed and (nearby_item != null or near_door)
+	use_button.call("set_stairs_up", current_floor == 1)
+	use_button.call("set_door_mode", near_door)
+	use_button.call("set_action_mode", "use" if near_door else "take")
+	use_button.call("set_action_available", can_act)
+	use_control.visible = not transitioning and not round_completed
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		_exit_to_city()
 	elif event is InputEventKey and event.pressed and (event.keycode == KEY_E or event.keycode == KEY_SPACE):
-		if use_control.visible:
+		if use_control.visible and bool(use_button.get("interaction_available")):
 			_use_current_interaction()
 
 
 func _create_background() -> void:
-	var background_layer := CanvasLayer.new()
-	background_layer.layer = -10
-	add_child(background_layer)
-	var meadow := TextureRect.new()
-	meadow.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	meadow.texture = MEADOW_BACKGROUND
-	meadow.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	meadow.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
-	meadow.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	background_layer.add_child(meadow)
+	# Do not draw the old meadow, city or any second background outside the
+	# stage. The supplied cave image belongs exclusively to FossilSafeStage.
+	pass
 
 
 func _create_house_world() -> void:
+	_stage_panel = Panel.new()
+	_stage_panel.name = "FossilFullSafeStage"
+	_stage_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_stage_panel.clip_contents = true
+	var stage_style: StyleBoxFlat = NativeUiKit.stage_style()
+	stage_style.bg_color = Color("071323")
+	stage_style.set_border_width_all(3)
+	stage_style.set_corner_radius_all(29)
+	_stage_panel.add_theme_stylebox_override("panel", stage_style)
+	add_child(_stage_panel)
+	_cave_background = TextureRect.new()
+	_cave_background.name = "CaveOnlyInsideGamePanel"
+	_cave_background.texture = CAVE_BACKGROUND
+	_cave_background.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_cave_background.stretch_mode = TextureRect.STRETCH_SCALE
+	_cave_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var cave_material := ShaderMaterial.new()
+	cave_material.shader = CAVE_CLIP_SHADER
+	_cave_background.material = cave_material
+	_stage_panel.add_child(_cave_background)
 	world_layer = Node2D.new()
-	world_layer.name = "HouseWorld"
-	add_child(world_layer)
-
-	var house := Sprite2D.new()
-	house.name = "House"
-	house.centered = false
-	house.texture = preload("res://education/playtown/assets/house_search/house_cutaway.png")
-	house.region_enabled = true
-	house.region_rect = Rect2(0, 80, 1536, 864)
-	world_layer.add_child(house)
-
-	second_floor_door = _make_door(Rect2(694, 185, 148, 265))
-	first_floor_door = _make_door(Rect2(697, 530, 142, 227))
-
-	player = HouseSearchPlayerScript.new()
-	player.name = "Player"
-	player.z_index = 10
-	player.position = Vector2(DOOR_X, 725)
+	world_layer.name = "CrystalCaveWorld"
+	# All movable sprites use the same z-index; Godot orders them by foot Y.
+	world_layer.y_sort_enabled = true
+	_stage_panel.add_child(world_layer)
+	# The image itself contains the central ladder. There are deliberately no
+	# old door cut-outs or house sprites drawn over the cave art.
+	first_floor_door = null
+	second_floor_door = null
+	player = FossilMikaPlayerV4Script.new() as HouseSearchPlayer
+	player.name = "PlayerMikaFromResourceRush"
+	player.set("fossil_current_floor", 1)
+	player.z_index = 0
+	player.floor_y = LOWER_FLOOR_Y
+	player.floor_left = 235.0
+	player.floor_right = 1370.0
+	player.position = Vector2(DOOR_X - 94.0, LOWER_FLOOR_Y)
+	player.set("fossil_mirror_left", FossilMikaFramesV3.mirror_left())
 	var sprite := AnimatedSprite2D.new()
 	sprite.name = "AnimatedSprite2D"
-	sprite.sprite_frames = load(GameState.character_frames_path()) as SpriteFrames
-	sprite.animation = &"walk_down"
-	sprite.scale = Vector2(0.95, 0.95)
+	sprite.sprite_frames = FossilMikaFramesV3.make_frames()
+	# The supplied single-Mika 320x680 climbing PNGs form a clean 4-frame loop.
+	if sprite.sprite_frames != null:
+		for climb_name in ["climb_up", "climb_down"]:
+			if not sprite.sprite_frames.has_animation(climb_name):
+				sprite.sprite_frames.add_animation(climb_name)
+			sprite.sprite_frames.set_animation_speed(climb_name, 7.0)
+			sprite.sprite_frames.set_animation_loop(climb_name, true)
+		for i in range(CLIMB_ASSETS_V4.size()):
+			var texture: Texture2D = load(CLIMB_ASSETS_V4[i]) as Texture2D
+			if texture == null:
+				push_error("Fossil Hunt: missing climb frame " + CLIMB_ASSETS_V4[i])
+				continue
+			sprite.sprite_frames.add_frame("climb_up", texture)
+		for i in range(CLIMB_ASSETS_V4.size() - 1, -1, -1):
+			var texture: Texture2D = load(CLIMB_ASSETS_V4[i]) as Texture2D
+			if texture != null:
+				sprite.sprite_frames.add_frame("climb_down", texture)
+	if sprite.sprite_frames == null:
+		push_error("Fossil Hunt: Resource Rush MIKA animation sheets could not load")
+	else:
+		sprite.animation = &"walk_down"
+	var source_height: float = FossilMikaFramesV3.walk_frame_height()
+	sprite.scale = Vector2.ONE * (132.0 / source_height)
+	sprite.offset = Vector2(0.0, -source_height * 0.5)
 	player.add_child(sprite)
 	world_layer.add_child(player)
 
@@ -301,14 +377,14 @@ func _create_ui() -> void:
 
 
 func _create_goal_ui() -> void:
-	var ring := TextureRect.new()
-	ring.position = Vector2(24, 24)
-	ring.size = Vector2(140, 140)
-	ring.texture = preload("res://education/playtown/assets/ui/navigation_circle.png")
-	ring.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	ring.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	ring.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	ui_root.add_child(ring)
+	_goal_ring = FossilGoalRingV3Script.new() as TextureRect
+	_goal_ring.position = Vector2(24, 24)
+	_goal_ring.size = Vector2(140, 140)
+	_goal_ring.texture = null
+	_goal_ring.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_goal_ring.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	_goal_ring.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	ui_root.add_child(_goal_ring)
 
 	goal_icon = TextureButton.new()
 	goal_icon.position = Vector2(46, 46)
@@ -334,79 +410,156 @@ func _create_goal_ui() -> void:
 
 
 func _create_score_and_exit() -> void:
-	var exit_button: Button = GameExitButtonScript.new()
-	exit_button.set_anchors_preset(Control.PRESET_TOP_RIGHT)
-	exit_button.position = Vector2(-112, 18)
-	exit_button.size = Vector2(94, 94)
-	exit_button.pressed.connect(_exit_to_city)
-	ui_root.add_child(exit_button)
-
-	var score_box := Control.new()
-	score_box.set_anchors_preset(Control.PRESET_TOP_RIGHT)
-	score_box.position = Vector2(-260, 26)
-	score_box.size = Vector2(130, 78)
-	ui_root.add_child(score_box)
-	var star := TextureRect.new()
-	star.size = Vector2(70, 70)
-	star.texture = preload("res://education/playtown/assets/ui/star.png")
-	star.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	star.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	star.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	score_box.add_child(star)
-	score_label = Label.new()
-	score_label.position = Vector2(66, 5)
-	score_label.size = Vector2(64, 64)
-	score_label.text = "0"
-	score_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	score_label.add_theme_font_size_override("font_size", 38)
-	score_label.add_theme_color_override("font_color", Color.WHITE)
-	score_label.add_theme_color_override("font_outline_color", Color("#75420d"))
-	score_label.add_theme_constant_override("outline_size", 7)
-	score_box.add_child(score_label)
+	_native_title_panel = Panel.new()
+	_native_title_panel.name = "FossilNativeTitlePanel"
+	_native_title_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	NativeToolbarScript.apply_title_style(_native_title_panel)
+	ui_root.add_child(_native_title_panel)
+	_native_title = Label.new()
+	_native_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_native_title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_native_title.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_native_title.clip_text = true
+	_native_title_panel.add_child(_native_title)
+	_native_subtitle = Label.new()
+	_native_subtitle.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_native_subtitle.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_native_subtitle.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_native_subtitle.clip_text = true
+	_native_title_panel.add_child(_native_subtitle)
+	_native_back = Button.new()
+	_native_back.name = "FossilNativeBack"
+	_native_back.focus_mode = Control.FOCUS_NONE
+	_native_back.add_theme_stylebox_override("normal", NativeUiKit.button_style(false))
+	_native_back.add_theme_stylebox_override("hover", NativeUiKit.button_style(true))
+	_native_back.add_theme_stylebox_override("pressed", NativeUiKit.button_style(true))
+	_native_back.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	_native_back.pressed.connect(_exit_to_city)
+	ui_root.add_child(_native_back)
+	var glyph := NativeBackGlyph.new() as Control
+	_native_back.add_child(glyph)
+	glyph.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_native_hud = NativeHudScript.new() as Control
+	_native_hud.name = "FossilNativeCrystalCounter"
+	_native_hud.size = Vector2(1680.0, 158.0)
+	ui_root.add_child(_native_hud)
+	for control_name in ["SimulatorButton", "LaunchButton"]:
+		var unused: Control = _native_hud.get_node_or_null(control_name) as Control
+		if unused != null:
+			unused.hide()
+			if unused is BaseButton:
+				(unused as BaseButton).disabled = true
+	_native_hud.set("crystal_count", 0)
+	_refresh_fossil_header()
+	var locale_service: Node = get_node_or_null("/root/MobileLocale")
+	if locale_service != null and locale_service.has_signal("language_changed"):
+		locale_service.connect("language_changed", _on_fossil_locale)
+	_find_host_back()
 
 
 func _create_dpad() -> void:
-	movement_joystick = JoystickScript.new() as ChildJoystick
-	movement_joystick.name = "ChildJoystick"
-	# Keep the joystick in viewport coordinates. A bottom-right anchor combined
-	# with a negative `position` placed it outside this full-screen UI root on
-	# some aspect ratios, so the control existed but was not visible.
-	movement_joystick.set_anchors_preset(Control.PRESET_TOP_LEFT)
+	# Reuse the actual main-flight joystick, including its multi-touch input.
+	movement_joystick = JoystickScript.new() as Control
+	movement_joystick.name = "FlightJoystickForFossilHunt"
 	movement_joystick.z_index = 100
-	movement_joystick.size = Vector2(220, 220)
-	movement_joystick.direction_changed.connect(player.set_touch_direction)
+	movement_joystick.size = Vector2(184.0, 184.0)
+	movement_joystick.connect("direction_changed", Callable(player, "set_touch_direction"))
 	ui_root.add_child(movement_joystick)
 
 
 func _create_use_button() -> void:
 	use_control = Control.new()
-	use_control.set_anchors_preset(Control.PRESET_BOTTOM_LEFT)
-	use_control.position = Vector2(28, -188)
-	use_control.size = Vector2(160, 160)
-	use_control.visible = false
+	use_control.name = "FossilFlightActionHolder"
+	use_control.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	use_control.size = Vector2(184.0, 184.0)
+	use_control.z_index = 100
 	ui_root.add_child(use_control)
-	use_button = UseButtonScript.new()
-	use_button.size = Vector2(154, 154)
-	use_button.pressed.connect(_use_current_interaction)
+	# Native ActionButton from flight + local stairs icon while near the door.
+	use_button = FossilActionScript.new() as Control
+	use_button.size = Vector2(184.0, 184.0)
+	use_button.connect("action_requested", Callable(self, "_on_fossil_action"))
 	use_control.add_child(use_button)
+	use_button.call("set_action_available", false)
+
+
+func _on_fossil_action(_mode: String) -> void:
+	_use_current_interaction()
 
 
 func _layout_world() -> void:
-	if world_layer == null:
+	if world_layer == null or _stage_panel == null or _native_hud == null:
 		return
-	var viewport_size := get_viewport().get_visible_rect().size
-	var factor := minf(viewport_size.x / DESIGN_SIZE.x, viewport_size.y / DESIGN_SIZE.y)
-	world_layer.scale = Vector2.ONE * factor
-	world_layer.position = (viewport_size - DESIGN_SIZE * factor) * 0.5
-	if movement_joystick != null:
-		var safe := _safe_area_insets(viewport_size)
-		var side := clampf(minf(viewport_size.x, viewport_size.y) * 0.245, 154.0, 220.0)
-		movement_joystick.size = Vector2.ONE * side
-		movement_joystick.position = Vector2(
-			viewport_size.x - safe.z - side - maxf(18.0, side * 0.10),
-			viewport_size.y - safe.w - side - maxf(16.0, side * 0.08)
-		)
-
+	var viewport_size: Vector2 = get_viewport().get_visible_rect().size
+	if viewport_size.x < 250.0 or viewport_size.y < 185.0:
+		return
+	ui_root.size = viewport_size
+	var safe_insets: Vector4 = _safe_area_insets(viewport_size)
+	var safe := Rect2(Vector2(safe_insets.x, safe_insets.y),
+			viewport_size - Vector2(safe_insets.x + safe_insets.z,
+				safe_insets.y + safe_insets.w))
+	var header_end: float = NativeToolbarScript.relayout(viewport_size, safe,
+			_native_back, _native_hud, _native_title_panel, _native_title, _native_subtitle)
+	var margin: float = clampf(safe.size.x * 0.012, 6.0, 18.0)
+	var stage_top: float = header_end + clampf(safe.size.y * 0.010, 4.0, 10.0)
+	_stage_panel.position = Vector2(safe.position.x + margin, stage_top)
+	_stage_panel.size = Vector2(maxf(180.0, safe.size.x - margin * 2.0),
+			maxf(115.0, safe.end.y - stage_top - margin))
+	var stage_size: Vector2 = _stage_panel.size
+	# The original artwork fills the stage; crop rock-only edges while keeping
+	# the upper shelf, lower shelf and ladder inside the safe view.
+	var sx: float = maxf(stage_size.x / CAVE_ART_WIDTH, stage_size.y / CAVE_ART_HEIGHT)
+	var sy: float = maxf(stage_size.y / CAVE_ART_HEIGHT,
+			minf(sx, stage_size.y / 590.0))
+	var drawn_size := Vector2(CAVE_ART_WIDTH * sx, CAVE_ART_HEIGHT * sy)
+	var ladder_x: float = 839.0
+	var focus_y: float = 600.0
+	var desired := Vector2(stage_size.x * 0.50 - ladder_x * sx,
+			stage_size.y * 0.54 - focus_y * sy)
+	var origin := Vector2(clampf(desired.x, stage_size.x - drawn_size.x, 0.0),
+			clampf(desired.y, stage_size.y - drawn_size.y, 0.0))
+	_cave_background.position = origin
+	_cave_background.size = drawn_size
+	world_layer.position = origin
+	world_layer.scale = Vector2(drawn_size.x / DESIGN_SIZE.x,
+			drawn_size.y / DESIGN_SIZE.y)
+	var material: ShaderMaterial = _cave_background.material as ShaderMaterial
+	if material != null:
+		material.set_shader_parameter("stage_screen_origin",
+				_stage_panel.get_global_transform_with_canvas().origin)
+		material.set_shader_parameter("stage_screen_size", stage_size)
+		material.set_shader_parameter("radius", 29.0)
+	var visible_left: float = maxf(0.0, -origin.x / sx) / CAVE_ART_WIDTH * DESIGN_SIZE.x
+	var visible_right: float = minf(CAVE_ART_WIDTH,
+			(stage_size.x - origin.x) / sx) / CAVE_ART_WIDTH * DESIGN_SIZE.x
+	player.floor_left = maxf(190.0, visible_left + 46.0)
+	player.floor_right = minf(1370.0, visible_right - 46.0)
+	# Same diameter and horizontal center line as the action circle below.
+	var control_scale: float = clampf(minf(stage_size.y / 660.0,
+			stage_size.x / 1100.0), 0.61, 1.03)
+	var side: float = 184.0 * control_scale
+	var left: float = _stage_panel.position.x + 10.0
+	var bottom: float = _stage_panel.position.y + stage_size.y - side - 10.0
+	use_control.position = Vector2(left, bottom)
+	use_control.scale = Vector2.ONE * control_scale
+	movement_joystick.position = Vector2(
+			_stage_panel.position.x + stage_size.x - side - 10.0, bottom)
+	movement_joystick.scale = Vector2.ONE * control_scale
+	_goal_ring.position = Vector2(left, _stage_panel.position.y + 10.0)
+	_goal_ring.size = Vector2(184.0, 184.0)
+	_goal_ring.scale = Vector2.ONE * control_scale
+	goal_icon.position = _goal_ring.position + Vector2(44.0, 44.0) * control_scale
+	goal_icon.size = Vector2(96.0, 96.0) * control_scale
+	var slot_side: float = clampf(side * 0.41, 30.0, 68.0)
+	found_strip.position = _goal_ring.position + Vector2(side + 10.0, 30.0 * control_scale)
+	for slot in found_strip.get_children():
+		if slot is Control:
+			(slot as Control).custom_minimum_size = Vector2.ONE * slot_side
+	# Keep original 5-slot row inside the stage on narrow devices.
+	var max_slot: float = maxf(23.0, (stage_size.x - side * 2.4 - 60.0) / 5.0)
+	if slot_side > max_slot:
+		for slot in found_strip.get_children():
+			if slot is Control:
+				(slot as Control).custom_minimum_size = Vector2.ONE * max_slot
 
 func _safe_area_insets(view: Vector2) -> Vector4:
 	if OS.get_name() not in ["iOS", "Android"]:
@@ -427,19 +580,35 @@ func _safe_area_insets(view: Vector2) -> Vector4:
 
 
 func _start_round() -> void:
+	score = 0
+	if _native_hud != null:
+		_native_hud.set("crystal_count", 0)
+	if found_strip != null:
+		for slot in found_strip.get_children():
+			if slot is TextureRect:
+				(slot as TextureRect).texture = null
+				(slot as TextureRect).modulate = Color(1.0, 1.0, 1.0, 0.22)
 	for item in spawned_items:
 		if is_instance_valid(item):
 			item.queue_free()
 	spawned_items.clear()
 	target_queue.clear()
-	var locale := LanguageService.learning_locale
-	var objects_by_key := _index_entries(LearningObjectCatalog.all(locale, "objects"))
-	var products_by_key := _index_entries(ProductCatalog.all(locale))
-	var layout := generate_round_layout()
-	for placement in layout:
-		var key := String(placement.key)
-		var data: Dictionary = products_by_key.get(key, {}) if PRODUCT_KEYS.has(key) else objects_by_key.get(key, {})
-		_spawn_item(data, String(placement.point_id))
+	# Keep the existing randomized ten positions, exact user map and 5 targets.
+	# Change only what is displayed there: ten distinct fossil PNGs.
+	var layout: Array[Dictionary] = generate_round_layout()
+	if layout.size() != ROUND_ITEM_COUNT:
+		push_error("Fossil Hunt: cannot create ten reachable fossil positions")
+		return
+	var fossil_order: Array[String] = FOSSIL_IDS_V5.duplicate()
+	fossil_order.shuffle()
+	for i in range(ROUND_ITEM_COUNT):
+		var fossil_id: String = fossil_order[i]
+		var fossil_texture: Texture2D = load(FOSSIL_ART_DIR_V5 + fossil_id + ".png") as Texture2D
+		if fossil_texture == null:
+			push_error("Fossil Hunt: missing " + fossil_id)
+			return
+		var fossil_data: Dictionary = {"key": fossil_id, "texture": fossil_texture}
+		_spawn_item(fossil_data, String(layout[i].point_id))
 	if spawned_items.size() != ROUND_ITEM_COUNT:
 		push_error("House search expected %d items, spawned %d" % [ROUND_ITEM_COUNT, spawned_items.size()])
 	target_queue.assign(spawned_items)
@@ -458,7 +627,7 @@ func generate_round_layout() -> Array[Dictionary]:
 		var kitchen := _random_subset(kitchen_pool, ROUND_ITEM_COUNT - NON_KITCHEN_COUNT)
 		var used_points := {}
 		var layout: Array[Dictionary] = []
-		var second_count := randi_range(2, 4)
+		var second_count := randi_range(3, 4)
 		var non_kitchen_limits := {"second": second_count, "living": NON_KITCHEN_COUNT - second_count}
 		if not _assign_items(non_kitchen, 0, used_points, layout, non_kitchen_limits, {}):
 			continue
@@ -499,6 +668,9 @@ func _assign_items(
 	candidates.shuffle()
 	for point_value in candidates:
 		var point_id := String(point_value)
+		# FOSSIL_SKIP_TOP_LEFT_V5_1: never select the two high-left ledge markers.
+		if point_id == "bed_l" or point_id == "bed_r":
+			continue
 		if used_points.has(point_id):
 			continue
 		var point: Dictionary = SPAWN_POINTS.get(point_id, {})
@@ -615,7 +787,7 @@ func _spawn_item(data: Dictionary, point_id: String) -> void:
 	var local_position := Vector2(source_position.x, source_position.y - HOUSE_CROP_Y)
 	var key := String(data.get("key", ""))
 	var item: HouseSearchItem = HouseSearchItemScript.new()
-	item.z_index = 6
+	item.z_index = 0
 	item.configure(data, int(source_point.floor), local_position, float(ITEM_HEIGHTS.get(key, 60.0)))
 	item.set_meta("spawn_point_id", point_id)
 	world_layer.add_child(item)
@@ -660,26 +832,28 @@ func _play_target_voice() -> void:
 
 
 func _find_nearby_item() -> HouseSearchItem:
-	var nearest: HouseSearchItem
-	var distance := INF
+	var best: HouseSearchItem
+	var best_distance: float = INF
 	for item in spawned_items:
-		if not is_instance_valid(item) or not item.can_use(player.position.x, current_floor):
+		if not is_instance_valid(item) or not item.visible or item.floor_number != current_floor:
 			continue
-		var item_distance := absf(item.position.x - player.position.x)
-		if item_distance < distance:
-			nearest = item
-			distance = item_distance
-	return nearest
-
+		# A two-dimensional reach zone; nearby on X alone is not enough.
+		var delta := Vector2(item.position.x - player.position.x,
+				(item.position.y - player.position.y) * 1.20)
+		if absf(delta.x) > item.interaction_distance or delta.length() > 118.0:
+			continue
+		if delta.length_squared() < best_distance:
+			best = item
+			best_distance = delta.length_squared()
+	return best
 
 func _use_current_interaction() -> void:
 	if transitioning or round_completed:
 		return
-	if nearby_item != null and is_instance_valid(nearby_item):
-		_try_collect(nearby_item)
-	elif absf(player.position.x - DOOR_X) <= DOOR_DISTANCE:
+	if _near_ladder_v4():
 		_change_floor()
-
+	elif nearby_item != null and is_instance_valid(nearby_item):
+		_try_collect(nearby_item)
 
 func _try_collect(item: HouseSearchItem) -> void:
 	if item != current_target:
@@ -708,7 +882,8 @@ func _try_collect(item: HouseSearchItem) -> void:
 	slot.texture = found_texture
 	slot.modulate = Color.WHITE
 	score += 1
-	score_label.text = str(score)
+	_native_hud.set("crystal_count", score)
+	# Preserve original one-coin global reward; do not grant it twice.
 	GameState.add_coins(1)
 	SFX.play_2d(CORRECT_SOUND, player.global_position, -4.0)
 	if found_voice:
@@ -717,7 +892,7 @@ func _try_collect(item: HouseSearchItem) -> void:
 		round_completed = true
 		goal_icon.texture_normal = null
 		player.clear_touch_direction()
-		movement_joystick.reset()
+		movement_joystick.clear_input()
 		# Keep controls locked until the return transition starts.
 		await get_tree().create_timer(0.75).timeout
 		if not is_inside_tree():
@@ -734,51 +909,121 @@ func _try_collect(item: HouseSearchItem) -> void:
 		_show_next_target()
 
 
+func _near_ladder_v4() -> bool:
+	if player == null:
+		return false
+	var floor_name: String = "lower" if current_floor == 1 else "upper"
+	var entries: Dictionary = player.get("_stair_entries_v4")
+	var positions: PackedVector2Array = entries.get(floor_name, PackedVector2Array())
+	for p in positions:
+		if player.position.distance_to(CaveZonesV4.source_to_world(p)) <= 69.0:
+			return true
+	return false
+
 func _change_floor() -> void:
+	if transitioning or round_completed or not _near_ladder_v4():
+		return
 	transitioning = true
 	player.input_enabled = false
 	player.clear_touch_direction()
-	movement_joystick.reset()
-	player.play_walk(Vector2.UP)
-	var source := first_floor_door if current_floor == 1 else second_floor_door
-	var destination := second_floor_door if current_floor == 1 else first_floor_door
-	var source_inside := Vector2(DOOR_X, 645.0 if current_floor == 1 else 318.0)
-	var destination_inside := Vector2(DOOR_X, 318.0 if current_floor == 1 else 645.0)
-	var next_floor := 2 if current_floor == 1 else 1
-	source.texture = open_door_texture
-	var enter := create_tween().set_parallel(true)
-	enter.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	enter.tween_property(player, "position", source_inside, 0.62)
-	enter.tween_property(player, "scale", Vector2(0.58, 0.58), 0.62)
-	enter.tween_property(player, "modulate:a", 0.15, 0.62)
-	await enter.finished
-	player.visible = false
-	source.texture = closed_door_texture
-	await get_tree().create_timer(0.25).timeout
+	movement_joystick.clear_input()
+	var up: bool = current_floor == 1
+	var next_floor: int = 2 if up else 1
+	var sprite: AnimatedSprite2D = player.get_node("AnimatedSprite2D") as AnimatedSprite2D
+	var old_scale: Vector2 = sprite.scale
+	var old_offset: Vector2 = sprite.offset
+	var old_flip: bool = sprite.flip_h
+	var entry_source: Vector2 = Vector2(845.0, 810.0) if up else Vector2(845.0, 498.0)
+	var exit_source: Vector2 = Vector2(845.0, 498.0) if up else Vector2(845.0, 810.0)
+	var side_source: Vector2 = Vector2(782.0, 490.0) if up else Vector2(782.0, 820.0)
+	var entry: Vector2 = CaveZonesV4.source_to_world(entry_source)
+	var exit_position: Vector2 = CaveZonesV4.source_to_world(exit_source)
+	var side_position: Vector2 = CaveZonesV4.source_to_world(side_source)
+	# Walk to the marked ladder and then play the four original rear-view poses.
+	var approach := create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	approach.tween_property(player, "position", entry, 0.35)
+	await approach.finished
+	if not is_inside_tree():
+		return
+	sprite.flip_h = false
+	sprite.scale = Vector2.ONE * (142.0 / 633.0)
+	sprite.offset = Vector2(0.0, -319.0)
+	sprite.play(&"climb_up" if up else &"climb_down")
+	var climb := create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	climb.tween_property(player, "position", exit_position, 1.45)
+	await climb.finished
+	if not is_inside_tree():
+		return
 	current_floor = next_floor
-	player.set_floor(current_floor, DOOR_X)
-	player.position = destination_inside
-	player.scale = Vector2(0.58, 0.58)
-	player.modulate.a = 0.15
-	player.play_walk(Vector2.DOWN)
-	destination.texture = open_door_texture
-	await get_tree().create_timer(0.2).timeout
-	player.visible = true
-	var destination_position := Vector2(DOOR_X, 725.0 if current_floor == 1 else 397.0)
-	var leave := create_tween().set_parallel(true)
-	leave.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	leave.tween_property(player, "position", destination_position, 0.72)
-	leave.tween_property(player, "scale", Vector2.ONE, 0.72)
-	leave.tween_property(player, "modulate:a", 1.0, 0.72)
-	await leave.finished
-	destination.texture = closed_door_texture
-	player.set_floor(current_floor, DOOR_X)
-	player.face(Vector2.DOWN)
+	player.set("fossil_current_floor", current_floor)
+	player.floor_y = exit_position.y
+	var step_out := create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	step_out.tween_property(player, "position", side_position, 0.27)
+	await step_out.finished
+	if not is_inside_tree():
+		return
+	sprite.stop()
+	sprite.scale = old_scale
+	sprite.offset = old_offset
+	sprite.flip_h = old_flip
+	sprite.animation = &"walk_down"
+	player.position = side_position
 	player.input_enabled = true
 	transitioning = false
-
 
 func _exit_to_city() -> void:
 	if transitioning:
 		return
+	if is_instance_valid(_host_back):
+		_host_back.show()
+	var portal: Node = get_node_or_null("/root/PlayTownPortal")
+	if portal != null and bool(portal.get("active")):
+		portal.call("handle_scene_transition", "res://")
+		return
 	SFX.transition_to_scene(GameState.main_scene_path)
+
+
+func _find_host_back() -> void:
+	var ancestor: Node = get_parent()
+	while ancestor != null:
+		for identifier in ["ReturnToEducationalCards", "ReturnToExistingPlanetCards"]:
+			var old_button: Control = ancestor.get_node_or_null(identifier) as Control
+			if old_button != null:
+				_host_back = old_button
+				_host_back.hide()
+				return
+		ancestor = ancestor.get_parent()
+
+
+func _exit_tree() -> void:
+	if is_instance_valid(_host_back):
+		_host_back.show()
+
+
+func _on_fossil_locale(_unused: String) -> void:
+	_refresh_fossil_header()
+	_layout_world()
+
+
+func _refresh_fossil_header() -> void:
+	if _native_title == null or _native_subtitle == null:
+		return
+	var code := "en"
+	var mobile: Node = get_node_or_null("/root/MobileLocale")
+	if mobile != null:
+		code = str(mobile.get("language")).to_lower().get_slice("_", 0).get_slice("-", 0)
+	elif get_node_or_null("/root/LanguageService") != null:
+		code = str(get_node("/root/LanguageService").get("interface_locale")).to_lower().get_slice("_", 0)
+	var names := {
+		"ru": ["ПОИСК ОКАМЕНЕЛОСТЕЙ", "Найди и собери спрятанные предметы"],
+		"en": ["FOSSIL HUNT", "Find and collect the hidden objects"],
+		"pt": ["CAÇA AOS FÓSSEIS", "Encontre e recolha os objetos escondidos"],
+		"es": ["BÚSQUEDA DE FÓSILES", "Busca y recoge los objetos ocultos"],
+		"fr": ["CHASSE AUX FOSSILES", "Trouve et ramasse les objets cachés"],
+		"de": ["FOSSILIENSUCHE", "Finde und sammle die versteckten Gegenstände"]
+	}
+	var words: Array = names.get(code, names["en"])
+	_native_title.text = str(words[0])
+	_native_subtitle.text = str(words[1])
+
+

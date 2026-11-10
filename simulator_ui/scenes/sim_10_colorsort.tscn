@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://simulator_ui/color_sort/independent/color_sort_dragonly_rapid_v2.gd" id="1_sort"]
+[ext_resource type="Script" path="res://simulator_ui/color_sort/independent/color_sort_dragonly_safearea_v3.gd" id="1_sort"]
 
 [node name="Sim10_ColorSort_RealSpace" type="Control"]
 layout_mode = 3

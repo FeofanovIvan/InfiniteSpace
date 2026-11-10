@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://planet_hub/games/ice_planet/IcePlanet.gd" id="1_game"]
+[ext_resource type="Script" path="res://planet_hub/games/ice_planet/IcePlanetSurvivalV42.gd" id="1_game"]
 
-[node name="IcePlanet" type="Control"]
+[node name="IcePlanetEndlessSurvivalV42" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -131,7 +131,7 @@ func _style_neon_close(button: Button) -> void:
 	style.shadow_size = 6
 	button.add_theme_stylebox_override("normal", style)
 	var hover: StyleBoxFlat = style.duplicate() as StyleBoxFlat
-	hover.bg_color = Color("113a60")	
+	hover.bg_color = Color("113a60")
 	button.add_theme_stylebox_override("hover", hover)
 	button.add_theme_stylebox_override("pressed", hover)
 	button.add_theme_stylebox_override("focus", StyleBoxEmpty.new())

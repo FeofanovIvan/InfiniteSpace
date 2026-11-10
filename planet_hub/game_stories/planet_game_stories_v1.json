@@ -1,0 +1,206 @@
+{
+  "version": 1,
+  "description": "Draft texts for exactly 24 planet mini-games. Empty strings are intentional. Edit only values, keep game ids and language keys.",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "de",
+    "fr"
+  ],
+  "games": {
+    "mw__puzzles": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "mw__animal_habitat": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "mw__shopping_list": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "mw__product_count": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "lmc__fungal_paths": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "lmc__sunbeam_catcher": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "lmc__eco_sort": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "lmc__fungal_race": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "smc__build_molecule": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "smc__solutions_lab": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "smc__resource_rush": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "smc__icy_planet": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "ngc6822__fossil_search": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "ngc6822__evolution_order": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "ngc6822__dinosaur_eggs": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "ngc6822__pizza_fraction": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "m31__roll_ball": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "m31__magnetic_collector": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "m31__gravity_pinball": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "m31__electric_pulses": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "m33__piano": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "m33__matching_pairs": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "m33__space_rebus": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    },
+    "m33__neural_math": {
+      "ru": "",
+      "en": "",
+      "pt_BR": "",
+      "es": "",
+      "de": "",
+      "fr": ""
+    }
+  }
+}

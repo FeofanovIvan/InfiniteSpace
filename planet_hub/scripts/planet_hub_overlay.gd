@@ -761,6 +761,16 @@ func _v1051_layout_back() -> void:
 	var sc: float = clampf(minf(size.x / 1280.0, size.y / 720.0), 0.7, 1.3)
 	_v1051_back.position = Vector2(12.0, 12.0) * sc
 	_v1051_back.size = Vector2.ONE * 56.0 * sc
+	# MIKA_RESOURCE_RUSH_HOST_BACK_ALIGN_V1_2
+	# Align this SAME PlanetHub return button with Resource Rush's header.
+	if is_instance_valid(_v1051_viewport):
+		for running_game in _v1051_viewport.get_children():
+			if running_game.has_method("resource_rush_host_back_rect"):
+				var native_slot: Rect2 = running_game.call("resource_rush_host_back_rect")
+				if native_slot.size.x > 20.0 and native_slot.size.y > 20.0:
+					_v1051_back.position = native_slot.position
+					_v1051_back.size = native_slot.size
+				break
 
 
 func _v1051_open_existing_game(game_id: String) -> void:
@@ -801,6 +811,14 @@ func _v1051_open_existing_game(game_id: String) -> void:
 	_v1051_game_layer.move_to_front()
 	portal.call("start_game", scene_path)
 	_v1051_viewport.add_child(instance)
+	# MIKA_PLANET_STORY_V1_SHARED_ENTRY
+	var story_overlay: CanvasLayer = load("res://planet_hub/game_stories/planet_story_overlay_v1.gd").new() as CanvasLayer
+	story_overlay.set("game_id", game_id)
+	instance.add_child(story_overlay)
+	# MIKA_RESOURCE_RUSH_HOST_BACK_SYNC_AFTER_OPEN_V1_2
+	# Newly instantiated Resource Rush has computed its slot in _ready().
+	# Other games simply retain their original back-button positioning.
+	_v1051_layout_back()
 
 
 func _v1051_return_to_cards() -> void:

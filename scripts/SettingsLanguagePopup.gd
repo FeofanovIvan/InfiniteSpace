@@ -40,6 +40,7 @@ func _ready() -> void:
 	_veil.color = Color(0.0, 0.015, 0.05, 0.76)
 	_veil.mouse_filter = Control.MOUSE_FILTER_STOP
 	add_child(_veil)
+	_veil.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_veil.gui_input.connect(_veil_input)
 	_panel = Panel.new()
 	_panel.name = "LanguageSettingsNeonPanel"
@@ -126,9 +127,6 @@ func _layout() -> void:
 	var view: Vector2 = get_viewport_rect().size
 	if view.x < 180 or view.y < 180:
 		return
-	size = view
-	_veil.position = Vector2.ZERO
-	_veil.size = view
 	var safe: Rect2 = MobileLocale.safe_rect(view)
 	var w: float = minf(670.0, safe.size.x - 14.0)
 	var h: float = minf(650.0, safe.size.y - 14.0)

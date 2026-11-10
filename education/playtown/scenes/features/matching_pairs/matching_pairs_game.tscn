@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://education/playtown/src/features/matching_pairs/matching_pairs_game.gd" id="1"]
+[ext_resource type="Script" path="res://education/playtown/src/features/matching_pairs/mika_matching_pairs_session_cap_v3_2.gd" id="1"]
 
 [node name="MatchingPairsGame" type="Node2D"]
 script = ExtResource("1")

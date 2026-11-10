@@ -30,7 +30,7 @@ const AsteroidFieldScene = preload("res://scripts/AsteroidField.gd")
 const GalacticMapScene = preload("res://scripts/GalacticMap.gd")
 const PlayerJumpFXScene = preload("res://scripts/PlayerJumpFX.gd")
 const NpcJumpVisual = preload("res://scripts/NpcJumpVisual.gd")
-const MikoMainMenuScene = preload("res://simulator_ui/menu/earth_playtown_original_v1.gd")
+const MikoMainMenuScene = preload("res://simulator_ui/menu/mika_free_world_more_games_v1.gd")
 const ComicPrologueScene = preload("res://scripts/ComicPrologue.gd")
 const StoryLandingSmokeScene = preload("res://scripts/StoryLandingSmoke.gd")
 const LandingMotion = preload("res://scripts/LandingMotion.gd")
@@ -727,9 +727,6 @@ func _layout_bubble_popup(view: Vector2) -> void:
 	var portrait: Vector2 = Vector2(430.0,540.0)*sc
 	_bubble_popup.size = portrait
 	_bubble_popup.position = (view-portrait)*0.5
-	var card: Control = _bubble_popup.get_node_or_null("SameSimulatorPortraitCard") as Control
-	if card != null:
-		card.size = portrait
 
 func _bubble_flight_available() -> bool:
 	return (_gameplay_hud != null and _gameplay_hud.visible and not get_tree().paused

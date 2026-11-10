@@ -221,6 +221,20 @@ func _draw_orbits() -> void:
 
 func _draw_planets() -> void:
 	for body in _solar_bodies:
+		# MIKA_MINIMAP_PLANETS_ONLY_V1_BEGIN
+		# Filter VISUAL map markers only: world objects and navigation are unchanged.
+		# Keep the Sun for orientation, named MW planets and planets from other systems.
+		var mika_map_kind: String = str(body.get("kind", ""))
+		var mika_map_name: String = str(body.get("name", ""))
+		var mika_mw_planet: bool = [
+			"Mercury", "Venus", "Earth", "Mars", "Jupiter",
+			"Saturn", "Uranus", "Neptune"
+		].has(mika_map_name)
+		if mika_map_kind == "moon":
+			continue
+		if mika_map_name != "Sun" and mika_map_kind != "planet" and not mika_mw_planet:
+			continue
+		# MIKA_MINIMAP_PLANETS_ONLY_V1_END
 		var world: Vector2 = body["world"]
 		var point: Vector2 = _world_to_map(world)
 		var name: String = str(body["name"])

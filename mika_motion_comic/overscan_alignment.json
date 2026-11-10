@@ -1,0 +1,240 @@
+{
+  "source": "MIKA_images_metadata_FIXED.zip/mika_original_regions.json",
+  "note": "Mappings are APPROXIMATE SIFT/RANSAC alignment only, not proof of pixel-identical content",
+  "entries": {
+    "city": {
+      "file": "res://mika_motion_comic/assets/overscan/city_overscan.png",
+      "original_file": "res://mika_motion_comic/assets/city.png",
+      "source_size_px": [
+        1372,
+        1146
+      ],
+      "expanded_size_px": [
+        1448,
+        1086
+      ],
+      "matrix": [
+        [
+          0.74532,
+          0.00082,
+          243.0691
+        ],
+        [
+          -0.00082,
+          0.74532,
+          117.91354
+        ]
+      ],
+      "inliers": 547,
+      "uncertain_registration": false
+    },
+    "mica": {
+      "file": "res://mika_motion_comic/assets/overscan/mica_overscan.png",
+      "original_file": "res://mika_motion_comic/assets/mica_balcony.png",
+      "source_size_px": [
+        1122,
+        1402
+      ],
+      "expanded_size_px": [
+        1024,
+        1536
+      ],
+      "matrix": [
+        [
+          0.59319,
+          0.00196,
+          150.72984
+        ],
+        [
+          -0.00196,
+          0.59319,
+          497.31648
+        ]
+      ],
+      "inliers": 40,
+      "uncertain_registration": true
+    },
+    "news": {
+      "file": "res://mika_motion_comic/assets/overscan/news_overscan.png",
+      "original_file": "res://mika_motion_comic/assets/news.png",
+      "source_size_px": [
+        1372,
+        1147
+      ],
+      "expanded_size_px": [
+        1536,
+        1024
+      ],
+      "matrix": [
+        [
+          0.78477,
+          0.00082,
+          234.00754
+        ],
+        [
+          -0.00082,
+          0.78477,
+          57.36714
+        ]
+      ],
+      "inliers": 284,
+      "uncertain_registration": false
+    },
+    "talk": {
+      "file": "res://mika_motion_comic/assets/overscan/talk_overscan.png",
+      "original_file": "res://mika_motion_comic/assets/conversation.png",
+      "source_size_px": [
+        1536,
+        1024
+      ],
+      "expanded_size_px": [
+        1536,
+        1024
+      ],
+      "matrix": [
+        [
+          0.66617,
+          -0.00694,
+          268.05682
+        ],
+        [
+          0.00694,
+          0.66617,
+          176.88933
+        ]
+      ],
+      "inliers": 120,
+      "uncertain_registration": true
+    },
+    "red": {
+      "file": "res://mika_motion_comic/assets/overscan/red_overscan.png",
+      "original_file": "res://mika_motion_comic/assets/disaster_red.png",
+      "source_size_px": [
+        1372,
+        1147
+      ],
+      "expanded_size_px": [
+        1503,
+        1047
+      ],
+      "matrix": [
+        [
+          0.72143,
+          -0.00306,
+          139.13664
+        ],
+        [
+          0.00306,
+          0.72143,
+          96.94213
+        ]
+      ],
+      "inliers": 126,
+      "uncertain_registration": true
+    },
+    "magenta": {
+      "file": "res://mika_motion_comic/assets/overscan/magenta_overscan.png",
+      "original_file": "res://mika_motion_comic/assets/disaster_magenta.png",
+      "source_size_px": [
+        1371,
+        1147
+      ],
+      "expanded_size_px": [
+        1448,
+        1086
+      ],
+      "matrix": [
+        [
+          0.80308,
+          -0.00261,
+          126.27197
+        ],
+        [
+          0.00261,
+          0.80308,
+          60.50362
+        ]
+      ],
+      "inliers": 262,
+      "uncertain_registration": false
+    },
+    "ship_front": {
+      "file": "res://mika_motion_comic/assets/overscan/ship_front_overscan.png",
+      "original_file": "res://mika_motion_comic/assets/ship_front.png",
+      "source_size_px": [
+        1536,
+        1024
+      ],
+      "expanded_size_px": [
+        1536,
+        1024
+      ],
+      "matrix": [
+        [
+          0.78007,
+          -0.00249,
+          188.57894
+        ],
+        [
+          0.00249,
+          0.78007,
+          83.9573
+        ]
+      ],
+      "inliers": 266,
+      "uncertain_registration": false
+    },
+    "ship_rear": {
+      "file": "res://mika_motion_comic/assets/overscan/ship_rear_overscan.png",
+      "original_file": "res://mika_motion_comic/assets/ship_rear.png",
+      "source_size_px": [
+        1536,
+        1024
+      ],
+      "expanded_size_px": [
+        1536,
+        1024
+      ],
+      "matrix": [
+        [
+          0.75522,
+          -0.04459,
+          217.293
+        ],
+        [
+          0.04459,
+          0.75522,
+          74.42986
+        ]
+      ],
+      "inliers": 222,
+      "uncertain_registration": false
+    },
+    "cockpit": {
+      "file": "res://mika_motion_comic/assets/overscan/cockpit_overscan.png",
+      "original_file": "res://mika_motion_comic/assets/cockpit.png",
+      "source_size_px": [
+        1536,
+        1024
+      ],
+      "expanded_size_px": [
+        1536,
+        1024
+      ],
+      "matrix": [
+        [
+          0.61516,
+          -0.00952,
+          302.65328
+        ],
+        [
+          0.00952,
+          0.61516,
+          208.17871
+        ]
+      ],
+      "inliers": 211,
+      "uncertain_registration": false
+    }
+  }
+}

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://planet_hub/games/gravity_pinball/gravity_pinball.gd" id="1"]
+[ext_resource type="Script" path="res://planet_hub/games/gravity_pinball/gravity_pinball_v23.gd" id="1"]
 
 [node name="Main" type="Control"]
 layout_mode = 3

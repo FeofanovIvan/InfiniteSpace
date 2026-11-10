@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://brlm7qoau7les"
+
+[deps]
+
+files=["res://mika_motion_comic/voice_sfx_cues.END.translation", "res://mika_motion_comic/voice_sfx_cues.TRACK.translation", "res://mika_motion_comic/voice_sfx_cues.ROLE.translation", "res://mika_motion_comic/voice_sfx_cues.VOICE_EN.translation", "res://mika_motion_comic/voice_sfx_cues.TEXT_ON.translation", "res://mika_motion_comic/voice_sfx_cues.SFX.translation", "res://mika_motion_comic/voice_sfx_cues.NOTE.translation"]
+
+source_file="res://mika_motion_comic/voice_sfx_cues.csv"
+dest_files=["res://mika_motion_comic/voice_sfx_cues.END.translation", "res://mika_motion_comic/voice_sfx_cues.TRACK.translation", "res://mika_motion_comic/voice_sfx_cues.ROLE.translation", "res://mika_motion_comic/voice_sfx_cues.VOICE_EN.translation", "res://mika_motion_comic/voice_sfx_cues.TEXT_ON.translation", "res://mika_motion_comic/voice_sfx_cues.SFX.translation", "res://mika_motion_comic/voice_sfx_cues.NOTE.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

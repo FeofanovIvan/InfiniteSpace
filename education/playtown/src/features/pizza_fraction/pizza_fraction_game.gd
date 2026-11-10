@@ -10,6 +10,29 @@ const REFERENCE_SIZE := Vector2(1536.0, 768.0)
 const DENOMINATORS := [2, 3, 4, 5, 6, 8, 9, 10]
 const MAX_SLICES := 10
 
+# MIKA_PIZZA_EVOLUTION_TABLE_V21
+# Reuses the existing MIKA simulator top rail. Original pizza mechanics/voices stay intact.
+const MIKA_TOOLBAR = preload("res://simulator_ui/scripts/mika_shared_tracing_toolbar_v2.gd")
+const MIKA_HUD = preload("res://planet_hub/scripts/bottom_hud.gd")
+const MIKA_FOSSIL_BG: Texture2D = preload("res://education/playtown/assets/pizza_fraction/evolution_fossil_valley.png")
+const MIKA_STONE_TABLE: Texture2D = preload("res://education/playtown/assets/pizza_fraction/stone_table.png")
+const MIKA_TITLES: Dictionary = {
+	"ru": ["Пицца и дроби", "Собери нужную часть пиццы"],
+	"en": ["Pizza Fractions", "Collect the requested slices"],
+	"pt_BR": ["Frações de pizza", "Recolha as fatias pedidas"],
+	"fr": ["Fractions de pizza", "Récupère les parts demandées"],
+	"es": ["Fracciones de pizza", "Recoge las porciones pedidas"],
+	"de": ["Pizza und Brüche", "Sammle die gewünschten Stücke"],
+}
+var _mika_outer: ColorRect
+var _mika_frame: Panel
+var _mika_header: Panel
+var _mika_title: Label
+var _mika_subtitle: Label
+var _mika_hud: Control
+var _mika_back_slot: Control
+var _mika_background_shader: ShaderMaterial
+
 var ui: Control
 var background: TextureRect
 var left_panel: Panel
@@ -49,7 +72,10 @@ var taken: Array[bool] = []
 
 func _ready() -> void:
 	rng.randomize()
+	score = 0
+	GameState.last_score = 0
 	_build_ui()
+	_mika_setup_interface()
 	get_viewport().size_changed.connect(_layout)
 	_layout()
 	_start_round()
@@ -273,6 +299,7 @@ func _finish_round() -> void:
 	denominator_label.visible = true
 	score += 1
 	score_panel.set_score(score)
+	_mika_sync_score()
 	GameState.last_score = score
 	GameState.add_coins(1)
 	SFX.play_2d(CORRECT_SOUND, get_viewport_rect().size * 0.5, -5.0)
@@ -339,16 +366,31 @@ func _layout() -> void:
 	var top := safe.y + edge
 	var right := view.x - safe.z - edge
 	var bottom := view.y - safe.w - edge
-	background.position = Vector2.ZERO
-	background.size = view
+	# Main board fills the central region; only the background is cover-scaled
+	# and rounded-clipped. The game controls use the same content bounds.
+	_mika_outer.position = Vector2.ZERO
+	_mika_outer.size = view
+	var safe_rect := Rect2(Vector2(safe.x, safe.y),
+		Vector2(maxf(0.0, view.x - safe.x - safe.z), maxf(0.0, view.y - safe.y - safe.w)))
+	var bar_bottom: float = MIKA_TOOLBAR.relayout(view, safe_rect,
+		_mika_back_slot, _mika_hud, _mika_header, _mika_title, _mika_subtitle)
+	_mika_sync_host_back()
+	var rim: float = maxf(6.0, 8.0 * safe_scale)
+	_mika_frame.position = Vector2(left - rim, bar_bottom + 8.0 * safe_scale)
+	_mika_frame.size = Vector2(maxf(80.0, right - left + 2.0 * rim),
+		maxf(80.0, bottom - _mika_frame.position.y - 2.0 * safe_scale))
+	background.position = _mika_frame.position + Vector2(4.0, 4.0) * safe_scale
+	background.size = _mika_frame.size - Vector2(8.0, 8.0) * safe_scale
+	_mika_background_shader.set_shader_parameter("panel_size", background.size)
+	_mika_background_shader.set_shader_parameter("corner_px", 23.0 * safe_scale)
 	var exit_side := 78.0 * safe_scale
 	var score_size := Vector2(185.0, 72.0) * safe_scale
 	home_button.position = Vector2(right - exit_side, top)
 	home_button.size = Vector2.ONE * exit_side
 	score_panel.position = Vector2(home_button.position.x - score_size.x - 12.0 * safe_scale, top)
 	score_panel.size = score_size
-	var content_top := top + exit_side + 14.0 * safe_scale
-	var content_height := bottom - content_top
+	var content_top := bar_bottom + 24.0 * safe_scale
+	var content_height := maxf(90.0, _mika_frame.position.y + _mika_frame.size.y - 14.0 * safe_scale - content_top)
 	var total_width := right - left
 	var gap := 16.0 * safe_scale
 	var left_width := total_width * 0.25
@@ -397,8 +439,8 @@ func _layout() -> void:
 	target_text.size = Vector2(left_width - header_margin * 2.0, content_height * 0.22)
 	target_text.add_theme_font_size_override("font_size", maxi(18, int(28 * safe_scale)))
 
-	var basket_center := Vector2(center_width * 0.50, content_height * 0.39)
-	var basket_visible_size := Vector2(center_width * 0.94, content_height * 0.55)
+	var basket_center := Vector2(center_width * 0.50, content_height * 0.43)
+	var basket_visible_size := Vector2(center_width * 0.98, content_height * 0.65)
 	basket.size = basket_visible_size
 	basket.pivot_offset = basket.size * 0.5
 	basket.position = basket_center - basket.size * 0.5
@@ -415,7 +457,7 @@ func _layout() -> void:
 		piece_width * float(basket_columns) + basket_gap * float(maxi(basket_columns - 1, 0)),
 		piece_height * float(basket_rows) + basket_gap * float(maxi(basket_rows - 1, 0))
 	)
-	var basket_grid_start := basket_center - basket_grid_size * 0.5
+	var basket_grid_start := basket_center - Vector2(0.0, basket_visible_size.y * 0.105) - basket_grid_size * 0.5
 	for index in range(MAX_SLICES):
 		var basket_column := index % maxi(basket_columns, 1)
 		var basket_row := index / maxi(basket_columns, 1)
@@ -428,7 +470,7 @@ func _layout() -> void:
 		line.visible = false
 	basket_drop_rect = Rect2(center_panel.position + basket_center - basket_visible_size * 0.5, basket_visible_size)
 
-	var fraction_y := content_height * 0.76
+	var fraction_y := content_height * 0.79
 	equals_label.position = Vector2(center_width * 0.28, fraction_y)
 	equals_label.size = Vector2(center_width * 0.16, content_height * 0.16)
 	var fraction_x := center_width * 0.48
@@ -605,3 +647,124 @@ func _safe_area_insets(viewport_size: Vector2) -> Vector4:
 
 func _go_back() -> void:
 	SFX.transition_to_scene(BACK_SCENE)
+
+
+# The real Back is outside the game SubViewport. Move that host button into the
+# rail's left slot; never clone or replace its click handler.
+func _mika_sync_host_back() -> void:
+	if _mika_back_slot == null:
+		return
+	var host: Button = get_tree().root.find_child("ReturnToEducationalCards", true, false) as Button
+	if host == null:
+		host = get_tree().root.find_child("ReturnToExistingPlanetCards", true, false) as Button
+	if host == null:
+		return
+	host.position = _mika_back_slot.position
+	host.size = _mika_back_slot.size
+
+func _mika_setup_interface() -> void:
+	home_button.hide()
+	home_button.disabled = true
+	score_panel.hide()
+	left_panel.clip_contents = true
+	basket.texture = MIKA_STONE_TABLE
+	# The original image, not a resized copy, is cropped using a cover-scale.
+	background.texture = MIKA_FOSSIL_BG
+	background.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	_mika_background_shader = ShaderMaterial.new()
+	var shader := Shader.new()
+	shader.code = """
+shader_type canvas_item;
+uniform vec2 panel_size = vec2(1000.0, 600.0);
+uniform float corner_px = 23.0;
+varying vec2 local_pixel;
+void vertex() {
+	local_pixel = VERTEX;
+}
+void fragment() {
+	vec2 half_size = panel_size * 0.5;
+	vec2 q = abs(local_pixel - half_size) - (half_size - vec2(corner_px));
+	float distance_to_edge = length(max(q, vec2(0.0))) + min(max(q.x, q.y), 0.0) - corner_px;
+	COLOR.a *= 1.0 - smoothstep(-1.25, 1.25, distance_to_edge);
+}
+"""
+	_mika_background_shader.shader = shader
+	background.material = _mika_background_shader
+	_mika_outer = ColorRect.new()
+	_mika_outer.name = "PizzaFractionsOuterSpace"
+	_mika_outer.color = Color("07152c")
+	_mika_outer.z_index = -100
+	_mika_outer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_mika_outer)
+	_mika_frame = Panel.new()
+	_mika_frame.name = "PizzaFractionsRoundedCyanBorder"
+	_mika_frame.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_mika_frame.z_index = 90
+	var frame_style := StyleBoxFlat.new()
+	# MIKA_PIZZA_CLEAR_BOARD_V22: draw only the cyan rim; no blue film or glow over the playfield.
+	frame_style.draw_center = false
+	frame_style.bg_color = Color.TRANSPARENT
+	frame_style.border_color = Color("65e7ff")
+	frame_style.set_border_width_all(4)
+	frame_style.set_corner_radius_all(27)
+	frame_style.anti_aliasing = true
+	frame_style.shadow_color = Color.TRANSPARENT
+	frame_style.shadow_size = 0
+	_mika_frame.add_theme_stylebox_override("panel", frame_style)
+	add_child(_mika_frame)
+	_mika_back_slot = Control.new()
+	_mika_back_slot.name = "PizzaFractionsRealBackPosition"
+	_mika_back_slot.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_mika_back_slot)
+	_mika_header = Panel.new()
+	_mika_header.name = "PizzaFractionsCaption"
+	_mika_header.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_mika_header.z_index = 105
+	MIKA_TOOLBAR.apply_title_style(_mika_header)
+	add_child(_mika_header)
+	_mika_title = Label.new()
+	_mika_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_mika_title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_mika_title.clip_text = true
+	_mika_title.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_mika_title.add_theme_color_override("font_color", Color.WHITE)
+	_mika_header.add_child(_mika_title)
+	_mika_subtitle = Label.new()
+	_mika_subtitle.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_mika_subtitle.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_mika_subtitle.clip_text = true
+	_mika_subtitle.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_mika_subtitle.add_theme_color_override("font_color", Color("b7eaff"))
+	_mika_header.add_child(_mika_subtitle)
+	_mika_hud = MIKA_HUD.new() as Control
+	_mika_hud.name = "PizzaFractionsEarnedCrystals"
+	_mika_hud.z_index = 106
+	_mika_hud.size = Vector2(1680.0, 158.0)
+	add_child(_mika_hud)
+	for key in ["sim_button", "flight_button"]:
+		var wing: Button = _mika_hud.get(key) as Button
+		if wing != null:
+			wing.disabled = true
+			wing.hide()
+	_mika_sync_score()
+	_mika_refresh_title()
+	if not MobileLocale.language_changed.is_connected(_mika_language_changed):
+		MobileLocale.language_changed.connect(_mika_language_changed)
+
+func _mika_language_changed(_lang: String) -> void:
+	_mika_refresh_title()
+	_layout()
+
+func _mika_refresh_title() -> void:
+	if _mika_title == null:
+		return
+	var lang: String = str(MobileLocale.language)
+	if not MIKA_TITLES.has(lang):
+		lang = "en"
+	var labels: Array = MIKA_TITLES[lang]
+	_mika_title.text = str(labels[0])
+	_mika_subtitle.text = str(labels[1])
+
+func _mika_sync_score() -> void:
+	if _mika_hud != null:
+		_mika_hud.set("crystal_count", score)

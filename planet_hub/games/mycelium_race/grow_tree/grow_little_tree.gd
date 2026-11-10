@@ -8,9 +8,12 @@ const HUD = preload("res://planet_hub/scripts/bottom_hud.gd")
 const BACK = preload("res://simulator_ui/back_arrow_glyph.gd")
 const BG = preload("res://planet_hub/games/mycelium_race/grow_tree/assets/soil_sky.png")
 const SHOVEL = preload("res://planet_hub/games/mycelium_race/grow_tree/assets/trowel.png")
+const SEED_ICON = preload("res://planet_hub/games/mycelium_race/grow_tree/assets/seed.png")
 const WATER = preload("res://planet_hub/games/mycelium_race/grow_tree/assets/watering_can.png")
 const MINERALS = preload("res://planet_hub/games/mycelium_race/grow_tree/assets/fertilizer.png")
 const HOLE = preload("res://planet_hub/games/mycelium_race/grow_tree/assets/planting_hole.png")
+const SUN_SHAFT = preload("res://planet_hub/games/mycelium_race/grow_tree/assets/sunlight_shaft.png")
+const SUN_GROUND = preload("res://planet_hub/games/mycelium_race/grow_tree/assets/sunlight_ground.png")
 const STAGES = [
     preload("res://planet_hub/games/mycelium_race/grow_tree/assets/tree_01.png"),
     preload("res://planet_hub/games/mycelium_race/grow_tree/assets/tree_02.png"),
@@ -23,8 +26,15 @@ const STAGES = [
     preload("res://planet_hub/games/mycelium_race/grow_tree/assets/tree_09.png"),
     preload("res://planet_hub/games/mycelium_race/grow_tree/assets/tree_10.png")
 ]
-const GOOD_SOUND = preload("res://education/playtown/audio/sfx/correct.ogg")
-const BAD_SOUND = preload("res://education/playtown/audio/sfx/wrong.ogg")
+const GOOD_SOUND = preload("res://education/playtown/audio/sfx/connect_point.ogg")
+const BAD_SOUND = preload("res://planet_hub/games/mycelium_race/grow_tree/audio/try_again.wav")
+const ACTION_AUDIO = {
+    "shovel": preload("res://planet_hub/games/mycelium_race/grow_tree/audio/dig.wav"),
+    "seed": preload("res://planet_hub/games/mycelium_race/grow_tree/audio/seed.wav"),
+    "water": preload("res://planet_hub/games/mycelium_race/grow_tree/audio/water.wav"),
+    "sun": preload("res://planet_hub/games/mycelium_race/grow_tree/audio/sun.wav"),
+    "minerals": preload("res://planet_hub/games/mycelium_race/grow_tree/audio/minerals.wav")
+}
 const TOOL_IDS = ["shovel", "seed", "water", "sun", "minerals"]
 const TOOL_COLORS = [Color("d4d9ff"), Color("f4d594"), Color("65ceff"), Color("ffe59c"), Color("b6eb9b")]
 const LOCALES = {
@@ -44,6 +54,7 @@ var _back: Button
 var _counter: Control
 var _restart: Button
 var _sfx: AudioStreamPlayer
+var _action_sfx: AudioStreamPlayer
 var _stage: Rect2 = Rect2(15, 145, 1250, 540)
 var _toolbar_bottom: float = 100.0
 var _now: float = 0.0
@@ -64,8 +75,14 @@ var _finished: bool = false
 var _won: bool = false
 var _effect: String = ""
 var _effect_time: float = 0.0
+var _effect_duration: float = 1.0
+var _pending_tool: String = ""
+var _plant_pop_time: float = 0.0
 var _rng := RandomNumberGenerator.new()
 var _intro_spoken: bool = false
+var _runner_back: Button = null
+var _runner_back_was_visible: bool = false
+var _restart_icon: Label
 
 
 func _ready() -> void:
@@ -77,8 +94,32 @@ func _ready() -> void:
     _reset_game()
     resized.connect(_layout)
     _layout()
+    _hide_outer_runner_back()
     call_deferred("_layout")
     call_deferred("_play_intro")
+
+
+func _hide_outer_runner_back() -> void:
+    # The Simulator / Planet Hub adds its own Back ABOVE the game SubViewport.
+    # Hide only the matching runner control, never the game's native toolbar Back.
+    var candidate: Node = get_parent()
+    for depth in range(8):
+        if candidate == null:
+            break
+        for button_name in ["ReturnToEducationalCards", "ReturnToExistingPlanetCards"]:
+            var external_back: Button = candidate.get_node_or_null(button_name) as Button
+            if external_back != null:
+                _runner_back = external_back
+                _runner_back_was_visible = external_back.visible
+                external_back.hide()
+                return
+        candidate = candidate.get_parent()
+
+func _exit_tree() -> void:
+    # Restore the runner for every other game; no shared scene or script edited.
+    if _runner_back != null and is_instance_valid(_runner_back):
+        _runner_back.visible = _runner_back_was_visible
+    _runner_back = null
 
 func _create_header() -> void:
     _header_panel = Panel.new()
@@ -105,9 +146,9 @@ func _create_header() -> void:
     _back.add_theme_stylebox_override("pressed", UI_KIT.button_style(true))
     _back.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
     _back.pressed.connect(_go_back)
-    _back.disabled = true
-    _back.visible = false
-    _back.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    _back.disabled = false
+    _back.visible = true
+    _back.mouse_filter = Control.MOUSE_FILTER_STOP
     add_child(_back)
     var glyph: Control = BACK.new() as Control
     glyph.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -130,19 +171,56 @@ func _create_header() -> void:
     _restart.add_theme_stylebox_override("pressed", UI_KIT.button_style(true))
     _restart.pressed.connect(_reset_game)
     add_child(_restart)
+    _restart_icon = Label.new()
+    _restart_icon.name = "GrowTreeRestartGlyph"
+    _restart_icon.text = "⟳"
+    _restart_icon.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+    _restart_icon.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+    _restart_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+    _restart_icon.add_theme_color_override("font_color", Color("d9fbff"))
+    _restart.add_child(_restart_icon)
     _sfx = AudioStreamPlayer.new()
+    _sfx.volume_db = -12.0
     add_child(_sfx)
+    _action_sfx = AudioStreamPlayer.new()
+    _action_sfx.volume_db = -8.0
+    add_child(_action_sfx)
 
 
 func _instruction_line() -> String:
     match _language:
-        "ru": return "Вырасти деревце: копай, сажай, поливай и свети солнцем."
-        "pt": return "Cultive a arvorezinha: cave, plante, regue e dê sol."
-        "es": return "Haz crecer el arbolito: cava, planta, riega y dale sol."
-        "de": return "Lass den kleinen Baum wachsen: graben, pflanzen, gießen und Sonne geben."
-        "fr": return "Fais pousser le petit arbre : creuse, plante, arrose et donne du soleil."
+        "ru": return "Расти, деревце! Посади семечко и помоги маленькому дереву вырасти!"
+        "pt": return "Cresça, arvorezinha! Plante uma semente e ajude a pequena árvore a crescer!"
+        "es": return "¡Crece, arbolito! ¡Planta una semilla y ayuda al arbolito a crecer!"
+        "de": return "Wachs, kleiner Baum! Pflanze einen Samen und hilf dem Bäumchen beim Wachsen!"
+        "fr": return "Pousse, petit arbre ! Plante une graine et aide ton arbre à grandir !"
         _:
-            return "Grow your little tree: dig, plant, water, and shine the sun."
+            return "Grow, little tree! Plant a seed and help your little tree grow!"
+
+func _step_speech() -> String:
+    var step: String = _expected
+    var prompts: Dictionary = {
+        "ru": {"seed":"Теперь опусти семечко в ямку.", "water":"Полей деревце из лейки.", "sun":"Подари деревцу солнечный свет.", "minerals":"Покорми деревце минералами."},
+        "en": {"seed":"Now place the seed in the hole.", "water":"Water your little tree.", "sun":"Give your little tree some sunshine.", "minerals":"Feed your little tree with minerals."},
+        "pt": {"seed":"Agora coloque a semente na cova.", "water":"Regue a sua arvorezinha.", "sun":"Dê um pouco de sol à sua árvore.", "minerals":"Alimente sua árvore com minerais."},
+        "es": {"seed":"Ahora pon la semilla en el hoyo.", "water":"Riega tu arbolito.", "sun":"Dale un poco de luz del sol.", "minerals":"Dale minerales a tu arbolito."},
+        "de": {"seed":"Lege jetzt den Samen in das Loch.", "water":"Gieße deinen kleinen Baum.", "sun":"Schenk deinem Baum Sonnenlicht.", "minerals":"Gib deinem Baum Mineralien."},
+        "fr": {"seed":"Place maintenant la graine dans le trou.", "water":"Arrose ton petit arbre.", "sun":"Offre du soleil à ton arbre.", "minerals":"Donne des minéraux à ton arbre."}
+    }
+    var lang_data: Dictionary = prompts.get(_language, prompts["en"])
+    return str(lang_data.get(step, ""))
+
+func _speak_next_step() -> void:
+    if _finished or _pending_tool != "":
+        return
+    if _phase == "care" and _correct_actions % 3 != 0:
+        return
+    var message: String = _step_speech()
+    if message.is_empty():
+        return
+    var speaker: Node = get_node_or_null("/root/MikaVoice")
+    if speaker != null and speaker.has_method("speak_text"):
+        speaker.call("speak_text", message, _language, "fungal")
 
 func _task_prefix() -> String:
     match _language:
@@ -161,7 +239,7 @@ func _play_intro() -> void:
     var voice: Node = get_node_or_null("/root/MikaVoice")
     if voice != null and voice.has_method("speak_text"):
         var locale := _language if _language != "pt" else "pt_BR"
-        voice.call("speak_text", _instruction_line(), locale, "tablet")
+        voice.call("speak_text", _instruction_line(), locale, "fungal")
 
 func _buzz(ms: int = 35) -> void:
     if OS.get_name() in ["Android", "iOS"]:
@@ -190,7 +268,7 @@ func _tr(key: String) -> String:
 func _refresh_language() -> void:
     _header_title.text = _tr("title")
     _header_subtitle.text = _tr("subtitle")
-    _restart.text = "⟳  " + _tr("restart")
+    _restart.text = "      " + _tr("restart")
     _layout()
 
 func _safe_area() -> Rect2:
@@ -213,7 +291,11 @@ func _layout() -> void:
     _stage = Rect2(safe.position.x + margin, _toolbar_bottom + gap, maxf(125.0, safe.size.x - 2.0 * margin), maxf(90.0, safe.end.y - _toolbar_bottom - gap - margin))
     _restart.position = _stage.end - Vector2(clampf(_stage.size.x * 0.155, 96.0, 190.0) + 14.0, clampf(_stage.size.y * 0.082, 38.0, 56.0) + 12.0)
     _restart.size = Vector2(clampf(_stage.size.x * 0.155, 96.0, 190.0), clampf(_stage.size.y * 0.082, 38.0, 56.0))
-    _restart.add_theme_font_size_override("font_size", maxi(12, roundi(_restart.size.y * 0.42)))
+    _restart.add_theme_font_size_override("font_size", maxi(12, roundi(_restart.size.y * 0.34)))
+    if _restart_icon != null:
+        _restart_icon.position = Vector2(4.0, 0.0)
+        _restart_icon.size = Vector2(_restart.size.y * 0.98, _restart.size.y)
+        _restart_icon.add_theme_font_size_override("font_size", maxi(23, roundi(_restart.size.y * 0.76)))
     queue_redraw()
 
 func _reset_game() -> void:
@@ -232,6 +314,13 @@ func _reset_game() -> void:
     _won = false
     _effect = ""
     _effect_time = 0.0
+    _effect_duration = 1.0
+    _pending_tool = ""
+    _plant_pop_time = 0.0
+    if _action_sfx != null:
+        _action_sfx.stop()
+    if _sfx != null:
+        _sfx.stop()
     if _counter != null:
         _counter.set("crystal_count", 0)
     queue_redraw()
@@ -273,6 +362,8 @@ func _input(event: InputEvent) -> void:
             queue_redraw()
 
 func _handle_pointer(p: Vector2, pressed: bool) -> void:
+    if _pending_tool != "":
+        return
     if not _stage.has_point(p):
         return
     if pressed:
@@ -300,47 +391,71 @@ func _handle_pointer(p: Vector2, pressed: bool) -> void:
             queue_redraw()
 
 func _perform_action(index: int) -> void:
-    if _finished or index < 0 or index >= TOOL_IDS.size():
+    if _finished or _pending_tool != "" or index < 0 or index >= TOOL_IDS.size():
         return
     var tool: String = str(TOOL_IDS[index])
     if tool != _expected:
         _register_error()
         return
+    # Stage, score, seed sprite, and next task change ONLY after the full animation.
+    _pending_tool = tool
+    _effect = "dig" if tool == "shovel" else tool
+    match tool:
+        "shovel": _effect_duration = 1.60
+        "seed": _effect_duration = 1.75
+        "water": _effect_duration = 1.65
+        "sun": _effect_duration = 1.85
+        "minerals": _effect_duration = 1.75
+    _effect_time = _effect_duration
+    _selected_tool = -1
+    _dragging = false
+    var fx_sound: AudioStream = ACTION_AUDIO.get(tool) as AudioStream
+    if fx_sound != null and _action_sfx != null:
+        _action_sfx.stream = fx_sound
+        _action_sfx.play()
+    _buzz(20)
+    queue_redraw()
+
+func _finish_action_animation() -> void:
+    if _pending_tool == "":
+        return
+    var tool: String = _pending_tool
+    _pending_tool = ""
+    _effect = ""
+    _effect_time = 0.0
     _score += 10
     _correct_actions += 1
     _health = minf(1.0, _health + 0.13)
     if _counter != null:
         _counter.set("crystal_count", _score)
-    _sfx.stream = GOOD_SOUND
-    _sfx.play()
-    _buzz(28)
+    if _sfx != null:
+        _sfx.stream = GOOD_SOUND
+        _sfx.play()
+    _buzz(36)
     if _phase == "dig":
         _phase = "seed"
         _expected = "seed"
-        _effect = "dig"
     elif _phase == "seed":
         _has_seed = true
         _phase = "water"
         _expected = "water"
         _plant_level = 0
-        _effect = "seed"
     elif _phase == "water":
         _phase = "sun"
         _expected = "sun"
         _plant_level = 1
-        _effect = "water"
     elif _phase == "sun":
         _phase = "care"
         _plant_level = 2
-        _effect = "sun"
         _schedule_next_care()
     elif _phase == "care":
         _plant_level = mini(_plant_level + 1, 9)
-        _effect = tool
         _schedule_next_care()
-    _effect_time = 1.0
+    _plant_pop_time = 0.30
     if _phase == "care" and _plant_level >= 9 and _health >= 0.98:
         _finish(true)
+    else:
+        call_deferred("_speak_next_step")
     queue_redraw()
 
 func _schedule_next_care() -> void:
@@ -355,7 +470,8 @@ func _register_error() -> void:
     _mistakes += 1
     _health = maxf(-1.0, _health - 0.42)
     _effect = "error"
-    _effect_time = 0.55
+    _effect_duration = 0.55
+    _effect_time = _effect_duration
     _sfx.stream = BAD_SOUND
     _sfx.play()
     _buzz(70)
@@ -372,20 +488,32 @@ func _finish(won: bool) -> void:
 
 func _process(delta: float) -> void:
     _now += delta
+    if _plant_pop_time > 0.0:
+        _plant_pop_time = maxf(0.0, _plant_pop_time - delta)
     if _effect_time > 0.0:
         _effect_time = maxf(0.0, _effect_time - delta)
-    if _phase == "care" and not _finished:
+        if _effect_time <= 0.0 and _pending_tool != "":
+            _finish_action_animation()
+        elif _effect_time <= 0.0:
+            _effect = ""
+    # Timed care does not run during an action animation or voice instruction.
+    if _phase == "care" and not _finished and _pending_tool == "":
         _care_remaining -= delta
         if _care_remaining <= 0.0:
             _register_error()
             _care_remaining = maxf(5.8, 11.0 - float(_correct_actions) * 0.36)
     queue_redraw()
 
+func _effect_progress() -> float:
+    return clampf(1.0 - _effect_time / maxf(0.001, _effect_duration), 0.0, 1.0)
+
 func _draw() -> void:
     draw_rect(Rect2(Vector2.ZERO, size), Color("06172d"))
     if _stage.size.x < 50.0:
         return
     _draw_cover_background()
+    if _effect == "sun" and _effect_time > 0.0:
+        _draw_sunlight()
     _draw_plant()
     _draw_hole()
     _draw_focus()
@@ -421,6 +549,10 @@ func _draw_plant() -> void:
     var center: Vector2 = _plant_point()
     var height: float = minf(_stage.size.y * 0.80, _stage.size.x * 0.37)
     var width: float = height * 344.0 / 682.0
+    if _plant_pop_time > 0.0:
+        var b: float = sin((1.0 - _plant_pop_time / 0.30) * PI)
+        height *= 1.0 + b * 0.045
+        width *= 1.0 + b * 0.045
     var top_y: float = center.y - height * 455.0 / 682.0
     var tex: Texture2D = STAGES[clampi(_plant_level, 0, 9)]
     var tint: Color = Color.WHITE
@@ -429,12 +561,21 @@ func _draw_plant() -> void:
     draw_texture_rect(tex, Rect2(Vector2(center.x - width / 2.0, top_y), Vector2(width, height)), false, tint)
 
 
-func _draw_hole() -> void:
-    if _phase != "seed":
-        return
+func _hole_rect() -> Rect2:
     var center: Vector2 = _plant_point() + Vector2(0.0, _stage.size.y * 0.072)
     var w: float = minf(_stage.size.x * 0.23, _stage.size.y * 0.38)
-    draw_texture_rect(HOLE, Rect2(center - Vector2(w * 0.5, w * 0.10), Vector2(w, w * 0.46)), false)
+    return Rect2(center - Vector2(w * 0.5, w * 0.10), Vector2(w, w * 0.46))
+
+func _draw_hole() -> void:
+    var opacity: float = 0.0
+    if _phase == "seed":
+        opacity = 1.0
+        if _effect == "seed" and _effect_time > 0.0:
+            opacity = 1.0 - smoothstep(0.53, 0.98, _effect_progress())
+    elif _phase == "dig" and _effect == "dig" and _effect_time > 0.0:
+        opacity = smoothstep(0.42, 0.89, _effect_progress())
+    if opacity > 0.001:
+        draw_texture_rect(HOLE, _hole_rect(), false, Color(1, 1, 1, opacity))
 
 func _draw_focus() -> void:
     if _finished:
@@ -488,13 +629,11 @@ func _draw_tool_icon(index: int, center: Vector2, d: float) -> void:
         var rect: Rect2 = Rect2(center - Vector2(d * aspect, d) * 0.5, Vector2(d * aspect, d))
         draw_texture_rect(tex, rect, false)
     elif index == 1:
-        var points := PackedVector2Array([
-            center + Vector2(0, -0.36 * d), center + Vector2(0.32 * d, -0.10 * d),
-            center + Vector2(0.23 * d, 0.25 * d), center + Vector2(0, 0.38 * d),
-            center + Vector2(-0.23 * d, 0.25 * d), center + Vector2(-0.32 * d, -0.10 * d)
-        ])
-        draw_colored_polygon(points, Color("b87b3c"))
-        draw_arc(center, d * 0.30, PI * 1.08, PI * 1.70, 22, Color("ffe8a6"), d * 0.06, true)
+        # Exactly the seed from the 10-stage artwork, including the task prompt.
+        var height: float = d * 0.86
+        var aspect: float = float(SEED_ICON.get_width()) / maxf(1.0, float(SEED_ICON.get_height()))
+        var seed_size: Vector2 = Vector2(height * aspect, height)
+        draw_texture_rect(SEED_ICON, Rect2(center - seed_size * 0.5, seed_size), false)
     elif index == 3:
         draw_circle(center, d * 0.30, Color(1.0, 0.73, 0.25, 0.12))
         for j in range(10):
@@ -528,64 +667,203 @@ func _draw_meter() -> void:
         draw_circle(_stage.position + Vector2(rect.position.x - _stage.position.x + rect.size.x * 0.5, _stage.size.y * 0.87 + k * 14.0), 4.0, Color("ff8f84"))
 
 
+func _draw_anchored_sprite(image: Texture2D, anchor_world: Vector2, anchor_uv: Vector2, rotation: float, scale_factor: float) -> void:
+    # Transform a known source-image landmark onto a world-space point.
+    # Water begins at the watering-can SPOUT, granules at the bag OPENING.
+    var origin: Vector2 = (image.get_size() * (anchor_uv - Vector2(0.5, 0.5))).rotated(rotation) * scale_factor
+    draw_set_transform(anchor_world - origin, rotation, Vector2.ONE * scale_factor)
+    draw_texture(image, -image.get_size() * 0.5)
+    draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+
+func _draw_dirt_piece(point: Vector2, radius: float, opacity: float) -> void:
+    draw_circle(point + Vector2(0.7, 1.1), radius * 1.1, Color(0.30, 0.14, 0.07, opacity * 0.8))
+    draw_circle(point, radius, Color(0.61, 0.34, 0.18, opacity))
+    draw_circle(point + Vector2(-radius * 0.3, -radius * 0.3), radius * 0.37, Color(0.86, 0.57, 0.32, opacity * 0.62))
+
+func _draw_dig_animation(p: float) -> void:
+    var soil: Vector2 = _plant_point() + Vector2(0.0, _stage.size.y * 0.072)
+    var active: float = fmod(p * 2.0, 1.0)
+    var penetration: float = smoothstep(0.10, 0.50, active)
+    var lifting: float = smoothstep(0.52, 0.88, active)
+    var target: Vector2 = soil + Vector2(-_stage.size.x * 0.045 * (1.0 - penetration), -_stage.size.y * 0.14 * (1.0 - penetration) - _stage.size.y * 0.04 * lifting)
+    var tilt: float = -0.35 - 0.27 * penetration + 0.42 * lifting
+    var scale_factor: float = minf(_stage.size.x * 0.19 / float(SHOVEL.get_width()), _stage.size.y * 0.36 / float(SHOVEL.get_height()))
+    _draw_anchored_sprite(SHOVEL, target, Vector2(0.10, 0.90), tilt, scale_factor)
+    for i in range(19):
+        var birth: float = float(i % 9) * 0.037
+        var t: float = active - birth
+        if t < 0.0 or t > 0.68:
+            continue
+        var vx: float = (float((i * 13) % 17) - 8.0) / 8.0
+        var drift: Vector2 = Vector2(vx * _stage.size.y * 0.075 * t, -_stage.size.y * 0.12 * sin(t * PI / 0.68))
+        var point: Vector2 = soil + drift
+        _draw_dirt_piece(point, clampf(_stage.size.y * 0.007, 2.0, 5.0) * (1.0 - t), 1.0 - t / 0.68)
+
+func _draw_soil_closure(p: float) -> void:
+    var t: float = smoothstep(0.51, 0.97, p)
+    if t <= 0.0:
+        return
+    var hole: Rect2 = _hole_rect()
+    var soil: Vector2 = hole.get_center() + Vector2(0.0, hole.size.y * 0.30)
+    for i in range(20):
+        var side: float = -1.0 if i % 2 == 0 else 1.0
+        var a: float = float(i / 2) / 9.0
+        var x: float = soil.x + side * hole.size.x * (0.46 - 0.40 * t) * (0.65 + 0.35 * a)
+        var y: float = soil.y - t * hole.size.y * 0.19 + 5.0 * sin(float(i) * 2.41)
+        _draw_dirt_piece(Vector2(x, y), maxf(2.0, hole.size.y * 0.09 * (0.65 + 0.45 * a)), t * 0.82)
+
+func _draw_seed_animation(p: float) -> void:
+    var hole: Rect2 = _hole_rect()
+    var soil_target: Vector2 = hole.get_center() + Vector2(0.0, hole.size.y * 0.04)
+    var fall: float = smoothstep(0.05, 0.49, p)
+    var start: Vector2 = soil_target - Vector2(0.0, _stage.size.y * 0.26)
+    var current: Vector2 = start.lerp(soil_target, fall)
+    var fading: float = 1.0 - smoothstep(0.57, 0.85, p)
+    var img_h: float = clampf(_stage.size.y * 0.095, 22.0, 48.0)
+    var img_w: float = img_h * float(SEED_ICON.get_width()) / float(SEED_ICON.get_height())
+    draw_texture_rect(SEED_ICON, Rect2(current - Vector2(img_w, img_h) * 0.5, Vector2(img_w, img_h)), false, Color(1, 1, 1, fading))
+    # Soil only closes after the seed has fully descended into the open hole.
+    _draw_soil_closure(p)
+
+func _pour_pose(tool: String, p: float) -> Dictionary:
+    # An upright tool approaches first, pivots toward the tree, pours, straightens
+    # and departs. The stream originates from the exact transformed PNG landmark.
+    var watering: bool = tool == "water"
+    var image: Texture2D = WATER if watering else MINERALS
+    var pivot_uv: Vector2 = Vector2(0.62, 0.73) if watering else Vector2(0.52, 0.75)
+    var mouth_uv: Vector2 = Vector2(0.145, 0.385) if watering else Vector2(0.50, 0.18)
+    var scale_factor: float
+    if watering:
+        scale_factor = minf(_stage.size.y * 0.39 / float(image.get_height()), _stage.size.x * 0.20 / float(image.get_width()))
+    else:
+        scale_factor = minf(_stage.size.y * 0.35 / float(image.get_height()), _stage.size.x * 0.17 / float(image.get_width()))
+    var approach: float = smoothstep(0.015, 0.19, p)
+    var tip_in: float = smoothstep(0.20, 0.42, p)
+    var tip_out: float = 1.0 - smoothstep(0.77, 0.94, p)
+    var tipped: float = tip_in * tip_out
+    var depart: float = smoothstep(0.92, 1.0, p)
+    var soil: Vector2 = _plant_point() + Vector2(0.0, _stage.size.y * 0.07)
+    var pivot: Vector2
+    var angle: float
+    var flow: float
+    if watering:
+        pivot = soil + Vector2(_stage.size.x * 0.135, -_stage.size.y * 0.325)
+        pivot += Vector2(_stage.size.x * 0.065, -_stage.size.y * 0.055) * (1.0 - approach)
+        pivot += Vector2(-_stage.size.x * 0.006, _stage.size.y * 0.092) * tipped
+        pivot += Vector2(_stage.size.x * 0.065, -_stage.size.y * 0.07) * depart
+        # The PNG's nozzle is LEFT. Negative angle makes it LOWER, not rise.
+        angle = -0.81 * tipped
+        flow = smoothstep(0.38, 0.46, p) * (1.0 - smoothstep(0.76, 0.88, p))
+    else:
+        pivot = soil + Vector2(_stage.size.x * 0.145, -_stage.size.y * 0.21)
+        pivot += Vector2(_stage.size.x * 0.065, -_stage.size.y * 0.05) * (1.0 - approach)
+        pivot += Vector2(-_stage.size.x * 0.008, _stage.size.y * 0.040) * tipped
+        pivot += Vector2(_stage.size.x * 0.07, -_stage.size.y * 0.08) * depart
+        # From UPRIGHT to nearly horizontal, with its open mouth facing LEFT.
+        angle = -1.30 * tipped
+        flow = smoothstep(0.43, 0.51, p) * (1.0 - smoothstep(0.76, 0.88, p))
+    var mouth: Vector2 = pivot + (image.get_size() * (mouth_uv - pivot_uv) * scale_factor).rotated(angle)
+    return {
+        "image": image, "pivot": pivot, "pivot_uv": pivot_uv,
+        "mouth": mouth, "angle": angle, "scale": scale_factor,
+        "flow": flow, "soil": soil, "tipped": tipped
+    }
+
+func _draw_water_animation(p: float) -> void:
+    var pose: Dictionary = _pour_pose("water", p)
+    _draw_anchored_sprite(WATER, pose["pivot"], pose["pivot_uv"], pose["angle"], pose["scale"])
+    var ground: Vector2 = pose["soil"]
+    # Only release droplets AFTER the nozzle has tilted downwards.
+    # Calculate each droplet's birth position from the historical nozzle pose,
+    # so falling water does not move with the can when it straightens.
+    for i in range(65):
+        var birth: float = 0.39 + float(i) * 0.0057
+        var age: float = (p - birth) / 0.25
+        if age < 0.0 or age >= 1.0:
+            continue
+        var birth_pose: Dictionary = _pour_pose("water", birth)
+        var origin: Vector2 = birth_pose["mouth"]
+        var side: float = sin(float(i) * 2.17) * _stage.size.x * 0.020
+        var destination: Vector2 = ground + Vector2(side, float(i % 3) * 2.0)
+        var fall: float = age * age * (3.0 - 2.0 * age)
+        var at: Vector2 = origin.lerp(destination, fall)
+        at.x += sin(float(i) * 1.93) * _stage.size.x * 0.005 * age
+        var alpha: float = 1.0 - smoothstep(0.83, 1.0, age)
+        var radius: float = clampf(_stage.size.y * 0.0056, 1.8, 3.5)
+        draw_line(at - Vector2(0.0, radius * 3.0), at, Color(0.54, 0.90, 1.0, alpha * 0.75), radius * 0.85, true)
+        draw_circle(at, radius, Color(0.80, 0.97, 1.0, alpha))
+    if p > 0.55:
+        var ring_alpha: float = (1.0 - smoothstep(0.72, 1.0, p)) * 0.58
+        for j in range(3):
+            var rr: float = _stage.size.y * (0.016 + float(j) * 0.013 + fmod(p * 3.6, 1.0) * 0.020)
+            draw_arc(ground, rr, PI * 0.10, PI * 0.90, 24, Color(0.65, 0.94, 1.0, ring_alpha), 1.8, true)
+
+func _draw_granule(point: Vector2, radius: float, alpha: float, violet: bool) -> void:
+    # Small spherical pellet, with Bubble feeder's multi-tone volume treatment.
+    var core: Color = Color(0.56, 0.34, 0.17, alpha) if not violet else Color(0.57, 0.38, 0.87, alpha)
+    draw_circle(point + Vector2(0.4, 0.8), radius * 1.12, Color(0.25, 0.12, 0.11, alpha * 0.67))
+    draw_circle(point, radius, core)
+    draw_circle(point + Vector2(-radius * 0.25, -radius * 0.30), radius * 0.45, Color(1.0, 0.85, 0.58, alpha * 0.65))
+
+func _draw_minerals_animation(p: float) -> void:
+    var pose: Dictionary = _pour_pose("minerals", p)
+    _draw_anchored_sprite(MINERALS, pose["pivot"], pose["pivot_uv"], pose["angle"], pose["scale"])
+    var soil: Vector2 = pose["soil"]
+    # Individual pellets come from the bag's rotating OPEN TOP, not from the
+    # center of the screen. Feed only starts once the bag is almost horizontal.
+    for i in range(70):
+        var birth: float = 0.44 + float(i) * 0.0049
+        var age: float = (p - birth) / 0.30
+        if age < 0.0 or age >= 1.0:
+            continue
+        var birth_pose: Dictionary = _pour_pose("minerals", birth)
+        var origin: Vector2 = birth_pose["mouth"] + Vector2(-2.5, 1.5)
+        var drift: float = sin(float(i) * 2.37) * _stage.size.x * 0.047
+        var destination: Vector2 = soil + Vector2(drift, float(i % 4) * 2.0)
+        var fall: float = age * age * (3.0 - 2.0 * age)
+        var at: Vector2 = origin.lerp(destination, fall)
+        at.x += sin(float(i) * 4.21) * _stage.size.x * 0.006 * age
+        var opacity: float = 1.0 - smoothstep(0.83, 1.0, age)
+        var radius: float = clampf(_stage.size.y * 0.0052, 1.6, 3.5) * (0.85 + float(i % 4) * 0.12)
+        _draw_granule(at, radius, opacity, i % 5 == 0)
+    # Pellets briefly accumulate on the soil as the bag is straightening.
+    var landed: float = smoothstep(0.60, 0.79, p) * (1.0 - smoothstep(0.87, 1.0, p))
+    for j in range(16):
+        var pos: Vector2 = soil + Vector2(sin(float(j) * 2.7) * _stage.size.x * 0.052, -float(j % 3) * 1.8)
+        _draw_granule(pos, clampf(_stage.size.y * 0.0055, 1.6, 3.5), landed, j % 5 == 0)
+
+func _draw_sunlight() -> void:
+    var p: float = _effect_progress()
+    var glow: float = smoothstep(0.07, 0.30, p) * (1.0 - smoothstep(0.78, 0.98, p))
+    var focus: Vector2 = _plant_point()
+    var sweep: float = _stage.size.x * 0.055 * (1.0 - smoothstep(0.02, 0.43, p))
+    var x: float = focus.x + sweep + sin(_now * 3.1) * _stage.size.x * 0.005
+    var width: float = clampf(_stage.size.x * 0.23, 100.0, 320.0)
+    var shaft: Rect2 = Rect2(Vector2(x - width * 0.5, _stage.position.y), Vector2(width, focus.y - _stage.position.y + _stage.size.y * 0.10))
+    draw_texture_rect(SUN_SHAFT, shaft, false, Color(1.0, 0.98, 0.77, glow * 0.86))
+    draw_texture_rect(SUN_SHAFT, Rect2(shaft.position + Vector2(width * 0.23, 0.0), Vector2(width * 0.54, shaft.size.y)), false, Color(1, 1, 0.92, glow * 0.26))
+    var halo_w: float = width * 1.15
+    draw_texture_rect(SUN_GROUND, Rect2(Vector2(x - halo_w * 0.5, focus.y - _stage.size.y * 0.025), Vector2(halo_w, _stage.size.y * 0.17)), false, Color(1, 0.97, 0.75, glow * 0.93))
+    # Gentle floating motes, not a hard rectangle or extra cartoon sun.
+    for i in range(14):
+        var fx: float = x + sin(float(i) * 12.31 + _now * 0.5) * width * 0.33
+        var fy: float = _stage.position.y + fmod(float(i) * 69.7 + _now * (11.0 + float(i % 4) * 4.0), maxf(10.0, shaft.size.y))
+        draw_circle(Vector2(fx, fy), 1.0 + float(i % 3), Color(1.0, 0.99, 0.72, glow * (0.25 + 0.09 * float(i % 3))))
+
 func _draw_effects() -> void:
     if _effect_time <= 0.0:
         return
-    var focus: Vector2 = _plant_point()
-    var p: float = 1.0 - _effect_time
-    if _effect == "dig":
-        var ground_focus: Vector2 = focus + Vector2(0.0, _stage.size.y * 0.075)
-        var shovel_pos: Vector2 = ground_focus + Vector2(-_stage.size.x * 0.11 + p * _stage.size.x * 0.085, -_stage.size.y * 0.015 + sin(p * PI) * _stage.size.y * 0.028)
-        draw_set_transform(shovel_pos, -0.72 + 0.22 * sin(p * PI), Vector2.ONE * clampf(_stage.size.y / 1100.0, 0.24, 0.36))
-        draw_texture(SHOVEL, -SHOVEL.get_size() * 0.5)
-        draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
-        for i in range(18):
-            var t: float = float(i) / 17.0
-            var x: float = ground_focus.x + (t - 0.5) * _stage.size.x * 0.13
-            var y: float = ground_focus.y + 3.0 + 5.0 * sin(t * PI) - 18.0 * sin(p * PI)
-            draw_circle(Vector2(x, y), 2.8 + 2.2 * (1.0 - p), Color(0.67, 0.42, 0.24, 0.78 * _effect_time))
-    elif _effect == "seed":
-        var seed_center := focus + Vector2(0.0, -18.0 + p * 34.0)
-        var seed_points := PackedVector2Array()
-        for j in range(20):
-            var ang: float = TAU * float(j) / 20.0
-            seed_points.append(seed_center + Vector2(sin(ang) * 8.0, cos(ang) * 11.0))
-        draw_colored_polygon(seed_points, Color("9b6a35", _effect_time))
-        draw_line(seed_center + Vector2(0, -7), seed_center + Vector2(0, 8), Color("e7d4aa", _effect_time), 2.0, true)
-    elif _effect == "sun":
-        var top_y: float = _stage.position.y + 3.0
-        var ground_y: float = _plant_point().y + _stage.size.y * 0.06
-        var beam_w: float = clampf(_stage.size.x * 0.13, 56.0, 110.0)
-        for k in range(5):
-            var pad := float(k) * 10.0
-            var alpha := (0.06 + float(5 - k) * 0.03) * _effect_time
-            draw_rect(Rect2(focus.x - beam_w * 0.5 - pad * 0.3, top_y, beam_w + pad * 0.6, ground_y - top_y), Color(1.0, 0.95, 0.58, alpha))
-        draw_circle(Vector2(focus.x, top_y + 35.0), 18.0, Color(1.0, 0.88, 0.30, 0.85 * _effect_time))
-        draw_circle(Vector2(focus.x, top_y + 35.0), 30.0, Color(1.0, 0.94, 0.70, 0.18 * _effect_time))
-    elif _effect == "water":
-        var can_pos: Vector2 = focus + Vector2(_stage.size.x * 0.10, -_stage.size.y * 0.15)
-        draw_set_transform(can_pos, -0.48, Vector2.ONE * clampf(_stage.size.y / 980.0, 0.32, 0.48))
-        draw_texture(WATER, -WATER.get_size() * 0.5)
-        draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
-        for i in range(18):
-            var t: float = float(i) / 17.0
-            var drop_x: float = can_pos.x - 45.0 + t * 22.0
-            var drop_y: float = can_pos.y + 25.0 + p * 140.0 + fmod(float(i * 19), 28.0)
-            draw_line(Vector2(drop_x, drop_y - 9.0), Vector2(drop_x, minf(drop_y + 11.0, focus.y + 34.0)), Color(0.55, 0.89, 1.0, 0.80 * _effect_time), 2.5, true)
-            draw_circle(Vector2(drop_x, minf(drop_y + 13.0, focus.y + 35.0)), 2.8, Color(0.70, 0.96, 1.0, 0.92 * _effect_time))
-    elif _effect == "minerals":
-        var bag_pos: Vector2 = focus + Vector2(_stage.size.x * 0.09, -_stage.size.y * 0.12)
-        draw_set_transform(bag_pos, -0.32, Vector2.ONE * clampf(_stage.size.y / 980.0, 0.32, 0.48))
-        draw_texture(MINERALS, -MINERALS.get_size() * 0.5)
-        draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
-        for i in range(16):
-            var dx: float = sin(float(i) * 1.71) * _stage.size.x * 0.026
-            var dy: float = p * 92.0 + fmod(float(i * 17), 40.0)
-            var particle := focus + Vector2(dx, -34.0 + dy)
-            draw_circle(particle, 3.2, Color(0.83, 0.72, 0.97, 0.92 * _effect_time))
-            draw_circle(particle + Vector2(2.0, -2.0), 1.2, Color(0.95, 0.90, 1.0, 0.85 * _effect_time))
-    elif _effect == "error":
-        draw_arc(focus, _stage.size.y * 0.09, 0, TAU, 48, Color(1.0, 0.22, 0.24, 0.6 * _effect_time), 4.0, true)
+    var p: float = _effect_progress()
+    match _effect:
+        "dig": _draw_dig_animation(p)
+        "seed": _draw_seed_animation(p)
+        "water": _draw_water_animation(p)
+        "minerals": _draw_minerals_animation(p)
+        "sun":
+            # Beam is rendered below the tree by _draw_sunlight().
+            pass
+        "error":
+            draw_arc(_plant_point(), _stage.size.y * 0.09, 0, TAU, 48, Color(1.0, 0.22, 0.24, 0.60 * (1.0 - p)), 4.0, true)
 
 func _draw_corner_mask() -> void:
     # Precise cutouts over stage artwork. No square background leaks beyond rounded corners.

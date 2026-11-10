@@ -1,0 +1,2810 @@
+{
+  "ru": [
+    {
+      "answer": "ЛЕСОРУБ",
+      "hint": "Кто рубит деревья?",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "ЛЕС",
+          "value": "ЛЕС",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/forest.svg",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+О",
+          "value": "О",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "РУБ",
+          "value": "РУБ",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "РЫБА",
+          "value": "РЫБА",
+          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "ДОМ",
+          "value": "ДОМ",
+          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "op": "add"
+        }
+      ],
+      "id": "ru_01"
+    },
+    {
+      "answer": "ПАРОВОЗ",
+      "hint": "Поезд старого типа.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "ПАР",
+          "value": "ПАР",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/steam.svg",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+О",
+          "value": "О",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "ВОЗ",
+          "value": "ВОЗ",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/wooden_wagon.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "КНИГА",
+          "value": "КНИГА",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "ШАР",
+          "value": "ШАР",
+          "asset": "",
+          "op": "add"
+        }
+      ],
+      "id": "ru_02"
+    },
+    {
+      "answer": "РЫБОЛОВ",
+      "hint": "Так называют рыбака.",
+      "required": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "РЫБА",
+          "value": "РЫБА",
+          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "op": "add"
+        },
+        {
+          "type": "remove",
+          "label": "−А",
+          "value": "А",
+          "asset": "",
+          "op": "remove"
+        },
+        {
+          "type": "add",
+          "label": "+О",
+          "value": "О",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "ЛОВ",
+          "value": "ЛОВ",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "ЛЕС",
+          "value": "ЛЕС",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/forest.svg",
+          "op": "add"
+        }
+      ],
+      "id": "ru_03"
+    },
+    {
+      "answer": "ЛУНОХОД",
+      "hint": "Машина для езды по Луне.",
+      "required": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "ЛУНА",
+          "value": "ЛУНА",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "remove",
+          "label": "−А",
+          "value": "А",
+          "asset": "",
+          "op": "remove"
+        },
+        {
+          "type": "add",
+          "label": "+О",
+          "value": "О",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "ХОД",
+          "value": "ХОД",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "СНЕГ",
+          "value": "СНЕГ",
+          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "op": "add"
+        }
+      ],
+      "id": "ru_04"
+    },
+    {
+      "answer": "ПОДСОЛНУХ",
+      "hint": "Жёлтый цветок, похожий на солнце.",
+      "required": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "ПОД",
+          "value": "ПОД",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "СОЛНЦЕ",
+          "value": "СОЛНЦЕ",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "remove",
+          "label": "−ЦЕ",
+          "value": "ЦЕ",
+          "asset": "",
+          "op": "remove"
+        },
+        {
+          "type": "text",
+          "label": "УХ",
+          "value": "УХ",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "ДВЕРЬ",
+          "value": "ДВЕРЬ",
+          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "op": "add"
+        }
+      ],
+      "id": "ru_05"
+    },
+    {
+      "answer": "СНЕГОПАД",
+      "hint": "Когда снег идёт с неба.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "СНЕГ",
+          "value": "СНЕГ",
+          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+О",
+          "value": "О",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "ПАД",
+          "value": "ПАД",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "ЛУНА",
+          "value": "ЛУНА",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "САД",
+          "value": "САД",
+          "asset": "",
+          "op": "add"
+        }
+      ],
+      "id": "ru_06"
+    },
+    {
+      "answer": "КНИГОЛЮБ",
+      "hint": "Тот, кто очень любит книги.",
+      "required": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "КНИГА",
+          "value": "КНИГА",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        },
+        {
+          "type": "remove",
+          "label": "−А",
+          "value": "А",
+          "asset": "",
+          "op": "remove"
+        },
+        {
+          "type": "add",
+          "label": "+О",
+          "value": "О",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "ЛЮБ",
+          "value": "ЛЮБ",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "ВОДА",
+          "value": "ВОДА",
+          "asset": "res://education/playtown/assets/grocery/products_v2/water.webp",
+          "op": "add"
+        }
+      ],
+      "id": "ru_07"
+    },
+    {
+      "answer": "ВОДОПАД",
+      "hint": "Падающая вода в горах.",
+      "required": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "ВОДА",
+          "value": "ВОДА",
+          "asset": "res://education/playtown/assets/grocery/products_v2/water.webp",
+          "op": "add"
+        },
+        {
+          "type": "remove",
+          "label": "−А",
+          "value": "А",
+          "asset": "",
+          "op": "remove"
+        },
+        {
+          "type": "add",
+          "label": "+О",
+          "value": "О",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "ПАД",
+          "value": "ПАД",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "СТОЛ",
+          "value": "СТОЛ",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "ru_08"
+    },
+    {
+      "answer": "ЗВЕЗДОПАД",
+      "hint": "Когда падают звёзды.",
+      "required": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "ЗВЕЗДА",
+          "value": "ЗВЕЗДА",
+          "asset": "res://education/playtown/assets/learning_objects/star.webp",
+          "op": "add"
+        },
+        {
+          "type": "remove",
+          "label": "−А",
+          "value": "А",
+          "asset": "",
+          "op": "remove"
+        },
+        {
+          "type": "add",
+          "label": "+О",
+          "value": "О",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "ПАД",
+          "value": "ПАД",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "ДОМ",
+          "value": "ДОМ",
+          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "op": "add"
+        }
+      ],
+      "id": "ru_09"
+    },
+    {
+      "answer": "ЗЕМЛЕКОП",
+      "hint": "Кто копает землю.",
+      "required": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "ЗЕМЛЯ",
+          "value": "ЗЕМЛЯ",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/earth.svg",
+          "op": "add"
+        },
+        {
+          "type": "remove",
+          "label": "−Я",
+          "value": "Я",
+          "asset": "",
+          "op": "remove"
+        },
+        {
+          "type": "add",
+          "label": "+Е",
+          "value": "Е",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "КОП",
+          "value": "КОП",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "КЛЮЧ",
+          "value": "КЛЮЧ",
+          "asset": "res://education/playtown/assets/learning_objects/key.webp",
+          "op": "add"
+        }
+      ],
+      "id": "ru_10"
+    }
+  ],
+  "en": [
+    {
+      "answer": "KEYBOARD",
+      "hint": "What do we type on?",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "KEY",
+          "value": "KEY",
+          "asset": "res://education/playtown/assets/learning_objects/key.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BOARD",
+          "value": "BOARD",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/wooden_board.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BOOK",
+          "value": "BOOK",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "STAR",
+          "value": "STAR",
+          "asset": "res://education/playtown/assets/learning_objects/star.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BALL",
+          "value": "BALL",
+          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "op": "add"
+        }
+      ],
+      "id": "en_01"
+    },
+    {
+      "answer": "SUNSHINE",
+      "hint": "Bright light from the sun.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "SUN",
+          "value": "SUN",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "SHINE",
+          "value": "SHINE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MOON",
+          "value": "MOON",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "RAIN",
+          "value": "RAIN",
+          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BOOK",
+          "value": "BOOK",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        }
+      ],
+      "id": "en_02"
+    },
+    {
+      "answer": "SNOWFLAKE",
+      "hint": "A tiny ice crystal.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "SNOW",
+          "value": "SNOW",
+          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+F",
+          "value": "F",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LAKE",
+          "value": "LAKE",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/lake.png",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "S",
+          "value": "S",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SUN",
+          "value": "SUN",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        }
+      ],
+      "id": "en_03"
+    },
+    {
+      "answer": "BOOKCASE",
+      "hint": "Where do we keep books?",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "BOOK",
+          "value": "BOOK",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "CAKE",
+          "value": "CAKE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "replace",
+          "label": "K → S",
+          "from": "K",
+          "value": "S",
+          "where": "last",
+          "asset": "",
+          "op": "replace"
+        },
+        {
+          "type": "object",
+          "label": "MOON",
+          "value": "MOON",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "KEY",
+          "value": "KEY",
+          "asset": "res://education/playtown/assets/learning_objects/key.webp",
+          "op": "add"
+        }
+      ],
+      "id": "en_04"
+    },
+    {
+      "answer": "TOOTHPASTE",
+      "hint": "What do we put on a toothbrush?",
+      "required": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "TOOTH",
+          "value": "TOOTH",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/tooth.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "PASTA",
+          "value": "PASTA",
+          "asset": "res://education/playtown/assets/grocery/products_v2/pasta.webp",
+          "op": "add"
+        },
+        {
+          "type": "remove",
+          "label": "−A",
+          "value": "A",
+          "asset": "",
+          "op": "remove"
+        },
+        {
+          "type": "add",
+          "label": "+E",
+          "value": "E",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "FISH",
+          "value": "FISH",
+          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "op": "add"
+        }
+      ],
+      "id": "en_05"
+    },
+    {
+      "answer": "RAINBOW",
+      "hint": "What appears after rain?",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "RAIN",
+          "value": "RAIN",
+          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BOW",
+          "value": "BOW",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/bow_and_arrow.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SUN",
+          "value": "SUN",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BALL",
+          "value": "BALL",
+          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "KEY",
+          "value": "KEY",
+          "asset": "res://education/playtown/assets/learning_objects/key.webp",
+          "op": "add"
+        }
+      ],
+      "id": "en_06"
+    },
+    {
+      "answer": "NOTEBOOK",
+      "hint": "A book for writing notes.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "NOTE",
+          "value": "NOTE",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/paper_note.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BOOK",
+          "value": "BOOK",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MOON",
+          "value": "MOON",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SNOW",
+          "value": "SNOW",
+          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "HOUSE",
+          "value": "HOUSE",
+          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "op": "add"
+        }
+      ],
+      "id": "en_07"
+    },
+    {
+      "answer": "STARFISH",
+      "hint": "A sea animal with five arms.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "STAR",
+          "value": "STAR",
+          "asset": "res://education/playtown/assets/learning_objects/star.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "FISH",
+          "value": "FISH",
+          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SUN",
+          "value": "SUN",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "CAKE",
+          "value": "CAKE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "HEAD",
+          "value": "HEAD",
+          "asset": "res://education/playtown/assets/learning_objects/head.webp",
+          "op": "add"
+        }
+      ],
+      "id": "en_08"
+    },
+    {
+      "answer": "MOONLIGHT",
+      "hint": "Light from the moon.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "MOON",
+          "value": "MOON",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "LIGHT",
+          "value": "LIGHT",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "RAIN",
+          "value": "RAIN",
+          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BALL",
+          "value": "BALL",
+          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SNOW",
+          "value": "SNOW",
+          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "op": "add"
+        }
+      ],
+      "id": "en_09"
+    },
+    {
+      "answer": "FOOTBALL",
+      "hint": "A popular ball game.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "FOOT",
+          "value": "FOOT",
+          "asset": "res://education/playtown/assets/learning_objects/foot.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BALL",
+          "value": "BALL",
+          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "HAND",
+          "value": "HAND",
+          "asset": "res://education/playtown/assets/learning_objects/hand.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BOOK",
+          "value": "BOOK",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "RAIN",
+          "value": "RAIN",
+          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "op": "add"
+        }
+      ],
+      "id": "en_10"
+    }
+  ],
+  "pt": [
+    {
+      "answer": "SOLDADO",
+      "hint": "Pessoa que serve no exército.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "DADO",
+          "value": "DADO",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/dice.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUA",
+          "value": "LUA",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CASA",
+          "value": "CASA",
+          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "FLOR",
+          "value": "FLOR",
+          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "op": "add"
+        }
+      ],
+      "id": "pt_01"
+    },
+    {
+      "answer": "GIRASSOL",
+      "hint": "Flor amarela que segue o sol.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "GIRA",
+          "value": "GIRA",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+S",
+          "value": "S",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "PEIXE",
+          "value": "PEIXE",
+          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MESA",
+          "value": "MESA",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "pt_02"
+    },
+    {
+      "answer": "CHUVEIRO",
+      "hint": "Fica no banheiro e joga água.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "CHUVA",
+          "value": "CHUVA",
+          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "op": "add"
+        },
+        {
+          "type": "remove",
+          "label": "−A",
+          "value": "A",
+          "asset": "",
+          "op": "remove"
+        },
+        {
+          "type": "text",
+          "label": "EIRO",
+          "value": "EIRO",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MAR",
+          "value": "MAR",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/sea.png",
+          "op": "add"
+        }
+      ],
+      "id": "pt_03"
+    },
+    {
+      "answer": "CAVALOMARINHO",
+      "hint": "Peixe com nome de cavalo.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "CAVALO",
+          "value": "CAVALO",
+          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_horse.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MAR",
+          "value": "MAR",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/sea.png",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "INHO",
+          "value": "INHO",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUA",
+          "value": "LUA",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        }
+      ],
+      "id": "pt_04"
+    },
+    {
+      "answer": "SOBREMESA",
+      "hint": "Doce que comemos depois da refeição.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "SOBRE",
+          "value": "SOBRE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MESA",
+          "value": "MESA",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "PÃO",
+          "value": "PÃO",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/bread.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "FLOR",
+          "value": "FLOR",
+          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "op": "add"
+        }
+      ],
+      "id": "pt_05"
+    },
+    {
+      "answer": "BEIJAFLOR",
+      "hint": "Pequeno pássaro que gosta de flores.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "BEIJA",
+          "value": "BEIJA",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "FLOR",
+          "value": "FLOR",
+          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CASA",
+          "value": "CASA",
+          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "PÉ",
+          "value": "PÉ",
+          "asset": "",
+          "op": "add"
+        }
+      ],
+      "id": "pt_06"
+    },
+    {
+      "answer": "PASSATEMPO",
+      "hint": "Algo para distrair e divertir.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "PASSA",
+          "value": "PASSA",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "TEMPO",
+          "value": "TEMPO",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUA",
+          "value": "LUA",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "GATO",
+          "value": "GATO",
+          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_cat.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MAR",
+          "value": "MAR",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/sea.png",
+          "op": "add"
+        }
+      ],
+      "id": "pt_07"
+    },
+    {
+      "answer": "PARABRISAS",
+      "hint": "Fica na frente do carro.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "PARA",
+          "value": "PARA",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "BRISA",
+          "value": "BRISA",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+S",
+          "value": "S",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "RIO",
+          "value": "RIO",
+          "asset": "",
+          "op": "add"
+        }
+      ],
+      "id": "pt_08"
+    },
+    {
+      "answer": "GUARDACHUVA",
+      "hint": "Objeto usado na chuva.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "GUARDA",
+          "value": "GUARDA",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CHUVA",
+          "value": "CHUVA",
+          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MAR",
+          "value": "MAR",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/sea.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MESA",
+          "value": "MESA",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "pt_09"
+    },
+    {
+      "answer": "PORTARETRATO",
+      "hint": "Moldura para fotografia.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "PORTA",
+          "value": "PORTA",
+          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "RETRATO",
+          "value": "RETRATO",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/framed_portrait.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LIVRO",
+          "value": "LIVRO",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "FLOR",
+          "value": "FLOR",
+          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CASA",
+          "value": "CASA",
+          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "op": "add"
+        }
+      ],
+      "id": "pt_10"
+    }
+  ],
+  "es": [
+    {
+      "answer": "CARACOL",
+      "hint": "Animal pequeño con caparazón.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "CARA",
+          "value": "CARA",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/human_face.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "COL",
+          "value": "COL",
+          "asset": "res://education/playtown/assets/grocery/products_v2/cabbage.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MAR",
+          "value": "MAR",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/sea.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "FLOR",
+          "value": "FLOR",
+          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "op": "add"
+        }
+      ],
+      "id": "es_01"
+    },
+    {
+      "answer": "SOBREMESA",
+      "hint": "Se come al final de la comida.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "SOBRE",
+          "value": "SOBRE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MESA",
+          "value": "MESA",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LLAVE",
+          "value": "LLAVE",
+          "asset": "res://education/playtown/assets/learning_objects/key.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUNA",
+          "value": "LUNA",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CASA",
+          "value": "CASA",
+          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "op": "add"
+        }
+      ],
+      "id": "es_02"
+    },
+    {
+      "answer": "SALTAMONTES",
+      "hint": "Insecto que da grandes saltos.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "SALTA",
+          "value": "SALTA",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MONTES",
+          "value": "MONTES",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/mountains.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "FLOR",
+          "value": "FLOR",
+          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "AGUA",
+          "value": "AGUA",
+          "asset": "res://education/playtown/assets/grocery/products_v2/water.webp",
+          "op": "add"
+        }
+      ],
+      "id": "es_03"
+    },
+    {
+      "answer": "PARAGUAS",
+      "hint": "Nos protege de la lluvia.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "PAR",
+          "value": "PAR",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "AGUA",
+          "value": "AGUA",
+          "asset": "res://education/playtown/assets/grocery/products_v2/water.webp",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+S",
+          "value": "S",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUNA",
+          "value": "LUNA",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MAR",
+          "value": "MAR",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/sea.png",
+          "op": "add"
+        }
+      ],
+      "id": "es_04"
+    },
+    {
+      "answer": "MARIPOSA",
+      "hint": "Insecto con alas bonitas.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "MAR",
+          "value": "MAR",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/sea.png",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+I",
+          "value": "I",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "POSA",
+          "value": "POSA",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CARA",
+          "value": "CARA",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/human_face.png",
+          "op": "add"
+        }
+      ],
+      "id": "es_05"
+    },
+    {
+      "answer": "SACAPUNTAS",
+      "hint": "Sirve para afilar lápices.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "SACA",
+          "value": "SACA",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "PUNTAS",
+          "value": "PUNTAS",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MESA",
+          "value": "MESA",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "FLOR",
+          "value": "FLOR",
+          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "op": "add"
+        }
+      ],
+      "id": "es_06"
+    },
+    {
+      "answer": "ABRELATAS",
+      "hint": "Sirve para abrir latas.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "ABRE",
+          "value": "ABRE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LATAS",
+          "value": "LATAS",
+          "asset": "res://planet_hub/games/eco_sorting/art_v5/11_metal_food_can.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUNA",
+          "value": "LUNA",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "RÍO",
+          "value": "RÍO",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MAR",
+          "value": "MAR",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/sea.png",
+          "op": "add"
+        }
+      ],
+      "id": "es_07"
+    },
+    {
+      "answer": "GIRASOL",
+      "hint": "Flor amarilla que mira al sol.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "GIRA",
+          "value": "GIRA",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LLUVIA",
+          "value": "LLUVIA",
+          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MESA",
+          "value": "MESA",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "PEZ",
+          "value": "PEZ",
+          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "op": "add"
+        }
+      ],
+      "id": "es_08"
+    },
+    {
+      "answer": "RASCACIELOS",
+      "hint": "Edificio muy alto.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "RASCA",
+          "value": "RASCA",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CIELOS",
+          "value": "CIELOS",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/sky.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "PEZ",
+          "value": "PEZ",
+          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MESA",
+          "value": "MESA",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "es_09"
+    },
+    {
+      "answer": "CUMPLEAÑOS",
+      "hint": "Día en que nacimos.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "CUMPLE",
+          "value": "CUMPLE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "AÑOS",
+          "value": "AÑOS",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOL",
+          "value": "SOL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CASA",
+          "value": "CASA",
+          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MESA",
+          "value": "MESA",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "es_10"
+    }
+  ],
+  "de": [
+    {
+      "answer": "HANDSCHUH",
+      "hint": "Den trägt man an der Hand.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "HAND",
+          "value": "HAND",
+          "asset": "res://education/playtown/assets/learning_objects/hand.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SCHUH",
+          "value": "SCHUH",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/shoe.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MOND",
+          "value": "MOND",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BUCH",
+          "value": "BUCH",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "REGEN",
+          "value": "REGEN",
+          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "op": "add"
+        }
+      ],
+      "id": "de_01"
+    },
+    {
+      "answer": "SONNENBLUME",
+      "hint": "Gelbe Blume, die zur Sonne schaut.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "SONNE",
+          "value": "SONNE",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+N",
+          "value": "N",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BLUME",
+          "value": "BLUME",
+          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "HAUS",
+          "value": "HAUS",
+          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TISCH",
+          "value": "TISCH",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "de_02"
+    },
+    {
+      "answer": "BLUMENTOPF",
+      "hint": "Darin wächst eine Blume.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "BLUME",
+          "value": "BLUME",
+          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+N",
+          "value": "N",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TOPF",
+          "value": "TOPF",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/flower_pot.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MOND",
+          "value": "MOND",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "REGEN",
+          "value": "REGEN",
+          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "op": "add"
+        }
+      ],
+      "id": "de_03"
+    },
+    {
+      "answer": "SCHNEEFLOCKE",
+      "hint": "Kleine Form aus Schnee.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "SCHNEE",
+          "value": "SCHNEE",
+          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+F",
+          "value": "F",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LOCKE",
+          "value": "LOCKE",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/hair_curl.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BUCH",
+          "value": "BUCH",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BALL",
+          "value": "BALL",
+          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "op": "add"
+        }
+      ],
+      "id": "de_04"
+    },
+    {
+      "answer": "WOLKENKRATZER",
+      "hint": "Sehr hohes Haus.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "WOLKE",
+          "value": "WOLKE",
+          "asset": "res://education/playtown/assets/learning_objects/cloud.webp",
+          "op": "add"
+        },
+        {
+          "type": "add",
+          "label": "+N",
+          "value": "N",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "KRATZER",
+          "value": "KRATZER",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SCHUH",
+          "value": "SCHUH",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/shoe.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MOND",
+          "value": "MOND",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        }
+      ],
+      "id": "de_05"
+    },
+    {
+      "answer": "REGENBOGEN",
+      "hint": "Bunte Farben nach dem Regen.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "REGEN",
+          "value": "REGEN",
+          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BOGEN",
+          "value": "BOGEN",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/arc.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SONNE",
+          "value": "SONNE",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TISCH",
+          "value": "TISCH",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "FISCH",
+          "value": "FISCH",
+          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "op": "add"
+        }
+      ],
+      "id": "de_06"
+    },
+    {
+      "answer": "MONDLICHT",
+      "hint": "Licht in der Nacht.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "MOND",
+          "value": "MOND",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "LICHT",
+          "value": "LICHT",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "REGEN",
+          "value": "REGEN",
+          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "SCHUH",
+          "value": "SCHUH",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "HAUS",
+          "value": "HAUS",
+          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "op": "add"
+        }
+      ],
+      "id": "de_07"
+    },
+    {
+      "answer": "ZAHNBÜRSTE",
+      "hint": "Damit putzt man die Zähne.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "ZAHN",
+          "value": "ZAHN",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/tooth.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BÜRSTE",
+          "value": "BÜRSTE",
+          "asset": "res://education/playtown/assets/pet_home/teeth/toothbrush.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BUCH",
+          "value": "BUCH",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MOND",
+          "value": "MOND",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BALL",
+          "value": "BALL",
+          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "op": "add"
+        }
+      ],
+      "id": "de_08"
+    },
+    {
+      "answer": "STAUBSAUGER",
+      "hint": "Er saugt den Boden sauber.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "STAUB",
+          "value": "STAUB",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SAUGER",
+          "value": "SAUGER",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/vacuum_cleaner.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SONNE",
+          "value": "SONNE",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BUCH",
+          "value": "BUCH",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TISCH",
+          "value": "TISCH",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "de_09"
+    },
+    {
+      "answer": "HAUSSCHUH",
+      "hint": "Bequemer Schuh für drinnen.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "HAUS",
+          "value": "HAUS",
+          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SCHUH",
+          "value": "SCHUH",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/shoe.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "HAND",
+          "value": "HAND",
+          "asset": "res://education/playtown/assets/learning_objects/hand.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MOND",
+          "value": "MOND",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "BUCH",
+          "value": "BUCH",
+          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "op": "add"
+        }
+      ],
+      "id": "de_10"
+    }
+  ],
+  "fr": [
+    {
+      "answer": "PORTEFEUILLE",
+      "hint": "On y met l’argent et les cartes.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "PORTE",
+          "value": "PORTE",
+          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "FEUILLE",
+          "value": "FEUILLE",
+          "asset": "res://education/playtown/assets/learning_objects/leaf.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUNE",
+          "value": "LUNE",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TABLE",
+          "value": "TABLE",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CHAT",
+          "value": "CHAT",
+          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_cat.webp",
+          "op": "add"
+        }
+      ],
+      "id": "fr_01"
+    },
+    {
+      "answer": "GRATTECIEL",
+      "hint": "Bâtiment très haut.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "GRATTE",
+          "value": "GRATTE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CIEL",
+          "value": "CIEL",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/sky.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOLEIL",
+          "value": "SOLEIL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUNE",
+          "value": "LUNE",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TABLE",
+          "value": "TABLE",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "fr_02"
+    },
+    {
+      "answer": "POMMEDETERRE",
+      "hint": "Légume que l’on mange souvent.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "POMME",
+          "value": "POMME",
+          "asset": "res://education/playtown/assets/grocery/products_v2/apple.webp",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "DE",
+          "value": "DE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TERRE",
+          "value": "TERRE",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/earth.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUNE",
+          "value": "LUNE",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TABLE",
+          "value": "TABLE",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "fr_03"
+    },
+    {
+      "answer": "ARCENCIEL",
+      "hint": "On le voit après la pluie.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "ARC",
+          "value": "ARC",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/arc.svg",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "EN",
+          "value": "EN",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CIEL",
+          "value": "CIEL",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/sky.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOLEIL",
+          "value": "SOLEIL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MER",
+          "value": "MER",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/sea.png",
+          "op": "add"
+        }
+      ],
+      "id": "fr_04"
+    },
+    {
+      "answer": "TOURNESOL",
+      "hint": "Grande fleur jaune.",
+      "required": [
+        0,
+        1,
+        2
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "TOURNE",
+          "value": "TOURNE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOLEIL",
+          "value": "SOLEIL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "remove",
+          "label": "−EIL",
+          "value": "EIL",
+          "asset": "",
+          "op": "remove"
+        },
+        {
+          "type": "object",
+          "label": "PORTE",
+          "value": "PORTE",
+          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TABLE",
+          "value": "TABLE",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "fr_05"
+    },
+    {
+      "answer": "CHAUVESOURIS",
+      "hint": "Animal qui vole la nuit.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "CHAUVE",
+          "value": "CHAUVE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOURIS",
+          "value": "SOURIS",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/mouse.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CHAT",
+          "value": "CHAT",
+          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_cat.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUNE",
+          "value": "LUNE",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "PORTE",
+          "value": "PORTE",
+          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "op": "add"
+        }
+      ],
+      "id": "fr_06"
+    },
+    {
+      "answer": "PORTEMONNAIE",
+      "hint": "On y garde les pièces.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "object",
+          "label": "PORTE",
+          "value": "PORTE",
+          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "MONNAIE",
+          "value": "MONNAIE",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/coins.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUNE",
+          "value": "LUNE",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CHAT",
+          "value": "CHAT",
+          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_cat.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TABLE",
+          "value": "TABLE",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "fr_07"
+    },
+    {
+      "answer": "PETITPOIS",
+      "hint": "Petit légume vert.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "PETIT",
+          "value": "PETIT",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "POIS",
+          "value": "POIS",
+          "asset": "res://planet_hub/games/space_rebus/assets/objects_v133/green_peas.png",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "SOLEIL",
+          "value": "SOLEIL",
+          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUNE",
+          "value": "LUNE",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TABLE",
+          "value": "TABLE",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        }
+      ],
+      "id": "fr_08"
+    },
+    {
+      "answer": "GARDEMANGER",
+      "hint": "Armoire où l’on met la nourriture.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "GARDE",
+          "value": "GARDE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "text",
+          "label": "MANGER",
+          "value": "MANGER",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "PORTE",
+          "value": "PORTE",
+          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUNE",
+          "value": "LUNE",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "CHAT",
+          "value": "CHAT",
+          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_cat.webp",
+          "op": "add"
+        }
+      ],
+      "id": "fr_09"
+    },
+    {
+      "answer": "LAVEVAISSELLE",
+      "hint": "Machine pour laver les assiettes.",
+      "required": [
+        0,
+        1
+      ],
+      "pieces": [
+        {
+          "type": "text",
+          "label": "LAVE",
+          "value": "LAVE",
+          "asset": "",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "VAISSELLE",
+          "value": "VAISSELLE",
+          "asset": "res://planet_hub/games/space_rebus/assets/icons/plates.svg",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "LUNE",
+          "value": "LUNE",
+          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "TABLE",
+          "value": "TABLE",
+          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "op": "add"
+        },
+        {
+          "type": "object",
+          "label": "PORTE",
+          "value": "PORTE",
+          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "op": "add"
+        }
+      ],
+      "id": "fr_10"
+    }
+  ]
+}
