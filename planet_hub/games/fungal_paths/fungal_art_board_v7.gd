@@ -69,7 +69,15 @@ func _draw() -> void:
     if map_rect.size.x < 10.0:
         return
     # Independent mycelial map: uniform scale, centered, never stretched or tiled.
-    draw_texture_rect_region(NETWORK, map_rect, Rect2(0.0, CROP_TOP, ORIGINAL_WIDTH, CROP_HEIGHT))
+    # Import size limits change Texture2D pixel dimensions. Geometry and tracing
+    # remain in the original artwork space, so convert the requested source crop
+    # into the current imported texture space before drawing it.
+    var network_size: Vector2 = NETWORK.get_size()
+    var source_scale: Vector2 = network_size / Vector2(ORIGINAL_WIDTH, ORIGINAL_HEIGHT)
+    var source_crop := Rect2(
+            Vector2(0.0, CROP_TOP * source_scale.y),
+            Vector2(ORIGINAL_WIDTH * source_scale.x, CROP_HEIGHT * source_scale.y))
+    draw_texture_rect_region(NETWORK, map_rect, source_crop)
     if display_tracing:
         for raw in _edges.values():
             var coords: PackedVector2Array = PackedVector2Array()

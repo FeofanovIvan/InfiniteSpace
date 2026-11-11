@@ -67,6 +67,7 @@ void fragment() {
     var material: ShaderMaterial = ShaderMaterial.new()
     material.shader = shader
     material.set_shader_parameter("background_tex", LAB_WALL_V22)
+    material.set_shader_parameter("background_px", LAB_WALL_V22.get_size())
     _lab_background.material = material
 
     _board = BOARD.new() as Control

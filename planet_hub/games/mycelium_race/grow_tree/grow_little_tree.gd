@@ -539,9 +539,11 @@ func _draw_cover_background() -> void:
     var cover: float = maxf(stage_size.x / original.x, stage_size.y / original.y)
     var crop: Vector2 = stage_size / cover
     var crop_x: float = (original.x - crop.x) * 0.5
-    var grass_at: float = 577.0  # native image horizon
+    # Keep the horizon at the same relative point after Godot applies an import
+    # size limit. The source artwork is 1672x941 and its grass line is y=577.
+    var grass_at: float = original.y * (577.0 / 941.0)
     var crop_y: float = clampf(grass_at - 0.614 * crop.y, 0.0, original.y - crop.y)
-    draw_texture_rect_region(BG, _stage, Rect2(Vector2(crop_x, crop_y), crop), Color(0.78, 0.83, 0.93))
+    draw_texture_rect_region(BG, _stage, Rect2(Vector2(crop_x, crop_y), crop), Color.WHITE)
 
 func _draw_plant() -> void:
     if not _has_seed:

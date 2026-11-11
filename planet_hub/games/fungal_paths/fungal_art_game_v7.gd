@@ -578,18 +578,19 @@ func _layout_controls() -> void:
     if width < 80.0 or height < 80.0:
         return
     var pad: float = clampf(height * 0.025, 8.0, 18.0)
-    # Two clear buttons stacked in the upper LEFT corner of the map frame.
-    # No third button; all controls stay within the adaptive rounded panel.
-    var button_width: float = minf(clampf(width * 0.19, 135.0, 214.0), width - pad * 2.0)
-    var button_height: float = minf(clampf(height * 0.145, 44.0, 61.0), (height - pad * 3.0) * 0.5)
-    var gap: float = clampf(height * 0.022, 6.0, 11.0)
-    _play.position = Vector2(pad, pad)
+    # MIKA_FUNGAL_BOTTOM_BUTTONS_ONLY_V2: Change only Play and Restart controls.
+    # Preserve the current map size, position, nodes, Bubble, spaceship, and status.
+    # The controls sit in the lower corners of the existing map frame.
+    var button_width: float = minf(clampf(width * 0.165, 100.0, 176.0), maxf(55.0, (width - pad * 3.0) * 0.5))
+    var button_height: float = minf(clampf(height * 0.090, 35.0, 48.0), maxf(29.0, height - pad * 2.0))
+    var buttons_y: float = height - pad - button_height
+    _play.position = Vector2(pad, buttons_y)
     _play.size = Vector2(button_width, button_height)
-    _reset.position = Vector2(pad, pad + button_height + gap)
+    _reset.position = Vector2(width - pad - button_width, buttons_y)
     _reset.size = Vector2(button_width, button_height)
     for button in [_play, _reset]:
         var characters: int = maxi(7, button.text.length())
-        var font: int = maxi(12, mini(22, roundi(button.size.x / float(characters) * 1.7)))
+        var font: int = maxi(11, mini(15, roundi(button_width / float(characters) * 1.30)))
         button.add_theme_font_size_override("font_size", font)
     # Status is kept away from the action buttons; don't cover top-left roads.
     var status_width: float = maxf(60.0, width - button_width - pad * 4.0)
