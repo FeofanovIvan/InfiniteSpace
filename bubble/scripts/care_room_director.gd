@@ -3,14 +3,14 @@ extends Node2D
 # MIKA_PLAYTOWN_NATIVE_DENTAL_V8_5_9_8
 # MIKA_DENTAL_RESTORED_TO_V8_5_9_2_R1
 # v8.5.9.4: memoized bristle contact in ORIGINAL texture-local pixels.
-# Ellipse geometry is cached per original imported PlayTown PNG.
+# Ellipse geometry is cached per original imported embedded learning module PNG.
 ## MIKA Bubble Room: actions on the right, auto-walk inside polygon, smooth 2D camera,
 ## preserved procedural body, interactive scrub/teeth and manual joystick mode.
 ## Designed for Godot 4.7.1; no installation or upgrading code here.
 
 const ART_SIZE := Vector2(1672.0, 941.0)
-const PLAYTOWN_TEETH_ADAPTER = preload("res://bubble/scripts/room_playtown_teeth_v8598.gd")
-var _mika_playtown_teeth: Node2D = null
+const EMBEDDED_TEETH_ADAPTER = preload("res://bubble/scripts/room_embedded_teeth_v8598.gd")
+var _embedded_teeth: Node2D = null
 const JOYSTICK_SCRIPT := preload("res://bubble/scripts/room_joystick.gd")
 const CONTEXT_ACTION_SCRIPT := preload("res://bubble/scripts/care_context_stop.gd")
 const FACE_SCENE := preload("res://bubble/scenes/bubble_face.tscn")
@@ -291,7 +291,7 @@ func _set_manual_care_stop(enabled: bool) -> void:
 func _care_play_sound(sound_name: String, pitch: float = 1.0) -> void:
 	if not is_instance_valid(_care_sound):
 		return
-	var path: String = "res://education/playtown/audio/sfx/" + sound_name
+	var path: String = "res://learning/audio/sfx/" + sound_name
 	if not ResourceLoader.exists(path):
 		return
 	_care_sound.stop()
@@ -402,7 +402,7 @@ func _build_hud() -> void:
 	_tool.visible = false
 	_tool.z_index = 25
 	_hud.add_child(_tool)
-	# Quiet reusable sound player: existing PlayTown clips only.
+	# Quiet reusable sound player: existing embedded learning module clips only.
 	_care_sound = AudioStreamPlayer.new()
 	_care_sound.name = "BubbleCareShortSounds"
 	_care_sound.volume_db = -13.0
@@ -1095,7 +1095,7 @@ func _begin_care_action() -> void:
 			shower_fx.set_shower_on(true)
 			scrub_mask.start_scrubbing()
 			_tool_mode = "shower"
-			_show_tool("res://education/playtown/assets/pet_home/wash/brush.png",0.37)
+			_show_tool("res://learning/assets/pet_home/wash/brush.png",0.37)
 			_progress.value = 0
 			_progress.visible = true
 			_hint.text = "Води губкой по пене на Баббле, заполняя шкалу мытья"
@@ -1114,7 +1114,7 @@ func _begin_care_action() -> void:
 			# Jaw is already open from _advance_dental_turn: no restart.
 			_camera_to = _mirror_focus_point()
 			_zoom_to = _base_zoom * 5.2
-			_show_tool("res://education/playtown/assets/pet_home/teeth/toothbrush.png",0.31)
+			_show_tool("res://learning/assets/pet_home/teeth/toothbrush.png",0.31)
 			_progress.value = 0.0
 			_progress.visible = true
 			_hint.text = "Чистим настоящие зубы Баббла — без зубных накладок"
@@ -1331,16 +1331,16 @@ func _show_tool(path: String, scale_value: float) -> void:
 	_tool.visible = true
 	_reset_tool_position()
 	if _tool_mode == "teeth_rig" and path.get_file() == "toothbrush.png":
-		# The real PlayTown mini-game owns its own texture, touch and eraser.
+		# The real embedded learning module mini-game owns its own texture, touch and eraser.
 		# Hide the former MIKA sprite and all former dental contacts.
 		_tool.visible = false
-		if not is_instance_valid(_mika_playtown_teeth):
-			_mika_playtown_teeth = PLAYTOWN_TEETH_ADAPTER.new()
-			_mika_playtown_teeth.name = "BubblePlayTownTeeth"
-			_hud.add_child(_mika_playtown_teeth)
-			_mika_playtown_teeth.progress_changed.connect(_update_progress)
-			_mika_playtown_teeth.completed.connect(_on_care_completed)
-		_mika_playtown_teeth_begin()
+		if not is_instance_valid(_embedded_teeth):
+			_embedded_teeth = EMBEDDED_TEETH_ADAPTER.new()
+			_embedded_teeth.name = "BubbleEmbeddedTeeth"
+			_hud.add_child(_embedded_teeth)
+			_embedded_teeth.progress_changed.connect(_update_progress)
+			_embedded_teeth.completed.connect(_on_care_completed)
+		_embedded_teeth_begin()
 
 func _update_progress(value: float) -> void:
 	if _mode != "care" or _focus_finished: return
@@ -1349,8 +1349,8 @@ func _update_progress(value: float) -> void:
 		_on_care_completed()
 
 func _on_care_completed() -> void:
-	if is_instance_valid(_mika_playtown_teeth):
-		_mika_playtown_teeth.stop(true)
+	if is_instance_valid(_embedded_teeth):
+		_embedded_teeth.stop(true)
 	if _mode != "care" or _focus_finished: return
 	_focus_finished = true
 	_set_manual_care_stop(false)
@@ -1374,8 +1374,8 @@ func _on_care_completed() -> void:
 		bubble.set_room_emotion("happy", 1.8)
 
 func _stop_care(reset_camera: bool = true) -> void:
-	if is_instance_valid(_mika_playtown_teeth):
-		_mika_playtown_teeth.stop()
+	if is_instance_valid(_embedded_teeth):
+		_embedded_teeth.stop()
 	_set_manual_care_stop(false)
 
 	_clear_post_feed_gas()
@@ -1543,7 +1543,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 func _input(event: InputEvent) -> void:
 	if _tool_mode == "teeth_rig":
-		return # PlayTown owns dental touch, drag and erasing.
+		return # embedded learning module owns dental touch, drag and erasing.
 	if _mode != "care" or _tool_mode == "" or _focus_finished:
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -1564,7 +1564,7 @@ func _input(event: InputEvent) -> void:
 func _try_begin_drag(screen_position: Vector2) -> void:
 	if not _tool.visible: return
 	if _tool.texture == null: return
-	# The PlayTown tools are long: grab anywhere inside the actual sprite.
+	# The embedded learning module tools are long: grab anywhere inside the actual sprite.
 	var local_point: Vector2 = _tool.get_global_transform_with_canvas().affine_inverse() * screen_position
 	var half_size: Vector2 = _tool.texture.get_size() * 0.5
 	if absf(local_point.x) > half_size.x or absf(local_point.y) > half_size.y: return
@@ -1582,7 +1582,7 @@ func _tool_tip() -> Vector2:
 	return _tool.position
 
 func _move_tool(screen_position: Vector2) -> void:
-	# Dental movement is handled by the ORIGINAL PlayTown pet minigame.
+	# Dental movement is handled by the ORIGINAL embedded learning module pet minigame.
 	# Retain the original MIKA shower scrub implementation unchanged.
 	if _tool_mode == "teeth_rig":
 		return
@@ -1602,15 +1602,15 @@ func _move_tool(screen_position: Vector2) -> void:
 	_last_tip = tip
 	get_viewport().set_input_as_handled()
 
-# Start the exact PlayTown pet dental minigame on Bubble's close-up face.
+# Start the exact embedded learning module pet dental minigame on Bubble's close-up face.
 
-func _mika_playtown_teeth_begin() -> void:
-	if not is_instance_valid(_mika_playtown_teeth):
-		push_error("[MIKA DENTAL v8.5.9.9] PlayTown adapter not created")
+func _embedded_teeth_begin() -> void:
+	if not is_instance_valid(_embedded_teeth):
+		push_error("[MIKA DENTAL v8.5.9.9] embedded dental adapter not created")
 		return
 	var live_face: MikaBubbleFace = bubble.get_face()
 	if not is_instance_valid(live_face):
 		push_error("[MIKA DENTAL v8.5.9.9] Bubble live FaceRig missing")
 		return
-	print("[MIKA DENTAL v8.5.9.9] CONNECTED teeth_rig -> PlayTown -> live Bubble FaceRig")
-	_mika_playtown_teeth.begin_with_bubble(live_face)
+	print("[MIKA DENTAL v8.5.9.9] CONNECTED teeth_rig -> embedded learning module -> live Bubble FaceRig")
+	_embedded_teeth.begin_with_bubble(live_face)

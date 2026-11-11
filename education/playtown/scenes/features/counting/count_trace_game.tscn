@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7vs554hr5lhd"]
-
-[ext_resource type="Script" path="res://education/playtown/src/features/counting/mika_count_trace_native_v2_2_clear_equals.gd" id="1_ctg"]
-
-[node name="CountTraceGame" type="Node2D"]
-script = ExtResource("1_ctg")

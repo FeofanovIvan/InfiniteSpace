@@ -274,7 +274,7 @@ func _next_pressed() -> void:
 
 func _return_to_simulator() -> void:
     # Never jump to the unrelated PlayTown city. Return to THIS game's gallery.
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")):
         portal.call("handle_scene_transition", "")
         return

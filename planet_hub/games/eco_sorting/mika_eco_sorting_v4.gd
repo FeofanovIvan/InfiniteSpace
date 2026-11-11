@@ -350,12 +350,12 @@ func _submit_to_bin(index_value: int) -> void:
         _status.text = _t("wrong")
         _status.add_theme_color_override("font_color", Color("#ffd9a7"))
         _status_timer.start()
-        _sound("res://education/playtown/audio/sfx/error.ogg")
+        _sound("res://learning/audio/sfx/error.ogg")
         return
     _status_timer.stop()
     _status.text = _t("correct")
     _status.add_theme_color_override("font_color", Color("#b7ffd8"))
-    _sound("res://education/playtown/audio/sfx/correct.ogg")
+    _sound("res://learning/audio/sfx/correct.ogg")
     _score += 1
     _index += 1
     _locked = true
@@ -386,7 +386,7 @@ func _win_round() -> void:
     _dragging = false
     _victory_shade.show()
     _update_readout()
-    _sound("res://education/playtown/audio/sfx/bonus_wheel_win.mp3")
+    _sound("res://learning/audio/sfx/bonus_wheel_win.mp3")
 
 func _safe_rect(view: Vector2) -> Rect2:
     if OS.get_name() not in ["iOS", "Android"]:
@@ -571,7 +571,7 @@ func _exit_tree() -> void:
 func _exit_to_cards() -> void:
     if is_instance_valid(_host_back):
         _host_back.show()
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")):
         portal.call("handle_scene_transition", "res://")
         return
@@ -586,6 +586,6 @@ func _exit_to_cards() -> void:
             ancestor.call("_return_to_cards")
             return
         ancestor = ancestor.get_parent()
-    var fallback: String = "res://education/playtown/scenes/screens/game_select_playground.tscn"
+    var fallback: String = "res://scenes/main.tscn"
     if ResourceLoader.exists(fallback):
         get_tree().change_scene_to_file(fallback)

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3]
-
-[ext_resource type="Script" path="res://simulator_ui/earth_backgrounds/puzzle_earth_bg_v1.gd" id="1_pg"]
-
-[node name="PuzzleGame" type="Node2D"]
-script = ExtResource("1_pg")
-back_scene_path = "res://education/playtown/scenes/screens/game_select_home.tscn"

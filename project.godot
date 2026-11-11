@@ -27,12 +27,12 @@ general/text_to_speech=true
 
 [autoload]
 
-PlayTownPortal="*res://scripts/PlayTownPortal.gd"
-GameState="*res://education/playtown/src/core/game_state.gd"
-SFX="*res://education/playtown/src/core/sound_service.gd"
-BillingService="*res://education/playtown/src/core/billing_service.gd"
-AccessService="*res://education/playtown/src/core/access_service.gd"
-LanguageService="*res://education/playtown/src/core/localization/language_service.gd"
+EmbeddedGamePortal="*res://scripts/EmbeddedGamePortal.gd"
+GameState="*res://learning/src/core/game_state.gd"
+SFX="*res://learning/src/core/sound_service.gd"
+BillingService="*res://learning/src/core/billing_service.gd"
+AccessService="*res://learning/src/core/access_service.gd"
+LanguageService="*res://learning/src/core/localization/language_service.gd"
 MobileLocale="*res://scripts/MobileLocale.gd"
 ChildProfileStore="*res://planet_hub/scripts/child_profile_store.gd"
 MikaVoice="*res://addons/mika_voice/MikaVoice.gd"
@@ -51,10 +51,10 @@ window/handheld/orientation=4
 
 [input_devices]
 
+sensors/enable_accelerometer=true
+sensors/enable_gravity=true
 pointing/emulate_touch_from_mouse=true
 pointing/emulate_mouse_from_touch=false
-sensors/enable_gravity=true
-sensors/enable_accelerometer=true
 
 [rendering]
 

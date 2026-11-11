@@ -171,11 +171,11 @@ func _find_host_back() -> void:
 func _exit_to_cards() -> void:
     if is_instance_valid(_host_back):
         _host_back.show()
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")):
         portal.call("handle_scene_transition", "res://")
         return
-    get_tree().change_scene_to_file("res://education/playtown/scenes/screens/game_select_playground.tscn")
+    get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 
 func _exit_tree() -> void:

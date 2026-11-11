@@ -10,8 +10,8 @@ const BACK_GLYPH = preload("res://simulator_ui/back_arrow_glyph.gd")
 const VESSEL = preload("res://planet_hub/games/solution_lab/solution_vessel.gd")
 const LAB_BACKGROUND = preload("res://planet_hub/games/solution_lab/assets/neon_liquid_planet_lab.webp")
 const ACTION_GLYPH = preload("res://planet_hub/games/solution_lab/solution_action_glyph.gd")
-const SUCCESS_SOUND = preload("res://education/playtown/audio/sfx/correct.ogg")
-const RETRY_SOUND = preload("res://education/playtown/audio/sfx/wrong.ogg")
+const SUCCESS_SOUND = preload("res://learning/audio/sfx/correct.ogg")
+const RETRY_SOUND = preload("res://learning/audio/sfx/wrong.ogg")
 
 const BOARD_SIZE := Vector2(1500.0, 700.0)
 const MIX_CENTER := Vector2(750.0, 456.0)
@@ -803,7 +803,7 @@ func _speak_color(id: String, voice_index: int, target: bool) -> void:
     tts.call("speak_text",phrase,"pt_BR" if _locale == "pt" else _locale,"phase")
 
 func _go_back() -> void:
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")):
         portal.call("handle_scene_transition", "")
         return
@@ -818,7 +818,7 @@ func _go_back() -> void:
             parent_node.call("_return_to_cards")
             return
         parent_node = parent_node.get_parent()
-    var fallback := "res://education/playtown/scenes/screens/game_select_school.tscn"
+    var fallback := "res://scenes/main.tscn"
     if ResourceLoader.exists(fallback):
         get_tree().change_scene_to_file(fallback)
 

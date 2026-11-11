@@ -10,7 +10,7 @@ const TOOLBAR: Script = preload("res://simulator_ui/scripts/mika_shared_tracing_
 const HUD: Script = preload("res://planet_hub/scripts/bottom_hud.gd")
 const GLYPH: Script = preload("res://simulator_ui/back_arrow_glyph.gd")
 const KIT: Script = preload("res://simulator_ui/scripts/mika_minigame_ui_kit_v11.gd")
-const FINISH_SOUND: AudioStream = preload("res://education/playtown/audio/sfx/bonus_wheel_win.mp3")
+const FINISH_SOUND: AudioStream = preload("res://learning/audio/sfx/bonus_wheel_win.mp3")
 
 const WORDS: Dictionary = {
     "ru": {"title":"ГРИБНЫЕ ПУТИ", "sub":"Помоги Бабблу добраться до корабля!", "plan":"Соединяй точки. Затем нажми Play", "run":"Баббл идёт по твоему маршруту", "lost":"Баббл потерялся! Попробуй ещё", "win":"Баббл добрался до корабля!", "play":"▶ Играть", "restart":"↻ Заново", "replay":"↻ Повторить", "exit":"Выйти"},
@@ -612,13 +612,13 @@ func _find_host_back() -> void:
 func _exit_to_cards() -> void:
     if is_instance_valid(_host_back):
         _host_back.show()
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")):
         portal.call("handle_scene_transition", "res://")
         return
     var tree: SceneTree = get_tree()
     if tree != null:
-        tree.change_scene_to_file("res://education/playtown/scenes/screens/game_select_playground.tscn")
+        tree.change_scene_to_file("res://scenes/main.tscn")
 
 func _exit_tree() -> void:
     if is_instance_valid(_host_back):

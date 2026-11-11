@@ -39,7 +39,6 @@ var _v104_game_cards: Array[Control] = []
 # The v104 planet assignment table and the card creation/layout are preserved.
 var _v1051_game_layer: Control
 var _v1051_viewport: SubViewport
-var _v1051_back: Button
 var _v1051_playing: bool = false
 var _bubble_ball_layer: Control
 var _bubble_ball_card: Control
@@ -456,15 +455,117 @@ func _v104_card_localized(value: Variant) -> String:
 func _v104_card_status(code: String) -> String:
 	var lang: String = "ru" if Engine.is_editor_hint() else MobileLocale.language
 	var names: Dictionary = {
-		"ru":{"ready":"Играть", "playtown":"Основа готова", "adapt":"Нужна адаптация", "missing":"В разработке"},
-		"en":{"ready":"Play", "playtown":"Source available", "adapt":"Needs adaptation", "missing":"In development"},
-		"fr":{"ready":"Jouer", "playtown":"Base disponible", "adapt":"À adapter", "missing":"En développement"},
-		"de":{"ready":"Spielen", "playtown":"Vorlage vorhanden", "adapt":"Anpassung nötig", "missing":"In Entwicklung"},
-		"es":{"ready":"Jugar", "playtown":"Base disponible", "adapt":"Por adaptar", "missing":"En desarrollo"},
-		"pt_BR":{"ready":"Jogar", "playtown":"Base disponível", "adapt":"Precisa adaptar", "missing":"Em desenvolvimento"}
+		"ru":{"ready":"Играть", "embedded_learning":"Основа готова", "adapt":"Нужна адаптация", "missing":"В разработке"},
+		"en":{"ready":"Play", "embedded_learning":"Source available", "adapt":"Needs adaptation", "missing":"In development"},
+		"fr":{"ready":"Jouer", "embedded_learning":"Base disponible", "adapt":"À adapter", "missing":"En développement"},
+		"de":{"ready":"Spielen", "embedded_learning":"Vorlage vorhanden", "adapt":"Anpassung nötig", "missing":"In Entwicklung"},
+		"es":{"ready":"Jugar", "embedded_learning":"Base disponible", "adapt":"Por adaptar", "missing":"En desarrollo"},
+		"pt_BR":{"ready":"Jogar", "embedded_learning":"Base disponível", "adapt":"Precisa adaptar", "missing":"Em desenvolvimento"}
 	}
 	var localized: Dictionary = names.get(lang,names["en"])
 	return str(localized.get(code,localized["missing"]))
+
+
+# MIKA_PLANET_ROUTE_AND_BACK_V1
+# Match the *working simulator*'s v115.1+24 scene resolution without
+# modifying the simulator or the planet/mission assignment table.
+const _MIKA_SIM_PLANET_CATALOG: String = "res://simulator_ui/data/temp_planet_cards_v1151p24.json"
+var _mika_planet_candidates: Dictionary = {}
+var _mika_planet_candidates_loaded: bool = false
+
+
+func _mika_read_planet_candidates() -> void:
+	if _mika_planet_candidates_loaded:
+		return
+	_mika_planet_candidates_loaded = true
+	if not FileAccess.file_exists(_MIKA_SIM_PLANET_CATALOG):
+		push_warning("MIKA: shared 24-game simulator catalog missing")
+		return
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(_MIKA_SIM_PLANET_CATALOG))
+	if not (parsed is Dictionary):
+		push_warning("MIKA: shared 24-game simulator catalog invalid")
+		return
+	var entries: Variant = parsed.get("entries", [])
+	if not (entries is Array) or entries.size() != 24:
+		push_warning("MIKA: shared simulator catalog is not the expected 24-game list")
+		return
+	for entry in entries:
+		if not (entry is Dictionary):
+			continue
+		var game_id: String = str(entry.get("id", ""))
+		if not game_id.is_empty():
+			_mika_planet_candidates[game_id] = entry.get("scene_candidates", [])
+
+
+func _mika_planet_scene(game_id: String, record: Dictionary) -> String:
+	_mika_read_planet_candidates()
+	# The Bubble Ball card uses a dedicated existing handler, not this router.
+	if not _mika_planet_candidates.has(game_id):
+		return ""
+	# This installed scene is intentionally prioritized by the working simulator.
+	if game_id == "lmc__fungal_paths":
+		var fungal: String = "res://planet_hub/games/fungal_paths/FungalPathsArtwork.tscn"
+		if ResourceLoader.exists(fungal) and load(fungal) is PackedScene:
+			return fungal
+	var candidates: Array[String] = []
+	var preferred: String = str(record.get("source_scene", ""))
+	if preferred.begins_with("res://"):
+		candidates.append(preferred)
+	var raw: Variant = _mika_planet_candidates[game_id]
+	if raw is Array:
+		for candidate in raw:
+			var path: String = str(candidate)
+			if path.begins_with("res://") and not candidates.has(path):
+				candidates.append(path)
+	for scene_path in candidates:
+		if ResourceLoader.exists(scene_path):
+			return scene_path
+	return ""
+
+
+func _mika_is_game_exit_button(button: BaseButton) -> bool:
+	var script: Script = button.get_script() as Script
+	if script != null and script.resource_path.get_file() == "game_exit_button.gd":
+		return true
+	var name_lower: String = str(button.name).to_lower()
+	return (
+		name_lower in ["back", "exit", "home", "backbutton", "exitbutton", "homebutton", "back_button", "exit_button", "home_button"]
+		or name_lower.ends_with("nativeback") or name_lower.ends_with("toolbarback")
+		or name_lower.ends_with("sharedback") or name_lower.ends_with("backbutton")
+		or name_lower.ends_with("back_button") or name_lower.ends_with("exitbutton")
+		or name_lower.ends_with("exit_button") or name_lower.ends_with("home_button")
+		or name_lower.begins_with("returnto")
+	)
+
+
+
+func _mika_bind_game_exit(instance: Node) -> void:
+	var return_callback: Callable = Callable(self, "_v1051_return_to_cards")
+	if instance.has_signal("back_requested") and not instance.is_connected("back_requested", return_callback):
+		instance.connect("back_requested", return_callback, CONNECT_DEFERRED)
+	var pending: Array[Node] = [instance]
+	var inspected: int = 0
+	while not pending.is_empty() and inspected < 2500:
+		var node: Node = pending.pop_back()
+		inspected += 1
+		if node is BaseButton:
+			var candidate: BaseButton = node as BaseButton
+			if candidate.is_visible_in_tree() and _mika_is_game_exit_button(candidate):
+				# Preserve its original handler, but always provide a reliable
+				# fallback to the *current planet*, not a legacy scene selector.
+				if not candidate.pressed.is_connected(return_callback):
+					candidate.pressed.connect(return_callback, CONNECT_DEFERRED)
+		for child in node.get_children():
+			pending.append(child)
+	# No host Back exists: leave the game's own controls visible.
+
+
+func _mika_refresh_game_exit() -> void:
+	if not _v1051_playing or not is_instance_valid(_v1051_viewport):
+		return
+	for instance in _v1051_viewport.get_children():
+		_mika_bind_game_exit(instance)
+		break
 
 
 func _v104_refresh_game_cards() -> void:
@@ -481,13 +582,15 @@ func _v104_refresh_game_cards() -> void:
 	for game_id_value in game_ids:
 		var game_id: String = str(game_id_value)
 		var record: Dictionary = game_records.get(game_id, {})
+		var mika_scene: String = _mika_planet_scene(game_id, record)
+		var mika_enabled: bool = not mika_scene.is_empty()
 		if record.is_empty():
 			continue
 		var card: Control = V104_GAME_CARD_SCRIPT.new() as Control
 		card.name = "GamePreview_" + game_id
 		card.mouse_filter = Control.MOUSE_FILTER_STOP
 		card.set("card_title",_v104_card_localized(record.get("title", {})))
-		card.set("card_subtitle", "" if bool(record.get("launch_enabled", false)) else _v104_card_status(str(record.get("source_status", "missing"))))
+		card.set("card_subtitle", "" if mika_enabled else _v104_card_status(str(record.get("source_status", "missing"))))
 		card.set("card_description",_v104_card_localized(record.get("description", {})))
 		card.set("accent",Color("55cdff"))
 		card.set("image_fit_mode","contain")
@@ -496,7 +599,7 @@ func _v104_refresh_game_cards() -> void:
 			card.set("image_path", card_image)
 			card.set("art_bay_enabled", true)
 		card_row.add_child(card)
-		if bool(record.get("launch_enabled", false)):
+		if mika_enabled:
 			_v108_ensure_entry_arrow(card, false)
 		_v104_game_cards.append(card)
 		var hint: Label = card.get_node_or_null("ImagePlaceholder") as Label
@@ -505,8 +608,8 @@ func _v104_refresh_game_cards() -> void:
 			hint.add_theme_font_size_override("font_size",42)
 		# The exact existing card is clickable ONLY when its validated game exists.
 		# The hit area is transparent, like the existing RepresentativeCard overlay.
-		var scene_path: String = str(record.get("source_scene", ""))
-		if bool(record.get("launch_enabled", false)) and not scene_path.is_empty() and ResourceLoader.exists(scene_path):
+		var scene_path: String = mika_scene
+		if mika_enabled and not scene_path.is_empty() and ResourceLoader.exists(scene_path):
 			var hit: Button = Button.new()
 			hit.name = "OpenExistingGame"
 			hit.flat = true
@@ -727,50 +830,11 @@ func _v1051_setup_runner() -> void:
 	_v1051_viewport.handle_input_locally = true
 	_v1051_viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	container.add_child(_v1051_viewport)
-	# Same concept as simulator's ReturnToEducationalCards button.
-	_v1051_back = Button.new()
-	_v1051_back.name = "ReturnToExistingPlanetCards"
-	_v1051_back.text = "❮"
-	_v1051_back.focus_mode = Control.FOCUS_NONE
-	_v1051_back.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	_v1051_back.add_theme_font_size_override("font_size", 27)
-	_v1051_back.add_theme_color_override("font_color", Color("eafaff"))
-	var skin: StyleBoxFlat = StyleBoxFlat.new()
-	skin.bg_color = Color("061c38")
-	skin.border_color = Color("26dfff")
-	skin.set_border_width_all(2)
-	skin.set_corner_radius_all(17)
-	_v1051_back.add_theme_stylebox_override("normal", skin)
-	var hover: StyleBoxFlat = skin.duplicate() as StyleBoxFlat
-	hover.bg_color = Color("113a60")
-	_v1051_back.add_theme_stylebox_override("hover", hover)
-	_v1051_back.add_theme_stylebox_override("pressed", hover)
-	_v1051_back.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
-	_v1051_back.pressed.connect(_v1051_return_to_cards)
-	_v1051_game_layer.add_child(_v1051_back)
-	_v1051_game_layer.resized.connect(_v1051_layout_back)
-	_v1051_layout_back()
-	var portal: Node = get_node_or_null("/root/PlayTownPortal")
+	# MIKA_PLANET_NATIVE_BACK_ONLY_V2
+	# Planet games own their Back controls. The hub adds NO Back widget.
+	var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
 	if portal != null and portal.has_signal("game_finished"):
 		portal.connect("game_finished", _v1051_return_to_cards)
-
-
-func _v1051_layout_back() -> void:
-	if _v1051_back == null or not is_instance_valid(_v1051_game_layer):
-		return
-	var sc: float = clampf(minf(size.x / 1280.0, size.y / 720.0), 0.7, 1.3)
-	_v1051_back.position = Vector2(12.0, 12.0) * sc
-	_v1051_back.size = Vector2.ONE * 56.0 * sc
-	# MIKA_RESOURCE_RUSH_HOST_BACK_ALIGN_V1_2
-	# Align this SAME PlanetHub return button with Resource Rush's header.
-	if is_instance_valid(_v1051_viewport):
-		for running_game in _v1051_viewport.get_children():
-			if running_game.has_method("resource_rush_host_back_rect"):
-				var native_slot: Rect2 = running_game.call("resource_rush_host_back_rect")
-				if native_slot.size.x > 20.0 and native_slot.size.y > 20.0:
-					_v1051_back.position = native_slot.position
-					_v1051_back.size = native_slot.size
-				break
 
 
 func _v1051_open_existing_game(game_id: String) -> void:
@@ -778,9 +842,7 @@ func _v1051_open_existing_game(game_id: String) -> void:
 		return
 	var games: Dictionary = _v104_game_database.get("games", {})
 	var record: Dictionary = games.get(game_id, {})
-	if not bool(record.get("launch_enabled", false)):
-		return
-	var scene_path: String = str(record.get("source_scene", ""))
+	var scene_path: String = _mika_planet_scene(game_id, record)
 	if scene_path.is_empty() or not ResourceLoader.exists(scene_path):
 		push_warning("Planet game scene missing: " + scene_path)
 		return
@@ -788,9 +850,9 @@ func _v1051_open_existing_game(game_id: String) -> void:
 	if packed == null:
 		push_warning("Planet game could not load: " + scene_path)
 		return
-	var portal: Node = get_node_or_null("/root/PlayTownPortal")
+	var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
 	if portal == null or bool(portal.get("active")):
-		push_warning("Cannot start planet game: PlayTownPortal is busy or missing")
+		push_warning("Cannot start planet game: EmbeddedGamePortal is busy or missing")
 		return
 	if not is_instance_valid(_v1051_game_layer):
 		_v1051_setup_runner()
@@ -815,17 +877,15 @@ func _v1051_open_existing_game(game_id: String) -> void:
 	var story_overlay: CanvasLayer = load("res://planet_hub/game_stories/planet_story_overlay_v1.gd").new() as CanvasLayer
 	story_overlay.set("game_id", game_id)
 	instance.add_child(story_overlay)
-	# MIKA_RESOURCE_RUSH_HOST_BACK_SYNC_AFTER_OPEN_V1_2
-	# Newly instantiated Resource Rush has computed its slot in _ready().
-	# Other games simply retain their original back-button positioning.
-	_v1051_layout_back()
+	_mika_bind_game_exit(instance)
+	call_deferred("_mika_refresh_game_exit")
 
 
 func _v1051_return_to_cards() -> void:
 	if not _v1051_playing:
 		return
 	_v1051_playing = false
-	var portal: Node = get_node_or_null("/root/PlayTownPortal")
+	var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
 	if portal != null:
 		portal.call("stop_game")
 	if is_instance_valid(_v1051_viewport):

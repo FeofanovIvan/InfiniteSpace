@@ -38,7 +38,7 @@ const V81_GAME_NAMES: Dictionary = {
 const BackArrowGlyph = preload("res://simulator_ui/back_arrow_glyph.gd")
 const SHIP_TEXTURE: Texture2D = preload("res://assets/ui/miko_ship_menu_circle.png")
 const BACK_TEXTURE: Texture2D = preload("res://assets/ui/bridge_back.png")
-const CATALOG_PATH: String = "res://education/playtown_catalog.json"
+const CATALOG_PATH: String = "res://learning/catalog.json"
 # v94: first seven legacy lessons + three reserved future scenes.
 const V94_GAME_CARD = preload("res://simulator_ui/scripts/approved_simulator_card.gd")
 const V94_APPROVED_GAMES: Array[Dictionary] = [
@@ -145,7 +145,7 @@ const V94_GAME_NAMES: Dictionary = {
 	}
 }
 
-const ART_ROOT: String = "res://education/playtown/"
+const ART_ROOT: String = "res://learning/"
 const PET_SCENE_PATH: String = "res://bubble/scenes/care_room_actions_camera.tscn"
 # v77: standalone Bubble replaces the PlayTown walking dog.
 # Footer scene preload removed: sim_11 is the only entry to Bubble Care.
@@ -188,7 +188,7 @@ var _game_viewport: SubViewport
 var _game_back: Button
 var _cards: Array[Dictionary] = []
 var _crystal_balance: int = 0
-var _last_playtown_coins: int = 0
+var _last_learning_coins: int = 0
 var _playing: bool = false
 var _bubble_direct: bool = false
 var _pet_sprite: Node2D
@@ -261,7 +261,7 @@ func _ready() -> void:
 	_header.add_child(_counter)
 	_install_exact_hub_counter()
 	_gallery = ScrollContainer.new()
-	_gallery.name = "OriginalPlayTownCards_HorizontalSwipe"
+	_gallery.name = "EmbeddedGameCards_HorizontalSwipe"
 	# The gallery is a fully transparent swipe surface with no navigation arrows
 	# or scrolling chrome. Touch and mouse gestures use the same controller.
 	_gallery.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
@@ -271,7 +271,7 @@ func _ready() -> void:
 	_gallery.mouse_filter = Control.MOUSE_FILTER_STOP
 	add_child(_gallery)
 	_strip = HBoxContainer.new()
-	_strip.name = "PlayTownEducation_CardStrip"
+	_strip.name = "LearningGameCardStrip"
 	_strip.alignment = BoxContainer.ALIGNMENT_BEGIN
 	_strip.add_theme_constant_override("separation", 20)
 	_gallery.add_child(_strip)
@@ -292,7 +292,7 @@ func _ready() -> void:
 	_pet_sprite = null
 	_pet_click_area = null
 	_game_layer = Control.new()
-	_game_layer.name = "PlayTownOriginalGameRunner"
+	_game_layer.name = "EmbeddedGameRunner"
 	_game_layer.mouse_filter = Control.MOUSE_FILTER_STOP
 	_game_layer.clip_contents = true
 	_game_layer.visible = false
@@ -312,7 +312,7 @@ func _ready() -> void:
 	_viewport_container.mouse_filter = Control.MOUSE_FILTER_STOP
 	_game_layer.add_child(_viewport_container)
 	_game_viewport = SubViewport.new()
-	_game_viewport.name = "OriginalPlayTownGameViewport"
+	_game_viewport.name = "EmbeddedGameViewport"
 	# v88: game viewport resolution is controlled by full-size SubViewportContainer.
 	_game_viewport.handle_input_locally = true
 	_game_viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
@@ -323,7 +323,7 @@ func _ready() -> void:
 	_style_back_button(_game_back)
 	_game_back.pressed.connect(_return_to_cards)
 	_game_layer.add_child(_game_back)
-	var portal: Node = get_node_or_null("/root/PlayTownPortal")
+	var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
 	if portal != null and portal.has_signal("game_finished"):
 		portal.connect("game_finished", _return_to_cards)
 	var coins: Node = get_node_or_null("/root/GameState")
@@ -446,7 +446,7 @@ func _load_original_catalog() -> void:
 		info["scene_path"] = scene_path
 		_cards.append(info)
 		var button := TextureButton.new()
-		button.name = "PlayTownCard_" + game_id
+		button.name = "LearningGameCard_" + game_id
 		button.texture_normal = null
 		button.set_meta("game_id", game_id)
 		button.set_meta("original_art_path", original_art)
@@ -531,8 +531,8 @@ func _open_game(scene_path: String) -> void:
 		language.call("set_locale", locale, false)
 	var coins: Node = get_node_or_null("/root/GameState")
 	if coins != null:
-		_last_playtown_coins = int(coins.call("get_coin_balance"))
-	var portal: Node = get_node_or_null("/root/PlayTownPortal")
+		_last_learning_coins = int(coins.call("get_coin_balance"))
+	var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
 	if portal != null:
 		portal.call("start_game", scene_path)
 	var original: Node = packed.instantiate()
@@ -552,8 +552,8 @@ func _open_game(scene_path: String) -> void:
 func _on_coins_changed(balance: int) -> void:
 	if not _playing:
 		return
-	var gained: int = maxi(0, balance - _last_playtown_coins)
-	_last_playtown_coins = balance
+	var gained: int = maxi(0, balance - _last_learning_coins)
+	_last_learning_coins = balance
 	if gained > 0:
 		crystals_earned.emit(gained)
 		_crystal_balance = mini(50, _crystal_balance + gained)
@@ -568,7 +568,7 @@ func _return_to_cards() -> void:
 		return
 
 	_playing = false
-	var portal: Node = get_node_or_null("/root/PlayTownPortal")
+	var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
 	if portal != null:
 		portal.call("stop_game")
 	for child in _game_viewport.get_children():
@@ -886,7 +886,7 @@ func _v1151p24_open_card(game_id: String) -> void:
 		language.call("set_locale", locale, false)
 	var coins: Node = get_node_or_null("/root/GameState")
 	if coins != null:
-		_last_playtown_coins = int(coins.call("get_coin_balance"))
+		_last_learning_coins = int(coins.call("get_coin_balance"))
 	var instance: Node = packed.instantiate()
 	if instance == null:
 		push_error("MIKA could not instantiate planet game: " + scene_path)
@@ -895,10 +895,10 @@ func _v1151p24_open_card(game_id: String) -> void:
 	# MIKA_EARTH_PLAYTOWN_PORTAL_BRIDGE_V1
 	# All 24 temporary planet cards use the exact same return bridge as the
 	# approved ten simulator cards. Start BEFORE entering the scene tree.
-	var planet_portal: Node = get_node_or_null("/root/PlayTownPortal")
+	var planet_portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
 	if planet_portal == null or not planet_portal.has_method("start_game"):
 		instance.free()
-		push_error("MIKA planet game: PlayTownPortal is unavailable")
+		push_error("MIKA planet game: EmbeddedGamePortal is unavailable")
 		return
 	planet_portal.call("start_game", scene_path)
 	_game_viewport.add_child(instance)

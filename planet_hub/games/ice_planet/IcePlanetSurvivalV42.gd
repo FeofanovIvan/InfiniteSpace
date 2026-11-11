@@ -4,8 +4,8 @@ extends "res://planet_hub/games/ice_planet/IcePlanetSurvivalV41.gd"
 ## v4.1 continuous survival, actual spherical rotation and solar escalations stay.
 
 const STICK_V42: Script = preload("res://planet_hub/games/ice_planet/IcePlanetHorizontalStickV42.gd")
-const CRYSTAL_CHIME: AudioStream = preload("res://education/playtown/audio/sfx/correct.ogg")
-const WARNING_CHIME: AudioStream = preload("res://education/playtown/audio/sfx/wrong.ogg")
+const CRYSTAL_CHIME: AudioStream = preload("res://learning/audio/sfx/correct.ogg")
+const WARNING_CHIME: AudioStream = preload("res://learning/audio/sfx/wrong.ogg")
 
 const BEGIN_SAFE_HALF_WIDTH: float = 0.2325 # v4.1 was 0.155: exactly +50%.
 const FIRST_SHRINK_AFTER_POINTS: int = 4

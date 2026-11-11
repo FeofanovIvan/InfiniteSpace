@@ -1,4 +1,4 @@
-extends "res://simulator_ui/menu/earth_playtown_original_v1.gd"
+extends "res://simulator_ui/menu/earth_embedded_learning_v1.gd"
 ## MIKA Free World additional games toggle v1.
 ## First ten approved simulator cards remain in their original 5x2 grid.
 ## Extra cards are accessible only after the player explicitly expands them

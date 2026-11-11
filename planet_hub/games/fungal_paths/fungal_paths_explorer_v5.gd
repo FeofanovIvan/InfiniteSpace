@@ -9,8 +9,8 @@ const HUD: Script = preload("res://planet_hub/scripts/bottom_hud.gd")
 const GLYPH: Script = preload("res://simulator_ui/back_arrow_glyph.gd")
 const KIT: Script = preload("res://simulator_ui/scripts/mika_minigame_ui_kit_v11.gd")
 const SPACE: Script = preload("res://simulator_ui/scripts/real_space_background.gd")
-const TURN_SOUND: AudioStream = preload("res://education/playtown/audio/sfx/connect_point.ogg")
-const FINISH_SOUND: AudioStream = preload("res://education/playtown/audio/sfx/correct.ogg")
+const TURN_SOUND: AudioStream = preload("res://learning/audio/sfx/connect_point.ogg")
+const FINISH_SOUND: AudioStream = preload("res://learning/audio/sfx/correct.ogg")
 
 const WORDS: Dictionary = {
  "ru":{"title":"ГРИБНЫЕ ПУТИ","sub":"Поверни пять дорожек","hint":"Выбери пятиугольник и поворачивай стрелками. Баббл уже ищет дом!","ready":"Баббл ищет дорогу домой. Соединяй дорожки!","win":"Баббл добрался домой! Нажми ↻ для новой задачи.","left":"Повернуть выбранную дорожку влево","right":"Повернуть выбранную дорожку вправо","shuffle":"Новая задача","selected":"Выбрана дорожка %d из 5"},
@@ -396,7 +396,7 @@ func _exit_tree() -> void:
     if is_instance_valid(_outer_back): _outer_back.show()
 
 func _exit_to_cards() -> void:
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")):
         portal.call("handle_scene_transition","")
         return
@@ -410,7 +410,7 @@ func _exit_to_cards() -> void:
             p.call("_return_to_cards")
             return
         p = p.get_parent()
-    var fallback: String = "res://education/playtown/scenes/screens/game_select_school.tscn"
+    var fallback: String = "res://scenes/main.tscn"
     if ResourceLoader.exists(fallback): get_tree().change_scene_to_file(fallback)
 
 func _unhandled_key_input(event: InputEvent) -> void:

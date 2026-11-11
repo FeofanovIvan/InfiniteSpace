@@ -319,7 +319,7 @@ func _exit_tree() -> void:
     if is_instance_valid(_host_back):_host_back.show()
 
 func _exit_to_cards() -> void:
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")):
         portal.call("handle_scene_transition","")
         return
@@ -333,7 +333,7 @@ func _exit_to_cards() -> void:
             p.call("_return_to_cards")
             return
         p = p.get_parent()
-    var fallback: String = "res://education/playtown/scenes/screens/game_select_school.tscn"
+    var fallback: String = "res://scenes/main.tscn"
     if ResourceLoader.exists(fallback):get_tree().change_scene_to_file(fallback)
 
 func _unhandled_key_input(event: InputEvent) -> void:

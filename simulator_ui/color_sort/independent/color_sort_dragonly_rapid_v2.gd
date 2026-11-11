@@ -6,10 +6,10 @@ extends "res://simulator_ui/color_sort/scripts/color_sort.gd"
 const SHARED_TOOLBAR = preload("res://simulator_ui/scripts/mika_shared_tracing_toolbar_v2.gd")
 const SHARED_UI = preload("res://simulator_ui/scripts/mika_minigame_ui_kit_v11.gd")
 const ORIGINAL_HUD = preload("res://planet_hub/scripts/bottom_hud.gd")
-const GOOD_SFX: AudioStream = preload("res://education/playtown/audio/sfx/correct.ogg")
-const BAD_SFX: AudioStream = preload("res://education/playtown/audio/sfx/wrong.ogg")
-const PICK_SFX: AudioStream = preload("res://education/playtown/audio/sfx/connect_point.ogg")
-const COIN_SFX: AudioStream = preload("res://education/playtown/audio/sfx/coin.ogg")
+const GOOD_SFX: AudioStream = preload("res://learning/audio/sfx/correct.ogg")
+const BAD_SFX: AudioStream = preload("res://learning/audio/sfx/wrong.ogg")
+const PICK_SFX: AudioStream = preload("res://learning/audio/sfx/connect_point.ogg")
+const COIN_SFX: AudioStream = preload("res://learning/audio/sfx/coin.ogg")
 const CHECKPOINT: int = 18
 # A success multiplies the speed by 1.38; seven wins reach about 8.5x.
 const SPEED_GAIN_PER_SUCCESS: float = 1.38

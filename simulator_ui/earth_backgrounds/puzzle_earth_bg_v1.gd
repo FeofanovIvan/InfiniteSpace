@@ -1,4 +1,4 @@
-extends "res://education/playtown/src/features/puzzle/puzzle_game.gd"
+extends "res://learning/src/features/puzzle/puzzle_game.gd"
 ## Background only. Original SafeCityKids puzzle board, tray, score and Exit are intact.
 const MIKA_EARTH_SCENE_BG: Texture2D = preload("res://planet_hub/backgrounds/mw_p01.png")
 var _mika_earth_backdrop: TextureRect

@@ -41,8 +41,8 @@ var _v124_last_locale: String = ""
 
 
 const V125_SPEAKER_SCRIPT: Script = preload("res://addons/mika_voice/SpeakerButton.gd")
-const V125_CORRECT_SOUND: AudioStream = preload("res://education/playtown/audio/sfx/correct.ogg")
-const V125_WRONG_SOUND: AudioStream = preload("res://education/playtown/audio/sfx/wrong.ogg")
+const V125_CORRECT_SOUND: AudioStream = preload("res://learning/audio/sfx/correct.ogg")
+const V125_WRONG_SOUND: AudioStream = preload("res://learning/audio/sfx/wrong.ogg")
 
 var _v125_speaker: Button
 var _v125_voice_locale: String = ""
@@ -121,7 +121,7 @@ func _next_pressed() -> void:
 
 func _return_to_simulator() -> void:
     # Never jump to the unrelated PlayTown city. Return to THIS game's gallery.
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")):
         portal.call("handle_scene_transition", "")
         return

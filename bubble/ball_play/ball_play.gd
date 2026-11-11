@@ -382,7 +382,7 @@ func _play_ball_sound(name: String, touchdown: bool = false) -> void:
 	var player: AudioStreamPlayer = _ball_hit_sound if touchdown else _ball_sound
 	if not is_instance_valid(player):
 		return
-	var path: String = "res://education/playtown/audio/sfx/" + name
+	var path: String = "res://learning/audio/sfx/" + name
 	if not ResourceLoader.exists(path):
 		return
 	player.stop()

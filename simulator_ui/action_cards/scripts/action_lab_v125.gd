@@ -3,8 +3,8 @@ extends "res://simulator_ui/action_cards/scripts/action_lab_v124.gd"
 ## Keep all 20 action PNGs and SVGs, endless shuffle, hit testing and reward logic.
 
 const V125_SPEAKER_SCRIPT: Script = preload("res://addons/mika_voice/SpeakerButton.gd")
-const V125_CORRECT_SOUND: AudioStream = preload("res://education/playtown/audio/sfx/correct.ogg")
-const V125_WRONG_SOUND: AudioStream = preload("res://education/playtown/audio/sfx/wrong.ogg")
+const V125_CORRECT_SOUND: AudioStream = preload("res://learning/audio/sfx/correct.ogg")
+const V125_WRONG_SOUND: AudioStream = preload("res://learning/audio/sfx/wrong.ogg")
 
 var _v125_title_frame: Panel
 var _v125_bottom_frame: Panel

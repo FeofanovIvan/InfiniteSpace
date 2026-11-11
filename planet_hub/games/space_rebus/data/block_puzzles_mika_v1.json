@@ -34,14 +34,14 @@
           "type": "object",
           "label": "РЫБА",
           "value": "РЫБА",
-          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "asset": "res://learning/assets/grocery/products_v2/fish.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "ДОМ",
           "value": "ДОМ",
-          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "asset": "res://learning/assets/learning_objects/house.webp",
           "op": "add"
         }
       ],
@@ -81,7 +81,7 @@
           "type": "object",
           "label": "КНИГА",
           "value": "КНИГА",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         },
         {
@@ -108,7 +108,7 @@
           "type": "object",
           "label": "РЫБА",
           "value": "РЫБА",
-          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "asset": "res://learning/assets/grocery/products_v2/fish.webp",
           "op": "add"
         },
         {
@@ -156,7 +156,7 @@
           "type": "object",
           "label": "ЛУНА",
           "value": "ЛУНА",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
@@ -184,7 +184,7 @@
           "type": "object",
           "label": "СНЕГ",
           "value": "СНЕГ",
-          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "asset": "res://learning/assets/learning_objects/snow.webp",
           "op": "add"
         }
       ],
@@ -211,7 +211,7 @@
           "type": "object",
           "label": "СОЛНЦЕ",
           "value": "СОЛНЦЕ",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -232,7 +232,7 @@
           "type": "object",
           "label": "ДВЕРЬ",
           "value": "ДВЕРЬ",
-          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "asset": "res://learning/assets/learning_objects/door.webp",
           "op": "add"
         }
       ],
@@ -251,7 +251,7 @@
           "type": "object",
           "label": "СНЕГ",
           "value": "СНЕГ",
-          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "asset": "res://learning/assets/learning_objects/snow.webp",
           "op": "add"
         },
         {
@@ -272,7 +272,7 @@
           "type": "object",
           "label": "ЛУНА",
           "value": "ЛУНА",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
@@ -299,7 +299,7 @@
           "type": "object",
           "label": "КНИГА",
           "value": "КНИГА",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         },
         {
@@ -327,7 +327,7 @@
           "type": "object",
           "label": "ВОДА",
           "value": "ВОДА",
-          "asset": "res://education/playtown/assets/grocery/products_v2/water.webp",
+          "asset": "res://learning/assets/grocery/products_v2/water.webp",
           "op": "add"
         }
       ],
@@ -347,7 +347,7 @@
           "type": "object",
           "label": "ВОДА",
           "value": "ВОДА",
-          "asset": "res://education/playtown/assets/grocery/products_v2/water.webp",
+          "asset": "res://learning/assets/grocery/products_v2/water.webp",
           "op": "add"
         },
         {
@@ -375,7 +375,7 @@
           "type": "object",
           "label": "СТОЛ",
           "value": "СТОЛ",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -395,7 +395,7 @@
           "type": "object",
           "label": "ЗВЕЗДА",
           "value": "ЗВЕЗДА",
-          "asset": "res://education/playtown/assets/learning_objects/star.webp",
+          "asset": "res://learning/assets/learning_objects/star.webp",
           "op": "add"
         },
         {
@@ -423,7 +423,7 @@
           "type": "object",
           "label": "ДОМ",
           "value": "ДОМ",
-          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "asset": "res://learning/assets/learning_objects/house.webp",
           "op": "add"
         }
       ],
@@ -471,7 +471,7 @@
           "type": "object",
           "label": "КЛЮЧ",
           "value": "КЛЮЧ",
-          "asset": "res://education/playtown/assets/learning_objects/key.webp",
+          "asset": "res://learning/assets/learning_objects/key.webp",
           "op": "add"
         }
       ],
@@ -491,7 +491,7 @@
           "type": "object",
           "label": "KEY",
           "value": "KEY",
-          "asset": "res://education/playtown/assets/learning_objects/key.webp",
+          "asset": "res://learning/assets/learning_objects/key.webp",
           "op": "add"
         },
         {
@@ -505,21 +505,21 @@
           "type": "object",
           "label": "BOOK",
           "value": "BOOK",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "STAR",
           "value": "STAR",
-          "asset": "res://education/playtown/assets/learning_objects/star.webp",
+          "asset": "res://learning/assets/learning_objects/star.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BALL",
           "value": "BALL",
-          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "asset": "res://learning/assets/learning_objects/ball.webp",
           "op": "add"
         }
       ],
@@ -537,7 +537,7 @@
           "type": "object",
           "label": "SUN",
           "value": "SUN",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -551,21 +551,21 @@
           "type": "object",
           "label": "MOON",
           "value": "MOON",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "RAIN",
           "value": "RAIN",
-          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "asset": "res://learning/assets/learning_objects/rain.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BOOK",
           "value": "BOOK",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         }
       ],
@@ -584,7 +584,7 @@
           "type": "object",
           "label": "SNOW",
           "value": "SNOW",
-          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "asset": "res://learning/assets/learning_objects/snow.webp",
           "op": "add"
         },
         {
@@ -612,7 +612,7 @@
           "type": "object",
           "label": "SUN",
           "value": "SUN",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         }
       ],
@@ -631,7 +631,7 @@
           "type": "object",
           "label": "BOOK",
           "value": "BOOK",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         },
         {
@@ -654,14 +654,14 @@
           "type": "object",
           "label": "MOON",
           "value": "MOON",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "KEY",
           "value": "KEY",
-          "asset": "res://education/playtown/assets/learning_objects/key.webp",
+          "asset": "res://learning/assets/learning_objects/key.webp",
           "op": "add"
         }
       ],
@@ -688,7 +688,7 @@
           "type": "object",
           "label": "PASTA",
           "value": "PASTA",
-          "asset": "res://education/playtown/assets/grocery/products_v2/pasta.webp",
+          "asset": "res://learning/assets/grocery/products_v2/pasta.webp",
           "op": "add"
         },
         {
@@ -709,7 +709,7 @@
           "type": "object",
           "label": "FISH",
           "value": "FISH",
-          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "asset": "res://learning/assets/grocery/products_v2/fish.webp",
           "op": "add"
         }
       ],
@@ -727,7 +727,7 @@
           "type": "object",
           "label": "RAIN",
           "value": "RAIN",
-          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "asset": "res://learning/assets/learning_objects/rain.webp",
           "op": "add"
         },
         {
@@ -741,21 +741,21 @@
           "type": "object",
           "label": "SUN",
           "value": "SUN",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BALL",
           "value": "BALL",
-          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "asset": "res://learning/assets/learning_objects/ball.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "KEY",
           "value": "KEY",
-          "asset": "res://education/playtown/assets/learning_objects/key.webp",
+          "asset": "res://learning/assets/learning_objects/key.webp",
           "op": "add"
         }
       ],
@@ -780,28 +780,28 @@
           "type": "object",
           "label": "BOOK",
           "value": "BOOK",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "MOON",
           "value": "MOON",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "SNOW",
           "value": "SNOW",
-          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "asset": "res://learning/assets/learning_objects/snow.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "HOUSE",
           "value": "HOUSE",
-          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "asset": "res://learning/assets/learning_objects/house.webp",
           "op": "add"
         }
       ],
@@ -819,21 +819,21 @@
           "type": "object",
           "label": "STAR",
           "value": "STAR",
-          "asset": "res://education/playtown/assets/learning_objects/star.webp",
+          "asset": "res://learning/assets/learning_objects/star.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "FISH",
           "value": "FISH",
-          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "asset": "res://learning/assets/grocery/products_v2/fish.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "SUN",
           "value": "SUN",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -847,7 +847,7 @@
           "type": "object",
           "label": "HEAD",
           "value": "HEAD",
-          "asset": "res://education/playtown/assets/learning_objects/head.webp",
+          "asset": "res://learning/assets/learning_objects/head.webp",
           "op": "add"
         }
       ],
@@ -865,7 +865,7 @@
           "type": "object",
           "label": "MOON",
           "value": "MOON",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
@@ -879,21 +879,21 @@
           "type": "object",
           "label": "RAIN",
           "value": "RAIN",
-          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "asset": "res://learning/assets/learning_objects/rain.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BALL",
           "value": "BALL",
-          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "asset": "res://learning/assets/learning_objects/ball.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "SNOW",
           "value": "SNOW",
-          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "asset": "res://learning/assets/learning_objects/snow.webp",
           "op": "add"
         }
       ],
@@ -911,35 +911,35 @@
           "type": "object",
           "label": "FOOT",
           "value": "FOOT",
-          "asset": "res://education/playtown/assets/learning_objects/foot.webp",
+          "asset": "res://learning/assets/learning_objects/foot.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BALL",
           "value": "BALL",
-          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "asset": "res://learning/assets/learning_objects/ball.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "HAND",
           "value": "HAND",
-          "asset": "res://education/playtown/assets/learning_objects/hand.webp",
+          "asset": "res://learning/assets/learning_objects/hand.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BOOK",
           "value": "BOOK",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "RAIN",
           "value": "RAIN",
-          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "asset": "res://learning/assets/learning_objects/rain.webp",
           "op": "add"
         }
       ],
@@ -959,7 +959,7 @@
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -973,21 +973,21 @@
           "type": "object",
           "label": "LUA",
           "value": "LUA",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "CASA",
           "value": "CASA",
-          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "asset": "res://learning/assets/learning_objects/house.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "FLOR",
           "value": "FLOR",
-          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "asset": "res://learning/assets/learning_objects/flower.webp",
           "op": "add"
         }
       ],
@@ -1020,21 +1020,21 @@
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "PEIXE",
           "value": "PEIXE",
-          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "asset": "res://learning/assets/grocery/products_v2/fish.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "MESA",
           "value": "MESA",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -1053,7 +1053,7 @@
           "type": "object",
           "label": "CHUVA",
           "value": "CHUVA",
-          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "asset": "res://learning/assets/learning_objects/rain.webp",
           "op": "add"
         },
         {
@@ -1074,7 +1074,7 @@
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -1100,7 +1100,7 @@
           "type": "object",
           "label": "CAVALO",
           "value": "CAVALO",
-          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_horse.webp",
+          "asset": "res://learning/assets/animal_habitat/animals/farm_horse.webp",
           "op": "add"
         },
         {
@@ -1121,14 +1121,14 @@
           "type": "object",
           "label": "LUA",
           "value": "LUA",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         }
       ],
@@ -1153,14 +1153,14 @@
           "type": "object",
           "label": "MESA",
           "value": "MESA",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -1174,7 +1174,7 @@
           "type": "object",
           "label": "FLOR",
           "value": "FLOR",
-          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "asset": "res://learning/assets/learning_objects/flower.webp",
           "op": "add"
         }
       ],
@@ -1199,21 +1199,21 @@
           "type": "object",
           "label": "FLOR",
           "value": "FLOR",
-          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "asset": "res://learning/assets/learning_objects/flower.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "CASA",
           "value": "CASA",
-          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "asset": "res://learning/assets/learning_objects/house.webp",
           "op": "add"
         },
         {
@@ -1252,14 +1252,14 @@
           "type": "object",
           "label": "LUA",
           "value": "LUA",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "GATO",
           "value": "GATO",
-          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_cat.webp",
+          "asset": "res://learning/assets/animal_habitat/animals/farm_cat.webp",
           "op": "add"
         },
         {
@@ -1306,7 +1306,7 @@
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -1338,14 +1338,14 @@
           "type": "object",
           "label": "CHUVA",
           "value": "CHUVA",
-          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "asset": "res://learning/assets/learning_objects/rain.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -1359,7 +1359,7 @@
           "type": "object",
           "label": "MESA",
           "value": "MESA",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -1377,7 +1377,7 @@
           "type": "object",
           "label": "PORTA",
           "value": "PORTA",
-          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "asset": "res://learning/assets/learning_objects/door.webp",
           "op": "add"
         },
         {
@@ -1391,21 +1391,21 @@
           "type": "object",
           "label": "LIVRO",
           "value": "LIVRO",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "FLOR",
           "value": "FLOR",
-          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "asset": "res://learning/assets/learning_objects/flower.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "CASA",
           "value": "CASA",
-          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "asset": "res://learning/assets/learning_objects/house.webp",
           "op": "add"
         }
       ],
@@ -1432,14 +1432,14 @@
           "type": "object",
           "label": "COL",
           "value": "COL",
-          "asset": "res://education/playtown/assets/grocery/products_v2/cabbage.webp",
+          "asset": "res://learning/assets/grocery/products_v2/cabbage.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -1453,7 +1453,7 @@
           "type": "object",
           "label": "FLOR",
           "value": "FLOR",
-          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "asset": "res://learning/assets/learning_objects/flower.webp",
           "op": "add"
         }
       ],
@@ -1478,28 +1478,28 @@
           "type": "object",
           "label": "MESA",
           "value": "MESA",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "LLAVE",
           "value": "LLAVE",
-          "asset": "res://education/playtown/assets/learning_objects/key.webp",
+          "asset": "res://learning/assets/learning_objects/key.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "LUNA",
           "value": "LUNA",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "CASA",
           "value": "CASA",
-          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "asset": "res://learning/assets/learning_objects/house.webp",
           "op": "add"
         }
       ],
@@ -1531,21 +1531,21 @@
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "FLOR",
           "value": "FLOR",
-          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "asset": "res://learning/assets/learning_objects/flower.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "AGUA",
           "value": "AGUA",
-          "asset": "res://education/playtown/assets/grocery/products_v2/water.webp",
+          "asset": "res://learning/assets/grocery/products_v2/water.webp",
           "op": "add"
         }
       ],
@@ -1571,7 +1571,7 @@
           "type": "object",
           "label": "AGUA",
           "value": "AGUA",
-          "asset": "res://education/playtown/assets/grocery/products_v2/water.webp",
+          "asset": "res://learning/assets/grocery/products_v2/water.webp",
           "op": "add"
         },
         {
@@ -1585,7 +1585,7 @@
           "type": "object",
           "label": "LUNA",
           "value": "LUNA",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
@@ -1632,7 +1632,7 @@
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -1671,21 +1671,21 @@
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "MESA",
           "value": "MESA",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "FLOR",
           "value": "FLOR",
-          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "asset": "res://learning/assets/learning_objects/flower.webp",
           "op": "add"
         }
       ],
@@ -1717,7 +1717,7 @@
           "type": "object",
           "label": "LUNA",
           "value": "LUNA",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
@@ -1756,28 +1756,28 @@
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "LLUVIA",
           "value": "LLUVIA",
-          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "asset": "res://learning/assets/learning_objects/rain.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "MESA",
           "value": "MESA",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "PEZ",
           "value": "PEZ",
-          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "asset": "res://learning/assets/grocery/products_v2/fish.webp",
           "op": "add"
         }
       ],
@@ -1809,21 +1809,21 @@
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "PEZ",
           "value": "PEZ",
-          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "asset": "res://learning/assets/grocery/products_v2/fish.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "MESA",
           "value": "MESA",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -1855,21 +1855,21 @@
           "type": "object",
           "label": "SOL",
           "value": "SOL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "CASA",
           "value": "CASA",
-          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "asset": "res://learning/assets/learning_objects/house.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "MESA",
           "value": "MESA",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -1889,7 +1889,7 @@
           "type": "object",
           "label": "HAND",
           "value": "HAND",
-          "asset": "res://education/playtown/assets/learning_objects/hand.webp",
+          "asset": "res://learning/assets/learning_objects/hand.webp",
           "op": "add"
         },
         {
@@ -1903,21 +1903,21 @@
           "type": "object",
           "label": "MOND",
           "value": "MOND",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BUCH",
           "value": "BUCH",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "REGEN",
           "value": "REGEN",
-          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "asset": "res://learning/assets/learning_objects/rain.webp",
           "op": "add"
         }
       ],
@@ -1936,7 +1936,7 @@
           "type": "object",
           "label": "SONNE",
           "value": "SONNE",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -1950,21 +1950,21 @@
           "type": "object",
           "label": "BLUME",
           "value": "BLUME",
-          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "asset": "res://learning/assets/learning_objects/flower.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "HAUS",
           "value": "HAUS",
-          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "asset": "res://learning/assets/learning_objects/house.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "TISCH",
           "value": "TISCH",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -1983,7 +1983,7 @@
           "type": "object",
           "label": "BLUME",
           "value": "BLUME",
-          "asset": "res://education/playtown/assets/learning_objects/flower.webp",
+          "asset": "res://learning/assets/learning_objects/flower.webp",
           "op": "add"
         },
         {
@@ -2004,14 +2004,14 @@
           "type": "object",
           "label": "MOND",
           "value": "MOND",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "REGEN",
           "value": "REGEN",
-          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "asset": "res://learning/assets/learning_objects/rain.webp",
           "op": "add"
         }
       ],
@@ -2030,7 +2030,7 @@
           "type": "object",
           "label": "SCHNEE",
           "value": "SCHNEE",
-          "asset": "res://education/playtown/assets/learning_objects/snow.webp",
+          "asset": "res://learning/assets/learning_objects/snow.webp",
           "op": "add"
         },
         {
@@ -2051,14 +2051,14 @@
           "type": "object",
           "label": "BUCH",
           "value": "BUCH",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BALL",
           "value": "BALL",
-          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "asset": "res://learning/assets/learning_objects/ball.webp",
           "op": "add"
         }
       ],
@@ -2077,7 +2077,7 @@
           "type": "object",
           "label": "WOLKE",
           "value": "WOLKE",
-          "asset": "res://education/playtown/assets/learning_objects/cloud.webp",
+          "asset": "res://learning/assets/learning_objects/cloud.webp",
           "op": "add"
         },
         {
@@ -2105,7 +2105,7 @@
           "type": "object",
           "label": "MOND",
           "value": "MOND",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         }
       ],
@@ -2123,7 +2123,7 @@
           "type": "object",
           "label": "REGEN",
           "value": "REGEN",
-          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "asset": "res://learning/assets/learning_objects/rain.webp",
           "op": "add"
         },
         {
@@ -2137,21 +2137,21 @@
           "type": "object",
           "label": "SONNE",
           "value": "SONNE",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "TISCH",
           "value": "TISCH",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "FISCH",
           "value": "FISCH",
-          "asset": "res://education/playtown/assets/grocery/products_v2/fish.webp",
+          "asset": "res://learning/assets/grocery/products_v2/fish.webp",
           "op": "add"
         }
       ],
@@ -2169,7 +2169,7 @@
           "type": "object",
           "label": "MOND",
           "value": "MOND",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
@@ -2183,7 +2183,7 @@
           "type": "object",
           "label": "REGEN",
           "value": "REGEN",
-          "asset": "res://education/playtown/assets/learning_objects/rain.webp",
+          "asset": "res://learning/assets/learning_objects/rain.webp",
           "op": "add"
         },
         {
@@ -2197,7 +2197,7 @@
           "type": "object",
           "label": "HAUS",
           "value": "HAUS",
-          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "asset": "res://learning/assets/learning_objects/house.webp",
           "op": "add"
         }
       ],
@@ -2222,28 +2222,28 @@
           "type": "object",
           "label": "BÜRSTE",
           "value": "BÜRSTE",
-          "asset": "res://education/playtown/assets/pet_home/teeth/toothbrush.png",
+          "asset": "res://learning/assets/pet_home/teeth/toothbrush.png",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BUCH",
           "value": "BUCH",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "MOND",
           "value": "MOND",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BALL",
           "value": "BALL",
-          "asset": "res://education/playtown/assets/learning_objects/ball.webp",
+          "asset": "res://learning/assets/learning_objects/ball.webp",
           "op": "add"
         }
       ],
@@ -2275,21 +2275,21 @@
           "type": "object",
           "label": "SONNE",
           "value": "SONNE",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BUCH",
           "value": "BUCH",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "TISCH",
           "value": "TISCH",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -2307,7 +2307,7 @@
           "type": "object",
           "label": "HAUS",
           "value": "HAUS",
-          "asset": "res://education/playtown/assets/learning_objects/house.webp",
+          "asset": "res://learning/assets/learning_objects/house.webp",
           "op": "add"
         },
         {
@@ -2321,21 +2321,21 @@
           "type": "object",
           "label": "HAND",
           "value": "HAND",
-          "asset": "res://education/playtown/assets/learning_objects/hand.webp",
+          "asset": "res://learning/assets/learning_objects/hand.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "MOND",
           "value": "MOND",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "BUCH",
           "value": "BUCH",
-          "asset": "res://education/playtown/assets/learning_objects/book.webp",
+          "asset": "res://learning/assets/learning_objects/book.webp",
           "op": "add"
         }
       ],
@@ -2355,35 +2355,35 @@
           "type": "object",
           "label": "PORTE",
           "value": "PORTE",
-          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "asset": "res://learning/assets/learning_objects/door.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "FEUILLE",
           "value": "FEUILLE",
-          "asset": "res://education/playtown/assets/learning_objects/leaf.webp",
+          "asset": "res://learning/assets/learning_objects/leaf.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "LUNE",
           "value": "LUNE",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "TABLE",
           "value": "TABLE",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "CHAT",
           "value": "CHAT",
-          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_cat.webp",
+          "asset": "res://learning/assets/animal_habitat/animals/farm_cat.webp",
           "op": "add"
         }
       ],
@@ -2415,21 +2415,21 @@
           "type": "object",
           "label": "SOLEIL",
           "value": "SOLEIL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "LUNE",
           "value": "LUNE",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "TABLE",
           "value": "TABLE",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -2448,7 +2448,7 @@
           "type": "object",
           "label": "POMME",
           "value": "POMME",
-          "asset": "res://education/playtown/assets/grocery/products_v2/apple.webp",
+          "asset": "res://learning/assets/grocery/products_v2/apple.webp",
           "op": "add"
         },
         {
@@ -2469,14 +2469,14 @@
           "type": "object",
           "label": "LUNE",
           "value": "LUNE",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "TABLE",
           "value": "TABLE",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -2516,7 +2516,7 @@
           "type": "object",
           "label": "SOLEIL",
           "value": "SOLEIL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -2549,7 +2549,7 @@
           "type": "object",
           "label": "SOLEIL",
           "value": "SOLEIL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
@@ -2563,14 +2563,14 @@
           "type": "object",
           "label": "PORTE",
           "value": "PORTE",
-          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "asset": "res://learning/assets/learning_objects/door.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "TABLE",
           "value": "TABLE",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -2602,21 +2602,21 @@
           "type": "object",
           "label": "CHAT",
           "value": "CHAT",
-          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_cat.webp",
+          "asset": "res://learning/assets/animal_habitat/animals/farm_cat.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "LUNE",
           "value": "LUNE",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "PORTE",
           "value": "PORTE",
-          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "asset": "res://learning/assets/learning_objects/door.webp",
           "op": "add"
         }
       ],
@@ -2634,7 +2634,7 @@
           "type": "object",
           "label": "PORTE",
           "value": "PORTE",
-          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "asset": "res://learning/assets/learning_objects/door.webp",
           "op": "add"
         },
         {
@@ -2648,21 +2648,21 @@
           "type": "object",
           "label": "LUNE",
           "value": "LUNE",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "CHAT",
           "value": "CHAT",
-          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_cat.webp",
+          "asset": "res://learning/assets/animal_habitat/animals/farm_cat.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "TABLE",
           "value": "TABLE",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -2694,21 +2694,21 @@
           "type": "object",
           "label": "SOLEIL",
           "value": "SOLEIL",
-          "asset": "res://education/playtown/assets/learning_objects/sun.webp",
+          "asset": "res://learning/assets/learning_objects/sun.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "LUNE",
           "value": "LUNE",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "TABLE",
           "value": "TABLE",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         }
       ],
@@ -2740,21 +2740,21 @@
           "type": "object",
           "label": "PORTE",
           "value": "PORTE",
-          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "asset": "res://learning/assets/learning_objects/door.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "LUNE",
           "value": "LUNE",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "CHAT",
           "value": "CHAT",
-          "asset": "res://education/playtown/assets/animal_habitat/animals/farm_cat.webp",
+          "asset": "res://learning/assets/animal_habitat/animals/farm_cat.webp",
           "op": "add"
         }
       ],
@@ -2786,21 +2786,21 @@
           "type": "object",
           "label": "LUNE",
           "value": "LUNE",
-          "asset": "res://education/playtown/assets/learning_objects/moon.webp",
+          "asset": "res://learning/assets/learning_objects/moon.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "TABLE",
           "value": "TABLE",
-          "asset": "res://education/playtown/assets/learning_objects/table.webp",
+          "asset": "res://learning/assets/learning_objects/table.webp",
           "op": "add"
         },
         {
           "type": "object",
           "label": "PORTE",
           "value": "PORTE",
-          "asset": "res://education/playtown/assets/learning_objects/door.webp",
+          "asset": "res://learning/assets/learning_objects/door.webp",
           "op": "add"
         }
       ],

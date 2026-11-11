@@ -118,7 +118,7 @@ func _on_back_pressed() -> void:
     if is_instance_valid(_host):
         _host.call("_return_to_cards")
     else:
-        get_tree().change_scene_to_file("res://education/playtown/scenes/screens/game_select_playground.tscn")
+        get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 
 func _detect_locale() -> void:

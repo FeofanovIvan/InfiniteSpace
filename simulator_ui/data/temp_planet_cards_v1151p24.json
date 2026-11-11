@@ -6,7 +6,7 @@
     {
       "id": "mw__puzzles",
       "system": "mw",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Пазлы",
         "en": "Puzzles",
@@ -16,13 +16,13 @@
         "pt_BR": "Quebra-cabeças"
       },
       "scene_candidates": [
-        "res://education/playtown/scenes/features/puzzle/puzzle_game.tscn"
+        "res://learning/scenes/features/puzzle/puzzle_game.tscn"
       ]
     },
     {
       "id": "mw__animal_habitat",
       "system": "mw",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Среда обитания",
         "en": "Animal Habitat",
@@ -32,13 +32,13 @@
         "pt_BR": "Habitat dos animais"
       },
       "scene_candidates": [
-        "res://education/playtown/scenes/features/animal_habitat/animal_habitat_game.tscn"
+        "res://learning/scenes/features/animal_habitat/animal_habitat_game.tscn"
       ]
     },
     {
       "id": "mw__shopping_list",
       "system": "mw",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Список покупок",
         "en": "Shopping List",
@@ -48,13 +48,13 @@
         "pt_BR": "Lista de compras"
       },
       "scene_candidates": [
-        "res://education/playtown/scenes/features/grocery/grocery_game.tscn"
+        "res://learning/scenes/features/grocery/grocery_game.tscn"
       ]
     },
     {
       "id": "mw__product_count",
       "system": "mw",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Посчитай предметы",
         "en": "Product Count",
@@ -64,13 +64,13 @@
         "pt_BR": "Contar objetos"
       },
       "scene_candidates": [
-        "res://education/playtown/scenes/features/product_count/product_count_game.tscn"
+        "res://learning/scenes/features/product_count/product_count_game.tscn"
       ]
     },
     {
       "id": "lmc__fungal_paths",
       "system": "lmc",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Грибные пути",
         "en": "Fungal Paths",
@@ -159,7 +159,7 @@
     {
       "id": "smc__solutions_lab",
       "system": "smc",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Лаборатория растворов",
         "en": "Solution Lab",
@@ -175,7 +175,7 @@
     {
       "id": "smc__resource_rush",
       "system": "smc",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Сбор ресурсов на скорость",
         "en": "Resource Rush",
@@ -185,7 +185,7 @@
         "pt_BR": "Corrida dos recursos"
       },
       "scene_candidates": [
-        "res://education/playtown/scenes/features/ice_cream/ice_cream_game.tscn"
+        "res://learning/scenes/features/ice_cream/ice_cream_game.tscn"
       ]
     },
     {
@@ -207,7 +207,7 @@
     {
       "id": "ngc6822__fossil_search",
       "system": "ngc6822",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Поиск древних останков",
         "en": "Fossil Hunt",
@@ -217,7 +217,7 @@
         "pt_BR": "Caça aos fósseis"
       },
       "scene_candidates": [
-        "res://education/playtown/scenes/features/house_search/house_search_game.tscn"
+        "res://learning/scenes/features/house_search/house_search_game.tscn"
       ]
     },
     {
@@ -255,7 +255,7 @@
     {
       "id": "ngc6822__pizza_fraction",
       "system": "ngc6822",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Пицца и дроби",
         "en": "Pizza Fractions",
@@ -265,13 +265,13 @@
         "pt_BR": "Frações de pizza"
       },
       "scene_candidates": [
-        "res://education/playtown/scenes/features/pizza_fraction/pizza_fraction_game.tscn"
+        "res://learning/scenes/features/pizza_fraction/pizza_fraction_game.tscn"
       ]
     },
     {
       "id": "m31__roll_ball",
       "system": "m31",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Закати шарик",
         "en": "Roll the Ball",
@@ -281,7 +281,7 @@
         "pt_BR": "Role a bola"
       },
       "scene_candidates": [
-        "res://education/playtown/scenes/features/tilt_maze/tilt_maze_game.tscn"
+        "res://learning/scenes/features/tilt_maze/tilt_maze_game.tscn"
       ]
     },
     {
@@ -335,7 +335,7 @@
     {
       "id": "m33__piano",
       "system": "m33",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Пианино",
         "en": "Piano",
@@ -345,13 +345,13 @@
         "pt_BR": "Piano"
       },
       "scene_candidates": [
-        "res://education/playtown/scenes/features/piano/piano_game.tscn"
+        "res://learning/scenes/features/piano/piano_game.tscn"
       ]
     },
     {
       "id": "m33__matching_pairs",
       "system": "m33",
-      "origin": "playtown",
+      "origin": "embedded_learning",
       "title": {
         "ru": "Найди пары",
         "en": "Matching Pairs",
@@ -361,7 +361,7 @@
         "pt_BR": "Encontre os pares"
       },
       "scene_candidates": [
-        "res://education/playtown/scenes/features/matching_pairs/matching_pairs_game.tscn"
+        "res://learning/scenes/features/matching_pairs/matching_pairs_game.tscn"
       ]
     },
     {

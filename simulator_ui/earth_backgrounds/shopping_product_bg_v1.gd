@@ -1,6 +1,6 @@
-extends "res://education/playtown/src/features/grocery/grocery_game.gd"
+extends "res://learning/src/features/grocery/grocery_game.gd"
 ## Background only. Same Product Count image, no changes to product positions.
-const MIKA_PRODUCT_COUNT_BG: Texture2D = preload("res://education/playtown/assets/product_count/background.webp")
+const MIKA_PRODUCT_COUNT_BG: Texture2D = preload("res://learning/assets/product_count/background.webp")
 var _mika_product_backdrop: TextureRect
 
 func _build_scene() -> void:

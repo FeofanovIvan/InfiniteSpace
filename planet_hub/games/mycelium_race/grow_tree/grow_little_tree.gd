@@ -26,7 +26,7 @@ const STAGES = [
     preload("res://planet_hub/games/mycelium_race/grow_tree/assets/tree_09.png"),
     preload("res://planet_hub/games/mycelium_race/grow_tree/assets/tree_10.png")
 ]
-const GOOD_SOUND = preload("res://education/playtown/audio/sfx/connect_point.ogg")
+const GOOD_SOUND = preload("res://learning/audio/sfx/connect_point.ogg")
 const BAD_SOUND = preload("res://planet_hub/games/mycelium_race/grow_tree/audio/try_again.wav")
 const ACTION_AUDIO = {
     "shovel": preload("res://planet_hub/games/mycelium_race/grow_tree/audio/dig.wav"),
@@ -899,7 +899,7 @@ func _draw_finish_banner() -> void:
     draw_string(face, rect.position + Vector2(15.0, rect.size.y * 0.64), _tr("win") if _won else _tr("lose"), HORIZONTAL_ALIGNMENT_CENTER, rect.size.x - 30.0, maxi(12, roundi(h * 0.21)), Color("f1fff1"))
 
 func _go_back() -> void:
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")):
         portal.call("handle_scene_transition", "")
         return
@@ -914,7 +914,7 @@ func _go_back() -> void:
             parent_node.call("_return_to_cards")
             return
         parent_node = parent_node.get_parent()
-    var fallback: String = "res://education/playtown/scenes/screens/game_select_school.tscn"
+    var fallback: String = "res://scenes/main.tscn"
     if ResourceLoader.exists(fallback):
         get_tree().change_scene_to_file(fallback)
 

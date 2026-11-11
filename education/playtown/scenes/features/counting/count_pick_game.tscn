@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd4w40slfb7c3"]
-
-[ext_resource type="Script" path="res://education/playtown/src/features/counting/mika_count_pick_native_v1_3.gd" id="1_cpg"]
-
-[node name="CountPickGame" type="Node2D"]
-script = ExtResource("1_cpg")

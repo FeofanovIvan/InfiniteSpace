@@ -200,7 +200,7 @@ func _go_back() -> void:
         if is_instance_valid(button):
             button.emit_signal("pressed")
             return
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")) and portal.has_method("handle_scene_transition"):
         portal.call("handle_scene_transition", "")
         return

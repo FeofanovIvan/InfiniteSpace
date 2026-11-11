@@ -28,8 +28,8 @@
         "es": "Une las piezas para formar la imagen.",
         "pt_BR": "Junte as peças para formar a imagem."
       },
-      "source_status": "playtown",
-      "source_scene": "res://education/playtown/scenes/features/puzzle/puzzle_game.tscn",
+      "source_status": "embedded_learning",
+      "source_scene": "res://learning/scenes/features/puzzle/puzzle_game.tscn",
       "launch_enabled": true,
       "image_path": "res://planet_hub/cards/game_icons/mw__puzzles.png"
     },
@@ -51,8 +51,8 @@
         "es": "Encuentra el hogar de cada animal.",
         "pt_BR": "Encontre a casa de cada animal."
       },
-      "source_status": "playtown",
-      "source_scene": "res://education/playtown/scenes/features/animal_habitat/animal_habitat_game.tscn",
+      "source_status": "embedded_learning",
+      "source_scene": "res://learning/scenes/features/animal_habitat/animal_habitat_game.tscn",
       "launch_enabled": true,
       "image_path": "res://planet_hub/cards/game_icons/mw__animal_habitat.png"
     },
@@ -74,8 +74,8 @@
         "es": "Encuentra los objetos de la lista.",
         "pt_BR": "Encontre os itens da lista."
       },
-      "source_status": "playtown",
-      "source_scene": "res://education/playtown/scenes/features/grocery/grocery_game.tscn",
+      "source_status": "embedded_learning",
+      "source_scene": "res://learning/scenes/features/grocery/grocery_game.tscn",
       "launch_enabled": true,
       "image_path": "res://planet_hub/cards/game_icons/mw__shopping_list.png"
     },
@@ -97,8 +97,8 @@
         "es": "Cuenta y elige la cantidad correcta.",
         "pt_BR": "Conte e escolha a quantidade certa."
       },
-      "source_status": "playtown",
-      "source_scene": "res://education/playtown/scenes/features/product_count/product_count_game.tscn",
+      "source_status": "embedded_learning",
+      "source_scene": "res://learning/scenes/features/product_count/product_count_game.tscn",
       "launch_enabled": true,
       "image_path": "res://planet_hub/cards/game_icons/mw__product_count.png"
     },
@@ -373,8 +373,8 @@
         "es": "Forma una pizza con sus porciones.",
         "pt_BR": "Monte uma pizza com suas fatias."
       },
-      "source_status": "playtown",
-      "source_scene": "res://education/playtown/scenes/features/pizza_fraction/pizza_fraction_game.tscn",
+      "source_status": "embedded_learning",
+      "source_scene": "res://learning/scenes/features/pizza_fraction/pizza_fraction_game.tscn",
       "launch_enabled": true,
       "image_path": "res://planet_hub/cards/game_icons/ngc6822__pizza_fraction.png"
     },
@@ -396,8 +396,8 @@
         "es": "Guía la bola por el laberinto.",
         "pt_BR": "Guie a bola pelo labirinto."
       },
-      "source_status": "playtown",
-      "source_scene": "res://education/playtown/scenes/features/tilt_maze/tilt_maze_game.tscn",
+      "source_status": "embedded_learning",
+      "source_scene": "res://learning/scenes/features/tilt_maze/tilt_maze_game.tscn",
       "launch_enabled": true,
       "image_path": "res://planet_hub/cards/game_icons/m31__roll_ball.png"
     },
@@ -488,8 +488,8 @@
         "es": "Repite notas y toca melodías.",
         "pt_BR": "Repita notas e toque melodias."
       },
-      "source_status": "playtown",
-      "source_scene": "res://education/playtown/scenes/features/piano/piano_game.tscn",
+      "source_status": "embedded_learning",
+      "source_scene": "res://learning/scenes/features/piano/piano_game.tscn",
       "launch_enabled": true,
       "image_path": "res://planet_hub/cards/game_icons/m33__piano.png"
     },
@@ -511,8 +511,8 @@
         "es": "Voltea cartas y busca parejas iguales.",
         "pt_BR": "Vire as cartas e encontre os pares."
       },
-      "source_status": "playtown",
-      "source_scene": "res://education/playtown/scenes/features/matching_pairs/matching_pairs_game.tscn",
+      "source_status": "embedded_learning",
+      "source_scene": "res://learning/scenes/features/matching_pairs/matching_pairs_game.tscn",
       "launch_enabled": true,
       "image_path": "res://planet_hub/cards/game_icons/m33__matching_pairs.png"
     },
@@ -581,7 +581,7 @@
         "pt_BR": "Passeie com seu bichinho e explore."
       },
       "source_status": "adapt",
-      "source_scene": "res://education/playtown/scenes/features/pet/pet_home_miko.tscn",
+      "source_scene": "res://learning/scenes/features/pet/pet_home_miko.tscn",
       "launch_enabled": false,
       "image_path": "res://planet_hub/cards/game_icons/common__pet_walk.png"
     }

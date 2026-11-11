@@ -21,7 +21,7 @@ const WORDS: Dictionary = {
     "de": {"colors":["ROSA", "BLAU", "GRÜN", "GELB", "LILA", "ORANGE"], "info":"Ziehe ein Ei oder tippe erst aufs Ei und dann auf einen Inkubator", "win":"ALLE EIER SIND SORTIERT!", "ready":"Inkubatoren bereit für die nächste Runde"}
 }
 const INCUBATOR_IMAGE_PATH: String = "res://planet_hub/games/dinosaur_eggs/assets/incubator_user.png"
-const SFX_OK: AudioStream = preload("res://education/playtown/audio/sfx/correct.ogg")
+const SFX_OK: AudioStream = preload("res://learning/audio/sfx/correct.ogg")
 
 var locale: String = "en"
 var _bins: Array = []

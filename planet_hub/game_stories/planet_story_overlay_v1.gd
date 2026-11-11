@@ -7,8 +7,8 @@ extends CanvasLayer
 
 const STORIES_PATH: String = "res://planet_hub/game_stories/planet_game_stories_v1.json"
 const EARTH_GAMES := ["mw__puzzles", "mw__animal_habitat", "mw__shopping_list", "mw__product_count"]
-const NATIVE_EXIT_SOURCE := "res://education/playtown/src/ui/game_exit_button.gd"
-const NATIVE_SCORE_SOURCE := "res://education/playtown/src/ui/game_score_panel.gd"
+const NATIVE_EXIT_SOURCE := "res://learning/src/ui/game_exit_button.gd"
+const NATIVE_SCORE_SOURCE := "res://learning/src/ui/game_score_panel.gd"
 const GAME_CATALOGS := [
     "res://planet_hub/data/planet_game_cards_v204.json",
     "res://planet_hub/data/planet_game_cards_v104.json",

@@ -2,10 +2,10 @@ extends "res://simulator_ui/where_is_it/scripts/where_is_it.gd"
 ## MIKA / Where Is It? – native-style toolbar, enlarged 3D cube, sound feedback.
 ## Independent overlay. The original game and cube_world.gd remain untouched.
 
-const SOUND_CORRECT = "res://education/playtown/audio/sfx/correct.ogg"
-const SOUND_WRONG = "res://education/playtown/audio/sfx/wrong.ogg"
-const SOUND_CLICK = "res://education/playtown/audio/sfx/connect_point.ogg"
-const SOUND_COMPLETE = "res://education/playtown/audio/sfx/coin.ogg"
+const SOUND_CORRECT = "res://learning/audio/sfx/correct.ogg"
+const SOUND_WRONG = "res://learning/audio/sfx/wrong.ogg"
+const SOUND_CLICK = "res://learning/audio/sfx/connect_point.ogg"
+const SOUND_COMPLETE = "res://learning/audio/sfx/coin.ogg"
 
 const INSTRUCTION = {
     "en": "Drag each word to its place around the cube",

@@ -1,0 +1,123 @@
+{
+  "animations": {
+    "walk_down": {
+      "path": "res://learning/assets/ice_cream/resource_rush_mika/mika_walk_front_sheet.png",
+      "regions": [
+        [
+          0,
+          0,
+          320,
+          480
+        ],
+        [
+          320,
+          0,
+          320,
+          480
+        ],
+        [
+          640,
+          0,
+          320,
+          480
+        ],
+        [
+          960,
+          0,
+          320,
+          480
+        ]
+      ]
+    },
+    "walk_up": {
+      "path": "res://learning/assets/ice_cream/resource_rush_mika/mika_walk_up_sheet.png",
+      "regions": [
+        [
+          0,
+          0,
+          320,
+          480
+        ],
+        [
+          320,
+          0,
+          320,
+          480
+        ],
+        [
+          640,
+          0,
+          320,
+          480
+        ],
+        [
+          960,
+          0,
+          320,
+          480
+        ]
+      ]
+    },
+    "walk_right": {
+      "path": "res://learning/assets/ice_cream/resource_rush_mika/mika_walk_right_sheet.png",
+      "regions": [
+        [
+          0,
+          0,
+          320,
+          480
+        ],
+        [
+          320,
+          0,
+          320,
+          480
+        ],
+        [
+          640,
+          0,
+          320,
+          480
+        ],
+        [
+          960,
+          0,
+          320,
+          480
+        ]
+      ]
+    },
+    "walk_left": {
+      "path": "res://learning/assets/ice_cream/resource_rush_mika/mika_walk_right_sheet.png",
+      "regions": [
+        [
+          0,
+          0,
+          320,
+          480
+        ],
+        [
+          320,
+          0,
+          320,
+          480
+        ],
+        [
+          640,
+          0,
+          320,
+          480
+        ],
+        [
+          960,
+          0,
+          320,
+          480
+        ]
+      ]
+    }
+  },
+  "cell_height": 480.0,
+  "mirror_left": true,
+  "note": "v3 PNG alpha gutters; four individual sprites per animation"
+}

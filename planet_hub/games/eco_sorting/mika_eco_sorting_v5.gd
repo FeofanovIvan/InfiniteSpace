@@ -465,11 +465,11 @@ func _sort_object(id_value: int, bin_id: int) -> void:
     if int(_falling[index_value]["category"]) == bin_id:
         _despawn(index_value)
         _set_crystal_count(_crystal_count + 1)
-        _play_sound("res://education/playtown/audio/sfx/correct.ogg")
+        _play_sound("res://learning/audio/sfx/correct.ogg")
     else:
         _status.text = _tr("wrong")
         _status_life = 0.85
-        _play_sound("res://education/playtown/audio/sfx/error.ogg")
+        _play_sound("res://learning/audio/sfx/error.ogg")
         _picked_object_id = -1
         if _drag_object_id == id_value:
             _drag_object_id = -1
@@ -690,7 +690,7 @@ func _exit_tree() -> void:
 func _exit_to_cards() -> void:
     if is_instance_valid(_host_back):
         _host_back.show()
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")):
         portal.call("handle_scene_transition", "res://")
         return
@@ -705,6 +705,6 @@ func _exit_to_cards() -> void:
             ancestor.call("_return_to_cards")
             return
         ancestor = ancestor.get_parent()
-    var fallback: String = "res://education/playtown/scenes/screens/game_select_playground.tscn"
+    var fallback: String = "res://scenes/main.tscn"
     if ResourceLoader.exists(fallback):
         get_tree().change_scene_to_file(fallback)

@@ -118,9 +118,9 @@ func _layout() -> void:
 
 
 func _return_to_simulator() -> void:
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and portal.has_method("handle_scene_transition"):
-        portal.call("handle_scene_transition", "res://education/playtown/scenes/screens/game_select_playground.tscn")
+        portal.call("handle_scene_transition", "res://scenes/main.tscn")
 
 
 func _unhandled_key_input(event: InputEvent) -> void:

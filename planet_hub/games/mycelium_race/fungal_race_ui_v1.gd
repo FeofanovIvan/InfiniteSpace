@@ -8,7 +8,7 @@ const HUD_NATIVE = preload("res://planet_hub/scripts/bottom_hud.gd")
 const BACK_GLYPH = preload("res://simulator_ui/back_arrow_glyph.gd")
 const UI_KIT = preload("res://simulator_ui/scripts/mika_minigame_ui_kit_v11.gd")
 const SPACE_BG = preload("res://simulator_ui/scripts/real_space_background.gd")
-const VICTORY_SFX = preload("res://education/playtown/audio/sfx/correct.ogg")
+const VICTORY_SFX = preload("res://learning/audio/sfx/correct.ogg")
 
 var _race_space: Control
 var _race_back: Button
@@ -332,7 +332,7 @@ func _exit_tree() -> void:
         _race_outer_back.show()
 
 func _race_exit() -> void:
-    var portal: Node = get_node_or_null("/root/PlayTownPortal")
+    var portal: Node = get_node_or_null("/root/EmbeddedGamePortal")
     if portal != null and bool(portal.get("active")):
         portal.call("handle_scene_transition", "")
         return
@@ -347,7 +347,7 @@ func _race_exit() -> void:
             parent_node.call("_return_to_cards")
             return
         parent_node = parent_node.get_parent()
-    var fallback: String = "res://education/playtown/scenes/screens/game_select_school.tscn"
+    var fallback: String = "res://scenes/main.tscn"
     if ResourceLoader.exists(fallback):
         get_tree().change_scene_to_file(fallback)
 
