@@ -541,9 +541,7 @@ func _draw_cover_background() -> void:
     var crop_x: float = (original.x - crop.x) * 0.5
     var grass_at: float = 577.0  # native image horizon
     var crop_y: float = clampf(grass_at - 0.614 * crop.y, 0.0, original.y - crop.y)
-    # Preserve the source artwork's native colors; the former blue-grey tint
-    # looked like a translucent film over the entire playable panel.
-    draw_texture_rect_region(BG, _stage, Rect2(Vector2(crop_x, crop_y), crop), Color.WHITE)
+    draw_texture_rect_region(BG, _stage, Rect2(Vector2(crop_x, crop_y), crop), Color(0.78, 0.83, 0.93))
 
 func _draw_plant() -> void:
     if not _has_seed:
