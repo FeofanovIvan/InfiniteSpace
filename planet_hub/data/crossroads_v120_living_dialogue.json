@@ -269,15 +269,18 @@
       ],
       "fr": [
         "aimant",
-        "aimants"
+        "aimants",
+        "magnétique"
       ],
       "de": [
         "magnet",
-        "magnete"
+        "magnete",
+        "magnetisch"
       ],
       "es": [
         "imán",
-        "imanes"
+        "imanes",
+        "magnético"
       ],
       "pt_BR": [
         "ímã",
@@ -293,21 +296,28 @@
       ],
       "en": [
         "gravity",
-        "gravitational pull"
+        "gravitational pull",
+        "earth pull"
       ],
       "fr": [
         "gravité",
-        "pesanteur"
+        "pesanteur",
+        "attraction terrestre"
       ],
       "de": [
         "schwerkraft",
-        "gravitation"
+        "gravitation",
+        "erdanziehung"
       ],
       "es": [
-        "gravedad"
+        "gravedad",
+        "fuerza de gravedad",
+        "atracción terrestre"
       ],
       "pt_BR": [
-        "gravidade"
+        "gravidade",
+        "força da gravidade",
+        "atração da terra"
       ]
     },
     "molecules": {
@@ -349,7 +359,8 @@
       ],
       "fr": [
         "neurone",
-        "neurones"
+        "neurones",
+        "cellules du cerveau"
       ],
       "de": [
         "neuron",
@@ -358,11 +369,13 @@
       ],
       "es": [
         "neurona",
-        "neuronas"
+        "neuronas",
+        "células del cerebro"
       ],
       "pt_BR": [
         "neurônio",
-        "neurônios"
+        "neurônios",
+        "células do cérebro"
       ]
     },
     "phase_changes": {
@@ -378,25 +391,30 @@
       ],
       "fr": [
         "fonte",
-        "évaporation"
+        "évaporation",
+        "congélation"
       ],
       "de": [
         "schmelzen",
-        "verdampfen"
+        "verdampfen",
+        "gefrieren"
       ],
       "es": [
         "derretir",
-        "evaporación"
+        "evaporación",
+        "congelación"
       ],
       "pt_BR": [
         "derreter",
-        "evaporação"
+        "evaporação",
+        "congelamento"
       ]
     },
     "sorting": {
       "ru": [
         "сортировка мусора",
-        "раздельный сбор"
+        "раздельный сбор",
+        "переработка мусора"
       ],
       "en": [
         "recycling bins",
@@ -405,19 +423,23 @@
       ],
       "fr": [
         "tri des déchets",
-        "recyclage"
+        "recyclage",
+        "poubelles de tri"
       ],
       "de": [
         "mülltrennung",
-        "recycling"
+        "recycling",
+        "müll sortieren"
       ],
       "es": [
         "separar basura",
-        "reciclaje"
+        "reciclaje",
+        "contenedores de reciclaje"
       ],
       "pt_BR": [
         "separar o lixo",
-        "reciclagem"
+        "reciclagem",
+        "lixeiras de reciclagem"
       ]
     },
     "clean_water": {
@@ -457,16 +479,24 @@
         "waste water"
       ],
       "fr": [
-        "économiser l eau"
+        "économiser l eau",
+        "garder l eau",
+        "gaspiller l eau"
       ],
       "de": [
-        "wasser sparen"
+        "wasser sparen",
+        "wasser schützen",
+        "wasser verschwenden"
       ],
       "es": [
-        "ahorrar agua"
+        "ahorrar agua",
+        "cuidar el agua",
+        "desperdiciar agua"
       ],
       "pt_BR": [
-        "economizar água"
+        "economizar água",
+        "cuidar da água",
+        "desperdiçar água"
       ]
     },
     "planets": {
@@ -604,16 +634,20 @@
         "light rays"
       ],
       "fr": [
-        "lumière"
+        "lumière",
+        "rayon de lumière"
       ],
       "de": [
-        "licht"
+        "licht",
+        "lichtstrahl"
       ],
       "es": [
-        "luz"
+        "luz",
+        "rayo de luz"
       ],
       "pt_BR": [
-        "luz"
+        "luz",
+        "raio de luz"
       ]
     },
     "electricity": {
@@ -626,17 +660,20 @@
         "electric current"
       ],
       "fr": [
-        "électricité"
+        "électricité",
+        "courant électrique"
       ],
       "de": [
         "strom",
         "elektrizität"
       ],
       "es": [
-        "electricidad"
+        "electricidad",
+        "corriente eléctrica"
       ],
       "pt_BR": [
-        "eletricidade"
+        "eletricidade",
+        "corrente elétrica"
       ]
     },
     "bees": {

@@ -179,9 +179,10 @@ func _v96_layout_cloud_choices() -> void:
 	# Dialogue buttons remain on the LOWER HALF of the character's area.
 	if _v96_cloud_layer == null or size.x < 180.0 or size.y < 180.0:
 		return
-	var half: float = size.x * 0.50
-	var h: float = size.y
-	_v96_cloud_layer.position = Vector2.ZERO
+	var safe: Rect2 = _safe_rect()
+	var half: float = safe.size.x * 0.50
+	var h: float = safe.size.y
+	_v96_cloud_layer.position = safe.position
 	_v96_cloud_layer.size = Vector2(half, h)
 	var available: float = maxf(80.0, half - clampf(half * 0.068, 24.0, 48.0))
 	var basic_height: float = clampf(h * 0.098, 52.0, 70.0)
@@ -220,24 +221,33 @@ func _load_background() -> void:
 func _layout_ui() -> void:
 	if not _setup or size.x < 200 or size.y < 140:
 		return
-	var w: float = size.x
-	var h: float = size.y
-	var split: float = w * 0.50
-	character.position = Vector2(8, h * 0.025)
-	character.size = Vector2(split - 16, h * 0.965)
+	var safe: Rect2 = _safe_rect()
+	var w: float = safe.size.x
+	var h: float = safe.size.y
+	var split: float = safe.position.x + w * 0.50
+	character.position = safe.position + Vector2(8, h * 0.025)
+	character.size = Vector2(w * 0.50 - 16, h * 0.965)
 	_v93_layout_magnetic_creature()
 	# A real self-contained tablet, bounded to the right half, almost full-height.
 	var frame_margin: float = clampf(h * 0.019, 10.0, 24.0)
 	var tablet_left: float = split + clampf(w * 0.011, 8.0, 22.0)
-	tablet.position = Vector2(tablet_left, frame_margin)
-	tablet.size = Vector2(w - tablet_left - frame_margin, h - 2.0 * frame_margin)
+	tablet.position = Vector2(tablet_left, safe.position.y + frame_margin)
+	tablet.size = Vector2(safe.end.x - tablet_left - frame_margin, h - 2.0 * frame_margin)
 	var back_margin: float = clampf(minf(w, h) * 0.034, 18.0, 34.0)
 	var back_size: float = clampf(h * 0.098, 53.0, 82.0)
-	_back_button.position = Vector2(back_margin, back_margin)
+	_back_button.position = safe.position + Vector2(back_margin, back_margin)
 	_back_button.size = Vector2(back_size, back_size)
 	_v96_layout_cloud_choices()
 	_back_button.move_to_front()
 	queue_redraw()
+
+func _safe_rect() -> Rect2:
+	var mobile: Node = get_node_or_null("/root/MobileLocale")
+	if mobile != null and mobile.has_method("safe_rect"):
+		var candidate: Variant = mobile.call("safe_rect", size)
+		if candidate is Rect2:
+			return candidate
+	return Rect2(Vector2.ZERO, size)
 
 func _go_back() -> void:
 	if not Engine.is_editor_hint():

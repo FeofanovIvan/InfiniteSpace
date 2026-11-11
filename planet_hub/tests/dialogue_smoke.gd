@@ -49,7 +49,9 @@ func _run_checks() -> void:
 			_check(str(world.get("structure", {}).get("ru", "")).is_empty(), "nature-only " + str(id))
 	_check(planets == 48 and active == 30 and nature == 24, "24 inhabited planets, 24 nature-only, 6 station crews")
 	var phrases: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://planet_hub/data/dialogue_phrases.json"))
-	_check(phrases is Dictionary and phrases.get("topics", {}).size() == 10, "ten dialogue topics")
+	_check(phrases is Dictionary and phrases.get("topics", {}).size() == 9, "nine dialogue topics without age")
+	_check(not phrases.get("topics", {}).has("age"), "representatives never ask an age question")
+	_check(not phrases.get("personal", {}).has("name") and not phrases.get("personal", {}).has("age"), "no child name or age prompts")
 	for lang in ["ru", "en", "fr", "de", "es", "pt_BR"]:
 		var e: RefCounted = EngineScript.new()
 		var result: Dictionary = e.call("begin", "mw_p01", lang)

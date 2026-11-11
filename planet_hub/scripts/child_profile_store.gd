@@ -1,7 +1,7 @@
 extends Node
 ## v93: consent-light local preference store.
-## Never create a demo child's name, age, or favorite color.
-## Values are learned only after the child voluntarily types a matching phrase.
+## Stores only a non-identifying color preference. Names and ages are neither
+## requested nor retained.
 signal profile_ready
 signal answer_learned(key: String, value: Variant)
 
@@ -21,13 +21,12 @@ func _ready() -> void:
 	var old: Dictionary = _read_json(DB_PATH)
 	var answers: Dictionary = old.get("answers", {})
 	if int(old.get("schema_version", 0)) >= 3 and answers is Dictionary:
-		for key in ["name", "age", "favorite_color"]:
-			if answers.has(key):
-				_set_validated(key, answers[key])
+		if answers.has("favorite_color"):
+			_set_validated("favorite_color", answers["favorite_color"])
 	elif answers is Dictionary:
 		# v60.1 persisted a fabricated profile at first run.
 		# Keep only values clearly unlike the sample: ambiguous demo data is not user input.
-		for key in ["name", "age", "favorite_color"]:
+		for key in ["favorite_color"]:
 			if answers.has(key) and str(answers[key]) != str(OLD_DEMO.get(key, "")):
 				var value: Variant = answers[key]
 				if key == "favorite_color" and str(value).to_lower() == "голубой":
@@ -44,16 +43,6 @@ func _read_json(path: String) -> Dictionary:
 
 func _set_validated(key: String, value: Variant) -> bool:
 	match key:
-		"name":
-			var nickname: String = str(value).strip_edges()
-			if nickname.length() >= 2 and nickname.length() <= 24 and not nickname.contains("\n"):
-				profile["name"] = nickname
-				return true
-		"age":
-			var age: int = int(value) if str(value).is_valid_int() else -1
-			if age >= 1 and age <= 120:
-				profile["age"] = age
-				return true
 		"favorite_color":
 			var color_id: String = str(value).to_lower().strip_edges()
 			if ALLOWED_COLORS.has(color_id):
@@ -72,7 +61,7 @@ func _save() -> void:
 	var file: FileAccess = FileAccess.open(DB_PATH, FileAccess.WRITE)
 	if file != null:
 		file.store_string(JSON.stringify({
-			"schema_version": 3,
+			"schema_version": 4,
 			"profile_initialized": false,
 			"answers": profile
 		}, "  "))
@@ -86,7 +75,7 @@ func get_questions() -> Array:
 	return questions.duplicate(true)
 
 func get_display_name(_locale: String = "ru") -> String:
-	return str(profile.get("name", ""))
+	return ""
 
 func clear_answer(field: String) -> void:
 	if profile.has(field):

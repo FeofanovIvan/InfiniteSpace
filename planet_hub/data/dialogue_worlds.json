@@ -238,10 +238,10 @@
       "structure": {
         "ru": "Исследовательский город у водной долины.",
         "en": "A research city by a watery valley.",
-        "fr": "J'observe l'eau et les jardins près de notre ville scientifique sur Terre.",
-        "de": "Ich beobachte das Wasser und die Gärten bei unserer Forschungsstadt auf der Erde.",
-        "es": "Observo el agua y los jardines junto a nuestra ciudad científica de la Tierra.",
-        "pt_BR": "Eu observo a água e os jardins perto da nossa cidade de pesquisas na Terra."
+        "fr": "Une ville de recherche située près d'une vallée traversée par l'eau.",
+        "de": "Eine Forschungsstadt an einem wasserreichen Tal.",
+        "es": "Una ciudad de investigación junto a un valle con agua.",
+        "pt_BR": "Uma cidade de pesquisa junto a um vale com água."
       }
     },
     "mw_p02": {
@@ -267,10 +267,10 @@
       "structure": {
         "ru": "Подземные дата-центры и сферический зал искусственного интеллекта.",
         "en": "Underground data centers and a spherical AI hall.",
-        "fr": "Sous la poussière rouge de Mars, j'étudie un énorme ordinateur tout rond.",
-        "de": "Unter dem roten Marsstaub erforsche ich einen riesigen kugelförmigen Computer.",
-        "es": "Bajo el polvo rojo de Marte, estudio una computadora enorme y redonda.",
-        "pt_BR": "Debaixo da poeira vermelha de Marte, estudo um computador enorme e redondo."
+        "fr": "Des centres de données souterrains et une salle sphérique pour l'intelligence artificielle.",
+        "de": "Unterirdische Rechenzentren und eine kugelförmige Halle für künstliche Intelligenz.",
+        "es": "Centros de datos subterráneos y una sala esférica de inteligencia artificial.",
+        "pt_BR": "Centros de dados subterrâneos e uma sala esférica de inteligência artificial."
       }
     },
     "mw_p03": {
@@ -296,10 +296,10 @@
       "structure": {
         "ru": "Кольцевая исследовательская станция парит над атмосферой.",
         "en": "A ring-shaped research station floats above the atmosphere.",
-        "fr": "J'observe les bandes de nuages de Jupiter depuis une station protégée.",
-        "de": "Ich beobachte Jupiters Wolkenstreifen von unserer geschützten Station.",
-        "es": "Observo las franjas de nubes de Júpiter desde una estación protegida.",
-        "pt_BR": "Eu observo as faixas de nuvens de Júpiter de uma estação protegida."
+        "fr": "Une station de recherche en forme d'anneau flotte au-dessus de l'atmosphère.",
+        "de": "Eine ringförmige Forschungsstation schwebt über der Atmosphäre.",
+        "es": "Una estación de investigación en forma de anillo flota sobre la atmósfera.",
+        "pt_BR": "Uma estação de pesquisa em forma de anel flutua acima da atmosfera."
       }
     },
     "mw_p04": {
@@ -359,10 +359,10 @@
       "structure": {
         "ru": "Исследовательская платформа с прозрачными куполами и антенной парит над облаками.",
         "en": "A research platform with clear domes and an antenna floats above the clouds.",
-        "fr": "Je mesure les vents au-dessus des nuages bleus de Neptune.",
-        "de": "Über den blauen Wolken Neptuns messe ich die starken Winde.",
-        "es": "Mido los vientos sobre las nubes azules de Neptuno.",
-        "pt_BR": "Eu meço os ventos acima das nuvens azuis de Netuno."
+        "fr": "Une plateforme de recherche avec des dômes transparents et une antenne flotte au-dessus des nuages.",
+        "de": "Eine Forschungsplattform mit durchsichtigen Kuppeln und einer Antenne schwebt über den Wolken.",
+        "es": "Una plataforma de investigación con cúpulas transparentes y una antena flota sobre las nubes.",
+        "pt_BR": "Uma plataforma de pesquisa com domos transparentes e uma antena flutua acima das nuvens."
       }
     },
     "mw_p07": {
@@ -388,10 +388,10 @@
       "structure": {
         "ru": "Герметичная научная станция с куполом и технической башней.",
         "en": "A sealed science station with a dome and a service tower.",
-        "fr": "Je vérifie le dôme qui protège notre station sur Vénus, une planète brûlante.",
-        "de": "Ich prüfe die Schutzkuppel unserer Station auf der heißen Venus.",
-        "es": "Reviso la cúpula que protege la estación en el caluroso Venus.",
-        "pt_BR": "Eu verifico a cúpula que protege nossa estação em Vênus, onde faz muito calor."
+        "fr": "Une station scientifique hermétique avec un dôme et une tour de service.",
+        "de": "Eine abgedichtete Forschungsstation mit Kuppel und Versorgungsturm.",
+        "es": "Una estación científica sellada con una cúpula y una torre de servicio.",
+        "pt_BR": "Uma estação científica vedada com um domo e uma torre de serviço."
       }
     },
     "mw_p08": {
@@ -451,10 +451,10 @@
       "structure": {
         "ru": "Над морем растёт живой грибной город с куполами и ажурными мостами.",
         "en": "A living fungal city with domes and delicate bridges grows above the sea.",
-        "fr": "Mes filaments vivants ressentent les vagues sur Thalas.",
-        "de": "Meine lebenden Fasern spüren die Wellen im Ozean von Thalas.",
-        "es": "Mis fibras vivas sienten las olas del océano de Thalas.",
-        "pt_BR": "Minhas fibras vivas sentem as ondas do oceano de Thalas."
+        "fr": "Une cité fongique vivante, faite de dômes et de ponts délicats, pousse au-dessus de la mer.",
+        "de": "Eine lebende Pilzstadt mit Kuppeln und feinen Brücken wächst über dem Meer.",
+        "es": "Una ciudad viva de hongos, con cúpulas y puentes delicados, crece sobre el mar.",
+        "pt_BR": "Uma cidade viva de fungos, com domos e pontes delicadas, cresce acima do mar."
       }
     },
     "lmc_p03": {
@@ -480,10 +480,10 @@
       "structure": {
         "ru": "Город из грибоподобных герметичных биокуполов.",
         "en": "A city of sealed fungus-like biodomes.",
-        "fr": "J'aide les biodômes vivants à pousser parmi les roches sombres de Molia.",
-        "de": "Ich helfe lebenden Kuppeln, zwischen den dunklen Felsen von Molia zu wachsen.",
-        "es": "Ayudo a crecer a las cúpulas vivas entre las rocas oscuras de Molia.",
-        "pt_BR": "Eu ajudo domos vivos a crescer entre as rochas escuras de Molia."
+        "fr": "Une ville de biodômes hermétiques en forme de champignons.",
+        "de": "Eine Stadt aus abgedichteten, pilzähnlichen Biokuppeln.",
+        "es": "Una ciudad de biodomos sellados con forma de hongo.",
+        "pt_BR": "Uma cidade de biodomos vedados em forma de fungo."
       }
     },
     "lmc_p04": {
@@ -509,10 +509,10 @@
       "structure": {
         "ru": "Защищённые прозрачные биокупола с живыми ветвящимися структурами.",
         "en": "Protected transparent biodomes with living branching structures.",
-        "fr": "Mes fibres perçoivent les moindres mouvements de la glace sur Cryona.",
-        "de": "Meine Fasern spüren winzige Bewegungen im Eis auf Cryona.",
-        "es": "Mis fibras sienten hasta el movimiento más pequeño del hielo en Cryona.",
-        "pt_BR": "Minhas fibras percebem até os menores movimentos do gelo em Cryona."
+        "fr": "Des biodômes transparents et protégés abritent des structures vivantes ramifiées.",
+        "de": "Geschützte durchsichtige Biokuppeln mit lebenden verzweigten Strukturen.",
+        "es": "Biodomos transparentes y protegidos con estructuras vivas ramificadas.",
+        "pt_BR": "Biodomos transparentes e protegidos com estruturas vivas ramificadas."
       }
     },
     "lmc_p05": {
@@ -606,10 +606,10 @@
       "structure": {
         "ru": "Из воды поднимается прозрачный текучий город из волнообразных арок и куполов.",
         "en": "A transparent flowing city of wave-shaped arches and domes rises from the water.",
-        "fr": "J'observe les arches transparentes qui montent de l'océan d'Okea.",
-        "de": "Ich beobachte die durchsichtigen Bögen, die aus Okeas Meer aufsteigen.",
-        "es": "Observo los arcos transparentes que suben del océano de Okea.",
-        "pt_BR": "Eu observo os arcos transparentes que saem do oceano de Okea."
+        "fr": "Une ville transparente et fluide, faite d'arches ondulées et de dômes, s'élève hors de l'eau.",
+        "de": "Eine durchsichtige fließende Stadt aus wellenförmigen Bögen und Kuppeln erhebt sich aus dem Wasser.",
+        "es": "Una ciudad transparente y fluida de arcos ondulados y cúpulas se eleva desde el agua.",
+        "pt_BR": "Uma cidade transparente e fluida, com arcos em forma de ondas e domos, se ergue da água."
       }
     },
     "smc_p02": {
@@ -635,10 +635,10 @@
       "structure": {
         "ru": "Полупрозрачные жидкостные купола со светящимися опорами.",
         "en": "Translucent liquid domes with glowing supports.",
-        "fr": "J'observe les montagnes rouges dans les dômes transparents de Tsela.",
-        "de": "Ich sehe die roten Berge in den durchsichtigen Kuppeln von Tsela.",
-        "es": "Observo las montañas rojas reflejadas en las cúpulas de Tsela.",
-        "pt_BR": "Eu observo as montanhas vermelhas refletidas nos domos de Tsela."
+        "fr": "Des dômes liquides translucides soutenus par des piliers lumineux.",
+        "de": "Durchscheinende flüssige Kuppeln mit leuchtenden Stützen.",
+        "es": "Cúpulas líquidas translúcidas con soportes luminosos.",
+        "pt_BR": "Domos líquidos translúcidos com suportes luminosos."
       }
     },
     "smc_p03": {
@@ -664,10 +664,10 @@
       "structure": {
         "ru": "Прозрачные водные башни, купола и текучие переходы.",
         "en": "Clear water towers, domes, and flowing walkways.",
-        "fr": "J'étudie les tours fluides et les fissures remplies d'eau de Genora.",
-        "de": "Ich erforsche die fließenden Türme und Wasserspalten von Genora.",
-        "es": "Estudio las torres fluidas y las grietas de agua de Genora.",
-        "pt_BR": "Eu estudo as torres que fluem e as fendas de água de Genora."
+        "fr": "Des tours d'eau transparentes, des dômes et des passerelles fluides.",
+        "de": "Klare Wassertürme, Kuppeln und fließende Wege.",
+        "es": "Torres de agua transparentes, cúpulas y pasarelas fluidas.",
+        "pt_BR": "Torres de água transparentes, domos e passarelas fluidas."
       }
     },
     "smc_p04": {
@@ -710,10 +710,10 @@
       "structure": {
         "ru": "Полупрозрачная туманно-жидкая станция из плавных куполов.",
         "en": "A translucent mist-and-liquid station made of smooth domes.",
-        "fr": "J'explore les passages brumeux parmi les roches sombres de Spira.",
-        "de": "Ich erkunde neblige Wege zwischen Spiras dunklen Felsen.",
-        "es": "Exploro caminos de niebla entre las rocas oscuras de Spira.",
-        "pt_BR": "Eu exploro caminhos de névoa entre as rochas escuras de Spira."
+        "fr": "Une station translucide de brume et de liquide, formée de dômes lisses.",
+        "de": "Eine durchscheinende Station aus Nebel und Flüssigkeit mit glatten Kuppeln.",
+        "es": "Una estación translúcida de niebla y líquido formada por cúpulas lisas.",
+        "pt_BR": "Uma estação translúcida de névoa e líquido formada por domos lisos."
       }
     },
     "smc_p06": {
@@ -790,10 +790,10 @@
       "structure": {
         "ru": "Большой герметичный кольцевой город с зелёными внутренними зонами.",
         "en": "A large sealed ring city with green gardens inside.",
-        "fr": "Je veille sur les jardins à l'intérieur de notre ville en anneau, sur Archeon.",
-        "de": "Ich kümmere mich um die Gärten in Archeons geschützter Ringstadt.",
-        "es": "Cuido los jardines dentro de la ciudad circular de Archeon.",
-        "pt_BR": "Eu cuido dos jardins dentro da cidade em anel de Archeon."
+        "fr": "Une grande cité annulaire hermétique avec des jardins verts à l'intérieur.",
+        "de": "Eine große abgedichtete Ringstadt mit grünen Gärten im Inneren.",
+        "es": "Una gran ciudad anular sellada con jardines verdes en su interior.",
+        "pt_BR": "Uma grande cidade vedada em forma de anel, com jardins verdes por dentro."
       }
     },
     "ngc6822_p02": {
@@ -819,10 +819,10 @@
       "structure": {
         "ru": "В скале скрыта пещерная станция со светящимися куполами.",
         "en": "A cave station with glowing domes is built into the rock.",
-        "fr": "Je dessine la carte des grottes et des dômes de Quaria.",
-        "de": "Ich zeichne Karten der Höhlen und geschützten Kuppeln von Quaria.",
-        "es": "Hago mapas de las cuevas y cúpulas protegidas de Quaria.",
-        "pt_BR": "Eu faço mapas das cavernas e dos domos protegidos de Quaria."
+        "fr": "Une station troglodyte avec des dômes lumineux est construite dans la roche.",
+        "de": "Eine Höhlenstation mit leuchtenden Kuppeln ist in den Felsen gebaut.",
+        "es": "Una estación de cuevas con cúpulas luminosas está construida dentro de la roca.",
+        "pt_BR": "Uma estação em cavernas, com domos luminosos, foi construída dentro da rocha."
       }
     },
     "ngc6822_p03": {
@@ -848,10 +848,10 @@
       "structure": {
         "ru": "Промышленный космопорт с ангарами, башнями и мостами.",
         "en": "An industrial spaceport with hangars, towers, and bridges.",
-        "fr": "Je surveille les signaux des vaisseaux dans le port sombre de Nocta.",
-        "de": "Ich beobachte die Schiffssignale im dämmrigen Raumhafen von Nocta.",
-        "es": "Vigilo las señales de las naves en el puerto al atardecer de Nocta.",
-        "pt_BR": "Eu observo os sinais das naves no porto de Nocta, onde o céu é escuro."
+        "fr": "Un port spatial industriel avec des hangars, des tours et des ponts.",
+        "de": "Ein industrieller Raumhafen mit Hangars, Türmen und Brücken.",
+        "es": "Un puerto espacial industrial con hangares, torres y puentes.",
+        "pt_BR": "Um porto espacial industrial com hangares, torres e pontes."
       }
     },
     "ngc6822_p04": {
@@ -877,10 +877,10 @@
       "structure": {
         "ru": "Металлургическая станция с корпусами, резервуарами и трубами.",
         "en": "A metalworking station with industrial halls, tanks, and pipes.",
-        "fr": "Je vérifie les conduites qui transportent les minéraux sur Ferra.",
-        "de": "Ich prüfe die geschützten Leitungen für Minerale auf Ferra.",
-        "es": "Reviso los tubos que transportan minerales por Ferra.",
-        "pt_BR": "Eu verifico os tubos que carregam minerais em Ferra."
+        "fr": "Une station métallurgique avec des halls industriels, des réservoirs et des conduites.",
+        "de": "Eine Metallverarbeitungsstation mit Werkhallen, Tanks und Rohrleitungen.",
+        "es": "Una estación metalúrgica con naves industriales, tanques y tuberías.",
+        "pt_BR": "Uma estação metalúrgica com galpões industriais, tanques e tubulações."
       }
     },
     "ngc6822_p05": {
@@ -923,10 +923,10 @@
       "structure": {
         "ru": "Массивный ступенчатый архивный комплекс с широкой лестницей.",
         "en": "A massive stepped archive complex with a broad staircase.",
-        "fr": "Je garde les anciens récits de voyage dans les archives en escalier de Runa.",
-        "de": "Im Stufenarchiv von Runa bewahre ich alte Reiseberichte auf.",
-        "es": "Guardo los relatos antiguos en el archivo escalonado de Runa.",
-        "pt_BR": "Eu guardo relatos antigos no arquivo de grandes degraus de Runa."
+        "fr": "Un immense complexe d'archives en gradins avec un large escalier.",
+        "de": "Ein gewaltiger stufenförmiger Archivkomplex mit einer breiten Treppe.",
+        "es": "Un enorme complejo de archivos escalonado con una amplia escalera.",
+        "pt_BR": "Um enorme complexo de arquivos em degraus, com uma escadaria larga."
       }
     },
     "ngc6822_p07": {
@@ -1020,10 +1020,10 @@
       "structure": {
         "ru": "Зеркальные магнитные лаборатории с металлическими дугами и кольцевыми установками.",
         "en": "Mirrorlike magnetic laboratories with metal arches and ring machines.",
-        "fr": "J'observe les arches métalliques changeantes des laboratoires de Phasis.",
-        "de": "Ich untersuche die beweglichen Metallbögen in den Laboren von Phasis.",
-        "es": "Estudio los arcos de metal que cambian en los laboratorios de Phasis.",
-        "pt_BR": "Eu estudo os arcos de metal que mudam de forma nos laboratórios de Phasis."
+        "fr": "Des laboratoires magnétiques miroitants avec des arches métalliques et des machines annulaires.",
+        "de": "Spiegelnde magnetische Labore mit Metallbögen und ringförmigen Maschinen.",
+        "es": "Laboratorios magnéticos reflectantes con arcos de metal y máquinas anulares.",
+        "pt_BR": "Laboratórios magnéticos espelhados com arcos de metal e máquinas em forma de anel."
       }
     },
     "m31_p04": {
@@ -1066,10 +1066,10 @@
       "structure": {
         "ru": "Над глубоким механическим городом левитирует огромная почти чёрная сфера.",
         "en": "A huge near-black sphere levitates above a deep mechanical city.",
-        "fr": "Je vérifie la grande sphère sombre qui flotte au-dessus de la cité de Sinta.",
-        "de": "Ich prüfe die große dunkle Kugel, die über der Stadt Sinta schwebt.",
-        "es": "Reviso la enorme esfera oscura que flota sobre la ciudad de Sinta.",
-        "pt_BR": "Eu verifico a enorme esfera escura que flutua acima da cidade de Sinta."
+        "fr": "Une immense sphère presque noire lévite au-dessus d'une profonde cité mécanique.",
+        "de": "Eine riesige, fast schwarze Kugel schwebt über einer tiefen mechanischen Stadt.",
+        "es": "Una enorme esfera casi negra levita sobre una profunda ciudad mecánica.",
+        "pt_BR": "Uma esfera enorme, quase preta, levita acima de uma profunda cidade mecânica."
       }
     },
     "m31_p06": {
@@ -1095,10 +1095,10 @@
       "structure": {
         "ru": "Гигантская матово-чёрная перевёрнутая пирамида парит над раскалённой областью.",
         "en": "A giant matte-black inverted pyramid floats over the hot ground.",
-        "fr": "J'étudie la pyramide noire renversée au-dessus des fissures chaudes de Geona.",
-        "de": "Ich beobachte die umgedrehte schwarze Pyramide über Geonas heißen Spalten.",
-        "es": "Estudio la pirámide negra invertida sobre las grietas calientes de Geona.",
-        "pt_BR": "Eu estudo a pirâmide preta de cabeça para baixo acima das fendas quentes de Geona."
+        "fr": "Une gigantesque pyramide noire mate et renversée flotte au-dessus du sol brûlant.",
+        "de": "Eine riesige mattschwarze, umgedrehte Pyramide schwebt über dem heißen Boden.",
+        "es": "Una gigantesca pirámide negra mate e invertida flota sobre el suelo caliente.",
+        "pt_BR": "Uma pirâmide gigante, preta e fosca, flutua de cabeça para baixo acima do solo quente."
       }
     },
     "m31_p07": {
@@ -1158,10 +1158,10 @@
       "structure": {
         "ru": "Зеркальная парящая станция со светящейся сферой и орбитальными кольцами.",
         "en": "A floating mirror station with a glowing sphere and orbital rings.",
-        "fr": "Je compare les souvenirs dans la station miroir flottante de Svetara.",
-        "de": "Ich vergleiche Erinnerungen auf der schwebenden Spiegelstation von Svetara.",
-        "es": "Comparo recuerdos en la estación espejo que flota sobre Svetara.",
-        "pt_BR": "Eu comparo lembranças na estação espelhada que flutua sobre Svetara."
+        "fr": "Une station miroir flottante avec une sphère lumineuse et des anneaux orbitaux.",
+        "de": "Eine schwebende Spiegelstation mit einer leuchtenden Kugel und Umlaufringen.",
+        "es": "Una estación flotante de espejos con una esfera luminosa y anillos orbitales.",
+        "pt_BR": "Uma estação espelhada flutuante com uma esfera luminosa e anéis orbitais."
       }
     },
     "m33_p02": {
@@ -1187,10 +1187,10 @@
       "structure": {
         "ru": "Над водой парит учебная обсерватория с кольцами и прозрачным куполом.",
         "en": "An educational observatory with rings and a clear dome floats above the water.",
-        "fr": "J'aide les jeunes à observer le ciel depuis l'observatoire d'Orbita.",
-        "de": "Im Observatorium von Orbita helfe ich jungen Wesen, den Himmel zu beobachten.",
-        "es": "Ayudo a los pequeños a mirar el cielo desde el observatorio de Orbita.",
-        "pt_BR": "Eu ajudo crianças a observar o céu no observatório de Orbita."
+        "fr": "Un observatoire éducatif avec des anneaux et un dôme transparent flotte au-dessus de l'eau.",
+        "de": "Ein Lernobservatorium mit Ringen und einer klaren Kuppel schwebt über dem Wasser.",
+        "es": "Un observatorio educativo con anillos y una cúpula transparente flota sobre el agua.",
+        "pt_BR": "Um observatório educativo com anéis e um domo transparente flutua acima da água."
       }
     },
     "m33_p03": {
@@ -1216,10 +1216,10 @@
       "structure": {
         "ru": "Парящий математический комплекс из светящихся колец и геометрических проекций.",
         "en": "A floating math complex of glowing rings and geometric projections.",
-        "fr": "Dans le complexe mathématique de Tessera, je cherche l'ordre des formes.",
-        "de": "Im Mathekomplex von Tessera suche ich Muster aus Formen und Zahlen.",
-        "es": "En el centro matemático de Tessera, busco patrones de formas y números.",
-        "pt_BR": "No complexo matemático de Tessera, procuro padrões de formas e números."
+        "fr": "Un complexe mathématique flottant fait d'anneaux lumineux et de projections géométriques.",
+        "de": "Ein schwebender Mathematikkomplex aus leuchtenden Ringen und geometrischen Projektionen.",
+        "es": "Un complejo matemático flotante de anillos luminosos y proyecciones geométricas.",
+        "pt_BR": "Um complexo matemático flutuante com anéis luminosos e projeções geométricas."
       }
     },
     "m33_p04": {
@@ -1245,10 +1245,10 @@
       "structure": {
         "ru": "Парящая исследовательская станция с большим космическим телескопом.",
         "en": "A floating research station with a large space telescope.",
-        "fr": "J'explore l'espace avec le grand télescope de Lentis.",
-        "de": "Mit dem großen Teleskop von Lentis erforsche ich den fernen Weltraum.",
-        "es": "Con el gran telescopio de Lentis observo objetos muy lejanos.",
-        "pt_BR": "Eu observo objetos bem distantes com o grande telescópio de Lentis."
+        "fr": "Une station de recherche flottante équipée d'un grand télescope spatial.",
+        "de": "Eine schwebende Forschungsstation mit einem großen Weltraumteleskop.",
+        "es": "Una estación de investigación flotante con un gran telescopio espacial.",
+        "pt_BR": "Uma estação de pesquisa flutuante com um grande telescópio espacial."
       }
     },
     "m33_p05": {
@@ -1342,10 +1342,10 @@
       "structure": {
         "ru": "Здесь обслуживают и ремонтируют крупные корабли.",
         "en": "Large ships are serviced and repaired here.",
-        "fr": "Je vérifie et répare les vaisseaux dans les docks de Callisto.",
-        "de": "In Callistos Docks untersuche und repariere ich Raumschiffe.",
-        "es": "Reviso y reparo naves en los muelles orbitales de Calisto.",
-        "pt_BR": "Eu verifico e conserto naves nas docas orbitais de Calisto."
+        "fr": "De grands vaisseaux y sont entretenus et réparés.",
+        "de": "Hier werden große Raumschiffe gewartet und repariert.",
+        "es": "Aquí se revisan y reparan grandes naves.",
+        "pt_BR": "Grandes naves recebem manutenção e são consertadas aqui."
       }
     },
     "st_lmc": {
@@ -1371,10 +1371,10 @@
       "structure": {
         "ru": "Внутри работают органические биореакторы и сияют живые биокамеры.",
         "en": "Inside are organic bioreactors and glowing living biochambers.",
-        "fr": "Je prends soin des couloirs vivants et des chambres du vaisseau Tarentule.",
-        "de": "Ich kümmere mich um die lebenden Gänge und Kammern des Schiffs Tarantel.",
-        "es": "Cuido los pasillos vivos y las cámaras de la nave Tarántula.",
-        "pt_BR": "Eu cuido dos corredores vivos e das câmaras da nave Tarântula."
+        "fr": "À l'intérieur se trouvent des bioréacteurs organiques et des biochambres vivantes et lumineuses.",
+        "de": "Im Inneren befinden sich organische Bioreaktoren und leuchtende lebende Biokammern.",
+        "es": "En el interior hay biorreactores orgánicos y biocámaras vivas y luminosas.",
+        "pt_BR": "Por dentro há biorreatores orgânicos e biocâmaras vivas e luminosas."
       }
     },
     "st_smc": {
@@ -1400,10 +1400,10 @@
       "structure": {
         "ru": "Её прозрачные резервуары соединяют жидкостные и газовые камеры.",
         "en": "Its transparent reservoirs connect liquid and gas chambers.",
-        "fr": "Je protège les récits de notre peuple dans les chambres transparentes des Archives.",
-        "de": "Ich bewahre unsere Geschichten in den durchsichtigen Kammern des Archivs.",
-        "es": "Conservo historias en las cámaras transparentes del Archivo Vivo.",
-        "pt_BR": "Eu guardo histórias nas câmaras transparentes do Arquivo Vivo."
+        "fr": "Ses réservoirs transparents relient des chambres de liquide et de gaz.",
+        "de": "Seine durchsichtigen Behälter verbinden Flüssigkeits- und Gaskammern.",
+        "es": "Sus depósitos transparentes conectan cámaras de líquido y gas.",
+        "pt_BR": "Seus reservatórios transparentes ligam câmaras de líquido e de gás."
       }
     },
     "st_ngc6822": {
@@ -1429,10 +1429,10 @@
       "structure": {
         "ru": "Здесь есть ангары, торговые помещения и голубые доковые кольца.",
         "en": "There are hangars, trading areas, and blue docking rings.",
-        "fr": "J'aide les visiteurs à traverser les tunnels de pierre de la Tête du Titan.",
-        "de": "Ich zeige Gästen sichere Wege durch die Steintunnel im Titanenkopf.",
-        "es": "Ayudo a visitantes a recorrer los túneles de piedra de la Cabeza del Titán.",
-        "pt_BR": "Eu ajudo visitantes a passar pelos túneis de pedra da Cabeça do Titã."
+        "fr": "On y trouve des hangars, des zones de commerce et des anneaux d'amarrage bleus.",
+        "de": "Dort gibt es Hangars, Handelsbereiche und blaue Andockringe.",
+        "es": "Hay hangares, zonas comerciales y anillos azules de atraque.",
+        "pt_BR": "Há hangares, áreas de comércio e anéis azuis de acoplagem."
       }
     },
     "st_m31": {
@@ -1458,10 +1458,10 @@
       "structure": {
         "ru": "В храме науки металл превращается в нужные инструменты без экранов и кнопок.",
         "en": "In this temple of science, metal forms tools without screens or buttons.",
-        "fr": "Dans ce temple-pyramide, je crée des instruments avec un métal qui change de forme.",
-        "de": "In diesem Pyramidentempel forme ich Werkzeuge aus wandelbarem Metall.",
-        "es": "En este templo, creo instrumentos de metal que cambia de forma.",
-        "pt_BR": "Neste templo, eu crio ferramentas com um metal que muda de forma."
+        "fr": "Dans ce temple de la science, le métal forme des outils sans écran ni bouton.",
+        "de": "In diesem Tempel der Wissenschaft formt Metall Werkzeuge ohne Bildschirme oder Tasten.",
+        "es": "En este templo de la ciencia, el metal forma herramientas sin pantallas ni botones.",
+        "pt_BR": "Neste templo da ciência, o metal forma ferramentas sem telas nem botões."
       }
     },
     "st_m33": {
@@ -1487,74 +1487,11 @@
       "structure": {
         "ru": "Это путь к загадочному Перекрёстку миров.",
         "en": "It is a passage toward the mysterious Crossroads of Worlds.",
-        "fr": "Je veille sur les portails de différentes formes menant au Carrefour des mondes.",
-        "de": "Ich beobachte die verschieden geformten Portale zum Kreuzweg der Welten.",
-        "es": "Vigilo los portales de distintas formas hacia el Cruce de los Mundos.",
-        "pt_BR": "Eu observo portais de várias formas no caminho para o Encontro dos Mundos."
+        "fr": "C'est un passage vers le mystérieux Carrefour des mondes.",
+        "de": "Dies ist ein Durchgang zur geheimnisvollen Kreuzung der Welten.",
+        "es": "Es un paso hacia el misterioso Cruce de los Mundos.",
+        "pt_BR": "É uma passagem para o misterioso Encontro dos Mundos."
       }
     }
-  },
-  "character_ages": {
-    "05_human_amara_cole.png": {
-      "ru": "34 земных года",
-      "en": "34 Earth years"
-    },
-    "06_human_lin_kai.png": {
-      "ru": "31 земной год",
-      "en": "31 Earth years"
-    },
-    "07_mold_form_archive.png": {
-      "ru": "120 циклов роста",
-      "en": "120 growth cycles"
-    },
-    "08_mold_form_cluster.png": {
-      "ru": "86 циклов роста",
-      "en": "86 growth cycles"
-    },
-    "10_phase_crystal.png": {
-      "ru": "75 фазовых циклов",
-      "en": "75 phase cycles"
-    },
-    "11_phase_gas.png": {
-      "ru": "43 фазовых цикла",
-      "en": "43 phase cycles"
-    },
-    "12_phase_liquid.png": {
-      "ru": "61 фазовый цикл",
-      "en": "61 phase cycles"
-    },
-    "01_reptile_liri.png": {
-      "ru": "24 местных года",
-      "en": "24 local years"
-    },
-    "02_reptile_taro.png": {
-      "ru": "29 местных лет",
-      "en": "29 local years"
-    },
-    "13_magnetic_ring.png": {
-      "ru": "152 магнитных цикла",
-      "en": "152 magnetic cycles"
-    },
-    "14_magnetic_engineer.png": {
-      "ru": "187 магнитных циклов",
-      "en": "187 magnetic cycles"
-    },
-    "15_magnetic_companion.png": {
-      "ru": "64 магнитных цикла",
-      "en": "64 magnetic cycles"
-    },
-    "16_neural_historian.png": {
-      "ru": "420 циклов памяти",
-      "en": "420 memory cycles"
-    },
-    "17_neural_researcher.png": {
-      "ru": "190 циклов памяти",
-      "en": "190 memory cycles"
-    },
-    "18_neural_guide.png": {
-      "ru": "68 циклов памяти",
-      "en": "68 memory cycles"
-    }
-  },
-  "character_age_status": "Provisional fiction for dialogue, not established by the v1.4 glossary; may be revised as character canon develops."
+  }
 }

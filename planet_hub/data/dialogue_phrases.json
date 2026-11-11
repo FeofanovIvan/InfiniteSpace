@@ -33,38 +33,6 @@
         "Pode se apresentar?"
       ]
     },
-    "age": {
-      "en": [
-        "How old are you?",
-        "What is your age?",
-        "How long have you lived?"
-      ],
-      "ru": [
-        "Сколько тебе лет?",
-        "Какой у тебя возраст?",
-        "Как давно ты живёшь?"
-      ],
-      "fr": [
-        "Quel âge as-tu ?",
-        "Tu as quel âge ?",
-        "Depuis combien de temps vis-tu ?"
-      ],
-      "de": [
-        "Wie alt bist du?",
-        "Was ist dein Alter?",
-        "Wie lange lebst du schon?"
-      ],
-      "es": [
-        "¿Cuántos años tienes?",
-        "¿Qué edad tienes?",
-        "¿Cuánto tiempo has vivido?"
-      ],
-      "pt_BR": [
-        "Quantos anos você tem?",
-        "Qual é a sua idade?",
-        "Há quanto tempo você vive?"
-      ]
-    },
     "race": {
       "en": [
         "What is your species called?",
@@ -332,8 +300,6 @@
       "hint": "Подсказка",
       "you": "Ты",
       "color_q": "Какой твой любимый цвет?",
-      "name_q": "Как мне тебя называть?",
-      "age_q": "Сколько тебе лет? Можешь не отвечать.",
       "math_q": "Сколько будет один плюс два?",
       "math_ok": "Верно! Один плюс два — три.",
       "math_bad": "Попробуй ещё раз: один плюс два.",
@@ -348,8 +314,6 @@
       "hint": "Hint",
       "you": "You",
       "color_q": "What is your favorite color?",
-      "name_q": "What should I call you?",
-      "age_q": "How old are you? You can skip this.",
       "math_q": "What is one plus two?",
       "math_ok": "Correct! One plus two is three.",
       "math_bad": "Try again: one plus two.",
@@ -364,8 +328,6 @@
       "hint": "Indice",
       "you": "Toi",
       "color_q": "Quelle est ta couleur préférée ?",
-      "name_q": "Comment dois-je t'appeler ?",
-      "age_q": "Quel âge as-tu ? Tu peux passer.",
       "math_q": "Combien font un plus deux ?",
       "math_ok": "Exact ! Un plus deux font trois.",
       "math_bad": "Essaie encore : un plus deux.",
@@ -380,8 +342,6 @@
       "hint": "Tipp",
       "you": "Du",
       "color_q": "Was ist deine Lieblingsfarbe?",
-      "name_q": "Wie soll ich dich nennen?",
-      "age_q": "Wie alt bist du? Du kannst überspringen.",
       "math_q": "Was ist eins plus zwei?",
       "math_ok": "Richtig! Eins plus zwei ist drei.",
       "math_bad": "Versuch es noch einmal: eins plus zwei.",
@@ -396,8 +356,6 @@
       "hint": "Pista",
       "you": "Tú",
       "color_q": "¿Cuál es tu color favorito?",
-      "name_q": "¿Cómo debo llamarte?",
-      "age_q": "¿Cuántos años tienes? Puedes omitirlo.",
       "math_q": "¿Cuánto es uno más dos?",
       "math_ok": "¡Correcto! Uno más dos son tres.",
       "math_bad": "Inténtalo de nuevo: uno más dos.",
@@ -412,8 +370,6 @@
       "hint": "Dica",
       "you": "Você",
       "color_q": "Qual é sua cor favorita?",
-      "name_q": "Como devo chamar você?",
-      "age_q": "Quantos anos você tem? Pode pular.",
       "math_q": "Quanto é um mais dois?",
       "math_ok": "Correto! Um mais dois são três.",
       "math_bad": "Tente novamente: um mais dois.",
@@ -582,80 +538,6 @@
         "Eu gosto de azul.",
         "Minha cor favorita é vermelho.",
         "Eu gosto de verde."
-      ]
-    },
-    "name": {
-      "en": [
-        "Call me Mika.",
-        "You can call me explorer.",
-        "I prefer not to say.",
-        "You can call me Star."
-      ],
-      "ru": [
-        "Зови меня Мика.",
-        "Можешь звать меня исследователем.",
-        "Я не хочу говорить.",
-        "Можешь звать меня Мика.",
-        "Зови меня Звёздочка.",
-        "Не хочу говорить."
-      ],
-      "fr": [
-        "Appelle-moi Mika.",
-        "Tu peux m'appeler explorateur.",
-        "Je préfère ne pas le dire.",
-        "Tu peux m’appeler Étoile."
-      ],
-      "de": [
-        "Nenn mich Mika.",
-        "Du kannst mich Entdecker nennen.",
-        "Das möchte ich nicht sagen.",
-        "Du kannst mich Stern nennen."
-      ],
-      "es": [
-        "Llámame Mika.",
-        "Puedes llamarme explorador.",
-        "Prefiero no decirlo.",
-        "Puedes llamarme Mika.",
-        "Llámame Estrella."
-      ],
-      "pt_BR": [
-        "Me chame de Mika.",
-        "Pode me chamar de explorador.",
-        "Prefiro não dizer.",
-        "Pode me chamar de Mika.",
-        "Me chama de Estrela."
-      ]
-    },
-    "age": {
-      "en": [
-        "I am eight years old.",
-        "I am ten years old.",
-        "I prefer not to say."
-      ],
-      "ru": [
-        "Мне восемь лет.",
-        "Мне десять лет.",
-        "Я не хочу говорить."
-      ],
-      "fr": [
-        "J'ai huit ans.",
-        "J'ai dix ans.",
-        "Je préfère ne pas le dire."
-      ],
-      "de": [
-        "Ich bin acht Jahre alt.",
-        "Ich bin zehn Jahre alt.",
-        "Das möchte ich nicht sagen."
-      ],
-      "es": [
-        "Tengo ocho años.",
-        "Tengo diez años.",
-        "Prefiero no decirlo."
-      ],
-      "pt_BR": [
-        "Tenho oito anos.",
-        "Tenho dez anos.",
-        "Prefiro não dizer."
       ]
     },
     "math": {

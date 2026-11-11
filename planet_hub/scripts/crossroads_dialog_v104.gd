@@ -36,6 +36,7 @@ var _topic_list: VBoxContainer
 var _locale: String = "en"
 var _group_id: String = "care"
 var _topic_id: String = ""
+var _toolbar_rect: Rect2 = Rect2()
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -99,6 +100,22 @@ func _ready() -> void:
 	_refresh_groups()
 	_select_topic(_find_first_topic("care"), true)
 	_layout()
+	_set_runtime_active(false)
+
+func _safe_rect(view: Vector2) -> Rect2:
+	var mobile: Node = get_node_or_null("/root/MobileLocale")
+	if mobile != null and mobile.has_method("safe_rect"):
+		var candidate: Variant = mobile.call("safe_rect", view)
+		if candidate is Rect2:
+			return candidate
+	return Rect2(Vector2.ZERO, view)
+
+func _set_runtime_active(active: bool) -> void:
+	if _sky != null:
+		_sky.process_mode = Node.PROCESS_MODE_ALWAYS if active else Node.PROCESS_MODE_DISABLED
+	if _planet != null:
+		_planet.call("set_paused", not active)
+		_planet.process_mode = Node.PROCESS_MODE_ALWAYS if active else Node.PROCESS_MODE_DISABLED
 
 func _style(selected: bool) -> StyleBoxFlat:
 	var style := StyleBoxFlat.new()
@@ -115,7 +132,7 @@ func _topic_button(caption: String, selected: bool, font_px: int) -> Button:
 	button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	button.focus_mode = Control.FOCUS_NONE
 	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	button.custom_minimum_size.y = 42.0 if font_px >= 15 else 49.0
+	button.custom_minimum_size.y = 48.0
 	button.add_theme_font_size_override("font_size", font_px)
 	button.add_theme_color_override("font_color", Color.WHITE)
 	button.add_theme_stylebox_override("normal", _style(selected))
@@ -198,6 +215,10 @@ func _process(_delta: float) -> void:
 	# changes. Enforce the toolbar slot without touching that original script.
 	if not visible or _original_back == null or _back_slot == null:
 		return
+	if _toolbar != null and _toolbar_rect.size.x > 0.0:
+		if _toolbar.position.distance_to(_toolbar_rect.position) > 0.5 or _toolbar.size.distance_to(_toolbar_rect.size) > 0.5:
+			_toolbar.position = _toolbar_rect.position
+			_toolbar.size = _toolbar_rect.size
 	if _original_back.position != Vector2.ZERO or _original_back.size.distance_to(_back_slot.size) > 0.5:
 		_arrange_original_back()
 
@@ -363,11 +384,10 @@ func _layout() -> void:
 	var view: Vector2 = size
 	if view.x < 250.0 or view.y < 200.0:
 		return
-	_dialog.size = view
 	# ONE full-screen procedural sky. No extra shade/texture under planet.
-	_sky.position = Vector2.ZERO
-	_sky.size = view
+	var safe: Rect2 = _safe_rect(view)
 	var half: float = view.x * 0.50
+	var safe_half: float = safe.size.x * 0.50
 	_planet_clip.position = Vector2.ZERO
 	_planet_clip.size = Vector2(half, view.y)
 	if _planet != null:
@@ -385,12 +405,13 @@ func _layout() -> void:
 	# instead of hugging the upper screen edge. The arrow shares the same
 	# horizontal inset from the left edge as the tablet's visible frame.
 	var tablet_origin_y: float = _tablet.position.y if _tablet != null else 0.0
-	var inset: float = clampf(view.y * 0.040, 22.0, 36.0)
-	var bar_top: float = tablet_origin_y + clampf(view.y * 0.040, 24.0, 44.0)
+	var inset: float = clampf(safe.size.y * 0.040, 22.0, 36.0)
+	var bar_top: float = maxf(safe.position.y, tablet_origin_y) + clampf(safe.size.y * 0.040, 24.0, 44.0)
 	var button_height: float = clampf(view.y * 0.095, 60.0, 86.0)
-	_toolbar.position = Vector2(inset, bar_top)
-	_toolbar.size = Vector2(maxf(210.0, half - inset * 2.0), button_height)
-	_back_slot.custom_minimum_size = Vector2(clampf(half * 0.09, 53.0, 74.0), button_height)
+	_toolbar_rect = Rect2(Vector2(safe.position.x + inset, bar_top), Vector2(maxf(210.0, safe_half - inset * 2.0), button_height))
+	_toolbar.position = _toolbar_rect.position
+	_toolbar.size = _toolbar_rect.size
+	_back_slot.custom_minimum_size = Vector2(clampf(safe_half * 0.09, 53.0, 74.0), button_height)
 	if _original_back != null:
 		_original_back.add_theme_font_size_override("font_size", clampi(roundi(button_height * 0.41), 25, 34))
 	var gaps: float = 3.0 * float(_group_row.get_theme_constant("separation"))
@@ -405,19 +426,19 @@ func _layout() -> void:
 	# Topic list opens below the single bar and ends near mid-screen,
 	# entirely ABOVE the question clouds. No permanently visible topic row.
 	var list_top: float = _toolbar.position.y + _toolbar.size.y + 8.0
-	var list_bottom: float = view.y * 0.595
-	_panel.position = Vector2(inset, list_top)
+	var list_bottom: float = minf(safe.end.y, safe.position.y + safe.size.y * 0.595)
+	_panel.position = Vector2(safe.position.x + inset, list_top)
 	_panel.size = Vector2(_toolbar.size.x, maxf(56.0, list_bottom - list_top))
 	var original_clouds: Control = _dialog.get_node_or_null("LeftQuestionChoices") as Control
 	if original_clouds != null:
-		original_clouds.position = Vector2(maxf(24.0, half * 0.07), view.y * 0.710)
-		original_clouds.size = Vector2(half * 0.86, view.y * 0.275)
+		original_clouds.position = Vector2(safe.position.x + maxf(24.0, safe_half * 0.07), safe.position.y + safe.size.y * 0.710)
+		original_clouds.size = Vector2(safe_half * 0.86, safe.size.y * 0.275)
 		var column: Node = original_clouds.get_node_or_null("ChoicesLayout")
 		if column != null:
 			for child in column.get_children():
 				var cloud_button: Button = child as Button
 				if cloud_button != null:
-					cloud_button.custom_minimum_size = Vector2(0.0, clampf(view.y * 0.080, 43.0, 64.0))
+					cloud_button.custom_minimum_size = Vector2(0.0, clampf(view.y * 0.080, 48.0, 64.0))
 	# Keep the dropdown on top of the animation but NOT on the tablet/questions.
 	_panel.move_to_front()
 	_toolbar.move_to_front()
@@ -434,11 +455,13 @@ func open_dialog() -> void:
 	_tablet.set("_v96_engine", _engine)
 	_tablet.call("configure_for_world", "crossroads_core")
 	visible = true
+	_set_runtime_active(true)
 	_set_topic_list_open(false)
 	_layout()
 
 func _on_original_back_pressed() -> void:
 	visible = false
+	_set_runtime_active(false)
 	return_requested.emit()
 
 

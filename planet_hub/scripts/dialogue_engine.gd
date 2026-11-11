@@ -14,7 +14,7 @@ const REPRESENTATIVE_PROFILES_PATH := "res://planet_hub/data/representative_prof
 const RESPONSE_TRANSLATIONS_PATH := "res://planet_hub/data/dialogue_responses_i18n.json"
 const ROSTER_PATH := "res://planet_hub/data/representatives.json"
 const SAVE_PATH := "user://miko_dialogue_progress.json"
-const TOPIC_ORDER := ["self", "world", "race", "race_about", "origin", "ability", "work", "energy", "age", "learn"]
+const TOPIC_ORDER := ["self", "world", "race", "race_about", "origin", "ability", "work", "energy", "learn"]
 const MATH_CHALLENGES := [[1, 2], [2, 3], [3, 1], [4, 2], [5, 1], [3, 3], [2, 5], [4, 4]]
 
 var language: String = "ru"
@@ -25,7 +25,6 @@ var _world: Dictionary = {}
 var _race: Dictionary = {}
 var _words: Dictionary = {}
 var _roster: Dictionary = {}
-var _ages: Dictionary = {}
 var _state: Dictionary = {}
 var _visited: Dictionary = {}
 var _profile: Node
@@ -46,12 +45,18 @@ var _active_adventure: Dictionary = {}
 var _active_adventure_index: int = -1
 var _pending_adventure_quiz: bool = false
 var _story_opened_this_visit: bool = false
+static var _resource_cache: Dictionary = {}
 
 func _read(path: String) -> Dictionary:
+	if path.begins_with("res://") and _resource_cache.has(path):
+		return _resource_cache[path]
 	if not FileAccess.file_exists(path):
 		return {}
 	var data: Variant = JSON.parse_string(FileAccess.get_file_as_string(path))
-	return data if data is Dictionary else {}
+	var result: Dictionary = data if data is Dictionary else {}
+	if path.begins_with("res://"):
+		_resource_cache[path] = result
+	return result
 
 func _save() -> void:
 	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -115,7 +120,6 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	_representative = _read(REPRESENTATIVE_PROFILES_PATH).get("characters", {}).get(target, {})
 	_replies = _read(RESPONSE_TRANSLATIONS_PATH).get("locales", {}).get(language, {})
 	_roster = _read(ROSTER_PATH).get("assignments", {})
-	_ages = world_database.get("character_ages", {})
 	_world = world_database.get("worlds", {}).get(target, {})
 	_enabled = not _world.is_empty() and bool(_world.get("inhabited", false))
 	if not _enabled:
@@ -137,9 +141,6 @@ func begin(target: String, locale: String, profile: Node = null) -> Dictionary:
 	_save()
 	choices = _options("greeting")
 	var hello: String = _ui("hello") + " " + _localized(_race.get("greeting", {}))
-	var nickname: String = _profile_get("name")
-	if int(_visited.get("visits", 0)) > 1 and not nickname.is_empty():
-		hello += " " + str(_replies.get("return", "Welcome back, %s!")) % nickname
 	return {"accepted": true, "npc": hello, "choices": choices.duplicate(), "available": true}
 
 func get_choices() -> Array[String]:
@@ -200,9 +201,7 @@ func _topic_options() -> Array[String]:
 		if topic_is_station(topic):
 			variants = _words.get("station_world", {}).get(language, _words.get("station_world", {}).get("en", variants))
 		if variants.size() > 0:
-			var age_text: String = _profile_get("age")
-			var young: bool = age_text.is_valid_int() and int(age_text) <= 6
-			var variant_index: int = 0 if young else (int(_visited.get("response_counter", 0)) + selected.size()) % variants.size()
+			var variant_index: int = (int(_visited.get("response_counter", 0)) + selected.size()) % variants.size()
 			selected.append(str(variants[variant_index]))
 	return selected
 
@@ -577,17 +576,7 @@ func _response(topic: String) -> String:
 	var answer: String = ""
 	match topic:
 		"self":
-			var age_hint: String = _profile_get("age")
-			var little: bool = age_hint.is_valid_int() and int(age_hint) <= 5
-			if little:
-				# A short first-person introduction for preschoolers, no gendered titles.
-				answer = str(_replies.get("self_young", "I'm %s. %s")) % [name, _personal_work()]
-			else:
-				answer = _reply_variant("self", variant) % [name, _role(), _personal_work()]
-		"age":
-			# Ages previously keyed by shared portrait were not character-specific.
-			# Avoid fabricating a gender/age. The answer is still meaningful.
-			answer = _reply_variant("age", variant)
+			answer = _reply_variant("self", variant) % [name, _role(), _personal_work()]
 		"race":
 			answer = _reply_variant("race", variant) % race_name
 		"race_about":
@@ -625,10 +614,6 @@ func _personal_turn() -> Dictionary:
 	var desired: String = ""
 	if _topic_count >= 2 and _profile_get("favorite_color").is_empty():
 		desired = "color"
-	elif _topic_count >= 5 and _profile_get("name").is_empty():
-		desired = "name"
-	elif _topic_count >= 7 and _profile_get("age").is_empty():
-		desired = "age"
 	if desired.is_empty():
 		return {}
 	var asked: Array = _state.get("personal_asked", [])
@@ -684,32 +669,6 @@ func _color_id(text: String) -> String:
 				return str(entry.get("id", ""))
 	return ""
 
-func _age_value(text: String) -> int:
-	var normalized: String = _clean(text)
-	for num in range(1, 121):
-		var s: String = str(num)
-		if (" " + normalized + " ").contains(" " + s + " "):
-			return num
-	var number_words: Dictionary = {"eight": 8, "ten": 10, "восемь": 8, "десять": 10, "huit": 8, "dix": 10, "acht": 8, "zehn": 10, "ocho": 8, "diez": 10, "oito": 8, "dez": 10}
-	for token in number_words:
-		if (" " + normalized + " ").contains(" " + token + " "):
-			return int(number_words[token])
-	return 0
-
-func _name_value(text: String) -> String:
-	var normalized: String = _clean(text)
-	if _skip(text) or normalized.contains("explorer") or normalized.contains("исследовател") or normalized.contains("explorador") or normalized.contains("entdecker"):
-		return ""
-	for prefix in ["my name is ", "call me ", "you can call me ", "меня зовут ", "зови меня ", "je m'appelle ", "appelle-moi ", "ich heiße ", "nenn mich ", "me llamo ", "llámame ", "meu nome é ", "me chame de "]:
-		if normalized.begins_with(prefix):
-			normalized = normalized.trim_prefix(prefix).strip_edges()
-			break
-	if normalized.length() < 2 or normalized.length() > 24 or normalized.contains(" "):
-		return ""
-	if normalized.is_valid_int():
-		return ""
-	return normalized.substr(0, 1).to_upper() + normalized.substr(1)
-
 func _accept_personal(text: String) -> bool:
 	if _skip(text):
 		return true
@@ -719,18 +678,6 @@ func _accept_personal(text: String) -> bool:
 			if not color.is_empty():
 				_profile_set("favorite_color", color)
 				return true
-		"age":
-			var age: int = _age_value(text)
-			if age > 0:
-				_profile_set("age", age)
-				return true
-		"name":
-			var name: String = _name_value(text)
-			if not name.is_empty():
-				_profile_set("name", name)
-				return true
-			if _matches(text, _options("name")):
-				return true # Generic nickname or refusal, never invent a legal name.
 	return false
 
 func accept(text: String) -> Dictionary:

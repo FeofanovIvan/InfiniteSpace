@@ -89,5 +89,6 @@ func _test() -> void:
 		_assert(npc.get("character_id") == "npc_mw_p02" and str(npc.get("role")).contains("computer"), "named Mars computer researcher in locale "+loc)
 		var intro: Dictionary = example.call("accept", str(example.call("get_choices")[0]))
 		_assert(str(example.get("stage")) == "story_adventure", "continue the four-chapter flow in locale "+loc)
-		_assert(str(intro.get("npc","")).contains("Mars"), "local content personalizes the story for "+loc)
+		var localized_mars: String = str(atlas.get("mw_p02", {}).get("name", {}).get(loc, "Mars"))
+		_assert(str(intro.get("npc","")).contains(localized_mars), "local content personalizes the story for "+loc)
 	# All game cards are outside this test and remain untouched.

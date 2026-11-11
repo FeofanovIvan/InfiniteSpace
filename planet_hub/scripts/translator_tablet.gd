@@ -14,7 +14,6 @@ signal suggestions_changed(options: Array)
 
 const LANGUAGES: Array[String] = ["ru", "en", "fr", "de", "es", "pt_BR"]
 const LANGUAGE_NAMES: Dictionary = {"ru":"РУС", "en":"ENG", "fr":"FRA", "de":"DEU", "es":"ESP", "pt_BR":"POR"}
-const GREETINGS: Dictionary = {"ru":"Привет!", "en":"Hello!", "fr":"Bonjour !", "de":"Hallo!", "es":"¡Hola!", "pt_BR":"Olá!"}
 # v60: localized response to a wrong answer. An incorrect answer must not
 # advance the current exercise or silently accept arbitrary text.
 const NOT_UNDERSTOOD: Dictionary = {
@@ -67,11 +66,8 @@ var _keyboard: Control
 var _keyboard_mode: String = "letters"
 var _shift: bool = false
 var _locale: String = "ru"
-var _turn: int = 0
 var _pending_text: String = ""
 var _typing_seconds: float = 0.0
-var _profile: Dictionary = {}
-var _questions: Array = []
 var _ready_ui: bool = false
 var _v96_engine: RefCounted
 var _v96_place_id: String = ""
@@ -93,12 +89,6 @@ func _ready() -> void:
 	# The game-wide Settings screen owns language selection.
 	if loc != null and loc.has_signal("language_changed"):
 		loc.connect("language_changed", Callable(self, "_on_global_locale_changed"))
-	var db: Node = get_node_or_null("/root/ChildProfileStore")
-	if db != null:
-		_profile = db.get("profile")
-		_questions = db.call("get_questions")
-	if _profile.is_empty():
-		_profile = {"name":"Алися", "age":3, "favorite_color":"голубой"}
 	_v96_engine = DialogueEngine.new()
 	_ready_ui = true
 	# v75 built the keyboard while _locale was still the Russian default.
@@ -417,7 +407,19 @@ func _add_message(text: String, from_child: bool) -> void:
 	if not from_child:
 		row.add_child(spacer)
 	_chat_messages.add_child(row)
-	_chat_scroll.call_deferred("set", "scroll_vertical", 999999)
+	call_deferred("_scroll_chat_to_latest")
+
+func _scroll_chat_to_latest() -> void:
+	if not is_instance_valid(_chat_scroll):
+		return
+	# Containers update their minimum sizes at the end of the frame. Waiting for
+	# two layout passes makes the newest bubble the actual scroll limit on phones.
+	await get_tree().process_frame
+	await get_tree().process_frame
+	if not is_instance_valid(_chat_scroll):
+		return
+	var bar: VScrollBar = _chat_scroll.get_v_scroll_bar()
+	_chat_scroll.scroll_vertical = roundi(bar.max_value)
 
 func reset_exercise() -> void:
 	if not _ready_ui:
@@ -458,60 +460,6 @@ func _process(delta: float) -> void:
 		_pending_text = ""
 		_typing_indicator.text = ""
 		_send_button.disabled = false
-
-# Only a known answer to the current prompt advances the scripted exercise.
-# Normalization tolerates case, punctuation and repeated spaces. Children may
-# still type ANY text; unrecognized answers receive a friendly immediate reply.
-func _normalize_answer(value: String) -> String:
-	var normalized: String = value.to_lower().strip_edges()
-	for mark in ["!", "?", ".", ",", ";", ":", "¡", "¿", "…", "«", "»", "'"]:
-		normalized = normalized.replace(mark, "")
-	while normalized.contains("  "):
-		normalized = normalized.replace("  ", " ")
-	return normalized.strip_edges()
-
-
-func _answer_matches_expected(answer: String) -> bool:
-	# Conversation can become free-form after the initial four prompts.
-	if _turn >= 4:
-		return true
-	var typed: String = _normalize_answer(answer)
-	var expected: String = _normalize_answer(_sample_answer())
-	if typed.is_empty():
-		return false
-	if typed == expected:
-		return true
-	match _turn:
-		0:
-			# Greetings in any of the six languages are meaningful.
-			for greeting in GREETINGS.values():
-				if typed == _normalize_answer(str(greeting)):
-					return true
-		1:
-			# The same name may be typed in Cyrillic or Latin in ANY locale.
-			# Proper names are transliterated, not translated into six names.
-			var names: Array[String] = [
-				str(_profile.get("name_cyrillic", "Алися")),
-				str(_profile.get("name_latin", "Alisya"))
-			]
-			for candidate in names:
-				var normalized_candidate: String = _normalize_answer(candidate)
-				if typed == normalized_candidate:
-					return true
-				for prefix in ["меня зовут ", "my name is ", "je m'appelle ", "ich heiße ", "me llamo ", "meu nome é "]:
-					if typed == _normalize_answer(prefix + normalized_candidate):
-						return true
-		2:
-			# Accept a bare number or a simple age phrase, but not another age.
-			for form in ["мне %s", "%s года", "%s лет", "i am %s", "%s years old", "tengo %s años", "tenho %s anos", "j'ai %s ans", "ich bin %s"]:
-				if typed == _normalize_answer(form % expected):
-					return true
-		3:
-			# The saved child's preferred colour is also a valid answer.
-			return typed == _normalize_answer(str(_profile.get("favorite_color", "голубой")))
-	return false
-
-
 func _on_send() -> void:
 	var text: String = _message_input.text.strip_edges()
 	if text.is_empty() or _typing_seconds > 0.0 or _v96_place_id.is_empty():
@@ -568,6 +516,7 @@ func _relayout() -> void:
 				key.add_theme_font_size_override("font_size", maxi(13, roundi(row_h * 0.47)))
 	queue_redraw()
 	_v107_adjust_entry_send_layout()
+	call_deferred("_scroll_chat_to_latest")
 
 func _draw() -> void:
 	if size.x < 70.0 or size.y < 70.0:

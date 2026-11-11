@@ -1011,7 +1011,7 @@
       "mystery": "One arch changed shape when a large wave passed.",
       "share": "Let's share our idea with the builders of flowing paths.",
       "gender": null,
-      "portrait_template": "10_phase_crystal.png",
+      "portrait_template": "12_phase_liquid.png",
       "chapter_cues": [
         "I study transparent water arches rising from Okea's ocean.",
         "One arch changed shape when a large wave passed.",
@@ -1110,7 +1110,7 @@
       "mystery": "One dome now reflects much more light than its neighbor.",
       "share": "Let's show other phase beings how transparency changes.",
       "gender": null,
-      "portrait_template": "11_phase_gas.png",
+      "portrait_template": "12_phase_liquid.png",
       "chapter_cues": [
         "I watch red mountains reflected in Cela's clear liquid domes.",
         "One dome now reflects much more light than its neighbor.",
@@ -1308,7 +1308,7 @@
       "mystery": "The mist became thicker beside a bright ridge.",
       "share": "Let's mark the clearest way for the next visitor.",
       "gender": null,
-      "portrait_template": "10_phase_crystal.png",
+      "portrait_template": "12_phase_liquid.png",
       "chapter_cues": [
         "I explore misty passages among Spira's dark rocks.",
         "The mist became thicker beside a bright ridge.",
@@ -1407,7 +1407,7 @@
       "mystery": "A transparent chamber displayed an unfamiliar old pattern.",
       "share": "Let's preserve the pattern for future visitors.",
       "gender": null,
-      "portrait_template": "11_phase_gas.png",
+      "portrait_template": "12_phase_liquid.png",
       "chapter_cues": [
         "I protect memories inside the Archive's clear liquid and gas chambers.",
         "A transparent chamber displayed an unfamiliar old pattern.",
