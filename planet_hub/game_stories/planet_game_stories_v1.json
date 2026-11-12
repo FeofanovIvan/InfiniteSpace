@@ -91,12 +91,12 @@
       "fr": ""
     },
     "smc__resource_rush": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "На планете объявился хитрый ящер-воришка! Он пытается утащить кристаллы, а Мике нужно успеть их спасти.\n\nПомоги Мике собрать как можно больше кристаллов, пока воришка не добрался до них!",
+      "en": "A sneaky lizard thief has appeared on the planet! He's trying to steal the crystals, and Mika needs to save them in time.\n\nHelp Mika collect as many crystals as possible before the thief gets to them!",
+      "pt_BR": "Um lagarto ladrão apareceu no planeta! Ele está tentando roubar os cristais, e Mika precisa salvá-los a tempo.\n\nAjude Mika a juntar o máximo de cristais possível antes que o ladrão chegue até eles!",
+      "es": "¡Un lagarto ladrón ha aparecido en el planeta! Está intentando robar los cristales, y Mika tiene que salvarlos a tiempo.\n\n¡Ayuda a Mika a recoger tantos cristales como puedas antes de que el ladrón llegue a ellos!",
+      "de": "Auf dem Planeten ist eine diebische Echse aufgetaucht! Sie versucht, die Kristalle zu stehlen. Mika muss sie rechtzeitig retten.\n\nHilf Mika, so viele Kristalle wie möglich einzusammeln, bevor der Dieb sie erwischt!",
+      "fr": "Un lézard voleur est apparu sur la planète ! Il essaie de voler les cristaux, et Mika doit les sauver à temps.\n\nAide Mika à ramasser le plus de cristaux possible avant que le voleur ne s’en empare !"
     },
     "smc__icy_planet": {
       "ru": "",
