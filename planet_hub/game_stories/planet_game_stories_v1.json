@@ -43,12 +43,12 @@
       "fr": "Mika prépare des provisions pour un long voyage dans l’espace. Mais il n’y a pas beaucoup de place dans son vaisseau. Il doit donc emporter juste ce qu’il faut : ni trop, ni trop peu.\n\nAide Mika à compter les aliments et à choisir la bonne quantité de chacun !"
     },
     "lmc__fungal_paths": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Бабл отправился играть в живой грибной город и так увлёкся, что заблудился среди извилистых тропинок грибницы. Теперь он не может найти дорогу назад.\n\nПомоги Баблу пройти по грибным дорожкам и вернуться к кораблю!",
+      "en": "Bubble went to play in the living fungal city. He was having so much fun that he got lost among the winding paths of the mycelium. Now he can't find his way back.\n\nHelp Bubble find a path through the fungal network and return to the spaceship!",
+      "pt_BR": "Bubble foi brincar na cidade viva dos fungos. Ele se divertiu tanto que acabou se perdendo entre os caminhos sinuosos do micélio. Agora não sabe como voltar.\n\nAjude Bubble a encontrar o caminho pela rede de fungos e voltar para a nave!",
+      "es": "Bubble fue a jugar a la ciudad viva de los hongos. Se divirtió tanto que acabó perdido entre los caminos enredados del micelio. Ahora no sabe cómo volver.\n\n¡Ayuda a Bubble a encontrar el camino por la red de hongos y regresar a la nave!",
+      "de": "Bubble wollte in der lebendigen Pilzstadt spielen. Dabei hatte er so viel Spaß, dass er sich auf den verschlungenen Wegen des Pilzgeflechts verirrte. Jetzt findet er nicht mehr zurück.\n\nHilf Bubble, den Weg durch das Pilzgeflecht zu finden und zum Raumschiff zurückzukehren!",
+      "fr": "Bubble est parti jouer dans la cité vivante des champignons. Il s’est tellement amusé qu’il s’est perdu parmi les chemins sinueux du mycélium. Maintenant, il ne sait plus comment rentrer.\n\nAide Bubble à retrouver son chemin à travers le réseau de champignons et à rejoindre le vaisseau !"
     },
     "lmc__sunbeam_catcher": {
       "ru": "",
