@@ -5,6 +5,10 @@ reports/
 _mika_backups/
 backup_*/
 *_backup_*/
+space_racing_backups/
+.mika_patch_backups/
+# Duplicate installer artifact; the canonical scene lives in mika_motion_comic/scenes.
+bubble/addons/SinglePageComicIntro.tscn
 mika_comic_kit/
 bubble_planet_fetch/
 qa_game_center/

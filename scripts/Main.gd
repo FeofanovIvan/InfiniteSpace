@@ -35,6 +35,7 @@ const ComicPrologueScene = preload("res://scripts/ComicPrologue.gd")
 const StoryLandingSmokeScene = preload("res://scripts/StoryLandingSmoke.gd")
 const LandingMotion = preload("res://scripts/LandingMotion.gd")
 const HyperjumpMotion = preload("res://scripts/HyperjumpMotion.gd")
+const AdaptiveMusicScene = preload("res://scripts/AdaptiveMusic.gd")
 
 const V104_CROSSROADS_UI: Script = preload("res://planet_hub/scripts/crossroads_dialog_v104.gd")
 var _v104_crossroads_dialog: Control
@@ -153,9 +154,13 @@ var navigator = WorldAddress.new()
 var diagnostics = DiagnosticsClass.new()
 var _ship_heading: float = 0.0
 var _report_timer: float = 0.0
+var _adaptive_music: AdaptiveMusic
 
 
 func _ready() -> void:
+	_adaptive_music = AdaptiveMusicScene.new() as AdaptiveMusic
+	_adaptive_music.name = "AdaptiveExplorationMusic"
+	add_child(_adaptive_music)
 	# Launch next to Earth, not at the origin inside the Sun.
 	navigator.advance(SolarSystemScene.INITIAL_SHIP_POSITION)
 	diagnostics.start()
@@ -751,6 +756,7 @@ func _on_bubble_care_requested() -> void:
 	main_menu.set_stats(status_hud.crystal_count, 0, 0.0)
 	main_menu.call("open_bubble_care_direct", get_viewport_rect().size)
 	if main_menu.visible:
+		_set_music_context("silent")
 		status_hud.call("reset_bubble_clock")
 		get_tree().paused = true
 
@@ -764,6 +770,7 @@ func _on_main_menu_requested() -> void:
 		return
 	main_menu.set_stats(status_hud.crystal_count, 0, 0.0)
 	main_menu.open_menu(get_viewport_rect().size)
+	_set_music_context("silent")
 	get_tree().paused = true
 	diagnostics.write("miko_main_menu_opened", {"screen": "bridge", "flight_crystals": status_hud.crystal_count, "crystal_capacity": 0, "ship_speed": 0})
 
@@ -776,8 +783,10 @@ func _on_educational_crystals_earned(units: int) -> void:
 func _on_modal_closed() -> void:
 	if _planet_landing_active and is_instance_valid(_planet_hub):
 		_planet_hub.visible = true
+		_set_music_context("calm")
 		get_tree().paused = true
 		return
+	_set_music_context("flight")
 	get_tree().paused = false
 	diagnostics.write("flight_overlay_closed", {})
 
@@ -788,6 +797,7 @@ func _on_galaxy_travel_requested(region_id: String, direction: Vector2) -> void:
 	if solar_system.get_system(region_id).is_empty():
 		return
 	get_tree().paused = false
+	_set_music_context("flight")
 	if _autopilot_active:
 		_stop_autopilot("hyperspace_jump")
 	velocity = Vector2.ZERO
@@ -1617,6 +1627,7 @@ func _begin_planet_landing(planet_id: String, display_name: String, with_animati
 	if hub == null:
 		return
 	_planet_landing_active = true
+	_set_music_context("calm")
 	if _autopilot_active:
 		_stop_autopilot("landing_on_planet")
 	velocity = Vector2.ZERO
@@ -1639,6 +1650,7 @@ func _on_planet_hub_flight_requested() -> void:
 		return
 	_planet_hub.visible = false
 	_planet_landing_active = false
+	_set_music_context("flight")
 	get_tree().paused = false
 	ship.visible = true
 	ship.scale = Vector2.ZERO
@@ -1659,6 +1671,7 @@ func _on_planet_hub_simulator_requested() -> void:
 	if not _planet_landing_active:
 		return
 	_planet_hub.visible = false
+	_set_music_context("silent")
 	main_menu.set_stats(status_hud.crystal_count, 0, 0.0)
 	main_menu.open_menu(get_viewport_rect().size)
 	# The normal ship simulator is unchanged; returning opens the planet hub.
@@ -1689,6 +1702,7 @@ func _v104_open_crossroads_dialog() -> void:
 	if _autopilot_active:
 		_stop_autopilot("crossroads_dialog")
 	velocity = Vector2.ZERO
+	_set_music_context("calm")
 	current_input = Vector2.ZERO
 	joystick.clear_input()
 	_v104_crossroads_dialog.call("open_dialog")
@@ -1699,9 +1713,15 @@ func _v104_close_crossroads_dialog() -> void:
 	if is_instance_valid(_v104_crossroads_dialog):
 		_v104_crossroads_dialog.visible = false
 	get_tree().paused = false
+	_set_music_context("flight")
 	joystick.clear_input()
 	current_input = Vector2.ZERO
 	_update_landing_offer()
+
+
+func _set_music_context(context: String) -> void:
+	if is_instance_valid(_adaptive_music):
+		_adaptive_music.set_context(context)
 
 
 # v122: the approved Bubble-style simulator card is clickable but never modal.

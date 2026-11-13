@@ -13,6 +13,7 @@ const TARANTULA_STATION_PREVIEW: Texture2D = preload("res://assets/story/tarantu
 const LIVING_ARCHIVE_PREVIEW: Texture2D = preload("res://assets/story/living_archive_lotus.png")
 const TITAN_SKULL_PREVIEW: Texture2D = preload("res://assets/story/titan_skull_ngc6822.png")
 const PYRAMID_PREVIEW: Texture2D = preload("res://assets/story/inverted_pyramid_m31.png")
+const LAST_GATE_PREVIEW: Texture2D = preload("res://assets/story/last_gate_m33.png")
 # The round chart almost completely fills this SQUARE panel. The sight button
 # sits in the naturally unused lower-right corner, outside the chart circle.
 const PANEL: Vector2 = Vector2(260.0, 260.0)
@@ -221,20 +222,11 @@ func _draw_orbits() -> void:
 
 func _draw_planets() -> void:
 	for body in _solar_bodies:
-		# MIKA_MINIMAP_PLANETS_ONLY_V1_BEGIN
-		# Filter VISUAL map markers only: world objects and navigation are unchanged.
-		# Keep the Sun for orientation, named MW planets and planets from other systems.
-		var mika_map_kind: String = str(body.get("kind", ""))
-		var mika_map_name: String = str(body.get("name", ""))
-		var mika_mw_planet: bool = [
-			"Mercury", "Venus", "Earth", "Mars", "Jupiter",
-			"Saturn", "Uranus", "Neptune"
-		].has(mika_map_name)
-		if mika_map_kind == "moon":
+		# Filter visual markers only. Stations are navigation destinations and must
+		# reach the station drawing branch below; the previous planets-only filter
+		# accidentally discarded them first.
+		if not should_draw_body(body):
 			continue
-		if mika_map_name != "Sun" and mika_map_kind != "planet" and not mika_mw_planet:
-			continue
-		# MIKA_MINIMAP_PLANETS_ONLY_V1_END
 		var world: Vector2 = body["world"]
 		var point: Vector2 = _world_to_map(world)
 		var name: String = str(body["name"])
@@ -253,6 +245,8 @@ func _draw_planets() -> void:
 				preview = TITAN_SKULL_PREVIEW
 			elif station_id == "st_m31":
 				preview = PYRAMID_PREVIEW
+			elif station_id == "st_m33":
+				preview = LAST_GATE_PREVIEW
 			draw_circle(point, 9.0, Color(0.38, 0.84, 1.0, 0.25))
 			var preview_aspect: float = float(preview.get_width()) / maxf(1.0, float(preview.get_height()))
 			var station_extent: Vector2 = Vector2(15.0, 15.0)
@@ -282,6 +276,21 @@ func _draw_planets() -> void:
 			draw_circle(point, dot_size, col)
 			if name == "Saturn":
 				draw_arc(point, 4.7, 0.15, PI * 1.30, 24, Color(0.98, 0.86, 0.55, 0.75), 1.0, true)
+
+
+static func should_draw_body(body: Dictionary) -> bool:
+	var kind: String = str(body.get("kind", ""))
+	var body_name: String = str(body.get("name", ""))
+	if kind == "moon":
+		return false
+	if kind == "station" or body_name == "EarthStation":
+		return true
+	if body_name == "Sun" or kind == "planet":
+		return true
+	return [
+		"Mercury", "Venus", "Earth", "Mars", "Jupiter",
+		"Saturn", "Uranus", "Neptune"
+	].has(body_name)
 
 
 func _draw_ship() -> void:

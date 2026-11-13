@@ -112,6 +112,8 @@ func set_quality_low(low: bool) -> void:
         rings.visible = storm_enabled and not low
         front_ribbons.visible = storm_enabled and not low
         lightning.visible = storm_enabled and not low
+    if motes != null:
+        motes.visible = storm_enabled and not low
     _sync_layers()
 
 func set_storm_enabled(enabled: bool) -> void:
@@ -124,7 +126,7 @@ func set_storm_enabled(enabled: bool) -> void:
             front_ribbons.visible = false
             lightning.visible = false
     if motes != null:
-        motes.visible = enabled
+        motes.visible = enabled and not mobile_simple_shading
 
 func set_paused(value: bool) -> void:
     paused = value

@@ -96,6 +96,10 @@ func set_mood(new_mood: String) -> void:
 
 func set_quality_low(is_low: bool) -> void:
     mobile_simple_shading = is_low
+    if aura != null:
+        aura.visible = not is_low
+    if flares != null:
+        flares.visible = flares_enabled and not is_low
     if _surface_mat != null:
         _surface_mat.set_shader_parameter("detail_level", 0.0 if is_low else 1.0)
     if _flares_mat != null:
@@ -129,7 +133,7 @@ func trigger_liquid_flare(local_direction: Vector2 = Vector2.ZERO, strength: flo
 func set_flares_enabled(enabled: bool) -> void:
     flares_enabled = enabled
     if flares != null:
-        flares.visible = enabled
+        flares.visible = enabled and not mobile_simple_shading
 
 func _sync_motion() -> void:
     if _surface_mat == null:

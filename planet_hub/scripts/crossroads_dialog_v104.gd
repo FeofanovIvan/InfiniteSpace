@@ -37,6 +37,12 @@ var _locale: String = "en"
 var _group_id: String = "care"
 var _topic_id: String = ""
 var _toolbar_rect: Rect2 = Rect2()
+var _quality_low: bool = false
+var _perf_warmup: float = 2.5
+var _perf_elapsed: float = 0.0
+var _perf_frames: int = 0
+var _slow_windows: int = 0
+var _fast_windows: int = 0
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -116,6 +122,48 @@ func _set_runtime_active(active: bool) -> void:
 	if _planet != null:
 		_planet.call("set_paused", not active)
 		_planet.process_mode = Node.PROCESS_MODE_ALWAYS if active else Node.PROCESS_MODE_DISABLED
+	if active:
+		_perf_warmup = 2.5
+		_perf_elapsed = 0.0
+		_perf_frames = 0
+		_slow_windows = 0
+		_fast_windows = 0
+
+func set_performance_quality_low(value: bool) -> void:
+	if _quality_low == value:
+		return
+	_quality_low = value
+	if _sky != null and _sky.has_method("set_quality_low"):
+		_sky.call("set_quality_low", value)
+	if _planet != null and _planet.has_method("set_quality_low"):
+		_planet.call("set_quality_low", value)
+
+func is_performance_quality_low() -> bool:
+	return _quality_low
+
+func _sample_mobile_performance(delta: float) -> void:
+	if not OS.has_feature("mobile"):
+		return
+	if _perf_warmup > 0.0:
+		_perf_warmup -= delta
+		return
+	_perf_elapsed += delta
+	_perf_frames += 1
+	if _perf_elapsed < 1.25:
+		return
+	var measured_fps: float = float(_perf_frames) / maxf(_perf_elapsed, 0.001)
+	_perf_elapsed = 0.0
+	_perf_frames = 0
+	if not _quality_low:
+		_slow_windows = _slow_windows + 1 if measured_fps < 52.0 else 0
+		if _slow_windows >= 2:
+			set_performance_quality_low(true)
+			_slow_windows = 0
+	else:
+		_fast_windows = _fast_windows + 1 if measured_fps > 56.0 else 0
+		if _fast_windows >= 6:
+			set_performance_quality_low(false)
+			_fast_windows = 0
 
 func _style(selected: bool) -> StyleBoxFlat:
 	var style := StyleBoxFlat.new()
@@ -210,11 +258,12 @@ func _arrange_original_back() -> void:
 	_original_back.size = _back_slot.size
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	# The unmodified original dialogue can resize its Back button when a hint
 	# changes. Enforce the toolbar slot without touching that original script.
 	if not visible or _original_back == null or _back_slot == null:
 		return
+	_sample_mobile_performance(delta)
 	if _toolbar != null and _toolbar_rect.size.x > 0.0:
 		if _toolbar.position.distance_to(_toolbar_rect.position) > 0.5 or _toolbar.size.distance_to(_toolbar_rect.size) > 0.5:
 			_toolbar.position = _toolbar_rect.position

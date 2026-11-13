@@ -5,7 +5,9 @@ extends CanvasLayer
 signal comic_completed
 signal skipped
 
-const MotionComicIntroScene: PackedScene = preload("res://mika_motion_comic/scenes/MotionComicIntro.tscn")
+## Single-page experiment. The previous nine-image player remains at
+## res://mika_motion_comic/scenes/MotionComicIntro.tscn for instant rollback.
+const MotionComicIntroScene: PackedScene = preload("res://mika_motion_comic/scenes/SinglePageComicIntro.tscn")
 
 var _root: Control
 var _intro: Control

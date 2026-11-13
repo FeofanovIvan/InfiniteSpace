@@ -11,196 +11,196 @@
   ],
   "games": {
     "mw__puzzles": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "После прибытия в новую вселенную Мике было непросто разобраться, как устроен незнакомый мир. Местные жители предложили ему собрать пазлы с изображениями разных мест и предметов, чтобы он быстрее освоился.\n\nПомоги Мике сложить картинки из кусочков и лучше узнать новый мир!",
+      "en": "After arriving in a new universe, Mika found it hard to understand the unfamiliar world around him. The local inhabitants suggested putting together puzzles showing different places and objects to help him get to know it.\n\nHelp Mika put the pictures together, piece by piece, and discover his new world!",
+      "pt_BR": "Depois de chegar a um novo universo, Mika teve dificuldade para entender aquele mundo desconhecido. Os habitantes locais sugeriram que ele montasse quebra-cabeças com imagens de lugares e objetos para conhecê-lo melhor.\n\nAjude Mika a juntar as peças dos quebra-cabeças e descobrir esse novo mundo!",
+      "es": "Después de llegar a un nuevo universo, a Mika le costaba entender aquel mundo desconocido. Sus habitantes le propusieron armar rompecabezas con imágenes de lugares y objetos para que pudiera conocerlo mejor.\n\n¡Ayuda a Mika a juntar las piezas y descubrir ese nuevo mundo!",
+      "de": "Als Mika in einem neuen Universum ankam, fiel es ihm schwer, die unbekannte Welt zu verstehen. Die Bewohner schlugen ihm vor, Puzzles mit Bildern von Orten und Gegenständen zusammenzusetzen, damit er sich schneller zurechtfindet.\n\nHilf Mika, die Bilder Stück für Stück zusammenzusetzen und die neue Welt kennenzulernen!",
+      "fr": "À son arrivée dans un nouvel univers, Mika avait du mal à comprendre ce monde inconnu. Ses habitants lui ont proposé de reconstituer des puzzles représentant différents lieux et objets pour l’aider à mieux le découvrir.\n\nAide Mika à assembler les pièces des images et à découvrir ce nouveau monde !"
     },
     "mw__animal_habitat": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Когда Мика прибыл в новую вселенную, ему было непросто понять, как устроен окружающий мир. Местные жители рассказали ему о разных животных и о том, где они обитают.\n\nПомоги Мике разобраться, где живут животные, и найти для каждого подходящую среду обитания!",
+      "en": "When Mika arrived in a new universe, he found it hard to understand the world around him. The local inhabitants told him about different animals and the places where they live.\n\nHelp Mika discover where animals live and find the right habitat for each one!",
+      "pt_BR": "Quando Mika chegou a um novo universo, foi difícil entender o mundo ao seu redor. Os habitantes locais contaram a ele sobre diferentes animais e os lugares onde vivem.\n\nAjude Mika a descobrir onde os animais vivem e encontrar o habitat certo para cada um!",
+      "es": "Cuando Mika llegó a un nuevo universo, le costaba entender el mundo que lo rodeaba. Sus habitantes le hablaron de diferentes animales y de los lugares donde viven.\n\n¡Ayuda a Mika a descubrir dónde viven los animales y encontrar el hábitat adecuado para cada uno!",
+      "de": "Als Mika in einem neuen Universum ankam, fiel es ihm schwer, die Welt um sich herum zu verstehen. Die Bewohner erzählten ihm von verschiedenen Tieren und davon, wo sie leben.\n\nHilf Mika herauszufinden, wo die Tiere leben, und für jedes Tier den passenden Lebensraum zu finden!",
+      "fr": "Quand Mika est arrivé dans un nouvel univers, il avait du mal à comprendre le monde qui l’entourait. Les habitants lui ont parlé des différents animaux et des endroits où ils vivent.\n\nAide Mika à découvrir où vivent les animaux et à trouver le bon habitat pour chacun !"
     },
     "mw__shopping_list": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Мика приземлился на планете. Впереди его ждёт долгое космическое путешествие, поэтому нужно пополнить запасы еды.\n\nПомоги Мике найти и собрать все продукты из списка, чтобы он мог отправиться дальше!",
+      "en": "Mika has landed on a planet. A long space journey lies ahead, so he needs to stock up on food.\n\nHelp Mika find and collect all the food on the shopping list so he can continue his journey!",
+      "pt_BR": "Mika pousou em um planeta. Uma longa viagem espacial o espera, então ele precisa renovar seus estoques de comida.\n\nAjude Mika a encontrar e juntar todos os alimentos da lista para que ele possa continuar a viagem!",
+      "es": "Mika ha aterrizado en un planeta. Le espera un largo viaje espacial, así que necesita abastecerse de comida.\n\n¡Ayuda a Mika a encontrar y reunir todos los alimentos de la lista para que pueda continuar su viaje!",
+      "de": "Mika ist auf einem Planeten gelandet. Vor ihm liegt eine lange Reise durch den Weltraum. Dafür braucht er genügend Proviant.\n\nHilf Mika, alle Lebensmittel auf der Einkaufsliste zu finden und einzusammeln, damit er weiterfliegen kann!",
+      "fr": "Mika a atterri sur une planète. Un long voyage dans l’espace l’attend : il doit donc faire des réserves de nourriture.\n\nAide Mika à trouver et à rassembler tous les aliments de la liste pour qu’il puisse poursuivre son voyage !"
     },
     "mw__product_count": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Мика собирает продукты для долгого космического путешествия. Но на корабле мало места, поэтому важно взять ровно столько еды, сколько нужно — не больше и не меньше.\n\nПомоги Мике посчитать продукты и выбрать правильное количество каждого!",
+      "en": "Mika is gathering food for a long journey through space. But there isn't much room on his spaceship, so he needs just the right amount of food — not too much and not too little.\n\nHelp Mika count the food and choose the correct number of each item!",
+      "pt_BR": "Mika está separando alimentos para uma longa viagem espacial. Mas há pouco espaço na nave, então ele precisa levar a quantidade certa de comida — nem demais, nem de menos.\n\nAjude Mika a contar os alimentos e escolher a quantidade correta de cada um!",
+      "es": "Mika está reuniendo comida para un largo viaje espacial. Pero hay poco espacio en la nave, así que debe llevar la cantidad justa: ni demasiado ni demasiado poco.\n\n¡Ayuda a Mika a contar los alimentos y elegir la cantidad correcta de cada uno!",
+      "de": "Mika sammelt Lebensmittel für eine lange Reise durchs All. Aber in seinem Raumschiff ist nur wenig Platz. Deshalb muss er genau die richtige Menge mitnehmen – nicht zu viel und nicht zu wenig.\n\nHilf Mika, die Lebensmittel zu zählen und von jedem die richtige Anzahl auszuwählen!",
+      "fr": "Mika prépare des provisions pour un long voyage dans l’espace. Mais il n’y a pas beaucoup de place dans son vaisseau. Il doit donc emporter juste ce qu’il faut : ni trop, ni trop peu.\n\nAide Mika à compter les aliments et à choisir la bonne quantité de chacun !"
     },
     "lmc__fungal_paths": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Бабл отправился играть в живой грибной город и так увлёкся, что заблудился среди извилистых тропинок грибницы. Теперь он не может найти дорогу назад.\n\nПомоги Баблу пройти по грибным дорожкам и вернуться к кораблю!",
+      "en": "Bubble went to play in the living fungal city. He was having so much fun that he got lost among the winding paths of the mycelium. Now he can't find his way back.\n\nHelp Bubble find a path through the fungal network and return to the spaceship!",
+      "pt_BR": "Bubble foi brincar na cidade viva dos fungos. Ele se divertiu tanto que acabou se perdendo entre os caminhos sinuosos do micélio. Agora não sabe como voltar.\n\nAjude Bubble a encontrar o caminho pela rede de fungos e voltar para a nave!",
+      "es": "Bubble fue a jugar a la ciudad viva de los hongos. Se divirtió tanto que acabó perdido entre los caminos enredados del micelio. Ahora no sabe cómo volver.\n\n¡Ayuda a Bubble a encontrar el camino por la red de hongos y regresar a la nave!",
+      "de": "Bubble wollte in der lebendigen Pilzstadt spielen. Dabei hatte er so viel Spaß, dass er sich auf den verschlungenen Wegen des Pilzgeflechts verirrte. Jetzt findet er nicht mehr zurück.\n\nHilf Bubble, den Weg durch das Pilzgeflecht zu finden und zum Raumschiff zurückzukehren!",
+      "fr": "Bubble est parti jouer dans la cité vivante des champignons. Il s’est tellement amusé qu’il s’est perdu parmi les chemins sinueux du mycélium. Maintenant, il ne sait plus comment rentrer.\n\nAide Bubble à retrouver son chemin à travers le réseau de champignons et à rejoindre le vaisseau !"
     },
     "lmc__sunbeam_catcher": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Мика и его друзья обнаружили на грибной планете необычный способ получать энергию: местные растения ловят солнечный свет и запасают его с помощью фотосинтеза.\n\nПеред долгим путешествием кораблю нужно подзарядить батареи.\n\nПомоги Мике поймать солнечные лучи, собрать энергию и зарядить корабль для нового путешествия!",
+      "en": "On the fungal planet, Mika and his friends discover an unusual way to get energy: local plants capture sunlight and store its energy through photosynthesis.\n\nBefore their long journey, the spaceship needs to recharge its batteries.\n\nHelp Mika catch the sunbeams, collect energy, and charge the spaceship for its next adventure!",
+      "pt_BR": "No planeta dos fungos, Mika e seus amigos descobriram uma maneira diferente de obter energia: as plantas locais captam a luz do sol e armazenam sua energia por meio da fotossíntese.\n\nAntes da longa viagem, a nave precisa recarregar as baterias.\n\nAjude Mika a captar os raios de sol, reunir energia e recarregar a nave para a próxima aventura!",
+      "es": "En el planeta de los hongos, Mika y sus amigos descubrieron una forma especial de obtener energía: las plantas del lugar captan la luz del sol y almacenan su energía mediante la fotosíntesis.\n\nAntes del largo viaje, la nave necesita recargar sus baterías.\n\n¡Ayuda a Mika a atrapar los rayos de sol, reunir energía y recargar la nave para la próxima aventura!",
+      "de": "Auf dem Pilzplaneten entdecken Mika und seine Freunde eine besondere Art, Energie zu gewinnen: Die Pflanzen dort fangen Sonnenlicht ein und speichern die Energie durch Fotosynthese.\n\nVor der langen Reise müssen die Batterien des Raumschiffs aufgeladen werden.\n\nHilf Mika, Sonnenstrahlen einzufangen, Energie zu sammeln und das Raumschiff für das nächste Abenteuer aufzuladen!",
+      "fr": "Sur la planète des champignons, Mika et ses amis découvrent une façon étonnante d’obtenir de l’énergie : les plantes locales captent la lumière du soleil et stockent son énergie grâce à la photosynthèse.\n\nAvant leur long voyage, les batteries du vaisseau doivent être rechargées.\n\nAide Mika à attraper les rayons du soleil, à récupérer de l’énergie et à recharger le vaisseau pour la prochaine aventure !"
     },
     "lmc__eco_sort": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Грибные жители рассказали Мике историю древней цивилизации, которая неразумно расходовала природные ресурсы и оставляла после себя горы отходов. Многие из них невозможно было переработать, и они загрязняли планету.\n\nЧтобы не повторять ошибок прошлого, грибные жители научились сортировать отходы и использовать полезные материалы повторно. Они предложили Мике начать с мусора, который накопился во время его путешествия.\n\nПомоги Мике правильно рассортировать отходы: отправить пригодные материалы на переработку, органические остатки — на компост, а всё остальное — в мусорный контейнер!",
+      "en": "The fungal inhabitants told Mika about an ancient civilization that wasted natural resources and left mountains of rubbish behind. Much of it could not be recycled, and it polluted the planet.\n\nTo avoid making the same mistakes, the fungal inhabitants learned to sort waste and reuse useful materials. They invited Mika to start with the rubbish collected during his journey.\n\nHelp Mika sort the waste correctly: put recyclable materials in the recycling bin, organic scraps in the compost bin, and everything else in the rubbish bin!",
+      "pt_BR": "Os habitantes dos fungos contaram a Mika a história de uma civilização antiga que desperdiçava recursos naturais e deixava montanhas de lixo. Grande parte desses resíduos não podia ser reciclada e poluía o planeta.\n\nPara não repetir os erros do passado, os habitantes aprenderam a separar os resíduos e reutilizar materiais úteis. Eles convidaram Mika a começar pelo lixo acumulado durante sua viagem.\n\nAjude Mika a separar os resíduos corretamente: materiais recicláveis na lixeira de reciclagem, restos orgânicos na composteira e o restante na lixeira comum!",
+      "es": "Los habitantes de los hongos le contaron a Mika la historia de una antigua civilización que malgastaba los recursos naturales y dejaba montañas de basura. Muchos de esos residuos no se podían reciclar y contaminaban el planeta.\n\nPara no repetir los errores del pasado, aprendieron a separar los residuos y reutilizar los materiales útiles. Invitaron a Mika a empezar con la basura acumulada durante su viaje.\n\n¡Ayuda a Mika a separar los residuos: los materiales reciclables al contenedor de reciclaje, los restos orgánicos al de compost y lo demás al de basura!",
+      "de": "Die Pilzbewohner erzählten Mika von einer alten Zivilisation, die natürliche Rohstoffe verschwendete und Berge von Abfall hinterließ. Vieles davon ließ sich nicht recyceln und verschmutzte den Planeten.\n\nDamit sich diese Fehler nicht wiederholen, lernten die Pilzbewohner, Müll zu trennen und wertvolle Materialien wiederzuverwenden. Sie schlugen Mika vor, mit den Abfällen seiner Reise anzufangen.\n\nHilf Mika, den Abfall richtig zu sortieren: Wiederverwertbares in die Recyclingtonne, organische Reste in den Kompost und alles Übrige in die Mülltonne!",
+      "fr": "Les habitants champignons ont raconté à Mika l’histoire d’une ancienne civilisation qui gaspillait les ressources naturelles et laissait derrière elle des montagnes de déchets. Une grande partie ne pouvait pas être recyclée et polluait la planète.\n\nPour ne pas répéter les erreurs du passé, ils ont appris à trier les déchets et à réutiliser les matériaux utiles. Ils ont proposé à Mika de commencer par les déchets accumulés pendant son voyage.\n\nAide Mika à bien trier les déchets : les matériaux recyclables dans le bac de recyclage, les déchets organiques dans le compost et le reste dans la poubelle !"
     },
     "lmc__fungal_race": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "На базе грибной цивилизации Мике показали, как её жители восстанавливают природу на разных планетах: выращивают растения и создают целые живые экосистемы.\n\nГрибные жители предложили Мике посадить собственное дерево, которое останется здесь на память о его космическом путешествии.\n\nПомоги Мике вырастить дерево из маленького семечка и подарить планете новую жизнь!",
+      "en": "At the fungal civilization's base, Mika saw how its inhabitants restore nature on different planets by growing plants and creating thriving ecosystems.\n\nThe fungal inhabitants invited Mika to plant his own tree, which would stay there as a reminder of his journey through space.\n\nHelp Mika grow a tree from a tiny seed and bring new life to the planet!",
+      "pt_BR": "Na base da civilização dos fungos, Mika viu como seus habitantes recuperam a natureza em diferentes planetas, cultivando plantas e criando ecossistemas cheios de vida.\n\nOs habitantes dos fungos convidaram Mika a plantar sua própria árvore, que ficaria ali como lembrança de sua viagem espacial.\n\nAjude Mika a cultivar uma árvore a partir de uma pequena semente e levar mais vida ao planeta!",
+      "es": "En la base de la civilización de los hongos, Mika descubrió cómo sus habitantes recuperan la naturaleza en distintos planetas: cultivan plantas y crean ecosistemas llenos de vida.\n\nLos habitantes de los hongos invitaron a Mika a plantar su propio árbol, que quedaría allí como recuerdo de su viaje espacial.\n\n¡Ayuda a Mika a hacer crecer un árbol a partir de una pequeña semilla y a llenar el planeta de nueva vida!",
+      "de": "In der Basis der Pilzzivilisation zeigte man Mika, wie ihre Bewohner die Natur auf verschiedenen Planeten wiederherstellen: Sie ziehen Pflanzen auf und schaffen lebendige Ökosysteme.\n\nDie Pilzbewohner luden Mika ein, einen eigenen Baum zu pflanzen, der als Erinnerung an seine Weltraumreise dort wachsen soll.\n\nHilf Mika, aus einem kleinen Samen einen Baum wachsen zu lassen und dem Planeten neues Leben zu schenken!",
+      "fr": "Dans la base de la civilisation des champignons, Mika a découvert comment ses habitants restaurent la nature sur différentes planètes : ils font pousser des plantes et créent des écosystèmes pleins de vie.\n\nLes habitants ont proposé à Mika de planter son propre arbre, qui resterait là en souvenir de son voyage dans l’espace.\n\nAide Mika à faire pousser un arbre à partir d’une petite graine et à apporter une nouvelle vie à la planète !"
     },
     "smc__build_molecule": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Фазовые существа рассказали Мике о своём необычном строении и показали, как атомы соединяются в молекулы. Чтобы Мика лучше понял их мир, они предложили ему самому собрать молекулы разных веществ.\n\nПомоги Мике правильно соединить атомы и построить молекулы!",
+      "en": "The Phase beings told Mika about their unusual structure and showed him how atoms join together to form molecules. To help Mika understand their world, they invited him to build molecules of different substances himself.\n\nHelp Mika connect the atoms correctly and build the molecules!",
+      "pt_BR": "Os seres de fase contaram a Mika sobre sua estrutura incomum e mostraram como os átomos se unem para formar moléculas. Para ajudá-lo a entender melhor seu mundo, convidaram Mika a montar moléculas de diferentes substâncias.\n\nAjude Mika a ligar os átomos corretamente e construir as moléculas!",
+      "es": "Los seres de fase le contaron a Mika cómo es su estructura especial y le mostraron cómo se unen los átomos para formar moléculas. Para que comprendiera mejor su mundo, lo invitaron a construir moléculas de distintas sustancias.\n\n¡Ayuda a Mika a unir correctamente los átomos y construir las moléculas!",
+      "de": "Die Phasenwesen erzählten Mika von ihrem ungewöhnlichen Aufbau und zeigten ihm, wie sich Atome zu Molekülen verbinden. Damit Mika ihre Welt besser versteht, durfte er selbst Moleküle verschiedener Stoffe bauen.\n\nHilf Mika, die Atome richtig zu verbinden und Moleküle zu bauen!",
+      "fr": "Les êtres de phase ont expliqué à Mika leur structure étonnante et lui ont montré comment les atomes s’assemblent pour former des molécules. Pour l’aider à mieux comprendre leur monde, ils lui ont proposé de construire lui-même des molécules de différentes substances.\n\nAide Mika à relier les atomes correctement et à construire les molécules !"
     },
     "smc__solutions_lab": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Мика оказался в лаборатории фазовых существ. Там ему показали удивительные опыты: при смешивании разных растворов можно получать новые цвета и оттенки.\n\nФазовые исследователи предложили Мике самому попробовать провести несколько экспериментов.\n\nПомоги Мике смешать растворы и получить нужный цвет!",
+      "en": "Mika visited the Phase beings' laboratory. They showed him some amazing experiments: mixing different solutions can create new colors and shades.\n\nThe Phase researchers invited Mika to try a few experiments himself.\n\nHelp Mika mix the solutions and make the right color!",
+      "pt_BR": "Mika visitou o laboratório dos seres de fase. Lá, mostraram a ele experiências incríveis: ao misturar diferentes soluções, é possível criar novas cores e tonalidades.\n\nOs pesquisadores de fase convidaram Mika a fazer algumas experiências por conta própria.\n\nAjude Mika a misturar as soluções e conseguir a cor certa!",
+      "es": "Mika visitó el laboratorio de los seres de fase. Allí le mostraron experimentos sorprendentes: al mezclar distintas soluciones, se pueden obtener nuevos colores y tonos.\n\nLos investigadores de fase invitaron a Mika a realizar algunos experimentos por su cuenta.\n\n¡Ayuda a Mika a mezclar las soluciones y conseguir el color indicado!",
+      "de": "Mika besuchte das Labor der Phasenwesen. Dort zeigten sie ihm spannende Experimente: Wenn man verschiedene Lösungen mischt, können neue Farben und Farbtöne entstehen.\n\nDie Phasenforscher luden Mika ein, selbst ein paar Versuche durchzuführen.\n\nHilf Mika, die Lösungen zu mischen und die gesuchte Farbe zu erhalten!",
+      "fr": "Mika a visité le laboratoire des êtres de phase. On lui a montré des expériences étonnantes : en mélangeant différentes solutions, on peut obtenir de nouvelles couleurs et nuances.\n\nLes chercheurs lui ont proposé d'essayer lui-même quelques expériences.\n\nAide Mika à mélanger les solutions pour obtenir la couleur demandée !"
     },
     "smc__resource_rush": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "На планете объявился хитрый ящер-воришка! Он пытается утащить кристаллы, а Мике нужно успеть их спасти.\n\nПомоги Мике собрать как можно больше кристаллов, пока воришка не добрался до них!",
+      "en": "A sneaky lizard thief has appeared on the planet! He's trying to steal the crystals, and Mika needs to save them in time.\n\nHelp Mika collect as many crystals as possible before the thief gets to them!",
+      "pt_BR": "Um lagarto ladrão apareceu no planeta! Ele está tentando roubar os cristais, e Mika precisa salvá-los a tempo.\n\nAjude Mika a juntar o máximo de cristais possível antes que o ladrão chegue até eles!",
+      "es": "¡Un lagarto ladrón ha aparecido en el planeta! Está intentando robar los cristales, y Mika tiene que salvarlos a tiempo.\n\n¡Ayuda a Mika a recoger tantos cristales como puedas antes de que el ladrón llegue a ellos!",
+      "de": "Auf dem Planeten ist eine diebische Echse aufgetaucht! Sie versucht, die Kristalle zu stehlen. Mika muss sie rechtzeitig retten.\n\nHilf Mika, so viele Kristalle wie möglich einzusammeln, bevor der Dieb sie erwischt!",
+      "fr": "Un lézard voleur est apparu sur la planète ! Il essaie de voler les cristaux, et Mika doit les sauver à temps.\n\nAide Mika à ramasser le plus de cristaux possible avant que le voleur ne s’en empare !"
     },
     "smc__icy_planet": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Фазовые существа рассказали Мике, что вещества могут переходить из одного состояния в другое под воздействием температуры и давления. Например, вода замерзает при сильном охлаждении, а при нагревании может превращаться в пар.\n\nЧтобы показать, насколько важен температурный баланс для жизни, они создали миниатюрную модель планетной системы и предложили Мике управлять одной из планет.\n\nПомоги Мике правильно расположить и повернуть планету относительно Солнца, чтобы сохранить благоприятную температуру: не дать воде замёрзнуть или слишком сильно нагреться!",
+      "en": "The Phase beings told Mika that substances can change from one state to another when temperature or pressure changes. For example, water can freeze when it gets very cold or turn into vapor when heated.\n\nTo show how important a balanced temperature is for life, they built a miniature model of a planetary system and let Mika control one of its planets.\n\nHelp Mika position and rotate the planet relative to the Sun to keep the temperature just right, so the water doesn't freeze or get too hot!",
+      "pt_BR": "Os seres de fase explicaram a Mika que as substâncias podem mudar de estado quando a temperatura ou a pressão muda. Por exemplo, a água pode congelar com o frio intenso ou virar vapor quando é aquecida.\n\nPara mostrar como o equilíbrio da temperatura é importante para a vida, eles criaram um modelo em miniatura de um sistema planetário e deixaram Mika controlar um dos planetas.\n\nAjude Mika a posicionar e girar o planeta em relação ao Sol para manter uma temperatura adequada, sem deixar a água congelar nem esquentar demais!",
+      "es": "Los seres de fase le explicaron a Mika que las sustancias pueden cambiar de estado cuando varían la temperatura o la presión. Por ejemplo, el agua puede congelarse con mucho frío o convertirse en vapor al calentarse.\n\nPara mostrar lo importante que es el equilibrio de temperatura para la vida, construyeron una maqueta de un sistema planetario y dejaron que Mika controlara uno de sus planetas.\n\n¡Ayuda a Mika a colocar y girar el planeta respecto al Sol para mantener una temperatura adecuada, sin que el agua se congele ni se caliente demasiado!",
+      "de": "Die Phasenwesen erklärten Mika, dass Stoffe ihren Zustand ändern können, wenn sich Temperatur oder Druck verändern. Wasser kann zum Beispiel bei großer Kälte gefrieren oder beim Erhitzen zu Wasserdampf werden.\n\nUm zu zeigen, wie wichtig eine ausgeglichene Temperatur für das Leben ist, bauten sie ein kleines Modell eines Planetensystems. Mika durfte einen der Planeten steuern.\n\nHilf Mika, den Planeten im richtigen Abstand zur Sonne zu halten und ihn passend zu drehen, damit die Temperatur angenehm bleibt und das Wasser weder gefriert noch zu heiß wird!",
+      "fr": "Les êtres de phase ont expliqué à Mika que les substances peuvent changer d’état lorsque la température ou la pression varie. Par exemple, l’eau peut geler quand il fait très froid ou se transformer en vapeur lorsqu’elle chauffe.\n\nPour montrer l’importance d’une température équilibrée pour la vie, ils ont construit une maquette de système planétaire et ont proposé à Mika de contrôler l’une des planètes.\n\nAide Mika à placer et à faire tourner la planète par rapport au Soleil pour garder une température favorable, sans laisser l’eau geler ni trop chauffer !"
     },
     "ngc6822__fossil_search": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Мика увлёкся раскопками и решил исследовать древние окаменелости. Глубоко под землёй спрятано множество удивительных находок, и ему хочется отыскать их все!\n\nПомоги Мике найти все спрятанные ископаемые и пополнить его коллекцию древних находок!",
+      "en": "Mika has become fascinated by digging for ancient fossils. Many amazing discoveries are hidden deep underground, and he wants to find them all!\n\nHelp Mika uncover all the hidden fossils and add them to his collection of ancient finds!",
+      "pt_BR": "Mika ficou fascinado pelas escavações e decidiu procurar fósseis antigos. Muitas descobertas incríveis estão escondidas debaixo da terra, e ele quer encontrar todas!\n\nAjude Mika a encontrar todos os fósseis escondidos e aumentar sua coleção de descobertas antigas!",
+      "es": "A Mika le han encantado las excavaciones y ha decidido buscar fósiles antiguos. ¡Bajo tierra se esconden muchos hallazgos sorprendentes y quiere encontrarlos todos!\n\n¡Ayuda a Mika a descubrir todos los fósiles escondidos y ampliar su colección de hallazgos antiguos!",
+      "de": "Mika ist von Ausgrabungen begeistert und möchte uralte Fossilien erforschen. Tief unter der Erde warten viele erstaunliche Funde darauf, entdeckt zu werden. Er möchte sie alle finden!\n\nHilf Mika, alle versteckten Fossilien zu entdecken und seine Sammlung alter Funde zu vergrößern!",
+      "fr": "Mika s’est passionné pour les fouilles et a décidé de chercher des fossiles anciens. De nombreuses découvertes étonnantes sont cachées sous terre, et il aimerait toutes les trouver !\n\nAide Mika à retrouver tous les fossiles cachés et à enrichir sa collection de trésors du passé !"
     },
     "ngc6822__evolution_order": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Пока Мика изучал историю Вселенной, в музее ему показали, как на протяжении миллионов лет менялись разные животные. Но в нескольких музейных схемах пропали важные звенья, и сотрудники предложили ему разгадать эти загадки.\n\nПомоги Мике восстановить последовательности и выбрать, что должно идти дальше!",
+      "en": "While Mika was learning about the history of the universe, a museum exhibit showed him how different animals changed over millions of years. But some important steps are missing from the displays, and the museum staff asked him to solve the mysteries.\n\nHelp Mika put the stages in the right order and choose what comes next!",
+      "pt_BR": "Enquanto Mika aprendia sobre a história do Universo, no museu mostraram a ele como diferentes animais mudaram ao longo de milhões de anos. Mas algumas etapas importantes desapareceram das exposições, e os funcionários pediram ajuda para resolver esses mistérios.\n\nAjude Mika a colocar as etapas na ordem certa e descobrir o que vem depois!",
+      "es": "Mientras Mika aprendía sobre la historia del universo, en el museo le mostraron cómo cambiaron distintos animales a lo largo de millones de años. Pero faltan algunos eslabones importantes en las exposiciones, y los empleados le pidieron ayuda para resolver estos misterios.\n\n¡Ayuda a Mika a ordenar las etapas y descubrir qué viene después!",
+      "de": "Während Mika etwas über die Geschichte des Universums lernte, zeigte man ihm im Museum, wie sich verschiedene Tiere im Laufe von Millionen Jahren verändert haben. Doch auf einigen Schautafeln fehlen wichtige Entwicklungsschritte. Die Museumsmitarbeiter baten ihn, diese Rätsel zu lösen.\n\nHilf Mika, die Entwicklungsstufen in die richtige Reihenfolge zu bringen und herauszufinden, was als Nächstes kommt!",
+      "fr": "Pendant que Mika découvrait l’histoire de l’Univers, on lui a montré au musée comment différents animaux ont changé au fil de millions d’années. Mais il manque des étapes importantes dans plusieurs présentations, et le personnel lui a proposé de résoudre ces énigmes.\n\nAide Mika à remettre les étapes dans le bon ordre et à trouver ce qui vient ensuite !"
     },
     "ngc6822__dinosaur_eggs": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Мика решил узнать, где на космической станции хранятся яйца динозавров. Но оказалось, что один из сотрудников случайно перепутал яйца разных цветов! Теперь трудно понять, кому они принадлежат.\n\nПомоги Мике рассортировать яйца по цветам и разложить их по нужным инкубаторам, чтобы малыши потом смогли вернуться к своим родителям!",
+      "en": "Mika wanted to see where dinosaur eggs are kept on the space station. But one of the workers accidentally mixed up the eggs of different colors! Now it's hard to tell which eggs belong to which parents.\n\nHelp Mika sort the eggs by color and put them in the right incubators, so the baby dinosaurs can find their parents when they hatch!",
+      "pt_BR": "Mika quis conhecer o lugar onde os ovos de dinossauro são guardados na estação espacial. Mas um dos funcionários misturou sem querer ovos de cores diferentes! Agora está difícil saber a quais pais cada ovo pertence.\n\nAjude Mika a separar os ovos por cor e colocá-los nas incubadoras certas, para que os filhotes encontrem seus pais quando nascerem!",
+      "es": "Mika quiso ver dónde guardan los huevos de dinosaurio en la estación espacial. ¡Pero uno de los trabajadores mezcló por accidente huevos de distintos colores! Ahora es difícil saber a qué padres pertenece cada huevo.\n\n¡Ayuda a Mika a ordenar los huevos por colores y colocarlos en las incubadoras correctas para que las crías encuentren a sus padres cuando nazcan!",
+      "de": "Mika wollte sich ansehen, wo auf der Raumstation die Dinosauriereier aufbewahrt werden. Doch ein Mitarbeiter hat die Eier verschiedener Farben versehentlich durcheinandergebracht! Jetzt ist nicht mehr klar, welche Eier zu welchen Eltern gehören.\n\nHilf Mika, die Eier nach Farben zu sortieren und in die richtigen Brutkästen zu legen, damit die kleinen Dinosaurier nach dem Schlüpfen ihre Eltern wiederfinden!",
+      "fr": "Mika voulait découvrir où l’on garde les œufs de dinosaures dans la station spatiale. Mais un employé a mélangé par erreur des œufs de différentes couleurs ! Maintenant, difficile de savoir à quels parents ils appartiennent.\n\nAide Mika à trier les œufs par couleur et à les placer dans les bonnes couveuses pour que les bébés dinosaures retrouvent leurs parents après l’éclosion !"
     },
     "ngc6822__pizza_fraction": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Пока Мика и его друзья путешествовали по планете, они устали и решили сделать небольшой привал, чтобы перекусить. У них есть вкусная пицца, но её нужно правильно разделить на кусочки.\n\nПомоги Мике и его друзьям поделить пиццу!",
+      "en": "While exploring the planet, Mika and his friends got tired and decided to take a little break for a snack. They have a delicious pizza, but they need to divide it into slices.\n\nHelp Mika and his friends share the pizza!",
+      "pt_BR": "Enquanto exploravam o planeta, Mika e seus amigos ficaram cansados e decidiram fazer uma pequena pausa para comer. Eles têm uma pizza deliciosa, mas precisam dividi-la em pedaços.\n\nAjude Mika e seus amigos a dividir a pizza!",
+      "es": "Mientras exploraban el planeta, Mika y sus amigos se cansaron y decidieron hacer una pequeña parada para comer algo. Tienen una pizza deliciosa, pero necesitan dividirla en porciones.\n\n¡Ayuda a Mika y a sus amigos a repartir la pizza!",
+      "de": "Während Mika und seine Freunde den Planeten erkundeten, wurden sie müde und beschlossen, eine kleine Pause zum Essen zu machen. Sie haben eine leckere Pizza, müssen sie aber in Stücke aufteilen.\n\nHilf Mika und seinen Freunden, die Pizza zu teilen!",
+      "fr": "En explorant la planète, Mika et ses amis se sont fatigués et ont décidé de faire une petite pause pour manger. Ils ont une délicieuse pizza, mais ils doivent la découper en parts.\n\nAide Mika et ses amis à partager la pizza !"
     },
     "m31__roll_ball": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "На планете существ из жидкого металла Мике показали необычный лабиринт, в котором шарик движется под действием силы тяжести. Так местные жители объяснили ему, как гравитация влияет на движение предметов.\n\nПомоги Мике провести шарик через лабиринт и добраться до цели!",
+      "en": "On the planet of the liquid-metal beings, Mika was shown an unusual maze where a ball rolls under the force of gravity. The inhabitants used it to explain how gravity affects the movement of objects.\n\nHelp Mika guide the ball through the maze and reach the goal!",
+      "pt_BR": "No planeta dos seres de metal líquido, mostraram a Mika um labirinto diferente, onde uma bolinha rola pela ação da gravidade. Assim, os habitantes explicaram como a gravidade influencia o movimento dos objetos.\n\nAjude Mika a guiar a bolinha pelo labirinto até chegar ao objetivo!",
+      "es": "En el planeta de los seres de metal líquido, le mostraron a Mika un laberinto especial donde una bola rueda por la fuerza de la gravedad. Así, los habitantes le explicaron cómo influye la gravedad en el movimiento de los objetos.\n\n¡Ayuda a Mika a guiar la bola por el laberinto hasta llegar a la meta!",
+      "de": "Auf dem Planeten der Wesen aus flüssigem Metall zeigte man Mika ein ungewöhnliches Labyrinth. Darin rollt eine Kugel durch die Schwerkraft. So erklärten ihm die Bewohner, wie die Schwerkraft die Bewegung von Gegenständen beeinflusst.\n\nHilf Mika, die Kugel durch das Labyrinth bis zum Ziel zu führen!",
+      "fr": "Sur la planète des êtres de métal liquide, on a montré à Mika un labyrinthe étonnant où une bille roule sous l’effet de la gravité. Les habitants lui ont ainsi expliqué comment la gravité influence le mouvement des objets.\n\nAide Mika à guider la bille à travers le labyrinthe jusqu’à l’arrivée !"
     },
     "m31__magnetic_collector": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Жители из жидкого металла решили показать Мике, как работает магнитное притяжение. Они доверили ему управление специальным манипулятором, который поднимает металлические предметы с помощью магнита.\n\nПомоги Мике управлять магнитным манипулятором и собрать как можно больше металлических предметов!",
+      "en": "The liquid-metal inhabitants decided to show Mika how magnetic attraction works. They let him operate a special crane that uses a magnet to lift metal objects.\n\nHelp Mika control the magnetic crane and collect as many metal objects as possible!",
+      "pt_BR": "Os habitantes de metal líquido decidiram mostrar a Mika como funciona a atração magnética. Eles deixaram Mika controlar um manipulador especial que usa um ímã para levantar objetos de metal.\n\nAjude Mika a controlar o manipulador magnético e recolher o máximo possível de objetos de metal!",
+      "es": "Los habitantes de metal líquido decidieron enseñarle a Mika cómo funciona la atracción magnética. Le permitieron manejar un brazo mecánico especial que utiliza un imán para levantar objetos metálicos.\n\n¡Ayuda a Mika a controlar el brazo magnético y recoger tantos objetos metálicos como puedas!",
+      "de": "Die Bewohner aus flüssigem Metall wollten Mika zeigen, wie magnetische Anziehung funktioniert. Sie ließen ihn einen besonderen Greifarm steuern, der Metallgegenstände mit einem Magneten anhebt.\n\nHilf Mika, den magnetischen Greifarm zu bedienen und so viele Metallgegenstände wie möglich einzusammeln!",
+      "fr": "Les habitants de métal liquide ont décidé de montrer à Mika comment fonctionne l’attraction magnétique. Ils lui ont confié les commandes d’un bras mécanique spécial qui soulève des objets métalliques grâce à un aimant.\n\nAide Mika à piloter le bras magnétique et à ramasser le plus d’objets métalliques possible !"
     },
     "m31__gravity_pinball": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Изучая цивилизацию жидкого магнитного металла, Мика обнаружил их любимую игру. Магнитные жители создали модель планет и играют в пинбол маленькими астероидами. Под действием притяжения астероиды меняют свой путь!\n\nПомоги Мике сыграть вместе с магнитными жителями: направляй астероид, избегай ловушек и наблюдай, как работает гравитация!",
+      "en": "While learning about the liquid-metal magnetic beings, Mika discovered their favorite game. The magnetic inhabitants built a model of a planetary system and play pinball with tiny asteroids. Gravity makes the asteroids change direction!\n\nHelp Mika play with the magnetic inhabitants: guide the asteroid, avoid the traps, and see gravity in action!",
+      "pt_BR": "Enquanto conhecia os seres magnéticos de metal líquido, Mika descobriu o jogo favorito deles. Os habitantes magnéticos criaram um modelo de sistema planetário e jogam pinball com pequenos asteroides. A gravidade faz os asteroides mudarem de direção!\n\nAjude Mika a jogar com os habitantes magnéticos: guie o asteroide, evite as armadilhas e veja a gravidade em ação!",
+      "es": "Mientras conocía a los seres magnéticos de metal líquido, Mika descubrió su juego favorito. Los habitantes magnéticos construyeron un modelo de sistema planetario y juegan al pinball con pequeños asteroides. ¡La gravedad hace que los asteroides cambien de dirección!\n\n¡Ayuda a Mika a jugar con ellos: guía el asteroide, evita las trampas y observa la gravedad en acción!",
+      "de": "Als Mika die Wesen aus flüssigem magnetischem Metall kennenlernte, entdeckte er ihr Lieblingsspiel. Die magnetischen Bewohner haben ein Modell eines Planetensystems gebaut und spielen darin Flipper mit kleinen Asteroiden. Durch die Schwerkraft ändern die Asteroiden ihre Flugbahn!\n\nHilf Mika, mitzuspielen: Lenke den Asteroiden, weiche den Fallen aus und beobachte, wie die Schwerkraft wirkt!",
+      "fr": "En découvrant les êtres magnétiques faits de métal liquide, Mika a trouvé leur jeu préféré. Les habitants magnétiques ont construit un modèle de système planétaire et jouent au flipper avec de petits astéroïdes. Sous l’effet de la gravité, les astéroïdes changent de trajectoire !\n\nAide Mika à jouer avec eux : guide l’astéroïde, évite les pièges et observe la gravité en action !"
     },
     "m31__electric_pulses": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Жители планеты жидкого металла рассказали Мике, как их устройства передают и принимают электрические сигналы. Оказывается, очень важно не только получить сигнал, но и правильно определить последовательность импульсов.\n\nЧтобы Мика лучше разобрался, магнитные жители предложили ему потренироваться на световых сигналах.\n\nПомоги Мике запомнить и правильно повторить последовательности электрических импульсов!",
+      "en": "The liquid-metal inhabitants showed Mika how their devices send and receive electrical signals. He learned that it is important not only to receive a signal, but also to recognize the order of its pulses.\n\nTo help Mika understand, the magnetic inhabitants invited him to practice with flashing lights.\n\nHelp Mika remember and correctly repeat the sequences of electrical pulses!",
+      "pt_BR": "Os habitantes de metal líquido mostraram a Mika como seus aparelhos enviam e recebem sinais elétricos. Ele descobriu que não basta receber um sinal: também é importante reconhecer a ordem dos impulsos.\n\nPara ajudar Mika a entender, os habitantes magnéticos o convidaram a praticar com sinais luminosos.\n\nAjude Mika a memorizar e repetir corretamente as sequências de impulsos elétricos!",
+      "es": "Los habitantes de metal líquido le enseñaron a Mika cómo sus dispositivos envían y reciben señales eléctricas. Descubrió que no basta con recibir una señal: también es importante reconocer el orden de sus impulsos.\n\nPara que Mika lo entendiera mejor, los habitantes magnéticos le propusieron practicar con señales luminosas.\n\n¡Ayuda a Mika a recordar y repetir correctamente las secuencias de impulsos eléctricos!",
+      "de": "Die Bewohner aus flüssigem Metall zeigten Mika, wie ihre Geräte elektrische Signale senden und empfangen. Dabei lernte er, dass es nicht nur auf den Empfang eines Signals ankommt, sondern auch auf die richtige Reihenfolge der Impulse.\n\nDamit Mika das besser versteht, schlugen die magnetischen Bewohner ein Spiel mit Lichtsignalen vor.\n\nHilf Mika, sich die Folgen der elektrischen Impulse zu merken und sie richtig zu wiederholen!",
+      "fr": "Les habitants de métal liquide ont expliqué à Mika comment leurs appareils envoient et reçoivent des signaux électriques. Il a découvert qu'il ne suffit pas de recevoir un signal : il faut aussi reconnaître l'ordre de ses impulsions.\n\nPour l'aider à comprendre, les habitants magnétiques lui ont proposé de s'entraîner avec des signaux lumineux.\n\nAide Mika à mémoriser et à reproduire correctement les séquences d'impulsions électriques !"
     },
     "m33__piano": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Нейронные жители очень любят искусство, творчество и загадки. А Мика привёз с Земли небольшой синтезатор и решил познакомить их с земной музыкой. Но чтобы получилась красивая мелодия, нужно правильно повторить ноты!\n\nПомоги Мике сыграть мелодии на синтезаторе и удивить нейронных жителей!",
+      "en": "The Neuron people love art, creativity, and puzzles. Mika brought a small synthesizer from Earth and decided to introduce them to Earth music. But to make a beautiful melody, he needs to play the notes in the right order!\n\nHelp Mika play melodies on his synthesizer and amaze the Neuron people!",
+      "pt_BR": "Os habitantes neurais adoram arte, criatividade e enigmas. Mika trouxe um pequeno sintetizador da Terra e decidiu apresentar a eles a música terrestre. Mas, para criar uma bela melodia, é preciso tocar as notas na ordem certa!\n\nAjude Mika a tocar melodias no sintetizador e surpreender os habitantes neurais!",
+      "es": "A los habitantes neuronales les encantan el arte, la creatividad y los acertijos. Mika trajo un pequeño sintetizador de la Tierra y decidió mostrarles la música terrestre. ¡Pero para crear una bonita melodía hay que tocar las notas en el orden correcto!\n\n¡Ayuda a Mika a tocar melodías en su sintetizador y sorprender a los habitantes neuronales!",
+      "de": "Die Neuronenbewohner lieben Kunst, Kreativität und Rätsel. Mika hat einen kleinen Synthesizer von der Erde mitgebracht und möchte ihnen die Musik der Erde zeigen. Doch für eine schöne Melodie muss er die Töne in der richtigen Reihenfolge spielen!\n\nHilf Mika, Melodien auf dem Synthesizer zu spielen und die Neuronenbewohner zu überraschen!",
+      "fr": "Les habitants neuronaux adorent l’art, la créativité et les énigmes. Mika a apporté un petit synthétiseur de la Terre et veut leur faire découvrir la musique terrestre. Mais pour créer une jolie mélodie, il faut jouer les notes dans le bon ordre !\n\nAide Mika à jouer des mélodies sur son synthétiseur et à émerveiller les habitants neuronaux !"
     },
     "m33__matching_pairs": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Нейронные жители объяснили Мике, как важно тренировать память и внимание. Они показали ему свою любимую игру: за закрытыми карточками спрятаны разные предметы, и нужно запомнить, где находится каждый из них.\n\nПомоги Мике открывать карточки, запоминать предметы и находить одинаковые пары!",
+      "en": "The Neuron inhabitants explained to Mika why it's important to train his memory and attention. They showed him one of their favorite games: different objects are hidden behind face-down cards, and he needs to remember where each one is.\n\nHelp Mika turn over the cards, remember the objects, and find matching pairs!",
+      "pt_BR": "Os habitantes neurais explicaram a Mika como é importante treinar a memória e a atenção. Eles mostraram um de seus jogos favoritos: diferentes objetos estão escondidos atrás de cartas viradas para baixo, e é preciso lembrar onde está cada um.\n\nAjude Mika a virar as cartas, memorizar os objetos e encontrar os pares iguais!",
+      "es": "Los habitantes neuronales le explicaron a Mika lo importante que es ejercitar la memoria y la atención. Le mostraron uno de sus juegos favoritos: hay distintos objetos escondidos detrás de cartas boca abajo, y debe recordar dónde está cada uno.\n\n¡Ayuda a Mika a dar la vuelta a las cartas, recordar los objetos y encontrar las parejas iguales!",
+      "de": "Die Neuronenbewohner erklärten Mika, wie wichtig es ist, Gedächtnis und Aufmerksamkeit zu trainieren. Sie zeigten ihm eines ihrer Lieblingsspiele: Hinter verdeckten Karten sind verschiedene Gegenstände versteckt. Mika muss sich merken, wo sie liegen.\n\nHilf Mika, die Karten aufzudecken, sich die Gegenstände zu merken und gleiche Paare zu finden!",
+      "fr": "Les habitants neuronaux ont expliqué à Mika combien il est important d'entraîner sa mémoire et son attention. Ils lui ont montré l'un de leurs jeux préférés : différents objets sont cachés derrière des cartes retournées, et il faut se souvenir de leur emplacement.\n\nAide Mika à retourner les cartes, à mémoriser les objets et à retrouver les paires identiques !"
     },
     "m33__space_rebus": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Нейронные жители очень любят разгадывать сложные загадки. Одна из их любимых забав — ребусы, в которых за картинками и буквами прячутся слова.\n\nМика решил попробовать свои силы в этой необычной игре.\n\nПомоги Мике разгадать ребусы нейронных жителей и показать, как хорошо он умеет решать загадки!",
+      "en": "The Neuron inhabitants love solving tricky puzzles. One of their favorite games is rebus puzzles, where pictures and letters hide words.\n\nMika decided to try this unusual game.\n\nHelp Mika solve the Neuron inhabitants' rebus puzzles and show how good he is at solving riddles!",
+      "pt_BR": "Os habitantes neurais adoram resolver enigmas difíceis. Uma das brincadeiras favoritas deles são os rebus, em que figuras e letras escondem palavras.\n\nMika decidiu experimentar esse jogo diferente.\n\nAjude Mika a decifrar os rebus dos habitantes neurais e mostrar como ele é bom em resolver enigmas!",
+      "es": "A los habitantes neuronales les encanta resolver acertijos difíciles. Uno de sus juegos favoritos son los jeroglíficos, en los que las imágenes y las letras esconden palabras.\n\nMika decidió probar este juego tan curioso.\n\n¡Ayuda a Mika a resolver los jeroglíficos de los habitantes neuronales y demostrar lo bien que sabe resolver acertijos!",
+      "de": "Die Neuronenbewohner lieben knifflige Rätsel. Besonders gern lösen sie Bilderrätsel, bei denen sich Wörter hinter Bildern und Buchstaben verstecken.\n\nMika möchte dieses ungewöhnliche Spiel ausprobieren.\n\nHilf Mika, die Bilderrätsel der Neuronenbewohner zu lösen und zu zeigen, wie gut er rätseln kann!",
+      "fr": "Les habitants neuronaux adorent résoudre des énigmes difficiles. L'un de leurs jeux préférés consiste à résoudre des rébus où des images et des lettres cachent des mots.\n\nMika a décidé d'essayer ce jeu original.\n\nAide Mika à résoudre les rébus des habitants neuronaux et à montrer son talent pour les énigmes !"
     },
     "m33__neural_math": {
-      "ru": "",
-      "en": "",
-      "pt_BR": "",
-      "es": "",
-      "de": "",
-      "fr": ""
+      "ru": "Нейронные жители поделились с Микой своим секретом. Они не видят будущее напрямую, но умеют предугадывать события: изучают прошлое, находят закономерности и рассчитывают вероятности.\n\nОказывается, в основе этого удивительного умения лежит математика!\n\nПомоги Мике решить числовые загадки и научиться находить закономерности вместе с нейронными жителями!",
+      "en": "The Neuron inhabitants shared their secret with Mika. They cannot see the future directly, but they can predict what might happen by studying the past, spotting patterns, and calculating probabilities.\n\nIt turns out that mathematics is the key to this amazing skill!\n\nHelp Mika solve number puzzles and learn to spot patterns with the Neuron inhabitants!",
+      "pt_BR": "Os habitantes neurais contaram seu segredo a Mika. Eles não conseguem ver o futuro diretamente, mas podem prever o que talvez aconteça ao estudar o passado, descobrir padrões e calcular probabilidades.\n\nE a matemática é a base dessa habilidade incrível!\n\nAjude Mika a resolver desafios com números e aprender a identificar padrões com os habitantes neurais!",
+      "es": "Los habitantes neuronales compartieron su secreto con Mika. No pueden ver el futuro directamente, pero sí imaginar qué podría pasar al estudiar el pasado, encontrar patrones y calcular probabilidades.\n\n¡Resulta que las matemáticas son la base de esta habilidad increíble!\n\n¡Ayuda a Mika a resolver acertijos numéricos y aprender a reconocer patrones con los habitantes neuronales!",
+      "de": "Die Neuronenbewohner verrieten Mika ihr Geheimnis. Sie können die Zukunft nicht direkt sehen, aber sie können mögliche Ereignisse vorhersagen: Sie untersuchen die Vergangenheit, erkennen Muster und berechnen Wahrscheinlichkeiten.\n\nHinter dieser erstaunlichen Fähigkeit steckt die Mathematik!\n\nHilf Mika, Zahlenrätsel zu lösen und gemeinsam mit den Neuronenbewohnern Muster zu erkennen!",
+      "fr": "Les habitants neuronaux ont confié leur secret à Mika. Ils ne voient pas directement l’avenir, mais peuvent prévoir ce qui pourrait arriver en étudiant le passé, en repérant des régularités et en calculant des probabilités.\n\nEn fait, les mathématiques sont à la base de ce talent étonnant !\n\nAide Mika à résoudre des énigmes avec des nombres et à repérer des régularités avec les habitants neuronaux !"
     }
   }
 }

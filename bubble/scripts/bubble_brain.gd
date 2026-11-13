@@ -61,6 +61,12 @@ var _room_emotion_clock: float = 0.0
 var _room_emotion_cycle: int = 0
 var _surface_heading: float = 0.0
 var _room_sleeping: bool = false
+var _render_quality_low: bool = false
+var _perf_warmup: float = 2.5
+var _perf_elapsed: float = 0.0
+var _perf_frames: int = 0
+var _slow_windows: int = 0
+var _fast_windows: int = 0
 # MIKA_BUBBLE_SEAMLESS_SLEEP_V8_4_7
 
 # Action intent is a separate layer, not an asset per motion.
@@ -315,6 +321,7 @@ func play_action(id: String) -> void:
     _actor = _scene_for(group_for(id)).instantiate()
     _actor.name = "ActiveVisual"
     add_child(_actor)
+    _apply_render_quality(_actor)
     _attach_face()
     current_action = id
     current_group = group_for(id)
@@ -392,6 +399,7 @@ func _travel_delta(id: String) -> Vector2:
 func _process(delta: float) -> void:
     if paused or not is_instance_valid(_actor):
         return
+    _sample_mobile_performance(delta)
     var dt: float = minf(delta, 0.04)
     if is_instance_valid(_outgoing):
         _blend_time += dt
@@ -491,6 +499,47 @@ func set_paused(value: bool) -> void:
         _face_rig.set_process(not value)
     if is_instance_valid(_outgoing):
         _outgoing.set_process(not value)
+
+func set_render_quality_low(value: bool) -> void:
+    if _render_quality_low == value:
+        return
+    _render_quality_low = value
+    _apply_render_quality(_actor)
+    _apply_render_quality(_outgoing)
+
+func is_render_quality_low() -> bool:
+    return _render_quality_low
+
+func _apply_render_quality(target: Node) -> void:
+    if not is_instance_valid(target):
+        return
+    var surface: ColorRect = target.get_node_or_null("Body/Surface") as ColorRect
+    if surface != null and surface.material is ShaderMaterial:
+        (surface.material as ShaderMaterial).set_shader_parameter("detail_level", 0.0 if _render_quality_low else 1.0)
+
+func _sample_mobile_performance(delta: float) -> void:
+    if not OS.has_feature("mobile"):
+        return
+    if _perf_warmup > 0.0:
+        _perf_warmup -= delta
+        return
+    _perf_elapsed += delta
+    _perf_frames += 1
+    if _perf_elapsed < 1.25:
+        return
+    var measured_fps: float = float(_perf_frames) / maxf(_perf_elapsed, 0.001)
+    _perf_elapsed = 0.0
+    _perf_frames = 0
+    if not _render_quality_low:
+        _slow_windows = _slow_windows + 1 if measured_fps < 52.0 else 0
+        if _slow_windows >= 2:
+            set_render_quality_low(true)
+            _slow_windows = 0
+    else:
+        _fast_windows = _fast_windows + 1 if measured_fps > 56.0 else 0
+        if _fast_windows >= 6:
+            set_render_quality_low(false)
+            _fast_windows = 0
 
 func set_playback_rate(value: float) -> void:
     playback_rate = value
