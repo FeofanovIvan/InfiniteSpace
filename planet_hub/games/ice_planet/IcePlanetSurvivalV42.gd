@@ -60,6 +60,7 @@ var _v42_sfx: AudioStreamPlayer
 var _v42_intro_played: bool = false
 var _v42_danger_announced: bool = false
 var _v42_warning_cooldown: float = 0.0
+var _v42_last_steering_ms: int = -1000000
 
 func _create_flight_controls() -> void:
     # Original flight joystick's input behavior and hit testing; only the
@@ -113,9 +114,12 @@ func _draw() -> void:
 func _restart_survival() -> void:
     _v42_danger_announced = false
     _v42_warning_cooldown = 0.0
+    _v42_last_steering_ms = -1000000
     super._restart_survival()
 
 func _process(delta: float) -> void:
+    if absf(_left_vector.x) > 0.15 or absf(_right_vector.x) > 0.15:
+        _v42_last_steering_ms = Time.get_ticks_msec()
     if _v42_warning_cooldown > 0.0:
         _v42_warning_cooldown = maxf(0.0, _v42_warning_cooldown - delta)
     super._process(delta)
@@ -131,14 +135,17 @@ func _advance_survival(delta: float) -> void:
         _v42_danger_announced = false
     elif not _v42_danger_announced and _danger_tick_progress >= 2.0 and _v42_warning_cooldown <= 0.0:
         _v42_danger_announced = true
-        _v42_warning_cooldown = 6.0
+        _v42_warning_cooldown = 10.0
         _v42_sound(false)
         _v42_speak("heat" if _actual_distance < limits.x else "ice")
 
 func _award_crystal() -> void:
     super._award_crystal()
     _v42_sound(true)
-    if _earned_crystals == 1 or _earned_crystals % 3 == 0:
+    # Timed survival may award a crystal while the player is idle. The chime
+    # remains, but spoken congratulations require recent joystick interaction.
+    var steered_recently: bool = Time.get_ticks_msec() - _v42_last_steering_ms <= 10000
+    if steered_recently and (_earned_crystals == 1 or _earned_crystals % 3 == 0):
         _v42_speak("crystal")
 
 func _lose_planet() -> void:
@@ -164,6 +171,10 @@ func _v42_speak(key: String) -> void:
         return
     var voice: Node = get_node_or_null("/root/MikaVoice")
     if voice == null or not voice.has_method("speak_text"):
+        return
+    # Drop stale introductions and congratulations if another voice is active;
+    # warnings and final loss messages retain their existing priority.
+    if (key == "intro" or key == "crystal") and voice.has_method("is_reading") and bool(voice.call("is_reading")):
         return
     var language: String = _interface_lang.substr(0, 2)
     var dictionary: Dictionary = SPEECH.get(language, SPEECH["en"])

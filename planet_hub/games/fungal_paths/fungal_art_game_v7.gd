@@ -11,6 +11,7 @@ const HUD: Script = preload("res://planet_hub/scripts/bottom_hud.gd")
 const GLYPH: Script = preload("res://simulator_ui/back_arrow_glyph.gd")
 const KIT: Script = preload("res://simulator_ui/scripts/mika_minigame_ui_kit_v11.gd")
 const FINISH_SOUND: AudioStream = preload("res://learning/audio/sfx/bonus_wheel_win.mp3")
+const FUNGAL_AUDIO: Script = preload("res://planet_hub/games/fungal_paths/FungalPathsAudio.gd")
 
 const WORDS: Dictionary = {
     "ru": {"title":"ГРИБНЫЕ ПУТИ", "sub":"Помоги Бабблу добраться до корабля!", "plan":"Соединяй точки. Затем нажми Play", "run":"Баббл идёт по твоему маршруту", "lost":"Баббл потерялся! Попробуй ещё", "win":"Баббл добрался до корабля!", "play":"▶ Играть", "restart":"↻ Заново", "replay":"↻ Повторить", "exit":"Выйти"},
@@ -35,6 +36,7 @@ var _status: Label
 var _play: Button
 var _reset: Button
 var _sound: AudioStreamPlayer
+var _fungal_audio: Node
 var _win_overlay: ColorRect
 var _win_panel: Panel
 var _win_title: Label
@@ -171,7 +173,10 @@ func _ready() -> void:
     _create_victory_dialog()
     _sound = AudioStreamPlayer.new()
     _sound.bus = "SFX"
+    _sound.volume_db = -7.0
     add_child(_sound)
+    _fungal_audio = FUNGAL_AUDIO.new() as Node
+    add_child(_fungal_audio)
     _read_locale()
     _new_pair()
     _find_host_back()
@@ -372,6 +377,7 @@ func _reset_route() -> void:
 
 func _restart_random_pair() -> void:
     # One button creates a new puzzle. Keep the entrances on the left and ship on the right.
+    _fungal_audio.call("round_restarted")
     _new_pair()
 
 func _add_route_node(node_id: String) -> void:
@@ -383,6 +389,7 @@ func _add_route_node(node_id: String) -> void:
     if endpoint == _goal:
         return
     _route.append(node_id)
+    _fungal_audio.call("point_added", _route.size())
     _planner.set("route", _route)
     _planner.refresh()
     _translate()
@@ -391,6 +398,7 @@ func _undo_route_node() -> void:
     if _playing or _finished or _route.size() <= 2:
         return
     _route.pop_back()
+    _fungal_audio.call("point_removed")
     _planner.set("route", _route)
     _planner.refresh()
     _translate()
@@ -399,6 +407,7 @@ func _play_route() -> void:
     if _playing or _finished:
         return
     _playing = true
+    _fungal_audio.call("route_started")
     _lost = false
     _current = _start
     _target = ""
@@ -483,6 +492,7 @@ func _process(delta: float) -> void:
                 _playing = false
                 _sound.stream = FINISH_SOUND
                 _sound.play()
+                _fungal_audio.call("bubble_won", _locale)
                 _bubble.call("set_room_locomotion", "idle", 0.0, 0.0)
                 _translate()
                 _show_victory_dialog()
@@ -509,9 +519,12 @@ func _process(delta: float) -> void:
             _lost_visits[key] = int(_lost_visits.get(key, 0)) + 1
         else:
             _play_index += 1
+            if _current != _goal and _play_index < _route.size() - 1:
+                _fungal_audio.call("junction_reached", _play_index)
 
 func _enter_lost() -> void:
     _lost = true
+    _fungal_audio.call("bubble_lost", _locale)
     _lost_center = _current
     _lost_visits.clear()
     _planner.set("failed", true)

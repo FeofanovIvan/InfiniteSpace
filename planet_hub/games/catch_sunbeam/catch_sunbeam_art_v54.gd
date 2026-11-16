@@ -15,6 +15,7 @@ const SUCCESS_SFX: AudioStream = preload("res://learning/audio/sfx/correct.ogg")
 const TOUCH_SFX: AudioStream = preload("res://learning/audio/sfx/connect_point.ogg")
 const FULL_SFX: AudioStream = preload("res://learning/audio/sfx/coin.ogg")
 const WRONG_SFX: AudioStream = preload("res://learning/audio/sfx/wrong.ogg")
+const SUNBEAM_FEEDBACK: Script = preload("res://planet_hub/games/catch_sunbeam/SunbeamFeedback.gd")
 
 const FLOWER_COUNT: int = 6
 const HITS_PER_BATTERY: int = 15
@@ -48,6 +49,7 @@ var _outer_back: Control
 var _counter: Control
 var _reset: Button
 var _audio: AudioStreamPlayer
+var _voice_feedback: Node
 var _locale: String = "en"
 var _rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -65,6 +67,8 @@ var _charge: float = 0.0
 var _streak: int = 0
 var _cycles: int = 0
 var _missed: int = 0
+var _miss_chain: int = 0
+var _last_wrong_press_ms: int = -100000
 var _flower_openings: Array[float] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 var _bloom_timers: Array[float] = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 var _intro_spoken: bool = false
@@ -147,6 +151,8 @@ func _ready() -> void:
     _audio = AudioStreamPlayer.new()
     _audio.bus = "SFX"
     add_child(_audio)
+    _voice_feedback = SUNBEAM_FEEDBACK.new() as Node
+    add_child(_voice_feedback)
 
     _read_locale()
     _reset_all()
@@ -206,6 +212,7 @@ func _read_locale() -> void:
         _locale = "en"
 
 func _on_language_changed(_code: String) -> void:
+    _voice_feedback.call("stop_feedback")
     _read_locale()
     _translate()
     _layout_game()
@@ -230,6 +237,8 @@ func _update_labels() -> void:
         _counter.set("crystal_count", roundi(_charge))
 
 func _reset_all() -> void:
+    if _voice_feedback != null:
+        _voice_feedback.call("stop_feedback")
     _phase = "gap"
     _phase_time = 0.0
     _ray_duration = RAY_BASE_SECONDS
@@ -243,6 +252,8 @@ func _reset_all() -> void:
     _streak = 0
     _cycles = 0
     _missed = 0
+    _miss_chain = 0
+    _last_wrong_press_ms = -100000
     _flower_openings = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     _bloom_timers = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
     _message = "ready"
@@ -299,6 +310,16 @@ func _on_bud_pressed(index: int) -> void:
         _play_sound(TOUCH_SFX)
     else:
         _play_sound(WRONG_SFX)
+        # Only actual mistaken taps count toward spoken encouragement.
+        # A missed ray, with no player interaction, must never speak.
+        var now_ms: int = Time.get_ticks_msec()
+        if now_ms - _last_wrong_press_ms > 5500:
+            _miss_chain = 0
+        _last_wrong_press_ms = now_ms
+        _miss_chain += 1
+        if _miss_chain >= 3:
+            _miss_chain = 0
+            _voice_feedback.call("encourage", _locale)
 
 func _tick_logic(delta: float) -> void:
     var dt: float = minf(maxf(delta, 0.0), 0.08)
@@ -341,6 +362,8 @@ func _capture_target() -> void:
     _ray_captured = true
     _streak += 1
     _captured += 1
+    _miss_chain = 0
+    _last_wrong_press_ms = -100000
     _charge = minf(BATTERY_CAPACITY, BATTERY_CAPACITY * float(_captured) / float(HITS_PER_BATTERY))
     _board.call("pulse_from", _target_index)
     _play_sound(SUCCESS_SFX)
@@ -353,6 +376,8 @@ func _capture_target() -> void:
         _phase_time = 0.0
         _play_sound(FULL_SFX)
         _vibrate(100)
+    if _captured % 5 == 0:
+        _voice_feedback.call("praise", _locale)
     _update_labels()
 
 func _finish_ray() -> void:

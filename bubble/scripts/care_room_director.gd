@@ -14,6 +14,8 @@ var _embedded_teeth: Node2D = null
 const JOYSTICK_SCRIPT := preload("res://bubble/scripts/room_joystick.gd")
 const CONTEXT_ACTION_SCRIPT := preload("res://bubble/scripts/care_context_stop.gd")
 const FACE_SCENE := preload("res://bubble/scenes/bubble_face.tscn")
+const BUBBLE_CARE_AUDIO: Script = preload("res://bubble/scripts/BubbleCareAudio.gd")
+# MIKA_BUBBLE_CARE_MUSIC_FOLEY_V1
 # MIKA_ROOM_V8_INTEGRATION
 # MIKA_ROOM_V8_2_FEED_FLIGHT
 # MIKA_FEED_ONLY_EXISTING_FX_V83_1
@@ -75,6 +77,7 @@ var _hud: Control
 var _joystick
 var _context_use_action: Control
 var _care_sound: AudioStreamPlayer
+var _bubble_care_audio: Node
 var _action_buttons: Dictionary = {}
 var _use_button: Button
 var _status: Label
@@ -213,6 +216,9 @@ func _ready() -> void:
 	bubble.play_action("idle")
 	_update_nearest()
 	process_priority = 150
+	_bubble_care_audio = BUBBLE_CARE_AUDIO.new()
+	_bubble_care_audio.name = "BubbleCareRoomMusicAndFoley"
+	add_child(_bubble_care_audio)
 
 func _make_style(fill: Color, edge: Color, radius: int = 17) -> StyleBoxFlat:
 	var style := StyleBoxFlat.new()
@@ -1064,6 +1070,7 @@ func _begin_care_action() -> void:
 	_v8_eating = false
 	_status.text = "Баббл: " + str(_zone(_target_id)["button"])
 	room_v8.call("set_action_fx", _target_id, true)
+	_bubble_care_audio.call("start_action", _target_id)
 	# Do not force a new face pose at the dental transition.
 	if _target_id != "mirror":
 		bubble.clear_expression_override()
@@ -1140,6 +1147,7 @@ func _v8_update_station_care(delta: float) -> void:
 	_v8_care_clock += delta
 	if _target_id == "food":
 		var phase: String = str(room_v8.call("feeding_phase"))
+		_bubble_care_audio.call("update_feed_phase", phase)
 		avatar.position = _feed_station_point
 		_feed_update_absorption(phase)
 		bubble.set_room_heading(PI)
@@ -1267,6 +1275,7 @@ func _water_update_absorption(delta: float) -> void:
 func _water_begin_lower() -> void:
 	if _target_id != "water" or _mode == "water_lower":
 		return
+	_bubble_care_audio.call("stop_action")
 	_mode = "water_lower"
 	_water_motion_from = avatar.position
 	_water_motion_t = 0.0
@@ -1317,6 +1326,7 @@ func _feed_set_solid(enabled: bool) -> void:
 func _feed_begin_lower() -> void:
 	if _target_id != "food" or _mode == "food_lower":
 		return
+	_bubble_care_audio.call("stop_action")
 	_mode = "food_lower"
 	_feed_motion_from = avatar.position
 	_feed_motion_t = 0.0
@@ -1345,6 +1355,7 @@ func _show_tool(path: String, scale_value: float) -> void:
 func _update_progress(value: float) -> void:
 	if _mode != "care" or _focus_finished: return
 	_progress.value = value*100.0
+	_bubble_care_audio.call("on_care_progress", _target_id, value)
 	if _target_id == "mirror" and value>=0.92:
 		_on_care_completed()
 
@@ -1352,6 +1363,7 @@ func _on_care_completed() -> void:
 	if is_instance_valid(_embedded_teeth):
 		_embedded_teeth.stop(true)
 	if _mode != "care" or _focus_finished: return
+	_bubble_care_audio.call("stop_action")
 	_focus_finished = true
 	_set_manual_care_stop(false)
 	_care_play_sound("correct.ogg", 1.06)
@@ -1374,6 +1386,8 @@ func _on_care_completed() -> void:
 		bubble.set_room_emotion("happy", 1.8)
 
 func _stop_care(reset_camera: bool = true) -> void:
+	if is_instance_valid(_bubble_care_audio):
+		_bubble_care_audio.call("stop_action")
 	if is_instance_valid(_embedded_teeth):
 		_embedded_teeth.stop()
 	_set_manual_care_stop(false)

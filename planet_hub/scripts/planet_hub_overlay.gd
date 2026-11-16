@@ -40,6 +40,7 @@ var _v104_game_cards: Array[Control] = []
 var _v1051_game_layer: Control
 var _v1051_viewport: SubViewport
 var _v1051_playing: bool = false
+var _station_race_active: bool = false
 var _bubble_ball_layer: Control
 var _bubble_ball_card: Control
 var _bubble_ball_active: bool = false
@@ -622,6 +623,7 @@ func _v104_refresh_game_cards() -> void:
 			hit.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 			hit.pressed.connect(_v1051_open_existing_game.bind(game_id))
 	_bubble_ball_make_card()
+	_mika_station_race_add_card()
 
 
 
@@ -882,6 +884,9 @@ func _v1051_open_existing_game(game_id: String) -> void:
 
 
 func _v1051_return_to_cards() -> void:
+	if _station_race_active:
+		_mika_station_race_close()
+		return
 	if not _v1051_playing:
 		return
 	_v1051_playing = false
@@ -915,3 +920,97 @@ func _v108_ensure_entry_arrow(card: Control, is_representative: bool) -> void:
 		return
 	arrow.set("representative_mode", is_representative)
 	card.add_child(arrow)
+
+# MIKA_STATION_RACING_NATIVE_V2 — separate game session, no educational portal.
+func _mika_station_race_add_card() -> void:
+	if not bool(_meta.get("is_station", false)):
+		return
+	if not _planet_id in ["st_mw", "st_lmc", "st_smc", "st_ngc6822", "st_m31", "st_m33"]:
+		return
+	if not ResourceLoader.exists("res://space_racing/SpaceRace.tscn"):
+		push_warning("Space Racing scene not installed")
+		return
+	var card: Control = V104_GAME_CARD_SCRIPT.new() as Control
+	card.name = "GamePreview_station__space_race"
+	card.mouse_filter = Control.MOUSE_FILTER_STOP
+	card.set("card_title", _v104_card_localized({"ru":"Космические гонки", "en":"Space Racing", "fr":"Course spatiale", "de":"Weltraumrennen", "es":"Carrera espacial", "pt_BR":"Corrida espacial"}))
+	card.set("card_subtitle", "")
+	card.set("card_description", _v104_card_localized({"ru":"Три круга против четырёх соперников.", "en":"Three laps against four rivals.", "fr":"Trois tours contre quatre adversaires.", "de":"Drei Runden gegen vier Gegner.", "es":"Tres vueltas contra cuatro rivales.", "pt_BR":"Três voltas contra quatro rivais."}))
+	card.set("accent", Color("55cdff"))
+	card.set("image_fit_mode", "contain")
+	card.set("image_path", "res://planet_hub/cards/game_icons/station__space_race.png")
+	card.set("art_bay_enabled", true)
+	card_row.add_child(card)
+	_v104_game_cards.append(card)
+	_v108_ensure_entry_arrow(card, false)
+	var button: Button = Button.new()
+	button.name = "OpenStationRace"
+	button.flat = true
+	button.focus_mode = Control.FOCUS_NONE
+	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	button.tooltip_text = str(card.get("card_title"))
+	for state in ["normal", "hover", "pressed", "disabled", "focus"]:
+		button.add_theme_stylebox_override(state, StyleBoxEmpty.new())
+	card.add_child(button)
+	button.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	button.pressed.connect(_mika_station_race_open)
+
+
+func _mika_station_race_open() -> void:
+	if _v1051_playing or _station_race_active or not bool(_meta.get("is_station", false)):
+		return
+	var scene_path: String = "res://space_racing/SpaceRace.tscn"
+	if not ResourceLoader.exists(scene_path):
+		push_warning("Station Racing scene missing: " + scene_path)
+		return
+	var packed: PackedScene = load(scene_path) as PackedScene
+	if packed == null:
+		return
+	if not is_instance_valid(_v1051_game_layer):
+		_v1051_setup_runner()
+	if not is_instance_valid(_v1051_viewport) or _v1051_viewport.get_child_count() != 0:
+		return
+	var instance: Node = packed.instantiate()
+	if instance == null or not instance.has_signal("exit_requested"):
+		if instance != null:
+			instance.queue_free()
+		push_error("Station Racing: invalid game scene or missing exit_requested")
+		return
+	instance.connect("exit_requested", Callable(self, "_mika_station_race_close"), CONNECT_DEFERRED)
+	# RaceSession.take() consumes this before the game first frame.
+	get_tree().root.set_meta("mika_race_session_v8", {
+		"planet": _planet_id,
+		"system": str(_meta.get("system_id", "mw")),
+		"difficulty": "normal",
+		"embedded": true,
+		"return_scene": "res://scenes/main.tscn"
+	})
+	_mouse_scroll_drag = false
+	_station_race_active = true
+	_v1051_playing = true
+	scroll.hide()
+	hud.hide()
+	if is_instance_valid(_top_info):
+		_top_info.hide()
+	_v1051_game_layer.show()
+	_v1051_game_layer.move_to_front()
+	_v1051_viewport.add_child(instance)
+
+
+func _mika_station_race_close() -> void:
+	if not _station_race_active:
+		return
+	_station_race_active = false
+	_v1051_playing = false
+	if get_tree().root.has_meta("mika_race_session_v8"):
+		get_tree().root.remove_meta("mika_race_session_v8")
+	if is_instance_valid(_v1051_viewport):
+		for instance in _v1051_viewport.get_children():
+			_v1051_viewport.remove_child(instance)
+			instance.queue_free()
+	_v1051_game_layer.hide()
+	scroll.show()
+	hud.show()
+	if is_instance_valid(_top_info):
+		_top_info.show()
+	_layout_ui()

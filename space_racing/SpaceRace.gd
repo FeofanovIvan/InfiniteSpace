@@ -1,4 +1,6 @@
 extends Node2D
+signal exit_requested
+# MIKA_STATION_RACING_NATIVE_V2
 ## Standalone MW racing prototype. No changes to Main.
 const Generator = preload("res://space_racing/RaceRouteGenerator.gd")
 const Solar = preload("res://scripts/SolarSystem.gd")
@@ -15,6 +17,10 @@ const WALL_SPEED_LOSS: float = 0.78
 const CONTACT_RADIUS: float = 45.0
 const RaceProgress = preload("res://space_racing/RaceProgress.gd")
 const RaceSession = preload("res://space_racing/RaceSession.gd")
+const Campaign = preload("res://space_racing/RaceCampaign.gd")
+const RaceStartAudio = preload("res://space_racing/RaceStartAudio.gd")
+# MIKA_RACE_START_MUSIC_AND_LIGHT_SFX_V1
+# MIKA_STATION_RACING_CAMPAIGN_V3
 var _solar: Node2D
 var _stars: Node2D
 var _ship: Node2D
@@ -55,18 +61,44 @@ var _race_position: int = 1
 var _lap_elapsed: float = 0.0
 var _best_lap: float = 0.0
 var _planet_id: String = "mw_station"
+var _embedded_station_race: bool = false
+var _system_id: String = "mw"
 var _difficulty: String = "normal"
 var _return_scene: String = "res://scenes/main.tscn"
 var _scoreboard: Control
 var _race_elapsed: float = 0.0
 var _exit_button: Button
+var _campaign_requested: String = "st_mw"
+var _campaign_waiting: bool = false
+var _campaign_modal: Control
+var _race_audio: Node
+var _race_red_pending: bool = false
+var _race_green_hold: float = 0.0
 
 func _ready() -> void:
+	_race_audio = RaceStartAudio.new()
+	_race_audio.name = "StationRaceMusicAndTrafficLights"
+	add_child(_race_audio)
 	_stars = Stars.new()
 	add_child(_stars)
-	_solar = Solar.new()
+	var incoming_session: Dictionary = get_tree().root.get_meta("mika_race_session_v8", {})
+	_campaign_requested = str(incoming_session.get("planet", "st_mw"))
+	var target: String = Campaign.target_for(_campaign_requested)
+	var locked: bool = target != _campaign_requested
+	incoming_session["planet"] = target
+	incoming_session["system"] = Campaign.system_for(target)
+	incoming_session["difficulty"] = Campaign.difficulty_for(target)
+	get_tree().root.set_meta("mika_race_session_v8", incoming_session)
+	set_meta("campaign_locked", locked)
+	var incoming_system: String = str(incoming_session.get("system", "mw"))
+	if incoming_system != "mw":
+		_solar = Node2D.new()
+		_solar.set_script(preload("res://space_racing/RaceGalaxyBackdrop.gd"))
+		_solar.set("system_id", incoming_system)
+	else:
+		_solar = Solar.new()
+		_solar.set_process(false) # Fixed orbits during races.
 	add_child(_solar)
-	_solar.set_process(false) # Keep orbital phases fixed; camera updates still work.
 	_route_layer = Node2D.new()
 	_route_layer.set_script(preload("res://space_racing/RaceVisual.gd"))
 	add_child(_route_layer)
@@ -133,6 +165,9 @@ func _ready() -> void:
 	_hud.add_child(_exit_button)
 	var session: Dictionary = RaceSession.take()
 	_planet_id = str(session.get("planet", "mw_station"))
+	_embedded_station_race = bool(session.get("embedded", false))
+	_system_id = str(session.get("system", "mw"))
+	_rivals.call("set_system_id", _system_id)
 	_difficulty = str(session.get("difficulty", "normal"))
 	_return_scene = str(session.get("return_scene", "res://scenes/main.tscn"))
 	_best_lap = RaceProgress.best_lap(_planet_id, _difficulty)
@@ -143,6 +178,10 @@ func _ready() -> void:
 	_seed = int(Time.get_unix_time_from_system())
 	_layout()
 	_apply_route()
+	_rivals.set("active", false)
+	if bool(get_meta("campaign_locked", false)):
+		_campaign_waiting = true
+		_mika_campaign_dialog("Сначала выиграйте гонку в %s.\nНачать её сейчас?\nПосле выхода вы вернётесь на исходную станцию." % Campaign.name_for(_planet_id), "Начать", _mika_campaign_confirm, "Отмена", _leave_race)
 	get_viewport().size_changed.connect(_layout)
 
 func _new_route() -> void:
@@ -166,6 +205,11 @@ func _apply_route() -> void:
 	_stick.call("clear_input")
 	_clock = 0.0
 	_countdown = 3.0
+	_race_red_pending = true
+	_race_green_hold = 0.0
+	_race_audio.call("stop_all")
+	_lights.visible = true
+	_lights.set("remaining", 3.0)
 	_running = false
 	_lap_complete = false
 	_laps_finished = 0
@@ -175,6 +219,9 @@ func _apply_route() -> void:
 	_last_progress_index = 0
 	_race_position = 1
 	_rivals.call("configure", _route, _track_width, _seed + _variation * 104729)
+	# Increase rival speed slightly at each successive station.
+	for racer in _rivals.get("racers"):
+		racer["base_speed"] = float(racer["base_speed"]) * Campaign.speed_multiplier(_planet_id)
 	_progress_index = 0
 	_half_lap_reached = false
 	_nearest_index = 0
@@ -198,46 +245,82 @@ func _layout() -> void:
 	if _hud == null:
 		return
 	_hud.size = s
-	var scale_factor: float = clampf(minf(s.x / 1280.0, s.y / 720.0), 0.67, 1.25)
-	_map.scale = Vector2.ONE * (0.74 if s.x < 850.0 else 0.87) * scale_factor
-	_map.position = Vector2(12, 12)
+	# Use the same safe-area geometry as the main flight screen.
+	var safe: Rect2 = MobileLocale.safe_rect(s)
+	var scale_factor: float = clampf(minf(safe.size.x / 1280.0, safe.size.y / 720.0), 0.45, 1.25)
+	# 230 scoreboard + 158 laps + 200 joystick + 3 x 12 clearance.
+	scale_factor = minf(scale_factor, safe.size.y / 630.0)
+	var gap: float = 12.0 * scale_factor
+	var edge: float = 12.0 * scale_factor
+	var map_scale: float = (0.74 if safe.size.x < 850.0 else 0.87) * scale_factor
+	_map.scale = Vector2.ONE * map_scale
+	_map.position = safe.position + Vector2(edge, edge)
 	_map_route.scale = _map.scale
 	_map_route.position = _map.position
+
+	# The joystick is anchored to the lower-right SAFE corner.
 	_stick.scale = Vector2.ONE * scale_factor
-	_stick.position = Vector2(s.x - 205.0 * scale_factor, s.y - 200.0 * scale_factor)
-	_info.position = Vector2(14.0, s.y - 44.0)
-	_info.size = Vector2(s.x - 28.0, 36.0)
-	_lights.position = Vector2(s.x * 0.5 - 97.0, 12.0)
-	_lights.size = Vector2(194.0, 70.0)
-	# Vertical lap rail shares the joystick's right-side control axis.
+	_stick.position = Vector2(safe.end.x - 205.0 * scale_factor, safe.end.y - 200.0 * scale_factor - edge)
 	var stick_axis_x: float = _stick.position.x + 100.0 * scale_factor
+	_info.position = Vector2(safe.position.x + edge, safe.end.y - 44.0 * scale_factor)
+	_info.size = Vector2(safe.size.x - 2.0 * edge, 36.0 * scale_factor)
+	_lights.position = Vector2(s.x * 0.5 - 97.0 * scale_factor, safe.position.y + edge)
+	_lights.size = Vector2(194.0, 70.0) * scale_factor
+
+	# Align the standings, lap rail and joystick to ONE right-hand axis.
 	_scoreboard.size = Vector2(320.0, 230.0) * scale_factor
-	_scoreboard.position = Vector2(s.x - _scoreboard.size.x - 18.0 * scale_factor, 96.0 * scale_factor)
+	_scoreboard.position = Vector2(
+		clampf(stick_axis_x - _scoreboard.size.x * 0.5, safe.position.x + edge, safe.end.x - edge - _scoreboard.size.x),
+		safe.position.y + edge
+	)
 	_lap_display.size = Vector2(94.0, 158.0) * scale_factor
-	_lap_display.position = Vector2(stick_axis_x - _lap_display.size.x * 0.5, _stick.position.y - _lap_display.size.y - 14.0 * scale_factor)
-	_exit_button.position = Vector2(20.0 * scale_factor, s.y - 86.0 * scale_factor)
-	_exit_button.size = Vector2(68.0 * scale_factor, 62.0 * scale_factor)
+	var lap_top: float = _scoreboard.position.y + _scoreboard.size.y + gap
+	_lap_display.position = Vector2(
+		clampf(stick_axis_x - _lap_display.size.x * 0.5, safe.position.x + edge, safe.end.x - edge - _lap_display.size.x),
+		lap_top
+	)
+
+	_exit_button.size = Vector2(68.0, 62.0) * scale_factor
+	_exit_button.position = Vector2(safe.position.x + edge, safe.end.y - edge - _exit_button.size.y)
 	_route_layer.set("viewport_size", s)
 	if _rivals != null:
 		_rivals.set("viewport_size", s)
 	_map.call("set_camera_view_size", s)
 	_update_camera()
-
 func _physics_process(delta: float) -> void:
+	if _campaign_waiting:
+		return
 	if _route.is_empty():
 		return
 	_clock += delta
 	if _running and not _lap_complete:
 		_lap_elapsed += delta
 		_race_elapsed += delta
-	if _countdown > 0.0:
-		_countdown -= delta
-		_lights.set("remaining", maxf(_countdown, 0.0))
-		if _countdown <= 0.0:
+	# Keep green illuminated briefly after launch, without holding the ships.
+	if _race_green_hold > 0.0:
+		_race_green_hold = maxf(0.0, _race_green_hold - delta)
+		if _race_green_hold <= 0.0:
 			_lights.visible = false
+	if _countdown > 0.0:
+		# No countdown sounds while a locked-station confirmation is open.
+		if _race_red_pending:
+			_race_red_pending = false
+			_race_audio.call("signal_light", 0)
+		var previous_countdown: float = _countdown
+		_countdown = maxf(0.0, _countdown - delta)
+		_lights.set("remaining", _countdown)
+		if previous_countdown > 2.0 and _countdown <= 2.0:
+			_race_audio.call("signal_light", 1)
+		if previous_countdown > 1.0 and _countdown <= 1.0:
+			# Third sound = green light = movement and music start.
+			_race_audio.call("signal_light", 2)
+			_countdown = 0.0
+			_lights.set("remaining", 0.0)
+			_race_green_hold = 0.80
 			_running = true
 			_rivals.set("active", true)
-	else:
+			_race_audio.call("start_music")
+	elif _race_green_hold <= 0.0:
 		_lights.set("remaining", -1.0)
 	var keyboard := Vector2(float(int(Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_RIGHT))) - float(int(Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_LEFT))), float(int(Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_DOWN))) - float(int(Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_UP))))
 	var steer: Vector2 = keyboard.normalized() if keyboard.length_squared() > 0.0 else _input
@@ -305,8 +388,11 @@ func _physics_process(delta: float) -> void:
 			if _laps_finished >= TOTAL_LAPS:
 				_lap_complete = true
 				_running = false
-				RaceProgress.complete_race(_planet_id)
+				if not _embedded_station_race:
+					RaceProgress.complete_race(_planet_id)
 				_velocity = Vector2.ZERO
+				_update_race_position()
+				_mika_campaign_finish()
 			else:
 				_info.text = "PLACE %d/5 | LAP %d/%d | %s" % [_race_position, _laps_finished + 1, TOTAL_LAPS, _base_info]
 	_rivals.set_meta("race_elapsed", _race_elapsed)
@@ -381,8 +467,139 @@ func _update_race_position() -> void:
 		_info.text = "PLACE %d/5 | LAP %d/%d | %s" % [_race_position, mini(TOTAL_LAPS, _laps_finished + 1), TOTAL_LAPS, _base_info]
 
 func _leave_race() -> void:
+	_race_audio.call("stop_all")
+	if _embedded_station_race:
+		_exit_button.disabled = true
+		exit_requested.emit()
+		return
 	var destination: String = _return_scene
 	if not ResourceLoader.exists(destination):
 		destination = "res://scenes/main.tscn"
 	_exit_button.disabled = true
 	get_tree().call_deferred("change_scene_to_file", destination)
+
+
+# Six-station racing campaign. No educational portal or crystal rewards.
+func _mika_campaign_confirm() -> void:
+	_mika_campaign_dismiss()
+	_campaign_waiting = false
+	_countdown = 3.0
+	_lights.visible = true
+	_lights.set("remaining", 3.0)
+
+func _mika_campaign_finish() -> void:
+	_race_audio.call("stop_all")
+	_campaign_waiting = true
+	_rivals.set("active", false)
+	# Compare actual rival finish timestamps, not capped track distances.
+	var earlier_finishers: int = 0
+	for rival in _rivals.get("racers"):
+		if rival.has("finish_time") and float(rival["finish_time"]) <= _race_elapsed:
+			earlier_finishers += 1
+	var final_place: int = 1 + earlier_finishers
+	if final_place != 1:
+		_mika_campaign_dialog("Финиш: место %d из 5.\nДля открытия следующей гонки нужно первое место." % final_place, "Повторить", _mika_campaign_retry, "Выход", _leave_race)
+		return
+	var result: Dictionary = Campaign.record_win(_planet_id, _race_elapsed)
+	if not bool(result.get("saved", false)):
+		_mika_campaign_dialog("Не удалось сохранить победу.", "Повторить", _mika_campaign_retry, "Выход", _leave_race)
+		return
+	var best: float = float(result.get("best", _race_elapsed))
+	var next_station: String = str(result.get("next", ""))
+	if next_station.is_empty():
+		_mika_campaign_dialog("Все шесть гонок выиграны!\nНаграда: трофей чемпиона.\nЛучшее время победы: %.1f сек." % best, "Ещё раз", _mika_campaign_retry, "Выход", _leave_race)
+	else:
+		_mika_campaign_dialog("Победа в %s!\nЛучшее время: %.1f сек.\nОткрыта %s. Продолжить?" % [Campaign.name_for(_planet_id), best, Campaign.name_for(next_station)], "Следующая", _mika_campaign_next.bind(next_station), "Выход", _leave_race)
+
+func _mika_campaign_retry() -> void:
+	_mika_campaign_dismiss()
+	_campaign_waiting = false
+	_apply_route()
+	_lights.visible = true
+	_rivals.set("active", false)
+
+func _mika_campaign_next(station: String) -> void:
+	_mika_campaign_dismiss()
+	_campaign_waiting = false
+	_planet_id = station
+	_system_id = Campaign.system_for(station)
+	_difficulty = Campaign.difficulty_for(station)
+	_best_lap = RaceProgress.best_lap(_planet_id, _difficulty)
+	match _difficulty:
+		"easy": _length_index = 0
+		"hard": _length_index = 2
+		_: _length_index = 1
+	if is_instance_valid(_solar):
+		remove_child(_solar)
+		_solar.queue_free()
+	if _system_id == "mw":
+		_solar = Solar.new()
+		_solar.set_process(false)
+	else:
+		_solar = Node2D.new()
+		_solar.set_script(preload("res://space_racing/RaceGalaxyBackdrop.gd"))
+		_solar.set("system_id", _system_id)
+	add_child(_solar)
+	move_child(_solar, 1)
+	_rivals.call("set_system_id", _system_id)
+	_apply_route()
+	_lights.visible = true
+	_rivals.set("active", false)
+
+func _mika_campaign_dismiss() -> void:
+	if is_instance_valid(_campaign_modal):
+		_campaign_modal.queue_free()
+	_campaign_modal = null
+
+func _mika_campaign_dialog(message: String, yes_text: String, yes_action: Callable, no_text: String, no_action: Callable) -> void:
+	_mika_campaign_dismiss()
+	var cover := ColorRect.new()
+	cover.name = "RaceCampaignDialog"
+	cover.color = Color(0.015, 0.035, 0.085, 0.86)
+	cover.mouse_filter = Control.MOUSE_FILTER_STOP
+	_hud.add_child(cover)
+	cover.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_campaign_modal = cover
+	var center := CenterContainer.new()
+	cover.add_child(center)
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var panel := PanelContainer.new()
+	panel.custom_minimum_size = Vector2(390, 0)
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color("0c253e")
+	style.border_color = Color("4bc7f5")
+	style.set_border_width_all(3)
+	style.set_corner_radius_all(18)
+	style.content_margin_left = 20
+	style.content_margin_right = 20
+	style.content_margin_top = 20
+	style.content_margin_bottom = 20
+	panel.add_theme_stylebox_override("panel", style)
+	center.add_child(panel)
+	var stack := VBoxContainer.new()
+	stack.add_theme_constant_override("separation", 18)
+	panel.add_child(stack)
+	var title := Label.new()
+	title.text = "SPACE RACING"
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title.add_theme_font_size_override("font_size", 24)
+	title.add_theme_color_override("font_color", Color("7ce5ff"))
+	stack.add_child(title)
+	var label := Label.new()
+	label.text = message
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.custom_minimum_size = Vector2(340, 90)
+	label.add_theme_font_size_override("font_size", 18)
+	stack.add_child(label)
+	var buttons := HBoxContainer.new()
+	buttons.alignment = BoxContainer.ALIGNMENT_CENTER
+	buttons.add_theme_constant_override("separation", 16)
+	stack.add_child(buttons)
+	for entry in [[yes_text, yes_action], [no_text, no_action]]:
+		var button := Button.new()
+		button.text = str(entry[0])
+		button.custom_minimum_size = Vector2(138, 48)
+		button.focus_mode = Control.FOCUS_NONE
+		button.pressed.connect(entry[1])
+		buttons.add_child(button)

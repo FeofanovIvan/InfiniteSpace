@@ -12,6 +12,7 @@ const LAB_BACKGROUND = preload("res://planet_hub/games/solution_lab/assets/neon_
 const ACTION_GLYPH = preload("res://planet_hub/games/solution_lab/solution_action_glyph.gd")
 const SUCCESS_SOUND = preload("res://learning/audio/sfx/correct.ogg")
 const RETRY_SOUND = preload("res://learning/audio/sfx/wrong.ogg")
+const FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 
 const BOARD_SIZE := Vector2(1500.0, 700.0)
 const MIX_CENTER := Vector2(750.0, 456.0)
@@ -131,6 +132,7 @@ var _new_button: Button
 var _reset_button: Button
 var _sfx: AudioStreamPlayer
 var _voice_player: AudioStreamPlayer
+var _feedback: Node
 var _queue: Array[int] = []
 var _rng := RandomNumberGenerator.new()
 var _host_back_buttons: Array[Button] = []
@@ -141,6 +143,7 @@ var _selected: Array[String] = []
 var _mixed_color: Color = Color.WHITE
 var _mixed_fill: float = 0.0
 var _crystals: int = 0
+var _wrong_recipe_streak: int = 0
 var _locked: bool = false
 var _tracking: int = -1
 var _touch_index: int = -1
@@ -152,6 +155,9 @@ func _ready() -> void:
     process_mode = Node.PROCESS_MODE_ALWAYS
     _rng.randomize()
     _build_ui()
+    _feedback = FEEDBACK_SCRIPT.new()
+    _feedback.name = "SolutionsActionFeedback"
+    add_child(_feedback)
     _read_language()
     get_viewport().size_changed.connect(_layout)
     _layout()
@@ -353,6 +359,8 @@ func _claim_toolbar_navigation() -> void:
             host_button.hide()
 
 func _exit_tree() -> void:
+    if _feedback != null:
+        _feedback.call("stop_feedback")
     for i in range(_host_back_buttons.size()):
         var button: Button = _host_back_buttons[i]
         if is_instance_valid(button):
@@ -468,6 +476,8 @@ func _read_language() -> void:
     _locale = language.substr(0,2)
     if not WORDS.has(_locale):
         _locale = "en"
+    if _feedback != null:
+        _feedback.call("prime_locale", _locale)
     _refresh_language()
 
 func _language_changed(_new_locale: String) -> void:
@@ -506,6 +516,8 @@ func _refresh_language() -> void:
 func _new_round() -> void:
     if _locked:
         return
+    if _feedback != null:
+        _feedback.call("stop_feedback")
     if _cursor >= _queue.size():
         _queue.clear()
         for i in range(RECIPES.size()):
@@ -726,9 +738,13 @@ func _matches(picks: Array, needs: Array) -> bool:
 
 func _success() -> void:
     var recipe: Dictionary = RECIPES[_recipe_index]
+    _wrong_recipe_streak = 0
     _mixer.call("configure",0,Color(str(recipe.hex)),0.80)
     _set_status("great")
     _play_sfx(SUCCESS_SOUND)
+    # The last poured reagent was just validated. Do not overlap color narration.
+    if _feedback != null and not _voice_player.playing:
+        _feedback.call("praise", _locale)
     _crystals += 1
     _native_counter.set("crystal_count",_crystals)
     var game_state: Node = get_node_or_null("/root/GameState")
@@ -746,6 +762,13 @@ func _success() -> void:
 func _wrong_mix() -> void:
     _set_status("retry")
     _play_sfx(RETRY_SOUND)
+    _wrong_recipe_streak += 1
+    # One bad recipe only needs the normal error sound. A second failed
+    # mixture merits encouragement, provided target-color speech is idle.
+    if _wrong_recipe_streak >= 2:
+        _wrong_recipe_streak = 0
+        if _feedback != null and not _voice_player.playing:
+            _feedback.call("encourage", _locale)
     await get_tree().create_timer(1.0).timeout
     _locked = false
     _restart_same()
@@ -775,6 +798,8 @@ func _speak_target() -> void:
     _speak_color(id,voice_idx,true)
 
 func _speak_color(id: String, voice_index: int, target: bool) -> void:
+    if _feedback != null:
+        _feedback.call("stop_feedback")
     var service: Node = get_node_or_null("/root/LanguageService")
     if voice_index >= 0 and service != null and service.has_method("get_color_voice"):
         var recorded: Variant = service.call("get_color_voice",voice_index)

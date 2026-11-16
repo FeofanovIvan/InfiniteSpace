@@ -55,6 +55,7 @@ const TOOLBAR: Script = preload("res://simulator_ui/scripts/mika_shared_tracing_
 const HUD: Script = preload("res://planet_hub/scripts/bottom_hud.gd")
 const GLYPH: Script = preload("res://simulator_ui/back_arrow_glyph.gd")
 const KIT: Script = preload("res://simulator_ui/scripts/mika_minigame_ui_kit_v11.gd")
+const FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 const SFX_GOOD: AudioStream = preload("res://planet_hub/games/molecule_builder/audio/atom_good_v3.ogg")
 const SFX_WRONG: AudioStream = preload("res://planet_hub/games/molecule_builder/audio/atom_wrong_v3.ogg")
 const SFX_COMPLETE: AudioStream = preload("res://planet_hub/games/molecule_builder/audio/molecule_complete_v3.ogg")
@@ -82,12 +83,14 @@ var _placed: Array = []
 var _interface_lang := "en"
 var _learning_lang := "en"
 var _service: Node
+var _feedback: Node
 var _scale := 1.0
 var _origin := Vector2.ZERO
 var _time := 0.0
 var _round := 0
 var _score := 0
 var _errors := 0
+var _wrong_streak: int = 0
 var _completed := false
 var _finished := false
 var _auto_next_seconds: float = -1.0
@@ -157,6 +160,9 @@ func _ready() -> void:
 	_make_controls()
 	_make_native_header()
 	_setup_audio()
+	_feedback = FEEDBACK_SCRIPT.new()
+	_feedback.name = "MoleculeActionFeedback"
+	add_child(_feedback)
 	_connect_language()
 	_find_host_back()
 	_layout()
@@ -353,6 +359,8 @@ func _choose_language(index: int) -> void:
 func _apply_languages(interface_code: String, learning_code: String) -> void:
 	_interface_lang = interface_code if LANGUAGES.has(interface_code) else "en"
 	_learning_lang = learning_code if LANGUAGES.has(learning_code) else _interface_lang
+	if _feedback != null:
+		_feedback.call("prime_locale", _learning_lang)
 	if _language_picker != null:
 		_language_picker.select(LANGUAGES.find(_learning_lang))
 	_update_labels()
@@ -374,6 +382,8 @@ func _molecule_name() -> String:
 func _new_game() -> void:
 	if _molecules.is_empty():
 		return
+	if _feedback != null:
+		_feedback.call("stop_feedback")
 	_queue = _molecules.duplicate()
 	_queue.shuffle()
 	# No fixed first molecule, and avoid immediately repeating the last opening.
@@ -389,6 +399,7 @@ func _new_game() -> void:
 	_round = 0
 	_score = 0
 	_errors = 0
+	_wrong_streak = 0
 	_session_crystals = 0
 	_finished = false
 	_molecule_voice_intro = true
@@ -400,6 +411,9 @@ func _new_game() -> void:
 func _go_to_round() -> void:
 	if _queue.is_empty():
 		return
+	if _feedback != null:
+		_feedback.call("stop_feedback")
+	_wrong_streak = 0
 	_round = posmod(_round, _queue.size())
 	_model = _queue[_round]
 	_auto_next_seconds = -1.0
@@ -608,14 +622,24 @@ func _try_placement(element: String, point: Vector2) -> void:
 	var atoms: Array = _model.get("atoms", [])
 	if str(atoms[slot].get("type", "")) != element:
 		_errors += 1
+		_wrong_streak += 1
 		_play_sfx(SFX_WRONG)
 		_feedback_message = _tr("wrong")
-		_voice_speak(_voice_phrase(_learning_lang, "wrong"))
+		# A wrong atom always gets immediate visual/SFX feedback. Speak only
+		# after three consecutive mistakes; otherwise earlier feedback would
+		# lag behind the child's next placement.
+		if _wrong_streak >= 3:
+			_wrong_streak = 0
+			if _feedback != null:
+				_feedback.call("encourage", _learning_lang)
+			else:
+				_voice_speak(_voice_phrase(_learning_lang, "wrong"))
 		_feedback_color = Color("ffabba")
 		_feedback_timer = 2.6
 		_update_labels()
 		_burst(_slot_point(slot), Color("ff9aa5"), 7)
 		return
+	_wrong_streak = 0
 	_placed[slot] = true
 	_session_crystals += 1
 	if _native_hud != null:
@@ -643,6 +667,10 @@ func _try_placement(element: String, point: Vector2) -> void:
 		_next_button.hide()
 		for i in range(_placed.size()):
 			_burst(_slot_point(i), Color("83ffee"), 8)
+	else:
+		# Only a confirmed correct placement, never a palette tap or idle timer.
+		if _feedback != null:
+			_feedback.call("praise", _learning_lang)
 	_save_progress()
 	_update_labels()
 	queue_redraw()
@@ -974,6 +1002,8 @@ func _exit_to_cards() -> void:
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 func _exit_tree() -> void:
+	if _feedback != null:
+		_feedback.call("stop_feedback")
 	if _molecule_voice_started and DisplayServer.has_feature(DisplayServer.FEATURE_TEXT_TO_SPEECH):
 		DisplayServer.tts_stop()
 	if is_instance_valid(_host_back):
@@ -1080,6 +1110,8 @@ func _voice_available(locale: String) -> String:
 func _voice_speak(text: String) -> void:
 	if text.strip_edges().is_empty():
 		return
+	if _feedback != null:
+		_feedback.call("stop_feedback")
 	var code: String = _learning_lang if MOLECULE_VOICE_LINES.has(_learning_lang) else "en"
 	var voice_id: String = _voice_available(code)
 	if voice_id.is_empty():

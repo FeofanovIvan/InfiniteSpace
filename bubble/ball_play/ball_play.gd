@@ -12,6 +12,8 @@ const ACTION_SCRIPT: Script = preload("res://scripts/ActionButton.gd")
 const BACK_ARROW: Script = preload("res://simulator_ui/back_arrow_glyph.gd")
 const STRENGTH_SCRIPT: Script = preload("res://bubble/ball_play/strength_bar.gd")
 const BALL_VISUAL_SCRIPT: Script = preload("res://bubble/ball_play/ball_visual.gd")
+const BALL_FOLEY: Script = preload("res://bubble/ball_play/BubbleBallFoley.gd")
+# MIKA_BUBBLE_BALL_FOLEY_ONLY_V1
 const SHARED_PLANETS: String = "res://planet_hub/data/uninhabited_shared_backgrounds.json"
 const PLAY_ZONES: String = "res://bubble/ball_play/play_zones.json"
 const MAX_SHOTS: int = 5
@@ -39,6 +41,8 @@ const THROW_TEXT: Dictionary = {
 
 var _ball_sound: AudioStreamPlayer
 var _ball_hit_sound: AudioStreamPlayer
+var _ball_foley: Node
+var _return_hit_heard: bool = false
 var _planet_id: String = ""
 var _profile: Dictionary = {"far_y": 0.52}
 var _allowed: Rect2
@@ -163,6 +167,9 @@ func _ready() -> void:
 	_ball_hit_sound.name = "BubbleBallTouchdown"
 	_ball_hit_sound.volume_db = -18.0
 	add_child(_ball_hit_sound)
+	_ball_foley = BALL_FOLEY.new()
+	_ball_foley.name = "BubbleThrowFlightLandingFoley"
+	add_child(_ball_foley)
 	if not MobileLocale.language_changed.is_connected(_on_language_changed):
 		MobileLocale.language_changed.connect(_on_language_changed)
 	resized.connect(_layout)
@@ -392,7 +399,7 @@ func _play_ball_sound(name: String, touchdown: bool = false) -> void:
 func _launch_projectile() -> void:
 	_flight_clock = 0.0
 	_state = "flying"
-	_play_ball_sound("connect_point.ogg")
+	_ball_foley.call("throw_ball", _flight_duration, _locked_strength)
 	_bubble.set_room_emotion("excited", 1.35)
 
 func _on_throw_released(_mode: String) -> void:
@@ -667,6 +674,7 @@ func _start_dropping() -> void:
 	_drop_clock = 0.0
 	_drop_lean = 0.0
 	_drop_released = false
+	_return_hit_heard = false
 	_drop_alignment_wait = 0.0
 	_drop_ground_target = _throw_origin()
 	_bubble.set_mouth_open(0.0)
@@ -748,7 +756,7 @@ func _process(delta: float) -> void:
 		bob_amplitude = 9.0
 		if t >= 1.0:
 			_state = "landed"
-			_play_ball_sound("collision.ogg", true)
+			_ball_foley.call("land_ball", _locked_strength)
 			_landing_clock = 0.0
 			_pickup_side = -1.0 if _pose.x <= _ball_ground.x else 1.0
 			_bubble.set_room_emotion("excited", 0.9)
@@ -828,6 +836,9 @@ func _process(delta: float) -> void:
 					_drop_clock = minf(_drop_clock, DROP_DURATION * 0.48)
 		if _drop_released and not _ball_in_mouth:
 			var drop_t: float = clampf((t - 0.43) / 0.57, 0.0, 1.0)
+			if drop_t >= 0.35 and not _return_hit_heard:
+				_return_hit_heard = true
+				_ball_foley.call("ball_returned")
 			_ball_ground = _drop_ground_target
 			# The mouth is ALREADY directly above the target. Fall and two
 			# damped hops happen on a VERTICAL LINE, with no backward roll.
@@ -893,9 +904,11 @@ func _draw() -> void:
 
 func _request_exit() -> void:
 	if _input_enabled:
+		_ball_foley.call("finish_play")
 		exit_requested.emit()
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if _input_enabled and event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE:
+		_ball_foley.call("finish_play")
 		exit_requested.emit()
 		get_viewport().set_input_as_handled()

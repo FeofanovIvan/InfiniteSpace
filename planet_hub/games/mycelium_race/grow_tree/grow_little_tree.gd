@@ -28,6 +28,7 @@ const STAGES = [
 ]
 const GOOD_SOUND = preload("res://learning/audio/sfx/connect_point.ogg")
 const BAD_SOUND = preload("res://planet_hub/games/mycelium_race/grow_tree/audio/try_again.wav")
+const FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 const ACTION_AUDIO = {
     "shovel": preload("res://planet_hub/games/mycelium_race/grow_tree/audio/dig.wav"),
     "seed": preload("res://planet_hub/games/mycelium_race/grow_tree/audio/seed.wav"),
@@ -55,6 +56,7 @@ var _counter: Control
 var _restart: Button
 var _sfx: AudioStreamPlayer
 var _action_sfx: AudioStreamPlayer
+var _feedback: Node
 var _stage: Rect2 = Rect2(15, 145, 1250, 540)
 var _toolbar_bottom: float = 100.0
 var _now: float = 0.0
@@ -64,6 +66,8 @@ var _plant_level: int = 0   # zero-based index into the 10 aligned images
 var _has_seed: bool = false
 var _health: float = 0.0     # -1 dead, +1 fully healthy
 var _mistakes: int = 0
+var _wrong_action_chain: int = 0
+var _last_wrong_action_ms: int = -100000
 var _score: int = 0
 var _correct_actions: int = 0
 var _care_remaining: float = 11.0
@@ -117,6 +121,8 @@ func _hide_outer_runner_back() -> void:
 
 func _exit_tree() -> void:
     # Restore the runner for every other game; no shared scene or script edited.
+    if _feedback != null:
+        _feedback.call("stop_feedback")
     if _runner_back != null and is_instance_valid(_runner_back):
         _runner_back.visible = _runner_back_was_visible
     _runner_back = null
@@ -185,6 +191,8 @@ func _create_header() -> void:
     _action_sfx = AudioStreamPlayer.new()
     _action_sfx.volume_db = -8.0
     add_child(_action_sfx)
+    _feedback = FEEDBACK_SCRIPT.new() as Node
+    add_child(_feedback)
 
 
 func _instruction_line() -> String:
@@ -257,8 +265,12 @@ func _set_language_from_settings() -> void:
     if not LOCALES.has(_language):
         _language = "en"
     _refresh_language()
+    if _feedback != null:
+        _feedback.call("prime_locale", _language)
 
 func _on_lang_changed(_unused: String) -> void:
+    if _feedback != null:
+        _feedback.call("stop_feedback")
     _set_language_from_settings()
 
 func _tr(key: String) -> String:
@@ -299,12 +311,16 @@ func _layout() -> void:
     queue_redraw()
 
 func _reset_game() -> void:
+    if _feedback != null:
+        _feedback.call("stop_feedback")
     _phase = "dig"
     _expected = "shovel"
     _plant_level = 0
     _has_seed = false
     _health = 0.0
     _mistakes = 0
+    _wrong_action_chain = 0
+    _last_wrong_action_ms = -100000
     _score = 0
     _correct_actions = 0
     _care_remaining = 11.0
@@ -397,6 +413,8 @@ func _perform_action(index: int) -> void:
     if tool != _expected:
         _register_error()
         return
+    _wrong_action_chain = 0
+    _last_wrong_action_ms = -100000
     # Stage, score, seed sprite, and next task change ONLY after the full animation.
     _pending_tool = tool
     _effect = "dig" if tool == "shovel" else tool
@@ -432,6 +450,9 @@ func _finish_action_animation() -> void:
         _sfx.stream = GOOD_SOUND
         _sfx.play()
     _buzz(36)
+    # Praise follows a completed player action, never an idle timer.
+    if _correct_actions % 5 == 0:
+        _feedback.call("praise", _language)
     if _phase == "dig":
         _phase = "seed"
         _expected = "seed"
@@ -466,7 +487,7 @@ func _schedule_next_care() -> void:
     _expected = next
     _care_remaining = maxf(5.8, 11.0 - float(_correct_actions) * 0.36)
 
-func _register_error() -> void:
+func _register_error(from_player: bool = true) -> void:
     _mistakes += 1
     _health = maxf(-1.0, _health - 0.42)
     _effect = "error"
@@ -474,6 +495,15 @@ func _register_error() -> void:
     _effect_time = _effect_duration
     _sfx.stream = BAD_SOUND
     _sfx.play()
+    if from_player:
+        var now_ms: int = Time.get_ticks_msec()
+        if now_ms - _last_wrong_action_ms > 6500:
+            _wrong_action_chain = 0
+        _last_wrong_action_ms = now_ms
+        _wrong_action_chain += 1
+        if _wrong_action_chain >= 2:
+            _wrong_action_chain = 0
+            _feedback.call("encourage", _language)
     _buzz(70)
     if _mistakes >= 3 or _health <= -0.99:
         _finish(false)
@@ -484,6 +514,7 @@ func _finish(won: bool) -> void:
     _won = won
     if won:
         _plant_level = 9
+        _feedback.call("praise", _language)
     queue_redraw()
 
 func _process(delta: float) -> void:
@@ -500,7 +531,7 @@ func _process(delta: float) -> void:
     if _phase == "care" and not _finished and _pending_tool == "":
         _care_remaining -= delta
         if _care_remaining <= 0.0:
-            _register_error()
+            _register_error(false)
             _care_remaining = maxf(5.8, 11.0 - float(_correct_actions) * 0.36)
     queue_redraw()
 

@@ -15,6 +15,7 @@ const FUNGAL_ROUND_MASK: Shader = preload("res://planet_hub/games/fungal_paths/f
 const ART: String = "res://planet_hub/games/eco_sorting/art_v5/"
 const BG_CONFIG: String = "res://planet_hub/games/eco_sorting/eco_sort_shared_background_v5.txt"
 const VOICE_BASE: String = "res://planet_hub/games/eco_sorting/voice_v51/"
+const FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 const BIN_IMAGES: Array[String] = ["bin_recycling.png", "bin_organics.png", "bin_trash.png"]
 const BIN_COLORS: Array[Color] = [Color("#167be5"), Color("#18a64a"), Color("#181d27")]
 
@@ -102,8 +103,12 @@ var _bin_icons: Array[TextureRect] = []
 var _bin_labels: Array[Label] = []
 var _sfx: AudioStreamPlayer
 var _instruction_player: AudioStreamPlayer
+var _feedback: Node
 var _crystal_count: int = 0
 var _tts_active: bool = false
+var _correct_sorted: int = 0
+var _wrong_taps: int = 0
+var _last_wrong_tap_ms: int = -100000
 
 func _ready() -> void:
     process_mode = Node.PROCESS_MODE_ALWAYS
@@ -112,6 +117,7 @@ func _ready() -> void:
     _build_game()
     _make_audio()
     _read_locale()
+    _feedback.call("prime_locale", _locale)
     _translate()
     resized.connect(_layout_game)
     get_viewport().size_changed.connect(_layout_game)
@@ -220,6 +226,8 @@ func _make_audio() -> void:
         _instruction_player.bus = "Voice"
     elif AudioServer.get_bus_index("SFX") >= 0:
         _instruction_player.bus = "SFX"
+    _feedback = FEEDBACK_SCRIPT.new() as Node
+    add_child(_feedback)
 
 func _speak_instruction() -> void:
     if _instruction_player == null or not is_inside_tree():
@@ -307,7 +315,9 @@ func _read_locale() -> void:
         _locale = "en"
 
 func _on_language_changed(_new_language: String) -> void:
+    _feedback.call("stop_feedback")
     _read_locale()
+    _feedback.call("prime_locale", _locale)
     _translate()
     _layout_game()
     _speak_instruction()
@@ -332,6 +342,11 @@ func _translate() -> void:
             sprite.tooltip_text = str(item_names[index_value])
 
 func _restart() -> void:
+    if _feedback != null:
+        _feedback.call("stop_feedback")
+    _correct_sorted = 0
+    _wrong_taps = 0
+    _last_wrong_tap_ms = -100000
     for entry in _falling:
         var obj: TextureRect = entry["view"] as TextureRect
         if obj != null and is_instance_valid(obj):
@@ -466,10 +481,23 @@ func _sort_object(id_value: int, bin_id: int) -> void:
         _despawn(index_value)
         _set_crystal_count(_crystal_count + 1)
         _play_sound("res://learning/audio/sfx/correct.ogg")
+        _correct_sorted += 1
+        _wrong_taps = 0
+        if _correct_sorted % 5 == 0 and not _instruction_player.playing:
+            _feedback.call("praise", _locale)
     else:
         _status.text = _tr("wrong")
         _status_life = 0.85
         _play_sound("res://learning/audio/sfx/error.ogg")
+        var now_ms: int = Time.get_ticks_msec()
+        if now_ms - _last_wrong_tap_ms > 6000:
+            _wrong_taps = 0
+        _last_wrong_tap_ms = now_ms
+        _wrong_taps += 1
+        if _wrong_taps >= 3:
+            _wrong_taps = 0
+            if not _instruction_player.playing:
+                _feedback.call("encourage", _locale)
         _picked_object_id = -1
         if _drag_object_id == id_value:
             _drag_object_id = -1
@@ -681,6 +709,8 @@ func _find_host_back() -> void:
         ancestor = ancestor.get_parent()
 
 func _exit_tree() -> void:
+    if _feedback != null:
+        _feedback.call("stop_feedback")
     if _tts_active:
         DisplayServer.tts_stop()
         _tts_active = false

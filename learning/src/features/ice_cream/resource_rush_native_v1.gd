@@ -8,6 +8,7 @@ extends "res://learning/src/features/ice_cream/ice_cream_game.gd"
 const MIKA_TOOLBAR = preload("res://simulator_ui/scripts/mika_shared_tracing_toolbar_v2.gd")
 const MIKA_HUD = preload("res://planet_hub/scripts/bottom_hud.gd")
 const FLIGHT_STICK = preload("res://scripts/Joystick.gd")
+const RESOURCE_RUSH_FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 const PICKUP_VISUAL_REACH: float = 60.0
 const CRYSTAL_SIDE: float = 112.0
 # EXACT textures used by AsteroidField.gd after an asteroid shatters.
@@ -58,6 +59,7 @@ var _toolbar_back: Control
 var _flight_stick: Control
 var _board_rect: Rect2 = Rect2()
 var _locale: String = "en"
+var _feedback: Node
 
 func _ready() -> void:
     # Parent creates the unchanged café, girl, friend, score panels, items,
@@ -174,6 +176,10 @@ func _ready() -> void:
     _layout()
     _install_mika_for_girl()
     _install_cave_competitors()
+    _feedback = RESOURCE_RUSH_FEEDBACK_SCRIPT.new()
+    _feedback.name = "ResourceRushActionFeedback"
+    add_child(_feedback)
+    _feedback.call("prime_locale", _locale)
     _layout()
     # Trail is sampled only from real motion on the physical cave floor.
 
@@ -210,6 +216,8 @@ func _read_language() -> String:
 
 func _on_language_changed(_ignored: String) -> void:
     _locale = _read_language()
+    if _feedback != null:
+        _feedback.call("prime_locale", _locale)
     _refresh_title()
     _layout()
 
@@ -450,6 +458,10 @@ func _on_pickup_collected(body: Node2D, item: Area2D) -> void:
         _adaptive_register_player_pickup()
         if _hud != null:
             _hud.set("crystal_count", player_score)
+        # Praise only for confirmed MIKA pickups, never for an NPC crystal,
+        # automatic spawn, timer, score redraw, or a duplicate collision.
+        if _feedback != null and (player_score == 5 or player_score == 10 or player_score == 20):
+            _feedback.call("praise", _locale)
 
 
 

@@ -8,6 +8,12 @@ const ART: Array[Texture2D] = [
  preload("res://assets/ships/08_science_explorer.png"),
  preload("res://assets/ships/02_pirate_raider.png")
 ]
+const STATION_RACE_FLEETS: Dictionary = {
+ "lmc": ["res://assets/story/lmc_merchant_01.png", "res://assets/story/lmc_shuttle_02.png", "res://assets/story/lmc_explorer_04.png", "res://assets/story/lmc_escort_05.png"],
+ "ngc6822": ["res://assets/story/ngc6822_cargo_01.png", "res://assets/story/ngc6822_interceptor_02.png", "res://assets/story/ngc6822_patrol_03.png", "res://assets/story/ngc6822_merchant_05.png"],
+ "m31": ["res://assets/story/m31_scout_01.png", "res://assets/story/m31_liner_02.png", "res://assets/story/m31_interceptor_04.png", "res://assets/story/m31_guardian_05.png"],
+ "m33": ["res://assets/story/m33_civilian_01.png", "res://assets/story/m33_merchant_02.png", "res://assets/story/m33_courier_03.png", "res://assets/story/m33_patrol_04.png"]
+}
 const COLORS: Array[Color] = [Color(0.52, 1.0, 0.43), Color(0.37, 0.68, 1.0), Color(0.43, 1.0, 0.84), Color(1.0, 0.40, 0.71)]
 var route: PackedVector2Array = PackedVector2Array()
 var track_width := 650.0
@@ -21,6 +27,7 @@ const SPRITE_BODY_SIZE: float = 104.0
 const LANE_SHIFT_RATE: float = 190.0
 const HEADING_LOOKAHEAD: float = 65.0
 var _sprite_regions: Array[Rect2] = []
+var _artwork: Array[Texture2D] = []
 var _previous_positions: Array[Vector2] = []
 var _previous_angles: Array[float] = []
 const WALL_RESTITUTION: float = 0.32
@@ -28,15 +35,34 @@ const CONTACT_COOLDOWN: float = 0.42
 var _contact_timers: Array[float] = []
 
 func _ready() -> void:
- # Crop transparent padding independently for each artwork, preserving aspect ratio.
+ # Crop transparent padding for every artwork, including per-system fleets.
+ set_system_id("mw")
+ set_process(true)
+
+
+func set_system_id(system_id: String) -> void:
+ # SMC keeps the current generic fleet until dedicated art exists in the repo.
+ _artwork.clear()
+ var fleet: Array = STATION_RACE_FLEETS.get(system_id, [])
+ for i in range(4):
+  var selected: Texture2D = ART[i]
+  if i < fleet.size():
+   var asset_path: String = str(fleet[i])
+   if ResourceLoader.exists(asset_path):
+    var custom: Texture2D = load(asset_path) as Texture2D
+    if custom != null:
+     selected = custom
+  _artwork.append(selected)
+ _station_race_refresh_sprite_regions()
+
+func _station_race_refresh_sprite_regions() -> void:
  _sprite_regions.clear()
- for texture in ART:
+ for texture in _artwork:
   var img: Image = texture.get_image()
   var used: Rect2i = img.get_used_rect()
   if used.size.x <= 0 or used.size.y <= 0:
    used = Rect2i(Vector2i.ZERO, img.get_size())
   _sprite_regions.append(Rect2(used.position, used.size))
- set_process(true)
 
 func _process(_delta: float) -> void:
  # Draw between fixed physics ticks rather than only at 60 Hz.
@@ -233,10 +259,10 @@ func _draw() -> void:
   var screen: Vector2 = world_position - camera_world + center
   if screen.x < -110.0 or screen.y < -110.0 or screen.x > viewport_size.x + 110.0 or screen.y > viewport_size.y + 110.0:
    continue
-  var source: Rect2 = _sprite_regions[i] if i < _sprite_regions.size() else Rect2(Vector2.ZERO, ART[i].get_size())
+  var source: Rect2 = _sprite_regions[i] if i < _sprite_regions.size() else Rect2(Vector2.ZERO, _artwork[i].get_size())
   var visible_size: Vector2 = source.size
   var factor: float = SPRITE_BODY_SIZE / maxf(visible_size.x, visible_size.y)
   var dest_size: Vector2 = visible_size * factor
   draw_set_transform(screen, heading)
-  draw_texture_rect_region(ART[i], Rect2(-dest_size * 0.5, dest_size), source)
+  draw_texture_rect_region(_artwork[i], Rect2(-dest_size * 0.5, dest_size), source)
   draw_set_transform(Vector2.ZERO)
