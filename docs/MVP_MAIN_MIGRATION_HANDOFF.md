@@ -73,6 +73,7 @@ Reason: the MVP task explicitly excludes introducing a new payment mechanism wit
 
 - Godot `4.7.1.stable.official.a13da4feb` headless editor import: pass, with no project parser or missing-resource errors. Sandbox-only CA/editor-settings/ADB warnings do not reproduce as project failures.
 - Normal main scene startup (`res://scenes/main.tscn`) for 600 frames outside the filesystem sandbox: pass. Only forced-quit ObjectDB/resource leak diagnostics remain.
+- Normal graphical launch through `run_mvp_mac.command`: pass. The Godot debug window opened with the expected Free World space view, ship, HUD, minimap, and action controls; it was closed cleanly after inspection.
 - Existing smoke scripts: all pass — adaptive music, minimap/station, mobile performance, dialogue i18n/adaptive (all six languages), typing tolerance, dialogue UI runtime, Crossroads content, and single-page comic.
 - Added `tools/mvp_scene_smoke.gd`: pass. It verifies the real Free World wrapper, exactly 10 initial games, all 24 expanded planet/additional games, launch/return for every registered game, the current Bubble Care scene, and Space Racing.
 - Resource reachability audit: 1,368 reachable resources and 2,499 conservative unreferenced candidates. No deletion was performed because many candidates can be loaded dynamically.
@@ -94,7 +95,7 @@ The launcher pins the project to `/Applications/Godot 4.7.1.app`.
 
 ## Next exact action
 
-Commit the Godot 4.7.1 compatibility fix, MVP smoke, launcher, and this updated handoff. Then perform a normal graphical launch and open the pull request. Do not merge the pull request until the user visually approves the runnable MVP.
+Open the pull request against `main` and wait for the user's visual approval. Do not merge the pull request before that approval.
 
 ## Resume commands
 
