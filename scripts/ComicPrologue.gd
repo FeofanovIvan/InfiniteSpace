@@ -72,6 +72,9 @@ func begin() -> void:
 	set_process_unhandled_input(true)
 
 func begin_space_sequence() -> void:
+	# The card entry hides this layer; restoring it preserves the original
+	# skip control when the landing resumes after the simulator closes.
+	visible = true
 	_mode = "space"
 	_intro.visible = false
 	_panels.end_sequence()
