@@ -1,0 +1,50 @@
+{
+  "version": "v70",
+  "smc_sources": {
+    "smc_p01": {
+      "filename": "Окея.png",
+      "sha256": "b6a2b113004897ef7fb9a9c5a9c24a2deb9f8f8d7aaf17f5e6b78eafc2205a13"
+    },
+    "smc_p02": {
+      "filename": "Цела.png",
+      "sha256": "3525c9621dc5950b4bdeeb0832a8e3536952ed434b3395f839d26078ba44094d"
+    },
+    "smc_p03": {
+      "filename": "Генора.png",
+      "sha256": "23d6f9ccde8f54dea0e4f87fea8a47073c7f27485401cbeebe8767989d1d5741"
+    },
+    "smc_p04": {
+      "filename": "Мицела.png",
+      "sha256": "794dc842a4b7b9ab5c0292a44e0dc2e3af993849f7c68918f46b9980ffe824cb"
+    },
+    "smc_p05": {
+      "filename": "Спира.png",
+      "sha256": "db0e3de2698d0ed094cebea742d19a5eb96f0d77a77d8395da3c5a40a576173a"
+    },
+    "smc_p06": {
+      "filename": "Амбра.png",
+      "sha256": "292fdf0bcd1e5aa1925dea5b68254781eee0ae5e6ffa2a8e4c969478b384d733"
+    },
+    "smc_p07": {
+      "filename": "Силика.png",
+      "sha256": "e4e054f779f58780724741436d915cf143fb41831dd6ad963de7a776fe2eb3d2"
+    },
+    "smc_p08": {
+      "filename": "Биора.png",
+      "sha256": "f978f26a2584232324fd72af97dfdf42716acce72dc8d1d73fb8ecdb848b7542"
+    }
+  },
+  "lmc_repair": {
+    "status": "swapped",
+    "molia_id": "lmc_p03",
+    "ventra_id": "lmc_p07",
+    "before_sha256": {
+      "lmc_p03": "14f3877eb7047abf16b2b42d77072cd1ea2119996cb6abd60fc50fdafb383993",
+      "lmc_p07": "b7bd406a5158e183bbfcbb8ede087c6c6a2896237e4c3f5ec34d0a2ddff24d5c"
+    },
+    "after_sha256": {
+      "lmc_p03": "b7bd406a5158e183bbfcbb8ede087c6c6a2896237e4c3f5ec34d0a2ddff24d5c",
+      "lmc_p07": "14f3877eb7047abf16b2b42d77072cd1ea2119996cb6abd60fc50fdafb383993"
+    }
+  }
+}

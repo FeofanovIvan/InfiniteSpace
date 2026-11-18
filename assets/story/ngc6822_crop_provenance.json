@@ -1,0 +1,97 @@
+{
+  "source_name": "e545ca95-0435-597a-b92d-86c9c7857735.png",
+  "source_sha256": "4e9102eea8d563eeddf9536b55c37ecfee352ef1b0ea905d15a2e98f2f544757",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "method": "connected components in source alpha >20, 8px padding, original RGBA retained, no generated/repainted pixels",
+  "ordering": "top-left,top-middle,top-right,bottom-left,bottom-right",
+  "ships": [
+    {
+      "slot": "top-left",
+      "name": "ngc6822_cargo_01.png",
+      "role": "cargo",
+      "label": "Heavy Cargo Hauler",
+      "box": [
+        11,
+        0,
+        563,
+        574
+      ],
+      "size": [
+        552,
+        574
+      ],
+      "sha256": "edbcd5f557aad5447a95872fd5db5af871212d1c1ee534c055c6dacbec991933"
+    },
+    {
+      "slot": "top-middle",
+      "name": "ngc6822_interceptor_02.png",
+      "role": "interceptor",
+      "label": "Needle Interceptor",
+      "box": [
+        573,
+        8,
+        1048,
+        569
+      ],
+      "size": [
+        475,
+        561
+      ],
+      "sha256": "c75f64f4ad8320f7e0d95ac451a5f52e63d96234d7e8c7d39c6bd2a13ec2000c"
+    },
+    {
+      "slot": "top-right",
+      "name": "ngc6822_patrol_03.png",
+      "role": "patrol",
+      "label": "Frontier Patrol Ship",
+      "box": [
+        1051,
+        2,
+        1527,
+        573
+      ],
+      "size": [
+        476,
+        571
+      ],
+      "sha256": "1fe68e52e3bfb7a952d7d78b833b2fcc17f2878b6e361e261478616248dbfb67"
+    },
+    {
+      "slot": "bottom-left",
+      "name": "ngc6822_liner_04.png",
+      "role": "liner",
+      "label": "Garden Passenger Liner",
+      "box": [
+        9,
+        585,
+        830,
+        921
+      ],
+      "size": [
+        821,
+        336
+      ],
+      "sha256": "424268c0240ca141a2bccb8b918dd1fc7ab8ad77a6b28cdcce7a9d50dc1d390a"
+    },
+    {
+      "slot": "bottom-right",
+      "name": "ngc6822_merchant_05.png",
+      "role": "merchant",
+      "label": "Trade Ring Vessel",
+      "box": [
+        830,
+        557,
+        1533,
+        939
+      ],
+      "size": [
+        703,
+        382
+      ],
+      "sha256": "7cfe05f39c026e5f472b5b799880d8f96f02b171c6f08058c203fe1d0b57bb5f"
+    }
+  ]
+}

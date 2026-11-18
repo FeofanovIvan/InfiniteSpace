@@ -1,6 +1,6 @@
 extends Control
 ## Picture-only destination selector for young players.
-## The six circular icons expand in ONE row to the LEFT of the preview.
+## Destinations appear in ONE scrollable row; counts differ by system.
 ## The strip scrolls horizontally on narrow mobile screens.
 signal target_selected(target_id: String)
 
@@ -11,14 +11,17 @@ const RAIL_GAP: float = 12.0
 const RAIL_PADDING: float = 8.0
 const RAIL_HEIGHT: float = 90.0
 const PREFERRED_WIDTH: float = 94.0 + 12.0 + 8.0 * 2.0 + 64.0 * 6.0 + 8.0 * 5.0
-const TARGETS: Array[String] = ["Venus", "Earth", "Mars", "Jupiter", "Neptune", "EarthStation"]
+const TARGETS: Array[String] = ["Earth", "Mars", "st_mw"]
 const PREVIEWS: Dictionary = {
 	"Venus": preload("res://assets/destinations/venus.png"),
 	"Earth": preload("res://assets/destinations/earth.png"),
 	"Mars": preload("res://assets/destinations/mars.png"),
 	"Jupiter": preload("res://assets/destinations/jupiter.png"),
 	"Neptune": preload("res://assets/destinations/neptune.png"),
-	"EarthStation": preload("res://assets/destinations/earth_station.png")
+	"EarthStation": preload("res://assets/destinations/earth_station.png"),
+	"st_mw": preload("res://assets/story/callisto_shipyard.png"),
+	"st_ngc6822": preload("res://assets/story/titan_skull_ngc6822.png"),
+	"st_m31": preload("res://assets/story/inverted_pyramid_m31.png")
 }
 
 var _trigger: Button
@@ -34,7 +37,9 @@ var _target_previews: Dictionary = PREVIEWS.duplicate()
 var _target_labels: Dictionary = {}
 var _total_width: float = PREFERRED_WIDTH
 var _rail_width: float = PREFERRED_WIDTH - TRIGGER_SIZE - RAIL_GAP
+var _available_width: float = PREFERRED_WIDTH
 var _shown_width: float = 0.0
+var _mouse_dragging: bool = false
 
 
 func _ready() -> void:
@@ -53,8 +58,8 @@ func _ready() -> void:
 
 	_scroll = ScrollContainer.new()
 	_scroll.name = "HorizontalDestinationScroller"
-	_scroll.position = Vector2(RAIL_PADDING, 5.0)
-	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	_scroll.position = Vector2(RAIL_PADDING, (RAIL_HEIGHT - TILE_SIZE) * 0.5)
+	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
 	_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	_scroll.follow_focus = false
 	_scroll.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -63,7 +68,7 @@ func _ready() -> void:
 	_scroll.get_h_scroll_bar().modulate = Color.TRANSPARENT
 
 	_row = HBoxContainer.new()
-	_row.name = "SingleRowOfSixDestinations"
+	_row.name = "InhabitedWorldsAndStations"
 	_row.add_theme_constant_override("separation", TILE_GAP)
 	_row.mouse_filter = Control.MOUSE_FILTER_PASS
 	_scroll.add_child(_row)
@@ -77,7 +82,7 @@ func _ready() -> void:
 	_trigger.icon = _target_previews[_preview_target]
 	_trigger.expand_icon = true
 	_trigger.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_trigger.tooltip_text = "Выбрать направление"
+	_trigger.tooltip_text = MobileLocale.t("pick_destination")
 	_trigger.focus_mode = Control.FOCUS_NONE
 	_trigger.add_theme_stylebox_override("normal", _style(Color(0.025, 0.15, 0.28, 0.98), Color(0.44, 0.87, 1.0, 0.92), 47, 2))
 	_trigger.add_theme_stylebox_override("hover", _style(Color(0.045, 0.24, 0.37, 0.99), Color(0.71, 0.96, 1.0), 47, 2))
@@ -86,6 +91,22 @@ func _ready() -> void:
 	add_child(_trigger)
 	_update_selection()
 	_update_geometry()
+	MobileLocale.language_changed.connect(_refresh_locale)
+	_refresh_locale(MobileLocale.language)
+
+
+func _input(event: InputEvent) -> void:
+	# Touch swiping stays native to ScrollContainer; additionally support mouse drag.
+	if not _open or not is_instance_valid(_scroll):
+		_mouse_dragging = false
+		return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			_mouse_dragging = _scroll.get_global_rect().has_point(event.position)
+		else:
+			_mouse_dragging = false
+	elif event is InputEventMouseMotion and _mouse_dragging and (event.button_mask & MOUSE_BUTTON_MASK_LEFT) != 0:
+		_scroll.scroll_horizontal = maxi(0, _scroll.scroll_horizontal - roundi(event.relative.x))
 
 
 func _process(delta: float) -> void:
@@ -104,7 +125,11 @@ func _process(delta: float) -> void:
 
 func set_available_width(available_width: float) -> void:
 	# Main.gd reserves space for the mini-map on the left, whenever possible.
-	_total_width = clampf(available_width, TRIGGER_SIZE + RAIL_GAP + 82.0, PREFERRED_WIDTH)
+	_available_width = available_width
+	var tiles: int = _target_ids.size()
+	var content_width: float = RAIL_PADDING * 2.0 + float(tiles) * TILE_SIZE + float(maxi(0, tiles - 1)) * TILE_GAP
+	var wanted: float = TRIGGER_SIZE + RAIL_GAP + maxf(82.0, content_width)
+	_total_width = clampf(available_width, TRIGGER_SIZE + RAIL_GAP + 82.0, wanted)
 	_rail_width = _total_width - TRIGGER_SIZE - RAIL_GAP
 	_shown_width = minf(_shown_width, _rail_width)
 	_update_geometry()
@@ -117,7 +142,7 @@ func _update_geometry() -> void:
 	_trigger.position = Vector2(_total_width - TRIGGER_SIZE, 0.0)
 	_rail.size = Vector2(_shown_width, RAIL_HEIGHT)
 	_rail.position = Vector2(_trigger.position.x - RAIL_GAP - _shown_width, 2.0)
-	_scroll.size = Vector2(maxf(0.0, _shown_width - RAIL_PADDING * 2.0), RAIL_HEIGHT - 10.0)
+	_scroll.size = Vector2(maxf(0.0, _shown_width - RAIL_PADDING * 2.0), RAIL_HEIGHT - _scroll.position.y)
 
 
 func _toggle_menu() -> void:
@@ -159,19 +184,27 @@ func _style(bg: Color, stroke: Color, radius: int, border_width: int) -> StyleBo
 	return s
 
 
-func _hint(id: String) -> String:
-	match id:
-		"Mercury": return "Меркурий"
-		"Venus": return "Венера"
-		"Earth": return "Земля"
-		"Mars": return "Марс"
-		"Jupiter": return "Юпитер"
-		"Saturn": return "Сатурн"
-		"Uranus": return "Уран"
-		"Neptune": return "Нептун"
-		"EarthStation": return "Орбитальная станция"
-	return str(_target_labels.get(id, id))
+func _refresh_locale(_new_locale: String) -> void:
+	if _trigger != null:
+		_trigger.tooltip_text = MobileLocale.t("pick_destination")
+	for id in _target_ids:
+		var tile: Button = _tiles.get(id) as Button
+		if tile != null:
+			tile.tooltip_text = _hint(id)
 
+func _hint(id: String) -> String:
+	if id == "crossroads_core":
+		var translated: Dictionary = {
+			"ru":"Живая планета", "en":"Living World", "fr":"Planète vivante",
+			"de":"Lebendige Welt", "es":"Planeta viva", "pt_BR":"Planeta viva"}
+		return str(translated.get(MobileLocale.language, translated["en"]))
+	if ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"].has(id):
+		return MobileLocale.t("planet_" + id)
+	if id == "EarthStation":
+		return MobileLocale.t("orbit_station")
+	if id == "st_mw":
+		return MobileLocale.t("shipyard")
+	return str(_target_labels.get(id, id))
 
 func set_autopilot_status(active: bool, target_id: String = "") -> void:
 	_active_target = target_id if active else ""
@@ -198,27 +231,44 @@ func _add_tile(id: String) -> void:
 
 
 func set_region_destinations(region_id: String, planets: Array, station: Variant) -> void:
-	# Existing Milky Way UI remains unchanged and limits flight to five
-	# inhabited planets plus the standalone station.
+	# One source of truth for every system. Not a fixed-size planet menu.
 	_target_ids.clear()
 	_target_previews.clear()
 	_target_labels.clear()
-	if region_id == "mw":
-		_target_ids = TARGETS.duplicate()
-		_target_previews = PREVIEWS.duplicate()
-	else:
-		for data in planets:
-			var id: String = str(data.get("id", ""))
-			_target_ids.append(id)
-			_target_labels[id] = str(data.get("name_en", id))
-			var path: String = str(data.get("visual_asset", ""))
-			if path != "":
-				_target_previews[id] = load(path) as Texture2D
-		if station is Dictionary:
-			var station_id: String = str(station.get("id", ""))
+	# InfiniteSpace v104.2: Living World is an autopilot destination
+	if region_id == "crossroads":
+		# Only one destination: the living planet. All other systems keep their picker.
+		var id: String = "crossroads_core"
+		_target_ids.append(id)
+		_target_previews[id] = _v1042_living_world_icon()
+		_target_labels[id] = "Living World"
+	for data in planets:
+		if not bool(data.get("inhabited", false)):
+			continue
+		var id: String = str(data.get("name_en", "")) if region_id == "mw" else str(data.get("id", ""))
+		if id == "":
+			continue
+		var preview: Texture2D = PREVIEWS.get(id) as Texture2D
+		var path: String = str(data.get("visual_asset", ""))
+		if preview == null and path != "":
+			preview = load(path) as Texture2D
+		if preview == null:
+			continue
+		_target_ids.append(id)
+		_target_labels[id] = str(data.get("name_en", id))
+		_target_previews[id] = preview
+	if station is Dictionary and bool(station.get("accessible", true)):
+		var station_id: String = str(station.get("id", ""))
+		if station_id != "":
+			var station_preview: Texture2D = PREVIEWS.get(station_id) as Texture2D
+			var station_asset: String = str(station.get("visual_asset", ""))
+			if station_preview == null and station_asset != "":
+				station_preview = load(station_asset) as Texture2D
+			if station_preview == null:
+				station_preview = PREVIEWS["EarthStation"]
 			_target_ids.append(station_id)
 			_target_labels[station_id] = str(station.get("name_en", "Station"))
-			_target_previews[station_id] = PREVIEWS["EarthStation"]
+			_target_previews[station_id] = station_preview
 	if _row == null:
 		return
 	for child in _row.get_children():
@@ -226,10 +276,28 @@ func set_region_destinations(region_id: String, planets: Array, station: Variant
 		child.queue_free()
 	_tiles.clear()
 	for id in _target_ids:
-		if _target_previews.has(id) and _target_previews[id] != null:
-			_add_tile(id)
+		_add_tile(id)
 	_preview_target = _target_ids[0] if not _target_ids.is_empty() else ""
-	if _preview_target != "" and _target_previews.has(_preview_target):
-		_trigger.icon = _target_previews[_preview_target]
+	_trigger.icon = _target_previews.get(_preview_target) as Texture2D
 	_open = false
 	_update_selection()
+	set_available_width(_available_width)
+
+
+func _v1042_living_world_icon() -> Texture2D:
+	# A small native procedural preview, no incorrect planet PNG or extra download.
+	var pic: Image = Image.create(112, 112, false, Image.FORMAT_RGBA8)
+	pic.fill(Color.TRANSPARENT)
+	for y in range(112):
+		for x in range(112):
+			var offset: Vector2 = (Vector2(float(x), float(y)) - Vector2(55.5, 55.5)) / 49.0
+			var radius: float = offset.length()
+			if radius > 1.0:
+				continue
+			var hue: float = sin(offset.y * 9.0 + offset.x * 5.0 + radius * 10.0)
+			var glow: float = clampf(0.94 - radius * 0.37 - offset.x * 0.13 - offset.y * 0.11, 0.22, 1.0)
+			var violet: float = maxf(0.0, hue)
+			var cyan: float = maxf(0.0, -hue)
+			var c: Color = Color((0.22 + violet * 0.38) * glow, (0.44 + cyan * 0.33) * glow, (0.82 + violet * 0.13) * glow, 1.0)
+			pic.set_pixel(x, y, c)
+	return ImageTexture.create_from_image(pic)

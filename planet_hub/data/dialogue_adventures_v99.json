@@ -1,0 +1,1108 @@
+{
+  "schema_version": 1,
+  "base_version": "v98",
+  "age_target": "3-8",
+  "locales": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "description": "Chapters 3 and 4. The callback depends on the decision in the immediately preceding chapter; every outcome is non-punitive. No scene/UI changes.",
+  "races": {
+    "human": [
+      {
+        "id": "signal_pattern",
+        "follows": "planet_report",
+        "intro": {
+          "ru": "В нашем дневнике появилась загадка: маячок передал три огонька подряд. Что они могут означать?",
+          "en": "Our journal has a mystery: the beacon sent three flashes in a row. What might they mean?",
+          "fr": "Notre carnet contient un mystère : la balise a envoyé trois éclairs. Que signifient-ils ?",
+          "de": "In unserem Tagebuch steht ein Rätsel: Die Boje hat dreimal geblinkt. Was bedeutet das?",
+          "es": "Hay un misterio en el diario: la baliza envió tres destellos. ¿Qué significan?",
+          "pt_BR": "Há um mistério no diário: a baliza enviou três piscadas. O que será?"
+        },
+        "choices": [
+          {
+            "ru": "Сравним записи.",
+            "en": "Let's compare our notes.",
+            "fr": "Comparons nos notes.",
+            "de": "Vergleichen wir die Notizen.",
+            "es": "Comparemos las notas.",
+            "pt_BR": "Vamos comparar as anotações."
+          },
+          {
+            "ru": "Посчитаем вспышки.",
+            "en": "Let's count the flashes.",
+            "fr": "Comptons les éclairs.",
+            "de": "Zählen wir die Lichtblitze.",
+            "es": "Contemos los destellos.",
+            "pt_BR": "Vamos contar as piscadas."
+          },
+          {
+            "ru": "Спросим инженера.",
+            "en": "Let's ask an engineer.",
+            "fr": "Demandons à un ingénieur.",
+            "de": "Fragen wir eine Ingenieurin.",
+            "es": "Preguntemos a una ingeniera.",
+            "pt_BR": "Vamos perguntar a uma engenheira."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Нашли! Вчера маячок мигал так же, когда отправлял обычное приветствие.",
+            "en": "We found it! Yesterday the beacon flashed that way to send a friendly hello.",
+            "fr": "Trouvé ! Hier, la balise a clignoté pareil pour dire bonjour.",
+            "de": "Gefunden! Gestern blinkte die Boje so, um Hallo zu sagen.",
+            "es": "¡Lo encontramos! Ayer la baliza hizo lo mismo para saludar.",
+            "pt_BR": "Achamos! Ontem a baliza piscou assim para dizer olá."
+          },
+          {
+            "ru": "Раз, два, три! Это повторяющийся ритм. Мы заметили важную подсказку.",
+            "en": "One, two, three! It's a repeating rhythm. We spotted a useful clue.",
+            "fr": "Un, deux, trois ! C'est un rythme répété. Voilà un indice !",
+            "de": "Eins, zwei, drei! Ein wiederholter Rhythmus. Das ist ein Hinweis!",
+            "es": "¡Uno, dos, tres! Es un ritmo repetido. ¡Encontramos una pista!",
+            "pt_BR": "Um, dois, três! É um ritmo que se repete. Achamos uma pista!"
+          },
+          {
+            "ru": "Инженер объяснил: маячок просто проверяет связь. Мы научились задавать вопросы.",
+            "en": "The engineer explained: the beacon is checking its connection. Good question!",
+            "fr": "L'ingénieure explique : la balise teste sa connexion. Bonne question !",
+            "de": "Die Ingenieurin erklärt: Die Boje testet die Verbindung. Gute Frage!",
+            "es": "La ingeniera explicó: la baliza comprueba la conexión. ¡Buena pregunta!",
+            "pt_BR": "A engenheira explicou: a baliza está testando a conexão. Boa pergunta!"
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты нарисовал облако. Теперь заметим, как огоньки мигают под ним.",
+            "en": "You drew a cloud. Now let's watch the lights flash beneath it.",
+            "fr": "Tu as dessiné un nuage. Regardons les lumières dessous.",
+            "de": "Du hast eine Wolke gezeichnet. Jetzt beobachten wir die Lichter darunter.",
+            "es": "Dibujaste una nube. Veamos las luces debajo.",
+            "pt_BR": "Você desenhou uma nuvem. Vamos observar as luzes abaixo dela."
+          },
+          {
+            "ru": "Ты посчитал звёзды. Сможем ли мы так же посчитать вспышки?",
+            "en": "You counted the stars. Can we count the flashes too?",
+            "fr": "Tu as compté les étoiles. Comptons aussi les éclairs !",
+            "de": "Du hast Sterne gezählt. Zählen wir auch die Lichtblitze!",
+            "es": "Contaste estrellas. ¡Contemos también los destellos!",
+            "pt_BR": "Você contou estrelas. Vamos contar as piscadas também!"
+          },
+          {
+            "ru": "Ты нашёл круг. Наш маячок тоже круглый — присмотрись к нему.",
+            "en": "You found a circle. Our beacon is round too—look closely!",
+            "fr": "Tu as trouvé un cercle. Notre balise est ronde aussi !",
+            "de": "Du hast einen Kreis gefunden. Unsere Boje ist auch rund!",
+            "es": "Encontraste un círculo. ¡Nuestra baliza también es redonda!",
+            "pt_BR": "Você achou um círculo. Nossa baliza também é redonda!"
+          }
+        ]
+      },
+      {
+        "id": "shared_discovery",
+        "follows": "signal_pattern",
+        "intro": {
+          "ru": "Мы разобрались в сигналах. Кому расскажем об открытии, чтобы оно пригодилось другим?",
+          "en": "We understand the signals now. Who shall we tell so others can use our discovery?",
+          "fr": "Nous comprenons les signaux. À qui raconter notre découverte ?",
+          "de": "Jetzt verstehen wir die Signale. Wem erzählen wir von unserer Entdeckung?",
+          "es": "Ya entendemos las señales. ¿Con quién compartimos el descubrimiento?",
+          "pt_BR": "Entendemos os sinais! Com quem vamos compartilhar a descoberta?"
+        },
+        "choices": [
+          {
+            "ru": "Расскажем юным исследователям.",
+            "en": "Let's tell young explorers.",
+            "fr": "Racontons-le aux jeunes explorateurs.",
+            "de": "Erzählen wir es jungen Forschern.",
+            "es": "Contémoslo a los pequeños exploradores.",
+            "pt_BR": "Vamos contar aos pequenos exploradores."
+          },
+          {
+            "ru": "Отправим сообщение кораблю.",
+            "en": "Let's message a spaceship.",
+            "fr": "Envoyons un message au vaisseau.",
+            "de": "Senden wir eine Nachricht zum Raumschiff.",
+            "es": "Enviemos un mensaje a una nave.",
+            "pt_BR": "Vamos mandar uma mensagem para uma nave."
+          },
+          {
+            "ru": "Сохраним в научном архиве.",
+            "en": "Let's save it in the science archive.",
+            "fr": "Gardons-le aux archives scientifiques.",
+            "de": "Speichern wir es im Forschungsarchiv.",
+            "es": "Guardémoslo en el archivo científico.",
+            "pt_BR": "Vamos guardar no arquivo científico."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Другие дети научились замечать повторяющиеся сигналы. Вот как открытия растут!",
+            "en": "Other children learned to spot repeating signals. Discoveries grow when shared!",
+            "fr": "D'autres enfants apprennent à reconnaître les signaux. Bravo !",
+            "de": "Andere Kinder erkennen jetzt Signale. Wissen wächst, wenn wir es teilen!",
+            "es": "Otros niños aprendieron a reconocer las señales. ¡Compartir ayuda!",
+            "pt_BR": "Outras crianças aprenderam a reconhecer os sinais. Compartilhar ajuda!"
+          },
+          {
+            "ru": "Корабль ответил весёлым огоньком. Наше открытие помогло путешественникам.",
+            "en": "The spaceship replied with a cheerful flash. Our discovery helped travelers!",
+            "fr": "Le vaisseau répond par une lumière joyeuse. Notre découverte aide !",
+            "de": "Das Raumschiff antwortet mit einem Licht. Unsere Entdeckung hilft!",
+            "es": "La nave respondió con una luz alegre. ¡Nuestro hallazgo ayudó!",
+            "pt_BR": "A nave respondeu com uma luz alegre. Nossa descoberta ajudou!"
+          },
+          {
+            "ru": "Запись останется в архиве для следующих исследователей. Отличная работа!",
+            "en": "The record will help future researchers. Great work!",
+            "fr": "Ce document aidera les prochains explorateurs. Bravo !",
+            "de": "Der Eintrag hilft zukünftigen Forschenden. Gut gemacht!",
+            "es": "El registro ayudará a futuros investigadores. ¡Buen trabajo!",
+            "pt_BR": "O registro vai ajudar futuros pesquisadores. Bom trabalho!"
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты заметил сходство в записях. Может, поделимся этим наблюдением?",
+            "en": "You spotted matching notes. Shall we share that observation?",
+            "fr": "Tu as remarqué des notes semblables. Partageons-les !",
+            "de": "Du hast ähnliche Notizen entdeckt. Teilen wir die Beobachtung!",
+            "es": "Encontraste notas parecidas. ¡Compartamos lo aprendido!",
+            "pt_BR": "Você encontrou anotações parecidas. Vamos compartilhar!"
+          },
+          {
+            "ru": "Ты посчитал три вспышки. Это важная часть нашего открытия.",
+            "en": "You counted three flashes. That's an important part of our discovery.",
+            "fr": "Tu as compté trois éclairs. C'est important !",
+            "de": "Du hast drei Blitze gezählt. Das ist wichtig!",
+            "es": "Contaste tres destellos. ¡Eso es importante!",
+            "pt_BR": "Você contou três piscadas. Isso é importante!"
+          },
+          {
+            "ru": "Ты попросил совета у инженера. Теперь мы можем помочь другим.",
+            "en": "You asked an engineer for help. Now we can help others!",
+            "fr": "Tu as demandé conseil. Maintenant, aidons les autres !",
+            "de": "Du hast nach Hilfe gefragt. Jetzt können wir anderen helfen!",
+            "es": "Pediste ayuda a una ingeniera. ¡Ahora ayudemos a otros!",
+            "pt_BR": "Você pediu ajuda. Agora podemos ajudar outras pessoas!"
+          }
+        ]
+      }
+    ],
+    "mold": [
+      {
+        "id": "mystery_rhythm",
+        "follows": "new_growth",
+        "intro": {
+          "ru": "В нашей сети появился новый ритм: три мягких толчка. Он пришёл от найденной веточки! Что проверим?",
+          "en": "Our network has a new rhythm: three gentle pulses from the branch we found! What shall we check?",
+          "fr": "Notre réseau reçoit trois petites vibrations de la branche retrouvée. Que vérifier ?",
+          "de": "Unser Netz spürt drei sanfte Impulse vom gefundenen Zweig. Was prüfen wir?",
+          "es": "La red recibe tres pulsos suaves de la ramita encontrada. ¿Qué comprobamos?",
+          "pt_BR": "A rede recebeu três sinais suaves do raminho encontrado. O que vamos observar?"
+        },
+        "choices": [
+          {
+            "ru": "Проверим соседние нити.",
+            "en": "Let's check nearby fibers.",
+            "fr": "Regardons les fibres voisines.",
+            "de": "Prüfen wir die Fasern daneben.",
+            "es": "Revisemos las fibras cercanas.",
+            "pt_BR": "Vamos observar as fibras vizinhas."
+          },
+          {
+            "ru": "Повторим ритм.",
+            "en": "Let's repeat the rhythm.",
+            "fr": "Répétons le rythme.",
+            "de": "Wiederholen wir den Rhythmus.",
+            "es": "Repitamos el ritmo.",
+            "pt_BR": "Vamos repetir o ritmo."
+          },
+          {
+            "ru": "Послушаем сеть вместе.",
+            "en": "Let's listen to the whole network.",
+            "fr": "Écoutons tout le réseau.",
+            "de": "Hören wir auf das ganze Netz.",
+            "es": "Escuchemos toda la red.",
+            "pt_BR": "Vamos escutar toda a rede."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Соседние нити ответили такими же толчками. Это знакомое приветствие!",
+            "en": "The nearby fibers pulsed back. It's a friendly hello!",
+            "fr": "Les fibres répondent. C'est un salut amical !",
+            "de": "Die Fasern antworten. Es ist ein freundliches Hallo!",
+            "es": "Las fibras respondieron. ¡Era un saludo amistoso!",
+            "pt_BR": "As fibras responderam. Era uma saudação amigável!"
+          },
+          {
+            "ru": "Раз, два, три! Сеть повторила наш ритм. Мы нашли способ разговаривать.",
+            "en": "One, two, three! The network echoed our rhythm. We found a way to talk!",
+            "fr": "Un, deux, trois ! Le réseau répète le rythme. Nous parlons !",
+            "de": "Eins, zwei, drei! Das Netz wiederholt den Rhythmus!",
+            "es": "¡Uno, dos, tres! La red repitió el ritmo. ¡Nos comunicamos!",
+            "pt_BR": "Um, dois, três! A rede repetiu o ritmo. Conseguimos conversar!"
+          },
+          {
+            "ru": "Ты услышал, как разные части сети отвечают друг другу. Никто не остался один.",
+            "en": "You heard the network answering itself. No part was left alone.",
+            "fr": "Le réseau se répond. Aucune branche n'est seule.",
+            "de": "Das Netz antwortet sich. Kein Zweig bleibt allein.",
+            "es": "La red se respondió. Ninguna rama quedó sola.",
+            "pt_BR": "A rede respondeu. Nenhum ramo ficou sozinho."
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты выбрал воду для веточки. Рядом с водой она заметила первые сигналы.",
+            "en": "You chose the water for our branch. It noticed its first signals there.",
+            "fr": "Tu as choisi l'eau. La branche y a perçu des signaux.",
+            "de": "Du hast das Wasser gewählt. Dort bemerkte der Zweig Signale.",
+            "es": "Elegiste el agua. Allí la ramita recibió señales.",
+            "pt_BR": "Você escolheu a água. Lá o raminho percebeu sinais."
+          },
+          {
+            "ru": "Ты выбрал мягкий свет. Теперь волокна хорошо видны, когда подают сигналы.",
+            "en": "You chose gentle light. Now the signaling fibers are easy to see.",
+            "fr": "Tu as choisi la lumière douce. On voit bien les fibres !",
+            "de": "Du hast sanftes Licht gewählt. Jetzt sieht man die Fasern gut!",
+            "es": "Elegiste luz suave. ¡Ahora se ven las fibras!",
+            "pt_BR": "Você escolheu a luz suave. Agora as fibras ficam visíveis!"
+          },
+          {
+            "ru": "Ты выбрал тихий уголок. Поэтому мы заметили совсем слабый ритм.",
+            "en": "You chose a quiet corner. That's how we noticed the faint rhythm.",
+            "fr": "Tu as choisi un coin calme. Nous sentons le petit rythme !",
+            "de": "Du hast einen ruhigen Ort gewählt. Dort spüren wir den Rhythmus!",
+            "es": "Elegiste un lugar tranquilo. Así notamos el ritmo.",
+            "pt_BR": "Você escolheu um lugar calmo. Por isso percebemos o ritmo."
+          }
+        ]
+      },
+      {
+        "id": "living_message",
+        "follows": "mystery_rhythm",
+        "intro": {
+          "ru": "Мы поняли ритм сети! Кому передадим наше доброе сообщение?",
+          "en": "We understand the network's rhythm! Who shall receive our friendly message?",
+          "fr": "Nous comprenons le rythme du réseau ! À qui envoyer notre message ?",
+          "de": "Wir verstehen den Rhythmus! Wem senden wir unsere Nachricht?",
+          "es": "Entendemos el ritmo de la red. ¿A quién enviamos nuestro mensaje?",
+          "pt_BR": "Entendemos o ritmo da rede! Para quem vamos enviar a mensagem?"
+        },
+        "choices": [
+          {
+            "ru": "Молодым веточкам.",
+            "en": "To the young branches.",
+            "fr": "Aux jeunes branches.",
+            "de": "An die jungen Zweige.",
+            "es": "A las ramas jóvenes.",
+            "pt_BR": "Para os raminhos jovens."
+          },
+          {
+            "ru": "На корабль «Тарантул».",
+            "en": "To the Tarantula ship.",
+            "fr": "Au vaisseau Tarentule.",
+            "de": "Zum Raumschiff Tarantel.",
+            "es": "A la nave Tarántula.",
+            "pt_BR": "Para a nave Tarântula."
+          },
+          {
+            "ru": "В живой архив сети.",
+            "en": "To our living network archive.",
+            "fr": "Aux archives vivantes du réseau.",
+            "de": "Ins lebende Archiv des Netzes.",
+            "es": "Al archivo vivo de la red.",
+            "pt_BR": "Para o arquivo vivo da rede."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Молодые веточки ответили светом. Наш сигнал поможет им учиться.",
+            "en": "The young branches answered with light. Our signal will help them learn.",
+            "fr": "Les jeunes branches répondent en brillant. Elles apprennent !",
+            "de": "Die jungen Zweige antworten mit Licht. Sie lernen dazu!",
+            "es": "Las ramitas respondieron con luz. ¡Así aprenderán!",
+            "pt_BR": "Os raminhos responderam com luz. Assim eles aprendem!"
+          },
+          {
+            "ru": "«Тарантул» принял сигнал и передал его по живым коридорам.",
+            "en": "The Tarantula received our signal and carried it through living corridors.",
+            "fr": "La Tarentule reçoit le signal et le transmet.",
+            "de": "Die Tarantel empfängt das Signal und leitet es weiter.",
+            "es": "La Tarántula recibió la señal y la transmitió.",
+            "pt_BR": "A Tarântula recebeu e transmitiu o sinal."
+          },
+          {
+            "ru": "В архиве остался ритм, который другие части сети смогут узнать позже.",
+            "en": "The living archive saved the rhythm for future listeners.",
+            "fr": "Les archives vivantes gardent le rythme pour plus tard.",
+            "de": "Das lebende Archiv bewahrt den Rhythmus für später.",
+            "es": "El archivo vivo guardó el ritmo para después.",
+            "pt_BR": "O arquivo vivo guardou o ritmo para depois."
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты исследовал соседние волокна. Теперь мы знаем, куда передать сигнал.",
+            "en": "You examined nearby fibers. Now we know where to send the signal.",
+            "fr": "Tu as observé les fibres voisines. Nous connaissons le chemin !",
+            "de": "Du hast die Fasern untersucht. Jetzt kennen wir den Weg!",
+            "es": "Observaste las fibras. Ya sabemos por dónde enviar la señal.",
+            "pt_BR": "Você observou as fibras. Agora sabemos o caminho do sinal."
+          },
+          {
+            "ru": "Ты повторил ритм. Другие смогут узнать его по трём толчкам.",
+            "en": "You repeated the rhythm. Others can recognize those three pulses.",
+            "fr": "Tu as répété les trois vibrations. Les autres les reconnaîtront !",
+            "de": "Du hast die drei Impulse wiederholt. Andere erkennen sie wieder!",
+            "es": "Repetiste tres pulsos. Otros los reconocerán.",
+            "pt_BR": "Você repetiu os três sinais. Outros vão reconhecer."
+          },
+          {
+            "ru": "Ты прислушался ко всей сети. Передадим сообщение так, чтобы его все получили.",
+            "en": "You listened to the whole network. Let's share the message with everyone.",
+            "fr": "Tu as écouté tout le réseau. Partageons le message !",
+            "de": "Du hast dem ganzen Netz zugehört. Teilen wir die Nachricht!",
+            "es": "Escuchaste toda la red. Compartamos el mensaje.",
+            "pt_BR": "Você escutou a rede inteira. Vamos compartilhar a mensagem."
+          }
+        ]
+      }
+    ],
+    "phase": [
+      {
+        "id": "crystal_glimmer",
+        "follows": "festival",
+        "intro": {
+          "ru": "После праздника форм в прозрачной камере засветился старый кристалл. Он хранит память нашего народа. Что рассмотрим?",
+          "en": "After the festival, an old crystal glowed in a clear chamber. It holds memories of our people. What shall we examine?",
+          "fr": "Après la fête, un vieux cristal brille. Il garde la mémoire de notre peuple. Que regarder ?",
+          "de": "Nach dem Fest leuchtet ein alter Kristall. Er bewahrt unsere Erinnerungen. Was sehen wir uns an?",
+          "es": "Tras la fiesta, un cristal antiguo brilla. Guarda recuerdos de nuestro pueblo. ¿Qué miramos?",
+          "pt_BR": "Depois da festa, um cristal antigo brilhou. Ele guarda memórias do nosso povo. O que vamos observar?"
+        },
+        "choices": [
+          {
+            "ru": "Посмотрим на грани.",
+            "en": "Let's look at its faces.",
+            "fr": "Regardons ses facettes.",
+            "de": "Betrachten wir seine Flächen.",
+            "es": "Miremos sus caras.",
+            "pt_BR": "Vamos olhar suas faces."
+          },
+          {
+            "ru": "Изучим отражение.",
+            "en": "Let's study its reflection.",
+            "fr": "Observons son reflet.",
+            "de": "Untersuchen wir sein Spiegelbild.",
+            "es": "Estudiemos su reflejo.",
+            "pt_BR": "Vamos observar seu reflexo."
+          },
+          {
+            "ru": "Спросим хранителя архива.",
+            "en": "Let's ask the archive keeper.",
+            "fr": "Demandons au gardien des archives.",
+            "de": "Fragen wir den Hüter des Archivs.",
+            "es": "Preguntemos al guardián del archivo.",
+            "pt_BR": "Vamos perguntar ao guardião do arquivo."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "На каждой грани виден свой отблеск. Будто маленькие страницы одной истории.",
+            "en": "Each crystal face catches light differently, like pages of one story.",
+            "fr": "Chaque facette brille autrement, comme les pages d'une histoire.",
+            "de": "Jede Fläche glänzt anders, wie die Seiten einer Geschichte.",
+            "es": "Cada cara brilla de otro modo, como páginas de una historia.",
+            "pt_BR": "Cada face brilha de um jeito, como páginas de uma história."
+          },
+          {
+            "ru": "Отражённый свет показал мягкий узор — это часть старой истории.",
+            "en": "The reflected light showed a gentle pattern, a piece of an old story.",
+            "fr": "Le reflet montre un doux motif, morceau d'une vieille histoire.",
+            "de": "Im Licht erscheint ein Muster, ein Teil einer alten Geschichte.",
+            "es": "La luz reflejada mostró un dibujo de una historia antigua.",
+            "pt_BR": "A luz refletida mostrou um padrão de uma história antiga."
+          },
+          {
+            "ru": "Хранитель объяснил, почему мы бережём старые кристаллы и их истории.",
+            "en": "The keeper explained why we protect old crystals and their memories.",
+            "fr": "Le gardien explique pourquoi nous protégeons ces cristaux.",
+            "de": "Der Hüter erklärt, warum wir alte Kristalle bewahren.",
+            "es": "El guardián explicó por qué cuidamos esos cristales.",
+            "pt_BR": "O guardião explicou por que cuidamos desses cristais."
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты выбрал текучую форму. Теперь сравним её гладкость с гранями кристалла.",
+            "en": "You chose a flowing form. Now let's compare it with the crystal's sharp faces.",
+            "fr": "Tu as choisi une forme fluide. Comparons-la au cristal !",
+            "de": "Du hast eine fließende Form gewählt. Vergleichen wir sie mit dem Kristall!",
+            "es": "Elegiste una forma fluida. Comparémosla con el cristal.",
+            "pt_BR": "Você escolheu a forma líquida. Vamos comparar com o cristal."
+          },
+          {
+            "ru": "Ты выбрал туман. Посмотрим, как свет проходит через кристалл.",
+            "en": "You chose mist. Now watch the light pass through the crystal.",
+            "fr": "Tu as choisi la brume. Regardons la lumière traverser le cristal.",
+            "de": "Du hast Nebel gewählt. Sehen wir, wie Licht durch den Kristall geht!",
+            "es": "Elegiste niebla. Veamos pasar la luz por el cristal.",
+            "pt_BR": "Você escolheu a névoa. Vamos ver a luz atravessar o cristal."
+          },
+          {
+            "ru": "Ты выбрал кристалл. Теперь мы можем исследовать кристаллическую память.",
+            "en": "You chose a crystal. Now we can explore crystal memories together.",
+            "fr": "Tu as choisi le cristal. Découvrons ses souvenirs !",
+            "de": "Du hast den Kristall gewählt. Entdecken wir seine Erinnerungen!",
+            "es": "Elegiste cristal. Descubramos sus recuerdos.",
+            "pt_BR": "Você escolheu o cristal. Vamos descobrir suas memórias."
+          }
+        ]
+      },
+      {
+        "id": "memory_guardians",
+        "follows": "crystal_glimmer",
+        "intro": {
+          "ru": "Мы узнали маленькую часть истории кристалла. Как сохранить её, чтобы никто не забыл?",
+          "en": "We found a small piece of the crystal's story. How shall we keep it safe?",
+          "fr": "Nous avons découvert un morceau d'histoire. Comment le garder ?",
+          "de": "Wir kennen einen Teil der Kristallgeschichte. Wie bewahren wir ihn?",
+          "es": "Conocemos parte de la historia del cristal. ¿Cómo la guardamos?",
+          "pt_BR": "Descobrimos parte da história do cristal. Como vamos guardar?"
+        },
+        "choices": [
+          {
+            "ru": "Запишем историю в архив.",
+            "en": "Let's record it in the archive.",
+            "fr": "Notons-la dans les archives.",
+            "de": "Schreiben wir sie ins Archiv.",
+            "es": "Anotémosla en el archivo.",
+            "pt_BR": "Vamos registrar no arquivo."
+          },
+          {
+            "ru": "Расскажем юным существам.",
+            "en": "Let's tell the little ones.",
+            "fr": "Racontons-la aux plus jeunes.",
+            "de": "Erzählen wir sie den Jüngeren.",
+            "es": "Contémosla a los más pequeños.",
+            "pt_BR": "Vamos contar aos mais novos."
+          },
+          {
+            "ru": "Попросим старших помочь.",
+            "en": "Let's ask our elders for help.",
+            "fr": "Demandons conseil aux anciens.",
+            "de": "Bitten wir die Älteren um Hilfe.",
+            "es": "Pidamos ayuda a los mayores.",
+            "pt_BR": "Vamos pedir ajuda aos mais velhos."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "В Живом архиве появилась новая запись. История останется с нами.",
+            "en": "A new record appeared in the Living Archive. The story will stay with us.",
+            "fr": "Une nouvelle histoire entre aux Archives vivantes.",
+            "de": "Das lebende Archiv hat einen neuen Eintrag. Die Geschichte bleibt erhalten.",
+            "es": "El Archivo Vivo guardó la historia para el futuro.",
+            "pt_BR": "O Arquivo Vivo guardou a história para o futuro."
+          },
+          {
+            "ru": "Младшие с интересом слушают рассказ. Так память объединяет поколения.",
+            "en": "The little ones listened closely. Sharing memories connects generations.",
+            "fr": "Les plus jeunes écoutent. Les souvenirs nous rapprochent !",
+            "de": "Die Jüngeren hören zu. Erinnerungen verbinden Generationen!",
+            "es": "Los pequeños escucharon. Los recuerdos nos unen.",
+            "pt_BR": "Os pequenos escutaram. As memórias nos aproximam."
+          },
+          {
+            "ru": "Старшие помогли бережно сохранить кристалл и объяснить его историю.",
+            "en": "Our elders helped preserve the crystal and share its story.",
+            "fr": "Les anciens aident à protéger le cristal et son histoire.",
+            "de": "Die Älteren helfen, den Kristall und seine Geschichte zu bewahren.",
+            "es": "Los mayores ayudaron a cuidar el cristal y su historia.",
+            "pt_BR": "Os mais velhos ajudaram a cuidar do cristal e de sua história."
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты заметил грани кристалла. Мы запомним его необычную форму.",
+            "en": "You noticed the crystal's faces. Let's remember its special shape.",
+            "fr": "Tu as vu ses facettes. Souvenons-nous de sa forme !",
+            "de": "Du hast die Kristallflächen bemerkt. Merken wir uns seine Form!",
+            "es": "Observaste las caras del cristal. Recordemos su forma.",
+            "pt_BR": "Você observou as faces do cristal. Vamos lembrar sua forma."
+          },
+          {
+            "ru": "Ты нашёл узор в свете. Мы можем сохранить и этот узор.",
+            "en": "You spotted a pattern in the light. Let's preserve it too.",
+            "fr": "Tu as trouvé un motif lumineux. Conservons-le !",
+            "de": "Du hast ein Lichtmuster gefunden. Bewahren wir es auch!",
+            "es": "Encontraste un dibujo de luz. Guardémoslo.",
+            "pt_BR": "Você achou um padrão na luz. Vamos guardá-lo também."
+          },
+          {
+            "ru": "Ты спросил хранителя. Он поможет нам передать историю бережно.",
+            "en": "You asked the keeper. He can help us share the story respectfully.",
+            "fr": "Tu as demandé au gardien. Il nous aidera à transmettre ce récit.",
+            "de": "Du hast den Hüter gefragt. Er hilft uns, die Geschichte zu teilen.",
+            "es": "Preguntaste al guardián. Nos ayudará a contarla con cuidado.",
+            "pt_BR": "Você perguntou ao guardião. Ele vai nos ajudar a contar com carinho."
+          }
+        ]
+      }
+    ],
+    "reptile": [
+      {
+        "id": "hidden_star_route",
+        "follows": "old_record",
+        "intro": {
+          "ru": "В старой записи есть карта со звёздным знаком. За ним скрывается забытая тропа к безопасному убежищу. Как её найти?",
+          "en": "An old record shows a star symbol. It marks a forgotten path to a safe shelter. How can we find it?",
+          "fr": "Un vieux récit montre une étoile. Elle indique un chemin oublié vers un abri. Comment le trouver ?",
+          "de": "Ein alter Bericht zeigt einen Stern. Er weist zu einem sicheren Versteck. Wie finden wir es?",
+          "es": "Un registro antiguo muestra una estrella. Marca una ruta a un refugio seguro. ¿Cómo encontrarla?",
+          "pt_BR": "Um registro antigo mostra uma estrela. Ela marca um caminho até um abrigo seguro. Como achá-lo?"
+        },
+        "choices": [
+          {
+            "ru": "Сравним звёзды на карте.",
+            "en": "Let's compare the stars on the map.",
+            "fr": "Comparons les étoiles sur la carte.",
+            "de": "Vergleichen wir die Sterne auf der Karte.",
+            "es": "Comparemos las estrellas del mapa.",
+            "pt_BR": "Vamos comparar as estrelas no mapa."
+          },
+          {
+            "ru": "Пойдём по каменным меткам.",
+            "en": "Let's follow the stone marks.",
+            "fr": "Suivons les marques sur la pierre.",
+            "de": "Folgen wir den Steinzeichen.",
+            "es": "Sigamos las marcas de piedra.",
+            "pt_BR": "Vamos seguir as marcas nas pedras."
+          },
+          {
+            "ru": "Проверим путь к архиву.",
+            "en": "Let's check the archive route.",
+            "fr": "Vérifions le chemin des archives.",
+            "de": "Prüfen wir den Weg zum Archiv.",
+            "es": "Revisemos la ruta del archivo.",
+            "pt_BR": "Vamos conferir o caminho para o arquivo."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Две звезды совпали! Мы нашли отмеченный поворот к убежищу.",
+            "en": "Two stars match! We found the marked turn toward the shelter.",
+            "fr": "Deux étoiles se ressemblent ! Voici le tournant vers l'abri.",
+            "de": "Zwei Sterne stimmen überein! Wir haben die Abzweigung gefunden.",
+            "es": "¡Dos estrellas coinciden! Encontramos el desvío hacia el refugio.",
+            "pt_BR": "Duas estrelas combinam! Achamos a curva que leva ao abrigo."
+          },
+          {
+            "ru": "Каменные метки ведут мимо скал к спокойной долине. Отличное наблюдение!",
+            "en": "The stone marks lead past the rocks to a quiet valley. Great observation!",
+            "fr": "Les marques mènent vers une vallée tranquille. Bien vu !",
+            "de": "Die Zeichen führen zu einem ruhigen Tal. Gut beobachtet!",
+            "es": "Las marcas llevan a un valle tranquilo. ¡Buena observación!",
+            "pt_BR": "As marcas levam até um vale tranquilo. Boa observação!"
+          },
+          {
+            "ru": "Мы сверили путь с записями и нашли безопасный проход.",
+            "en": "We checked the records and found a safe passage.",
+            "fr": "Nous comparons les notes et trouvons un passage sûr.",
+            "de": "Wir vergleichen die Aufzeichnungen und finden einen sicheren Weg.",
+            "es": "Comparamos los registros y encontramos un paso seguro.",
+            "pt_BR": "Conferimos os registros e achamos um caminho seguro."
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты раньше изучал следы на камне. Теперь они помогают читать карту.",
+            "en": "You studied stone marks before. Now they help us read this map.",
+            "fr": "Tu as déjà observé des traces de pierre. Elles nous aident !",
+            "de": "Du hast Steinspuren untersucht. Jetzt helfen sie beim Lesen der Karte!",
+            "es": "Antes estudiaste las marcas de piedra. ¡Ahora nos ayudan!",
+            "pt_BR": "Você estudou as marcas na pedra. Agora elas ajudam!"
+          },
+          {
+            "ru": "Ты запомнил порядок старых событий. Может, путь тоже устроен по порядку?",
+            "en": "You remembered the order of events. Perhaps the path follows a pattern too.",
+            "fr": "Tu as retenu l'ordre des événements. Le chemin suit peut-être un ordre !",
+            "de": "Du erinnerst dich an die Reihenfolge. Vielleicht gilt das auch für den Weg!",
+            "es": "Recordaste el orden de los hechos. Quizá el camino siga un patrón.",
+            "pt_BR": "Você lembrou da ordem dos fatos. Será que o caminho tem um padrão?"
+          },
+          {
+            "ru": "Ты заметил звёздный символ. Сегодня он укажет нам дорогу.",
+            "en": "You noticed the star symbol. Today it can guide us.",
+            "fr": "Tu as remarqué l'étoile. Elle nous guide aujourd'hui !",
+            "de": "Du hast den Stern entdeckt. Heute zeigt er uns den Weg!",
+            "es": "Viste el símbolo de estrella. Hoy nos guía.",
+            "pt_BR": "Você notou o símbolo da estrela. Hoje ele mostra o caminho."
+          }
+        ]
+      },
+      {
+        "id": "shared_safe_route",
+        "follows": "hidden_star_route",
+        "intro": {
+          "ru": "Мы нашли тропу к убежищу. Как поможем другим путешественникам пройти по ней безопасно?",
+          "en": "We found the path to the shelter. How can we help other travelers use it safely?",
+          "fr": "Nous avons trouvé le chemin vers l'abri. Comment aider les autres voyageurs ?",
+          "de": "Wir haben den Weg zum Unterschlupf gefunden. Wie helfen wir anderen Reisenden?",
+          "es": "Encontramos el camino al refugio. ¿Cómo ayudamos a otros viajeros?",
+          "pt_BR": "Achamos o caminho para o abrigo. Como ajudar outros viajantes?"
+        },
+        "choices": [
+          {
+            "ru": "Отметим тропу на карте.",
+            "en": "Let's mark it on the map.",
+            "fr": "Marquons-le sur la carte.",
+            "de": "Zeichnen wir ihn auf die Karte.",
+            "es": "Marquemos la ruta en el mapa.",
+            "pt_BR": "Vamos marcar o caminho no mapa."
+          },
+          {
+            "ru": "Оставим понятные знаки.",
+            "en": "Let's leave clear signs.",
+            "fr": "Laissons des signes faciles à lire.",
+            "de": "Stellen wir klare Wegzeichen auf.",
+            "es": "Dejemos señales claras.",
+            "pt_BR": "Vamos deixar sinais claros."
+          },
+          {
+            "ru": "Расскажем хранителям доков.",
+            "en": "Let's tell the dock keepers.",
+            "fr": "Prévenons les gardiens des quais.",
+            "de": "Sagen wir den Hütern der Docks Bescheid.",
+            "es": "Avisemos a los encargados de los muelles.",
+            "pt_BR": "Vamos avisar os guardiões das docas."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "На карте появился новый безопасный маршрут. Другим станет проще путешествовать.",
+            "en": "A safe route is now on the map. Traveling will be easier for others.",
+            "fr": "Un chemin sûr figure maintenant sur la carte. Cela aidera les autres !",
+            "de": "Ein sicherer Weg steht jetzt auf der Karte. Das hilft anderen!",
+            "es": "Hay una nueva ruta segura en el mapa. ¡Ayudará a otros!",
+            "pt_BR": "Um caminho seguro apareceu no mapa. Vai ajudar muita gente!"
+          },
+          {
+            "ru": "Мы поставили простые знаки. Они покажут нужный поворот даже в сумерках.",
+            "en": "We left simple signs. They will show the turn even at dusk.",
+            "fr": "Nous avons placé des signes. On les verra même au crépuscule.",
+            "de": "Wir haben klare Zeichen angebracht. Man sieht sie auch in der Dämmerung!",
+            "es": "Dejamos señales sencillas. Se verán incluso al anochecer.",
+            "pt_BR": "Deixamos sinais simples. Eles ajudam até ao anoitecer."
+          },
+          {
+            "ru": "Хранители доков передадут маршрут новым кораблям. Мы помогли целому порту!",
+            "en": "The dock keepers will share the route with new ships. We helped a whole port!",
+            "fr": "Les gardiens partageront le chemin avec les vaisseaux. Bravo !",
+            "de": "Die Dockwächter teilen den Weg mit den Schiffen. Wir helfen dem Hafen!",
+            "es": "Los encargados avisarán a las naves. ¡Ayudamos a todo un puerto!",
+            "pt_BR": "Os guardiões vão avisar as naves. Ajudamos todo o porto!"
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты сравнивал звёзды на карте. Эти знаки помогут и другим.",
+            "en": "You compared stars on the map. Those symbols can help others too.",
+            "fr": "Tu as comparé les étoiles. Elles aideront les autres !",
+            "de": "Du hast die Sterne verglichen. Die Zeichen helfen auch anderen!",
+            "es": "Comparaste las estrellas. ¡También ayudarán a otros!",
+            "pt_BR": "Você comparou as estrelas. Elas também vão ajudar outros!"
+          },
+          {
+            "ru": "Ты шёл по каменным меткам. Давай сделаем их понятными всем.",
+            "en": "You followed stone marks. Let's make the path clear for everyone.",
+            "fr": "Tu as suivi les marques. Rendons-les visibles pour tous !",
+            "de": "Du bist den Steinzeichen gefolgt. Machen wir sie für alle verständlich!",
+            "es": "Seguiste las marcas. ¡Hagámoslas claras para todos!",
+            "pt_BR": "Você seguiu as marcas. Vamos deixá-las claras para todos!"
+          },
+          {
+            "ru": "Ты проверил старые записи. Теперь у нас есть надёжный маршрут.",
+            "en": "You checked old records. Now we have a route we can share.",
+            "fr": "Tu as vérifié les anciens récits. Partageons notre chemin !",
+            "de": "Du hast alte Berichte geprüft. Jetzt können wir den Weg teilen!",
+            "es": "Revisaste los registros. Ya podemos compartir el camino.",
+            "pt_BR": "Você conferiu os registros. Agora podemos compartilhar o caminho."
+          }
+        ]
+      }
+    ],
+    "magnetic": [
+      {
+        "id": "unusual_balance",
+        "follows": "shapes",
+        "intro": {
+          "ru": "Наша новая металлическая форма вдруг слегка закачалась рядом с магнитными кольцами. Как вернуть равновесие?",
+          "en": "Our newly shaped metal began to wobble near the magnetic rings. How can we balance it?",
+          "fr": "Notre nouvelle forme métallique oscille près des anneaux magnétiques. Comment l'équilibrer ?",
+          "de": "Unsere neue Metallform schwankt bei den Magnetringen. Wie gleichen wir sie aus?",
+          "es": "Nuestra figura de metal se balancea junto a los anillos. ¿Cómo la equilibramos?",
+          "pt_BR": "Nossa nova forma de metal balança perto dos anéis magnéticos. Como equilibrar?"
+        },
+        "choices": [
+          {
+            "ru": "Измерим расстояние до кольца.",
+            "en": "Let's measure the distance to the ring.",
+            "fr": "Mesurons la distance jusqu'à l'anneau.",
+            "de": "Messen wir den Abstand zum Ring.",
+            "es": "Midamos la distancia al anillo.",
+            "pt_BR": "Vamos medir a distância até o anel."
+          },
+          {
+            "ru": "Изменим силу поля.",
+            "en": "Let's adjust the field strength.",
+            "fr": "Réglons la force du champ.",
+            "de": "Ändern wir die Feldstärke.",
+            "es": "Ajustemos la fuerza del campo.",
+            "pt_BR": "Vamos ajustar a força do campo."
+          },
+          {
+            "ru": "Понаблюдаем за движением.",
+            "en": "Let's watch its movement.",
+            "fr": "Observons son mouvement.",
+            "de": "Beobachten wir die Bewegung.",
+            "es": "Observemos su movimiento.",
+            "pt_BR": "Vamos observar o movimento."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Теперь расстояния одинаковые. Металл перестал качаться.",
+            "en": "The distances are equal now. The metal stopped wobbling.",
+            "fr": "Les distances sont égales. Le métal ne bouge plus !",
+            "de": "Jetzt sind die Abstände gleich. Das Metall schwankt nicht mehr!",
+            "es": "Las distancias son iguales. ¡El metal dejó de balancearse!",
+            "pt_BR": "As distâncias ficaram iguais. O metal parou de balançar!"
+          },
+          {
+            "ru": "Мы осторожно изменили поле. Форма мягко выровнялась.",
+            "en": "We gently adjusted the field. The shape became steady again.",
+            "fr": "Nous réglons doucement le champ. La forme retrouve son équilibre.",
+            "de": "Wir stellen das Feld behutsam ein. Die Form ist wieder stabil.",
+            "es": "Ajustamos el campo con cuidado. La figura se estabilizó.",
+            "pt_BR": "Ajustamos o campo com cuidado. A forma ficou estável."
+          },
+          {
+            "ru": "Мы увидели, когда качание уменьшилось. Наблюдение помогло найти равновесие.",
+            "en": "We watched until the wobble became smaller. Observation helped us find balance.",
+            "fr": "L'oscillation diminue. Observer nous a aidés !",
+            "de": "Das Schwanken wird kleiner. Beobachten hat geholfen!",
+            "es": "Vimos cómo disminuía el balanceo. ¡Observar ayudó!",
+            "pt_BR": "Vimos o balanço diminuir. Observar ajudou!"
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты создал круглый шар. Давай узнаем, как он держится среди полей.",
+            "en": "You made a round sphere. Let's see how it balances among fields.",
+            "fr": "Tu as créé une sphère. Voyons comment elle tient en équilibre !",
+            "de": "Du hast eine Kugel geschaffen. Prüfen wir ihr Gleichgewicht!",
+            "es": "Creaste una esfera. Veamos cómo se equilibra.",
+            "pt_BR": "Você criou uma esfera. Vamos ver como ela se equilibra."
+          },
+          {
+            "ru": "Ты создал кольцо. Теперь оно должно удержаться рядом с другими кольцами.",
+            "en": "You made a ring. Now it must remain steady beside the others.",
+            "fr": "Tu as créé un anneau. Il doit rester stable près des autres !",
+            "de": "Du hast einen Ring geschaffen. Er soll neben den anderen stabil bleiben!",
+            "es": "Creaste un anillo. Debe mantenerse estable junto a los demás.",
+            "pt_BR": "Você criou um anel. Ele precisa ficar estável perto dos outros."
+          },
+          {
+            "ru": "Ты создал куб. Проверим, как его ровные грани ведут себя в поле.",
+            "en": "You made a cube. Let's watch how its flat faces behave in the field.",
+            "fr": "Tu as créé un cube. Observons ses faces dans le champ !",
+            "de": "Du hast einen Würfel geschaffen. Beobachten wir seine Flächen im Feld!",
+            "es": "Creaste un cubo. Veamos sus caras dentro del campo.",
+            "pt_BR": "Você criou um cubo. Vamos observar suas faces no campo."
+          }
+        ]
+      },
+      {
+        "id": "city_field",
+        "follows": "unusual_balance",
+        "intro": {
+          "ru": "Наша форма снова устойчива. Городу тоже нужны надёжные магнитные поля. Как проверим безопасность?",
+          "en": "Our shape is stable again. The city needs steady magnetic fields too. How shall we check them?",
+          "fr": "Notre forme est stable. La ville a aussi besoin de champs sûrs. Que vérifier ?",
+          "de": "Unsere Form ist stabil. Auch die Stadt braucht sichere Magnetfelder. Was prüfen wir?",
+          "es": "La figura está estable. La ciudad también necesita campos seguros. ¿Qué revisamos?",
+          "pt_BR": "Nossa forma está estável. A cidade também precisa de campos seguros. O que verificar?"
+        },
+        "choices": [
+          {
+            "ru": "Посмотрим на опорные кольца.",
+            "en": "Let's examine the support rings.",
+            "fr": "Observons les anneaux de soutien.",
+            "de": "Prüfen wir die Stützringe.",
+            "es": "Miremos los anillos de soporte.",
+            "pt_BR": "Vamos observar os anéis de apoio."
+          },
+          {
+            "ru": "Сравним два измерения.",
+            "en": "Let's compare two measurements.",
+            "fr": "Comparons deux mesures.",
+            "de": "Vergleichen wir zwei Messungen.",
+            "es": "Comparemos dos mediciones.",
+            "pt_BR": "Vamos comparar duas medidas."
+          },
+          {
+            "ru": "Передадим результаты инженерам.",
+            "en": "Let's share our results with the engineers.",
+            "fr": "Partageons nos résultats avec les ingénieurs.",
+            "de": "Teilen wir die Ergebnisse mit den Ingenieuren.",
+            "es": "Compartamos los resultados con los ingenieros.",
+            "pt_BR": "Vamos enviar os resultados aos engenheiros."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Опорные кольца держатся ровно. Мы нашли хорошую опору для города.",
+            "en": "The support rings are steady. We found a good support for the city!",
+            "fr": "Les anneaux sont stables. Voilà un bon soutien pour la ville !",
+            "de": "Die Stützringe sind stabil. Das hilft der Stadt!",
+            "es": "Los anillos están firmes. ¡Eso ayuda a la ciudad!",
+            "pt_BR": "Os anéis estão firmes. Isso ajuda a cidade!"
+          },
+          {
+            "ru": "Измерения совпали. Это хороший знак, но мы продолжим наблюдать.",
+            "en": "The readings match. That's a good sign, and we'll keep watching.",
+            "fr": "Les mesures correspondent. C'est bon signe. Restons attentifs !",
+            "de": "Die Messungen stimmen überein. Ein gutes Zeichen! Wir beobachten weiter.",
+            "es": "Las mediciones coinciden. Buena señal; seguiremos observando.",
+            "pt_BR": "As medidas combinam. É um bom sinal; vamos continuar observando."
+          },
+          {
+            "ru": "Инженеры получили данные и проверят остальные поля. Мы помогли всем.",
+            "en": "The engineers received our data and will check the other fields. We helped everyone!",
+            "fr": "Les ingénieurs ont reçu nos données. Nous aidons toute la ville !",
+            "de": "Die Ingenieure haben die Daten. Wir helfen der ganzen Stadt!",
+            "es": "Los ingenieros recibieron los datos. ¡Ayudamos a toda la ciudad!",
+            "pt_BR": "Os engenheiros receberam os dados. Ajudamos a cidade inteira!"
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты измерял расстояние. Теперь мы знаем, почему точность важна.",
+            "en": "You measured distances. Now we know why accuracy matters.",
+            "fr": "Tu as mesuré les distances. La précision est importante !",
+            "de": "Du hast Abstände gemessen. Genauigkeit ist wichtig!",
+            "es": "Mediste distancias. ¡Ahora sabemos por qué importa la precisión!",
+            "pt_BR": "Você mediu distâncias. Agora sabemos por que a precisão importa."
+          },
+          {
+            "ru": "Ты изменил поле осторожно. Будем так же осторожны с целым городом.",
+            "en": "You adjusted the field gently. Let's be just as careful with a whole city.",
+            "fr": "Tu as réglé le champ doucement. Faisons attention à la ville !",
+            "de": "Du hast das Feld behutsam verändert. Tun wir das auch für die Stadt!",
+            "es": "Ajustaste el campo con cuidado. Cuidemos también la ciudad.",
+            "pt_BR": "Você ajustou o campo com cuidado. Vamos cuidar da cidade também."
+          },
+          {
+            "ru": "Ты внимательно наблюдал. Теперь проверим ещё больше важных деталей.",
+            "en": "You watched closely. Now let's check more important details.",
+            "fr": "Tu as bien observé. Vérifions encore quelques détails !",
+            "de": "Du hast gut beobachtet. Prüfen wir noch mehr Details!",
+            "es": "Observaste con atención. Revisemos más detalles.",
+            "pt_BR": "Você observou com atenção. Vamos conferir mais detalhes."
+          }
+        ]
+      }
+    ],
+    "neural": [
+      {
+        "id": "unexpected_path",
+        "follows": "memory_gate",
+        "intro": {
+          "ru": "У наших врат три дорожки света. Сегодня одна светится иначе. Это загадка, а не опасность. Что проверим?",
+          "en": "Three paths of light shine at our gates. One looks different today. It's a puzzle, not a danger. What shall we check?",
+          "fr": "Trois chemins de lumière brillent aux portails. L'un est différent. Quelle énigme !",
+          "de": "Drei Lichtwege leuchten an den Toren. Einer sieht anders aus. Ein Rätsel!",
+          "es": "Hay tres caminos de luz en los portales. Uno es diferente. ¡Qué acertijo!",
+          "pt_BR": "Há três caminhos de luz nos portais. Um está diferente. Que enigma!"
+        },
+        "choices": [
+          {
+            "ru": "Сравним три дорожки.",
+            "en": "Let's compare the three paths.",
+            "fr": "Comparons les trois chemins.",
+            "de": "Vergleichen wir die drei Wege.",
+            "es": "Comparemos los tres caminos.",
+            "pt_BR": "Vamos comparar os três caminhos."
+          },
+          {
+            "ru": "Запомним порядок огней.",
+            "en": "Let's remember the light order.",
+            "fr": "Mémorisons l'ordre des lumières.",
+            "de": "Merken wir uns die Reihenfolge der Lichter.",
+            "es": "Recordemos el orden de las luces.",
+            "pt_BR": "Vamos lembrar a ordem das luzes."
+          },
+          {
+            "ru": "Посмотрим на форму портала.",
+            "en": "Let's examine the portal shape.",
+            "fr": "Observons la forme du portail.",
+            "de": "Betrachten wir die Form des Portals.",
+            "es": "Miremos la forma del portal.",
+            "pt_BR": "Vamos olhar a forma do portal."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Две дорожки похожи, а третья изгибается. Вот где спрятана подсказка!",
+            "en": "Two paths match, but the third bends. There's our clue!",
+            "fr": "Deux chemins se ressemblent, le troisième tourne. Voilà l'indice !",
+            "de": "Zwei Wege sind ähnlich, der dritte biegt ab. Das ist der Hinweis!",
+            "es": "Dos caminos se parecen y el tercero gira. ¡Ahí está la pista!",
+            "pt_BR": "Dois caminhos parecem iguais, o terceiro faz uma curva. Achamos a pista!"
+          },
+          {
+            "ru": "Один, два, три! Мы запомнили порядок и заметили, что огни поменялись местами.",
+            "en": "One, two, three! Remembering the order helped us spot the change.",
+            "fr": "Un, deux, trois ! Nous avons remarqué le changement d'ordre.",
+            "de": "Eins, zwei, drei! Wir merken, dass die Reihenfolge anders ist.",
+            "es": "¡Uno, dos, tres! Notamos que cambió el orden.",
+            "pt_BR": "Um, dois, três! Percebemos que a ordem mudou."
+          },
+          {
+            "ru": "Круглый портал отражает свет иначе, чем арка. Мы нашли отличие.",
+            "en": "The round portal reflects light differently from the arch. We spotted the difference.",
+            "fr": "Le portail rond reflète la lumière autrement que l'arche.",
+            "de": "Das runde Portal spiegelt Licht anders als der Bogen.",
+            "es": "El portal redondo refleja la luz de otro modo que el arco.",
+            "pt_BR": "O portal redondo reflete a luz de outro jeito que o arco."
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты искал большой круг. Сравнение размеров пригодится и здесь.",
+            "en": "You found the biggest circle. Comparing sizes will help here too.",
+            "fr": "Tu as trouvé le plus grand cercle. Comparons maintenant les chemins !",
+            "de": "Du hast den größten Kreis gefunden. Vergleichen hilft auch hier!",
+            "es": "Encontraste el círculo más grande. Comparar ayudará ahora.",
+            "pt_BR": "Você achou o maior círculo. Comparar vai ajudar agora."
+          },
+          {
+            "ru": "Ты повторял ритм огоньков. Теперь попробуем запомнить их порядок.",
+            "en": "You repeated a light rhythm. Now let's remember their order.",
+            "fr": "Tu as répété le rythme. Souvenons-nous aussi de leur ordre !",
+            "de": "Du hast den Lichtrhythmus wiederholt. Merken wir uns die Reihenfolge!",
+            "es": "Repetiste el ritmo de luces. Recordemos el orden.",
+            "pt_BR": "Você repetiu o ritmo das luzes. Vamos lembrar a ordem."
+          },
+          {
+            "ru": "Ты сравнивал порталы. Это поможет найти, почему свет различается.",
+            "en": "You compared portals. That will help us see why the light looks different.",
+            "fr": "Tu as comparé les portails. Cela nous aidera encore !",
+            "de": "Du hast Portale verglichen. Das hilft, die Lichter zu verstehen!",
+            "es": "Comparaste portales. Eso ayudará a entender la luz.",
+            "pt_BR": "Você comparou os portais. Isso vai ajudar a entender as luzes."
+          }
+        ]
+      },
+      {
+        "id": "gateway_guides",
+        "follows": "unexpected_path",
+        "intro": {
+          "ru": "Мы разгадали узор света у врат. Как поделимся открытием с будущими путешественниками?",
+          "en": "We solved the light pattern at the gates. How shall we help future travelers?",
+          "fr": "Nous comprenons le motif des portails. Comment aider les prochains voyageurs ?",
+          "de": "Wir verstehen das Lichtmuster am Tor. Wie helfen wir künftigen Reisenden?",
+          "es": "Entendimos el patrón de luz. ¿Cómo ayudamos a los próximos viajeros?",
+          "pt_BR": "Entendemos o padrão de luz. Como vamos ajudar os próximos viajantes?"
+        },
+        "choices": [
+          {
+            "ru": "Оставим световую подсказку.",
+            "en": "Let's leave a light clue.",
+            "fr": "Laissons un indice lumineux.",
+            "de": "Hinterlassen wir einen Lichthinweis.",
+            "es": "Dejemos una pista de luz.",
+            "pt_BR": "Vamos deixar uma dica de luz."
+          },
+          {
+            "ru": "Сохраним порядок в памяти.",
+            "en": "Let's store the pattern in memory.",
+            "fr": "Gardons le motif en mémoire.",
+            "de": "Speichern wir das Muster im Gedächtnis.",
+            "es": "Guardemos el patrón en la memoria.",
+            "pt_BR": "Vamos guardar o padrão na memória."
+          },
+          {
+            "ru": "Расскажем другим хранителям.",
+            "en": "Let's tell the other guardians.",
+            "fr": "Racontons-le aux autres gardiens.",
+            "de": "Erzählen wir es den anderen Wächtern.",
+            "es": "Contémoslo a los otros guardianes.",
+            "pt_BR": "Vamos contar aos outros guardiões."
+          }
+        ],
+        "outcomes": [
+          {
+            "ru": "Мягкие огоньки покажут, куда смотреть. Путешественникам будет проще замечать путь.",
+            "en": "Gentle lights will show travelers what to look for. Their journey will be clearer.",
+            "fr": "De douces lumières guideront le regard des voyageurs.",
+            "de": "Sanfte Lichter zeigen Reisenden, wohin sie schauen können.",
+            "es": "Las luces suaves ayudarán a los viajeros a orientarse.",
+            "pt_BR": "Luzes suaves vão ajudar os viajantes a observar o caminho."
+          },
+          {
+            "ru": "Узор сохранён. Если что-то изменится, хранители смогут сравнить его с прежним.",
+            "en": "The pattern is saved. If it changes, guardians can compare it with the old one.",
+            "fr": "Le motif est gardé. Les gardiens pourront comparer les changements.",
+            "de": "Das Muster ist gespeichert. Wächter können Änderungen vergleichen.",
+            "es": "El patrón está guardado. Podrán comparar cualquier cambio.",
+            "pt_BR": "O padrão está salvo. Os guardiões vão poder comparar mudanças."
+          },
+          {
+            "ru": "Другие хранители услышали нашу историю и смогут помогать новым гостям.",
+            "en": "The other guardians heard our story and can help new guests.",
+            "fr": "Les autres gardiens connaissent notre histoire et aideront les visiteurs.",
+            "de": "Die anderen Wächter kennen die Geschichte und helfen neuen Gästen.",
+            "es": "Los guardianes escucharon la historia y ayudarán a otros visitantes.",
+            "pt_BR": "Os outros guardiões ouviram a história e vão ajudar os visitantes."
+          }
+        ],
+        "callbacks": [
+          {
+            "ru": "Ты сравнил дорожки. Теперь знаешь, какую подсказку оставить.",
+            "en": "You compared the paths. Now you know which clue to share.",
+            "fr": "Tu as comparé les chemins. Partageons cet indice !",
+            "de": "Du hast die Wege verglichen. Jetzt kannst du den Hinweis teilen!",
+            "es": "Comparaste los caminos. ¡Ya sabes qué pista compartir!",
+            "pt_BR": "Você comparou os caminhos. Já sabe que dica compartilhar!"
+          },
+          {
+            "ru": "Ты запомнил порядок огней. Теперь его смогут запомнить и другие.",
+            "en": "You remembered the light order. Now others can learn it too.",
+            "fr": "Tu as retenu l'ordre des lumières. Les autres le pourront aussi !",
+            "de": "Du hast die Reihenfolge behalten. Jetzt können andere sie lernen!",
+            "es": "Recordaste el orden de las luces. Otros también podrán aprenderlo.",
+            "pt_BR": "Você lembrou a ordem das luzes. Outros também vão aprender."
+          },
+          {
+            "ru": "Ты заметил форму портала. Это поможет отличить одну дорогу от другой.",
+            "en": "You noticed the portal's shape. That helps tell one path from another.",
+            "fr": "Tu as remarqué la forme du portail. Cela aide à choisir le chemin !",
+            "de": "Du hast die Form bemerkt. So erkennt man die verschiedenen Wege!",
+            "es": "Observaste la forma del portal. ¡Eso ayuda a distinguir caminos!",
+            "pt_BR": "Você notou a forma do portal. Isso ajuda a distinguir caminhos."
+          }
+        ]
+      }
+    ]
+  }
+}

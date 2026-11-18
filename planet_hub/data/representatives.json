@@ -1,0 +1,1042 @@
+{
+  "schema_version": 3,
+  "assignment_policy": "Unique NPC per inhabited planet/station; original portrait PNG may repeat. IDs/names/jobs/memory are location-bound and gender-neutral.",
+  "excluded_from_dialogues": [
+    "03_reptile_raks",
+    "04_human_professor_elias_braun"
+  ],
+  "assignments": {
+    "mw_p01": {
+      "asset": "05_human_amara_cole.png",
+      "name_ru": "Ari",
+      "character_id": "npc_mw_p01",
+      "display_name": "Ari",
+      "role": "Valley ecology researcher",
+      "short_role": "Valley ecology researcher",
+      "profile_id": "mw_p01",
+      "name_localized": {
+        "ru": "Ари",
+        "en": "Ari",
+        "fr": "Ari",
+        "de": "Ari",
+        "es": "Ari",
+        "pt_BR": "Ari"
+      },
+      "role_localized": {
+        "ru": "Исследователь экологии долины",
+        "en": "Valley ecology researcher",
+        "fr": "Étude de la nature de la vallée",
+        "de": "Forschung im grünen Tal",
+        "es": "Estudio de la naturaleza del valle",
+        "pt_BR": "Pesquisa da natureza do vale"
+      },
+      "short_role_localized": {
+        "ru": "Исследователь экологии долины",
+        "en": "Valley ecology researcher",
+        "fr": "Étude de la nature de la vallée",
+        "de": "Forschung im grünen Tal",
+        "es": "Estudio de la naturaleza del valle",
+        "pt_BR": "Pesquisa da natureza do vale"
+      },
+      "gender_policy": "unspecified"
+    },
+    "mw_p02": {
+      "asset": "06_human_lin_kai.png",
+      "name_ru": "Nevi",
+      "character_id": "npc_mw_p02",
+      "display_name": "Nevi",
+      "role": "Mars computer researcher",
+      "short_role": "Mars computer researcher",
+      "profile_id": "mw_p02",
+      "name_localized": {
+        "ru": "Нэви",
+        "en": "Nevi",
+        "fr": "Nevi",
+        "de": "Nevi",
+        "es": "Nevi",
+        "pt_BR": "Nevi"
+      },
+      "role_localized": {
+        "ru": "Исследователь марсианских компьютеров",
+        "en": "Mars computer researcher",
+        "fr": "Recherche informatique sur Mars",
+        "de": "Computerforschung auf dem Mars",
+        "es": "Investigación informática en Marte",
+        "pt_BR": "Pesquisa de computadores em Marte"
+      },
+      "short_role_localized": {
+        "ru": "Исследователь марсианских компьютеров",
+        "en": "Mars computer researcher",
+        "fr": "Recherche informatique sur Mars",
+        "de": "Computerforschung auf dem Mars",
+        "es": "Investigación informática en Marte",
+        "pt_BR": "Pesquisa de computadores em Marte"
+      },
+      "gender_policy": "unspecified"
+    },
+    "mw_p03": {
+      "asset": "05_human_amara_cole.png",
+      "name_ru": "Remi",
+      "character_id": "npc_mw_p03",
+      "display_name": "Remi",
+      "role": "Jupiter storm observer",
+      "short_role": "Jupiter storm observer",
+      "profile_id": "mw_p03",
+      "name_localized": {
+        "ru": "Реми",
+        "en": "Remi",
+        "fr": "Remi",
+        "de": "Remi",
+        "es": "Remi",
+        "pt_BR": "Remi"
+      },
+      "role_localized": {
+        "ru": "Наблюдатель бурь Юпитера",
+        "en": "Jupiter storm observer",
+        "fr": "Observation des tempêtes de Jupiter",
+        "de": "Beobachtung von Jupiters Stürmen",
+        "es": "Observación de las tormentas de Júpiter",
+        "pt_BR": "Observação das tempestades de Júpiter"
+      },
+      "short_role_localized": {
+        "ru": "Наблюдатель бурь Юпитера",
+        "en": "Jupiter storm observer",
+        "fr": "Observation des tempêtes de Jupiter",
+        "de": "Beobachtung von Jupiters Stürmen",
+        "es": "Observación de las tormentas de Júpiter",
+        "pt_BR": "Observação das tempestades de Júpiter"
+      },
+      "gender_policy": "unspecified"
+    },
+    "mw_p06": {
+      "asset": "06_human_lin_kai.png",
+      "name_ru": "Semi",
+      "character_id": "npc_mw_p06",
+      "display_name": "Semi",
+      "role": "Neptune wind researcher",
+      "short_role": "Neptune wind researcher",
+      "profile_id": "mw_p06",
+      "name_localized": {
+        "ru": "Сэми",
+        "en": "Semi",
+        "fr": "Semi",
+        "de": "Semi",
+        "es": "Semi",
+        "pt_BR": "Semi"
+      },
+      "role_localized": {
+        "ru": "Исследователь ветров Нептуна",
+        "en": "Neptune wind researcher",
+        "fr": "Étude des vents de Neptune",
+        "de": "Windforschung auf Neptun",
+        "es": "Estudio de los vientos de Neptuno",
+        "pt_BR": "Pesquisa dos ventos de Netuno"
+      },
+      "short_role_localized": {
+        "ru": "Исследователь ветров Нептуна",
+        "en": "Neptune wind researcher",
+        "fr": "Étude des vents de Neptune",
+        "de": "Windforschung auf Neptun",
+        "es": "Estudio de los vientos de Neptuno",
+        "pt_BR": "Pesquisa dos ventos de Netuno"
+      },
+      "gender_policy": "unspecified"
+    },
+    "mw_p07": {
+      "asset": "05_human_amara_cole.png",
+      "name_ru": "Keri",
+      "character_id": "npc_mw_p07",
+      "display_name": "Keri",
+      "role": "Venus station safety researcher",
+      "short_role": "Venus station safety researcher",
+      "profile_id": "mw_p07",
+      "name_localized": {
+        "ru": "Кэри",
+        "en": "Keri",
+        "fr": "Keri",
+        "de": "Keri",
+        "es": "Keri",
+        "pt_BR": "Keri"
+      },
+      "role_localized": {
+        "ru": "Специалист по безопасности Венеры",
+        "en": "Venus station safety researcher",
+        "fr": "Sécurité de la station de Vénus",
+        "de": "Sicherheit auf der Venusstation",
+        "es": "Seguridad de la estación de Venus",
+        "pt_BR": "Segurança da estação de Vênus"
+      },
+      "short_role_localized": {
+        "ru": "Специалист по безопасности Венеры",
+        "en": "Venus station safety researcher",
+        "fr": "Sécurité de la station de Vénus",
+        "de": "Sicherheit auf der Venusstation",
+        "es": "Seguridad de la estación de Venus",
+        "pt_BR": "Segurança da estação de Vênus"
+      },
+      "gender_policy": "unspecified"
+    },
+    "st_mw": {
+      "asset": "06_human_lin_kai.png",
+      "name_ru": "Evi",
+      "character_id": "npc_st_mw",
+      "display_name": "Evi",
+      "role": "Callisto shipyard technician",
+      "short_role": "Callisto shipyard technician",
+      "profile_id": "st_mw",
+      "name_localized": {
+        "ru": "Эви",
+        "en": "Evi",
+        "fr": "Evi",
+        "de": "Evi",
+        "es": "Evi",
+        "pt_BR": "Evi"
+      },
+      "role_localized": {
+        "ru": "Техник космической верфи",
+        "en": "Callisto shipyard technician",
+        "fr": "Entretien des vaisseaux de Callisto",
+        "de": "Raumschiffwartung auf Callisto",
+        "es": "Reparación de naves en Calisto",
+        "pt_BR": "Manutenção de naves em Calisto"
+      },
+      "short_role_localized": {
+        "ru": "Техник космической верфи",
+        "en": "Callisto shipyard technician",
+        "fr": "Entretien des vaisseaux de Callisto",
+        "de": "Raumschiffwartung auf Callisto",
+        "es": "Reparación de naves en Calisto",
+        "pt_BR": "Manutenção de naves em Calisto"
+      },
+      "gender_policy": "unspecified"
+    },
+    "lmc_p02": {
+      "asset": "07_mold_form_archive.png",
+      "name_ru": "Nomi",
+      "character_id": "npc_lmc_p02",
+      "display_name": "Nomi",
+      "role": "Ocean network listener",
+      "short_role": "Ocean network listener",
+      "profile_id": "lmc_p02",
+      "name_localized": {
+        "ru": "Номи",
+        "en": "Nomi",
+        "fr": "Nomi",
+        "de": "Nomi",
+        "es": "Nomi",
+        "pt_BR": "Nomi"
+      },
+      "role_localized": {
+        "ru": "Слушатель океанской сети",
+        "en": "Ocean network listener",
+        "fr": "Écoute du réseau océanique",
+        "de": "Lauschen im Ozeannetz",
+        "es": "Escucha de la red oceánica",
+        "pt_BR": "Escuta da rede do oceano"
+      },
+      "short_role_localized": {
+        "ru": "Слушатель океанской сети",
+        "en": "Ocean network listener",
+        "fr": "Écoute du réseau océanique",
+        "de": "Lauschen im Ozeannetz",
+        "es": "Escucha de la red oceánica",
+        "pt_BR": "Escuta da rede do oceano"
+      },
+      "gender_policy": "unspecified"
+    },
+    "lmc_p03": {
+      "asset": "08_mold_form_cluster.png",
+      "name_ru": "Miori",
+      "character_id": "npc_lmc_p03",
+      "display_name": "Miori",
+      "role": "Living biodome grower",
+      "short_role": "Living biodome grower",
+      "profile_id": "lmc_p03",
+      "name_localized": {
+        "ru": "Миори",
+        "en": "Miori",
+        "fr": "Miori",
+        "de": "Miori",
+        "es": "Miori",
+        "pt_BR": "Miori"
+      },
+      "role_localized": {
+        "ru": "Выращивание живых куполов",
+        "en": "Living biodome grower",
+        "fr": "Croissance des dômes vivants",
+        "de": "Pflege lebender Kuppeln",
+        "es": "Cuidado de cúpulas vivas",
+        "pt_BR": "Cuidado dos domos vivos"
+      },
+      "short_role_localized": {
+        "ru": "Выращивание живых куполов",
+        "en": "Living biodome grower",
+        "fr": "Croissance des dômes vivants",
+        "de": "Pflege lebender Kuppeln",
+        "es": "Cuidado de cúpulas vivas",
+        "pt_BR": "Cuidado dos domos vivos"
+      },
+      "gender_policy": "unspecified"
+    },
+    "lmc_p04": {
+      "asset": "07_mold_form_archive.png",
+      "name_ru": "Lomi",
+      "character_id": "npc_lmc_p04",
+      "display_name": "Lomi",
+      "role": "Ice signal observer",
+      "short_role": "Ice signal observer",
+      "profile_id": "lmc_p04",
+      "name_localized": {
+        "ru": "Ломи",
+        "en": "Lomi",
+        "fr": "Lomi",
+        "de": "Lomi",
+        "es": "Lomi",
+        "pt_BR": "Lomi"
+      },
+      "role_localized": {
+        "ru": "Наблюдатель ледяных сигналов",
+        "en": "Ice signal observer",
+        "fr": "Observation des signaux de glace",
+        "de": "Beobachtung von Eissignalen",
+        "es": "Observación de señales del hielo",
+        "pt_BR": "Observação dos sinais do gelo"
+      },
+      "short_role_localized": {
+        "ru": "Наблюдатель ледяных сигналов",
+        "en": "Ice signal observer",
+        "fr": "Observation des signaux de glace",
+        "de": "Beobachtung von Eissignalen",
+        "es": "Observación de señales del hielo",
+        "pt_BR": "Observação dos sinais do gelo"
+      },
+      "gender_policy": "unspecified"
+    },
+    "st_lmc": {
+      "asset": "08_mold_form_cluster.png",
+      "name_ru": "Sori",
+      "character_id": "npc_st_lmc",
+      "display_name": "Sori",
+      "role": "Tarantula living laboratory caretaker",
+      "short_role": "Tarantula living laboratory caretaker",
+      "profile_id": "st_lmc",
+      "name_localized": {
+        "ru": "Сори",
+        "en": "Sori",
+        "fr": "Sori",
+        "de": "Sori",
+        "es": "Sori",
+        "pt_BR": "Sori"
+      },
+      "role_localized": {
+        "ru": "Хранитель живых лабораторий «Тарантула»",
+        "en": "Tarantula living laboratory caretaker",
+        "fr": "Soin du laboratoire vivant Tarentule",
+        "de": "Pflege des lebenden Laborschiffs",
+        "es": "Cuidado del laboratorio vivo Tarántula",
+        "pt_BR": "Cuidado do laboratório vivo Tarântula"
+      },
+      "short_role_localized": {
+        "ru": "Хранитель живых лабораторий «Тарантула»",
+        "en": "Tarantula living laboratory caretaker",
+        "fr": "Soin du laboratoire vivant Tarentule",
+        "de": "Pflege des lebenden Laborschiffs",
+        "es": "Cuidado del laboratorio vivo Tarántula",
+        "pt_BR": "Cuidado do laboratório vivo Tarântula"
+      },
+      "gender_policy": "unspecified"
+    },
+    "smc_p01": {
+      "asset": "12_phase_liquid.png",
+      "name_ru": "Aeri",
+      "character_id": "npc_smc_p01",
+      "display_name": "Aeri",
+      "role": "Ocean arch explorer",
+      "short_role": "Ocean arch explorer",
+      "profile_id": "smc_p01",
+      "name_localized": {
+        "ru": "Аэри",
+        "en": "Aeri",
+        "fr": "Aeri",
+        "de": "Aeri",
+        "es": "Aeri",
+        "pt_BR": "Aeri"
+      },
+      "role_localized": {
+        "ru": "Исследователь водных арок",
+        "en": "Ocean arch explorer",
+        "fr": "Étude des arches d'eau",
+        "de": "Erforschung der Wasserbögen",
+        "es": "Estudio de arcos de agua",
+        "pt_BR": "Pesquisa dos arcos de água"
+      },
+      "short_role_localized": {
+        "ru": "Исследователь водных арок",
+        "en": "Ocean arch explorer",
+        "fr": "Étude des arches d'eau",
+        "de": "Erforschung der Wasserbögen",
+        "es": "Estudio de arcos de agua",
+        "pt_BR": "Pesquisa dos arcos de água"
+      },
+      "gender_policy": "unspecified"
+    },
+    "smc_p02": {
+      "asset": "12_phase_liquid.png",
+      "name_ru": "Ili",
+      "character_id": "npc_smc_p02",
+      "display_name": "Ili",
+      "role": "Light reflection researcher",
+      "short_role": "Light reflection researcher",
+      "profile_id": "smc_p02",
+      "name_localized": {
+        "ru": "Или",
+        "en": "Ili",
+        "fr": "Ili",
+        "de": "Ili",
+        "es": "Ili",
+        "pt_BR": "Ili"
+      },
+      "role_localized": {
+        "ru": "Исследователь отражений",
+        "en": "Light reflection researcher",
+        "fr": "Étude des reflets",
+        "de": "Forschung über Spiegelungen",
+        "es": "Estudio de los reflejos",
+        "pt_BR": "Pesquisa dos reflexos"
+      },
+      "short_role_localized": {
+        "ru": "Исследователь отражений",
+        "en": "Light reflection researcher",
+        "fr": "Étude des reflets",
+        "de": "Forschung über Spiegelungen",
+        "es": "Estudio de los reflejos",
+        "pt_BR": "Pesquisa dos reflexos"
+      },
+      "gender_policy": "unspecified"
+    },
+    "smc_p03": {
+      "asset": "12_phase_liquid.png",
+      "name_ru": "Ori",
+      "character_id": "npc_smc_p03",
+      "display_name": "Ori",
+      "role": "Liquid tower observer",
+      "short_role": "Liquid tower observer",
+      "profile_id": "smc_p03",
+      "name_localized": {
+        "ru": "Ори",
+        "en": "Ori",
+        "fr": "Ori",
+        "de": "Ori",
+        "es": "Ori",
+        "pt_BR": "Ori"
+      },
+      "role_localized": {
+        "ru": "Наблюдатель жидких башен",
+        "en": "Liquid tower observer",
+        "fr": "Observation des tours liquides",
+        "de": "Beobachtung fließender Türme",
+        "es": "Observación de torres líquidas",
+        "pt_BR": "Observação de torres líquidas"
+      },
+      "short_role_localized": {
+        "ru": "Наблюдатель жидких башен",
+        "en": "Liquid tower observer",
+        "fr": "Observation des tours liquides",
+        "de": "Beobachtung fließender Türme",
+        "es": "Observación de torres líquidas",
+        "pt_BR": "Observação de torres líquidas"
+      },
+      "gender_policy": "unspecified"
+    },
+    "smc_p05": {
+      "asset": "12_phase_liquid.png",
+      "name_ru": "Keo",
+      "character_id": "npc_smc_p05",
+      "display_name": "Keo",
+      "role": "Mist navigation guide",
+      "short_role": "Mist navigation guide",
+      "profile_id": "smc_p05",
+      "name_localized": {
+        "ru": "Кэо",
+        "en": "Keo",
+        "fr": "Keo",
+        "de": "Keo",
+        "es": "Keo",
+        "pt_BR": "Keo"
+      },
+      "role_localized": {
+        "ru": "Проводник в тумане",
+        "en": "Mist navigation guide",
+        "fr": "Guidage dans la brume",
+        "de": "Wegweisung im Nebel",
+        "es": "Guía de caminos entre la niebla",
+        "pt_BR": "Guia pelos caminhos de névoa"
+      },
+      "short_role_localized": {
+        "ru": "Проводник в тумане",
+        "en": "Mist navigation guide",
+        "fr": "Guidage dans la brume",
+        "de": "Wegweisung im Nebel",
+        "es": "Guía de caminos entre la niebla",
+        "pt_BR": "Guia pelos caminhos de névoa"
+      },
+      "gender_policy": "unspecified"
+    },
+    "st_smc": {
+      "asset": "12_phase_liquid.png",
+      "name_ru": "Lie",
+      "character_id": "npc_st_smc",
+      "display_name": "Lie",
+      "role": "Living Archive memory keeper",
+      "short_role": "Living Archive memory keeper",
+      "profile_id": "st_smc",
+      "name_localized": {
+        "ru": "Лиэ",
+        "en": "Lie",
+        "fr": "Lie",
+        "de": "Lie",
+        "es": "Lie",
+        "pt_BR": "Lie"
+      },
+      "role_localized": {
+        "ru": "Хранитель Живого архива",
+        "en": "Living Archive memory keeper",
+        "fr": "Mémoire des Archives vivantes",
+        "de": "Bewahrung des lebenden Archivs",
+        "es": "Cuidado de la memoria del Archivo Vivo",
+        "pt_BR": "Cuidado da memória do Arquivo Vivo"
+      },
+      "short_role_localized": {
+        "ru": "Хранитель Живого архива",
+        "en": "Living Archive memory keeper",
+        "fr": "Mémoire des Archives vivantes",
+        "de": "Bewahrung des lebenden Archivs",
+        "es": "Cuidado de la memoria del Archivo Vivo",
+        "pt_BR": "Cuidado da memória do Arquivo Vivo"
+      },
+      "gender_policy": "unspecified"
+    },
+    "ngc6822_p01": {
+      "asset": "01_reptile_liri.png",
+      "name_ru": "Zeri",
+      "character_id": "npc_ngc6822_p01",
+      "display_name": "Zeri",
+      "role": "Archeon garden guardian",
+      "short_role": "Archeon garden guardian",
+      "profile_id": "ngc6822_p01",
+      "name_localized": {
+        "ru": "Зери",
+        "en": "Zeri",
+        "fr": "Zeri",
+        "de": "Zeri",
+        "es": "Zeri",
+        "pt_BR": "Zeri"
+      },
+      "role_localized": {
+        "ru": "Хранитель садов Археона",
+        "en": "Archeon garden guardian",
+        "fr": "Soin des jardins d'Archeon",
+        "de": "Schutz der Gärten von Archeon",
+        "es": "Cuidado de los jardines de Archeon",
+        "pt_BR": "Cuidado dos jardins de Archeon"
+      },
+      "short_role_localized": {
+        "ru": "Хранитель садов Археона",
+        "en": "Archeon garden guardian",
+        "fr": "Soin des jardins d'Archeon",
+        "de": "Schutz der Gärten von Archeon",
+        "es": "Cuidado de los jardines de Archeon",
+        "pt_BR": "Cuidado dos jardins de Archeon"
+      },
+      "gender_policy": "unspecified"
+    },
+    "ngc6822_p02": {
+      "asset": "02_reptile_taro.png",
+      "name_ru": "Tevi",
+      "character_id": "npc_ngc6822_p02",
+      "display_name": "Tevi",
+      "role": "Quaria cave explorer",
+      "short_role": "Quaria cave explorer",
+      "profile_id": "ngc6822_p02",
+      "name_localized": {
+        "ru": "Тэви",
+        "en": "Tevi",
+        "fr": "Tevi",
+        "de": "Tevi",
+        "es": "Tevi",
+        "pt_BR": "Tevi"
+      },
+      "role_localized": {
+        "ru": "Исследователь пещер Кварии",
+        "en": "Quaria cave explorer",
+        "fr": "Exploration des grottes de Quaria",
+        "de": "Höhlenforschung auf Quaria",
+        "es": "Exploración de cuevas de Quaria",
+        "pt_BR": "Exploração das cavernas de Quaria"
+      },
+      "short_role_localized": {
+        "ru": "Исследователь пещер Кварии",
+        "en": "Quaria cave explorer",
+        "fr": "Exploration des grottes de Quaria",
+        "de": "Höhlenforschung auf Quaria",
+        "es": "Exploración de cuevas de Quaria",
+        "pt_BR": "Exploração das cavernas de Quaria"
+      },
+      "gender_policy": "unspecified"
+    },
+    "ngc6822_p03": {
+      "asset": "01_reptile_liri.png",
+      "name_ru": "Runi",
+      "character_id": "npc_ngc6822_p03",
+      "display_name": "Runi",
+      "role": "Nocta dock signal keeper",
+      "short_role": "Nocta dock signal keeper",
+      "profile_id": "ngc6822_p03",
+      "name_localized": {
+        "ru": "Руни",
+        "en": "Runi",
+        "fr": "Runi",
+        "de": "Runi",
+        "es": "Runi",
+        "pt_BR": "Runi"
+      },
+      "role_localized": {
+        "ru": "Хранитель сигналов космопорта",
+        "en": "Nocta dock signal keeper",
+        "fr": "Signaux du port de Nocta",
+        "de": "Hafensignale auf Nocta",
+        "es": "Señales del puerto de Nocta",
+        "pt_BR": "Sinais do porto espacial de Nocta"
+      },
+      "short_role_localized": {
+        "ru": "Хранитель сигналов космопорта",
+        "en": "Nocta dock signal keeper",
+        "fr": "Signaux du port de Nocta",
+        "de": "Hafensignale auf Nocta",
+        "es": "Señales del puerto de Nocta",
+        "pt_BR": "Sinais do porto espacial de Nocta"
+      },
+      "gender_policy": "unspecified"
+    },
+    "ngc6822_p04": {
+      "asset": "02_reptile_taro.png",
+      "name_ru": "Deri",
+      "character_id": "npc_ngc6822_p04",
+      "display_name": "Deri",
+      "role": "Ferra mineral transport keeper",
+      "short_role": "Ferra mineral transport keeper",
+      "profile_id": "ngc6822_p04",
+      "name_localized": {
+        "ru": "Дэри",
+        "en": "Deri",
+        "fr": "Deri",
+        "de": "Deri",
+        "es": "Deri",
+        "pt_BR": "Deri"
+      },
+      "role_localized": {
+        "ru": "Хранитель перевозок минералов",
+        "en": "Ferra mineral transport keeper",
+        "fr": "Transport des minéraux de Ferra",
+        "de": "Mineraltransport auf Ferra",
+        "es": "Transporte de minerales de Ferra",
+        "pt_BR": "Transporte de minerais de Ferra"
+      },
+      "short_role_localized": {
+        "ru": "Хранитель перевозок минералов",
+        "en": "Ferra mineral transport keeper",
+        "fr": "Transport des minéraux de Ferra",
+        "de": "Mineraltransport auf Ferra",
+        "es": "Transporte de minerales de Ferra",
+        "pt_BR": "Transporte de minerais de Ferra"
+      },
+      "gender_policy": "unspecified"
+    },
+    "ngc6822_p06": {
+      "asset": "01_reptile_liri.png",
+      "name_ru": "Seri",
+      "character_id": "npc_ngc6822_p06",
+      "display_name": "Seri",
+      "role": "Runa history archivist",
+      "short_role": "Runa history archivist",
+      "profile_id": "ngc6822_p06",
+      "name_localized": {
+        "ru": "Сэри",
+        "en": "Seri",
+        "fr": "Seri",
+        "de": "Seri",
+        "es": "Seri",
+        "pt_BR": "Seri"
+      },
+      "role_localized": {
+        "ru": "Хранитель истории Руны",
+        "en": "Runa history archivist",
+        "fr": "Mémoire des voyageurs de Runa",
+        "de": "Bewahrung der Geschichte von Runa",
+        "es": "Historia de los viajeros de Runa",
+        "pt_BR": "Histórias dos viajantes de Runa"
+      },
+      "short_role_localized": {
+        "ru": "Хранитель истории Руны",
+        "en": "Runa history archivist",
+        "fr": "Mémoire des voyageurs de Runa",
+        "de": "Bewahrung der Geschichte von Runa",
+        "es": "Historia de los viajeros de Runa",
+        "pt_BR": "Histórias dos viajantes de Runa"
+      },
+      "gender_policy": "unspecified"
+    },
+    "st_ngc6822": {
+      "asset": "02_reptile_taro.png",
+      "name_ru": "Oni",
+      "character_id": "npc_st_ngc6822",
+      "display_name": "Oni",
+      "role": "Titan's Head dock guide",
+      "short_role": "Titan's Head dock guide",
+      "profile_id": "st_ngc6822",
+      "name_localized": {
+        "ru": "Они",
+        "en": "Oni",
+        "fr": "Oni",
+        "de": "Oni",
+        "es": "Oni",
+        "pt_BR": "Oni"
+      },
+      "role_localized": {
+        "ru": "Проводник доков «Головы Титана»",
+        "en": "Titan's Head dock guide",
+        "fr": "Guidage des docks de la Tête du Titan",
+        "de": "Wege durch den Titanenkopf",
+        "es": "Guía de los muelles de la Cabeza del Titán",
+        "pt_BR": "Guia das docas da Cabeça do Titã"
+      },
+      "short_role_localized": {
+        "ru": "Проводник доков «Головы Титана»",
+        "en": "Titan's Head dock guide",
+        "fr": "Guidage des docks de la Tête du Titan",
+        "de": "Wege durch den Titanenkopf",
+        "es": "Guía de los muelles de la Cabeza del Titán",
+        "pt_BR": "Guia das docas da Cabeça do Titã"
+      },
+      "gender_policy": "unspecified"
+    },
+    "m31_p03": {
+      "asset": "13_magnetic_ring.png",
+      "name_ru": "Atri",
+      "character_id": "npc_m31_p03",
+      "display_name": "Atri",
+      "role": "Phasis magnetic field researcher",
+      "short_role": "Phasis magnetic field researcher",
+      "profile_id": "m31_p03",
+      "name_localized": {
+        "ru": "Атри",
+        "en": "Atri",
+        "fr": "Atri",
+        "de": "Atri",
+        "es": "Atri",
+        "pt_BR": "Atri"
+      },
+      "role_localized": {
+        "ru": "Исследователь магнитных полей",
+        "en": "Phasis magnetic field researcher",
+        "fr": "Étude des champs magnétiques",
+        "de": "Erforschung magnetischer Felder",
+        "es": "Estudio de campos magnéticos",
+        "pt_BR": "Pesquisa dos campos magnéticos"
+      },
+      "short_role_localized": {
+        "ru": "Исследователь магнитных полей",
+        "en": "Phasis magnetic field researcher",
+        "fr": "Étude des champs magnétiques",
+        "de": "Erforschung magnetischer Felder",
+        "es": "Estudio de campos magnéticos",
+        "pt_BR": "Pesquisa dos campos magnéticos"
+      },
+      "gender_policy": "unspecified"
+    },
+    "m31_p05": {
+      "asset": "14_magnetic_engineer.png",
+      "name_ru": "Neri",
+      "character_id": "npc_m31_p05",
+      "display_name": "Neri",
+      "role": "Sinta levitation engineer",
+      "short_role": "Sinta levitation engineer",
+      "profile_id": "m31_p05",
+      "name_localized": {
+        "ru": "Нэри",
+        "en": "Neri",
+        "fr": "Neri",
+        "de": "Neri",
+        "es": "Neri",
+        "pt_BR": "Neri"
+      },
+      "role_localized": {
+        "ru": "Инженер левитации",
+        "en": "Sinta levitation engineer",
+        "fr": "Équilibre des sphères flottantes",
+        "de": "Gleichgewicht schwebender Kugeln",
+        "es": "Equilibrio de esferas flotantes",
+        "pt_BR": "Equilíbrio de esferas flutuantes"
+      },
+      "short_role_localized": {
+        "ru": "Инженер левитации",
+        "en": "Sinta levitation engineer",
+        "fr": "Équilibre des sphères flottantes",
+        "de": "Gleichgewicht schwebender Kugeln",
+        "es": "Equilibrio de esferas flotantes",
+        "pt_BR": "Equilíbrio de esferas flutuantes"
+      },
+      "gender_policy": "unspecified"
+    },
+    "m31_p06": {
+      "asset": "15_magnetic_companion.png",
+      "name_ru": "Kori",
+      "character_id": "npc_m31_p06",
+      "display_name": "Kori",
+      "role": "Geona science temple observer",
+      "short_role": "Geona science temple observer",
+      "profile_id": "m31_p06",
+      "name_localized": {
+        "ru": "Кори",
+        "en": "Kori",
+        "fr": "Kori",
+        "de": "Kori",
+        "es": "Kori",
+        "pt_BR": "Kori"
+      },
+      "role_localized": {
+        "ru": "Наблюдатель храма науки",
+        "en": "Geona science temple observer",
+        "fr": "Observation du temple scientifique",
+        "de": "Erforschung des Wissenschaftstempels",
+        "es": "Observación del templo de ciencia",
+        "pt_BR": "Observação do templo da ciência"
+      },
+      "short_role_localized": {
+        "ru": "Наблюдатель храма науки",
+        "en": "Geona science temple observer",
+        "fr": "Observation du temple scientifique",
+        "de": "Erforschung des Wissenschaftstempels",
+        "es": "Observación del templo de ciencia",
+        "pt_BR": "Observação do templo da ciência"
+      },
+      "gender_policy": "unspecified"
+    },
+    "st_m31": {
+      "asset": "13_magnetic_ring.png",
+      "name_ru": "Veli",
+      "character_id": "npc_st_m31",
+      "display_name": "Veli",
+      "role": "Inverted Pyramid metal scholar",
+      "short_role": "Inverted Pyramid metal scholar",
+      "profile_id": "st_m31",
+      "name_localized": {
+        "ru": "Вэли",
+        "en": "Veli",
+        "fr": "Veli",
+        "de": "Veli",
+        "es": "Veli",
+        "pt_BR": "Veli"
+      },
+      "role_localized": {
+        "ru": "Исследователь изменяющегося металла",
+        "en": "Inverted Pyramid metal scholar",
+        "fr": "Recherche sur le métal vivant",
+        "de": "Forschung an wandelbarem Metall",
+        "es": "Investigación del metal cambiante",
+        "pt_BR": "Pesquisa do metal que muda de forma"
+      },
+      "short_role_localized": {
+        "ru": "Исследователь изменяющегося металла",
+        "en": "Inverted Pyramid metal scholar",
+        "fr": "Recherche sur le métal vivant",
+        "de": "Forschung an wandelbarem Metall",
+        "es": "Investigación del metal cambiante",
+        "pt_BR": "Pesquisa do metal que muda de forma"
+      },
+      "gender_policy": "unspecified"
+    },
+    "m33_p01": {
+      "asset": "16_neural_historian.png",
+      "name_ru": "Enu",
+      "character_id": "npc_m33_p01",
+      "display_name": "Enu",
+      "role": "Svetara memory curator",
+      "short_role": "Svetara memory curator",
+      "profile_id": "m33_p01",
+      "name_localized": {
+        "ru": "Эну",
+        "en": "Enu",
+        "fr": "Enu",
+        "de": "Enu",
+        "es": "Enu",
+        "pt_BR": "Enu"
+      },
+      "role_localized": {
+        "ru": "Хранитель памяти Светары",
+        "en": "Svetara memory curator",
+        "fr": "Conservation des souvenirs de Svetara",
+        "de": "Bewahrung von Svetaras Erinnerungen",
+        "es": "Cuidado de la memoria de Svetara",
+        "pt_BR": "Cuidado das memórias de Svetara"
+      },
+      "short_role_localized": {
+        "ru": "Хранитель памяти Светары",
+        "en": "Svetara memory curator",
+        "fr": "Conservation des souvenirs de Svetara",
+        "de": "Bewahrung von Svetaras Erinnerungen",
+        "es": "Cuidado de la memoria de Svetara",
+        "pt_BR": "Cuidado das memórias de Svetara"
+      },
+      "gender_policy": "unspecified"
+    },
+    "m33_p02": {
+      "asset": "17_neural_researcher.png",
+      "name_ru": "Navi",
+      "character_id": "npc_m33_p02",
+      "display_name": "Navi",
+      "role": "Orbita sky observation mentor",
+      "short_role": "Orbita sky observation mentor",
+      "profile_id": "m33_p02",
+      "name_localized": {
+        "ru": "Нави",
+        "en": "Navi",
+        "fr": "Navi",
+        "de": "Navi",
+        "es": "Navi",
+        "pt_BR": "Navi"
+      },
+      "role_localized": {
+        "ru": "Наставник небесных наблюдений",
+        "en": "Orbita sky observation mentor",
+        "fr": "Accompagnement des observations du ciel",
+        "de": "Lernen am Sternenhimmel",
+        "es": "Guía para observar el cielo",
+        "pt_BR": "Guia para observar o céu"
+      },
+      "short_role_localized": {
+        "ru": "Наставник небесных наблюдений",
+        "en": "Orbita sky observation mentor",
+        "fr": "Accompagnement des observations du ciel",
+        "de": "Lernen am Sternenhimmel",
+        "es": "Guía para observar el cielo",
+        "pt_BR": "Guia para observar o céu"
+      },
+      "gender_policy": "unspecified"
+    },
+    "m33_p03": {
+      "asset": "18_neural_guide.png",
+      "name_ru": "Eli",
+      "character_id": "npc_m33_p03",
+      "display_name": "Eli",
+      "role": "Tessera pattern researcher",
+      "short_role": "Tessera pattern researcher",
+      "profile_id": "m33_p03",
+      "name_localized": {
+        "ru": "Эли",
+        "en": "Eli",
+        "fr": "Eli",
+        "de": "Eli",
+        "es": "Eli",
+        "pt_BR": "Eli"
+      },
+      "role_localized": {
+        "ru": "Исследователь закономерностей",
+        "en": "Tessera pattern researcher",
+        "fr": "Recherche des suites de formes",
+        "de": "Erforschung von Zahlenmustern",
+        "es": "Estudio de patrones de figuras",
+        "pt_BR": "Pesquisa de padrões e formas"
+      },
+      "short_role_localized": {
+        "ru": "Исследователь закономерностей",
+        "en": "Tessera pattern researcher",
+        "fr": "Recherche des suites de formes",
+        "de": "Erforschung von Zahlenmustern",
+        "es": "Estudio de patrones de figuras",
+        "pt_BR": "Pesquisa de padrões e formas"
+      },
+      "gender_policy": "unspecified"
+    },
+    "m33_p04": {
+      "asset": "16_neural_historian.png",
+      "name_ru": "Lumi",
+      "character_id": "npc_m33_p04",
+      "display_name": "Lumi",
+      "role": "Lentis telescope observer",
+      "short_role": "Lentis telescope observer",
+      "profile_id": "m33_p04",
+      "name_localized": {
+        "ru": "Луми",
+        "en": "Lumi",
+        "fr": "Lumi",
+        "de": "Lumi",
+        "es": "Lumi",
+        "pt_BR": "Lumi"
+      },
+      "role_localized": {
+        "ru": "Наблюдатель дальнего космоса",
+        "en": "Lentis telescope observer",
+        "fr": "Observation de l'espace lointain",
+        "de": "Beobachtung des fernen Weltraums",
+        "es": "Observación del espacio lejano",
+        "pt_BR": "Observação do espaço distante"
+      },
+      "short_role_localized": {
+        "ru": "Наблюдатель дальнего космоса",
+        "en": "Lentis telescope observer",
+        "fr": "Observation de l'espace lointain",
+        "de": "Beobachtung des fernen Weltraums",
+        "es": "Observación del espacio lejano",
+        "pt_BR": "Observação do espaço distante"
+      },
+      "gender_policy": "unspecified"
+    },
+    "st_m33": {
+      "asset": "17_neural_researcher.png",
+      "name_ru": "Eon",
+      "character_id": "npc_st_m33",
+      "display_name": "Eon",
+      "role": "Final Gates portal guardian",
+      "short_role": "Final Gates portal guardian",
+      "profile_id": "st_m33",
+      "name_localized": {
+        "ru": "Эон",
+        "en": "Eon",
+        "fr": "Eon",
+        "de": "Eon",
+        "es": "Eon",
+        "pt_BR": "Eon"
+      },
+      "role_localized": {
+        "ru": "Хранитель Последних врат",
+        "en": "Final Gates portal guardian",
+        "fr": "Protection des Dernières Portes",
+        "de": "Wache an den Letzten Toren",
+        "es": "Cuidado de las Últimas Puertas",
+        "pt_BR": "Cuidado dos Últimos Portais"
+      },
+      "short_role_localized": {
+        "ru": "Хранитель Последних врат",
+        "en": "Final Gates portal guardian",
+        "fr": "Protection des Dernières Portes",
+        "de": "Wache an den Letzten Toren",
+        "es": "Cuidado de las Últimas Puertas",
+        "pt_BR": "Cuidado dos Últimos Portais"
+      },
+      "gender_policy": "unspecified"
+    }
+  },
+  "not_landing_backgrounds": [
+    "mw_p04",
+    "mw_p05"
+  ],
+  "race_by_system": {
+    "mw": "humans",
+    "lmc": "mold",
+    "smc": "phase",
+    "ngc6822": "reptiles",
+    "m31": "magnetic",
+    "m33": "neural"
+  }
+}

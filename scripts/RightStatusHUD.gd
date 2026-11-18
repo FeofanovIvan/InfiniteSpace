@@ -1,26 +1,40 @@
 extends Control
+# MIKA_BUBBLE_CARE_MAIN_HUD_V8_5_0
 ## MIKO compact HUD: seven fuel sticks, one blue crystal and two round buttons.
 ## No giant aircraft image or numerical resource labels on the child-facing HUD.
 signal galaxy_requested
 signal main_menu_requested
+signal bubble_care_requested
+signal bubble_reminder_ready
 
-const CRYSTAL_ICON: Texture2D = preload("res://assets/ui/crystal.png")
+const CRYSTAL_ICON: Texture2D = preload("res://asteroid_assets/fragments/04_blue/crystal_wedge.png")
 const GALAXY_ICON: Texture2D = preload("res://assets/ui/galaxy_button.png")
-const PLAYER_SHIP_BUTTON: Texture2D = preload("res://assets/ui/miko_ship_menu_circle.png")
+# v77: simulator helmet badge from the planetary hub.
+const PLAYER_SHIP_BUTTON: Texture2D = preload("res://planet_hub/assets/v68_neon/simulator_badge.png")
 
+const BUBBLE_REMINDER_BUTTON: Script = preload("res://scripts/BubbleCareReminderButton.gd")
+const SETTINGS_GEAR_GLYPH: Script = preload("res://simulator_ui/settings_gear_glyph.gd")
+const SETTINGS_POPUP: Script = preload("res://scripts/SettingsLanguagePopup.gd")
 const HUD_WIDTH: float = 126.0
+## v84: settings button beneath simulator, six languages via MobileLocale.
 var fuel_segments: int = 7
 var crystal_count: int = 0
 var _bars: Array[Panel] = []
-var _crystal_icon: TextureRect
+var _crystal_icon: Sprite2D
+var _fuel_count_label: Label
+var _blink_time: float = 0.0
+var _settings_popup: Control
+var _bubble_care_button: Button
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	size = Vector2(HUD_WIDTH, 132.0)
+	size = Vector2(HUD_WIDTH, 196.0)
 	var panel: Panel = Panel.new()
 	panel.name = "FuelSticksAndBlueCrystal"
 	panel.size = Vector2(HUD_WIDTH, 34.0)
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	# A hard clip prevents any icon from spilling out over the gameplay field.
+	panel.clip_contents = true
 	panel.add_theme_stylebox_override("panel", _style(Color(0.016, 0.10, 0.17, 0.91), Color(0.28, 0.64, 0.87, 0.70), 14, 1))
 	add_child(panel)
 	for i in range(7):
@@ -31,11 +45,37 @@ func _ready() -> void:
 		seg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		panel.add_child(seg)
 		_bars.append(seg)
-	_crystal_icon = _add_icon(panel, CRYSTAL_ICON, Vector2(84.0, 4.0), Vector2(26.0, 26.0))
-	_crystal_icon.name = "BlueCrystal_NoDigits"
-	_make_icon_button("GlobalFlight", GALAXY_ICON, 43.0, "Галактическая карта", _open_galaxy)
+	# The exact blue crystal used by the asteroid shatter/debris system.
+	# Sprite2D uses an explicit fixed scale, preventing texture auto-sizing.
+	_crystal_icon = Sprite2D.new()
+	_crystal_icon.name = "BlueAsteroidFragment_InsideFuelPanel"
+	_crystal_icon.texture = CRYSTAL_ICON
+	_crystal_icon.centered = true
+	_crystal_icon.position = Vector2(95.0, 17.0)
+	_crystal_icon.scale = Vector2.ONE * 0.059
+	_crystal_icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+	panel.add_child(_crystal_icon)
+	_fuel_count_label = Label.new()
+	_fuel_count_label.name = "FuelCount_50Capacity"
+	_fuel_count_label.position = Vector2(101.0, 7.0)
+	_fuel_count_label.size = Vector2(23.0, 22.0)
+	_fuel_count_label.add_theme_font_size_override("font_size", 11)
+	_fuel_count_label.add_theme_color_override("font_color", Color(0.85, 0.96, 1.0))
+	_fuel_count_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	panel.add_child(_fuel_count_label)
+	_make_icon_button("GlobalFlight", GALAXY_ICON, 46.0, MobileLocale.t("galaxy_map"), _open_galaxy)
 	_make_ship_menu_button()
+	_make_bubble_care_button()
+	_make_settings_button()
 	_refresh()
+	MobileLocale.language_changed.connect(_refresh_locale)
+
+func _refresh_locale(_code: String) -> void:
+	(get_node("GlobalFlight") as Button).tooltip_text = MobileLocale.t("galaxy_map")
+	(get_node("MikoMainMenu") as TextureButton).tooltip_text = MobileLocale.t("planet_simulator")
+
+	if has_node("SettingsBelowSimulator"):
+		(get_node("SettingsBelowSimulator") as Button).tooltip_text = str({"ru":"Настройки", "en":"Settings", "fr":"Paramètres", "de":"Einstellungen", "es":"Ajustes", "pt_BR":"Configurações"}.get(MobileLocale.language, "Settings"))
 
 func _make_icon_button(node_name: String, icon: Texture2D, top: float, description: String, callback: Callable) -> void:
 	var button: Button = Button.new()
@@ -61,28 +101,78 @@ func _make_ship_menu_button() -> void:
 	# the native 512px ship outside its 42px parent on narrow phone displays.
 	var button: TextureButton = TextureButton.new()
 	button.name = "MikoMainMenu"
-	button.position = Vector2(HUD_WIDTH - 44.0, 90.0)
+	button.position = Vector2(HUD_WIDTH - 44.0, 100.0)
 	button.size = Vector2(42.0, 42.0)
 	button.ignore_texture_size = true
 	button.stretch_mode = TextureButton.STRETCH_SCALE
 	button.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 	button.texture_normal = PLAYER_SHIP_BUTTON
-	button.tooltip_text = "Главное меню Мико"
+	button.tooltip_text = MobileLocale.t("planet_simulator")
 	button.focus_mode = Control.FOCUS_NONE
 	button.mouse_filter = Control.MOUSE_FILTER_STOP
 	button.pressed.connect(_open_main_menu)
 	add_child(button)
 
-func _add_icon(parent: Node, texture: Texture2D, at: Vector2, dimensions: Vector2) -> TextureRect:
-	var icon: TextureRect = TextureRect.new()
-	icon.texture = texture
-	icon.position = at
-	icon.size = dimensions
-	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	parent.add_child(icon)
-	return icon
+
+func _make_bubble_care_button() -> void:
+	_bubble_care_button = BUBBLE_REMINDER_BUTTON.new() as Button
+	_bubble_care_button.name = "BubbleCareClock"
+	_bubble_care_button.position = Vector2(HUD_WIDTH - 44.0, 154.0)
+	_bubble_care_button.size = Vector2(42.0, 42.0)
+	_bubble_care_button.tooltip_text = "Bubble · забота"
+	_bubble_care_button.pressed.connect(_open_bubble_care)
+	_bubble_care_button.connect("reminder_ready", Callable(self, "_on_bubble_reminder_ready"))
+	add_child(_bubble_care_button)
+
+func _open_bubble_care() -> void:
+	bubble_care_requested.emit()
+
+func _on_bubble_reminder_ready() -> void:
+	bubble_reminder_ready.emit()
+
+func set_bubble_timer_active(active: bool) -> void:
+	if is_instance_valid(_bubble_care_button):
+		_bubble_care_button.call("set_flight_active", active)
+
+func reset_bubble_clock() -> void:
+	if is_instance_valid(_bubble_care_button):
+		_bubble_care_button.call("reset_clock")
+
+func bubble_settings_open() -> bool:
+	return is_instance_valid(_settings_popup) and _settings_popup.visible
+
+func _make_settings_button() -> void:
+	# Third compact circle below the simulator entry; Main.gd positions it safely.
+	var button: Button = Button.new()
+	button.name = "SettingsBelowSimulator"
+	button.text = ""
+	button.position = Vector2(HUD_WIDTH - 44.0, 208.0)
+	button.size = Vector2(42.0, 42.0)
+	button.focus_mode = Control.FOCUS_NONE
+	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	button.add_theme_stylebox_override("normal", _style(Color("061c38"), Color("26dfff"), 21, 2))
+	button.add_theme_stylebox_override("hover", _style(Color("113a60"), Color("a9f5ff"), 21, 2))
+	button.add_theme_stylebox_override("pressed", _style(Color("154866"), Color("a9f5ff"), 21, 2))
+	button.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
+	add_child(button)
+	var glyph: Control = SETTINGS_GEAR_GLYPH.new() as Control
+	glyph.name = "NeonSettingsGear"
+	button.add_child(glyph)
+	glyph.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	button.pressed.connect(_open_language_settings)
+	# CanvasLayer keeps settings fullscreen despite the world HUD scale.
+	var layer: CanvasLayer = CanvasLayer.new()
+	layer.name = "LanguageSettingsOverlayLayer"
+	layer.layer = 95
+	add_child(layer)
+	_settings_popup = SETTINGS_POPUP.new() as Control
+	_settings_popup.name = "LanguageSettingsPopup"
+	layer.add_child(_settings_popup)
+	_settings_popup.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+
+func _open_language_settings() -> void:
+	if is_instance_valid(_settings_popup):
+		_settings_popup.call("open_settings")
 
 func _style(background: Color, outline: Color, corner: int, stroke: int) -> StyleBoxFlat:
 	var s: StyleBoxFlat = StyleBoxFlat.new()
@@ -93,29 +183,48 @@ func _style(background: Color, outline: Color, corner: int, stroke: int) -> Styl
 	return s
 
 func set_fuel_segments(value: int) -> void:
-	fuel_segments = clampi(value, 0, 7)
+	var next_value: int = clampi(value, 0, 7)
+	if next_value == fuel_segments:
+		return
+	fuel_segments = next_value
 	if is_node_ready():
 		_refresh()
 
 func set_crystals(value: int) -> void:
-	crystal_count = maxi(0, value)
+	var next_value: int = maxi(0, value)
+	if next_value == crystal_count:
+		return
+	crystal_count = next_value
 	if is_node_ready():
 		_refresh()
 
+func _process(delta: float) -> void:
+	if fuel_segments <= 1:
+		var was_bright: bool = sin(_blink_time * 10.0) > 0.0
+		_blink_time += delta
+		if was_bright != (sin(_blink_time * 10.0) > 0.0):
+			_refresh()
+
+
 func _refresh() -> void:
 	var lit: Color = Color("4bde80")
-	if fuel_segments <= 2:
-		lit = Color("fa585b")
-	elif fuel_segments <= 5:
+	if fuel_segments == 1:
+		lit = Color("fa3348") if sin(_blink_time * 10.0) > 0.0 else Color("641624")
+	elif fuel_segments == 2:
+		lit = Color("ef8260")
+	elif fuel_segments <= 4:
 		lit = Color("ffd459")
 	for i in range(_bars.size()):
 		var cell: Panel = _bars[i]
 		var active: bool = i < fuel_segments
 		cell.add_theme_stylebox_override("panel", _style(lit if active else Color(0.10, 0.20, 0.27, 0.93), Color(0.8, 0.95, 1.0, 0.4) if active else Color(0.24, 0.35, 0.44, 0.7), 3, 1))
-	# The crystal icon, not a number, is always present. Brightness reflects
-	# whether at least one collectible has been added to the future inventory.
+	# This is a pictogram inside the bar, not a count or a spawned world object.
+	# Keep it visible even at zero collected crystals.
 	if _crystal_icon != null:
-		_crystal_icon.modulate = Color(0.53, 0.70, 0.85, 0.78) if crystal_count == 0 else Color.WHITE
+		_crystal_icon.modulate = Color.WHITE
+	if _fuel_count_label != null:
+		_fuel_count_label.text = str(crystal_count)
+		_fuel_count_label.add_theme_color_override("font_color", Color("fa585b") if fuel_segments <= 1 and sin(_blink_time * 10.0) > 0.0 else (Color("641624") if fuel_segments <= 1 else Color(0.86, 0.97, 1.0)))
 
 func _open_galaxy() -> void:
 	galaxy_requested.emit()

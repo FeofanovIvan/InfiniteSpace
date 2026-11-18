@@ -1,0 +1,112 @@
+{
+  "source_archives": [
+    "солнечная система(1).zip",
+    "infinity_space_cutouts_clean_v5 (1).zip"
+  ],
+  "assets": {
+    "planet_hub/backgrounds/mw_p02.png": {
+      "source": "Martian AI Citadel Beneath Sunset Peaks.png",
+      "sha256": "208b45e51433888ee7cd9f275b6154da330e7015e5017935f01d55da8d76cbd8"
+    },
+    "planet_hub/backgrounds/mw_p01.png": {
+      "source": "Utopian Cities Across a Sunset Lake.png",
+      "sha256": "520d16fd21898dbc34fdddeacbbe774ae2d36b1631a92e7d7549fd2e864980f9"
+    },
+    "planet_hub/backgrounds/mw_p03.png": {
+      "source": "Orbital Station Above the Storm.png",
+      "sha256": "7ddfdc650547714999ba93ce7f361a1f09d2d4b6cd9eead437b412bffe87d835"
+    },
+    "planet_hub/backgrounds/mw_p07.png": {
+      "source": "Venusian Outpost Beneath the Sun.png",
+      "sha256": "aac9582c07a14a27cd154bd64524a8398da88f1df1dc19e4a118546cc50c23ab"
+    },
+    "planet_hub/backgrounds/mw_p05.png": {
+      "source": "UranusΓÇÖs Frozen Chasms Beneath a Spiral Nebula.png",
+      "sha256": "eaed8f776d9938246e0c44f4b43a5f1955dd4095a2ec23a2dbd45ad9cab826c2"
+    },
+    "planet_hub/backgrounds/mw_p08.png": {
+      "source": "MercuryΓÇÖs Cratered Sunscape.png",
+      "sha256": "b1c32e556f467aebf5b91e7b5e5ecf3676b5f57d0f5b78834f386f2ad3a8dc47"
+    },
+    "planet_hub/backgrounds/mw_p06.png": {
+      "source": "Neptune Cloudtop Station.png",
+      "sha256": "88d3bfdac0f9b07bc4a47c4036dd9f27799445e85d7e38d8b36e59e9ccdb700a"
+    },
+    "planet_hub/backgrounds/mw_p04.png": {
+      "source": "SaturnΓÇÖs Majestic Ringed Stormscape.png",
+      "sha256": "132c0749d3f907035e97dd0211ab7aed899d7dede31da7a3b3b5ffd377103603"
+    },
+    "planet_hub/backgrounds/st_mw.png": {
+      "source": "Giant Spaceship in a Glowing Industrial Hangar.png",
+      "sha256": "97f1a3bfc6637c7068b5cd7d646098034824d4e1990b7f83a46934bda49ffc3e"
+    },
+    "planet_hub/characters/01_reptile_liri.png": {
+      "source": "01_reptile_liri.png",
+      "sha256": "f5be7aeb538b4362c55cb090806b14bbd185236a124e6e853fddc4a790697af0"
+    },
+    "planet_hub/characters/02_reptile_taro.png": {
+      "source": "02_reptile_taro.png",
+      "sha256": "ec6732283538cfa0d32d83ae4ac155419ca433d035caada15aa09014365d9491"
+    },
+    "planet_hub/characters/05_human_amara_cole.png": {
+      "source": "05_human_amara_cole.png",
+      "sha256": "761bb2b9f3a295344af2eac1febf58b27916daef5a8e8e7319cb30544128a09a"
+    },
+    "planet_hub/characters/06_human_lin_kai.png": {
+      "source": "06_human_lin_kai.png",
+      "sha256": "0b6dbba0db6a0414a87b4c48d117dcdee52b1d5963256fc2d61f3f0733a983f2"
+    },
+    "planet_hub/characters/07_mold_form_archive.png": {
+      "source": "07_mold_form_archive.png",
+      "sha256": "7656409abc287a767f4eea094030ad088233d2d32be768802af4387b0318ccee"
+    },
+    "planet_hub/characters/08_mold_form_cluster.png": {
+      "source": "08_mold_form_cluster.png",
+      "sha256": "b9d3db22b68e74489f25c7bf52620900f794e063a9a1b04e71d5af2d06e85900"
+    },
+    "planet_hub/characters/09_mold_form_small_symbiont.png": {
+      "source": "09_mold_form_small_symbiont.png",
+      "sha256": "47fafa96d04945a9b9c5393c0d1ca9689dd620dfbd4a45f87bcd3a536e3dae50"
+    },
+    "planet_hub/characters/10_phase_crystal.png": {
+      "source": "10_phase_crystal.png",
+      "sha256": "d25ecf97ab238d1f24300c58c4f9496ef9dbefdee289c30d79575501fe88e4b9"
+    },
+    "planet_hub/characters/11_phase_gas.png": {
+      "source": "11_phase_gas.png",
+      "sha256": "4061c73f514d6a03bcb2978c063a25407a91248da1b1748f486e23d51b7dd34e"
+    },
+    "planet_hub/characters/12_phase_liquid.png": {
+      "source": "12_phase_liquid.png",
+      "sha256": "5e6226b903e4bf71b148f7a8f33a156efd22249fa05bfc16fd31aaccb699ba55"
+    },
+    "planet_hub/characters/13_magnetic_ring.png": {
+      "source": "13_magnetic_ring.png",
+      "sha256": "b7543e7b20f208a837b4a8bc675d41a6eb400b22b92073c8b8839bad99ffdfb9"
+    },
+    "planet_hub/characters/14_magnetic_engineer.png": {
+      "source": "14_magnetic_engineer.png",
+      "sha256": "277452390960b9c84b8e7fec623a878217dffca8983074b74621c0e39ca5e374"
+    },
+    "planet_hub/characters/15_magnetic_companion.png": {
+      "source": "15_magnetic_companion.png",
+      "sha256": "1d49f55955d6ec49bad47408b070f1ac1733ada9b6823a9221df75093df4bd48"
+    },
+    "planet_hub/characters/16_neural_historian.png": {
+      "source": "16_neural_historian.png",
+      "sha256": "aefc80727424d3313352e2406ae7eae6685851e9c8ce296d7bb578dd99ae9e0d"
+    },
+    "planet_hub/characters/17_neural_researcher.png": {
+      "source": "17_neural_researcher.png",
+      "sha256": "59c589e0ebb39fe90866b5f83c004a05a45bc96b5f1eedd34131ef62cedcf0ef"
+    },
+    "planet_hub/characters/18_neural_guide.png": {
+      "source": "18_neural_guide.png",
+      "sha256": "82b2cef6664bbffe9741c6061f8a81143f4b4a86b81b2a6e4292d8f08e30227d"
+    }
+  },
+  "reserved_backgrounds": [
+    "planet_hub/backgrounds/mw_p05.png",
+    "planet_hub/backgrounds/mw_p04.png"
+  ]
+}

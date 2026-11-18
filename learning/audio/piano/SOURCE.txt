@@ -1,0 +1,7 @@
+Source: University of Iowa Musical Instrument Samples
+Collection: Piano_Other/piano, mezzo-forte samples
+Creator credited by the collection: Lawrence Fritts, University of Iowa Electronic Music Studios
+Source page: https://theremin.music.uiowa.edu/MIS.html
+Files used: C4, Db4, D4, Eb4, E4, F4, Gb4, G4, Ab4, A4, Bb4, B4, C5
+Processing: shortened to 4 seconds, normalized, faded, and converted from AIFF to OGG Vorbis
+License status: explicit commercial redistribution terms were not found on the source page; verify permission before production release

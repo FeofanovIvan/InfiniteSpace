@@ -1,0 +1,174 @@
+{
+  "behaviors": 31,
+  "groups": 6,
+  "expressions": 17,
+  "source_body": "MIKA_Bubble_Unified_Godot_4.7.1",
+  "source_face": "MIKA_Bubble_Jaw_Brush_Godot_4.7.1",
+  "teeth": 10,
+  "default_expressions": {
+    "calm": {
+      "label": "Спокойствие",
+      "eyes": "open",
+      "mouth": "smile",
+      "brow": "soft",
+      "blush": false
+    },
+    "happy": {
+      "label": "Радость",
+      "eyes": "happy",
+      "mouth": "grin",
+      "brow": "soft",
+      "blush": true
+    },
+    "excited": {
+      "label": "Восторг",
+      "eyes": "wide",
+      "mouth": "big_smile",
+      "brow": "raised",
+      "blush": true
+    },
+    "curious": {
+      "label": "Любопытство",
+      "eyes": "open",
+      "mouth": "o",
+      "brow": "raised",
+      "blush": false,
+      "gaze": [
+        0.8,
+        -0.15
+      ]
+    },
+    "surprised": {
+      "label": "Удивление",
+      "eyes": "wide",
+      "mouth": "o",
+      "brow": "raised",
+      "blush": false
+    },
+    "shy": {
+      "label": "Смущение",
+      "eyes": "half",
+      "mouth": "smile",
+      "brow": "soft",
+      "blush": true,
+      "gaze": [
+        -0.8,
+        0.5
+      ]
+    },
+    "sad": {
+      "label": "Грусть",
+      "eyes": "half",
+      "mouth": "sad",
+      "brow": "worried",
+      "blush": false
+    },
+    "scared": {
+      "label": "Испуг",
+      "eyes": "wide",
+      "mouth": "open",
+      "brow": "raised",
+      "blush": false
+    },
+    "annoyed": {
+      "label": "Недовольство",
+      "eyes": "half",
+      "mouth": "flat",
+      "brow": "angry",
+      "blush": false
+    },
+    "sleepy": {
+      "label": "Сонливость",
+      "eyes": "half",
+      "mouth": "smile",
+      "brow": "soft",
+      "blush": false
+    },
+    "sleeping": {
+      "label": "Сон",
+      "eyes": "closed",
+      "mouth": "smile",
+      "brow": "soft",
+      "blush": false
+    },
+    "playful": {
+      "label": "Игривость",
+      "eyes": "wink",
+      "mouth": "grin",
+      "brow": "raised",
+      "blush": true
+    },
+    "uncomfortable": {
+      "label": "Дискомфорт",
+      "eyes": "closed",
+      "mouth": "strain",
+      "brow": "worried",
+      "blush": false
+    },
+    "content": {
+      "label": "Удовольствие",
+      "eyes": "happy",
+      "mouth": "grin",
+      "brow": "soft",
+      "blush": true
+    },
+    "strained": {
+      "label": "Напряжение (газ)",
+      "eyes": "closed",
+      "mouth": "strain",
+      "brow": "angry",
+      "blush": true
+    },
+    "embarrassed": {
+      "label": "Смущение (после газа)",
+      "eyes": "half",
+      "mouth": "o",
+      "brow": "worried",
+      "blush": true,
+      "gaze": [
+        -1,
+        0.5
+      ]
+    },
+    "relieved": {
+      "label": "Облегчение",
+      "eyes": "happy",
+      "mouth": "big_smile",
+      "brow": "soft",
+      "blush": true
+    }
+  },
+  "action_face_mappings": {
+    "idle": "calm",
+    "walk_forward": "happy",
+    "walk_backward": "curious",
+    "strafe_left": "curious",
+    "strafe_right": "curious",
+    "accelerate": "excited",
+    "brake": "surprised",
+    "turn_45_left": "curious",
+    "turn_45_right": "curious",
+    "turn_90_left": "curious",
+    "turn_90_right": "curious",
+    "turn_180_left": "surprised",
+    "turn_180_right": "surprised",
+    "turn_move_left": "curious",
+    "turn_move_right": "curious",
+    "wave": "happy",
+    "jump": "excited",
+    "roll": "playful",
+    "float": "content",
+    "spin": "excited",
+    "look": "curious",
+    "detach": "surprised",
+    "rejoin": "happy",
+    "stretch": "content",
+    "contract": "uncomfortable",
+    "gas": "strained",
+    "sleep": "sleeping",
+    "eat": "content",
+    "drink": "calm",
+    "brush_teeth": "calm",
+    "bath": "content"
+  }
+}

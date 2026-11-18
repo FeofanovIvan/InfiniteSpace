@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "patch": "MIKA v118",
+  "base": "MIKA v117",
+  "locales": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "policies": {
+    "offline_only": true,
+    "no_generated_science": true,
+    "no_raw_child_text_in_progress": true,
+    "no_personal_data": true,
+    "separate_progress_by_locale": true,
+    "three_clouds": true,
+    "child_safety_first": true,
+    "preserve_existing_studies": true,
+    "preserve_knowledge_links": true,
+    "preserve_adaptive_hints": true,
+    "max_routes": 6,
+    "min_steps": 4,
+    "max_steps": 5,
+    "max_saved_routes_per_locale": 6
+  },
+  "routes": {
+    "water_cycle": {
+      "title": {
+        "ru": "Путешествие капли воды",
+        "en": "A Drop of Water",
+        "fr": "Le voyage d’une goutte d’eau",
+        "de": "Reise eines Wassertropfens",
+        "es": "Viaje de una gota de agua",
+        "pt_BR": "A viagem de uma gota de água"
+      },
+      "topic_ids": [
+        "clean_water",
+        "phase_changes",
+        "states",
+        "molecules"
+      ]
+    },
+    "light_and_shadow": {
+      "title": {
+        "ru": "Свет и тени",
+        "en": "Light and Shadows",
+        "fr": "Lumière et ombres",
+        "de": "Licht und Schatten",
+        "es": "Luz y sombras",
+        "pt_BR": "Luz e sombras"
+      },
+      "topic_ids": [
+        "sun",
+        "light",
+        "shadows",
+        "day_night"
+      ]
+    },
+    "tiny_parts": {
+      "title": {
+        "ru": "Мир маленьких частиц",
+        "en": "A World of Tiny Particles",
+        "fr": "Le monde des petites particules",
+        "de": "Welt der winzigen Teilchen",
+        "es": "El mundo de las partículas",
+        "pt_BR": "O mundo das pequenas partículas"
+      },
+      "topic_ids": [
+        "atoms",
+        "molecules",
+        "states",
+        "phase_changes"
+      ]
+    },
+    "living_nature": {
+      "title": {
+        "ru": "Живая природа",
+        "en": "Living Nature",
+        "fr": "La nature vivante",
+        "de": "Lebendige Natur",
+        "es": "La naturaleza viva",
+        "pt_BR": "A natureza viva"
+      },
+      "topic_ids": [
+        "bees",
+        "flowers",
+        "trees",
+        "air"
+      ]
+    },
+    "planet_care": {
+      "title": {
+        "ru": "Заботимся о планете",
+        "en": "Caring for Our Planet",
+        "fr": "Prenons soin de la planète",
+        "de": "Unseren Planeten schützen",
+        "es": "Cuidar nuestro planeta",
+        "pt_BR": "Cuidando do nosso planeta"
+      },
+      "topic_ids": [
+        "sorting",
+        "waste",
+        "plastic",
+        "clean_ocean",
+        "clean_water"
+      ]
+    },
+    "space_journey": {
+      "title": {
+        "ru": "Путешествие по космосу",
+        "en": "A Journey Through Space",
+        "fr": "Voyage dans l’espace",
+        "de": "Reise durch den Weltraum",
+        "es": "Viaje por el espacio",
+        "pt_BR": "Uma viagem pelo espaço"
+      },
+      "topic_ids": [
+        "earth",
+        "solar_system",
+        "planets",
+        "asteroids",
+        "comets"
+      ]
+    }
+  },
+  "order": [
+    "water_cycle",
+    "light_and_shadow",
+    "tiny_parts",
+    "living_nature",
+    "planet_care",
+    "space_journey"
+  ],
+  "ui": {
+    "ru": {
+      "browse": "Выбрать научную тему",
+      "routes": "Маршруты открытий",
+      "resume": "Продолжить маршрут",
+      "about": "О Живой планете",
+      "next_page": "Другие маршруты",
+      "back_to_home": "К темам",
+      "step": "Следующее открытие: %s",
+      "step_note": "Открытие %d из %d в маршруте «%s».",
+      "finish": "Мы изучили весь маршрут «%s». Можно выбрать новый или вернуться к темам.",
+      "resume_note": "Можно продолжить маршрут «%s».",
+      "welcome": "Мы уже знакомились с %d темами и завершили %d исследований.",
+      "select": "Выбери маршрут. Можно вернуться к темам в любой момент.",
+      "list_hint": "Для новых маршрутов выбери «Маршруты открытий».",
+      "about_reply": "Я отвечаю через планшет-переводчик. Выбирай тему или путешествие!",
+      "no_active": "Пока нет начатого маршрута. Выбери один из маршрутов открытий."
+    },
+    "en": {
+      "browse": "Choose a science topic",
+      "routes": "Discovery journeys",
+      "resume": "Continue my journey",
+      "about": "About the Living World",
+      "next_page": "More journeys",
+      "back_to_home": "Back to topics",
+      "step": "Next discovery: %s",
+      "step_note": "Discovery %d of %d on “%s”.",
+      "finish": "We have explored the whole “%s” journey. You can choose another or return to the topics.",
+      "resume_note": "You can continue the “%s” journey.",
+      "welcome": "We have explored %d topics and completed %d investigations.",
+      "select": "Choose a journey. You can return to the topics at any time.",
+      "list_hint": "To explore another route, choose “Discovery journeys”.",
+      "about_reply": "I speak through the translation tablet. Choose a topic or a discovery journey!",
+      "no_active": "There is no journey in progress yet. Choose a discovery journey."
+    },
+    "fr": {
+      "browse": "Choisir un sujet scientifique",
+      "routes": "Parcours de découverte",
+      "resume": "Reprendre mon parcours",
+      "about": "À propos du Monde vivant",
+      "next_page": "Autres parcours",
+      "back_to_home": "Retour aux sujets",
+      "step": "Prochaine découverte : %s",
+      "step_note": "Découverte %d sur %d du parcours « %s ».",
+      "finish": "Nous avons terminé le parcours « %s ». Tu peux en choisir un autre ou revenir aux sujets.",
+      "resume_note": "Tu peux reprendre le parcours « %s ».",
+      "welcome": "Nous avons exploré %d sujets et terminé %d recherches.",
+      "select": "Choisis un parcours. Tu peux revenir aux sujets à tout moment.",
+      "list_hint": "Pour un autre parcours, choisis « Parcours de découverte ».",
+      "about_reply": "Je parle grâce à la tablette de traduction. Choisis un sujet ou un parcours !",
+      "no_active": "Aucun parcours en cours. Choisis un parcours de découverte."
+    },
+    "de": {
+      "browse": "Ein Wissenschaftsthema wählen",
+      "routes": "Entdeckungsreisen",
+      "resume": "Meine Reise fortsetzen",
+      "about": "Über die Lebendige Welt",
+      "next_page": "Weitere Reisen",
+      "back_to_home": "Zurück zu den Themen",
+      "step": "Nächste Entdeckung: %s",
+      "step_note": "Entdeckung %d von %d auf der Reise „%s“.",
+      "finish": "Wir haben die Reise „%s“ beendet. Du kannst eine andere wählen oder zu den Themen zurückkehren.",
+      "resume_note": "Du kannst die Reise „%s“ fortsetzen.",
+      "welcome": "Wir haben %d Themen erkundet und %d Untersuchungen abgeschlossen.",
+      "select": "Wähle eine Reise. Du kannst jederzeit zu den Themen zurückkehren.",
+      "list_hint": "Für eine neue Reise wähle „Entdeckungsreisen“.",
+      "about_reply": "Ich spreche durch das Übersetzertablet. Wähle ein Thema oder eine Entdeckungsreise!",
+      "no_active": "Es gibt noch keine begonnene Reise. Wähle eine Entdeckungsreise."
+    },
+    "es": {
+      "browse": "Elegir un tema de ciencias",
+      "routes": "Rutas de descubrimiento",
+      "resume": "Continuar mi ruta",
+      "about": "Sobre el Mundo Vivo",
+      "next_page": "Más rutas",
+      "back_to_home": "Volver a los temas",
+      "step": "Siguiente descubrimiento: %s",
+      "step_note": "Descubrimiento %d de %d en «%s».",
+      "finish": "Hemos terminado la ruta «%s». Puedes elegir otra o volver a los temas.",
+      "resume_note": "Puedes continuar la ruta «%s».",
+      "welcome": "Hemos explorado %d temas y completado %d investigaciones.",
+      "select": "Elige una ruta. Puedes volver a los temas cuando quieras.",
+      "list_hint": "Para otra ruta, elige «Rutas de descubrimiento».",
+      "about_reply": "Hablo mediante la tableta traductora. ¡Elige un tema o una ruta!",
+      "no_active": "Todavía no hay ninguna ruta iniciada. Elige una ruta de descubrimiento."
+    },
+    "pt_BR": {
+      "browse": "Escolher um tema de ciências",
+      "routes": "Trilhas de descobertas",
+      "resume": "Continuar minha trilha",
+      "about": "Sobre o Mundo Vivo",
+      "next_page": "Mais trilhas",
+      "back_to_home": "Voltar aos temas",
+      "step": "Próxima descoberta: %s",
+      "step_note": "Descoberta %d de %d na trilha “%s”.",
+      "finish": "Terminamos a trilha “%s”. Você pode escolher outra ou voltar aos temas.",
+      "resume_note": "Você pode continuar a trilha “%s”.",
+      "welcome": "Já exploramos %d temas e concluímos %d investigações.",
+      "select": "Escolha uma trilha. Você pode voltar aos temas quando quiser.",
+      "list_hint": "Para outra trilha, escolha “Trilhas de descobertas”.",
+      "about_reply": "Eu me comunico pelo tablet tradutor. Escolha um tema ou uma trilha!",
+      "no_active": "Ainda não há uma trilha iniciada. Escolha uma trilha de descobertas."
+    }
+  }
+}

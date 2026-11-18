@@ -1,0 +1,709 @@
+{
+  "schema_version": 1,
+  "basis": "Reviewed questions and answers from crossroads_encyclopedia.json v96; only the official source_answer_index is stated as fact. No external experiments, no generative answers.",
+  "locales": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "policies": {
+    "no_real_world_actions": true,
+    "no_grading": true,
+    "no_child_message_storage": true,
+    "only_approved_science_explanations": true,
+    "always_offer_skip": true,
+    "freeform_prediction_not_scored": true,
+    "max_stored_scenarios": 14
+  },
+  "ui": {
+    "ru": {
+      "enter": "Подумаем вместе",
+      "intro": "Это исследование в воображении. Ничего делать по-настоящему не нужно.",
+      "skip": "Вернуться к вопросам",
+      "aligned": "Интересное предположение! Оно согласуется с нашей энциклопедией.",
+      "other": "Интересная мысль! Давай сравним её с тем, что знает энциклопедия.",
+      "free": "Спасибо за предположение! Давай посмотрим, что говорит энциклопедия.",
+      "fact": "Вот проверенное объяснение:",
+      "finish": "Ты исследовал идею. Здесь нет оценок: главное — думать и спрашивать.",
+      "again": "Другое предположение",
+      "talk": "Ещё поговорим об этом",
+      "another": "Другая тема",
+      "skipped": "Хорошо, вернёмся к вопросам.",
+      "question_hold": "Хороший вопрос. Сначала закончим наше предположение или вернёмся к вопросам.",
+      "unavailable": "Пока не нахожу проверенного объяснения. Выберем другую тему."
+    },
+    "en": {
+      "enter": "Let’s think together",
+      "intro": "This is an imaginary investigation. You do not need to try anything for real.",
+      "skip": "Back to questions",
+      "aligned": "Interesting prediction! It agrees with our encyclopedia.",
+      "other": "Interesting idea! Let’s compare it with what our encyclopedia says.",
+      "free": "Thanks for sharing your idea! Let’s see what our encyclopedia says.",
+      "fact": "Here is the verified explanation:",
+      "finish": "You explored an idea. There are no scores here: thinking and asking questions matter.",
+      "again": "Try another prediction",
+      "talk": "Keep talking about this",
+      "another": "Another topic",
+      "skipped": "All right, back to the questions.",
+      "question_hold": "Good question. First, finish your prediction or return to the questions.",
+      "unavailable": "I do not have a verified explanation for this yet. Let’s choose another topic."
+    },
+    "fr": {
+      "enter": "Réfléchissons ensemble",
+      "intro": "C’est une expérience imaginaire. Tu n’as rien à faire en vrai.",
+      "skip": "Retour aux questions",
+      "aligned": "Une idée intéressante ! Elle correspond à notre encyclopédie.",
+      "other": "Une idée intéressante ! Comparons-la à notre encyclopédie.",
+      "free": "Merci pour ton idée ! Voyons ce que dit notre encyclopédie.",
+      "fact": "Voici l’explication vérifiée :",
+      "finish": "Tu as exploré une idée. Pas de notes ici : l’important, c’est de réfléchir et de poser des questions.",
+      "again": "Essayer une autre idée",
+      "talk": "Continuer sur ce sujet",
+      "another": "Un autre sujet",
+      "skipped": "D’accord, revenons aux questions.",
+      "question_hold": "Bonne question. Terminons d’abord cette idée ou revenons aux questions.",
+      "unavailable": "Je n’ai pas encore d’explication vérifiée. Choisissons un autre sujet."
+    },
+    "de": {
+      "enter": "Lass uns zusammen nachdenken",
+      "intro": "Das ist ein Gedankenexperiment. Du musst nichts wirklich ausprobieren.",
+      "skip": "Zurück zu den Fragen",
+      "aligned": "Eine interessante Vermutung! Sie passt zu unserem Lexikon.",
+      "other": "Eine interessante Idee! Vergleichen wir sie mit unserem Lexikon.",
+      "free": "Danke für deine Idee! Schauen wir nach, was unser Lexikon sagt.",
+      "fact": "Das ist die geprüfte Erklärung:",
+      "finish": "Du hast eine Idee erforscht. Hier gibt es keine Noten: Fragen und Nachdenken sind wichtig.",
+      "again": "Etwas anderes vermuten",
+      "talk": "Weiter darüber reden",
+      "another": "Ein anderes Thema",
+      "skipped": "Gut, zurück zu den Fragen.",
+      "question_hold": "Gute Frage. Lass uns erst die Vermutung beenden oder zurückgehen.",
+      "unavailable": "Dafür habe ich noch keine geprüfte Erklärung. Wählen wir ein anderes Thema."
+    },
+    "es": {
+      "enter": "Pensemos juntos",
+      "intro": "Esta investigación es imaginaria. No tienes que hacer nada de verdad.",
+      "skip": "Volver a las preguntas",
+      "aligned": "¡Qué buena idea! Coincide con nuestra enciclopedia.",
+      "other": "¡Qué idea interesante! Comparémosla con nuestra enciclopedia.",
+      "free": "¡Gracias por tu idea! Veamos qué dice nuestra enciclopedia.",
+      "fact": "Esta es la explicación comprobada:",
+      "finish": "Has explorado una idea. Aquí no hay notas: lo importante es pensar y preguntar.",
+      "again": "Probar otra idea",
+      "talk": "Seguir hablando de esto",
+      "another": "Otro tema",
+      "skipped": "De acuerdo, volvamos a las preguntas.",
+      "question_hold": "Buena pregunta. Primero termina tu idea o vuelve a las preguntas.",
+      "unavailable": "Todavía no tengo una explicación comprobada. Elijamos otro tema."
+    },
+    "pt_BR": {
+      "enter": "Vamos pensar juntos",
+      "intro": "Esta investigação é de faz de conta. Você não precisa fazer nada de verdade.",
+      "skip": "Voltar às perguntas",
+      "aligned": "Que ideia interessante! Ela combina com a nossa enciclopédia.",
+      "other": "Que ideia interessante! Vamos comparar com a nossa enciclopédia.",
+      "free": "Obrigado por compartilhar sua ideia! Vamos ver o que diz a enciclopédia.",
+      "fact": "Aqui está a explicação confirmada:",
+      "finish": "Você explorou uma ideia. Aqui não há notas: o importante é pensar e perguntar.",
+      "again": "Tentar outra ideia",
+      "talk": "Continuar falando disso",
+      "another": "Outro assunto",
+      "skipped": "Tudo bem, vamos voltar às perguntas.",
+      "question_hold": "Boa pergunta. Primeiro termine sua ideia ou volte às perguntas.",
+      "unavailable": "Ainda não tenho uma explicação confirmada. Vamos escolher outro assunto."
+    }
+  },
+  "experiments": {
+    "sorting": {
+      "id": "thought_sorting",
+      "topic_id": "sorting",
+      "source_answer_index": 0,
+      "aligned_prediction_index": 0,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "Есть бумага и стекло. Что поможет разделить их?",
+        "en": "We have paper and glass. What could help us separate them?",
+        "fr": "Nous avons du papier et du verre. Comment les séparer ?",
+        "de": "Wir haben Papier und Glas. Wie können wir sie trennen?",
+        "es": "Tenemos papel y vidrio. ¿Qué ayudaría a separarlos?",
+        "pt_BR": "Temos papel e vidro. O que ajuda a separá-los?"
+      },
+      "predictions": {
+        "ru": [
+          "Положить в разные баки.",
+          "Сложить в одну общую кучу."
+        ],
+        "en": [
+          "Put them in different bins.",
+          "Put them in one mixed pile."
+        ],
+        "fr": [
+          "Les mettre dans des bacs différents.",
+          "Tout mélanger en un tas."
+        ],
+        "de": [
+          "In verschiedene Tonnen legen.",
+          "Alles auf einen Haufen legen."
+        ],
+        "es": [
+          "Ponerlos en contenedores distintos.",
+          "Juntarlos en un solo montón."
+        ],
+        "pt_BR": [
+          "Colocar em lixeiras diferentes.",
+          "Misturar tudo num só monte."
+        ]
+      }
+    },
+    "saving_water": {
+      "id": "thought_saving_water",
+      "topic_id": "saving_water",
+      "source_answer_index": 0,
+      "aligned_prediction_index": 1,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "Кран открыт, но вода никому не нужна. Как её сберечь?",
+        "en": "A tap is running, but nobody needs water. How could we save it?",
+        "fr": "Le robinet coule, mais personne ne se sert de l’eau. Que faire ?",
+        "de": "Der Wasserhahn läuft, aber niemand braucht Wasser. Was hilft?",
+        "es": "El grifo está abierto, pero nadie necesita agua. ¿Qué harías?",
+        "pt_BR": "A torneira está aberta, mas ninguém precisa de água. O que fazer?"
+      },
+      "predictions": {
+        "ru": [
+          "Оставить воду течь.",
+          "Закрыть кран."
+        ],
+        "en": [
+          "Let the water keep running.",
+          "Turn off the tap."
+        ],
+        "fr": [
+          "Laisser couler l’eau.",
+          "Fermer le robinet."
+        ],
+        "de": [
+          "Das Wasser weiterlaufen lassen.",
+          "Den Wasserhahn zudrehen."
+        ],
+        "es": [
+          "Dejar correr el agua.",
+          "Cerrar el grifo."
+        ],
+        "pt_BR": [
+          "Deixar a água correr.",
+          "Fechar a torneira."
+        ]
+      }
+    },
+    "trees": {
+      "id": "thought_trees",
+      "topic_id": "trees",
+      "source_answer_index": 1,
+      "aligned_prediction_index": 0,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "В солнечный день под деревом прохладнее. Как ты думаешь, почему?",
+        "en": "It feels cooler under a tree on a sunny day. Why might that be?",
+        "fr": "Il fait plus frais sous un arbre ensoleillé. Pourquoi, à ton avis ?",
+        "de": "Unter einem Baum ist es an einem Sonnentag kühler. Warum wohl?",
+        "es": "Hace más fresco bajo un árbol en un día soleado. ¿Por qué?",
+        "pt_BR": "Faz mais fresco debaixo de uma árvore num dia de sol. Por quê?"
+      },
+      "predictions": {
+        "ru": [
+          "Листья закрывают часть солнечного света.",
+          "Дерево делает лёд."
+        ],
+        "en": [
+          "Leaves block some sunlight.",
+          "The tree makes ice."
+        ],
+        "fr": [
+          "Les feuilles bloquent une partie du soleil.",
+          "L’arbre fabrique de la glace."
+        ],
+        "de": [
+          "Die Blätter halten etwas Sonnenlicht ab.",
+          "Der Baum macht Eis."
+        ],
+        "es": [
+          "Las hojas bloquean parte de la luz solar.",
+          "El árbol fabrica hielo."
+        ],
+        "pt_BR": [
+          "As folhas bloqueiam parte da luz do Sol.",
+          "A árvore fabrica gelo."
+        ]
+      }
+    },
+    "bees": {
+      "id": "thought_bees",
+      "topic_id": "bees",
+      "source_answer_index": 1,
+      "aligned_prediction_index": 1,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "Пчела перелетает с цветка на цветок. Что она может переносить?",
+        "en": "A bee flies from one flower to another. What might it carry?",
+        "fr": "Une abeille vole d’une fleur à une autre. Que peut-elle transporter ?",
+        "de": "Eine Biene fliegt von Blüte zu Blüte. Was kann sie mitnehmen?",
+        "es": "Una abeja va de una flor a otra. ¿Qué puede transportar?",
+        "pt_BR": "Uma abelha vai de uma flor para outra. O que ela pode levar?"
+      },
+      "predictions": {
+        "ru": [
+          "Маленький камушек.",
+          "Пыльцу."
+        ],
+        "en": [
+          "A little stone.",
+          "Pollen."
+        ],
+        "fr": [
+          "Un petit caillou.",
+          "Du pollen."
+        ],
+        "de": [
+          "Einen kleinen Stein.",
+          "Blütenstaub."
+        ],
+        "es": [
+          "Una piedrita.",
+          "Polen."
+        ],
+        "pt_BR": [
+          "Uma pedrinha.",
+          "Pólen."
+        ]
+      }
+    },
+    "magnets": {
+      "id": "thought_magnets",
+      "topic_id": "magnets",
+      "source_answer_index": 0,
+      "aligned_prediction_index": 0,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "Железная скрепка рядом с магнитом. Что может сделать магнит?",
+        "en": "An iron paper clip is near a magnet. What might the magnet do?",
+        "fr": "Un trombone en fer est près d’un aimant. Que peut faire l’aimant ?",
+        "de": "Eine Büroklammer aus Eisen liegt neben einem Magneten. Was passiert?",
+        "es": "Un clip de hierro está cerca de un imán. ¿Qué podría pasar?",
+        "pt_BR": "Um clipe de ferro está perto de um ímã. O que pode acontecer?"
+      },
+      "predictions": {
+        "ru": [
+          "Притянуть скрепку.",
+          "Превратить скрепку в воду."
+        ],
+        "en": [
+          "Pull the paper clip.",
+          "Turn the clip into water."
+        ],
+        "fr": [
+          "Attirer le trombone.",
+          "Changer le trombone en eau."
+        ],
+        "de": [
+          "Der Magnet zieht sie an.",
+          "Die Klammer wird zu Wasser."
+        ],
+        "es": [
+          "El imán atrae el clip.",
+          "El clip se convierte en agua."
+        ],
+        "pt_BR": [
+          "O ímã atrai o clipe.",
+          "O clipe vira água."
+        ]
+      }
+    },
+    "gravity": {
+      "id": "thought_gravity",
+      "topic_id": "gravity",
+      "source_answer_index": 1,
+      "aligned_prediction_index": 1,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "На Земле отпустили мяч. Куда он полетит?",
+        "en": "A ball is released near the ground on Earth. Where will it go?",
+        "fr": "On lâche une balle près du sol sur Terre. Où va-t-elle ?",
+        "de": "Auf der Erde lässt jemand einen Ball los. Wohin fällt er?",
+        "es": "Soltamos una pelota cerca del suelo en la Tierra. ¿Adónde va?",
+        "pt_BR": "Soltamos uma bola perto do chão na Terra. Para onde ela vai?"
+      },
+      "predictions": {
+        "ru": [
+          "Вверх в космос.",
+          "Вниз, к земле."
+        ],
+        "en": [
+          "Up into space.",
+          "Down toward the ground."
+        ],
+        "fr": [
+          "Vers l’espace, en haut.",
+          "Vers le sol, en bas."
+        ],
+        "de": [
+          "Nach oben ins Weltall.",
+          "Nach unten zum Boden."
+        ],
+        "es": [
+          "Hacia arriba, al espacio.",
+          "Hacia abajo, al suelo."
+        ],
+        "pt_BR": [
+          "Para cima, rumo ao espaço.",
+          "Para baixo, rumo ao chão."
+        ]
+      }
+    },
+    "sound": {
+      "id": "thought_sound",
+      "topic_id": "sound",
+      "source_answer_index": 0,
+      "aligned_prediction_index": 0,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "Маленький колокольчик вибрирует. Что мы можем услышать?",
+        "en": "A little bell is vibrating. What might our ears notice?",
+        "fr": "Une petite cloche vibre. Que pourraient entendre nos oreilles ?",
+        "de": "Eine kleine Glocke schwingt. Was könnten wir hören?",
+        "es": "Una campanita vibra. ¿Qué podrían oír nuestros oídos?",
+        "pt_BR": "Um sininho está vibrando. O que podemos ouvir?"
+      },
+      "predictions": {
+        "ru": [
+          "Звук.",
+          "Новый цвет."
+        ],
+        "en": [
+          "A sound.",
+          "A new color."
+        ],
+        "fr": [
+          "Un son.",
+          "Une nouvelle couleur."
+        ],
+        "de": [
+          "Einen Ton.",
+          "Eine neue Farbe."
+        ],
+        "es": [
+          "Un sonido.",
+          "Un color nuevo."
+        ],
+        "pt_BR": [
+          "Um som.",
+          "Uma cor nova."
+        ]
+      }
+    },
+    "light": {
+      "id": "thought_light",
+      "topic_id": "light",
+      "source_answer_index": 1,
+      "aligned_prediction_index": 1,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "Свет падает на игрушку, а потом попадает в наши глаза. Как мы её видим?",
+        "en": "Light reaches a toy and then our eyes. How can we see the toy?",
+        "fr": "La lumière arrive sur un jouet, puis dans nos yeux. Comment le voyons-nous ?",
+        "de": "Licht trifft auf ein Spielzeug und dann in unsere Augen. Wie sehen wir es?",
+        "es": "La luz llega a un juguete y luego a nuestros ojos. ¿Cómo lo vemos?",
+        "pt_BR": "A luz chega a um brinquedo e depois aos nossos olhos. Como podemos vê-lo?"
+      },
+      "predictions": {
+        "ru": [
+          "Игрушка превращается в звезду.",
+          "Свет отражается от игрушки."
+        ],
+        "en": [
+          "The toy becomes a star.",
+          "Light bounces off the toy."
+        ],
+        "fr": [
+          "Le jouet devient une étoile.",
+          "La lumière se réfléchit sur le jouet."
+        ],
+        "de": [
+          "Das Spielzeug wird ein Stern.",
+          "Das Licht wird vom Spielzeug zurückgeworfen."
+        ],
+        "es": [
+          "El juguete se vuelve una estrella.",
+          "La luz se refleja en el juguete."
+        ],
+        "pt_BR": [
+          "O brinquedo vira uma estrela.",
+          "A luz é refletida pelo brinquedo."
+        ]
+      }
+    },
+    "shadows": {
+      "id": "thought_shadows",
+      "topic_id": "shadows",
+      "source_answer_index": 0,
+      "aligned_prediction_index": 0,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "В воображаемой комнате игрушка закрывает свет лампы. Что появится за ней?",
+        "en": "In an imaginary room, a toy blocks a lamp’s light. What appears behind it?",
+        "fr": "Dans une pièce imaginaire, un jouet bloque une lampe. Que voit-on derrière ?",
+        "de": "In einem gedachten Zimmer blockiert ein Spielzeug Lampenlicht. Was entsteht?",
+        "es": "En una habitación imaginaria, un juguete tapa la luz. ¿Qué aparece detrás?",
+        "pt_BR": "Num quarto imaginário, um brinquedo bloqueia a luz. O que aparece atrás?"
+      },
+      "predictions": {
+        "ru": [
+          "Тёмная тень.",
+          "Второе Солнце."
+        ],
+        "en": [
+          "A darker shadow.",
+          "A second Sun."
+        ],
+        "fr": [
+          "Une ombre plus sombre.",
+          "Un deuxième Soleil."
+        ],
+        "de": [
+          "Ein dunkler Schatten.",
+          "Eine zweite Sonne."
+        ],
+        "es": [
+          "Una sombra más oscura.",
+          "Un segundo Sol."
+        ],
+        "pt_BR": [
+          "Uma sombra mais escura.",
+          "Um segundo Sol."
+        ]
+      }
+    },
+    "floating_sinking": {
+      "id": "thought_floating_sinking",
+      "topic_id": "floating_sinking",
+      "source_answer_index": 0,
+      "aligned_prediction_index": 0,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "Воображаемая лодочка держится на воде. Что помогает ей плавать?",
+        "en": "An imaginary little boat floats on water. What helps it stay up?",
+        "fr": "Un petit bateau imaginaire flotte sur l’eau. Qu’est-ce qui l’aide ?",
+        "de": "Ein kleines Fantasieboot schwimmt im Wasser. Was hält es oben?",
+        "es": "Un barquito imaginario flota en el agua. ¿Qué lo sostiene?",
+        "pt_BR": "Um barquinho imaginário flutua na água. O que o mantém na superfície?"
+      },
+      "predictions": {
+        "ru": [
+          "Вода подталкивает её вверх.",
+          "Небо тянет лодку вверх."
+        ],
+        "en": [
+          "Water pushes it upward.",
+          "The sky pulls it upward."
+        ],
+        "fr": [
+          "L’eau le pousse vers le haut.",
+          "Le ciel le tire vers le haut."
+        ],
+        "de": [
+          "Das Wasser drückt es nach oben.",
+          "Der Himmel zieht es nach oben."
+        ],
+        "es": [
+          "El agua lo empuja hacia arriba.",
+          "El cielo tira de él hacia arriba."
+        ],
+        "pt_BR": [
+          "A água o empurra para cima.",
+          "O céu puxa o barco para cima."
+        ]
+      }
+    },
+    "phase_changes": {
+      "id": "thought_phase_changes",
+      "topic_id": "phase_changes",
+      "source_answer_index": 0,
+      "aligned_prediction_index": 1,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "Кусочек льда становится теплее. Что может произойти?",
+        "en": "A little piece of ice gets warmer. What might happen?",
+        "fr": "Un petit morceau de glace se réchauffe. Que peut-il arriver ?",
+        "de": "Ein Stückchen Eis wird wärmer. Was kann passieren?",
+        "es": "Un trocito de hielo se calienta. ¿Qué puede pasar?",
+        "pt_BR": "Um pedacinho de gelo fica mais quente. O que pode acontecer?"
+      },
+      "predictions": {
+        "ru": [
+          "Он превратится в камень.",
+          "Он растает и станет водой."
+        ],
+        "en": [
+          "It turns into a rock.",
+          "It melts into water."
+        ],
+        "fr": [
+          "Il devient une pierre.",
+          "Il fond et devient de l’eau."
+        ],
+        "de": [
+          "Es wird zu einem Stein.",
+          "Es schmilzt zu Wasser."
+        ],
+        "es": [
+          "Se vuelve una piedra.",
+          "Se derrite y se convierte en agua."
+        ],
+        "pt_BR": [
+          "Ele vira pedra.",
+          "Ele derrete e vira água."
+        ]
+      }
+    },
+    "states": {
+      "id": "thought_states",
+      "topic_id": "states",
+      "source_answer_index": 1,
+      "aligned_prediction_index": 1,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "В чашке налита жидкая вода. Как она себя ведёт?",
+        "en": "A cup contains liquid water. How does the water behave?",
+        "fr": "Il y a de l’eau liquide dans une tasse. Comment se comporte-t-elle ?",
+        "de": "In einer Tasse ist flüssiges Wasser. Wie verhält es sich?",
+        "es": "Hay agua líquida en una taza. ¿Cómo se comporta?",
+        "pt_BR": "Há água líquida numa xícara. Como ela se comporta?"
+      },
+      "predictions": {
+        "ru": [
+          "Всегда сохраняет форму кубика.",
+          "Течёт и принимает форму чашки."
+        ],
+        "en": [
+          "It always keeps a cube shape.",
+          "It flows and takes the cup’s shape."
+        ],
+        "fr": [
+          "Elle garde toujours la forme d’un cube.",
+          "Elle coule et prend la forme de la tasse."
+        ],
+        "de": [
+          "Es bleibt immer würfelförmig.",
+          "Es fließt und nimmt die Tassenform an."
+        ],
+        "es": [
+          "Conserva siempre la forma de un cubo.",
+          "Fluye y toma la forma de la taza."
+        ],
+        "pt_BR": [
+          "Ela fica sempre em forma de cubo.",
+          "Ela escorre e toma a forma da xícara."
+        ]
+      }
+    },
+    "day_night": {
+      "id": "thought_day_night",
+      "topic_id": "day_night",
+      "source_answer_index": 0,
+      "aligned_prediction_index": 0,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "Наша сторона Земли поворачивается от Солнца. Что наступает?",
+        "en": "Our side of Earth turns away from the Sun. What comes next?",
+        "fr": "Notre côté de la Terre se tourne loin du Soleil. Que se passe-t-il ?",
+        "de": "Unsere Seite der Erde dreht sich von der Sonne weg. Was kommt dann?",
+        "es": "Nuestro lado de la Tierra se aleja del Sol al girar. ¿Qué llega?",
+        "pt_BR": "Nosso lado da Terra gira para longe do Sol. O que vem depois?"
+      },
+      "predictions": {
+        "ru": [
+          "Ночь.",
+          "Появляется ещё одно Солнце."
+        ],
+        "en": [
+          "Night.",
+          "Another Sun appears."
+        ],
+        "fr": [
+          "La nuit arrive.",
+          "Un deuxième Soleil apparaît."
+        ],
+        "de": [
+          "Die Nacht.",
+          "Eine zweite Sonne erscheint."
+        ],
+        "es": [
+          "La noche.",
+          "Aparece otro Sol."
+        ],
+        "pt_BR": [
+          "A noite.",
+          "Aparece outro Sol."
+        ]
+      }
+    },
+    "moon": {
+      "id": "thought_moon",
+      "topic_id": "moon",
+      "source_answer_index": 2,
+      "aligned_prediction_index": 1,
+      "mode": "screen_only_thought_experiment",
+      "safety": "no_real_world_actions_required",
+      "prompt": {
+        "ru": "Ночью Луна кажется яркой. Откуда берётся её свет?",
+        "en": "The Moon looks bright at night. Where does its light come from?",
+        "fr": "La Lune paraît brillante la nuit. D’où vient sa lumière ?",
+        "de": "Der Mond sieht nachts hell aus. Woher kommt sein Licht?",
+        "es": "La Luna se ve brillante de noche. ¿De dónde viene su luz?",
+        "pt_BR": "A Lua parece brilhante à noite. De onde vem essa luz?"
+      },
+      "predictions": {
+        "ru": [
+          "Луна светит как звезда сама.",
+          "Луна отражает солнечный свет."
+        ],
+        "en": [
+          "The Moon makes its own starlight.",
+          "The Moon reflects sunlight."
+        ],
+        "fr": [
+          "La Lune produit sa lumière comme une étoile.",
+          "La Lune reflète la lumière du Soleil."
+        ],
+        "de": [
+          "Der Mond erzeugt sein eigenes Sternenlicht.",
+          "Der Mond spiegelt Sonnenlicht."
+        ],
+        "es": [
+          "La Luna produce luz como una estrella.",
+          "La Luna refleja la luz del Sol."
+        ],
+        "pt_BR": [
+          "A Lua produz sua própria luz de estrela.",
+          "A Lua reflete a luz do Sol."
+        ]
+      }
+    }
+  }
+}

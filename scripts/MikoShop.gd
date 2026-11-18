@@ -77,8 +77,20 @@ func _ready() -> void:
 	_caption.add_theme_color_override("font_color", Color(0.69, 0.85, 0.95))
 	_frame.add_child(_caption)
 	resized.connect(_reflow)
+	MobileLocale.language_changed.connect(_refresh_locale)
+	_refresh_locale(MobileLocale.language)
 	_update_category()
 	_reflow()
+
+func _refresh_locale(_code: String) -> void:
+	if _heading != null:
+		_heading.text = MobileLocale.t("shop_heading")
+	if _hulls != null:
+		_hulls.text = MobileLocale.t("shop_hulls")
+	if _engines != null:
+		_engines.text = MobileLocale.t("shop_engines")
+	if _caption != null:
+		_caption.text = MobileLocale.t("shop_future")
 
 func _style(bg: Color, outline: Color, rad: int, stroke: int) -> StyleBoxFlat:
 	var s: StyleBoxFlat = StyleBoxFlat.new()

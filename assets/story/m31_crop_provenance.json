@@ -1,0 +1,91 @@
+{
+  "source_name": "Obsidian Fleet Concept Sheet.png",
+  "source_size": [
+    1448,
+    1086
+  ],
+  "source_sha256": "3ca0c92fbad1d9a21a23356ceaa0470150f24130b388b1c0de743b69a45e4662",
+  "extraction": "Connected alpha >24, 11px mask margin, original RGBA exact inside mask, transparent outside; no generative rendering",
+  "ships": [
+    {
+      "file": "m31_scout_01.png",
+      "role": "scout",
+      "source_bounds_xywh": [
+        14,
+        122,
+        231,
+        375
+      ],
+      "cutout_dimensions": [
+        231,
+        375
+      ],
+      "sha256": "392d2464ab8e543ed80c860e208e0f49f66b20ae9285c3e9294fa2014fec291e",
+      "nose_axis": -1.5707963267948966
+    },
+    {
+      "file": "m31_liner_02.png",
+      "role": "liner",
+      "source_bounds_xywh": [
+        213,
+        109,
+        597,
+        377
+      ],
+      "cutout_dimensions": [
+        597,
+        377
+      ],
+      "sha256": "50488dddcbbf88fdf98c931875c7abecc0d4ae966da941fe4dac27e5cf5f1ef1",
+      "nose_axis": 0
+    },
+    {
+      "file": "m31_freighter_03.png",
+      "role": "freighter",
+      "source_bounds_xywh": [
+        778,
+        8,
+        670,
+        568
+      ],
+      "cutout_dimensions": [
+        670,
+        568
+      ],
+      "sha256": "9ef7828354164736bb9df80d86b219d784e74492031d1d4c52fe19b5faebfcfc",
+      "nose_axis": -1.5707963267948966
+    },
+    {
+      "file": "m31_interceptor_04.png",
+      "role": "interceptor",
+      "source_bounds_xywh": [
+        4,
+        533,
+        590,
+        467
+      ],
+      "cutout_dimensions": [
+        590,
+        467
+      ],
+      "sha256": "3ddff255121cf4f760f62239a95330011a7f7e578b72f89ca009738a2844141e",
+      "nose_axis": 0
+    },
+    {
+      "file": "m31_guardian_05.png",
+      "role": "guardian",
+      "source_bounds_xywh": [
+        561,
+        508,
+        887,
+        546
+      ],
+      "cutout_dimensions": [
+        887,
+        546
+      ],
+      "sha256": "8d69159c2f5414211a8daba79f68a83f4658a898db13124f308585adaf76d0ff",
+      "nose_axis": 0
+    }
+  ]
+}

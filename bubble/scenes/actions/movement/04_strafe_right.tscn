@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://bubble/scenes/bubble_movement.tscn" id="1_bubble"]
+
+[node name="BubbleStrafeRight" instance=ExtResource("1_bubble")]
+initial_motion = "strafe_right"

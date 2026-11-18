@@ -1,0 +1,1508 @@
+{
+  "schema_version": 1,
+  "context": "representative_dialog",
+  "entity": "six_species",
+  "age_target": "3-8",
+  "source": "authored fictional vignette additions grounded in existing v93 dialogue_worlds.json",
+  "notes": "30 unique location/character mini-scenes. Three follow-up question intents localized in six game languages, answers authored RU/EN with intentional EN fallback until editorial localization. Never treat uninhabited planets as NPC locations.",
+  "choices_by_race": {
+    "human": {
+      "ru": [
+        "Что ты здесь заметил?",
+        "Почему это важно?",
+        "Что я могу попробовать?"
+      ],
+      "en": [
+        "What did you notice here?",
+        "Why is it important?",
+        "What can I try?"
+      ],
+      "fr": [
+        "Qu'as-tu remarqué ici ?",
+        "Pourquoi est-ce important ?",
+        "Que puis-je essayer ?"
+      ],
+      "de": [
+        "Was hast du hier bemerkt?",
+        "Warum ist das wichtig?",
+        "Was kann ich ausprobieren?"
+      ],
+      "es": [
+        "¿Qué has observado aquí?",
+        "¿Por qué es importante?",
+        "¿Qué puedo probar?"
+      ],
+      "pt_BR": [
+        "O que você percebeu aqui?",
+        "Por que isso é importante?",
+        "O que posso experimentar?"
+      ]
+    },
+    "mold": {
+      "ru": [
+        "Что чувствует ваша сеть?",
+        "Зачем вы растёте вместе?",
+        "Как я могу помочь?"
+      ],
+      "en": [
+        "What can your network sense?",
+        "Why do you grow together?",
+        "How can I help?"
+      ],
+      "fr": [
+        "Que ressent votre réseau ?",
+        "Pourquoi grandissez-vous ensemble ?",
+        "Comment puis-je aider ?"
+      ],
+      "de": [
+        "Was spürt euer Netzwerk?",
+        "Warum wachst ihr zusammen?",
+        "Wie kann ich helfen?"
+      ],
+      "es": [
+        "¿Qué siente su red?",
+        "¿Por qué crecen juntos?",
+        "¿Cómo puedo ayudar?"
+      ],
+      "pt_BR": [
+        "O que sua rede percebe?",
+        "Por que vocês crescem juntos?",
+        "Como posso ajudar?"
+      ]
+    },
+    "phase": {
+      "ru": [
+        "Что происходит с твоей формой?",
+        "Зачем менять состояние?",
+        "Что мне понаблюдать?"
+      ],
+      "en": [
+        "What happens to your shape?",
+        "Why change your state?",
+        "What can I observe?"
+      ],
+      "fr": [
+        "Que devient ta forme ?",
+        "Pourquoi changer d'état ?",
+        "Que puis-je observer ?"
+      ],
+      "de": [
+        "Was passiert mit deiner Form?",
+        "Warum wechselst du deinen Zustand?",
+        "Was kann ich beobachten?"
+      ],
+      "es": [
+        "¿Qué ocurre con tu forma?",
+        "¿Por qué cambias de estado?",
+        "¿Qué puedo observar?"
+      ],
+      "pt_BR": [
+        "O que acontece com sua forma?",
+        "Por que você muda de estado?",
+        "O que posso observar?"
+      ]
+    },
+    "reptile": {
+      "ru": [
+        "Что ты здесь охраняешь?",
+        "Почему это нужно вашему городу?",
+        "Что мы можем исследовать?"
+      ],
+      "en": [
+        "What do you protect here?",
+        "Why does your city need it?",
+        "What can we explore?"
+      ],
+      "fr": [
+        "Que protèges-tu ici ?",
+        "Pourquoi ta ville en a-t-elle besoin ?",
+        "Que pouvons-nous explorer ?"
+      ],
+      "de": [
+        "Was beschützt du hier?",
+        "Warum braucht eure Stadt das?",
+        "Was können wir erforschen?"
+      ],
+      "es": [
+        "¿Qué proteges aquí?",
+        "¿Por qué lo necesita tu ciudad?",
+        "¿Qué podemos explorar?"
+      ],
+      "pt_BR": [
+        "O que você protege aqui?",
+        "Por que sua cidade precisa disso?",
+        "O que podemos explorar?"
+      ]
+    },
+    "magnetic": {
+      "ru": [
+        "Как движется металл?",
+        "Зачем нужны магнитные поля?",
+        "Что можно заметить?"
+      ],
+      "en": [
+        "How does the metal move?",
+        "Why do you need magnetic fields?",
+        "What can I notice?"
+      ],
+      "fr": [
+        "Comment le métal bouge-t-il ?",
+        "Pourquoi ces champs magnétiques ?",
+        "Que puis-je observer ?"
+      ],
+      "de": [
+        "Wie bewegt sich das Metall?",
+        "Wozu dienen die Magnetfelder?",
+        "Was kann ich beobachten?"
+      ],
+      "es": [
+        "¿Cómo se mueve el metal?",
+        "¿Para qué sirven los campos magnéticos?",
+        "¿Qué puedo observar?"
+      ],
+      "pt_BR": [
+        "Como o metal se move?",
+        "Para que servem os campos magnéticos?",
+        "O que posso observar?"
+      ]
+    },
+    "neural": {
+      "ru": [
+        "Что ты изучаешь?",
+        "Как ты это запоминаешь?",
+        "Могу я разгадать загадку?"
+      ],
+      "en": [
+        "What are you studying?",
+        "How do you remember it?",
+        "Can I solve a riddle?"
+      ],
+      "fr": [
+        "Qu'étudies-tu ?",
+        "Comment t'en souviens-tu ?",
+        "Puis-je résoudre une énigme ?"
+      ],
+      "de": [
+        "Was erforschst du?",
+        "Wie merkst du dir das?",
+        "Darf ich ein Rätsel lösen?"
+      ],
+      "es": [
+        "¿Qué estás estudiando?",
+        "¿Cómo lo recuerdas?",
+        "¿Puedo resolver un acertijo?"
+      ],
+      "pt_BR": [
+        "O que você está estudando?",
+        "Como se lembra disso?",
+        "Posso resolver um enigma?"
+      ]
+    }
+  },
+  "scenes": {
+    "mw_p01": {
+      "hook": {
+        "ru": "Смотри: у водной долины стоят светлые исследовательские здания. Здесь природу изучают, не переставая о ней заботиться.",
+        "en": "Look: bright research buildings stand by the water valley. Here people study nature and try to care for it.",
+        "fr": "Le courant de la rivière a changé. Regardons les mesures !",
+        "de": "Der Fluss fließt heute etwas anders. Prüfen wir die Messwerte!",
+        "es": "El río cambió un poco su corriente. ¡Veamos los datos!",
+        "pt_BR": "A correnteza do rio mudou um pouquinho. Vamos conferir os dados!"
+      },
+      "responses": [
+        {
+          "ru": "Я наблюдаю, как вода течёт между горами и городом. Она нужна и растениям, и людям.",
+          "en": "I watch the water flow between the mountains and the city. Plants and people both need it.",
+          "fr": "Je regarde tout de près. J'observe l'eau et les jardins près de notre ville scientifique sur Terre.",
+          "de": "Ich beobachte alles genau. Ich beobachte das Wasser und die Gärten bei unserer Forschungsstadt auf der Erde.",
+          "es": "Me fijo en cada detalle. Observo el agua y los jardines junto a nuestra ciudad científica de la Tierra.",
+          "pt_BR": "Eu observo cada detalhe. Eu observo a água e os jardins perto da nossa cidade de pesquisas na Terra."
+        },
+        {
+          "ru": "Если мы загрязним воду, пострадают многие живые существа. Поэтому мы проверяем, чтобы она была чистой.",
+          "en": "If we pollute the water, many living things may suffer. That is why we check that it is clean.",
+          "fr": "Comprendre aide à bien protéger cet endroit. Le courant de la rivière a changé. Regardons les mesures !",
+          "de": "Wissen hilft, diesen Ort zu schützen. Der Fluss fließt heute etwas anders. Prüfen wir die Messwerte!",
+          "es": "Conocer el lugar nos ayuda a cuidarlo. El río cambió un poco su corriente. ¡Veamos los datos!",
+          "pt_BR": "Conhecer o lugar ajuda a cuidar dele. A correnteza do rio mudou um pouquinho. Vamos conferir os dados!"
+        },
+        {
+          "ru": "Посмотри вокруг: найдёшь что-то зелёное и что-то синее? Это поможет заметить природу рядом с городом.",
+          "en": "Look around: can you spot something green and something blue? That helps us notice nature beside the city.",
+          "fr": "Essayons ensemble ! Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "de": "Probieren wir es gemeinsam! Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "es": "¡Probemos juntos! Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "pt_BR": "Vamos tentar juntos! Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "mw_p02": {
+      "hook": {
+        "ru": "Под красной пылью Марса спрятан зал с большим шарообразным компьютерным ядром. Он помогает исследователям искать ответы.",
+        "en": "Beneath Mars's red dust is a room with a huge round computer core. It helps researchers search for answers.",
+        "fr": "L'ordinateur a repéré un détail étrange dans une tempête de poussière.",
+        "de": "Der Computer hat seltsame Daten zu einem Staubsturm gefunden.",
+        "es": "La computadora detectó algo extraño en una tormenta de polvo.",
+        "pt_BR": "O computador percebeu algo diferente numa tempestade de poeira."
+      },
+      "responses": [
+        {
+          "ru": "Я задаю компьютеру вопросы о температуре и пыли, а потом проверяю ответы приборами.",
+          "en": "I ask the computer about temperature and dust, then check its answers with instruments.",
+          "fr": "Je regarde tout de près. Sous la poussière rouge de Mars, j'étudie un énorme ordinateur tout rond.",
+          "de": "Ich beobachte alles genau. Unter dem roten Marsstaub erforsche ich einen riesigen kugelförmigen Computer.",
+          "es": "Me fijo en cada detalle. Bajo el polvo rojo de Marte, estudio una computadora enorme y redonda.",
+          "pt_BR": "Eu observo cada detalhe. Debaixo da poeira vermelha de Marte, estudo um computador enorme e redondo."
+        },
+        {
+          "ru": "На Марсе холодно, а воздух слишком разрежен для дыхания без защиты. Поэтому наши помещения герметичны.",
+          "en": "Mars is cold and its air is too thin for us to breathe without protection. That is why our rooms are sealed.",
+          "fr": "Comprendre aide à bien protéger cet endroit. L'ordinateur a repéré un détail étrange dans une tempête de poussière.",
+          "de": "Wissen hilft, diesen Ort zu schützen. Der Computer hat seltsame Daten zu einem Staubsturm gefunden.",
+          "es": "Conocer el lugar nos ayuda a cuidarlo. La computadora detectó algo extraño en una tormenta de polvo.",
+          "pt_BR": "Conhecer o lugar ajuda a cuidar dele. O computador percebeu algo diferente numa tempestade de poeira."
+        },
+        {
+          "ru": "Можешь найти на картинке круг или шар? Наше компьютерное ядро именно такой формы.",
+          "en": "Can you find a circle or a sphere in the picture? Our computer core has that shape.",
+          "fr": "Essayons ensemble ! Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "de": "Probieren wir es gemeinsam! Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "es": "¡Probemos juntos! Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "pt_BR": "Vamos tentar juntos! Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "mw_p03": {
+      "hook": {
+        "ru": "Мы смотрим на вихри Юпитера со станции, которая парит над облаками. Сам Юпитер — огромный газовый мир.",
+        "en": "We watch Jupiter's storms from a station floating above the clouds. Jupiter itself is a giant gas world.",
+        "fr": "Une bande de nuages dorés semble plus large. Où commence-t-elle ?",
+        "de": "Ein goldener Wolkenstreifen wird breiter. Wo fängt er an?",
+        "es": "Una franja dorada de nubes se hizo más ancha. ¿Dónde empieza?",
+        "pt_BR": "Uma faixa dourada ficou mais larga. Onde será que ela começa?"
+      },
+      "responses": [
+        {
+          "ru": "Облака здесь складываются в полосы, а некоторые вихри намного больше земных бурь.",
+          "en": "The clouds make stripes here, and some storms are much bigger than storms on Earth.",
+          "fr": "Je regarde tout de près. J'observe les bandes de nuages de Jupiter depuis une station protégée.",
+          "de": "Ich beobachte alles genau. Ich beobachte Jupiters Wolkenstreifen von unserer geschützten Station.",
+          "es": "Me fijo en cada detalle. Observo las franjas de nubes de Júpiter desde una estación protegida.",
+          "pt_BR": "Eu observo cada detalhe. Eu observo as faixas de nuvens de Júpiter de uma estação protegida."
+        },
+        {
+          "ru": "У Юпитера нет такой твёрдой поверхности, как у Земли. Поэтому наши исследователи работают на защищённой станции.",
+          "en": "Jupiter does not have an Earth-like solid surface. That is why our researchers work on a protected station.",
+          "fr": "Comprendre aide à bien protéger cet endroit. Une bande de nuages dorés semble plus large. Où commence-t-elle ?",
+          "de": "Wissen hilft, diesen Ort zu schützen. Ein goldener Wolkenstreifen wird breiter. Wo fängt er an?",
+          "es": "Conocer el lugar nos ayuda a cuidarlo. Una franja dorada de nubes se hizo más ancha. ¿Dónde empieza?",
+          "pt_BR": "Conhecer o lugar ajuda a cuidar dele. Uma faixa dourada ficou mais larga. Onde será que ela começa?"
+        },
+        {
+          "ru": "Проведи пальцем вдоль одной облачной полосы на изображении. Она тянется прямо или изгибается?",
+          "en": "Trace one cloud stripe with your finger in the picture. Is it straight or curved?",
+          "fr": "Essayons ensemble ! Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "de": "Probieren wir es gemeinsam! Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "es": "¡Probemos juntos! Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "pt_BR": "Vamos tentar juntos! Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "mw_p06": {
+      "hook": {
+        "ru": "Вокруг нашей станции на Нептуне клубятся синие облака. Ветер там сильнее многих бурь на Земле.",
+        "en": "Blue clouds swirl around our station at Neptune. The winds there can be stronger than many storms on Earth.",
+        "fr": "Notre antenne signale un changement dans une tempête lointaine.",
+        "de": "Die Antenne meldet eine Veränderung in einem fernen Sturm.",
+        "es": "La antena detectó un cambio en una tormenta lejana.",
+        "pt_BR": "A antena percebeu uma mudança numa tempestade distante."
+      },
+      "responses": [
+        {
+          "ru": "Мы измеряем облака приборами и отправляем записи исследователям в другие миры.",
+          "en": "We measure the clouds with instruments and send records to researchers on other worlds.",
+          "fr": "Je regarde tout de près. Je mesure les vents au-dessus des nuages bleus de Neptune.",
+          "de": "Ich beobachte alles genau. Über den blauen Wolken Neptuns messe ich die starken Winde.",
+          "es": "Me fijo en cada detalle. Mido los vientos sobre las nubes azules de Neptuno.",
+          "pt_BR": "Eu observo cada detalhe. Eu meço os ventos acima das nuvens azuis de Netuno."
+        },
+        {
+          "ru": "Станции нужны защитные оболочки: мы наблюдаем ледяной гигант с безопасного расстояния.",
+          "en": "Stations need protective shells: we observe this ice giant from a safe distance.",
+          "fr": "Comprendre aide à bien protéger cet endroit. Notre antenne signale un changement dans une tempête lointaine.",
+          "de": "Wissen hilft, diesen Ort zu schützen. Die Antenne meldet eine Veränderung in einem fernen Sturm.",
+          "es": "Conocer el lugar nos ayuda a cuidarlo. La antena detectó un cambio en una tormenta lejana.",
+          "pt_BR": "Conhecer o lugar ajuda a cuidar dele. A antena percebeu uma mudança numa tempestade distante."
+        },
+        {
+          "ru": "Найди самый тёмный и самый светлый синий участок облаков. Они похожи друг на друга?",
+          "en": "Find the darkest and lightest blue patch of clouds. Do they look alike?",
+          "fr": "Essayons ensemble ! Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "de": "Probieren wir es gemeinsam! Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "es": "¡Probemos juntos! Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "pt_BR": "Vamos tentar juntos! Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "mw_p07": {
+      "hook": {
+        "ru": "На Венере густые облака скрывают горячие скалы. Наш купол защищает исследователей от опасной среды.",
+        "en": "On Venus, thick clouds hide hot rocks. Our dome protects researchers from the dangerous environment.",
+        "fr": "Il fait encore plus chaud dehors. Comparons les mesures !",
+        "de": "Außerhalb der Kuppel ist es noch heißer geworden. Prüfen wir das!",
+        "es": "Afuera de la cúpula hace aún más calor. ¡Comparemos los datos!",
+        "pt_BR": "Lá fora ficou ainda mais quente. Vamos comparar os dados!"
+      },
+      "responses": [
+        {
+          "ru": "Я изучаю температуру за стенами станции. Там гораздо жарче, чем в комнате.",
+          "en": "I study the temperature outside the station. It is much hotter there than in this room.",
+          "fr": "Je regarde tout de près. Je vérifie le dôme qui protège notre station sur Vénus, une planète brûlante.",
+          "de": "Ich beobachte alles genau. Ich prüfe die Schutzkuppel unserer Station auf der heißen Venus.",
+          "es": "Me fijo en cada detalle. Reviso la cúpula que protege la estación en el caluroso Venus.",
+          "pt_BR": "Eu observo cada detalhe. Eu verifico a cúpula que protege nossa estação em Vênus, onde faz muito calor."
+        },
+        {
+          "ru": "Нельзя выходить наружу без специальной защиты: Венера очень горячая, и её атмосфера опасна для человека.",
+          "en": "We cannot go outside without special protection: Venus is extremely hot and its atmosphere is dangerous for humans.",
+          "fr": "Comprendre aide à bien protéger cet endroit. Il fait encore plus chaud dehors. Comparons les mesures !",
+          "de": "Wissen hilft, diesen Ort zu schützen. Außerhalb der Kuppel ist es noch heißer geworden. Prüfen wir das!",
+          "es": "Conocer el lugar nos ayuda a cuidarlo. Afuera de la cúpula hace aún más calor. ¡Comparemos los datos!",
+          "pt_BR": "Conhecer o lugar ajuda a cuidar dele. Lá fora ficou ainda mais quente. Vamos comparar os dados!"
+        },
+        {
+          "ru": "Посмотри на купол и скажи, он больше похож на круг или на квадрат?",
+          "en": "Look at the dome: does it remind you more of a circle or a square?",
+          "fr": "Essayons ensemble ! Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "de": "Probieren wir es gemeinsam! Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "es": "¡Probemos juntos! Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "pt_BR": "Vamos tentar juntos! Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_mw": {
+      "hook": {
+        "ru": "На верфи Каллисто корабли отдыхают от дальних путешествий. Здесь их осматривают и чинят.",
+        "en": "At Callisto Shipyard, spaceships rest after long journeys. Here we inspect and repair them.",
+        "fr": "Un vaisseau envoie un petit signal. A-t-il besoin d'aide ?",
+        "de": "Ein Schiff sendet ein leises Signal. Braucht es Hilfe?",
+        "es": "Una nave envió una señal débil. ¿Necesita ayuda?",
+        "pt_BR": "Uma nave enviou um sinal bem fraquinho. Será que precisa de ajuda?"
+      },
+      "responses": [
+        {
+          "ru": "Я проверяю детали кораблей, прежде чем они снова отправятся в путь.",
+          "en": "I inspect spaceship parts before the ships travel again.",
+          "fr": "Je regarde tout de près. Je vérifie et répare les vaisseaux dans les docks de Callisto.",
+          "de": "Ich beobachte alles genau. In Callistos Docks untersuche und repariere ich Raumschiffe.",
+          "es": "Me fijo en cada detalle. Reviso y reparo naves en los muelles orbitales de Calisto.",
+          "pt_BR": "Eu observo cada detalhe. Eu verifico e conserto naves nas docas orbitais de Calisto."
+        },
+        {
+          "ru": "Даже маленькая поломка в космосе может стать серьёзной. Поэтому мы проверяем всё внимательно.",
+          "en": "Even a small fault in space can become serious. That is why we check everything carefully.",
+          "fr": "Comprendre aide à bien protéger cet endroit. Un vaisseau envoie un petit signal. A-t-il besoin d'aide ?",
+          "de": "Wissen hilft, diesen Ort zu schützen. Ein Schiff sendet ein leises Signal. Braucht es Hilfe?",
+          "es": "Conocer el lugar nos ayuda a cuidarlo. Una nave envió una señal débil. ¿Necesita ayuda?",
+          "pt_BR": "Conhecer o lugar ajuda a cuidar dele. Uma nave enviou um sinal bem fraquinho. Será que precisa de ajuda?"
+        },
+        {
+          "ru": "Найди на станции место, где мог бы поместиться большой корабль. Это наш док.",
+          "en": "Find a place on the station that could fit a big spaceship. That is our dock.",
+          "fr": "Essayons ensemble ! Partageons notre découverte avec les autres chercheurs. Ils pourront la vérifier !",
+          "de": "Probieren wir es gemeinsam! Teilen wir unsere Entdeckung mit anderen Forschenden. Sie können sie überprüfen!",
+          "es": "¡Probemos juntos! Compartamos lo descubierto con otros equipos. ¡Así podrán comprobarlo!",
+          "pt_BR": "Vamos tentar juntos! Vamos compartilhar a descoberta com outras equipes. Assim podem conferir também!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "lmc_p02": {
+      "hook": {
+        "ru": "На Таласе наша живая сеть растёт рядом с волнами океана. Она чувствует изменения вокруг себя.",
+        "en": "On Thalas, our living network grows beside the ocean waves. It senses changes around it.",
+        "fr": "Une vague a transmis un rythme étrange au pont vivant.",
+        "de": "Eine Welle bringt einen seltsamen Rhythmus zur lebenden Brücke.",
+        "es": "Una ola transmitió un ritmo extraño al puente vivo. ¡Escuchemos!",
+        "pt_BR": "Uma onda trouxe um ritmo estranho até a ponte viva. Vamos escutar!"
+      },
+      "responses": [
+        {
+          "ru": "Когда волны усиливаются, наши чувствительные нити передают сигнал остальной сети.",
+          "en": "When the waves grow stronger, our sensitive fibers send a signal through the rest of the network.",
+          "fr": "Mes fibres ressentent beaucoup de choses. Mes filaments vivants ressentent les vagues sur Thalas.",
+          "de": "Meine Fasern spüren vieles. Meine lebenden Fasern spüren die Wellen im Ozean von Thalas.",
+          "es": "Mis fibras perciben muchas cosas. Mis fibras vivas sienten las olas del océano de Thalas.",
+          "pt_BR": "Minhas fibras percebem muitas coisas. Minhas fibras vivas sentem as ondas do oceano de Thalas."
+        },
+        {
+          "ru": "Мы соединены многими нитями. Так разные части нашего организма помогают друг другу.",
+          "en": "Many fibers connect us. That lets different parts of our organism help one another.",
+          "fr": "Nos signaux nous aident à grandir ensemble. Une vague a transmis un rythme étrange au pont vivant.",
+          "de": "Unsere Signale verbinden uns. Eine Welle bringt einen seltsamen Rhythmus zur lebenden Brücke.",
+          "es": "Las señales nos mantienen unidos. Una ola transmitió un ritmo extraño al puente vivo. ¡Escuchemos!",
+          "pt_BR": "Os sinais mantêm nossa rede unida. Uma onda trouxe um ritmo estranho até a ponte viva. Vamos escutar!"
+        },
+        {
+          "ru": "Посмотри на живые мосты: можешь проследить, где одна ветка соединяется с другой?",
+          "en": "Look at the living bridges: can you follow where one branch joins another?",
+          "fr": "Nous allons chercher doucement. Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi.",
+          "de": "Suchen wir ganz vorsichtig! Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern.",
+          "es": "¡Busquemos con cuidado! Enviemos la señal por nuestra red viva para que otras fibras también aprendan.",
+          "pt_BR": "Vamos procurar com cuidado! Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "lmc_p03": {
+      "hook": {
+        "ru": "На Молии тёмные скалы окружают наши мягкие живые купола. Мы растём там, где камень кажется неподвижным.",
+        "en": "On Molia, dark rocks surround our soft living domes. We grow where the stone seems motionless.",
+        "fr": "Une fissure est apparue près d'un dôme. Où mène-t-elle ?",
+        "de": "Neben einer Kuppel ist ein schmaler Riss aufgetaucht. Wohin führt er?",
+        "es": "Apareció una grieta fina junto a una cúpula. ¿Adónde llega?",
+        "pt_BR": "Apareceu uma rachadura fininha perto de um domo. Para onde ela vai?"
+      },
+      "responses": [
+        {
+          "ru": "Наши волокна исследуют маленькие трещины, но мы не спешим: рост требует времени.",
+          "en": "Our fibers explore tiny cracks, but we do not hurry: growing takes time.",
+          "fr": "Mes fibres ressentent beaucoup de choses. J'aide les biodômes vivants à pousser parmi les roches sombres de Molia.",
+          "de": "Meine Fasern spüren vieles. Ich helfe lebenden Kuppeln, zwischen den dunklen Felsen von Molia zu wachsen.",
+          "es": "Mis fibras perciben muchas cosas. Ayudo a crecer a las cúpulas vivas entre las rocas oscuras de Molia.",
+          "pt_BR": "Minhas fibras percebem muitas coisas. Eu ajudo domos vivos a crescer entre as rochas escuras de Molia."
+        },
+        {
+          "ru": "Купола берегут наш организм от сухого воздуха и помогают сохранять нужные условия.",
+          "en": "The domes protect our organism from dry air and help keep the conditions we need.",
+          "fr": "Nos signaux nous aident à grandir ensemble. Une fissure est apparue près d'un dôme. Où mène-t-elle ?",
+          "de": "Unsere Signale verbinden uns. Neben einer Kuppel ist ein schmaler Riss aufgetaucht. Wohin führt er?",
+          "es": "Las señales nos mantienen unidos. Apareció una grieta fina junto a una cúpula. ¿Adónde llega?",
+          "pt_BR": "Os sinais mantêm nossa rede unida. Apareceu uma rachadura fininha perto de um domo. Para onde ela vai?"
+        },
+        {
+          "ru": "Найди две разные поверхности: гладкий купол и неровный камень. Чем они отличаются?",
+          "en": "Find two different surfaces: a smooth dome and rough rock. How are they different?",
+          "fr": "Nous allons chercher doucement. Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi.",
+          "de": "Suchen wir ganz vorsichtig! Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern.",
+          "es": "¡Busquemos con cuidado! Enviemos la señal por nuestra red viva para que otras fibras también aprendan.",
+          "pt_BR": "Vamos procurar com cuidado! Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "lmc_p04": {
+      "hook": {
+        "ru": "На Крионе подо льдом светятся голубые трещины. Мы укрываем нашу живую сеть в защищённых биокуполах.",
+        "en": "On Cryona, blue cracks glow beneath the ice. We shelter our living network inside protected biodomes.",
+        "fr": "Une fissure bleue brille davantage. Observons-la avec prudence !",
+        "de": "Ein blauer Spalt leuchtet stärker. Untersuchen wir ihn vorsichtig!",
+        "es": "Una grieta azul brilla con más fuerza. Veámosla con cuidado.",
+        "pt_BR": "Uma rachadura azul está brilhando mais. Vamos olhar com cuidado."
+      },
+      "responses": [
+        {
+          "ru": "Мы чувствуем, когда лёд рядом немного сдвигается, и передаём предупреждение по нитям.",
+          "en": "We sense when nearby ice shifts a little and send a warning along our fibers.",
+          "fr": "Mes fibres ressentent beaucoup de choses. Mes fibres perçoivent les moindres mouvements de la glace sur Cryona.",
+          "de": "Meine Fasern spüren vieles. Meine Fasern spüren winzige Bewegungen im Eis auf Cryona.",
+          "es": "Mis fibras perciben muchas cosas. Mis fibras sienten hasta el movimiento más pequeño del hielo en Cryona.",
+          "pt_BR": "Minhas fibras percebem muitas coisas. Minhas fibras percebem até os menores movimentos do gelo em Cryona."
+        },
+        {
+          "ru": "Лёд может трескаться, поэтому важно строить убежища и следить за изменениями поверхности.",
+          "en": "Ice can crack, so shelters and careful monitoring of the surface matter.",
+          "fr": "Nos signaux nous aident à grandir ensemble. Une fissure bleue brille davantage. Observons-la avec prudence !",
+          "de": "Unsere Signale verbinden uns. Ein blauer Spalt leuchtet stärker. Untersuchen wir ihn vorsichtig!",
+          "es": "Las señales nos mantienen unidos. Una grieta azul brilla con más fuerza. Veámosla con cuidado.",
+          "pt_BR": "Os sinais mantêm nossa rede unida. Uma rachadura azul está brilhando mais. Vamos olhar com cuidado."
+        },
+        {
+          "ru": "Попробуй отыскать самую длинную голубую трещину на изображении.",
+          "en": "Try to find the longest blue crack in the picture.",
+          "fr": "Nous allons chercher doucement. Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi.",
+          "de": "Suchen wir ganz vorsichtig! Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern.",
+          "es": "¡Busquemos con cuidado! Enviemos la señal por nuestra red viva para que otras fibras también aprendan.",
+          "pt_BR": "Vamos procurar com cuidado! Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_lmc": {
+      "hook": {
+        "ru": "«Тарантул» — не обычный железный корабль. Его внутренние комнаты растут вместе с нашей грибной сетью.",
+        "en": "The Tarantula is no ordinary metal ship. Its inner rooms grow with our fungal network.",
+        "fr": "Un signal a disparu dans une chambre vivante. Écoutons les fibres !",
+        "de": "In einer Biokammer fehlt ein Signal. Was sagen uns die Fasern?",
+        "es": "Se apagó una señal en una biocámara. ¿Qué nos dicen las fibras?",
+        "pt_BR": "Um sinal sumiu numa biocâmara. O que as fibras vão nos contar?"
+      },
+      "responses": [
+        {
+          "ru": "Мы передаём сообщения по живым волокнам — словно по множеству мягких дорожек.",
+          "en": "We pass messages through living fibers, like along many soft little paths.",
+          "fr": "Mes fibres ressentent beaucoup de choses. Je prends soin des couloirs vivants et des chambres du vaisseau Tarentule.",
+          "de": "Meine Fasern spüren vieles. Ich kümmere mich um die lebenden Gänge und Kammern des Schiffs Tarantel.",
+          "es": "Mis fibras perciben muchas cosas. Cuido los pasillos vivos y las cámaras de la nave Tarántula.",
+          "pt_BR": "Minhas fibras percebem muitas coisas. Eu cuido dos corredores vivos e das câmaras da nave Tarântula."
+        },
+        {
+          "ru": "Живым частям корабля нужны подходящие температура и питательные вещества. Мы заботимся о них.",
+          "en": "The living parts of this ship need suitable temperatures and nutrients. We care for them.",
+          "fr": "Nos signaux nous aident à grandir ensemble. Un signal a disparu dans une chambre vivante. Écoutons les fibres !",
+          "de": "Unsere Signale verbinden uns. In einer Biokammer fehlt ein Signal. Was sagen uns die Fasern?",
+          "es": "Las señales nos mantienen unidos. Se apagó una señal en una biocámara. ¿Qué nos dicen las fibras?",
+          "pt_BR": "Os sinais mantêm nossa rede unida. Um sinal sumiu numa biocâmara. O que as fibras vão nos contar?"
+        },
+        {
+          "ru": "Представь две дорожки, соединяющиеся в одну. Так и наши сигналы могут встречаться внутри сети.",
+          "en": "Imagine two paths joining into one. Our signals can meet like that inside the network.",
+          "fr": "Nous allons chercher doucement. Envoyons un signal dans notre réseau vivant. Les autres filaments apprendront aussi.",
+          "de": "Suchen wir ganz vorsichtig! Schicken wir ein Signal durch unser lebendes Netz. So lernen auch die anderen Fasern.",
+          "es": "¡Busquemos con cuidado! Enviemos la señal por nuestra red viva para que otras fibras también aprendan.",
+          "pt_BR": "Vamos procurar com cuidado! Vamos mandar um sinal pela rede viva. Outras fibras também vão aprender."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "smc_p01": {
+      "hook": {
+        "ru": "На Окее наши прозрачные постройки поднимаются прямо из воды. Я могу менять форму вместе с волнами.",
+        "en": "On Okea, our transparent buildings rise straight from the water. I can change shape with the waves.",
+        "fr": "Une grosse vague a changé la forme d'une arche. Retrouvons-la !",
+        "de": "Eine große Welle hat einen Bogen verformt. Finden wir ihn?",
+        "es": "Una ola grande cambió la forma de un arco. ¿Lo encontramos?",
+        "pt_BR": "Uma onda grande mudou a forma de um arco. Vamos encontrá-lo?"
+      },
+      "responses": [
+        {
+          "ru": "Сейчас я стал более текучим. Посмотри, как трудно удержать одну и ту же форму!",
+          "en": "I have become more fluid. Look how hard it is to keep just one shape!",
+          "fr": "Ma forme change un peu. J'observe les arches transparentes qui montent de l'océan d'Okea.",
+          "de": "Meine Gestalt ändert sich ein wenig. Ich beobachte die durchsichtigen Bögen, die aus Okeas Meer aufsteigen.",
+          "es": "Mi forma cambia un poquito. Observo los arcos transparentes que suben del océano de Okea.",
+          "pt_BR": "Minha forma muda um pouquinho. Eu observo os arcos transparentes que saem do oceano de Okea."
+        },
+        {
+          "ru": "Мы меняем состояние, чтобы приспосабливаться к условиям. Это необычная способность нашей сказочной цивилизации.",
+          "en": "We change state to adapt to conditions. That is a special ability of our fictional civilization.",
+          "fr": "Chaque forme nous aide autrement. Une grosse vague a changé la forme d'une arche. Retrouvons-la !",
+          "de": "Jede Form hilft bei anderen Aufgaben. Eine große Welle hat einen Bogen verformt. Finden wir ihn?",
+          "es": "Cada forma sirve para algo distinto. Una ola grande cambió la forma de un arco. ¿Lo encontramos?",
+          "pt_BR": "Cada forma ajuda de um jeito. Uma onda grande mudou a forma de um arco. Vamos encontrá-lo?"
+        },
+        {
+          "ru": "Посмотри, где вода встречается со станцией. Можешь найти границу между ними?",
+          "en": "Look where water meets the station. Can you find the boundary between them?",
+          "fr": "Observons le changement ! Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres.",
+          "de": "Beobachten wir die Veränderung! Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes.",
+          "es": "¡Observemos el cambio! Guardemos este descubrimiento en la memoria de nuestro pueblo.",
+          "pt_BR": "Vamos observar a mudança! Vamos guardar essa descoberta nas memórias do nosso povo."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "smc_p02": {
+      "hook": {
+        "ru": "На Целе красные горы отражаются в прозрачных жидких куполах. Кажется, будто станция сияет изнутри.",
+        "en": "On Cela, red mountains reflect in transparent liquid domes. The station seems to glow from within.",
+        "fr": "Un dôme renvoie plus de lumière qu'un autre. Pourquoi ?",
+        "de": "Eine Kuppel spiegelt mehr Licht als die andere. Warum wohl?",
+        "es": "Una cúpula refleja más luz que otra. ¿Por qué?",
+        "pt_BR": "Um domo reflete mais luz que outro. Por quê?"
+      },
+      "responses": [
+        {
+          "ru": "Я меняю прозрачность и могу стать заметнее на фоне красных скал.",
+          "en": "I change my transparency and can become easier to see against the red rocks.",
+          "fr": "Ma forme change un peu. J'observe les montagnes rouges dans les dômes transparents de Tsela.",
+          "de": "Meine Gestalt ändert sich ein wenig. Ich sehe die roten Berge in den durchsichtigen Kuppeln von Tsela.",
+          "es": "Mi forma cambia un poquito. Observo las montañas rojas reflejadas en las cúpulas de Tsela.",
+          "pt_BR": "Minha forma muda um pouquinho. Eu observo as montanhas vermelhas refletidas nos domos de Tsela."
+        },
+        {
+          "ru": "Купола помогают нашему народу сохранять подходящее состояние тела в этом мире.",
+          "en": "The domes help our people keep the body state we need on this world.",
+          "fr": "Chaque forme nous aide autrement. Un dôme renvoie plus de lumière qu'un autre. Pourquoi ?",
+          "de": "Jede Form hilft bei anderen Aufgaben. Eine Kuppel spiegelt mehr Licht als die andere. Warum wohl?",
+          "es": "Cada forma sirve para algo distinto. Una cúpula refleja más luz que otra. ¿Por qué?",
+          "pt_BR": "Cada forma ajuda de um jeito. Um domo reflete mais luz que outro. Por quê?"
+        },
+        {
+          "ru": "Найди красную скалу за прозрачным куполом. Видишь ли ты её сквозь стенку?",
+          "en": "Find a red rock behind a clear dome. Can you see it through the wall?",
+          "fr": "Observons le changement ! Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres.",
+          "de": "Beobachten wir die Veränderung! Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes.",
+          "es": "¡Observemos el cambio! Guardemos este descubrimiento en la memoria de nuestro pueblo.",
+          "pt_BR": "Vamos observar a mudança! Vamos guardar essa descoberta nas memórias do nosso povo."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "smc_p03": {
+      "hook": {
+        "ru": "На Геноре светится граница между водой и тёмными скалами. Наши жидкие башни похожи на застывшие волны.",
+        "en": "On Genora, the edge between water and dark rocks glows. Our liquid towers look like frozen waves.",
+        "fr": "Une tour se courbe doucement comme une vague. Suivons son mouvement !",
+        "de": "Ein Turm biegt sich wie eine sanfte Welle. Beobachten wir ihn!",
+        "es": "Una torre se dobló suavemente como una ola. ¡Miremos!",
+        "pt_BR": "Uma torre se curvou como uma onda. Vamos acompanhar?"
+      },
+      "responses": [
+        {
+          "ru": "Я могу вытянуться как струя, а потом снова собраться в каплю.",
+          "en": "I can stretch like a stream and then gather back into a drop.",
+          "fr": "Ma forme change un peu. J'étudie les tours fluides et les fissures remplies d'eau de Genora.",
+          "de": "Meine Gestalt ändert sich ein wenig. Ich erforsche die fließenden Türme und Wasserspalten von Genora.",
+          "es": "Mi forma cambia un poquito. Estudio las torres fluidas y las grietas de agua de Genora.",
+          "pt_BR": "Minha forma muda um pouquinho. Eu estudo as torres que fluem e as fendas de água de Genora."
+        },
+        {
+          "ru": "Нам нужны разные формы для разных задач. Иногда удобно быть текучим, а иногда — плотным.",
+          "en": "Different tasks need different forms. Sometimes flowing helps, and sometimes a denser form is better.",
+          "fr": "Chaque forme nous aide autrement. Une tour se courbe doucement comme une vague. Suivons son mouvement !",
+          "de": "Jede Form hilft bei anderen Aufgaben. Ein Turm biegt sich wie eine sanfte Welle. Beobachten wir ihn!",
+          "es": "Cada forma sirve para algo distinto. Una torre se dobló suavemente como una ola. ¡Miremos!",
+          "pt_BR": "Cada forma ajuda de um jeito. Uma torre se curvou como uma onda. Vamos acompanhar?"
+        },
+        {
+          "ru": "Покажи глазами, где на изображении скала, а где вода. Что выглядит более гладким?",
+          "en": "Point out the rock and the water in the picture. Which looks smoother?",
+          "fr": "Observons le changement ! Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres.",
+          "de": "Beobachten wir die Veränderung! Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes.",
+          "es": "¡Observemos el cambio! Guardemos este descubrimiento en la memoria de nuestro pueblo.",
+          "pt_BR": "Vamos observar a mudança! Vamos guardar essa descoberta nas memórias do nosso povo."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "smc_p05": {
+      "hook": {
+        "ru": "На Спире свет и тень почти встречаются. Я превращаюсь в туман, чтобы мягко пройти через нашу станцию.",
+        "en": "On Spira, light and shadow almost meet. I turn misty to move gently through our station.",
+        "fr": "La brume s'épaissit près d'une lumière. D'où vient-elle ?",
+        "de": "In der Nähe eines Lichts wird der Nebel dichter. Woher kommt er?",
+        "es": "La niebla se hizo más densa junto a una luz. ¿De dónde viene?",
+        "pt_BR": "A névoa ficou mais grossa perto de uma luz. De onde será que vem?"
+      },
+      "responses": [
+        {
+          "ru": "В газообразной форме моё тело выглядит рассеянным, как туман. Потом я снова собираюсь вместе.",
+          "en": "In gas form, my body looks spread out like mist. Then I gather together again.",
+          "fr": "Ma forme change un peu. J'explore les passages brumeux parmi les roches sombres de Spira.",
+          "de": "Meine Gestalt ändert sich ein wenig. Ich erkunde neblige Wege zwischen Spiras dunklen Felsen.",
+          "es": "Mi forma cambia un poquito. Exploro caminos de niebla entre las rocas oscuras de Spira.",
+          "pt_BR": "Minha forma muda um pouquinho. Eu exploro caminhos de névoa entre as rochas escuras de Spira."
+        },
+        {
+          "ru": "Изменения формы зависят от условий и возможностей нашей необычной расы.",
+          "en": "Changes of form depend on the conditions and the abilities of our unusual species.",
+          "fr": "Chaque forme nous aide autrement. La brume s'épaissit près d'une lumière. D'où vient-elle ?",
+          "de": "Jede Form hilft bei anderen Aufgaben. In der Nähe eines Lichts wird der Nebel dichter. Woher kommt er?",
+          "es": "Cada forma sirve para algo distinto. La niebla se hizo más densa junto a una luz. ¿De dónde viene?",
+          "pt_BR": "Cada forma ajuda de um jeito. A névoa ficou mais grossa perto de uma luz. De onde será que vem?"
+        },
+        {
+          "ru": "Найди светлую и тёмную часть мира. Где туман заметнее?",
+          "en": "Find the bright and dark parts of this world. Where is the mist easier to see?",
+          "fr": "Observons le changement ! Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres.",
+          "de": "Beobachten wir die Veränderung! Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes.",
+          "es": "¡Observemos el cambio! Guardemos este descubrimiento en la memoria de nuestro pueblo.",
+          "pt_BR": "Vamos observar a mudança! Vamos guardar essa descoberta nas memórias do nosso povo."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_smc": {
+      "hook": {
+        "ru": "В Живом архиве прозрачные камеры хранят знания нашей цивилизации. Некоторые наполнены жидкостью, другие — газом.",
+        "en": "In the Living Archive, clear chambers store knowledge of our civilization. Some hold liquid and others gas.",
+        "fr": "Un motif oublié apparaît dans une chambre. Regardons de plus près !",
+        "de": "In einer Kammer erscheint ein vergessenes Muster. Sehen wir hin!",
+        "es": "Apareció un dibujo olvidado en una cámara. ¡Miremos de cerca!",
+        "pt_BR": "Um desenho antigo apareceu numa câmara. Vamos ver de perto!"
+      },
+      "responses": [
+        {
+          "ru": "Смотри: для каждого состояния тела у нас есть подходящее пространство.",
+          "en": "Look: we have spaces suited to each state of our bodies.",
+          "fr": "Ma forme change un peu. Je protège les récits de notre peuple dans les chambres transparentes des Archives.",
+          "de": "Meine Gestalt ändert sich ein wenig. Ich bewahre unsere Geschichten in den durchsichtigen Kammern des Archivs.",
+          "es": "Mi forma cambia un poquito. Conservo historias en las cámaras transparentes del Archivo Vivo.",
+          "pt_BR": "Minha forma muda um pouquinho. Eu guardo histórias nas câmaras transparentes do Arquivo Vivo."
+        },
+        {
+          "ru": "Смена условий помогает хранить разные формы. Но мы делаем это осторожно и под наблюдением.",
+          "en": "Changing conditions helps preserve different forms. We do it carefully and with observation.",
+          "fr": "Chaque forme nous aide autrement. Un motif oublié apparaît dans une chambre. Regardons de plus près !",
+          "de": "Jede Form hilft bei anderen Aufgaben. In einer Kammer erscheint ein vergessenes Muster. Sehen wir hin!",
+          "es": "Cada forma sirve para algo distinto. Apareció un dibujo olvidado en una cámara. ¡Miremos de cerca!",
+          "pt_BR": "Cada forma ajuda de um jeito. Um desenho antigo apareceu numa câmara. Vamos ver de perto!"
+        },
+        {
+          "ru": "Представь, как выглядел бы архив для капли воды, а как — для облака. Они были бы одинаковыми?",
+          "en": "Imagine an archive for a drop of water and another for a cloud. Would they look alike?",
+          "fr": "Observons le changement ! Gardons cette découverte dans la mémoire de notre peuple. Elle aidera les autres.",
+          "de": "Beobachten wir die Veränderung! Bewahren wir die Entdeckung in den Erinnerungen unseres Volkes.",
+          "es": "¡Observemos el cambio! Guardemos este descubrimiento en la memoria de nuestro pueblo.",
+          "pt_BR": "Vamos observar a mudança! Vamos guardar essa descoberta nas memórias do nosso povo."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "ngc6822_p01": {
+      "hook": {
+        "ru": "На Археоне наше кольцо-убежище окружает зелёные сады. Снаружи — красная каменная пустыня.",
+        "en": "On Archeon, our shelter ring surrounds green gardens. Outside lies a red rocky desert.",
+        "fr": "La poussière rouge couvre un petit chemin du jardin. Où va-t-il ?",
+        "de": "Roter Staub bedeckt einen Gartenweg. Wie finden wir ihn wieder?",
+        "es": "El polvo rojo tapó un sendero del jardín. ¿Cómo lo encontramos?",
+        "pt_BR": "A poeira vermelha cobriu uma trilha do jardim. Como achar o caminho?"
+      },
+      "responses": [
+        {
+          "ru": "Я присматриваю за проходами между скалами и зелёными зонами.",
+          "en": "I watch the passages between the rocks and our green spaces.",
+          "fr": "Je veille sur notre monde. Je veille sur les jardins à l'intérieur de notre ville en anneau, sur Archeon.",
+          "de": "Ich passe auf diese Welt auf. Ich kümmere mich um die Gärten in Archeons geschützter Ringstadt.",
+          "es": "Cuido este mundo. Cuido los jardines dentro de la ciudad circular de Archeon.",
+          "pt_BR": "Eu cuido deste mundo. Eu cuido dos jardins dentro da cidade em anel de Archeon."
+        },
+        {
+          "ru": "Зелень внутри города помогает делать жизнь приятнее. Герметичные стены защищают его от среды снаружи.",
+          "en": "Green spaces make city life more pleasant. Sealed walls protect the city from the environment outside.",
+          "fr": "Nous protégeons les chemins et les jardins. La poussière rouge couvre un petit chemin du jardin. Où va-t-il ?",
+          "de": "Wir schützen Wege und Gärten. Roter Staub bedeckt einen Gartenweg. Wie finden wir ihn wieder?",
+          "es": "Protegemos caminos y jardines. El polvo rojo tapó un sendero del jardín. ¿Cómo lo encontramos?",
+          "pt_BR": "Protegemos caminhos e jardins. A poeira vermelha cobriu uma trilha do jardim. Como achar o caminho?"
+        },
+        {
+          "ru": "Найди зелёную часть города среди красных скал. Какой цвет видно лучше?",
+          "en": "Find the green part of the city among the red rocks. Which color stands out more?",
+          "fr": "Cherchons un indice ensemble ! Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "de": "Suchen wir gemeinsam einen Hinweis! Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "es": "¡Busquemos una pista! Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "pt_BR": "Vamos achar uma pista! Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "ngc6822_p02": {
+      "hook": {
+        "ru": "На Кварии мы укрыли станцию внутри горы. Снаружи видны лишь некоторые сияющие купола.",
+        "en": "On Quaria, we hid a station inside a mountain. Outside, only a few glowing domes are visible.",
+        "fr": "Une lumière apparaît derrière une paroi rocheuse. Que cache-t-elle ?",
+        "de": "Hinter einer Felswand leuchtet etwas. Wohin führt der Gang?",
+        "es": "Una lucecita apareció detrás de una roca. ¿Adónde lleva el túnel?",
+        "pt_BR": "Uma luzinha apareceu atrás de uma rocha. Para onde vai o túnel?"
+      },
+      "responses": [
+        {
+          "ru": "Я исследую горные проходы и помогаю находить дорогу между пещерами.",
+          "en": "I explore the mountain tunnels and help others find their way between caves.",
+          "fr": "Je veille sur notre monde. Je dessine la carte des grottes et des dômes de Quaria.",
+          "de": "Ich passe auf diese Welt auf. Ich zeichne Karten der Höhlen und geschützten Kuppeln von Quaria.",
+          "es": "Cuido este mundo. Hago mapas de las cuevas y cúpulas protegidas de Quaria.",
+          "pt_BR": "Eu cuido deste mundo. Eu faço mapas das cavernas e dos domos protegidos de Quaria."
+        },
+        {
+          "ru": "Камень сверху защищает часть станции. А внутри можно строить спокойные комнаты и переходы.",
+          "en": "The rock overhead shelters part of the station. Inside, we can build quiet rooms and passages.",
+          "fr": "Nous protégeons les chemins et les jardins. Une lumière apparaît derrière une paroi rocheuse. Que cache-t-elle ?",
+          "de": "Wir schützen Wege und Gärten. Hinter einer Felswand leuchtet etwas. Wohin führt der Gang?",
+          "es": "Protegemos caminos y jardines. Una lucecita apareció detrás de una roca. ¿Adónde lleva el túnel?",
+          "pt_BR": "Protegemos caminhos e jardins. Uma luzinha apareceu atrás de uma rocha. Para onde vai o túnel?"
+        },
+        {
+          "ru": "Попробуй представить лабиринт из трёх тоннелей. Как найти выход, не теряя дорогу?",
+          "en": "Imagine a maze of three tunnels. How might you find the exit without getting lost?",
+          "fr": "Cherchons un indice ensemble ! Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "de": "Suchen wir gemeinsam einen Hinweis! Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "es": "¡Busquemos una pista! Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "pt_BR": "Vamos achar uma pista! Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "ngc6822_p03": {
+      "hook": {
+        "ru": "На Нокте небо тёмное, а космопорт светится в сумерках. Я слежу за прибытием кораблей.",
+        "en": "On Nocta, the sky is dark and the spaceport glows at dusk. I watch the arriving ships.",
+        "fr": "Deux lumières de quai clignotent à des rythmes différents.",
+        "de": "Zwei Docklichter blinken unterschiedlich. Was wollen sie sagen?",
+        "es": "Dos luces del muelle parpadean de forma distinta. ¿Qué dicen?",
+        "pt_BR": "Duas luzes da doca piscam em ritmos diferentes. O que significam?"
+      },
+      "responses": [
+        {
+          "ru": "Я замечаю огни доков и узнаю, к какому ангару направляется корабль.",
+          "en": "I notice the dock lights and work out which hangar a ship is heading toward.",
+          "fr": "Je veille sur notre monde. Je surveille les signaux des vaisseaux dans le port sombre de Nocta.",
+          "de": "Ich passe auf diese Welt auf. Ich beobachte die Schiffssignale im dämmrigen Raumhafen von Nocta.",
+          "es": "Cuido este mundo. Vigilo las señales de las naves en el puerto al atardecer de Nocta.",
+          "pt_BR": "Eu cuido deste mundo. Eu observo os sinais das naves no porto de Nocta, onde o céu é escuro."
+        },
+        {
+          "ru": "На космопорте важно соблюдать порядок. Так корабли могут прибывать и улетать безопаснее.",
+          "en": "Order matters at a spaceport. It helps ships arrive and leave more safely.",
+          "fr": "Nous protégeons les chemins et les jardins. Deux lumières de quai clignotent à des rythmes différents.",
+          "de": "Wir schützen Wege und Gärten. Zwei Docklichter blinken unterschiedlich. Was wollen sie sagen?",
+          "es": "Protegemos caminos y jardines. Dos luces del muelle parpadean de forma distinta. ¿Qué dicen?",
+          "pt_BR": "Protegemos caminhos e jardins. Duas luzes da doca piscam em ritmos diferentes. O que significam?"
+        },
+        {
+          "ru": "Найди два разных огня космопорта. Они одинаковой яркости?",
+          "en": "Find two different lights in the spaceport. Are they equally bright?",
+          "fr": "Cherchons un indice ensemble ! Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "de": "Suchen wir gemeinsam einen Hinweis! Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "es": "¡Busquemos una pista! Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "pt_BR": "Vamos achar uma pista! Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "ngc6822_p04": {
+      "hook": {
+        "ru": "На Ферре мы работаем рядом с ржаво-красными железными горами. Здесь перерабатывают минералы.",
+        "en": "On Ferra, we work beside rusty-red mountains rich in iron. Minerals are processed here.",
+        "fr": "Une conduite avance moins vite que prévu. Pourquoi ?",
+        "de": "In einer Leitung fließt die Fracht langsamer. Woran liegt das?",
+        "es": "La carga avanza más despacio en un tubo. ¿Qué habrá pasado?",
+        "pt_BR": "A carga ficou mais lenta num dos tubos. O que aconteceu?"
+      },
+      "responses": [
+        {
+          "ru": "Я проверяю, как материалы движутся по защищённым трубам и переходам.",
+          "en": "I check how materials travel through the protected pipes and passages.",
+          "fr": "Je veille sur notre monde. Je vérifie les conduites qui transportent les minéraux sur Ferra.",
+          "de": "Ich passe auf diese Welt auf. Ich prüfe die geschützten Leitungen für Minerale auf Ferra.",
+          "es": "Cuido este mundo. Reviso los tubos que transportan minerales por Ferra.",
+          "pt_BR": "Eu cuido deste mundo. Eu verifico os tubos que carregam minerais em Ferra."
+        },
+        {
+          "ru": "Металл нужен для кораблей и зданий. Но добыча требует бережного отношения к миру.",
+          "en": "We need metal for ships and buildings. But gathering it should respect the world around us.",
+          "fr": "Nous protégeons les chemins et les jardins. Une conduite avance moins vite que prévu. Pourquoi ?",
+          "de": "Wir schützen Wege und Gärten. In einer Leitung fließt die Fracht langsamer. Woran liegt das?",
+          "es": "Protegemos caminos y jardines. La carga avanza más despacio en un tubo. ¿Qué habrá pasado?",
+          "pt_BR": "Protegemos caminhos e jardins. A carga ficou mais lenta num dos tubos. O que aconteceu?"
+        },
+        {
+          "ru": "Попробуй найти на станции прямую трубу и круглый резервуар.",
+          "en": "Try to spot a straight pipe and a round tank in the station.",
+          "fr": "Cherchons un indice ensemble ! Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "de": "Suchen wir gemeinsam einen Hinweis! Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "es": "¡Busquemos una pista! Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "pt_BR": "Vamos achar uma pista! Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "ngc6822_p06": {
+      "hook": {
+        "ru": "На Руне хранится старый архив нашего народа. Его ступени ведут к залам с воспоминаниями.",
+        "en": "On Runa, an old archive of our people stands behind great steps. The stairs lead to rooms of memories.",
+        "fr": "Un étrange symbole d'étoile apparaît sur une vieille carte.",
+        "de": "Auf einer alten Karte steht ein unbekannter Stern. Was bedeutet er?",
+        "es": "Encontré una estrella extraña en un mapa antiguo. ¿Qué significa?",
+        "pt_BR": "Achei uma estrela diferente num mapa antigo. O que será que ela quer dizer?"
+      },
+      "responses": [
+        {
+          "ru": "Я берегу записи путешествий, чтобы новые исследователи могли учиться у прошлых поколений.",
+          "en": "I protect travel records so new explorers can learn from earlier generations.",
+          "fr": "Je veille sur notre monde. Je garde les anciens récits de voyage dans les archives en escalier de Runa.",
+          "de": "Ich passe auf diese Welt auf. Im Stufenarchiv von Runa bewahre ich alte Reiseberichte auf.",
+          "es": "Cuido este mundo. Guardo los relatos antiguos en el archivo escalonado de Runa.",
+          "pt_BR": "Eu cuido deste mundo. Eu guardo relatos antigos no arquivo de grandes degraus de Runa."
+        },
+        {
+          "ru": "Истории помогают не забывать открытия и ошибки. Мы хотим беречь память, а не повторять всё с нуля.",
+          "en": "Stories help us remember discoveries and mistakes. We keep memories so we need not start from nothing.",
+          "fr": "Nous protégeons les chemins et les jardins. Un étrange symbole d'étoile apparaît sur une vieille carte.",
+          "de": "Wir schützen Wege und Gärten. Auf einer alten Karte steht ein unbekannter Stern. Was bedeutet er?",
+          "es": "Protegemos caminos y jardines. Encontré una estrella extraña en un mapa antiguo. ¿Qué significa?",
+          "pt_BR": "Protegemos caminhos e jardins. Achei uma estrela diferente num mapa antigo. O que será que ela quer dizer?"
+        },
+        {
+          "ru": "Посчитай три ступени, начиная с самой нижней. Какая будет третьей?",
+          "en": "Count three steps, starting from the bottom. Which one is third?",
+          "fr": "Cherchons un indice ensemble ! Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "de": "Suchen wir gemeinsam einen Hinweis! Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "es": "¡Busquemos una pista! Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "pt_BR": "Vamos achar uma pista! Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_ngc6822": {
+      "hook": {
+        "ru": "Внутри «Головы Титана» есть доки и каменные тоннели. Этот необычный порт устроен в огромном черепе.",
+        "en": "Inside Titan's Head there are docks and stone tunnels. This unusual port is built within a giant skull.",
+        "fr": "Un tunnel est fermé pour travaux. Trouvons un autre passage sûr.",
+        "de": "Ein Tunnel ist wegen Reparaturen gesperrt. Finden wir einen Umweg!",
+        "es": "Un túnel está cerrado por reparaciones. ¡Busquemos otra ruta!",
+        "pt_BR": "Um túnel está fechado para conserto. Vamos achar outro caminho!"
+      },
+      "responses": [
+        {
+          "ru": "Я изучаю старые проходы и отмечаю путь к безопасным докам.",
+          "en": "I explore old passages and mark the route to safe docks.",
+          "fr": "Je veille sur notre monde. J'aide les visiteurs à traverser les tunnels de pierre de la Tête du Titan.",
+          "de": "Ich passe auf diese Welt auf. Ich zeige Gästen sichere Wege durch die Steintunnel im Titanenkopf.",
+          "es": "Cuido este mundo. Ayudo a visitantes a recorrer los túneles de piedra de la Cabeza del Titán.",
+          "pt_BR": "Eu cuido deste mundo. Eu ajudo visitantes a passar pelos túneis de pedra da Cabeça do Titã."
+        },
+        {
+          "ru": "Здесь сходятся разные путешественники. Важно знать, где можно ходить, а где идут ремонтные работы.",
+          "en": "Many travelers meet here. It is important to know which paths are safe and where repairs are underway.",
+          "fr": "Nous protégeons les chemins et les jardins. Un tunnel est fermé pour travaux. Trouvons un autre passage sûr.",
+          "de": "Wir schützen Wege und Gärten. Ein Tunnel ist wegen Reparaturen gesperrt. Finden wir einen Umweg!",
+          "es": "Protegemos caminos y jardines. Un túnel está cerrado por reparaciones. ¡Busquemos otra ruta!",
+          "pt_BR": "Protegemos caminhos e jardins. Um túnel está fechado para conserto. Vamos achar outro caminho!"
+        },
+        {
+          "ru": "Посмотри на круглые доковые огни. Можешь найти две одинаковые формы?",
+          "en": "Look at the round dock lights. Can you find two matching shapes?",
+          "fr": "Cherchons un indice ensemble ! Montrons un chemin sûr aux autres voyageurs. En s’entraidant, on va plus loin !",
+          "de": "Suchen wir gemeinsam einen Hinweis! Zeigen wir anderen Reisenden einen sicheren Weg. Gemeinsam schaffen wir mehr!",
+          "es": "¡Busquemos una pista! Mostremos una ruta segura a otros viajeros. ¡Ayudarnos es importante!",
+          "pt_BR": "Vamos achar uma pista! Vamos mostrar um caminho seguro a outros viajantes. Ajudar faz bem!"
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m31_p03": {
+      "hook": {
+        "ru": "На Фазисе среди чёрных скал стоят зеркальные лаборатории. Металлические дуги могут менять положение.",
+        "en": "On Phasis, mirrored laboratories stand among black rocks. Metal arches can change position.",
+        "fr": "Une arche bouge autrement que sa voisine. Comparons-les !",
+        "de": "Ein Bogen bewegt sich anders als sein Nachbar. Vergleichen wir sie!",
+        "es": "Un arco se mueve de otra manera. ¿Lo comparamos con otro?",
+        "pt_BR": "Um arco está se movendo de um jeito diferente. Vamos comparar!"
+      },
+      "responses": [
+        {
+          "ru": "Я превращаю часть себя в тонкую дугу и чувствую действие магнитных полей.",
+          "en": "I shape part of myself into a thin arch and sense the magnetic fields.",
+          "fr": "Je sens bouger le métal. J'observe les arches métalliques changeantes des laboratoires de Phasis.",
+          "de": "Ich spüre, wie das Metall sich bewegt. Ich untersuche die beweglichen Metallbögen in den Laboren von Phasis.",
+          "es": "Siento cómo se mueve el metal. Estudio los arcos de metal que cambian en los laboratorios de Phasis.",
+          "pt_BR": "Eu sinto o metal se mover. Eu estudo os arcos de metal que mudam de forma nos laboratórios de Phasis."
+        },
+        {
+          "ru": "Поля помогают нам управлять движением металла. Нам не всегда нужны обычные человеческие рычаги.",
+          "en": "Fields help us control how metal moves. We do not always need human-style levers.",
+          "fr": "Les champs nous aident à garder l’équilibre. Une arche bouge autrement que sa voisine. Comparons-les !",
+          "de": "Die Felder halten uns im Gleichgewicht. Ein Bogen bewegt sich anders als sein Nachbar. Vergleichen wir sie!",
+          "es": "Los campos nos ayudan a mantener el equilibrio. Un arco se mueve de otra manera. ¿Lo comparamos con otro?",
+          "pt_BR": "Os campos ajudam a manter o equilíbrio. Um arco está se movendo de um jeito diferente. Vamos comparar!"
+        },
+        {
+          "ru": "Найди дугу и кольцо. Чем они похожи, а чем отличаются?",
+          "en": "Find an arch and a ring. How are their shapes alike and different?",
+          "fr": "Regardons les formes ! Partageons nos mesures pour que les autres puissent les vérifier.",
+          "de": "Sehen wir uns die Formen an! Teilen wir unsere Messungen, damit andere sie prüfen können.",
+          "es": "¡Miremos las formas! Compartamos las mediciones para que otros equipos puedan revisarlas.",
+          "pt_BR": "Vamos olhar as formas! Vamos compartilhar as medidas para outras equipes conferirem."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m31_p05": {
+      "hook": {
+        "ru": "На Синте над подземным городом парит большая тёмная сфера. Мы следим за её равновесием.",
+        "en": "On Sinta, a huge dark sphere floats above an underground city. We watch its balance.",
+        "fr": "La sphère a légèrement bougé. Comment retrouver l'équilibre ?",
+        "de": "Die schwebende Kugel hat sich leicht verschoben. Wie helfen wir?",
+        "es": "La esfera se movió un poco. ¿Cómo devolvemos su equilibrio?",
+        "pt_BR": "A esfera se mexeu um pouquinho. Como devolver o equilíbrio?"
+      },
+      "responses": [
+        {
+          "ru": "Я чувствую, как меняются поля вокруг сферы, и помогаю удерживать её в нужном положении.",
+          "en": "I sense how the fields around the sphere change and help hold it in place.",
+          "fr": "Je sens bouger le métal. Je vérifie la grande sphère sombre qui flotte au-dessus de la cité de Sinta.",
+          "de": "Ich spüre, wie das Metall sich bewegt. Ich prüfe die große dunkle Kugel, die über der Stadt Sinta schwebt.",
+          "es": "Siento cómo se mueve el metal. Reviso la enorme esfera oscura que flota sobre la ciudad de Sinta.",
+          "pt_BR": "Eu sinto o metal se mover. Eu verifico a enorme esfera escura que flutua acima da cidade de Sinta."
+        },
+        {
+          "ru": "Для нашего города важно, чтобы тяжёлая конструкция оставалась устойчивой. Это требует точных расчётов.",
+          "en": "Our city needs the great structure to remain stable. That takes careful calculations.",
+          "fr": "Les champs nous aident à garder l’équilibre. La sphère a légèrement bougé. Comment retrouver l'équilibre ?",
+          "de": "Die Felder halten uns im Gleichgewicht. Die schwebende Kugel hat sich leicht verschoben. Wie helfen wir?",
+          "es": "Los campos nos ayudan a mantener el equilibrio. La esfera se movió un poco. ¿Cómo devolvemos su equilibrio?",
+          "pt_BR": "Os campos ajudam a manter o equilíbrio. A esfera se mexeu um pouquinho. Como devolver o equilíbrio?"
+        },
+        {
+          "ru": "Покажи, где шар, а где куб или плоская стена. Какая форма круглая?",
+          "en": "Point to the sphere and then to a cube or flat wall. Which shape is round?",
+          "fr": "Regardons les formes ! Partageons nos mesures pour que les autres puissent les vérifier.",
+          "de": "Sehen wir uns die Formen an! Teilen wir unsere Messungen, damit andere sie prüfen können.",
+          "es": "¡Miremos las formas! Compartamos las mediciones para que otros equipos puedan revisarlas.",
+          "pt_BR": "Vamos olhar as formas! Vamos compartilhar as medidas para outras equipes conferirem."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m31_p06": {
+      "hook": {
+        "ru": "На Геоне над горячими разломами парит тёмная перевёрнутая пирамида. Это место научных размышлений.",
+        "en": "On Geona, a dark upside-down pyramid floats above hot fissures. This is a place for scientific thought.",
+        "fr": "Un mur du temple s'est transformé en nouvel instrument. Pourquoi ?",
+        "de": "Eine Tempelwand wurde zu einem neuen Messgerät. Wie funktioniert es?",
+        "es": "Una pared del templo se transformó en un instrumento nuevo. ¿Cómo funciona?",
+        "pt_BR": "Uma parede do templo virou uma ferramenta nova. Como funciona?"
+      },
+      "responses": [
+        {
+          "ru": "Внутри металл меняет форму и становится прибором, когда нам нужен инструмент.",
+          "en": "Inside, metal changes shape and becomes an instrument when we need a tool.",
+          "fr": "Je sens bouger le métal. J'étudie la pyramide noire renversée au-dessus des fissures chaudes de Geona.",
+          "de": "Ich spüre, wie das Metall sich bewegt. Ich beobachte die umgedrehte schwarze Pyramide über Geonas heißen Spalten.",
+          "es": "Siento cómo se mueve el metal. Estudio la pirámide negra invertida sobre las grietas calientes de Geona.",
+          "pt_BR": "Eu sinto o metal se mover. Eu estudo a pirâmide preta de cabeça para baixo acima das fendas quentes de Geona."
+        },
+        {
+          "ru": "Мы привыкли работать без кнопок и экранов: наши тела взаимодействуют с материалом напрямую.",
+          "en": "We work without buttons and screens: our bodies can interact with the material directly.",
+          "fr": "Les champs nous aident à garder l’équilibre. Un mur du temple s'est transformé en nouvel instrument. Pourquoi ?",
+          "de": "Die Felder halten uns im Gleichgewicht. Eine Tempelwand wurde zu einem neuen Messgerät. Wie funktioniert es?",
+          "es": "Los campos nos ayudan a mantener el equilibrio. Una pared del templo se transformó en un instrumento nuevo. ¿Cómo funciona?",
+          "pt_BR": "Os campos ajudam a manter o equilíbrio. Uma parede do templo virou uma ferramenta nova. Como funciona?"
+        },
+        {
+          "ru": "Найди вершину пирамиды. В какую сторону она указывает: вверх или вниз?",
+          "en": "Find the pyramid's point. Does it face up or down?",
+          "fr": "Regardons les formes ! Partageons nos mesures pour que les autres puissent les vérifier.",
+          "de": "Sehen wir uns die Formen an! Teilen wir unsere Messungen, damit andere sie prüfen können.",
+          "es": "¡Miremos las formas! Compartamos las mediciones para que otros equipos puedan revisarlas.",
+          "pt_BR": "Vamos olhar as formas! Vamos compartilhar as medidas para outras equipes conferirem."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_m31": {
+      "hook": {
+        "ru": "В храме науки «Перевёрнутая пирамида» стены не просто стены: они могут преобразиться в инструменты.",
+        "en": "In the Inverted Pyramid science temple, the walls are more than walls: they can become tools.",
+        "fr": "Un instrument courbé est devenu un outil de mesure. Observons-le !",
+        "de": "Ein gebogenes Werkzeug wurde zu einem Messgerät. Warum wohl?",
+        "es": "Un instrumento curvo se convirtió en medidor. ¡Qué curioso!",
+        "pt_BR": "Uma ferramenta curva virou um medidor. Por que será?"
+      },
+      "responses": [
+        {
+          "ru": "Я касаюсь металлической поверхности, и она меняет форму под нашу задачу.",
+          "en": "I touch a metal surface, and it changes shape to suit our task.",
+          "fr": "Je sens bouger le métal. Dans ce temple-pyramide, je crée des instruments avec un métal qui change de forme.",
+          "de": "Ich spüre, wie das Metall sich bewegt. In diesem Pyramidentempel forme ich Werkzeuge aus wandelbarem Metall.",
+          "es": "Siento cómo se mueve el metal. En este templo, creo instrumentos de metal que cambia de forma.",
+          "pt_BR": "Eu sinto o metal se mover. Neste templo, eu crio ferramentas com um metal que muda de forma."
+        },
+        {
+          "ru": "Так мы создаём приборы только тогда, когда они нужны. Лишних кнопок в этом храме нет.",
+          "en": "We make instruments only when they are needed. This temple has no extra buttons.",
+          "fr": "Les champs nous aident à garder l’équilibre. Un instrument courbé est devenu un outil de mesure. Observons-le !",
+          "de": "Die Felder halten uns im Gleichgewicht. Ein gebogenes Werkzeug wurde zu einem Messgerät. Warum wohl?",
+          "es": "Los campos nos ayudan a mantener el equilibrio. Un instrumento curvo se convirtió en medidor. ¡Qué curioso!",
+          "pt_BR": "Os campos ajudam a manter o equilíbrio. Uma ferramenta curva virou um medidor. Por que será?"
+        },
+        {
+          "ru": "Представь стену, которая стала ложкой или чашей. На что она была бы похожа?",
+          "en": "Imagine a wall turning into a spoon or bowl. What would it look like?",
+          "fr": "Regardons les formes ! Partageons nos mesures pour que les autres puissent les vérifier.",
+          "de": "Sehen wir uns die Formen an! Teilen wir unsere Messungen, damit andere sie prüfen können.",
+          "es": "¡Miremos las formas! Compartamos las mediciones para que otros equipos puedan revisarlas.",
+          "pt_BR": "Vamos olhar as formas! Vamos compartilhar as medidas para outras equipes conferirem."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m33_p01": {
+      "hook": {
+        "ru": "На Светаре над сиреневыми холмами висит зеркальная станция. Мы собираем здесь знания о далёких мирах.",
+        "en": "On Svetara, a mirrored station floats above purple hills. We gather knowledge of faraway worlds.",
+        "fr": "Deux dessins d'étoiles se ressemblent beaucoup. Trouvons une différence !",
+        "de": "Zwei Sternmuster sehen fast gleich aus. Finden wir den Unterschied!",
+        "es": "Dos dibujos de estrellas parecen iguales. ¡Busquemos una diferencia!",
+        "pt_BR": "Dois desenhos de estrelas parecem iguais. Vamos achar a diferença!"
+      },
+      "responses": [
+        {
+          "ru": "Я соединяю новые наблюдения со старыми воспоминаниями, чтобы ничего важного не потерять.",
+          "en": "I connect new observations with old memories, so important things are not lost.",
+          "fr": "Je garde les détails en mémoire. Je compare les souvenirs dans la station miroir flottante de Svetara.",
+          "de": "Ich merke mir die kleinen Details. Ich vergleiche Erinnerungen auf der schwebenden Spiegelstation von Svetara.",
+          "es": "Recuerdo los pequeños detalles. Comparo recuerdos en la estación espejo que flota sobre Svetara.",
+          "pt_BR": "Eu lembro dos pequenos detalhes. Eu comparo lembranças na estação espelhada que flutua sobre Svetara."
+        },
+        {
+          "ru": "Память помогает учиться: мы сравниваем то, что видели раньше, с тем, что заметили теперь.",
+          "en": "Memory helps us learn: we compare what we saw before with what we notice now.",
+          "fr": "En comparant, on apprend davantage. Deux dessins d'étoiles se ressemblent beaucoup. Trouvons une différence !",
+          "de": "Durch Vergleichen lernen wir dazu. Zwei Sternmuster sehen fast gleich aus. Finden wir den Unterschied!",
+          "es": "Comparar nos ayuda a aprender. Dos dibujos de estrellas parecen iguales. ¡Busquemos una diferencia!",
+          "pt_BR": "Comparar ajuda a aprender. Dois desenhos de estrelas parecem iguais. Vamos achar a diferença!"
+        },
+        {
+          "ru": "Посмотри на кольца станции. Можешь найти самое большое?",
+          "en": "Look at the station's rings. Can you find the largest?",
+          "fr": "Essayons une petite énigme ! Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage.",
+          "de": "Lösen wir ein Rätsel! Merken wir uns das Muster und erzählen davon. So wächst unser Wissen.",
+          "es": "¡Vamos con un acertijo! Recordemos este patrón y compartámoslo. Así crece el conocimiento.",
+          "pt_BR": "Vamos resolver uma charada! Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m33_p02": {
+      "hook": {
+        "ru": "На Орбите над синим озером парит учебная обсерватория. Мы учимся внимательно смотреть на небо.",
+        "en": "On Orbita, a teaching observatory floats above a blue lake. We practice looking carefully at the sky.",
+        "fr": "Deux anneaux lumineux se reflètent dans le lac. Sont-ils identiques ?",
+        "de": "Zwei leuchtende Ringe spiegeln sich im See. Sind sie gleich?",
+        "es": "Dos anillos luminosos se reflejan en el lago. ¿Son iguales?",
+        "pt_BR": "Dois anéis brilhantes aparecem refletidos no lago. São iguais?"
+      },
+      "responses": [
+        {
+          "ru": "Я сравниваю два наблюдения и спрашиваю себя, что в них одинаково.",
+          "en": "I compare two observations and ask myself what is the same in them.",
+          "fr": "Je garde les détails en mémoire. J'aide les jeunes à observer le ciel depuis l'observatoire d'Orbita.",
+          "de": "Ich merke mir die kleinen Details. Im Observatorium von Orbita helfe ich jungen Wesen, den Himmel zu beobachten.",
+          "es": "Recuerdo los pequeños detalles. Ayudo a los pequeños a mirar el cielo desde el observatorio de Orbita.",
+          "pt_BR": "Eu lembro dos pequenos detalhes. Eu ajudo crianças a observar o céu no observatório de Orbita."
+        },
+        {
+          "ru": "Замечать различия полезно для учёбы. Иногда маленькая деталь помогает понять большое событие.",
+          "en": "Spotting differences helps us learn. Sometimes a small detail helps explain a big event.",
+          "fr": "En comparant, on apprend davantage. Deux anneaux lumineux se reflètent dans le lac. Sont-ils identiques ?",
+          "de": "Durch Vergleichen lernen wir dazu. Zwei leuchtende Ringe spiegeln sich im See. Sind sie gleich?",
+          "es": "Comparar nos ayuda a aprender. Dos anillos luminosos se reflejan en el lago. ¿Son iguales?",
+          "pt_BR": "Comparar ajuda a aprender. Dois anéis brilhantes aparecem refletidos no lago. São iguais?"
+        },
+        {
+          "ru": "Попробуй найти один круг на станции и другой круг рядом. Чем они различаются?",
+          "en": "Try to find one circle on the station and another nearby. How do they differ?",
+          "fr": "Essayons une petite énigme ! Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage.",
+          "de": "Lösen wir ein Rätsel! Merken wir uns das Muster und erzählen davon. So wächst unser Wissen.",
+          "es": "¡Vamos con un acertijo! Recordemos este patrón y compartámoslo. Así crece el conocimiento.",
+          "pt_BR": "Vamos resolver uma charada! Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m33_p03": {
+      "hook": {
+        "ru": "На Тессере парит математический комплекс. Световые кольца здесь помогают нам представлять задачи.",
+        "en": "On Tessera, a floating math complex glows. Its light rings help us imagine problems.",
+        "fr": "Une forme ne suit pas la suite lumineuse. Laquelle ?",
+        "de": "Eine Form passt nicht in die leuchtende Reihe. Welche?",
+        "es": "Una figura no sigue la secuencia brillante. ¿Cuál será?",
+        "pt_BR": "Uma forma não combina com a sequência de luz. Qual será?"
+      },
+      "responses": [
+        {
+          "ru": "Я запоминаю последовательности фигур и ищу, какая появится следующей.",
+          "en": "I remember sequences of shapes and work out which one comes next.",
+          "fr": "Je garde les détails en mémoire. Dans le complexe mathématique de Tessera, je cherche l'ordre des formes.",
+          "de": "Ich merke mir die kleinen Details. Im Mathekomplex von Tessera suche ich Muster aus Formen und Zahlen.",
+          "es": "Recuerdo los pequeños detalles. En el centro matemático de Tessera, busco patrones de formas y números.",
+          "pt_BR": "Eu lembro dos pequenos detalhes. No complexo matemático de Tessera, procuro padrões de formas e números."
+        },
+        {
+          "ru": "Когда мы замечаем порядок, нам легче решать головоломки и планировать путь.",
+          "en": "Finding a pattern helps us solve puzzles and plan a route.",
+          "fr": "En comparant, on apprend davantage. Une forme ne suit pas la suite lumineuse. Laquelle ?",
+          "de": "Durch Vergleichen lernen wir dazu. Eine Form passt nicht in die leuchtende Reihe. Welche?",
+          "es": "Comparar nos ayuda a aprender. Una figura no sigue la secuencia brillante. ¿Cuál será?",
+          "pt_BR": "Comparar ajuda a aprender. Uma forma não combina com a sequência de luz. Qual será?"
+        },
+        {
+          "ru": "Представь ряд: круг, квадрат, круг, квадрат. Какая фигура будет следующей?",
+          "en": "Imagine a pattern: circle, square, circle, square. Which shape comes next?",
+          "fr": "Essayons une petite énigme ! Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage.",
+          "de": "Lösen wir ein Rätsel! Merken wir uns das Muster und erzählen davon. So wächst unser Wissen.",
+          "es": "¡Vamos con un acertijo! Recordemos este patrón y compartámoslo. Así crece el conocimiento.",
+          "pt_BR": "Vamos resolver uma charada! Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "m33_p04": {
+      "hook": {
+        "ru": "На Лентисе наш большой телескоп смотрит в дальний космос над ледяными берегами.",
+        "en": "On Lentis, our big telescope looks into faraway space above icy shores.",
+        "fr": "Le télescope a reçu une faible lumière lointaine. Vérifions-la !",
+        "de": "Das Teleskop hat ein schwaches Licht entdeckt. Prüfen wir es!",
+        "es": "El telescopio vio una lucecita lejana. ¿La comprobamos?",
+        "pt_BR": "O telescópio viu uma luzinha distante. Vamos conferir?"
+      },
+      "responses": [
+        {
+          "ru": "Я собираю свет далёких объектов и сравниваю его с прежними наблюдениями.",
+          "en": "I gather light from distant objects and compare it with earlier observations.",
+          "fr": "Je garde les détails en mémoire. J'explore l'espace avec le grand télescope de Lentis.",
+          "de": "Ich merke mir die kleinen Details. Mit dem großen Teleskop von Lentis erforsche ich den fernen Weltraum.",
+          "es": "Recuerdo los pequeños detalles. Con el gran telescopio de Lentis observo objetos muy lejanos.",
+          "pt_BR": "Eu lembro dos pequenos detalhes. Eu observo objetos bem distantes com o grande telescópio de Lentis."
+        },
+        {
+          "ru": "Свет идёт через космос долго. Телескоп помогает замечать объекты, которых не видно просто глазами.",
+          "en": "Light travels through space for a long time. A telescope helps us notice objects our eyes cannot see alone.",
+          "fr": "En comparant, on apprend davantage. Le télescope a reçu une faible lumière lointaine. Vérifions-la !",
+          "de": "Durch Vergleichen lernen wir dazu. Das Teleskop hat ein schwaches Licht entdeckt. Prüfen wir es!",
+          "es": "Comparar nos ayuda a aprender. El telescopio vio una lucecita lejana. ¿La comprobamos?",
+          "pt_BR": "Comparar ajuda a aprender. O telescópio viu uma luzinha distante. Vamos conferir?"
+        },
+        {
+          "ru": "Найди длинную трубу телескопа. Куда она направлена — к земле или в небо?",
+          "en": "Find the telescope's long tube. Is it pointing down or into the sky?",
+          "fr": "Essayons une petite énigme ! Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage.",
+          "de": "Lösen wir ein Rätsel! Merken wir uns das Muster und erzählen davon. So wächst unser Wissen.",
+          "es": "¡Vamos con un acertijo! Recordemos este patrón y compartámoslo. Así crece el conocimiento.",
+          "pt_BR": "Vamos resolver uma charada! Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce."
+        }
+      ],
+      "topic_trigger": "world"
+    },
+    "st_m33": {
+      "hook": {
+        "ru": "«Последние врата» окружены разными порталами. Мы охраняем путь к Перекрёстку миров.",
+        "en": "The Final Gates are surrounded by different portals. We watch over the path toward the Crossroads of Worlds.",
+        "fr": "La lumière d'un portail a changé. Quel chemin indique-t-elle ?",
+        "de": "Ein Portal zeigt ein anderes Lichtmuster. Welcher Weg ist das?",
+        "es": "La luz de un portal cambió su dibujo. ¿Qué camino indica?",
+        "pt_BR": "Um portal mudou seu desenho de luz. Para onde será que leva?"
+      },
+      "responses": [
+        {
+          "ru": "Я запоминаю, какой портал ведёт в какую сторону, чтобы путешественники не путали пути.",
+          "en": "I remember which portal leads where so travelers can follow the right path.",
+          "fr": "Je garde les détails en mémoire. Je veille sur les portails de différentes formes menant au Carrefour des mondes.",
+          "de": "Ich merke mir die kleinen Details. Ich beobachte die verschieden geformten Portale zum Kreuzweg der Welten.",
+          "es": "Recuerdo los pequeños detalles. Vigilo los portales de distintas formas hacia el Cruce de los Mundos.",
+          "pt_BR": "Eu lembro dos pequenos detalhes. Eu observo portais de várias formas no caminho para o Encontro dos Mundos."
+        },
+        {
+          "ru": "Разные переходы нужны для разных маршрутов. Перед прыжком важно внимательно проверять направление.",
+          "en": "Different gateways serve different routes. Before a jump, we check the direction carefully.",
+          "fr": "En comparant, on apprend davantage. La lumière d'un portail a changé. Quel chemin indique-t-elle ?",
+          "de": "Durch Vergleichen lernen wir dazu. Ein Portal zeigt ein anderes Lichtmuster. Welcher Weg ist das?",
+          "es": "Comparar nos ayuda a aprender. La luz de un portal cambió su dibujo. ¿Qué camino indica?",
+          "pt_BR": "Comparar ajuda a aprender. Um portal mudou seu desenho de luz. Para onde será que leva?"
+        },
+        {
+          "ru": "Найди два портала разных форм. Какой круглый, а какой больше похож на арку?",
+          "en": "Find two portals of different shapes. Which is round, and which looks more like an arch?",
+          "fr": "Essayons une petite énigme ! Gardons ce motif en mémoire et racontons-le. Le savoir grandit quand on le partage.",
+          "de": "Lösen wir ein Rätsel! Merken wir uns das Muster und erzählen davon. So wächst unser Wissen.",
+          "es": "¡Vamos con un acertijo! Recordemos este patrón y compartámoslo. Así crece el conocimiento.",
+          "pt_BR": "Vamos resolver uma charada! Vamos lembrar desse padrão e contar para outras pessoas. Assim o saber cresce."
+        }
+      ],
+      "topic_trigger": "world"
+    }
+  },
+  "reactions_by_race": {
+    "human": {
+      "ru": [
+        "Хорошо, что ты присмотрелся!",
+        "Вот почему мы это исследуем.",
+        "Давай попробуем вместе."
+      ],
+      "en": [
+        "You have a sharp eye!",
+        "That is why we study it.",
+        "Let's try together."
+      ],
+      "fr": [
+        "Tu as l'œil !",
+        "Voilà pourquoi nous l'étudions.",
+        "Essayons ensemble."
+      ],
+      "de": [
+        "Gut beobachtet!",
+        "Darum untersuchen wir das.",
+        "Probieren wir es zusammen."
+      ],
+      "es": [
+        "¡Qué bien has observado!",
+        "Por eso lo estudiamos.",
+        "Vamos a probarlo juntos."
+      ],
+      "pt_BR": [
+        "Você observou muito bem!",
+        "Por isso estudamos isso.",
+        "Vamos tentar juntos."
+      ]
+    },
+    "mold": {
+      "ru": [
+        "Наша сеть уловила твоё любопытство.",
+        "Наши волокна передают этот вопрос дальше.",
+        "Попробуем осторожно, все вместе."
+      ],
+      "en": [
+        "Our network sensed your curiosity.",
+        "Our fibers carry this question onward.",
+        "Let's try gently, together."
+      ],
+      "fr": [
+        "Notre réseau a senti ta curiosité.",
+        "Nos fibres transmettent cette question.",
+        "Essayons doucement, ensemble."
+      ],
+      "de": [
+        "Unser Netzwerk spürt deine Neugier.",
+        "Unsere Fasern leiten die Frage weiter.",
+        "Versuchen wir es vorsichtig zusammen."
+      ],
+      "es": [
+        "Nuestra red ha notado tu curiosidad.",
+        "Nuestras fibras transmiten esa pregunta.",
+        "Probemos con cuidado, juntos."
+      ],
+      "pt_BR": [
+        "Nossa rede percebeu sua curiosidade.",
+        "Nossas fibras transmitem essa pergunta.",
+        "Vamos tentar com cuidado, juntos."
+      ]
+    },
+    "phase": {
+      "ru": [
+        "Моя форма чуть дрогнула от интереса.",
+        "Сейчас я объясню, не меняя состояния.",
+        "Посмотри, как интересно всё меняется!"
+      ],
+      "en": [
+        "My shape rippled with curiosity.",
+        "Let me explain without changing form.",
+        "Watch how things can change!"
+      ],
+      "fr": [
+        "Ma forme ondule de curiosité.",
+        "Je t'explique sans changer de forme.",
+        "Regarde comme tout peut changer !"
+      ],
+      "de": [
+        "Meine Form kräuselt sich vor Neugier.",
+        "Ich erkläre es in dieser Form.",
+        "Sieh, wie sich alles verändern kann!"
+      ],
+      "es": [
+        "Mi forma ondula de curiosidad.",
+        "Te lo explicaré sin cambiar de forma.",
+        "¡Mira cómo pueden cambiar las cosas!"
+      ],
+      "pt_BR": [
+        "Minha forma ondulou de curiosidade.",
+        "Vou explicar sem mudar de forma.",
+        "Veja como as coisas podem mudar!"
+      ]
+    },
+    "reptile": {
+      "ru": [
+        "Ты заметил важную деталь.",
+        "Наш народ многое понял за долгие путешествия.",
+        "Отлично, исследователь!"
+      ],
+      "en": [
+        "You spotted an important detail.",
+        "Our people learned a lot on long journeys.",
+        "Well done, explorer!"
+      ],
+      "fr": [
+        "Tu as remarqué un détail important.",
+        "Nos voyages nous ont beaucoup appris.",
+        "Bravo, explorateur !"
+      ],
+      "de": [
+        "Dir ist ein wichtiges Detail aufgefallen.",
+        "Auf unseren Reisen haben wir viel gelernt.",
+        "Gut gemacht, Entdecker!"
+      ],
+      "es": [
+        "Has notado un detalle importante.",
+        "Nuestros viajes nos enseñaron mucho.",
+        "¡Bien hecho, explorador!"
+      ],
+      "pt_BR": [
+        "Você notou um detalhe importante.",
+        "Nossas viagens ensinaram muita coisa.",
+        "Muito bem, explorador!"
+      ]
+    },
+    "magnetic": {
+      "ru": [
+        "Мои поля откликнулись на твой вопрос.",
+        "Для равновесия важно понимать причину.",
+        "Исследуем это без спешки."
+      ],
+      "en": [
+        "My fields responded to your question.",
+        "Understanding why helps us keep balance.",
+        "Let's study it without rushing."
+      ],
+      "fr": [
+        "Mes champs réagissent à ta question.",
+        "Comprendre pourquoi aide à garder l'équilibre.",
+        "Observons cela sans nous presser."
+      ],
+      "de": [
+        "Meine Felder reagieren auf deine Frage.",
+        "Der Grund hilft uns, das Gleichgewicht zu halten.",
+        "Untersuchen wir es ganz in Ruhe."
+      ],
+      "es": [
+        "Mis campos responden a tu pregunta.",
+        "Entenderlo ayuda a mantener el equilibrio.",
+        "Vamos a observarlo con calma."
+      ],
+      "pt_BR": [
+        "Meus campos respondem à sua pergunta.",
+        "Entender a razão ajuda a manter o equilíbrio.",
+        "Vamos observar com calma."
+      ]
+    },
+    "neural": {
+      "ru": [
+        "Я сохранил твоё наблюдение в памяти.",
+        "Давай найдём между событиями связь.",
+        "Хороший повод для маленькой загадки!"
+      ],
+      "en": [
+        "I have kept your observation in memory.",
+        "Let's find a connection between events.",
+        "A perfect moment for a small riddle!"
+      ],
+      "fr": [
+        "J'ai gardé ton observation en mémoire.",
+        "Cherchons un lien entre les événements.",
+        "Voilà une bonne occasion pour une énigme !"
+      ],
+      "de": [
+        "Ich habe deine Beobachtung gespeichert.",
+        "Finden wir einen Zusammenhang.",
+        "Ein guter Moment für ein kleines Rätsel!"
+      ],
+      "es": [
+        "He guardado tu observación en mi memoria.",
+        "Busquemos una relación entre los hechos.",
+        "¡Es un buen momento para un acertijo!"
+      ],
+      "pt_BR": [
+        "Guardei sua observação na memória.",
+        "Vamos encontrar uma ligação entre os fatos.",
+        "Ótimo momento para uma pequena charada!"
+      ]
+    }
+  }
+}
