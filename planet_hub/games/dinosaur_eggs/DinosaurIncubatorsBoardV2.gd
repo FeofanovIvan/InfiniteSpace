@@ -6,6 +6,7 @@ extends Control
 ## No score/level/hint/restart UI. Use drag/drop or tap an egg then a bin.
 
 signal crystals_changed(count: int)
+signal placement_evaluated(correct: bool)
 
 const CAPACITY: int = 4
 const INITIAL_COUNT: int = 3
@@ -315,10 +316,14 @@ func _move_egg_to(destination: int) -> void:
     dest.append(egg)
     _held.clear()
     _dragging = false
-    if int(egg["color"]) == destination:
+    var correct_placement: bool = int(egg["color"]) == destination
+    if correct_placement:
         _play_feedback(SFX_OK)
     else:
         _play_feedback(SFX_PLACE_V24)
+    # Emit only after a real egg has moved between incubators. Pickup taps,
+    # drag previews and blocked/full destinations do not count as mistakes.
+    placement_evaluated.emit(correct_placement)
     for rack in range(INCUBATOR_COUNT):
         if _is_finished_rack(rack) and not _credited.has(rack):
             _credited[rack] = true

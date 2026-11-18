@@ -43,17 +43,36 @@ Backup contents include `working-tree.patch`, `index.patch`, `tracked-files.tar`
 - `scripts/NpcTraffic.gd`: use the complete refactor v47 jump-heading implementation. The shorter `main` side does not define `jump_heading` and `heading_error`, although both are consumed immediately afterward.
 - `atlas/world_atlas.json`: preserve the richer canonical `main` metadata and add refactor runtime fields such as `inhabited`, station assets/placement/accessibility, and other missing keys. Prefer refactor `landing` values because the MVP requires the current all-planets landing behavior. Prefer refactor Crossroads runtime status/note while retaining `main` lore metadata. Story runtime code remains excluded.
 
-## Local changes pending review
+## Local changes review
 
-The original dirty worktree changes have been backed up but not yet applied. They will be reviewed file-by-file after the branch merge is committed. Backup-only directories, store-listing artwork, signing material, build output, and experimental story changes must not be imported automatically.
+Selected gameplay changes were applied cleanly on top of the merge:
+
+- Matching Pairs, Pizza Fractions, Roll the Ball
+- Dinosaur Eggs and Evolution Timeline
+- Electric Impulses, Gravity Pinball, Magnetic Collector
+- Neural Math and Space Rebus
+- Space Racing fleet-facing correction and six-language campaign UI
+- `.gitignore` entry for generated `android/`
+
+These changes reuse the already tracked shared `ActionFeedbackVoice.gd` implementation and do not add backup copies.
+
+Intentionally left only in the safety backup:
+
+- Google Play Billing relocation/binaries and the subscription-to-permanent-purchase rewrite
+- Android store release preset that activates the billing plugin
+- purchase/subscription overlay, access-service, purchase-localization, and settings-link edits tied to that store change
+- Google Play listing/legal artwork and documents
+- `bubble_backups`, `learning_backups`, and `planet_hub_backups`
+
+Reason: the MVP task explicitly excludes introducing a new payment mechanism without necessity. Backup directories and store-publication artifacts are not runtime sources. The original dirty worktree remains untouched, so this decision is reversible from the recorded patch/archive.
 
 ## Tests
 
-Not run yet. Required next stages: validate the merged JSON, apply selected local fixes, run resource checks and Godot 4.7.1 headless import/startup tests, then inspect export readiness.
+Atlas JSON validation passed after conflict resolution. Runtime tests are not run yet. Required next stages: commit selected local fixes, run resource checks and Godot 4.7.1 headless import/startup tests, then inspect export readiness.
 
 ## Next exact action
 
-Resolve and stage the two conflicts, validate the merged atlas as JSON, create the merge commit, then review the backed-up local diff against the merged tree.
+Commit selected local gameplay fixes, verify resource references and scene routing, then run Godot 4.7.1 headless import and startup smoke tests.
 
 ## Resume commands
 

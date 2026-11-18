@@ -1,6 +1,7 @@
 .godot/
 .import/
 builds/
+android/
 reports/
 _mika_backups/
 backup_*/

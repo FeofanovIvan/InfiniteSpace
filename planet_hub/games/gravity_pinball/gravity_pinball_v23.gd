@@ -9,6 +9,7 @@ const KIT: Script = preload("res://simulator_ui/scripts/mika_minigame_ui_kit_v11
 const VERTICAL_JOYSTICK: Script = preload("res://planet_hub/games/gravity_pinball/gravity_pinball_main_vertical_v23.gd")
 const LAUNCH_BUTTON: Script = preload("res://planet_hub/games/gravity_pinball/gravity_pinball_main_rocket_v23.gd")
 const ARENA: Script = preload("res://planet_hub/games/gravity_pinball/gravity_pinball_arena_v23.gd")
+const ACTION_FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 
 const WORDS: Dictionary = {
     "ru": {"title":"ГРАВИТАЦИОННЫЙ ПИНБОЛ", "sub":"Удерживай ракету, отпусти для запуска • Справа — направление"},
@@ -45,6 +46,7 @@ var _end_panel: Panel
 var _end_caption: Label
 var _new_game_button: Button
 var _locale: String = "en"
+var _m31_action_voice: Node
 
 
 func _ready() -> void:
@@ -128,6 +130,10 @@ func _ready() -> void:
     _crystals.set("crystal_count", 0)
 
     _read_locale()
+    _m31_action_voice = ACTION_FEEDBACK_SCRIPT.new()
+    _m31_action_voice.name = "GravityPinballActionFeedback"
+    add_child(_m31_action_voice)
+    _m31_action_voice.call("prime_locale", _locale)
     var mobile: Node = get_node_or_null("/root/MobileLocale")
     if mobile != null and mobile.has_signal("language_changed"):
         mobile.connect("language_changed", _on_locale)
@@ -176,6 +182,13 @@ func _on_round_finished(count: int) -> void:
     _right_caption.hide()
     _update_end_words(count)
     _relayout()
+    # A pocket is a genuine round result; praise a scored shot, encourage an
+    # empty one. Never attach voice to the passive flight animation.
+    if _m31_action_voice != null:
+        if count > 0:
+            _m31_action_voice.call("praise", _locale)
+        else:
+            _m31_action_voice.call("encourage", _locale)
 
 
 func _update_end_words(count: int) -> void:
@@ -193,6 +206,8 @@ func _update_end_words(count: int) -> void:
 
 
 func _new_game() -> void:
+    if _m31_action_voice != null:
+        _m31_action_voice.call("stop_feedback")
     _arena.call("start_new_game")
     _end_panel.hide()
     _launch_button.show()
@@ -245,6 +260,8 @@ func _read_locale() -> void:
 
 func _on_locale(_value: String) -> void:
     _read_locale()
+    if _m31_action_voice != null:
+        _m31_action_voice.call("prime_locale", _locale)
     _translate()
     _relayout()
 
@@ -270,6 +287,9 @@ func _translate() -> void:
 func _on_crystals_changed(count: int) -> void:
     if is_instance_valid(_crystals):
         _crystals.set("crystal_count", count)
+    # The arena emits this on actual target collection as well as reset (0).
+    if count > 0 and count % 5 == 0 and _m31_action_voice != null:
+        _m31_action_voice.call("praise", _locale)
 
 
 func _on_launch_pressed() -> void:
@@ -365,5 +385,7 @@ func _exit_to_cards() -> void:
 
 
 func _exit_tree() -> void:
+    if _m31_action_voice != null:
+        _m31_action_voice.call("stop_feedback")
     if is_instance_valid(_host_back):
         _host_back.show()

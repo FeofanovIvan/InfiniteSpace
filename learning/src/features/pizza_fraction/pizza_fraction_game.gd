@@ -14,6 +14,7 @@ const MAX_SLICES := 10
 # Reuses the existing MIKA simulator top rail. Original pizza mechanics/voices stay intact.
 const MIKA_TOOLBAR = preload("res://simulator_ui/scripts/mika_shared_tracing_toolbar_v2.gd")
 const MIKA_HUD = preload("res://planet_hub/scripts/bottom_hud.gd")
+const ACTION_FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 const MIKA_FOSSIL_BG: Texture2D = preload("res://learning/assets/pizza_fraction/evolution_fossil_valley.png")
 const MIKA_STONE_TABLE: Texture2D = preload("res://learning/assets/pizza_fraction/stone_table.png")
 const MIKA_TITLES: Dictionary = {
@@ -55,6 +56,7 @@ var pizza_input: Control
 var home_button: GameExitButton
 var score_panel: GameScorePanel
 var voice_player: AudioStreamPlayer
+var _action_feedback: Node
 
 var rng := RandomNumberGenerator.new()
 var denominator := 2
@@ -75,6 +77,10 @@ func _ready() -> void:
 	score = 0
 	GameState.last_score = 0
 	_build_ui()
+	_action_feedback = ACTION_FEEDBACK_SCRIPT.new()
+	_action_feedback.name = "PizzaFractionsActionFeedback"
+	add_child(_action_feedback)
+	_action_feedback.call("prime_locale", str(LanguageService.learning_locale))
 	_mika_setup_interface()
 	get_viewport().size_changed.connect(_layout)
 	_layout()
@@ -181,6 +187,8 @@ func _build_ui() -> void:
 
 
 func _start_round() -> void:
+	if _action_feedback != null:
+		_action_feedback.call("stop_feedback")
 	input_locked = false
 	drag_index = -1
 	collected_count = 0
@@ -303,11 +311,22 @@ func _finish_round() -> void:
 	GameState.last_score = score
 	GameState.add_coins(1)
 	SFX.play_2d(CORRECT_SOUND, get_viewport_rect().size * 0.5, -5.0)
+	# Praise is tied to THIS completed pizza, without the SoundService's
+	# deferred 0.55-second timer which could speak during the next round.
+	var praised_now: bool = false
+	if _action_feedback != null and not voice_player.playing:
+		praised_now = bool(_action_feedback.call("praise", str(LanguageService.learning_locale)))
 	var tween := create_tween()
 	tween.tween_property(center_panel, "scale", Vector2(1.025, 1.025), 0.14).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tween.tween_property(center_panel, "scale", Vector2.ONE, 0.12)
+	# Result narration must not overlap a short recorded congratulation.
+	if praised_now:
+		var praise_player: AudioStreamPlayer = _action_feedback.get_node_or_null("PlanetaryActionFeedback") as AudioStreamPlayer
+		if praise_player != null and praise_player.playing:
+			await praise_player.finished
+	if not is_inside_tree():
+		return
 	await _play_fraction_result()
-	SFX.play_praise(get_viewport_rect().size * 0.5, 0.55)
 	await get_tree().create_timer(1.2).timeout
 	if is_inside_tree():
 		_start_round()
@@ -646,6 +665,8 @@ func _safe_area_insets(viewport_size: Vector2) -> Vector4:
 
 
 func _go_back() -> void:
+	if _action_feedback != null:
+		_action_feedback.call("stop_feedback")
 	SFX.transition_to_scene(BACK_SCENE)
 
 

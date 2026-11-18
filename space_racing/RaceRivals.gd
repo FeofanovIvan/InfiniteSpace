@@ -14,6 +14,16 @@ const STATION_RACE_FLEETS: Dictionary = {
  "m31": ["res://assets/story/m31_scout_01.png", "res://assets/story/m31_liner_02.png", "res://assets/story/m31_interceptor_04.png", "res://assets/story/m31_guardian_05.png"],
  "m33": ["res://assets/story/m33_civilian_01.png", "res://assets/story/m33_merchant_02.png", "res://assets/story/m33_courier_03.png", "res://assets/story/m33_patrol_04.png"]
 }
+# The route heading assumes the original ship artwork points UP. Alien fleet
+# PNGs face right, left or up. Apply this additional VISUAL rotation only;
+# never alter racer["angle"], which is also used for collision response.
+# Texture order matches STATION_RACE_FLEETS for each system.
+const FLEET_DRAW_OFFSETS: Dictionary = {
+ "lmc": [-PI * 0.5, -PI * 0.5, -PI * 0.5, PI * 0.5],
+ "ngc6822": [0.0, -PI * 0.5, 0.0, -PI * 0.5],
+ "m31": [0.0, PI * 0.5, -PI * 0.5, -PI * 0.5],
+ "m33": [PI * 0.5, PI * 0.5, -PI * 0.5, 0.0]
+}
 const COLORS: Array[Color] = [Color(0.52, 1.0, 0.43), Color(0.37, 0.68, 1.0), Color(0.43, 1.0, 0.84), Color(1.0, 0.40, 0.71)]
 var route: PackedVector2Array = PackedVector2Array()
 var track_width := 650.0
@@ -28,6 +38,7 @@ const LANE_SHIFT_RATE: float = 190.0
 const HEADING_LOOKAHEAD: float = 65.0
 var _sprite_regions: Array[Rect2] = []
 var _artwork: Array[Texture2D] = []
+var _draw_heading_offsets: Array[float] = []
 var _previous_positions: Array[Vector2] = []
 var _previous_angles: Array[float] = []
 const WALL_RESTITUTION: float = 0.32
@@ -43,16 +54,22 @@ func _ready() -> void:
 func set_system_id(system_id: String) -> void:
  # SMC keeps the current generic fleet until dedicated art exists in the repo.
  _artwork.clear()
+ _draw_heading_offsets.clear()
  var fleet: Array = STATION_RACE_FLEETS.get(system_id, [])
+ var offsets: Array = FLEET_DRAW_OFFSETS.get(system_id, [])
  for i in range(4):
   var selected: Texture2D = ART[i]
+  var sprite_offset: float = 0.0
   if i < fleet.size():
    var asset_path: String = str(fleet[i])
    if ResourceLoader.exists(asset_path):
     var custom: Texture2D = load(asset_path) as Texture2D
     if custom != null:
      selected = custom
+     if i < offsets.size():
+      sprite_offset = float(offsets[i])
   _artwork.append(selected)
+  _draw_heading_offsets.append(sprite_offset)
  _station_race_refresh_sprite_regions()
 
 func _station_race_refresh_sprite_regions() -> void:
@@ -263,6 +280,9 @@ func _draw() -> void:
   var visible_size: Vector2 = source.size
   var factor: float = SPRITE_BODY_SIZE / maxf(visible_size.x, visible_size.y)
   var dest_size: Vector2 = visible_size * factor
-  draw_set_transform(screen, heading)
+  # A right/left-facing PNG needs a different draw rotation than an up-facing
+  # PNG. Keep physics headings and interpolation completely unchanged.
+  var visual_heading: float = heading + (_draw_heading_offsets[i] if i < _draw_heading_offsets.size() else 0.0)
+  draw_set_transform(screen, visual_heading)
   draw_texture_rect_region(_artwork[i], Rect2(-dest_size * 0.5, dest_size), source)
   draw_set_transform(Vector2.ZERO)

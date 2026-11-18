@@ -6,6 +6,7 @@ extends "res://planet_hub/games/magnetic_collector/magnetic_collector_mika_ui_v4
 
 const V5_STAGE_SHADER = preload("res://planet_hub/games/magnetic_collector/stage_cover_rounded_v5.gdshader")
 const V5_RADIUS := 26.0
+const ACTION_FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 
 var _v5_panel: Rect2 = Rect2(Vector2(32.0, 130.0), Vector2(1216.0, 558.0))
 var _v5_scale := Vector2.ONE
@@ -13,10 +14,15 @@ var _v5_canvas_origin := Vector2.ZERO
 var _v5_bg: ColorRect
 var _v5_bg_material: ShaderMaterial
 var _v5_outline: StyleBoxFlat
+var _m31_action_voice: Node
 
 
 func _ready() -> void:
 	super._ready()
+	_m31_action_voice = ACTION_FEEDBACK_SCRIPT.new()
+	_m31_action_voice.name = "MagneticCollectorActionFeedback"
+	add_child(_m31_action_voice)
+	_m31_action_voice.call("prime_locale", _v2_locale())
 	_v5_bg = ColorRect.new()
 	_v5_bg.name = "RoundedCoverBackground"
 	_v5_bg.color = Color.WHITE
@@ -36,6 +42,23 @@ func _ready() -> void:
 	_v5_outline.anti_aliasing = true
 	_v5_outline.anti_aliasing_size = 1.0
 	_layout_ui()
+
+
+func _v2_speak(key: String) -> void:
+	# v2 already announces the instructions and actual errors via TTS.
+	# Only replace its final completion TTS, so two voices never congratulate
+	# the child simultaneously; all existing pickup and drop SFX remain.
+	if key == "complete":
+		if _m31_action_voice != null:
+			_m31_action_voice.call("praise", _v2_locale())
+		return
+	super._v2_speak(key)
+
+
+func _exit_tree() -> void:
+	if _m31_action_voice != null:
+		_m31_action_voice.call("stop_feedback")
+	super._exit_tree()
 
 
 func _layout_ui() -> void:

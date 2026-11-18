@@ -4,16 +4,41 @@ extends "res://learning/src/features/matching_pairs/mika_matching_pairs_panel_v3
 ## Does not touch door layout, eight-point aperture, voices, sounds, or navigation.
 
 const SESSION_CAPACITY: int = 50
+const ACTION_FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
+
+var _m33_action_voice: Variant = null
+var _m33_wrong_streak: int = 0
 
 
 func _build_ui() -> void:
     super._build_ui()
+    _m33_action_voice = ACTION_FEEDBACK_SCRIPT.new()
+    _m33_action_voice.name = "MatchingPairsActionFeedback"
+    add_child(_m33_action_voice)
+    _m33_action_voice.prime_locale(_m33_locale())
     # Each newly instantiated game is a new session. Do NOT clear persistent
     # GameState coins or MikoMainMenu's ship inventory.
     score = 0
     GameState.last_score = 0
     if _mika_crystal_hud != null:
         _mika_crystal_hud.set("crystal_count", 0)
+
+
+func _m33_locale() -> String:
+    var language: String = str(LanguageService.learning_locale)
+    var code: String = language.to_lower().get_slice("_", 0).get_slice("-", 0)
+    return code if code in ["ru", "en", "pt", "es", "fr", "de"] else "en"
+
+
+func _start_new_round() -> void:
+    _m33_wrong_streak = 0
+    super._start_new_round()
+
+
+func _exit_tree() -> void:
+    if _m33_action_voice != null:
+        _m33_action_voice.stop_feedback()
+    super._exit_tree()
 
 
 func _mika_on_coin_balance_changed(_balance: int) -> void:
@@ -71,9 +96,15 @@ func _on_door_selected(door: MatchingDoor) -> void:
         return
     var second_door := door
     if _symbols_match(first_door, second_door):
+        _m33_wrong_streak = 0
         correct_player.play()
-        _play_shape_voice(first_door.symbol_kind)
-        SFX.play_praise(get_viewport_rect().size * 0.5, 1.0)
+        # Five pairs per round: retain each shape's educational voice. On the
+        # final pair, an immediate phrase may replace the final shape name.
+        var praised: bool = false
+        if doors.size() == 2 and _m33_action_voice != null and not voice_player.playing:
+            praised = _m33_action_voice.praise(_m33_locale())
+        if not praised:
+            _play_shape_voice(first_door.symbol_kind)
         _mika_award_one_crystal()
         await get_tree().create_timer(0.28).timeout
         if not is_inside_tree():
@@ -98,7 +129,11 @@ func _on_door_selected(door: MatchingDoor) -> void:
         input_locked = false
     else:
         wrong_player.play()
-        SFX.play_retry(get_viewport_rect().size * 0.5)
+        _m33_wrong_streak += 1
+        if _m33_wrong_streak >= 2:
+            _m33_wrong_streak = 0
+            if _m33_action_voice != null and not voice_player.playing:
+                _m33_action_voice.encourage(_m33_locale())
         await get_tree().create_timer(0.7).timeout
         if not is_inside_tree():
             return

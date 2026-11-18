@@ -8,6 +8,7 @@ const VOICE_START_GRACE: float = 3.0
 const VOICE_SAFETY_TIMEOUT: float = 25.0
 const AUTO_ROUND_DELAY: float = 0.70
 const AUTO_CYCLE_DELAY: float = 1.05
+const ACTION_FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 
 var _intro_voice_pending: bool = false
 var _intro_voice_requested: bool = false
@@ -17,12 +18,19 @@ var _intro_voice_silent: float = 0.0
 var _auto_round_remaining: float = -1.0
 var _session_crystals: int = 0
 var _crystals_settled: bool = false
+var _m31_action_voice: Node
+var _m31_wrong_streak: int = 0
 
 
 func _ready() -> void:
     # super schedules _speak_instruction_once using call_deferred.
     # Explicitly gate the first demo before the deferred call can start it.
     super._ready()
+    _m31_action_voice = ACTION_FEEDBACK_SCRIPT.new()
+    _m31_action_voice.name = "ElectricImpulsesActionFeedback"
+    add_child(_m31_action_voice)
+    _m31_action_voice.call("prime_locale", _ui_lang)
+    _m31_wrong_streak = 0
     _session_crystals = 0
     _crystals_settled = false
     _intro_voice_pending = true
@@ -64,7 +72,10 @@ func _finish_intro_voice() -> void:
 
 
 func _process(delta: float) -> void:
-    super._process(delta)
+    # A recorded encouragement should finish before the mistake's automatic
+    # replay; otherwise the animated node tones would start during the voice.
+    var voice_on_wrong: bool = _phase == "wrong" and _m31_action_voice != null and bool(_m31_action_voice.call("is_playing"))
+    super._process(0.0 if voice_on_wrong else delta)
     if _intro_voice_pending:
         # The original base only advances demo/intro phases; "voice_intro"
         # keeps the entire first light pattern motionless while speech plays.
@@ -88,6 +99,9 @@ func _process(delta: float) -> void:
     if _auto_round_remaining >= 0.0:
         _auto_round_remaining -= delta
         if _auto_round_remaining <= 0.0:
+            if _m31_action_voice != null and bool(_m31_action_voice.call("is_playing")):
+                _auto_round_remaining = 0.10
+                return
             _auto_round_remaining = -1.0
             if _phase == "level_done" or _phase == "finished":
                 super._go_next()
@@ -97,6 +111,7 @@ func _process(delta: float) -> void:
 
 func _tap_node_now(node_id: int) -> void:
     var credit_before: int = _credited_steps
+    var was_waiting_for_input: bool = _phase == "input"
     super._tap_node_now(node_id)
     # Existing logic credits each *new* correct step only once, even when a
     # sequence is replayed after a mistake or with Watch Again.
@@ -104,6 +119,18 @@ func _tap_node_now(node_id: int) -> void:
     if newly_correct > 0:
         _session_crystals = mini(SESSION_CRYSTAL_CAP, _session_crystals + newly_correct)
         _update_crystals()
+    if was_waiting_for_input and _phase == "wrong":
+        _m31_wrong_streak += 1
+        if _m31_wrong_streak >= 2:
+            _m31_wrong_streak = 0
+            if _sound_on and _m31_action_voice != null:
+                _m31_action_voice.call("encourage", _ui_lang)
+    elif was_waiting_for_input and _phase in ["level_done", "finished"]:
+        _m31_wrong_streak = 0
+        if _sound_on and _m31_action_voice != null:
+            _m31_action_voice.call("praise", _ui_lang)
+    elif newly_correct > 0:
+        _m31_wrong_streak = 0
     if _phase == "level_done" and _auto_round_remaining < 0.0:
         _auto_round_remaining = AUTO_ROUND_DELAY
     elif _phase == "finished" and _auto_round_remaining < 0.0:
@@ -117,6 +144,12 @@ func _update_crystals() -> void:
     if count != _last_hud_crystals:
         _last_hud_crystals = count
         _crystal_hud.set("crystal_count", count)
+
+
+func _on_language_changed(locale: String) -> void:
+    super._on_language_changed(locale)
+    if _m31_action_voice != null:
+        _m31_action_voice.call("prime_locale", _ui_lang)
 
 
 func _handle_click(point: Vector2) -> void:
@@ -195,5 +228,7 @@ func _exit_to_cards() -> void:
 
 
 func _exit_tree() -> void:
+    if _m31_action_voice != null:
+        _m31_action_voice.call("stop_feedback")
     _settle_session_crystals()
     super._exit_tree()

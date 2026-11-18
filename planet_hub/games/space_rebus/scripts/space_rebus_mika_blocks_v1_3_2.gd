@@ -9,6 +9,7 @@ const SHARED := preload("res://simulator_ui/scripts/mika_shared_tracing_toolbar_
 const HUD := preload("res://planet_hub/scripts/bottom_hud.gd")
 const BACK_GLYPH := preload("res://simulator_ui/back_arrow_glyph.gd")
 const REAL_SPACE := preload("res://simulator_ui/scripts/real_space_background.gd")
+const ACTION_FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 const LANGS := ["ru", "en", "pt", "es", "de", "fr"]
 const VISIBLE_CHOICES := 4
 const MAX_LEVELS_PER_LANG := 10
@@ -62,6 +63,8 @@ var _host: Node = null
 var _host_back: Control = null
 var _host_back_visible: bool = false
 var _sfx: AudioStreamPlayer
+var _m33_action_voice: Variant = null
+var _m33_wrong_streak: int = 0
 
 
 func _ready() -> void:
@@ -80,6 +83,10 @@ func _ready() -> void:
     _sfx.process_mode = Node.PROCESS_MODE_ALWAYS
     _sfx.bus = "SFX"
     add_child(_sfx)
+    _m33_action_voice = ACTION_FEEDBACK_SCRIPT.new()
+    _m33_action_voice.name = "SpaceRebusActionFeedback"
+    add_child(_m33_action_voice)
+    _m33_action_voice.prime_locale(_locale)
     _host = _find_simulator_host()
     if _host != null:
         var candidate: Variant = _host.get("_game_back")
@@ -114,6 +121,8 @@ func _build_stage_background() -> void:
     _stage_space.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
 
 func _exit_tree() -> void:
+    if _m33_action_voice != null:
+        _m33_action_voice.stop_feedback()
     _settle_rewards()
     if is_instance_valid(_host_back):
         _host_back.visible = _host_back_visible
@@ -166,6 +175,8 @@ func _on_mobile_language_changed(_new_locale: String) -> void:
     var prev: String = _locale
     _detect_locale()
     if prev != _locale:
+        if _m33_action_voice != null:
+            _m33_action_voice.prime_locale(_locale)
         _start_game(false)
         _relayout()
 
@@ -245,6 +256,9 @@ func _copy(index: int) -> String:
 
 
 func _start_game(reset_score: bool) -> void:
+    _m33_wrong_streak = 0
+    if _m33_action_voice != null:
+        _m33_action_voice.stop_feedback()
     if reset_score:
         _earned = 0
         _settled = false
@@ -371,7 +385,9 @@ func _process(delta: float) -> void:
             _wrong_slot = -1
             queue_redraw()
     if _solved and _success_delay > 0.0:
-        _success_delay -= delta
+        # Hold the solved word on screen until its spoken feedback ends.
+        if _m33_action_voice == null or not _m33_action_voice.is_playing():
+            _success_delay -= delta
         if _success_delay <= 0.0:
             _advance_after_success()
 
@@ -589,6 +605,16 @@ func _check_solution() -> void:
 
 
 func _play_audio(ok: bool) -> void:
+    if ok:
+        _m33_wrong_streak = 0
+        if _m33_action_voice != null:
+            _m33_action_voice.praise(_locale)
+    else:
+        _m33_wrong_streak += 1
+        if _m33_wrong_streak >= 2:
+            _m33_wrong_streak = 0
+            if _m33_action_voice != null:
+                _m33_action_voice.encourage(_locale)
     if _sfx == null:
         return
     var path: String = "res://planet_hub/games/space_rebus/audio/ui/correct.wav" if ok else "res://planet_hub/games/space_rebus/audio/ui/wrong.wav"

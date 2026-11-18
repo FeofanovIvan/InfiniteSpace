@@ -17,9 +17,60 @@ const STICK_A := Color("73e6ff")
 const STICK_B := Color("ffd471")
 const STICK_C := Color("92f3ce")
 const STICK_MUTED := Color(0.73, 0.88, 0.98, 0.18)
+const ACTION_FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 
 var _hint_button: Button
 var _hint_visible: bool = false
+var _m33_action_voice: Variant = null
+var _m33_wrong_streak: int = 0
+
+
+func _ready() -> void:
+	super._ready()
+	_m33_action_voice = ACTION_FEEDBACK_SCRIPT.new()
+	_m33_action_voice.name = "NeuralMathActionFeedback"
+	add_child(_m33_action_voice)
+	_m33_action_voice.prime_locale(_locale)
+
+
+func _process(delta: float) -> void:
+	# The parent advances after 0.85 s; retain the solved equation while
+	# a real spoken phrase is playing so the next-round cue cannot cover it.
+	if _correct_lock and _transition_time > 0.0 and _m33_action_voice != null and _m33_action_voice.is_playing():
+		super._process(0.0)
+	else:
+		super._process(delta)
+
+
+func _try_answer(index: int) -> void:
+	if _correct_lock or index < 0 or index >= _options.size():
+		return
+	var correct: bool = _options[index] == _correct_answer
+	super._try_answer(index)
+	if correct:
+		_m33_wrong_streak = 0
+		if _m33_action_voice != null and (_v4_voice == null or not _v4_voice.playing):
+			_m33_action_voice.praise(_locale)
+	else:
+		_m33_wrong_streak += 1
+		if _m33_wrong_streak >= 2:
+			_m33_wrong_streak = 0
+			if _m33_action_voice != null and (_v4_voice == null or not _v4_voice.playing):
+				_m33_action_voice.encourage(_locale)
+
+
+func _language_changed(value: String) -> void:
+	if _m33_action_voice != null:
+		_m33_action_voice.stop_feedback()
+	super._language_changed(value)
+	if _m33_action_voice != null:
+		_m33_action_voice.prime_locale(_locale)
+
+
+func _exit_tree() -> void:
+	if _m33_action_voice != null:
+		_m33_action_voice.stop_feedback()
+	super._exit_tree()
 
 
 func _build_header() -> void:
@@ -95,6 +146,9 @@ func _toggle_hint() -> void:
 
 
 func _choose_mode(mode: int) -> void:
+	_m33_wrong_streak = 0
+	if _m33_action_voice != null:
+		_m33_action_voice.stop_feedback()
 	super._choose_mode(mode)
 	_hint_visible = false
 	_update_hint_button_style()

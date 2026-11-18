@@ -21,6 +21,78 @@ const Campaign = preload("res://space_racing/RaceCampaign.gd")
 const RaceStartAudio = preload("res://space_racing/RaceStartAudio.gd")
 # MIKA_RACE_START_MUSIC_AND_LIGHT_SFX_V1
 # MIKA_STATION_RACING_CAMPAIGN_V3
+# Campaign dialogs are translated at the moment they open, using the same
+# MobileLocale language as the rest of the planetary hub (ru/en/pt/es/fr/de).
+const CAMPAIGN_TEXT: Dictionary = {
+	"ru": {
+		"title": "КОСМИЧЕСКИЕ ГОНКИ", "start": "Начать", "cancel": "Отмена",
+		"retry": "Повторить", "exit": "Выход", "again": "Ещё раз", "next": "Следующая",
+		"locked": "Сначала выиграй гонку: %s.\nНачать сейчас?\nПосле выхода вернёшься на исходную станцию.",
+		"finish_other": "Финиш: место %d из 5.\nСледующая гонка откроется только после первого места.",
+		"save_failed": "Не удалось сохранить победу.",
+		"all_won": "Все шесть гонок выиграны!\nНаграда: трофей чемпиона.\nЛучшее время: %.1f сек.",
+		"win_next": "Победа: %s!\nЛучшее время: %.1f сек.\nСледующая гонка открыта: %s. Продолжить?",
+		"mika": "Мика", "rival": "Гонщик %d", "return": "Вернуться на станцию"
+	},
+	"en": {
+		"title": "SPACE RACING", "start": "Start", "cancel": "Cancel",
+		"retry": "Retry", "exit": "Exit", "again": "Race again", "next": "Next race",
+		"locked": "First win the race at %s.\nStart it now?\nLeaving takes you back to your original station.",
+		"finish_other": "Finished in place %d of 5.\nOnly first place unlocks the next race.",
+		"save_failed": "Could not save your victory.",
+		"all_won": "You won all six races!\nReward: champion's trophy.\nBest winning time: %.1f s.",
+		"win_next": "Victory at %s!\nBest time: %.1f s.\nNext race unlocked: %s. Continue?",
+		"mika": "Mika", "rival": "Racer %d", "return": "Return to station"
+	},
+	"pt": {
+		"title": "CORRIDAS ESPACIAIS", "start": "Começar", "cancel": "Cancelar",
+		"retry": "Tentar de novo", "exit": "Sair", "again": "Correr de novo", "next": "Próxima corrida",
+		"locked": "Primeiro, vença a corrida em %s.\nQuer começar agora?\nAo sair, você volta à estação de origem.",
+		"finish_other": "Chegada: %dº lugar de 5.\nSó o primeiro lugar libera a próxima corrida.",
+		"save_failed": "Não foi possível salvar a vitória.",
+		"all_won": "Você venceu as seis corridas!\nPrêmio: troféu de campeão.\nMelhor tempo de vitória: %.1f s.",
+		"win_next": "Vitória em %s!\nMelhor tempo: %.1f s.\nPróxima corrida liberada: %s. Continuar?",
+		"mika": "Mika", "rival": "Piloto %d", "return": "Voltar à estação"
+	},
+	"es": {
+		"title": "CARRERAS ESPACIALES", "start": "Empezar", "cancel": "Cancelar",
+		"retry": "Reintentar", "exit": "Salir", "again": "Otra carrera", "next": "Siguiente carrera",
+		"locked": "Primero gana la carrera en %s.\n¿Quieres empezar ahora?\nAl salir volverás a la estación de origen.",
+		"finish_other": "Meta: puesto %d de 5.\nSolo el primer puesto desbloquea la siguiente carrera.",
+		"save_failed": "No se pudo guardar la victoria.",
+		"all_won": "¡Has ganado las seis carreras!\nPremio: trofeo de campeón.\nMejor tiempo de victoria: %.1f s.",
+		"win_next": "¡Victoria en %s!\nMejor tiempo: %.1f s.\nSiguiente carrera desbloqueada: %s. ¿Continuar?",
+		"mika": "Mika", "rival": "Piloto %d", "return": "Volver a la estación"
+	},
+	"fr": {
+		"title": "COURSES SPATIALES", "start": "Commencer", "cancel": "Annuler",
+		"retry": "Réessayer", "exit": "Quitter", "again": "Rejouer", "next": "Course suivante",
+		"locked": "Gagne d'abord la course à %s.\nCommencer maintenant ?\nEn quittant, tu reviendras à ta station de départ.",
+		"finish_other": "Arrivée : %de place sur 5.\nSeule la première place débloque la prochaine course.",
+		"save_failed": "Impossible d'enregistrer la victoire.",
+		"all_won": "Tu as gagné les six courses !\nRécompense : trophée de champion.\nMeilleur temps de victoire : %.1f s.",
+		"win_next": "Victoire à %s !\nMeilleur temps : %.1f s.\nCourse suivante débloquée : %s. Continuer ?",
+		"mika": "Mika", "rival": "Pilote %d", "return": "Retour à la station"
+	},
+	"de": {
+		"title": "WELTRAUMRENNEN", "start": "Starten", "cancel": "Abbrechen",
+		"retry": "Erneut versuchen", "exit": "Verlassen", "again": "Noch einmal", "next": "Nächstes Rennen",
+		"locked": "Gewinne zuerst das Rennen bei %s.\nJetzt starten?\nBeim Verlassen kehrst du zur ursprünglichen Station zurück.",
+		"finish_other": "Ziel: Platz %d von 5.\nNur Platz 1 schaltet das nächste Rennen frei.",
+		"save_failed": "Der Sieg konnte nicht gespeichert werden.",
+		"all_won": "Du hast alle sechs Rennen gewonnen!\nBelohnung: Meisterpokal.\nBeste Siegerzeit: %.1f Sek.",
+		"win_next": "Sieg bei %s!\nBestzeit: %.1f Sek.\nNächstes Rennen freigeschaltet: %s. Weiter?",
+		"mika": "Mika", "rival": "Pilot %d", "return": "Zurück zur Station"
+	}
+}
+const CAMPAIGN_STATION_NAMES: Dictionary = {
+	"ru": ["Млечный Путь", "Большое Магелланово Облако", "Малое Магелланово Облако", "Барнард", "Андромеда", "Треугольник"],
+	"en": ["Milky Way", "Large Magellanic Cloud", "Small Magellanic Cloud", "Barnard", "Andromeda", "Triangulum"],
+	"pt": ["Via Láctea", "Grande Nuvem de Magalhães", "Pequena Nuvem de Magalhães", "Barnard", "Andrômeda", "Triângulo"],
+	"es": ["Vía Láctea", "Gran Nube de Magallanes", "Pequeña Nube de Magallanes", "Barnard", "Andrómeda", "Triángulo"],
+	"fr": ["Voie lactée", "Grand Nuage de Magellan", "Petit Nuage de Magellan", "Barnard", "Andromède", "Triangle"],
+	"de": ["Milchstraße", "Große Magellansche Wolke", "Kleine Magellansche Wolke", "Barnard", "Andromeda", "Dreiecksgalaxie"]
+}
 var _solar: Node2D
 var _stars: Node2D
 var _ship: Node2D
@@ -143,7 +215,7 @@ func _ready() -> void:
 	_exit_button = Button.new()
 	_exit_button.name = "RaceExitButton"
 	_exit_button.text = "←"
-	_exit_button.tooltip_text = "Return to station"
+	_exit_button.tooltip_text = _mika_campaign_text("return")
 	_exit_button.add_theme_font_size_override("font_size", 28)
 	_exit_button.add_theme_color_override("font_color", Color(0.80, 0.95, 1.0))
 	var exit_style := StyleBoxFlat.new()
@@ -181,7 +253,7 @@ func _ready() -> void:
 	_rivals.set("active", false)
 	if bool(get_meta("campaign_locked", false)):
 		_campaign_waiting = true
-		_mika_campaign_dialog("Сначала выиграйте гонку в %s.\nНачать её сейчас?\nПосле выхода вы вернётесь на исходную станцию." % Campaign.name_for(_planet_id), "Начать", _mika_campaign_confirm, "Отмена", _leave_race)
+		_mika_campaign_dialog(_mika_campaign_text("locked") % _mika_campaign_station(_planet_id), _mika_campaign_text("start"), _mika_campaign_confirm, _mika_campaign_text("cancel"), _leave_race)
 	get_viewport().size_changed.connect(_layout)
 
 func _new_route() -> void:
@@ -413,10 +485,10 @@ func _physics_process(delta: float) -> void:
 	var player_progress: float = float(_laps_finished) * route_length
 	for j in range(_progress_index):
 		player_progress += _route[j].distance_to(_route[(j + 1) % _route.size()])
-	standings.append({"name": "Мики", "progress": player_progress, "lap": mini(3, _laps_finished + 1), "time": _race_elapsed, "mika": true})
+	standings.append({"name": _mika_campaign_text("mika"), "progress": player_progress, "lap": mini(3, _laps_finished + 1), "time": _race_elapsed, "mika": true})
 	for rival in _rivals.get("racers"):
 		var distance: float = float(rival["distance"])
-		standings.append({"name": "Игрок %d" % (int(rival["id"]) + 1), "progress": distance, "lap": mini(3, maxi(1, int(rival["lap"]) + 1)), "time": minf(_race_elapsed, float(rival.get("finish_time", _race_elapsed))), "mika": false})
+		standings.append({"name": _mika_campaign_text("rival") % (int(rival["id"]) + 1), "progress": distance, "lap": mini(3, maxi(1, int(rival["lap"]) + 1)), "time": minf(_race_elapsed, float(rival.get("finish_time", _race_elapsed))), "mika": false})
 	standings.sort_custom(func(a: Dictionary, b: Dictionary) -> bool: return float(a["progress"]) > float(b["progress"]))
 	_scoreboard.set("elapsed", _race_elapsed)
 	_scoreboard.set("standings", standings)
@@ -480,6 +552,22 @@ func _leave_race() -> void:
 
 
 # Six-station racing campaign. No educational portal or crystal rewards.
+func _mika_campaign_locale() -> String:
+	var code: String = str(MobileLocale.language).to_lower().get_slice("_", 0).get_slice("-", 0)
+	return code if CAMPAIGN_TEXT.has(code) else "en"
+
+
+func _mika_campaign_text(key: String) -> String:
+	var local: Dictionary = CAMPAIGN_TEXT.get(_mika_campaign_locale(), CAMPAIGN_TEXT["en"])
+	return str(local.get(key, CAMPAIGN_TEXT["en"].get(key, key)))
+
+
+func _mika_campaign_station(station: String) -> String:
+	var index: int = Campaign.stage_index(station)
+	var names: Array = CAMPAIGN_STATION_NAMES.get(_mika_campaign_locale(), CAMPAIGN_STATION_NAMES["en"])
+	return str(names[index]) if index >= 0 and index < names.size() else Campaign.name_for(station)
+
+
 func _mika_campaign_confirm() -> void:
 	_mika_campaign_dismiss()
 	_campaign_waiting = false
@@ -498,18 +586,18 @@ func _mika_campaign_finish() -> void:
 			earlier_finishers += 1
 	var final_place: int = 1 + earlier_finishers
 	if final_place != 1:
-		_mika_campaign_dialog("Финиш: место %d из 5.\nДля открытия следующей гонки нужно первое место." % final_place, "Повторить", _mika_campaign_retry, "Выход", _leave_race)
+		_mika_campaign_dialog(_mika_campaign_text("finish_other") % final_place, _mika_campaign_text("retry"), _mika_campaign_retry, _mika_campaign_text("exit"), _leave_race)
 		return
 	var result: Dictionary = Campaign.record_win(_planet_id, _race_elapsed)
 	if not bool(result.get("saved", false)):
-		_mika_campaign_dialog("Не удалось сохранить победу.", "Повторить", _mika_campaign_retry, "Выход", _leave_race)
+		_mika_campaign_dialog(_mika_campaign_text("save_failed"), _mika_campaign_text("retry"), _mika_campaign_retry, _mika_campaign_text("exit"), _leave_race)
 		return
 	var best: float = float(result.get("best", _race_elapsed))
 	var next_station: String = str(result.get("next", ""))
 	if next_station.is_empty():
-		_mika_campaign_dialog("Все шесть гонок выиграны!\nНаграда: трофей чемпиона.\nЛучшее время победы: %.1f сек." % best, "Ещё раз", _mika_campaign_retry, "Выход", _leave_race)
+		_mika_campaign_dialog(_mika_campaign_text("all_won") % best, _mika_campaign_text("again"), _mika_campaign_retry, _mika_campaign_text("exit"), _leave_race)
 	else:
-		_mika_campaign_dialog("Победа в %s!\nЛучшее время: %.1f сек.\nОткрыта %s. Продолжить?" % [Campaign.name_for(_planet_id), best, Campaign.name_for(next_station)], "Следующая", _mika_campaign_next.bind(next_station), "Выход", _leave_race)
+		_mika_campaign_dialog(_mika_campaign_text("win_next") % [_mika_campaign_station(_planet_id), best, _mika_campaign_station(next_station)], _mika_campaign_text("next"), _mika_campaign_next.bind(next_station), _mika_campaign_text("exit"), _leave_race)
 
 func _mika_campaign_retry() -> void:
 	_mika_campaign_dismiss()
@@ -580,7 +668,7 @@ func _mika_campaign_dialog(message: String, yes_text: String, yes_action: Callab
 	stack.add_theme_constant_override("separation", 18)
 	panel.add_child(stack)
 	var title := Label.new()
-	title.text = "SPACE RACING"
+	title.text = _mika_campaign_text("title")
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	title.add_theme_font_size_override("font_size", 24)
 	title.add_theme_color_override("font_color", Color("7ce5ff"))

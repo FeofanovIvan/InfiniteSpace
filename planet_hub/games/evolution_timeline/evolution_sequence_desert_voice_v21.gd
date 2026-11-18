@@ -6,14 +6,20 @@ extends "res://planet_hub/games/evolution_timeline/evolution_sequence_v2.gd"
 const DUNA_BACKGROUND: String = "res://planet_hub/backgrounds/shared_uninhabited/11.png"
 const SUCCESS_SOUND: String = "res://planet_hub/games/evolution_timeline/audio/evolution_right_v21.wav"
 const ERROR_SOUND: String = "res://planet_hub/games/evolution_timeline/audio/evolution_wrong_v21.wav"
+const ACTION_FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 
 var _desert_background: TextureRect
 var _success_audio: AudioStreamPlayer
 var _error_audio: AudioStreamPlayer
-var _last_wrong_voice_ms: int = -100000
+var _action_feedback: Node
+var _wrong_streak: int = 0
 
 func _ready() -> void:
     super._ready()
+    _action_feedback = ACTION_FEEDBACK_SCRIPT.new()
+    _action_feedback.name = "EvolutionActionFeedback"
+    add_child(_action_feedback)
+    _action_feedback.call("prime_locale", _language)
     # Defer system TTS until the scene, navigation and autoloads are ready.
     call_deferred("_speak_instruction")
 
@@ -62,6 +68,8 @@ func _layout() -> void:
 
 func _on_language_changed(new_language: String) -> void:
     super._on_language_changed(new_language)
+    if _action_feedback != null:
+        _action_feedback.call("prime_locale", _language)
     call_deferred("_speak_instruction")
 
 func _speak_instruction() -> void:
@@ -76,10 +84,14 @@ func _speak_evolution_text(key: String) -> void:
 
 func _award() -> void:
     super._award()
+    _wrong_streak = 0
     if not _smoke_mode:
         if _success_audio != null and _success_audio.stream != null:
             _success_audio.play()
-        _speak_evolution_text("correct")
+        # One confirmed correct choice: immediate, non-queued recorded praise.
+        # The helper silences itself while the instruction TTS is speaking.
+        if _action_feedback != null:
+            _action_feedback.call("praise", _language)
 
 func _choose(choice: int) -> void:
     var was_valid: bool = not _completed and choice >= 0 and choice < _choices.size()
@@ -88,7 +100,9 @@ func _choose(choice: int) -> void:
     if wrong and not _smoke_mode:
         if _error_audio != null and _error_audio.stream != null:
             _error_audio.play()
-        var now: int = Time.get_ticks_msec()
-        if now - _last_wrong_voice_ms > 2600:
-            _last_wrong_voice_ms = now
-            _speak_evolution_text("wrong")
+        _wrong_streak += 1
+        # No TTS phrase on every wrong tap; visual feedback and soft SFX remain.
+        if _wrong_streak >= 3:
+            _wrong_streak = 0
+            if _action_feedback != null:
+                _action_feedback.call("encourage", _language)

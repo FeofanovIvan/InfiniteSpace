@@ -2,6 +2,9 @@ extends "res://learning/src/features/tilt_maze/mika_roll_ball_magnetic_audio_v2_
 ## MIKA Roll the Ball v2.4.1 — victory popup visuals and localization only.
 ## Inherited unchanged: magnetic maze, true Sun, stage, tilt physics and SFX.
 
+const ACTION_FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
+
+var _m31_action_voice: Node
 var _mika_popup_inner_frame: Panel
 var _mika_popup_subtitle: Label
 
@@ -21,6 +24,41 @@ const RESULT_SUBTITLE = {
     "fr": "Mission magnétique accomplie",
     "de": "Magnetische Mission geschafft",
 }
+
+
+func _build_ui() -> void:
+    super._build_ui()
+    _m31_action_voice = ACTION_FEEDBACK_SCRIPT.new()
+    _m31_action_voice.name = "RollBallActionFeedback"
+    add_child(_m31_action_voice)
+    _m31_action_voice.call("prime_locale", _mika_locale)
+
+
+func _reset_game() -> void:
+    if _m31_action_voice != null:
+        _m31_action_voice.call("stop_feedback")
+    super._reset_game()
+
+
+func _complete_game() -> void:
+    if completed:
+        return
+    super._complete_game()
+    # One voice only for reaching the actual goal, never for wall collisions.
+    if completed and _m31_action_voice != null:
+        _m31_action_voice.call("praise", _mika_locale)
+
+
+func _mika_on_language_changed(locale: String) -> void:
+    super._mika_on_language_changed(locale)
+    if _m31_action_voice != null:
+        _m31_action_voice.call("prime_locale", _mika_locale)
+
+
+func _exit_tree() -> void:
+    if _m31_action_voice != null:
+        _m31_action_voice.call("stop_feedback")
+    super._exit_tree()
 
 
 func _build_win_overlay() -> void:

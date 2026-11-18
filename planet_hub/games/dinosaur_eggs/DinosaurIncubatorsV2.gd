@@ -8,6 +8,7 @@ const HUD: Script = preload("res://planet_hub/scripts/bottom_hud.gd")
 const GLYPH: Script = preload("res://simulator_ui/back_arrow_glyph.gd")
 const KIT: Script = preload("res://simulator_ui/scripts/mika_minigame_ui_kit_v11.gd")
 const BOARD: Script = preload("res://planet_hub/games/dinosaur_eggs/DinosaurIncubatorsBoardV2.gd")
+const ACTION_FEEDBACK_SCRIPT: Script = preload("res://planet_hub/games/shared/ActionFeedbackVoice.gd")
 const LAB_WALL_V22: Texture2D = preload("res://planet_hub/games/dinosaur_eggs/assets/lab_metal_background_v22.png")
 
 const WORDS: Dictionary = {
@@ -29,6 +30,8 @@ var _lab_background: ColorRect
 var _board: Control
 var _host_back: Control
 var _locale: String = "en"
+var _action_feedback: Node
+var _wrong_streak: int = 0
 
 
 func _ready() -> void:
@@ -76,6 +79,7 @@ void fragment() {
     _stage.add_child(_board)
     _board.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
     _board.connect("crystals_changed", _on_crystals_changed)
+    _board.connect("placement_evaluated", _on_placement_evaluated)
 
     _title_panel = Panel.new()
     _title_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -118,6 +122,10 @@ void fragment() {
             action.hide()
     _crystals.set("crystal_count", 0)
     _read_locale()
+    _action_feedback = ACTION_FEEDBACK_SCRIPT.new()
+    _action_feedback.name = "DinosaurEggsActionFeedback"
+    add_child(_action_feedback)
+    _action_feedback.call("prime_locale", _locale)
     var language: Node = get_node_or_null("/root/MobileLocale")
     if language != null and language.has_signal("language_changed"):
         language.connect("language_changed", _on_locale)
@@ -146,6 +154,8 @@ func _read_locale() -> void:
 
 func _on_locale(_value: String) -> void:
     _read_locale()
+    if _action_feedback != null:
+        _action_feedback.call("prime_locale", _locale)
     _translate()
     _relayout()
 
@@ -162,6 +172,20 @@ func _translate() -> void:
 func _on_crystals_changed(count: int) -> void:
     if _crystals != null:
         _crystals.set("crystal_count", count)
+    # Completing a whole incubator is a meaningful success, not each egg tap.
+    if count > 0 and _action_feedback != null:
+        _action_feedback.call("praise", _locale)
+
+
+func _on_placement_evaluated(correct: bool) -> void:
+    if correct:
+        _wrong_streak = 0
+        return
+    _wrong_streak += 1
+    if _wrong_streak >= 2:
+        _wrong_streak = 0
+        if _action_feedback != null:
+            _action_feedback.call("encourage", _locale)
 
 
 func _safe_area(view: Vector2) -> Rect2:
@@ -220,5 +244,7 @@ func _exit_to_cards() -> void:
 
 
 func _exit_tree() -> void:
+    if _action_feedback != null:
+        _action_feedback.call("stop_feedback")
     if is_instance_valid(_host_back):
         _host_back.show()
