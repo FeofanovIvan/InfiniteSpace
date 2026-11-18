@@ -1809,9 +1809,10 @@ func _open_initial_earth_hub() -> void:
 	_begin_planet_landing("mw_p01", "Земля", false)
 
 func _v104_free_world_boot() -> void:
-	# Story is hidden in settings until the mission chain is complete.
-	# Existing comic and cinematic assets remain untouched for future Story mode.
-	_skip_story()
+	# Story-preview branch: run the real intro when Godot launches normally.
+	# The existing skip arrow still exits to the full Free World.
+	# Release builds should expose an explicit mode selector instead.
+	_start_story_comic()
 
 
 func _v104_open_crossroads_dialog() -> void:
