@@ -105,4 +105,4 @@ git status --short
 git diff --name-only --diff-filter=U
 ```
 
-No pull request has been created yet. Do not merge into `main` until the user visually approves the runnable MVP.
+Pull request: `https://github.com/FeofanovIvan/InfiniteSpace/pull/13`. It targets `main` from `integration/mvp-main-20261118`. Do not merge it until the user visually approves the runnable MVP.
