@@ -126,6 +126,10 @@ var _intro_time: float = 0.0
 var _intro_landing_offset: Vector2 = Vector2.ZERO
 var _intro_landing_direction: Vector2 = Vector2.UP
 var _intro_approach_started: bool = false
+# Story branch only: the existing first-page clock is unchanged. The second
+# page and its game transitions advance on finished signals and player input.
+var _story_phase: String = "inactive"
+var _story_simulator_required: bool = false
 # v57: tuneable normal-flight fuel. Hyperjumps and story flights remain free.
 const FUEL_CAPACITY: float = 50.0
 const FUEL_MAX_DRAIN_PER_SECOND: float = 1.8
@@ -266,6 +270,12 @@ func _physics_process(delta: float) -> void:
 		return
 	if _intro_space_flying:
 		_advance_story_flight(delta)
+		return
+	if _story_phase == "await_simulator_card":
+		# Remain anchored beside the moving Earth while the existing simulator
+		# reminder waits for a real tap. No fuel is consumed in this stage.
+		velocity = Vector2.ZERO
+		_story_move_to(solar_system.earth_world_position() + _intro_landing_direction * NpcTrafficScene.PLANET_LANDING_OFFSET)
 		return
 	var keyboard := Vector2.ZERO
 	if Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_LEFT):
@@ -658,6 +668,8 @@ func _on_galaxy_requested() -> void:
 	if is_instance_valid(_bubble_popup):
 		_bubble_popup.hide()
 
+	if _story_phase == "await_simulator_card":
+		return
 	if _warp_active or _intro_comic_playing or _intro_space_flying:
 		return
 	if main_menu.visible:
@@ -746,9 +758,11 @@ func _on_bubble_reminder_ready() -> void:
 func _refresh_bubble_popup() -> void:
 	if not is_instance_valid(_bubble_popup):
 		return
-	_bubble_popup.visible = _bubble_attention_pending and _bubble_flight_available() and _fuel_units > 0.0
+	_bubble_popup.visible = _bubble_attention_pending and _bubble_flight_available() and _fuel_units > 0.0 and not _story_simulator_required
 
 func _on_bubble_care_requested() -> void:
+	if _story_phase == "await_simulator_card":
+		return
 	if not _bubble_flight_available():
 		return
 	_bubble_attention_pending = false
@@ -764,6 +778,10 @@ func _on_main_menu_requested() -> void:
 	if is_instance_valid(_bubble_popup):
 		_bubble_popup.hide()
 
+	# The story must enter through the approved fuel-reminder card, not the
+	# ordinary upper-right shortcut. Normal Free World is unaffected.
+	if _story_phase == "await_simulator_card":
+		return
 	if _warp_active or _intro_comic_playing or _intro_space_flying:
 		return
 	if galactic_map.visible:
@@ -781,6 +799,11 @@ func _on_educational_crystals_earned(units: int) -> void:
 
 
 func _on_modal_closed() -> void:
+	if _story_phase == "inside_simulator":
+		# This signal fires when the player leaves the simulator's card list,
+		# not when an individual educational game returns to its list.
+		_story_begin_earth_landing()
+		return
 	if _planet_landing_active and is_instance_valid(_planet_hub):
 		_planet_hub.visible = true
 		_set_music_context("calm")
@@ -998,7 +1021,7 @@ func _arrive_new_region(region_id: String, new_spawn: Vector2) -> void:
 
 
 func _on_target_selected(target_id: String) -> void:
-	if _warp_active:
+	if _warp_active or _story_phase == "await_simulator_card":
 		return
 	var state: Dictionary = solar_system.get_target_state(target_id)
 	if not bool(state.get("valid", false)):
@@ -1153,6 +1176,8 @@ func _update_landing_offer() -> void:
 
 
 func _on_action_requested(mode: String) -> void:
+	if _story_phase == "await_simulator_card":
+		return
 	if mode == "talk" and solar_system.current_id == "crossroads":
 		if _ship_world().length() <= 620.0 and not _warp_active and not get_tree().paused:
 			_v104_open_crossroads_dialog()
@@ -1351,8 +1376,11 @@ func _start_story_comic() -> void:
 		_comic_prologue = ComicPrologueScene.new()
 		_comic_prologue.name = "MikoComicPage1CameraStory"
 		add_child(_comic_prologue)
-		_comic_prologue.comic_completed.connect(_begin_story_space_flight)
+		_comic_prologue.comic_completed.connect(_story_on_first_page_finished)
+		_comic_prologue.panels_completed.connect(_story_on_panels_finished)
 		_comic_prologue.skipped.connect(_skip_story)
+	_story_phase = "first_page"
+	_story_simulator_required = false
 	_intro_comic_playing = true
 	_intro_space_flying = false
 	_intro_time = 0.0
@@ -1372,8 +1400,29 @@ func _start_story_comic() -> void:
 	diagnostics.write("prologue_comic_started", {"panels": 9, "source": "nine_full_originals_with_two_added_disaster_scenes"})
 
 
+func _story_on_first_page_finished() -> void:
+	if _story_phase != "first_page":
+		return
+	# Page 1-2, panel 1: the ship sees the black wormhole. The player
+	# advances this still frame; there is no invented second-page timing.
+	_story_phase = "wormhole_panel"
+	_comic_prologue.show_panels(["wormhole"])
+	diagnostics.write("story_wormhole_panel", {"source": "ch01_p02_story.jpg"})
+
+
+func _story_on_panels_finished() -> void:
+	match _story_phase:
+		"wormhole_panel":
+			_begin_story_space_flight()
+		"earth_view_panels":
+			_story_offer_simulator()
+		"earth_arrival_panels":
+			_finish_story_flight()
+
+
 func _begin_story_space_flight() -> void:
 	get_tree().paused = false
+	_story_phase = "flight_to_earth"
 	_intro_comic_playing = false
 	_intro_space_flying = true
 	_intro_time = 0.0
@@ -1385,13 +1434,84 @@ func _begin_story_space_flight() -> void:
 	_story_move_to(_story_position(0.0))
 	_ship_heading = -0.7
 	ship.rotation = _ship_heading
-	diagnostics.write("prologue_space_started", {"origin": "black_hole", "mode": "continuous_uncontrolled_direct_earth_fall"})
+	diagnostics.write("prologue_space_started", {"origin": "black_hole", "mode": "tumble_then_earth_orbit_stop"})
+
+
+func _story_show_earth_view_panels() -> void:
+	_intro_space_flying = false
+	_intro_comic_playing = true
+	_story_phase = "earth_view_panels"
+	ship.throttle = 0.0
+	_comic_prologue.show_panels(["earth_view", "simulator"])
+	get_tree().paused = true
+	diagnostics.write("story_earth_view", {"sequence": "earth_then_simulator"})
+
+
+func _story_offer_simulator() -> void:
+	_story_phase = "await_simulator_card"
+	_intro_comic_playing = false
+	_story_simulator_required = true
+	_comic_prologue.begin_space_sequence()
+	_gameplay_hud.visible = true
+	_story_set_flight_controls_visible(false)
+	velocity = Vector2.ZERO
+	current_input = Vector2.ZERO
+	joystick.clear_input()
+	get_tree().paused = false
+	diagnostics.write("story_simulator_card_required", {"fuel_unchanged": true})
+
+
+func _on_story_simulator_card_requested() -> void:
+	if _story_phase == "await_simulator_card":
+		_story_phase = "inside_simulator"
+		_story_simulator_required = false
+		_story_set_flight_controls_visible(true)
+		_comic_prologue.finish()
+		diagnostics.write("story_simulator_card_entered", {})
+	_on_main_menu_requested()
+
+
+func _story_set_flight_controls_visible(should_show: bool) -> void:
+	# The only required interaction during the story halt is the original
+	# simulator portrait card. Other HUD buttons cannot bypass that choice.
+	for control in [joystick, action_button, goal_picker, status_hud]:
+		if is_instance_valid(control):
+			control.visible = should_show
+
+
+func _story_begin_earth_landing() -> void:
+	# Resume only the EXISTING NPC-style scale-down, starting at the hover
+	# boundary. The ship-to-Earth journey is not replayed after the menu.
+	_story_phase = "landing"
+	_intro_time = STORY_HOVER_END
+	_intro_comic_playing = false
+	_intro_space_flying = true
+	_comic_prologue.begin_space_sequence()
+	_gameplay_hud.visible = false
+	_set_music_context("flight")
+	get_tree().paused = false
+	diagnostics.write("story_earth_landing_resumed", {"trigger": "simulator_closed"})
+
+
+func _story_show_arrival_panels() -> void:
+	_intro_space_flying = false
+	_intro_comic_playing = true
+	_story_phase = "earth_arrival_panels"
+	ship.visible = false
+	_comic_prologue.show_panels(["earth_descent", "earth_arrival"])
+	get_tree().paused = true
+	diagnostics.write("story_earth_arrival_panels", {"stop_after": "last_page_panel"})
 
 
 func _skip_story() -> void:
 	get_tree().paused = false
+	_story_phase = "inactive"
+	_story_simulator_required = false
 	_intro_comic_playing = false
 	_intro_space_flying = false
+	if is_instance_valid(_comic_prologue):
+		_comic_prologue.finish()
+	_story_set_flight_controls_visible(true)
 	_story_smoke.visible = false
 	ship.visible = true
 	ship.modulate = Color.WHITE
@@ -1468,10 +1588,12 @@ func _advance_story_flight(delta: float) -> void:
 		shake = Vector2(sin(_intro_time * 31.0), cos(_intro_time * 26.0)) * strength
 	ship.position = get_viewport_rect().size * 0.5 - _camera_offset + shake
 	_story_smoke.visible = false
-	if _intro_time >= STORY_LANDING_END:
+	if _story_phase == "flight_to_earth" and _intro_time >= STORY_HOVER_END:
+		_story_show_earth_view_panels()
+	elif _story_phase == "landing" and _intro_time >= STORY_LANDING_END:
 		diagnostics.write("story_player_landed", {"planet": "Earth", "npc_landing_logic": true,
 			"anchor_distance": NpcTrafficScene.PLANET_LANDING_OFFSET})
-		_finish_story_flight()
+		_story_show_arrival_panels()
 
 
 func _story_move_to(world_position: Vector2) -> void:
@@ -1501,7 +1623,10 @@ func _story_move_to(world_position: Vector2) -> void:
 
 
 func _finish_story_flight() -> void:
+	_story_phase = "inactive"
+	_story_simulator_required = false
 	_intro_space_flying = false
+	_intro_comic_playing = false
 	_comic_prologue.finish()
 	_story_smoke.visible = false
 	ship.visible = true
@@ -1513,7 +1638,8 @@ func _finish_story_flight() -> void:
 	ship.rotation = 0.0
 	_story_move_to(solar_system.earth_world_position() + Vector2(160.0, -80.0))
 	_gameplay_hud.visible = true
-	diagnostics.write("prologue_complete", {"landing": "Earth", "playable": true, "flight": "npc_style_hover_and_landing"})
+	_story_set_flight_controls_visible(true)
+	diagnostics.write("prologue_complete", {"landing": "Earth", "playable": true, "flight": "simulator_gated_earth_landing"})
 	call_deferred("_open_initial_earth_hub")
 
 
@@ -1733,4 +1859,4 @@ func _v122_build_empty_fuel_card(root: Control) -> void:
 	popup.name = "FuelEmptySimulatorCenterReminder"
 	root.add_child(popup)
 	popup.call("configure", self)
-	popup.connect("simulator_requested", Callable(self, "_on_main_menu_requested"))
+	popup.connect("simulator_requested", Callable(self, "_on_story_simulator_card_requested"))

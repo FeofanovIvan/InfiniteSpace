@@ -91,7 +91,10 @@ func _update_visibility() -> void:
 		var speed_vector: Vector2 = speed
 		stopped = speed_vector.length_squared() <= 0.000625
 	var flight_ready: bool = bool(_host.call("_bubble_flight_available"))
-	visible = fuel <= 0.0 and stopped and flight_ready
+	# In the Story prologue this very same card is summoned by the plot cue.
+	# Free World keeps the existing zero-fuel behaviour unchanged.
+	var story_required: bool = bool(_host.get("_story_simulator_required"))
+	visible = flight_ready and (story_required or (fuel <= 0.0 and stopped))
 
 func _on_pressed() -> void:
 	if not visible:

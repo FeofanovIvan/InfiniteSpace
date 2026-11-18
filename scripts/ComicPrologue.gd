@@ -3,14 +3,17 @@ extends CanvasLayer
 ## Keeps the old Main.gd interface: begin(), begin_space_sequence(), finish().
 
 signal comic_completed
+signal panels_completed
 signal skipped
 
 ## Single-page experiment. The previous nine-image player remains at
 ## res://mika_motion_comic/scenes/MotionComicIntro.tscn for instant rollback.
 const MotionComicIntroScene: PackedScene = preload("res://mika_motion_comic/scenes/SinglePageComicIntro.tscn")
+const StoryPageTwoPanelsScript: Script = preload("res://mika_motion_comic/scripts/story_page_two_panels.gd")
 
 var _root: Control
 var _intro: Control
+var _panels: Control
 var _skip: Button
 var _mode: String = "idle"
 var _view_size: Vector2 = Vector2(1280.0, 720.0)
@@ -29,6 +32,10 @@ func _ready() -> void:
 	_intro.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_root.add_child(_intro)
 	_intro.finished.connect(_on_intro_finished)
+	_panels = StoryPageTwoPanelsScript.new() as Control
+	_panels.name = "ChapterOnePageTwoEventPanels"
+	_root.add_child(_panels)
+	_panels.sequence_completed.connect(_on_panels_finished)
 	_skip = Button.new()
 	_skip.name = "SkipIntro"
 	_skip.text = "»"
@@ -55,6 +62,7 @@ func begin() -> void:
 	visible = true
 	_mode = "comic"
 	_intro.visible = true
+	_panels.end_sequence()
 	_skip.visible = true
 	_layout()
 	if _intro.has_method("restart"):
@@ -66,12 +74,23 @@ func begin() -> void:
 func begin_space_sequence() -> void:
 	_mode = "space"
 	_intro.visible = false
+	_panels.end_sequence()
 	_skip.visible = true
+
+func show_panels(panel_ids: Array) -> void:
+	visible = true
+	_mode = "panels"
+	_intro.visible = false
+	_panels.begin_sequence(panel_ids)
+	_skip.visible = true
+	_layout()
+	set_process_unhandled_input(true)
 
 func finish() -> void:
 	_mode = "idle"
 	visible = false
 	_skip.visible = false
+	_panels.end_sequence()
 	if _intro.has_method("stop"):
 		_intro.call("stop")
 	set_process_unhandled_input(false)
@@ -88,6 +107,12 @@ func _on_intro_finished() -> void:
 	_mode = "space"
 	_intro.visible = false
 	comic_completed.emit()
+
+func _on_panels_finished() -> void:
+	if _mode != "panels":
+		return
+	_mode = "space"
+	panels_completed.emit()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if _mode != "idle" and event is InputEventKey:
@@ -107,6 +132,9 @@ func _layout() -> void:
 	if is_instance_valid(_intro):
 		_intro.position = Vector2.ZERO
 		_intro.size = _view_size
+	if is_instance_valid(_panels):
+		_panels.position = Vector2.ZERO
+		_panels.size = _view_size
 	_skip.size = Vector2(55.0, 52.0)
 	var safe: Rect2 = MobileLocale.safe_rect(_view_size)
 	_skip.position = Vector2(safe.end.x - _skip.size.x - 6.0, safe.position.y + 6.0)
