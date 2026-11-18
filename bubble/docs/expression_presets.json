@@ -1,0 +1,195 @@
+{
+  "calm": {
+    "label": "Спокойствие",
+    "eyes": "open",
+    "mouth": "smile",
+    "brow": "soft",
+    "blush": false
+  },
+  "happy": {
+    "label": "Радость",
+    "eyes": "happy",
+    "mouth": "grin",
+    "brow": "soft",
+    "blush": true
+  },
+  "excited": {
+    "label": "Восторг",
+    "eyes": "wide",
+    "mouth": "big_smile",
+    "brow": "raised",
+    "blush": true
+  },
+  "curious": {
+    "label": "Любопытство",
+    "eyes": "open",
+    "mouth": "o",
+    "brow": "raised",
+    "blush": false,
+    "gaze": [
+      0.8,
+      -0.15
+    ]
+  },
+  "surprised": {
+    "label": "Удивление",
+    "eyes": "wide",
+    "mouth": "o",
+    "brow": "raised",
+    "blush": false
+  },
+  "shy": {
+    "label": "Смущение",
+    "eyes": "half",
+    "mouth": "smile",
+    "brow": "soft",
+    "blush": true,
+    "gaze": [
+      -0.8,
+      0.5
+    ]
+  },
+  "sad": {
+    "label": "Грусть",
+    "eyes": "half",
+    "mouth": "sad",
+    "brow": "worried",
+    "blush": false
+  },
+  "scared": {
+    "label": "Испуг",
+    "eyes": "wide",
+    "mouth": "open",
+    "brow": "raised",
+    "blush": false
+  },
+  "annoyed": {
+    "label": "Недовольство",
+    "eyes": "half",
+    "mouth": "flat",
+    "brow": "angry",
+    "blush": false
+  },
+  "sleepy": {
+    "label": "Сонливость",
+    "eyes": "half",
+    "mouth": "smile",
+    "brow": "soft",
+    "blush": false
+  },
+  "sleeping": {
+    "label": "Сон",
+    "eyes": "closed",
+    "mouth": "smile",
+    "brow": "soft",
+    "blush": false
+  },
+  "playful": {
+    "label": "Игривость",
+    "eyes": "wink",
+    "mouth": "grin",
+    "brow": "raised",
+    "blush": true
+  },
+  "uncomfortable": {
+    "label": "Дискомфорт",
+    "eyes": "closed",
+    "mouth": "strain",
+    "brow": "worried",
+    "blush": false
+  },
+  "content": {
+    "label": "Удовольствие",
+    "eyes": "happy",
+    "mouth": "grin",
+    "brow": "soft",
+    "blush": true
+  },
+  "strained": {
+    "label": "Напряжение (газ)",
+    "eyes": "closed",
+    "mouth": "strain",
+    "brow": "angry",
+    "blush": true
+  },
+  "embarrassed": {
+    "label": "Смущение (после газа)",
+    "eyes": "half",
+    "mouth": "o",
+    "brow": "worried",
+    "blush": true,
+    "gaze": [
+      -1,
+      0.5
+    ]
+  },
+  "relieved": {
+    "label": "Облегчение",
+    "eyes": "happy",
+    "mouth": "big_smile",
+    "brow": "soft",
+    "blush": true
+  },
+  "proud": {
+    "label": "Гордость",
+    "eyes": "half",
+    "mouth": "grin",
+    "brow": "raised",
+    "blush": true,
+    "gaze": [
+      0.25,
+      -0.25
+    ]
+  },
+  "thoughtful": {
+    "label": "Задумчивость",
+    "eyes": "half",
+    "mouth": "flat",
+    "brow": "soft",
+    "blush": false,
+    "gaze": [
+      0.65,
+      -0.65
+    ]
+  },
+  "delighted": {
+    "label": "Восхищение",
+    "eyes": "happy",
+    "mouth": "big_smile",
+    "brow": "raised",
+    "blush": true
+  },
+  "dreamy": {
+    "label": "Мечтательность",
+    "eyes": "half",
+    "mouth": "smile",
+    "brow": "soft",
+    "blush": true,
+    "gaze": [
+      -0.4,
+      -0.65
+    ]
+  },
+  "mischievous": {
+    "label": "Озорство",
+    "eyes": "wink",
+    "mouth": "grin",
+    "brow": "raised",
+    "blush": true,
+    "gaze": [
+      0.65,
+      0.2
+    ]
+  },
+  "attentive": {
+    "label": "Внимание",
+    "eyes": "open",
+    "mouth": "smile",
+    "brow": "raised",
+    "blush": false,
+    "gaze": [
+      0.0,
+      -0.35
+    ]
+  }
+}

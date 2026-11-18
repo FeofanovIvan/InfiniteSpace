@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "style": "natural, age-appropriate, gender-neutral, place-aware, offline and deterministic",
+  "locales": {
+    "ru": {
+      "self": [
+        "Меня зовут %s. Моё занятие — %s. %s",
+        "Привет! Можно звать меня %s. Я отвечаю за такое дело: %s. %s",
+        "Я %s. Моя работа здесь — %s. %s"
+      ],
+      "age": [
+        "В нашей цивилизации время считают по-разному. Я люблю считать открытия!",
+        "Хороший вопрос! Мы измеряем время по-своему.",
+        "Вместо числа лет я лучше расскажу тебе о новом открытии!"
+      ],
+      "race": [
+        "Мой народ — %s.",
+        "Мы называем себя так: %s.",
+        "Ты сейчас общаешься с представителем народа «%s»."
+      ],
+      "origin": [
+        "Сейчас мой дом здесь, в мире %s. Наш народ живёт и в других мирах.",
+        "Мы встретились здесь, в мире %s. Но наша цивилизация путешествует среди звёзд.",
+        "Этот мир называется %s. Мы исследуем и другие места в космосе."
+      ],
+      "race_about": [
+        "",
+        "Вот что интересно: ",
+        "Слушай, это любопытно! "
+      ],
+      "ability": [
+        "",
+        "Вот что у нас получается: ",
+        "Хочешь узнать нашу особенность? "
+      ],
+      "energy": [
+        "",
+        "У разных видов разные потребности. ",
+        "Способы получать энергию бывают разными. "
+      ],
+      "work": [
+        "",
+        "Моя работа связана с этим местом. ",
+        "Посмотри вокруг! "
+      ],
+      "world_look": "Посмотри вокруг! ",
+      "favorite": "Ты рассказывал, что тебе нравится цвет «%s». Поищем его здесь!",
+      "return": "С возвращением, %s!",
+      "story_identity": "Я %s. Моё дело — %s.",
+      "self_young": "Я %s. %s"
+    },
+    "en": {
+      "self": [
+        "I'm %s. My role is %s. %s",
+        "Hello again! You can call me %s. I work in %s. %s",
+        "I'm %s. My job here: %s. %s"
+      ],
+      "age": [
+        "We measure time in different ways. I like to count discoveries!",
+        "Good question! My people count time in their own way.",
+        "Instead of counting my years, let's make a new discovery!"
+      ],
+      "race": [
+        "My people are called %s.",
+        "We call ourselves %s.",
+        "You're speaking with someone from the %s people."
+      ],
+      "origin": [
+        "For now, my home is here at %s. My people live on other worlds too.",
+        "We met at %s, but my people travel among the stars.",
+        "This place is called %s. We also explore other worlds."
+      ],
+      "race_about": [
+        "",
+        "Here's something interesting: ",
+        "Listen to this! "
+      ],
+      "ability": [
+        "",
+        "Here's what we can do: ",
+        "Want to hear what makes us different? "
+      ],
+      "energy": [
+        "",
+        "Different kinds of life need different things. ",
+        "Life gets energy in many ways. "
+      ],
+      "work": [
+        "",
+        "My work is connected to this place. ",
+        "Look around! "
+      ],
+      "world_look": "Look around! ",
+      "favorite": "You said you like %s. Can you spot that color here?",
+      "return": "Welcome back, %s!",
+      "story_identity": "I'm %s. My role: %s.",
+      "self_young": "I'm %s. %s"
+    },
+    "fr": {
+      "self": [
+        "Je m'appelle %s. Mon travail ici : %s. %s",
+        "Coucou ! Tu peux m'appeler %s. Je m'occupe de ceci : %s. %s",
+        "Moi, c'est %s. Mon rôle : %s. %s"
+      ],
+      "age": [
+        "Chez nous, on mesure le temps autrement. Moi, je compte surtout les découvertes !",
+        "Bonne question ! Notre peuple a sa façon de compter le temps.",
+        "Et si on découvrait quelque chose, plutôt que de compter mes années ?"
+      ],
+      "race": [
+        "Mon peuple s'appelle : %s.",
+        "Nous nous appelons %s.",
+        "Tu parles avec un être du peuple %s."
+      ],
+      "origin": [
+        "Pour le moment, j'habite ici, à %s. Notre peuple vit aussi ailleurs.",
+        "Nous nous retrouvons à %s, mais notre peuple voyage parmi les étoiles.",
+        "Cet endroit s'appelle %s. Nous explorons d'autres mondes aussi."
+      ],
+      "race_about": [
+        "",
+        "Écoute bien : ",
+        "Voilà quelque chose de surprenant : "
+      ],
+      "ability": [
+        "",
+        "Voici ce que nous savons faire : ",
+        "Tu veux connaître notre secret ? "
+      ],
+      "energy": [
+        "",
+        "Chaque forme de vie a ses besoins. ",
+        "Il y a plusieurs façons de trouver de l'énergie. "
+      ],
+      "work": [
+        "",
+        "Mon travail se passe ici. ",
+        "Regarde autour de toi ! "
+      ],
+      "world_look": "Regarde autour de toi ! ",
+      "favorite": "Tu aimes le %s, tu m'as dit. On le cherche ici ?",
+      "return": "Quel plaisir de te retrouver, %s !",
+      "story_identity": "Je m’appelle %s. Mon rôle : %s.",
+      "self_young": "Moi, c’est %s. %s"
+    },
+    "de": {
+      "self": [
+        "Ich heiße %s. Meine Aufgabe ist %s. %s",
+        "Hallo! Du kannst mich %s nennen. Ich arbeite im Bereich %s. %s",
+        "Ich bin %s. Meine Arbeit hier: %s. %s"
+      ],
+      "age": [
+        "Wir zählen die Zeit anders. Ich zähle lieber Entdeckungen!",
+        "Gute Frage! Unser Volk hat eine eigene Zeitrechnung.",
+        "Wollen wir lieber etwas Neues entdecken, statt Jahre zu zählen?"
+      ],
+      "race": [
+        "Mein Volk heißt %s.",
+        "Wir nennen uns %s.",
+        "Du sprichst gerade mit einem Wesen aus dem Volk der %s."
+      ],
+      "origin": [
+        "Im Moment bin ich hier am Ort %s zu Hause. Unser Volk lebt auch anderswo.",
+        "Wir treffen uns hier bei %s, aber mein Volk reist durch die Sterne.",
+        "Dieser Ort heißt %s. Wir erforschen auch andere Welten."
+      ],
+      "race_about": [
+        "",
+        "Das ist spannend: ",
+        "Hör mal zu: "
+      ],
+      "ability": [
+        "",
+        "Das können wir besonders gut: ",
+        "Kennst du unsere besondere Fähigkeit? "
+      ],
+      "energy": [
+        "",
+        "Jede Lebensform braucht etwas anderes. ",
+        "Energie kann aus vielen Quellen kommen. "
+      ],
+      "work": [
+        "",
+        "Meine Arbeit gehört zu diesem Ort. ",
+        "Sieh dich um! "
+      ],
+      "world_look": "Sieh dich um! ",
+      "favorite": "Du magst %s, hast du erzählt. Finden wir diese Farbe hier?",
+      "return": "Schön, dass du wieder da bist, %s!",
+      "story_identity": "Ich heiße %s. Meine Aufgabe: %s.",
+      "self_young": "Ich heiße %s. %s"
+    },
+    "es": {
+      "self": [
+        "Me llamo %s. Mi trabajo aquí: %s. %s",
+        "¡Hola! Puedes llamarme %s. Me dedico a %s. %s",
+        "Soy %s. Mi tarea en este lugar: %s. %s"
+      ],
+      "age": [
+        "Aquí contamos el tiempo de otra manera. ¡Prefiero contar descubrimientos!",
+        "¡Buena pregunta! Nuestro pueblo mide el tiempo a su manera.",
+        "En vez de contar años, ¿descubrimos algo nuevo?"
+      ],
+      "race": [
+        "Mi pueblo se llama %s.",
+        "Nos llamamos %s.",
+        "Estás hablando con un ser del pueblo %s."
+      ],
+      "origin": [
+        "Por ahora vivo aquí, en %s. Nuestro pueblo vive en otros mundos también.",
+        "Nos encontramos en %s, pero mi pueblo viaja entre estrellas.",
+        "Este lugar se llama %s. También exploramos otros mundos."
+      ],
+      "race_about": [
+        "",
+        "Mira qué interesante: ",
+        "¡Escucha esto! "
+      ],
+      "ability": [
+        "",
+        "Esto es lo que sabemos hacer: ",
+        "¿Quieres conocer nuestra habilidad especial? "
+      ],
+      "energy": [
+        "",
+        "Cada tipo de vida necesita cosas distintas. ",
+        "Hay muchas formas de conseguir energía. "
+      ],
+      "work": [
+        "",
+        "Mi trabajo está relacionado con este lugar. ",
+        "¡Mira a tu alrededor! "
+      ],
+      "world_look": "¡Mira a tu alrededor! ",
+      "favorite": "Dijiste que te gusta el color %s. ¿Lo buscamos aquí?",
+      "return": "¡Qué alegría verte de nuevo, %s!",
+      "story_identity": "Me llamo %s. Mi tarea: %s.",
+      "self_young": "Me llamo %s. %s"
+    },
+    "pt_BR": {
+      "self": [
+        "Eu me chamo %s. Meu trabalho aqui: %s. %s",
+        "Oi! Pode me chamar de %s. Eu cuido de %s. %s",
+        "Meu nome é %s. Minha tarefa por aqui: %s. %s"
+      ],
+      "age": [
+        "Por aqui contamos o tempo de outro jeito. Eu gosto mesmo é de contar descobertas!",
+        "Boa pergunta! Nosso povo mede o tempo de um jeito próprio.",
+        "Em vez de contar anos, que tal descobrir algo novo?"
+      ],
+      "race": [
+        "Meu povo se chama %s.",
+        "Nós nos chamamos %s.",
+        "Você está conversando com um ser do povo %s."
+      ],
+      "origin": [
+        "Por enquanto moro aqui, em %s. Nosso povo também vive em outros mundos.",
+        "A gente se encontrou em %s, mas meu povo viaja pelas estrelas.",
+        "Este lugar se chama %s. Também exploramos outros mundos."
+      ],
+      "race_about": [
+        "",
+        "Olha que interessante: ",
+        "Escuta só! "
+      ],
+      "ability": [
+        "",
+        "É isso que a gente sabe fazer: ",
+        "Quer descobrir nossa habilidade especial? "
+      ],
+      "energy": [
+        "",
+        "Cada tipo de vida precisa de coisas diferentes. ",
+        "Existem muitos jeitos de conseguir energia. "
+      ],
+      "work": [
+        "",
+        "Meu trabalho tem a ver com este lugar. ",
+        "Olha ao redor! "
+      ],
+      "world_look": "Olha ao redor! ",
+      "favorite": "Você disse que gosta da cor %s. Vamos procurar por aqui?",
+      "return": "Que bom ter você de volta, %s!",
+      "story_identity": "Eu me chamo %s. Meu trabalho: %s.",
+      "self_young": "Meu nome é %s. %s"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "animation": "idle",
+  "frame_size": [
+    512,
+    512
+  ],
+  "frame_count": 16,
+  "fps": 5.333333333333333,
+  "duration_seconds": 3.0,
+  "layout": {
+    "columns": 16,
+    "rows": 1
+  },
+  "tail_cycles_per_loop": 2,
+  "blink_frames": {
+    "half_close": 12,
+    "closed": 13,
+    "half_open": 14
+  }
+}

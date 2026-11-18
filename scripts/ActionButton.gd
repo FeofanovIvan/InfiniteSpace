@@ -148,8 +148,17 @@ func _draw_speech(center: Vector2) -> void:
 
 
 func _draw_landing(center: Vector2) -> void:
-	var tone := Color(0.69, 0.95, 1.0, 0.92)
-	draw_line(center + Vector2(0, -32), center + Vector2(0, 9), tone, 5.0, true)
-	draw_line(center + Vector2(-15, -5), center + Vector2(0, 12), tone, 5.0, true)
-	draw_line(center + Vector2(15, -5), center + Vector2(0, 12), tone, 5.0, true)
-	draw_line(center + Vector2(-31, 25), center + Vector2(31, 25), tone, 4.0, true)
+	# Only the original ship symbol, vertically centred in the round button.
+	# Its original silhouette has Y bounds [-38, +13]; shift by +12.5 to centre it.
+	var ship_center: Vector2 = center + Vector2(0.0, 12.5)
+	var tone := Color(0.70, 0.94, 1.0, 0.96)
+	var hull := PackedVector2Array([
+		ship_center + Vector2(0, -38), ship_center + Vector2(8, -28),
+		ship_center + Vector2(10, -8), ship_center + Vector2(20, 6),
+		ship_center + Vector2(20, 11), ship_center + Vector2(6, 7),
+		ship_center + Vector2(0, 13), ship_center + Vector2(-6, 7),
+		ship_center + Vector2(-20, 11), ship_center + Vector2(-20, 6),
+		ship_center + Vector2(-10, -8), ship_center + Vector2(-8, -28)
+	])
+	draw_colored_polygon(hull, tone)
+	draw_circle(ship_center + Vector2(0, -14), 5.5, Color(0.06, 0.36, 0.59, 0.94))

@@ -1,0 +1,30 @@
+{
+  "installer_id": "MIKA_ENCYCLOPEDIA_DIRECT_SETTINGS_V2_1",
+  "backup": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_encyclopedia_direct_v21_20261105_124850_028109",
+  "files": {
+    "scripts/SettingsLanguagePopup.gd": {
+      "old_sha256": "7b4f553025be279660314520edee89d4d3b4158fa8495d0df7d04a377a8e303e",
+      "new_sha256": "4e4002ae30deb789417c828c8fa5c8ad264b673bdb518e0f697b8352810e5586"
+    },
+    "mika_encyclopedia_v18/scripts/native_settings_entry.gd": {
+      "old_sha256": null,
+      "new_sha256": "dbf55f93cc5de320a5ed7a9d121a45f3e56a8817f4b3ad3362329e74621763be"
+    },
+    "mika_encyclopedia_v18/scripts/glossary_screen.gd": {
+      "old_sha256": "b77de6f8c774874fbb8703a7b9b46675023569384b61f044c65edd8fb4a855d8",
+      "new_sha256": "60f0cf910485fe111f1c434d243a0b093e84926f00032d6654571b91abaf45ee"
+    },
+    "mika_encyclopedia_v18/scripts/encyclopedia_bridge.gd": {
+      "old_sha256": "c1c3e391184d1cff8a5046ce3df60b4db13a4bedff24ca89956bd785219c59a2",
+      "new_sha256": "4fbbbe0c758a343d81db5b32468bfde2cd2993437010c5226ac02da760f312f7"
+    },
+    "mika_encyclopedia_v18/data/native_asset_links.json": {
+      "old_sha256": null,
+      "new_sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    "mika_encyclopedia_v18/data/article_localizations.json": {
+      "old_sha256": null,
+      "new_sha256": "54470bd9a36e2d5224bc968195182209a314ac3425c81b728dc5537dd7790170"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://m31_planets/planet_2d.tscn" id="1"]
+
+[node name="m31_p04" instance=ExtResource("1")]
+planet_id = "m31_p04"
+diameter_pixels = 192.0

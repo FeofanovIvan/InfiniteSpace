@@ -1,0 +1,1497 @@
+{
+  "schema_version": 1,
+  "source": "MIKA_GLOSSARY_PLANETS_STATIONS_RACES_V1_4 (2026-11-02)",
+  "rules": {
+    "worlds": 48,
+    "inhabited": 24,
+    "nature_only": 24,
+    "stations": 6,
+    "undiscovered_aliens_on_nature_worlds": false
+  },
+  "races": {
+    "human": {
+      "ru": "люди",
+      "en": "humans",
+      "about_ru": "Мы исследуем космос с помощью кораблей, научных станций и технологий.",
+      "about_en": "We explore space using ships, research stations, and technology.",
+      "ability_ru": "Мы строим, изучаем и изобретаем.",
+      "ability_en": "We build, study, and invent.",
+      "energy_ru": "Мы едим пищу и пьём воду.",
+      "energy_en": "We eat food and drink water.",
+      "greeting": {
+        "ru": "Как здорово встретить ещё одного исследователя среди звёзд!",
+        "en": "It's great to meet a new space explorer!",
+        "fr": "Quel plaisir d'explorer les étoiles ensemble !",
+        "de": "Wie schön, jemand Neues beim Entdecken der Sterne zu treffen!",
+        "es": "¡Qué alegría conocer a alguien que explora las estrellas!",
+        "pt_BR": "Que legal conhecer mais alguém explorando as estrelas!"
+      },
+      "fr": "humains",
+      "about_fr": "Nous explorons l'espace avec des vaisseaux et des stations scientifiques.",
+      "ability_fr": "Nous construisons, étudions la nature et inventons.",
+      "energy_fr": "Les humains mangent et boivent de l'eau.",
+      "de": "Menschen",
+      "about_de": "Wir reisen mit Raumschiffen und Forschungsstationen durch das All.",
+      "ability_de": "Wir bauen, erforschen die Natur und erfinden Neues.",
+      "energy_de": "Menschen brauchen Nahrung und Wasser.",
+      "es": "humanos",
+      "about_es": "Exploramos el espacio con naves y estaciones científicas.",
+      "ability_es": "Construimos, estudiamos la naturaleza e inventamos cosas nuevas.",
+      "energy_es": "Las personas necesitan comida y agua.",
+      "pt_BR": "humanos",
+      "about_pt_BR": "Exploramos o espaço com naves e estações de pesquisa.",
+      "ability_pt_BR": "Construímos, estudamos a natureza e inventamos coisas novas.",
+      "energy_pt_BR": "As pessoas precisam de comida e água."
+    },
+    "mold": {
+      "ru": "разумная грибная сеть",
+      "en": "sentient mold",
+      "about_ru": "Мы живые сети из волокон и мембран. Наши постройки тоже растут.",
+      "about_en": "We are living networks of fibers and membranes. Our buildings grow too.",
+      "ability_ru": "Мы можем соединяться волокнами и делиться сигналами.",
+      "ability_en": "We can connect with fibers and share signals.",
+      "energy_ru": "Мы получаем вещества и энергию из окружающей среды.",
+      "energy_en": "We gather nutrients and energy from our surroundings.",
+      "greeting": {
+        "ru": "Наша сеть почувствовала твоё приближение. Добро пожаловать!",
+        "en": "Our living network sensed your arrival. Welcome!",
+        "fr": "Notre réseau a senti ton arrivée. Bienvenue !",
+        "de": "Unser Netz hat deine Ankunft gespürt. Willkommen!",
+        "es": "Nuestra red sintió tu llegada. ¡Qué gusto verte por aquí!",
+        "pt_BR": "Nossa rede sentiu sua chegada. Boas-vindas!"
+      },
+      "fr": "réseau de champignons vivants",
+      "about_fr": "Nous sommes un organisme formé de nombreux filaments. Même nos bâtiments poussent !",
+      "ability_fr": "Nos filaments nous relient et transmettent des messages.",
+      "energy_fr": "Nous puisons des nutriments dans ce qui nous entoure.",
+      "de": "lebendiges Pilznetz",
+      "about_de": "Wir sind ein lebendiges Netz aus vielen Fasern. Sogar unsere Gebäude wachsen!",
+      "ability_de": "Unsere Fasern verbinden uns und übertragen Signale.",
+      "energy_de": "Wir nehmen Nährstoffe aus unserer Umgebung auf.",
+      "es": "red de hongos vivos",
+      "about_es": "Somos un ser vivo formado por muchas fibras. ¡Hasta nuestros edificios crecen!",
+      "ability_es": "Nuestras fibras nos unen y transmiten señales.",
+      "energy_es": "Obtenemos nutrientes de lo que nos rodea.",
+      "pt_BR": "rede de fungos vivos",
+      "about_pt_BR": "Somos um ser vivo formado por muitas fibras. Até nossos prédios crescem!",
+      "ability_pt_BR": "Nossas fibras nos conectam e transmitem sinais.",
+      "energy_pt_BR": "Retiramos nutrientes do que existe ao nosso redor."
+    },
+    "phase": {
+      "ru": "фазовые существа",
+      "en": "phase beings",
+      "about_ru": "Наши тела могут переходить между газообразным, жидким и кристаллическим состояниями.",
+      "about_en": "Our bodies can shift between gas, liquid, and crystal forms.",
+      "ability_ru": "Мы можем изменять состояние и прозрачность своей формы.",
+      "ability_en": "We can change our form and transparency.",
+      "energy_ru": "Мы получаем энергию из окружающей среды, а не едим как люди.",
+      "energy_en": "We gather energy from our environment instead of eating like humans.",
+      "greeting": {
+        "ru": "Видишь? Мы изменили форму, чтобы встретить тебя!",
+        "en": "We are changing form to welcome you!",
+        "fr": "Regarde : nous changeons de forme pour te souhaiter la bienvenue !",
+        "de": "Sieh nur, wir verändern unsere Form zur Begrüßung!",
+        "es": "¡Mira cómo cambiamos de forma para saludarte!",
+        "pt_BR": "Olha só! Mudamos de forma para receber você!"
+      },
+      "fr": "êtres changeants",
+      "about_fr": "Nous pouvons prendre la forme d'un liquide, d'un gaz ou d'un cristal.",
+      "ability_fr": "Nous changeons de forme et de transparence.",
+      "energy_fr": "Nous trouvons de l'énergie autour de nous, sans manger comme les humains.",
+      "de": "Wesen mit wandelbarer Form",
+      "about_de": "Wir können flüssig, gasförmig oder kristallartig sein.",
+      "ability_de": "Wir verändern unsere Form und unsere Durchsichtigkeit.",
+      "energy_de": "Wir nehmen Energie aus der Umgebung auf, statt wie Menschen zu essen.",
+      "es": "seres que cambian de forma",
+      "about_es": "Podemos ser líquidos, gaseosos o tener forma de cristal.",
+      "ability_es": "Cambiamos de forma y de transparencia cuando lo necesitamos.",
+      "energy_es": "Tomamos energía del entorno y no comemos como los humanos.",
+      "pt_BR": "seres que mudam de forma",
+      "about_pt_BR": "Podemos ficar líquidos, gasosos ou em forma de cristal.",
+      "ability_pt_BR": "Mudamos de forma e transparência quando precisamos.",
+      "energy_pt_BR": "Tiramos energia do ambiente, sem comer como os humanos."
+    },
+    "reptile": {
+      "ru": "разумные ящеры",
+      "en": "intelligent reptiles",
+      "about_ru": "Мы похожи на древних земных динозавров, но создали космическую цивилизацию.",
+      "about_en": "We resemble Earth's ancient dinosaurs, but we built a space civilization.",
+      "ability_ru": "Мы исследуем каменные миры и умеем строить большие города.",
+      "ability_en": "We explore rocky worlds and build large cities.",
+      "energy_ru": "Мы питаемся, как живые организмы, но наши любимые продукты ещё предстоит изучить.",
+      "energy_en": "We eat as living organisms do, but our favorite foods remain to be discovered.",
+      "greeting": {
+        "ru": "Привет! Здесь рады любознательным путешественникам.",
+        "en": "Hello! Curious travelers are always welcome here.",
+        "fr": "Bonjour ! Ici, les voyageurs curieux sont les bienvenus.",
+        "de": "Hallo! Neugierige Reisende sind hier willkommen.",
+        "es": "¡Hola! Nos encantan las visitas curiosas.",
+        "pt_BR": "Oi! A gente adora receber visitantes curiosos."
+      },
+      "fr": "lézards intelligents",
+      "about_fr": "Nos lointains ancêtres ressemblaient aux reptiles anciens de la Terre.",
+      "ability_fr": "Nous explorons des mondes rocheux et construisons de grandes cités.",
+      "energy_fr": "Nous avons besoin de nourriture, mais chacun a ses goûts !",
+      "de": "intelligente Echsen",
+      "about_de": "Unsere fernen Vorfahren ähnelten den uralten Reptilien der Erde.",
+      "ability_de": "Wir erforschen felsige Welten und bauen große Städte.",
+      "energy_de": "Wir brauchen Nahrung, haben aber ganz eigene Lieblingsspeisen.",
+      "es": "lagartos inteligentes",
+      "about_es": "Nuestros antepasados lejanos se parecían a los antiguos reptiles de la Tierra.",
+      "ability_es": "Exploramos mundos rocosos y construimos grandes ciudades.",
+      "energy_es": "Necesitamos alimentarnos, ¡pero tenemos gustos muy distintos!",
+      "pt_BR": "lagartos inteligentes",
+      "about_pt_BR": "Nossos ancestrais distantes lembravam os répteis antigos da Terra.",
+      "ability_pt_BR": "Exploramos mundos rochosos e construímos grandes cidades.",
+      "energy_pt_BR": "Precisamos de comida, mas temos nossos próprios gostos!"
+    },
+    "magnetic": {
+      "ru": "жидкометаллические существа",
+      "en": "magnetic liquid-metal beings",
+      "about_ru": "Мы — цельные живые массы металла, которые управляют своей формой.",
+      "about_en": "We are living masses of metal that can control our shapes.",
+      "ability_ru": "Мы меняем форму с помощью электромагнитных взаимодействий.",
+      "ability_en": "We reshape ourselves using electromagnetic interactions.",
+      "energy_ru": "Мы взаимодействуем с полями и веществом; человеческая еда нам не нужна.",
+      "energy_en": "We interact with fields and matter; we do not need human food.",
+      "greeting": {
+        "ru": "Мои магнитные волны приветствуют твою экспедицию.",
+        "en": "My magnetic waves welcome your expedition.",
+        "fr": "Mes ondes magnétiques te souhaitent la bienvenue.",
+        "de": "Meine Magnetwellen begrüßen deine Entdeckungsreise.",
+        "es": "Mis ondas magnéticas te dan la bienvenida.",
+        "pt_BR": "Minhas ondas magnéticas dão as boas-vindas à sua expedição."
+      },
+      "fr": "êtres de métal liquide",
+      "about_fr": "Notre corps est fait de métal vivant qui peut changer de forme.",
+      "ability_fr": "Nous modifions notre forme grâce aux champs magnétiques.",
+      "energy_fr": "Nous utilisons les champs et la matière. Pas besoin de repas humains !",
+      "de": "Wesen aus flüssigem Metall",
+      "about_de": "Unser Körper besteht aus lebendigem Metall, das seine Form ändert.",
+      "ability_de": "Mithilfe magnetischer Felder verändern wir unsere Gestalt.",
+      "energy_de": "Wir nutzen Felder und Materie. Menschenessen brauchen wir nicht.",
+      "es": "seres de metal líquido",
+      "about_es": "Nuestro cuerpo está hecho de metal vivo que puede cambiar de forma.",
+      "ability_es": "Controlamos nuestra forma usando campos magnéticos.",
+      "energy_es": "Usamos campos y materia. No necesitamos comida humana.",
+      "pt_BR": "seres de metal líquido",
+      "about_pt_BR": "Nosso corpo é de metal vivo e consegue mudar de forma.",
+      "ability_pt_BR": "Usamos campos magnéticos para mudar nossa forma.",
+      "energy_pt_BR": "Usamos campos e matéria. Não precisamos comer comida humana."
+    },
+    "neural": {
+      "ru": "нейронные существа",
+      "en": "neural beings",
+      "about_ru": "Мы живые нейронные структуры со складчатым ядром. Мы бережём знания.",
+      "about_en": "We are living neural structures with folded cores. We cherish knowledge.",
+      "ability_ru": "Мы используем телекинез и исследуем сложные связи.",
+      "ability_en": "We use telekinesis and study complex connections.",
+      "energy_ru": "Наши тела защищены питательной средой.",
+      "energy_en": "Our bodies are protected by a nourishing medium.",
+      "greeting": {
+        "ru": "Мы заметили новый любознательный разум. Привет!",
+        "en": "We noticed a curious new mind. Greetings!",
+        "fr": "Nous avons repéré un esprit curieux. Bonjour !",
+        "de": "Wir haben einen neugierigen Geist bemerkt. Hallo!",
+        "es": "¡Hemos notado una mente curiosa! ¡Hola!",
+        "pt_BR": "Percebemos uma mente curiosa. Oi!"
+      },
+      "fr": "êtres neuronaux",
+      "about_fr": "Nous sommes des structures vivantes qui aiment garder et partager les connaissances.",
+      "ability_fr": "Nous pouvons agir à distance et étudier des liens compliqués.",
+      "energy_fr": "Nos corps ont besoin d'un milieu nourrissant particulier.",
+      "de": "neuronale Wesen",
+      "about_de": "Wir sind lebendige neuronale Strukturen und lieben Wissen und Erinnerungen.",
+      "ability_de": "Wir können Dinge aus der Ferne bewegen und Zusammenhänge erforschen.",
+      "energy_de": "Unsere Körper benötigen ein besonderes nährendes Medium.",
+      "es": "seres neuronales",
+      "about_es": "Somos estructuras neuronales vivas que valoran los recuerdos y el conocimiento.",
+      "ability_es": "Podemos mover cosas a distancia y estudiar relaciones complejas.",
+      "energy_es": "Nuestros cuerpos necesitan un medio que nos alimente.",
+      "pt_BR": "seres neuronais",
+      "about_pt_BR": "Somos estruturas neuronais vivas e adoramos guardar lembranças e conhecimentos.",
+      "ability_pt_BR": "Podemos mover coisas de longe e estudar ligações complicadas.",
+      "energy_pt_BR": "Nosso corpo precisa de um ambiente especial que nos nutra."
+    }
+  },
+  "worlds": {
+    "mw_p01": {
+      "name": {
+        "ru": "Земля",
+        "en": "Earth",
+        "fr": "Terre",
+        "de": "Erde",
+        "es": "Tierra",
+        "pt_BR": "Terra"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "human",
+      "world": {
+        "ru": "Океаны, зелёные горы и светлые города с куполами, башнями и мостами.",
+        "en": "Oceans, green mountains, and bright cities with domes, towers, and bridges.",
+        "fr": "De grands océans, des montagnes vertes et une ville claire au bord de l'eau.",
+        "de": "Weite Ozeane, grüne Berge und eine helle Forschungsstadt am Wasser.",
+        "es": "Grandes masas de agua, montañas verdes y una ciudad luminosa junto al río.",
+        "pt_BR": "Oceanos, montanhas verdes e uma cidade luminosa perto da água."
+      },
+      "structure": {
+        "ru": "Исследовательский город у водной долины.",
+        "en": "A research city by a watery valley.",
+        "fr": "Une ville de recherche située près d'une vallée traversée par l'eau.",
+        "de": "Eine Forschungsstadt an einem wasserreichen Tal.",
+        "es": "Una ciudad de investigación junto a un valle con agua.",
+        "pt_BR": "Uma cidade de pesquisa junto a um vale com água."
+      }
+    },
+    "mw_p02": {
+      "name": {
+        "ru": "Марс",
+        "en": "Mars",
+        "fr": "Mars",
+        "de": "Mars",
+        "es": "Marte",
+        "pt_BR": "Marte"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "human",
+      "world": {
+        "ru": "Красная пыльная пустыня, горы и герметичный купольный комплекс.",
+        "en": "A cold red desert with mountains and a sealed domed complex.",
+        "fr": "Un désert rouge et froid, avec des montagnes et une base bien protégée.",
+        "de": "Eine kalte rote Wüste mit Bergen und einer gut geschützten Forschungsstation.",
+        "es": "Un desierto rojo y frío, con montañas y una base científica protegida.",
+        "pt_BR": "Um deserto vermelho e frio, com montanhas e uma base científica protegida."
+      },
+      "structure": {
+        "ru": "Подземные дата-центры и сферический зал искусственного интеллекта.",
+        "en": "Underground data centers and a spherical AI hall.",
+        "fr": "Des centres de données souterrains et une salle sphérique pour l'intelligence artificielle.",
+        "de": "Unterirdische Rechenzentren und eine kugelförmige Halle für künstliche Intelligenz.",
+        "es": "Centros de datos subterráneos y una sala esférica de inteligencia artificial.",
+        "pt_BR": "Centros de dados subterrâneos e uma sala esférica de inteligência artificial."
+      }
+    },
+    "mw_p03": {
+      "name": {
+        "ru": "Юпитер",
+        "en": "Jupiter",
+        "fr": "Jupiter",
+        "de": "Jupiter",
+        "es": "Júpiter",
+        "pt_BR": "Júpiter"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "human",
+      "world": {
+        "ru": "Газовый гигант с золотыми облачными полосами и могучими вихрями.",
+        "en": "A gas giant with golden cloud bands and powerful storms.",
+        "fr": "Jupiter est une géante gazeuse aux nuages dorés et aux grandes tempêtes.",
+        "de": "Jupiter ist ein Gasriese mit goldenen Wolkenstreifen und großen Stürmen.",
+        "es": "Júpiter es un gigante gaseoso con nubes doradas y tormentas enormes.",
+        "pt_BR": "Júpiter é um gigante gasoso com nuvens douradas e tempestades enormes."
+      },
+      "structure": {
+        "ru": "Кольцевая исследовательская станция парит над атмосферой.",
+        "en": "A ring-shaped research station floats above the atmosphere.",
+        "fr": "Une station de recherche en forme d'anneau flotte au-dessus de l'atmosphère.",
+        "de": "Eine ringförmige Forschungsstation schwebt über der Atmosphäre.",
+        "es": "Una estación de investigación en forma de anillo flota sobre la atmósfera.",
+        "pt_BR": "Uma estação de pesquisa em forma de anel flutua acima da atmosfera."
+      }
+    },
+    "mw_p04": {
+      "name": {
+        "ru": "Сатурн",
+        "en": "Saturn"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Газовый гигант со светлыми кольцами и широкими золотистыми облаками.",
+        "en": "A gas giant with bright rings and broad golden clouds."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "mw_p05": {
+      "name": {
+        "ru": "Уран",
+        "en": "Uranus"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Ледяной гигант с бирюзовой атмосферой и светлыми слоями облаков.",
+        "en": "An icy giant with a turquoise atmosphere and pale cloud layers."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "mw_p06": {
+      "name": {
+        "ru": "Нептун",
+        "en": "Neptune",
+        "fr": "Neptune",
+        "de": "Neptun",
+        "es": "Neptuno",
+        "pt_BR": "Netuno"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "human",
+      "world": {
+        "ru": "Ледяной гигант с глубокими синими облаками и сильными ветрами.",
+        "en": "An icy giant with deep blue clouds and strong winds.",
+        "fr": "Neptune est une géante glacée, avec des nuages bleus et des vents puissants.",
+        "de": "Neptun ist ein eisiger Riese mit blauen Wolken und sehr starken Winden.",
+        "es": "Neptuno es un gigante helado, con nubes azules y vientos muy fuertes.",
+        "pt_BR": "Netuno é um gigante gelado, com nuvens azuis e ventos muito fortes."
+      },
+      "structure": {
+        "ru": "Исследовательская платформа с прозрачными куполами и антенной парит над облаками.",
+        "en": "A research platform with clear domes and an antenna floats above the clouds.",
+        "fr": "Une plateforme de recherche avec des dômes transparents et une antenne flotte au-dessus des nuages.",
+        "de": "Eine Forschungsplattform mit durchsichtigen Kuppeln und einer Antenne schwebt über den Wolken.",
+        "es": "Una plataforma de investigación con cúpulas transparentes y una antena flota sobre las nubes.",
+        "pt_BR": "Uma plataforma de pesquisa com domos transparentes e uma antena flutua acima das nuvens."
+      }
+    },
+    "mw_p07": {
+      "name": {
+        "ru": "Венера",
+        "en": "Venus",
+        "fr": "Vénus",
+        "de": "Venus",
+        "es": "Venus",
+        "pt_BR": "Vênus"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "human",
+      "world": {
+        "ru": "Очень горячий мир с оранжевыми скалами и густой атмосферой.",
+        "en": "A very hot world with orange rocks and a dense atmosphere.",
+        "fr": "Vénus est brûlante, avec des roches orangées et une atmosphère épaisse.",
+        "de": "Die Venus ist sehr heiß, mit orangefarbenen Felsen und einer dichten Atmosphäre.",
+        "es": "Venus es un mundo muy caliente, con rocas anaranjadas y una atmósfera espesa.",
+        "pt_BR": "Vênus é muito quente, com rochas alaranjadas e uma atmosfera espessa."
+      },
+      "structure": {
+        "ru": "Герметичная научная станция с куполом и технической башней.",
+        "en": "A sealed science station with a dome and a service tower.",
+        "fr": "Une station scientifique hermétique avec un dôme et une tour de service.",
+        "de": "Eine abgedichtete Forschungsstation mit Kuppel und Versorgungsturm.",
+        "es": "Una estación científica sellada con una cúpula y una torre de servicio.",
+        "pt_BR": "Uma estação científica vedada com um domo e uma torre de serviço."
+      }
+    },
+    "mw_p08": {
+      "name": {
+        "ru": "Меркурий",
+        "en": "Mercury"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Безвоздушный серый мир с кратерами, пылью и глубокими тенями.",
+        "en": "An airless gray world with craters, dust, and deep shadows."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "lmc_p01": {
+      "name": {
+        "ru": "Аэра",
+        "en": "Aera"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Газово-ледяной мир с голубыми облачными полосами и белой грядой облаков.",
+        "en": "A gas-and-ice world with blue cloud bands and a high white cloud ridge."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "lmc_p02": {
+      "name": {
+        "ru": "Талас",
+        "en": "Thalas",
+        "fr": "Thalas",
+        "de": "Thalas",
+        "es": "Thalas",
+        "pt_BR": "Thalas"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "mold",
+      "world": {
+        "ru": "Планета глубокого синего океана и высоких волн.",
+        "en": "A planet of deep blue oceans and tall waves.",
+        "fr": "Un monde d'océans bleu sombre et de vagues immenses, avec des ponts vivants.",
+        "de": "Eine Welt voller dunkelblauer Ozeane und großer Wellen mit lebenden Brücken.",
+        "es": "Un mundo de océanos azul oscuro, olas enormes y puentes vivos.",
+        "pt_BR": "Um mundo de oceanos azul-escuros, ondas gigantes e pontes vivas."
+      },
+      "structure": {
+        "ru": "Над морем растёт живой грибной город с куполами и ажурными мостами.",
+        "en": "A living fungal city with domes and delicate bridges grows above the sea.",
+        "fr": "Une cité fongique vivante, faite de dômes et de ponts délicats, pousse au-dessus de la mer.",
+        "de": "Eine lebende Pilzstadt mit Kuppeln und feinen Brücken wächst über dem Meer.",
+        "es": "Una ciudad viva de hongos, con cúpulas y puentes delicados, crece sobre el mar.",
+        "pt_BR": "Uma cidade viva de fungos, com domos e pontes delicadas, cresce acima do mar."
+      }
+    },
+    "lmc_p03": {
+      "name": {
+        "ru": "Молия",
+        "en": "Molia",
+        "fr": "Molia",
+        "de": "Molia",
+        "es": "Molia",
+        "pt_BR": "Molia"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "mold",
+      "world": {
+        "ru": "Сухая пепельная поверхность с кратерами и тёмными минералами.",
+        "en": "A dry ashen surface with craters and dark minerals.",
+        "fr": "Des roches très sombres, des cratères et des dômes biologiques bien protégés.",
+        "de": "Dunkle Felsen und Krater; dazwischen stehen geschützte lebende Kuppeln.",
+        "es": "Rocas oscuras y cráteres, con cúpulas biológicas bien protegidas.",
+        "pt_BR": "Rochas escuras e crateras, com domos biológicos bem protegidos."
+      },
+      "structure": {
+        "ru": "Город из грибоподобных герметичных биокуполов.",
+        "en": "A city of sealed fungus-like biodomes.",
+        "fr": "Une ville de biodômes hermétiques en forme de champignons.",
+        "de": "Eine Stadt aus abgedichteten, pilzähnlichen Biokuppeln.",
+        "es": "Una ciudad de biodomos sellados con forma de hongo.",
+        "pt_BR": "Uma cidade de biodomos vedados em forma de fungo."
+      }
+    },
+    "lmc_p04": {
+      "name": {
+        "ru": "Криона",
+        "en": "Cryona",
+        "fr": "Cryona",
+        "de": "Cryona",
+        "es": "Cryona",
+        "pt_BR": "Cryona"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "mold",
+      "world": {
+        "ru": "Ледяной мир с глубокими сияющими голубыми трещинами.",
+        "en": "An icy world with deep glowing blue cracks.",
+        "fr": "Un paysage gelé, traversé de fissures bleues lumineuses et de dômes vivants.",
+        "de": "Eine eisige Welt mit leuchtenden blauen Rissen und lebenden Schutzkuppeln.",
+        "es": "Un mundo helado con grietas azules brillantes y refugios vivos.",
+        "pt_BR": "Um mundo de gelo com rachaduras azuis brilhantes e abrigos vivos."
+      },
+      "structure": {
+        "ru": "Защищённые прозрачные биокупола с живыми ветвящимися структурами.",
+        "en": "Protected transparent biodomes with living branching structures.",
+        "fr": "Des biodômes transparents et protégés abritent des structures vivantes ramifiées.",
+        "de": "Geschützte durchsichtige Biokuppeln mit lebenden verzweigten Strukturen.",
+        "es": "Biodomos transparentes y protegidos con estructuras vivas ramificadas.",
+        "pt_BR": "Biodomos transparentes e protegidos com estruturas vivas ramificadas."
+      }
+    },
+    "lmc_p05": {
+      "name": {
+        "ru": "Карбона",
+        "en": "Carbona"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Сверхгорячий газовый гигант с багровыми, оранжевыми и фиолетовыми штормами.",
+        "en": "A superhot gas giant with crimson, orange, and purple storms."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "lmc_p06": {
+      "name": {
+        "ru": "Люкс",
+        "en": "Lux"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Очень лёгкий газовый мир с розово-сиреневыми облаками, похожими на пену.",
+        "en": "A very light gas world with pink and lilac foam-like clouds."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "lmc_p07": {
+      "name": {
+        "ru": "Вентра",
+        "en": "Ventra"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Газовый гигант с золотистыми облачными валами и огромными вихрями.",
+        "en": "A gas giant with golden cloud banks and immense vortices."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "lmc_p08": {
+      "name": {
+        "ru": "Магнета",
+        "en": "Magneta"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Холодный гигант с бирюзовыми и ярко-синими атмосферными слоями.",
+        "en": "A cold giant with turquoise and bright blue atmospheric layers."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "smc_p01": {
+      "name": {
+        "ru": "Окея",
+        "en": "Okea",
+        "fr": "Okea",
+        "de": "Okea",
+        "es": "Okea",
+        "pt_BR": "Okea"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "phase",
+      "world": {
+        "ru": "Мир ярко-синего океана.",
+        "en": "A world of brilliant blue ocean.",
+        "fr": "Un océan bleu vif d'où s'élèvent des arches et des dômes d'eau transparents.",
+        "de": "Ein tiefblauer Ozean mit durchsichtigen Wasserbögen und fließenden Kuppeln.",
+        "es": "Un océano azul brillante del que surgen arcos y cúpulas transparentes de agua.",
+        "pt_BR": "Um oceano azul brilhante de onde saem arcos e domos transparentes de água."
+      },
+      "structure": {
+        "ru": "Из воды поднимается прозрачный текучий город из волнообразных арок и куполов.",
+        "en": "A transparent flowing city of wave-shaped arches and domes rises from the water.",
+        "fr": "Une ville transparente et fluide, faite d'arches ondulées et de dômes, s'élève hors de l'eau.",
+        "de": "Eine durchsichtige fließende Stadt aus wellenförmigen Bögen und Kuppeln erhebt sich aus dem Wasser.",
+        "es": "Una ciudad transparente y fluida de arcos ondulados y cúpulas se eleva desde el agua.",
+        "pt_BR": "Uma cidade transparente e fluida, com arcos em forma de ondas e domos, se ergue da água."
+      }
+    },
+    "smc_p02": {
+      "name": {
+        "ru": "Цела",
+        "en": "Tsela",
+        "fr": "Tsela",
+        "de": "Tsela",
+        "es": "Tsela",
+        "pt_BR": "Tsela"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "phase",
+      "world": {
+        "ru": "Красная каменистая пустыня с высокими горами.",
+        "en": "A red rocky desert with tall mountains.",
+        "fr": "Un désert de roches rouges, de hautes montagnes et de dômes translucides.",
+        "de": "Eine rote Felswüste mit hohen Bergen und durchsichtigen Kuppeln.",
+        "es": "Un desierto de rocas rojas, montañas altas y cúpulas translúcidas.",
+        "pt_BR": "Um deserto de rochas vermelhas, montanhas altas e domos transparentes."
+      },
+      "structure": {
+        "ru": "Полупрозрачные жидкостные купола со светящимися опорами.",
+        "en": "Translucent liquid domes with glowing supports.",
+        "fr": "Des dômes liquides translucides soutenus par des piliers lumineux.",
+        "de": "Durchscheinende flüssige Kuppeln mit leuchtenden Stützen.",
+        "es": "Cúpulas líquidas translúcidas con soportes luminosos.",
+        "pt_BR": "Domos líquidos translúcidos com suportes luminosos."
+      }
+    },
+    "smc_p03": {
+      "name": {
+        "ru": "Генора",
+        "en": "Genora",
+        "fr": "Genora",
+        "de": "Genora",
+        "es": "Genora",
+        "pt_BR": "Genora"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "phase",
+      "world": {
+        "ru": "Сумеречный мир тёмных скал и водных разломов.",
+        "en": "A twilight world of dark cliffs and watery fractures.",
+        "fr": "Des falaises sombres, des fissures d'eau et des tours fluides au crépuscule.",
+        "de": "Dunkle Klippen, Wasserspalten und fließende Türme im Dämmerlicht.",
+        "es": "Acantilados oscuros, grietas de agua y torres líquidas en el crepúsculo.",
+        "pt_BR": "Penhascos escuros, fendas de água e torres líquidas no crepúsculo."
+      },
+      "structure": {
+        "ru": "Прозрачные водные башни, купола и текучие переходы.",
+        "en": "Clear water towers, domes, and flowing walkways.",
+        "fr": "Des tours d'eau transparentes, des dômes et des passerelles fluides.",
+        "de": "Klare Wassertürme, Kuppeln und fließende Wege.",
+        "es": "Torres de agua transparentes, cúpulas y pasarelas fluidas.",
+        "pt_BR": "Torres de água transparentes, domos e passarelas fluidas."
+      }
+    },
+    "smc_p04": {
+      "name": {
+        "ru": "Мицела",
+        "en": "Mycela"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Зелёные склоны, спокойное озеро и широкая природная долина.",
+        "en": "Green slopes, a calm lake, and a wide natural valley."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "smc_p05": {
+      "name": {
+        "ru": "Спира",
+        "en": "Spira",
+        "fr": "Spira",
+        "de": "Spira",
+        "es": "Spira",
+        "pt_BR": "Spira"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "phase",
+      "world": {
+        "ru": "Мир на границе света и тьмы с чёрными скалами и красными отражениями.",
+        "en": "A world on the border of light and dark, with black rocks and red reflections.",
+        "fr": "À la limite du jour et de la nuit, des roches noires et une station de brume.",
+        "de": "Am Rand von Licht und Schatten liegt eine Nebelstation zwischen schwarzen Felsen.",
+        "es": "En el borde entre luz y sombra hay rocas negras y una estación de niebla.",
+        "pt_BR": "No limite entre luz e sombra, rochas pretas e uma estação de névoa."
+      },
+      "structure": {
+        "ru": "Полупрозрачная туманно-жидкая станция из плавных куполов.",
+        "en": "A translucent mist-and-liquid station made of smooth domes.",
+        "fr": "Une station translucide de brume et de liquide, formée de dômes lisses.",
+        "de": "Eine durchscheinende Station aus Nebel und Flüssigkeit mit glatten Kuppeln.",
+        "es": "Una estación translúcida de niebla y líquido formada por cúpulas lisas.",
+        "pt_BR": "Uma estação translúcida de névoa e líquido formada por domos lisos."
+      }
+    },
+    "smc_p06": {
+      "name": {
+        "ru": "Амбра",
+        "en": "Ambra"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Холодные тёмные озёра, лёд, скалы и оранжевое сияние горизонта.",
+        "en": "Cold dark lakes, ice, cliffs, and an orange glow at the horizon."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "smc_p07": {
+      "name": {
+        "ru": "Силика",
+        "en": "Silica"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Сухая рыжая пустыня с валунами и острыми горными хребтами.",
+        "en": "A dry rusty desert with boulders and sharp mountain ridges."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "smc_p08": {
+      "name": {
+        "ru": "Биора",
+        "en": "Biora"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Газовый гигант с золотистыми облачными гребнями и воронками.",
+        "en": "A gas giant with golden cloud crests and atmospheric funnels."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "ngc6822_p01": {
+      "name": {
+        "ru": "Археон",
+        "en": "Archeon",
+        "fr": "Archeon",
+        "de": "Archeon",
+        "es": "Archeon",
+        "pt_BR": "Archeon"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "reptile",
+      "world": {
+        "ru": "Красная каменистая пустыня с крутыми горами.",
+        "en": "A red rocky desert with steep mountains.",
+        "fr": "Un désert rouge entourant une ville en anneau avec de beaux jardins verts.",
+        "de": "Eine rote Felswüste umgibt eine geschützte Ringstadt voller grüner Gärten.",
+        "es": "Un desierto rojo alrededor de una ciudad circular protegida con jardines verdes.",
+        "pt_BR": "Um deserto vermelho ao redor de uma cidade em anel com jardins verdes."
+      },
+      "structure": {
+        "ru": "Большой герметичный кольцевой город с зелёными внутренними зонами.",
+        "en": "A large sealed ring city with green gardens inside.",
+        "fr": "Une grande cité annulaire hermétique avec des jardins verts à l'intérieur.",
+        "de": "Eine große abgedichtete Ringstadt mit grünen Gärten im Inneren.",
+        "es": "Una gran ciudad anular sellada con jardines verdes en su interior.",
+        "pt_BR": "Uma grande cidade vedada em forma de anel, com jardins verdes por dentro."
+      }
+    },
+    "ngc6822_p02": {
+      "name": {
+        "ru": "Квария",
+        "en": "Quaria",
+        "fr": "Quaria",
+        "de": "Quaria",
+        "es": "Quaria",
+        "pt_BR": "Quaria"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "reptile",
+      "world": {
+        "ru": "Серый минеральный мир с кратерами и кристаллическими породами.",
+        "en": "A gray mineral world with craters and crystal outcrops.",
+        "fr": "Un monde gris de cratères et de minéraux, avec une station cachée dans la roche.",
+        "de": "Ein grauer Kraterplanet mit Mineralien und einer Station tief im Fels.",
+        "es": "Un mundo gris de cráteres y minerales, con una estación dentro de la roca.",
+        "pt_BR": "Um mundo cinza de crateras e minerais, com uma estação dentro da rocha."
+      },
+      "structure": {
+        "ru": "В скале скрыта пещерная станция со светящимися куполами.",
+        "en": "A cave station with glowing domes is built into the rock.",
+        "fr": "Une station troglodyte avec des dômes lumineux est construite dans la roche.",
+        "de": "Eine Höhlenstation mit leuchtenden Kuppeln ist in den Felsen gebaut.",
+        "es": "Una estación de cuevas con cúpulas luminosas está construida dentro de la roca.",
+        "pt_BR": "Uma estação em cavernas, com domos luminosos, foi construída dentro da rocha."
+      }
+    },
+    "ngc6822_p03": {
+      "name": {
+        "ru": "Нокта",
+        "en": "Nocta",
+        "fr": "Nocta",
+        "de": "Nocta",
+        "es": "Nocta",
+        "pt_BR": "Nocta"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "reptile",
+      "world": {
+        "ru": "Тёмная долина, чёрные скалы и красно-фиолетовое небо.",
+        "en": "A dark valley, black cliffs, and a red-purple sky.",
+        "fr": "Une vallée de falaises noires sous un ciel rouge-violet, avec un grand port spatial.",
+        "de": "Ein dunkles Tal mit schwarzen Felsen und einem Raumhafen unter rotviolettem Himmel.",
+        "es": "Un valle oscuro de acantilados negros y un puerto espacial bajo un cielo rojizo.",
+        "pt_BR": "Um vale escuro de rochas pretas e um porto espacial sob um céu avermelhado."
+      },
+      "structure": {
+        "ru": "Промышленный космопорт с ангарами, башнями и мостами.",
+        "en": "An industrial spaceport with hangars, towers, and bridges.",
+        "fr": "Un port spatial industriel avec des hangars, des tours et des ponts.",
+        "de": "Ein industrieller Raumhafen mit Hangars, Türmen und Brücken.",
+        "es": "Un puerto espacial industrial con hangares, torres y puentes.",
+        "pt_BR": "Um porto espacial industrial com hangares, torres e pontes."
+      }
+    },
+    "ngc6822_p04": {
+      "name": {
+        "ru": "Ферра",
+        "en": "Ferra",
+        "fr": "Ferra",
+        "de": "Ferra",
+        "es": "Ferra",
+        "pt_BR": "Ferra"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "reptile",
+      "world": {
+        "ru": "Железистые ржаво-красные равнины и горы.",
+        "en": "Iron-rich rust-red plains and mountains.",
+        "fr": "Des plaines rouge rouille, des montagnes riches en fer et des ateliers métalliques.",
+        "de": "Rostrote Ebenen, eisenreiche Berge und große Werkhallen aus Metall.",
+        "es": "Llanuras de color óxido, montañas ricas en hierro y grandes talleres metálicos.",
+        "pt_BR": "Planícies cor de ferrugem, montanhas com ferro e grandes oficinas de metal."
+      },
+      "structure": {
+        "ru": "Металлургическая станция с корпусами, резервуарами и трубами.",
+        "en": "A metalworking station with industrial halls, tanks, and pipes.",
+        "fr": "Une station métallurgique avec des halls industriels, des réservoirs et des conduites.",
+        "de": "Eine Metallverarbeitungsstation mit Werkhallen, Tanks und Rohrleitungen.",
+        "es": "Una estación metalúrgica con naves industriales, tanques y tuberías.",
+        "pt_BR": "Uma estação metalúrgica com galpões industriais, tanques e tubulações."
+      }
+    },
+    "ngc6822_p05": {
+      "name": {
+        "ru": "Дуна",
+        "en": "Duna"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Оранжевый сухой мир с горными массивами, валунами и пылью.",
+        "en": "An orange dry world with mountains, boulders, and dust."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "ngc6822_p06": {
+      "name": {
+        "ru": "Руна",
+        "en": "Runa",
+        "fr": "Runa",
+        "de": "Runa",
+        "es": "Runa",
+        "pt_BR": "Runa"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "reptile",
+      "world": {
+        "ru": "Сухая серо-белая равнина и кратеры.",
+        "en": "A dry pale gray plain with craters.",
+        "fr": "Une plaine grise et sèche, avec un grand bâtiment d'archives en escalier.",
+        "de": "Eine trockene graue Ebene mit einem riesigen, stufenförmigen Archiv.",
+        "es": "Una llanura seca y gris con un enorme archivo de muchos escalones.",
+        "pt_BR": "Uma planície cinza e seca com um arquivo enorme cheio de degraus."
+      },
+      "structure": {
+        "ru": "Массивный ступенчатый архивный комплекс с широкой лестницей.",
+        "en": "A massive stepped archive complex with a broad staircase.",
+        "fr": "Un immense complexe d'archives en gradins avec un large escalier.",
+        "de": "Ein gewaltiger stufenförmiger Archivkomplex mit einer breiten Treppe.",
+        "es": "Un enorme complejo de archivos escalonado con una amplia escalera.",
+        "pt_BR": "Um enorme complexo de arquivos em degraus, com uma escadaria larga."
+      }
+    },
+    "ngc6822_p07": {
+      "name": {
+        "ru": "Геода",
+        "en": "Geoda"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Активные вулканы, лавовые поля и яркие оранжевые трещины.",
+        "en": "Active volcanoes, lava fields, and bright orange cracks."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "ngc6822_p08": {
+      "name": {
+        "ru": "Хрона",
+        "en": "Chrona"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Сухие красно-охристые горные гряды, уступы и выветренные скалы.",
+        "en": "Dry ocher-red mountain ridges, terraces, and weathered rocks."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m31_p01": {
+      "name": {
+        "ru": "Люмена",
+        "en": "Lumena"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Очень горячий газовый гигант с фиолетовыми вихрями и оранжевыми потоками.",
+        "en": "A very hot gas giant with violet storms and orange glowing streams."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m31_p02": {
+      "name": {
+        "ru": "Гравис",
+        "en": "Gravis"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Кольцевой газовый гигант с золотыми облаками и светлыми кольцами.",
+        "en": "A ringed gas giant with golden clouds and bright rings."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m31_p03": {
+      "name": {
+        "ru": "Фазис",
+        "en": "Phasis",
+        "fr": "Phasis",
+        "de": "Phasis",
+        "es": "Phasis",
+        "pt_BR": "Phasis"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "magnetic",
+      "world": {
+        "ru": "Чёрные скалы, геотермальные озёра и красный горизонт.",
+        "en": "Black cliffs, geothermal lakes, and a red horizon.",
+        "fr": "Des falaises noires, des eaux chaudes et des laboratoires aux arches métalliques.",
+        "de": "Schwarze Klippen, heiße Seen und Spiegellabore mit metallischen Bögen.",
+        "es": "Acantilados negros, lagos calientes y laboratorios con arcos de metal.",
+        "pt_BR": "Penhascos pretos, lagos quentes e laboratórios com arcos metálicos."
+      },
+      "structure": {
+        "ru": "Зеркальные магнитные лаборатории с металлическими дугами и кольцевыми установками.",
+        "en": "Mirrorlike magnetic laboratories with metal arches and ring machines.",
+        "fr": "Des laboratoires magnétiques miroitants avec des arches métalliques et des machines annulaires.",
+        "de": "Spiegelnde magnetische Labore mit Metallbögen und ringförmigen Maschinen.",
+        "es": "Laboratorios magnéticos reflectantes con arcos de metal y máquinas anulares.",
+        "pt_BR": "Laboratórios magnéticos espelhados com arcos de metal e máquinas em forma de anel."
+      }
+    },
+    "m31_p04": {
+      "name": {
+        "ru": "Гелион",
+        "en": "Helion"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Чёрная каменная корка, раскалённая лава и светящиеся разломы.",
+        "en": "Black rocky crust, molten lava, and glowing fractures."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m31_p05": {
+      "name": {
+        "ru": "Синта",
+        "en": "Sinta",
+        "fr": "Sinta",
+        "de": "Sinta",
+        "es": "Sinta",
+        "pt_BR": "Sinta"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "magnetic",
+      "world": {
+        "ru": "Светлая каменистая равнина с кратерами.",
+        "en": "A pale cratered rocky plain.",
+        "fr": "Une plaine rocheuse avec une immense sphère noire suspendue au-dessus d'une ville.",
+        "de": "Eine helle felsige Ebene mit einer schwarzen schwebenden Kugel über einer Stadt.",
+        "es": "Una llanura rocosa con una esfera negra enorme flotando sobre la ciudad.",
+        "pt_BR": "Uma planície rochosa com uma esfera preta enorme flutuando sobre a cidade."
+      },
+      "structure": {
+        "ru": "Над глубоким механическим городом левитирует огромная почти чёрная сфера.",
+        "en": "A huge near-black sphere levitates above a deep mechanical city.",
+        "fr": "Une immense sphère presque noire lévite au-dessus d'une profonde cité mécanique.",
+        "de": "Eine riesige, fast schwarze Kugel schwebt über einer tiefen mechanischen Stadt.",
+        "es": "Una enorme esfera casi negra levita sobre una profunda ciudad mecánica.",
+        "pt_BR": "Uma esfera enorme, quase preta, levita acima de uma profunda cidade mecânica."
+      }
+    },
+    "m31_p06": {
+      "name": {
+        "ru": "Геона",
+        "en": "Geona",
+        "fr": "Geona",
+        "de": "Geona",
+        "es": "Geona",
+        "pt_BR": "Geona"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "magnetic",
+      "world": {
+        "ru": "Вулканический мир с лавой и оранжевыми горами.",
+        "en": "A volcanic world with lava and orange mountains.",
+        "fr": "Des volcans et des roches orange, sous une grande pyramide noire renversée.",
+        "de": "Vulkanfelsen und orangefarbene Berge unter einer umgedrehten schwarzen Pyramide.",
+        "es": "Volcanes y montañas anaranjadas bajo una gran pirámide negra invertida.",
+        "pt_BR": "Vulcões e montanhas alaranjadas sob uma grande pirâmide preta de cabeça para baixo."
+      },
+      "structure": {
+        "ru": "Гигантская матово-чёрная перевёрнутая пирамида парит над раскалённой областью.",
+        "en": "A giant matte-black inverted pyramid floats over the hot ground.",
+        "fr": "Une gigantesque pyramide noire mate et renversée flotte au-dessus du sol brûlant.",
+        "de": "Eine riesige mattschwarze, umgedrehte Pyramide schwebt über dem heißen Boden.",
+        "es": "Una gigantesca pirámide negra mate e invertida flota sobre el suelo caliente.",
+        "pt_BR": "Uma pirâmide gigante, preta e fosca, flutua de cabeça para baixo acima do solo quente."
+      }
+    },
+    "m31_p07": {
+      "name": {
+        "ru": "Резона",
+        "en": "Resona"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Глубокое синее озеро, зелёно-серые горы и розовые облака.",
+        "en": "A deep blue lake, gray-green mountains, and pink clouds."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m31_p08": {
+      "name": {
+        "ru": "Квантия",
+        "en": "Quantia"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Лёгкий газовый мир с мягкими лавандовыми и розовыми облаками.",
+        "en": "A light gas world with soft lavender and pink clouds."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m33_p01": {
+      "name": {
+        "ru": "Светара",
+        "en": "Svetara",
+        "fr": "Svetara",
+        "de": "Svetara",
+        "es": "Svetara",
+        "pt_BR": "Svetara"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "neural",
+      "world": {
+        "ru": "Каменистые сиреневые холмы и необычный рельеф.",
+        "en": "Rocky lilac hills and unusual terrain.",
+        "fr": "Des collines lilas et une station miroir flottante entourée d'anneaux lumineux.",
+        "de": "Lila Hügel und eine schwebende Spiegelstation mit leuchtenden Ringen.",
+        "es": "Colinas lilas y una estación flotante de espejos con anillos luminosos.",
+        "pt_BR": "Morros lilás e uma estação espelhada flutuante com anéis brilhantes."
+      },
+      "structure": {
+        "ru": "Зеркальная парящая станция со светящейся сферой и орбитальными кольцами.",
+        "en": "A floating mirror station with a glowing sphere and orbital rings.",
+        "fr": "Une station miroir flottante avec une sphère lumineuse et des anneaux orbitaux.",
+        "de": "Eine schwebende Spiegelstation mit einer leuchtenden Kugel und Umlaufringen.",
+        "es": "Una estación flotante de espejos con una esfera luminosa y anillos orbitales.",
+        "pt_BR": "Uma estação espelhada flutuante com uma esfera luminosa e anéis orbitais."
+      }
+    },
+    "m33_p02": {
+      "name": {
+        "ru": "Орбита",
+        "en": "Orbita",
+        "fr": "Orbita",
+        "de": "Orbita",
+        "es": "Orbita",
+        "pt_BR": "Orbita"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "neural",
+      "world": {
+        "ru": "Горы и широкое синее озеро.",
+        "en": "Mountains and a wide blue lake.",
+        "fr": "Des montagnes, un lac bleu et un observatoire flottant au-dessus de l'eau.",
+        "de": "Berge, ein blauer See und ein Observatorium, das über dem Wasser schwebt.",
+        "es": "Montañas, un lago azul y un observatorio que flota sobre el agua.",
+        "pt_BR": "Montanhas, um lago azul e um observatório flutuando sobre a água."
+      },
+      "structure": {
+        "ru": "Над водой парит учебная обсерватория с кольцами и прозрачным куполом.",
+        "en": "An educational observatory with rings and a clear dome floats above the water.",
+        "fr": "Un observatoire éducatif avec des anneaux et un dôme transparent flotte au-dessus de l'eau.",
+        "de": "Ein Lernobservatorium mit Ringen und einer klaren Kuppel schwebt über dem Wasser.",
+        "es": "Un observatorio educativo con anillos y una cúpula transparente flota sobre el agua.",
+        "pt_BR": "Um observatório educativo com anéis e um domo transparente flutua acima da água."
+      }
+    },
+    "m33_p03": {
+      "name": {
+        "ru": "Тессера",
+        "en": "Tessera",
+        "fr": "Tessera",
+        "de": "Tessera",
+        "es": "Tessera",
+        "pt_BR": "Tessera"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "neural",
+      "world": {
+        "ru": "Серые каменистые кратеры и плато.",
+        "en": "Gray rocky craters and plateaus.",
+        "fr": "Des plateaux gris et un complexe mathématique aux formes lumineuses flottantes.",
+        "de": "Graue Felsplateaus und ein schwebender Mathekomplex aus leuchtenden Formen.",
+        "es": "Mesetas grises y un centro matemático flotante de formas brillantes.",
+        "pt_BR": "Platôs cinza e um complexo matemático flutuante com formas brilhantes."
+      },
+      "structure": {
+        "ru": "Парящий математический комплекс из светящихся колец и геометрических проекций.",
+        "en": "A floating math complex of glowing rings and geometric projections.",
+        "fr": "Un complexe mathématique flottant fait d'anneaux lumineux et de projections géométriques.",
+        "de": "Ein schwebender Mathematikkomplex aus leuchtenden Ringen und geometrischen Projektionen.",
+        "es": "Un complejo matemático flotante de anillos luminosos y proyecciones geométricas.",
+        "pt_BR": "Um complexo matemático flutuante com anéis luminosos e projeções geométricas."
+      }
+    },
+    "m33_p04": {
+      "name": {
+        "ru": "Лентис",
+        "en": "Lentis",
+        "fr": "Lentis",
+        "de": "Lentis",
+        "es": "Lentis",
+        "pt_BR": "Lentis"
+      },
+      "inhabited": true,
+      "is_station": false,
+      "race": "neural",
+      "world": {
+        "ru": "Холодная вода, ледяные берега и тёмные скалы.",
+        "en": "Cold water, icy shores, and dark rocks.",
+        "fr": "Une côte glacée et une station flottante équipée d'un très grand télescope.",
+        "de": "Eisige Ufer und eine schwebende Station mit einem riesigen Teleskop.",
+        "es": "Costas heladas y una estación flotante con un telescopio enorme.",
+        "pt_BR": "Costas geladas e uma estação flutuante com um telescópio enorme."
+      },
+      "structure": {
+        "ru": "Парящая исследовательская станция с большим космическим телескопом.",
+        "en": "A floating research station with a large space telescope.",
+        "fr": "Une station de recherche flottante équipée d'un grand télescope spatial.",
+        "de": "Eine schwebende Forschungsstation mit einem großen Weltraumteleskop.",
+        "es": "Una estación de investigación flotante con un gran telescopio espacial.",
+        "pt_BR": "Uma estação de pesquisa flutuante com um grande telescópio espacial."
+      }
+    },
+    "m33_p05": {
+      "name": {
+        "ru": "Паралла",
+        "en": "Paralla"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Красно-охристые горы, валуны и широкое оранжевое небо.",
+        "en": "Ocher-red mountains, boulders, and a vast orange sky."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m33_p06": {
+      "name": {
+        "ru": "Пульса",
+        "en": "Pulsa"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Тёмные острые хребты, красные равнины и багровый туман.",
+        "en": "Dark sharp ridges, red plains, and crimson mist."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m33_p07": {
+      "name": {
+        "ru": "Эклипса",
+        "en": "Eclipsa"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Жёлто-рыжие каменные уступы и яркое солнце на тёмном небе.",
+        "en": "Yellow-rust rocky terraces and a bright sun in a dark sky."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "m33_p08": {
+      "name": {
+        "ru": "Цикла",
+        "en": "Cykla"
+      },
+      "inhabited": false,
+      "is_station": false,
+      "race": "",
+      "world": {
+        "ru": "Далёкий ледяной мир с голубыми равнинами и глубокими трещинами.",
+        "en": "A distant frozen world with blue plains and deep cracks."
+      },
+      "structure": {
+        "ru": "",
+        "en": ""
+      }
+    },
+    "st_mw": {
+      "name": {
+        "ru": "Орбитальная верфь Каллисто",
+        "en": "Callisto Orbital Shipyard",
+        "fr": "Chantier orbital de Callisto",
+        "de": "Callisto-Orbitalwerft",
+        "es": "Astillero orbital de Calisto",
+        "pt_BR": "Estaleiro orbital de Calisto"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "human",
+      "world": {
+        "ru": "Космическая инженерная верфь с ангарами, доками и ремонтными площадками.",
+        "en": "A space engineering yard with hangars, docks, and repair areas.",
+        "fr": "Une immense base orbitale avec des docks, des hangars et des ateliers de réparation.",
+        "de": "Eine große Raumwerft mit Docks, Hangars und Werkstätten für Schiffe.",
+        "es": "Un gran astillero espacial con hangares, muelles y talleres de reparación.",
+        "pt_BR": "Um grande estaleiro espacial com hangares, docas e oficinas de conserto."
+      },
+      "structure": {
+        "ru": "Здесь обслуживают и ремонтируют крупные корабли.",
+        "en": "Large ships are serviced and repaired here.",
+        "fr": "De grands vaisseaux y sont entretenus et réparés.",
+        "de": "Hier werden große Raumschiffe gewartet und repariert.",
+        "es": "Aquí se revisan y reparan grandes naves.",
+        "pt_BR": "Grandes naves recebem manutenção e são consertadas aqui."
+      }
+    },
+    "st_lmc": {
+      "name": {
+        "ru": "Лабораторный корабль «Тарантул»",
+        "en": "Tarantula Laboratory Ship",
+        "fr": "Vaisseau-laboratoire Tarentule",
+        "de": "Laborschiff Tarantel",
+        "es": "Nave laboratorio Tarántula",
+        "pt_BR": "Nave-laboratório Tarântula"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "mold",
+      "world": {
+        "ru": "Живой исследовательский корабль с влажной грибной сетью.",
+        "en": "A living research ship woven from a moist fungal network.",
+        "fr": "Un vaisseau scientifique vivant, fait de filaments, de chambres et de matières organiques.",
+        "de": "Ein lebendiges Forschungsschiff aus Fasern, Kammern und organischem Gewebe.",
+        "es": "Una nave de investigación viva, hecha de fibras, cámaras y tejidos orgánicos.",
+        "pt_BR": "Uma nave de pesquisa viva, feita de fibras, câmaras e tecidos orgânicos."
+      },
+      "structure": {
+        "ru": "Внутри работают органические биореакторы и сияют живые биокамеры.",
+        "en": "Inside are organic bioreactors and glowing living biochambers.",
+        "fr": "À l'intérieur se trouvent des bioréacteurs organiques et des biochambres vivantes et lumineuses.",
+        "de": "Im Inneren befinden sich organische Bioreaktoren und leuchtende lebende Biokammern.",
+        "es": "En el interior hay biorreactores orgánicos y biocámaras vivas y luminosas.",
+        "pt_BR": "Por dentro há biorreatores orgânicos e biocâmaras vivas e luminosas."
+      }
+    },
+    "st_smc": {
+      "name": {
+        "ru": "Живой архив",
+        "en": "Living Archive",
+        "fr": "Archives vivantes",
+        "de": "Lebendes Archiv",
+        "es": "Archivo Vivo",
+        "pt_BR": "Arquivo Vivo"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "phase",
+      "world": {
+        "ru": "Органическая станция с пористыми лотосоподобными формами.",
+        "en": "An organic station with porous lotus-like shapes.",
+        "fr": "Des chambres transparentes accueillent des formes liquides et gazeuses.",
+        "de": "Durchsichtige Kammern bieten Raum für flüssige und gasförmige Lebensformen.",
+        "es": "Cámaras transparentes para seres que pueden volverse líquidos o gaseosos.",
+        "pt_BR": "Câmaras transparentes para seres em forma líquida ou gasosa."
+      },
+      "structure": {
+        "ru": "Её прозрачные резервуары соединяют жидкостные и газовые камеры.",
+        "en": "Its transparent reservoirs connect liquid and gas chambers.",
+        "fr": "Ses réservoirs transparents relient des chambres de liquide et de gaz.",
+        "de": "Seine durchsichtigen Behälter verbinden Flüssigkeits- und Gaskammern.",
+        "es": "Sus depósitos transparentes conectan cámaras de líquido y gas.",
+        "pt_BR": "Seus reservatórios transparentes ligam câmaras de líquido e de gás."
+      }
+    },
+    "st_ngc6822": {
+      "name": {
+        "ru": "Голова Титана",
+        "en": "Titan's Head",
+        "fr": "Tête du Titan",
+        "de": "Titanenkopf",
+        "es": "Cabeza del Titán",
+        "pt_BR": "Cabeça do Titã"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "reptile",
+      "world": {
+        "ru": "Космопорт внутри огромного черепа с каменными тоннелями и доками.",
+        "en": "A spaceport within a giant skull, with stone tunnels and docks.",
+        "fr": "Un port spatial dans un crâne géant, avec des tunnels de pierre et des docks.",
+        "de": "Ein Raumhafen in einem riesigen Schädel, mit Steintunneln und Docks.",
+        "es": "Un puerto espacial dentro de un cráneo gigante, con túneles de piedra y muelles.",
+        "pt_BR": "Um porto espacial dentro de um crânio gigante, com túneis de pedra e docas."
+      },
+      "structure": {
+        "ru": "Здесь есть ангары, торговые помещения и голубые доковые кольца.",
+        "en": "There are hangars, trading areas, and blue docking rings.",
+        "fr": "On y trouve des hangars, des zones de commerce et des anneaux d'amarrage bleus.",
+        "de": "Dort gibt es Hangars, Handelsbereiche und blaue Andockringe.",
+        "es": "Hay hangares, zonas comerciales y anillos azules de atraque.",
+        "pt_BR": "Há hangares, áreas de comércio e anéis azuis de acoplagem."
+      }
+    },
+    "st_m31": {
+      "name": {
+        "ru": "Перевёрнутая пирамида",
+        "en": "Inverted Pyramid",
+        "fr": "Pyramide renversée",
+        "de": "Umgedrehte Pyramide",
+        "es": "Pirámide invertida",
+        "pt_BR": "Pirâmide invertida"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "magnetic",
+      "world": {
+        "ru": "Тёмная металлическая пирамида, обращённая вершиной вниз.",
+        "en": "A dark metal pyramid with its tip pointing downward.",
+        "fr": "Un temple de science en forme de pyramide renversée, où le métal devient outil.",
+        "de": "Ein Wissenschaftstempel in Form einer umgedrehten Pyramide. Metall wird hier zu Werkzeug.",
+        "es": "Un templo científico en forma de pirámide invertida donde el metal se transforma en herramientas.",
+        "pt_BR": "Um templo de ciência em forma de pirâmide invertida, onde o metal vira ferramenta."
+      },
+      "structure": {
+        "ru": "В храме науки металл превращается в нужные инструменты без экранов и кнопок.",
+        "en": "In this temple of science, metal forms tools without screens or buttons.",
+        "fr": "Dans ce temple de la science, le métal forme des outils sans écran ni bouton.",
+        "de": "In diesem Tempel der Wissenschaft formt Metall Werkzeuge ohne Bildschirme oder Tasten.",
+        "es": "En este templo de la ciencia, el metal forma herramientas sin pantallas ni botones.",
+        "pt_BR": "Neste templo da ciência, o metal forma ferramentas sem telas nem botões."
+      }
+    },
+    "st_m33": {
+      "name": {
+        "ru": "Последние врата",
+        "en": "Last Gates",
+        "fr": "Dernières Portes",
+        "de": "Letzte Tore",
+        "es": "Últimas Puertas",
+        "pt_BR": "Últimos Portais"
+      },
+      "inhabited": true,
+      "is_station": true,
+      "race": "neural",
+      "world": {
+        "ru": "Парящий комплекс сфер и порталов разных форм.",
+        "en": "A floating complex of spheres and portals of different shapes.",
+        "fr": "De nombreuses sphères et portes de formes différentes flottent vers le Carrefour des mondes.",
+        "de": "Kugeln und unterschiedlich geformte Portale schweben am Kreuzweg der Welten.",
+        "es": "Esferas y portales de distintas formas flotan en el Cruce de los Mundos.",
+        "pt_BR": "Esferas e portais de formatos diferentes flutuam no Encontro dos Mundos."
+      },
+      "structure": {
+        "ru": "Это путь к загадочному Перекрёстку миров.",
+        "en": "It is a passage toward the mysterious Crossroads of Worlds.",
+        "fr": "C'est un passage vers le mystérieux Carrefour des mondes.",
+        "de": "Dies ist ein Durchgang zur geheimnisvollen Kreuzung der Welten.",
+        "es": "Es un paso hacia el misterioso Cruce de los Mundos.",
+        "pt_BR": "É uma passagem para o misterioso Encontro dos Mundos."
+      }
+    }
+  }
+}

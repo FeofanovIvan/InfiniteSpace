@@ -40,7 +40,9 @@
           "habitat_notes": "Природная атмосфера, вода и существующая земная биосфера позволяют людям жить вне герметичных сооружений.",
           "natural_environment_assessment": "подтверждено только для Земли",
           "mandatory_visit": true,
-          "story_approval": "confirmed"
+          "story_approval": "confirmed",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "mw_p02",
@@ -80,14 +82,16 @@
             "environment": "сферическое помещение",
             "entity": "ИИ в форме сферы",
             "access": "мост для общения и вопросов"
-          }
+          },
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "mw_p03",
           "name_en": "Jupiter",
           "name_ru": "Юпитер",
           "type": "РЕАЛЬНАЯ ПЛАНЕТА; газовый гигант. Родительская звезда: Солнце, G2V.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": true,
           "moons": [
             "Ио",
@@ -115,14 +119,16 @@
           "habitat_notes": "Нет поверхности для проживания; сильная радиация в ближнем окружении и опасные условия в глубокой атмосфере.",
           "natural_environment_assessment": "только искусственная среда",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "mw_p04",
           "name_en": "Saturn",
           "name_ru": "Сатурн",
           "type": "РЕАЛЬНАЯ ПЛАНЕТА; газовый гигант с кольцами. Родительская звезда: Солнце, G2V.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [
             "Титан",
@@ -150,14 +156,16 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "mw_p05",
           "name_en": "Uranus",
           "name_ru": "Уран",
           "type": "РЕАЛЬНАЯ ПЛАНЕТА; ледяной гигант. Родительская звезда: Солнце, G2V.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [
             "Миранда",
@@ -185,14 +193,16 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "mw_p06",
           "name_en": "Neptune",
           "name_ru": "Нептун",
           "type": "РЕАЛЬНАЯ ПЛАНЕТА; ледяной гигант. Родительская звезда: Солнце, G2V.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [
             "Тритон",
@@ -219,14 +229,16 @@
           "habitat_notes": "Нет пригодной твёрдой поверхности; спуск в атмосферу опасен из-за ветров, давления и холода.",
           "natural_environment_assessment": "только искусственная среда",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "mw_p07",
           "name_en": "Venus",
           "name_ru": "Венера",
           "type": "РЕАЛЬНАЯ ПЛАНЕТА; каменистая, экстремально горячая. Родительская звезда: Солнце, G2V.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [],
           "unique": "Дрейфующая высотная исследовательская станция.",
@@ -249,7 +261,9 @@
           "habitat_notes": "На поверхности экстремальны жара и давление; на высотах около 50 км давление и температура умереннее, но облака содержат серную кислоту.",
           "natural_environment_assessment": "только искусственная среда",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "mw_p08",
@@ -278,7 +292,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         }
       ],
       "station": {
@@ -291,7 +307,15 @@
         "last_before_crossroads": false,
         "inhabitants": "Люди (возможны гости других цивилизаций)",
         "habitat": "Герметичные жилые модули при орбитальной верфи Каллисто",
-        "interior_view": "Интерьер огромного промышленного космического ангара с голубым потолочным освещением, трубопроводами, подвесными конструкциями и жёлтыми ограждениями. В центральной части расположен крупный серо-белый космический корабль над ремонтной платформой; вокруг многоэтажные технические галереи. Вид на Каллисто отсутствует."
+        "interior_view": "Интерьер огромного промышленного космического ангара с голубым потолочным освещением, трубопроводами, подвесными конструкциями и жёлтыми ограждениями. В центральной части расположен крупный серо-белый космический корабль над ремонтной платформой; вокруг многоэтажные технические галереи. Вид на Каллисто отсутствует.",
+        "placement": {
+          "mode": "fixed_outer_solar_system",
+          "x": -2150,
+          "y": 1850,
+          "primary_body": "Sun",
+          "gameplay_override": "User-directed relocation from Callisto orbit to outer system; not a moon satellite."
+        },
+        "accessible": true
       },
       "civilization": "Люди"
     },
@@ -307,7 +331,7 @@
           "name_en": "Aera",
           "name_ru": "Аэра",
           "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; мини-нептун с плотной атмосферой. Родительская звезда: K-звезда, вымышленная.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": true,
           "moons": [],
           "unique": "Кольцо прозрачных аэростатических городов.",
@@ -330,7 +354,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "lmc_p02",
@@ -363,7 +389,9 @@
           "habitat_notes": "Для грибоподобной сети нужны химически совместимый субстрат, энергия и контроль солёности/давления; открытый океан автоматически не подходит.",
           "natural_environment_assessment": "естественная совместимость не установлена",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "lmc_p03",
@@ -394,7 +422,9 @@
           "habitat_notes": "Углеродные сухие породы сами по себе не дают влажной питательной среды; нужны водоснабжение и биореакторы.",
           "natural_environment_assessment": "только искусственная среда при текущей модели",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "lmc_p04",
@@ -429,14 +459,16 @@
           "habitat_notes": "На открытом льду слишком холодно; подлёдное тепло возможно лишь при наличии источника энергии.",
           "natural_environment_assessment": "только искусственная среда при текущей модели",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "lmc_p05",
           "name_en": "Carbona",
           "name_ru": "Карбона",
           "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; ультрагорячий газовый гигант. Родительская звезда: F-звезда, близкая орбита.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [],
           "unique": "Автоматический сборщик проб.",
@@ -459,14 +491,16 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "lmc_p06",
           "name_en": "Lux",
           "name_ru": "Люкс",
           "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; сверхлёгкий газовый мир super-puff. Родительская звезда: K-звезда, вымышленная.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [],
           "unique": "Малая капсула в высоких атмосферных слоях.",
@@ -489,14 +523,16 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "lmc_p07",
           "name_en": "Ventra",
           "name_ru": "Вентра",
           "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; газовый гигант. Родительская звезда: G-звезда, дальняя орбита.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [
             "Дун",
@@ -525,14 +561,16 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "lmc_p08",
           "name_en": "Magneta",
           "name_ru": "Магнета",
           "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; ледяной гигант. Родительская звезда: M-звезда, дальняя орбита.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [
             "Полис"
@@ -557,7 +595,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         }
       ],
       "station": {
@@ -570,7 +610,10 @@
         "last_before_crossroads": false,
         "inhabitants": "Разумная плесень (возможны гости)",
         "habitat": "Влажные питательные биокамеры в исследовательском корабле",
-        "interior_view": "Интерьер органического лабораторного корабля заполнен переплетёнными лилово-розовыми пористыми перемычками и тонкими ветвящимися структурами, похожими на живую сеть. По всему залу расположены прозрачные сферические и цилиндрические камеры с зелёными, бирюзовыми и фиолетовыми организмоподобными образцами, соединённые светящимися трубами. В центре — крупный янтарно-золотой светящийся узел; вдали видны многоярусные арки и голубое свечение. Свободной пустой площадки в центре нет."
+        "interior_view": "Интерьер органического лабораторного корабля заполнен переплетёнными лилово-розовыми пористыми перемычками и тонкими ветвящимися структурами, похожими на живую сеть. По всему залу расположены прозрачные сферические и цилиндрические камеры с зелёными, бирюзовыми и фиолетовыми организмоподобными образцами, соединённые светящимися трубами. В центре — крупный янтарно-золотой светящийся узел; вдали видны многоярусные арки и голубое свечение. Свободной пустой площадки в центре нет.",
+        "visual_asset": "res://assets/story/tarantula_lab_ship.png",
+        "placement": "free_deep_space",
+        "accessible": true
       },
       "civilization": "Разумная плесень"
     },
@@ -612,7 +655,9 @@
           "habitat_notes": "Физическая изменчивость существ фантастична; химия, давление и температура океана не описаны достаточно, чтобы признать природную совместимость.",
           "natural_environment_assessment": "естественная совместимость не установлена",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "smc_p02",
@@ -643,7 +688,9 @@
           "habitat_notes": "Холодный сухой грунт не гарантирует устойчивого существования многокомпонентной субстанции; необходим контролируемый состав среды.",
           "natural_environment_assessment": "только искусственная среда при текущей модели",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "smc_p03",
@@ -677,7 +724,9 @@
           "habitat_notes": "Океанская и влажная среда потенциально подходит по агрегатному состоянию, но необходимые химические параметры неизвестны.",
           "natural_environment_assessment": "условно совместимо, не доказано",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "smc_p04",
@@ -707,7 +756,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "smc_p05",
@@ -740,7 +791,9 @@
           "habitat_notes": "Постоянная низкая освещённость и более умеренная температура возможны; пригодность атмосферы и химии не установлена.",
           "natural_environment_assessment": "условно совместимо только при специальных условиях",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "smc_p06",
@@ -770,7 +823,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "smc_p07",
@@ -804,14 +859,16 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "smc_p08",
           "name_en": "Biora",
           "name_ru": "Биора",
           "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; газовый гигант с обширной атмосферой. Родительская звезда: G-звезда, дальняя орбита.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [
             "Лист",
@@ -840,7 +897,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         }
       ],
       "station": {
@@ -853,7 +912,10 @@
         "last_before_crossroads": false,
         "inhabitants": "Фазовые существа (возможны гости)",
         "habitat": "Герметичные камеры разных давлений и состояний вещества",
-        "interior_view": "Внутренний зал из светлых розово-лиловых органических пористых перемычек с многочисленными круглыми окнами и прозрачными камерами. Внутри крупных полостей заметны светящиеся фиолетовые, голубые и золотистые биоподобные структуры. Под сводами проходят изогнутые мостики и переходы, внизу — тёмная водная гладь с розовыми и золотистыми светящимися цветкообразными объектами. Отдельных технических приборов контроля давления и температуры на изображении не видно."
+        "interior_view": "Внутренний зал из светлых розово-лиловых органических пористых перемычек с многочисленными круглыми окнами и прозрачными камерами. Внутри крупных полостей заметны светящиеся фиолетовые, голубые и золотистые биоподобные структуры. Под сводами проходят изогнутые мостики и переходы, внизу — тёмная водная гладь с розовыми и золотистыми светящимися цветкообразными объектами. Отдельных технических приборов контроля давления и температуры на изображении не видно.",
+        "visual_asset": "res://assets/story/living_archive_lotus.png",
+        "placement": "free_deep_space_with_haze",
+        "accessible": true
       },
       "civilization": "Фазовые существа"
     },
@@ -893,7 +955,9 @@
           "habitat_notes": "Сухость, пыль и неизвестная атмосфера не позволяют считать открытое проживание углеродных видов безопасным.",
           "natural_environment_assessment": "проверка после назначения цивилизации",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "ngc6822_p02",
@@ -926,7 +990,9 @@
           "habitat_notes": "Минералы и кристаллы не доказывают наличие воды, пищи или подходящей атмосферы.",
           "natural_environment_assessment": "проверка после назначения цивилизации",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "ngc6822_p03",
@@ -957,7 +1023,9 @@
           "habitat_notes": "Сумеречная зона потенциально снижает температурный контраст, но давление и состав воздуха неизвестны.",
           "natural_environment_assessment": "проверка после назначения цивилизации",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "ngc6822_p04",
@@ -991,7 +1059,9 @@
           "habitat_notes": "Железистые породы и магнитные аномалии не делают атмосферу пригодной для дыхания.",
           "natural_environment_assessment": "проверка после назначения цивилизации",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "ngc6822_p05",
@@ -1021,7 +1091,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "ngc6822_p06",
@@ -1054,7 +1126,9 @@
           "habitat_notes": "Соли и сухость требуют защиты для предполагаемой органической жизни.",
           "natural_environment_assessment": "проверка после назначения цивилизации",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "ngc6822_p07",
@@ -1088,7 +1162,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "ngc6822_p08",
@@ -1118,7 +1194,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         }
       ],
       "station": {
@@ -1131,7 +1209,10 @@
         "last_before_crossroads": false,
         "inhabitants": "Цивилизация не назначена (порт может быть многорасовым)",
         "habitat": "Экранированные герметичные доки и жилые отсеки внутри астероида",
-        "interior_view": "Открытый многоуровневый пиратский космопорт внутри гигантского черепообразного астероидного комплекса. Светлая костеподобная конструкция с огромными глазными проёмами и рядами длинных клыков образует верхнюю и правую части сцены; за проёмами виден фиолетово-пурпурный звёздный космос. Слева и в центре — многочисленные круглые застеклённые помещения с тёплым жёлтым светом, мосты и пандусы с ограждениями, торговые стойки под красными тентами, информационные терминалы и грузовые контейнеры. В глубине — большое круглое посадочное кольцо с голубой подсветкой; справа расположены выносные посадочные платформы с несколькими серо-синими космическими кораблями, включая крупный корабль на ближней правой площадке. Свисают красные пиратские полотнища с эмблемой черепа, у краёв видны розово-фиолетовые кристаллические образования. Персонажи не являются читаемыми центральными объектами; вид на пространство открыт, центральная зона частично занята пандусами и торговой инфраструктурой."
+        "interior_view": "Открытый многоуровневый пиратский космопорт внутри гигантского черепообразного астероидного комплекса. Светлая костеподобная конструкция с огромными глазными проёмами и рядами длинных клыков образует верхнюю и правую части сцены; за проёмами виден фиолетово-пурпурный звёздный космос. Слева и в центре — многочисленные круглые застеклённые помещения с тёплым жёлтым светом, мосты и пандусы с ограждениями, торговые стойки под красными тентами, информационные терминалы и грузовые контейнеры. В глубине — большое круглое посадочное кольцо с голубой подсветкой; справа расположены выносные посадочные платформы с несколькими серо-синими космическими кораблями, включая крупный корабль на ближней правой площадке. Свисают красные пиратские полотнища с эмблемой черепа, у краёв видны розово-фиолетовые кристаллические образования. Персонажи не являются читаемыми центральными объектами; вид на пространство открыт, центральная зона частично занята пандусами и торговой инфраструктурой.",
+        "visual_asset": "res://assets/story/titan_skull_ngc6822.png",
+        "placement": "remote_asteroid_port_with_ring",
+        "accessible": true
       },
       "civilization": "Разумные ящеры"
     },
@@ -1147,7 +1228,7 @@
           "name_en": "Lumena",
           "name_ru": "Люмена",
           "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; ультрагорячий газовый гигант. Родительская звезда: F-звезда, близкая орбита.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": true,
           "moons": [],
           "unique": "Зеркальная обсерватория на дальней орбите.",
@@ -1170,14 +1251,16 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "m31_p02",
           "name_en": "Gravis",
           "name_ru": "Гравис",
           "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; крупный газовый гигант с кольцами. Родительская звезда: G-звезда, дальняя орбита.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": true,
           "moons": [
             "Орбис",
@@ -1206,7 +1289,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "m31_p03",
@@ -1237,14 +1322,16 @@
           "habitat_notes": "Жар дневной стороны может разрушать сложную структуру; безопаснее локальные температурные градиенты и контролируемые поля.",
           "natural_environment_assessment": "условно совместимо в защищённых зонах",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "m31_p04",
           "name_en": "Helion",
           "name_ru": "Гелион",
           "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; лавовая планета. Родительская звезда: K-звезда, экстремально близкая орбита.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [],
           "unique": "Роботизированный зонд над лавовым морем.",
@@ -1267,7 +1354,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "m31_p05",
@@ -1300,7 +1389,9 @@
           "habitat_notes": "Стабильность жидкометаллических организмов зависит от температуры, химии и электромагнитного удержания.",
           "natural_environment_assessment": "только искусственная среда при текущей модели",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "m31_p06",
@@ -1334,7 +1425,9 @@
           "habitat_notes": "Местные тепловые и химические градиенты подходят по концепции расы, но прямое погружение в магму не обосновано.",
           "natural_environment_assessment": "условно совместимо в контролируемых геотермальных зонах",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "m31_p07",
@@ -1364,14 +1457,16 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "m31_p08",
           "name_en": "Quantia",
           "name_ru": "Квантия",
           "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; сверхлёгкий газовый гигант. Родительская звезда: G-звезда, вымышленная.",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [],
           "unique": "Отдалённая орбитальная квантовая лаборатория.",
@@ -1394,7 +1489,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         }
       ],
       "station": {
@@ -1407,7 +1504,10 @@
         "last_before_crossroads": false,
         "inhabitants": "Магнитная жидкометаллическая раса (возможны гости)",
         "habitat": "Изолированные металлосодержащие камеры с управляемыми полями",
-        "interior_view": "Внутри — металлические проходы, устойчивые электромагнитные секции и архивные залы."
+        "interior_view": "Внутри — металлические проходы, устойчивые электромагнитные секции и архивные залы.",
+        "visual_asset": "res://assets/story/inverted_pyramid_m31.png",
+        "placement": "independent_outer_sector_structure",
+        "accessible": true
       },
       "civilization": "Магнитная жидкометаллическая цивилизация"
     },
@@ -1447,7 +1547,9 @@
           "habitat_notes": "Нервной ткани нужны температурная стабильность, питание и защита; две звезды не делают открытое проживание безопасным.",
           "natural_environment_assessment": "только искусственная среда",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "m33_p02",
@@ -1482,7 +1584,9 @@
           "habitat_notes": "Состав атмосферы не установлен, а нейронные тела нуждаются в постоянной питательной и защитной среде.",
           "natural_environment_assessment": "только искусственная среда",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "m33_p03",
@@ -1515,7 +1619,9 @@
           "habitat_notes": "Каменистый ландшафт пригоден для строительства, но не заменяет контролируемой биосреды.",
           "natural_environment_assessment": "только искусственная среда",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "m33_p04",
@@ -1546,7 +1652,9 @@
           "habitat_notes": "Холодная наружная среда требует надёжного нагрева, экранирования и питательной циркуляции.",
           "natural_environment_assessment": "только искусственная среда",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": true
         },
         {
           "id": "m33_p05",
@@ -1576,14 +1684,16 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "m33_p06",
           "name_en": "Pulsa",
           "name_ru": "Пульса",
           "type": "ВЫМЫШЛЕННАЯ ПЛАНЕТА / реальный научный тип; сухой мир около пульсара. Родительская звезда: Пульсар (вымышленная система).",
-          "landing": "orbit",
+          "landing": "landing",
           "story": false,
           "moons": [
             "Тон"
@@ -1608,7 +1718,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "m33_p07",
@@ -1641,7 +1753,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         },
         {
           "id": "m33_p08",
@@ -1671,7 +1785,9 @@
           "habitat": null,
           "natural_environment_assessment": "No approved settlement; does not imply lack of indigenous life",
           "mandatory_visit": false,
-          "story_approval": "working_or_optional"
+          "story_approval": "working_or_optional",
+          "landable": true,
+          "inhabited": false
         }
       ],
       "station": {
@@ -1684,7 +1800,10 @@
         "last_before_crossroads": true,
         "inhabitants": "Нейронные существа (возможны гости)",
         "habitat": "Защищённые биокапсулы и переходные герметичные отсеки",
-        "interior_view": "Внутри — защищённые камеры, панели дистанционного управления и инженерные портальные конструкции."
+        "interior_view": "Внутри — защищённые камеры, панели дистанционного управления и инженерные портальные конструкции.",
+        "visual_asset": "res://assets/story/last_gate_m33.png",
+        "placement": "free_outer_sector_final_gateway_before_crossroads",
+        "accessible": true
       },
       "civilization": "Нейронные существа"
     },
@@ -1697,8 +1816,8 @@
       "planets": [],
       "station": null,
       "gateway_from": "m33",
-      "status": "marker_only",
-      "note": "Not a seventh galaxy. Fictional separate destination through the Last Gate.",
+      "status": "living_world_center",
+      "note": "Special finale region with a central living liquid world and surrounding nebulae.",
       "living_world": {
         "id": "crossroads_living_world",
         "species": "Единая живая жидкая планета",

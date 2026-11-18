@@ -1,0 +1,57 @@
+{
+  "source_name": "Alien Biomechanical Starship Showcase.png",
+  "source_sha256": "53046d5217f7230a0063aa107ff65ae4695c4357615c712692001c3b643b32da",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "method": "connected components in source alpha >32, dilated 6px, original RGBA retained, no generated/repainted pixels",
+  "ordering": "top-left,top-right,centre,bottom-left,bottom-right",
+  "ships": [
+    {
+      "name": "lmc_merchant_01.png",
+      "role": "merchant",
+      "size": [
+        908,
+        439
+      ],
+      "sha256": "2124b4221af3d115d431b2d1ae95bf404078f858205594e10f1c6e1e8711b826"
+    },
+    {
+      "name": "lmc_shuttle_02.png",
+      "role": "shuttle",
+      "size": [
+        627,
+        428
+      ],
+      "sha256": "320147585f0d5e2a0897b96ab6834eebb79f5e80aab050731d1414bbae0141b5"
+    },
+    {
+      "name": "lmc_freighter_03.png",
+      "role": "freighter",
+      "size": [
+        1280,
+        329
+      ],
+      "sha256": "2ac3e5fa00d70588f9ec0ec03ccb79c337651ff1e746c33e97edd65f4846f5c1"
+    },
+    {
+      "name": "lmc_explorer_04.png",
+      "role": "explorer",
+      "size": [
+        853,
+        459
+      ],
+      "sha256": "bb2c9378f480da53054dd8512f29bfad8ffc9b3145fbb42b84f80de387943077"
+    },
+    {
+      "name": "lmc_escort_05.png",
+      "role": "escort",
+      "size": [
+        811,
+        451
+      ],
+      "sha256": "09bc6557411017a93b0b4ac99c837a2fb6b760f52444203b63e5416e6a7efb96"
+    }
+  ]
+}

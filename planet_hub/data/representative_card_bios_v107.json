@@ -1,0 +1,584 @@
+{
+  "schema_version": 107,
+  "source": "Exact localized work sentences from user-supplied MIKA v106; one sentence per card, no newly invented backstory",
+  "languages": [
+    "ru",
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt_BR"
+  ],
+  "characters": {
+    "mw_p01": {
+      "character_id": "npc_mw_p01",
+      "name": {
+        "ru": "Ари",
+        "en": "Ari",
+        "fr": "Ari",
+        "de": "Ari",
+        "es": "Ari",
+        "pt_BR": "Ari"
+      },
+      "bio": {
+        "ru": "Я наблюдаю за водой и зелёными садами возле земного научного города.",
+        "en": "I study the water and gardens beside Earth's research city.",
+        "fr": "J'observe l'eau et les jardins près de notre ville scientifique sur Terre.",
+        "de": "Ich beobachte das Wasser und die Gärten bei unserer Forschungsstadt auf der Erde.",
+        "es": "Observo el agua y los jardines junto a nuestra ciudad científica de la Tierra.",
+        "pt_BR": "Eu observo a água e os jardins perto da nossa cidade de pesquisas na Terra."
+      }
+    },
+    "mw_p02": {
+      "character_id": "npc_mw_p02",
+      "name": {
+        "ru": "Нэви",
+        "en": "Nevi",
+        "fr": "Nevi",
+        "de": "Nevi",
+        "es": "Nevi",
+        "pt_BR": "Nevi"
+      },
+      "bio": {
+        "ru": "Под красной пылью Марса я изучаю огромный шарообразный компьютер.",
+        "en": "I work beside the spherical computer core deep below Mars's red dust.",
+        "fr": "Sous la poussière rouge de Mars, j'étudie un énorme ordinateur tout rond.",
+        "de": "Unter dem roten Marsstaub erforsche ich einen riesigen kugelförmigen Computer.",
+        "es": "Bajo el polvo rojo de Marte, estudio una computadora enorme y redonda.",
+        "pt_BR": "Debaixo da poeira vermelha de Marte, estudo um computador enorme e redondo."
+      }
+    },
+    "mw_p03": {
+      "character_id": "npc_mw_p03",
+      "name": {
+        "ru": "Реми",
+        "en": "Remi",
+        "fr": "Remi",
+        "de": "Remi",
+        "es": "Remi",
+        "pt_BR": "Remi"
+      },
+      "bio": {
+        "ru": "Я наблюдаю за полосами облаков Юпитера с защищённой станции.",
+        "en": "I watch Jupiter's striped clouds from our protected floating station.",
+        "fr": "J'observe les bandes de nuages de Jupiter depuis une station protégée.",
+        "de": "Ich beobachte Jupiters Wolkenstreifen von unserer geschützten Station.",
+        "es": "Observo las franjas de nubes de Júpiter desde una estación protegida.",
+        "pt_BR": "Eu observo as faixas de nuvens de Júpiter de uma estação protegida."
+      }
+    },
+    "mw_p06": {
+      "character_id": "npc_mw_p06",
+      "name": {
+        "ru": "Сэми",
+        "en": "Semi",
+        "fr": "Semi",
+        "de": "Semi",
+        "es": "Semi",
+        "pt_BR": "Semi"
+      },
+      "bio": {
+        "ru": "Я измеряю ветер над синими облаками Нептуна.",
+        "en": "I measure powerful winds above Neptune's blue clouds.",
+        "fr": "Je mesure les vents au-dessus des nuages bleus de Neptune.",
+        "de": "Über den blauen Wolken Neptuns messe ich die starken Winde.",
+        "es": "Mido los vientos sobre las nubes azules de Neptuno.",
+        "pt_BR": "Eu meço os ventos acima das nuvens azuis de Netuno."
+      }
+    },
+    "mw_p07": {
+      "character_id": "npc_mw_p07",
+      "name": {
+        "ru": "Кэри",
+        "en": "Keri",
+        "fr": "Keri",
+        "de": "Keri",
+        "es": "Keri",
+        "pt_BR": "Keri"
+      },
+      "bio": {
+        "ru": "Я проверяю защитный купол станции на очень горячей Венере.",
+        "en": "I inspect the protective dome of our station on hot Venus.",
+        "fr": "Je vérifie le dôme qui protège notre station sur Vénus, une planète brûlante.",
+        "de": "Ich prüfe die Schutzkuppel unserer Station auf der heißen Venus.",
+        "es": "Reviso la cúpula que protege la estación en el caluroso Venus.",
+        "pt_BR": "Eu verifico a cúpula que protege nossa estação em Vênus, onde faz muito calor."
+      }
+    },
+    "st_mw": {
+      "character_id": "npc_st_mw",
+      "name": {
+        "ru": "Эви",
+        "en": "Evi",
+        "fr": "Evi",
+        "de": "Evi",
+        "es": "Evi",
+        "pt_BR": "Evi"
+      },
+      "bio": {
+        "ru": "Я проверяю и чиню корабли в доках орбитальной верфи Каллисто.",
+        "en": "I inspect ships and repair parts inside Callisto's orbital docks.",
+        "fr": "Je vérifie et répare les vaisseaux dans les docks de Callisto.",
+        "de": "In Callistos Docks untersuche und repariere ich Raumschiffe.",
+        "es": "Reviso y reparo naves en los muelles orbitales de Calisto.",
+        "pt_BR": "Eu verifico e conserto naves nas docas orbitais de Calisto."
+      }
+    },
+    "lmc_p02": {
+      "character_id": "npc_lmc_p02",
+      "name": {
+        "ru": "Номи",
+        "en": "Nomi",
+        "fr": "Nomi",
+        "de": "Nomi",
+        "es": "Nomi",
+        "pt_BR": "Nomi"
+      },
+      "bio": {
+        "ru": "Мои живые нити чувствуют волны океана Таласа.",
+        "en": "I listen to waves through the living fungal bridges of Thalas.",
+        "fr": "Mes filaments vivants ressentent les vagues sur Thalas.",
+        "de": "Meine lebenden Fasern spüren die Wellen im Ozean von Thalas.",
+        "es": "Mis fibras vivas sienten las olas del océano de Thalas.",
+        "pt_BR": "Minhas fibras vivas sentem as ondas do oceano de Thalas."
+      }
+    },
+    "lmc_p03": {
+      "character_id": "npc_lmc_p03",
+      "name": {
+        "ru": "Миори",
+        "en": "Miori",
+        "fr": "Miori",
+        "de": "Miori",
+        "es": "Miori",
+        "pt_BR": "Miori"
+      },
+      "bio": {
+        "ru": "Я помогаю живым куполам расти среди тёмных скал Молии.",
+        "en": "I help living biodomes grow among Molia's dark mineral rocks.",
+        "fr": "J'aide les biodômes vivants à pousser parmi les roches sombres de Molia.",
+        "de": "Ich helfe lebenden Kuppeln, zwischen den dunklen Felsen von Molia zu wachsen.",
+        "es": "Ayudo a crecer a las cúpulas vivas entre las rocas oscuras de Molia.",
+        "pt_BR": "Eu ajudo domos vivos a crescer entre as rochas escuras de Molia."
+      }
+    },
+    "lmc_p04": {
+      "character_id": "npc_lmc_p04",
+      "name": {
+        "ru": "Ломи",
+        "en": "Lomi",
+        "fr": "Lomi",
+        "de": "Lomi",
+        "es": "Lomi",
+        "pt_BR": "Lomi"
+      },
+      "bio": {
+        "ru": "Мои волокна чувствуют малейшее движение льда на Крионе.",
+        "en": "I sense tiny movements in the blue ice near Cryona's shelters.",
+        "fr": "Mes fibres perçoivent les moindres mouvements de la glace sur Cryona.",
+        "de": "Meine Fasern spüren winzige Bewegungen im Eis auf Cryona.",
+        "es": "Mis fibras sienten hasta el movimiento más pequeño del hielo en Cryona.",
+        "pt_BR": "Minhas fibras percebem até os menores movimentos do gelo em Cryona."
+      }
+    },
+    "st_lmc": {
+      "character_id": "npc_st_lmc",
+      "name": {
+        "ru": "Сори",
+        "en": "Sori",
+        "fr": "Sori",
+        "de": "Sori",
+        "es": "Sori",
+        "pt_BR": "Sori"
+      },
+      "bio": {
+        "ru": "Я забочусь о живых коридорах и биокамерах корабля «Тарантул».",
+        "en": "I care for the living corridors and biochambers aboard Tarantula.",
+        "fr": "Je prends soin des couloirs vivants et des chambres du vaisseau Tarentule.",
+        "de": "Ich kümmere mich um die lebenden Gänge und Kammern des Schiffs Tarantel.",
+        "es": "Cuido los pasillos vivos y las cámaras de la nave Tarántula.",
+        "pt_BR": "Eu cuido dos corredores vivos e das câmaras da nave Tarântula."
+      }
+    },
+    "smc_p01": {
+      "character_id": "npc_smc_p01",
+      "name": {
+        "ru": "Аэри",
+        "en": "Aeri",
+        "fr": "Aeri",
+        "de": "Aeri",
+        "es": "Aeri",
+        "pt_BR": "Aeri"
+      },
+      "bio": {
+        "ru": "Я наблюдаю за прозрачными арками, поднимающимися из океана Океи.",
+        "en": "I study transparent water arches rising from Okea's ocean.",
+        "fr": "J'observe les arches transparentes qui montent de l'océan d'Okea.",
+        "de": "Ich beobachte die durchsichtigen Bögen, die aus Okeas Meer aufsteigen.",
+        "es": "Observo los arcos transparentes que suben del océano de Okea.",
+        "pt_BR": "Eu observo os arcos transparentes que saem do oceano de Okea."
+      }
+    },
+    "smc_p02": {
+      "character_id": "npc_smc_p02",
+      "name": {
+        "ru": "Или",
+        "en": "Ili",
+        "fr": "Ili",
+        "de": "Ili",
+        "es": "Ili",
+        "pt_BR": "Ili"
+      },
+      "bio": {
+        "ru": "Я изучаю отражения красных гор в прозрачных куполах Целы.",
+        "en": "I watch red mountains reflected in Cela's clear liquid domes.",
+        "fr": "J'observe les montagnes rouges dans les dômes transparents de Tsela.",
+        "de": "Ich sehe die roten Berge in den durchsichtigen Kuppeln von Tsela.",
+        "es": "Observo las montañas rojas reflejadas en las cúpulas de Tsela.",
+        "pt_BR": "Eu observo as montanhas vermelhas refletidas nos domos de Tsela."
+      }
+    },
+    "smc_p03": {
+      "character_id": "npc_smc_p03",
+      "name": {
+        "ru": "Ори",
+        "en": "Ori",
+        "fr": "Ori",
+        "de": "Ori",
+        "es": "Ori",
+        "pt_BR": "Ori"
+      },
+      "bio": {
+        "ru": "Я изучаю текучие башни и водные трещины Геноры.",
+        "en": "I study the flowing towers and watery fissures of Genora.",
+        "fr": "J'étudie les tours fluides et les fissures remplies d'eau de Genora.",
+        "de": "Ich erforsche die fließenden Türme und Wasserspalten von Genora.",
+        "es": "Estudio las torres fluidas y las grietas de agua de Genora.",
+        "pt_BR": "Eu estudo as torres que fluem e as fendas de água de Genora."
+      }
+    },
+    "smc_p05": {
+      "character_id": "npc_smc_p05",
+      "name": {
+        "ru": "Кэо",
+        "en": "Keo",
+        "fr": "Keo",
+        "de": "Keo",
+        "es": "Keo",
+        "pt_BR": "Keo"
+      },
+      "bio": {
+        "ru": "Я изучаю туманные переходы среди тёмных скал Спиры.",
+        "en": "I explore misty passages among Spira's dark rocks.",
+        "fr": "J'explore les passages brumeux parmi les roches sombres de Spira.",
+        "de": "Ich erkunde neblige Wege zwischen Spiras dunklen Felsen.",
+        "es": "Exploro caminos de niebla entre las rocas oscuras de Spira.",
+        "pt_BR": "Eu exploro caminhos de névoa entre as rochas escuras de Spira."
+      }
+    },
+    "st_smc": {
+      "character_id": "npc_st_smc",
+      "name": {
+        "ru": "Лиэ",
+        "en": "Lie",
+        "fr": "Lie",
+        "de": "Lie",
+        "es": "Lie",
+        "pt_BR": "Lie"
+      },
+      "bio": {
+        "ru": "Я берегу истории нашей цивилизации в прозрачных камерах Живого архива.",
+        "en": "I protect memories inside the Archive's clear liquid and gas chambers.",
+        "fr": "Je protège les récits de notre peuple dans les chambres transparentes des Archives.",
+        "de": "Ich bewahre unsere Geschichten in den durchsichtigen Kammern des Archivs.",
+        "es": "Conservo historias en las cámaras transparentes del Archivo Vivo.",
+        "pt_BR": "Eu guardo histórias nas câmaras transparentes do Arquivo Vivo."
+      }
+    },
+    "ngc6822_p01": {
+      "character_id": "npc_ngc6822_p01",
+      "name": {
+        "ru": "Зери",
+        "en": "Zeri",
+        "fr": "Zeri",
+        "de": "Zeri",
+        "es": "Zeri",
+        "pt_BR": "Zeri"
+      },
+      "bio": {
+        "ru": "Я забочусь о садах внутри защищённого города-кольца на Археоне.",
+        "en": "I care for green gardens inside Archeon's sealed ring city.",
+        "fr": "Je veille sur les jardins à l'intérieur de notre ville en anneau, sur Archeon.",
+        "de": "Ich kümmere mich um die Gärten in Archeons geschützter Ringstadt.",
+        "es": "Cuido los jardines dentro de la ciudad circular de Archeon.",
+        "pt_BR": "Eu cuido dos jardins dentro da cidade em anel de Archeon."
+      }
+    },
+    "ngc6822_p02": {
+      "character_id": "npc_ngc6822_p02",
+      "name": {
+        "ru": "Тэви",
+        "en": "Tevi",
+        "fr": "Tevi",
+        "de": "Tevi",
+        "es": "Tevi",
+        "pt_BR": "Tevi"
+      },
+      "bio": {
+        "ru": "Я составляю карту пещер и защищённых куполов Кварии.",
+        "en": "I map mineral caves and the sheltered domes of Quaria.",
+        "fr": "Je dessine la carte des grottes et des dômes de Quaria.",
+        "de": "Ich zeichne Karten der Höhlen und geschützten Kuppeln von Quaria.",
+        "es": "Hago mapas de las cuevas y cúpulas protegidas de Quaria.",
+        "pt_BR": "Eu faço mapas das cavernas e dos domos protegidos de Quaria."
+      }
+    },
+    "ngc6822_p03": {
+      "character_id": "npc_ngc6822_p03",
+      "name": {
+        "ru": "Руни",
+        "en": "Runi",
+        "fr": "Runi",
+        "de": "Runi",
+        "es": "Runi",
+        "pt_BR": "Runi"
+      },
+      "bio": {
+        "ru": "Я слежу за сигналами кораблей в сумеречном порту Нокты.",
+        "en": "I watch the ship signals in Nocta's twilight spaceport.",
+        "fr": "Je surveille les signaux des vaisseaux dans le port sombre de Nocta.",
+        "de": "Ich beobachte die Schiffssignale im dämmrigen Raumhafen von Nocta.",
+        "es": "Vigilo las señales de las naves en el puerto al atardecer de Nocta.",
+        "pt_BR": "Eu observo os sinais das naves no porto de Nocta, onde o céu é escuro."
+      }
+    },
+    "ngc6822_p04": {
+      "character_id": "npc_ngc6822_p04",
+      "name": {
+        "ru": "Дэри",
+        "en": "Deri",
+        "fr": "Deri",
+        "de": "Deri",
+        "es": "Deri",
+        "pt_BR": "Deri"
+      },
+      "bio": {
+        "ru": "Я проверяю закрытые трубы для перевозки минералов на Ферре.",
+        "en": "I monitor the protected mineral transport lines on Ferra.",
+        "fr": "Je vérifie les conduites qui transportent les minéraux sur Ferra.",
+        "de": "Ich prüfe die geschützten Leitungen für Minerale auf Ferra.",
+        "es": "Reviso los tubos que transportan minerales por Ferra.",
+        "pt_BR": "Eu verifico os tubos que carregam minerais em Ferra."
+      }
+    },
+    "ngc6822_p06": {
+      "character_id": "npc_ngc6822_p06",
+      "name": {
+        "ru": "Сэри",
+        "en": "Seri",
+        "fr": "Seri",
+        "de": "Seri",
+        "es": "Seri",
+        "pt_BR": "Seri"
+      },
+      "bio": {
+        "ru": "Я сохраняю старые записи путешественников в ступенчатом архиве Руны.",
+        "en": "I preserve old explorer records inside Runa's stepped archive.",
+        "fr": "Je garde les anciens récits de voyage dans les archives en escalier de Runa.",
+        "de": "Im Stufenarchiv von Runa bewahre ich alte Reiseberichte auf.",
+        "es": "Guardo los relatos antiguos en el archivo escalonado de Runa.",
+        "pt_BR": "Eu guardo relatos antigos no arquivo de grandes degraus de Runa."
+      }
+    },
+    "st_ngc6822": {
+      "character_id": "npc_st_ngc6822",
+      "name": {
+        "ru": "Они",
+        "en": "Oni",
+        "fr": "Oni",
+        "de": "Oni",
+        "es": "Oni",
+        "pt_BR": "Oni"
+      },
+      "bio": {
+        "ru": "Я помогаю путешественникам проходить по каменным тоннелям «Головы Титана».",
+        "en": "I help visitors find safe passages through Titan's Head spaceport.",
+        "fr": "J'aide les visiteurs à traverser les tunnels de pierre de la Tête du Titan.",
+        "de": "Ich zeige Gästen sichere Wege durch die Steintunnel im Titanenkopf.",
+        "es": "Ayudo a visitantes a recorrer los túneles de piedra de la Cabeza del Titán.",
+        "pt_BR": "Eu ajudo visitantes a passar pelos túneis de pedra da Cabeça do Titã."
+      }
+    },
+    "m31_p03": {
+      "character_id": "npc_m31_p03",
+      "name": {
+        "ru": "Атри",
+        "en": "Atri",
+        "fr": "Atri",
+        "de": "Atri",
+        "es": "Atri",
+        "pt_BR": "Atri"
+      },
+      "bio": {
+        "ru": "Я изучаю меняющиеся металлические арки лабораторий Фазиса.",
+        "en": "I study shifting metal arches in Phasis's mirrored laboratories.",
+        "fr": "J'observe les arches métalliques changeantes des laboratoires de Phasis.",
+        "de": "Ich untersuche die beweglichen Metallbögen in den Laboren von Phasis.",
+        "es": "Estudio los arcos de metal que cambian en los laboratorios de Phasis.",
+        "pt_BR": "Eu estudo os arcos de metal que mudam de forma nos laboratórios de Phasis."
+      }
+    },
+    "m31_p05": {
+      "character_id": "npc_m31_p05",
+      "name": {
+        "ru": "Нэри",
+        "en": "Neri",
+        "fr": "Neri",
+        "de": "Neri",
+        "es": "Neri",
+        "pt_BR": "Neri"
+      },
+      "bio": {
+        "ru": "Я проверяю равновесие большой тёмной сферы над городом Синта.",
+        "en": "I check the balance of the dark sphere floating above Sinta's city.",
+        "fr": "Je vérifie la grande sphère sombre qui flotte au-dessus de la cité de Sinta.",
+        "de": "Ich prüfe die große dunkle Kugel, die über der Stadt Sinta schwebt.",
+        "es": "Reviso la enorme esfera oscura que flota sobre la ciudad de Sinta.",
+        "pt_BR": "Eu verifico a enorme esfera escura que flutua acima da cidade de Sinta."
+      }
+    },
+    "m31_p06": {
+      "character_id": "npc_m31_p06",
+      "name": {
+        "ru": "Кори",
+        "en": "Kori",
+        "fr": "Kori",
+        "de": "Kori",
+        "es": "Kori",
+        "pt_BR": "Kori"
+      },
+      "bio": {
+        "ru": "Я изучаю чёрную перевёрнутую пирамиду над горячими разломами Геоны.",
+        "en": "I study the dark inverted pyramid above Geona's volcanic vents.",
+        "fr": "J'étudie la pyramide noire renversée au-dessus des fissures chaudes de Geona.",
+        "de": "Ich beobachte die umgedrehte schwarze Pyramide über Geonas heißen Spalten.",
+        "es": "Estudio la pirámide negra invertida sobre las grietas calientes de Geona.",
+        "pt_BR": "Eu estudo a pirâmide preta de cabeça para baixo acima das fendas quentes de Geona."
+      }
+    },
+    "st_m31": {
+      "character_id": "npc_st_m31",
+      "name": {
+        "ru": "Вэли",
+        "en": "Veli",
+        "fr": "Veli",
+        "de": "Veli",
+        "es": "Veli",
+        "pt_BR": "Veli"
+      },
+      "bio": {
+        "ru": "В храме-пирамиде я создаю инструменты из металла, который меняет форму.",
+        "en": "I work with transforming metal inside the quiet science temple.",
+        "fr": "Dans ce temple-pyramide, je crée des instruments avec un métal qui change de forme.",
+        "de": "In diesem Pyramidentempel forme ich Werkzeuge aus wandelbarem Metall.",
+        "es": "En este templo, creo instrumentos de metal que cambia de forma.",
+        "pt_BR": "Neste templo, eu crio ferramentas com um metal que muda de forma."
+      }
+    },
+    "m33_p01": {
+      "character_id": "npc_m33_p01",
+      "name": {
+        "ru": "Эну",
+        "en": "Enu",
+        "fr": "Enu",
+        "de": "Enu",
+        "es": "Enu",
+        "pt_BR": "Enu"
+      },
+      "bio": {
+        "ru": "Я собираю и сравниваю воспоминания на парящей зеркальной станции Светары.",
+        "en": "I study remembered patterns in Svetara's mirrored floating station.",
+        "fr": "Je compare les souvenirs dans la station miroir flottante de Svetara.",
+        "de": "Ich vergleiche Erinnerungen auf der schwebenden Spiegelstation von Svetara.",
+        "es": "Comparo recuerdos en la estación espejo que flota sobre Svetara.",
+        "pt_BR": "Eu comparo lembranças na estação espelhada que flutua sobre Svetara."
+      }
+    },
+    "m33_p02": {
+      "character_id": "npc_m33_p02",
+      "name": {
+        "ru": "Нави",
+        "en": "Navi",
+        "fr": "Navi",
+        "de": "Navi",
+        "es": "Navi",
+        "pt_BR": "Navi"
+      },
+      "bio": {
+        "ru": "Я помогаю юным исследователям смотреть на небо в обсерватории Орбиты.",
+        "en": "I teach young explorers to compare shapes at Orbita's observatory.",
+        "fr": "J'aide les jeunes à observer le ciel depuis l'observatoire d'Orbita.",
+        "de": "Im Observatorium von Orbita helfe ich jungen Wesen, den Himmel zu beobachten.",
+        "es": "Ayudo a los pequeños a mirar el cielo desde el observatorio de Orbita.",
+        "pt_BR": "Eu ajudo crianças a observar o céu no observatório de Orbita."
+      }
+    },
+    "m33_p03": {
+      "character_id": "npc_m33_p03",
+      "name": {
+        "ru": "Эли",
+        "en": "Eli",
+        "fr": "Eli",
+        "de": "Eli",
+        "es": "Eli",
+        "pt_BR": "Eli"
+      },
+      "bio": {
+        "ru": "В математическом комплексе Тессеры я ищу закономерности среди фигур.",
+        "en": "I study number and shape patterns at Tessera's floating math complex.",
+        "fr": "Dans le complexe mathématique de Tessera, je cherche l'ordre des formes.",
+        "de": "Im Mathekomplex von Tessera suche ich Muster aus Formen und Zahlen.",
+        "es": "En el centro matemático de Tessera, busco patrones de formas y números.",
+        "pt_BR": "No complexo matemático de Tessera, procuro padrões de formas e números."
+      }
+    },
+    "m33_p04": {
+      "character_id": "npc_m33_p04",
+      "name": {
+        "ru": "Луми",
+        "en": "Lumi",
+        "fr": "Lumi",
+        "de": "Lumi",
+        "es": "Lumi",
+        "pt_BR": "Lumi"
+      },
+      "bio": {
+        "ru": "Я изучаю далёкие объекты через большой телескоп Лентиса.",
+        "en": "I look toward distant space through Lentis's enormous telescope.",
+        "fr": "J'explore l'espace avec le grand télescope de Lentis.",
+        "de": "Mit dem großen Teleskop von Lentis erforsche ich den fernen Weltraum.",
+        "es": "Con el gran telescopio de Lentis observo objetos muy lejanos.",
+        "pt_BR": "Eu observo objetos bem distantes com o grande telescópio de Lentis."
+      }
+    },
+    "st_m33": {
+      "character_id": "npc_st_m33",
+      "name": {
+        "ru": "Эон",
+        "en": "Eon",
+        "fr": "Eon",
+        "de": "Eon",
+        "es": "Eon",
+        "pt_BR": "Eon"
+      },
+      "bio": {
+        "ru": "Я слежу за порталами разных форм на пути к Перекрёстку миров.",
+        "en": "I watch the different portal shapes on the path to the Crossroads.",
+        "fr": "Je veille sur les portails de différentes formes menant au Carrefour des mondes.",
+        "de": "Ich beobachte die verschieden geformten Portale zum Kreuzweg der Welten.",
+        "es": "Vigilo los portales de distintas formas hacia el Cruce de los Mundos.",
+        "pt_BR": "Eu observo portais de várias formas no caminho para o Encontro dos Mundos."
+      }
+    }
+  }
+}

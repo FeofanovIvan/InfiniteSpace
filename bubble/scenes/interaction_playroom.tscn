@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://bubble/scripts/interaction_playroom.gd" id="1_room"]
+[ext_resource type="PackedScene" path="res://bubble/scenes/bubble_character.tscn" id="2_bubble"]
+[ext_resource type="PackedScene" path="res://bubble/scenes/cosmo_ball.tscn" id="3_ball"]
+[ext_resource type="Script" path="res://bubble/scripts/shower_play.gd" id="4_shower"]
+[ext_resource type="Script" path="res://bubble/scripts/playroom_gas_fx.gd" id="5_gas"]
+
+[node name="BubbleInteractivePlayroom" type="Node2D"]
+script = ExtResource("1_room")
+
+[node name="Bubble" parent="." instance=ExtResource("2_bubble")]
+position = Vector2(970, 533)
+scale = Vector2(0.66, 0.66)
+
+[node name="Shower" type="Node2D" parent="."]
+script = ExtResource("4_shower")
+
+[node name="GasFX" type="Node2D" parent="."]
+script = ExtResource("5_gas")
+
+[node name="CosmoBall" parent="." instance=ExtResource("3_ball")]
+position = Vector2(522, 676)
+
+[node name="HUD" type="CanvasLayer" parent="."]

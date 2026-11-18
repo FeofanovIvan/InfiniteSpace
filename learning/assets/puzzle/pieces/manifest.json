@@ -1,0 +1,74 @@
+{
+  "kitten": {
+    "rows": 3,
+    "cols": 5,
+    "image_w": 900,
+    "image_h": 506,
+    "cell_w": 180.0,
+    "cell_h": 168.66666666666666,
+    "pad": 54.0
+  },
+  "amusement_park": {
+    "rows": 3,
+    "cols": 4,
+    "image_w": 900,
+    "image_h": 675,
+    "cell_w": 225.0,
+    "cell_h": 225.0,
+    "pad": 72.0
+  },
+  "fire_truck": {
+    "rows": 3,
+    "cols": 4,
+    "image_w": 900,
+    "image_h": 600,
+    "cell_w": 225.0,
+    "cell_h": 200.0,
+    "pad": 64.0
+  },
+  "rocket": {
+    "rows": 3,
+    "cols": 4,
+    "image_w": 900,
+    "image_h": 600,
+    "cell_w": 225.0,
+    "cell_h": 200.0,
+    "pad": 64.0
+  },
+  "fish": {
+    "rows": 3,
+    "cols": 4,
+    "image_w": 900,
+    "image_h": 720,
+    "cell_w": 225.0,
+    "cell_h": 240.0,
+    "pad": 72.0
+  },
+  "safari": {
+    "rows": 3,
+    "cols": 4,
+    "image_w": 900,
+    "image_h": 600,
+    "cell_w": 225.0,
+    "cell_h": 200.0,
+    "pad": 64.0
+  },
+  "tractor": {
+    "rows": 3,
+    "cols": 4,
+    "image_w": 900,
+    "image_h": 600,
+    "cell_w": 225.0,
+    "cell_h": 200.0,
+    "pad": 64.0
+  },
+  "puppy": {
+    "rows": 3,
+    "cols": 5,
+    "image_w": 900,
+    "image_h": 506,
+    "cell_w": 180.0,
+    "cell_h": 168.66666666666666,
+    "pad": 54.0
+  }
+}

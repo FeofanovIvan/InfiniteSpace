@@ -1,0 +1,110 @@
+{
+  "youtube_16_9": {
+    "screen": [
+      1920,
+      1080
+    ],
+    "cover_scale": 1.5,
+    "canvas": [
+      1920.0,
+      1080.0
+    ],
+    "frame_position": [
+      0.0,
+      0.0
+    ],
+    "fullscreen": true,
+    "crop_x_percent": 0.0,
+    "crop_y_percent": 0.0
+  },
+  "ultrawide_21_9": {
+    "screen": [
+      2520,
+      1080
+    ],
+    "cover_scale": 1.96875,
+    "canvas": [
+      2520.0,
+      1417.5
+    ],
+    "frame_position": [
+      0.0,
+      -168.75
+    ],
+    "fullscreen": true,
+    "crop_x_percent": 0.0,
+    "crop_y_percent": 23.81
+  },
+  "phone_20_9": {
+    "screen": [
+      2400,
+      1080
+    ],
+    "cover_scale": 1.875,
+    "canvas": [
+      2400.0,
+      1350.0
+    ],
+    "frame_position": [
+      0.0,
+      -135.0
+    ],
+    "fullscreen": true,
+    "crop_x_percent": 0.0,
+    "crop_y_percent": 20.0
+  },
+  "laptop_16_10": {
+    "screen": [
+      1440,
+      900
+    ],
+    "cover_scale": 1.25,
+    "canvas": [
+      1600.0,
+      900.0
+    ],
+    "frame_position": [
+      -80.0,
+      0.0
+    ],
+    "fullscreen": true,
+    "crop_x_percent": 10.0,
+    "crop_y_percent": 0.0
+  },
+  "tablet_4_3": {
+    "screen": [
+      1024,
+      768
+    ],
+    "cover_scale": 1.06667,
+    "canvas": [
+      1365.33,
+      768.0
+    ],
+    "frame_position": [
+      -170.67,
+      0.0
+    ],
+    "fullscreen": true,
+    "crop_x_percent": 25.0,
+    "crop_y_percent": 0.0
+  },
+  "phone_19_5_9": {
+    "screen": [
+      2340,
+      1080
+    ],
+    "cover_scale": 1.82812,
+    "canvas": [
+      2340.0,
+      1316.25
+    ],
+    "frame_position": [
+      0.0,
+      -118.12
+    ],
+    "fullscreen": true,
+    "crop_x_percent": 0.0,
+    "crop_y_percent": 17.95
+  }
+}

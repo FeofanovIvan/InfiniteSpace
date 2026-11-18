@@ -1,0 +1,5 @@
+{
+  "schema_version": 1,
+  "purpose": "Planet / station mission cards. Missing or disabled IDs produce no mission card.",
+  "missions": {}
+}

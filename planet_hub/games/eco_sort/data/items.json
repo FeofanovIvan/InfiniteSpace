@@ -1,0 +1,182 @@
+[
+  {
+    "id": "plastic_bottle",
+    "category": "recycle",
+    "names": {
+      "en": "Plastic bottle",
+      "ru": "Пластиковая бутылка",
+      "pt": "Garrafa plástica",
+      "es": "Botella de plástico",
+      "de": "Plastikflasche",
+      "fr": "Bouteille en plastique"
+    }
+  },
+  {
+    "id": "glass_jar",
+    "category": "recycle",
+    "names": {
+      "en": "Glass jar",
+      "ru": "Стеклянная банка",
+      "pt": "Pote de vidro",
+      "es": "Tarro de vidrio",
+      "de": "Glasgefäß",
+      "fr": "Bocal en verre"
+    }
+  },
+  {
+    "id": "aluminum_can",
+    "category": "recycle",
+    "names": {
+      "en": "Aluminum can",
+      "ru": "Алюминиевая банка",
+      "pt": "Lata de alumínio",
+      "es": "Lata de aluminio",
+      "de": "Aludose",
+      "fr": "Canette en aluminium"
+    }
+  },
+  {
+    "id": "cardboard_box",
+    "category": "recycle",
+    "names": {
+      "en": "Cardboard box",
+      "ru": "Картонная коробка",
+      "pt": "Caixa de papelão",
+      "es": "Caja de cartón",
+      "de": "Pappkarton",
+      "fr": "Boîte en carton"
+    }
+  },
+  {
+    "id": "newspaper",
+    "category": "recycle",
+    "names": {
+      "en": "Newspaper",
+      "ru": "Газета",
+      "pt": "Jornal",
+      "es": "Periódico",
+      "de": "Zeitung",
+      "fr": "Journal"
+    }
+  },
+  {
+    "id": "banana_peel",
+    "category": "organic",
+    "names": {
+      "en": "Banana peel",
+      "ru": "Банановая кожура",
+      "pt": "Casca de banana",
+      "es": "Cáscara de plátano",
+      "de": "Bananenschale",
+      "fr": "Peau de banane"
+    }
+  },
+  {
+    "id": "apple_core",
+    "category": "organic",
+    "names": {
+      "en": "Apple core",
+      "ru": "Огрызок яблока",
+      "pt": "Miolo de maçã",
+      "es": "Corazón de manzana",
+      "de": "Apfelbutzen",
+      "fr": "Trognon de pomme"
+    }
+  },
+  {
+    "id": "dry_leaf",
+    "category": "organic",
+    "names": {
+      "en": "Dry leaf",
+      "ru": "Сухой лист",
+      "pt": "Folha seca",
+      "es": "Hoja seca",
+      "de": "Trockenes Blatt",
+      "fr": "Feuille sèche"
+    }
+  },
+  {
+    "id": "vegetable_peels",
+    "category": "organic",
+    "names": {
+      "en": "Vegetable peels",
+      "ru": "Овощные очистки",
+      "pt": "Cascas de legumes",
+      "es": "Cáscaras de verduras",
+      "de": "Gemüseschalen",
+      "fr": "Épluchures de légumes"
+    }
+  },
+  {
+    "id": "eggshell",
+    "category": "organic",
+    "names": {
+      "en": "Eggshell",
+      "ru": "Яичная скорлупа",
+      "pt": "Casca de ovo",
+      "es": "Cáscara de huevo",
+      "de": "Eierschale",
+      "fr": "Coquille d’œuf"
+    }
+  },
+  {
+    "id": "used_tissue",
+    "category": "residual",
+    "names": {
+      "en": "Used tissue",
+      "ru": "Использованная салфетка",
+      "pt": "Lenço usado",
+      "es": "Pañuelo usado",
+      "de": "Benutztes Taschentuch",
+      "fr": "Mouchoir usagé"
+    }
+  },
+  {
+    "id": "sponge",
+    "category": "residual",
+    "names": {
+      "en": "Used dish sponge",
+      "ru": "Старая губка",
+      "pt": "Esponja usada",
+      "es": "Esponja usada",
+      "de": "Alter Spülschwamm",
+      "fr": "Éponge usagée"
+    }
+  },
+  {
+    "id": "broken_mug",
+    "category": "residual",
+    "names": {
+      "en": "Broken ceramic mug",
+      "ru": "Разбитая кружка",
+      "pt": "Caneca quebrada",
+      "es": "Taza de cerámica rota",
+      "de": "Zerbrochene Keramiktasse",
+      "fr": "Tasse cassée en céramique"
+    }
+  },
+  {
+    "id": "used_bandage",
+    "category": "residual",
+    "names": {
+      "en": "Used bandage",
+      "ru": "Использованный пластырь",
+      "pt": "Curativo usado",
+      "es": "Tirita usada",
+      "de": "Benutztes Pflaster",
+      "fr": "Pansement usagé"
+    }
+  },
+  {
+    "id": "sticker",
+    "category": "residual",
+    "names": {
+      "en": "Used sticker",
+      "ru": "Использованная наклейка",
+      "pt": "Adesivo usado",
+      "es": "Pegatina usada",
+      "de": "Benutzter Aufkleber",
+      "fr": "Autocollant usagé"
+    }
+  }
+]

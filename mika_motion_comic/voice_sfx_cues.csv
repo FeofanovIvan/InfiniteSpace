@@ -1,0 +1,15 @@
+START_SEC,END_SEC,TRACK,ROLE,VOICE_LINE_EN,TEXT_ON_SCREEN,SFX_SUGGESTION,NOTE
+0.65,5.35,VOICE,NARRATOR,Aerelia. A world above the clouds.,AERELIA / A WORLD ABOVE THE CLOUDS,Airy city ambience,"Warm, slow narration"
+5.90,9.75,VOICE,NARRATOR,A place where life floated in the sky.,A PLACE WHERE LIFE / FLOATED IN THE SKY.,Soft chimes,Breath between phrases
+9.90,12.90,VOICE,MIKA,What is happening?,WHAT'S HAPPENING? / ,Short transmission ping,"Curious, surprised"
+13.55,19.85,VOICE,BROADCASTER,Emergency! A Chronostorm is approaching Aerelia!,EMERGENCY TRANSMISSION / A CHRONOSTORM IS COMING!,Emergency broadcast ping,"Clear, urgent, not shouted"
+21.15,25.75,VOICE,BROADCASTER,It bends space...,IT BENDS SPACE... / ,Low bending pulse,Leave a dramatic pause
+26.45,30.45,VOICE,BROADCASTER,...and fractures time!,...AND FRACTURES TIME! / ,Time distortion,Clear emphasis on time
+30.65,35.30,VOICE,BROADCASTER,Our world is breaking apart!,OUR WORLD IS / BREAKING APART!,Distant rumble,"Alarm, not panic"
+37.20,41.05,VOICE,MIKA,What can we do?,WHAT CAN WE DO? / ,Alarm beneath dialogue,Give a beat before response
+41.25,46.65,VOICE,FRIEND,Find the Crossroads of Worlds!,FIND THE CROSSROADS / OF WORLDS!,Hopeful electronic chime,Explain distinctly: Crossroads of Worlds
+48.55,52.40,VOICE,MIKA,I'll find it!,I'LL FIND IT! / ,Engine starts,Short and confident
+52.60,55.20,VOICE,NARRATOR,"And so, Mika set off into the unknown.",INTO THE UNKNOWN... / ,Engine builds,A quiet breath after
+57.05,61.55,VOICE,NARRATOR,But the storm was faster.,BUT THE STORM / WAS FASTER.,Rumbling storm,Slight tension
+62.80,67.30,VOICE,MIKA,No! It found me!,NO! IT FOUND ME! / ,Cockpit alarms,Fear rising
+67.80,70.60,VOICE,MIKA,Aaaah!,AAAAAAH! / ,Cosmic surge,One extended cry

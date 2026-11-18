@@ -1,0 +1,11 @@
+{
+  "version": "115.1",
+  "backup_dir": "/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_backup_before_v115_1_20261104_194454",
+  "added_paths": [
+    "bubble",
+    "simulator_ui/assets/approved_icons/sim_11_bubble_care.png"
+  ],
+  "patched_files": [
+    "scripts/MikoMainMenu.gd"
+  ]
+}

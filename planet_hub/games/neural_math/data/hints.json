@@ -1,0 +1,734 @@
+{
+  "en": {
+    "l1_01": [
+      "Addition puts quantities together. Find the missing number.",
+      "Use the dots. The total is 5. Count the parts you already know.",
+      "Start at 2, count forward to 5, and count your steps."
+    ],
+    "l1_02": [
+      "Addition puts quantities together. Find the missing number.",
+      "Use the dots. The total is 7. Count the parts you already know.",
+      "Start at 4, count forward to 7, and count your steps."
+    ],
+    "l1_03": [
+      "Subtraction means taking away. Find the missing number.",
+      "Use the dots to see what stays and what is taken away.",
+      "Begin with 8 dots. Leave 5 dots. Count the ones removed."
+    ],
+    "l1_04": [
+      "Addition puts quantities together. Find the missing number.",
+      "Use the dots. The total is 9. Count the parts you already know.",
+      "Start at 4, count forward to 9, and count your steps."
+    ],
+    "l1_05": [
+      "Subtraction means taking away. Find the missing number.",
+      "Use the dots to see what stays and what is taken away.",
+      "There are 5 dots left after removing 2. Think of the original number."
+    ],
+    "l1_06": [
+      "Addition puts quantities together. Find the missing number.",
+      "Use the dots. The total is 10. Count the parts you already know.",
+      "Start at 6, count forward to 10, and count your steps."
+    ],
+    "l1_07": [
+      "Subtraction means taking away. Find the missing number.",
+      "Use the dots to see what stays and what is taken away.",
+      "Begin with 10 dots. Leave 6 dots. Count the ones removed."
+    ],
+    "l1_08": [
+      "Subtraction means taking away. Find the missing number.",
+      "Use the dots to see what stays and what is taken away.",
+      "Begin with 9, remove 3 dots, and count what remains."
+    ],
+    "l2_01": [
+      "Multiplication means equal groups.",
+      "You need 6 dots in equal groups. Look at the grouped dots.",
+      "Make groups of 2 dots until you reach 6. Count the groups."
+    ],
+    "l2_02": [
+      "Multiplication means equal groups.",
+      "You need 12 dots in equal groups. Look at the grouped dots.",
+      "Make groups of 3 dots until you reach 12. Count the groups."
+    ],
+    "l2_03": [
+      "Multiplication means equal groups.",
+      "You need 15 dots in equal groups. Look at the grouped dots.",
+      "Make groups of 5 dots until you reach 15. Count the groups."
+    ],
+    "l2_04": [
+      "Multiplication means equal groups.",
+      "You need 20 dots in equal groups. Look at the grouped dots.",
+      "Make groups of 4 dots until you reach 20. Count the groups."
+    ],
+    "l2_05": [
+      "Division means sharing equally between groups.",
+      "Look at the equal groups of dots in the diagram.",
+      "Split 8 dots into 2 equal groups. Count dots per group."
+    ],
+    "l2_06": [
+      "Division means sharing equally between groups.",
+      "Look at the equal groups of dots in the diagram.",
+      "Make 3 equal groups with 4 dots in each. Count all dots."
+    ],
+    "l2_07": [
+      "Division means sharing equally between groups.",
+      "Look at the equal groups of dots in the diagram.",
+      "Split 12 dots into 3 equal groups. Count dots per group."
+    ],
+    "l2_08": [
+      "Multiplication means equal groups.",
+      "You need 16 dots in equal groups. Look at the grouped dots.",
+      "Make groups of 4 dots until you reach 16. Count the groups."
+    ],
+    "l3_01": [
+      "All the fractions have the same denominator. Only the top numbers change.",
+      "The denominator is 4. Look at the colored parts in the fraction bars.",
+      "Start with 1 parts and reach 3 parts. Count the parts you need to add."
+    ],
+    "l3_02": [
+      "All the fractions have the same denominator. Only the top numbers change.",
+      "The denominator is 5. Look at the colored parts in the fraction bars.",
+      "To reach 3 parts, one group already has 1. Count the missing parts."
+    ],
+    "l3_03": [
+      "All the fractions have the same denominator. Only the top numbers change.",
+      "The denominator is 6. Look at the colored parts in the fraction bars.",
+      "Start with 1 parts and reach 4 parts. Count the parts you need to add."
+    ],
+    "l3_04": [
+      "All the fractions have the same denominator. Only the top numbers change.",
+      "The denominator is 3. Look at the colored parts in the fraction bars.",
+      "Start with 1 parts and reach 2 parts. Count the parts you need to add."
+    ],
+    "l3_05": [
+      "All the fractions have the same denominator. Only the top numbers change.",
+      "The denominator is 8. Look at the colored parts in the fraction bars.",
+      "To reach 5 parts, one group already has 2. Count the missing parts."
+    ],
+    "l3_06": [
+      "All the fractions have the same denominator. Only the top numbers change.",
+      "The denominator is 5. Look at the colored parts in the fraction bars.",
+      "Start with 2 parts and reach 4 parts. Count the parts you need to add."
+    ],
+    "l3_07": [
+      "All the fractions have the same denominator. Only the top numbers change.",
+      "The denominator is 6. Look at the colored parts in the fraction bars.",
+      "Start with 2 parts and reach 5 parts. Count the parts you need to add."
+    ],
+    "l3_08": [
+      "All the fractions have the same denominator. Only the top numbers change.",
+      "The denominator is 4. Look at the colored parts in the fraction bars.",
+      "To reach 3 parts, one group already has 1. Count the missing parts."
+    ]
+  },
+  "ru": {
+    "l1_01": [
+      "При сложении количества объединяются. Найди пропущенное число.",
+      "Посмотри на точки. Всего должно получиться 5. Посчитай известную часть.",
+      "Начни с 2 и считай вперёд до 5. Посчитай шаги."
+    ],
+    "l1_02": [
+      "При сложении количества объединяются. Найди пропущенное число.",
+      "Посмотри на точки. Всего должно получиться 7. Посчитай известную часть.",
+      "Начни с 4 и считай вперёд до 7. Посчитай шаги."
+    ],
+    "l1_03": [
+      "Вычитание означает убрать часть. Найди пропущенное число.",
+      "Точки покажут, что осталось, а что убрали.",
+      "Было 8 точек, осталось 5. Посчитай, сколько убрали."
+    ],
+    "l1_04": [
+      "При сложении количества объединяются. Найди пропущенное число.",
+      "Посмотри на точки. Всего должно получиться 9. Посчитай известную часть.",
+      "Начни с 4 и считай вперёд до 9. Посчитай шаги."
+    ],
+    "l1_05": [
+      "Вычитание означает убрать часть. Найди пропущенное число.",
+      "Точки покажут, что осталось, а что убрали.",
+      "После удаления 2 точек осталось 5. Сколько было сначала?"
+    ],
+    "l1_06": [
+      "При сложении количества объединяются. Найди пропущенное число.",
+      "Посмотри на точки. Всего должно получиться 10. Посчитай известную часть.",
+      "Начни с 6 и считай вперёд до 10. Посчитай шаги."
+    ],
+    "l1_07": [
+      "Вычитание означает убрать часть. Найди пропущенное число.",
+      "Точки покажут, что осталось, а что убрали.",
+      "Было 10 точек, осталось 6. Посчитай, сколько убрали."
+    ],
+    "l1_08": [
+      "Вычитание означает убрать часть. Найди пропущенное число.",
+      "Точки покажут, что осталось, а что убрали.",
+      "Из 9 точек убери 3. Посчитай оставшиеся."
+    ],
+    "l2_01": [
+      "Умножение — это несколько одинаковых групп.",
+      "Нужно получить 6 точек. Посмотри на группы одинакового размера.",
+      "Собери группы по 2 точек до 6. Посчитай группы."
+    ],
+    "l2_02": [
+      "Умножение — это несколько одинаковых групп.",
+      "Нужно получить 12 точек. Посмотри на группы одинакового размера.",
+      "Собери группы по 3 точек до 12. Посчитай группы."
+    ],
+    "l2_03": [
+      "Умножение — это несколько одинаковых групп.",
+      "Нужно получить 15 точек. Посмотри на группы одинакового размера.",
+      "Собери группы по 5 точек до 15. Посчитай группы."
+    ],
+    "l2_04": [
+      "Умножение — это несколько одинаковых групп.",
+      "Нужно получить 20 точек. Посмотри на группы одинакового размера.",
+      "Собери группы по 4 точек до 20. Посчитай группы."
+    ],
+    "l2_05": [
+      "Деление — это разделить поровну.",
+      "Посмотри на одинаковые группы точек.",
+      "Раздели 8 точек на 2 равные группы. Сколько в каждой?"
+    ],
+    "l2_06": [
+      "Деление — это разделить поровну.",
+      "Посмотри на одинаковые группы точек.",
+      "Сделай 3 групп по 4 точек и посчитай все точки."
+    ],
+    "l2_07": [
+      "Деление — это разделить поровну.",
+      "Посмотри на одинаковые группы точек.",
+      "Раздели 12 точек на 3 равные группы. Сосчитай точки в одной."
+    ],
+    "l2_08": [
+      "Умножение — это несколько одинаковых групп.",
+      "Нужно получить 16 точек. Посмотри на группы одинакового размера.",
+      "Собери группы по 4 точек до 16. Посчитай группы."
+    ],
+    "l3_01": [
+      "У всех дробей одинаковый знаменатель. Меняются только верхние числа.",
+      "Знаменатель равен 4. Посмотри на цветные части полосок.",
+      "Начни с 1 долей и дойди до 3. Посчитай, сколько долей нужно добавить."
+    ],
+    "l3_02": [
+      "У всех дробей одинаковый знаменатель. Меняются только верхние числа.",
+      "Знаменатель равен 5. Посмотри на цветные части полосок.",
+      "Всего нужно 3 долей. Одна часть — 1. Посчитай недостающие доли."
+    ],
+    "l3_03": [
+      "У всех дробей одинаковый знаменатель. Меняются только верхние числа.",
+      "Знаменатель равен 6. Посмотри на цветные части полосок.",
+      "Начни с 1 долей и дойди до 4. Посчитай, сколько долей нужно добавить."
+    ],
+    "l3_04": [
+      "У всех дробей одинаковый знаменатель. Меняются только верхние числа.",
+      "Знаменатель равен 3. Посмотри на цветные части полосок.",
+      "Начни с 1 долей и дойди до 2. Посчитай, сколько долей нужно добавить."
+    ],
+    "l3_05": [
+      "У всех дробей одинаковый знаменатель. Меняются только верхние числа.",
+      "Знаменатель равен 8. Посмотри на цветные части полосок.",
+      "Всего нужно 5 долей. Одна часть — 2. Посчитай недостающие доли."
+    ],
+    "l3_06": [
+      "У всех дробей одинаковый знаменатель. Меняются только верхние числа.",
+      "Знаменатель равен 5. Посмотри на цветные части полосок.",
+      "Начни с 2 долей и дойди до 4. Посчитай, сколько долей нужно добавить."
+    ],
+    "l3_07": [
+      "У всех дробей одинаковый знаменатель. Меняются только верхние числа.",
+      "Знаменатель равен 6. Посмотри на цветные части полосок.",
+      "Начни с 2 долей и дойди до 5. Посчитай, сколько долей нужно добавить."
+    ],
+    "l3_08": [
+      "У всех дробей одинаковый знаменатель. Меняются только верхние числа.",
+      "Знаменатель равен 4. Посмотри на цветные части полосок.",
+      "Всего нужно 3 долей. Одна часть — 1. Посчитай недостающие доли."
+    ]
+  },
+  "pt": {
+    "l1_01": [
+      "Somar significa juntar quantidades. Encontre o número que falta.",
+      "O total é 5. Use os pontos e conte a parte conhecida.",
+      "Comece do 2 e conte até 5. Conte os passos."
+    ],
+    "l1_02": [
+      "Somar significa juntar quantidades. Encontre o número que falta.",
+      "O total é 7. Use os pontos e conte a parte conhecida.",
+      "Comece do 4 e conte até 7. Conte os passos."
+    ],
+    "l1_03": [
+      "Subtrair significa tirar uma parte.",
+      "Os pontos mostram o que ficou e o que saiu.",
+      "Comece com 8 pontos e deixe 5. Conte os retirados."
+    ],
+    "l1_04": [
+      "Somar significa juntar quantidades. Encontre o número que falta.",
+      "O total é 9. Use os pontos e conte a parte conhecida.",
+      "Comece do 4 e conte até 9. Conte os passos."
+    ],
+    "l1_05": [
+      "Subtrair significa tirar uma parte.",
+      "Os pontos mostram o que ficou e o que saiu.",
+      "Depois de tirar 2 pontos ficaram 5. Quantos havia antes?"
+    ],
+    "l1_06": [
+      "Somar significa juntar quantidades. Encontre o número que falta.",
+      "O total é 10. Use os pontos e conte a parte conhecida.",
+      "Comece do 6 e conte até 10. Conte os passos."
+    ],
+    "l1_07": [
+      "Subtrair significa tirar uma parte.",
+      "Os pontos mostram o que ficou e o que saiu.",
+      "Comece com 10 pontos e deixe 6. Conte os retirados."
+    ],
+    "l1_08": [
+      "Subtrair significa tirar uma parte.",
+      "Os pontos mostram o que ficou e o que saiu.",
+      "De 9 pontos, tire 3 e conte os restantes."
+    ],
+    "l2_01": [
+      "Multiplicar significa formar grupos iguais.",
+      "O total é 6 pontos. Veja os grupos.",
+      "Faça grupos de 2 pontos até chegar a 6. Conte os grupos."
+    ],
+    "l2_02": [
+      "Multiplicar significa formar grupos iguais.",
+      "O total é 12 pontos. Veja os grupos.",
+      "Faça grupos de 3 pontos até chegar a 12. Conte os grupos."
+    ],
+    "l2_03": [
+      "Multiplicar significa formar grupos iguais.",
+      "O total é 15 pontos. Veja os grupos.",
+      "Faça grupos de 5 pontos até chegar a 15. Conte os grupos."
+    ],
+    "l2_04": [
+      "Multiplicar significa formar grupos iguais.",
+      "O total é 20 pontos. Veja os grupos.",
+      "Faça grupos de 4 pontos até chegar a 20. Conte os grupos."
+    ],
+    "l2_05": [
+      "Dividir significa repartir em grupos iguais.",
+      "Observe os grupos de pontos no desenho.",
+      "Divida 8 pontos em 2 grupos iguais. Conte cada grupo."
+    ],
+    "l2_06": [
+      "Dividir significa repartir em grupos iguais.",
+      "Observe os grupos de pontos no desenho.",
+      "Faça 3 grupos de 4 pontos e conte tudo."
+    ],
+    "l2_07": [
+      "Dividir significa repartir em grupos iguais.",
+      "Observe os grupos de pontos no desenho.",
+      "Divida 12 pontos em 3 grupos iguais. Conte cada grupo."
+    ],
+    "l2_08": [
+      "Multiplicar significa formar grupos iguais.",
+      "O total é 16 pontos. Veja os grupos.",
+      "Faça grupos de 4 pontos até chegar a 16. Conte os grupos."
+    ],
+    "l3_01": [
+      "Todas as frações têm o mesmo denominador. Só os numeradores mudam.",
+      "O denominador é 4. Observe as partes coloridas das barras.",
+      "Comece com 1 partes e chegue a 3. Conte quantas faltam adicionar."
+    ],
+    "l3_02": [
+      "Todas as frações têm o mesmo denominador. Só os numeradores mudam.",
+      "O denominador é 5. Observe as partes coloridas das barras.",
+      "O total é 3 partes e uma parcela tem 1. Conte as partes que faltam."
+    ],
+    "l3_03": [
+      "Todas as frações têm o mesmo denominador. Só os numeradores mudam.",
+      "O denominador é 6. Observe as partes coloridas das barras.",
+      "Comece com 1 partes e chegue a 4. Conte quantas faltam adicionar."
+    ],
+    "l3_04": [
+      "Todas as frações têm o mesmo denominador. Só os numeradores mudam.",
+      "O denominador é 3. Observe as partes coloridas das barras.",
+      "Comece com 1 partes e chegue a 2. Conte quantas faltam adicionar."
+    ],
+    "l3_05": [
+      "Todas as frações têm o mesmo denominador. Só os numeradores mudam.",
+      "O denominador é 8. Observe as partes coloridas das barras.",
+      "O total é 5 partes e uma parcela tem 2. Conte as partes que faltam."
+    ],
+    "l3_06": [
+      "Todas as frações têm o mesmo denominador. Só os numeradores mudam.",
+      "O denominador é 5. Observe as partes coloridas das barras.",
+      "Comece com 2 partes e chegue a 4. Conte quantas faltam adicionar."
+    ],
+    "l3_07": [
+      "Todas as frações têm o mesmo denominador. Só os numeradores mudam.",
+      "O denominador é 6. Observe as partes coloridas das barras.",
+      "Comece com 2 partes e chegue a 5. Conte quantas faltam adicionar."
+    ],
+    "l3_08": [
+      "Todas as frações têm o mesmo denominador. Só os numeradores mudam.",
+      "O denominador é 4. Observe as partes coloridas das barras.",
+      "O total é 3 partes e uma parcela tem 1. Conte as partes que faltam."
+    ]
+  },
+  "es": {
+    "l1_01": [
+      "Sumar es juntar cantidades. Encuentra el número que falta.",
+      "El total es 5. Mira los puntos y cuenta la parte conocida.",
+      "Empieza en 2 y cuenta hasta 5. Cuenta los pasos."
+    ],
+    "l1_02": [
+      "Sumar es juntar cantidades. Encuentra el número que falta.",
+      "El total es 7. Mira los puntos y cuenta la parte conocida.",
+      "Empieza en 4 y cuenta hasta 7. Cuenta los pasos."
+    ],
+    "l1_03": [
+      "Restar significa quitar una parte.",
+      "Observa qué puntos quedan y cuáles se quitan.",
+      "De 8 puntos deben quedar 5. Cuenta los que quitaste."
+    ],
+    "l1_04": [
+      "Sumar es juntar cantidades. Encuentra el número que falta.",
+      "El total es 9. Mira los puntos y cuenta la parte conocida.",
+      "Empieza en 4 y cuenta hasta 9. Cuenta los pasos."
+    ],
+    "l1_05": [
+      "Restar significa quitar una parte.",
+      "Observa qué puntos quedan y cuáles se quitan.",
+      "Después de quitar 2 puntos quedan 5. ¿Cuántos había?"
+    ],
+    "l1_06": [
+      "Sumar es juntar cantidades. Encuentra el número que falta.",
+      "El total es 10. Mira los puntos y cuenta la parte conocida.",
+      "Empieza en 6 y cuenta hasta 10. Cuenta los pasos."
+    ],
+    "l1_07": [
+      "Restar significa quitar una parte.",
+      "Observa qué puntos quedan y cuáles se quitan.",
+      "De 10 puntos deben quedar 6. Cuenta los que quitaste."
+    ],
+    "l1_08": [
+      "Restar significa quitar una parte.",
+      "Observa qué puntos quedan y cuáles se quitan.",
+      "De 9 puntos quita 3 y cuenta los que quedan."
+    ],
+    "l2_01": [
+      "Multiplicar significa hacer grupos iguales.",
+      "Necesitas 6 puntos. Mira cómo se forman grupos.",
+      "Haz grupos de 2 puntos hasta llegar a 6. Cuenta los grupos."
+    ],
+    "l2_02": [
+      "Multiplicar significa hacer grupos iguales.",
+      "Necesitas 12 puntos. Mira cómo se forman grupos.",
+      "Haz grupos de 3 puntos hasta llegar a 12. Cuenta los grupos."
+    ],
+    "l2_03": [
+      "Multiplicar significa hacer grupos iguales.",
+      "Necesitas 15 puntos. Mira cómo se forman grupos.",
+      "Haz grupos de 5 puntos hasta llegar a 15. Cuenta los grupos."
+    ],
+    "l2_04": [
+      "Multiplicar significa hacer grupos iguales.",
+      "Necesitas 20 puntos. Mira cómo se forman grupos.",
+      "Haz grupos de 4 puntos hasta llegar a 20. Cuenta los grupos."
+    ],
+    "l2_05": [
+      "Dividir es repartir en grupos iguales.",
+      "Mira los grupos de puntos en el dibujo.",
+      "Divide 8 puntos en 2 grupos iguales. Cuenta cada grupo."
+    ],
+    "l2_06": [
+      "Dividir es repartir en grupos iguales.",
+      "Mira los grupos de puntos en el dibujo.",
+      "Haz 3 grupos de 4 puntos y cuenta el total."
+    ],
+    "l2_07": [
+      "Dividir es repartir en grupos iguales.",
+      "Mira los grupos de puntos en el dibujo.",
+      "Divide 12 puntos en 3 grupos iguales. Cuenta cada grupo."
+    ],
+    "l2_08": [
+      "Multiplicar significa hacer grupos iguales.",
+      "Necesitas 16 puntos. Mira cómo se forman grupos.",
+      "Haz grupos de 4 puntos hasta llegar a 16. Cuenta los grupos."
+    ],
+    "l3_01": [
+      "Todas las fracciones tienen el mismo denominador. Solo cambia el numerador.",
+      "El denominador es 4. Observa las partes coloreadas.",
+      "Empieza con 1 partes y llega a 3. Cuenta las que faltan."
+    ],
+    "l3_02": [
+      "Todas las fracciones tienen el mismo denominador. Solo cambia el numerador.",
+      "El denominador es 5. Observa las partes coloreadas.",
+      "Necesitas 3 partes y ya tienes 1. Cuenta las que faltan."
+    ],
+    "l3_03": [
+      "Todas las fracciones tienen el mismo denominador. Solo cambia el numerador.",
+      "El denominador es 6. Observa las partes coloreadas.",
+      "Empieza con 1 partes y llega a 4. Cuenta las que faltan."
+    ],
+    "l3_04": [
+      "Todas las fracciones tienen el mismo denominador. Solo cambia el numerador.",
+      "El denominador es 3. Observa las partes coloreadas.",
+      "Empieza con 1 partes y llega a 2. Cuenta las que faltan."
+    ],
+    "l3_05": [
+      "Todas las fracciones tienen el mismo denominador. Solo cambia el numerador.",
+      "El denominador es 8. Observa las partes coloreadas.",
+      "Necesitas 5 partes y ya tienes 2. Cuenta las que faltan."
+    ],
+    "l3_06": [
+      "Todas las fracciones tienen el mismo denominador. Solo cambia el numerador.",
+      "El denominador es 5. Observa las partes coloreadas.",
+      "Empieza con 2 partes y llega a 4. Cuenta las que faltan."
+    ],
+    "l3_07": [
+      "Todas las fracciones tienen el mismo denominador. Solo cambia el numerador.",
+      "El denominador es 6. Observa las partes coloreadas.",
+      "Empieza con 2 partes y llega a 5. Cuenta las que faltan."
+    ],
+    "l3_08": [
+      "Todas las fracciones tienen el mismo denominador. Solo cambia el numerador.",
+      "El denominador es 4. Observa las partes coloreadas.",
+      "Necesitas 3 partes y ya tienes 1. Cuenta las que faltan."
+    ]
+  },
+  "de": {
+    "l1_01": [
+      "Beim Addieren werden Mengen zusammengezählt.",
+      "Insgesamt sollen es 5 Punkte sein. Zähle die bekannten.",
+      "Beginne bei 2 und zähle bis 5. Zähle die Schritte."
+    ],
+    "l1_02": [
+      "Beim Addieren werden Mengen zusammengezählt.",
+      "Insgesamt sollen es 7 Punkte sein. Zähle die bekannten.",
+      "Beginne bei 4 und zähle bis 7. Zähle die Schritte."
+    ],
+    "l1_03": [
+      "Beim Subtrahieren nimmt man etwas weg.",
+      "Sieh dir an, welche Punkte bleiben und welche verschwinden.",
+      "Von 8 Punkten bleiben 5. Zähle die weggenommenen."
+    ],
+    "l1_04": [
+      "Beim Addieren werden Mengen zusammengezählt.",
+      "Insgesamt sollen es 9 Punkte sein. Zähle die bekannten.",
+      "Beginne bei 4 und zähle bis 9. Zähle die Schritte."
+    ],
+    "l1_05": [
+      "Beim Subtrahieren nimmt man etwas weg.",
+      "Sieh dir an, welche Punkte bleiben und welche verschwinden.",
+      "Nach dem Wegnehmen von 2 Punkten bleiben 5. Wie viele waren es?"
+    ],
+    "l1_06": [
+      "Beim Addieren werden Mengen zusammengezählt.",
+      "Insgesamt sollen es 10 Punkte sein. Zähle die bekannten.",
+      "Beginne bei 6 und zähle bis 10. Zähle die Schritte."
+    ],
+    "l1_07": [
+      "Beim Subtrahieren nimmt man etwas weg.",
+      "Sieh dir an, welche Punkte bleiben und welche verschwinden.",
+      "Von 10 Punkten bleiben 6. Zähle die weggenommenen."
+    ],
+    "l1_08": [
+      "Beim Subtrahieren nimmt man etwas weg.",
+      "Sieh dir an, welche Punkte bleiben und welche verschwinden.",
+      "Von 9 Punkten nimm 3 weg. Zähle den Rest."
+    ],
+    "l2_01": [
+      "Multiplizieren bedeutet gleich große Gruppen.",
+      "Insgesamt brauchst du 6 Punkte. Schau dir die Gruppen an.",
+      "Bilde Gruppen mit je 2 Punkten bis 6. Zähle die Gruppen."
+    ],
+    "l2_02": [
+      "Multiplizieren bedeutet gleich große Gruppen.",
+      "Insgesamt brauchst du 12 Punkte. Schau dir die Gruppen an.",
+      "Bilde Gruppen mit je 3 Punkten bis 12. Zähle die Gruppen."
+    ],
+    "l2_03": [
+      "Multiplizieren bedeutet gleich große Gruppen.",
+      "Insgesamt brauchst du 15 Punkte. Schau dir die Gruppen an.",
+      "Bilde Gruppen mit je 5 Punkten bis 15. Zähle die Gruppen."
+    ],
+    "l2_04": [
+      "Multiplizieren bedeutet gleich große Gruppen.",
+      "Insgesamt brauchst du 20 Punkte. Schau dir die Gruppen an.",
+      "Bilde Gruppen mit je 4 Punkten bis 20. Zähle die Gruppen."
+    ],
+    "l2_05": [
+      "Dividieren bedeutet gleichmäßig verteilen.",
+      "Schau dir die gleich großen Punktgruppen an.",
+      "Verteile 8 Punkte auf 2 Gruppen. Zähle eine Gruppe."
+    ],
+    "l2_06": [
+      "Dividieren bedeutet gleichmäßig verteilen.",
+      "Schau dir die gleich großen Punktgruppen an.",
+      "Bilde 3 Gruppen mit je 4 Punkten und zähle alle."
+    ],
+    "l2_07": [
+      "Dividieren bedeutet gleichmäßig verteilen.",
+      "Schau dir die gleich großen Punktgruppen an.",
+      "Verteile 12 Punkte auf 3 Gruppen. Zähle eine Gruppe."
+    ],
+    "l2_08": [
+      "Multiplizieren bedeutet gleich große Gruppen.",
+      "Insgesamt brauchst du 16 Punkte. Schau dir die Gruppen an.",
+      "Bilde Gruppen mit je 4 Punkten bis 16. Zähle die Gruppen."
+    ],
+    "l3_01": [
+      "Alle Brüche haben den gleichen Nenner. Nur die Zähler ändern sich.",
+      "Der Nenner ist 4. Schau dir die farbigen Teile an.",
+      "Starte mit 1 Teilen und komme zu 3. Zähle die fehlenden Teile."
+    ],
+    "l3_02": [
+      "Alle Brüche haben den gleichen Nenner. Nur die Zähler ändern sich.",
+      "Der Nenner ist 5. Schau dir die farbigen Teile an.",
+      "Du brauchst 3 Teile. 1 sind schon bekannt. Zähle die fehlenden."
+    ],
+    "l3_03": [
+      "Alle Brüche haben den gleichen Nenner. Nur die Zähler ändern sich.",
+      "Der Nenner ist 6. Schau dir die farbigen Teile an.",
+      "Starte mit 1 Teilen und komme zu 4. Zähle die fehlenden Teile."
+    ],
+    "l3_04": [
+      "Alle Brüche haben den gleichen Nenner. Nur die Zähler ändern sich.",
+      "Der Nenner ist 3. Schau dir die farbigen Teile an.",
+      "Starte mit 1 Teilen und komme zu 2. Zähle die fehlenden Teile."
+    ],
+    "l3_05": [
+      "Alle Brüche haben den gleichen Nenner. Nur die Zähler ändern sich.",
+      "Der Nenner ist 8. Schau dir die farbigen Teile an.",
+      "Du brauchst 5 Teile. 2 sind schon bekannt. Zähle die fehlenden."
+    ],
+    "l3_06": [
+      "Alle Brüche haben den gleichen Nenner. Nur die Zähler ändern sich.",
+      "Der Nenner ist 5. Schau dir die farbigen Teile an.",
+      "Starte mit 2 Teilen und komme zu 4. Zähle die fehlenden Teile."
+    ],
+    "l3_07": [
+      "Alle Brüche haben den gleichen Nenner. Nur die Zähler ändern sich.",
+      "Der Nenner ist 6. Schau dir die farbigen Teile an.",
+      "Starte mit 2 Teilen und komme zu 5. Zähle die fehlenden Teile."
+    ],
+    "l3_08": [
+      "Alle Brüche haben den gleichen Nenner. Nur die Zähler ändern sich.",
+      "Der Nenner ist 4. Schau dir die farbigen Teile an.",
+      "Du brauchst 3 Teile. 1 sind schon bekannt. Zähle die fehlenden."
+    ]
+  },
+  "fr": {
+    "l1_01": [
+      "Additionner, c’est rassembler des quantités.",
+      "Le total est 5. Regarde les points et compte ceux connus.",
+      "Pars de 2 et compte jusqu’à 5. Compte les pas."
+    ],
+    "l1_02": [
+      "Additionner, c’est rassembler des quantités.",
+      "Le total est 7. Regarde les points et compte ceux connus.",
+      "Pars de 4 et compte jusqu’à 7. Compte les pas."
+    ],
+    "l1_03": [
+      "Soustraire signifie enlever une quantité.",
+      "Les points montrent ce qui reste et ce qui est retiré.",
+      "Pars de 8 points et garde 5. Compte ceux enlevés."
+    ],
+    "l1_04": [
+      "Additionner, c’est rassembler des quantités.",
+      "Le total est 9. Regarde les points et compte ceux connus.",
+      "Pars de 4 et compte jusqu’à 9. Compte les pas."
+    ],
+    "l1_05": [
+      "Soustraire signifie enlever une quantité.",
+      "Les points montrent ce qui reste et ce qui est retiré.",
+      "Après avoir retiré 2 points, il reste 5. Combien au début ?"
+    ],
+    "l1_06": [
+      "Additionner, c’est rassembler des quantités.",
+      "Le total est 10. Regarde les points et compte ceux connus.",
+      "Pars de 6 et compte jusqu’à 10. Compte les pas."
+    ],
+    "l1_07": [
+      "Soustraire signifie enlever une quantité.",
+      "Les points montrent ce qui reste et ce qui est retiré.",
+      "Pars de 10 points et garde 6. Compte ceux enlevés."
+    ],
+    "l1_08": [
+      "Soustraire signifie enlever une quantité.",
+      "Les points montrent ce qui reste et ce qui est retiré.",
+      "Enlève 3 points à 9 et compte le reste."
+    ],
+    "l2_01": [
+      "Multiplier signifie former des groupes égaux.",
+      "Il faut 6 points au total. Regarde les groupes.",
+      "Fais des groupes de 2 points jusqu’à 6. Compte les groupes."
+    ],
+    "l2_02": [
+      "Multiplier signifie former des groupes égaux.",
+      "Il faut 12 points au total. Regarde les groupes.",
+      "Fais des groupes de 3 points jusqu’à 12. Compte les groupes."
+    ],
+    "l2_03": [
+      "Multiplier signifie former des groupes égaux.",
+      "Il faut 15 points au total. Regarde les groupes.",
+      "Fais des groupes de 5 points jusqu’à 15. Compte les groupes."
+    ],
+    "l2_04": [
+      "Multiplier signifie former des groupes égaux.",
+      "Il faut 20 points au total. Regarde les groupes.",
+      "Fais des groupes de 4 points jusqu’à 20. Compte les groupes."
+    ],
+    "l2_05": [
+      "Diviser, c’est partager en groupes égaux.",
+      "Regarde les groupes de points sur le dessin.",
+      "Partage 8 points en 2 groupes égaux. Compte un groupe."
+    ],
+    "l2_06": [
+      "Diviser, c’est partager en groupes égaux.",
+      "Regarde les groupes de points sur le dessin.",
+      "Fais 3 groupes de 4 points et compte le total."
+    ],
+    "l2_07": [
+      "Diviser, c’est partager en groupes égaux.",
+      "Regarde les groupes de points sur le dessin.",
+      "Partage 12 points en 3 groupes égaux. Compte un groupe."
+    ],
+    "l2_08": [
+      "Multiplier signifie former des groupes égaux.",
+      "Il faut 16 points au total. Regarde les groupes.",
+      "Fais des groupes de 4 points jusqu’à 16. Compte les groupes."
+    ],
+    "l3_01": [
+      "Les fractions ont le même dénominateur. Seuls les numérateurs changent.",
+      "Le dénominateur est 4. Regarde les parts colorées.",
+      "Pars de 1 parts et arrive à 3. Compte les parts à ajouter."
+    ],
+    "l3_02": [
+      "Les fractions ont le même dénominateur. Seuls les numérateurs changent.",
+      "Le dénominateur est 5. Regarde les parts colorées.",
+      "Il faut 3 parts, dont 1 sont connues. Compte les parts manquantes."
+    ],
+    "l3_03": [
+      "Les fractions ont le même dénominateur. Seuls les numérateurs changent.",
+      "Le dénominateur est 6. Regarde les parts colorées.",
+      "Pars de 1 parts et arrive à 4. Compte les parts à ajouter."
+    ],
+    "l3_04": [
+      "Les fractions ont le même dénominateur. Seuls les numérateurs changent.",
+      "Le dénominateur est 3. Regarde les parts colorées.",
+      "Pars de 1 parts et arrive à 2. Compte les parts à ajouter."
+    ],
+    "l3_05": [
+      "Les fractions ont le même dénominateur. Seuls les numérateurs changent.",
+      "Le dénominateur est 8. Regarde les parts colorées.",
+      "Il faut 5 parts, dont 2 sont connues. Compte les parts manquantes."
+    ],
+    "l3_06": [
+      "Les fractions ont le même dénominateur. Seuls les numérateurs changent.",
+      "Le dénominateur est 5. Regarde les parts colorées.",
+      "Pars de 2 parts et arrive à 4. Compte les parts à ajouter."
+    ],
+    "l3_07": [
+      "Les fractions ont le même dénominateur. Seuls les numérateurs changent.",
+      "Le dénominateur est 6. Regarde les parts colorées.",
+      "Pars de 2 parts et arrive à 5. Compte les parts à ajouter."
+    ],
+    "l3_08": [
+      "Les fractions ont le même dénominateur. Seuls les numérateurs changent.",
+      "Le dénominateur est 4. Regarde les parts colorées.",
+      "Il faut 3 parts, dont 1 sont connues. Compte les parts manquantes."
+    ]
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "age_target": "3-8",
+  "correct_index": 0,
+  "description": "Optional educational follow-up after the third story branch, one mini-question per race; all prompts and feedback localized in 6 languages.",
+  "quizzes": {
+    "human": {
+      "question": {
+        "ru": "Маленький вопрос: что помогает беречь воду?",
+        "en": "A little question: what helps save water?",
+        "fr": "Petite question : qu'est-ce qui permet d'économiser l'eau ?",
+        "de": "Kleine Frage: Wie können wir Wasser sparen?",
+        "es": "Una pregunta: ¿qué ayuda a ahorrar agua?",
+        "pt_BR": "Uma pergunta: o que ajuda a economizar água?"
+      },
+      "options": {
+        "ru": [
+          "Закрыть кран.",
+          "Оставить кран открытым.",
+          "Лить воду без нужды."
+        ],
+        "en": [
+          "Turn off the tap.",
+          "Leave the tap running.",
+          "Waste water for no reason."
+        ],
+        "fr": [
+          "Fermer le robinet.",
+          "Laisser couler l'eau.",
+          "Gaspiller l'eau."
+        ],
+        "de": [
+          "Den Wasserhahn zudrehen.",
+          "Wasser laufen lassen.",
+          "Wasser verschwenden."
+        ],
+        "es": [
+          "Cerrar el grifo.",
+          "Dejar correr el agua.",
+          "Gastar agua sin necesidad."
+        ],
+        "pt_BR": [
+          "Fechar a torneira.",
+          "Deixar a torneira aberta.",
+          "Desperdiçar água."
+        ]
+      }
+    },
+    "mold": {
+      "question": {
+        "ru": "Как думаешь, что помогает живой сети расти?",
+        "en": "What do you think helps a living network grow?",
+        "fr": "À ton avis, qu'est-ce qui aide un réseau vivant à grandir ?",
+        "de": "Was hilft einem lebendigen Netzwerk beim Wachsen?",
+        "es": "¿Qué ayuda a crecer a una red viva?",
+        "pt_BR": "O que ajuda uma rede viva a crescer?"
+      },
+      "options": {
+        "ru": [
+          "Влага и питательные вещества.",
+          "Только сухой камень.",
+          "Ничего совсем."
+        ],
+        "en": [
+          "Moisture and nutrients.",
+          "Only dry rocks.",
+          "Nothing at all."
+        ],
+        "fr": [
+          "L'humidité et les nutriments.",
+          "Seulement des roches sèches.",
+          "Rien du tout."
+        ],
+        "de": [
+          "Feuchtigkeit und Nährstoffe.",
+          "Nur trockene Steine.",
+          "Gar nichts."
+        ],
+        "es": [
+          "Humedad y nutrientes.",
+          "Solo piedras secas.",
+          "Nada de nada."
+        ],
+        "pt_BR": [
+          "Umidade e nutrientes.",
+          "Somente pedras secas.",
+          "Nada mesmo."
+        ]
+      }
+    },
+    "phase": {
+      "question": {
+        "ru": "Когда лёд тает, что получается?",
+        "en": "When ice melts, what do we get?",
+        "fr": "Quand la glace fond, qu'obtient-on ?",
+        "de": "Was entsteht, wenn Eis schmilzt?",
+        "es": "¿Qué obtenemos cuando el hielo se derrite?",
+        "pt_BR": "O que acontece quando o gelo derrete?"
+      },
+      "options": {
+        "ru": [
+          "Жидкая вода.",
+          "Песок.",
+          "Дерево."
+        ],
+        "en": [
+          "Liquid water.",
+          "Sand.",
+          "Wood."
+        ],
+        "fr": [
+          "De l'eau liquide.",
+          "Du sable.",
+          "Du bois."
+        ],
+        "de": [
+          "Flüssiges Wasser.",
+          "Sand.",
+          "Holz."
+        ],
+        "es": [
+          "Agua líquida.",
+          "Arena.",
+          "Madera."
+        ],
+        "pt_BR": [
+          "Água líquida.",
+          "Areia.",
+          "Madeira."
+        ]
+      }
+    },
+    "reptile": {
+      "question": {
+        "ru": "Как лучше сохранить старую историю?",
+        "en": "What is a good way to preserve an old story?",
+        "fr": "Comment peut-on conserver une vieille histoire ?",
+        "de": "Wie bewahrt man eine alte Geschichte auf?",
+        "es": "¿Cómo podemos conservar una historia antigua?",
+        "pt_BR": "Como podemos preservar uma história antiga?"
+      },
+      "options": {
+        "ru": [
+          "Записать или рассказать её.",
+          "Совсем забыть.",
+          "Стереть все записи."
+        ],
+        "en": [
+          "Write it down or tell it.",
+          "Forget it completely.",
+          "Erase every record."
+        ],
+        "fr": [
+          "L'écrire ou la raconter.",
+          "L'oublier complètement.",
+          "Effacer tous les récits."
+        ],
+        "de": [
+          "Sie aufschreiben oder erzählen.",
+          "Sie ganz vergessen.",
+          "Alle Aufzeichnungen löschen."
+        ],
+        "es": [
+          "Escribirla o contarla.",
+          "Olvidarla por completo.",
+          "Borrar todos los registros."
+        ],
+        "pt_BR": [
+          "Escrever ou contar a história.",
+          "Esquecer tudo.",
+          "Apagar todos os registros."
+        ]
+      }
+    },
+    "magnetic": {
+      "question": {
+        "ru": "Какой предмет магнит может притянуть?",
+        "en": "Which object can a magnet attract?",
+        "fr": "Quel objet un aimant peut-il attirer ?",
+        "de": "Welchen Gegenstand kann ein Magnet anziehen?",
+        "es": "¿Qué objeto puede atraer un imán?",
+        "pt_BR": "Que objeto um ímã pode atrair?"
+      },
+      "options": {
+        "ru": [
+          "Железную скрепку.",
+          "Деревянную ложку.",
+          "Пластиковый стакан."
+        ],
+        "en": [
+          "An iron paper clip.",
+          "A wooden spoon.",
+          "A plastic cup."
+        ],
+        "fr": [
+          "Un trombone en fer.",
+          "Une cuillère en bois.",
+          "Un gobelet en plastique."
+        ],
+        "de": [
+          "Eine Büroklammer aus Eisen.",
+          "Einen Holzlöffel.",
+          "Einen Plastikbecher."
+        ],
+        "es": [
+          "Un clip de hierro.",
+          "Una cuchara de madera.",
+          "Un vaso de plástico."
+        ],
+        "pt_BR": [
+          "Um clipe de ferro.",
+          "Uma colher de madeira.",
+          "Um copo de plástico."
+        ]
+      }
+    },
+    "neural": {
+      "question": {
+        "ru": "Продолжи ряд: круг, квадрат, круг... Что дальше?",
+        "en": "Finish the pattern: circle, square, circle... What comes next?",
+        "fr": "Continue la suite : rond, carré, rond... Et ensuite ?",
+        "de": "Setze die Reihe fort: Kreis, Quadrat, Kreis... Was kommt dann?",
+        "es": "Sigue la secuencia: círculo, cuadrado, círculo... ¿Qué sigue?",
+        "pt_BR": "Complete a sequência: círculo, quadrado, círculo... O que vem depois?"
+      },
+      "options": {
+        "ru": [
+          "Квадрат.",
+          "Треугольник.",
+          "Звезда."
+        ],
+        "en": [
+          "Square.",
+          "Triangle.",
+          "Star."
+        ],
+        "fr": [
+          "Carré.",
+          "Triangle.",
+          "Étoile."
+        ],
+        "de": [
+          "Quadrat.",
+          "Dreieck.",
+          "Stern."
+        ],
+        "es": [
+          "Cuadrado.",
+          "Triángulo.",
+          "Estrella."
+        ],
+        "pt_BR": [
+          "Quadrado.",
+          "Triângulo.",
+          "Estrela."
+        ]
+      }
+    }
+  },
+  "feedback": {
+    "success": {
+      "ru": "Верно! Ты внимательно исследуешь наш мир.",
+      "en": "That's right! You are exploring our world carefully.",
+      "fr": "Bravo ! Tu observes notre monde avec attention.",
+      "de": "Richtig! Du erforschst unsere Welt aufmerksam.",
+      "es": "¡Correcto! Observas nuestro mundo con atención.",
+      "pt_BR": "Isso mesmo! Você observa nosso mundo com atenção."
+    },
+    "retry": {
+      "ru": "Почти! Попробуй ещё один вариант. Можно не спешить.",
+      "en": "Not quite. Try another answer. There's no rush.",
+      "fr": "Pas tout à fait. Essaie une autre réponse, à ton rythme.",
+      "de": "Noch nicht ganz. Versuch eine andere Antwort. Keine Eile.",
+      "es": "No exactamente. Prueba otra respuesta, sin prisa.",
+      "pt_BR": "Ainda não. Tente outra resposta, sem pressa."
+    },
+    "skip": {
+      "ru": "Хорошо, можем поговорить о чём-нибудь другом.",
+      "en": "That's okay. We can talk about something else.",
+      "fr": "D'accord, parlons d'autre chose.",
+      "de": "In Ordnung, wir können über etwas anderes sprechen.",
+      "es": "Está bien, podemos hablar de otra cosa.",
+      "pt_BR": "Tudo bem, podemos falar de outro assunto."
+    }
+  }
+}

@@ -1,0 +1,937 @@
+{
+  "en": [
+    {
+      "id": "en_sunflower",
+      "answer": "SUNFLOWER",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "sun",
+          "label": "SUN"
+        },
+        {
+          "kind": "icon",
+          "icon": "flower",
+          "label": "FLOWER"
+        }
+      ],
+      "hint": "Look at the two pictures. Put their names together. The answer is one word.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "en_football",
+      "answer": "FOOTBALL",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "foot",
+          "label": "FOOT"
+        },
+        {
+          "kind": "icon",
+          "icon": "ball",
+          "label": "BALL"
+        }
+      ],
+      "hint": "First think of the part of your body, then the round toy. One word.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "en_snowman",
+      "answer": "SNOWMAN",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "snow",
+          "label": "SNOW"
+        },
+        {
+          "kind": "icon",
+          "icon": "man",
+          "label": "MAN"
+        }
+      ],
+      "hint": "What can you build from snow? Join the two parts.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "en_starfish",
+      "answer": "STARFISH",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "star",
+          "label": "STAR"
+        },
+        {
+          "kind": "icon",
+          "icon": "fish",
+          "label": "FISH"
+        }
+      ],
+      "hint": "The second picture shows an animal that swims. Join both words.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "en_moonlight",
+      "answer": "MOONLIGHT",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "moon",
+          "label": "MOON"
+        },
+        {
+          "kind": "icon",
+          "icon": "light",
+          "label": "LIGHT"
+        }
+      ],
+      "hint": "Think about the light you can see at night. Combine two pictures.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "en_bookworm",
+      "answer": "BOOKWORM",
+      "parts": [
+        {
+          "kind": "action",
+          "icon": "read",
+          "label": "BOOK"
+        },
+        {
+          "kind": "icon",
+          "icon": "worm",
+          "label": "WORM"
+        }
+      ],
+      "hint": "Mika has something to read. Add the small animal. One word.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "en_cupcake",
+      "answer": "CUPCAKE",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "cup",
+          "label": "CUP"
+        },
+        {
+          "kind": "icon",
+          "icon": "cake",
+          "label": "CAKE"
+        }
+      ],
+      "hint": "A cup and a sweet treat together make one word.",
+      "difficulty": 3,
+      "word_count": 1
+    },
+    {
+      "id": "en_icecream",
+      "answer": "ICE CREAM",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "ice",
+          "label": "ICE"
+        },
+        {
+          "kind": "icon",
+          "icon": "cream",
+          "label": "CREAM"
+        }
+      ],
+      "hint": "Put the two pictures together. Your answer has two words.",
+      "difficulty": 3,
+      "word_count": 2
+    }
+  ],
+  "ru": [
+    {
+      "id": "ru_house",
+      "answer": "ДОМИК",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "house",
+          "label": "ДОМ"
+        },
+        {
+          "kind": "text",
+          "label": "ИК"
+        }
+      ],
+      "hint": "Назови рисунок. Прибавь две буквы справа. Получится одно ласковое слово.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "ru_cat",
+      "answer": "КОТИК",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "cat",
+          "label": "КОТ"
+        },
+        {
+          "kind": "text",
+          "label": "ИК"
+        }
+      ],
+      "hint": "Назови животное и прибавь две буквы. Ответ — одно слово.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "ru_leaf",
+      "answer": "ЛИСТОК",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "leaf",
+          "label": "ЛИСТ"
+        },
+        {
+          "kind": "text",
+          "label": "ОК"
+        }
+      ],
+      "hint": "Что изображено на рисунке? Добавь две буквы в конце.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "ru_snowman",
+      "answer": "СНЕГОВИК",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "snow",
+          "label": "СНЕГ"
+        },
+        {
+          "kind": "text",
+          "label": "ОВИК"
+        }
+      ],
+      "hint": "Начни со слова про зимнюю погоду. Добавь четыре буквы.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "ru_forester",
+      "answer": "ЛЕСНИК",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "forest",
+          "label": "ЛЕС"
+        },
+        {
+          "kind": "text",
+          "label": "НИК"
+        }
+      ],
+      "hint": "Соедини слово, обозначающее много деревьев, и три буквы.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "ru_train",
+      "answer": "ПАРОВОЗ",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "steam",
+          "label": "ПАР"
+        },
+        {
+          "kind": "text",
+          "label": "О"
+        },
+        {
+          "kind": "text",
+          "label": "ВОЗ"
+        }
+      ],
+      "hint": "Три части соединяются в одно слово. Это транспорт.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "ru_moonrover",
+      "answer": "ЛУНОХОД",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "moon",
+          "label": "ЛУНА"
+        },
+        {
+          "kind": "text",
+          "label": "−А"
+        },
+        {
+          "kind": "text",
+          "label": "+О"
+        },
+        {
+          "kind": "icon",
+          "icon": "walk",
+          "label": "ХОД"
+        }
+      ],
+      "hint": "Назови ночной спутник Земли. Убери букву А, добавь О и слово ХОД.",
+      "difficulty": 3,
+      "word_count": 1
+    },
+    {
+      "id": "ru_firefly",
+      "answer": "СВЕТЛЯЧОК",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "light",
+          "label": "СВЕТ"
+        },
+        {
+          "kind": "text",
+          "label": "ЛЯЧОК"
+        }
+      ],
+      "hint": "Это маленькое живое существо, которое светится. Соедини части.",
+      "difficulty": 3,
+      "word_count": 1
+    }
+  ],
+  "pt": [
+    {
+      "id": "pt_soldier",
+      "answer": "SOLDADO",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "sun",
+          "label": "SOL"
+        },
+        {
+          "kind": "icon",
+          "icon": "dice",
+          "label": "DADO"
+        }
+      ],
+      "hint": "Junte o astro brilhante com o objeto usado em jogos de tabuleiro. Uma palavra.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "pt_sunflower",
+      "answer": "GIRASSOL",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "GIRA"
+        },
+        {
+          "kind": "text",
+          "label": "S"
+        },
+        {
+          "kind": "icon",
+          "icon": "sun",
+          "label": "SOL"
+        }
+      ],
+      "hint": "A flor segue a luz do sol. Combine as três partes.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "pt_moonlight",
+      "answer": "LUAR",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "moon",
+          "label": "LUA"
+        },
+        {
+          "kind": "text",
+          "label": "R"
+        }
+      ],
+      "hint": "Veja a lua e coloque mais uma letra. Uma palavra.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "pt_umbrella",
+      "answer": "GUARDA-CHUVA",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "GUARDA-"
+        },
+        {
+          "kind": "icon",
+          "icon": "rain",
+          "label": "CHUVA"
+        }
+      ],
+      "hint": "O objeto protege da chuva. Junte as partes com hífen.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "pt_pastime",
+      "answer": "PASSATEMPO",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "PASSA"
+        },
+        {
+          "kind": "icon",
+          "icon": "clock",
+          "label": "TEMPO"
+        }
+      ],
+      "hint": "Pense em algo divertido que fazemos no tempo livre. Uma palavra.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "pt_hummingbird",
+      "answer": "BEIJA-FLOR",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "BEIJA-"
+        },
+        {
+          "kind": "icon",
+          "icon": "flower",
+          "label": "FLOR"
+        }
+      ],
+      "hint": "Um pequeno pássaro visita flores. Junte as partes.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "pt_bread",
+      "answer": "PÃO DE QUEIJO",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "bread",
+          "label": "PÃO"
+        },
+        {
+          "kind": "text",
+          "label": "DE"
+        },
+        {
+          "kind": "icon",
+          "icon": "cheese",
+          "label": "QUEIJO"
+        }
+      ],
+      "hint": "É uma comida muito conhecida no Brasil. A resposta tem três palavras.",
+      "difficulty": 3,
+      "word_count": 3
+    },
+    {
+      "id": "pt_jellyfish",
+      "answer": "ÁGUA-VIVA",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "water",
+          "label": "ÁGUA-"
+        },
+        {
+          "kind": "text",
+          "label": "VIVA"
+        }
+      ],
+      "hint": "Este animal vive no mar. Junte as partes com hífen.",
+      "difficulty": 3,
+      "word_count": 1
+    }
+  ],
+  "es": [
+    {
+      "id": "es_soldier",
+      "answer": "SOLDADO",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "sun",
+          "label": "SOL"
+        },
+        {
+          "kind": "icon",
+          "icon": "dice",
+          "label": "DADO"
+        }
+      ],
+      "hint": "Junta el astro brillante con el dado. Obtendrás una palabra.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "es_sunflower",
+      "answer": "GIRASOL",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "GIRA"
+        },
+        {
+          "kind": "icon",
+          "icon": "sun",
+          "label": "SOL"
+        }
+      ],
+      "hint": "Esta flor mira hacia el sol. Junta las dos partes.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "es_medianoche",
+      "answer": "MEDIANOCHE",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "half",
+          "label": "MEDIA"
+        },
+        {
+          "kind": "icon",
+          "icon": "moon",
+          "label": "NOCHE"
+        }
+      ],
+      "hint": "Piensa en la mitad de la noche. Es una sola palabra.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "es_umbrella",
+      "answer": "PARAGUAS",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "PAR"
+        },
+        {
+          "kind": "icon",
+          "icon": "water",
+          "label": "AGUAS"
+        }
+      ],
+      "hint": "Protege de la lluvia. Une las dos partes.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "es_dishwasher",
+      "answer": "LAVAPLATOS",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "LAVA"
+        },
+        {
+          "kind": "icon",
+          "icon": "plates",
+          "label": "PLATOS"
+        }
+      ],
+      "hint": "Piensa en un aparato para limpiar platos. Una palabra.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "es_grasshopper",
+      "answer": "SALTAMONTES",
+      "parts": [
+        {
+          "kind": "action",
+          "icon": "jump",
+          "label": "SALTA"
+        },
+        {
+          "kind": "icon",
+          "icon": "mountains",
+          "label": "MONTES"
+        }
+      ],
+      "hint": "Mika está saltando. Une la acción con los montes.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "es_sharpener",
+      "answer": "SACAPUNTAS",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "SACA"
+        },
+        {
+          "kind": "icon",
+          "icon": "pencil",
+          "label": "PUNTAS"
+        }
+      ],
+      "hint": "Es un objeto del colegio que deja el lápiz con punta.",
+      "difficulty": 3,
+      "word_count": 1
+    },
+    {
+      "id": "es_birthday",
+      "answer": "CUMPLEAÑOS",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "CUMPLE"
+        },
+        {
+          "kind": "icon",
+          "icon": "calendar",
+          "label": "AÑOS"
+        }
+      ],
+      "hint": "Piensa en la fiesta que celebramos una vez al año. Una palabra.",
+      "difficulty": 3,
+      "word_count": 1
+    }
+  ],
+  "de": [
+    {
+      "id": "de_sunflower",
+      "answer": "SONNENBLUME",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "sun",
+          "label": "SONNE"
+        },
+        {
+          "kind": "text",
+          "label": "N"
+        },
+        {
+          "kind": "icon",
+          "icon": "flower",
+          "label": "BLUME"
+        }
+      ],
+      "hint": "Verbinde die Sonne, den Buchstaben N und die Blume.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "de_house_door",
+      "answer": "HAUSTÜR",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "house",
+          "label": "HAUS"
+        },
+        {
+          "kind": "icon",
+          "icon": "door",
+          "label": "TÜR"
+        }
+      ],
+      "hint": "Das ist der Eingang zu einem Haus. Zwei Teile ergeben ein Wort.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "de_snowman",
+      "answer": "SCHNEEMANN",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "snow",
+          "label": "SCHNEE"
+        },
+        {
+          "kind": "icon",
+          "icon": "man",
+          "label": "MANN"
+        }
+      ],
+      "hint": "Was kann man aus Schnee bauen? Verbinde die Bilder.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "de_rainbow",
+      "answer": "REGENBOGEN",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "rain",
+          "label": "REGEN"
+        },
+        {
+          "kind": "icon",
+          "icon": "arc",
+          "label": "BOGEN"
+        }
+      ],
+      "hint": "Nach dem Regen erscheint manchmal etwas Buntes am Himmel.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "de_moonlight",
+      "answer": "MONDLICHT",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "moon",
+          "label": "MOND"
+        },
+        {
+          "kind": "icon",
+          "icon": "light",
+          "label": "LICHT"
+        }
+      ],
+      "hint": "Die beiden Bilder gehören zur Nacht. Ein Wort.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "de_glove",
+      "answer": "HANDSCHUH",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "hand",
+          "label": "HAND"
+        },
+        {
+          "kind": "icon",
+          "icon": "shoe",
+          "label": "SCHUH"
+        }
+      ],
+      "hint": "Ein Schuh für die Hand? Setze die Wörter zusammen.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "de_toothbrush",
+      "answer": "ZAHNBÜRSTE",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "tooth",
+          "label": "ZAHN"
+        },
+        {
+          "kind": "icon",
+          "icon": "brush",
+          "label": "BÜRSTE"
+        }
+      ],
+      "hint": "Damit putzen wir unsere Zähne. Ein Wort.",
+      "difficulty": 3,
+      "word_count": 1
+    },
+    {
+      "id": "de_football",
+      "answer": "FUßBALL",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "foot",
+          "label": "FUß"
+        },
+        {
+          "kind": "icon",
+          "icon": "ball",
+          "label": "BALL"
+        }
+      ],
+      "hint": "Ein Körperteil und ein Ball ergeben einen Sport.",
+      "difficulty": 3,
+      "word_count": 1
+    }
+  ],
+  "fr": [
+    {
+      "id": "fr_sunflower",
+      "answer": "TOURNESOL",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "TOURNE"
+        },
+        {
+          "kind": "icon",
+          "icon": "ground",
+          "label": "SOL"
+        }
+      ],
+      "hint": "Cette fleur suit le soleil. Réunis les deux parties.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "fr_coins",
+      "answer": "PORTE-MONNAIE",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "door",
+          "label": "PORTE-"
+        },
+        {
+          "kind": "icon",
+          "icon": "coins",
+          "label": "MONNAIE"
+        }
+      ],
+      "hint": "On y range des pièces. Réunis les éléments avec un trait d’union.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "fr_umbrella",
+      "answer": "PARAPLUIE",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "PARA"
+        },
+        {
+          "kind": "icon",
+          "icon": "rain",
+          "label": "PLUIE"
+        }
+      ],
+      "hint": "Cet objet protège quand il pleut. Un seul mot.",
+      "difficulty": 1,
+      "word_count": 1
+    },
+    {
+      "id": "fr_cauliflower",
+      "answer": "CHOU-FLEUR",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "cabbage",
+          "label": "CHOU-"
+        },
+        {
+          "kind": "icon",
+          "icon": "flower",
+          "label": "FLEUR"
+        }
+      ],
+      "hint": "C’est un légume. Unis les deux mots avec un trait d’union.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "fr_rainbow",
+      "answer": "ARC-EN-CIEL",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "arc",
+          "label": "ARC-"
+        },
+        {
+          "kind": "text",
+          "label": "EN"
+        },
+        {
+          "kind": "icon",
+          "icon": "sky",
+          "label": "-CIEL"
+        }
+      ],
+      "hint": "Après la pluie, des couleurs apparaissent dans le ciel. Une expression avec des traits d’union.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "fr_skyscraper",
+      "answer": "GRATTE-CIEL",
+      "parts": [
+        {
+          "kind": "text",
+          "label": "GRATTE-"
+        },
+        {
+          "kind": "icon",
+          "icon": "sky",
+          "label": "CIEL"
+        }
+      ],
+      "hint": "C’est un bâtiment très haut. Réunis les parties.",
+      "difficulty": 2,
+      "word_count": 1
+    },
+    {
+      "id": "fr_potato",
+      "answer": "POMME DE TERRE",
+      "parts": [
+        {
+          "kind": "icon",
+          "icon": "apple",
+          "label": "POMME"
+        },
+        {
+          "kind": "text",
+          "label": "DE"
+        },
+        {
+          "kind": "icon",
+          "icon": "earth",
+          "label": "TERRE"
+        }
+      ],
+      "hint": "C’est un aliment qui pousse sous le sol. La réponse a trois mots.",
+      "difficulty": 3,
+      "word_count": 3
+    },
+    {
+      "id": "fr_washing",
+      "answer": "LAVE-LINGE",
+      "parts": [
+        {
+          "kind": "action",
+          "icon": "wash_hands",
+          "label": "LAVE-"
+        },
+        {
+          "kind": "icon",
+          "icon": "shirt",
+          "label": "LINGE"
+        }
+      ],
+      "hint": "Mika se lave les mains. Pense à une machine qui lave les vêtements.",
+      "difficulty": 3,
+      "word_count": 1
+    }
+  ]
+}

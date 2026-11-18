@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfbhk4nh7dq3j"]
+
+[ext_resource type="Script" path="res://simulator_ui/earth_backgrounds/shopping_product_bg_v1.gd" id="1_game"]
+[ext_resource type="PackedScene" uid="uid://cvdh0b4si3umh" path="res://learning/scenes/features/grocery/grocery_item.tscn" id="2_item"]
+
+[node name="GroceryGame" type="Node2D"]
+script = ExtResource("1_game")
+product_scene = ExtResource("2_item")
