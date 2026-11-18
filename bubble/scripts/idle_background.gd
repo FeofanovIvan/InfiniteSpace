@@ -21,10 +21,10 @@ func _draw() -> void:
     # Still shadow/landing halo to make vertical breathing perceptible.
     for i in range(9):
         var f: float = 1.0 - float(i) / 9.0
-        draw_ellipse(seat, 205.0 * scale_factor * f, 32.0 * scale_factor * f, Color(0.24, 0.71, 0.94, 0.025))
+        _draw_shadow_ellipse(seat, 205.0 * scale_factor * f, 32.0 * scale_factor * f, Color(0.24, 0.71, 0.94, 0.025))
     draw_arc(seat, 180.0 * scale_factor, 0.13, PI - 0.13, 52, Color(0.45, 0.80, 0.98, 0.21), 1.5, true)
 
-func draw_ellipse(center: Vector2, rx: float, ry: float, color: Color) -> void:
+func _draw_shadow_ellipse(center: Vector2, rx: float, ry: float, color: Color) -> void:
     var points := PackedVector2Array()
     for i in range(48):
         var a: float = TAU * float(i) / 48.0

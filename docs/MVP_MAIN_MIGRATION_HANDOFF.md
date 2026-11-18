@@ -23,6 +23,12 @@ The original dirty worktree was not modified. Its 22 tracked changes and all Git
 
 Backup contents include `working-tree.patch`, `index.patch`, `tracked-files.tar`, `untracked-files.tar`, `status.txt`, and `HEAD.txt`. SHA-256 checksums were recorded in the execution log and verified after copying from `/private/tmp`.
 
+Key backup SHA-256 values:
+
+- `working-tree.patch`: `acbc384fd48617870a4dfe8e7427addfdf3a3784c6fa1ce38d97712e29a49a16`
+- `tracked-files.tar`: `3fe1911fba5e40848afac2423540d9dfe0ee9d9cb52a5ba90790646db4f8d888`
+- `untracked-files.tar`: `597a92d1d8564f18dd7c2e4ae271db735cfb22d92b7b6f85e13c794ac0155f76`
+
 ## Integration worktree
 
 - Path: `/Users/ivanfeofanov/Projects/InfiniteSpace/MVP_MAIN_Integration_20261118`
@@ -30,13 +36,10 @@ Backup contents include `working-tree.patch`, `index.patch`, `tracked-files.tar`
 - Base: current `origin/main`
 - Merge source: `origin/refactor/unified-learning-20261110`
 
-## Completed stages
+## Integration commits
 
-1. Audited both existing worktrees, local dirty state, remotes, and branch heads.
-2. Fetched and revalidated remote heads.
-3. Created and verified the external backup.
-4. Started a non-fast-forward merge of refactor into the integration branch.
-5. Merge produced only two conflicts: `atlas/world_atlas.json` and `scripts/NpcTraffic.gd`.
+- `9dfa6010` — merge `origin/refactor/unified-learning-20261110` into the `main`-based integration branch.
+- `321b38e1` — apply the reviewed local gameplay polish while excluding payment/store work.
 
 ## Conflict decisions
 
@@ -66,13 +69,32 @@ Intentionally left only in the safety backup:
 
 Reason: the MVP task explicitly excludes introducing a new payment mechanism without necessity. Backup directories and store-publication artifacts are not runtime sources. The original dirty worktree remains untouched, so this decision is reversible from the recorded patch/archive.
 
-## Tests
+## Verification completed
 
-Atlas JSON validation passed after conflict resolution. Runtime tests are not run yet. Required next stages: commit selected local fixes, run resource checks and Godot 4.7.1 headless import/startup tests, then inspect export readiness.
+- Godot `4.7.1.stable.official.a13da4feb` headless editor import: pass, with no project parser or missing-resource errors. Sandbox-only CA/editor-settings/ADB warnings do not reproduce as project failures.
+- Normal main scene startup (`res://scenes/main.tscn`) for 600 frames outside the filesystem sandbox: pass. Only forced-quit ObjectDB/resource leak diagnostics remain.
+- Existing smoke scripts: all pass — adaptive music, minimap/station, mobile performance, dialogue i18n/adaptive (all six languages), typing tolerance, dialogue UI runtime, Crossroads content, and single-page comic.
+- Added `tools/mvp_scene_smoke.gd`: pass. It verifies the real Free World wrapper, exactly 10 initial games, all 24 expanded planet/additional games, launch/return for every registered game, the current Bubble Care scene, and Space Racing.
+- Resource reachability audit: 1,368 reachable resources and 2,499 conservative unreferenced candidates. No deletion was performed because many candidates can be loaded dynamically.
+- Android debug export: pass after renaming a Bubble background helper that conflicts with Godot 4.7.1's new native `CanvasItem.draw_ellipse` method. Output `/private/tmp/InfiniteSpace-MVP-debug.apk` is 122 MiB, SHA-256 `770aa254b4f2ebc9457c1c7768e7fcca6e8af1b344d169aef6c3e7e8ae5cc7cd`, and verifies with APK Signature Schemes v2 and v3.
+- iOS project-only export: pass. Godot generated `/private/tmp/InfiniteSpace-MVP-ios.xcodeproj` and its supporting project/framework directories. `xcodebuild -list` passes. The default arm64 simulator link does not match the object composition in the Godot 4.7.1 simulator archive; an explicit x86_64 simulator build with `CODE_SIGNING_ALLOWED=NO` completes with `BUILD SUCCEEDED`. A device/App Store build cannot be signed locally because no Apple signing identity is installed.
+
+The active startup path remains Free World. Bubble uses `res://bubble/scenes/care_room_actions_camera.tscn`; the old Bubble prototype is not selected. The experimental story branch was audited only and was not merged.
+
+## Local launch
+
+From Finder, double-click `run_mvp_mac.command`, or run:
+
+```sh
+cd /Users/ivanfeofanov/Projects/InfiniteSpace/MVP_MAIN_Integration_20261118
+./run_mvp_mac.command
+```
+
+The launcher pins the project to `/Applications/Godot 4.7.1.app`.
 
 ## Next exact action
 
-Commit selected local gameplay fixes, verify resource references and scene routing, then run Godot 4.7.1 headless import and startup smoke tests.
+Commit the Godot 4.7.1 compatibility fix, MVP smoke, launcher, and this updated handoff. Then perform a normal graphical launch and open the pull request. Do not merge the pull request until the user visually approves the runnable MVP.
 
 ## Resume commands
 
