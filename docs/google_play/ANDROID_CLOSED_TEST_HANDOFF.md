@@ -193,8 +193,10 @@ This artifact must not be uploaded. It proves that the Gradle template, billing 
 ## Google Play and legal status
 
 - No Play Console upload or Production action has been performed.
-- `versionCode 36` has not been checked in Play Console and must not be considered available yet.
-- The existence/activation of `full_game_unlock` has not been confirmed in Play Console.
+- Read-only Play Console inspection on 2026-11-19 confirmed this is a personal developer account and currently contains only the two existing MathUp applications. Infinite Space / `com.feofanov.infinitespace` has not been created in this account.
+- Consequently there is no prior bundle/version history for this package in the inspected account: versionCode 36 has not been used there, `full_game_unlock` does not exist there, and there is no app-specific Play App Signing/upload-certificate record yet.
+- The console also shows a separate account-level action to declare trader status by February 2027; the owner must complete that declaration using accurate legal/business information.
+- No Play Console form was submitted and no app, product, tester list, or release was created during the inspection.
 - The store-listing assets and copy are prepared under `docs/google_play/`; no approved image was regenerated.
 - On 2026-11-19 both configured legal URLs returned HTTP 200, but their live content still says PlayTown Kids and describes subscriptions, a trial, auto-renewal, and subscription management. The corrected local files `docs/google_play/legal/privacy.html` and `terms.html` must be published by the site owner before submission; this Android task did not modify the site project.
 - Google's current help still requires at least 12 testers continuously opted in for 14 days for applicable personal accounts created after 2023-11-13. Uploading an AAB alone does not start or satisfy that requirement.
@@ -216,11 +218,12 @@ Only standard debug keystores were found locally. No reusable permanent upload k
 
 ## Required next steps
 
-1. Obtain explicit confirmation before creating a new upload keystore, or supply/reuse the key already registered for this app.
+1. Obtain explicit confirmation before creating a new upload keystore, or supply/reuse an owner-controlled key from prior secure storage.
 2. Build `builds/android/InfiniteSpace-0.36.0-36-release.aab` with `--export-release`, then verify its certificate, SHA-256, and bundletool structure.
 3. Publish the corrected privacy policy and terms at the configured public URLs without reintroducing subscription language.
-4. In Play Console, verify that versionCode 36 is unused, create/activate `full_game_unlock` as a one-time product with USD 15 base price, complete App content/Data safety, and configure license testers.
-5. Only after owner confirmation, upload the signed AAB to Internal or Closed testing. Do not publish to Production.
+4. With owner confirmation, create Infinite Space in Play Console, enable Play App Signing, and upload versionCode 36 first to Internal or Closed testing.
+5. Create/activate `full_game_unlock` as a one-time product with USD 15 base price, complete App content/Data safety, and configure license testers.
+6. Do not publish to Production.
 
 No Google Play Console upload or Production action has been performed.
 
