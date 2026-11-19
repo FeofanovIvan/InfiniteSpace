@@ -1,0 +1,2 @@
+# Store-listing materials are kept with the project but must not be imported
+# into the game or bundled inside the Android package.

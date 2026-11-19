@@ -3,7 +3,7 @@ extends SceneTree
 ## Run with Godot 4.7.1:
 ##   godot --headless --path . --script res://tools/mvp_scene_smoke.gd
 
-const MENU_SCRIPT_PATH := "res://simulator_ui/menu/mika_free_world_more_games_v1.gd"
+const MENU_SCRIPT_PATH := "res://tools/test_doubles/mvp_menu_free_world_test_double.gd"
 const SPACE_RACE_SCENE_PATH := "res://space_racing/SpaceRace.tscn"
 const EXPECTED_CORE_GAMES := 10
 const EXPECTED_PLANET_GAMES := 24

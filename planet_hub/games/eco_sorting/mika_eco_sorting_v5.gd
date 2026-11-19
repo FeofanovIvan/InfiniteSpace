@@ -223,7 +223,7 @@ func _make_audio() -> void:
     _instruction_player.name = "EcoInstructionVoice"
     add_child(_instruction_player)
     if AudioServer.get_bus_index("Voice") >= 0:
-        _instruction_player.bus = "Voice"
+        _instruction_player.bus = "VOICE"
     elif AudioServer.get_bus_index("SFX") >= 0:
         _instruction_player.bus = "SFX"
     _feedback = FEEDBACK_SCRIPT.new() as Node

@@ -14,9 +14,8 @@ var content_center: CenterContainer
 var content: VBoxContainer
 var answer_input: LineEdit
 var message_label: Label
-var trial_label: Label
 var challenge_answer := 0
-var plan_buttons: Dictionary = {}
+var purchase_button: Button
 var keyboard_height := 0
 var locked := false
 var show_expiration_notice := false
@@ -64,7 +63,7 @@ func _ready() -> void:
 	content.add_theme_constant_override("separation", 9)
 	content_center.add_child(content)
 	voice_player = AudioStreamPlayer.new()
-	voice_player.bus = "Voice"
+	voice_player.bus = "VOICE"
 	add_child(voice_player)
 	get_viewport().size_changed.connect(_layout)
 	set_process(true)
@@ -72,6 +71,7 @@ func _ready() -> void:
 	BillingService.products_updated.connect(_on_products_updated)
 	BillingService.entitlement_changed.connect(_on_entitlement_changed)
 	BillingService.purchase_pending.connect(_on_purchase_pending)
+	BillingService.purchase_canceled.connect(_on_purchase_canceled)
 	BillingService.billing_error.connect(_on_billing_error)
 	_layout()
 	if show_expiration_notice:
@@ -112,13 +112,19 @@ func _show_preview_expired_notice() -> void:
 	_add_subscription_icon()
 	_add_title(_t("preview_complete_title"))
 	_add_body(_t("preview_complete_body"))
-	var trial_badge := _add_trial_badge("★  %s  ★" % _t("trial_eligible"))
-	trial_badge.visible = true
-	_add_body(_t("trial_renewal_notice"))
-	var continue_button := _make_button(_t("continue"), Color(1.0, 0.66, 0.12), Color(0.35, 0.21, 0.08))
-	continue_button.custom_minimum_size.y = 64
-	continue_button.pressed.connect(_show_adult_gate)
-	content.add_child(continue_button)
+	_add_body(_t("one_time_purchase_notice"))
+	message_label = _add_status("")
+	var parent_button := _make_button(_t("for_parents"), Color(1.0, 0.66, 0.12), Color(0.35, 0.21, 0.08))
+	parent_button.custom_minimum_size.y = 64
+	parent_button.pressed.connect(_show_adult_gate)
+	content.add_child(parent_button)
+	var restore_button := _make_button(_t("restore_purchases"), Color(0.72, 0.56, 0.32))
+	restore_button.pressed.connect(_restore)
+	content.add_child(restore_button)
+	retry_button = _make_button(_t("retry_store"), Color(0.40, 0.64, 0.84))
+	retry_button.visible = false
+	retry_button.pressed.connect(_retry_store)
+	content.add_child(retry_button)
 	var parent_hint := _add_status(_t("parent_check_hint"))
 	parent_hint.add_theme_color_override("font_color", Color(0.43, 0.36, 0.25))
 	parent_hint.add_theme_font_size_override("font_size", 17)
@@ -163,10 +169,12 @@ func _show_adult_gate() -> void:
 	var continue_button := _make_button(_t("continue"), Color(1.0, 0.66, 0.12), Color(0.35, 0.21, 0.08))
 	continue_button.pressed.connect(_verify_answer)
 	content.add_child(continue_button)
-	if not locked:
-		var close_button := _make_button(_t("back"), Color(0.78, 0.62, 0.36))
+	var close_button := _make_button(_t("back"), Color(0.78, 0.62, 0.36))
+	if locked:
+		close_button.pressed.connect(_show_preview_expired_notice)
+	else:
 		close_button.pressed.connect(_close)
-		content.add_child(close_button)
+	content.add_child(close_button)
 	answer_input.grab_focus.call_deferred()
 
 func _on_answer_focus_entered() -> void:
@@ -189,29 +197,22 @@ func _verify_answer() -> void:
 		answer_input.clear()
 		answer_input.grab_focus()
 		return
-	_show_plans()
+	_show_purchase()
 
-func _show_plans() -> void:
+func _show_purchase() -> void:
 	_clear_content()
-	plan_buttons.clear()
+	purchase_button = null
 	_add_crown()
-	_add_title(_t("subscription_title"))
-	_add_body(_t("subscription_body"))
-	trial_label = _add_trial_badge("")
-	trial_label.visible = false
+	_add_title(_t("full_game_title"))
+	_add_body(_t("full_game_body"))
 	message_label = _add_status(_t("store_connecting"))
-	if AccessService.subscription_active:
-		message_label.text = _t("subscription_active")
-		var manage_button := _make_button(_t("manage_subscription"), Color(0.42, 0.73, 0.34))
-		manage_button.pressed.connect(BillingService.open_subscription_management)
-		content.add_child(manage_button)
+	if AccessService.full_game_owned:
+		message_label.text = _t("full_game_active")
 	else:
-		for plan_id in ["monthly", "quarterly", "annual"]:
-			var button := _make_button(_plan_name(plan_id), Color(1.0, 0.70, 0.16), Color(0.35, 0.21, 0.08))
-			button.disabled = true
-			button.pressed.connect(_purchase.bind(plan_id))
-			content.add_child(button)
-			plan_buttons[plan_id] = button
+		purchase_button = _make_button(_t("buy_full_game"), Color(1.0, 0.70, 0.16), Color(0.35, 0.21, 0.08))
+		purchase_button.disabled = true
+		purchase_button.pressed.connect(_purchase)
+		content.add_child(purchase_button)
 		var restore_button := _make_button(_t("restore_purchases"), Color(0.72, 0.56, 0.32))
 		restore_button.pressed.connect(_restore)
 		content.add_child(restore_button)
@@ -220,19 +221,21 @@ func _show_plans() -> void:
 		retry_button.pressed.connect(_retry_store)
 		content.add_child(retry_button)
 	_add_legal_information()
-	if not locked:
-		var close_button := _make_button(_t("back_to_game"), Color(0.78, 0.62, 0.36))
+	var close_button := _make_button(_t("back" if locked else "back_to_game"), Color(0.78, 0.62, 0.36))
+	if locked:
+		close_button.pressed.connect(_show_preview_expired_notice)
+	else:
 		close_button.pressed.connect(_close)
-		content.add_child(close_button)
+	content.add_child(close_button)
 	_update_store_state()
 	BillingService.refresh()
 
-func _purchase(plan_id: String) -> void:
-	_set_plan_buttons_disabled(true)
+func _purchase() -> void:
+	_set_purchase_disabled(true)
 	message_label.text = _t("store_opening")
-	if not BillingService.purchase_plan(plan_id):
+	if not BillingService.purchase_full_game():
 		message_label.text = _t("store_unavailable")
-		_set_plan_buttons_disabled(false)
+		_set_purchase_disabled(false)
 
 func _restore() -> void:
 	message_label.text = _t("restoring_purchases")
@@ -258,45 +261,40 @@ func _on_entitlement_changed(active: bool) -> void:
 		if locked:
 			_close()
 		else:
-			_show_plans()
+			_show_purchase()
 
 func _on_purchase_pending() -> void:
 	if is_instance_valid(message_label):
 		message_label.text = _t("purchase_pending")
 
+func _on_purchase_canceled() -> void:
+	if not is_instance_valid(message_label):
+		return
+	_update_store_state()
+	message_label.text = _t("purchase_canceled")
+
 func _on_billing_error(_code: int, error_message: String) -> void:
 	if not is_instance_valid(message_label):
 		return
 	message_label.text = _t("store_unavailable")
-	_set_plan_buttons_disabled(true)
+	_set_purchase_disabled(true)
 	if is_instance_valid(retry_button):
 		retry_button.visible = true
 
 func _update_store_state() -> void:
-	if plan_buttons.is_empty():
+	if not is_instance_valid(purchase_button):
 		return
 	var products_available := not BillingService.get_products().is_empty()
-	_set_plan_buttons_disabled(not products_available)
+	_set_purchase_disabled(not products_available)
 	if products_available:
 		if is_instance_valid(retry_button):
 			retry_button.visible = false
-		message_label.text = _t("select_plan")
-		var trial_text := ""
-		for plan_id in plan_buttons:
-			var info: Dictionary = BillingService.get_plan_info(plan_id)
-			var label := _plan_name(plan_id)
-			var price := str(info.get("formatted_price", ""))
-			if not price.is_empty():
-				label += "  •  " + price
-			if bool(info.get("has_free_trial", false)):
-				var offer_text := _trial_text(str(info.get("trial_period", "")))
-				label += "  •  " + offer_text
-				if trial_text.is_empty():
-					trial_text = offer_text
-			plan_buttons[plan_id].text = label
-		if is_instance_valid(trial_label):
-			trial_label.visible = not trial_text.is_empty()
-			trial_label.text = "★  %s  ★" % _t("trial_eligible")
+		message_label.text = _t("purchase_ready")
+		var info: Dictionary = BillingService.get_full_game_info()
+		var price := str(info.get("formatted_price", ""))
+		purchase_button.text = _t("buy_full_game")
+		if not price.is_empty():
+			purchase_button.text += "  •  " + price
 	elif not BillingService.get_last_error_message().is_empty():
 		_on_billing_error(-1, BillingService.get_last_error_message())
 	elif OS.get_name() == "Android":
@@ -306,19 +304,19 @@ func _update_store_state() -> void:
 		if is_instance_valid(retry_button):
 			retry_button.visible = true
 
-func _set_plan_buttons_disabled(value: bool) -> void:
-	for button in plan_buttons.values():
-		button.disabled = value
+func _set_purchase_disabled(value: bool) -> void:
+	if is_instance_valid(purchase_button):
+		purchase_button.disabled = value
 
 func _close() -> void:
-	if locked and not AccessService.subscription_active:
+	if locked and not AccessService.full_game_owned:
 		return
 	closed.emit()
 	queue_free()
 
 func _add_legal_information() -> void:
 	var renewal_notice := Label.new()
-	renewal_notice.text = _t("subscriptions_renew")
+	renewal_notice.text = _t("one_time_purchase_legal")
 	renewal_notice.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	renewal_notice.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	renewal_notice.add_theme_font_size_override("font_size", 16)
@@ -398,18 +396,6 @@ func _add_status(value: String) -> Label:
 	content.add_child(label)
 	return label
 
-func _add_trial_badge(value: String) -> Label:
-	var label := Label.new()
-	label.text = value
-	label.custom_minimum_size = Vector2(0, 38)
-	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	label.add_theme_font_size_override("font_size", 19)
-	label.add_theme_color_override("font_color", Color(0.33, 0.48, 0.14))
-	label.add_theme_stylebox_override("normal", _trial_style())
-	content.add_child(label)
-	return label
-
 func _make_button(label: String, color: Color, text_color: Color = Color.WHITE) -> Button:
 	var button := Button.new()
 	button.text = label
@@ -464,24 +450,8 @@ func _input_style(border_color: Color) -> StyleBoxFlat:
 	style.content_margin_right = 18
 	return style
 
-func _trial_style() -> StyleBoxFlat:
-	var style := StyleBoxFlat.new()
-	style.bg_color = Color(0.90, 0.97, 0.72)
-	style.border_color = Color(0.58, 0.76, 0.23)
-	style.set_border_width_all(2)
-	style.set_corner_radius_all(16)
-	return style
-
-func _trial_text(period: String) -> String:
-	if period == "P7D" or period == "P1W":
-		return _t("trial_seven_days")
-	return _t("trial_free")
-
 func _t(key: String) -> String:
 	return LanguageService.get_ui_text(key)
-
-func _plan_name(plan_id: String) -> String:
-	return _t("plan_%s" % plan_id)
 
 func _play_parent_gate_voice() -> void:
 	var stream := LanguageService.get_ui_voice("parent_gate_intro")

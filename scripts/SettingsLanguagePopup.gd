@@ -3,20 +3,23 @@ extends Control
 ## Input is handled by this modal; underlying simulator/flight UI stays unchanged.
 
 const CLOSE_GLYPH: Script = preload("res://simulator_ui/neon_close_glyph.gd")
+const PRIVACY_POLICY_URL: String = "https://feofanova-math-tutor.feofanov-logistics.workers.dev/playtown/privacy"
 const LOCALES: Array[String] = ["en", "ru", "fr", "de", "es", "pt_BR"]
 const NAMES: Array[String] = ["English", "Русский", "Français", "Deutsch", "Español", "Português (BR)"]
 const HEADINGS: Dictionary = {"en": "SETTINGS", "ru": "НАСТРОЙКИ", "fr": "PARAMÈTRES", "de": "EINSTELLUNGEN", "es": "AJUSTES", "pt_BR": "CONFIGURAÇÕES"}
 const V104_LABELS: Dictionary = {
-	"ru":{"mode":"Режим игры", "free":"Свободный мир", "story":"Сюжет (скоро)", "privacy":"Политика конфиденциальности", "purchase":"Покупка", "privacy_hint":"Ссылка на политику конфиденциальности пока не настроена.", "purchase_hint":"Покупка будет доступна после подключения магазина."},
-	"en":{"mode":"Game mode", "free":"Free world", "story":"Story (coming soon)", "privacy":"Privacy Policy", "purchase":"Purchase", "privacy_hint":"The official privacy policy link is not configured yet.", "purchase_hint":"Purchases will be available after store setup."},
-	"fr":{"mode":"Mode de jeu", "free":"Monde libre", "story":"Histoire (bientôt)", "privacy":"Politique de confidentialité", "purchase":"Achat", "privacy_hint":"Le lien officiel vers la politique de confidentialité n’est pas encore défini.", "purchase_hint":"Les achats seront disponibles après la configuration de la boutique."},
-	"de":{"mode":"Spielmodus", "free":"Freie Welt", "story":"Geschichte (bald)", "privacy":"Datenschutzerklärung", "purchase":"Kauf", "privacy_hint":"Der offizielle Datenschutzlink ist noch nicht eingerichtet.", "purchase_hint":"Käufe folgen nach der Einrichtung des Shops."},
-	"es":{"mode":"Modo de juego", "free":"Mundo libre", "story":"Historia (próximamente)", "privacy":"Política de privacidad", "purchase":"Compra", "privacy_hint":"Aún no se ha configurado el enlace oficial de privacidad.", "purchase_hint":"Las compras estarán disponibles al configurar la tienda."},
-	"pt_BR":{"mode":"Modo de jogo", "free":"Mundo livre", "story":"História (em breve)", "privacy":"Política de privacidade", "purchase":"Compra", "privacy_hint":"O link oficial da política de privacidade ainda não foi configurado.", "purchase_hint":"As compras estarão disponíveis após configurar a loja."}
+	"ru":{"mode":"Режим игры", "free":"Свободный мир", "story":"Сюжет (скоро)", "privacy":"Политика конфиденциальности", "purchase":"Полная версия", "purchase_hint":"Покупка полной версии появится после 10 бесплатных минут."},
+	"en":{"mode":"Game mode", "free":"Free world", "story":"Story (coming soon)", "privacy":"Privacy Policy", "purchase":"Full game", "purchase_hint":"The full-game purchase appears after 10 free minutes."},
+	"fr":{"mode":"Mode de jeu", "free":"Monde libre", "story":"Histoire (bientôt)", "privacy":"Politique de confidentialité", "purchase":"Jeu complet", "purchase_hint":"L’achat du jeu complet apparaît après 10 minutes gratuites."},
+	"de":{"mode":"Spielmodus", "free":"Freie Welt", "story":"Geschichte (bald)", "privacy":"Datenschutzerklärung", "purchase":"Vollversion", "purchase_hint":"Der Kauf der Vollversion erscheint nach 10 kostenlosen Minuten."},
+	"es":{"mode":"Modo de juego", "free":"Mundo libre", "story":"Historia (próximamente)", "privacy":"Política de privacidad", "purchase":"Juego completo", "purchase_hint":"La compra del juego completo aparece después de 10 minutos gratis."},
+	"pt_BR":{"mode":"Modo de jogo", "free":"Mundo livre", "story":"História (em breve)", "privacy":"Política de privacidade", "purchase":"Jogo completo", "purchase_hint":"A compra do jogo completo aparece após 10 minutos grátis."}
 }
 const V104_MODE_CONFIG: String = "user://miko_mode.cfg"
+const AUDIO_CONFIG_PATH: String = "user://miko_audio.cfg"
 # InfiniteSpace v104: Free world default; the story mode is not released.
 const LANGUAGE_LABELS: Dictionary = {"en": "Language", "ru": "Язык", "fr": "Langue", "de": "Sprache", "es": "Idioma", "pt_BR": "Idioma"}
+const VOLUME_LABELS: Dictionary = {"en": "Volume", "ru": "Громкость", "fr": "Volume", "de": "Lautstärke", "es": "Volumen", "pt_BR": "Volume"}
 
 var _veil: ColorRect
 var _panel: Panel
@@ -30,6 +33,9 @@ var _v104_story: Button
 var _v104_privacy: Button
 var _v104_purchase: Button
 var _v104_info: Label
+var _volume_title: Label
+var _volume_slider: HSlider
+var _volume_value: Label
 
 func _ready() -> void:
 	call_deferred("_mika_ency_v21_attach")
@@ -82,6 +88,7 @@ func _ready() -> void:
 		_panel.add_child(b)
 		_buttons.append(b)
 	_v104_build_extras()
+	_build_audio_settings()
 	resized.connect(_layout)
 	MobileLocale.language_changed.connect(_refresh_locale)
 	_refresh_locale(MobileLocale.language)
@@ -129,8 +136,8 @@ func _layout() -> void:
 		return
 	var safe: Rect2 = MobileLocale.safe_rect(view)
 	var w: float = minf(670.0, safe.size.x - 14.0)
-	var h: float = minf(650.0, safe.size.y - 14.0)
-	var s: float = clampf(minf(w / 670.0, h / 650.0), 0.35, 1.0)
+	var h: float = minf(690.0, safe.size.y - 14.0)
+	var s: float = clampf(minf(w / 670.0, h / 690.0), 0.35, 1.0)
 	_panel.position = safe.position + (safe.size - Vector2(w, h)) * 0.5
 	_panel.size = Vector2(w, h)
 	_title.position = Vector2(33.0*s, 12.0*s)
@@ -161,8 +168,16 @@ func _layout() -> void:
 	_v104_privacy.size = Vector2(w-margin*2.0, 62.0*s)
 	_v104_purchase.position = Vector2(margin, 494.0*s)
 	_v104_purchase.size = Vector2(w-margin*2.0, 62.0*s)
-	_v104_info.position = Vector2(margin, 572.0*s)
-	_v104_info.size = Vector2(w-margin*2.0, 60.0*s)
+	_volume_title.position = Vector2(margin, 562.0*s)
+	_volume_title.size = Vector2(150.0*s, 38.0*s)
+	_volume_title.add_theme_font_size_override("font_size", maxi(12, roundi(18.0*s)))
+	_volume_slider.position = Vector2(margin + 155.0*s, 562.0*s)
+	_volume_slider.size = Vector2(maxf(80.0*s, w-margin*2.0-230.0*s), 38.0*s)
+	_volume_value.position = Vector2(w-margin-68.0*s, 562.0*s)
+	_volume_value.size = Vector2(68.0*s, 38.0*s)
+	_volume_value.add_theme_font_size_override("font_size", maxi(12, roundi(17.0*s)))
+	_v104_info.position = Vector2(margin, 614.0*s)
+	_v104_info.size = Vector2(w-margin*2.0, 58.0*s)
 	_v104_info.add_theme_font_size_override("font_size", maxi(11,roundi(15.0*s)))
 	for button in [_v104_free, _v104_story, _v104_privacy, _v104_purchase]:
 		button.add_theme_font_size_override("font_size", maxi(12,roundi(18.0*s)))
@@ -193,7 +208,7 @@ func _v104_build_extras() -> void:
 	_v104_story.add_theme_color_override("font_disabled_color",Color("7893ab"))
 	_v104_privacy = _v104_extra_button()
 	_v104_purchase = _v104_extra_button()
-	_v104_privacy.pressed.connect(_v104_unconfigured.bind("privacy_hint"))
+	_v104_privacy.pressed.connect(_v104_open_privacy)
 	_v104_purchase.pressed.connect(_v104_unconfigured.bind("purchase_hint"))
 	_v104_info = Label.new()
 	_v104_info.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -201,6 +216,52 @@ func _v104_build_extras() -> void:
 	_v104_info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_v104_info.add_theme_color_override("font_color",Color("f3cf82"))
 	_panel.add_child(_v104_info)
+
+func _build_audio_settings() -> void:
+	_volume_title = Label.new()
+	_volume_title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_volume_title.add_theme_color_override("font_color", Color("96dcff"))
+	_panel.add_child(_volume_title)
+	_volume_slider = HSlider.new()
+	_volume_slider.name = "MasterVolume"
+	_volume_slider.min_value = 0.0
+	_volume_slider.max_value = 100.0
+	_volume_slider.step = 1.0
+	_volume_slider.value_changed.connect(_on_volume_changed)
+	_panel.add_child(_volume_slider)
+	_volume_value = Label.new()
+	_volume_value.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	_volume_value.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_volume_value.add_theme_color_override("font_color", Color("f0faff"))
+	_panel.add_child(_volume_value)
+	var config := ConfigFile.new()
+	var saved_volume := 100.0
+	if config.load(AUDIO_CONFIG_PATH) == OK:
+		saved_volume = clampf(float(config.get_value("audio", "master_percent", 100.0)), 0.0, 100.0)
+	_volume_slider.set_value_no_signal(saved_volume)
+	_apply_master_volume(saved_volume)
+	_refresh_volume_text(saved_volume)
+
+func _on_volume_changed(value: float) -> void:
+	_apply_master_volume(value)
+	_refresh_volume_text(value)
+	var config := ConfigFile.new()
+	config.set_value("audio", "master_percent", clampf(value, 0.0, 100.0))
+	if config.save(AUDIO_CONFIG_PATH) != OK:
+		push_warning("Could not persist audio volume")
+
+func _apply_master_volume(value: float) -> void:
+	var percent := clampf(value, 0.0, 100.0)
+	var master_index := AudioServer.get_bus_index("Master")
+	if master_index >= 0:
+		AudioServer.set_bus_volume_db(master_index, linear_to_db(percent / 100.0) if percent > 0.0 else -80.0)
+	var voice_service := get_node_or_null("/root/MikaVoice")
+	if voice_service != null:
+		voice_service.set("volume", roundi(percent))
+
+func _refresh_volume_text(value: float) -> void:
+	if _volume_value != null:
+		_volume_value.text = "%d%%" % roundi(value)
 
 func _v104_refresh_extras() -> void:
 	if _v104_mode_title == null:
@@ -212,6 +273,8 @@ func _v104_refresh_extras() -> void:
 	_v104_privacy.text = str(words.get("privacy","Privacy Policy"))
 	_v104_purchase.text = str(words.get("purchase","Purchase"))
 	_v104_free.add_theme_stylebox_override("normal",_style(Color("b26a2a"),Color("ffd36e"),16))
+	if _volume_title != null:
+		_volume_title.text = str(VOLUME_LABELS.get(MobileLocale.language, VOLUME_LABELS["en"]))
 
 func _v104_choose_free() -> void:
 	var config: ConfigFile = ConfigFile.new()
@@ -224,6 +287,9 @@ func _v104_choose_free() -> void:
 func _v104_unconfigured(key: String) -> void:
 	var words: Dictionary = V104_LABELS.get(MobileLocale.language,V104_LABELS["en"])
 	_v104_info.text = str(words.get(key,"Not configured yet"))
+
+func _v104_open_privacy() -> void:
+	OS.shell_open(PRIVACY_POLICY_URL)
 
 func open_settings() -> void:
 	visible = true

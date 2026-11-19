@@ -1,0 +1,236 @@
+# InfiniteSpace Android closed-test handoff
+
+Last updated: 2026-11-19 (America/Sao_Paulo)
+
+## Scope and safety
+
+- MVP source commit: `f2d796681e5105c759aa918b68dc9c8c296046bd`
+- MVP pull request: `https://github.com/FeofanovIvan/InfiniteSpace/pull/13` (unchanged; still awaiting visual approval)
+- Android release branch: `release/android-closed-test-20261119`
+- Android release worktree: `/Users/ivanfeofanov/Projects/InfiniteSpace/Android_Release_20261119`
+- Payment source worktree: `/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot` at `dbdb620b65a6ce31d1c3692397ed1f699adae468` plus local changes
+- Experimental story branch is not included.
+
+The payment source was backed up before transfer at:
+
+`/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Backups/AndroidRelease_source_20261118_1300`
+
+Backup SHA-256:
+
+- `working-tree.patch`: `acbc384fd48617870a4dfe8e7427addfdf3a3784c6fa1ce38d97712e29a49a16`
+- `index.patch`: `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852`
+- `tracked-files.tar`: `3fe1911f9e7cd80c626355e1789d94facd5b69b099d40f4c301935cf90023c7c`
+- `untracked-files.tar`: `597a92d1af754ca106a68aae9bd2c9cc46dec985822502ab28572464770bc345`
+
+## Transfer decisions
+
+Transferred from the local payment work:
+
+- Google Play Billing plugin wrapper and AARs under `addons/GodotGooglePlayBilling/`
+- Android one-time purchase logic for `full_game_unlock`
+- 600-second active-play limit and persistent local timer state
+- parent-gated purchase/restore UI and six-language strings
+- Android AAB export preset for `0.36.0 (36)`, package `com.feofanov.infinitespace`, target SDK 36
+- Google Play listing, closed-test, data-safety, legal, and approved graphic assets under `docs/google_play/`
+
+Not transferred:
+
+- gameplay files already present in the consolidated MVP
+- local backup directories
+- experimental story work
+- any keystore, password, or signing secret
+
+The local draft attempted to replace iOS subscriptions with a one-time product. That part was rejected because this task is Android-only. The existing iOS product identifiers and dormant subscription implementation remain unchanged.
+
+## Corrections made during review
+
+- Removed the old duplicate plugin path `learning/addons/GodotGooglePlayBilling/`; the supported plugin now lives only at the project root.
+- Billing dependency is `com.android.billingclient:billing-ktx:9.1.0`.
+- Android queries and restores use product type `INAPP`, never `SUBS`.
+- Purchase cancellation now restores the UI instead of leaving the purchase button disabled.
+- `PENDING` never grants access.
+- A `PURCHASED` item grants access only after Google Play confirms acknowledge; the app then re-queries purchases.
+- `ITEM_ALREADY_OWNED` triggers a purchase re-query instead of granting access from the button press.
+- The 10-minute gate starts automatically only in Android release builds. Debug builds remain unlocked; iOS runtime behavior is not changed.
+- The release preset no longer excludes Neural Math voice/effect files or the encyclopedia asset set. Those paths are dynamically referenced and the old exclusion was unsafe.
+- Added the missing `Master`, `Music`, `SFX`, and `VOICE` audio-bus layout and normalized two `Voice` assignments to `VOICE`.
+- Added a persistent 0–100 master-volume control to Settings. It controls music, effects, recorded voice, and system TTS and is localized in all six UI languages.
+
+## Current verification status
+
+Completed on Godot 4.7.1:
+
+- full project import/parser check: PASS
+- `tools/android_release_billing_smoke.gd`: PASS (exit 0)
+  - exact one-time product ID `full_game_unlock` and `INAPP` flow
+  - Play-provided localized price and purchase option
+  - cancel, pending, offline/error, already-owned restore, and empty-purchase paths
+  - acknowledgement followed by verified re-query before permanent entitlement
+  - exactly 600 seconds of active gameplay; background and paused time excluded
+  - permanent entitlement disables the timer
+  - parent-gated purchase/restore UI and strings in `ru`, `en`, `pt`, `es`, `de`, and `fr`
+- `tools/mvp_scene_smoke.gd`: PASS (exit 0)
+  - 10/10 main games and 24/24 additional games resolve, launch, and return through the real simulator wrapper
+  - Free World initially shows ten cards and expands all additional cards
+  - Bubble Care launches/returns; Space Racing launches
+  - the smoke now uses a test-only Free World mode override and never reads or changes the player's saved mode
+- `tools/android_release_persistence_smoke.gd`: PASS (exit 0)
+  - crystals/coins, mini-game progress, selected character, flight position, Bubble ownership, and stock survive reload
+  - elapsed preview time and locally cached verified entitlement survive an offline restart
+  - the test restores pre-existing `user://` save files byte-for-byte
+- `planet_hub/tests/mobile_performance_smoke.gd`: PASS (exit 0)
+  - Crossroads and Bubble low-GPU paths engage and recover without rebuilding scenes
+- `tools/android_release_mobile_layout_smoke.gd`: PASS (exit 0)
+  - Settings, volume, purchase gate, simulator, Bubble controls, and Space Racing controls stay inside the logical viewport at 1280×720, 1200×540 (20:9), and 960×720 (4:3)
+- `planet_hub/tests/adaptive_music_smoke.gd`: PASS (exit 0)
+- `tools/android_release_audio_smoke.gd`: PASS (exit 0)
+  - Singularity Action and Calm loop and switch without overlap
+  - Bubble Care and Space Racing use dedicated looping music, silence exploration music, and restore the prior context on exit
+  - all recorded instructions actually called by the current game resolve in `ru`, `en`, `pt`, `es`, `de`, and `fr`; shapes, numbers 0–10, and plus/minus voices also resolve
+  - master-volume control affects all buses and system TTS
+- `tools/android_release_game_audio_inventory.gd`: PASS (exit 0)
+  - all 34 game scenes launched through the production wrapper
+  - every runtime audio player used a valid bus and no scene started more than one background track
+- Android Gradle dependency resolution with export-plugin parameters: PASS
+  - direct external product dependency is `com.android.billingclient:billing-ktx:9.1.0`
+  - no advertising, Appsflyer, or Meta SDK is present
+  - Billing 9.1.0 brings Google Data Transport, Play Services Base/Tasks/Location, and `firebase-encoders` transitively; these do not add location, advertising-ID, camera, microphone, or storage permissions to the merged manifest
+- precompiled billing AAR compatibility review: PASS
+  - plugin identifies itself as GodotGooglePlayBilling 3.3.0
+  - bytecode uses Billing 9 APIs including `PendingPurchasesParams`, `enableAutoServiceReconnection`, and `QueryProductDetailsResult`, rather than relying on removed legacy signatures
+- Android merged-manifest audit: PASS
+  - package `com.feofanov.infinitespace`, version `0.36.0 (36)`, min SDK 24, target SDK 36, ARM64-only export
+  - permissions: `INTERNET`, `com.android.vending.BILLING`, `ACCESS_NETWORK_STATE`, plus the app's own signature-level dynamic-receiver permission
+  - absent: `AD_ID`, camera, microphone, location, contacts, and storage/media permissions
+- diagnostic AAB export: PASS as a build preflight only
+  - bundletool 1.16.0 validates the bundle structure successfully
+  - the artifact is intentionally unsigned/debug-exported and is **not** a ready release
+
+The only smoke-test warnings were expected headless-display messages about the virtual keyboard. They did not affect assertions or the exit code.
+
+## Audio audit
+
+Runtime inventory notation is `players/streams active or loaded at startup`. A deferred stream is normal for an effect that is assigned only after the player taps or completes an action. The simulator intentionally silences the exploration soundtrack so instructions and effects remain clear. Existing music was preserved; no new music was added.
+
+| Scene or game | Music | Effects | Voice | Result |
+|---|---|---|---|---|
+| Free space flight | Singularity Action, loop | Existing flight/UI effects | No required narration | PASS |
+| Calm planet hub/scenes | Singularity Calm, loop | Existing hub/UI effects | Recorded/TTS where requested | PASS |
+| Simulator shell | Exploration music intentionally silent | Shared UI service | Per-game recorded/TTS | PASS |
+| `sim_01` Trace Letters | Silent | 1/0 deferred | 1/1 | PASS |
+| `sim_02` Trace Words | Silent | 1/0 deferred | 1/1 | PASS |
+| `sim_03` Build a Word | Silent | 2/0 deferred | 9/1 | PASS |
+| `sim_04` Build Shapes | Silent | 1/0 deferred | 1/1 | PASS |
+| `sim_05` Draw It | Silent | 1/1 | 1/1 | PASS |
+| `sim_06` Pick a Number | Silent | 1/0 deferred | 1/1 plus TTS for 11–20 | PASS |
+| `sim_07` Write a Number | Silent | 1/0 deferred | 1/1 plus TTS for 11–20 | PASS |
+| `sim_08` Action Cards | Silent | Shared/deferred | Shared instruction service | PASS |
+| `sim_09` Where Is It? | Silent | Shared/deferred | Shared instruction service | PASS |
+| `sim_10` Color Sort | Silent | 1/0 deferred | Visual/shared instruction | PASS |
+| `mw__puzzles` | Silent | 1/0 deferred | 1/1 | PASS |
+| `mw__animal_habitat` | Silent | 2/2 | 1/1 | PASS |
+| `mw__shopping_list` | Silent | Deferred/shared | 1/1 | PASS |
+| `mw__product_count` | Silent | Deferred/shared | 2/1 | PASS |
+| `lmc__fungal_paths` | Silent | 4/0 deferred | 1/0 deferred/TTS | PASS |
+| `lmc__sunbeam_catcher` | Silent | 1/0 deferred | 1/0 deferred/TTS | PASS |
+| `lmc__eco_sort` | Silent | 1/0 deferred | 2/1 | PASS |
+| `lmc__fungal_race` | Silent | 2/0 deferred | 1/0 deferred/TTS | PASS |
+| `smc__build_molecule` | Own quiet ambient, 1/1 | 1/1 | 1/0 deferred/TTS | PASS |
+| `smc__solutions_lab` | Silent | 1/0 deferred | 2/1 | PASS |
+| `smc__resource_rush` | Silent | 1/1 | 1/0 deferred/TTS | PASS |
+| `smc__icy_planet` | Silent | 1/0 deferred | Visual instruction | PASS |
+| `ngc6822__fossil_search` | Silent | Shared/deferred | Visual/TTS instruction | PASS |
+| `ngc6822__evolution_order` | Silent | 2/2 | 1/0 deferred/TTS | PASS |
+| `ngc6822__dinosaur_eggs` | Silent | 1/0 deferred | 1/0 deferred/TTS | PASS |
+| `ngc6822__pizza_fraction` | Silent | Deferred/shared | 2/1 | PASS |
+| `m31__roll_ball` | Silent | 4/3 | 2/1 | PASS |
+| `m31__magnetic_collector` | Silent | 1/0 deferred | 1/0 deferred/TTS | PASS |
+| `m31__gravity_pinball` | Silent | 4/4 | 1/0 deferred/TTS | PASS |
+| `m31__electric_pulses` | Silent | 1/1 | 1/0 deferred/TTS | PASS |
+| `m33__piano` | Silent; piano notes are gameplay | 13/13 piano-note players | Not required | PASS |
+| `m33__matching_pairs` | Silent | 4/4 | 2/1 | PASS |
+| `m33__space_rebus` | Silent | 1/0 deferred | 1/0 deferred/TTS | PASS |
+| `m33__neural_math` | Silent | 1/0 deferred | 2/1 | PASS |
+| Bubble Care | `feel_good_island_loop.ogg`, loop | Shower/feed/water/brush/sleep foley connected | Visual interaction | PASS |
+| Space Racing | `neon_sign_race_loop.ogg`, loop | Red/yellow/green countdown cues connected | No required narration | PASS |
+
+The `LanguageService` still contains unused legacy dictionary entries for UI/game intros that have no files. Repository-wide call-site search confirmed those keys are not requested by the current MVP, so no placeholder audio was generated and no music/voice asset was replaced.
+
+## Size audit
+
+| Measurement | Result |
+|---|---:|
+| Consolidated-MVP control debug APK | about 122 MiB (provided baseline) |
+| Source media | 3,624 files, 476.59 MiB |
+| Godot imported cache | 133 MiB |
+| Project working directory including imports | 655 MiB |
+| Diagnostic AAB | 145,986,417 bytes (139.22 MiB) |
+| Universal diagnostic APK | 205,568,481 bytes (196.05 MiB) |
+| bundletool estimated device download | 141,743,444–141,765,489 bytes (135.18–135.20 MiB) |
+
+The AAB and APK are different packaging formats, so the 122 MiB APK baseline is not a direct before/after comparison with the AAB. The bundletool estimate is below Google Play's current 500 MB base-module limit and below the 200 MB threshold at which Play displays its large-download notice.
+
+Resource audit findings:
+
+- 57 exact-duplicate groups; 13.67 MiB is the theoretical upper bound if every duplicate could be removed.
+- The largest groups are dynamically selected planet backgrounds (4.10 MiB and 1.85 MiB groups), the shared pet/ball card (0.92 MiB), and assets used by both active encyclopedia implementations.
+- 2,713 files (214.84 MiB) have no literal `res://` reference, but many are loaded by catalog, manifest, or dynamically constructed paths; this is not a safe deletion list.
+- No old video files or archive/backup files were found in the export scope.
+- The release export explicitly excludes reports, docs, tools, build outputs, backups, test scenes, comic/story/prologue material, and unrelated QA/fetch folders.
+- No resource was deleted or recompressed without proof of safety. Therefore gameplay/audio quality and content size are unchanged by the audit.
+
+Largest packaged items include the ARM64 Godot library (76.18 MB raw / 25.47 MB compressed), app DEX (8.86 MB raw / 2.99 MB compressed), and the existing Singularity Action/Calm and Space Racing music. Detailed SHA-256 findings are in the ignored local reports `reports/android_release_resource_audit.{md,json}`.
+
+## Diagnostic artifact (not final)
+
+- Path: `/Users/ivanfeofanov/Projects/InfiniteSpace/Android_Release_20261119/builds/android/InfiniteSpace-0.36.0-36-diagnostic-debug.aab`
+- SHA-256: `1c60bca978afa19dc213873f5f09103f51c7612e6af3035d17b2e90dd654259e`
+- Bundle validation: PASS
+- JAR signature verification: unsigned
+
+This artifact must not be uploaded. It proves that the Gradle template, billing AAR, dependency graph, asset-pack generation, target SDK, and bundle structure build successfully before the permanent upload key is configured.
+
+## Google Play and legal status
+
+- No Play Console upload or Production action has been performed.
+- `versionCode 36` has not been checked in Play Console and must not be considered available yet.
+- The existence/activation of `full_game_unlock` has not been confirmed in Play Console.
+- The store-listing assets and copy are prepared under `docs/google_play/`; no approved image was regenerated.
+- On 2026-11-19 both configured legal URLs returned HTTP 200, but their live content still says PlayTown Kids and describes subscriptions, a trial, auto-renewal, and subscription management. The corrected local files `docs/google_play/legal/privacy.html` and `terms.html` must be published by the site owner before submission; this Android task did not modify the site project.
+- Google's current help still requires at least 12 testers continuously opted in for 14 days for applicable personal accounts created after 2023-11-13. Uploading an AAB alone does not start or satisfy that requirement.
+
+## Signing state
+
+Only standard debug keystores were found locally. No reusable permanent upload keystore was identified, no new key was created, and no secret was added to the repository or report. Creating a new upload key requires explicit owner confirmation after one final check against the key registered in Play Console or the owner's prior secure storage.
+
+## Changed areas
+
+- `addons/GodotGooglePlayBilling/` and removal of the duplicate legacy addon path
+- `learning/src/core/{billing_service,access_service}.gd`
+- `learning/src/screens/subscription_overlay.gd`
+- `learning/src/core/localization/language_service.gd`
+- `scripts/SettingsLanguagePopup.gd`, `default_bus_layout.tres`, and two corrected `VOICE` bus assignments
+- `project.godot` and `export_presets.cfg`
+- `tools/android_release_*.gd`, the MVP smoke isolation double, and associated Godot UIDs
+- `docs/google_play/` listing, legal, test-plan, 14-day journal template, assets, blockers, data-safety draft, and this handoff
+
+## Required next steps
+
+1. Obtain explicit confirmation before creating a new upload keystore, or supply/reuse the key already registered for this app.
+2. Build `builds/android/InfiniteSpace-0.36.0-36-release.aab` with `--export-release`, then verify its certificate, SHA-256, and bundletool structure.
+3. Publish the corrected privacy policy and terms at the configured public URLs without reintroducing subscription language.
+4. In Play Console, verify that versionCode 36 is unused, create/activate `full_game_unlock` as a one-time product with USD 15 base price, complete App content/Data safety, and configure license testers.
+5. Only after owner confirmation, upload the signed AAB to Internal or Closed testing. Do not publish to Production.
+
+No Google Play Console upload or Production action has been performed.
+
+## Resume commands
+
+```sh
+cd /Users/ivanfeofanov/Projects/InfiniteSpace/Android_Release_20261119
+git status --short --branch
+/Applications/Godot\ 4.7.1.app/Contents/MacOS/Godot --headless --path . --editor --quit
+/Applications/Godot\ 4.7.1.app/Contents/MacOS/Godot --headless --path . --export-release "Google Play Release (AAB)" builds/android/InfiniteSpace-0.36.0-36-release.aab
+java -jar /private/tmp/bundletool-all-1.16.0.jar validate --bundle=builds/android/InfiniteSpace-0.36.0-36-release.aab
+shasum -a 256 builds/android/InfiniteSpace-0.36.0-36-release.aab
+```

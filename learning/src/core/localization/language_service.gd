@@ -182,16 +182,13 @@ const UI_TEXT := {
 		"fr": "Encore",
 	},
 	"preview_complete_title": {
-		"ru": "5 минут закончились", "en": "Your 5 minutes are complete", "pt": "Seus 5 minutos terminaram", "es": "Tus 5 minutos terminaron", "de": "Deine 5 Minuten sind vorbei", "fr": "Tes 5 minutes sont terminées",
+		"ru": "Продолжить приключение", "en": "Continue the adventure", "pt": "Continuar a aventura", "es": "Continuar la aventura", "de": "Abenteuer fortsetzen", "fr": "Continuer l’aventure",
 	},
 	"preview_complete_body": {
-		"ru": "Бесплатное время закончилось. Попроси родителей открыть полный доступ к Infinite Space.", "en": "The free play period has ended. Ask a parent to continue with full access to Infinite Space.", "pt": "O período grátis terminou. Peça a um adulto para liberar o acesso completo ao Infinite Space.", "es": "El período gratuito terminó. Pide a un adulto que desbloquee el acceso completo a Infinite Space.", "de": "Die kostenlose Spielzeit ist vorbei. Bitte einen Erwachsenen, den vollständigen Zugang zu Infinite Space freizuschalten.", "fr": "La période gratuite est terminée. Demande à un adulte de débloquer l’accès complet à Infinite Space.",
+		"ru": "Бесплатное время игры закончилось. Попроси взрослого помочь открыть полную версию InfiniteSpace.", "en": "The free play time has ended. Ask an adult to help unlock the full version of InfiniteSpace.", "pt": "O tempo grátis terminou. Peça a um adulto para ajudar a desbloquear a versão completa do InfiniteSpace.", "es": "El tiempo gratis terminó. Pide a un adulto que te ayude a desbloquear la versión completa de InfiniteSpace.", "de": "Die kostenlose Spielzeit ist vorbei. Bitte einen Erwachsenen, die Vollversion von InfiniteSpace freizuschalten.", "fr": "Le temps de jeu gratuit est terminé. Demande à un adulte de t’aider à débloquer la version complète d’InfiniteSpace.",
 	},
-	"trial_eligible": {
-		"ru": "7 дней бесплатно для новых подписчиков", "en": "7 days free for eligible new subscribers", "pt": "7 dias grátis para novos assinantes elegíveis", "es": "7 días gratis para nuevos suscriptores elegibles", "de": "7 Tage kostenlos für berechtigte neue Abonnenten", "fr": "7 jours gratuits pour les nouveaux abonnés éligibles",
-	},
-	"trial_renewal_notice": {
-		"ru": "После пробного периода выбранная подписка продлевается автоматически, пока её не отменят.", "en": "After the free trial, the selected subscription renews automatically unless it is cancelled.", "pt": "Após o período grátis, a assinatura escolhida será renovada automaticamente até ser cancelada.", "es": "Después de la prueba gratuita, la suscripción elegida se renueva automáticamente hasta que se cancele.", "de": "Nach dem Probezeitraum verlängert sich das gewählte Abo automatisch, bis es gekündigt wird.", "fr": "Après l’essai gratuit, l’abonnement choisi est renouvelé automatiquement jusqu’à sa résiliation.",
+	"for_parents": {
+		"ru": "Для родителей", "en": "For parents", "pt": "Para adultos", "es": "Para adultos", "de": "Für Eltern", "fr": "Pour les parents",
 	},
 	"continue": {
 		"ru": "Продолжить", "en": "Continue", "pt": "Continuar", "es": "Continuar", "de": "Weiter", "fr": "Continuer",
@@ -205,27 +202,33 @@ const UI_TEXT := {
 	"parents_subtitle": {
 		"ru": "Быстрая проверка перед открытием покупок", "en": "A quick check before opening purchases", "pt": "Uma verificação rápida antes de abrir as compras", "es": "Una comprobación rápida antes de abrir las compras", "de": "Eine kurze Prüfung vor dem Öffnen der Käufe", "fr": "Une vérification rapide avant d’ouvrir les achats",
 	},
+	"one_time_purchase_notice": {
+		"ru": "Полная версия открывается одной покупкой без подписки.", "en": "Unlock the full game with one purchase. No subscription.", "pt": "Desbloqueie o jogo completo com uma compra. Sem assinatura.", "es": "Desbloquea el juego completo con una compra. Sin suscripción.", "de": "Schalte das vollständige Spiel mit einem Kauf frei. Kein Abo.", "fr": "Débloquez le jeu complet avec un achat. Sans abonnement.",
+	},
 	"enter_answer": {
 		"ru": "Введите ответ", "en": "Enter the answer", "pt": "Digite a resposta", "es": "Escribe la respuesta", "de": "Antwort eingeben", "fr": "Saisis la réponse",
 	},
 	"try_again": {
 		"ru": "Попробуйте ещё раз", "en": "Please try again", "pt": "Tente novamente", "es": "Inténtalo de nuevo", "de": "Bitte noch einmal versuchen", "fr": "Réessayez",
 	},
-	"subscription_title": {
+	"full_game_title": {
 		"ru": "Откройте полную версию", "en": "Unlock the full game", "pt": "Desbloqueie o jogo completo", "es": "Desbloquea el juego completo", "de": "Vollversion freischalten", "fr": "Débloquez le jeu complet",
 	},
-	"subscription_body": {
-		"ru": "Выберите подходящий план для вашей семьи. Новые подписчики могут бесплатно пользоваться полной версией 7 дней.", "en": "Choose the plan that works best for your family. New subscribers can try the full game free for 7 days.", "pt": "Escolha o melhor plano para sua família. Novos assinantes podem testar o jogo completo grátis por 7 dias.", "es": "Elige el plan ideal para tu familia. Los nuevos suscriptores pueden probar el juego completo gratis durante 7 días.", "de": "Wählen Sie den passenden Tarif für Ihre Familie. Neue Abonnenten können das vollständige Spiel 7 Tage kostenlos testen.", "fr": "Choisissez l’offre adaptée à votre famille. Les nouveaux abonnés peuvent essayer le jeu complet gratuitement pendant 7 jours.",
+	"full_game_body": {
+		"ru": "Одна покупка открывает все доступные игры и приключения. Цена показывается магазином в вашей валюте.", "en": "One purchase unlocks all available games and adventures. The store shows the price in your local currency.", "pt": "Uma compra libera todos os jogos e aventuras disponíveis. A loja mostra o preço na sua moeda.", "es": "Una compra desbloquea todos los juegos y aventuras disponibles. La tienda muestra el precio en tu moneda.", "de": "Ein Kauf schaltet alle verfügbaren Spiele und Abenteuer frei. Der Store zeigt den Preis in deiner Währung.", "fr": "Un achat débloque tous les jeux et aventures disponibles. La boutique affiche le prix dans votre devise.",
 	},
-	"subscription_active": {
-		"ru": "Подписка активна", "en": "Your subscription is active", "pt": "Sua assinatura está ativa", "es": "Tu suscripción está activa", "de": "Dein Abo ist aktiv", "fr": "Votre abonnement est actif",
+	"full_game_active": {
+		"ru": "Полная версия открыта", "en": "The full game is unlocked", "pt": "O jogo completo está desbloqueado", "es": "El juego completo está desbloqueado", "de": "Das vollständige Spiel ist freigeschaltet", "fr": "Le jeu complet est débloqué",
 	},
-	"manage_subscription": {
-		"ru": "Управлять подпиской", "en": "Manage subscription", "pt": "Gerenciar assinatura", "es": "Gestionar suscripción", "de": "Abo verwalten", "fr": "Gérer l’abonnement",
+	"buy_full_game": {
+		"ru": "Купить полную версию", "en": "Buy the full game", "pt": "Comprar o jogo completo", "es": "Comprar el juego completo", "de": "Vollversion kaufen", "fr": "Acheter le jeu complet",
 	},
-	"plan_monthly": {"ru": "Ежемесячно", "en": "Monthly", "pt": "Mensal", "es": "Mensual", "de": "Monatlich", "fr": "Mensuel"},
-	"plan_quarterly": {"ru": "3 месяца", "en": "3 months", "pt": "3 meses", "es": "3 meses", "de": "3 Monate", "fr": "3 mois"},
-	"plan_annual": {"ru": "На год", "en": "Yearly", "pt": "Anual", "es": "Anual", "de": "Jährlich", "fr": "Annuel"},
+	"purchase_ready": {
+		"ru": "Разовая покупка. Подписки нет.", "en": "One-time purchase. No subscription.", "pt": "Compra única. Sem assinatura.", "es": "Compra única. Sin suscripción.", "de": "Einmaliger Kauf. Kein Abo.", "fr": "Achat unique. Sans abonnement.",
+	},
+	"one_time_purchase_legal": {
+		"ru": "Разовая покупка навсегда открывает полную версию для аккаунта магазина. Подписки и автоматического продления нет.", "en": "A one-time purchase permanently unlocks the full game for the store account. There is no subscription or automatic renewal.", "pt": "Uma compra única desbloqueia permanentemente o jogo completo para a conta da loja. Não há assinatura nem renovação automática.", "es": "Una compra única desbloquea permanentemente el juego completo para la cuenta de la tienda. No hay suscripción ni renovación automática.", "de": "Ein einmaliger Kauf schaltet das vollständige Spiel dauerhaft für das Store-Konto frei. Es gibt kein Abo und keine automatische Verlängerung.", "fr": "Un achat unique débloque définitivement le jeu complet pour le compte de la boutique. Il n’y a ni abonnement ni renouvellement automatique.",
+	},
 	"restore_purchases": {"ru": "Восстановить покупки", "en": "Restore purchases", "pt": "Restaurar compras", "es": "Restaurar compras", "de": "Käufe wiederherstellen", "fr": "Restaurer les achats"},
 	"retry_store": {"ru": "Повторить подключение", "en": "Retry store connection", "pt": "Tentar conexão novamente", "es": "Reintentar conexión", "de": "Verbindung erneut versuchen", "fr": "Réessayer la connexion"},
 	"back_to_game": {"ru": "Вернуться в игру", "en": "Back to game", "pt": "Voltar ao jogo", "es": "Volver al juego", "de": "Zurück zum Spiel", "fr": "Retour au jeu"},
@@ -234,10 +237,7 @@ const UI_TEXT := {
 	"store_unavailable": {"ru": "Магазин недоступен. Попробуйте позже.", "en": "The app store is not available. Please try again later.", "pt": "A loja não está disponível. Tente novamente mais tarde.", "es": "La tienda no está disponible. Inténtalo más tarde.", "de": "Der Store ist nicht verfügbar. Bitte später erneut versuchen.", "fr": "La boutique n’est pas disponible. Réessayez plus tard."},
 	"restoring_purchases": {"ru": "Восстанавливаем покупки…", "en": "Restoring purchases…", "pt": "Restaurando compras…", "es": "Restaurando compras…", "de": "Käufe werden wiederhergestellt…", "fr": "Restauration des achats…"},
 	"purchase_pending": {"ru": "Покупка ожидает подтверждения", "en": "The purchase is pending approval", "pt": "A compra aguarda aprovação", "es": "La compra espera aprobación", "de": "Der Kauf wartet auf Genehmigung", "fr": "L’achat attend une approbation"},
-	"select_plan": {"ru": "Выберите план", "en": "Select a plan", "pt": "Escolha um plano", "es": "Elige un plan", "de": "Tarif wählen", "fr": "Choisissez une offre"},
-	"trial_seven_days": {"ru": "7 дней бесплатно", "en": "7 days free", "pt": "7 dias grátis", "es": "7 días gratis", "de": "7 Tage kostenlos", "fr": "7 jours gratuits"},
-	"trial_free": {"ru": "Бесплатный период", "en": "Free trial", "pt": "Período grátis", "es": "Prueba gratuita", "de": "Kostenlos testen", "fr": "Essai gratuit"},
-	"subscriptions_renew": {"ru": "Подписка продлевается автоматически, пока её не отменят в аккаунте магазина.", "en": "Subscriptions renew automatically unless cancelled in your store account.", "pt": "A assinatura é renovada automaticamente até ser cancelada na conta da loja.", "es": "La suscripción se renueva automáticamente hasta que se cancele en la cuenta de la tienda.", "de": "Das Abo verlängert sich automatisch, bis es im Store-Konto gekündigt wird.", "fr": "L’abonnement est renouvelé automatiquement jusqu’à sa résiliation dans le compte de la boutique."},
+	"purchase_canceled": {"ru": "Покупка отменена. Доступ не изменён.", "en": "The purchase was canceled. Access was not changed.", "pt": "A compra foi cancelada. O acesso não mudou.", "es": "La compra fue cancelada. El acceso no cambió.", "de": "Der Kauf wurde abgebrochen. Der Zugang wurde nicht geändert.", "fr": "L’achat a été annulé. L’accès n’a pas changé."},
 	"privacy_policy": {"ru": "Политика конфиденциальности", "en": "Privacy Policy", "pt": "Política de Privacidade", "es": "Política de privacidad", "de": "Datenschutzrichtlinie", "fr": "Politique de confidentialité"},
 	"terms_of_use": {"ru": "Условия использования", "en": "Terms of Use (EULA)", "pt": "Termos de Uso", "es": "Términos de uso", "de": "Nutzungsbedingungen", "fr": "Conditions d’utilisation"},
 	"shopping_list": {"ru": "СПИСОК ПОКУПОК", "en": "SHOPPING LIST", "pt": "LISTA DE COMPRAS", "es": "LISTA DE COMPRAS", "fr": "LISTE DE COURSES", "de": "EINKAUFSLISTE"},
