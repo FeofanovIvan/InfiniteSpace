@@ -8,6 +8,7 @@ Last updated: 2026-11-19 (America/Sao_Paulo)
 - MVP pull request: `https://github.com/FeofanovIvan/InfiniteSpace/pull/13` (unchanged; still awaiting visual approval)
 - Android release branch: `release/android-closed-test-20261119`
 - Android release worktree: `/Users/ivanfeofanov/Projects/InfiniteSpace/Android_Release_20261119`
+- Signed release source commit: `0bd54dd055cfc7444b0a40c4bd64693fcb38b948`
 - Payment source worktree: `/Users/ivanfeofanov/Projects/InfiniteSpace/InfiniteSpace_Godot` at `dbdb620b65a6ce31d1c3692397ed1f699adae468` plus local changes
 - Experimental story branch is not included.
 
@@ -105,6 +106,12 @@ Completed on Godot 4.7.1:
 - diagnostic AAB export: PASS as a build preflight only
   - bundletool 1.16.0 validates the bundle structure successfully
   - the artifact is intentionally unsigned/debug-exported and is **not** a ready release
+- signed release AAB export: PASS
+  - exported with `--export-release` and secrets supplied only through Godot environment variables read from macOS Keychain
+  - JAR signature verification: PASS (`jar verified`)
+  - bundletool 1.16.0 validation: PASS
+  - release manifest assertions: PASS; `debuggable=true` is absent
+  - package/version/SDK/Billing metadata remain `com.feofanov.infinitespace`, `0.36.0 (36)`, min SDK 24, target SDK 36, Billing 9.1.0
 
 The only smoke-test warnings were expected headless-display messages about the virtual keyboard. They did not affect assertions or the exit code.
 
@@ -165,8 +172,9 @@ The `LanguageService` still contains unused legacy dictionary entries for UI/gam
 | Godot imported cache | 133 MiB |
 | Project working directory including imports | 655 MiB |
 | Diagnostic AAB | 145,986,417 bytes (139.22 MiB) |
+| Signed release AAB | 144,767,231 bytes (138.06 MiB) |
 | Universal diagnostic APK | 205,568,481 bytes (196.05 MiB) |
-| bundletool estimated device download | 141,743,444–141,765,489 bytes (135.18–135.20 MiB) |
+| Signed-release bundletool estimated device download | 139,857,931–139,880,013 bytes (133.38–133.40 MiB) |
 
 The AAB and APK are different packaging formats, so the 122 MiB APK baseline is not a direct before/after comparison with the AAB. The bundletool estimate is below Google Play's current 500 MB base-module limit and below the 200 MB threshold at which Play displays its large-download notice.
 
@@ -180,6 +188,18 @@ Resource audit findings:
 - No resource was deleted or recompressed without proof of safety. Therefore gameplay/audio quality and content size are unchanged by the audit.
 
 Largest packaged items include the ARM64 Godot library (76.18 MB raw / 25.47 MB compressed), app DEX (8.86 MB raw / 2.99 MB compressed), and the existing Singularity Action/Calm and Space Racing music. Detailed SHA-256 findings are in the ignored local reports `reports/android_release_resource_audit.{md,json}`.
+
+## Signed release artifact
+
+- Path: `/Users/ivanfeofanov/Projects/InfiniteSpace/Android_Release_20261119/builds/android/InfiniteSpace-0.36.0-36-release.aab`
+- Size: 144,767,231 bytes (138.06 MiB)
+- SHA-256: `f31201e64d32f82620ad914677470da8bd6e8b02fe3580dd562f86333208ea01`
+- Source commit: `0bd54dd055cfc7444b0a40c4bd64693fcb38b948`
+- JAR signature: PASS
+- Bundle validation: PASS
+- Upload certificate SHA-256: `1E:EA:EC:C7:BE:91:8B:65:0F:20:EB:4E:75:D7:88:E9:3E:5C:8E:C3:2B:2F:B4:BD:A5:BA:F9:FC:90:1F:B6:45`
+
+This is the release AAB prepared for Internal/Closed testing. It has not been uploaded to Play Console. Google Play App Signing will verify this upload certificate and sign the generated distribution APKs with Google's app signing key.
 
 ## Diagnostic artifact (not final)
 
@@ -203,7 +223,15 @@ This artifact must not be uploaded. It proves that the Gradle template, billing 
 
 ## Signing state
 
-Only standard debug keystores were found locally. No reusable permanent upload keystore was identified, no new key was created, and no secret was added to the repository or report. Creating a new upload key requires explicit owner confirmation after one final check against the key registered in Play Console or the owner's prior secure storage.
+After explicit owner confirmation, a dedicated RSA-4096 upload key was created on 2026-11-19. It is valid through 2054-04-06.
+
+- Private keystore (local only): `/Users/ivanfeofanov/Library/Application Support/InfiniteSpace/keystores/infinite-space-upload-2026.jks`
+- Public certificate: `/Users/ivanfeofanov/Library/Application Support/InfiniteSpace/keystores/infinite-space-upload-2026.pem`
+- Alias: `infinite-space-upload`
+- Password storage: macOS Keychain, service `InfiniteSpace Google Play Upload Keystore`, account `infinite-space-upload`
+- File permissions: private keystore `0600`, parent directory `0700`
+
+The keystore and password are not in the repository, AAB directory, report attachments, or command output. Back up the private keystore and its Keychain credential to the owner's secure encrypted storage before the first upload. The public certificate and fingerprints are safe to register or compare in Play Console.
 
 ## Changed areas
 
@@ -218,12 +246,11 @@ Only standard debug keystores were found locally. No reusable permanent upload k
 
 ## Required next steps
 
-1. Obtain explicit confirmation before creating a new upload keystore, or supply/reuse an owner-controlled key from prior secure storage.
-2. Build `builds/android/InfiniteSpace-0.36.0-36-release.aab` with `--export-release`, then verify its certificate, SHA-256, and bundletool structure.
-3. Publish the corrected privacy policy and terms at the configured public URLs without reintroducing subscription language.
-4. With owner confirmation, create Infinite Space in Play Console, enable Play App Signing, and upload versionCode 36 first to Internal or Closed testing.
-5. Create/activate `full_game_unlock` as a one-time product with USD 15 base price, complete App content/Data safety, and configure license testers.
-6. Do not publish to Production.
+1. Back up the private upload keystore and Keychain credential to secure encrypted owner-controlled storage.
+2. Publish the corrected privacy policy and terms at the configured public URLs without reintroducing subscription language.
+3. With owner confirmation, create Infinite Space in Play Console, enable Play App Signing, and upload the signed versionCode 36 AAB first to Internal or Closed testing.
+4. Create/activate `full_game_unlock` as a one-time product with USD 15 base price, complete App content/Data safety, and configure license testers.
+5. Do not publish to Production.
 
 No Google Play Console upload or Production action has been performed.
 
@@ -233,7 +260,13 @@ No Google Play Console upload or Production action has been performed.
 cd /Users/ivanfeofanov/Projects/InfiniteSpace/Android_Release_20261119
 git status --short --branch
 /Applications/Godot\ 4.7.1.app/Contents/MacOS/Godot --headless --path . --editor --quit
+export GODOT_ANDROID_KEYSTORE_RELEASE_PATH='/Users/ivanfeofanov/Library/Application Support/InfiniteSpace/keystores/infinite-space-upload-2026.jks'
+export GODOT_ANDROID_KEYSTORE_RELEASE_USER='infinite-space-upload'
+export GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD="$(security find-generic-password -w -s 'InfiniteSpace Google Play Upload Keystore' -a 'infinite-space-upload')"
 /Applications/Godot\ 4.7.1.app/Contents/MacOS/Godot --headless --path . --export-release "Google Play Release (AAB)" builds/android/InfiniteSpace-0.36.0-36-release.aab
+unset GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD
+jarsigner -verify builds/android/InfiniteSpace-0.36.0-36-release.aab
+keytool -printcert -jarfile builds/android/InfiniteSpace-0.36.0-36-release.aab
 java -jar /private/tmp/bundletool-all-1.16.0.jar validate --bundle=builds/android/InfiniteSpace-0.36.0-36-release.aab
 shasum -a 256 builds/android/InfiniteSpace-0.36.0-36-release.aab
 ```
