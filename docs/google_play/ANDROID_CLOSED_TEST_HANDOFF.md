@@ -199,7 +199,7 @@ Largest packaged items include the ARM64 Godot library (76.18 MB raw / 25.47 MB 
 - Bundle validation: PASS
 - Upload certificate SHA-256: `1E:EA:EC:C7:BE:91:8B:65:0F:20:EB:4E:75:D7:88:E9:3E:5C:8E:C3:2B:2F:B4:BD:A5:BA:F9:FC:90:1F:B6:45`
 
-This is the release AAB prepared for Internal/Closed testing. It has not been uploaded to Play Console. Google Play App Signing will verify this upload certificate and sign the generated distribution APKs with Google's app signing key.
+This release AAB was uploaded successfully to the Google Play Internal testing track on 2026-11-20 and saved in draft release `36 (0.36.0)`. Google Play accepted versionCode 36, minSdk 24, targetSdk 36, and the ARM64 bundle. Google Play App Signing uses the registered upload certificate to verify uploads and signs generated distribution APKs with Google's app signing key.
 
 ## Diagnostic artifact (not final)
 
@@ -212,13 +212,14 @@ This artifact must not be uploaded. It proves that the Gradle template, billing 
 
 ## Google Play and legal status
 
-- No Play Console upload or Production action has been performed.
-- Read-only Play Console inspection on 2026-11-19 confirmed this is a personal developer account and currently contains only the two existing MathUp applications. Infinite Space / `com.feofanov.infinitespace` has not been created in this account.
-- Consequently there is no prior bundle/version history for this package in the inspected account: versionCode 36 has not been used there, `full_game_unlock` does not exist there, and there is no app-specific Play App Signing/upload-certificate record yet.
+- The app now exists in the `feofanov.br@gmail.com` Play Console developer account as **Kids Learning Games: MIKA** with package `com.feofanov.infinitespace`.
+- Play Console app ID: `4972395135945061586`; Internal testing track ID: `4701221321805246883`.
+- The app is configured as a game, default language `en-US`, and free to install. Monetization remains the one-time in-app product `full_game_unlock`; the product has not yet been created.
+- The signed versionCode 36 AAB was uploaded only to Internal testing and saved as draft release `36 (0.36.0)`. It has not been reviewed/confirmed or rolled out to testers; no tester list or release notes are configured.
+- No Production action has been performed.
 - The console also shows a separate account-level action to declare trader status by February 2027; the owner must complete that declaration using accurate legal/business information.
-- No Play Console form was submitted and no app, product, tester list, or release was created during the inspection.
 - The store-listing assets and copy are prepared under `docs/google_play/`; no approved image was regenerated.
-- On 2026-11-19 both configured legal URLs returned HTTP 200, but their live content still says PlayTown Kids and describes subscriptions, a trial, auto-renewal, and subscription management. The corrected local files `docs/google_play/legal/privacy.html` and `terms.html` must be published by the site owner before submission; this Android task did not modify the site project.
+- The selected promotion site is `https://mika.playtownkids.app/`; it returned HTTP 200 on 2026-11-20. Its privacy route `https://mika.playtownkids.app/privacy/` also returned HTTP 200, but the live text still scoped itself to the website and explicitly excluded mobile apps. The site owner was given a six-language update brief covering the website, Android, and iOS. Do not save the privacy URL in Play Console until that deployment is verified.
 - Google's current help still requires at least 12 testers continuously opted in for 14 days for applicable personal accounts created after 2023-11-13. Uploading an AAB alone does not start or satisfy that requirement.
 
 ## Signing state
@@ -247,12 +248,12 @@ The keystore and password are not in the repository, AAB directory, report attac
 ## Required next steps
 
 1. Back up the private upload keystore and Keychain credential to secure encrypted owner-controlled storage.
-2. Publish the corrected privacy policy and terms at the configured public URLs without reintroducing subscription language.
-3. With owner confirmation, create Infinite Space in Play Console, enable Play App Signing, and upload the signed versionCode 36 AAB first to Internal or Closed testing.
-4. Create/activate `full_game_unlock` as a one-time product with USD 15 base price, complete App content/Data safety, and configure license testers.
+2. Verify that `https://mika.playtownkids.app/privacy/` has been updated for the website, Android, and iOS; then save it as the Play Console privacy-policy URL and use `https://mika.playtownkids.app/` as the promotion website.
+3. Create/activate `full_game_unlock` as a one-time product with USD 15 base price, complete App content/Data safety, and configure license testers.
+4. Add the Internal testing tester list, release notes, review the draft, and explicitly confirm rollout only when the owner wants the release available to testers.
 5. Do not publish to Production.
 
-No Google Play Console upload or Production action has been performed.
+The signed AAB is present in a saved Internal testing draft. No Production action has been performed.
 
 ## Resume commands
 
