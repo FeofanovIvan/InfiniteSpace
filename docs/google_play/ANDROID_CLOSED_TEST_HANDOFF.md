@@ -219,7 +219,8 @@ This artifact must not be uploaded. It proves that the Gradle template, billing 
 - No Production action has been performed.
 - The console also shows a separate account-level action to declare trader status by February 2027; the owner must complete that declaration using accurate legal/business information.
 - The store-listing assets and copy are prepared under `docs/google_play/`; no approved image was regenerated.
-- The selected promotion site is `https://mika.playtownkids.app/`; it returned HTTP 200 on 2026-11-20. Its privacy route `https://mika.playtownkids.app/privacy/` also returned HTTP 200, but the live text still scoped itself to the website and explicitly excluded mobile apps. The site owner was given a six-language update brief covering the website, Android, and iOS. Do not save the privacy URL in Play Console until that deployment is verified.
+- The selected promotion site is `https://mika.playtownkids.app/`; it returned HTTP 200 on 2026-11-20. The deployed privacy policy at `https://mika.playtownkids.app/privacy/` was verified in Russian and English to cover the website, Android, and iOS, including local storage, Google Play/App Store payments, `full_game_unlock`, no Android subscription, parental verification, retention, and deletion. The privacy URL is saved in Play Console.
+- Play Console category/contact metadata is saved: Game / Educational, promotion website `https://mika.playtownkids.app/`, and public contact email `feofanov.br@gmail.com`.
 - Google's current help still requires at least 12 testers continuously opted in for 14 days for applicable personal accounts created after 2023-11-13. Uploading an AAB alone does not start or satisfy that requirement.
 
 ## Signing state
@@ -248,10 +249,9 @@ The keystore and password are not in the repository, AAB directory, report attac
 ## Required next steps
 
 1. Back up the private upload keystore and Keychain credential to secure encrypted owner-controlled storage.
-2. Verify that `https://mika.playtownkids.app/privacy/` has been updated for the website, Android, and iOS; then save it as the Play Console privacy-policy URL and use `https://mika.playtownkids.app/` as the promotion website.
-3. Create/activate `full_game_unlock` as a one-time product with USD 15 base price, complete App content/Data safety, and configure license testers.
-4. Add the Internal testing tester list, release notes, review the draft, and explicitly confirm rollout only when the owner wants the release available to testers.
-5. Do not publish to Production.
+2. Create/activate `full_game_unlock` as a one-time product with USD 15 base price, complete App content/Data safety, and configure license testers.
+3. Add the Internal testing tester list, release notes, review the draft, and explicitly confirm rollout only when the owner wants the release available to testers.
+4. Do not publish to Production.
 
 The signed AAB is present in a saved Internal testing draft. No Production action has been performed.
 
