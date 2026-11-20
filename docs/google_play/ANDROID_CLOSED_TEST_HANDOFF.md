@@ -221,6 +221,8 @@ This artifact must not be uploaded. It proves that the Gradle template, billing 
 - The store-listing assets and copy are prepared under `docs/google_play/`; no approved image was regenerated.
 - The selected promotion site is `https://mika.playtownkids.app/`; it returned HTTP 200 on 2026-11-20. The deployed privacy policy at `https://mika.playtownkids.app/privacy/` was verified in Russian and English to cover the website, Android, and iOS, including local storage, Google Play/App Store payments, `full_game_unlock`, no Android subscription, parental verification, retention, and deletion. The privacy URL is saved in Play Console.
 - Play Console category/contact metadata is saved: Game / Educational, promotion website `https://mika.playtownkids.app/`, and public contact email `feofanov.br@gmail.com`.
+- App content declarations saved on 2026-11-20: no ads, no advertising ID, not a government app, no financial features, and no health features. Play Console reduced the remaining App content actions from nine to five.
+- The Sign-in/App access declaration remains intentionally unsaved. The one-time paywall counts as restricted content, and Google requires an always-available free review path to all paid functionality. VersionCode 36 has no reviewer bypass, reusable access code, or account-based pre-unlocked entitlement, so declaring full review access would be inaccurate.
 - Google's current help still requires at least 12 testers continuously opted in for 14 days for applicable personal accounts created after 2023-11-13. Uploading an AAB alone does not start or satisfy that requirement.
 
 ## Signing state
@@ -249,9 +251,10 @@ The keystore and password are not in the repository, AAB directory, report attac
 ## Required next steps
 
 1. Back up the private upload keystore and Keychain credential to secure encrypted owner-controlled storage.
-2. Create/activate `full_game_unlock` as a one-time product with USD 15 base price, complete App content/Data safety, and configure license testers.
-3. Add the Internal testing tester list, release notes, review the draft, and explicitly confirm rollout only when the owner wants the release available to testers.
-4. Do not publish to Production.
+2. Decide and implement an always-available reviewer-access path for paid content, then upload a new signed versionCode if the app changes and complete the Sign-in/App access declaration.
+3. Create/activate `full_game_unlock` as a one-time product with USD 15 base price; complete content rating, target audience, Data safety, and trader/terms declarations; configure license testers.
+4. Add the Internal testing tester list, release notes, review the draft, and explicitly confirm rollout only when the owner wants the release available to testers.
+5. Do not publish to Production.
 
 The signed AAB is present in a saved Internal testing draft. No Production action has been performed.
 
