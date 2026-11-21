@@ -4,8 +4,8 @@ signal closed
 
 const PARENT_CROWN := preload("res://learning/assets/ui/subscription/parent_crown.png")
 const SUBSCRIPTION_ICON := preload("res://learning/assets/ui/subscription/subscription_icon.png")
-const PRIVACY_POLICY_URL := "https://feofanova-math-tutor.feofanov-logistics.workers.dev/playtown/privacy"
-const TERMS_OF_USE_URL := "https://feofanova-math-tutor.feofanov-logistics.workers.dev/playtown/terms"
+const PRIVACY_POLICY_URL := "https://mika.playtownkids.app/privacy/"
+const TERMS_OF_USE_URL := "https://mika.playtownkids.app/terms/"
 var backdrop: ColorRect
 var card: PanelContainer
 var scroll: ScrollContainer
@@ -13,6 +13,7 @@ var content_margin: MarginContainer
 var content_center: CenterContainer
 var content: VBoxContainer
 var answer_input: LineEdit
+var review_code_input: LineEdit
 var message_label: Label
 var challenge_answer := 0
 var purchase_button: Button
@@ -85,8 +86,9 @@ func _process(_delta: float) -> void:
 		return
 	keyboard_height = current_height
 	_layout()
-	if keyboard_height > 0 and is_instance_valid(answer_input):
-		scroll.ensure_control_visible.call_deferred(answer_input)
+	var focused_input := _active_text_input()
+	if keyboard_height > 0 and is_instance_valid(focused_input):
+		scroll.ensure_control_visible.call_deferred(focused_input)
 
 func _layout() -> void:
 	var viewport_size := get_viewport().get_visible_rect().size
@@ -221,6 +223,7 @@ func _show_purchase() -> void:
 		retry_button.pressed.connect(_retry_store)
 		content.add_child(retry_button)
 	_add_legal_information()
+	_add_reviewer_access_link()
 	var close_button := _make_button(_t("back" if locked else "back_to_game"), Color(0.78, 0.62, 0.36))
 	if locked:
 		close_button.pressed.connect(_show_preview_expired_notice)
@@ -308,8 +311,57 @@ func _set_purchase_disabled(value: bool) -> void:
 	if is_instance_valid(purchase_button):
 		purchase_button.disabled = value
 
+func _add_reviewer_access_link() -> void:
+	var link := LinkButton.new()
+	link.name = "ReviewerAccess"
+	link.text = "Reviewer access"
+	link.custom_minimum_size.y = 34
+	link.add_theme_font_size_override("font_size", 15)
+	link.add_theme_color_override("font_color", Color(0.42, 0.48, 0.54))
+	link.add_theme_color_override("font_hover_color", Color(0.08, 0.39, 0.66))
+	link.pressed.connect(_show_reviewer_access)
+	content.add_child(link)
+
+func _show_reviewer_access() -> void:
+	_clear_content()
+	_add_crown()
+	_add_title("Reviewer access")
+	_add_body("Enter the reusable access code supplied in Google Play Console.")
+	review_code_input = LineEdit.new()
+	review_code_input.name = "ReviewerAccessCode"
+	review_code_input.custom_minimum_size = Vector2(0, 56)
+	review_code_input.placeholder_text = "Access code"
+	review_code_input.max_length = 64
+	review_code_input.alignment = HORIZONTAL_ALIGNMENT_CENTER
+	review_code_input.add_theme_font_size_override("font_size", 22)
+	review_code_input.add_theme_color_override("font_color", Color(0.31, 0.22, 0.13))
+	review_code_input.add_theme_stylebox_override("normal", _input_style(Color(0.45, 0.62, 0.76)))
+	review_code_input.add_theme_stylebox_override("focus", _input_style(Color(0.08, 0.39, 0.66)))
+	review_code_input.focus_entered.connect(_layout_after_keyboard_change)
+	review_code_input.focus_exited.connect(_layout_after_keyboard_change)
+	review_code_input.text_submitted.connect(func(_value: String): _verify_reviewer_code())
+	content.add_child(review_code_input)
+	message_label = _add_status("")
+	var unlock_button := _make_button("Unlock for review", Color(0.24, 0.53, 0.72))
+	unlock_button.pressed.connect(_verify_reviewer_code)
+	content.add_child(unlock_button)
+	var back_button := _make_button(_t("back"), Color(0.78, 0.62, 0.36))
+	back_button.pressed.connect(_show_purchase)
+	content.add_child(back_button)
+	review_code_input.grab_focus.call_deferred()
+
+func _verify_reviewer_code() -> void:
+	if not is_instance_valid(review_code_input):
+		return
+	if AccessService.activate_reviewer_access(review_code_input.text):
+		message_label.text = "Review access enabled for this session."
+		return
+	message_label.text = "Invalid access code."
+	review_code_input.clear()
+	review_code_input.grab_focus()
+
 func _close() -> void:
-	if locked and not AccessService.full_game_owned:
+	if locked and not AccessService.has_access():
 		return
 	closed.emit()
 	queue_free()
@@ -343,8 +395,15 @@ func _open_legal_url(url: String) -> void:
 	OS.shell_open(url)
 
 func _clear_content() -> void:
+	answer_input = null
+	review_code_input = null
 	for child in content.get_children():
 		child.queue_free()
+
+func _active_text_input() -> LineEdit:
+	if is_instance_valid(review_code_input):
+		return review_code_input
+	return answer_input if is_instance_valid(answer_input) else null
 
 func _add_crown() -> TextureRect:
 	var crown := TextureRect.new()

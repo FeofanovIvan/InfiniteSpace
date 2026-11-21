@@ -1,6 +1,7 @@
 extends "res://learning/src/core/access_service.gd"
 
 var purchase_gate_count := 0
+var review_code_valid := false
 
 
 func _monetization_runtime_enabled() -> bool:
@@ -17,6 +18,10 @@ func _load_state() -> void:
 
 func _save_state() -> void:
 	save_elapsed = 0.0
+
+
+func _review_code_matches(_code: String) -> bool:
+	return review_code_valid
 
 
 func show_purchase_gate() -> void:

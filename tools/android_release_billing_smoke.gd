@@ -171,6 +171,14 @@ func _test_active_play_timer() -> void:
 	access.set_full_game_owned(true)
 	access._process(10.0)
 	_check(access.preview_elapsed_seconds == 100.0 and access.has_access(), "owned full game permanently disables the timer")
+	access.set_full_game_owned(false)
+	access.review_code_valid = false
+	_check(not access.activate_reviewer_access("wrong-code"), "invalid reviewer code never unlocks")
+	_check(not access.reviewer_access_active and not access.full_game_owned, "failed review access does not change purchase state")
+	access.review_code_valid = true
+	_check(access.activate_reviewer_access("test-only-code"), "valid reviewer code unlocks the current session")
+	_check(access.has_access() and access.reviewer_access_active, "reviewer session grants full access")
+	_check(not access.full_game_owned, "reviewer access never impersonates a purchase")
 	access.queue_free()
 	await process_frame
 
@@ -208,6 +216,9 @@ func _test_parent_purchase_ui() -> void:
 	_check(is_instance_valid(overlay.purchase_button), "purchase button appears only after parent challenge")
 	_check("€14,49" in overlay.purchase_button.text, "purchase button displays the localized Play price")
 	_check(not overlay.purchase_button.disabled, "confirmed product enables the explicit purchase button")
+	overlay._show_reviewer_access()
+	await process_frame
+	_check(is_instance_valid(overlay.review_code_input), "purchase screen exposes the documented reviewer-code entry")
 
 	for locale in ["ru", "en", "pt", "es", "de", "fr"]:
 		_check(not str(language_script.UI_TEXT["full_game_title"].get(locale, "")).is_empty(), "purchase UI localized: " + locale)

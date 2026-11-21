@@ -1,6 +1,6 @@
 # InfiniteSpace Android closed-test handoff
 
-Last updated: 2026-11-19 (America/Sao_Paulo)
+Last updated: 2026-11-21 (America/Sao_Paulo)
 
 ## Scope and safety
 
@@ -201,6 +201,18 @@ Largest packaged items include the ARM64 Godot library (76.18 MB raw / 25.47 MB 
 
 This release AAB was uploaded successfully to the Google Play Internal testing track on 2026-11-20 and saved in draft release `36 (0.36.0)`. Google Play accepted versionCode 36, minSdk 24, targetSdk 36, and the ARM64 bundle. Google Play App Signing uses the registered upload certificate to verify uploads and signs generated distribution APKs with Google's app signing key.
 
+## Reviewer-access release artifact
+
+- Path: `/Users/ivanfeofanov/Projects/InfiniteSpace/Android_Release_20261119/builds/android/InfiniteSpace-0.36.1-37-release.aab`
+- Size: 144,769,792 bytes
+- SHA-256: `a6559ca3463dafa4ff897faad4babfb92f11dce254a846108f01f8a8330ee69f`
+- JAR signature: PASS
+- Bundle validation: PASS
+- Manifest: `com.feofanov.infinitespace`, version `0.36.1 (37)`, min SDK 24, target SDK 36; `INTERNET` and Billing present, with no `AD_ID`, camera, microphone, location, contacts, or storage/media permission
+- Upload certificate SHA-256: `1E:EA:EC:C7:BE:91:8B:65:0F:20:EB:4E:75:D7:88:E9:3E:5C:8E:C3:2B:2F:B4:BD:A5:BA:F9:FC:90:1F:B6:45`
+
+VersionCode 37 adds a parent-gated reusable review code that grants full access only for the current process session. It never marks a purchase as owned, never persists a permanent entitlement, and must be re-entered after restart. The app contains only the code's SHA-256 hash. The plaintext code and Play Review instructions are in the ignored local file `private/reviewer_access_v37.txt`; `private/` is excluded from all export presets and was confirmed absent from the AAB. The expanded billing smoke test covers invalid-code rejection, session unlock, purchase-state isolation, and reviewer-entry UI. This artifact is ready locally but has not yet been uploaded to Play Console.
+
 ## Diagnostic artifact (not final)
 
 - Path: `/Users/ivanfeofanov/Projects/InfiniteSpace/Android_Release_20261119/builds/android/InfiniteSpace-0.36.0-36-diagnostic-debug.aab`
@@ -221,8 +233,11 @@ This artifact must not be uploaded. It proves that the Gradle template, billing 
 - The store-listing assets and copy are prepared under `docs/google_play/`; no approved image was regenerated.
 - The selected promotion site is `https://mika.playtownkids.app/`; it returned HTTP 200 on 2026-11-20. The deployed privacy policy at `https://mika.playtownkids.app/privacy/` was verified in Russian and English to cover the website, Android, and iOS, including local storage, Google Play/App Store payments, `full_game_unlock`, no Android subscription, parental verification, retention, and deletion. The privacy URL is saved in Play Console.
 - Play Console category/contact metadata is saved: Game / Educational, promotion website `https://mika.playtownkids.app/`, and public contact email `feofanov.br@gmail.com`.
-- App content declarations saved on 2026-11-20: no ads, no advertising ID, not a government app, no financial features, and no health features. Play Console reduced the remaining App content actions from nine to five.
-- The Sign-in/App access declaration remains intentionally unsaved. The one-time paywall counts as restricted content, and Google requires an always-available free review path to all paid functionality. VersionCode 36 has no reviewer bypass, reusable access code, or account-based pre-unlocked entitlement, so declaring full review access would be inaccurate.
+- App content declarations saved on 2026-11-20: no ads, no advertising ID, not a government app, no financial features, and no health features.
+- IARC content rating is complete. App-level trader status is saved as Yes with `https://mika.playtownkids.app/terms/`.
+- Data safety is saved as a draft declaring no collection and no sharing; final completion waits for Target audience and content.
+- The Sign-in/App access declaration remains unsaved in the console. VersionCode 37 now provides the required free, reusable, full-content review path; upload it and then submit the confidential instructions from `private/reviewer_access_v37.txt` to Google Play Review.
+- Three App content actions remain: App access, Target audience and content, and final Data safety completion.
 - Google's current help still requires at least 12 testers continuously opted in for 14 days for applicable personal accounts created after 2023-11-13. Uploading an AAB alone does not start or satisfy that requirement.
 
 ## Signing state
@@ -251,10 +266,11 @@ The keystore and password are not in the repository, AAB directory, report attac
 ## Required next steps
 
 1. Back up the private upload keystore and Keychain credential to secure encrypted owner-controlled storage.
-2. Decide and implement an always-available reviewer-access path for paid content, then upload a new signed versionCode if the app changes and complete the Sign-in/App access declaration.
-3. Create/activate `full_game_unlock` as a one-time product with USD 15 base price; complete content rating, target audience, Data safety, and trader/terms declarations; configure license testers.
-4. Add the Internal testing tester list, release notes, review the draft, and explicitly confirm rollout only when the owner wants the release available to testers.
-5. Do not publish to Production.
+2. Upload the signed versionCode 37 AAB to the existing Internal testing draft and submit the confidential reviewer instructions in App access. Do not delete versionCode 36 without explicit owner confirmation.
+3. Complete Target audience and content, then finalize Data safety.
+4. Create/activate `full_game_unlock` as a one-time product with USD 15 base price and configure license testers.
+5. Add the Internal testing tester list, release notes, review the draft, and explicitly confirm rollout only when the owner wants the release available to testers.
+6. Do not publish to Production.
 
 The signed AAB is present in a saved Internal testing draft. No Production action has been performed.
 
@@ -267,10 +283,10 @@ git status --short --branch
 export GODOT_ANDROID_KEYSTORE_RELEASE_PATH='/Users/ivanfeofanov/Library/Application Support/InfiniteSpace/keystores/infinite-space-upload-2026.jks'
 export GODOT_ANDROID_KEYSTORE_RELEASE_USER='infinite-space-upload'
 export GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD="$(security find-generic-password -w -s 'InfiniteSpace Google Play Upload Keystore' -a 'infinite-space-upload')"
-/Applications/Godot\ 4.7.1.app/Contents/MacOS/Godot --headless --path . --export-release "Google Play Release (AAB)" builds/android/InfiniteSpace-0.36.0-36-release.aab
+/Applications/Godot\ 4.7.1.app/Contents/MacOS/Godot --headless --path . --export-release "Google Play Release (AAB)" builds/android/InfiniteSpace-0.36.1-37-release.aab
 unset GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD
-jarsigner -verify builds/android/InfiniteSpace-0.36.0-36-release.aab
-keytool -printcert -jarfile builds/android/InfiniteSpace-0.36.0-36-release.aab
-java -jar /private/tmp/bundletool-all-1.16.0.jar validate --bundle=builds/android/InfiniteSpace-0.36.0-36-release.aab
-shasum -a 256 builds/android/InfiniteSpace-0.36.0-36-release.aab
+jarsigner -verify builds/android/InfiniteSpace-0.36.1-37-release.aab
+keytool -printcert -jarfile builds/android/InfiniteSpace-0.36.1-37-release.aab
+java -jar /private/tmp/bundletool-all-1.16.0.jar validate --bundle=builds/android/InfiniteSpace-0.36.1-37-release.aab
+shasum -a 256 builds/android/InfiniteSpace-0.36.1-37-release.aab
 ```

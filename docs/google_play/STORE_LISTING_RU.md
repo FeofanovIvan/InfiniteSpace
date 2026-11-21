@@ -2,7 +2,7 @@
 
 ## Основная локализация: русский
 
-**Название (до 30 знаков):** Infinite Space: игры Мики
+**Название (до 30 знаков):** Игры для детей 3-6: Мика
 
 **Краткое описание (до 80 знаков):** Космические приключения и развивающие игры вместе с Микой
 
@@ -27,7 +27,7 @@
 
 ## Английская локализация
 
-**Title:** Infinite Space: Mika Games
+**Title:** Kids Learning Games: MIKA
 
 **Short description:** Space adventures and educational games with Mika
 
@@ -70,9 +70,21 @@ This is a pre-release version. During closed testing, we are collecting feedback
 - Тип: Game.
 - Категория: Educational.
 - Package name: `com.feofanov.infinitespace`.
-- Текущая версия: `0.36.0` (`versionCode 36`).
+- Текущая версия: `0.36.1` (`versionCode 37`).
 - Основная аудитория: дети и родители; возрастные группы отметить честно по фактическому содержимому.
 - Реклама: нет.
 - Покупки в приложении: да, одна разовая покупка полной версии.
-- Политика конфиденциальности: `https://feofanova-math-tutor.feofanov-logistics.workers.dev/playtown/privacy`.
-- Условия использования: `https://feofanova-math-tutor.feofanov-logistics.workers.dev/playtown/terms`.
+- Сайт: `https://mika.playtownkids.app/`.
+- Политика конфиденциальности: `https://mika.playtownkids.app/privacy/`.
+- Условия использования: `https://mika.playtownkids.app/terms/`.
+
+## Утверждённые локализованные названия
+
+- EN: `Kids Learning Games: MIKA`
+- PT-BR: `Jogos Infantis 3-6: MIKA`
+- PT: `Jogos para Crianças: MIKA`
+- ES: `Juegos Infantiles: MIKA`
+- ES-MX: `Juegos para Niños: MIKA`
+- DE: `Kinderspiele ab 3: MIKA`
+- FR: `Jeux pour enfants: MIKA`
+- RU: `Игры для детей 3-6: Мика`

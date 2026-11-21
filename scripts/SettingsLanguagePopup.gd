@@ -3,7 +3,7 @@ extends Control
 ## Input is handled by this modal; underlying simulator/flight UI stays unchanged.
 
 const CLOSE_GLYPH: Script = preload("res://simulator_ui/neon_close_glyph.gd")
-const PRIVACY_POLICY_URL: String = "https://feofanova-math-tutor.feofanov-logistics.workers.dev/playtown/privacy"
+const PRIVACY_POLICY_URL: String = "https://mika.playtownkids.app/privacy/"
 const LOCALES: Array[String] = ["en", "ru", "fr", "de", "es", "pt_BR"]
 const NAMES: Array[String] = ["English", "Русский", "Français", "Deutsch", "Español", "Português (BR)"]
 const HEADINGS: Dictionary = {"en": "SETTINGS", "ru": "НАСТРОЙКИ", "fr": "PARAMÈTRES", "de": "EINSTELLUNGEN", "es": "AJUSTES", "pt_BR": "CONFIGURAÇÕES"}
@@ -209,7 +209,7 @@ func _v104_build_extras() -> void:
 	_v104_privacy = _v104_extra_button()
 	_v104_purchase = _v104_extra_button()
 	_v104_privacy.pressed.connect(_v104_open_privacy)
-	_v104_purchase.pressed.connect(_v104_unconfigured.bind("purchase_hint"))
+	_v104_purchase.pressed.connect(_v104_open_purchase)
 	_v104_info = Label.new()
 	_v104_info.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_v104_info.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -290,6 +290,10 @@ func _v104_unconfigured(key: String) -> void:
 
 func _v104_open_privacy() -> void:
 	OS.shell_open(PRIVACY_POLICY_URL)
+
+func _v104_open_purchase() -> void:
+	close_settings()
+	AccessService.show_purchase_options()
 
 func open_settings() -> void:
 	visible = true

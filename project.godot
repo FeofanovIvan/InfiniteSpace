@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Infinite Space - Distant Stars"
 config/description="Procedural endless deep space for a lightweight 2D mobile game."
-config/version="0.36.0"
+config/version="0.36.1"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/ships/miko_player_ship.png"

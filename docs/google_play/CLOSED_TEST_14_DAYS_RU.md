@@ -4,7 +4,7 @@
 
 ## Что уже настроено в проекте
 
-- релизный Android App Bundle preset, ARM64, `targetSdk 36`, `minSdk 24` (финальный подписанный AAB ещё не создан);
+- релизный Android App Bundle preset, ARM64, `targetSdk 36`, `minSdk 24`; подписанный AAB `0.36.1 (37)` создан и проверен;
 - production package name `com.feofanov.infinitespace`;
 - Google Play Billing 3.3.0 / Play Billing Library 9.1.0;
 - one-time product ID `full_game_unlock`;
@@ -29,7 +29,7 @@
 
 1. Создать приложение с package name `com.feofanov.infinitespace`.
 2. Включить Play App Signing и сохранить upload keystore отдельно от репозитория.
-3. Загрузить `builds/android/InfiniteSpace-0.36.0-36-release.aab` сначала во Internal testing для быстрой проверки.
+3. Загрузить `builds/android/InfiniteSpace-0.36.1-37-release.aab` сначала во Internal testing для быстрой проверки.
 4. В Play Console открыть Settings → License testing и добавить взрослые тестовые аккаунты, чтобы проверять покупку тестовой картой без списания $15.
 5. После smoke test создать Closed testing track.
 6. В Testing → Closed testing → Testers выбрать email list или Google Group, добавить минимум **12 тестировщиков**, сохранить трек и передать появившуюся opt-in ссылку.

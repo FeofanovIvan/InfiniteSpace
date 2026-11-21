@@ -8,6 +8,7 @@ const SubscriptionOverlay := preload("res://learning/src/screens/subscription_ov
 const PREVIEW_DURATION_SECONDS := 600.0
 const SAVE_INTERVAL_SECONDS := 5.0
 const SAVE_PATH := "user://miko_playtown_access_state.cfg"
+const REVIEW_ACCESS_CODE_SHA256 := "447ee48406d10d239ed8a91c355ad22cf3e353d044bab257f8009a00d19e066a"
 ## Local/editor and debug exports stay fully unlocked for development.
 ## Release exports use PREVIEW_DURATION_SECONDS and a permanent full-game unlock.
 const DEVELOPMENT_ACCESS_BYPASS := true
@@ -16,6 +17,9 @@ var preview_started := false
 var preview_elapsed_seconds := 0.0
 var full_game_owned := false
 var subscription_active := false
+## Google Play review access is deliberately session-only and is never persisted
+## as a purchase. A restart always returns to the verified store entitlement.
+var reviewer_access_active := false
 var app_active := true
 var save_elapsed := 0.0
 var last_reported_seconds := -1
@@ -122,6 +126,19 @@ func set_subscription_active(value: bool) -> void:
 		subscription_gate.queue_free()
 		subscription_gate = null
 
+func activate_reviewer_access(code: String) -> bool:
+	if not _monetization_runtime_enabled() or not _review_code_matches(code):
+		return false
+	reviewer_access_active = true
+	GameState.clear_preview_coins()
+	if is_instance_valid(subscription_gate):
+		subscription_gate.queue_free()
+		subscription_gate = null
+	return true
+
+func _review_code_matches(code: String) -> bool:
+	return code.strip_edges().sha256_text() == REVIEW_ACCESS_CODE_SHA256
+
 func show_purchase_gate() -> void:
 	if not _monetization_runtime_enabled():
 		return
@@ -130,11 +147,19 @@ func show_purchase_gate() -> void:
 			subscription_gate.queue_free()
 			subscription_gate = null
 		return
+	_show_purchase_overlay(true, true)
+
+func show_purchase_options() -> void:
+	if not _monetization_runtime_enabled() or _development_access_enabled():
+		return
+	_show_purchase_overlay(false, false)
+
+func _show_purchase_overlay(is_locked: bool, show_notice: bool) -> void:
 	if _entitlement_active() or is_instance_valid(subscription_gate):
 		return
 	subscription_gate = SubscriptionOverlay.new()
-	subscription_gate.set_locked(true)
-	subscription_gate.set_show_expiration_notice(true)
+	subscription_gate.set_locked(is_locked)
+	subscription_gate.set_show_expiration_notice(show_notice)
 	subscription_gate.tree_exited.connect(func(): subscription_gate = null)
 	get_tree().root.add_child(subscription_gate)
 
@@ -143,7 +168,7 @@ func _should_count_time() -> bool:
 		and not _entitlement_active() and not is_preview_expired()
 
 func _entitlement_active() -> bool:
-	return full_game_owned or subscription_active
+	return full_game_owned or subscription_active or reviewer_access_active
 
 func _monetization_runtime_enabled() -> bool:
 	return OS.get_name() == "Android"
