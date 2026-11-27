@@ -15,7 +15,10 @@ const POLICY_HINTS: Array[String] = [
 ]
 const PURCHASE_HINTS: Array[String] = [
 	"purchase", "purchases", "shop", "buy", "store", "покуп", "магазин", "закуп",
-	"compras", "comprar", "loja", "tienda", "achat", "achats", "einkauf", "kaufen"
+	"compras", "comprar", "loja", "tienda", "achat", "achats", "einkauf", "kaufen",
+	# v3.8+ uses Subscription instead of Purchase. Without these synonyms,
+	# the existing encyclopedia's Settings action block cannot be located.
+	"subscription", "subscribe", "подпис", "abonn", "suscrip", "assinatur", "assinar"
 ]
 const LANGUAGE_KEYS: Array[String] = [
 	"current_language", "selected_language", "language_code", "current_locale", "selected_locale",

@@ -1,0 +1,38 @@
+{
+  "page_id": "CH06_P01",
+  "status": "VISUAL_ONLY_NO_AUDIO",
+  "effects": [
+    {
+      "id": "CH06_P01_SFX001",
+      "panel": "city_neuron_world",
+      "layer_id": "wave_neuron_city",
+      "kind": "visual_nonverbal_vibration",
+      "audible_sample_requested": false,
+      "tts": false,
+      "translation": false,
+      "description_ru": "Визуальные резонансные импульсы и волны вокруг нейронных жителей города."
+    },
+    {
+      "id": "CH06_P01_SFX002",
+      "panel": "bottom_left_reunion",
+      "layer_id": "wave_neuron_reunion",
+      "kind": "two_way_vibration_exchange",
+      "audible_sample_requested": false,
+      "tts": false,
+      "translation": false,
+      "description_ru": "Сложное переплетение волн, кольцевых импульсов и светящихся частиц между магнитным другом и нейронным существом."
+    },
+    {
+      "id": "CH06_P01_SFX003",
+      "panel": "bottom_right_telepathy",
+      "layer_id": "wave_neuron_telepathy_hint",
+      "kind": "soft_telepathy_illustration",
+      "audible_sample_requested": false,
+      "tts": false,
+      "translation": false,
+      "description_ru": "Очень мягкие волны между Микой и нейронным устройством, без новых реплик."
+    }
+  ],
+  "localized_as_text": false,
+  "preserved_from_ru_draft": "v3"
+}

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://28cymjkby8i7"
+
+[deps]
+
+files=["res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.frame.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.speaker.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.tone.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.emotion.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.intensity.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.pace.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.volume.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.pitch.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.pause.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.acting.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.ru.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.en.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.pt_BR.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.es.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.fr.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.de.translation"]
+
+source_file="res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.csv"
+dest_files=["res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.frame.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.speaker.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.tone.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.emotion.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.intensity.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.pace.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.volume.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.pitch.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.pause.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.acting.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.ru.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.en.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.pt_BR.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.es.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.fr.translation", "res://mika_motion_comic/localization/ch01_p01/emotional_director_cues.de.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

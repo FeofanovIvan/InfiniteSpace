@@ -1,0 +1,258 @@
+{
+  "schema_version": 3,
+  "page_id": "CH08_P01",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch08_p01_languages/ch08_p01_ru.webp",
+  "native_scene_panels": [
+    "p81_palace",
+    "p81_mika",
+    "p81_bubble",
+    "p81_friends",
+    "p81_lizard",
+    "p81_reply"
+  ],
+  "panel_bounds": {
+    "p81_palace": [
+      0.0286,
+      0.02,
+      0.9429,
+      0.209
+    ],
+    "p81_mika": [
+      0.0286,
+      0.2384,
+      0.464,
+      0.263
+    ],
+    "p81_bubble": [
+      0.507,
+      0.2384,
+      0.464,
+      0.263
+    ],
+    "p81_friends": [
+      0.0286,
+      0.51,
+      0.9429,
+      0.219
+    ],
+    "p81_lizard": [
+      0.0286,
+      0.7387,
+      0.464,
+      0.2411
+    ],
+    "p81_reply": [
+      0.507,
+      0.7387,
+      0.464,
+      0.2411
+    ]
+  },
+  "lines": [
+    {
+      "panel_id": "p81_palace",
+      "camera_target": [
+        0.66,
+        0.133,
+        0.209
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.0286,
+        0.02,
+        0.9429,
+        0.209
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L001",
+      "frame_id": "01 — прибытие",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Корабль Мики вернулся на планету нейронных существ в галактике Треугольник.",
+      "audio_path": "res://mika_motion_comic/ch08_clips/ru/CH08_P01_L001_ru.mp3",
+      "audio_duration_s": 5.250612,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "5db49563f21e2ba68de5017cddb00972030a2730c699007d62737049c056ef2d"
+    },
+    {
+      "panel_id": "p81_mika",
+      "camera_target": [
+        0.268,
+        0.34,
+        0.263
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.0286,
+        0.2384,
+        0.464,
+        0.263
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L002",
+      "frame_id": "02 — открытая дверь",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Дверь в зал открылась.",
+      "audio_path": "res://mika_motion_comic/ch08_clips/ru/CH08_P01_L002_ru.mp3",
+      "audio_duration_s": 1.959184,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7949b5e98b1edf1746194c16f4d9058921c28ea5b276c94dd05c147b089068de"
+    },
+    {
+      "panel_id": "p81_mika",
+      "camera_target": [
+        0.268,
+        0.34,
+        0.263
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.0286,
+        0.2384,
+        0.464,
+        0.263
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L003",
+      "frame_id": "02 — Мика",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Привет!",
+      "audio_path": "res://mika_motion_comic/ch08_clips/ru/CH08_P01_L003_ru.mp3",
+      "audio_duration_s": 0.992653,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "6a7de32b6a2a633e0e08adea0c68c3dab0c26eadcbd86ae85bc26c6f199d8954"
+    },
+    {
+      "panel_id": "p81_bubble",
+      "camera_target": [
+        0.765,
+        0.366,
+        0.263
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.507,
+        0.2384,
+        0.464,
+        0.263
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L004",
+      "frame_id": "03 — Баббл",
+      "speaker_id": "CHR_014",
+      "kind": "nonverbal_vocal_sfx",
+      "spoken_text": "Бип-бип!",
+      "audio_path": "res://mika_motion_comic/ch08_clips/shared_sfx/CH08_P01_L004_BUBBLE_BEEP_BEEP.mp3",
+      "audio_duration_s": 0.757551,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fe6df445a7b7247d44e834d20d821b9b1cb62d58e004d06597df5ec7428c86af"
+    },
+    {
+      "panel_id": "p81_friends",
+      "camera_target": [
+        0.5,
+        0.615,
+        0.219
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.0286,
+        0.51,
+        0.9429,
+        0.219
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L005",
+      "frame_id": "04 — компания",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Вся компания была в сборе и ждала возвращения Мики.",
+      "audio_path": "res://mika_motion_comic/ch08_clips/ru/CH08_P01_L005_ru.mp3",
+      "audio_duration_s": 3.970612,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "61aae8d7b5b3900d581d3685d1d70281bbc2ef31ed5f84f4fa7c319debe240d3"
+    },
+    {
+      "panel_id": "p81_lizard",
+      "camera_target": [
+        0.27,
+        0.842,
+        0.2411
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.0286,
+        0.7387,
+        0.464,
+        0.2411
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L006",
+      "frame_id": "05 — ящер",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "А что касается друзей… Мне кажется, кто-то обещал слетать в Малое Магелланово Облако!",
+      "audio_path": "res://mika_motion_comic/ch08_clips/ru/CH08_P01_L006_ru.mp3",
+      "audio_duration_s": 6.19102,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "92beb0b970443601c26d36f97a59be75e46802953eeee82af559bc31114efe43"
+    },
+    {
+      "panel_id": "p81_reply",
+      "camera_target": [
+        0.745,
+        0.843,
+        0.2411
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.507,
+        0.7387,
+        0.464,
+        0.2411
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L007",
+      "frame_id": "06 — Мика",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Ну что, друзья, в путь!",
+      "audio_path": "res://mika_motion_comic/ch08_clips/ru/CH08_P01_L007_ru.mp3",
+      "audio_duration_s": 2.194286,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "364eb9471edd183615e81b838e07dcb9183d62848089f405c8246b5897ba8ac0"
+    }
+  ]
+}

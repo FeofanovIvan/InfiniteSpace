@@ -1,0 +1,329 @@
+{
+  "schema_version": 3,
+  "page_id": "CH06_P04",
+  "locale": "es",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch06_p04_languages/ch06_p04_es.webp",
+  "native_scene_panels": [
+    "p64_council",
+    "p64_mika",
+    "p64_route",
+    "p64_wake",
+    "p64_cockpit",
+    "p64_talk",
+    "p64_worlds",
+    "p64_portal"
+  ],
+  "panel_bounds": {
+    "p64_council": [
+      0.028646,
+      0.020239,
+      0.941406,
+      0.118675
+    ],
+    "p64_mika": [
+      0.028646,
+      0.156394,
+      0.428385,
+      0.216191
+    ],
+    "p64_route": [
+      0.509115,
+      0.156394,
+      0.460938,
+      0.220791
+    ],
+    "p64_wake": [
+      0.028646,
+      0.392824,
+      0.428385,
+      0.224471
+    ],
+    "p64_cockpit": [
+      0.519531,
+      0.393744,
+      0.450521,
+      0.223551
+    ],
+    "p64_talk": [
+      0.028646,
+      0.637534,
+      0.427083,
+      0.217111
+    ],
+    "p64_worlds": [
+      0.520833,
+      0.637534,
+      0.449219,
+      0.217111
+    ],
+    "p64_portal": [
+      0.028646,
+      0.875805,
+      0.941406,
+      0.103956
+    ]
+  },
+  "lines": [
+    {
+      "panel_id": "p64_council",
+      "camera_target": [
+        0.499349,
+        0.079577,
+        0.1400365
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.020239,
+        0.941406,
+        0.118675
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L001",
+      "frame_id": "1",
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Pedimos a nuestros amigos magnéticos que abrieran un portal entre nuestro mundo y aquel del que llegó el eco.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/es/CH06_P04_L001_es.mp3",
+      "audio_duration_s": 6.347755,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a72947b14be72f908df8ec10566a2542ee6e33e1944e1ac646730d12bed73415"
+    },
+    {
+      "panel_id": "p64_mika",
+      "camera_target": [
+        0.236979,
+        0.25759,
+        0.25510538
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028646,
+        0.156394,
+        0.428385,
+        0.216191
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L002",
+      "frame_id": "2",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "¿Entonces ustedes me salvaron?",
+      "audio_path": "res://mika_motion_comic/ch06_clips/es/CH06_P04_L002_es.mp3",
+      "audio_duration_s": 2.194286,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "1f9f84f7a2231396c1a5fa74d02cbee3cd9bd2e1c5edf34dd4661098c94a055d"
+    },
+    {
+      "panel_id": "p64_route",
+      "camera_target": [
+        0.739583,
+        0.266789,
+        0.26053338
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.509115,
+        0.156394,
+        0.460938,
+        0.220791
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L003",
+      "frame_id": "3",
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "No exactamente. Intenta llegar a «Las Últimas Puertas». Allí encontrarás más respuestas.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/es/CH06_P04_L003_es.mp3",
+      "audio_duration_s": 7.079184,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "bf34a867d94f8f8dfbcab6ccdd31134dfce5cd04b434340ad265a2ea4aec2d7b"
+    },
+    {
+      "panel_id": "p64_route",
+      "camera_target": [
+        0.739583,
+        0.266789,
+        0.26053338
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.509115,
+        0.156394,
+        0.460938,
+        0.220791
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L004",
+      "frame_id": "3",
+      "speaker_id": "CHR_038",
+      "kind": "exclamation",
+      "spoken_text": "¡Buena suerte!",
+      "audio_path": "res://mika_motion_comic/ch06_clips/es/CH06_P04_L004_es.mp3",
+      "audio_duration_s": 1.48898,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "55cff0462c1c1ce454c913e346852460dfd5821246cb368471637214745afc70"
+    },
+    {
+      "panel_id": "p64_wake",
+      "camera_target": [
+        0.222656,
+        0.482981,
+        0.26487578
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028646,
+        0.392824,
+        0.428385,
+        0.224471
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L005",
+      "frame_id": "4, 5",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika abrió los ojos y supo adónde ir. Se despidió de la tripulación y partió con su nuevo amigo hacia la Encrucijada de los Mundos.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/es/CH06_P04_L005_es.mp3",
+      "audio_duration_s": 8.75102,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9f19f8f12eab5238c4563628bb88609f483c3889e042849c6a5727e9f737abde"
+    },
+    {
+      "panel_id": "p64_cockpit",
+      "camera_target": [
+        0.744792,
+        0.50552,
+        0.26379018
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.519531,
+        0.393744,
+        0.450521,
+        0.223551
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_VIS_05",
+      "frame_id": "5",
+      "kind": "visual_hold",
+      "speaker_id": "",
+      "spoken_text": "",
+      "audio_path": "",
+      "audio_duration_s": 0.0,
+      "audio_kind": "silent",
+      "visual_hold_s": 2.2
+    },
+    {
+      "panel_id": "p64_talk",
+      "camera_target": [
+        0.242188,
+        0.74609,
+        0.25619097999999996
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.637534,
+        0.427083,
+        0.217111
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L006",
+      "frame_id": "6",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "En la Encrucijada de los Mundos, su amigo neuronal volvió a contactar con Mika. Para usar el artefacto, tenía que resolver un acertijo.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/es/CH06_P04_L006_es.mp3",
+      "audio_duration_s": 8.515918,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e5f40ae54cf4eb074467c9886840181437ba9da19ec74b5c59a005bc862f914f"
+    },
+    {
+      "panel_id": "p64_worlds",
+      "camera_target": [
+        0.745443,
+        0.74609,
+        0.25619097999999996
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.520833,
+        0.637534,
+        0.449219,
+        0.217111
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L007",
+      "frame_id": "7",
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Ni nosotros sabemos adónde lleva el artefacto. Iré contigo. Explorar lo desconocido es nuestra misión.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/es/CH06_P04_L007_es.mp3",
+      "audio_duration_s": 7.000816,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "94e1e52eb93f5aad027fbbfe2d25a19375ae3181e8758b1e45dda4dc69953266"
+    },
+    {
+      "panel_id": "p64_portal",
+      "camera_target": [
+        0.499349,
+        0.927783,
+        0.12266808
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.875805,
+        0.941406,
+        0.103956
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L008",
+      "frame_id": "8",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Se abrió un pasaje ante él, y Mika dirigió su nave hacia su interior.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/es/CH06_P04_L008_es.mp3",
+      "audio_duration_s": 4.597551,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "545e7fa6ce8636ee5c1ff7d5b077067edb3fa8f6463d8fe8c164dded5d038457"
+    }
+  ]
+}

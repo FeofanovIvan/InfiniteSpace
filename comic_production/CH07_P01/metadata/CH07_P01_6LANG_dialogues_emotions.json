@@ -1,0 +1,302 @@
+{
+  "page_id": "CH07_P01",
+  "chapter": 7,
+  "page": 1,
+  "version": "v30",
+  "status": "COMPLETE_6LANG",
+  "date": "2026-11-26",
+  "based_on": "MIKA_CH07_P01_RU_DRAFT_v1",
+  "source_artwork_changed": false,
+  "image_generated": false,
+  "audio_generated": false,
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "speaker_ids": [
+    "CHR_004",
+    "CHR_001"
+  ],
+  "lines": [
+    {
+      "line_id": "CH07_P01_L001",
+      "frame": "1 — верхний широкий кадр / шторм",
+      "speaker_id": "CHR_004",
+      "speaker": "Автор",
+      "kind": "narration",
+      "emotion": "напряжённое начало нового этапа",
+      "overlay_box": {
+        "x": 95,
+        "y": 100,
+        "width": 1190,
+        "height": 162,
+        "font_size": 39,
+        "visual_lines": 2,
+        "style": "NEBULA_AUTHOR_TECH",
+        "tail": "none"
+      },
+      "translations": {
+        "ru": "После выхода из портала корабль Мики попал в страшный шторм.",
+        "en": "After leaving the portal, Mika’s ship was caught in a terrifying storm.",
+        "pt_BR": "Ao sair do portal, a nave de Mika foi atingida por uma tempestade assustadora.",
+        "es": "Al salir del portal, la nave de Mika quedó atrapada en una tormenta aterradora.",
+        "fr": "À la sortie du portail, le vaisseau de Mika fut pris dans une terrible tempête.",
+        "de": "Kaum hatte Mikas Schiff das Portal verlassen, geriet es in einen gewaltigen Sturm."
+      },
+      "display_segments": {
+        "ru": [
+          "После выхода из портала корабль Мики попал в страшный шторм."
+        ],
+        "en": [
+          "After leaving the portal, Mika’s ship was caught in a terrifying storm."
+        ],
+        "pt_BR": [
+          "Ao sair do portal, a nave de Mika foi atingida por uma tempestade assustadora."
+        ],
+        "es": [
+          "Al salir del portal, la nave de Mika quedó atrapada en una tormenta aterradora."
+        ],
+        "fr": [
+          "À la sortie du portail, le vaisseau de Mika fut pris dans une terrible tempête."
+        ],
+        "de": [
+          "Kaum hatte Mikas Schiff das Portal verlassen, geriet es in einen gewaltigen Sturm."
+        ]
+      }
+    },
+    {
+      "line_id": "CH07_P01_L002",
+      "frame": "2 — кабина / тревога Мики",
+      "speaker_id": "CHR_001",
+      "speaker": "Мика",
+      "kind": "dialogue",
+      "emotion": "волнение, надежда",
+      "overlay_box": {
+        "x": 520,
+        "y": 1090,
+        "width": 545,
+        "height": 148,
+        "font_size": 37,
+        "visual_lines": 2,
+        "style": "NEBULA_MIKA_WHITE_DIALOGUE",
+        "tail": "none"
+      },
+      "translations": {
+        "ru": "Надеюсь, корабль выдержит!",
+        "en": "I hope the ship holds together!",
+        "pt_BR": "Tomara que a nave aguente!",
+        "es": "¡Espero que la nave resista!",
+        "fr": "Pourvu que le vaisseau résiste !",
+        "de": "Hoffentlich hält das Schiff durch!"
+      },
+      "display_segments": {
+        "ru": [
+          "Надеюсь, корабль выдержит!"
+        ],
+        "en": [
+          "I hope the ship holds together!"
+        ],
+        "pt_BR": [
+          "Tomara que a nave aguente!"
+        ],
+        "es": [
+          "¡Espero que la nave resista!"
+        ],
+        "fr": [
+          "Pourvu que le vaisseau résiste !"
+        ],
+        "de": [
+          "Hoffentlich hält das Schiff durch!"
+        ]
+      }
+    },
+    {
+      "line_id": "CH07_P01_L003",
+      "frame": "3 — корабль выходит из шторма",
+      "speaker_id": "CHR_004",
+      "speaker": "Автор",
+      "kind": "narration",
+      "emotion": "облегчение после опасности",
+      "overlay_box": {
+        "x": 1190,
+        "y": 1560,
+        "width": 900,
+        "height": 145,
+        "font_size": 35,
+        "visual_lines": 2,
+        "style": "NEBULA_AUTHOR_TECH",
+        "tail": "none"
+      },
+      "translations": {
+        "ru": "Через некоторое время корабль выбрался из шторма.",
+        "en": "After a while, the ship finally escaped the storm.",
+        "pt_BR": "Depois de algum tempo, a nave conseguiu sair da tempestade.",
+        "es": "Al cabo de un rato, la nave logró salir de la tormenta.",
+        "fr": "Au bout d’un moment, le vaisseau sortit enfin de la tempête.",
+        "de": "Nach einiger Zeit entkam das Schiff endlich dem Sturm."
+      },
+      "display_segments": {
+        "ru": [
+          "Через некоторое время корабль выбрался из шторма."
+        ],
+        "en": [
+          "After a while, the ship finally escaped the storm."
+        ],
+        "pt_BR": [
+          "Depois de algum tempo, a nave conseguiu sair da tempestade."
+        ],
+        "es": [
+          "Al cabo de un rato, la nave logró salir de la tormenta."
+        ],
+        "fr": [
+          "Au bout d’un moment, le vaisseau sortit enfin de la tempête."
+        ],
+        "de": [
+          "Nach einiger Zeit entkam das Schiff endlich dem Sturm."
+        ]
+      }
+    },
+    {
+      "line_id": "CH07_P01_L004",
+      "frame": "4 — Мика показывает на светящуюся точку",
+      "speaker_id": "CHR_001",
+      "speaker": "Мика",
+      "kind": "dialogue",
+      "emotion": "сосредоточенность и любопытство",
+      "overlay_box": {
+        "x": 735,
+        "y": 2260,
+        "width": 550,
+        "height": 155,
+        "font_size": 37,
+        "visual_lines": 2,
+        "style": "NEBULA_MIKA_WHITE_DIALOGUE",
+        "tail": "none"
+      },
+      "translations": {
+        "ru": "Наверное, нам нужно туда.",
+        "en": "I think we need to go there.",
+        "pt_BR": "Acho que precisamos ir até lá.",
+        "es": "Creo que tenemos que ir allí.",
+        "fr": "Je crois qu’il faut aller là-bas.",
+        "de": "Ich glaube, wir müssen dorthin."
+      },
+      "display_segments": {
+        "ru": [
+          "Наверное, нам нужно туда."
+        ],
+        "en": [
+          "I think we need to go there."
+        ],
+        "pt_BR": [
+          "Acho que precisamos ir até lá."
+        ],
+        "es": [
+          "Creo que tenemos que ir allí."
+        ],
+        "fr": [
+          "Je crois qu’il faut aller là-bas."
+        ],
+        "de": [
+          "Ich glaube, wir müssen dorthin."
+        ]
+      }
+    },
+    {
+      "line_id": "CH07_P01_L005",
+      "frame": "5 — светящаяся планета",
+      "speaker_id": "CHR_004",
+      "speaker": "Автор",
+      "kind": "narration",
+      "emotion": "удивление, космическое открытие",
+      "overlay_box": {
+        "x": 94,
+        "y": 3226,
+        "width": 1218,
+        "height": 182,
+        "font_size": 33,
+        "visual_lines": 3,
+        "style": "NEBULA_AUTHOR_TECH",
+        "tail": "none"
+      },
+      "translations": {
+        "ru": "Приблизившись к точке, они увидели странную светящуюся планету. Она меняла форму и излучала огромное количество плазмы.",
+        "en": "As they approached, they saw a strange glowing planet that changed shape and released enormous amounts of plasma.",
+        "pt_BR": "Ao se aproximarem, viram um planeta luminoso e estranho, que mudava de forma e liberava uma enorme quantidade de plasma.",
+        "es": "Al acercarse, vieron un extraño planeta luminoso que cambiaba de forma y desprendía enormes cantidades de plasma.",
+        "fr": "En s’approchant, ils découvrirent une étrange planète lumineuse qui changeait de forme et émettait d’immenses quantités de plasma.",
+        "de": "Als sie näher kamen, sahen sie einen seltsam leuchtenden Planeten. Er veränderte seine Form und stieß riesige Mengen Plasma aus."
+      },
+      "display_segments": {
+        "ru": [
+          "Приблизившись к точке, они увидели странную светящуюся планету. Она меняла форму и излучала огромное количество плазмы."
+        ],
+        "en": [
+          "As they approached, they saw a strange glowing planet that changed shape and released enormous amounts of plasma."
+        ],
+        "pt_BR": [
+          "Ao se aproximarem, viram um planeta luminoso e estranho, que mudava de forma e liberava uma enorme quantidade de plasma."
+        ],
+        "es": [
+          "Al acercarse, vieron un extraño planeta luminoso que cambiaba de forma y desprendía enormes cantidades de plasma."
+        ],
+        "fr": [
+          "En s’approchant, ils découvrirent une étrange planète lumineuse qui changeait de forme et émettait d’immenses quantités de plasma."
+        ],
+        "de": [
+          "Als sie näher kamen, sahen sie einen seltsam leuchtenden Planeten. Er veränderte seine Form und stieß riesige Mengen Plasma aus."
+        ]
+      }
+    },
+    {
+      "line_id": "CH07_P01_L006",
+      "frame": "6 — сон и похожее существо",
+      "speaker_id": "CHR_004",
+      "speaker": "Автор",
+      "kind": "narration",
+      "emotion": "тихая тайна, начало сновидения",
+      "overlay_box": {
+        "x": 1390,
+        "y": 3221,
+        "width": 1010,
+        "height": 182,
+        "font_size": 33,
+        "visual_lines": 3,
+        "style": "NEBULA_AUTHOR_TECH",
+        "tail": "none"
+      },
+      "translations": {
+        "ru": "Мика погрузился в сон. Там он встретил странное существо, удивительно похожее на него самого.",
+        "en": "Mika drifted off to sleep. In his dream, he met a strange being that looked remarkably like him.",
+        "pt_BR": "Mika adormeceu. Em seu sonho, encontrou um ser estranho que se parecia muito com ele.",
+        "es": "Mika se quedó dormido. En sueños conoció a un ser extraño que se parecía muchísimo a él.",
+        "fr": "Mika s’endormit. Dans son rêve, il rencontra un être étrange qui lui ressemblait étonnamment.",
+        "de": "Mika schlief ein. Im Traum begegnete er einem seltsamen Wesen, das ihm verblüffend ähnlich sah."
+      },
+      "display_segments": {
+        "ru": [
+          "Мика погрузился в сон. Там он встретил странное существо, удивительно похожее на него самого."
+        ],
+        "en": [
+          "Mika drifted off to sleep. In his dream, he met a strange being that looked remarkably like him."
+        ],
+        "pt_BR": [
+          "Mika adormeceu. Em seu sonho, encontrou um ser estranho que se parecia muito com ele."
+        ],
+        "es": [
+          "Mika se quedó dormido. En sueños conoció a un ser extraño que se parecía muchísimo a él."
+        ],
+        "fr": [
+          "Mika s’endormit. Dans son rêve, il rencontra un être étrange qui lui ressemblait étonnamment."
+        ],
+        "de": [
+          "Mika schlief ein. Im Traum begegnete er einem seltsamen Wesen, das ihm verblüffend ähnlich sah."
+        ]
+      }
+    }
+  ]
+}

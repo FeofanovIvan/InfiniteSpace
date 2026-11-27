@@ -6,7 +6,9 @@ extends "res://simulator_ui/menu/earth_embedded_learning_v1.gd"
 ## No changes to card scenes, rewards, localization service or settings UI.
 
 const MODE_SETTINGS_PATH: String = "user://miko_mode.cfg"
+const StorySubscriptionGate: Script = preload("res://scripts/StorySubscriptionGate.gd")
 const APPROVED_CARD_COUNT: int = 10
+const FREE_STORY_CARD_COUNT: int = 3
 const BUTTON_TEXT: Dictionary = {
     "ru": ["↓", "↑", "Показать остальные игры", "Вернуться к 10 основным играм"],
     "en": ["↓", "↑", "Show more games", "Back to the 10 main games"],
@@ -71,12 +73,16 @@ func _mika_refresh_catalog(preserve_expansion: bool) -> void:
     if not _mika_more_ready or not _grid_ready:
         return
     _mika_is_free_world = _mika_read_mode() == "free_world"
-    if not _mika_is_free_world or not preserve_expansion:
+    if not _mika_is_free_world or not preserve_expansion or StorySubscriptionGate.paywall_active():
         _mika_extra_expanded = false
+    var story_locked: bool = StorySubscriptionGate.paywall_active()
     for index in range(_grid_cards.size()):
         var card: TextureButton = _grid_cards[index]
         if is_instance_valid(card):
             card.visible = index < APPROVED_CARD_COUNT or (_mika_is_free_world and _mika_extra_expanded)
+            # Keep the real simulator cards and their original order. The
+            # first three are free; other cards remain visible, but grey.
+            card.modulate = Color(0.45, 0.47, 0.54, 0.90) if story_locked and index >= FREE_STORY_CARD_COUNT else Color.WHITE
     if _mika_extra_expanded:
         _gallery.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_NEVER
     else:
@@ -91,7 +97,7 @@ func _mika_update_more_button(_locale: String = "") -> void:
     if _mika_more_button == null:
         return
     # In Story this is hidden and can never be clicked even if previously open.
-    _mika_more_button.visible = _mika_is_free_world and _grid_cards.size() > APPROVED_CARD_COUNT
+    _mika_more_button.visible = _mika_is_free_world and not StorySubscriptionGate.paywall_active() and _grid_cards.size() > APPROVED_CARD_COUNT
     var translated: Array = BUTTON_TEXT.get(str(MobileLocale.language), BUTTON_TEXT["en"])
     _mika_more_button.text = str(translated[1] if _mika_extra_expanded else translated[0])
     _mika_more_button.tooltip_text = str(translated[3] if _mika_extra_expanded else translated[2])
@@ -104,8 +110,25 @@ func open_menu(view: Vector2) -> void:
     _reflow()
 
 
+func _gesture_end(screen_point: Vector2) -> void:
+    # Intercept only a completed TAP on a locked Story card. Preserve native
+    # swipe physics and original button signals for the three free games.
+    var clicked: TextureButton = _pressed_card
+    var card_index: int = _grid_cards.find(clicked) if clicked != null else -1
+    if StorySubscriptionGate.paywall_active() and card_index >= FREE_STORY_CARD_COUNT:
+        var valid_tap: bool = _pointer_kind != "" and not _pointer_moved and clicked == _card_under_point(screen_point)
+        _pointer_kind = ""
+        _pointer_index = -1
+        _pressed_card = null
+        if valid_tap:
+            _fling_speed = 0.0
+            StorySubscriptionGate.show_notice(self, "game")
+        return
+    super._gesture_end(screen_point)
+
+
 func _mika_toggle_more_games() -> void:
-    if not _mika_more_ready or not _mika_is_free_world or _playing:
+    if not _mika_more_ready or not _mika_is_free_world or StorySubscriptionGate.paywall_active() or _playing:
         return
     _mika_extra_expanded = not _mika_extra_expanded
     _mika_refresh_catalog(true)

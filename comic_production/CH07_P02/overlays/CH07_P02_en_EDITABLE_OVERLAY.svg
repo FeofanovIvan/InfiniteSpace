@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<title>MIKA CH07 P02 — RU Draft v2, balanced compact labels</title>
+<desc>Only editable SVG labels over unchanged original artwork. Two speakers, no crossing-arrow tails, short independent pictogram labels.</desc>
+<g id="CH07_P02_L001" data-layout-style="green" data-role="CHR_040">
+<rect x="804" y="91" width="795" height="215" rx="48" fill="#15243E" opacity=".11"/>
+<rect x="800" y="85" width="795" height="215" rx="48" fill="#D6F8ED" fill-opacity="0.97" stroke="#318C77" stroke-width="5"/>
+<circle cx="1568" cy="108" r="5" fill="#5BB9C6"/>
+<text x="832" y="163.05" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#174C41">Don't worry. I'm still the same</text><text x="832" y="205.05" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#174C41">planet. It's just easier for you to</text><text x="832" y="247.05" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#174C41">understand me when I look like you.</text></g>
+<g id="CH07_P02_L002" data-layout-style="green" data-role="CHR_040">
+<rect x="889" y="965" width="610" height="154" rx="48" fill="#15243E" opacity=".11"/>
+<rect x="885" y="959" width="610" height="154" rx="48" fill="#D6F8ED" fill-opacity="0.97" stroke="#318C77" stroke-width="5"/>
+<circle cx="1468" cy="982" r="5" fill="#5BB9C6"/>
+<text x="917" y="1010.03" font-family="DejaVu Sans" font-weight="700" font-size="31" fill="#174C41">Tell me how you solved the</text><text x="917" y="1047.23" font-family="DejaVu Sans" font-weight="700" font-size="31" fill="#174C41">puzzle and found your way to</text><text x="917" y="1084.43" font-family="DejaVu Sans" font-weight="700" font-size="31" fill="#174C41">me.</text></g>
+<g id="CH07_P02_L003" data-layout-style="mika" data-role="CHR_001">
+<rect x="754" y="1218" width="735" height="105" rx="46" fill="#15243E" opacity=".11"/>
+<rect x="750" y="1212" width="735" height="105" rx="46" fill="#FFFDF9" fill-opacity="0.97" stroke="#274C72" stroke-width="5"/>
+<text x="782" y="1274.74" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#19364F">I began thinking about patterns.</text></g>
+<g id="CH07_P02_L004_visual_a" data-layout-style="label" data-role="CHR_001">
+<rect x="74" y="1822" width="460" height="124" rx="24" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D7E6" stroke-width="2.6"/>
+<text x="95" y="1892.91" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">A meteorite fell to Earth.</text></g>
+<g id="CH07_P02_L004_visual_b" data-layout-style="label" data-role="CHR_001">
+<rect x="545" y="1822" width="555" height="124" rx="24" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D7E6" stroke-width="2.6"/>
+<text x="566" y="1876.71" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">Another hit the mold world,</text><text x="566" y="1909.11" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">before civilization.</text></g>
+<g id="CH07_P02_L005_visual_a" data-layout-style="label" data-role="CHR_001">
+<rect x="1220" y="1814" width="535" height="130" rx="24" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D7E6" stroke-width="2.6"/>
+<text x="1241" y="1871.71" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">The phase beings arose from</text><text x="1241" y="1904.11" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">meteorites.</text></g>
+<g id="CH07_P02_L005_visual_b" data-layout-style="label" data-role="CHR_001">
+<rect x="1802" y="1814" width="565" height="130" rx="24" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D7E6" stroke-width="2.6"/>
+<text x="1823" y="1871.71" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">An asteroid changed the air. The</text><text x="1823" y="1904.11" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">lizards became symbiotic.</text></g>
+<g id="CH07_P02_L006" data-layout-style="mika" data-role="CHR_001">
+<rect x="79" y="2007" width="455" height="148" rx="46" fill="#15243E" opacity=".11"/>
+<rect x="75" y="2001" width="455" height="148" rx="46" fill="#FFFDF9" fill-opacity="0.97" stroke="#274C72" stroke-width="5"/>
+<text x="107" y="2068.17" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">The magnetic beings</text><text x="107" y="2102.97" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">can control asteroids.</text></g>
+<g id="CH07_P02_L007" data-layout-style="mika" data-role="CHR_001">
+<rect x="1276" y="2007" width="470" height="148" rx="46" fill="#15243E" opacity=".11"/>
+<rect x="1272" y="2001" width="470" height="148" rx="46" fill="#FFFDF9" fill-opacity="0.97" stroke="#274C72" stroke-width="5"/>
+<text x="1304" y="2068.17" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">And open portals</text><text x="1304" y="2102.97" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">through space.</text></g>
+<g id="CH07_P02_L008" data-layout-style="label" data-role="CHR_001">
+<rect x="93" y="3365" width="780" height="112" rx="24" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D7E6" stroke-width="2.6"/>
+<text x="114" y="3413.17" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">The neuron beings know where and when</text><text x="114" y="3447.97" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">things will happen.</text></g>
+<g id="CH07_P02_L009" data-layout-style="mika" data-role="CHR_001">
+<rect x="2018" y="2794" width="398" height="194" rx="46" fill="#15243E" opacity=".11"/>
+<rect x="2014" y="2788" width="398" height="194" rx="46" fill="#FFFDF9" fill-opacity="0.97" stroke="#274C72" stroke-width="5"/>
+<text x="2046" y="2861.64" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#19364F">So life in the</text><text x="2046" y="2895.24" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#19364F">universe can be</text><text x="2046" y="2928.84" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#19364F">controlled.</text></g>
+</svg>

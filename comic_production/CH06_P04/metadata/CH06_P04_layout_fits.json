@@ -1,0 +1,1569 @@
+{
+  "page": "CH06_P04",
+  "checks": [
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L001",
+      "line_id": "CH06_P04_L001",
+      "kind": "neuron",
+      "frame": "1",
+      "text": "Мы попросили магнитных друзей открыть портал между нашим миром и миром, откуда пришло это эхо.",
+      "lines": [
+        "Мы попросили магнитных друзей открыть портал между нашим миром и",
+        "миром, откуда пришло это эхо."
+      ],
+      "font_size": 41,
+      "text_width": 1754.3,
+      "available_width": 1875,
+      "text_height": 91.0,
+      "available_height": 114,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L002",
+      "line_id": "CH06_P04_L002",
+      "kind": "mika",
+      "frame": "2",
+      "text": "Значит, вы меня спасли?",
+      "lines": [
+        "Значит, вы",
+        "меня спасли?"
+      ],
+      "font_size": 39,
+      "text_width": 301.9,
+      "available_width": 326,
+      "text_height": 86.6,
+      "available_height": 103,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L003_part_1",
+      "line_id": "CH06_P04_L003",
+      "kind": "neuron",
+      "frame": "3",
+      "text": "Не совсем так.",
+      "lines": [
+        "Не совсем так."
+      ],
+      "font_size": 37,
+      "text_width": 315.5,
+      "available_width": 445,
+      "text_height": 37.0,
+      "available_height": 66,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L003_part_2",
+      "line_id": "CH06_P04_L003",
+      "kind": "neuron",
+      "frame": "3",
+      "text": "Попробуй отправиться к «Последним вратам». Там ты найдёшь больше ответов.",
+      "lines": [
+        "Попробуй отправиться к «Последним",
+        "вратам». Там ты найдёшь больше",
+        "ответов."
+      ],
+      "font_size": 33,
+      "text_width": 716.4,
+      "available_width": 721,
+      "text_height": 113.5,
+      "available_height": 130,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L004",
+      "kind": "burst",
+      "text": "Удачи!",
+      "size": 31,
+      "text_width": 127.0,
+      "available_width": 130.4,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L005_part_1",
+      "line_id": "CH06_P04_L005",
+      "kind": "narrator",
+      "frame": "4, 5",
+      "text": "Мика открыл глаза и понял, куда лететь.",
+      "lines": [
+        "Мика открыл",
+        "глаза и понял,",
+        "куда лететь."
+      ],
+      "font_size": 30,
+      "text_width": 252.2,
+      "available_width": 293,
+      "text_height": 102.6,
+      "available_height": 141,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L005_part_2",
+      "line_id": "CH06_P04_L005",
+      "kind": "narrator",
+      "frame": "4, 5",
+      "text": "Он попрощался с командой и вместе с новым другом отправился к Перекрёстку миров.",
+      "lines": [
+        "Он попрощался с командой и вместе с новым",
+        "другом отправился к Перекрёстку миров."
+      ],
+      "font_size": 30,
+      "text_width": 796.1,
+      "available_width": 803,
+      "text_height": 66.3,
+      "available_height": 87,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L006_part_1",
+      "line_id": "CH06_P04_L006",
+      "kind": "narrator",
+      "frame": "6",
+      "text": "У Перекрёстка миров нейронный друг вновь связался с Микой.",
+      "lines": [
+        "У Перекрёстка миров нейронный друг",
+        "вновь связался с Микой."
+      ],
+      "font_size": 32,
+      "text_width": 716.2,
+      "available_width": 723,
+      "text_height": 70.7,
+      "available_height": 82,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L006_part_2",
+      "line_id": "CH06_P04_L006",
+      "kind": "narrator",
+      "frame": "6",
+      "text": "Чтобы воспользоваться артефактом, нужно разгадать ребус.",
+      "lines": [
+        "Чтобы воспользоваться",
+        "артефактом, нужно",
+        "разгадать ребус."
+      ],
+      "font_size": 29,
+      "text_width": 397.4,
+      "available_width": 478,
+      "text_height": 99.2,
+      "available_height": 107,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L007_part_1",
+      "line_id": "CH06_P04_L007",
+      "kind": "neuron",
+      "frame": "7",
+      "text": "Мы и сами не знаем, куда приведёт артефакт.",
+      "lines": [
+        "Мы и сами не знаем, куда",
+        "приведёт артефакт."
+      ],
+      "font_size": 28,
+      "text_width": 423.7,
+      "available_width": 425,
+      "text_height": 62.2,
+      "available_height": 97,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L007_part_2",
+      "line_id": "CH06_P04_L007",
+      "kind": "neuron",
+      "frame": "7",
+      "text": "Я отправлюсь с тобой. Изучать неизведанное — наша цель.",
+      "lines": [
+        "Я отправлюсь с",
+        "тобой. Изучать",
+        "неизведанное —",
+        "наша цель."
+      ],
+      "font_size": 29,
+      "text_width": 276.6,
+      "available_width": 287,
+      "text_height": 135.1,
+      "available_height": 148,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "visual_id": "CH06_P04_L008",
+      "line_id": "CH06_P04_L008",
+      "kind": "narrator",
+      "frame": "8",
+      "text": "Впереди открылся проход, и Мика направил свой звёздолёт в него.",
+      "lines": [
+        "Впереди открылся проход, и Мика направил",
+        "свой звёздолёт в него."
+      ],
+      "font_size": 33,
+      "text_width": 864.0,
+      "available_width": 903,
+      "text_height": 72.9,
+      "available_height": 74,
+      "status": "PASS",
+      "approved_ru_unchanged": true
+    },
+    {
+      "lang": "en",
+      "visual_id": "CH06_P04_L001",
+      "line_id": "CH06_P04_L001",
+      "text": "We asked our magnetic friends to open a portal between our world and the world where the echo came from.",
+      "kind": "neuron",
+      "font_size": 41,
+      "lines": [
+        "We asked our magnetic friends to open a portal between our world and the",
+        "world where the echo came from."
+      ],
+      "text_width": 1746.203125,
+      "text_height": 91.02,
+      "available_width": 1875,
+      "available_height": 114,
+      "box": [
+        270,
+        65,
+        1930,
+        160
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "visual_id": "CH06_P04_L002",
+      "line_id": "CH06_P04_L002",
+      "text": "So you saved me?",
+      "kind": "mika",
+      "font_size": 39,
+      "lines": [
+        "So you saved",
+        "me?"
+      ],
+      "text_width": 291.359375,
+      "text_height": 86.58,
+      "available_width": 326,
+      "available_height": 103,
+      "box": [
+        775,
+        585,
+        382,
+        142
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "visual_id": "CH06_P04_L003_part_1",
+      "line_id": "CH06_P04_L003",
+      "text": "Not quite.",
+      "kind": "neuron",
+      "font_size": 37,
+      "lines": [
+        "Not quite."
+      ],
+      "text_width": 209.3125,
+      "text_height": 37.0,
+      "available_width": 445,
+      "available_height": 66,
+      "box": [
+        1285,
+        558,
+        500,
+        112
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "visual_id": "CH06_P04_L003_part_2",
+      "line_id": "CH06_P04_L003",
+      "text": "Try going to the Last Gates. You’ll find more answers there.",
+      "kind": "neuron",
+      "font_size": 33,
+      "lines": [
+        "Try going to the Last Gates. You’ll find",
+        "more answers there."
+      ],
+      "text_width": 714.09375,
+      "text_height": 73.25999999999999,
+      "available_width": 721,
+      "available_height": 130,
+      "box": [
+        1270,
+        1108,
+        776,
+        176
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "visual_id": "CH06_P04_L005_part_1",
+      "line_id": "CH06_P04_L005",
+      "text": "Mika opened his eyes and knew where to go.",
+      "kind": "narrator",
+      "font_size": 30,
+      "lines": [
+        "Mika opened his",
+        "eyes and knew",
+        "where to go."
+      ],
+      "text_width": 276.3125,
+      "text_height": 102.6,
+      "available_width": 293,
+      "available_height": 141,
+      "box": [
+        830,
+        1692,
+        340,
+        179
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "visual_id": "CH06_P04_L005_part_2",
+      "line_id": "CH06_P04_L005",
+      "text": "He said goodbye to the crew and set off for the Crossroads of Worlds with his new friend.",
+      "kind": "narrator",
+      "font_size": 30,
+      "lines": [
+        "He said goodbye to the crew and set off for the",
+        "Crossroads of Worlds with his new friend."
+      ],
+      "text_width": 801.890625,
+      "text_height": 66.3,
+      "available_width": 803,
+      "available_height": 87,
+      "box": [
+        1250,
+        2006,
+        850,
+        125
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "visual_id": "CH06_P04_L006_part_1",
+      "line_id": "CH06_P04_L006",
+      "text": "At the Crossroads of Worlds, his neuron friend contacted Mika again.",
+      "kind": "narrator",
+      "font_size": 32,
+      "lines": [
+        "At the Crossroads of Worlds, his neuron",
+        "friend contacted Mika again."
+      ],
+      "text_width": 720.859375,
+      "text_height": 70.72,
+      "available_width": 723,
+      "available_height": 82,
+      "box": [
+        91,
+        2198,
+        770,
+        120
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "visual_id": "CH06_P04_L006_part_2",
+      "line_id": "CH06_P04_L006",
+      "text": "To use the artifact, he had to solve a puzzle.",
+      "kind": "narrator",
+      "font_size": 29,
+      "lines": [
+        "To use the artifact, he had to",
+        "solve a puzzle."
+      ],
+      "text_width": 475.125,
+      "text_height": 64.09,
+      "available_width": 478,
+      "available_height": 107,
+      "box": [
+        640,
+        2692,
+        525,
+        145
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "visual_id": "CH06_P04_L007_part_1",
+      "line_id": "CH06_P04_L007",
+      "text": "Even we don’t know where the artifact leads.",
+      "kind": "neuron",
+      "font_size": 28,
+      "lines": [
+        "Even we don’t know where",
+        "the artifact leads."
+      ],
+      "text_width": 424.671875,
+      "text_height": 62.16,
+      "available_width": 425,
+      "available_height": 97,
+      "box": [
+        1246,
+        2688,
+        480,
+        143
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "visual_id": "CH06_P04_L007_part_2",
+      "line_id": "CH06_P04_L007",
+      "text": "I’ll come with you. Exploring the unknown is our purpose.",
+      "kind": "neuron",
+      "font_size": 29,
+      "lines": [
+        "I’ll come with",
+        "you. Exploring",
+        "the unknown is",
+        "our purpose."
+      ],
+      "text_width": 250.125,
+      "text_height": 135.14,
+      "available_width": 287,
+      "available_height": 148,
+      "box": [
+        2052,
+        2639,
+        342,
+        194
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "visual_id": "CH06_P04_L008",
+      "line_id": "CH06_P04_L008",
+      "text": "A passage opened ahead, and Mika steered his starship into it.",
+      "kind": "narrator",
+      "font_size": 33,
+      "lines": [
+        "A passage opened ahead, and Mika steered his",
+        "starship into it."
+      ],
+      "text_width": 878.78125,
+      "text_height": 72.93,
+      "available_width": 903,
+      "available_height": 74,
+      "box": [
+        100,
+        2996,
+        950,
+        112
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "visual_id": "CH06_P04_L001",
+      "line_id": "CH06_P04_L001",
+      "text": "Pedimos aos nossos amigos magnéticos que abrissem um portal entre o nosso mundo e aquele de onde veio o eco.",
+      "kind": "neuron",
+      "font_size": 41,
+      "lines": [
+        "Pedimos aos nossos amigos magnéticos que abrissem um portal entre o nosso",
+        "mundo e aquele de onde veio o eco."
+      ],
+      "text_width": 1821.3125,
+      "text_height": 91.02,
+      "available_width": 1875,
+      "available_height": 114,
+      "box": [
+        270,
+        65,
+        1930,
+        160
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "visual_id": "CH06_P04_L002",
+      "line_id": "CH06_P04_L002",
+      "text": "Então foram vocês que me salvaram?",
+      "kind": "mika",
+      "font_size": 31,
+      "lines": [
+        "Então foram vocês",
+        "que me salvaram?"
+      ],
+      "text_width": 324.5,
+      "text_height": 68.82,
+      "available_width": 326,
+      "available_height": 103,
+      "box": [
+        775,
+        585,
+        382,
+        142
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "visual_id": "CH06_P04_L003_part_1",
+      "line_id": "CH06_P04_L003",
+      "text": "Não exatamente.",
+      "kind": "neuron",
+      "font_size": 37,
+      "lines": [
+        "Não exatamente."
+      ],
+      "text_width": 357.640625,
+      "text_height": 37.0,
+      "available_width": 445,
+      "available_height": 66,
+      "box": [
+        1285,
+        558,
+        500,
+        112
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "visual_id": "CH06_P04_L003_part_2",
+      "line_id": "CH06_P04_L003",
+      "text": "Tente ir até os “Últimos Portais”. Lá você encontrará mais respostas.",
+      "kind": "neuron",
+      "font_size": 33,
+      "lines": [
+        "Tente ir até os “Últimos Portais”. Lá",
+        "você encontrará mais respostas."
+      ],
+      "text_width": 674.65625,
+      "text_height": 73.25999999999999,
+      "available_width": 721,
+      "available_height": 130,
+      "box": [
+        1270,
+        1108,
+        776,
+        176
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "visual_id": "CH06_P04_L005_part_1",
+      "line_id": "CH06_P04_L005",
+      "text": "Mika abriu os olhos e soube para onde ir.",
+      "kind": "narrator",
+      "font_size": 30,
+      "lines": [
+        "Mika abriu os",
+        "olhos e soube",
+        "para onde ir."
+      ],
+      "text_width": 233.578125,
+      "text_height": 102.6,
+      "available_width": 293,
+      "available_height": 141,
+      "box": [
+        830,
+        1692,
+        340,
+        179
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "visual_id": "CH06_P04_L005_part_2",
+      "line_id": "CH06_P04_L005",
+      "text": "Despediu-se da equipe e partiu com seu novo amigo rumo à Encruzilhada dos Mundos.",
+      "kind": "narrator",
+      "font_size": 30,
+      "lines": [
+        "Despediu-se da equipe e partiu com seu novo",
+        "amigo rumo à Encruzilhada dos Mundos."
+      ],
+      "text_width": 772.9375,
+      "text_height": 66.3,
+      "available_width": 803,
+      "available_height": 87,
+      "box": [
+        1250,
+        2006,
+        850,
+        125
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "visual_id": "CH06_P04_L006_part_1",
+      "line_id": "CH06_P04_L006",
+      "text": "Na Encruzilhada dos Mundos, seu amigo neural voltou a falar com Mika.",
+      "kind": "narrator",
+      "font_size": 32,
+      "lines": [
+        "Na Encruzilhada dos Mundos, seu",
+        "amigo neural voltou a falar com Mika."
+      ],
+      "text_width": 684.71875,
+      "text_height": 70.72,
+      "available_width": 723,
+      "available_height": 82,
+      "box": [
+        91,
+        2198,
+        770,
+        120
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "visual_id": "CH06_P04_L006_part_2",
+      "line_id": "CH06_P04_L006",
+      "text": "Para usar o artefato, era preciso resolver um enigma.",
+      "kind": "narrator",
+      "font_size": 29,
+      "lines": [
+        "Para usar o artefato, era",
+        "preciso resolver um enigma."
+      ],
+      "text_width": 465.96875,
+      "text_height": 64.09,
+      "available_width": 478,
+      "available_height": 107,
+      "box": [
+        640,
+        2692,
+        525,
+        145
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "visual_id": "CH06_P04_L007_part_1",
+      "line_id": "CH06_P04_L007",
+      "text": "Nem nós sabemos aonde o artefato leva.",
+      "kind": "neuron",
+      "font_size": 28,
+      "lines": [
+        "Nem nós sabemos aonde o",
+        "artefato leva."
+      ],
+      "text_width": 422.4375,
+      "text_height": 62.16,
+      "available_width": 425,
+      "available_height": 97,
+      "box": [
+        1246,
+        2688,
+        480,
+        143
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "visual_id": "CH06_P04_L007_part_2",
+      "line_id": "CH06_P04_L007",
+      "text": "Vou com você. Explorar o desconhecido é nossa missão.",
+      "kind": "neuron",
+      "font_size": 29,
+      "lines": [
+        "Vou com você.",
+        "Explorar o",
+        "desconhecido é",
+        "nossa missão."
+      ],
+      "text_width": 253.34375,
+      "text_height": 135.14,
+      "available_width": 287,
+      "available_height": 148,
+      "box": [
+        2052,
+        2639,
+        342,
+        194
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "visual_id": "CH06_P04_L008",
+      "line_id": "CH06_P04_L008",
+      "text": "Uma passagem se abriu à frente, e Mika guiou sua nave para dentro dela.",
+      "kind": "narrator",
+      "font_size": 33,
+      "lines": [
+        "Uma passagem se abriu à frente, e Mika guiou",
+        "sua nave para dentro dela."
+      ],
+      "text_width": 866.984375,
+      "text_height": 72.93,
+      "available_width": 903,
+      "available_height": 74,
+      "box": [
+        100,
+        2996,
+        950,
+        112
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "visual_id": "CH06_P04_L001",
+      "line_id": "CH06_P04_L001",
+      "text": "Pedimos a nuestros amigos magnéticos que abrieran un portal entre nuestro mundo y aquel del que llegó el eco.",
+      "kind": "neuron",
+      "font_size": 41,
+      "lines": [
+        "Pedimos a nuestros amigos magnéticos que abrieran un portal entre nuestro",
+        "mundo y aquel del que llegó el eco."
+      ],
+      "text_width": 1786.765625,
+      "text_height": 91.02,
+      "available_width": 1875,
+      "available_height": 114,
+      "box": [
+        270,
+        65,
+        1930,
+        160
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "visual_id": "CH06_P04_L002",
+      "line_id": "CH06_P04_L002",
+      "text": "¿Entonces ustedes me salvaron?",
+      "kind": "mika",
+      "font_size": 30,
+      "lines": [
+        "¿Entonces ustedes",
+        "me salvaron?"
+      ],
+      "text_width": 315.578125,
+      "text_height": 66.6,
+      "available_width": 326,
+      "available_height": 103,
+      "box": [
+        775,
+        585,
+        382,
+        142
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "visual_id": "CH06_P04_L003_part_1",
+      "line_id": "CH06_P04_L003",
+      "text": "No exactamente.",
+      "kind": "neuron",
+      "font_size": 37,
+      "lines": [
+        "No exactamente."
+      ],
+      "text_width": 354.609375,
+      "text_height": 37.0,
+      "available_width": 445,
+      "available_height": 66,
+      "box": [
+        1285,
+        558,
+        500,
+        112
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "visual_id": "CH06_P04_L003_part_2",
+      "line_id": "CH06_P04_L003",
+      "text": "Intenta llegar a «Las Últimas Puertas». Allí encontrarás más respuestas.",
+      "kind": "neuron",
+      "font_size": 33,
+      "lines": [
+        "Intenta llegar a «Las Últimas",
+        "Puertas». Allí encontrarás más",
+        "respuestas."
+      ],
+      "text_width": 572.234375,
+      "text_height": 113.52,
+      "available_width": 721,
+      "available_height": 130,
+      "box": [
+        1270,
+        1108,
+        776,
+        176
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "visual_id": "CH06_P04_L005_part_1",
+      "line_id": "CH06_P04_L005",
+      "text": "Mika abrió los ojos y supo adónde ir.",
+      "kind": "narrator",
+      "font_size": 30,
+      "lines": [
+        "Mika abrió los",
+        "ojos y supo",
+        "adónde ir."
+      ],
+      "text_width": 237.375,
+      "text_height": 102.6,
+      "available_width": 293,
+      "available_height": 141,
+      "box": [
+        830,
+        1692,
+        340,
+        179
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "visual_id": "CH06_P04_L005_part_2",
+      "line_id": "CH06_P04_L005",
+      "text": "Se despidió de la tripulación y partió con su nuevo amigo hacia la Encrucijada de los Mundos.",
+      "kind": "narrator",
+      "font_size": 28,
+      "lines": [
+        "Se despidió de la tripulación y partió con su nuevo",
+        "amigo hacia la Encrucijada de los Mundos."
+      ],
+      "text_width": 801.203125,
+      "text_height": 61.879999999999995,
+      "available_width": 803,
+      "available_height": 87,
+      "box": [
+        1250,
+        2006,
+        850,
+        125
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "visual_id": "CH06_P04_L006_part_1",
+      "line_id": "CH06_P04_L006",
+      "text": "En la Encrucijada de los Mundos, su amigo neuronal volvió a contactar con Mika.",
+      "kind": "narrator",
+      "font_size": 30,
+      "lines": [
+        "En la Encrucijada de los Mundos, su amigo",
+        "neuronal volvió a contactar con Mika."
+      ],
+      "text_width": 719.125,
+      "text_height": 66.3,
+      "available_width": 723,
+      "available_height": 82,
+      "box": [
+        91,
+        2198,
+        770,
+        120
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "visual_id": "CH06_P04_L006_part_2",
+      "line_id": "CH06_P04_L006",
+      "text": "Para usar el artefacto, tenía que resolver un acertijo.",
+      "kind": "narrator",
+      "font_size": 29,
+      "lines": [
+        "Para usar el artefacto, tenía",
+        "que resolver un acertijo."
+      ],
+      "text_width": 460.859375,
+      "text_height": 64.09,
+      "available_width": 478,
+      "available_height": 107,
+      "box": [
+        640,
+        2692,
+        525,
+        145
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "visual_id": "CH06_P04_L007_part_1",
+      "line_id": "CH06_P04_L007",
+      "text": "Ni nosotros sabemos adónde lleva el artefacto.",
+      "kind": "neuron",
+      "font_size": 28,
+      "lines": [
+        "Ni nosotros sabemos",
+        "adónde lleva el artefacto."
+      ],
+      "text_width": 406.296875,
+      "text_height": 62.16,
+      "available_width": 425,
+      "available_height": 97,
+      "box": [
+        1246,
+        2688,
+        480,
+        143
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "visual_id": "CH06_P04_L007_part_2",
+      "line_id": "CH06_P04_L007",
+      "text": "Iré contigo. Explorar lo desconocido es nuestra misión.",
+      "kind": "neuron",
+      "font_size": 29,
+      "lines": [
+        "Iré contigo.",
+        "Explorar lo",
+        "desconocido es",
+        "nuestra misión."
+      ],
+      "text_width": 254.96875,
+      "text_height": 135.14,
+      "available_width": 287,
+      "available_height": 148,
+      "box": [
+        2052,
+        2639,
+        342,
+        194
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "visual_id": "CH06_P04_L008",
+      "line_id": "CH06_P04_L008",
+      "text": "Se abrió un pasaje ante él, y Mika dirigió su nave hacia su interior.",
+      "kind": "narrator",
+      "font_size": 33,
+      "lines": [
+        "Se abrió un pasaje ante él, y Mika dirigió su",
+        "nave hacia su interior."
+      ],
+      "text_width": 817.453125,
+      "text_height": 72.93,
+      "available_width": 903,
+      "available_height": 74,
+      "box": [
+        100,
+        2996,
+        950,
+        112
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "visual_id": "CH06_P04_L001",
+      "line_id": "CH06_P04_L001",
+      "text": "Nous avons demandé à nos amis magnétiques d’ouvrir un portail entre notre monde et celui d’où venait cet écho.",
+      "kind": "neuron",
+      "font_size": 41,
+      "lines": [
+        "Nous avons demandé à nos amis magnétiques d’ouvrir un portail entre notre",
+        "monde et celui d’où venait cet écho."
+      ],
+      "text_width": 1787.1875,
+      "text_height": 91.02,
+      "available_width": 1875,
+      "available_height": 114,
+      "box": [
+        270,
+        65,
+        1930,
+        160
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "visual_id": "CH06_P04_L002",
+      "line_id": "CH06_P04_L002",
+      "text": "Alors, vous m’avez sauvé ?",
+      "kind": "mika",
+      "font_size": 37,
+      "lines": [
+        "Alors, vous",
+        "m’avez sauvé ?"
+      ],
+      "text_width": 318.09375,
+      "text_height": 82.14,
+      "available_width": 326,
+      "available_height": 103,
+      "box": [
+        775,
+        585,
+        382,
+        142
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "visual_id": "CH06_P04_L003_part_1",
+      "line_id": "CH06_P04_L003",
+      "text": "Pas tout à fait.",
+      "kind": "neuron",
+      "font_size": 37,
+      "lines": [
+        "Pas tout à fait."
+      ],
+      "text_width": 309.34375,
+      "text_height": 37.0,
+      "available_width": 445,
+      "available_height": 66,
+      "box": [
+        1285,
+        558,
+        500,
+        112
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "visual_id": "CH06_P04_L003_part_2",
+      "line_id": "CH06_P04_L003",
+      "text": "Essaie de rejoindre les « Dernières Portes ». Tu y trouveras plus de réponses.",
+      "kind": "neuron",
+      "font_size": 33,
+      "lines": [
+        "Essaie de rejoindre les « Dernières",
+        "Portes ». Tu y trouveras plus de",
+        "réponses."
+      ],
+      "text_width": 647.109375,
+      "text_height": 113.52,
+      "available_width": 721,
+      "available_height": 130,
+      "box": [
+        1270,
+        1108,
+        776,
+        176
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "visual_id": "CH06_P04_L005_part_1",
+      "line_id": "CH06_P04_L005",
+      "text": "Mika ouvrit les yeux et sut où aller.",
+      "kind": "narrator",
+      "font_size": 30,
+      "lines": [
+        "Mika ouvrit les",
+        "yeux et sut où",
+        "aller."
+      ],
+      "text_width": 250.65625,
+      "text_height": 102.6,
+      "available_width": 293,
+      "available_height": 141,
+      "box": [
+        830,
+        1692,
+        340,
+        179
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "visual_id": "CH06_P04_L005_part_2",
+      "line_id": "CH06_P04_L005",
+      "text": "Il fit ses adieux à l’équipage et partit avec son nouvel ami vers le Carrefour des Mondes.",
+      "kind": "narrator",
+      "font_size": 30,
+      "lines": [
+        "Il fit ses adieux à l’équipage et partit avec son",
+        "nouvel ami vers le Carrefour des Mondes."
+      ],
+      "text_width": 787.90625,
+      "text_height": 66.3,
+      "available_width": 803,
+      "available_height": 87,
+      "box": [
+        1250,
+        2006,
+        850,
+        125
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "visual_id": "CH06_P04_L006_part_1",
+      "line_id": "CH06_P04_L006",
+      "text": "Au Carrefour des Mondes, son ami neuronal reprit contact avec Mika.",
+      "kind": "narrator",
+      "font_size": 32,
+      "lines": [
+        "Au Carrefour des Mondes, son ami",
+        "neuronal reprit contact avec Mika."
+      ],
+      "text_width": 623.234375,
+      "text_height": 70.72,
+      "available_width": 723,
+      "available_height": 82,
+      "box": [
+        91,
+        2198,
+        770,
+        120
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "visual_id": "CH06_P04_L006_part_2",
+      "line_id": "CH06_P04_L006",
+      "text": "Pour utiliser l’artefact, il fallait résoudre une énigme.",
+      "kind": "narrator",
+      "font_size": 29,
+      "lines": [
+        "Pour utiliser l’artefact, il",
+        "fallait résoudre une énigme."
+      ],
+      "text_width": 465.09375,
+      "text_height": 64.09,
+      "available_width": 478,
+      "available_height": 107,
+      "box": [
+        640,
+        2692,
+        525,
+        145
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "visual_id": "CH06_P04_L007_part_1",
+      "line_id": "CH06_P04_L007",
+      "text": "Nous ignorons aussi où mène cet artefact.",
+      "kind": "neuron",
+      "font_size": 28,
+      "lines": [
+        "Nous ignorons aussi où",
+        "mène cet artefact."
+      ],
+      "text_width": 367.9375,
+      "text_height": 62.16,
+      "available_width": 425,
+      "available_height": 97,
+      "box": [
+        1246,
+        2688,
+        480,
+        143
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "visual_id": "CH06_P04_L007_part_2",
+      "line_id": "CH06_P04_L007",
+      "text": "Je pars avec toi. Explorer l’inconnu est notre raison d’être.",
+      "kind": "neuron",
+      "font_size": 27,
+      "lines": [
+        "Je pars avec toi.",
+        "Explorer l’inconnu",
+        "est notre raison",
+        "d’être."
+      ],
+      "text_width": 277.5,
+      "text_height": 125.82,
+      "available_width": 287,
+      "available_height": 148,
+      "box": [
+        2052,
+        2639,
+        342,
+        194
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "visual_id": "CH06_P04_L008",
+      "line_id": "CH06_P04_L008",
+      "text": "Un passage s’ouvrit devant lui, et Mika y guida son vaisseau.",
+      "kind": "narrator",
+      "font_size": 33,
+      "lines": [
+        "Un passage s’ouvrit devant lui, et Mika y guida",
+        "son vaisseau."
+      ],
+      "text_width": 878.9375,
+      "text_height": 72.93,
+      "available_width": 903,
+      "available_height": 74,
+      "box": [
+        100,
+        2996,
+        950,
+        112
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "visual_id": "CH06_P04_L001",
+      "line_id": "CH06_P04_L001",
+      "text": "Wir baten unsere magnetischen Freunde, ein Portal zwischen unserer Welt und der Welt zu öffnen, aus der das Echo kam.",
+      "kind": "neuron",
+      "font_size": 41,
+      "lines": [
+        "Wir baten unsere magnetischen Freunde, ein Portal zwischen unserer Welt und",
+        "der Welt zu öffnen, aus der das Echo kam."
+      ],
+      "text_width": 1837.546875,
+      "text_height": 91.02,
+      "available_width": 1875,
+      "available_height": 114,
+      "box": [
+        270,
+        65,
+        1930,
+        160
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "visual_id": "CH06_P04_L002",
+      "line_id": "CH06_P04_L002",
+      "text": "Habt ihr mich also gerettet?",
+      "kind": "mika",
+      "font_size": 39,
+      "lines": [
+        "Habt ihr mich",
+        "also gerettet?"
+      ],
+      "text_width": 308.34375,
+      "text_height": 86.58,
+      "available_width": 326,
+      "available_height": 103,
+      "box": [
+        775,
+        585,
+        382,
+        142
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "visual_id": "CH06_P04_L003_part_1",
+      "line_id": "CH06_P04_L003",
+      "text": "Nicht ganz.",
+      "kind": "neuron",
+      "font_size": 37,
+      "lines": [
+        "Nicht ganz."
+      ],
+      "text_width": 235.890625,
+      "text_height": 37.0,
+      "available_width": 445,
+      "available_height": 66,
+      "box": [
+        1285,
+        558,
+        500,
+        112
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "visual_id": "CH06_P04_L003_part_2",
+      "line_id": "CH06_P04_L003",
+      "text": "Flieg zu den „Letzten Toren“. Dort findest du mehr Antworten.",
+      "kind": "neuron",
+      "font_size": 33,
+      "lines": [
+        "Flieg zu den „Letzten Toren“. Dort",
+        "findest du mehr Antworten."
+      ],
+      "text_width": 641.84375,
+      "text_height": 73.25999999999999,
+      "available_width": 721,
+      "available_height": 130,
+      "box": [
+        1270,
+        1108,
+        776,
+        176
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "visual_id": "CH06_P04_L005_part_1",
+      "line_id": "CH06_P04_L005",
+      "text": "Mika öffnete die Augen. Nun wusste er, wohin.",
+      "kind": "narrator",
+      "font_size": 30,
+      "lines": [
+        "Mika öffnete die",
+        "Augen. Nun",
+        "wusste er,",
+        "wohin."
+      ],
+      "text_width": 274.609375,
+      "text_height": 138.89999999999998,
+      "available_width": 293,
+      "available_height": 141,
+      "box": [
+        830,
+        1692,
+        340,
+        179
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "visual_id": "CH06_P04_L005_part_2",
+      "line_id": "CH06_P04_L005",
+      "text": "Er verabschiedete sich von der Crew und flog mit seinem neuen Freund zur Kreuzung der Welten.",
+      "kind": "narrator",
+      "font_size": 28,
+      "lines": [
+        "Er verabschiedete sich von der Crew und flog mit",
+        "seinem neuen Freund zur Kreuzung der Welten."
+      ],
+      "text_width": 778.5,
+      "text_height": 61.879999999999995,
+      "available_width": 803,
+      "available_height": 87,
+      "box": [
+        1250,
+        2006,
+        850,
+        125
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "visual_id": "CH06_P04_L006_part_1",
+      "line_id": "CH06_P04_L006",
+      "text": "An der Kreuzung der Welten meldete sich sein neuronaler Freund wieder.",
+      "kind": "narrator",
+      "font_size": 32,
+      "lines": [
+        "An der Kreuzung der Welten meldete",
+        "sich sein neuronaler Freund wieder."
+      ],
+      "text_width": 670.421875,
+      "text_height": 70.72,
+      "available_width": 723,
+      "available_height": 82,
+      "box": [
+        91,
+        2198,
+        770,
+        120
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "visual_id": "CH06_P04_L006_part_2",
+      "line_id": "CH06_P04_L006",
+      "text": "Um das Artefakt zu nutzen, musste er ein Rätsel lösen.",
+      "kind": "narrator",
+      "font_size": 29,
+      "lines": [
+        "Um das Artefakt zu nutzen,",
+        "musste er ein Rätsel lösen."
+      ],
+      "text_width": 448.171875,
+      "text_height": 64.09,
+      "available_width": 478,
+      "available_height": 107,
+      "box": [
+        640,
+        2692,
+        525,
+        145
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "visual_id": "CH06_P04_L007_part_1",
+      "line_id": "CH06_P04_L007",
+      "text": "Auch wir wissen nicht, wohin das Artefakt führt.",
+      "kind": "neuron",
+      "font_size": 28,
+      "lines": [
+        "Auch wir wissen nicht,",
+        "wohin das Artefakt führt."
+      ],
+      "text_width": 400.296875,
+      "text_height": 62.16,
+      "available_width": 425,
+      "available_height": 97,
+      "box": [
+        1246,
+        2688,
+        480,
+        143
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "visual_id": "CH06_P04_L007_part_2",
+      "line_id": "CH06_P04_L007",
+      "text": "Ich komme mit. Das Unbekannte zu erforschen ist unser Ziel.",
+      "kind": "neuron",
+      "font_size": 29,
+      "lines": [
+        "Ich komme mit.",
+        "Das Unbekannte",
+        "zu erforschen ist",
+        "unser Ziel."
+      ],
+      "text_width": 274.96875,
+      "text_height": 135.14,
+      "available_width": 287,
+      "available_height": 148,
+      "box": [
+        2052,
+        2639,
+        342,
+        194
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "visual_id": "CH06_P04_L008",
+      "line_id": "CH06_P04_L008",
+      "text": "Vor ihm öffnete sich ein Durchgang. Mika steuerte sein Raumschiff hinein.",
+      "kind": "narrator",
+      "font_size": 33,
+      "lines": [
+        "Vor ihm öffnete sich ein Durchgang. Mika",
+        "steuerte sein Raumschiff hinein."
+      ],
+      "text_width": 769.609375,
+      "text_height": 72.93,
+      "available_width": 903,
+      "available_height": 74,
+      "box": [
+        100,
+        2996,
+        950,
+        112
+      ],
+      "fits": true
+    }
+  ],
+  "burst_checks": [
+    {
+      "lang": "en",
+      "text": "Good luck!",
+      "lines": [
+        "Good",
+        "luck!"
+      ],
+      "font_size": 31,
+      "max_width": 90.21875,
+      "available_width": 130.4,
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "text": "Boa sorte!",
+      "lines": [
+        "Boa",
+        "sorte!"
+      ],
+      "font_size": 31,
+      "max_width": 105.015625,
+      "available_width": 130.4,
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "text": "¡Buena suerte!",
+      "lines": [
+        "¡Buena",
+        "suerte!"
+      ],
+      "font_size": 31,
+      "max_width": 126.8125,
+      "available_width": 130.4,
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "text": "Bonne chance !",
+      "lines": [
+        "Bonne",
+        "chance !"
+      ],
+      "font_size": 27,
+      "max_width": 128.6875,
+      "available_width": 130.4,
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "text": "Viel Glück!",
+      "lines": [
+        "Viel",
+        "Glück!"
+      ],
+      "font_size": 31,
+      "max_width": 111.25,
+      "available_width": 130.4,
+      "fits": true
+    }
+  ]
+}

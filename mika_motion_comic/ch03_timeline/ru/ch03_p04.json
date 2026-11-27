@@ -1,0 +1,319 @@
+{
+  "schema_version": 3,
+  "page_id": "CH03_P04",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch03_p04_languages/ch03_p04_ru.webp",
+  "native_scene_panels": [
+    "p34_lotus_council",
+    "p34_liquid_phase",
+    "p34_crystal_phase",
+    "p34_phase_cavern",
+    "p34_new_hero",
+    "p34_ship_departure"
+  ],
+  "panel_bounds": {
+    "p34_lotus_council": [
+      0.029,
+      0.027,
+      0.942,
+      0.222
+    ],
+    "p34_liquid_phase": [
+      0.029,
+      0.257,
+      0.942,
+      0.184
+    ],
+    "p34_crystal_phase": [
+      0.029,
+      0.257,
+      0.942,
+      0.184
+    ],
+    "p34_phase_cavern": [
+      0.249,
+      0.455,
+      0.491,
+      0.191
+    ],
+    "p34_new_hero": [
+      0.029,
+      0.657,
+      0.365,
+      0.313
+    ],
+    "p34_ship_departure": [
+      0.414,
+      0.657,
+      0.557,
+      0.313
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH03_P04_L001",
+      "frame_id": "CH03_P04_F00",
+      "panel_id": "p34_lotus_council",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Один из предводителей станции «Живой архив» пригласил Мику и его спутников и начал свой рассказ.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L001_ru.mp3",
+      "audio_duration_s": 6.348,
+      "camera_target": [
+        0.47,
+        0.136,
+        0.214
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "1f2649e915385b1636cba5515dc3120d7fbbaea4c684f50826ed9cc0efb5bf33"
+    },
+    {
+      "line_id": "CH03_P04_L003",
+      "frame_id": "CH03_P04_F01",
+      "panel_id": "p34_lotus_council",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Мы не случайно зовёмся фазовыми существами. Наша жизнь проходит через три состояния.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L003_ru.mp3",
+      "audio_duration_s": 5.721,
+      "camera_target": [
+        0.76,
+        0.135,
+        0.158
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "01feaa9aadec39ebca36d553056452ebdeb27128d8c7db305c2ff21e3b72e73b"
+    },
+    {
+      "line_id": "CH03_P04_L002",
+      "frame_id": "CH03_P04_F00",
+      "panel_id": "p34_lotus_council",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Как вода?",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L002_ru.mp3",
+      "audio_duration_s": 1.228,
+      "camera_target": [
+        0.49,
+        0.131,
+        0.155
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "30d5b3b149a8046ac5d59d52cc3e34f78650acc59c4963334490a4ee3a415667"
+    },
+    {
+      "line_id": "CH03_P04_L004",
+      "frame_id": "CH03_P04_F02",
+      "panel_id": "p34_liquid_phase",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Не совсем. Мы рождаемся в более газообразном состоянии: наши молекулы находятся далеко друг от друга.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L004_ru.mp3",
+      "audio_duration_s": 7.471,
+      "camera_target": [
+        0.255,
+        0.347,
+        0.165
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b0b0ad32cb32cec3294bd4bdb0b32df2885f439cf06b27c93e5f49672e74d310"
+    },
+    {
+      "line_id": "CH03_P04_L005",
+      "frame_id": "CH03_P04_F03",
+      "panel_id": "p34_crystal_phase",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Со временем мы становимся плотнее, приобретаем жидкую или желеобразную форму. А в конце жизни кристаллизуемся.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L005_ru.mp3",
+      "audio_duration_s": 8.438,
+      "camera_target": [
+        0.735,
+        0.348,
+        0.165
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f7987389f6e446cfe2ae0202af74110c29bad9eb09048e2a250835518fc4bc2a"
+    },
+    {
+      "line_id": "CH03_P04_L006",
+      "frame_id": "CH03_P04_F04",
+      "panel_id": "p34_phase_cavern",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "По одной из наших версий, мы произошли от древних космических кристаллов, встречающихся даже на астероидах.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L006_ru.mp3",
+      "audio_duration_s": 6.766,
+      "camera_target": [
+        0.49,
+        0.545,
+        0.18
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b2030e8e5d48c093ed787cfb9af35835dc0f841ec36fbb96a48f7d63e2e5164d"
+    },
+    {
+      "line_id": "CH03_P04_L007",
+      "frame_id": "CH03_P04_F04",
+      "panel_id": "p34_phase_cavern",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Но, возможно, это и стало нашей бедой. Другие расы считают кристаллы, остающиеся после нас, такими же ценными, как добытые в космосе.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L007_ru.mp3",
+      "audio_duration_s": 10.109,
+      "camera_target": [
+        0.5,
+        0.545,
+        0.18
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "0e8bd1b883c6cfd62037b186d079ef41b93d7277f6700126c2dbe8e872ef1e32"
+    },
+    {
+      "line_id": "CH03_P04_L008",
+      "frame_id": "CH03_P04_F04",
+      "panel_id": "p34_phase_cavern",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "А для нас это память предков.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L008_ru.mp3",
+      "audio_duration_s": 2.691,
+      "camera_target": [
+        0.5,
+        0.535,
+        0.18
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "32c48ba06c9e2765dc8a488e8db5c186e0df3865069f40db0e031fb944c20d0f"
+    },
+    {
+      "line_id": "CH03_P04_L009",
+      "frame_id": "CH03_P04_F05",
+      "panel_id": "p34_new_hero",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "И я хочу поблагодарить вас за то, что вы помогли остановить ящера.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L009_ru.mp3",
+      "audio_duration_s": 4.362,
+      "camera_target": [
+        0.22,
+        0.752,
+        0.141
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "36e25edf3ba04790f4404ed48e4032a61edc3faf33b2786e49f87022e2381fed"
+    },
+    {
+      "line_id": "CH03_P04_L010",
+      "frame_id": "CH03_P04_F06",
+      "panel_id": "p34_new_hero",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Хочу представить вам моего сына, принца нашего народа. Я предлагаю, чтобы он отправился вместе с вами.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L010_ru.mp3",
+      "audio_duration_s": 6.922,
+      "camera_target": [
+        0.21,
+        0.776,
+        0.142
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b1e2a4846a44676f03223f10715d8ffcaf6984291875802489b1d2a3d028acc5"
+    },
+    {
+      "line_id": "CH03_P04_L011",
+      "frame_id": "CH03_P04_F07",
+      "panel_id": "p34_ship_departure",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Я не могу ответить на твои вопросы о родной планете, Мика. Но помогу вам отправиться дальше — в галактику Барнарда.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L011_ru.mp3",
+      "audio_duration_s": 7.549,
+      "camera_target": [
+        0.69,
+        0.805,
+        0.218
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "042e9bdff7250cab8becb0340bb94d76ac5ea56c478818549f272e37691495cc"
+    },
+    {
+      "line_id": "CH03_P04_L012",
+      "frame_id": "CH03_P04_F07",
+      "panel_id": "p34_ship_departure",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Но будь осторожен: там много пиратов!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P04_L012_ru.mp3",
+      "audio_duration_s": 3.318,
+      "camera_target": [
+        0.69,
+        0.846,
+        0.218
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "cd9caa409a9320cfddbe122bb18edaa333e0d3d2d2504cc60a1161eac3e9878c"
+    }
+  ]
+}

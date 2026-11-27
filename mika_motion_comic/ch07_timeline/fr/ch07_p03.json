@@ -1,0 +1,345 @@
+{
+  "schema_version": 3,
+  "page_id": "CH07_P03",
+  "locale": "fr",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch07_p03_languages/ch07_p03_fr.webp",
+  "native_scene_panels": [
+    "p73_guide",
+    "p73_flower",
+    "p73_evolution",
+    "p73_storm",
+    "p73_mika_form",
+    "p73_tunnel"
+  ],
+  "panel_bounds": {
+    "p73_guide": [
+      0.0234375,
+      0.0166015625,
+      0.3059895833333333,
+      0.197265625
+    ],
+    "p73_flower": [
+      0.3463541666666667,
+      0.0166015625,
+      0.3059895833333333,
+      0.197265625
+    ],
+    "p73_evolution": [
+      0.0234375,
+      0.2265625,
+      0.9518229166666666,
+      0.244140625
+    ],
+    "p73_storm": [
+      0.0234375,
+      0.482421875,
+      0.9518229166666666,
+      0.2431640625
+    ],
+    "p73_mika_form": [
+      0.6692708333333334,
+      0.017578125,
+      0.3059895833333333,
+      0.1962890625
+    ],
+    "p73_tunnel": [
+      0.0234375,
+      0.740234375,
+      0.9518229166666666,
+      0.2431640625
+    ]
+  },
+  "lines": [
+    {
+      "panel_id": "p73_guide",
+      "camera_target": [
+        0.18,
+        0.12,
+        0.23277343749999999
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.0234375,
+        0.0166015625,
+        0.3059895833333333,
+        0.197265625
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P03_L001",
+      "frame_id": "1 — зелёное существо",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue",
+      "spoken_text": "Ha-ha ! Bien sûr que non, Mika. Tu es arrivé jusqu’à moi parce que...",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P03_L001_fr.mp3",
+      "audio_duration_s": 5.407347,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7aec9e8d281e3747f0b8d77138f1f5893192ad8caff608151d9a21bafa65392a"
+    },
+    {
+      "panel_id": "p73_flower",
+      "camera_target": [
+        0.5,
+        0.12,
+        0.23277343749999999
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.3463541666666667,
+        0.0166015625,
+        0.3059895833333333,
+        0.197265625
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P03_L002",
+      "frame_id": "2 — цветок среди камней",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue_offscreen",
+      "spoken_text": "Tu l’as compris : la vie trouve toujours un moyen de se frayer un chemin.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P03_L002_fr.mp3",
+      "audio_duration_s": 4.754286,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "dc5e14b85986f6644638ef40c366f3a6fa351aa0b43804bc080e2e6d2607cbd6"
+    },
+    {
+      "panel_id": "p73_evolution",
+      "camera_target": [
+        0.1365,
+        0.35,
+        0.225
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.023,
+        0.2265625,
+        0.227,
+        0.244140625
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P03_L003",
+      "frame_id": "3A — Земля",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue_offscreen",
+      "spoken_text": "Sur Terre, les formes de vie dominantes se sont succédé.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P03_L003_fr.mp3",
+      "audio_duration_s": 4.04898,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "32ceec874e8c2bdcd5f36f209b95e9da008a53d539cc9755bfc16c457e4a233f"
+    },
+    {
+      "panel_id": "p73_evolution",
+      "camera_target": [
+        0.365,
+        0.35,
+        0.225
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.24,
+        0.2265625,
+        0.25,
+        0.244140625
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P03_L004",
+      "frame_id": "3B — мир плесени",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue_offscreen",
+      "spoken_text": "Dans un monde où la vie s’était presque éteinte, une nouvelle est née sur les ruines.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P03_L004_fr.mp3",
+      "audio_duration_s": 4.989388,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "be7c4412bc1f52c56c34914900b5317f9c702a3961108de300e178e7d197d480"
+    },
+    {
+      "panel_id": "p73_evolution",
+      "camera_target": [
+        0.6074999999999999,
+        0.35,
+        0.225
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.475,
+        0.2265625,
+        0.265,
+        0.244140625
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P03_L005",
+      "frame_id": "3C — фазовые существа",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue_offscreen",
+      "spoken_text": "Même dans de froides structures de pierre, la vie a pu commencer à étinceler.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P03_L005_fr.mp3",
+      "audio_duration_s": 5.32898,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "965bc04b713ed27ee23e2e09ca7ada7d54c133d116f86a1d9f7248fe2dfed92d"
+    },
+    {
+      "panel_id": "p73_evolution",
+      "camera_target": [
+        0.855,
+        0.35,
+        0.225
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.735,
+        0.2265625,
+        0.24,
+        0.244140625
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P03_L006",
+      "frame_id": "3D — симбиоз",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue_offscreen",
+      "spoken_text": "Et parfois, différentes formes de vie s’unissent.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P03_L006_fr.mp3",
+      "audio_duration_s": 3.474286,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "3b0a355dce0ca0ef112a135405bcf260da3fe1e91c14081e1adcb19c32dc3905"
+    },
+    {
+      "panel_id": "p73_storm",
+      "camera_target": [
+        0.5,
+        0.6,
+        0.28693359375
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.0234375,
+        0.482421875,
+        0.9518229166666666,
+        0.2431640625
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P03_L007",
+      "frame_id": "4 — магнитный мир",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue_offscreen",
+      "spoken_text": "Mais l’anomalie qui est arrivée aux êtres magnétiques ne leur est pas arrivée à eux seuls.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P03_L007_fr.mp3",
+      "audio_duration_s": 4.91102,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c0dec831ef16e35baec27046915195442d59772c4cb220e78c7f4a5b9a27de1a"
+    },
+    {
+      "panel_id": "p73_mika_form",
+      "camera_target": [
+        0.82,
+        0.12,
+        0.23162109374999998
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.6692708333333334,
+        0.017578125,
+        0.3059895833333333,
+        0.1962890625
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P03_L008",
+      "frame_id": "5 — Мика и магнитное существо",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue_offscreen",
+      "spoken_text": "Toi et les habitants magnétiques venez d’un seul et même monde.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P03_L008_fr.mp3",
+      "audio_duration_s": 4.675918,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "43a2436576a68694a9c6359adb8efa15e1701a490880dc23beb5a8c0bc9c8684"
+    },
+    {
+      "panel_id": "p73_tunnel",
+      "camera_target": [
+        0.29,
+        0.86,
+        0.245
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.023,
+        0.74,
+        0.53,
+        0.243
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P03_L009",
+      "frame_id": "6A — эхо прошлого",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue_offscreen",
+      "spoken_text": "Mais l’écho des événements de votre monde ne nous est parvenu que des millions d’années plus tard.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P03_L009_fr.mp3",
+      "audio_duration_s": 5.146122,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2f3801c7a4c42835559185b4ef4fc28b5eb84426f0a4e436cd3d4fc87b2d00d0"
+    },
+    {
+      "panel_id": "p73_tunnel",
+      "camera_target": [
+        0.58,
+        0.86,
+        0.29
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.0234375,
+        0.740234375,
+        0.9518229166666666,
+        0.2431640625
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P03_L010",
+      "frame_id": "6B — осознание нейронных существ",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue_offscreen",
+      "spoken_text": "Et ce n’est que maintenant que les habitants neuronaux ont pu envoyer un signal au peuple magnétique pour qu’ils créent un canal qui t’a permis d’être sauvé en traversant le temps et l’espace.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P03_L010_fr.mp3",
+      "audio_duration_s": 10.370612,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a81388783e685e25ca9d003015a1d4be649186a15ee226ad22f68b119be492c4"
+    }
+  ]
+}

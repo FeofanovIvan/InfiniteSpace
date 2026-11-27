@@ -1,0 +1,210 @@
+{
+  "schema_version": 3,
+  "page_id": "CH05_P04",
+  "locale": "pt_BR",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch05_p04_languages/ch05_p04_pt_BR.webp",
+  "native_scene_panels": [
+    "p54_galaxy_network",
+    "p54_species_meet",
+    "p54_pulse_signal",
+    "p54_black_hole",
+    "p54_mika_farewell",
+    "p54_ship_departure"
+  ],
+  "panel_bounds": {
+    "p54_galaxy_network": [
+      0.018,
+      0.012,
+      0.965,
+      0.245
+    ],
+    "p54_species_meet": [
+      0.018,
+      0.266,
+      0.495,
+      0.242
+    ],
+    "p54_pulse_signal": [
+      0.528,
+      0.266,
+      0.454,
+      0.242
+    ],
+    "p54_black_hole": [
+      0.018,
+      0.52,
+      0.566,
+      0.24
+    ],
+    "p54_mika_farewell": [
+      0.597,
+      0.52,
+      0.386,
+      0.24
+    ],
+    "p54_ship_departure": [
+      0.018,
+      0.771,
+      0.965,
+      0.216
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH05_P04_L001",
+      "frame_id": "CH05_P04_F01",
+      "panel_id": "p54_galaxy_network",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Descobrimos enormes túneis gravitacionais e aprendemos a conectá-los entre si.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P04_L001_pt_BR.mp3",
+      "audio_duration_s": 5.251,
+      "camera_target": [
+        0.5,
+        0.135,
+        0.239
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d9c07256532b6e02663215a25c1e3d8b5ac04f5e213871825b88e4d80b4d35bd"
+    },
+    {
+      "line_id": "CH05_P04_L002",
+      "frame_id": "CH05_P04_F02",
+      "panel_id": "p54_species_meet",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Há muito tempo, quando chegamos a este mundo, seus habitantes nos ajudaram a nos adaptar. Ainda mantemos contato com eles.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P04_L002_pt_BR.mp3",
+      "audio_duration_s": 7.549,
+      "camera_target": [
+        0.266,
+        0.355,
+        0.195
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "bfbdea6041bc6795b29010953598662cbf5ef69432c6606d2719af3cdd53ed5b"
+    },
+    {
+      "line_id": "CH05_P04_L003",
+      "frame_id": "CH05_P04_F03",
+      "panel_id": "p54_pulse_signal",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Recentemente, recebemos um sinal deles: pediram que abríssemos um túnel do seu mundo para o nosso.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P04_L003_pt_BR.mp3",
+      "audio_duration_s": 6.531,
+      "camera_target": [
+        0.755,
+        0.385,
+        0.176
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4c70720e7b53bfbb9998c4bb064c5d807423f61952a4e288fd0576b279cf72d4"
+    },
+    {
+      "line_id": "CH05_P04_L004",
+      "frame_id": "CH05_P04_F04",
+      "panel_id": "p54_black_hole",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Abrimos a passagem e esperamos para ver o que aconteceria. E então você apareceu.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P04_L004_pt_BR.mp3",
+      "audio_duration_s": 5.721,
+      "camera_target": [
+        0.301,
+        0.641,
+        0.221
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f938a194afbfa335bb228427e836cdfd5809f776eace6f089ffef2e73f4cff3c"
+    },
+    {
+      "line_id": "CH05_P04_L005",
+      "frame_id": "CH05_P04_F05",
+      "panel_id": "p54_mika_farewell",
+      "speaker_id": "CHR_035",
+      "kind": "dialogue",
+      "spoken_text": "Decidimos: vou viajar com vocês e ajudá-los a chegar até esses seres. Eles poderão explicar por que salvaram você.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P04_L005_pt_BR.mp3",
+      "audio_duration_s": 7.393,
+      "camera_target": [
+        0.854,
+        0.645,
+        0.108
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "78fda571b8b42310b1507b37ab1fcc174e95bf8af99dbe0ba88406d4b0fed8a8"
+    },
+    {
+      "line_id": "CH05_P04_L006",
+      "frame_id": "CH05_P04_F05",
+      "panel_id": "p54_mika_farewell",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Obrigado!",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P04_L006_pt_BR.mp3",
+      "audio_duration_s": 1.411,
+      "camera_target": [
+        0.683,
+        0.632,
+        0.108
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "407f959c7b2404419823363ecd218da1f22fb7cd666800964868880d7a470801"
+    },
+    {
+      "line_id": "CH05_P04_L007",
+      "frame_id": "CH05_P04_F06",
+      "panel_id": "p54_ship_departure",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Nosso amigo magnético se juntou à tripulação e guiou a nave por uma região do espaço desconhecida para Mika, rumo àqueles que o salvaram.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P04_L007_pt_BR.mp3",
+      "audio_duration_s": 8.673,
+      "camera_target": [
+        0.57,
+        0.879,
+        0.208
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7cb0a6884d7787818e74c854ad52ce3422b698993fe95cb34a6daee12396f003"
+    }
+  ],
+  "note": "Native pulse task after F03; resume F04-F06 and existing Triangulum route."
+}

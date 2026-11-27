@@ -1,0 +1,186 @@
+{
+  "page_id": "CH06_P01",
+  "source_pdf": "6-1(2).pdf",
+  "status": "RU_APPROVED_SIX_LANG_PREPARED",
+  "base_ru_draft": "MIKA_CH06_P01_RU_DRAFT_v3",
+  "revision_date": "2026-11-26",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "illustration_changed": false,
+  "ru_svg_changed": false,
+  "audio_generated": false,
+  "continuity": "The magnetic companion CHR_035 joins Mika’s crew and guides them through the dark passage to the neural beings; Mika uses their simulator for a telepathic trance.",
+  "lines": [
+    {
+      "line_id": "CH06_P01_L001",
+      "frame": 1,
+      "speaker_id": "CHR_004",
+      "speaker_name": "Рассказчик",
+      "type": "narration",
+      "emotion_ru": "тихое напряжение перед полётом в неизвестное",
+      "emotion_key": "anticipation",
+      "translations": {
+        "ru": "После того как магнитный друг открыл проход, Мика направил корабль в чёрное пространство.",
+        "en": "After our magnetic friend opened the passage, Mika steered the ship into the darkness of space.",
+        "pt_BR": "Depois que o amigo magnético abriu a passagem, Mika conduziu a nave para a escuridão do espaço.",
+        "es": "Cuando el amigo magnético abrió el paso, Mika dirigió la nave hacia la oscuridad del espacio.",
+        "fr": "Une fois le passage ouvert par leur ami magnétique, Mika dirigea son vaisseau vers les ténèbres de l’espace.",
+        "de": "Nachdem ihr magnetischer Freund den Durchgang geöffnet hatte, steuerte Mika das Raumschiff in die Dunkelheit des Alls."
+      },
+      "elevenlabs_generated": false,
+      "source_approved_russian_text": "После того как магнитный друг открыл проход, Мика направил корабль в чёрное пространство."
+    },
+    {
+      "line_id": "CH06_P01_L002",
+      "frame": 1,
+      "speaker_id": "CHR_035",
+      "speaker_name": "Магнитный друг",
+      "type": "dialogue",
+      "emotion_ru": "уверенно, короткая подсказка направления",
+      "emotion_key": "confident_guidance",
+      "translations": {
+        "ru": "Нам туда!",
+        "en": "That way!",
+        "pt_BR": "É por ali!",
+        "es": "¡Por ahí!",
+        "fr": "C’est par là !",
+        "de": "Da lang!"
+      },
+      "elevenlabs_generated": false,
+      "source_approved_russian_text": "Нам туда!"
+    },
+    {
+      "line_id": "CH06_P01_L003",
+      "frame": 2,
+      "speaker_id": "CHR_004",
+      "speaker_name": "Рассказчик",
+      "type": "narration",
+      "emotion_ru": "плавное ускорение, динамичный переход",
+      "emotion_key": "travel_motion",
+      "translations": {
+        "ru": "Корабль Мики влетел в пространственный туннель.",
+        "en": "Mika’s ship shot into the tunnel through space.",
+        "pt_BR": "A nave de Mika disparou para dentro do túnel espacial.",
+        "es": "La nave de Mika se lanzó al túnel espacial.",
+        "fr": "Le vaisseau de Mika s’engouffra dans le tunnel spatial.",
+        "de": "Mikas Raumschiff schoss in den Raumtunnel."
+      },
+      "elevenlabs_generated": false,
+      "source_approved_russian_text": "Корабль Мики влетел в пространственный туннель."
+    },
+    {
+      "line_id": "CH06_P01_L004",
+      "frame": 3,
+      "speaker_id": "CHR_004",
+      "speaker_name": "Рассказчик",
+      "type": "narration",
+      "emotion_ru": "удивление и восхищение открытием",
+      "emotion_key": "new_world_wonder",
+      "translations": {
+        "ru": "За туннелем их ждала огромная розовая планета.",
+        "en": "Beyond the tunnel, an enormous pink planet awaited them.",
+        "pt_BR": "Do outro lado do túnel, um imenso planeta cor-de-rosa os esperava.",
+        "es": "Al otro lado del túnel los esperaba un enorme planeta rosa.",
+        "fr": "Au bout du tunnel, une immense planète rose les attendait.",
+        "de": "Hinter dem Tunnel erwartete sie ein riesiger rosafarbener Planet."
+      },
+      "elevenlabs_generated": false,
+      "source_approved_russian_text": "За туннелем их ждала огромная розовая планета."
+    },
+    {
+      "line_id": "CH06_P01_L005",
+      "frame": 4,
+      "speaker_id": "CHR_004",
+      "speaker_name": "Рассказчик",
+      "type": "narration",
+      "emotion_ru": "восхищение чужой необычной цивилизацией, без готовой интерпретации",
+      "emotion_key": "unfamiliar_wonder",
+      "translations": {
+        "ru": "Мир нейронных существ сильно отличался от всего, что они видели раньше.",
+        "en": "The world of the neural beings was unlike anything they had seen before.",
+        "pt_BR": "O mundo dos seres neurais era diferente de tudo o que já tinham visto.",
+        "es": "El mundo de los seres neuronales era muy distinto de todo lo que habían visto antes.",
+        "fr": "Le monde des êtres neuronaux ne ressemblait à rien de ce qu’ils avaient vu auparavant.",
+        "de": "Die Welt der Neuronenwesen war anders als alles, was sie bisher gesehen hatten."
+      },
+      "elevenlabs_generated": false,
+      "source_approved_russian_text": "Мир нейронных существ сильно отличался от всего, что они видели раньше."
+    },
+    {
+      "line_id": "CH06_P01_L006",
+      "frame": 5,
+      "speaker_id": "CHR_004",
+      "speaker_name": "Рассказчик",
+      "type": "narration",
+      "emotion_ru": "тепло, дружелюбно, с любопытством",
+      "emotion_key": "warm_reunion",
+      "translations": {
+        "ru": "Старые знакомые встретились спустя много лет. Мика не понимал, о чём они говорили, но было ясно: они рады друг другу.",
+        "en": "Old friends met again after many years. Mika couldn’t understand what they were saying, but it was clear they were happy to see each other.",
+        "pt_BR": "Depois de tantos anos, velhos amigos se reencontraram. Mika não entendia o que diziam, mas dava para ver que estavam felizes em se rever.",
+        "es": "Viejos amigos se reencontraron después de muchos años. Mika no entendía lo que decían, pero estaba claro que se alegraban de verse.",
+        "fr": "De vieux amis se retrouvaient après tant d’années. Mika ne comprenait pas ce qu’ils se disaient, mais leur joie de se revoir ne faisait aucun doute.",
+        "de": "Nach vielen Jahren trafen sich alte Freunde wieder. Mika verstand nicht, was sie sagten, doch ihre Freude über das Wiedersehen war deutlich."
+      },
+      "elevenlabs_generated": false,
+      "source_approved_russian_text": "Старые знакомые встретились спустя много лет. Мика не понимал, о чём они говорили, но было ясно: они рады друг другу."
+    },
+    {
+      "line_id": "CH06_P01_L007",
+      "frame": 6,
+      "speaker_id": "CHR_004",
+      "speaker_name": "Рассказчик",
+      "type": "narration",
+      "emotion_ru": "с интересом к необычному способу общения, спокойное погружение",
+      "emotion_key": "telepathic_initiation",
+      "translations": {
+        "ru": "Мика воспользовался их симулятором, чтобы погрузиться в телепатический транс.",
+        "en": "Mika used their simulator to enter a telepathic trance.",
+        "pt_BR": "Mika usou o simulador deles para entrar em um transe telepático.",
+        "es": "Mika utilizó su simulador para sumergirse en un trance telepático.",
+        "fr": "Mika utilisa leur simulateur pour entrer dans une transe télépathique.",
+        "de": "Mika nutzte ihren Simulator, um in eine telepathische Trance einzutauchen."
+      },
+      "elevenlabs_generated": false,
+      "source_approved_russian_text": "Мика воспользовался их симулятором, чтобы погрузиться в телепатический транс."
+    }
+  ],
+  "nonverbal_sound_effects": [
+    {
+      "id": "CH06_P01_SFX001",
+      "panel": "city_neuron_world",
+      "layer_id": "wave_neuron_city",
+      "kind": "visual_nonverbal_vibration",
+      "audible_sample_requested": false,
+      "tts": false,
+      "translation": false,
+      "description_ru": "Визуальные резонансные импульсы и волны вокруг нейронных жителей города."
+    },
+    {
+      "id": "CH06_P01_SFX002",
+      "panel": "bottom_left_reunion",
+      "layer_id": "wave_neuron_reunion",
+      "kind": "two_way_vibration_exchange",
+      "audible_sample_requested": false,
+      "tts": false,
+      "translation": false,
+      "description_ru": "Сложное переплетение волн, кольцевых импульсов и светящихся частиц между магнитным другом и нейронным существом."
+    },
+    {
+      "id": "CH06_P01_SFX003",
+      "panel": "bottom_right_telepathy",
+      "layer_id": "wave_neuron_telepathy_hint",
+      "kind": "soft_telepathy_illustration",
+      "audible_sample_requested": false,
+      "tts": false,
+      "translation": false,
+      "description_ru": "Очень мягкие волны между Микой и нейронным устройством, без новых реплик."
+    }
+  ]
+}

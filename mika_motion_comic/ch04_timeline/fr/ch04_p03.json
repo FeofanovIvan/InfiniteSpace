@@ -1,0 +1,275 @@
+{
+  "schema_version": 3,
+  "page_id": "CH04_P03",
+  "locale": "fr",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch04_p03_languages/ch04_p03_fr.webp",
+  "native_scene_panels": [
+    "p43_cockpit_decision",
+    "p43_ship_landing",
+    "p43_scientist_meeting",
+    "p43_loading_fossils",
+    "p43_next_target",
+    "p43_space_departure"
+  ],
+  "panel_bounds": {
+    "p43_cockpit_decision": [
+      0.03,
+      0.028,
+      0.94,
+      0.266
+    ],
+    "p43_ship_landing": [
+      0.03,
+      0.309,
+      0.47,
+      0.204
+    ],
+    "p43_scientist_meeting": [
+      0.522,
+      0.309,
+      0.448,
+      0.204
+    ],
+    "p43_loading_fossils": [
+      0.03,
+      0.53,
+      0.94,
+      0.222
+    ],
+    "p43_next_target": [
+      0.03,
+      0.765,
+      0.535,
+      0.207
+    ],
+    "p43_space_departure": [
+      0.588,
+      0.765,
+      0.382,
+      0.207
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH04_P03_L001",
+      "frame_id": "CH04_P03_F01",
+      "panel_id": "p43_cockpit_decision",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika raconta brièvement au lézard ce qui était arrivé à sa planète natale et le conseil de l’IA de Mars : chercher des réponses dans le passé.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P03_L001_fr.mp3",
+      "audio_duration_s": 8.516,
+      "camera_target": [
+        0.48,
+        0.16,
+        0.26
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9493dfb6feb6ab7380157f35f85ce1ccb1df7b6677d81ff1f2a504ec2e800333"
+    },
+    {
+      "line_id": "CH04_P03_L002",
+      "frame_id": "CH04_P03_F01",
+      "panel_id": "p43_cockpit_decision",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Et nous voilà !",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P03_L002_fr.mp3",
+      "audio_duration_s": 1.646,
+      "camera_target": [
+        0.285,
+        0.205,
+        0.178
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "edacee60e01db03bbc70a844650dad9f41a510d038566946d35610ddf7e6a8e9"
+    },
+    {
+      "line_id": "CH04_P03_L003",
+      "frame_id": "CH04_P03_F01",
+      "panel_id": "p43_cockpit_decision",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "À mon avis, vous devriez aller sur Archéon. Tu en apprendras davantage sur notre passé.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P03_L003_fr.mp3",
+      "audio_duration_s": 5.329,
+      "camera_target": [
+        0.754,
+        0.177,
+        0.182
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c8c2eb9df834d3e97b09454b5b6478f63560fbda912f6b2a4607d7823577e387"
+    },
+    {
+      "line_id": "CH04_P03_L004",
+      "frame_id": "CH04_P03_F02",
+      "panel_id": "p43_ship_landing",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Le vaisseau de Mika se posa sur Archéon, tout près d’un camp de fouilles archéologiques.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P03_L004_fr.mp3",
+      "audio_duration_s": 5.407,
+      "camera_target": [
+        0.266,
+        0.393,
+        0.187
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "03bf3ff2264a313e9f4af448affaa6958ac70bc8aac7599516285b6262a2e0d1"
+    },
+    {
+      "line_id": "CH04_P03_L005",
+      "frame_id": "CH04_P03_F03",
+      "panel_id": "p43_scientist_meeting",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Je suis sûr que tu peux nous aider !",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P03_L005_fr.mp3",
+      "audio_duration_s": 2.429,
+      "camera_target": [
+        0.696,
+        0.379,
+        0.147
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "711a127604679c386b9ce2ca75e3467641f3157a94016aeb2f2aef416721505d"
+    },
+    {
+      "line_id": "CH04_P03_L006",
+      "frame_id": "CH04_P03_F03",
+      "panel_id": "p43_scientist_meeting",
+      "speaker_id": "CHR_032",
+      "kind": "dialogue",
+      "spoken_text": "Euh… je ne sais pas trop comment je pourrais vous aider.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P03_L006_fr.mp3",
+      "audio_duration_s": 3.631,
+      "camera_target": [
+        0.821,
+        0.37,
+        0.119
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "093a8a077155dca80040aa261bb5dda64e21aac947eb6c2c1b81a33867ba99ba"
+    },
+    {
+      "line_id": "CH04_P03_L007",
+      "frame_id": "CH04_P03_F03",
+      "panel_id": "p43_scientist_meeting",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Le lézard conduisit Mika auprès d’une vieille connaissance : un professeur d’archéologie.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P03_L007_fr.mp3",
+      "audio_duration_s": 5.642,
+      "camera_target": [
+        0.75,
+        0.383,
+        0.185
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c568d43ab6526542c8aa4c99a59908e285ab3daa155f6b763a8d125ab75f90de"
+    },
+    {
+      "line_id": "CH04_P03_L008",
+      "frame_id": "CH04_P03_F04",
+      "panel_id": "p43_loading_fossils",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "L’archéologue donna quelques échantillons aux amis et leur conseilla de rencontrer un collègue au musée de Runa. Peut-être en saurait-il plus et pourrait-il les aider à poursuivre leur enquête.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P03_L008_fr.mp3",
+      "audio_duration_s": 9.874,
+      "camera_target": [
+        0.5,
+        0.64,
+        0.215
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "27e9802df88b6ac98249be8dacbd2c23c22b672c8b4ea8f710c4e4dfa734514d"
+    },
+    {
+      "line_id": "CH04_P03_L009",
+      "frame_id": "CH04_P03_F05",
+      "panel_id": "p43_next_target",
+      "speaker_id": "CHR_008",
+      "kind": "navigation",
+      "spoken_text": "PROCHAINE DESTINATION : RUNA — MUSÉE ARCHÉOLOGIQUE",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P03_L009_fr.mp3",
+      "audio_duration_s": 3.971,
+      "camera_target": [
+        0.296,
+        0.885,
+        0.202
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7ed1c24998988b1933bb4cba44003b96df30dabcf5dd916f7c525c99a7e49afb"
+    },
+    {
+      "line_id": "CH04_P03_L010",
+      "frame_id": "CH04_P03_F06",
+      "panel_id": "p43_space_departure",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Leur destination était choisie : les amis reprirent la route vers de nouvelles découvertes !",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P03_L010_fr.mp3",
+      "audio_duration_s": 5.068,
+      "camera_target": [
+        0.775,
+        0.869,
+        0.149
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2461facd62b5bd1fabfd77736dc5d86481dedd2eccc176f8f8f3a6bf33c8abd0"
+    }
+  ]
+}

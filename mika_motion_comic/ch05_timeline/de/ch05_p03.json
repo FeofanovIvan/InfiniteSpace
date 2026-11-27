@@ -1,0 +1,181 @@
+{
+  "schema_version": 3,
+  "page_id": "CH05_P03",
+  "locale": "de",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch05_p03_languages/ch05_p03_de.webp",
+  "native_scene_panels": [
+    "p53_archive_hall",
+    "p53_mika_console",
+    "p53_volcanic_city",
+    "p53_evacuating_ships",
+    "p53_gravity_anomaly"
+  ],
+  "panel_bounds": {
+    "p53_archive_hall": [
+      0.018,
+      0.014,
+      0.56,
+      0.317
+    ],
+    "p53_mika_console": [
+      0.595,
+      0.014,
+      0.386,
+      0.317
+    ],
+    "p53_volcanic_city": [
+      0.018,
+      0.345,
+      0.497,
+      0.251
+    ],
+    "p53_evacuating_ships": [
+      0.537,
+      0.345,
+      0.444,
+      0.251
+    ],
+    "p53_gravity_anomaly": [
+      0.018,
+      0.611,
+      0.963,
+      0.375
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH05_P03_L001",
+      "frame_id": "CH05_P03_F01",
+      "panel_id": "p53_archive_hall",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Was ist das?",
+      "audio_path": "res://mika_motion_comic/ch05_clips/de/CH05_P03_L001_de.mp3",
+      "audio_duration_s": 1.489,
+      "camera_target": [
+        0.21,
+        0.215,
+        0.174
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b9ef7a16ca4049e664a8168fd8f0a796a22a52b64d5444c4d7f3fb7cd08d44a7"
+    },
+    {
+      "line_id": "CH05_P03_L002",
+      "frame_id": "CH05_P03_F01",
+      "panel_id": "p53_archive_hall",
+      "speaker_id": "CHR_035",
+      "kind": "dialogue",
+      "spoken_text": "Das ist das Zentralarchiv. Richte es für dich ein, dann liefert es dir alle Informationen, die du brauchst.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/de/CH05_P03_L002_de.mp3",
+      "audio_duration_s": 6.269,
+      "camera_target": [
+        0.392,
+        0.244,
+        0.149
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b2174a9f689b12beda69ba22c16a399feb41145f591dc0e3a3d947931d7ababb"
+    },
+    {
+      "line_id": "CH05_P03_L003",
+      "frame_id": "CH05_P03_F02",
+      "panel_id": "p53_mika_console",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika begann, das Archiv einzustellen. Über dem Pult erschienen seltsame Bilder, und eine Stimme erklang.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/de/CH05_P03_L003_de.mp3",
+      "audio_duration_s": 7.549,
+      "camera_target": [
+        0.785,
+        0.173,
+        0.147
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "19bd441e8eba07d72e398bd39c0fc40ebf1f8fdad4a12b693d5e697443139ba9"
+    },
+    {
+      "line_id": "CH05_P03_L004",
+      "frame_id": "CH05_P03_F03",
+      "panel_id": "p53_volcanic_city",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Früher sahen wir etwas anders aus und lebten in einer anderen Welt.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/de/CH05_P03_L004_de.mp3",
+      "audio_duration_s": 4.362,
+      "camera_target": [
+        0.265,
+        0.478,
+        0.196
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9bb9b7b0843f5c5ce9e4e120dff24b530f78f1d1a2791fa2f667657e031206ab"
+    },
+    {
+      "line_id": "CH05_P03_L005",
+      "frame_id": "CH05_P03_F04",
+      "panel_id": "p53_evacuating_ships",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Doch der Sturm erreichte auch uns. Wir mussten fliehen.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/de/CH05_P03_L005_de.mp3",
+      "audio_duration_s": 3.631,
+      "camera_target": [
+        0.759,
+        0.474,
+        0.174
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "451450057a211043ff3e48b3ec27529250e86babf731e7a656e4168c6c6c89b9"
+    },
+    {
+      "line_id": "CH05_P03_L006",
+      "frame_id": "CH05_P03_F05",
+      "panel_id": "p53_gravity_anomaly",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Damals hatten wir Gravitationsanomalien bereits erforscht und gelernt, sie zu durchqueren. So konnten wir unsere alte Welt verlassen.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/de/CH05_P03_L006_de.mp3",
+      "audio_duration_s": 7.471,
+      "camera_target": [
+        0.5,
+        0.798,
+        0.33
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b6db66d2f44e9b5bfeac4c843f83e6416e9827743cc627ae2330997c6f52aa82"
+    }
+  ],
+  "note": "Native ball task after F02, resume F03-F05 and existing P04 sequence."
+}

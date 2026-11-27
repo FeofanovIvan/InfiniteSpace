@@ -1,0 +1,211 @@
+{
+  "schema_version": 3,
+  "page_id": "CH02_P02",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch02_p02_languages/ch02_p02_ru.webp",
+  "native_scene_panels": [
+    "p22_fungal_conversation",
+    "p22_mika_calls_bubble",
+    "p22_planet_departure"
+  ],
+  "panel_bounds": {
+    "p22_fungal_conversation": [
+      0.025,
+      0.018,
+      0.95,
+      0.293
+    ],
+    "p22_mika_calls_bubble": [
+      0.025,
+      0.345,
+      0.95,
+      0.369
+    ],
+    "p22_planet_departure": [
+      0.025,
+      0.743,
+      0.95,
+      0.229
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH02_P02_L001",
+      "frame_id": "CH02_P02_F01",
+      "panel_id": "p22_fungal_conversation",
+      "speaker_id": "CHR_004",
+      "kind": "narration_intro",
+      "spoken_text": "Хозяева пригласили Мику в Зал памяти — здесь колонии делятся знаниями и историями.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P02_L001_ru.mp3",
+      "audio_duration_s": 6.08,
+      "camera_target": [
+        0.48,
+        0.166,
+        0.29
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "db9e09c2457255d5b9d03dfc74da266a5b707869ec91d0ee09cee2730b5aba96"
+    },
+    {
+      "line_id": "CH02_P02_L002",
+      "frame_id": "CH02_P02_F01",
+      "panel_id": "p22_fungal_conversation",
+      "speaker_id": "CHR_001",
+      "kind": "speech_earnest_request",
+      "spoken_text": "Я ищу дорогу домой. И пытаюсь понять, куда меня занесло. Вы сможете мне помочь?",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P02_L002_ru.mp3",
+      "audio_duration_s": 6.24,
+      "camera_target": [
+        0.255,
+        0.17,
+        0.185
+      ],
+      "transition_before_s": 0.36,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "28315f1d466961309ceaa739456d7422bdbdd18a4a8d64845bf42097d68efa56"
+    },
+    {
+      "line_id": "CH02_P02_L003",
+      "frame_id": "CH02_P02_F01",
+      "panel_id": "p22_fungal_conversation",
+      "speaker_id": "CHR_022",
+      "kind": "speech_thoughtful_advice",
+      "spoken_text": "Начни с Молии — нашей древней родины. Там сейчас идут необычные исследования.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P02_L003_ru.mp3",
+      "audio_duration_s": 5.92,
+      "camera_target": [
+        0.72,
+        0.15,
+        0.205
+      ],
+      "transition_before_s": 0.36,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b0ff717a64bf2343103eff2cd843a07af810d9e41385b3b0be02169808688df1"
+    },
+    {
+      "line_id": "CH02_P02_L004",
+      "frame_id": "CH02_P02_F01",
+      "panel_id": "p22_fungal_conversation",
+      "speaker_id": "CHR_001",
+      "kind": "speech_curiosity",
+      "spoken_text": "Какие исследования?",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P02_L004_ru.mp3",
+      "audio_duration_s": 1.68,
+      "camera_target": [
+        0.3,
+        0.185,
+        0.235
+      ],
+      "transition_before_s": 0.36,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "08fbc4f45fcf7a8c9831748b4e299c93d72b6476afdb60215564e8894ecb1ae3"
+    },
+    {
+      "line_id": "CH02_P02_L005",
+      "frame_id": "CH02_P02_F01",
+      "panel_id": "p22_fungal_conversation",
+      "speaker_id": "CHR_022",
+      "kind": "speech_mysterious_reassurance",
+      "spoken_text": "Увидишь сам! Узнаешь нашу историю — возможно, она подскажет тебе дорогу.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P02_L005_ru.mp3",
+      "audio_duration_s": 5.44,
+      "camera_target": [
+        0.68,
+        0.17,
+        0.275
+      ],
+      "transition_before_s": 0.36,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e1ece7bce7c2730928a23a8e02668533e8455e952d765d77340d4d1c79c7c711"
+    },
+    {
+      "line_id": "CH02_P02_L006",
+      "frame_id": "CH02_P02_F02",
+      "panel_id": "p22_mika_calls_bubble",
+      "speaker_id": "CHR_001",
+      "kind": "speech_shout_offscreen",
+      "spoken_text": "Баббл!",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P02_L006_ru.mp3",
+      "audio_duration_s": 1.12,
+      "camera_target": [
+        0.3,
+        0.49,
+        0.27
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "1fa9888477ab1fe2778ad15a90cc7b6389addb2162da05d706ae56a0e31391a5"
+    },
+    {
+      "line_id": "CH02_P02_L007",
+      "frame_id": "CH02_P02_F02",
+      "panel_id": "p22_mika_calls_bubble",
+      "speaker_id": "CHR_022",
+      "kind": "speech_soothing_reassurance",
+      "spoken_text": "Не тревожься! Наши помогут Бабблу добраться до корабля.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P02_L007_ru.mp3",
+      "audio_duration_s": 3.84,
+      "camera_target": [
+        0.73,
+        0.565,
+        0.25
+      ],
+      "transition_before_s": 0.36,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b98b5e8a06e3a95883305dae255efae5cd52627e2ef6d8b5629119c6274962a7"
+    },
+    {
+      "line_id": "CH02_P02_L008",
+      "frame_id": "CH02_P02_F03",
+      "panel_id": "p22_planet_departure",
+      "speaker_id": "CHR_004",
+      "kind": "narration_departure",
+      "spoken_text": "Баббл благополучно добрался до корабля. И вся дружная компания отправилась на Молию!",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P02_L008_ru.mp3",
+      "audio_duration_s": 6.4,
+      "camera_target": [
+        0.66,
+        0.855,
+        0.225
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "ed6965c23fdb2f77f80d36191269051393e07c5234637eff7d14be7987526ad9"
+    }
+  ],
+  "display_only": "КУРС: МОЛИЯ ИСТОРИЧЕСКАЯ РОДИНА"
+}

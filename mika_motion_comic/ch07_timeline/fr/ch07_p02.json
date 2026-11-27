@@ -1,0 +1,316 @@
+{
+  "schema_version": 3,
+  "page_id": "CH07_P02",
+  "locale": "fr",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch07_p02_languages/ch07_p02_fr.webp",
+  "native_scene_panels": [
+    "p72_conversation",
+    "p72_history",
+    "p72_magnetic",
+    "p72_worlds",
+    "p72_neurons",
+    "p72_mika"
+  ],
+  "panel_bounds": {
+    "p72_conversation": [
+      0.029947916666666668,
+      0.0224609375,
+      0.9375,
+      0.3076171875
+    ],
+    "p72_history": [
+      0.03125,
+      0.3564453125,
+      0.9348958333333334,
+      0.1953125
+    ],
+    "p72_magnetic": [
+      0.032552083333333336,
+      0.572265625,
+      0.43359375,
+      0.2001953125
+    ],
+    "p72_worlds": [
+      0.5169270833333334,
+      0.572265625,
+      0.44921875,
+      0.1982421875
+    ],
+    "p72_neurons": [
+      0.03125,
+      0.7890625,
+      0.4505208333333333,
+      0.189453125
+    ],
+    "p72_mika": [
+      0.5208333333333334,
+      0.78515625,
+      0.4453125,
+      0.1943359375
+    ]
+  },
+  "lines": [
+    {
+      "panel_id": "p72_conversation",
+      "camera_target": [
+        0.745,
+        0.174,
+        0.3
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.53,
+        0.025,
+        0.43,
+        0.305
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P02_L001",
+      "frame_id": "1",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue",
+      "spoken_text": "Ne t’inquiète pas. Je suis toujours la même planète. Il t’est simplement plus facile de me comprendre si je te ressemble.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P02_L001_fr.mp3",
+      "audio_duration_s": 7.079184,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "62c8acd0c4eeb718b243815c625772f28bd64d304fd02420a19bfeaac0d9e865"
+    },
+    {
+      "panel_id": "p72_conversation",
+      "camera_target": [
+        0.5,
+        0.185,
+        0.36298828125
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.029947916666666668,
+        0.0224609375,
+        0.9375,
+        0.3076171875
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P02_L002",
+      "frame_id": "1",
+      "speaker_id": "CHR_040",
+      "kind": "dialogue",
+      "spoken_text": "Raconte-moi comment tu as résolu l’énigme pour arriver jusqu’à moi.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P02_L002_fr.mp3",
+      "audio_duration_s": 4.04898,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "279cbf3902a24c46528d25a52ca2e1cd570ac944f4eeb7f5e342ec74eb4bbe36"
+    },
+    {
+      "panel_id": "p72_history",
+      "camera_target": [
+        0.5,
+        0.455,
+        0.23046875
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.03125,
+        0.3564453125,
+        0.9348958333333334,
+        0.1953125
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P02_L003",
+      "frame_id": "2",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "J’ai commencé à réfléchir aux régularités.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P02_L003_fr.mp3",
+      "audio_duration_s": 2.925714,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "ea65bd0a09550fc269a1bf14a0197b76467bc11f58f2cf48417b929c8e368454"
+    },
+    {
+      "panel_id": "p72_history",
+      "camera_target": [
+        0.256,
+        0.453,
+        0.23
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.031,
+        0.356,
+        0.45,
+        0.195
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P02_L004",
+      "frame_id": "2",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Une météorite est tombée sur Terre. Une autre a frappé le monde des moisissures, bien avant sa civilisation.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P02_L004_fr.mp3",
+      "audio_duration_s": 6.530612,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4e7b57ad8804e9c0dc70b08a8d86c0202bb6e7a0f952e119c532be76bb037c2d"
+    },
+    {
+      "panel_id": "p72_history",
+      "camera_target": [
+        0.7275,
+        0.453,
+        0.23
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.49,
+        0.356,
+        0.475,
+        0.195
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P02_L005",
+      "frame_id": "2",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Les êtres de phase sont nés des météorites. Un astéroïde a modifié l’atmosphère et les lézards sont devenus des symbiotes.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P02_L005_fr.mp3",
+      "audio_duration_s": 7.392653,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fdd7d19711ea3648e9fe3e682eb32e85642fc8488b461bb77f7248e75a9a5277"
+    },
+    {
+      "panel_id": "p72_magnetic",
+      "camera_target": [
+        0.25,
+        0.68,
+        0.23623046874999998
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.032552083333333336,
+        0.572265625,
+        0.43359375,
+        0.2001953125
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P02_L006",
+      "frame_id": "3",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Les êtres magnétiques savent contrôler les astéroïdes.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P02_L006_fr.mp3",
+      "audio_duration_s": 3.395918,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "5d7a79b1fd3fc68051e7bd85431337aa43c5d6a4ad642ae3adb889a822fe88ea"
+    },
+    {
+      "panel_id": "p72_worlds",
+      "camera_target": [
+        0.75,
+        0.67,
+        0.23392578125
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.5169270833333334,
+        0.572265625,
+        0.44921875,
+        0.1982421875
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P02_L007",
+      "frame_id": "4",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Et ouvrir des portails à travers l’espace.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P02_L007_fr.mp3",
+      "audio_duration_s": 2.586122,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e457a6d9373e2235b7556d62d516af0fc7dd459408021c82a8822dd24961a269"
+    },
+    {
+      "panel_id": "p72_neurons",
+      "camera_target": [
+        0.25,
+        0.88,
+        0.2235546875
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.03125,
+        0.7890625,
+        0.4505208333333333,
+        0.189453125
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P02_L008",
+      "frame_id": "5",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Les êtres neuronaux savent où et quand les événements se produiront.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P02_L008_fr.mp3",
+      "audio_duration_s": 4.205714,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "af9ae01fbb6a7d4b595015caa2c23aae165cd8800350cfacb6700caa1ee9319e"
+    },
+    {
+      "panel_id": "p72_mika",
+      "camera_target": [
+        0.75,
+        0.9,
+        0.22931640625
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.5208333333333334,
+        0.78515625,
+        0.4453125,
+        0.1943359375
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P02_L009",
+      "frame_id": "6",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Alors, on peut contrôler la vie dans l’Univers.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/fr/CH07_P02_L009_fr.mp3",
+      "audio_duration_s": 3.160816,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7fc306d16d402d82340b5602a30141d36982ae09435c6caa6ba67613f0f76ef6"
+    }
+  ]
+}

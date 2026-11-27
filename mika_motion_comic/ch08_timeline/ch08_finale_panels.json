@@ -1,0 +1,12 @@
+{
+  "panels": [
+    "p82_approach",
+    "p82_portal",
+    "p82_entry",
+    "p82_change",
+    "p82_transformation",
+    "p82_beyond",
+    "p82_new_space"
+  ],
+  "final_panel": ""
+}

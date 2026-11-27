@@ -1,0 +1,121 @@
+{
+  "page_id": "CH01_P03",
+  "locale": "ru",
+  "audio_path": "res://mika_motion_comic/audio/ch01_p03_ru_voice_master.mp3",
+  "duration_seconds": 48.816,
+  "segmentation_status": "preliminary_from_audio_pauses_verify_per_line_in_Godot",
+  "panel_ids": [
+    "p03_puzzle_reveal",
+    "p03_mika_upset",
+    "p03_ship_refuel",
+    "p03_earth_departure",
+    "p03_mars_destination"
+  ],
+  "story_blocks": [
+    {
+      "trigger": "earth_after_puzzle_panels",
+      "frame_ids": [
+        "p03_puzzle_reveal",
+        "p03_mika_upset",
+        "p03_ship_refuel"
+      ],
+      "first_line": "CH01_P03_L001",
+      "last_line": "CH01_P03_L006",
+      "start_s": 0,
+      "end_s": 41.0
+    },
+    {
+      "trigger": "earth_departure_panels",
+      "frame_ids": [
+        "p03_earth_departure",
+        "p03_mars_destination"
+      ],
+      "first_line": "CH01_P03_L007",
+      "last_line": "CH01_P03_L008",
+      "start_s": 41.0,
+      "end_s": 48.984
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P03_L001",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "start_s": 0.0,
+      "end_s": 5.69,
+      "text": "Здравствуйте! Подскажите, пожалуйста… Куда я попал?"
+    },
+    {
+      "line_id": "CH01_P03_L002",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_011",
+      "kind": "dialogue",
+      "start_s": 5.69,
+      "end_s": 11.67,
+      "text": "Здравствуйте! Вы в космопорту Земли. Что у вас случилось?"
+    },
+    {
+      "line_id": "CH01_P03_L003",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "start_s": 11.67,
+      "end_s": 19.58,
+      "text": "Меня занесло сюда штормом… И теперь совсем не знаю, как вернуться домой."
+    },
+    {
+      "line_id": "CH01_P03_L004",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_011",
+      "kind": "dialogue",
+      "start_s": 19.58,
+      "end_s": 30.67,
+      "text": "Ого! Вот это история! Мы починим и заправим ваш корабль. А потом летите на Марс — в Центральный дата-центр. Там умный ИИ поможет найти путь!"
+    },
+    {
+      "line_id": "CH01_P03_L005",
+      "frame_id": "CH01_P03_F02",
+      "panel_id": "p03_mika_upset",
+      "speaker_id": "CHR_001",
+      "kind": "thought_sigh",
+      "start_s": 30.67,
+      "end_s": 33.03,
+      "text": "Эх… А вдруг я так и не найду дорогу домой?"
+    },
+    {
+      "line_id": "CH01_P03_L006",
+      "frame_id": "CH01_P03_F03",
+      "panel_id": "p03_ship_refuel",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "start_s": 33.03,
+      "end_s": 41.0,
+      "text": "Земляне сразу взялись за дело: починили корабль после шторма, проверили системы и заправили его до краёв!"
+    },
+    {
+      "line_id": "CH01_P03_L007",
+      "frame_id": "CH01_P03_F04",
+      "panel_id": "p03_earth_departure",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "start_s": 41.0,
+      "end_s": 46.86,
+      "text": "И вот — корабль снова готов! Мика поблагодарил землян, запустил двигатели… и вперёд!"
+    },
+    {
+      "line_id": "CH01_P03_L008",
+      "frame_id": "CH01_P03_F05",
+      "panel_id": "p03_mars_destination",
+      "speaker_id": "CHR_008",
+      "kind": "ship_system_hud",
+      "start_s": 46.86,
+      "end_s": 48.816,
+      "text": "Курс проложен. Направление — Марс!"
+    }
+  ]
+}

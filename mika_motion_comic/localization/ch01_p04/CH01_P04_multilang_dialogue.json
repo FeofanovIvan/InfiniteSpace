@@ -1,0 +1,1029 @@
+{
+  "schema_version": "3.2",
+  "project": "MIKA Infinite Space",
+  "page_id": "CH01_P04",
+  "revision": 4,
+  "approval_status": "ru_art_approved_six_localizations_adapted_native_review_recommended",
+  "style": "NEBULA",
+  "master_size_px": [
+    2480,
+    3508
+  ],
+  "source_pdf": "1-4(1).pdf",
+  "background": "background.jpg",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "godot_locale_aliases": {
+    "ru_RU": "ru",
+    "en_US": "en",
+    "en_GB": "en",
+    "pt_BR": "pt_BR",
+    "pt-BR": "pt_BR",
+    "pt_PT": "pt_BR",
+    "es_ES": "es",
+    "es_MX": "es",
+    "fr_FR": "fr",
+    "de_DE": "de"
+  },
+  "overlays_png": {
+    "ru": "overlays/CH01_P04_ru.png",
+    "en": "overlays/CH01_P04_en.png",
+    "pt_BR": "overlays/CH01_P04_pt_BR.png",
+    "es": "overlays/CH01_P04_es.png",
+    "fr": "overlays/CH01_P04_fr.png",
+    "de": "overlays/CH01_P04_de.png"
+  },
+  "overlays_svg": {
+    "ru": "overlays/CH01_P04_ru.svg",
+    "en": "overlays/CH01_P04_en.svg",
+    "pt_BR": "overlays/CH01_P04_pt_BR.svg",
+    "es": "overlays/CH01_P04_es.svg",
+    "fr": "overlays/CH01_P04_fr.svg",
+    "de": "overlays/CH01_P04_de.svg"
+  },
+  "previews": {
+    "ru": "previews/CH01_P04_ru_preview.jpg",
+    "en": "previews/CH01_P04_en_preview.jpg",
+    "pt_BR": "previews/CH01_P04_pt_BR_preview.jpg",
+    "es": "previews/CH01_P04_es_preview.jpg",
+    "fr": "previews/CH01_P04_fr_preview.jpg",
+    "de": "previews/CH01_P04_de_preview.jpg"
+  },
+  "speaker_ids": [
+    "CHR_004",
+    "CHR_001",
+    "CHR_012",
+    "CHR_013"
+  ],
+  "new_cast": [
+    {
+      "character_id": "CHR_012",
+      "name_ru": "Сотрудник пропускного бюро Марсианского дата-центра",
+      "role": "mars_ai_complex_access_officer",
+      "voice_character_ru": "Взрослый мужчина. Вежливый, добродушный, немного канцелярский по привычке, но без злой иронии. На «пара анкет» — такой же невозмутимо-радостный тон, словно просьба совершенно обычная. Сначала искать Voice Library.",
+      "voice_id": null,
+      "tts_status": "not_generated"
+    },
+    {
+      "character_id": "CHR_013",
+      "name_ru": "Центральный ИИ Марса",
+      "role": "mars_central_ai_core",
+      "voice_character_ru": "Разумный дружелюбный ИИ в огромной синей сфере. Голос очень разборчивый, спокойный и чуть загадочный, с мягким тембром и лёгким пространственным эффектом, который можно наложить в Godot. В текущем кадре он произносит только имя Мики. Почему он знает это имя, раскрывать сейчас нельзя.",
+      "voice_id": null,
+      "tts_status": "not_generated"
+    }
+  ],
+  "playback_profiles": {
+    "full_reading": {
+      "line_ids": [
+        "CH01_P04_L001",
+        "CH01_P04_L002",
+        "CH01_P04_L003",
+        "CH01_P04_L004",
+        "CH01_P04_L005",
+        "CH01_P04_L006",
+        "CH01_P04_L007",
+        "CH01_P04_L008"
+      ],
+      "description_ru": "Все фразы, включая автора и голос ИИ."
+    },
+    "spoken_only": {
+      "line_ids": [
+        "CH01_P04_L003",
+        "CH01_P04_L004",
+        "CH01_P04_L007",
+        "CH01_P04_L008"
+      ],
+      "description_ru": "Только Мика, сотрудник и ИИ; авторские подписи остаются текстом."
+    },
+    "no_ai_voice_until_reveal": {
+      "line_ids": [
+        "CH01_P04_L001",
+        "CH01_P04_L002",
+        "CH01_P04_L003",
+        "CH01_P04_L004",
+        "CH01_P04_L005",
+        "CH01_P04_L006",
+        "CH01_P04_L008"
+      ],
+      "description_ru": "Плашка «Мика…» остаётся видимой, но ИИ до следующей страницы не звучит."
+    }
+  },
+  "visual_only_elements": [
+    {
+      "ui_id": "CH01_P04_UI_WIND",
+      "frame_id": "CH01_P04_F02",
+      "kind": "wind_sfx",
+      "audio_required": false,
+      "optional_sound_design": "Mars wind SFX only, no spoken role",
+      "localized": {
+        "ru": "ФЬЮ-У-У!",
+        "en": "WHOOOSH!",
+        "pt_BR": "FUUUUSH!",
+        "es": "¡FUUUUSH!",
+        "fr": "FIOUUU !",
+        "de": "WUUUSCH!"
+      }
+    },
+    {
+      "ui_id": "CH01_P04_UI_REACTION",
+      "frame_id": "CH01_P04_F03",
+      "kind": "mika_silent_reaction",
+      "audio_required": false,
+      "localized": {
+        "ru": "?!",
+        "en": "?!",
+        "pt_BR": "?!",
+        "es": "?!",
+        "fr": "?!",
+        "de": "?!"
+      }
+    }
+  ],
+  "narrative_guardrail_ru": "Не раскрывать в четвёртой странице, почему ИИ знает имя Мики: ответ связан с заполненной в бюро анкетой и появится на следующей странице.",
+  "lines": [
+    {
+      "line_id": "CH01_P04_L001",
+      "page_id": "CH01_P04",
+      "frame_id": "CH01_P04_F01",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_cream_rect",
+      "performance": {
+        "emotion": "arrival_expectation",
+        "intensity": 0.49,
+        "pace": "warm_deliberate",
+        "volume": "medium",
+        "pause_after_ms": 380,
+        "tone_ru": "Удивление от прилёта на легендарную красную планету и ожидание ответа.",
+        "arc_ru": "«Марс» произнести как новую главу путешествия, короткая пауза. О космопорте — уверенно, но с лёгкой тайной.",
+        "acting_beats": [
+          "прибытие",
+          "зритель-оглядывается",
+          "предвкушение-встречи"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[curious]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "МАРС. Корабль Мики приземлился у космопорта Центрального дата-центра ИИ.",
+          "voice_spoken_text": "Марс. Корабль Мики приземлился у космопорта Центрального дата-центра искусственного интеллекта.",
+          "render_lines": [
+            "МАРС.",
+            "Корабль Мики приземлился",
+            "у космопорта Центрального",
+            "дата-центра ИИ."
+          ],
+          "font_size_viewbox": 21.1,
+          "edit_source_svg": "overlays/CH01_P04_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Марс. Корабль Мики приземлился у космопорта Центрального дата-центра искусственного интеллекта."
+        },
+        "en": {
+          "display_text": "MARS. Mika’s ship touched down at the spaceport of the Central AI Data Center.",
+          "voice_spoken_text": "Mars. Mika’s ship touched down at the spaceport of the Central Artificial Intelligence Data Center.",
+          "render_lines": [
+            "MARS.",
+            "Mika’s ship touched down",
+            "at the spaceport of the",
+            "Central AI Data Center."
+          ],
+          "font_size_viewbox": 21,
+          "edit_source_svg": "overlays/CH01_P04_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Mars. Mika’s ship touched down at the spaceport of the Central Artificial Intelligence Data Center."
+        },
+        "pt_BR": {
+          "display_text": "MARTE. A nave de Mika pousou no porto espacial do Centro Central de Dados da IA.",
+          "voice_spoken_text": "Marte. A nave de Mika pousou no porto espacial do Centro Central de Dados da Inteligência Artificial.",
+          "render_lines": [
+            "MARTE.",
+            "A nave de Mika pousou",
+            "no porto espacial do",
+            "Centro Central de Dados da IA."
+          ],
+          "font_size_viewbox": 19.4,
+          "edit_source_svg": "overlays/CH01_P04_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Marte. A nave de Mika pousou no porto espacial do Centro Central de Dados da Inteligência Artificial."
+        },
+        "es": {
+          "display_text": "MARTE. La nave de Mika aterrizó en el puerto espacial del Centro de Datos de la IA.",
+          "voice_spoken_text": "Marte. La nave de Mika aterrizó en el puerto espacial del Centro de Datos de Inteligencia Artificial.",
+          "render_lines": [
+            "MARTE.",
+            "La nave de Mika aterrizó",
+            "en el puerto espacial del",
+            "Centro de Datos de la IA."
+          ],
+          "font_size_viewbox": 20.1,
+          "edit_source_svg": "overlays/CH01_P04_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Marte. La nave de Mika aterrizó en el puerto espacial del Centro de Datos de Inteligencia Artificial."
+        },
+        "fr": {
+          "display_text": "MARS. Le vaisseau de Mika s’est posé au spatioport du Centre central de données de l’IA.",
+          "voice_spoken_text": "Mars. Le vaisseau de Mika s’est posé au spatioport du Centre central de données de l’intelligence artificielle.",
+          "render_lines": [
+            "MARS.",
+            "Le vaisseau de Mika s’est posé",
+            "au spatioport du Centre",
+            "central de données de l’IA."
+          ],
+          "font_size_viewbox": 19.6,
+          "edit_source_svg": "overlays/CH01_P04_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Mars. Le vaisseau de Mika s’est posé au spatioport du Centre central de données de l’intelligence artificielle."
+        },
+        "de": {
+          "display_text": "MARS. Mikas Schiff landete am Raumhafen des zentralen KI-Datenzentrums.",
+          "voice_spoken_text": "Mars. Mikas Schiff landete am Raumhafen des zentralen KI-Datenzentrums.",
+          "render_lines": [
+            "MARS.",
+            "Mikas Schiff landete",
+            "am Raumhafen des",
+            "zentralen KI-Datenzentrums."
+          ],
+          "font_size_viewbox": 19.8,
+          "edit_source_svg": "overlays/CH01_P04_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Mars. Mikas Schiff landete am Raumhafen des zentralen KI-Datenzentrums."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P04_L002",
+      "page_id": "CH01_P04",
+      "frame_id": "CH01_P04_F02",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_cream_rect",
+      "performance": {
+        "emotion": "windswept_surprise",
+        "intensity": 0.68,
+        "pace": "animated",
+        "volume": "medium_bright",
+        "pause_after_ms": 400,
+        "tone_ru": "С улыбкой: приветствие Марса оказалось не самым приветливым.",
+        "arc_ru": "«Красная планета» — чуть торжественно, «песчаной бурей» — с энергичным комическим акцентом; не делать шторм по-настоящему страшным.",
+        "acting_beats": [
+          "вдохновляющее-название",
+          "порыв-ветра",
+          "лёгкая-улыбка"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[surprised]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Красная планета встретила Мику песчаной бурей!",
+          "voice_spoken_text": "Красная планета встретила Мику песчаной бурей!",
+          "render_lines": [
+            "Красная планета",
+            "встретила Мику",
+            "песчаной бурей!"
+          ],
+          "font_size_viewbox": 21.2,
+          "edit_source_svg": "overlays/CH01_P04_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] Красная планета встретила Мику песчаной бурей!"
+        },
+        "en": {
+          "display_text": "The Red Planet welcomed Mika with a swirling sandstorm!",
+          "voice_spoken_text": "The Red Planet welcomed Mika with a swirling sandstorm!",
+          "render_lines": [
+            "The Red Planet",
+            "welcomed Mika with",
+            "a swirling sandstorm!"
+          ],
+          "font_size_viewbox": 21,
+          "edit_source_svg": "overlays/CH01_P04_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] The Red Planet welcomed Mika with a swirling sandstorm!"
+        },
+        "pt_BR": {
+          "display_text": "O Planeta Vermelho recebeu Mika com uma tempestade de areia!",
+          "voice_spoken_text": "O Planeta Vermelho recebeu Mika com uma tempestade de areia!",
+          "render_lines": [
+            "O Planeta Vermelho",
+            "recebeu Mika com",
+            "uma tempestade de areia!"
+          ],
+          "font_size_viewbox": 19.8,
+          "edit_source_svg": "overlays/CH01_P04_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] O Planeta Vermelho recebeu Mika com uma tempestade de areia!"
+        },
+        "es": {
+          "display_text": "El Planeta Rojo recibió a Mika con ¡una tormenta de arena!",
+          "voice_spoken_text": "El Planeta Rojo recibió a Mika con ¡una tormenta de arena!",
+          "render_lines": [
+            "El Planeta Rojo",
+            "recibió a Mika con",
+            "¡una tormenta de arena!"
+          ],
+          "font_size_viewbox": 19.8,
+          "edit_source_svg": "overlays/CH01_P04_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] El Planeta Rojo recibió a Mika con ¡una tormenta de arena!"
+        },
+        "fr": {
+          "display_text": "La planète rouge accueillit Mika avec une tempête de sable !",
+          "voice_spoken_text": "La planète rouge accueillit Mika avec une tempête de sable !",
+          "render_lines": [
+            "La planète rouge",
+            "accueillit Mika avec",
+            "une tempête de sable !"
+          ],
+          "font_size_viewbox": 19.6,
+          "edit_source_svg": "overlays/CH01_P04_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] La planète rouge accueillit Mika avec une tempête de sable !"
+        },
+        "de": {
+          "display_text": "Der Rote Planet begrüßte Mika mit einem Sandsturm!",
+          "voice_spoken_text": "Der Rote Planet begrüßte Mika mit einem Sandsturm!",
+          "render_lines": [
+            "Der Rote Planet",
+            "begrüßte Mika mit",
+            "einem Sandsturm!"
+          ],
+          "font_size_viewbox": 20.6,
+          "edit_source_svg": "overlays/CH01_P04_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] Der Rote Planet begrüßte Mika mit einem Sandsturm!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P04_L003",
+      "page_id": "CH01_P04",
+      "frame_id": "CH01_P04_F03",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "bubble_id": "mika_speech_amber_tail",
+      "performance": {
+        "emotion": "careful_hoping_for_help",
+        "intensity": 0.58,
+        "pace": "hesitant_then_earnest",
+        "volume": "gentle",
+        "pause_after_ms": 280,
+        "tone_ru": "Мика вежлив, но с трудом сдерживает нетерпение: он наконец-то добрался до места, где надеется найти путь домой.",
+        "arc_ru": "На «Простите…» небольшая заминка, потом простой и искренний вопрос. Не звучать самоуверенно.",
+        "acting_beats": [
+          "собирается-с-духом",
+          "вежливое-обращение",
+          "надежда"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[hopeful]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Простите… Можно к ИИ?",
+          "voice_spoken_text": "Простите… Можно к ИИ?",
+          "render_lines": [
+            "Простите…",
+            "Можно к ИИ?"
+          ],
+          "font_size_viewbox": 19.5,
+          "edit_source_svg": "overlays/CH01_P04_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Простите… Можно к ИИ?"
+        },
+        "en": {
+          "display_text": "Excuse me… May I see the AI?",
+          "voice_spoken_text": "Excuse me… May I see the AI?",
+          "render_lines": [
+            "Excuse me…",
+            "May I see the AI?"
+          ],
+          "font_size_viewbox": 17.8,
+          "edit_source_svg": "overlays/CH01_P04_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Excuse me… May I see the AI?"
+        },
+        "pt_BR": {
+          "display_text": "Com licença… Posso ver a IA?",
+          "voice_spoken_text": "Com licença… Posso ver a IA?",
+          "render_lines": [
+            "Com licença…",
+            "Posso ver a IA?"
+          ],
+          "font_size_viewbox": 17.6,
+          "edit_source_svg": "overlays/CH01_P04_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Com licença… Posso ver a IA?"
+        },
+        "es": {
+          "display_text": "Disculpe… ¿Puedo ver a la IA?",
+          "voice_spoken_text": "Disculpe… ¿Puedo ver a la IA?",
+          "render_lines": [
+            "Disculpe…",
+            "¿Puedo ver a la IA?"
+          ],
+          "font_size_viewbox": 16.5,
+          "edit_source_svg": "overlays/CH01_P04_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Disculpe… ¿Puedo ver a la IA?"
+        },
+        "fr": {
+          "display_text": "Excusez-moi… Je peux voir l’IA ?",
+          "voice_spoken_text": "Excusez-moi… Je peux voir l’IA ?",
+          "render_lines": [
+            "Excusez-moi…",
+            "Je peux voir l’IA ?"
+          ],
+          "font_size_viewbox": 16.2,
+          "edit_source_svg": "overlays/CH01_P04_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Excusez-moi… Je peux voir l’IA ?"
+        },
+        "de": {
+          "display_text": "Entschuldigung… Darf ich zur KI?",
+          "voice_spoken_text": "Entschuldigung… Darf ich zur KI?",
+          "render_lines": [
+            "Entschuldigung…",
+            "Darf ich zur KI?"
+          ],
+          "font_size_viewbox": 15,
+          "edit_source_svg": "overlays/CH01_P04_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Entschuldigung… Darf ich zur KI?"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P04_L004",
+      "page_id": "CH01_P04",
+      "frame_id": "CH01_P04_F03",
+      "speaker_id": "CHR_012",
+      "kind": "dialogue",
+      "bubble_id": "mars_clerk_speech_cyan_tail",
+      "performance": {
+        "emotion": "obliviously_cheerful_bureaucracy",
+        "intensity": 0.64,
+        "pace": "upbeat_then_matter_of_fact",
+        "volume": "friendly",
+        "pause_after_ms": 350,
+        "tone_ru": "Приветливо, без тени насмешки. Служащему кажется совершенно естественным просить несколько анкет даже перед встречей с ИИ.",
+        "arc_ru": "«Конечно!» — искренне и бодро. «Но сначала…» — слегка понизить голос, словно речь о мелочи. «Пара анкет» произнести невозмутимо и с улыбкой.",
+        "acting_beats": [
+          "разрешение",
+          "формальная-оговорка",
+          "добродушная-невозмутимость"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[cheerful]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Конечно! Но сначала… пара анкет.",
+          "voice_spoken_text": "Конечно! Но сначала… пара анкет.",
+          "render_lines": [
+            "Конечно!",
+            "Но сначала…",
+            "пара анкет."
+          ],
+          "font_size_viewbox": 19.5,
+          "edit_source_svg": "overlays/CH01_P04_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] Конечно! Но сначала… пара анкет."
+        },
+        "en": {
+          "display_text": "Of course! But first… a few forms.",
+          "voice_spoken_text": "Of course! But first… a few forms.",
+          "render_lines": [
+            "Of course!",
+            "But first…",
+            "a few forms."
+          ],
+          "font_size_viewbox": 19.2,
+          "edit_source_svg": "overlays/CH01_P04_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] Of course! But first… a few forms."
+        },
+        "pt_BR": {
+          "display_text": "Claro! Mas antes… umas fichas.",
+          "voice_spoken_text": "Claro! Mas antes… umas fichas.",
+          "render_lines": [
+            "Claro!",
+            "Mas antes…",
+            "umas fichas."
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P04_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] Claro! Mas antes… umas fichas."
+        },
+        "es": {
+          "display_text": "¡Claro! Pero antes… unos formularios.",
+          "voice_spoken_text": "¡Claro! Pero antes… unos formularios.",
+          "render_lines": [
+            "¡Claro!",
+            "Pero antes…",
+            "unos formularios."
+          ],
+          "font_size_viewbox": 16.7,
+          "edit_source_svg": "overlays/CH01_P04_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] ¡Claro! Pero antes… unos formularios."
+        },
+        "fr": {
+          "display_text": "Bien sûr ! Mais d’abord… quelques papiers.",
+          "voice_spoken_text": "Bien sûr ! Mais d’abord… quelques papiers.",
+          "render_lines": [
+            "Bien sûr !",
+            "Mais d’abord…",
+            "quelques papiers."
+          ],
+          "font_size_viewbox": 16.8,
+          "edit_source_svg": "overlays/CH01_P04_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] Bien sûr ! Mais d’abord… quelques papiers."
+        },
+        "de": {
+          "display_text": "Natürlich! Aber zuerst… ein paar Formulare.",
+          "voice_spoken_text": "Natürlich! Aber zuerst… ein paar Formulare.",
+          "render_lines": [
+            "Natürlich!",
+            "Aber zuerst…",
+            "ein paar Formulare."
+          ],
+          "font_size_viewbox": 16.4,
+          "edit_source_svg": "overlays/CH01_P04_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] Natürlich! Aber zuerst… ein paar Formulare."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P04_L005",
+      "page_id": "CH01_P04",
+      "frame_id": "CH01_P04_F04",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_cream_rect",
+      "performance": {
+        "emotion": "gentle_irony_then_progress",
+        "intensity": 0.6,
+        "pace": "light_comic_to_measured",
+        "volume": "medium",
+        "pause_after_ms": 500,
+        "tone_ru": "Короткая тёплая шутка автора о бюрократии, затем спокойное повествование о долгом спуске.",
+        "arc_ru": "Начать с маленькой усмешки на «бумажек», не превращая реплику в сатиру для взрослых. На «долго ехал на лифте вниз» замедлиться, чтобы почувствовалась глубина комплекса.",
+        "acting_beats": [
+          "комическое-недоумение",
+          "бумаги-заполнены",
+          "долгий-спуск"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[amused]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Даже в будущем от бумажек никуда не деться! Заполнив анкеты, Мика долго ехал на лифте вниз.",
+          "voice_spoken_text": "Даже в будущем от бумажек никуда не деться! Заполнив анкеты, Мика долго ехал на лифте вниз.",
+          "render_lines": [
+            "Даже в будущем от бумажек",
+            "никуда не деться!",
+            "Заполнив анкеты, Мика",
+            "долго ехал на лифте вниз."
+          ],
+          "font_size_viewbox": 17.1,
+          "edit_source_svg": "overlays/CH01_P04_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[amused] Даже в будущем от бумажек никуда не деться! Заполнив анкеты, Мика долго ехал на лифте вниз."
+        },
+        "en": {
+          "display_text": "Even in the future, paperwork never goes away! Forms done, Mika took a long elevator ride down.",
+          "voice_spoken_text": "Even in the future, paperwork never goes away! Forms done, Mika took a long elevator ride down.",
+          "render_lines": [
+            "Even in the future,",
+            "paperwork never goes away!",
+            "Forms done, Mika took",
+            "a long elevator ride down."
+          ],
+          "font_size_viewbox": 17,
+          "edit_source_svg": "overlays/CH01_P04_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[amused] Even in the future, paperwork never goes away! Forms done, Mika took a long elevator ride down."
+        },
+        "pt_BR": {
+          "display_text": "Nem no futuro a papelada dá uma trégua! Depois de preencher tudo, Mika desceu pelo elevador.",
+          "voice_spoken_text": "Nem no futuro a papelada dá uma trégua! Depois de preencher tudo, Mika desceu pelo elevador.",
+          "render_lines": [
+            "Nem no futuro a papelada",
+            "dá uma trégua!",
+            "Depois de preencher tudo,",
+            "Mika desceu pelo elevador."
+          ],
+          "font_size_viewbox": 16.4,
+          "edit_source_svg": "overlays/CH01_P04_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[amused] Nem no futuro a papelada dá uma trégua! Depois de preencher tudo, Mika desceu pelo elevador."
+        },
+        "es": {
+          "display_text": "¡Ni en el futuro se libran del papeleo! Tras llenar los formularios, Mika bajó en ascensor.",
+          "voice_spoken_text": "¡Ni en el futuro se libran del papeleo! Tras llenar los formularios, Mika bajó en ascensor.",
+          "render_lines": [
+            "¡Ni en el futuro se libran",
+            "del papeleo!",
+            "Tras llenar los formularios,",
+            "Mika bajó en ascensor."
+          ],
+          "font_size_viewbox": 16.4,
+          "edit_source_svg": "overlays/CH01_P04_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[amused] ¡Ni en el futuro se libran del papeleo! Tras llenar los formularios, Mika bajó en ascensor."
+        },
+        "fr": {
+          "display_text": "Même dans le futur, la paperasse est partout ! Après les formulaires, Mika descendit en ascenseur.",
+          "voice_spoken_text": "Même dans le futur, la paperasse est partout ! Après les formulaires, Mika descendit en ascenseur.",
+          "render_lines": [
+            "Même dans le futur,",
+            "la paperasse est partout !",
+            "Après les formulaires,",
+            "Mika descendit en ascenseur."
+          ],
+          "font_size_viewbox": 16.2,
+          "edit_source_svg": "overlays/CH01_P04_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[amused] Même dans le futur, la paperasse est partout ! Après les formulaires, Mika descendit en ascenseur."
+        },
+        "de": {
+          "display_text": "Selbst in der Zukunft gibt’s noch Papierkram! Nach dem Ausfüllen fuhr Mika tief im Aufzug hinab.",
+          "voice_spoken_text": "Selbst in der Zukunft gibt’s noch Papierkram! Nach dem Ausfüllen fuhr Mika tief im Aufzug hinab.",
+          "render_lines": [
+            "Selbst in der Zukunft",
+            "gibt’s noch Papierkram!",
+            "Nach dem Ausfüllen fuhr",
+            "Mika tief im Aufzug hinab."
+          ],
+          "font_size_viewbox": 16.3,
+          "edit_source_svg": "overlays/CH01_P04_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[amused] Selbst in der Zukunft gibt’s noch Papierkram! Nach dem Ausfüllen fuhr Mika tief im Aufzug hinab."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P04_L006",
+      "page_id": "CH01_P04",
+      "frame_id": "CH01_P04_F05",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_cream_rect",
+      "performance": {
+        "emotion": "quiet_cosmic_awe",
+        "intensity": 0.62,
+        "pace": "slower_mysterious",
+        "volume": "softening",
+        "pause_after_ms": 740,
+        "tone_ru": "После шутки — искренний восторг перед огромным светящимся пространством.",
+        "arc_ru": "Произнести «огромный зал» с удивлением; в финале «к сияющей сфере…» дать длинную паузу, чтобы зазвучала тайна.",
+        "acting_beats": [
+          "пространство-раскрывается",
+          "взгляд-по-мосту",
+          "загадка-впереди"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[in awe]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "В сердце Марса открылся огромный зал. Мост вёл к сияющей сфере…",
+          "voice_spoken_text": "В сердце Марса открылся огромный зал. Мост вёл к сияющей сфере…",
+          "render_lines": [
+            "В сердце Марса",
+            "открылся огромный зал.",
+            "Мост вёл к сияющей сфере…"
+          ],
+          "font_size_viewbox": 17.8,
+          "edit_source_svg": "overlays/CH01_P04_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[in awe] В сердце Марса открылся огромный зал. Мост вёл к сияющей сфере…"
+        },
+        "en": {
+          "display_text": "Deep inside Mars lay an enormous hall. A bridge led to a glowing orb…",
+          "voice_spoken_text": "Deep inside Mars lay an enormous hall. A bridge led to a glowing orb…",
+          "render_lines": [
+            "Deep inside Mars",
+            "lay an enormous hall.",
+            "A bridge led to a glowing orb…"
+          ],
+          "font_size_viewbox": 17,
+          "edit_source_svg": "overlays/CH01_P04_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[in awe] Deep inside Mars lay an enormous hall. A bridge led to a glowing orb…"
+        },
+        "pt_BR": {
+          "display_text": "No coração de Marte, havia um salão imenso. Uma ponte levava a uma esfera…",
+          "voice_spoken_text": "No coração de Marte, havia um salão imenso. Uma ponte levava a uma esfera…",
+          "render_lines": [
+            "No coração de Marte,",
+            "havia um salão imenso.",
+            "Uma ponte levava a uma esfera…"
+          ],
+          "font_size_viewbox": 16.5,
+          "edit_source_svg": "overlays/CH01_P04_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[in awe] No coração de Marte, havia um salão imenso. Uma ponte levava a uma esfera…"
+        },
+        "es": {
+          "display_text": "En el corazón de Marte se abrió una sala inmensa. Un puente llevaba a una esfera…",
+          "voice_spoken_text": "En el corazón de Marte se abrió una sala inmensa. Un puente llevaba a una esfera…",
+          "render_lines": [
+            "En el corazón de Marte",
+            "se abrió una sala inmensa.",
+            "Un puente llevaba a una esfera…"
+          ],
+          "font_size_viewbox": 16.3,
+          "edit_source_svg": "overlays/CH01_P04_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[in awe] En el corazón de Marte se abrió una sala inmensa. Un puente llevaba a una esfera…"
+        },
+        "fr": {
+          "display_text": "Au cœur de Mars, une salle immense apparut. Un pont menait à une sphère…",
+          "voice_spoken_text": "Au cœur de Mars, une salle immense apparut. Un pont menait à une sphère…",
+          "render_lines": [
+            "Au cœur de Mars,",
+            "une salle immense apparut.",
+            "Un pont menait à une sphère…"
+          ],
+          "font_size_viewbox": 16.5,
+          "edit_source_svg": "overlays/CH01_P04_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[in awe] Au cœur de Mars, une salle immense apparut. Un pont menait à une sphère…"
+        },
+        "de": {
+          "display_text": "Tief im Innern des Mars lag eine riesige Halle. Ein Steg führte zu einer Kugel…",
+          "voice_spoken_text": "Tief im Innern des Mars lag eine riesige Halle. Ein Steg führte zu einer Kugel…",
+          "render_lines": [
+            "Tief im Innern des Mars",
+            "lag eine riesige Halle.",
+            "Ein Steg führte zu einer Kugel…"
+          ],
+          "font_size_viewbox": 16,
+          "edit_source_svg": "overlays/CH01_P04_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[in awe] Tief im Innern des Mars lag eine riesige Halle. Ein Steg führte zu einer Kugel…"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P04_L007",
+      "page_id": "CH01_P04",
+      "frame_id": "CH01_P04_F06",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "bubble_id": "mars_ai_neon_navy_hud",
+      "performance": {
+        "emotion": "calm_knowing_mystery",
+        "intensity": 0.48,
+        "pace": "unhurried_resonant",
+        "volume": "gentle_even",
+        "pause_after_ms": 550,
+        "tone_ru": "Центральный ИИ узнаёт гостя. Спокойный, ласковый и немного загадочный голос без злодейских интонаций.",
+        "arc_ru": "Назвать только имя, мягко, с едва заметной улыбкой. Не подсказывать ребёнку заранее, почему оно известно; не продолжать никаких фраз.",
+        "acting_beats": [
+          "узнавание",
+          "пауза",
+          "ожидание-ответа"
+        ],
+        "voice_direction_ru": "Пространственное эхо можно добавить при монтаже в Godot; не искажать фонетику самого слова.",
+        "tts_tags_en": "[calmly]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Мика…",
+          "voice_spoken_text": "Мика…",
+          "render_lines": [
+            "Мика…"
+          ],
+          "font_size_viewbox": 40,
+          "edit_source_svg": "overlays/CH01_P04_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calmly] Мика…"
+        },
+        "en": {
+          "display_text": "Mika…",
+          "voice_spoken_text": "Mika…",
+          "render_lines": [
+            "Mika…"
+          ],
+          "font_size_viewbox": 40,
+          "edit_source_svg": "overlays/CH01_P04_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calmly] Mika…"
+        },
+        "pt_BR": {
+          "display_text": "Mika…",
+          "voice_spoken_text": "Mika…",
+          "render_lines": [
+            "Mika…"
+          ],
+          "font_size_viewbox": 40,
+          "edit_source_svg": "overlays/CH01_P04_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calmly] Mika…"
+        },
+        "es": {
+          "display_text": "Mika…",
+          "voice_spoken_text": "Mika…",
+          "render_lines": [
+            "Mika…"
+          ],
+          "font_size_viewbox": 40,
+          "edit_source_svg": "overlays/CH01_P04_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calmly] Mika…"
+        },
+        "fr": {
+          "display_text": "Mika…",
+          "voice_spoken_text": "Mika…",
+          "render_lines": [
+            "Mika…"
+          ],
+          "font_size_viewbox": 40,
+          "edit_source_svg": "overlays/CH01_P04_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calmly] Mika…"
+        },
+        "de": {
+          "display_text": "Mika…",
+          "voice_spoken_text": "Mika…",
+          "render_lines": [
+            "Mika…"
+          ],
+          "font_size_viewbox": 40,
+          "edit_source_svg": "overlays/CH01_P04_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calmly] Mika…"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P04_L008",
+      "page_id": "CH01_P04",
+      "frame_id": "CH01_P04_F06",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "bubble_id": "mika_shocked_speech_amber_tail",
+      "performance": {
+        "emotion": "astonished_but_hopeful",
+        "intensity": 0.82,
+        "pace": "breath_catch_then_quick_question",
+        "volume": "start_soft_then_bright",
+        "pause_after_ms": 1100,
+        "tone_ru": "Мика растерялся и почти не верит своим ушам. Испуг быстро сменяется любопытством и надеждой.",
+        "arc_ru": "«Ты…» — на задержанном дыхании, с паузой. Затем вопросительный подъём «знаешь моё имя?!» как маленькое эмоциональное открытие. Не кричать; оставить сцену на выразительной паузе.",
+        "acting_beats": [
+          "замер",
+          "не-верит-ушам",
+          "вопрос-с-надеждой",
+          "клиффхэнгер"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[surprised]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Ты… знаешь моё имя?!",
+          "voice_spoken_text": "Ты… знаешь моё имя?!",
+          "render_lines": [
+            "Ты…",
+            "знаешь моё имя?!"
+          ],
+          "font_size_viewbox": 30,
+          "edit_source_svg": "overlays/CH01_P04_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] Ты… знаешь моё имя?!"
+        },
+        "en": {
+          "display_text": "You… know my name?!",
+          "voice_spoken_text": "You… know my name?!",
+          "render_lines": [
+            "You…",
+            "know my name?!"
+          ],
+          "font_size_viewbox": 30,
+          "edit_source_svg": "overlays/CH01_P04_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] You… know my name?!"
+        },
+        "pt_BR": {
+          "display_text": "Você… sabe meu nome?!",
+          "voice_spoken_text": "Você… sabe meu nome?!",
+          "render_lines": [
+            "Você…",
+            "sabe meu nome?!"
+          ],
+          "font_size_viewbox": 30,
+          "edit_source_svg": "overlays/CH01_P04_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] Você… sabe meu nome?!"
+        },
+        "es": {
+          "display_text": "¿Tú… sabes mi nombre?!",
+          "voice_spoken_text": "¿Tú… sabes mi nombre?!",
+          "render_lines": [
+            "¿Tú…",
+            "sabes mi nombre?!"
+          ],
+          "font_size_viewbox": 29,
+          "edit_source_svg": "overlays/CH01_P04_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] ¿Tú… sabes mi nombre?!"
+        },
+        "fr": {
+          "display_text": "Tu… connais mon nom ?!",
+          "voice_spoken_text": "Tu… connais mon nom ?!",
+          "render_lines": [
+            "Tu…",
+            "connais mon nom ?!"
+          ],
+          "font_size_viewbox": 29,
+          "edit_source_svg": "overlays/CH01_P04_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] Tu… connais mon nom ?!"
+        },
+        "de": {
+          "display_text": "Du… kennst meinen Namen?!",
+          "voice_spoken_text": "Du… kennst meinen Namen?!",
+          "render_lines": [
+            "Du…",
+            "kennst meinen Namen?!"
+          ],
+          "font_size_viewbox": 28,
+          "edit_source_svg": "overlays/CH01_P04_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[surprised] Du… kennst meinen Namen?!"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema": "mika_ch01_p04_voice_timing_v1",
+  "page_id": "CH01_P04",
+  "locale": "fr",
+  "audio_path": "res://mika_motion_comic/audio/ch01_p04_fr_voice_master.mp3",
+  "duration_seconds": 32.544,
+  "status": "preliminary_boundaries_from_audio_pauses_needs_godot_playback_review",
+  "frame_map": {
+    "p04_mars_landing": [
+      "CH01_P04_L001"
+    ],
+    "p04_mika_walk": [
+      "CH01_P04_L002"
+    ],
+    "p04_reception": [
+      "CH01_P04_L003",
+      "CH01_P04_L004"
+    ],
+    "p04_elevator": [
+      "CH01_P04_L005"
+    ],
+    "p04_ai_core": [
+      "CH01_P04_L006"
+    ],
+    "p04_mika_orb_close": [
+      "CH01_P04_L007",
+      "CH01_P04_L008"
+    ]
+  },
+  "playback_groups": [
+    {
+      "trigger": "mars_arrival_panels",
+      "panels": [
+        "p04_mars_landing",
+        "p04_mika_walk",
+        "p04_reception"
+      ],
+      "voice_in_s": 0.0,
+      "voice_out_s": 16.18
+    },
+    {
+      "trigger": "mars_story_after_word_panels",
+      "panels": [
+        "p04_elevator",
+        "p04_ai_core",
+        "p04_mika_orb_close"
+      ],
+      "voice_in_s": 16.58,
+      "voice_out_s": 32.544
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P04_L001",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_mars_landing",
+      "start_s": 0.0,
+      "end_s": 6.75,
+      "text": "Mars. Le vaisseau de Mika s’est posé au spatioport du Centre central de données de l’intelligence artificielle."
+    },
+    {
+      "line_id": "CH01_P04_L002",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_mika_walk",
+      "start_s": 7.05,
+      "end_s": 10.13,
+      "text": "La planète rouge accueillit Mika avec une tempête de sable !"
+    },
+    {
+      "line_id": "CH01_P04_L003",
+      "speaker_id": "CHR_001",
+      "panel_id": "p04_reception",
+      "start_s": 10.72,
+      "end_s": 12.71,
+      "text": "Excusez-moi… Je peux voir l’IA ?"
+    },
+    {
+      "line_id": "CH01_P04_L004",
+      "speaker_id": "CHR_012",
+      "panel_id": "p04_reception",
+      "start_s": 13.23,
+      "end_s": 16.06,
+      "text": "Bien sûr ! Mais d’abord… quelques papiers."
+    },
+    {
+      "line_id": "CH01_P04_L005",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_elevator",
+      "start_s": 16.58,
+      "end_s": 22.92,
+      "text": "Même dans le futur, la paperasse est partout ! Après les formulaires, Mika descendit en ascenseur."
+    },
+    {
+      "line_id": "CH01_P04_L006",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_ai_core",
+      "start_s": 23.55,
+      "end_s": 28.66,
+      "text": "Au cœur de Mars, une salle immense apparut. Un pont menait à une sphère…"
+    },
+    {
+      "line_id": "CH01_P04_L007",
+      "speaker_id": "CHR_013",
+      "panel_id": "p04_mika_orb_close",
+      "start_s": 29.37,
+      "end_s": 30.03,
+      "text": "Mika…"
+    },
+    {
+      "line_id": "CH01_P04_L008",
+      "speaker_id": "CHR_001",
+      "panel_id": "p04_mika_orb_close",
+      "start_s": 30.72,
+      "end_s": 32.07,
+      "text": "Tu… connais mon nom ?!"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<title>MIKA CH05 P02 — NEBULA editable RU overlay</title>
+<!-- Each dialogue and pointer is an independent editable group. Original PDF artwork is not embedded. -->
+<g id="CH05_P02_L001" data-frame="1" data-speaker="Мика" data-kind="thought">
+<circle cx="520" cy="275" r="12" fill="#F5EDFF" stroke="#9B6AC9" stroke-width="4"/>
+<circle cx="509" cy="303" r="9" fill="#F5EDFF" stroke="#9B6AC9" stroke-width="4"/>
+<circle cx="499" cy="333" r="6" fill="#F5EDFF" stroke="#9B6AC9" stroke-width="4"/>
+<rect x="495" y="107" width="320" height="197" rx="30" fill="#020713" opacity=".23"/>
+<rect x="490" y="100" width="320" height="197" rx="30" fill="#F5EDFF" stroke="#9B6AC9" stroke-width="5.5"/>
+<text text-anchor="middle" x="655.0" y="168.8" fill="#302046" font-family="DejaVu Sans" font-size="38" font-weight="700"><tspan x="655.0" dy="0">Il faut régler</tspan><tspan x="655.0" dy="48">le</tspan><tspan x="655.0" dy="48">simulateur.</tspan></text></g>
+<g id="CH05_P02_L002" data-frame="2" data-speaker="Рассказчик" data-kind="author">
+<rect x="957" y="105" width="1400" height="166" rx="22" fill="#020713" opacity=".23"/>
+<rect x="952" y="98" width="1400" height="166" rx="22" fill="#102B51" stroke="#48C4DB" stroke-width="5.5"/>
+<rect x="977" y="111" width="74" height="7" rx="3.5" fill="#FBA54F"/>
+<rect x="2250" y="247" width="70" height="7" rx="3.5" fill="#FBA54F"/>
+<text text-anchor="middle" x="1657.0" y="175.1" fill="#F9FBFF" font-family="DejaVu Sans" font-size="41" font-weight="700"><tspan x="1657.0" dy="0">Mika comprit que l’inconnu n’est pas forcément</tspan><tspan x="1657.0" dy="51">dangereux. Parfois, il suffit d’apprendre à se comprendre.</tspan></text></g>
+<g id="CH05_P02_L003" data-frame="2" data-speaker="Магнитное существо 1" data-kind="magnet">
+<path d="M 1034 435 Q 998.5 454.0 1003 473" fill="none" stroke="#2BBBD2" stroke-width="10" stroke-linecap="round"/>
+<circle cx="1003" cy="473" r="8" fill="#E4FAFD" stroke="#2BBBD2" stroke-width="4"/>
+<rect x="905" y="341" width="285" height="116" rx="30" fill="#020713" opacity=".23"/>
+<rect x="900" y="334" width="285" height="116" rx="30" fill="#E4FAFD" stroke="#2BBBD2" stroke-width="5.5"/>
+<circle cx="920" cy="354" r="6" fill="#E78C35"/>
+<text text-anchor="middle" x="1047.5" y="413.6" fill="#103D56" font-family="DejaVu Sans" font-size="48" font-weight="700"><tspan x="1047.5" dy="0">Bonjour !</tspan></text></g>
+<g id="CH05_P02_L004" data-frame="2" data-speaker="Магнитное существо 2" data-kind="magnet2">
+<path d="M 1545 480 Q 1575.5 487.5 1566 495" fill="none" stroke="#24B2CC" stroke-width="10" stroke-linecap="round"/>
+<circle cx="1566" cy="495" r="8" fill="#DFF6FF" stroke="#24B2CC" stroke-width="4"/>
+<rect x="1232" y="333" width="615" height="156" rx="30" fill="#020713" opacity=".23"/>
+<rect x="1227" y="326" width="615" height="156" rx="30" fill="#DFF6FF" stroke="#24B2CC" stroke-width="5.5"/>
+<circle cx="1247" cy="346" r="6" fill="#EF9D47"/>
+<text text-anchor="middle" x="1539.5" y="400.8" fill="#103E5C" font-family="DejaVu Sans" font-size="32" font-weight="700"><tspan x="1539.5" dy="0">Nous sommes ravis que tu aies</tspan><tspan x="1539.5" dy="40">réussi à venir jusqu’à nous !</tspan></text></g>
+<g id="CH05_P02_L005" data-frame="2" data-speaker="Магнитное существо 3" data-kind="magnet3">
+<path d="M 2210 475 Q 2255.0 484.5 2260 494" fill="none" stroke="#2AAFA7" stroke-width="10" stroke-linecap="round"/>
+<circle cx="2260" cy="494" r="8" fill="#EAF7F4" stroke="#2AAFA7" stroke-width="4"/>
+<rect x="1900" y="326" width="490" height="152" rx="30" fill="#020713" opacity=".23"/>
+<rect x="1895" y="319" width="490" height="152" rx="30" fill="#EAF7F4" stroke="#2AAFA7" stroke-width="5.5"/>
+<circle cx="1915" cy="339" r="6" fill="#EE9850"/>
+<text text-anchor="middle" x="2145.0" y="389.3" fill="#154A45" font-family="DejaVu Sans" font-size="38" font-weight="700"><tspan x="2145.0" dy="0">Nous avons tant de</tspan><tspan x="2145.0" dy="48">choses à te raconter.</tspan></text></g>
+<g id="CH05_P02_L006" data-frame="3" data-speaker="Мика" data-kind="mika">
+<path d="M 626 1305 Q 591.0 1377.5 596 1450" fill="none" stroke="#9B6AC9" stroke-width="10" stroke-linecap="round"/>
+<circle cx="596" cy="1450" r="8" fill="#F5EDFF" stroke="#9B6AC9" stroke-width="4"/>
+<rect x="588" y="1124" width="555" height="203" rx="30" fill="#020713" opacity=".23"/>
+<rect x="583" y="1117" width="555" height="203" rx="30" fill="#F5EDFF" stroke="#9B6AC9" stroke-width="5.5"/>
+<text text-anchor="middle" x="865.5" y="1190.9" fill="#302046" font-family="DejaVu Sans" font-size="37" font-weight="700"><tspan x="865.5" dy="0">Bonjour ! Je suis si</tspan><tspan x="865.5" dy="46">heureux de découvrir</tspan><tspan x="865.5" dy="46">que vous êtes des amis !</tspan></text></g>
+<g id="CH05_P02_L007" data-frame="3" data-speaker="Магнитное существо" data-kind="magnet">
+<path d="M 998 2242 Q 965.5 2208.5 973 2175" fill="none" stroke="#2BBBD2" stroke-width="10" stroke-linecap="round"/>
+<circle cx="973" cy="2175" r="8" fill="#E4FAFD" stroke="#2BBBD2" stroke-width="4"/>
+<rect x="563" y="2249" width="586" height="203" rx="30" fill="#020713" opacity=".23"/>
+<rect x="558" y="2242" width="586" height="203" rx="30" fill="#E4FAFD" stroke="#2BBBD2" stroke-width="5.5"/>
+<circle cx="578" cy="2262" r="6" fill="#E78C35"/>
+<text text-anchor="middle" x="856.0" y="2312.7" fill="#103D56" font-family="DejaVu Sans" font-size="40" font-weight="700"><tspan x="856.0" dy="0">Ne t’inquiète pas.</tspan><tspan x="856.0" dy="50">Viens, je vais te</tspan><tspan x="856.0" dy="50">montrer quelque chose.</tspan></text></g>
+<g id="CH05_P02_L008" data-frame="4" data-speaker="Рассказчик" data-kind="author">
+<rect x="1240" y="1062" width="765" height="204" rx="22" fill="#020713" opacity=".23"/>
+<rect x="1235" y="1055" width="765" height="204" rx="22" fill="#102B51" stroke="#48C4DB" stroke-width="5.5"/>
+<rect x="1260" y="1068" width="74" height="7" rx="3.5" fill="#FBA54F"/>
+<rect x="1898" y="1242" width="70" height="7" rx="3.5" fill="#FBA54F"/>
+<text text-anchor="middle" x="1622.5" y="1130.5" fill="#F9FBFF" font-family="DejaVu Sans" font-size="35" font-weight="700"><tspan x="1622.5" dy="0">Les habitants de Géona montrèrent</tspan><tspan x="1622.5" dy="44">à Mika leur passe-temps favori :</tspan><tspan x="1622.5" dy="44">expérimenter avec la gravité.</tspan></text></g>
+<g id="CH05_P02_L009" data-frame="4" data-speaker="Мика" data-kind="mika">
+<path d="M 1390 1530 Q 1416.5 1588.5 1403 1647" fill="none" stroke="#9B6AC9" stroke-width="10" stroke-linecap="round"/>
+<circle cx="1403" cy="1647" r="8" fill="#F5EDFF" stroke="#9B6AC9" stroke-width="4"/>
+<rect x="1265" y="1443" width="218" height="125" rx="30" fill="#020713" opacity=".23"/>
+<rect x="1260" y="1436" width="218" height="125" rx="30" fill="#F5EDFF" stroke="#9B6AC9" stroke-width="5.5"/>
+<text text-anchor="middle" x="1374.0" y="1517.3" fill="#302046" font-family="DejaVu Sans" font-size="39" font-weight="700"><tspan x="1374.0" dy="0">Waouh !</tspan></text></g>
+<g id="CH05_P02_L010" data-frame="4" data-speaker="Магнитное существо" data-kind="magnet2">
+<path d="M 2250 2210 Q 2280.0 2140.0 2270 2070" fill="none" stroke="#24B2CC" stroke-width="10" stroke-linecap="round"/>
+<circle cx="2270" cy="2070" r="8" fill="#DFF6FF" stroke="#24B2CC" stroke-width="4"/>
+<rect x="1542" y="2216" width="818" height="206" rx="30" fill="#020713" opacity=".23"/>
+<rect x="1537" y="2209" width="818" height="206" rx="30" fill="#DFF6FF" stroke="#24B2CC" stroke-width="5.5"/>
+<circle cx="1557" cy="2229" r="6" fill="#EF9D47"/>
+<text text-anchor="middle" x="1951.0" y="2280.6" fill="#103E5C" font-family="DejaVu Sans" font-size="41" font-weight="700"><tspan x="1951.0" dy="0">Nous pouvons jouer un peu avec</tspan><tspan x="1951.0" dy="51">la gravité et l’espace. Tu peux</tspan><tspan x="1951.0" dy="51">essayer, toi aussi !</tspan></text></g>
+<g id="CH05_P02_L011" data-frame="5" data-speaker="Мика" data-kind="mika">
+<path d="M 400 2615 Q 363.5 2707.5 367 2800" fill="none" stroke="#9B6AC9" stroke-width="10" stroke-linecap="round"/>
+<circle cx="367" cy="2800" r="8" fill="#F5EDFF" stroke="#9B6AC9" stroke-width="4"/>
+<rect x="89" y="2483" width="832" height="160" rx="30" fill="#020713" opacity=".23"/>
+<rect x="84" y="2476" width="832" height="160" rx="30" fill="#F5EDFF" stroke="#9B6AC9" stroke-width="5.5"/>
+<text text-anchor="middle" x="505.0" y="2550.1" fill="#302046" font-family="DejaVu Sans" font-size="42" font-weight="700"><tspan x="505.0" dy="0">Vous m’attendiez ? Alors, vous</tspan><tspan x="505.0" dy="52">savez d’où je viens ?</tspan></text></g>
+<g id="CH05_P02_L012" data-frame="5" data-speaker="Магнитное существо" data-kind="magnet">
+<path d="M 965 3072 Q 945 3033 900 3025" fill="none" stroke="#2BBBD2" stroke-width="9" stroke-linecap="round"/><circle cx="900" cy="3025" r="7" fill="#E4FAFD" stroke="#2BBBD2" stroke-width="3"/><rect x="355" y="3079" width="745" height="294" rx="25" fill="#020713" opacity=".23"/><rect x="350" y="3072" width="745" height="294" rx="25" fill="#E4FAFD" stroke="#2BBBD2" stroke-width="5.5"/><circle cx="372" cy="3093" r="6" fill="#E78C35"/><text text-anchor="middle" x="727.5" y="3131.6" fill="#103D56" font-family="DejaVu Sans" font-size="34" font-weight="700"><tspan x="727.5" dy="0">Pas si vite, nous allons tout</tspan><tspan x="727.5" dy="42">t’expliquer. Rends-toi d’abord à</tspan><tspan x="727.5" dy="42">notre station, la Pyramide inversée.</tspan><tspan x="727.5" dy="42">Elle conserve des connaissances</tspan><tspan x="727.5" dy="42">qui t’aideront à comprendre ce qui</tspan><tspan x="727.5" dy="42">se passe.</tspan></text></g>
+<g id="CH05_P02_L013" data-frame="6" data-speaker="Рассказчик" data-kind="author">
+<rect x="1025" y="3389" width="1450" height="99" rx="22" fill="#020713" opacity=".23"/>
+<rect x="1020" y="3382" width="1450" height="99" rx="22" fill="#102B51" stroke="#48C4DB" stroke-width="5.5"/>
+<rect x="1045" y="3395" width="74" height="7" rx="3.5" fill="#FBA54F"/>
+<rect x="2368" y="3464" width="70" height="7" rx="3.5" fill="#FBA54F"/>
+<text text-anchor="middle" x="1750.0" y="3448.3" fill="#F9FBFF" font-family="DejaVu Sans" font-size="32" font-weight="700"><tspan x="1750.0" dy="0">La Pyramide inversée — station d’archives de la civilisation magnétique.</tspan></text></g>
+</svg>

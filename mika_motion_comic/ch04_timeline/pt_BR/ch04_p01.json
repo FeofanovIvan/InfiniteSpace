@@ -1,0 +1,226 @@
+{
+  "schema_version": 3,
+  "page_id": "CH04_P01",
+  "locale": "pt_BR",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch04_p01_languages/ch04_p01_pt_BR.webp",
+  "native_scene_panels": [
+    "p41_professor_bath_walk",
+    "p41_professor_bath_rest",
+    "p41_phase_bath_surprise",
+    "p41_pirate_ships",
+    "p41_flagship_threat"
+  ],
+  "panel_bounds": {
+    "p41_professor_bath_walk": [
+      0.03,
+      0.027,
+      0.464,
+      0.217
+    ],
+    "p41_professor_bath_rest": [
+      0.515,
+      0.027,
+      0.454,
+      0.216
+    ],
+    "p41_phase_bath_surprise": [
+      0.03,
+      0.252,
+      0.939,
+      0.224
+    ],
+    "p41_pirate_ships": [
+      0.03,
+      0.493,
+      0.939,
+      0.15
+    ],
+    "p41_flagship_threat": [
+      0.03,
+      0.66,
+      0.939,
+      0.31
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH04_P01_L001",
+      "frame_id": "CH04_P01_F01",
+      "panel_id": "p41_professor_bath_walk",
+      "speaker_id": "CHR_015",
+      "kind": "thought",
+      "spoken_text": "Alguém já encheu a banheira! Preciso chegar primeiro!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P01_L001_pt_BR.mp3",
+      "audio_duration_s": 3.631,
+      "camera_target": [
+        0.261,
+        0.108,
+        0.18
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c9e0c56aa2310ce3cb9a19ae08a0922c32da34bc6b3829a6e787a1677b2bff85"
+    },
+    {
+      "line_id": "CH04_P01_L002",
+      "frame_id": "CH04_P01_F02",
+      "panel_id": "p41_professor_bath_rest",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Ah, que água quentinha… Que maravilha!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P01_L002_pt_BR.mp3",
+      "audio_duration_s": 4.441,
+      "camera_target": [
+        0.704,
+        0.124,
+        0.18
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "723f6e52ac89a484eaae251f3dd30d5a1476deb3aed1d4e292361294aeede2b6"
+    },
+    {
+      "line_id": "CH04_P01_L003",
+      "frame_id": "CH04_P01_F03",
+      "panel_id": "p41_phase_bath_surprise",
+      "speaker_id": "CHR_015",
+      "kind": "shout",
+      "spoken_text": "AAAAH!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P01_L003_pt_BR.mp3",
+      "audio_duration_s": 1.149,
+      "camera_target": [
+        0.29,
+        0.35,
+        0.199
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "23189b46036ef94fc194c695e6a862e2604f565d814f804301159294e6cae348"
+    },
+    {
+      "line_id": "CH04_P01_L004",
+      "frame_id": "CH04_P01_F03",
+      "panel_id": "p41_phase_bath_surprise",
+      "speaker_id": "CHR_029",
+      "kind": "nonverbal_sfx",
+      "spoken_text": "Бур-бур… Ш-ш-ш!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/shared_sfx/SFX_CH04_P01_F03_PHASE_BATH_GURGLE.mp3",
+      "audio_duration_s": 1.536,
+      "camera_target": [
+        0.736,
+        0.349,
+        0.191
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "shared_sfx",
+      "sha256": "36d539c817a707f4374c3cdd0d64530ea4912bf5453adc6da4a09c4bde15b7a9"
+    },
+    {
+      "line_id": "CH04_P01_L005",
+      "frame_id": "CH04_P01_F04",
+      "panel_id": "p41_pirate_ships",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Naquele instante, duas naves desconhecidas atacaram o cruzador.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P01_L005_pt_BR.mp3",
+      "audio_duration_s": 4.284,
+      "camera_target": [
+        0.27,
+        0.558,
+        0.148
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "439b74c4ae8ebd1bc3f5b001756302e3e35f708cdd36d6966701c35b29afc970"
+    },
+    {
+      "line_id": "CH04_P01_L006",
+      "frame_id": "CH04_P01_F05",
+      "panel_id": "p41_flagship_threat",
+      "speaker_id": "CHR_030",
+      "kind": "radio_signal",
+      "spoken_text": "SINAL RECEBIDO\nParem! Abram a escotilha!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P01_L006_pt_BR.mp3",
+      "audio_duration_s": 3.396,
+      "camera_target": [
+        0.39,
+        0.745,
+        0.285
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "96153251f15733e27b71b127feeb8c170dc035535c74672d379cb232583fb2e8"
+    },
+    {
+      "line_id": "CH04_P01_L007",
+      "frame_id": "CH04_P01_F05",
+      "panel_id": "p41_flagship_threat",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Mika! O que vamos fazer?!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P01_L007_pt_BR.mp3",
+      "audio_duration_s": 2.351,
+      "camera_target": [
+        0.775,
+        0.792,
+        0.246
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "14759967e504ffab37b7d2771b18178a1bfa989232d4ba94f9025d643e3e724a"
+    },
+    {
+      "line_id": "CH04_P01_L008",
+      "frame_id": "CH04_P01_F05",
+      "panel_id": "p41_flagship_threat",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Precisamos deixá-los entrar. Não podemos arriscar toda a tripulação!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P01_L008_pt_BR.mp3",
+      "audio_duration_s": 4.598,
+      "camera_target": [
+        0.429,
+        0.858,
+        0.26
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e2d28ef9d715c3d47c256cdff22522ca1becfb67d14581d02d5d8e1ec4341b67"
+    }
+  ],
+  "display_only": [],
+  "direction_note": "Existing four-panel warp interlude and subsequent flagship panel remain separate; shared bath gurgle follows scream."
+}

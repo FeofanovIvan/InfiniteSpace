@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<!-- NEBULA v3: transparent editable Russian overlay. The original illustrations are NEVER embedded. -->
+<g id="CH04_P02_L001" data-speaker="Автор" data-kind="caption">
+<rect x="89" y="10" width="2295" height="85" rx="19" fill="#13102A" opacity="0.12"/>
+<rect x="86" y="5" width="2295" height="85" rx="19" fill="#FFF9F0" stroke="#6973AB" stroke-width="5"/>
+<rect x="102" y="18" width="59" height="6" rx="3" fill="#F4A54F"/>
+<rect x="170" y="18" width="20" height="6" rx="3" fill="#43CAE1"/>
+<text x="111.0" y="57.36" font-family="Noto Sans" font-stretch="semi-condensed" font-size="29" font-weight="700" fill="#2C2948">Tall, lizard-like strangers burst onto the ship. Firm but surprisingly polite, they ushered everyone into a cage.</text>
+</g>
+<g id="CH04_P02_L002" data-speaker="Ящер-пират" data-kind="speech">
+<path d="M 1415,443 Q 1409,559 1450,605 Q 1448,561 1454,445 Z" fill="#FFECE0" stroke="#C97946" stroke-width="5" stroke-linejoin="round"/>
+<rect x="1351" y="348" width="264" height="107" rx="31" fill="#121127" opacity="0.13"/>
+<rect x="1348" y="343" width="264" height="107" rx="31" fill="#FFECE0" stroke="#C97946" stroke-width="5"/>
+<path d="M 1379 359 h 60" fill="none" stroke="#F18F45" stroke-width="7" stroke-linecap="round"/>
+<text x="1373.0" y="408.28" font-family="Noto Sans" font-stretch="semi-condensed" font-size="38" font-weight="700" fill="#4A302A">After you.</text>
+</g>
+<g id="CH04_P02_L003" data-speaker="Профессор" data-kind="speech">
+<path d="M 299,263 Q 318,356 362,428 Q 357,358 338,265 Z" fill="#FFF2C5" stroke="#C49432" stroke-width="5" stroke-linejoin="round"/>
+<rect x="95" y="153" width="370" height="132" rx="31" fill="#121127" opacity="0.13"/>
+<rect x="92" y="148" width="370" height="132" rx="31" fill="#FFF2C5" stroke="#C49432" stroke-width="5"/>
+<path d="M 123 164 h 60" fill="none" stroke="#F2BB54" stroke-width="7" stroke-linecap="round"/>
+<text x="117.0" y="205.30" font-family="Noto Sans" font-stretch="semi-condensed" font-size="29" font-weight="700" fill="#42334B">What will happen to</text>
+<text x="117.0" y="240.68" font-family="Noto Sans" font-stretch="semi-condensed" font-size="29" font-weight="700" fill="#42334B">us?!</text>
+</g>
+<g id="CH04_P02_L004" data-speaker="Грибной спутник" data-kind="sfx">
+<path d="M 600,226 Q 598,251 609,270 Q 637,253 639,228 Z" fill="#F9E4FD" stroke="#C784CE" stroke-width="5" stroke-linejoin="round"/>
+<rect x="476" y="132" width="274" height="99" rx="41" fill="#F9E4FD" stroke="#C784CE" stroke-width="5"/>
+<ellipse cx="511" cy="149" rx="14" ry="5" fill="#F3C7F8"/>
+<text x="501.0" y="191.11" font-family="Noto Sans" font-stretch="semi-condensed" font-size="31" font-weight="700" fill="#633B6A">Буль-буль…</text>
+</g>
+<g id="CH04_P02_L005" data-speaker="Фазовый принц" data-kind="sfx">
+<path d="M 921,284 Q 916,336 963,404 Q 955,338 960,286 Z" fill="#E2FBFE" stroke="#3ABBD1" stroke-width="5" stroke-linejoin="round"/>
+<rect x="806" y="200" width="241" height="92" rx="41" fill="#E2FBFE" stroke="#3ABBD1" stroke-width="5"/>
+<ellipse cx="841" cy="217" rx="14" ry="5" fill="#A6EEF5"/>
+<text x="831.0" y="254.06" font-family="Noto Sans" font-stretch="semi-condensed" font-size="26" font-weight="700" fill="#205769">Ш-ш-ш…</text>
+</g>
+<g id="CH04_P02_L006" data-speaker="Мика" data-kind="thought">
+<path d="M 1048 353 Q 1072 307 1123 337 Q 1167 305 1203 336 Q 1255 321 1279 360 Q 1348 371 1326 422 Q 1351 470 1296 493 Q 1265 526 1228 499 Q 1184 531 1138 500 Q 1073 522 1053 487 Q 1009 460 1026 434 Q 1008 380 1048 353 Z" fill="#EEE1FF" stroke="#9D75C6" stroke-width="5"/>
+<circle cx="1199" cy="538" r="16" fill="#EEE1FF" stroke="#9D75C6" stroke-width="4"/>
+<circle cx="1190" cy="574" r="11" fill="#EEE1FF" stroke="#9D75C6" stroke-width="4"/>
+<circle cx="1184" cy="605" r="7" fill="#EEE1FF" stroke="#9D75C6" stroke-width="4"/>
+<text x="1045.0" y="404.70" font-family="Noto Sans" font-stretch="semi-condensed" font-size="36" font-weight="700" fill="#36264F">I'll never get</text>
+<text x="1045.0" y="448.62" font-family="Noto Sans" font-stretch="semi-condensed" font-size="36" font-weight="700" fill="#36264F">home…</text>
+</g>
+<g id="CH04_P02_L007" data-speaker="Автор" data-kind="caption">
+<rect x="85" y="929" width="1135" height="118" rx="19" fill="#13102A" opacity="0.12"/>
+<rect x="82" y="924" width="1135" height="118" rx="19" fill="#FFF9F0" stroke="#6973AB" stroke-width="5"/>
+<rect x="98" y="937" width="59" height="6" rx="3" fill="#F4A54F"/>
+<rect x="166" y="937" width="20" height="6" rx="3" fill="#43CAE1"/>
+<text x="107.0" y="991.06" font-family="Noto Sans" font-stretch="semi-condensed" font-size="26" font-weight="700" fill="#2C2948">They took everyone to the pirate station Titan's Head and kept them under guard.</text>
+</g>
+<g id="CH04_P02_L008" data-speaker="Мика" data-kind="speech">
+<path d="M 429,1370 Q 570,1436 665,1437 Q 609,1438 468,1372 Z" fill="#F2EBFF" stroke="#9670C7" stroke-width="5" stroke-linejoin="round"/>
+<rect x="131" y="1265" width="358" height="141" rx="31" fill="#121127" opacity="0.13"/>
+<rect x="128" y="1260" width="358" height="141" rx="31" fill="#F2EBFF" stroke="#9670C7" stroke-width="5"/>
+<path d="M 159 1276 h 60" fill="none" stroke="#BB9AFF" stroke-width="7" stroke-linecap="round"/>
+<text x="153.0" y="1320.60" font-family="Noto Sans" font-stretch="semi-condensed" font-size="33" font-weight="700" fill="#30234F">What do we do</text>
+<text x="153.0" y="1360.86" font-family="Noto Sans" font-stretch="semi-condensed" font-size="33" font-weight="700" fill="#30234F">now?</text>
+</g>
+<g id="CH04_P02_L009" data-speaker="Профессор" data-kind="speech">
+<path d="M 857,1236 Q 826,1305 815,1360 Q 865,1307 896,1238 Z" fill="#FFF2C5" stroke="#C49432" stroke-width="5" stroke-linejoin="round"/>
+<rect x="834" y="1113" width="345" height="147" rx="31" fill="#121127" opacity="0.13"/>
+<rect x="831" y="1108" width="345" height="147" rx="31" fill="#FFF2C5" stroke="#C49432" stroke-width="5"/>
+<path d="M 862 1124 h 60" fill="none" stroke="#F2BB54" stroke-width="7" stroke-linecap="round"/>
+<text x="856.0" y="1171.00" font-family="Noto Sans" font-stretch="semi-condensed" font-size="35" font-weight="700" fill="#42334B">We need a</text>
+<text x="856.0" y="1213.70" font-family="Noto Sans" font-stretch="semi-condensed" font-size="35" font-weight="700" fill="#42334B">plan…</text>
+</g>
+<g id="CH04_P02_L010" data-speaker="Ящер-пират" data-kind="speech">
+<path d="M 1987,1085 Q 1908,1158 1889,1201 Q 1947,1160 2026,1087 Z" fill="#FFECE0" stroke="#C97946" stroke-width="5" stroke-linejoin="round"/>
+<rect x="1998" y="982" width="394" height="138" rx="31" fill="#121127" opacity="0.13"/>
+<rect x="1995" y="977" width="394" height="138" rx="31" fill="#FFECE0" stroke="#C97946" stroke-width="5"/>
+<path d="M 2026 993 h 60" fill="none" stroke="#F18F45" stroke-width="7" stroke-linecap="round"/>
+<text x="2020.0" y="1036.70" font-family="Noto Sans" font-stretch="semi-condensed" font-size="31" font-weight="700" fill="#4A302A">Well, is your room</text>
+<text x="2020.0" y="1074.52" font-family="Noto Sans" font-stretch="semi-condensed" font-size="31" font-weight="700" fill="#4A302A">comfortable?</text>
+</g>
+<g id="CH04_P02_L011" data-speaker="Мика" data-kind="speech">
+<path d="M 1419,1440 Q 1443,1394 1470,1367 Q 1482,1396 1458,1442 Z" fill="#F2EBFF" stroke="#9670C7" stroke-width="5" stroke-linejoin="round"/>
+<rect x="1304" y="1436" width="512" height="178" rx="31" fill="#121127" opacity="0.13"/>
+<rect x="1301" y="1431" width="512" height="178" rx="31" fill="#F2EBFF" stroke="#9670C7" stroke-width="5"/>
+<path d="M 1332 1447 h 60" fill="none" stroke="#BB9AFF" stroke-width="7" stroke-linecap="round"/>
+<text x="1335.0" y="1490.88" font-family="Noto Sans" font-stretch="semi-condensed" font-size="32" font-weight="700" fill="#30234F">You're just like that one</text>
+<text x="1335.0" y="1529.92" font-family="Noto Sans" font-stretch="semi-condensed" font-size="32" font-weight="700" fill="#30234F">from the Small Magellanic</text>
+<text x="1335.0" y="1568.96" font-family="Noto Sans" font-stretch="semi-condensed" font-size="32" font-weight="700" fill="#30234F">Cloud!</text>
+</g>
+<g id="CH04_P02_L012_a" data-speaker="Ящер-пират" data-kind="speech">
+<rect x="98" y="1722" width="429" height="155" rx="31" fill="#121127" opacity="0.13"/>
+<rect x="95" y="1717" width="429" height="155" rx="31" fill="#FFECE0" stroke="#C97946" stroke-width="5"/>
+<path d="M 126 1733 h 60" fill="none" stroke="#F18F45" stroke-width="7" stroke-linecap="round"/>
+<text x="120.0" y="1783.70" font-family="Noto Sans" font-stretch="semi-condensed" font-size="36" font-weight="700" fill="#4A302A">Sargon?! What</text>
+<text x="120.0" y="1827.62" font-family="Noto Sans" font-stretch="semi-condensed" font-size="36" font-weight="700" fill="#4A302A">happened to him?</text>
+</g>
+<g id="CH04_P02_L012_b" data-speaker="Ящер-пират" data-kind="speech">
+<path d="M 437,2109 Q 484,2087 538,2068 Q 523,2089 476,2111 Z" fill="#FFECE0" stroke="#C97946" stroke-width="5" stroke-linejoin="round"/>
+<rect x="97" y="2075" width="372" height="213" rx="31" fill="#121127" opacity="0.13"/>
+<rect x="94" y="2070" width="372" height="213" rx="31" fill="#FFECE0" stroke="#C97946" stroke-width="5"/>
+<path d="M 125 2086 h 60" fill="none" stroke="#F18F45" stroke-width="7" stroke-linecap="round"/>
+<text x="119.0" y="2166.30" font-family="Noto Sans" font-stretch="semi-condensed" font-size="34" font-weight="700" fill="#4A302A">He said he had a</text>
+<text x="119.0" y="2207.78" font-family="Noto Sans" font-stretch="semi-condensed" font-size="34" font-weight="700" fill="#4A302A">plan to get rich!</text>
+</g>
+<g id="CH04_P02_L013" data-speaker="Фазовый принц" data-kind="sfx">
+<path d="M 1398,1812 Q 1408,1840 1473,1872 Q 1447,1842 1437,1814 Z" fill="#E2FBFE" stroke="#3ABBD1" stroke-width="5" stroke-linejoin="round"/>
+<rect x="1297" y="1716" width="293" height="101" rx="41" fill="#E2FBFE" stroke="#3ABBD1" stroke-width="5"/>
+<ellipse cx="1332" cy="1733" rx="14" ry="5" fill="#A6EEF5"/>
+<text x="1322.0" y="1776.73" font-family="Noto Sans" font-stretch="semi-condensed" font-size="33" font-weight="700" fill="#205769">Шу-у… Буль…</text>
+</g>
+<g id="CH04_P02_L015" data-speaker="Мика (переводит)" data-kind="trans">
+<rect x="87" y="2287" width="1628" height="194" rx="19" fill="#13102A" opacity="0.12"/>
+<rect x="84" y="2282" width="1628" height="194" rx="19" fill="#122C51" stroke="#45D7E8" stroke-width="5"/>
+<rect x="100" y="2295" width="59" height="6" rx="3" fill="#F2AB56"/>
+<rect x="168" y="2295" width="20" height="6" rx="3" fill="#2B6683"/>
+<text x="109" y="2320" font-family="Noto Sans" font-stretch="semi-condensed" font-size="23" font-weight="700" letter-spacing="1.2" fill="#F2AB56">MIKA · RELAYING HIS FRIEND'S WORDS</text>
+<text x="118.0" y="2380.05" font-family="Noto Sans" font-stretch="semi-condensed" font-size="33" font-weight="700" fill="#FFFFFF">Our friend says Sargon is being held prisoner. Help us escape, and he'll try to arrange Sargon's</text>
+<text x="118.0" y="2420.31" font-family="Noto Sans" font-stretch="semi-condensed" font-size="33" font-weight="700" fill="#FFFFFF">release.</text>
+</g>
+<g id="CH04_P02_L014" data-speaker="Ящер-пират" data-kind="speech">
+<path d="M 2111,2306 Q 2120,2253 2156,2241 Q 2159,2255 2150,2308 Z" fill="#FFECE0" stroke="#C97946" stroke-width="5" stroke-linejoin="round"/>
+<rect x="1743" y="2302" width="653" height="179" rx="31" fill="#121127" opacity="0.13"/>
+<rect x="1740" y="2297" width="653" height="179" rx="31" fill="#FFECE0" stroke="#C97946" stroke-width="5"/>
+<path d="M 1771 2313 h 60" fill="none" stroke="#F18F45" stroke-width="7" stroke-linecap="round"/>
+<text x="1774.0" y="2376.30" font-family="Noto Sans" font-stretch="semi-condensed" font-size="34" font-weight="700" fill="#4A302A">Agreed! But first, I need a bite to</text>
+<text x="1774.0" y="2417.78" font-family="Noto Sans" font-stretch="semi-condensed" font-size="34" font-weight="700" fill="#4A302A">eat!</text>
+</g>
+<g id="CH04_P02_L016" data-speaker="Автор" data-kind="caption">
+<rect x="90" y="3315" width="2290" height="177" rx="19" fill="#13102A" opacity="0.12"/>
+<rect x="87" y="3310" width="2290" height="177" rx="19" fill="#FFF9F0" stroke="#6973AB" stroke-width="5"/>
+<rect x="104" y="3325" width="59" height="6" rx="3" fill="#F4A54F"/>
+<rect x="172" y="3325" width="20" height="6" rx="3" fill="#43CAE1"/>
+<text x="1232.0" y="3384.40" font-family="Noto Sans" font-size="47" font-weight="700" fill="#2C2948" text-anchor="middle">After a quick bite, the lizard helped our friends escape. Soon the whole group reached their</text><text x="1232.0" y="3441.74" font-family="Noto Sans" font-size="47" font-weight="700" fill="#2C2948" text-anchor="middle">starship.</text></g>
+</svg>

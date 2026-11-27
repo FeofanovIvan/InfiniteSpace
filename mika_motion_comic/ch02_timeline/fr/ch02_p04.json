@@ -1,0 +1,296 @@
+{
+  "schema_version": 3,
+  "page_id": "CH02_P04",
+  "locale": "fr",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch02_p04_languages/ch02_p04_fr.webp",
+  "native_scene_panels": [
+    "p24_station_exterior",
+    "p24_fungal_garden",
+    "p24_factory",
+    "p24_reclaimed_city",
+    "p24_fungus_portrait",
+    "p24_meteor",
+    "p24_mycelium_net",
+    "p24_mika_smiles",
+    "p24_professor_and_fungus"
+  ],
+  "panel_bounds": {
+    "p24_station_exterior": [
+      0.021,
+      0.015,
+      0.96,
+      0.125
+    ],
+    "p24_fungal_garden": [
+      0.024,
+      0.158,
+      0.548,
+      0.229
+    ],
+    "p24_factory": [
+      0.607,
+      0.159,
+      0.367,
+      0.103
+    ],
+    "p24_reclaimed_city": [
+      0.609,
+      0.273,
+      0.366,
+      0.121
+    ],
+    "p24_fungus_portrait": [
+      0.022,
+      0.413,
+      0.299,
+      0.319
+    ],
+    "p24_meteor": [
+      0.349,
+      0.414,
+      0.302,
+      0.115
+    ],
+    "p24_mycelium_net": [
+      0.349,
+      0.545,
+      0.302,
+      0.189
+    ],
+    "p24_mika_smiles": [
+      0.682,
+      0.418,
+      0.293,
+      0.307
+    ],
+    "p24_professor_and_fungus": [
+      0.024,
+      0.752,
+      0.952,
+      0.23
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH02_P04_L001",
+      "frame_id": "CH02_P04_F01",
+      "panel_id": "p24_station_exterior",
+      "speaker_id": "CHR_004",
+      "kind": "intro",
+      "spoken_text": "La station Tarentule est un vaisseau-laboratoire vivant de la civilisation des champignons.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P04_L001_fr.mp3",
+      "audio_duration_s": 5.329,
+      "camera_target": [
+        0.5,
+        0.074,
+        0.123
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f6f586e13cd7b66b9005bc68b769ea0c2c3f9a279fc03b9cdf3c92bd1d87b697"
+    },
+    {
+      "line_id": "CH02_P04_L002",
+      "frame_id": "CH02_P04_F02",
+      "panel_id": "p24_fungal_garden",
+      "speaker_id": "CHR_023",
+      "kind": "station_greeting",
+      "spoken_text": "Bonjour, Mika ! Mes amis m’ont beaucoup parlé de toi. Notre histoire pourra peut-être t’aider à trouver des réponses.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P04_L002_fr.mp3",
+      "audio_duration_s": 6.687,
+      "camera_target": [
+        0.3,
+        0.28,
+        0.218
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fdd505ed5cfea7550547e2e8ad79527e7647e2fc5bc4d97db282eee5a89a1e75"
+    },
+    {
+      "line_id": "CH02_P04_L003",
+      "frame_id": "CH02_P04_F03",
+      "panel_id": "p24_factory",
+      "speaker_id": "CHR_023",
+      "kind": "old_civilization",
+      "spoken_text": "Autrefois, une grande civilisation prospérait sur Molia.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P04_L003_fr.mp3",
+      "audio_duration_s": 4.362,
+      "camera_target": [
+        0.792,
+        0.211,
+        0.1
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9766328c27454f34b275ed4db94fa8872c37a6b162e8cca8ad64ff9c0ae5c1cd"
+    },
+    {
+      "line_id": "CH02_P04_L004",
+      "frame_id": "CH02_P04_F04",
+      "panel_id": "p24_reclaimed_city",
+      "speaker_id": "CHR_023",
+      "kind": "ecological_collapse",
+      "spoken_text": "Mais sa soif de ressources et ses montagnes de déchets ont détruit son monde.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P04_L004_fr.mp3",
+      "audio_duration_s": 4.598,
+      "camera_target": [
+        0.791,
+        0.332,
+        0.118
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "54363ea4ea32d06e358737ef7d634230a1428f92eba3b301359ecaacd77997c6"
+    },
+    {
+      "line_id": "CH02_P04_L005",
+      "frame_id": "CH02_P04_F05",
+      "panel_id": "p24_fungus_portrait",
+      "speaker_id": "CHR_023",
+      "kind": "silence",
+      "spoken_text": "La planète est devenue déserte. La vie semblait avoir disparu pour toujours…",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P04_L005_fr.mp3",
+      "audio_duration_s": 5.564,
+      "camera_target": [
+        0.17,
+        0.488,
+        0.117
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "bf71be03d31b629b5d3425f17eb6da4501269e92c3c703421cd271beae917bbe"
+    },
+    {
+      "line_id": "CH02_P04_L006",
+      "frame_id": "CH02_P04_F06",
+      "panel_id": "p24_meteor",
+      "speaker_id": "CHR_023",
+      "kind": "meteor_ancestors",
+      "spoken_text": "Plus tard, une météorite a amené ici nos lointains ancêtres.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P04_L006_fr.mp3",
+      "audio_duration_s": 4.519,
+      "camera_target": [
+        0.505,
+        0.46,
+        0.11
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fcc6407bec8b02f6917e2c1f41f7c393f8684f368a3d895b997c8f9f6ab747a8"
+    },
+    {
+      "line_id": "CH02_P04_L007",
+      "frame_id": "CH02_P04_F07",
+      "panel_id": "p24_mycelium_net",
+      "speaker_id": "CHR_023",
+      "kind": "network_origin",
+      "spoken_text": "Ils se sont unis en un immense réseau intelligent. C’est ainsi qu’est né notre peuple.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P04_L007_fr.mp3",
+      "audio_duration_s": 5.407,
+      "camera_target": [
+        0.501,
+        0.612,
+        0.14
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "72bdc1675d4afa25205063b4ec4074b0787eb65d4e692480229fe99cbaa9752b"
+    },
+    {
+      "line_id": "CH02_P04_L008",
+      "frame_id": "CH02_P04_F08",
+      "panel_id": "p24_mika_smiles",
+      "speaker_id": "CHR_023",
+      "kind": "new_companion",
+      "spoken_text": "Je vais envoyer une partie de moi avec toi. Ensemble, nous chercherons le secret de la tempête.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P04_L008_fr.mp3",
+      "audio_duration_s": 6.113,
+      "camera_target": [
+        0.817,
+        0.557,
+        0.113
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8ab996859982d3bce545fd65ddd8315c2fb9e3ef9d4cbed6eb3dc9d48e975197"
+    },
+    {
+      "line_id": "CH02_P04_L009",
+      "frame_id": "CH02_P04_F08",
+      "panel_id": "p24_mika_smiles",
+      "speaker_id": "CHR_001",
+      "kind": "mika_thanks",
+      "spoken_text": "Merci ! Où allons-nous maintenant ?",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P04_L009_fr.mp3",
+      "audio_duration_s": 2.351,
+      "camera_target": [
+        0.817,
+        0.565,
+        0.113
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "ea1b3363f7b6b2069c977ed1180cbc5fb2065d179cc26b9efe76d31d416dec4b"
+    },
+    {
+      "line_id": "CH02_P04_L010",
+      "frame_id": "CH02_P04_F09",
+      "panel_id": "p24_professor_and_fungus",
+      "speaker_id": "CHR_004",
+      "kind": "destination_narration",
+      "spoken_text": "Tarentule leur a indiqué le chemin vers le Petit Nuage de Magellan. Un nouvel ami à bord, l’équipage était prêt pour d’autres aventures !",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P04_L010_fr.mp3",
+      "audio_duration_s": 7.628,
+      "camera_target": [
+        0.505,
+        0.862,
+        0.228
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "221ca055aebf3f9a28a8a1e65e54a150dc2df3a3271afa9c164a0966c7fd1577"
+    }
+  ]
+}

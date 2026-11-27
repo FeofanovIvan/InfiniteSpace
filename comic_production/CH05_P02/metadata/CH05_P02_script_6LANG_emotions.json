@@ -1,0 +1,1217 @@
+{
+  "schema_version": "1.0",
+  "page_id": "CH05_P02",
+  "page_title_ru": "Незнакомое не всегда опасно",
+  "source_pdf": "5-2(2).pdf",
+  "approved_ru_source": "CH05_P02_RU_APPROVAL_v3; L012 moved in v4 as requested",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "line_count": 13,
+  "lines": [
+    {
+      "line_id": "CH05_P02_L001",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F01",
+      "character_id": "CHR_001",
+      "element_type": "thought",
+      "emotion": "сосредоточенно, коротко",
+      "tts_required": true,
+      "translations": {
+        "ru": "Нужно настроить симулятор.",
+        "en": "I need to set up the simulator.",
+        "pt_BR": "Preciso ajustar o simulador.",
+        "es": "Tengo que ajustar el simulador.",
+        "fr": "Il faut régler le simulateur.",
+        "de": "Ich muss den Simulator einstellen."
+      }
+    },
+    {
+      "line_id": "CH05_P02_L002",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F02",
+      "character_id": "CHR_004",
+      "element_type": "narration",
+      "emotion": "мягко, с облегчением — повествование",
+      "tts_required": true,
+      "translations": {
+        "ru": "Мика понял: незнакомое не обязательно опасно. Иногда достаточно научиться понимать друг друга.",
+        "en": "Mika realized: the unfamiliar is not always dangerous. Sometimes we just need to understand each other.",
+        "pt_BR": "Mika percebeu que o desconhecido nem sempre é perigoso. Às vezes, basta aprender a entender o outro.",
+        "es": "Mika comprendió que lo desconocido no siempre es peligroso. A veces, basta con aprender a entendernos.",
+        "fr": "Mika comprit que l’inconnu n’est pas forcément dangereux. Parfois, il suffit d’apprendre à se comprendre.",
+        "de": "Mika verstand: Nicht alles Unbekannte ist gefährlich. Manchmal muss man einander nur verstehen lernen."
+      }
+    },
+    {
+      "line_id": "CH05_P02_L003",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F02",
+      "character_id": "CHR_034",
+      "element_type": "dialogue",
+      "emotion": "дружелюбное краткое приветствие",
+      "tts_required": true,
+      "translations": {
+        "ru": "Привет!",
+        "en": "Hello!",
+        "pt_BR": "Olá!",
+        "es": "¡Hola!",
+        "fr": "Bonjour !",
+        "de": "Hallo!"
+      }
+    },
+    {
+      "line_id": "CH05_P02_L004",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F02",
+      "character_id": "CHR_035",
+      "element_type": "dialogue",
+      "emotion": "искренняя радость прибытия",
+      "tts_required": true,
+      "translations": {
+        "ru": "Мы рады, что ты добрался до нас.",
+        "en": "We’re so glad you made it here.",
+        "pt_BR": "Que bom que você conseguiu chegar até nós!",
+        "es": "¡Nos alegra mucho que hayas llegado hasta aquí!",
+        "fr": "Nous sommes ravis que tu aies réussi à venir jusqu’à nous !",
+        "de": "Wir freuen uns, dass du es bis zu uns geschafft hast!"
+      }
+    },
+    {
+      "line_id": "CH05_P02_L005",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F02",
+      "character_id": "CHR_036",
+      "element_type": "dialogue",
+      "emotion": "ожидание важного разговора",
+      "tts_required": true,
+      "translations": {
+        "ru": "Нам есть что тебе рассказать.",
+        "en": "We have something to tell you.",
+        "pt_BR": "Temos muita coisa para contar a você.",
+        "es": "Tenemos mucho que contarte.",
+        "fr": "Nous avons tant de choses à te raconter.",
+        "de": "Wir haben dir einiges zu erzählen."
+      }
+    },
+    {
+      "line_id": "CH05_P02_L006",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F03",
+      "character_id": "CHR_001",
+      "element_type": "dialogue",
+      "emotion": "радостное облегчение",
+      "tts_required": true,
+      "translations": {
+        "ru": "Здравствуйте! Я так рад, что вы оказались друзьями!",
+        "en": "Hello! I’m so glad you turned out to be friends!",
+        "pt_BR": "Olá! Estou tão feliz por vocês serem amigos!",
+        "es": "¡Hola! ¡Qué alegría saber que son amigos!",
+        "fr": "Bonjour ! Je suis si heureux de découvrir que vous êtes des amis !",
+        "de": "Hallo! Ich bin so froh, dass ihr Freunde seid!"
+      }
+    },
+    {
+      "line_id": "CH05_P02_L007",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F03",
+      "character_id": "CHR_035",
+      "element_type": "dialogue",
+      "emotion": "доброжелательно, увлекает за собой",
+      "tts_required": true,
+      "translations": {
+        "ru": "Не переживай. Пойдём, я тебе кое-что покажу.",
+        "en": "Don’t worry. Come along, I want to show you something.",
+        "pt_BR": "Não se preocupe. Venha, quero mostrar uma coisa!",
+        "es": "No te preocupes. Ven, quiero enseñarte algo.",
+        "fr": "Ne t’inquiète pas. Viens, je vais te montrer quelque chose.",
+        "de": "Keine Sorge. Komm mit, ich zeige dir etwas!"
+      }
+    },
+    {
+      "line_id": "CH05_P02_L008",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F04",
+      "character_id": "CHR_004",
+      "element_type": "narration",
+      "emotion": "с любопытством и восхищением — автор",
+      "tts_required": true,
+      "translations": {
+        "ru": "Жители Геоны показали Мике своё любимое занятие — эксперименты с гравитацией.",
+        "en": "The people of Geona showed Mika their favorite pastime — experimenting with gravity.",
+        "pt_BR": "Os habitantes de Geona mostraram a Mika sua atividade favorita: fazer experiências com a gravidade.",
+        "es": "Los habitantes de Geona le mostraron a Mika su pasatiempo favorito: experimentar con la gravedad.",
+        "fr": "Les habitants de Géona montrèrent à Mika leur passe-temps favori : expérimenter avec la gravité.",
+        "de": "Die Bewohner von Geona zeigten Mika ihre Lieblingsbeschäftigung: Experimente mit der Schwerkraft."
+      }
+    },
+    {
+      "line_id": "CH05_P02_L009",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F04",
+      "character_id": "CHR_001",
+      "element_type": "dialogue",
+      "emotion": "удивление и восторг",
+      "tts_required": true,
+      "translations": {
+        "ru": "Вау!",
+        "en": "Wow!",
+        "pt_BR": "Uau!",
+        "es": "¡Guau!",
+        "fr": "Waouh !",
+        "de": "Wow!"
+      }
+    },
+    {
+      "line_id": "CH05_P02_L010",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F04",
+      "character_id": "CHR_035",
+      "element_type": "dialogue",
+      "emotion": "с азартом, объясняет опыт",
+      "tts_required": true,
+      "translations": {
+        "ru": "Мы можем немного управлять гравитацией и пространством. Ты тоже можешь попробовать!",
+        "en": "We can bend gravity and space a little. You can give it a try, too!",
+        "pt_BR": "Podemos manipular um pouquinho a gravidade e o espaço. Você também pode experimentar!",
+        "es": "Podemos manipular un poco la gravedad y el espacio. ¡Tú también puedes probar!",
+        "fr": "Nous pouvons jouer un peu avec la gravité et l’espace. Tu peux essayer, toi aussi !",
+        "de": "Wir können Schwerkraft und Raum ein wenig beeinflussen. Probier es doch selbst aus!"
+      }
+    },
+    {
+      "line_id": "CH05_P02_L011",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F05",
+      "character_id": "CHR_001",
+      "element_type": "dialogue",
+      "emotion": "осторожная надежда, вопрос",
+      "tts_required": true,
+      "translations": {
+        "ru": "Вы ждали меня? Значит, вы знаете, откуда я?",
+        "en": "You were expecting me? Does that mean you know where I come from?",
+        "pt_BR": "Vocês estavam me esperando? Então sabem de onde eu vim?",
+        "es": "¿Me estaban esperando? Entonces, ¿saben de dónde vengo?",
+        "fr": "Vous m’attendiez ? Alors, vous savez d’où je viens ?",
+        "de": "Ihr habt auf mich gewartet? Dann wisst ihr, woher ich komme?"
+      }
+    },
+    {
+      "line_id": "CH05_P02_L012",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F05",
+      "character_id": "CHR_034",
+      "element_type": "dialogue",
+      "emotion": "неторопливое ободрение, лёгкая загадочность",
+      "tts_required": true,
+      "translations": {
+        "ru": "Не спеши. Мы всё объясним. Отправляйся на нашу станцию — «Перевёрнутая пирамида». Там хранятся знания, которые помогут тебе понять, что происходит.",
+        "en": "Not so fast. We’ll explain everything. Head to our station, the Inverted Pyramid. It holds the knowledge that will help you understand what’s going on.",
+        "pt_BR": "Calma, vamos explicar tudo. Primeiro, vá até nossa estação, a Pirâmide Invertida. Lá estão guardados conhecimentos que vão ajudar você a entender o que está acontecendo.",
+        "es": "Espera, te lo explicaremos todo. Primero ve a nuestra estación, la Pirámide Invertida. Allí guardamos conocimientos que te ayudarán a comprender qué está pasando.",
+        "fr": "Pas si vite, nous allons tout t’expliquer. Rends-toi d’abord à notre station, la Pyramide inversée. Elle conserve des connaissances qui t’aideront à comprendre ce qui se passe.",
+        "de": "Nur Geduld, wir erklären dir alles. Flieg zuerst zu unserer Station, der Umgekehrten Pyramide. Dort bewahren wir Wissen auf, das dir helfen wird zu verstehen, was hier geschieht."
+      }
+    },
+    {
+      "line_id": "CH05_P02_L013",
+      "page_id": "CH05_P02",
+      "frame_id": "CH05_P02_F06",
+      "character_id": "CHR_004",
+      "element_type": "caption",
+      "emotion": "нейтральное обозначение станции",
+      "tts_required": true,
+      "translations": {
+        "ru": "«Перевёрнутая пирамида» — архивная станция магнитной цивилизации.",
+        "en": "The Inverted Pyramid — an archive station of the magnetic civilization.",
+        "pt_BR": "Pirâmide Invertida — estação-arquivo da civilização magnética.",
+        "es": "Pirámide Invertida — estación-archivo de la civilización magnética.",
+        "fr": "La Pyramide inversée — station d’archives de la civilisation magnétique.",
+        "de": "Die Umgekehrte Pyramide — Archivstation der magnetischen Zivilisation."
+      }
+    }
+  ],
+  "layout_checks": {
+    "en": [
+      {
+        "font_px": 38,
+        "line_count": 3,
+        "max_text_width": 270,
+        "available_width": 285.0,
+        "fit": true,
+        "bubble": [
+          495.0,
+          107.0,
+          320.0,
+          197.0
+        ],
+        "id": "CH05_P02_L001"
+      },
+      {
+        "font_px": 43,
+        "line_count": 2,
+        "max_text_width": 1319,
+        "available_width": 1348.0,
+        "fit": true,
+        "bubble": [
+          957.0,
+          105.0,
+          1400.0,
+          166.0
+        ],
+        "id": "CH05_P02_L002"
+      },
+      {
+        "font_px": 49,
+        "line_count": 1,
+        "max_text_width": 164,
+        "available_width": 250.0,
+        "fit": true,
+        "bubble": [
+          905.0,
+          341.0,
+          285.0,
+          116.0
+        ],
+        "id": "CH05_P02_L003"
+      },
+      {
+        "font_px": 41,
+        "line_count": 2,
+        "max_text_width": 557,
+        "available_width": 563.0,
+        "fit": true,
+        "bubble": [
+          1232.0,
+          333.0,
+          615.0,
+          156.0
+        ],
+        "id": "CH05_P02_L004"
+      },
+      {
+        "font_px": 39,
+        "line_count": 2,
+        "max_text_width": 434,
+        "available_width": 455.0,
+        "fit": true,
+        "bubble": [
+          1900.0,
+          326.0,
+          490.0,
+          152.0
+        ],
+        "id": "CH05_P02_L005"
+      },
+      {
+        "font_px": 40,
+        "line_count": 3,
+        "max_text_width": 493,
+        "available_width": 520.0,
+        "fit": true,
+        "bubble": [
+          588.0,
+          1124.0,
+          555.0,
+          203.0
+        ],
+        "id": "CH05_P02_L006"
+      },
+      {
+        "font_px": 40,
+        "line_count": 3,
+        "max_text_width": 486,
+        "available_width": 551.0,
+        "fit": true,
+        "bubble": [
+          563.0,
+          2249.0,
+          586.0,
+          203.0
+        ],
+        "id": "CH05_P02_L007"
+      },
+      {
+        "font_px": 39,
+        "line_count": 3,
+        "max_text_width": 653,
+        "available_width": 713.0,
+        "fit": true,
+        "bubble": [
+          1240.0,
+          1062.0,
+          765.0,
+          204.0
+        ],
+        "id": "CH05_P02_L008"
+      },
+      {
+        "font_px": 56,
+        "line_count": 1,
+        "max_text_width": 176,
+        "available_width": 183.0,
+        "fit": true,
+        "bubble": [
+          1265.0,
+          1443.0,
+          218.0,
+          125.0
+        ],
+        "id": "CH05_P02_L009"
+      },
+      {
+        "font_px": 41,
+        "line_count": 2,
+        "max_text_width": 766,
+        "available_width": 766.0,
+        "fit": true,
+        "bubble": [
+          1542.0,
+          2216.0,
+          818.0,
+          206.0
+        ],
+        "id": "CH05_P02_L010"
+      },
+      {
+        "font_px": 38,
+        "line_count": 2,
+        "max_text_width": 772,
+        "available_width": 780.0,
+        "fit": true,
+        "bubble": [
+          89.0,
+          2483.0,
+          832.0,
+          160.0
+        ],
+        "id": "CH05_P02_L011"
+      },
+      {
+        "font_px": 35,
+        "line_count": 5,
+        "max_text_width": 672,
+        "available_width": 693.0,
+        "fit": true,
+        "bubble": [
+          355.0,
+          3079.0,
+          745.0,
+          294.0
+        ],
+        "id": "CH05_P02_L012"
+      },
+      {
+        "font_px": 32,
+        "line_count": 1,
+        "max_text_width": 1287,
+        "available_width": 1398.0,
+        "fit": true,
+        "bubble": [
+          1025.0,
+          3389.0,
+          1450.0,
+          99.0
+        ],
+        "id": "CH05_P02_L013"
+      }
+    ],
+    "pt_BR": [
+      {
+        "font_px": 38,
+        "line_count": 3,
+        "max_text_width": 222,
+        "available_width": 285.0,
+        "fit": true,
+        "bubble": [
+          495.0,
+          107.0,
+          320.0,
+          197.0
+        ],
+        "id": "CH05_P02_L001"
+      },
+      {
+        "font_px": 43,
+        "line_count": 2,
+        "max_text_width": 1344,
+        "available_width": 1348.0,
+        "fit": true,
+        "bubble": [
+          957.0,
+          105.0,
+          1400.0,
+          166.0
+        ],
+        "id": "CH05_P02_L002"
+      },
+      {
+        "font_px": 49,
+        "line_count": 1,
+        "max_text_width": 114,
+        "available_width": 250.0,
+        "fit": true,
+        "bubble": [
+          905.0,
+          341.0,
+          285.0,
+          116.0
+        ],
+        "id": "CH05_P02_L003"
+      },
+      {
+        "font_px": 37,
+        "line_count": 2,
+        "max_text_width": 553,
+        "available_width": 563.0,
+        "fit": true,
+        "bubble": [
+          1232.0,
+          333.0,
+          615.0,
+          156.0
+        ],
+        "id": "CH05_P02_L004"
+      },
+      {
+        "font_px": 39,
+        "line_count": 2,
+        "max_text_width": 425,
+        "available_width": 455.0,
+        "fit": true,
+        "bubble": [
+          1900.0,
+          326.0,
+          490.0,
+          152.0
+        ],
+        "id": "CH05_P02_L005"
+      },
+      {
+        "font_px": 40,
+        "line_count": 2,
+        "max_text_width": 520,
+        "available_width": 520.0,
+        "fit": true,
+        "bubble": [
+          588.0,
+          1124.0,
+          555.0,
+          203.0
+        ],
+        "id": "CH05_P02_L006"
+      },
+      {
+        "font_px": 40,
+        "line_count": 3,
+        "max_text_width": 493,
+        "available_width": 551.0,
+        "fit": true,
+        "bubble": [
+          563.0,
+          2249.0,
+          586.0,
+          203.0
+        ],
+        "id": "CH05_P02_L007"
+      },
+      {
+        "font_px": 35,
+        "line_count": 3,
+        "max_text_width": 703,
+        "available_width": 713.0,
+        "fit": true,
+        "bubble": [
+          1240.0,
+          1062.0,
+          765.0,
+          204.0
+        ],
+        "id": "CH05_P02_L008"
+      },
+      {
+        "font_px": 56,
+        "line_count": 1,
+        "max_text_width": 149,
+        "available_width": 183.0,
+        "fit": true,
+        "bubble": [
+          1265.0,
+          1443.0,
+          218.0,
+          125.0
+        ],
+        "id": "CH05_P02_L009"
+      },
+      {
+        "font_px": 39,
+        "line_count": 3,
+        "max_text_width": 766,
+        "available_width": 766.0,
+        "fit": true,
+        "bubble": [
+          1542.0,
+          2216.0,
+          818.0,
+          206.0
+        ],
+        "id": "CH05_P02_L010"
+      },
+      {
+        "font_px": 42,
+        "line_count": 2,
+        "max_text_width": 729,
+        "available_width": 780.0,
+        "fit": true,
+        "bubble": [
+          89.0,
+          2483.0,
+          832.0,
+          160.0
+        ],
+        "id": "CH05_P02_L011"
+      },
+      {
+        "font_px": 34,
+        "line_count": 6,
+        "max_text_width": 668,
+        "available_width": 693.0,
+        "fit": true,
+        "bubble": [
+          355.0,
+          3079.0,
+          745.0,
+          294.0
+        ],
+        "id": "CH05_P02_L012"
+      },
+      {
+        "font_px": 32,
+        "line_count": 1,
+        "max_text_width": 1146,
+        "available_width": 1398.0,
+        "fit": true,
+        "bubble": [
+          1025.0,
+          3389.0,
+          1450.0,
+          99.0
+        ],
+        "id": "CH05_P02_L013"
+      }
+    ],
+    "es": [
+      {
+        "font_px": 38,
+        "line_count": 3,
+        "max_text_width": 222,
+        "available_width": 285.0,
+        "fit": true,
+        "bubble": [
+          495.0,
+          107.0,
+          320.0,
+          197.0
+        ],
+        "id": "CH05_P02_L001"
+      },
+      {
+        "font_px": 43,
+        "line_count": 2,
+        "max_text_width": 1329,
+        "available_width": 1348.0,
+        "fit": true,
+        "bubble": [
+          957.0,
+          105.0,
+          1400.0,
+          166.0
+        ],
+        "id": "CH05_P02_L002"
+      },
+      {
+        "font_px": 49,
+        "line_count": 1,
+        "max_text_width": 169,
+        "available_width": 250.0,
+        "fit": true,
+        "bubble": [
+          905.0,
+          341.0,
+          285.0,
+          116.0
+        ],
+        "id": "CH05_P02_L003"
+      },
+      {
+        "font_px": 38,
+        "line_count": 2,
+        "max_text_width": 552,
+        "available_width": 563.0,
+        "fit": true,
+        "bubble": [
+          1232.0,
+          333.0,
+          615.0,
+          156.0
+        ],
+        "id": "CH05_P02_L004"
+      },
+      {
+        "font_px": 39,
+        "line_count": 2,
+        "max_text_width": 448,
+        "available_width": 455.0,
+        "fit": true,
+        "bubble": [
+          1900.0,
+          326.0,
+          490.0,
+          152.0
+        ],
+        "id": "CH05_P02_L005"
+      },
+      {
+        "font_px": 40,
+        "line_count": 2,
+        "max_text_width": 513,
+        "available_width": 520.0,
+        "fit": true,
+        "bubble": [
+          588.0,
+          1124.0,
+          555.0,
+          203.0
+        ],
+        "id": "CH05_P02_L006"
+      },
+      {
+        "font_px": 40,
+        "line_count": 2,
+        "max_text_width": 513,
+        "available_width": 551.0,
+        "fit": true,
+        "bubble": [
+          563.0,
+          2249.0,
+          586.0,
+          203.0
+        ],
+        "id": "CH05_P02_L007"
+      },
+      {
+        "font_px": 34,
+        "line_count": 4,
+        "max_text_width": 630,
+        "available_width": 713.0,
+        "fit": true,
+        "bubble": [
+          1240.0,
+          1062.0,
+          765.0,
+          204.0
+        ],
+        "id": "CH05_P02_L008"
+      },
+      {
+        "font_px": 47,
+        "line_count": 1,
+        "max_text_width": 180,
+        "available_width": 183.0,
+        "fit": true,
+        "bubble": [
+          1265.0,
+          1443.0,
+          218.0,
+          125.0
+        ],
+        "id": "CH05_P02_L009"
+      },
+      {
+        "font_px": 41,
+        "line_count": 3,
+        "max_text_width": 712,
+        "available_width": 766.0,
+        "fit": true,
+        "bubble": [
+          1542.0,
+          2216.0,
+          818.0,
+          206.0
+        ],
+        "id": "CH05_P02_L010"
+      },
+      {
+        "font_px": 39,
+        "line_count": 2,
+        "max_text_width": 775,
+        "available_width": 780.0,
+        "fit": true,
+        "bubble": [
+          89.0,
+          2483.0,
+          832.0,
+          160.0
+        ],
+        "id": "CH05_P02_L011"
+      },
+      {
+        "font_px": 35,
+        "line_count": 5,
+        "max_text_width": 689,
+        "available_width": 693.0,
+        "fit": true,
+        "bubble": [
+          355.0,
+          3079.0,
+          745.0,
+          294.0
+        ],
+        "id": "CH05_P02_L012"
+      },
+      {
+        "font_px": 32,
+        "line_count": 1,
+        "max_text_width": 1210,
+        "available_width": 1398.0,
+        "fit": true,
+        "bubble": [
+          1025.0,
+          3389.0,
+          1450.0,
+          99.0
+        ],
+        "id": "CH05_P02_L013"
+      }
+    ],
+    "fr": [
+      {
+        "font_px": 38,
+        "line_count": 3,
+        "max_text_width": 271,
+        "available_width": 285.0,
+        "fit": true,
+        "bubble": [
+          495.0,
+          107.0,
+          320.0,
+          197.0
+        ],
+        "id": "CH05_P02_L001"
+      },
+      {
+        "font_px": 41,
+        "line_count": 2,
+        "max_text_width": 1347,
+        "available_width": 1348.0,
+        "fit": true,
+        "bubble": [
+          957.0,
+          105.0,
+          1400.0,
+          166.0
+        ],
+        "id": "CH05_P02_L002"
+      },
+      {
+        "font_px": 48,
+        "line_count": 1,
+        "max_text_width": 250,
+        "available_width": 250.0,
+        "fit": true,
+        "bubble": [
+          905.0,
+          341.0,
+          285.0,
+          116.0
+        ],
+        "id": "CH05_P02_L003"
+      },
+      {
+        "font_px": 32,
+        "line_count": 2,
+        "max_text_width": 562,
+        "available_width": 563.0,
+        "fit": true,
+        "bubble": [
+          1232.0,
+          333.0,
+          615.0,
+          156.0
+        ],
+        "id": "CH05_P02_L004"
+      },
+      {
+        "font_px": 38,
+        "line_count": 2,
+        "max_text_width": 448,
+        "available_width": 455.0,
+        "fit": true,
+        "bubble": [
+          1900.0,
+          326.0,
+          490.0,
+          152.0
+        ],
+        "id": "CH05_P02_L005"
+      },
+      {
+        "font_px": 37,
+        "line_count": 3,
+        "max_text_width": 519,
+        "available_width": 520.0,
+        "fit": true,
+        "bubble": [
+          588.0,
+          1124.0,
+          555.0,
+          203.0
+        ],
+        "id": "CH05_P02_L006"
+      },
+      {
+        "font_px": 40,
+        "line_count": 3,
+        "max_text_width": 539,
+        "available_width": 551.0,
+        "fit": true,
+        "bubble": [
+          563.0,
+          2249.0,
+          586.0,
+          203.0
+        ],
+        "id": "CH05_P02_L007"
+      },
+      {
+        "font_px": 35,
+        "line_count": 3,
+        "max_text_width": 704,
+        "available_width": 713.0,
+        "fit": true,
+        "bubble": [
+          1240.0,
+          1062.0,
+          765.0,
+          204.0
+        ],
+        "id": "CH05_P02_L008"
+      },
+      {
+        "font_px": 39,
+        "line_count": 1,
+        "max_text_width": 182,
+        "available_width": 183.0,
+        "fit": true,
+        "bubble": [
+          1265.0,
+          1443.0,
+          218.0,
+          125.0
+        ],
+        "id": "CH05_P02_L009"
+      },
+      {
+        "font_px": 41,
+        "line_count": 3,
+        "max_text_width": 753,
+        "available_width": 766.0,
+        "fit": true,
+        "bubble": [
+          1542.0,
+          2216.0,
+          818.0,
+          206.0
+        ],
+        "id": "CH05_P02_L010"
+      },
+      {
+        "font_px": 42,
+        "line_count": 2,
+        "max_text_width": 729,
+        "available_width": 780.0,
+        "fit": true,
+        "bubble": [
+          89.0,
+          2483.0,
+          832.0,
+          160.0
+        ],
+        "id": "CH05_P02_L011"
+      },
+      {
+        "font_px": 34,
+        "line_count": 6,
+        "max_text_width": 692,
+        "available_width": 693.0,
+        "fit": true,
+        "bubble": [
+          355.0,
+          3079.0,
+          745.0,
+          294.0
+        ],
+        "id": "CH05_P02_L012"
+      },
+      {
+        "font_px": 32,
+        "line_count": 1,
+        "max_text_width": 1314,
+        "available_width": 1398.0,
+        "fit": true,
+        "bubble": [
+          1025.0,
+          3389.0,
+          1450.0,
+          99.0
+        ],
+        "id": "CH05_P02_L013"
+      }
+    ],
+    "de": [
+      {
+        "font_px": 38,
+        "line_count": 3,
+        "max_text_width": 282,
+        "available_width": 285.0,
+        "fit": true,
+        "bubble": [
+          495.0,
+          107.0,
+          320.0,
+          197.0
+        ],
+        "id": "CH05_P02_L001"
+      },
+      {
+        "font_px": 43,
+        "line_count": 2,
+        "max_text_width": 1294,
+        "available_width": 1348.0,
+        "fit": true,
+        "bubble": [
+          957.0,
+          105.0,
+          1400.0,
+          166.0
+        ],
+        "id": "CH05_P02_L002"
+      },
+      {
+        "font_px": 49,
+        "line_count": 1,
+        "max_text_width": 164,
+        "available_width": 250.0,
+        "fit": true,
+        "bubble": [
+          905.0,
+          341.0,
+          285.0,
+          116.0
+        ],
+        "id": "CH05_P02_L003"
+      },
+      {
+        "font_px": 37,
+        "line_count": 2,
+        "max_text_width": 558,
+        "available_width": 563.0,
+        "fit": true,
+        "bubble": [
+          1232.0,
+          333.0,
+          615.0,
+          156.0
+        ],
+        "id": "CH05_P02_L004"
+      },
+      {
+        "font_px": 39,
+        "line_count": 2,
+        "max_text_width": 441,
+        "available_width": 455.0,
+        "fit": true,
+        "bubble": [
+          1900.0,
+          326.0,
+          490.0,
+          152.0
+        ],
+        "id": "CH05_P02_L005"
+      },
+      {
+        "font_px": 40,
+        "line_count": 2,
+        "max_text_width": 503,
+        "available_width": 520.0,
+        "fit": true,
+        "bubble": [
+          588.0,
+          1124.0,
+          555.0,
+          203.0
+        ],
+        "id": "CH05_P02_L006"
+      },
+      {
+        "font_px": 40,
+        "line_count": 2,
+        "max_text_width": 546,
+        "available_width": 551.0,
+        "fit": true,
+        "bubble": [
+          563.0,
+          2249.0,
+          586.0,
+          203.0
+        ],
+        "id": "CH05_P02_L007"
+      },
+      {
+        "font_px": 37,
+        "line_count": 3,
+        "max_text_width": 710,
+        "available_width": 713.0,
+        "fit": true,
+        "bubble": [
+          1240.0,
+          1062.0,
+          765.0,
+          204.0
+        ],
+        "id": "CH05_P02_L008"
+      },
+      {
+        "font_px": 56,
+        "line_count": 1,
+        "max_text_width": 176,
+        "available_width": 183.0,
+        "fit": true,
+        "bubble": [
+          1265.0,
+          1443.0,
+          218.0,
+          125.0
+        ],
+        "id": "CH05_P02_L009"
+      },
+      {
+        "font_px": 41,
+        "line_count": 3,
+        "max_text_width": 692,
+        "available_width": 766.0,
+        "fit": true,
+        "bubble": [
+          1542.0,
+          2216.0,
+          818.0,
+          206.0
+        ],
+        "id": "CH05_P02_L010"
+      },
+      {
+        "font_px": 40,
+        "line_count": 2,
+        "max_text_width": 762,
+        "available_width": 780.0,
+        "fit": true,
+        "bubble": [
+          89.0,
+          2483.0,
+          832.0,
+          160.0
+        ],
+        "id": "CH05_P02_L011"
+      },
+      {
+        "font_px": 34,
+        "line_count": 6,
+        "max_text_width": 682,
+        "available_width": 693.0,
+        "fit": true,
+        "bubble": [
+          355.0,
+          3079.0,
+          745.0,
+          294.0
+        ],
+        "id": "CH05_P02_L012"
+      },
+      {
+        "font_px": 32,
+        "line_count": 1,
+        "max_text_width": 1329,
+        "available_width": 1398.0,
+        "fit": true,
+        "bubble": [
+          1025.0,
+          3389.0,
+          1450.0,
+          99.0
+        ],
+        "id": "CH05_P02_L013"
+      }
+    ],
+    "ru": [
+      {
+        "id": "CH05_P02_L001",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L002",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L003",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L004",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L005",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L006",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L007",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L008",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L009",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L010",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L011",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L012",
+        "source": "approved v4; SVG not modified"
+      },
+      {
+        "id": "CH05_P02_L013",
+        "source": "approved v4; SVG not modified"
+      }
+    ]
+  },
+  "voice_status": "not_generated",
+  "voice_policy": "one role per language; no new custom voices yet; consolidate masters after all chapters"
+}

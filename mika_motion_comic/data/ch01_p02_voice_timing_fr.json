@@ -1,0 +1,85 @@
+{
+  "page_id": "CH01_P02",
+  "locale": "fr",
+  "audio_path": "res://mika_motion_comic/audio/ch01_p02_fr_voice_master.mp3",
+  "duration_seconds": 29.928,
+  "status": "preliminary_timing_from_audio_pauses_not_yet_verified_in_game",
+  "time_basis": "seconds_from_start_of_full_master_recording",
+  "lines": [
+    {
+      "line_id": "CH01_P02_L001",
+      "speaker_id": "CHR_004",
+      "panel_id": "wormhole",
+      "start_s": 0.0,
+      "end_s": 7.36,
+      "text": "Au cœur de la tempête, Mika aperçut un tunnel lumineux. Sans savoir où il menait, il mit le cap vers la lumière."
+    },
+    {
+      "line_id": "CH01_P02_L002",
+      "speaker_id": "CHR_004",
+      "panel_id": "earth_view",
+      "start_s": 7.36,
+      "end_s": 10.96,
+      "text": "Derrière le hublot, apparut une petite planète bleue."
+    },
+    {
+      "line_id": "CH01_P02_L003",
+      "speaker_id": "CHR_001",
+      "panel_id": "earth_view",
+      "start_s": 10.96,
+      "end_s": 12.36,
+      "text": "Une planète !"
+    },
+    {
+      "line_id": "CH01_P02_L004",
+      "speaker_id": "CHR_004",
+      "panel_id": "simulator",
+      "start_s": 12.36,
+      "end_s": 19.24,
+      "text": "Mika régla son simulateur. Celui-ci cherchait des infos sur les habitants, les langues et la vie de cette planète."
+    },
+    {
+      "line_id": "CH01_P02_L005",
+      "speaker_id": "CHR_004",
+      "panel_id": "earth_approach",
+      "start_s": 19.24,
+      "end_s": 26.2,
+      "text": "Le simulateur repéra le spatioport le plus proche. Mika mit le cap sur la piste : peut-être y apprendrait-il où il était."
+    },
+    {
+      "line_id": "CH01_P02_L006",
+      "speaker_id": "CHR_001",
+      "panel_id": "earth_spaceport",
+      "start_s": 26.2,
+      "end_s": 29.928,
+      "text": "Hmm… Et maintenant, où dois-je aller ?"
+    }
+  ],
+  "story_blocks": [
+    {
+      "trigger": "wormhole_panel",
+      "first_line_id": "CH01_P02_L001",
+      "last_line_id": "CH01_P02_L001",
+      "audio_in_s": 0.0,
+      "audio_out_s": 7.36,
+      "stop_audio_when_scene_ends": true
+    },
+    {
+      "trigger": "earth_view_panels",
+      "first_line_id": "CH01_P02_L002",
+      "last_line_id": "CH01_P02_L004",
+      "audio_in_s": 7.36,
+      "audio_out_s": 19.24,
+      "stop_audio_when_scene_ends": true
+    },
+    {
+      "trigger": "earth_landing_panels",
+      "first_line_id": "CH01_P02_L005",
+      "last_line_id": "CH01_P02_L006",
+      "audio_in_s": 19.24,
+      "audio_out_s": 29.928,
+      "stop_audio_when_scene_ends": true
+    }
+  ],
+  "preserve_existing_gameplay_between_blocks": true
+}

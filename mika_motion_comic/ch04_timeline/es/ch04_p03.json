@@ -1,0 +1,275 @@
+{
+  "schema_version": 3,
+  "page_id": "CH04_P03",
+  "locale": "es",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch04_p03_languages/ch04_p03_es.webp",
+  "native_scene_panels": [
+    "p43_cockpit_decision",
+    "p43_ship_landing",
+    "p43_scientist_meeting",
+    "p43_loading_fossils",
+    "p43_next_target",
+    "p43_space_departure"
+  ],
+  "panel_bounds": {
+    "p43_cockpit_decision": [
+      0.03,
+      0.028,
+      0.94,
+      0.266
+    ],
+    "p43_ship_landing": [
+      0.03,
+      0.309,
+      0.47,
+      0.204
+    ],
+    "p43_scientist_meeting": [
+      0.522,
+      0.309,
+      0.448,
+      0.204
+    ],
+    "p43_loading_fossils": [
+      0.03,
+      0.53,
+      0.94,
+      0.222
+    ],
+    "p43_next_target": [
+      0.03,
+      0.765,
+      0.535,
+      0.207
+    ],
+    "p43_space_departure": [
+      0.588,
+      0.765,
+      0.382,
+      0.207
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH04_P03_L001",
+      "frame_id": "CH04_P03_F01",
+      "panel_id": "p43_cockpit_decision",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika le contó brevemente al lagarto qué había ocurrido en su planeta natal y el consejo de la IA de Marte: buscar respuestas en el pasado.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/es/CH04_P03_L001_es.mp3",
+      "audio_duration_s": 8.986,
+      "camera_target": [
+        0.48,
+        0.16,
+        0.26
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4cc59a565b6112a6cfbd097d3c4dee88fa376ac53229b5364c3e498e7563f50f"
+    },
+    {
+      "line_id": "CH04_P03_L002",
+      "frame_id": "CH04_P03_F01",
+      "panel_id": "p43_cockpit_decision",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "¡Y aquí estamos!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/es/CH04_P03_L002_es.mp3",
+      "audio_duration_s": 1.646,
+      "camera_target": [
+        0.285,
+        0.205,
+        0.178
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "cde57ccc5081426154f9a3160adc657475092978ae14cc4e9780db79e55e65e2"
+    },
+    {
+      "line_id": "CH04_P03_L003",
+      "frame_id": "CH04_P03_F01",
+      "panel_id": "p43_cockpit_decision",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Creo que deberían visitar Archeon. Allí podrás descubrir algo más sobre nuestro pasado.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/es/CH04_P03_L003_es.mp3",
+      "audio_duration_s": 5.146,
+      "camera_target": [
+        0.754,
+        0.177,
+        0.182
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "836a877477e1bbd8e01db1952ca04e057543d916e194df338a320cc07dd64ceb"
+    },
+    {
+      "line_id": "CH04_P03_L004",
+      "frame_id": "CH04_P03_F02",
+      "panel_id": "p43_ship_landing",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "La nave de Mika aterrizó en Archeon, cerca de un campamento arqueológico.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/es/CH04_P03_L004_es.mp3",
+      "audio_duration_s": 5.068,
+      "camera_target": [
+        0.266,
+        0.393,
+        0.187
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "89b73f2a435ac3558a35ad6a14e41fc3816856c436c05379ba196986e573d212"
+    },
+    {
+      "line_id": "CH04_P03_L005",
+      "frame_id": "CH04_P03_F03",
+      "panel_id": "p43_scientist_meeting",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "¡Estoy seguro de que puedes ayudarnos!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/es/CH04_P03_L005_es.mp3",
+      "audio_duration_s": 2.586,
+      "camera_target": [
+        0.696,
+        0.379,
+        0.147
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "be9a790fa396762351d2e9a224430bb943d72807d6604baecd96880d0022760f"
+    },
+    {
+      "line_id": "CH04_P03_L006",
+      "frame_id": "CH04_P03_F03",
+      "panel_id": "p43_scientist_meeting",
+      "speaker_id": "CHR_032",
+      "kind": "dialogue",
+      "spoken_text": "Bueno… no sé muy bien cómo podría ayudarlos.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/es/CH04_P03_L006_es.mp3",
+      "audio_duration_s": 4.441,
+      "camera_target": [
+        0.821,
+        0.37,
+        0.119
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f326f96bea18eb5ed8a9d6662c81df065b19a4b0abf3784e656d762cd42397b4"
+    },
+    {
+      "line_id": "CH04_P03_L007",
+      "frame_id": "CH04_P03_F03",
+      "panel_id": "p43_scientist_meeting",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "El lagarto llevó a Mika a conocer a un viejo amigo: un profesor de arqueología.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/es/CH04_P03_L007_es.mp3",
+      "audio_duration_s": 5.407,
+      "camera_target": [
+        0.75,
+        0.383,
+        0.185
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "578291655fbf3cbaf53854e993747d7af8420b15a2d91d19b74a32f2d4ed7eb8"
+    },
+    {
+      "line_id": "CH04_P03_L008",
+      "frame_id": "CH04_P03_F04",
+      "panel_id": "p43_loading_fossils",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "El arqueólogo les entregó algunas muestras y les recomendó buscar a un colega suyo en el museo de Runa. Tal vez él supiera más y pudiera ayudarlos a seguir investigando.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/es/CH04_P03_L008_es.mp3",
+      "audio_duration_s": 10.109,
+      "camera_target": [
+        0.5,
+        0.64,
+        0.215
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "6efed93c5688349179ade900a921c9a0480be103653b01b601a0fa2ce6e42bcb"
+    },
+    {
+      "line_id": "CH04_P03_L009",
+      "frame_id": "CH04_P03_F05",
+      "panel_id": "p43_next_target",
+      "speaker_id": "CHR_008",
+      "kind": "navigation",
+      "spoken_text": "PRÓXIMO DESTINO: RUNA — MUSEO ARQUEOLÓGICO",
+      "audio_path": "res://mika_motion_comic/ch04_clips/es/CH04_P03_L009_es.mp3",
+      "audio_duration_s": 3.971,
+      "camera_target": [
+        0.296,
+        0.885,
+        0.202
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "cd6f61a6d50f38660fcff2411cba2f4b43f9827a66eb1288145e8d2287f715e9"
+    },
+    {
+      "line_id": "CH04_P03_L010",
+      "frame_id": "CH04_P03_F06",
+      "panel_id": "p43_space_departure",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Con el destino decidido, ¡nuestros amigos emprendieron otra etapa de su aventura!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/es/CH04_P03_L010_es.mp3",
+      "audio_duration_s": 5.146,
+      "camera_target": [
+        0.775,
+        0.869,
+        0.149
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "05e4a73fa09be11d6042f2d467bb7a2d73f75100ffa152df2d9b458a825b1644"
+    }
+  ]
+}

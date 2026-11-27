@@ -1,0 +1,339 @@
+{
+  "schema_version": 2,
+  "page_id": "CH01_P04",
+  "locale": "de",
+  "sync_model": "one_audio_clip_per_line__camera_transition_then_play__no_global_master_clock",
+  "image_path": "res://mika_motion_comic/assets/pages/ch01_p04_languages/ch01_p04_de.webp",
+  "native_scene_panels": [
+    "p04_mars_landing",
+    "p04_mika_walk",
+    "p04_reception",
+    "p04_elevator",
+    "p04_ai_core",
+    "p04_mika_orb_close"
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P04_L001",
+      "frame_id": "CH01_P04_F01",
+      "panel_id": "p04_mars_landing",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mars. Mikas Schiff landete am Raumhafen des zentralen KI-Datenzentrums.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P04_L001_de.mp3",
+      "audio_duration_s": 6.165,
+      "source_master": "CH01_P04_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 0.0,
+      "source_cut_out_s": 6.165,
+      "bubble_box_normalized": [
+        0.0442,
+        0.03613,
+        0.31768,
+        0.08008
+      ],
+      "camera_target": [
+        0.236,
+        0.109,
+        0.162
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "hold"
+    },
+    {
+      "line_id": "CH01_P04_L002",
+      "frame_id": "CH01_P04_F02",
+      "panel_id": "p04_mika_walk",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Der Rote Planet begrüßte Mika mit einem Sandsturm!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P04_L002_de.mp3",
+      "audio_duration_s": 3.63,
+      "source_master": "CH01_P04_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 6.165,
+      "source_cut_out_s": 9.795,
+      "bubble_box_normalized": [
+        0.25276,
+        0.22559,
+        0.25691,
+        0.06738
+      ],
+      "camera_target": [
+        0.281,
+        0.31,
+        0.173
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut"
+    },
+    {
+      "line_id": "CH01_P04_L003",
+      "frame_id": "CH01_P04_F03",
+      "panel_id": "p04_reception",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Entschuldigung… Darf ich zur KI?",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P04_L003_de.mp3",
+      "audio_duration_s": 3.03,
+      "source_master": "CH01_P04_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 9.795,
+      "source_cut_out_s": 12.825,
+      "bubble_box_normalized": [
+        0.6768,
+        0.21582,
+        0.14088,
+        0.08203
+      ],
+      "camera_target": [
+        0.748,
+        0.298,
+        0.169
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P04_L004",
+      "frame_id": "CH01_P04_F03",
+      "panel_id": "p04_reception",
+      "speaker_id": "CHR_012",
+      "kind": "dialogue",
+      "spoken_text": "Natürlich! Aber zuerst… ein paar Formulare.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P04_L004_de.mp3",
+      "audio_duration_s": 4.14,
+      "source_master": "CH01_P04_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 12.825,
+      "source_cut_out_s": 16.965,
+      "bubble_box_normalized": [
+        0.80663,
+        0.30078,
+        0.15884,
+        0.10156
+      ],
+      "camera_target": [
+        0.751,
+        0.318,
+        0.169
+      ],
+      "transition_before_s": 0.34,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P04_L005",
+      "frame_id": "CH01_P04_F04",
+      "panel_id": "p04_elevator",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Selbst in der Zukunft gibt’s noch Papierkram! Nach dem Ausfüllen fuhr Mika tief im Aufzug hinab.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P04_L005_de.mp3",
+      "audio_duration_s": 6.75,
+      "source_master": "CH01_P04_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 16.965,
+      "source_cut_out_s": 23.715,
+      "bubble_box_normalized": [
+        0.26796,
+        0.56934,
+        0.23757,
+        0.06543
+      ],
+      "camera_target": [
+        0.273,
+        0.542,
+        0.181
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut"
+    },
+    {
+      "line_id": "CH01_P04_L006",
+      "frame_id": "CH01_P04_F05",
+      "panel_id": "p04_ai_core",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Tief im Innern des Mars lag eine riesige Halle. Ein Steg führte zu einer Kugel…",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P04_L006_de.mp3",
+      "audio_duration_s": 6.28,
+      "source_master": "CH01_P04_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 23.715,
+      "source_cut_out_s": 29.995,
+      "bubble_box_normalized": [
+        0.54006,
+        0.57617,
+        0.22099,
+        0.0625
+      ],
+      "camera_target": [
+        0.748,
+        0.55,
+        0.168
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P04_L007",
+      "frame_id": "CH01_P04_F06",
+      "panel_id": "p04_mika_orb_close",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "spoken_text": "Mika…",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P04_L007_de.mp3",
+      "audio_duration_s": 1.19,
+      "source_master": "CH01_P04_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 29.995,
+      "source_cut_out_s": 31.185,
+      "bubble_box_normalized": [
+        0.62569,
+        0.68066,
+        0.32735,
+        0.08984
+      ],
+      "camera_target": [
+        0.714,
+        0.78,
+        0.224
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut"
+    },
+    {
+      "line_id": "CH01_P04_L008",
+      "frame_id": "CH01_P04_F06",
+      "panel_id": "p04_mika_orb_close",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Du… kennst meinen Namen?!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P04_L008_de.mp3",
+      "audio_duration_s": 2.415,
+      "source_master": "CH01_P04_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 31.185,
+      "source_cut_out_s": 33.6,
+      "bubble_box_normalized": [
+        0.50138,
+        0.79297,
+        0.4558,
+        0.15039
+      ],
+      "camera_target": [
+        0.7,
+        0.855,
+        0.23
+      ],
+      "transition_before_s": 0.34,
+      "transition_style": "pan"
+    }
+  ],
+  "audio_master_duration_s": 33.6,
+  "verified_source_svg": "MIKA_CH01_P04_NEBULA_6LANG_v4/chapter_01/page_04/CH01_P04_overlays/CH01_P04_de.svg",
+  "crop_boundary_review": [
+    {
+      "index": 1,
+      "nominal_s": 6.23,
+      "cut_s": 6.165,
+      "silence_s": [
+        5.85,
+        6.23
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 2,
+      "nominal_s": 9.86,
+      "cut_s": 9.795,
+      "silence_s": [
+        9.28,
+        9.86
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 3,
+      "nominal_s": 12.89,
+      "cut_s": 12.825,
+      "silence_s": [
+        12.37,
+        12.89
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 4,
+      "nominal_s": 16.89,
+      "cut_s": 16.965,
+      "silence_s": [
+        16.46,
+        17.03
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 5,
+      "nominal_s": 23.77,
+      "cut_s": 23.715,
+      "silence_s": [
+        23.26,
+        23.78
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 6,
+      "nominal_s": 30.06,
+      "cut_s": 29.995,
+      "silence_s": [
+        29.28,
+        30.06
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 7,
+      "nominal_s": 31.25,
+      "cut_s": 31.185,
+      "silence_s": [
+        30.58,
+        31.25
+      ],
+      "method": "detected_silence"
+    }
+  ],
+  "integration_note": "native_gameplay_stops_preserved__next_clip_waits_for_camera",
+  "quality": "automatic_silence_cuts_needs_listening_review",
+  "panel_bounds": {
+    "p04_mars_landing": [
+      0.034,
+      0.025,
+      0.934,
+      0.169
+    ],
+    "p04_mika_walk": [
+      0.035,
+      0.216,
+      0.473,
+      0.184
+    ],
+    "p04_reception": [
+      0.531,
+      0.216,
+      0.434,
+      0.184
+    ],
+    "p04_elevator": [
+      0.035,
+      0.424,
+      0.47,
+      0.207
+    ],
+    "p04_ai_core": [
+      0.531,
+      0.424,
+      0.434,
+      0.207
+    ],
+    "p04_mika_orb_close": [
+      0.035,
+      0.663,
+      0.93,
+      0.308
+    ]
+  }
+}

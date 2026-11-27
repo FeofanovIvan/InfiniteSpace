@@ -1,0 +1,86 @@
+{
+  "page_id": "CH01_P02",
+  "locale": "en",
+  "audio_path": "res://mika_motion_comic/audio/ch01_p02_en_voice_master.mp3",
+  "duration_seconds": 31.512,
+  "status": "preliminary_timing_from_audio_pauses_not_yet_verified_in_game",
+  "time_basis": "seconds_from_start_of_full_master_recording",
+  "lines": [
+    {
+      "line_id": "CH01_P02_L001",
+      "speaker_id": "CHR_004",
+      "panel_id": "wormhole",
+      "start_s": 0.0,
+      "end_s": 7.81,
+      "text": "Through the swirling storm, Mika spotted a glowing tunnel. Unsure where it led, Mika steered toward the light."
+    },
+    {
+      "line_id": "CH01_P02_L002",
+      "speaker_id": "CHR_004",
+      "panel_id": "earth_view",
+      "start_s": 7.81,
+      "end_s": 12.16,
+      "text": "Beyond the cockpit window, a little blue planet came into view."
+    },
+    {
+      "line_id": "CH01_P02_L003",
+      "speaker_id": "CHR_001",
+      "panel_id": "earth_view",
+      "start_s": 12.16,
+      "end_s": 13.53,
+      "text": "A planet!"
+    },
+    {
+      "line_id": "CH01_P02_L004",
+      "speaker_id": "CHR_004",
+      "panel_id": "simulator",
+      "start_s": 13.53,
+      "end_s": 20.97,
+      "text": "Mika tuned the ship's simulator. Now it was gathering clues about the planet’s people, languages, and way of life."
+    },
+    {
+      "line_id": "CH01_P02_L005",
+      "speaker_id": "CHR_004",
+      "panel_id": "earth_approach",
+      "start_s": 20.97,
+      "end_s": 28.53,
+      "text": "The simulator located the nearest spaceport. Mika set a course to land: maybe there, he’d find out where he was."
+    },
+    {
+      "line_id": "CH01_P02_L006",
+      "speaker_id": "CHR_001",
+      "panel_id": "earth_spaceport",
+      "start_s": 28.53,
+      "end_s": 31.512,
+      "text": "Hmm… Where should I go now?"
+    }
+  ],
+  "story_blocks": [
+    {
+      "trigger": "wormhole_panel",
+      "first_line_id": "CH01_P02_L001",
+      "last_line_id": "CH01_P02_L001",
+      "audio_in_s": 0.0,
+      "audio_out_s": 7.81,
+      "stop_audio_when_scene_ends": true
+    },
+    {
+      "trigger": "earth_view_panels",
+      "first_line_id": "CH01_P02_L002",
+      "last_line_id": "CH01_P02_L004",
+      "audio_in_s": 7.81,
+      "audio_out_s": 20.97,
+      "stop_audio_when_scene_ends": true
+    },
+    {
+      "trigger": "earth_landing_panels",
+      "first_line_id": "CH01_P02_L005",
+      "last_line_id": "CH01_P02_L006",
+      "audio_in_s": 20.97,
+      "audio_out_s": 31.512,
+      "stop_audio_when_scene_ends": true
+    }
+  ],
+  "preserve_existing_gameplay_between_blocks": true,
+  "note": "Frame and voice alignment is provisional until checked in the current Godot story flow."
+}

@@ -6,6 +6,8 @@ signal galaxy_requested
 signal main_menu_requested
 signal bubble_care_requested
 signal bubble_reminder_ready
+signal game_mode_selected(mode: String, restart: bool)
+signal story_arc_selected(arc_id: String)
 
 const CRYSTAL_ICON: Texture2D = preload("res://asteroid_assets/fragments/04_blue/crystal_wedge.png")
 const GALAXY_ICON: Texture2D = preload("res://assets/ui/galaxy_button.png")
@@ -23,8 +25,13 @@ var _bars: Array[Panel] = []
 var _crystal_icon: Sprite2D
 var _fuel_count_label: Label
 var _blink_time: float = 0.0
+var _story_fuel_danger: bool = false
+var _story_fuel_flash: bool = false
 var _settings_popup: Control
 var _bubble_care_button: Button
+var _bubble_care_available: bool = true
+var _story_galaxy_attention: bool = false
+var _story_galaxy_time: float = 0.0
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -125,14 +132,43 @@ func _make_bubble_care_button() -> void:
 	add_child(_bubble_care_button)
 
 func _open_bubble_care() -> void:
-	bubble_care_requested.emit()
+	if _bubble_care_available:
+		bubble_care_requested.emit()
 
 func _on_bubble_reminder_ready() -> void:
-	bubble_reminder_ready.emit()
+	if _bubble_care_available:
+		bubble_reminder_ready.emit()
+
+func set_bubble_care_available(available: bool) -> void:
+	_bubble_care_available = available
+	if is_instance_valid(_bubble_care_button):
+		_bubble_care_button.visible = available
+		if not available:
+			_bubble_care_button.call("set_flight_active", false)
+
+
+func set_story_galaxy_attention(active: bool) -> void:
+	_story_galaxy_attention = active
+	_story_galaxy_time = 0.0
+	var galaxy_button: Button = get_node_or_null("GlobalFlight") as Button
+	if galaxy_button != null:
+		galaxy_button.modulate = Color.WHITE
+		if active:
+			var glow: StyleBoxFlat = _style(Color("103754"), Color("ffc66b"), 29, 4)
+			glow.shadow_color = Color(1.0, 0.57, 0.12, 0.72)
+			glow.shadow_size = 13
+			galaxy_button.add_theme_stylebox_override("normal", glow)
+		else:
+			galaxy_button.add_theme_stylebox_override("normal", _style(Color(0.025, 0.14, 0.25, 0.98), Color(0.36, 0.76, 1.0), 21, 2))
+	for name in ["MikoMainMenu", "BubbleCareClock", "SettingsBelowSimulator"]:
+		var other: BaseButton = get_node_or_null(name) as BaseButton
+		if other != null:
+			other.disabled = active
+			other.modulate = Color(0.46, 0.53, 0.64, 0.52) if active else Color.WHITE
 
 func set_bubble_timer_active(active: bool) -> void:
 	if is_instance_valid(_bubble_care_button):
-		_bubble_care_button.call("set_flight_active", active)
+		_bubble_care_button.call("set_flight_active", active and _bubble_care_available)
 
 func reset_bubble_clock() -> void:
 	if is_instance_valid(_bubble_care_button):
@@ -169,6 +205,14 @@ func _make_settings_button() -> void:
 	_settings_popup.name = "LanguageSettingsPopup"
 	layer.add_child(_settings_popup)
 	_settings_popup.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_settings_popup.game_mode_selected.connect(_on_game_mode_selected)
+	_settings_popup.story_arc_selected.connect(_on_story_arc_selected)
+
+func _on_game_mode_selected(mode: String, restart: bool) -> void:
+	game_mode_selected.emit(mode, restart)
+
+func _on_story_arc_selected(arc_id: String) -> void:
+	story_arc_selected.emit(arc_id)
 
 func _open_language_settings() -> void:
 	if is_instance_valid(_settings_popup):
@@ -198,8 +242,21 @@ func set_crystals(value: int) -> void:
 	if is_node_ready():
 		_refresh()
 
+func set_story_fuel_attention(danger: bool, flash: bool = false) -> void:
+	# Story-only highlight of the EXISTING fuel sticks and count label.
+	_story_fuel_danger = danger
+	_story_fuel_flash = danger and flash
+	if is_node_ready():
+		_refresh()
+
 func _process(delta: float) -> void:
-	if fuel_segments <= 1:
+	if _story_galaxy_attention:
+		_story_galaxy_time += delta
+		var pulse: float = 0.5 + 0.5 * sin(_story_galaxy_time * 7.5)
+		var button: Button = get_node_or_null("GlobalFlight") as Button
+		if button != null:
+			button.modulate = Color(1.0, lerpf(0.74, 1.0, pulse), lerpf(0.36, 1.0, pulse), lerpf(0.68, 1.0, pulse))
+	if fuel_segments <= 1 or _story_fuel_flash:
 		var was_bright: bool = sin(_blink_time * 10.0) > 0.0
 		_blink_time += delta
 		if was_bright != (sin(_blink_time * 10.0) > 0.0):
@@ -208,8 +265,10 @@ func _process(delta: float) -> void:
 
 func _refresh() -> void:
 	var lit: Color = Color("4bde80")
-	if fuel_segments == 1:
-		lit = Color("fa3348") if sin(_blink_time * 10.0) > 0.0 else Color("641624")
+	var fuel_danger: bool = fuel_segments <= 1 or _story_fuel_danger
+	var blinking: bool = fuel_segments <= 1 or _story_fuel_flash
+	if fuel_danger:
+		lit = Color("fa3348") if not blinking or sin(_blink_time * 10.0) > 0.0 else Color("641624")
 	elif fuel_segments == 2:
 		lit = Color("ef8260")
 	elif fuel_segments <= 4:
@@ -224,7 +283,7 @@ func _refresh() -> void:
 		_crystal_icon.modulate = Color.WHITE
 	if _fuel_count_label != null:
 		_fuel_count_label.text = str(crystal_count)
-		_fuel_count_label.add_theme_color_override("font_color", Color("fa585b") if fuel_segments <= 1 and sin(_blink_time * 10.0) > 0.0 else (Color("641624") if fuel_segments <= 1 else Color(0.86, 0.97, 1.0)))
+		_fuel_count_label.add_theme_color_override("font_color", (Color("fa585b") if not blinking or sin(_blink_time * 10.0) > 0.0 else Color("641624")) if fuel_danger else Color(0.86, 0.97, 1.0))
 
 func _open_galaxy() -> void:
 	galaxy_requested.emit()

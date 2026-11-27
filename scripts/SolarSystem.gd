@@ -196,7 +196,9 @@ func station_world_position() -> Vector2:
 
 func get_target_state(target_id: String) -> Dictionary:
 	# Autopilot is limited to inhabited worlds and the separate orbital station.
-	if target_id != "EarthStation" and not STATION_SHELL_SCENES.has(target_id):
+	# Jupiter has a separate inhabited station and deliberately no orbital
+	# shell overlay. Its lack of a decorative ring must not disable autopilot.
+	if target_id != "EarthStation" and target_id != "Jupiter" and not STATION_SHELL_SCENES.has(target_id):
 		return {"valid": false}
 	# Position and instantaneous velocity are recalculated every physics frame;
 	# autopilot never chases the outdated position selected in the menu.

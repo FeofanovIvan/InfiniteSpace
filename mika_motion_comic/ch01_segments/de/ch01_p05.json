@@ -1,0 +1,289 @@
+{
+  "schema_version": 3,
+  "page_id": "CH01_P05",
+  "locale": "de",
+  "sync_model": "finite_state_camera_first_then_individual_voice",
+  "image_path": "res://mika_motion_comic/assets/pages/ch01_p05_languages/ch01_p05_de.webp",
+  "native_scene_panels": [
+    "p05_mika_orb",
+    "p05_mika_happy",
+    "p05_pink_city",
+    "p05_mika_shocked",
+    "p05_red_city",
+    "p05_mika_worried",
+    "p05_mika_sad",
+    "p05_mika_question"
+  ],
+  "panel_bounds": {
+    "p05_mika_orb": [
+      0.028,
+      0.024,
+      0.944,
+      0.226
+    ],
+    "p05_mika_happy": [
+      0.03,
+      0.273,
+      0.406,
+      0.217
+    ],
+    "p05_pink_city": [
+      0.464,
+      0.273,
+      0.507,
+      0.217
+    ],
+    "p05_mika_shocked": [
+      0.03,
+      0.511,
+      0.345,
+      0.226
+    ],
+    "p05_red_city": [
+      0.4,
+      0.511,
+      0.571,
+      0.226
+    ],
+    "p05_mika_worried": [
+      0.4,
+      0.511,
+      0.571,
+      0.226
+    ],
+    "p05_mika_sad": [
+      0.03,
+      0.764,
+      0.466,
+      0.207
+    ],
+    "p05_mika_question": [
+      0.525,
+      0.764,
+      0.447,
+      0.207
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH01_P05_L001",
+      "frame_id": "CH01_P05_F01",
+      "panel_id": "p05_mika_orb",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "spoken_text": "Na klar! Du hast deinen Namen ins Formular geschrieben!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L001_de.mp3",
+      "audio_duration_s": 3.8661,
+      "camera_target": [
+        0.32,
+        0.135,
+        0.218
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "ИИ и Мика, начало диалога"
+    },
+    {
+      "line_id": "CH01_P05_L002",
+      "frame_id": "CH01_P05_F01",
+      "panel_id": "p05_mika_orb",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Hilfst du mir herauszufinden, was mit meiner Heimat ist, und den Rückweg zu finden?",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L002_de.mp3",
+      "audio_duration_s": 4.8327,
+      "camera_target": [
+        0.295,
+        0.169,
+        0.205
+      ],
+      "transition_before_s": 0.28,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика и планшет"
+    },
+    {
+      "line_id": "CH01_P05_L003",
+      "frame_id": "CH01_P05_F01",
+      "panel_id": "p05_mika_orb",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "spoken_text": "Erzähl mir von zu Hause. Wie war es dort?",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L003_de.mp3",
+      "audio_duration_s": 3.2392,
+      "camera_target": [
+        0.698,
+        0.14,
+        0.216
+      ],
+      "transition_before_s": 0.28,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Сфера ИИ и вопрос"
+    },
+    {
+      "line_id": "CH01_P05_L005",
+      "frame_id": "CH01_P05_F02",
+      "panel_id": "p05_mika_happy",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika schloss die Augen. Seine Heimat erwachte vor ihm erneut…",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L005_de.mp3",
+      "audio_duration_s": 4.5192,
+      "camera_target": [
+        0.231,
+        0.383,
+        0.17
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика с закрытыми глазами"
+    },
+    {
+      "line_id": "CH01_P05_L004",
+      "frame_id": "CH01_P05_F02",
+      "panel_id": "p05_pink_city",
+      "speaker_id": "CHR_001",
+      "kind": "speech_recollection",
+      "spoken_text": "Wir lebten auf einem riesigen rosa Gasplaneten. Unsere Städte schwebten über den Wolken!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L004_de.mp3",
+      "audio_duration_s": 6.191,
+      "camera_target": [
+        0.718,
+        0.365,
+        0.198
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Панорама родного города"
+    },
+    {
+      "line_id": "CH01_P05_L006",
+      "frame_id": "CH01_P05_F03",
+      "panel_id": "p05_mika_shocked",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Aber dann…",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L006_de.mp3",
+      "audio_duration_s": 1.4106,
+      "camera_target": [
+        0.202,
+        0.632,
+        0.135
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Испуганный Мика"
+    },
+    {
+      "line_id": "CH01_P05_L007",
+      "frame_id": "CH01_P05_F04",
+      "panel_id": "p05_red_city",
+      "speaker_id": "CHR_001",
+      "kind": "speech_recollection",
+      "spoken_text": "PLÖTZLICH… EIN STURM BRACH LOS!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L007_de.mp3",
+      "audio_duration_s": 2.6906,
+      "camera_target": [
+        0.53,
+        0.615,
+        0.195
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Шторм и разрушение города"
+    },
+    {
+      "line_id": "CH01_P05_L008",
+      "frame_id": "CH01_P05_F05",
+      "panel_id": "p05_mika_worried",
+      "speaker_id": "CHR_001",
+      "kind": "speech_recollection",
+      "spoken_text": "Alles veränderte sich. Städte verloren ihre Form. Alle mussten fliehen!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L008_de.mp3",
+      "audio_duration_s": 4.8327,
+      "camera_target": [
+        0.75,
+        0.625,
+        0.197
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика на фоне эвакуации"
+    },
+    {
+      "line_id": "CH01_P05_L009",
+      "frame_id": "CH01_P05_F06",
+      "panel_id": "p05_mika_sad",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Ich konnte fliehen… Und jetzt bin ich hier.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L009_de.mp3",
+      "audio_duration_s": 3.7878,
+      "camera_target": [
+        0.258,
+        0.875,
+        0.18
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика, лицо и планшет"
+    },
+    {
+      "line_id": "CH01_P05_L010",
+      "frame_id": "CH01_P05_F07",
+      "panel_id": "p05_mika_question",
+      "speaker_id": "CHR_001",
+      "kind": "speech_question",
+      "spoken_text": "Sag mir bitte… Was ist mit meiner Welt passiert? Wie komme ich heim?",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L010_de.mp3",
+      "audio_duration_s": 4.911,
+      "camera_target": [
+        0.741,
+        0.84,
+        0.174
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика и сфера ИИ"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "schema": "mika_ch01_p04_voice_timing_v1",
+  "page_id": "CH01_P04",
+  "locale": "en",
+  "audio_path": "res://mika_motion_comic/audio/ch01_p04_en_voice_master.mp3",
+  "duration_seconds": 35.112,
+  "status": "preliminary_boundaries_from_audio_pauses_needs_godot_playback_review",
+  "frame_map": {
+    "p04_mars_landing": [
+      "CH01_P04_L001"
+    ],
+    "p04_mika_walk": [
+      "CH01_P04_L002"
+    ],
+    "p04_reception": [
+      "CH01_P04_L003",
+      "CH01_P04_L004"
+    ],
+    "p04_elevator": [
+      "CH01_P04_L005"
+    ],
+    "p04_ai_core": [
+      "CH01_P04_L006"
+    ],
+    "p04_mika_orb_close": [
+      "CH01_P04_L007",
+      "CH01_P04_L008"
+    ]
+  },
+  "playback_groups": [
+    {
+      "trigger": "mars_arrival_panels",
+      "panels": [
+        "p04_mars_landing",
+        "p04_mika_walk",
+        "p04_reception"
+      ],
+      "voice_in_s": 0.0,
+      "voice_out_s": 17.05
+    },
+    {
+      "trigger": "mars_story_after_word_panels",
+      "panels": [
+        "p04_elevator",
+        "p04_ai_core",
+        "p04_mika_orb_close"
+      ],
+      "voice_in_s": 17.21,
+      "voice_out_s": 35.112
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P04_L001",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_mars_landing",
+      "start_s": 0.0,
+      "end_s": 6.45,
+      "text": "Mars. Mika’s ship touched down at the spaceport of the Central Artificial Intelligence Data Center."
+    },
+    {
+      "line_id": "CH01_P04_L002",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_mika_walk",
+      "start_s": 6.92,
+      "end_s": 10.37,
+      "text": "The Red Planet welcomed Mika with a swirling sandstorm!"
+    },
+    {
+      "line_id": "CH01_P04_L003",
+      "speaker_id": "CHR_001",
+      "panel_id": "p04_reception",
+      "start_s": 10.9,
+      "end_s": 13.43,
+      "text": "Excuse me… May I see the AI?"
+    },
+    {
+      "line_id": "CH01_P04_L004",
+      "speaker_id": "CHR_012",
+      "panel_id": "p04_reception",
+      "start_s": 13.84,
+      "end_s": 16.93,
+      "text": "Of course! But first… a few forms."
+    },
+    {
+      "line_id": "CH01_P04_L005",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_elevator",
+      "start_s": 17.21,
+      "end_s": 24.83,
+      "text": "Even in the future, paperwork never goes away! Forms done, Mika took a long elevator ride down."
+    },
+    {
+      "line_id": "CH01_P04_L006",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_ai_core",
+      "start_s": 25.24,
+      "end_s": 31.04,
+      "text": "Deep inside Mars lay an enormous hall. A bridge led to a glowing orb…"
+    },
+    {
+      "line_id": "CH01_P04_L007",
+      "speaker_id": "CHR_013",
+      "panel_id": "p04_mika_orb_close",
+      "start_s": 31.67,
+      "end_s": 32.3,
+      "text": "Mika…"
+    },
+    {
+      "line_id": "CH01_P04_L008",
+      "speaker_id": "CHR_001",
+      "panel_id": "p04_mika_orb_close",
+      "start_s": 32.97,
+      "end_s": 34.7,
+      "text": "You… know my name?!"
+    }
+  ]
+}

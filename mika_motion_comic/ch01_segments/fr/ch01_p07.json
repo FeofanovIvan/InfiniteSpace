@@ -1,0 +1,395 @@
+{
+  "schema_version": 3,
+  "page_id": "CH01_P07",
+  "locale": "fr",
+  "sync_model": "finite_state_camera_first_then_individual_voice",
+  "image_path": "res://mika_motion_comic/assets/pages/ch01_p07_languages/ch01_p07_fr.webp",
+  "native_scene_panels": [
+    "p07_station_hangar",
+    "p07_mika_staff",
+    "p07_mika_worried",
+    "p07_professor_arrives",
+    "p07_professor_talks",
+    "p07_ship_repair",
+    "p07_lmc_window"
+  ],
+  "panel_bounds": {
+    "p07_station_hangar": [
+      0.04,
+      0.026,
+      0.472,
+      0.188
+    ],
+    "p07_mika_staff": [
+      0.537,
+      0.026,
+      0.424,
+      0.188
+    ],
+    "p07_mika_worried": [
+      0.039,
+      0.23,
+      0.645,
+      0.176
+    ],
+    "p07_professor_arrives": [
+      0.71,
+      0.23,
+      0.25,
+      0.176
+    ],
+    "p07_professor_talks": [
+      0.039,
+      0.428,
+      0.511,
+      0.199
+    ],
+    "p07_ship_repair": [
+      0.578,
+      0.428,
+      0.383,
+      0.199
+    ],
+    "p07_lmc_window": [
+      0.039,
+      0.645,
+      0.922,
+      0.322
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH01_P07_L001",
+      "frame_id": "CH01_P07_F01",
+      "panel_id": "p07_station_hangar",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Au chantier de Callisto, Mika confia son vaisseau aux spécialistes.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L001_fr.mp3",
+      "audio_duration_s": 4.4,
+      "camera_target": [
+        0.29,
+        0.117,
+        0.185
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Общий план ангара: корабль, инженеры и Мика"
+    },
+    {
+      "line_id": "CH01_P07_L002",
+      "frame_id": "CH01_P07_F01",
+      "panel_id": "p07_station_hangar",
+      "speaker_id": "CHR_016",
+      "kind": "speech_engineer",
+      "spoken_text": "La coque est solide… Mais ce moteur à ondes ne tiendra pas le saut !",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L002_fr.mp3",
+      "audio_duration_s": 4.32,
+      "camera_target": [
+        0.209,
+        0.131,
+        0.123
+      ],
+      "transition_before_s": 0.3,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Инженер слева, двигатель и корпус"
+    },
+    {
+      "line_id": "CH01_P07_L003",
+      "frame_id": "CH01_P07_F01",
+      "panel_id": "p07_station_hangar",
+      "speaker_id": "CHR_017",
+      "kind": "speech_engineer",
+      "spoken_text": "Comment a-t-il survécu à cette tempête cosmique ?!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L003_fr.mp3",
+      "audio_duration_s": 3.28,
+      "camera_target": [
+        0.385,
+        0.153,
+        0.115
+      ],
+      "transition_before_s": 0.3,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Инженер справа и корабль"
+    },
+    {
+      "line_id": "CH01_P07_L004",
+      "frame_id": "CH01_P07_F02",
+      "panel_id": "p07_mika_staff",
+      "speaker_id": "CHR_001",
+      "kind": "speech_pleading",
+      "spoken_text": "Pourquoi je dois rester ? Je dois atteindre une autre galaxie !",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L004_fr.mp3",
+      "audio_duration_s": 3.76,
+      "camera_target": [
+        0.66,
+        0.119,
+        0.112
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика обращается к сотруднице"
+    },
+    {
+      "line_id": "CH01_P07_L005",
+      "frame_id": "CH01_P07_F02",
+      "panel_id": "p07_mika_staff",
+      "speaker_id": "CHR_018",
+      "kind": "speech_service",
+      "spoken_text": "Désolée, Mika. Ton vaisseau ne tiendra pas ce saut. On a tout vérifié… on ne peut rien y faire.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L005_fr.mp3",
+      "audio_duration_s": 6.4,
+      "camera_target": [
+        0.827,
+        0.08,
+        0.115
+      ],
+      "transition_before_s": 0.3,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Сотрудница отвечает; лицо важнее нижней подписи"
+    },
+    {
+      "line_id": "CH01_P07_L006",
+      "frame_id": "CH01_P07_F03",
+      "panel_id": "p07_mika_worried",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika perdit courage. Et si son voyage vers la maison s’arrêtait ici?..",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L006_fr.mp3",
+      "audio_duration_s": 4.96,
+      "camera_target": [
+        0.358,
+        0.333,
+        0.164
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Расстроенный Мика за столом"
+    },
+    {
+      "line_id": "CH01_P07_L007",
+      "frame_id": "CH01_P07_F03",
+      "panel_id": "p07_mika_worried",
+      "speaker_id": "CHR_015",
+      "kind": "speech_offscreen",
+      "spoken_text": "Hé, jeune voyageur ! Je crois savoir comment t’aider !",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L007_fr.mp3",
+      "audio_duration_s": 3.6,
+      "camera_target": [
+        0.358,
+        0.333,
+        0.164
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Профессор за кадром; остаёмся на реакции Мики"
+    },
+    {
+      "line_id": "CH01_P07_L008",
+      "frame_id": "CH01_P07_F04",
+      "panel_id": "p07_professor_arrives",
+      "speaker_id": "CHR_004",
+      "kind": "narration_intro",
+      "spoken_text": "Le professeur : un génie méconnu de Callisto.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L008_fr.mp3",
+      "audio_duration_s": 4.08,
+      "camera_target": [
+        0.834,
+        0.27,
+        0.113
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Лицо профессора; реплики окружающих остаются на рисунке"
+    },
+    {
+      "line_id": "CH01_P07_L012",
+      "frame_id": "CH01_P07_F05",
+      "panel_id": "p07_professor_talks",
+      "speaker_id": "CHR_015",
+      "kind": "speech_inventor",
+      "spoken_text": "Ajoutons un déphaseur quantique au cœur ondulatoire. Il va plier l’espace… et hop ! Nous filerons dans une autre galaxie !",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L012_fr.mp3",
+      "audio_duration_s": 7.6,
+      "camera_target": [
+        0.386,
+        0.48,
+        0.132
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Профессор объясняет; лицо и жест"
+    },
+    {
+      "line_id": "CH01_P07_L013",
+      "frame_id": "CH01_P07_F05",
+      "panel_id": "p07_professor_talks",
+      "speaker_id": "CHR_001",
+      "kind": "speech_bewildered",
+      "spoken_text": "Euh… quoi ?",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L013_fr.mp3",
+      "audio_duration_s": 1.6,
+      "camera_target": [
+        0.177,
+        0.516,
+        0.109
+      ],
+      "transition_before_s": 0.3,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Реакция Мики"
+    },
+    {
+      "line_id": "CH01_P07_L014",
+      "frame_id": "CH01_P07_F06",
+      "panel_id": "p07_ship_repair",
+      "speaker_id": "CHR_001",
+      "kind": "thought",
+      "spoken_text": "J’espère qu’il sait vraiment ce qu’il fait… On croise les doigts !",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L014_fr.mp3",
+      "audio_duration_s": 4.08,
+      "camera_target": [
+        0.771,
+        0.536,
+        0.148
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мысль Мики; тот же кадр ремонта, затем искры"
+    },
+    {
+      "line_id": "SFX_CH01_P07_F06_SPARKS",
+      "frame_id": "CH01_P07_F06",
+      "panel_id": "p07_ship_repair",
+      "speaker_id": "CHR_015",
+      "kind": "nonverbal_sfx",
+      "spoken_text": "",
+      "audio_path": "res://mika_motion_comic/ch01_clips/sfx/SFX_CH01_P07_F06_SPARKS.mp3",
+      "audio_duration_s": 0.65,
+      "camera_target": [
+        0.771,
+        0.536,
+        0.148
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика, профессор и ремонт корабля; неречевые искры"
+    },
+    {
+      "line_id": "CH01_P07_L015",
+      "frame_id": "CH01_P07_F07",
+      "panel_id": "p07_lmc_window",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Après des essais, des doutes et des étincelles, le vaisseau fut enfin prêt pour le grand saut !",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L015_fr.mp3",
+      "audio_duration_s": 5.84,
+      "camera_target": [
+        0.5,
+        0.788,
+        0.31
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Общий план экипажа после модернизации"
+    },
+    {
+      "line_id": "CH01_P07_L016",
+      "frame_id": "CH01_P07_F07",
+      "panel_id": "p07_lmc_window",
+      "speaker_id": "CHR_004",
+      "kind": "narration_supplies",
+      "spoken_text": "Avant le départ, nos amis ont refait leurs réserves et pris la route. Un long voyage les attendait !",
+      "audio_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L016_fr.mp3",
+      "audio_duration_s": 5.84,
+      "camera_target": [
+        0.5,
+        0.811,
+        0.31
+      ],
+      "transition_before_s": 0.3,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Экипаж и курс на БМО"
+    }
+  ],
+  "source_reading_order": [
+    "CH01_P07_L001",
+    "CH01_P07_L002",
+    "CH01_P07_L003",
+    "CH01_P07_L004",
+    "CH01_P07_L005",
+    "CH01_P07_L006",
+    "CH01_P07_L007",
+    "CH01_P07_L008",
+    "CH01_P07_L009",
+    "CH01_P07_L010",
+    "CH01_P07_L011",
+    "CH01_P07_L012",
+    "CH01_P07_L013",
+    "CH01_P07_L014",
+    "CH01_P07_L015",
+    "CH01_P07_L016",
+    "CH01_P07_L017"
+  ],
+  "optional_source_lines": [
+    "CH01_P07_L009",
+    "CH01_P07_L010",
+    "CH01_P07_L011",
+    "CH01_P07_L017"
+  ]
+}

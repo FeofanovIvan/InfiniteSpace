@@ -1,0 +1,118 @@
+{
+  "schema": "mika_ch01_p04_voice_timing_v1",
+  "page_id": "CH01_P04",
+  "locale": "de",
+  "audio_path": "res://mika_motion_comic/audio/ch01_p04_de_voice_master.mp3",
+  "duration_seconds": 33.6,
+  "status": "preliminary_boundaries_from_audio_pauses_needs_godot_playback_review",
+  "frame_map": {
+    "p04_mars_landing": [
+      "CH01_P04_L001"
+    ],
+    "p04_mika_walk": [
+      "CH01_P04_L002"
+    ],
+    "p04_reception": [
+      "CH01_P04_L003",
+      "CH01_P04_L004"
+    ],
+    "p04_elevator": [
+      "CH01_P04_L005"
+    ],
+    "p04_ai_core": [
+      "CH01_P04_L006"
+    ],
+    "p04_mika_orb_close": [
+      "CH01_P04_L007",
+      "CH01_P04_L008"
+    ]
+  },
+  "playback_groups": [
+    {
+      "trigger": "mars_arrival_panels",
+      "panels": [
+        "p04_mars_landing",
+        "p04_mika_walk",
+        "p04_reception"
+      ],
+      "voice_in_s": 0.0,
+      "voice_out_s": 16.7
+    },
+    {
+      "trigger": "mars_story_after_word_panels",
+      "panels": [
+        "p04_elevator",
+        "p04_ai_core",
+        "p04_mika_orb_close"
+      ],
+      "voice_in_s": 16.89,
+      "voice_out_s": 33.6
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P04_L001",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_mars_landing",
+      "start_s": 0.0,
+      "end_s": 5.88,
+      "text": "Mars. Mikas Schiff landete am Raumhafen des zentralen KI-Datenzentrums."
+    },
+    {
+      "line_id": "CH01_P04_L002",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_mika_walk",
+      "start_s": 6.23,
+      "end_s": 9.33,
+      "text": "Der Rote Planet begrüßte Mika mit einem Sandsturm!"
+    },
+    {
+      "line_id": "CH01_P04_L003",
+      "speaker_id": "CHR_001",
+      "panel_id": "p04_reception",
+      "start_s": 9.86,
+      "end_s": 12.38,
+      "text": "Entschuldigung… Darf ich zur KI?"
+    },
+    {
+      "line_id": "CH01_P04_L004",
+      "speaker_id": "CHR_012",
+      "panel_id": "p04_reception",
+      "start_s": 12.89,
+      "end_s": 16.58,
+      "text": "Natürlich! Aber zuerst… ein paar Formulare."
+    },
+    {
+      "line_id": "CH01_P04_L005",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_elevator",
+      "start_s": 16.89,
+      "end_s": 23.26,
+      "text": "Selbst in der Zukunft gibt’s noch Papierkram! Nach dem Ausfüllen fuhr Mika tief im Aufzug hinab."
+    },
+    {
+      "line_id": "CH01_P04_L006",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_ai_core",
+      "start_s": 23.77,
+      "end_s": 29.3,
+      "text": "Tief im Innern des Mars lag eine riesige Halle. Ein Steg führte zu einer Kugel…"
+    },
+    {
+      "line_id": "CH01_P04_L007",
+      "speaker_id": "CHR_013",
+      "panel_id": "p04_mika_orb_close",
+      "start_s": 30.06,
+      "end_s": 30.69,
+      "text": "Mika…"
+    },
+    {
+      "line_id": "CH01_P04_L008",
+      "speaker_id": "CHR_001",
+      "panel_id": "p04_mika_orb_close",
+      "start_s": 31.25,
+      "end_s": 33.1,
+      "text": "Du… kennst meinen Namen?!"
+    }
+  ]
+}

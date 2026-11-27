@@ -1,0 +1,976 @@
+{
+  "en": [
+    {
+      "font_px": 38,
+      "line_count": 3,
+      "max_text_width": 270,
+      "available_width": 285.0,
+      "fit": true,
+      "bubble": [
+        495.0,
+        107.0,
+        320.0,
+        197.0
+      ],
+      "id": "CH05_P02_L001"
+    },
+    {
+      "font_px": 43,
+      "line_count": 2,
+      "max_text_width": 1319,
+      "available_width": 1348.0,
+      "fit": true,
+      "bubble": [
+        957.0,
+        105.0,
+        1400.0,
+        166.0
+      ],
+      "id": "CH05_P02_L002"
+    },
+    {
+      "font_px": 49,
+      "line_count": 1,
+      "max_text_width": 164,
+      "available_width": 250.0,
+      "fit": true,
+      "bubble": [
+        905.0,
+        341.0,
+        285.0,
+        116.0
+      ],
+      "id": "CH05_P02_L003"
+    },
+    {
+      "font_px": 41,
+      "line_count": 2,
+      "max_text_width": 557,
+      "available_width": 563.0,
+      "fit": true,
+      "bubble": [
+        1232.0,
+        333.0,
+        615.0,
+        156.0
+      ],
+      "id": "CH05_P02_L004"
+    },
+    {
+      "font_px": 39,
+      "line_count": 2,
+      "max_text_width": 434,
+      "available_width": 455.0,
+      "fit": true,
+      "bubble": [
+        1900.0,
+        326.0,
+        490.0,
+        152.0
+      ],
+      "id": "CH05_P02_L005"
+    },
+    {
+      "font_px": 40,
+      "line_count": 3,
+      "max_text_width": 493,
+      "available_width": 520.0,
+      "fit": true,
+      "bubble": [
+        588.0,
+        1124.0,
+        555.0,
+        203.0
+      ],
+      "id": "CH05_P02_L006"
+    },
+    {
+      "font_px": 40,
+      "line_count": 3,
+      "max_text_width": 486,
+      "available_width": 551.0,
+      "fit": true,
+      "bubble": [
+        563.0,
+        2249.0,
+        586.0,
+        203.0
+      ],
+      "id": "CH05_P02_L007"
+    },
+    {
+      "font_px": 39,
+      "line_count": 3,
+      "max_text_width": 653,
+      "available_width": 713.0,
+      "fit": true,
+      "bubble": [
+        1240.0,
+        1062.0,
+        765.0,
+        204.0
+      ],
+      "id": "CH05_P02_L008"
+    },
+    {
+      "font_px": 56,
+      "line_count": 1,
+      "max_text_width": 176,
+      "available_width": 183.0,
+      "fit": true,
+      "bubble": [
+        1265.0,
+        1443.0,
+        218.0,
+        125.0
+      ],
+      "id": "CH05_P02_L009"
+    },
+    {
+      "font_px": 41,
+      "line_count": 2,
+      "max_text_width": 766,
+      "available_width": 766.0,
+      "fit": true,
+      "bubble": [
+        1542.0,
+        2216.0,
+        818.0,
+        206.0
+      ],
+      "id": "CH05_P02_L010"
+    },
+    {
+      "font_px": 38,
+      "line_count": 2,
+      "max_text_width": 772,
+      "available_width": 780.0,
+      "fit": true,
+      "bubble": [
+        89.0,
+        2483.0,
+        832.0,
+        160.0
+      ],
+      "id": "CH05_P02_L011"
+    },
+    {
+      "font_px": 35,
+      "line_count": 5,
+      "max_text_width": 672,
+      "available_width": 693.0,
+      "fit": true,
+      "bubble": [
+        355.0,
+        3079.0,
+        745.0,
+        294.0
+      ],
+      "id": "CH05_P02_L012"
+    },
+    {
+      "font_px": 32,
+      "line_count": 1,
+      "max_text_width": 1287,
+      "available_width": 1398.0,
+      "fit": true,
+      "bubble": [
+        1025.0,
+        3389.0,
+        1450.0,
+        99.0
+      ],
+      "id": "CH05_P02_L013"
+    }
+  ],
+  "pt_BR": [
+    {
+      "font_px": 38,
+      "line_count": 3,
+      "max_text_width": 222,
+      "available_width": 285.0,
+      "fit": true,
+      "bubble": [
+        495.0,
+        107.0,
+        320.0,
+        197.0
+      ],
+      "id": "CH05_P02_L001"
+    },
+    {
+      "font_px": 43,
+      "line_count": 2,
+      "max_text_width": 1344,
+      "available_width": 1348.0,
+      "fit": true,
+      "bubble": [
+        957.0,
+        105.0,
+        1400.0,
+        166.0
+      ],
+      "id": "CH05_P02_L002"
+    },
+    {
+      "font_px": 49,
+      "line_count": 1,
+      "max_text_width": 114,
+      "available_width": 250.0,
+      "fit": true,
+      "bubble": [
+        905.0,
+        341.0,
+        285.0,
+        116.0
+      ],
+      "id": "CH05_P02_L003"
+    },
+    {
+      "font_px": 37,
+      "line_count": 2,
+      "max_text_width": 553,
+      "available_width": 563.0,
+      "fit": true,
+      "bubble": [
+        1232.0,
+        333.0,
+        615.0,
+        156.0
+      ],
+      "id": "CH05_P02_L004"
+    },
+    {
+      "font_px": 39,
+      "line_count": 2,
+      "max_text_width": 425,
+      "available_width": 455.0,
+      "fit": true,
+      "bubble": [
+        1900.0,
+        326.0,
+        490.0,
+        152.0
+      ],
+      "id": "CH05_P02_L005"
+    },
+    {
+      "font_px": 40,
+      "line_count": 2,
+      "max_text_width": 520,
+      "available_width": 520.0,
+      "fit": true,
+      "bubble": [
+        588.0,
+        1124.0,
+        555.0,
+        203.0
+      ],
+      "id": "CH05_P02_L006"
+    },
+    {
+      "font_px": 40,
+      "line_count": 3,
+      "max_text_width": 493,
+      "available_width": 551.0,
+      "fit": true,
+      "bubble": [
+        563.0,
+        2249.0,
+        586.0,
+        203.0
+      ],
+      "id": "CH05_P02_L007"
+    },
+    {
+      "font_px": 35,
+      "line_count": 3,
+      "max_text_width": 703,
+      "available_width": 713.0,
+      "fit": true,
+      "bubble": [
+        1240.0,
+        1062.0,
+        765.0,
+        204.0
+      ],
+      "id": "CH05_P02_L008"
+    },
+    {
+      "font_px": 56,
+      "line_count": 1,
+      "max_text_width": 149,
+      "available_width": 183.0,
+      "fit": true,
+      "bubble": [
+        1265.0,
+        1443.0,
+        218.0,
+        125.0
+      ],
+      "id": "CH05_P02_L009"
+    },
+    {
+      "font_px": 39,
+      "line_count": 3,
+      "max_text_width": 766,
+      "available_width": 766.0,
+      "fit": true,
+      "bubble": [
+        1542.0,
+        2216.0,
+        818.0,
+        206.0
+      ],
+      "id": "CH05_P02_L010"
+    },
+    {
+      "font_px": 42,
+      "line_count": 2,
+      "max_text_width": 729,
+      "available_width": 780.0,
+      "fit": true,
+      "bubble": [
+        89.0,
+        2483.0,
+        832.0,
+        160.0
+      ],
+      "id": "CH05_P02_L011"
+    },
+    {
+      "font_px": 34,
+      "line_count": 6,
+      "max_text_width": 668,
+      "available_width": 693.0,
+      "fit": true,
+      "bubble": [
+        355.0,
+        3079.0,
+        745.0,
+        294.0
+      ],
+      "id": "CH05_P02_L012"
+    },
+    {
+      "font_px": 32,
+      "line_count": 1,
+      "max_text_width": 1146,
+      "available_width": 1398.0,
+      "fit": true,
+      "bubble": [
+        1025.0,
+        3389.0,
+        1450.0,
+        99.0
+      ],
+      "id": "CH05_P02_L013"
+    }
+  ],
+  "es": [
+    {
+      "font_px": 38,
+      "line_count": 3,
+      "max_text_width": 222,
+      "available_width": 285.0,
+      "fit": true,
+      "bubble": [
+        495.0,
+        107.0,
+        320.0,
+        197.0
+      ],
+      "id": "CH05_P02_L001"
+    },
+    {
+      "font_px": 43,
+      "line_count": 2,
+      "max_text_width": 1329,
+      "available_width": 1348.0,
+      "fit": true,
+      "bubble": [
+        957.0,
+        105.0,
+        1400.0,
+        166.0
+      ],
+      "id": "CH05_P02_L002"
+    },
+    {
+      "font_px": 49,
+      "line_count": 1,
+      "max_text_width": 169,
+      "available_width": 250.0,
+      "fit": true,
+      "bubble": [
+        905.0,
+        341.0,
+        285.0,
+        116.0
+      ],
+      "id": "CH05_P02_L003"
+    },
+    {
+      "font_px": 38,
+      "line_count": 2,
+      "max_text_width": 552,
+      "available_width": 563.0,
+      "fit": true,
+      "bubble": [
+        1232.0,
+        333.0,
+        615.0,
+        156.0
+      ],
+      "id": "CH05_P02_L004"
+    },
+    {
+      "font_px": 39,
+      "line_count": 2,
+      "max_text_width": 448,
+      "available_width": 455.0,
+      "fit": true,
+      "bubble": [
+        1900.0,
+        326.0,
+        490.0,
+        152.0
+      ],
+      "id": "CH05_P02_L005"
+    },
+    {
+      "font_px": 40,
+      "line_count": 2,
+      "max_text_width": 513,
+      "available_width": 520.0,
+      "fit": true,
+      "bubble": [
+        588.0,
+        1124.0,
+        555.0,
+        203.0
+      ],
+      "id": "CH05_P02_L006"
+    },
+    {
+      "font_px": 40,
+      "line_count": 2,
+      "max_text_width": 513,
+      "available_width": 551.0,
+      "fit": true,
+      "bubble": [
+        563.0,
+        2249.0,
+        586.0,
+        203.0
+      ],
+      "id": "CH05_P02_L007"
+    },
+    {
+      "font_px": 34,
+      "line_count": 4,
+      "max_text_width": 630,
+      "available_width": 713.0,
+      "fit": true,
+      "bubble": [
+        1240.0,
+        1062.0,
+        765.0,
+        204.0
+      ],
+      "id": "CH05_P02_L008"
+    },
+    {
+      "font_px": 47,
+      "line_count": 1,
+      "max_text_width": 180,
+      "available_width": 183.0,
+      "fit": true,
+      "bubble": [
+        1265.0,
+        1443.0,
+        218.0,
+        125.0
+      ],
+      "id": "CH05_P02_L009"
+    },
+    {
+      "font_px": 41,
+      "line_count": 3,
+      "max_text_width": 712,
+      "available_width": 766.0,
+      "fit": true,
+      "bubble": [
+        1542.0,
+        2216.0,
+        818.0,
+        206.0
+      ],
+      "id": "CH05_P02_L010"
+    },
+    {
+      "font_px": 39,
+      "line_count": 2,
+      "max_text_width": 775,
+      "available_width": 780.0,
+      "fit": true,
+      "bubble": [
+        89.0,
+        2483.0,
+        832.0,
+        160.0
+      ],
+      "id": "CH05_P02_L011"
+    },
+    {
+      "font_px": 35,
+      "line_count": 5,
+      "max_text_width": 689,
+      "available_width": 693.0,
+      "fit": true,
+      "bubble": [
+        355.0,
+        3079.0,
+        745.0,
+        294.0
+      ],
+      "id": "CH05_P02_L012"
+    },
+    {
+      "font_px": 32,
+      "line_count": 1,
+      "max_text_width": 1210,
+      "available_width": 1398.0,
+      "fit": true,
+      "bubble": [
+        1025.0,
+        3389.0,
+        1450.0,
+        99.0
+      ],
+      "id": "CH05_P02_L013"
+    }
+  ],
+  "fr": [
+    {
+      "font_px": 38,
+      "line_count": 3,
+      "max_text_width": 271,
+      "available_width": 285.0,
+      "fit": true,
+      "bubble": [
+        495.0,
+        107.0,
+        320.0,
+        197.0
+      ],
+      "id": "CH05_P02_L001"
+    },
+    {
+      "font_px": 41,
+      "line_count": 2,
+      "max_text_width": 1347,
+      "available_width": 1348.0,
+      "fit": true,
+      "bubble": [
+        957.0,
+        105.0,
+        1400.0,
+        166.0
+      ],
+      "id": "CH05_P02_L002"
+    },
+    {
+      "font_px": 48,
+      "line_count": 1,
+      "max_text_width": 250,
+      "available_width": 250.0,
+      "fit": true,
+      "bubble": [
+        905.0,
+        341.0,
+        285.0,
+        116.0
+      ],
+      "id": "CH05_P02_L003"
+    },
+    {
+      "font_px": 32,
+      "line_count": 2,
+      "max_text_width": 562,
+      "available_width": 563.0,
+      "fit": true,
+      "bubble": [
+        1232.0,
+        333.0,
+        615.0,
+        156.0
+      ],
+      "id": "CH05_P02_L004"
+    },
+    {
+      "font_px": 38,
+      "line_count": 2,
+      "max_text_width": 448,
+      "available_width": 455.0,
+      "fit": true,
+      "bubble": [
+        1900.0,
+        326.0,
+        490.0,
+        152.0
+      ],
+      "id": "CH05_P02_L005"
+    },
+    {
+      "font_px": 37,
+      "line_count": 3,
+      "max_text_width": 519,
+      "available_width": 520.0,
+      "fit": true,
+      "bubble": [
+        588.0,
+        1124.0,
+        555.0,
+        203.0
+      ],
+      "id": "CH05_P02_L006"
+    },
+    {
+      "font_px": 40,
+      "line_count": 3,
+      "max_text_width": 539,
+      "available_width": 551.0,
+      "fit": true,
+      "bubble": [
+        563.0,
+        2249.0,
+        586.0,
+        203.0
+      ],
+      "id": "CH05_P02_L007"
+    },
+    {
+      "font_px": 35,
+      "line_count": 3,
+      "max_text_width": 704,
+      "available_width": 713.0,
+      "fit": true,
+      "bubble": [
+        1240.0,
+        1062.0,
+        765.0,
+        204.0
+      ],
+      "id": "CH05_P02_L008"
+    },
+    {
+      "font_px": 39,
+      "line_count": 1,
+      "max_text_width": 182,
+      "available_width": 183.0,
+      "fit": true,
+      "bubble": [
+        1265.0,
+        1443.0,
+        218.0,
+        125.0
+      ],
+      "id": "CH05_P02_L009"
+    },
+    {
+      "font_px": 41,
+      "line_count": 3,
+      "max_text_width": 753,
+      "available_width": 766.0,
+      "fit": true,
+      "bubble": [
+        1542.0,
+        2216.0,
+        818.0,
+        206.0
+      ],
+      "id": "CH05_P02_L010"
+    },
+    {
+      "font_px": 42,
+      "line_count": 2,
+      "max_text_width": 729,
+      "available_width": 780.0,
+      "fit": true,
+      "bubble": [
+        89.0,
+        2483.0,
+        832.0,
+        160.0
+      ],
+      "id": "CH05_P02_L011"
+    },
+    {
+      "font_px": 34,
+      "line_count": 6,
+      "max_text_width": 692,
+      "available_width": 693.0,
+      "fit": true,
+      "bubble": [
+        355.0,
+        3079.0,
+        745.0,
+        294.0
+      ],
+      "id": "CH05_P02_L012"
+    },
+    {
+      "font_px": 32,
+      "line_count": 1,
+      "max_text_width": 1314,
+      "available_width": 1398.0,
+      "fit": true,
+      "bubble": [
+        1025.0,
+        3389.0,
+        1450.0,
+        99.0
+      ],
+      "id": "CH05_P02_L013"
+    }
+  ],
+  "de": [
+    {
+      "font_px": 38,
+      "line_count": 3,
+      "max_text_width": 282,
+      "available_width": 285.0,
+      "fit": true,
+      "bubble": [
+        495.0,
+        107.0,
+        320.0,
+        197.0
+      ],
+      "id": "CH05_P02_L001"
+    },
+    {
+      "font_px": 43,
+      "line_count": 2,
+      "max_text_width": 1294,
+      "available_width": 1348.0,
+      "fit": true,
+      "bubble": [
+        957.0,
+        105.0,
+        1400.0,
+        166.0
+      ],
+      "id": "CH05_P02_L002"
+    },
+    {
+      "font_px": 49,
+      "line_count": 1,
+      "max_text_width": 164,
+      "available_width": 250.0,
+      "fit": true,
+      "bubble": [
+        905.0,
+        341.0,
+        285.0,
+        116.0
+      ],
+      "id": "CH05_P02_L003"
+    },
+    {
+      "font_px": 37,
+      "line_count": 2,
+      "max_text_width": 558,
+      "available_width": 563.0,
+      "fit": true,
+      "bubble": [
+        1232.0,
+        333.0,
+        615.0,
+        156.0
+      ],
+      "id": "CH05_P02_L004"
+    },
+    {
+      "font_px": 39,
+      "line_count": 2,
+      "max_text_width": 441,
+      "available_width": 455.0,
+      "fit": true,
+      "bubble": [
+        1900.0,
+        326.0,
+        490.0,
+        152.0
+      ],
+      "id": "CH05_P02_L005"
+    },
+    {
+      "font_px": 40,
+      "line_count": 2,
+      "max_text_width": 503,
+      "available_width": 520.0,
+      "fit": true,
+      "bubble": [
+        588.0,
+        1124.0,
+        555.0,
+        203.0
+      ],
+      "id": "CH05_P02_L006"
+    },
+    {
+      "font_px": 40,
+      "line_count": 2,
+      "max_text_width": 546,
+      "available_width": 551.0,
+      "fit": true,
+      "bubble": [
+        563.0,
+        2249.0,
+        586.0,
+        203.0
+      ],
+      "id": "CH05_P02_L007"
+    },
+    {
+      "font_px": 37,
+      "line_count": 3,
+      "max_text_width": 710,
+      "available_width": 713.0,
+      "fit": true,
+      "bubble": [
+        1240.0,
+        1062.0,
+        765.0,
+        204.0
+      ],
+      "id": "CH05_P02_L008"
+    },
+    {
+      "font_px": 56,
+      "line_count": 1,
+      "max_text_width": 176,
+      "available_width": 183.0,
+      "fit": true,
+      "bubble": [
+        1265.0,
+        1443.0,
+        218.0,
+        125.0
+      ],
+      "id": "CH05_P02_L009"
+    },
+    {
+      "font_px": 41,
+      "line_count": 3,
+      "max_text_width": 692,
+      "available_width": 766.0,
+      "fit": true,
+      "bubble": [
+        1542.0,
+        2216.0,
+        818.0,
+        206.0
+      ],
+      "id": "CH05_P02_L010"
+    },
+    {
+      "font_px": 40,
+      "line_count": 2,
+      "max_text_width": 762,
+      "available_width": 780.0,
+      "fit": true,
+      "bubble": [
+        89.0,
+        2483.0,
+        832.0,
+        160.0
+      ],
+      "id": "CH05_P02_L011"
+    },
+    {
+      "font_px": 34,
+      "line_count": 6,
+      "max_text_width": 682,
+      "available_width": 693.0,
+      "fit": true,
+      "bubble": [
+        355.0,
+        3079.0,
+        745.0,
+        294.0
+      ],
+      "id": "CH05_P02_L012"
+    },
+    {
+      "font_px": 32,
+      "line_count": 1,
+      "max_text_width": 1329,
+      "available_width": 1398.0,
+      "fit": true,
+      "bubble": [
+        1025.0,
+        3389.0,
+        1450.0,
+        99.0
+      ],
+      "id": "CH05_P02_L013"
+    }
+  ],
+  "ru": [
+    {
+      "id": "CH05_P02_L001",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L002",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L003",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L004",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L005",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L006",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L007",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L008",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L009",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L010",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L011",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L012",
+      "source": "approved v4; SVG not modified"
+    },
+    {
+      "id": "CH05_P02_L013",
+      "source": "approved v4; SVG not modified"
+    }
+  ]
+}

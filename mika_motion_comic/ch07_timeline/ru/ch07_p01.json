@@ -1,0 +1,229 @@
+{
+  "schema_version": 3,
+  "page_id": "CH07_P01",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch07_p01_languages/ch07_p01_ru.webp",
+  "native_scene_panels": [
+    "p71_ship",
+    "p71_cabin",
+    "p71_flight",
+    "p71_mika_points",
+    "p71_planet",
+    "p71_thought"
+  ],
+  "panel_bounds": {
+    "p71_ship": [
+      0.028645833333333332,
+      0.021484375,
+      0.94140625,
+      0.224609375
+    ],
+    "p71_cabin": [
+      0.028645833333333332,
+      0.265625,
+      0.4166666666666667,
+      0.2314453125
+    ],
+    "p71_flight": [
+      0.4778645833333333,
+      0.2587890625,
+      0.4921875,
+      0.240234375
+    ],
+    "p71_mika_points": [
+      0.028645833333333332,
+      0.51171875,
+      0.5052083333333334,
+      0.208984375
+    ],
+    "p71_planet": [
+      0.028645833333333332,
+      0.740234375,
+      0.4947916666666667,
+      0.2392578125
+    ],
+    "p71_thought": [
+      0.5638020833333334,
+      0.5126953125,
+      0.40625,
+      0.466796875
+    ]
+  },
+  "lines": [
+    {
+      "panel_id": "p71_ship",
+      "camera_target": [
+        0.5,
+        0.146,
+        0.2650390625
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028645833333333332,
+        0.021484375,
+        0.94140625,
+        0.224609375
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P01_L001",
+      "frame_id": "1 — верхний широкий кадр / шторм",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "После выхода из портала корабль Мики попал в страшный шторм.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/ru/CH07_P01_L001_ru.mp3",
+      "audio_duration_s": 4.284082,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f4581f748bd805622b11871c7ca7f57237b9045beacf1357a484ab15bbc7a022"
+    },
+    {
+      "panel_id": "p71_cabin",
+      "camera_target": [
+        0.24,
+        0.395,
+        0.27310546874999997
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028645833333333332,
+        0.265625,
+        0.4166666666666667,
+        0.2314453125
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P01_L002",
+      "frame_id": "2 — кабина / тревога Мики",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Надеюсь, корабль выдержит!",
+      "audio_path": "res://mika_motion_comic/ch07_clips/ru/CH07_P01_L002_ru.mp3",
+      "audio_duration_s": 2.586122,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7b03bf36ebecc1cd8ecac146f321ea17a69130a437f6240b7ed926e9c999a7ac"
+    },
+    {
+      "panel_id": "p71_flight",
+      "camera_target": [
+        0.76,
+        0.395,
+        0.2834765625
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.4778645833333333,
+        0.2587890625,
+        0.4921875,
+        0.240234375
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P01_L003",
+      "frame_id": "3 — корабль выходит из шторма",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Через некоторое время корабль выбрался из шторма.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/ru/CH07_P01_L003_ru.mp3",
+      "audio_duration_s": 3.552653,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "3c225e1088f02fc036796e7b03b1fbf1cad5334f0e73518224476e52ad797e05"
+    },
+    {
+      "panel_id": "p71_mika_points",
+      "camera_target": [
+        0.22,
+        0.62,
+        0.24660156249999998
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028645833333333332,
+        0.51171875,
+        0.5052083333333334,
+        0.208984375
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P01_L004",
+      "frame_id": "4 — Мика показывает на светящуюся точку",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Наверное, нам нужно туда.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/ru/CH07_P01_L004_ru.mp3",
+      "audio_duration_s": 2.586122,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "686f83b32f0721a8b336292bcc2714fd6719227a7adc4ed7021a8037a9f4377b"
+    },
+    {
+      "panel_id": "p71_planet",
+      "camera_target": [
+        0.26,
+        0.86,
+        0.28232421874999997
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028645833333333332,
+        0.740234375,
+        0.4947916666666667,
+        0.2392578125
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P01_L005",
+      "frame_id": "5 — светящаяся планета",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Приблизившись к точке, они увидели странную светящуюся планету. Она меняла форму и излучала огромное количество плазмы.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/ru/CH07_P01_L005_ru.mp3",
+      "audio_duration_s": 8.515918,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f40608f09620d5df0bee79781794f8589c0173bf8b2b8c8a803f0bfc6b9671fe"
+    },
+    {
+      "panel_id": "p71_thought",
+      "camera_target": [
+        0.77,
+        0.78,
+        0.5508203125
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.5638020833333334,
+        0.5126953125,
+        0.40625,
+        0.466796875
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH07_P01_L006",
+      "frame_id": "6 — сон и похожее существо",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Мика погрузился в сон. Там он встретил странное существо, удивительно похожее на него самого.",
+      "audio_path": "res://mika_motion_comic/ch07_clips/ru/CH07_P01_L006_ru.mp3",
+      "audio_duration_s": 6.844082,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f0979b358a4377cb3d5a8d4eb05e00ce691adecbbc51dd613fef3cb88148071f"
+    }
+  ]
+}

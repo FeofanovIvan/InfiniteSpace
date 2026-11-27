@@ -2,21 +2,37 @@ extends Control
 ## Standalone six-language settings modal. Reuses MobileLocale persistence.
 ## Input is handled by this modal; underlying simulator/flight UI stays unchanged.
 
+signal game_mode_selected(mode: String, restart: bool)
+signal story_arc_selected(arc_id: String)
+
+const StoryProgress: Script = preload("res://scripts/StoryProgress.gd")
+const StoryArcBrowser: Script = preload("res://scripts/StoryArcBrowser.gd")
+const StorySubscriptionGate: Script = preload("res://scripts/StorySubscriptionGate.gd")
+const StoryModeChoiceDialog: Script = preload("res://scripts/StoryModeChoiceDialog.gd")
+
 const CLOSE_GLYPH: Script = preload("res://simulator_ui/neon_close_glyph.gd")
 const LOCALES: Array[String] = ["en", "ru", "fr", "de", "es", "pt_BR"]
 const NAMES: Array[String] = ["English", "Русский", "Français", "Deutsch", "Español", "Português (BR)"]
 const HEADINGS: Dictionary = {"en": "SETTINGS", "ru": "НАСТРОЙКИ", "fr": "PARAMÈTRES", "de": "EINSTELLUNGEN", "es": "AJUSTES", "pt_BR": "CONFIGURAÇÕES"}
 const V104_LABELS: Dictionary = {
-	"ru":{"mode":"Режим игры", "free":"Свободный мир", "story":"Сюжет (скоро)", "privacy":"Политика конфиденциальности", "purchase":"Покупка", "privacy_hint":"Ссылка на политику конфиденциальности пока не настроена.", "purchase_hint":"Покупка будет доступна после подключения магазина."},
-	"en":{"mode":"Game mode", "free":"Free world", "story":"Story (coming soon)", "privacy":"Privacy Policy", "purchase":"Purchase", "privacy_hint":"The official privacy policy link is not configured yet.", "purchase_hint":"Purchases will be available after store setup."},
-	"fr":{"mode":"Mode de jeu", "free":"Monde libre", "story":"Histoire (bientôt)", "privacy":"Politique de confidentialité", "purchase":"Achat", "privacy_hint":"Le lien officiel vers la politique de confidentialité n’est pas encore défini.", "purchase_hint":"Les achats seront disponibles après la configuration de la boutique."},
-	"de":{"mode":"Spielmodus", "free":"Freie Welt", "story":"Geschichte (bald)", "privacy":"Datenschutzerklärung", "purchase":"Kauf", "privacy_hint":"Der offizielle Datenschutzlink ist noch nicht eingerichtet.", "purchase_hint":"Käufe folgen nach der Einrichtung des Shops."},
-	"es":{"mode":"Modo de juego", "free":"Mundo libre", "story":"Historia (próximamente)", "privacy":"Política de privacidad", "purchase":"Compra", "privacy_hint":"Aún no se ha configurado el enlace oficial de privacidad.", "purchase_hint":"Las compras estarán disponibles al configurar la tienda."},
-	"pt_BR":{"mode":"Modo de jogo", "free":"Mundo livre", "story":"História (em breve)", "privacy":"Política de privacidade", "purchase":"Compra", "privacy_hint":"O link oficial da política de privacidade ainda não foi configurado.", "purchase_hint":"As compras estarão disponíveis após configurar a loja."}
+	"ru":{"mode":"Режим игры", "free":"Свободный мир", "story":"История", "privacy":"Политика конфиденциальности", "purchase":"Покупка", "privacy_hint":"Ссылка на политику конфиденциальности пока не настроена.", "purchase_hint":"Покупка будет доступна после подключения магазина."},
+	"en":{"mode":"Game mode", "free":"Free world", "story":"Story", "privacy":"Privacy Policy", "purchase":"Purchase", "privacy_hint":"The official privacy policy link is not configured yet.", "purchase_hint":"Purchases will be available after store setup."},
+	"fr":{"mode":"Mode de jeu", "free":"Monde libre", "story":"Histoire", "privacy":"Politique de confidentialité", "purchase":"Achat", "privacy_hint":"Le lien officiel vers la politique de confidentialité n’est pas encore défini.", "purchase_hint":"Les achats seront disponibles après la configuration de la boutique."},
+	"de":{"mode":"Spielmodus", "free":"Freie Welt", "story":"Geschichte", "privacy":"Datenschutzerklärung", "purchase":"Kauf", "privacy_hint":"Der offizielle Datenschutzlink ist noch nicht eingerichtet.", "purchase_hint":"Käufe folgen nach der Einrichtung des Shops."},
+	"es":{"mode":"Modo de juego", "free":"Mundo libre", "story":"Historia", "privacy":"Política de privacidad", "purchase":"Compra", "privacy_hint":"Aún no se ha configurado el enlace oficial de privacidad.", "purchase_hint":"Las compras estarán disponibles al configurar la tienda."},
+	"pt_BR":{"mode":"Modo de jogo", "free":"Mundo livre", "story":"História", "privacy":"Política de privacidade", "purchase":"Compra", "privacy_hint":"O link oficial da política de privacidade ainda não foi configurado.", "purchase_hint":"As compras estarão disponíveis após configurar a loja."}
 }
-const V104_MODE_CONFIG: String = "user://miko_mode.cfg"
-# InfiniteSpace v104: Free world default; the story mode is not released.
+const STORY_CHOICE_LABELS: Dictionary = {
+	"ru": {"title": "СЮЖЕТНОЕ ПРИКЛЮЧЕНИЕ", "question": "Хотите начать историю сначала или продолжить с сохранённого момента?", "continue": "Продолжить", "restart": "Начать сначала", "cancel": "Отмена"},
+	"en": {"title": "STORY ADVENTURE", "question": "Start the story over or continue from your checkpoint?", "continue": "Continue", "restart": "Start over", "cancel": "Cancel"},
+	"fr": {"title": "AVENTURE", "question": "Recommencer l’histoire ou continuer au point sauvegardé ?", "continue": "Continuer", "restart": "Recommencer", "cancel": "Annuler"},
+	"de": {"title": "GESCHICHTE", "question": "Geschichte neu beginnen oder vom Speicherpunkt fortsetzen?", "continue": "Fortsetzen", "restart": "Neu beginnen", "cancel": "Abbrechen"},
+	"es": {"title": "AVENTURA", "question": "¿Empezar la historia de nuevo o continuar desde el punto guardado?", "continue": "Continuar", "restart": "Empezar de nuevo", "cancel": "Cancelar"},
+	"pt_BR": {"title": "AVENTURA", "question": "Recomeçar a história ou continuar do ponto salvo?", "continue": "Continuar", "restart": "Recomeçar", "cancel": "Cancelar"}
+}
+# Shared mode file is read by StoryProgress; Story is enabled on develop.
 const LANGUAGE_LABELS: Dictionary = {"en": "Language", "ru": "Язык", "fr": "Langue", "de": "Sprache", "es": "Idioma", "pt_BR": "Idioma"}
+const ARCS_LABELS: Dictionary = {"ru": "Сюжетные арки", "en": "Story arcs", "fr": "Arcs narratifs", "de": "Handlungsbögen", "es": "Arcos narrativos", "pt_BR": "Arcos da história"}
 
 var _veil: ColorRect
 var _panel: Panel
@@ -27,9 +43,12 @@ var _buttons: Array[Button] = []
 var _v104_mode_title: Label
 var _v104_free: Button
 var _v104_story: Button
+var _v104_arcs: Button
 var _v104_privacy: Button
 var _v104_purchase: Button
 var _v104_info: Label
+var _story_choice: CanvasLayer
+var _story_browser: Control
 
 func _ready() -> void:
 	call_deferred("_mika_ency_v21_attach")
@@ -82,6 +101,11 @@ func _ready() -> void:
 		_panel.add_child(b)
 		_buttons.append(b)
 	_v104_build_extras()
+	_story_browser = StoryArcBrowser.new() as Control
+	_story_browser.name = "UnlockedStoryArcArchive"
+	add_child(_story_browser)
+	_story_browser.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_story_browser.arc_chosen.connect(_v104_arc_chosen)
 	resized.connect(_layout)
 	MobileLocale.language_changed.connect(_refresh_locale)
 	_refresh_locale(MobileLocale.language)
@@ -152,11 +176,13 @@ func _layout() -> void:
 	_v104_mode_title.position = Vector2(margin, 287.0*s)
 	_v104_mode_title.size = Vector2(w-margin*2.0, 35.0*s)
 	_v104_mode_title.add_theme_font_size_override("font_size", maxi(14,roundi(20.0*s)))
-	var mode_w: float = (w-margin*2.0-gap)/2.0
+	var mode_w: float = (w-margin*2.0-gap*2.0)/3.0
 	_v104_free.position = Vector2(margin, 326.0*s)
 	_v104_free.size = Vector2(mode_w, 70.0*s)
 	_v104_story.position = Vector2(margin+mode_w+gap, 326.0*s)
 	_v104_story.size = Vector2(mode_w, 70.0*s)
+	_v104_arcs.position = Vector2(margin+(mode_w+gap)*2.0, 326.0*s)
+	_v104_arcs.size = Vector2(mode_w, 70.0*s)
 	_v104_privacy.position = Vector2(margin, 418.0*s)
 	_v104_privacy.size = Vector2(w-margin*2.0, 62.0*s)
 	_v104_purchase.position = Vector2(margin, 494.0*s)
@@ -164,7 +190,7 @@ func _layout() -> void:
 	_v104_info.position = Vector2(margin, 572.0*s)
 	_v104_info.size = Vector2(w-margin*2.0, 60.0*s)
 	_v104_info.add_theme_font_size_override("font_size", maxi(11,roundi(15.0*s)))
-	for button in [_v104_free, _v104_story, _v104_privacy, _v104_purchase]:
+	for button in [_v104_free, _v104_story, _v104_arcs, _v104_privacy, _v104_purchase]:
 		button.add_theme_font_size_override("font_size", maxi(12,roundi(18.0*s)))
 
 func _v104_extra_button() -> Button:
@@ -187,14 +213,15 @@ func _v104_build_extras() -> void:
 	_v104_free = _v104_extra_button()
 	_v104_free.pressed.connect(_v104_choose_free)
 	_v104_story = _v104_extra_button()
-	_v104_story.disabled = true
-	_v104_story.mouse_default_cursor_shape = Control.CURSOR_ARROW
-	_v104_story.add_theme_stylebox_override("disabled",_style(Color("09213c"),Color("355a78"),16))
-	_v104_story.add_theme_color_override("font_disabled_color",Color("7893ab"))
+	_v104_story.pressed.connect(_v104_choose_story)
+	_v104_arcs = _v104_extra_button()
+	_v104_arcs.pressed.connect(_v104_choose_arcs)
 	_v104_privacy = _v104_extra_button()
 	_v104_purchase = _v104_extra_button()
+	_v104_privacy.name = "MikaSettingsPrivacyPolicy"
+	_v104_purchase.name = "MikaSettingsSubscriptionPurchase"
 	_v104_privacy.pressed.connect(_v104_unconfigured.bind("privacy_hint"))
-	_v104_purchase.pressed.connect(_v104_unconfigured.bind("purchase_hint"))
+	_v104_purchase.pressed.connect(_v104_show_subscription)
 	_v104_info = Label.new()
 	_v104_info.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_v104_info.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
@@ -208,25 +235,70 @@ func _v104_refresh_extras() -> void:
 	var words: Dictionary = V104_LABELS.get(MobileLocale.language,V104_LABELS["en"])
 	_v104_mode_title.text = str(words.get("mode","Game mode"))
 	_v104_free.text = str(words.get("free","Free world"))
-	_v104_story.text = str(words.get("story","Story (coming soon)"))
+	_v104_story.text = str(words.get("story","Story"))
+	_v104_arcs.text = str(ARCS_LABELS.get(MobileLocale.language, ARCS_LABELS["en"]))
 	_v104_privacy.text = str(words.get("privacy","Privacy Policy"))
-	_v104_purchase.text = str(words.get("purchase","Purchase"))
-	_v104_free.add_theme_stylebox_override("normal",_style(Color("b26a2a"),Color("ffd36e"),16))
+	_v104_purchase.text = StorySubscriptionGate.word("buy")
+	var current_mode: String = StoryProgress.read_mode()
+	_v104_free.add_theme_stylebox_override("normal",_style(Color("b26a2a"),Color("ffd36e"),16) if current_mode == "free_world" else _style(Color("133c60"),Color("58c5ed"),16))
+	_v104_story.add_theme_stylebox_override("normal",_style(Color("b26a2a"),Color("ffd36e"),16) if current_mode == "story" else _style(Color("133c60"),Color("58c5ed"),16))
 
 func _v104_choose_free() -> void:
-	var config: ConfigFile = ConfigFile.new()
-	config.set_value("game","mode","free_world")
-	var result: int = config.save(V104_MODE_CONFIG)
-	if result != OK:
-		push_warning("Could not persist free-world mode: " + str(result))
+	if not StoryProgress.write_mode("free_world"):
+		return
 	_v104_info.text = ""
+	close_settings()
+	game_mode_selected.emit("free_world", false)
+
+func _v104_choose_story() -> void:
+	var labels: Dictionary = STORY_CHOICE_LABELS.get(MobileLocale.language, STORY_CHOICE_LABELS["en"])
+	if is_instance_valid(_story_choice):
+		return
+	_story_choice = StoryModeChoiceDialog.new() as CanvasLayer
+	_story_choice.name = "StoryContinueOrRestart"
+	add_child(_story_choice)
+	_story_choice.call("configure_choice", str(labels["title"]), str(labels["question"]), str(labels["continue"]), str(labels["restart"]), str(labels["cancel"]))
+	_story_choice.connect("subscribe_requested", _v104_story_dialog_choice.bind(false))
+	_story_choice.connect("restart_requested", _v104_story_dialog_choice.bind(true))
+	_story_choice.connect("dismissed", _v104_close_story_dialog)
+
+func _v104_choose_arcs() -> void:
+	if is_instance_valid(_story_browser):
+		_story_browser.open_browser()
+
+func _v104_arc_chosen(arc_id: String) -> void:
+	close_settings()
+	story_arc_selected.emit(arc_id)
+
+func _v104_close_story_dialog() -> void:
+	if is_instance_valid(_story_choice):
+		_story_choice.queue_free()
+	_story_choice = null
+
+
+func _v104_story_dialog_choice(restart: bool) -> void:
+	_v104_close_story_dialog()
+	_v104_enter_story(restart)
+
+func _v104_enter_story(restart: bool) -> void:
+	if restart and not StoryProgress.restart_story():
+		return
+	if not StoryProgress.write_mode("story"):
+		return
+	close_settings()
+	game_mode_selected.emit("story", restart)
 
 func _v104_unconfigured(key: String) -> void:
 	var words: Dictionary = V104_LABELS.get(MobileLocale.language,V104_LABELS["en"])
 	_v104_info.text = str(words.get(key,"Not configured yet"))
 
+
+func _v104_show_subscription() -> void:
+	StorySubscriptionGate.show_notice(self, "station")
+
 func open_settings() -> void:
 	visible = true
+	_v104_refresh_extras()
 	_layout()
 	# MIKA_ENC_V572_SYNC_SETTINGS
 	var enc_actions: Node = get_node_or_null("/root/MikaEncyclopediaSettingsButton")
@@ -234,11 +306,17 @@ func open_settings() -> void:
 		enc_actions.call("refresh_now")
 
 func close_settings() -> void:
+	_v104_close_story_dialog()
+	if is_instance_valid(_story_browser):
+		_story_browser.close_browser()
 	visible = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if visible and event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		close_settings()
+		if is_instance_valid(_story_browser) and _story_browser.visible:
+			_story_browser.close_browser()
+		else:
+			close_settings()
 		get_viewport().set_input_as_handled()
 
 func _mika_ency_v21_attach() -> void:

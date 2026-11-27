@@ -1,0 +1,337 @@
+{
+  "schema_version": 3,
+  "page_id": "CH03_P01",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch03_p01_languages/ch03_p01_ru.webp",
+  "native_scene_panels": [
+    "p31_professor_sandwich",
+    "p31_fungus_and_professor",
+    "p31_okea_city",
+    "p31_okea_meeting",
+    "p31_okea_observes",
+    "p31_okea_lizard_sad",
+    "p31_okea_lizard_talks",
+    "p31_okea_to_cela"
+  ],
+  "panel_bounds": {
+    "p31_professor_sandwich": [
+      0.031,
+      0.043,
+      0.384,
+      0.238
+    ],
+    "p31_fungus_and_professor": [
+      0.449,
+      0.043,
+      0.518,
+      0.238
+    ],
+    "p31_okea_city": [
+      0.031,
+      0.296,
+      0.441,
+      0.232
+    ],
+    "p31_okea_meeting": [
+      0.495,
+      0.296,
+      0.473,
+      0.233
+    ],
+    "p31_okea_observes": [
+      0.031,
+      0.545,
+      0.268,
+      0.236
+    ],
+    "p31_okea_lizard_sad": [
+      0.325,
+      0.545,
+      0.249,
+      0.236
+    ],
+    "p31_okea_lizard_talks": [
+      0.592,
+      0.545,
+      0.376,
+      0.233
+    ],
+    "p31_okea_to_cela": [
+      0.031,
+      0.795,
+      0.936,
+      0.158
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH03_P01_L001",
+      "frame_id": "CH03_P01_F01",
+      "panel_id": "p31_professor_sandwich",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Где-то между Большим и Малым Магеллановыми Облаками…",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L001_ru.mp3",
+      "audio_duration_s": 3.971,
+      "camera_target": [
+        0.24,
+        0.166,
+        0.235
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "10f24964fe9974a2a4f4b1a2cb61e76310db4101e5ede4e76985869852b42b22"
+    },
+    {
+      "line_id": "CH03_P01_L002",
+      "frame_id": "CH03_P01_F02",
+      "panel_id": "p31_fungus_and_professor",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Я знаю! Это ты съел мой бургер!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L002_ru.mp3",
+      "audio_duration_s": 3.318,
+      "camera_target": [
+        0.845,
+        0.156,
+        0.138
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c0d09a080ccdfe3388511c1ca2f481a4f934b5d79fa2a839275d62ba7affbd10"
+    },
+    {
+      "line_id": "CH03_P01_L003",
+      "frame_id": "CH03_P01_F02",
+      "panel_id": "p31_fungus_and_professor",
+      "speaker_id": "CHR_023",
+      "kind": "dialogue",
+      "spoken_text": "Это не я!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L003_ru.mp3",
+      "audio_duration_s": 1.306,
+      "camera_target": [
+        0.526,
+        0.176,
+        0.138
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "86bebc1bcb42e60a30f03cf7dcda026430cfd31a61516a6e337ba834aa88b057"
+    },
+    {
+      "line_id": "CH03_P01_L005",
+      "frame_id": "CH03_P01_F03",
+      "panel_id": "p31_okea_city",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Окея сияла изящными городами, полными удивительных форм жизни.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L005_ru.mp3",
+      "audio_duration_s": 5.329,
+      "camera_target": [
+        0.25,
+        0.392,
+        0.231
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a85d7bd3da6b12f7f07750c185bf91581b1692faed7c78cadcd3ac75f814e0e8"
+    },
+    {
+      "line_id": "CH03_P01_L007",
+      "frame_id": "CH03_P01_F04",
+      "panel_id": "p31_okea_meeting",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Какой удивительный у вас мир!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L007_ru.mp3",
+      "audio_duration_s": 2.586,
+      "camera_target": [
+        0.59,
+        0.412,
+        0.125
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b9604409bc7cf5c34e985b955a21d8cf414fb04736dba8bf6aeb18b0edb3968f"
+    },
+    {
+      "line_id": "CH03_P01_L008",
+      "frame_id": "CH03_P01_F04",
+      "panel_id": "p31_okea_meeting",
+      "speaker_id": "CHR_024",
+      "kind": "dialogue",
+      "spoken_text": "Хочешь, покажу, как здесь всё устроено?",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L008_ru.mp3",
+      "audio_duration_s": 2.508,
+      "camera_target": [
+        0.865,
+        0.415,
+        0.125
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b6e521dd89d77cf4043a01712b7881efe069604b0d2fab2d1e80dfe9708451ea"
+    },
+    {
+      "line_id": "CH03_P01_L009",
+      "frame_id": "CH03_P01_F05",
+      "panel_id": "p31_okea_observes",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Мика обратился за помощью к старейшинам Океи. Но они не смогли — или не захотели — ему помочь.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L009_ru.mp3",
+      "audio_duration_s": 7.079,
+      "camera_target": [
+        0.171,
+        0.663,
+        0.224
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "011f2d26ff511b313b70551c5907d9b245a175e7f300d937bd3fa6d4ea3df754"
+    },
+    {
+      "line_id": "CH03_P01_L011",
+      "frame_id": "CH03_P01_F06",
+      "panel_id": "p31_okea_lizard_sad",
+      "speaker_id": "CHR_001",
+      "kind": "thought",
+      "spoken_text": "Что же мне теперь делать?..",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L011_ru.mp3",
+      "audio_duration_s": 2.351,
+      "camera_target": [
+        0.524,
+        0.686,
+        0.195
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e63521fa8d60f78bfb3311cdf2892a42a86810f1fa4c1fc73aa2021690693343"
+    },
+    {
+      "line_id": "CH03_P01_L012",
+      "frame_id": "CH03_P01_F06",
+      "panel_id": "p31_okea_lizard_sad",
+      "speaker_id": "CHR_025",
+      "kind": "dialogue",
+      "spoken_text": "Слышал, тебе нужна помощь.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L012_ru.mp3",
+      "audio_duration_s": 2.508,
+      "camera_target": [
+        0.414,
+        0.622,
+        0.19
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "bb072203e2f98ede58405e9d091d72fc6178cb9068c453762da9b02c2469c51d"
+    },
+    {
+      "line_id": "CH03_P01_L013",
+      "frame_id": "CH03_P01_F07",
+      "panel_id": "p31_okea_lizard_talks",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Да! Конечно!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L013_ru.mp3",
+      "audio_duration_s": 1.802,
+      "camera_target": [
+        0.651,
+        0.655,
+        0.104
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2bc8fb9d00824ec3d56471130ef31d47bac22bc12afb8a869f6aba3ace13dad2"
+    },
+    {
+      "line_id": "CH03_P01_L014",
+      "frame_id": "CH03_P01_F07",
+      "panel_id": "p31_okea_lizard_talks",
+      "speaker_id": "CHR_025",
+      "kind": "dialogue",
+      "spoken_text": "На Целе хранят древние знания. Возможно, они помогут!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L014_ru.mp3",
+      "audio_duration_s": 4.362,
+      "camera_target": [
+        0.855,
+        0.645,
+        0.105
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "839dd3f9529f929fc91b1689ab69eb4c0300adbefc5151a46a8aaac2cc8bc404"
+    },
+    {
+      "line_id": "CH03_P01_L015",
+      "frame_id": "CH03_P01_F08",
+      "panel_id": "p31_okea_to_cela",
+      "speaker_id": "CHR_004",
+      "kind": "destination_narration",
+      "spoken_text": "Друзья взяли курс на Целу — за следующей подсказкой о прошлом.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P01_L015_ru.mp3",
+      "audio_duration_s": 4.284,
+      "camera_target": [
+        0.5,
+        0.872,
+        0.157
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2a88ca148246f302ef581cb1f3de17888f5cca559f78306cde8aca1db67d0916"
+    }
+  ],
+  "display_only": [
+    "CH03_P01_L004",
+    "CH03_P01_L006"
+  ]
+}

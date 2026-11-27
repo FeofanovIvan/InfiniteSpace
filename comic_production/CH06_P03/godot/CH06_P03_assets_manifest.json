@@ -1,0 +1,51 @@
+{
+  "page_id": "CH06_P03",
+  "source_pdf": "source/6-3(1).pdf",
+  "canvas_px": [
+    2480,
+    3508
+  ],
+  "languages": {
+    "ru": {
+      "svg": "overlays/CH06_P03_ru_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH06_P03_ru_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH06_P03_ru_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "en": {
+      "svg": "overlays/CH06_P03_en_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH06_P03_en_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH06_P03_en_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "pt_BR": {
+      "svg": "overlays/CH06_P03_pt_BR_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH06_P03_pt_BR_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH06_P03_pt_BR_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "es": {
+      "svg": "overlays/CH06_P03_es_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH06_P03_es_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH06_P03_es_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "fr": {
+      "svg": "overlays/CH06_P03_fr_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH06_P03_fr_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH06_P03_fr_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "de": {
+      "svg": "overlays/CH06_P03_de_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH06_P03_de_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH06_P03_de_PDF_WITH_VECTOR_OVERLAY.pdf"
+    }
+  },
+  "line_ids": [
+    "CH06_P03_L001",
+    "CH06_P03_L002",
+    "CH06_P03_L003",
+    "CH06_P03_L004",
+    "CH06_P03_L005",
+    "CH06_P03_L006",
+    "CH06_P03_L007"
+  ],
+  "narrator": "CHR_038",
+  "artwork_unchanged": true
+}

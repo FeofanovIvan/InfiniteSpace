@@ -1,0 +1,120 @@
+{
+  "panels": [
+    "p82_approach",
+    "p82_portal",
+    "p82_entry",
+    "p82_change",
+    "p82_transformation",
+    "p82_beyond",
+    "p82_new_space"
+  ],
+  "final_panel": "",
+  "storm_panel": "p82_portal",
+  "camera": {
+    "p82_approach": {
+      "bounds": [
+        0.023,
+        0.016,
+        0.389,
+        0.155
+      ],
+      "camera": [
+        0.18,
+        0.105,
+        0.155
+      ]
+    },
+    "p82_portal": {
+      "bounds": [
+        0.402,
+        0.016,
+        0.575,
+        0.155
+      ],
+      "camera": [
+        0.72,
+        0.092,
+        0.155
+      ]
+    },
+    "p82_entry": {
+      "bounds": [
+        0.023,
+        0.178,
+        0.46,
+        0.22
+      ],
+      "camera": [
+        0.28,
+        0.283,
+        0.22
+      ]
+    },
+    "p82_change": {
+      "bounds": [
+        0.482,
+        0.178,
+        0.495,
+        0.22
+      ],
+      "camera": [
+        0.76,
+        0.284,
+        0.22
+      ]
+    },
+    "p82_transformation": {
+      "bounds": [
+        0.023,
+        0.405,
+        0.536,
+        0.264
+      ],
+      "camera": [
+        0.31,
+        0.537,
+        0.264
+      ]
+    },
+    "p82_beyond": {
+      "bounds": [
+        0.553,
+        0.405,
+        0.424,
+        0.264
+      ],
+      "camera": [
+        0.78,
+        0.537,
+        0.264
+      ]
+    },
+    "p82_new_space": {
+      "bounds": [
+        0.023,
+        0.676,
+        0.954,
+        0.308
+      ],
+      "camera": [
+        0.52,
+        0.83,
+        0.308
+      ]
+    }
+  },
+  "pages": {
+    "CH08_P02": {
+      "image_path": "res://mika_motion_comic/assets/pages/ch08_finale_languages/ch08_p02_en.webp",
+      "audio_path": "res://mika_motion_comic/ch08_clips/en/CH08_P02_L001_en.mp3",
+      "duration": 4.597551,
+      "text": "Mika flew into a storm. And the transformation began..."
+    },
+    "CH08_FINAL": {
+      "image_path": "res://mika_motion_comic/assets/pages/ch08_finale_languages/ch08_final_en.webp",
+      "audio_path": "res://mika_motion_comic/ch08_clips/en/CH08_FINAL_L001_en.mp3",
+      "duration": 8.75102,
+      "text": "This picture shows Mika’s new world. But the laws of physics in our world do not let us see it. You can add your own colors to it."
+    }
+  }
+}

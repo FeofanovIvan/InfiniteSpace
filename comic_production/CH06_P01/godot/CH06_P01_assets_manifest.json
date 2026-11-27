@@ -1,0 +1,57 @@
+{
+  "page_id": "CH06_P01",
+  "background_pdf": "source/6-1(2).pdf",
+  "pixel_size": [
+    2480,
+    3508
+  ],
+  "languages": {
+    "ru": {
+      "overlay_png": "overlays/CH06_P01_ru_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH06_P01_ru_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH06_P01_ru_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "en": {
+      "overlay_png": "overlays/CH06_P01_en_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH06_P01_en_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH06_P01_en_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "pt_BR": {
+      "overlay_png": "overlays/CH06_P01_pt_BR_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH06_P01_pt_BR_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH06_P01_pt_BR_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "es": {
+      "overlay_png": "overlays/CH06_P01_es_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH06_P01_es_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH06_P01_es_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "fr": {
+      "overlay_png": "overlays/CH06_P01_fr_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH06_P01_fr_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH06_P01_fr_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "de": {
+      "overlay_png": "overlays/CH06_P01_de_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH06_P01_de_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH06_P01_de_PDF_WITH_VECTOR_OVERLAY.pdf"
+    }
+  },
+  "audio_line_ids": [
+    "CH06_P01_L001",
+    "CH06_P01_L002",
+    "CH06_P01_L003",
+    "CH06_P01_L004",
+    "CH06_P01_L005",
+    "CH06_P01_L006",
+    "CH06_P01_L007"
+  ],
+  "visual_only_sfx_layers": [
+    "wave_neuron_city",
+    "wave_neuron_reunion",
+    "wave_neuron_telepathy_hint"
+  ],
+  "magnetic_companion_character_id": "CHR_035",
+  "narrator_character_id": "CHR_004",
+  "story_transition": "tunnel -> pink neural world -> nonverbal meeting -> telepathic simulator"
+}

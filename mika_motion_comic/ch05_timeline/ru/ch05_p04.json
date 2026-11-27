@@ -1,0 +1,210 @@
+{
+  "schema_version": 3,
+  "page_id": "CH05_P04",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch05_p04_languages/ch05_p04_ru.webp",
+  "native_scene_panels": [
+    "p54_galaxy_network",
+    "p54_species_meet",
+    "p54_pulse_signal",
+    "p54_black_hole",
+    "p54_mika_farewell",
+    "p54_ship_departure"
+  ],
+  "panel_bounds": {
+    "p54_galaxy_network": [
+      0.018,
+      0.012,
+      0.965,
+      0.245
+    ],
+    "p54_species_meet": [
+      0.018,
+      0.266,
+      0.495,
+      0.242
+    ],
+    "p54_pulse_signal": [
+      0.528,
+      0.266,
+      0.454,
+      0.242
+    ],
+    "p54_black_hole": [
+      0.018,
+      0.52,
+      0.566,
+      0.24
+    ],
+    "p54_mika_farewell": [
+      0.597,
+      0.52,
+      0.386,
+      0.24
+    ],
+    "p54_ship_departure": [
+      0.018,
+      0.771,
+      0.965,
+      0.216
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH05_P04_L001",
+      "frame_id": "CH05_P04_F01",
+      "panel_id": "p54_galaxy_network",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Мы обнаружили огромные гравитационные туннели и научились связывать их между собой.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P04_L001_ru.mp3",
+      "audio_duration_s": 5.564,
+      "camera_target": [
+        0.5,
+        0.135,
+        0.239
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a3b3b3f1a73adab61e396defcaf23a4cc18e35d3516b9bd45a8b8ef9d8b079f8"
+    },
+    {
+      "line_id": "CH05_P04_L002",
+      "frame_id": "CH05_P04_F02",
+      "panel_id": "p54_species_meet",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Когда мы давным-давно прибыли в этот мир, местные существа помогли нам освоиться. Мы до сих пор поддерживаем с ними связь.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P04_L002_ru.mp3",
+      "audio_duration_s": 7.549,
+      "camera_target": [
+        0.266,
+        0.355,
+        0.195
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "04f4a972f480b8374d333d8116106a0c1871f8f06558abbda068a439a709d602"
+    },
+    {
+      "line_id": "CH05_P04_L003",
+      "frame_id": "CH05_P04_F03",
+      "panel_id": "p54_pulse_signal",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Недавно мы получили от них сигнал: они попросили открыть туннель из твоего мира в наш.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P04_L003_ru.mp3",
+      "audio_duration_s": 5.564,
+      "camera_target": [
+        0.755,
+        0.385,
+        0.176
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b130547bd45d7314c24ed9064951f8024fbaa82ce995f2e6ecc4e5792c230367"
+    },
+    {
+      "line_id": "CH05_P04_L004",
+      "frame_id": "CH05_P04_F04",
+      "panel_id": "p54_black_hole",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Мы открыли проход и стали ждать, к чему это приведёт. А вскоре появился ты.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P04_L004_ru.mp3",
+      "audio_duration_s": 5.878,
+      "camera_target": [
+        0.301,
+        0.641,
+        0.221
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b42b8bee49c0df4253914df5ad2b9a1516074f17ca7c018d0672ccd25e7bbab8"
+    },
+    {
+      "line_id": "CH05_P04_L005",
+      "frame_id": "CH05_P04_F05",
+      "panel_id": "p54_mika_farewell",
+      "speaker_id": "CHR_035",
+      "kind": "dialogue",
+      "spoken_text": "Мы решили: я полечу с вами и помогу добраться до этих существ. Они подскажут, зачем спасли тебя.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P04_L005_ru.mp3",
+      "audio_duration_s": 6.844,
+      "camera_target": [
+        0.854,
+        0.645,
+        0.108
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "5dceae8f7f3e1d1ebf313d091300502bf71a715e623af5155077dd6c2b080f04"
+    },
+    {
+      "line_id": "CH05_P04_L006",
+      "frame_id": "CH05_P04_F05",
+      "panel_id": "p54_mika_farewell",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Спасибо!",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P04_L006_ru.mp3",
+      "audio_duration_s": 1.411,
+      "camera_target": [
+        0.683,
+        0.632,
+        0.108
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a123f0bb77de97baa9e033885bd9404a2c53710b1e007caffcb89938b01650b1"
+    },
+    {
+      "line_id": "CH05_P04_L007",
+      "frame_id": "CH05_P04_F06",
+      "panel_id": "p54_ship_departure",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Магнитный друг полетел с экипажем и указал путь в неизвестную Мике часть космоса — к его спасителям.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P04_L007_ru.mp3",
+      "audio_duration_s": 6.922,
+      "camera_target": [
+        0.57,
+        0.879,
+        0.208
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "06b3d6b76c3a6e2f68014b8b18bdab33dbd1d242fdcf3766a078ad6df5ddef9a"
+    }
+  ],
+  "note": "Native pulse task after F03; resume F04-F06 and existing Triangulum route."
+}

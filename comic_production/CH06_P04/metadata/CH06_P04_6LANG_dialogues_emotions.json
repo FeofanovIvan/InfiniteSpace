@@ -1,0 +1,579 @@
+{
+  "page_id": "CH06_P04",
+  "version": "v29",
+  "date": "2026-11-26",
+  "status": "COMPLETE_6LANG",
+  "based_on": "MIKA_CH06_P04_RU_DRAFT_v2_RELAYOUT",
+  "artwork_unchanged": true,
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "lines": [
+    {
+      "line_id": "CH06_P04_L001",
+      "frame": "1",
+      "speaker_id": "CHR_038",
+      "speaker": "Голос нейронных существ",
+      "kind": "offscreen_neuron_speech",
+      "emotion": "объяснение, искренняя серьёзность",
+      "source_note": "Смысл исходного длинного предложения сохранён.",
+      "translations": {
+        "ru": "Мы попросили магнитных друзей открыть портал между нашим миром и миром, откуда пришло это эхо.",
+        "en": "We asked our magnetic friends to open a portal between our world and the world where the echo came from.",
+        "pt_BR": "Pedimos aos nossos amigos magnéticos que abrissem um portal entre o nosso mundo e aquele de onde veio o eco.",
+        "es": "Pedimos a nuestros amigos magnéticos que abrieran un portal entre nuestro mundo y aquel del que llegó el eco.",
+        "fr": "Nous avons demandé à nos amis magnétiques d’ouvrir un portail entre notre monde et celui d’où venait cet écho.",
+        "de": "Wir baten unsere magnetischen Freunde, ein Portal zwischen unserer Welt und der Welt zu öffnen, aus der das Echo kam."
+      },
+      "display_segments": {
+        "ru": [
+          "Мы попросили магнитных друзей открыть портал между нашим миром и миром, откуда пришло это эхо."
+        ],
+        "en": [
+          "We asked our magnetic friends to open a portal between our world and the world where the echo came from."
+        ],
+        "pt_BR": [
+          "Pedimos aos nossos amigos magnéticos que abrissem um portal entre o nosso mundo e aquele de onde veio o eco."
+        ],
+        "es": [
+          "Pedimos a nuestros amigos magnéticos que abrieran un portal entre nuestro mundo y aquel del que llegó el eco."
+        ],
+        "fr": [
+          "Nous avons demandé à nos amis magnétiques d’ouvrir un portail entre notre monde et celui d’où venait cet écho."
+        ],
+        "de": [
+          "Wir baten unsere magnetischen Freunde, ein Portal zwischen unserer Welt und der Welt zu öffnen, aus der das Echo kam."
+        ]
+      }
+    },
+    {
+      "line_id": "CH06_P04_L002",
+      "frame": "2",
+      "speaker_id": "CHR_001",
+      "speaker": "Мика",
+      "kind": "dialogue",
+      "emotion": "потрясение, надежда",
+      "translations": {
+        "ru": "Значит, вы меня спасли?",
+        "en": "So you saved me?",
+        "pt_BR": "Então foram vocês que me salvaram?",
+        "es": "¿Entonces ustedes me salvaron?",
+        "fr": "Alors, vous m’avez sauvé ?",
+        "de": "Habt ihr mich also gerettet?"
+      },
+      "display_segments": {
+        "ru": [
+          "Значит, вы меня спасли?"
+        ],
+        "en": [
+          "So you saved me?"
+        ],
+        "pt_BR": [
+          "Então foram vocês que me salvaram?"
+        ],
+        "es": [
+          "¿Entonces ustedes me salvaron?"
+        ],
+        "fr": [
+          "Alors, vous m’avez sauvé ?"
+        ],
+        "de": [
+          "Habt ihr mich also gerettet?"
+        ]
+      }
+    },
+    {
+      "line_id": "CH06_P04_L003",
+      "frame": "3",
+      "speaker_id": "CHR_038",
+      "speaker": "Голос нейронных существ",
+      "kind": "offscreen_neuron_speech",
+      "emotion": "мягкая поправка, напутствие",
+      "translations": {
+        "ru": "Не совсем так. Попробуй отправиться к «Последним вратам». Там ты найдёшь больше ответов.",
+        "en": "Not quite. Try going to the Last Gates. You’ll find more answers there.",
+        "pt_BR": "Não exatamente. Tente ir até os “Últimos Portais”. Lá você encontrará mais respostas.",
+        "es": "No exactamente. Intenta llegar a «Las Últimas Puertas». Allí encontrarás más respuestas.",
+        "fr": "Pas tout à fait. Essaie de rejoindre les « Dernières Portes ». Tu y trouveras plus de réponses.",
+        "de": "Nicht ganz. Flieg zu den „Letzten Toren“. Dort findest du mehr Antworten."
+      },
+      "display_segments": {
+        "ru": [
+          "Не совсем так.",
+          "Попробуй отправиться к «Последним вратам». Там ты найдёшь больше ответов."
+        ],
+        "en": [
+          "Not quite.",
+          "Try going to the Last Gates. You’ll find more answers there."
+        ],
+        "pt_BR": [
+          "Não exatamente.",
+          "Tente ir até os “Últimos Portais”. Lá você encontrará mais respostas."
+        ],
+        "es": [
+          "No exactamente.",
+          "Intenta llegar a «Las Últimas Puertas». Allí encontrarás más respuestas."
+        ],
+        "fr": [
+          "Pas tout à fait.",
+          "Essaie de rejoindre les « Dernières Portes ». Tu y trouveras plus de réponses."
+        ],
+        "de": [
+          "Nicht ganz.",
+          "Flieg zu den „Letzten Toren“. Dort findest du mehr Antworten."
+        ]
+      }
+    },
+    {
+      "line_id": "CH06_P04_L004",
+      "frame": "3",
+      "speaker_id": "CHR_038",
+      "speaker": "Голос нейронных существ",
+      "kind": "exclamation",
+      "emotion": "ободряющее пожелание",
+      "translations": {
+        "ru": "Удачи!",
+        "en": "Good luck!",
+        "pt_BR": "Boa sorte!",
+        "es": "¡Buena suerte!",
+        "fr": "Bonne chance !",
+        "de": "Viel Glück!"
+      },
+      "display_segments": {
+        "ru": [
+          "Удачи!"
+        ],
+        "en": [
+          "Good luck!"
+        ],
+        "pt_BR": [
+          "Boa sorte!"
+        ],
+        "es": [
+          "¡Buena suerte!"
+        ],
+        "fr": [
+          "Bonne chance !"
+        ],
+        "de": [
+          "Viel Glück!"
+        ]
+      }
+    },
+    {
+      "line_id": "CH06_P04_L005",
+      "frame": "4, 5",
+      "speaker_id": "CHR_004",
+      "speaker": "Автор",
+      "kind": "narration",
+      "emotion": "осознание, переход к путешествию",
+      "translations": {
+        "ru": "Мика открыл глаза и понял, куда лететь. Он попрощался с командой и вместе с новым другом отправился к Перекрёстку миров.",
+        "en": "Mika opened his eyes and knew where to go. He said goodbye to the crew and set off for the Crossroads of Worlds with his new friend.",
+        "pt_BR": "Mika abriu os olhos e soube para onde ir. Despediu-se da equipe e partiu com seu novo amigo rumo à Encruzilhada dos Mundos.",
+        "es": "Mika abrió los ojos y supo adónde ir. Se despidió de la tripulación y partió con su nuevo amigo hacia la Encrucijada de los Mundos.",
+        "fr": "Mika ouvrit les yeux et sut où aller. Il fit ses adieux à l’équipage et partit avec son nouvel ami vers le Carrefour des Mondes.",
+        "de": "Mika öffnete die Augen. Nun wusste er, wohin. Er verabschiedete sich von der Crew und flog mit seinem neuen Freund zur Kreuzung der Welten."
+      },
+      "display_segments": {
+        "ru": [
+          "Мика открыл глаза и понял, куда лететь.",
+          "Он попрощался с командой и вместе с новым другом отправился к Перекрёстку миров."
+        ],
+        "en": [
+          "Mika opened his eyes and knew where to go.",
+          "He said goodbye to the crew and set off for the Crossroads of Worlds with his new friend."
+        ],
+        "pt_BR": [
+          "Mika abriu os olhos e soube para onde ir.",
+          "Despediu-se da equipe e partiu com seu novo amigo rumo à Encruzilhada dos Mundos."
+        ],
+        "es": [
+          "Mika abrió los ojos y supo adónde ir.",
+          "Se despidió de la tripulación y partió con su nuevo amigo hacia la Encrucijada de los Mundos."
+        ],
+        "fr": [
+          "Mika ouvrit les yeux et sut où aller.",
+          "Il fit ses adieux à l’équipage et partit avec son nouvel ami vers le Carrefour des Mondes."
+        ],
+        "de": [
+          "Mika öffnete die Augen. Nun wusste er, wohin.",
+          "Er verabschiedete sich von der Crew und flog mit seinem neuen Freund zur Kreuzung der Welten."
+        ]
+      }
+    },
+    {
+      "line_id": "CH06_P04_L006",
+      "frame": "6",
+      "speaker_id": "CHR_004",
+      "speaker": "Автор",
+      "kind": "narration",
+      "emotion": "сюжетное объяснение",
+      "translations": {
+        "ru": "У Перекрёстка миров нейронный друг вновь связался с Микой. Чтобы воспользоваться артефактом, нужно разгадать ребус.",
+        "en": "At the Crossroads of Worlds, his neuron friend contacted Mika again. To use the artifact, he had to solve a puzzle.",
+        "pt_BR": "Na Encruzilhada dos Mundos, seu amigo neural voltou a falar com Mika. Para usar o artefato, era preciso resolver um enigma.",
+        "es": "En la Encrucijada de los Mundos, su amigo neuronal volvió a contactar con Mika. Para usar el artefacto, tenía que resolver un acertijo.",
+        "fr": "Au Carrefour des Mondes, son ami neuronal reprit contact avec Mika. Pour utiliser l’artefact, il fallait résoudre une énigme.",
+        "de": "An der Kreuzung der Welten meldete sich sein neuronaler Freund wieder. Um das Artefakt zu nutzen, musste er ein Rätsel lösen."
+      },
+      "display_segments": {
+        "ru": [
+          "У Перекрёстка миров нейронный друг вновь связался с Микой.",
+          "Чтобы воспользоваться артефактом, нужно разгадать ребус."
+        ],
+        "en": [
+          "At the Crossroads of Worlds, his neuron friend contacted Mika again.",
+          "To use the artifact, he had to solve a puzzle."
+        ],
+        "pt_BR": [
+          "Na Encruzilhada dos Mundos, seu amigo neural voltou a falar com Mika.",
+          "Para usar o artefato, era preciso resolver um enigma."
+        ],
+        "es": [
+          "En la Encrucijada de los Mundos, su amigo neuronal volvió a contactar con Mika.",
+          "Para usar el artefacto, tenía que resolver un acertijo."
+        ],
+        "fr": [
+          "Au Carrefour des Mondes, son ami neuronal reprit contact avec Mika.",
+          "Pour utiliser l’artefact, il fallait résoudre une énigme."
+        ],
+        "de": [
+          "An der Kreuzung der Welten meldete sich sein neuronaler Freund wieder.",
+          "Um das Artefakt zu nutzen, musste er ein Rätsel lösen."
+        ]
+      }
+    },
+    {
+      "line_id": "CH06_P04_L007",
+      "frame": "7",
+      "speaker_id": "CHR_038",
+      "speaker": "Нейронный друг",
+      "kind": "offscreen_neuron_speech",
+      "emotion": "открытость неизвестному, решимость",
+      "translations": {
+        "ru": "Мы и сами не знаем, куда приведёт артефакт. Я отправлюсь с тобой. Изучать неизведанное — наша цель.",
+        "en": "Even we don’t know where the artifact leads. I’ll come with you. Exploring the unknown is our purpose.",
+        "pt_BR": "Nem nós sabemos aonde o artefato leva. Vou com você. Explorar o desconhecido é nossa missão.",
+        "es": "Ni nosotros sabemos adónde lleva el artefacto. Iré contigo. Explorar lo desconocido es nuestra misión.",
+        "fr": "Nous ignorons aussi où mène cet artefact. Je pars avec toi. Explorer l’inconnu est notre raison d’être.",
+        "de": "Auch wir wissen nicht, wohin das Artefakt führt. Ich komme mit. Das Unbekannte zu erforschen ist unser Ziel."
+      },
+      "display_segments": {
+        "ru": [
+          "Мы и сами не знаем, куда приведёт артефакт.",
+          "Я отправлюсь с тобой. Изучать неизведанное — наша цель."
+        ],
+        "en": [
+          "Even we don’t know where the artifact leads.",
+          "I’ll come with you. Exploring the unknown is our purpose."
+        ],
+        "pt_BR": [
+          "Nem nós sabemos aonde o artefato leva.",
+          "Vou com você. Explorar o desconhecido é nossa missão."
+        ],
+        "es": [
+          "Ni nosotros sabemos adónde lleva el artefacto.",
+          "Iré contigo. Explorar lo desconocido es nuestra misión."
+        ],
+        "fr": [
+          "Nous ignorons aussi où mène cet artefact.",
+          "Je pars avec toi. Explorer l’inconnu est notre raison d’être."
+        ],
+        "de": [
+          "Auch wir wissen nicht, wohin das Artefakt führt.",
+          "Ich komme mit. Das Unbekannte zu erforschen ist unser Ziel."
+        ]
+      }
+    },
+    {
+      "line_id": "CH06_P04_L008",
+      "frame": "8",
+      "speaker_id": "CHR_004",
+      "speaker": "Автор",
+      "kind": "narration",
+      "emotion": "решимость, открытый финал",
+      "translations": {
+        "ru": "Впереди открылся проход, и Мика направил свой звёздолёт в него.",
+        "en": "A passage opened ahead, and Mika steered his starship into it.",
+        "pt_BR": "Uma passagem se abriu à frente, e Mika guiou sua nave para dentro dela.",
+        "es": "Se abrió un pasaje ante él, y Mika dirigió su nave hacia su interior.",
+        "fr": "Un passage s’ouvrit devant lui, et Mika y guida son vaisseau.",
+        "de": "Vor ihm öffnete sich ein Durchgang. Mika steuerte sein Raumschiff hinein."
+      },
+      "display_segments": {
+        "ru": [
+          "Впереди открылся проход, и Мика направил свой звёздолёт в него."
+        ],
+        "en": [
+          "A passage opened ahead, and Mika steered his starship into it."
+        ],
+        "pt_BR": [
+          "Uma passagem se abriu à frente, e Mika guiou sua nave para dentro dela."
+        ],
+        "es": [
+          "Se abrió un pasaje ante él, y Mika dirigió su nave hacia su interior."
+        ],
+        "fr": [
+          "Un passage s’ouvrit devant lui, et Mika y guida son vaisseau."
+        ],
+        "de": [
+          "Vor ihm öffnete sich ein Durchgang. Mika steuerte sein Raumschiff hinein."
+        ]
+      }
+    }
+  ],
+  "visual_overlays": [
+    {
+      "line_id": "CH06_P04_L001",
+      "visual_id": "CH06_P04_L001",
+      "display_part": 1,
+      "kind": "neuron",
+      "box": {
+        "x": 270,
+        "y": 65,
+        "w": 1930,
+        "h": 160
+      },
+      "font_size": 41,
+      "translations": {
+        "ru": "Мы попросили магнитных друзей открыть портал между нашим миром и миром, откуда пришло это эхо.",
+        "en": "We asked our magnetic friends to open a portal between our world and the world where the echo came from.",
+        "pt_BR": "Pedimos aos nossos amigos magnéticos que abrissem um portal entre o nosso mundo e aquele de onde veio o eco.",
+        "es": "Pedimos a nuestros amigos magnéticos que abrieran un portal entre nuestro mundo y aquel del que llegó el eco.",
+        "fr": "Nous avons demandé à nos amis magnétiques d’ouvrir un portail entre notre monde et celui d’où venait cet écho.",
+        "de": "Wir baten unsere magnetischen Freunde, ein Portal zwischen unserer Welt und der Welt zu öffnen, aus der das Echo kam."
+      }
+    },
+    {
+      "line_id": "CH06_P04_L002",
+      "visual_id": "CH06_P04_L002",
+      "display_part": 1,
+      "kind": "mika",
+      "box": {
+        "x": 775,
+        "y": 585,
+        "w": 382,
+        "h": 142
+      },
+      "font_size": 39,
+      "translations": {
+        "ru": "Значит, вы меня спасли?",
+        "en": "So you saved me?",
+        "pt_BR": "Então foram vocês que me salvaram?",
+        "es": "¿Entonces ustedes me salvaron?",
+        "fr": "Alors, vous m’avez sauvé ?",
+        "de": "Habt ihr mich also gerettet?"
+      }
+    },
+    {
+      "line_id": "CH06_P04_L003",
+      "visual_id": "CH06_P04_L003_part_1",
+      "display_part": 1,
+      "kind": "neuron",
+      "box": {
+        "x": 1285,
+        "y": 558,
+        "w": 500,
+        "h": 112
+      },
+      "font_size": 37,
+      "translations": {
+        "ru": "Не совсем так.",
+        "en": "Not quite.",
+        "pt_BR": "Não exatamente.",
+        "es": "No exactamente.",
+        "fr": "Pas tout à fait.",
+        "de": "Nicht ganz."
+      }
+    },
+    {
+      "line_id": "CH06_P04_L003",
+      "visual_id": "CH06_P04_L003_part_2",
+      "display_part": 2,
+      "kind": "neuron",
+      "box": {
+        "x": 1270,
+        "y": 1108,
+        "w": 776,
+        "h": 176
+      },
+      "font_size": 33,
+      "translations": {
+        "ru": "Попробуй отправиться к «Последним вратам». Там ты найдёшь больше ответов.",
+        "en": "Try going to the Last Gates. You’ll find more answers there.",
+        "pt_BR": "Tente ir até os “Últimos Portais”. Lá você encontrará mais respostas.",
+        "es": "Intenta llegar a «Las Últimas Puertas». Allí encontrarás más respuestas.",
+        "fr": "Essaie de rejoindre les « Dernières Portes ». Tu y trouveras plus de réponses.",
+        "de": "Flieg zu den „Letzten Toren“. Dort findest du mehr Antworten."
+      }
+    },
+    {
+      "line_id": "CH06_P04_L005",
+      "visual_id": "CH06_P04_L005_part_1",
+      "display_part": 1,
+      "kind": "narrator",
+      "box": {
+        "x": 830,
+        "y": 1692,
+        "w": 340,
+        "h": 179
+      },
+      "font_size": 30,
+      "translations": {
+        "ru": "Мика открыл глаза и понял, куда лететь.",
+        "en": "Mika opened his eyes and knew where to go.",
+        "pt_BR": "Mika abriu os olhos e soube para onde ir.",
+        "es": "Mika abrió los ojos y supo adónde ir.",
+        "fr": "Mika ouvrit les yeux et sut où aller.",
+        "de": "Mika öffnete die Augen. Nun wusste er, wohin."
+      }
+    },
+    {
+      "line_id": "CH06_P04_L005",
+      "visual_id": "CH06_P04_L005_part_2",
+      "display_part": 2,
+      "kind": "narrator",
+      "box": {
+        "x": 1250,
+        "y": 2006,
+        "w": 850,
+        "h": 125
+      },
+      "font_size": 30,
+      "translations": {
+        "ru": "Он попрощался с командой и вместе с новым другом отправился к Перекрёстку миров.",
+        "en": "He said goodbye to the crew and set off for the Crossroads of Worlds with his new friend.",
+        "pt_BR": "Despediu-se da equipe e partiu com seu novo amigo rumo à Encruzilhada dos Mundos.",
+        "es": "Se despidió de la tripulación y partió con su nuevo amigo hacia la Encrucijada de los Mundos.",
+        "fr": "Il fit ses adieux à l’équipage et partit avec son nouvel ami vers le Carrefour des Mondes.",
+        "de": "Er verabschiedete sich von der Crew und flog mit seinem neuen Freund zur Kreuzung der Welten."
+      }
+    },
+    {
+      "line_id": "CH06_P04_L006",
+      "visual_id": "CH06_P04_L006_part_1",
+      "display_part": 1,
+      "kind": "narrator",
+      "box": {
+        "x": 91,
+        "y": 2198,
+        "w": 770,
+        "h": 120
+      },
+      "font_size": 32,
+      "translations": {
+        "ru": "У Перекрёстка миров нейронный друг вновь связался с Микой.",
+        "en": "At the Crossroads of Worlds, his neuron friend contacted Mika again.",
+        "pt_BR": "Na Encruzilhada dos Mundos, seu amigo neural voltou a falar com Mika.",
+        "es": "En la Encrucijada de los Mundos, su amigo neuronal volvió a contactar con Mika.",
+        "fr": "Au Carrefour des Mondes, son ami neuronal reprit contact avec Mika.",
+        "de": "An der Kreuzung der Welten meldete sich sein neuronaler Freund wieder."
+      }
+    },
+    {
+      "line_id": "CH06_P04_L006",
+      "visual_id": "CH06_P04_L006_part_2",
+      "display_part": 2,
+      "kind": "narrator",
+      "box": {
+        "x": 640,
+        "y": 2692,
+        "w": 525,
+        "h": 145
+      },
+      "font_size": 29,
+      "translations": {
+        "ru": "Чтобы воспользоваться артефактом, нужно разгадать ребус.",
+        "en": "To use the artifact, he had to solve a puzzle.",
+        "pt_BR": "Para usar o artefato, era preciso resolver um enigma.",
+        "es": "Para usar el artefacto, tenía que resolver un acertijo.",
+        "fr": "Pour utiliser l’artefact, il fallait résoudre une énigme.",
+        "de": "Um das Artefakt zu nutzen, musste er ein Rätsel lösen."
+      }
+    },
+    {
+      "line_id": "CH06_P04_L007",
+      "visual_id": "CH06_P04_L007_part_1",
+      "display_part": 1,
+      "kind": "neuron",
+      "box": {
+        "x": 1246,
+        "y": 2688,
+        "w": 480,
+        "h": 143
+      },
+      "font_size": 28,
+      "translations": {
+        "ru": "Мы и сами не знаем, куда приведёт артефакт.",
+        "en": "Even we don’t know where the artifact leads.",
+        "pt_BR": "Nem nós sabemos aonde o artefato leva.",
+        "es": "Ni nosotros sabemos adónde lleva el artefacto.",
+        "fr": "Nous ignorons aussi où mène cet artefact.",
+        "de": "Auch wir wissen nicht, wohin das Artefakt führt."
+      }
+    },
+    {
+      "line_id": "CH06_P04_L007",
+      "visual_id": "CH06_P04_L007_part_2",
+      "display_part": 2,
+      "kind": "neuron",
+      "box": {
+        "x": 2052,
+        "y": 2639,
+        "w": 342,
+        "h": 194
+      },
+      "font_size": 29,
+      "translations": {
+        "ru": "Я отправлюсь с тобой. Изучать неизведанное — наша цель.",
+        "en": "I’ll come with you. Exploring the unknown is our purpose.",
+        "pt_BR": "Vou com você. Explorar o desconhecido é nossa missão.",
+        "es": "Iré contigo. Explorar lo desconocido es nuestra misión.",
+        "fr": "Je pars avec toi. Explorer l’inconnu est notre raison d’être.",
+        "de": "Ich komme mit. Das Unbekannte zu erforschen ist unser Ziel."
+      }
+    },
+    {
+      "line_id": "CH06_P04_L008",
+      "visual_id": "CH06_P04_L008",
+      "display_part": 1,
+      "kind": "narrator",
+      "box": {
+        "x": 100,
+        "y": 2996,
+        "w": 950,
+        "h": 112
+      },
+      "font_size": 33,
+      "translations": {
+        "ru": "Впереди открылся проход, и Мика направил свой звёздолёт в него.",
+        "en": "A passage opened ahead, and Mika steered his starship into it.",
+        "pt_BR": "Uma passagem se abriu à frente, e Mika guiou sua nave para dentro dela.",
+        "es": "Se abrió un pasaje ante él, y Mika dirigió su nave hacia su interior.",
+        "fr": "Un passage s’ouvrit devant lui, et Mika y guida son vaisseau.",
+        "de": "Vor ihm öffnete sich ein Durchgang. Mika steuerte sein Raumschiff hinein."
+      }
+    },
+    {
+      "line_id": "CH06_P04_L004",
+      "visual_id": "CH06_P04_L004",
+      "kind": "burst",
+      "display_part": 1,
+      "translations": {
+        "ru": "Удачи!",
+        "en": "Good luck!",
+        "pt_BR": "Boa sorte!",
+        "es": "¡Buena suerte!",
+        "fr": "Bonne chance !",
+        "de": "Viel Glück!"
+      }
+    }
+  ],
+  "voice_notes": "CHR_038 neuron; CHR_001 Mika; CHR_004 author. Approved RU v2 mapping preserved. Burst L004 spoken by CHR_038."
+}

@@ -1,0 +1,327 @@
+{
+  "schema_version": 3,
+  "page_id": "CH04_P05",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch04_p05_languages/ch04_p05_ru.webp",
+  "native_scene_panels": [
+    "p45_ruins_entrance",
+    "p45_museum_walk",
+    "p45_professor_handshake",
+    "p45_evolution_display",
+    "p45_white_evolution",
+    "p45_scientists_farewell",
+    "p45_shadow_of_origin"
+  ],
+  "panel_bounds": {
+    "p45_ruins_entrance": [
+      0.023,
+      0.024,
+      0.524,
+      0.233
+    ],
+    "p45_museum_walk": [
+      0.575,
+      0.019,
+      0.4,
+      0.263
+    ],
+    "p45_professor_handshake": [
+      0.024,
+      0.304,
+      0.502,
+      0.268
+    ],
+    "p45_evolution_display": [
+      0.542,
+      0.314,
+      0.433,
+      0.255
+    ],
+    "p45_white_evolution": [
+      0.024,
+      0.589,
+      0.952,
+      0.127
+    ],
+    "p45_scientists_farewell": [
+      0.024,
+      0.735,
+      0.522,
+      0.247
+    ],
+    "p45_shadow_of_origin": [
+      0.57,
+      0.739,
+      0.405,
+      0.243
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH04_P05_L001",
+      "frame_id": "CH04_P05_F01",
+      "panel_id": "p45_ruins_entrance",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Наконец друзья добрались до археологического музея на Руне.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L001_ru.mp3",
+      "audio_duration_s": 4.284,
+      "camera_target": [
+        0.284,
+        0.153,
+        0.23
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "01df0ce72106dea963caedc25df3522312f9d1faeedf67df7c4fa96ef0766b98"
+    },
+    {
+      "line_id": "CH04_P05_L002",
+      "frame_id": "CH04_P05_F02",
+      "panel_id": "p45_museum_walk",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Профессор решил составить Мике компанию.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L002_ru.mp3",
+      "audio_duration_s": 2.847,
+      "camera_target": [
+        0.75,
+        0.158,
+        0.158
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b1768b9d89cf3ddab53a6a83970bec918c88eec55eda7bac37afa876b99feb96"
+    },
+    {
+      "line_id": "CH04_P05_L003",
+      "frame_id": "CH04_P05_F02",
+      "panel_id": "p45_museum_walk",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Мика, взгляни! Похоже на череп небольшого хищного динозавра!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L003_ru.mp3",
+      "audio_duration_s": 4.754,
+      "camera_target": [
+        0.822,
+        0.123,
+        0.147
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b0a0486a48e0a312c5e8481ff9899c0ae622d2e889c30f8ccda53203ed4a1d19"
+    },
+    {
+      "line_id": "CH04_P05_L004",
+      "frame_id": "CH04_P05_F02",
+      "panel_id": "p45_museum_walk",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Вау!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L004_ru.mp3",
+      "audio_duration_s": 1.306,
+      "camera_target": [
+        0.685,
+        0.161,
+        0.146
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "91729b6a044b9c0f0432d4946f8120e67b461c292a4002cabd373c4b5430fc98"
+    },
+    {
+      "line_id": "CH04_P05_L005",
+      "frame_id": "CH04_P05_F03",
+      "panel_id": "p45_professor_handshake",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Встреча профессоров…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L005_ru.mp3",
+      "audio_duration_s": 2.116,
+      "camera_target": [
+        0.267,
+        0.378,
+        0.199
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c86dd94fe2f9150e9787b8c944e6724bfe896ce5a8288dbee7ccfa6244e8eb3e"
+    },
+    {
+      "line_id": "CH04_P05_L006",
+      "frame_id": "CH04_P05_F03",
+      "panel_id": "p45_professor_handshake",
+      "speaker_id": "CHR_033",
+      "kind": "dialogue",
+      "spoken_text": "Рад познакомиться, коллега!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L006_ru.mp3",
+      "audio_duration_s": 2.038,
+      "camera_target": [
+        0.188,
+        0.379,
+        0.19
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fa02aa0f0d885ffabae427626018feb8d322188e819b200d923562829f7ae179"
+    },
+    {
+      "line_id": "CH04_P05_L007",
+      "frame_id": "CH04_P05_F04",
+      "panel_id": "p45_evolution_display",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "…как всегда, закончилась спором!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L007_ru.mp3",
+      "audio_duration_s": 3.004,
+      "camera_target": [
+        0.75,
+        0.392,
+        0.171
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8df8b6b543616621fdeb0c7be08802bf029a94d1069e6c1e33840cc6b045da7a"
+    },
+    {
+      "line_id": "CH04_P05_L008",
+      "frame_id": "CH04_P05_F05",
+      "panel_id": "p45_white_evolution",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Учёные предположили: удар астероида не оборвал древнюю ветвь эволюции. Следы земной жизни могли попасть в другую галактику, смешаться с местными видами и дать начало необычному гибриду — предку ящеров.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L008_ru.mp3",
+      "audio_duration_s": 14.289,
+      "camera_target": [
+        0.5,
+        0.655,
+        0.126
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9708b940fc2f284cc67c2adb6505ab2f64404910a11cde9b1742739b6ae5a497"
+    },
+    {
+      "line_id": "CH04_P05_L009",
+      "frame_id": "CH04_P05_F06",
+      "panel_id": "p45_scientists_farewell",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Редкий случай: учёные всё-таки нашли компромисс!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L009_ru.mp3",
+      "audio_duration_s": 4.127,
+      "camera_target": [
+        0.28,
+        0.841,
+        0.208
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2078fd817354803d9c6a61aaf6406f7e4560fb4673c946f09b75a3ea7ac63830"
+    },
+    {
+      "line_id": "CH04_P05_L010",
+      "frame_id": "CH04_P05_F07",
+      "panel_id": "p45_shadow_of_origin",
+      "speaker_id": "CHR_033",
+      "kind": "dialogue",
+      "spoken_text": "На раскопках мы обнаружили следы древней расы. Похоже, она умела управлять гравитацией!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L010_ru.mp3",
+      "audio_duration_s": 6.426,
+      "camera_target": [
+        0.79,
+        0.804,
+        0.16
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7385f04132bc993dfb1f434b1df0dea62dd2ffcb8107c6431dab05be113475e2"
+    },
+    {
+      "line_id": "CH04_P05_L011",
+      "frame_id": "CH04_P05_F07",
+      "panel_id": "p45_shadow_of_origin",
+      "speaker_id": "CHR_033",
+      "kind": "dialogue",
+      "spoken_text": "Возможно, именно её знания помогут тебе разгадать тайну шторма, Мика.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L011_ru.mp3",
+      "audio_duration_s": 5.146,
+      "camera_target": [
+        0.766,
+        0.84,
+        0.16
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fbbb6e02f6d9a63af46fca2f23fcfc395fea3b21cb0cc35053c212df7d82e68b"
+    },
+    {
+      "line_id": "CH04_P05_L012",
+      "frame_id": "CH04_P05_F07",
+      "panel_id": "p45_shadow_of_origin",
+      "speaker_id": "CHR_008",
+      "kind": "system",
+      "spoken_text": "НОВЫЙ КУРС: АНДРОМЕДА",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P05_L012_ru.mp3",
+      "audio_duration_s": 2.508,
+      "camera_target": [
+        0.842,
+        0.928,
+        0.12
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "aa0ebc98c8bfc1da9d783475c7c27cae69265620241f8ff3762567d7f025a9b3"
+    }
+  ],
+  "note": "Original Runa arrival and post-evolution sequences; fixed art-first camera, same six languages."
+}

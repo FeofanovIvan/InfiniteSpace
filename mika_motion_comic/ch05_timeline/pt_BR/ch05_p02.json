@@ -1,0 +1,342 @@
+{
+  "schema_version": 3,
+  "page_id": "CH05_P02",
+  "locale": "pt_BR",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch05_p02_languages/ch05_p02_pt_BR.webp",
+  "native_scene_panels": [
+    "p52_mika_earpiece",
+    "p52_magnetic_hall",
+    "p52_mika_meets_magnetic",
+    "p52_portal_discovery",
+    "p52_mika_talks",
+    "p52_ship_departure"
+  ],
+  "panel_bounds": {
+    "p52_mika_earpiece": [
+      0.024,
+      0.017,
+      0.285,
+      0.245
+    ],
+    "p52_magnetic_hall": [
+      0.354,
+      0.017,
+      0.621,
+      0.251
+    ],
+    "p52_mika_meets_magnetic": [
+      0.024,
+      0.272,
+      0.449,
+      0.439
+    ],
+    "p52_portal_discovery": [
+      0.498,
+      0.29,
+      0.477,
+      0.416
+    ],
+    "p52_mika_talks": [
+      0.024,
+      0.735,
+      0.355,
+      0.245
+    ],
+    "p52_ship_departure": [
+      0.412,
+      0.735,
+      0.563,
+      0.249
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH05_P02_L001",
+      "frame_id": "CH05_P02_F01",
+      "panel_id": "p52_mika_earpiece",
+      "speaker_id": "CHR_001",
+      "kind": "thought",
+      "spoken_text": "Preciso ajustar o simulador.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L001_pt_BR.mp3",
+      "audio_duration_s": 2.194,
+      "camera_target": [
+        0.17,
+        0.126,
+        0.23
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "87e49853dfee37bf71c07a78b915c8e52b409716be213090a4dedc6215be65d6"
+    },
+    {
+      "line_id": "CH05_P02_L002",
+      "frame_id": "CH05_P02_F02",
+      "panel_id": "p52_magnetic_hall",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika percebeu que o desconhecido nem sempre é perigoso. Às vezes, basta aprender a entender o outro.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L002_pt_BR.mp3",
+      "audio_duration_s": 7.001,
+      "camera_target": [
+        0.66,
+        0.126,
+        0.245
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9ac9192f9703b120a51a1045dca434004116c2a5978f72d773febe3befb2cfcc"
+    },
+    {
+      "line_id": "CH05_P02_L003",
+      "frame_id": "CH05_P02_F02",
+      "panel_id": "p52_magnetic_hall",
+      "speaker_id": "CHR_034",
+      "kind": "dialogue",
+      "spoken_text": "Olá!",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L003_pt_BR.mp3",
+      "audio_duration_s": 0.993,
+      "camera_target": [
+        0.455,
+        0.168,
+        0.123
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "039b72b5ba839d2bf0676c8723762d541cbc598a542c1c07afeca7cd1cc62064"
+    },
+    {
+      "line_id": "CH05_P02_L004",
+      "frame_id": "CH05_P02_F02",
+      "panel_id": "p52_magnetic_hall",
+      "speaker_id": "CHR_035",
+      "kind": "dialogue",
+      "spoken_text": "Que bom que você conseguiu chegar até nós!",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L004_pt_BR.mp3",
+      "audio_duration_s": 2.691,
+      "camera_target": [
+        0.635,
+        0.177,
+        0.125
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "3af4875ddf4b4dab7b1b3273df5eb8d22d2a44fe01d4a5d087ffb34f0b7363d3"
+    },
+    {
+      "line_id": "CH05_P02_L005",
+      "frame_id": "CH05_P02_F02",
+      "panel_id": "p52_magnetic_hall",
+      "speaker_id": "CHR_036",
+      "kind": "dialogue",
+      "spoken_text": "Temos muita coisa para contar a você.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L005_pt_BR.mp3",
+      "audio_duration_s": 2.926,
+      "camera_target": [
+        0.876,
+        0.177,
+        0.119
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f3203cb463f13bcd3573658f47d132acc546667b6292352364e853b56b2ee96c"
+    },
+    {
+      "line_id": "CH05_P02_L006",
+      "frame_id": "CH05_P02_F03",
+      "panel_id": "p52_mika_meets_magnetic",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Olá! Estou tão feliz por vocês serem amigos!",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L006_pt_BR.mp3",
+      "audio_duration_s": 3.866,
+      "camera_target": [
+        0.19,
+        0.43,
+        0.23
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e8420834e6fc9d04a37d0e9fc960a21e8ecaa48233dd750e9eddff04e609ad6f"
+    },
+    {
+      "line_id": "CH05_P02_L007",
+      "frame_id": "CH05_P02_F03",
+      "panel_id": "p52_mika_meets_magnetic",
+      "speaker_id": "CHR_035",
+      "kind": "dialogue",
+      "spoken_text": "Não se preocupe. Venha, quero mostrar uma coisa!",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L007_pt_BR.mp3",
+      "audio_duration_s": 3.318,
+      "camera_target": [
+        0.3,
+        0.56,
+        0.24
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b1a6cbcb564d0abe046c449c4fc23faeae48cbecff3113b5501ea3928ab11337"
+    },
+    {
+      "line_id": "CH05_P02_L008",
+      "frame_id": "CH05_P02_F04",
+      "panel_id": "p52_portal_discovery",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Os habitantes de Geona mostraram a Mika sua atividade favorita: fazer experiências com a gravidade.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L008_pt_BR.mp3",
+      "audio_duration_s": 7.001,
+      "camera_target": [
+        0.76,
+        0.485,
+        0.29
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "620aff464f3e3f48b02bc24ba220073ddcafa4bd1d911243ef616c3781365e9d"
+    },
+    {
+      "line_id": "CH05_P02_L009",
+      "frame_id": "CH05_P02_F04",
+      "panel_id": "p52_portal_discovery",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Uau!",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L009_pt_BR.mp3",
+      "audio_duration_s": 1.489,
+      "camera_target": [
+        0.6,
+        0.51,
+        0.2
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "be7486c989c40c75d005150e2daa9307bc49e71320b058b657263cd0235152f5"
+    },
+    {
+      "line_id": "CH05_P02_L010",
+      "frame_id": "CH05_P02_F04",
+      "panel_id": "p52_portal_discovery",
+      "speaker_id": "CHR_035",
+      "kind": "dialogue",
+      "spoken_text": "Podemos manipular um pouquinho a gravidade e o espaço. Você também pode experimentar!",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L010_pt_BR.mp3",
+      "audio_duration_s": 5.486,
+      "camera_target": [
+        0.79,
+        0.58,
+        0.25
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "520f339c544e5db9c4f91d651abe5b4b2f68135ab6440ba6538526acb601213d"
+    },
+    {
+      "line_id": "CH05_P02_L011",
+      "frame_id": "CH05_P02_F05",
+      "panel_id": "p52_mika_talks",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Vocês estavam me esperando? Então sabem de onde eu vim?",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L011_pt_BR.mp3",
+      "audio_duration_s": 3.971,
+      "camera_target": [
+        0.145,
+        0.816,
+        0.215
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c8dd7ae25fb7f785deab6de031d7c66fac327a7efc7198013279ec49e373bd45"
+    },
+    {
+      "line_id": "CH05_P02_L012",
+      "frame_id": "CH05_P02_F05",
+      "panel_id": "p52_mika_talks",
+      "speaker_id": "CHR_034",
+      "kind": "dialogue",
+      "spoken_text": "Calma, vamos explicar tudo. Primeiro, vá até nossa estação, a Pirâmide Invertida. Lá estão guardados conhecimentos que vão ajudar você a entender o que está acontecendo.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L012_pt_BR.mp3",
+      "audio_duration_s": 12.121,
+      "camera_target": [
+        0.285,
+        0.845,
+        0.2
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8f3a37acb125610e6acbf69d10d8a1639738b989ab023310d07c3db659ff2aea"
+    },
+    {
+      "line_id": "CH05_P02_L013",
+      "frame_id": "CH05_P02_F06",
+      "panel_id": "p52_ship_departure",
+      "speaker_id": "CHR_004",
+      "kind": "caption",
+      "spoken_text": "Pirâmide Invertida — estação-arquivo da civilização magnética.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/pt_BR/CH05_P02_L013_pt_BR.mp3",
+      "audio_duration_s": 4.989,
+      "camera_target": [
+        0.7,
+        0.856,
+        0.235
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7326ca0244b0c82fb0d1f764c1484156f105c5488b17223880b31cdeaa532a9c"
+    }
+  ],
+  "note": "Native Gravity Pinball after F04, resume F05-F06 before launch."
+}

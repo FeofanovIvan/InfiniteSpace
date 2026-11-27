@@ -1,0 +1,26 @@
+{
+  "page_id": "CH05_P01",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "line_ids": [
+    "CH05_P01_L001",
+    "CH05_P01_L002",
+    "CH05_P01_L003",
+    "CH05_P01_L004",
+    "CH05_P01_L005",
+    "CH05_P01_L006",
+    "CH05_P01_L007",
+    "CH05_P01_L008",
+    "CH05_P01_L009",
+    "CH05_P01_L010",
+    "CH05_P01_L011",
+    "CH05_P01_L012"
+  ],
+  "status": "approved_ru_adapted"
+}

@@ -1,0 +1,1043 @@
+{
+  "schema_version": "3.2",
+  "project": "MIKA Infinite Space",
+  "page_id": "CH01_P03",
+  "revision": 3,
+  "approval_status": "ru_art_approved_six_localizations_adapted_native_review_recommended",
+  "style": "NEBULA",
+  "master_size_px": [
+    2480,
+    3508
+  ],
+  "source_pdf": "1-3(1).pdf",
+  "background": "background.jpg",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "godot_locale_aliases": {
+    "ru_RU": "ru",
+    "en_US": "en",
+    "en_GB": "en",
+    "pt_BR": "pt_BR",
+    "pt-BR": "pt_BR",
+    "pt_PT": "pt_BR",
+    "es_ES": "es",
+    "es_MX": "es",
+    "fr_FR": "fr",
+    "de_DE": "de"
+  },
+  "overlays_png": {
+    "ru": "overlays/CH01_P03_ru.png",
+    "en": "overlays/CH01_P03_en.png",
+    "pt_BR": "overlays/CH01_P03_pt_BR.png",
+    "es": "overlays/CH01_P03_es.png",
+    "fr": "overlays/CH01_P03_fr.png",
+    "de": "overlays/CH01_P03_de.png"
+  },
+  "overlays_svg": {
+    "ru": "overlays/CH01_P03_ru.svg",
+    "en": "overlays/CH01_P03_en.svg",
+    "pt_BR": "overlays/CH01_P03_pt_BR.svg",
+    "es": "overlays/CH01_P03_es.svg",
+    "fr": "overlays/CH01_P03_fr.svg",
+    "de": "overlays/CH01_P03_de.svg"
+  },
+  "previews": {
+    "ru": "previews/CH01_P03_ru_preview.jpg",
+    "en": "previews/CH01_P03_en_preview.jpg",
+    "pt_BR": "previews/CH01_P03_pt_BR_preview.jpg",
+    "es": "previews/CH01_P03_es_preview.jpg",
+    "fr": "previews/CH01_P03_fr_preview.jpg",
+    "de": "previews/CH01_P03_de_preview.jpg"
+  },
+  "speaker_ids": [
+    "CHR_001",
+    "CHR_011",
+    "CHR_004",
+    "CHR_008"
+  ],
+  "playback_profiles": {
+    "full_reading": {
+      "line_ids": [
+        "CH01_P03_L001",
+        "CH01_P03_L002",
+        "CH01_P03_L003",
+        "CH01_P03_L004",
+        "CH01_P03_L005",
+        "CH01_P03_L006",
+        "CH01_P03_L007",
+        "CH01_P03_L008"
+      ],
+      "description_ru": "Включены речь, слова автора, мысль и голос навигации."
+    },
+    "without_internal_thought": {
+      "line_ids": [
+        "CH01_P03_L001",
+        "CH01_P03_L002",
+        "CH01_P03_L003",
+        "CH01_P03_L004",
+        "CH01_P03_L006",
+        "CH01_P03_L007",
+        "CH01_P03_L008"
+      ],
+      "description_ru": "Внутренняя мысль Мики видна на экране, но не озвучена."
+    },
+    "dialogue_and_system": {
+      "line_ids": [
+        "CH01_P03_L001",
+        "CH01_P03_L002",
+        "CH01_P03_L003",
+        "CH01_P03_L004",
+        "CH01_P03_L008"
+      ],
+      "description_ru": "Говорят герои и корабль; авторские подписи только читают."
+    }
+  },
+  "visual_only_elements": [
+    {
+      "ui_id": "CH01_P03_UI_LOCATION",
+      "frame_id": "CH01_P03_F01",
+      "kind": "earth_spaceport_location",
+      "audio_required": false,
+      "localized": {
+        "ru": "КОСМОПОРТ ЗЕМЛИ / СПРАВОЧНОЕ БЮРО",
+        "en": "EARTH SPACEPORT / INFORMATION DESK",
+        "pt_BR": "PORTO ESPACIAL DA TERRA / BALCÃO DE INFORMAÇÕES",
+        "es": "PUERTO ESPACIAL DE LA TIERRA / OFICINA DE INFORMACIÓN",
+        "fr": "SPATIOPORT TERRESTRE / BUREAU D’ACCUEIL",
+        "de": "RAUMHAFEN DER ERDE / INFORMATIONSSCHALTER"
+      }
+    },
+    {
+      "ui_id": "CH01_P03_UI_REPAIR",
+      "frame_id": "CH01_P03_F03",
+      "kind": "service_status",
+      "audio_required": false,
+      "localized": {
+        "ru": "РЕМОНТ: ГОТОВО / ТОПЛИВО: 100%",
+        "en": "REPAIRS: DONE / FUEL: 100%",
+        "pt_BR": "REPARO: OK / COMBUSTÍVEL: 100%",
+        "es": "REPARACIÓN: LISTA / COMBUSTIBLE: 100%",
+        "fr": "RÉPARATIONS : OK / CARBURANT : 100%",
+        "de": "REPARATUR: FERTIG / TANK: 100%"
+      }
+    }
+  ],
+  "new_cast": [
+    {
+      "character_id": "CHR_011",
+      "name_ru": "Сотрудница справочного бюро космопорта Земли",
+      "role": "earth_spaceport_help_desk",
+      "voice_character_ru": "Жизнерадостная доброжелательная сотрудница. Взрослая, без канцелярщины: улыбка в голосе, искреннее удивление перед планом помощи, ясная уверенность на ключевых словах. Сначала искать готовый голос в ElevenLabs Voice Library.",
+      "voice_id": null,
+      "tts_status": "not_generated"
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P03_L001",
+      "page_id": "CH01_P03",
+      "frame_id": "CH01_P03_F01",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "bubble_id": "mika_speech_amber_tail",
+      "performance": {
+        "emotion": "polite_but_disoriented",
+        "intensity": 0.66,
+        "pace": "quick_hello_then_hesitant",
+        "volume": "medium",
+        "pause_after_ms": 250,
+        "tone_ru": "Вежливо и с надеждой, но под вежливостью прячется тревога.",
+        "arc_ru": "«Здравствуйте!» звучит живо; на «пожалуйста» лёгкая заминка; «куда я попал?» — невольный испуг с вопросительной интонацией.",
+        "acting_beats": [
+          "улыбка-на-автомате",
+          "поиск-слов",
+          "растерянный-вопрос"
+        ],
+        "voice_direction_ru": "Не произносить монотонно; перед «Куда» коротко вдохнуть, будто осматривая незнакомый зал.",
+        "tts_tags_en": "[nervous]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Здравствуйте! Подскажите, пожалуйста… Куда я попал?",
+          "voice_spoken_text": "Здравствуйте! Подскажите, пожалуйста… Куда я попал?",
+          "render_lines": [
+            "Здравствуйте!",
+            "Подскажите, пожалуйста…",
+            "Куда я попал?"
+          ],
+          "font_size_viewbox": 22.7,
+          "edit_source_svg": "overlays/CH01_P03_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] Здравствуйте! Подскажите, пожалуйста… Куда я попал?"
+        },
+        "en": {
+          "display_text": "Hello! Could you please tell me… Where am I?",
+          "voice_spoken_text": "Hello! Could you please tell me… Where am I?",
+          "render_lines": [
+            "Hello!",
+            "Could you please tell me…",
+            "Where am I?"
+          ],
+          "font_size_viewbox": 21.1,
+          "edit_source_svg": "overlays/CH01_P03_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] Hello! Could you please tell me… Where am I?"
+        },
+        "pt_BR": {
+          "display_text": "Olá! Com licença… Você pode me dizer onde eu vim parar?",
+          "voice_spoken_text": "Olá! Com licença… Você pode me dizer onde eu vim parar?",
+          "render_lines": [
+            "Olá! Com licença…",
+            "Você pode me dizer",
+            "onde eu vim parar?"
+          ],
+          "font_size_viewbox": 21,
+          "edit_source_svg": "overlays/CH01_P03_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] Olá! Com licença… Você pode me dizer onde eu vim parar?"
+        },
+        "es": {
+          "display_text": "¡Hola! Disculpe… ¿Me puede decir dónde estoy?",
+          "voice_spoken_text": "¡Hola! Disculpe… ¿Me puede decir dónde estoy?",
+          "render_lines": [
+            "¡Hola! Disculpe…",
+            "¿Me puede decir",
+            "dónde estoy?"
+          ],
+          "font_size_viewbox": 22,
+          "edit_source_svg": "overlays/CH01_P03_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] ¡Hola! Disculpe… ¿Me puede decir dónde estoy?"
+        },
+        "fr": {
+          "display_text": "Bonjour ! Excusez-moi… Pourriez-vous me dire où je suis ?",
+          "voice_spoken_text": "Bonjour ! Excusez-moi… Pourriez-vous me dire où je suis ?",
+          "render_lines": [
+            "Bonjour ! Excusez-moi…",
+            "Pourriez-vous me dire",
+            "où je suis ?"
+          ],
+          "font_size_viewbox": 20.2,
+          "edit_source_svg": "overlays/CH01_P03_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] Bonjour ! Excusez-moi… Pourriez-vous me dire où je suis ?"
+        },
+        "de": {
+          "display_text": "Hallo! Entschuldigung… Können Sie mir sagen, wo ich gelandet bin?",
+          "voice_spoken_text": "Hallo! Entschuldigung… Können Sie mir sagen, wo ich gelandet bin?",
+          "render_lines": [
+            "Hallo! Entschuldigung…",
+            "Können Sie mir sagen,",
+            "wo ich gelandet bin?"
+          ],
+          "font_size_viewbox": 20.4,
+          "edit_source_svg": "overlays/CH01_P03_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] Hallo! Entschuldigung… Können Sie mir sagen, wo ich gelandet bin?"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P03_L002",
+      "page_id": "CH01_P03",
+      "frame_id": "CH01_P03_F01",
+      "speaker_id": "CHR_011",
+      "kind": "dialogue",
+      "bubble_id": "desk_speech_cyan_tail",
+      "performance": {
+        "emotion": "friendly_curiosity",
+        "intensity": 0.57,
+        "pace": "welcoming_then_attentive",
+        "volume": "medium",
+        "pause_after_ms": 250,
+        "tone_ru": "Улыбка в голосе, очень естественное дружелюбие, искреннее внимание к гостю.",
+        "arc_ru": "Начать тепло и бодро. «Что у вас случилось?» — чуть мягче, без допроса, с любопытством.",
+        "acting_beats": [
+          "тёплое-приветствие",
+          "уверенное-представление",
+          "мягкий-вопрос"
+        ],
+        "voice_direction_ru": "Финальный вопрос адресован конкретно Мике; не озвучивать как объявление по громкой связи.",
+        "tts_tags_en": "[warmly]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Здравствуйте! Вы в космопорту Земли. Что у вас случилось?",
+          "voice_spoken_text": "Здравствуйте! Вы в космопорту Земли. Что у вас случилось?",
+          "render_lines": [
+            "Здравствуйте!",
+            "Вы в космопорту Земли.",
+            "Что у вас случилось?"
+          ],
+          "font_size_viewbox": 20.6,
+          "edit_source_svg": "overlays/CH01_P03_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] Здравствуйте! Вы в космопорту Земли. Что у вас случилось?"
+        },
+        "en": {
+          "display_text": "Hello there! You’re at Earth’s spaceport. What happened to you?",
+          "voice_spoken_text": "Hello there! You’re at Earth’s spaceport. What happened to you?",
+          "render_lines": [
+            "Hello there!",
+            "You’re at Earth’s spaceport.",
+            "What happened to you?"
+          ],
+          "font_size_viewbox": 19.4,
+          "edit_source_svg": "overlays/CH01_P03_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] Hello there! You’re at Earth’s spaceport. What happened to you?"
+        },
+        "pt_BR": {
+          "display_text": "Olá! Seja bem-vindo! Este é o porto espacial da Terra. O que houve?",
+          "voice_spoken_text": "Olá! Seja bem-vindo! Este é o porto espacial da Terra. O que houve?",
+          "render_lines": [
+            "Olá! Seja bem-vindo!",
+            "Este é o porto espacial",
+            "da Terra. O que houve?"
+          ],
+          "font_size_viewbox": 18.7,
+          "edit_source_svg": "overlays/CH01_P03_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] Olá! Seja bem-vindo! Este é o porto espacial da Terra. O que houve?"
+        },
+        "es": {
+          "display_text": "¡Hola! ¡Bienvenido! Este es el puerto espacial de la Tierra. ¿Qué pasó?",
+          "voice_spoken_text": "¡Hola! ¡Bienvenido! Este es el puerto espacial de la Tierra. ¿Qué pasó?",
+          "render_lines": [
+            "¡Hola! ¡Bienvenido!",
+            "Este es el puerto espacial",
+            "de la Tierra. ¿Qué pasó?"
+          ],
+          "font_size_viewbox": 18.7,
+          "edit_source_svg": "overlays/CH01_P03_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] ¡Hola! ¡Bienvenido! Este es el puerto espacial de la Tierra. ¿Qué pasó?"
+        },
+        "fr": {
+          "display_text": "Bonjour ! Bienvenue ! Vous êtes au spatioport de la Terre. Un souci ?",
+          "voice_spoken_text": "Bonjour ! Bienvenue ! Vous êtes au spatioport de la Terre. Un souci ?",
+          "render_lines": [
+            "Bonjour ! Bienvenue !",
+            "Vous êtes au spatioport",
+            "de la Terre. Un souci ?"
+          ],
+          "font_size_viewbox": 18.4,
+          "edit_source_svg": "overlays/CH01_P03_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] Bonjour ! Bienvenue ! Vous êtes au spatioport de la Terre. Un souci ?"
+        },
+        "de": {
+          "display_text": "Hallo, willkommen! Du bist am Raumhafen der Erde. Was ist denn passiert?",
+          "voice_spoken_text": "Hallo, willkommen! Du bist am Raumhafen der Erde. Was ist denn passiert?",
+          "render_lines": [
+            "Hallo, willkommen!",
+            "Du bist am Raumhafen der Erde.",
+            "Was ist denn passiert?"
+          ],
+          "font_size_viewbox": 18.3,
+          "edit_source_svg": "overlays/CH01_P03_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] Hallo, willkommen! Du bist am Raumhafen der Erde. Was ist denn passiert?"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P03_L003",
+      "page_id": "CH01_P03",
+      "frame_id": "CH01_P03_F01",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "bubble_id": "mika_speech_amber_tail",
+      "performance": {
+        "emotion": "exhausted_vulnerable_truth",
+        "intensity": 0.75,
+        "pace": "soft_hesitant_then_quiet",
+        "volume": "medium",
+        "pause_after_ms": 360,
+        "tone_ru": "После первого облегчения неожиданно признаётся, что очень напуган.",
+        "arc_ru": "«Штормом» с недоверием к пережитому; после многоточия мягкий выдох; слова «домой» — тихо и по-настоящему трогательно.",
+        "acting_beats": [
+          "вспоминает-ужас",
+          "замирает",
+          "признаётся-в-беспомощности"
+        ],
+        "voice_direction_ru": "Не играть истерику; тёплая детская искренность и живое сбивчивое дыхание.",
+        "tts_tags_en": "[sad]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Меня занесло сюда штормом… И теперь совсем не знаю, как вернуться домой.",
+          "voice_spoken_text": "Меня занесло сюда штормом… И теперь совсем не знаю, как вернуться домой.",
+          "render_lines": [
+            "Меня занесло сюда штормом…",
+            "И теперь совсем не знаю,",
+            "как вернуться домой."
+          ],
+          "font_size_viewbox": 19.7,
+          "edit_source_svg": "overlays/CH01_P03_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sad] Меня занесло сюда штормом… И теперь совсем не знаю, как вернуться домой."
+        },
+        "en": {
+          "display_text": "A storm carried me here… And now I have no idea how to get back home.",
+          "voice_spoken_text": "A storm carried me here… And now I have no idea how to get back home.",
+          "render_lines": [
+            "A storm carried me here…",
+            "And now I have no idea",
+            "how to get back home."
+          ],
+          "font_size_viewbox": 19.2,
+          "edit_source_svg": "overlays/CH01_P03_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sad] A storm carried me here… And now I have no idea how to get back home."
+        },
+        "pt_BR": {
+          "display_text": "Uma tempestade me trouxe aqui… E agora eu não faço ideia de como voltar pra casa.",
+          "voice_spoken_text": "Uma tempestade me trouxe aqui… E agora eu não faço ideia de como voltar pra casa.",
+          "render_lines": [
+            "Uma tempestade me trouxe aqui…",
+            "E agora eu não faço ideia",
+            "de como voltar pra casa."
+          ],
+          "font_size_viewbox": 18.4,
+          "edit_source_svg": "overlays/CH01_P03_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sad] Uma tempestade me trouxe aqui… E agora eu não faço ideia de como voltar pra casa."
+        },
+        "es": {
+          "display_text": "Una tormenta me trajo hasta aquí… Y ahora no tengo ni idea de cómo volver a casa.",
+          "voice_spoken_text": "Una tormenta me trajo hasta aquí… Y ahora no tengo ni idea de cómo volver a casa.",
+          "render_lines": [
+            "Una tormenta me trajo hasta aquí…",
+            "Y ahora no tengo ni idea",
+            "de cómo volver a casa."
+          ],
+          "font_size_viewbox": 18.3,
+          "edit_source_svg": "overlays/CH01_P03_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sad] Una tormenta me trajo hasta aquí… Y ahora no tengo ni idea de cómo volver a casa."
+        },
+        "fr": {
+          "display_text": "Une tempête m’a emporté ici… Je ne sais même pas comment rentrer chez moi.",
+          "voice_spoken_text": "Une tempête m’a emporté ici… Je ne sais même pas comment rentrer chez moi.",
+          "render_lines": [
+            "Une tempête m’a emporté ici…",
+            "Je ne sais même pas",
+            "comment rentrer chez moi."
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P03_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sad] Une tempête m’a emporté ici… Je ne sais même pas comment rentrer chez moi."
+        },
+        "de": {
+          "display_text": "Ein Sturm hat mich hergeweht… Jetzt weiß ich nicht mehr, wie ich nach Hause komme.",
+          "voice_spoken_text": "Ein Sturm hat mich hergeweht… Jetzt weiß ich nicht mehr, wie ich nach Hause komme.",
+          "render_lines": [
+            "Ein Sturm hat mich hergeweht…",
+            "Jetzt weiß ich nicht mehr,",
+            "wie ich nach Hause komme."
+          ],
+          "font_size_viewbox": 18.4,
+          "edit_source_svg": "overlays/CH01_P03_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sad] Ein Sturm hat mich hergeweht… Jetzt weiß ich nicht mehr, wie ich nach Hause komme."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P03_L004",
+      "page_id": "CH01_P03",
+      "frame_id": "CH01_P03_F01",
+      "speaker_id": "CHR_011",
+      "kind": "dialogue",
+      "bubble_id": "desk_speech_cyan_tail",
+      "performance": {
+        "emotion": "surprised_then_resourceful_reassurance",
+        "intensity": 0.79,
+        "pace": "energetic_opening_measured_plan_inspiring_finish",
+        "volume": "medium",
+        "pause_after_ms": 420,
+        "tone_ru": "Настоящее удивление, затем добрый деловой оптимизм, в конце заражает надеждой.",
+        "arc_ru": "Удивиться на «Ого!», затем чуть снизить темп. «Мы починим» — твёрдая уверенность. На «Марс» оживиться. Завершить с улыбкой: «найти путь!». Мысленно показать рукой на изображение Марса за спиной.",
+        "acting_beats": [
+          "радостное-удивление",
+          "сочувствие",
+          "конкретный-план",
+          "воодушевление"
+        ],
+        "voice_direction_ru": "Важно, чтобы длинная реплика звучала как четыре короткие естественные мысли, а не как рекламный текст.",
+        "tts_tags_en": "[excited]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Ого! Вот это история! Мы починим и заправим ваш корабль. А потом летите на Марс — в Центральный дата-центр. Там умный ИИ поможет найти путь!",
+          "voice_spoken_text": "Ого! Вот это история! Мы починим и заправим ваш корабль. А потом летите на Марс — в Центральный дата-центр. Там умный ИИ поможет найти путь!",
+          "render_lines": [
+            "Ого! Вот это история!",
+            "Мы починим и заправим ваш корабль.",
+            "А потом летите на Марс —",
+            "в Центральный дата-центр.",
+            "Там умный ИИ поможет найти путь!"
+          ],
+          "font_size_viewbox": 19.5,
+          "edit_source_svg": "overlays/CH01_P03_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Ого! Вот это история! Мы починим и заправим ваш корабль. А потом летите на Марс — в Центральный дата-центр. Там умный ИИ поможет найти путь!"
+        },
+        "en": {
+          "display_text": "Oh wow! What a story! We’ll fix up your ship and refuel it. Then head to Mars — to the Central Data Center. The AI there can help you get home!",
+          "voice_spoken_text": "Oh wow! What a story! We’ll fix up your ship and refuel it. Then head to Mars — to the Central Data Center. The AI there can help you get home!",
+          "render_lines": [
+            "Oh wow! What a story!",
+            "We’ll fix up your ship and refuel it.",
+            "Then head to Mars —",
+            "to the Central Data Center.",
+            "The AI there can help you get home!"
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P03_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Oh wow! What a story! We’ll fix up your ship and refuel it. Then head to Mars — to the Central Data Center. The AI there can help you get home!"
+        },
+        "pt_BR": {
+          "display_text": "Nossa! Que história! Vamos consertar e abastecer sua nave. Depois, siga para Marte. Lá, no Centro de Dados, tem uma IA que pode te ajudar a voltar pra casa!",
+          "voice_spoken_text": "Nossa! Que história! Vamos consertar e abastecer sua nave. Depois, siga para Marte. Lá, no Centro de Dados, tem uma IA que pode te ajudar a voltar pra casa!",
+          "render_lines": [
+            "Nossa! Que história!",
+            "Vamos consertar e abastecer sua nave.",
+            "Depois, siga para Marte.",
+            "Lá, no Centro de Dados, tem uma IA",
+            "que pode te ajudar a voltar pra casa!"
+          ],
+          "font_size_viewbox": 18.5,
+          "edit_source_svg": "overlays/CH01_P03_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Nossa! Que história! Vamos consertar e abastecer sua nave. Depois, siga para Marte. Lá, no Centro de Dados, tem uma IA que pode te ajudar a voltar pra casa!"
+        },
+        "es": {
+          "display_text": "¡Vaya! ¡Qué aventura! Dejaremos tu nave como nueva y llenaremos el tanque. Luego ve a Marte, al Centro de Datos. ¡Su IA te ayudará a encontrar el camino!",
+          "voice_spoken_text": "¡Vaya! ¡Qué aventura! Dejaremos tu nave como nueva y llenaremos el tanque. Luego ve a Marte, al Centro de Datos. ¡Su IA te ayudará a encontrar el camino!",
+          "render_lines": [
+            "¡Vaya! ¡Qué aventura!",
+            "Dejaremos tu nave como nueva",
+            "y llenaremos el tanque.",
+            "Luego ve a Marte, al Centro de Datos.",
+            "¡Su IA te ayudará a encontrar el camino!"
+          ],
+          "font_size_viewbox": 18.2,
+          "edit_source_svg": "overlays/CH01_P03_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] ¡Vaya! ¡Qué aventura! Dejaremos tu nave como nueva y llenaremos el tanque. Luego ve a Marte, al Centro de Datos. ¡Su IA te ayudará a encontrar el camino!"
+        },
+        "fr": {
+          "display_text": "Oh là là ! Quelle aventure ! On va réparer votre vaisseau et faire le plein. Ensuite, filez sur Mars, au Centre de données. L’IA qui s’y trouve saura vous guider !",
+          "voice_spoken_text": "Oh là là ! Quelle aventure ! On va réparer votre vaisseau et faire le plein. Ensuite, filez sur Mars, au Centre de données. L’IA qui s’y trouve saura vous guider !",
+          "render_lines": [
+            "Oh là là ! Quelle aventure !",
+            "On va réparer votre vaisseau",
+            "et faire le plein.",
+            "Ensuite, filez sur Mars, au Centre de données.",
+            "L’IA qui s’y trouve saura vous guider !"
+          ],
+          "font_size_viewbox": 17.7,
+          "edit_source_svg": "overlays/CH01_P03_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Oh là là ! Quelle aventure ! On va réparer votre vaisseau et faire le plein. Ensuite, filez sur Mars, au Centre de données. L’IA qui s’y trouve saura vous guider !"
+        },
+        "de": {
+          "display_text": "Wow! Was für eine Geschichte! Wir machen dein Schiff wieder flott und tanken es voll. Dann flieg zum Datenzentrum auf dem Mars. Dort hilft dir eine KI bei der Heimreise!",
+          "voice_spoken_text": "Wow! Was für eine Geschichte! Wir machen dein Schiff wieder flott und tanken es voll. Dann flieg zum Datenzentrum auf dem Mars. Dort hilft dir eine KI bei der Heimreise!",
+          "render_lines": [
+            "Wow! Was für eine Geschichte!",
+            "Wir machen dein Schiff wieder flott",
+            "und tanken es voll.",
+            "Dann flieg zum Datenzentrum auf dem Mars.",
+            "Dort hilft dir eine KI bei der Heimreise!"
+          ],
+          "font_size_viewbox": 17.6,
+          "edit_source_svg": "overlays/CH01_P03_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Wow! Was für eine Geschichte! Wir machen dein Schiff wieder flott und tanken es voll. Dann flieg zum Datenzentrum auf dem Mars. Dort hilft dir eine KI bei der Heimreise!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P03_L005",
+      "page_id": "CH01_P03",
+      "frame_id": "CH01_P03_F02",
+      "speaker_id": "CHR_001",
+      "kind": "thought_sigh",
+      "bubble_id": "thought_lilac",
+      "performance": {
+        "emotion": "loneliness_and_fear",
+        "intensity": 0.4,
+        "pace": "very_soft_slow",
+        "volume": "soft",
+        "pause_after_ms": 660,
+        "tone_ru": "Почти неслышная мысль; одиночество без затяжной жалобы.",
+        "arc_ru": "Сначала настоящий негромкий вздох «Эх…», затем вопрос самому себе. «Домой» — падающая нежная интонация.",
+        "acting_beats": [
+          "вздох",
+          "короткая-пауза",
+          "страх-остаться-одному"
+        ],
+        "voice_direction_ru": "В аудио можно оставить только вздох без слов или прочитать всю внутреннюю мысль; решение принимаем при монтаже.",
+        "tts_tags_en": "[sighs]",
+        "voice_optional": true
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Эх… А вдруг я так и не найду дорогу домой?",
+          "voice_spoken_text": "Эх… А вдруг я так и не найду дорогу домой?",
+          "render_lines": [
+            "Эх…",
+            "А вдруг я так и не",
+            "найду дорогу домой?"
+          ],
+          "font_size_viewbox": 23,
+          "edit_source_svg": "overlays/CH01_P03_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sighs] Эх… А вдруг я так и не найду дорогу домой?"
+        },
+        "en": {
+          "display_text": "Oh… What if I never find my way home?",
+          "voice_spoken_text": "Oh… What if I never find my way home?",
+          "render_lines": [
+            "Oh…",
+            "What if I never",
+            "find my way home?"
+          ],
+          "font_size_viewbox": 22,
+          "edit_source_svg": "overlays/CH01_P03_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sighs] Oh… What if I never find my way home?"
+        },
+        "pt_BR": {
+          "display_text": "Poxa… E se eu nunca achar o caminho de casa?",
+          "voice_spoken_text": "Poxa… E se eu nunca achar o caminho de casa?",
+          "render_lines": [
+            "Poxa…",
+            "E se eu nunca achar",
+            "o caminho de casa?"
+          ],
+          "font_size_viewbox": 22.2,
+          "edit_source_svg": "overlays/CH01_P03_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sighs] Poxa… E se eu nunca achar o caminho de casa?"
+        },
+        "es": {
+          "display_text": "Ay… ¿Y si nunca encuentro el camino a casa?",
+          "voice_spoken_text": "Ay… ¿Y si nunca encuentro el camino a casa?",
+          "render_lines": [
+            "Ay…",
+            "¿Y si nunca encuentro",
+            "el camino a casa?"
+          ],
+          "font_size_viewbox": 21.6,
+          "edit_source_svg": "overlays/CH01_P03_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sighs] Ay… ¿Y si nunca encuentro el camino a casa?"
+        },
+        "fr": {
+          "display_text": "Oh… Et si je ne rentrais jamais chez moi ?",
+          "voice_spoken_text": "Oh… Et si je ne rentrais jamais chez moi ?",
+          "render_lines": [
+            "Oh…",
+            "Et si je ne rentrais",
+            "jamais chez moi ?"
+          ],
+          "font_size_viewbox": 22,
+          "edit_source_svg": "overlays/CH01_P03_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sighs] Oh… Et si je ne rentrais jamais chez moi ?"
+        },
+        "de": {
+          "display_text": "Ach… Was, wenn ich nie mehr nach Hause finde?",
+          "voice_spoken_text": "Ach… Was, wenn ich nie mehr nach Hause finde?",
+          "render_lines": [
+            "Ach…",
+            "Was, wenn ich nie mehr",
+            "nach Hause finde?"
+          ],
+          "font_size_viewbox": 21.8,
+          "edit_source_svg": "overlays/CH01_P03_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sighs] Ach… Was, wenn ich nie mehr nach Hause finde?"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P03_L006",
+      "page_id": "CH01_P03",
+      "frame_id": "CH01_P03_F03",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_cream_rect",
+      "performance": {
+        "emotion": "busy_montage_relief",
+        "intensity": 0.62,
+        "pace": "brisk_clear",
+        "volume": "medium",
+        "pause_after_ms": 480,
+        "tone_ru": "Тёплая динамичная авторская речь, ощущение быстрых дружных действий.",
+        "arc_ru": "Перечисление звучит как монтаж под музыку; чуть оживить «до краёв!». Не растягивать.",
+        "acting_beats": [
+          "все-включились",
+          "механики-работают",
+          "радостная-готовность"
+        ],
+        "tts_tags_en": "[upbeat]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Земляне сразу взялись за дело: починили корабль после шторма, проверили системы и заправили его до краёв!",
+          "voice_spoken_text": "Земляне сразу взялись за дело: починили корабль после шторма, проверили системы и заправили его до краёв!",
+          "render_lines": [
+            "Земляне сразу взялись за дело:",
+            "починили корабль после шторма,",
+            "проверили системы",
+            "и заправили его до краёв!"
+          ],
+          "font_size_viewbox": 18.6,
+          "edit_source_svg": "overlays/CH01_P03_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[upbeat] Земляне сразу взялись за дело: починили корабль после шторма, проверили системы и заправили его до краёв!"
+        },
+        "en": {
+          "display_text": "The Earth crew sprang into action: they repaired the storm damage, checked every system, and filled the tanks to the brim!",
+          "voice_spoken_text": "The Earth crew sprang into action: they repaired the storm damage, checked every system, and filled the tanks to the brim!",
+          "render_lines": [
+            "The Earth crew sprang into action:",
+            "they repaired the storm damage,",
+            "checked every system,",
+            "and filled the tanks to the brim!"
+          ],
+          "font_size_viewbox": 18.1,
+          "edit_source_svg": "overlays/CH01_P03_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[upbeat] The Earth crew sprang into action: they repaired the storm damage, checked every system, and filled the tanks to the brim!"
+        },
+        "pt_BR": {
+          "display_text": "A equipe da Terra entrou em ação: consertou os estragos da tempestade, revisou cada sistema e deixou o tanque cheinho!",
+          "voice_spoken_text": "A equipe da Terra entrou em ação: consertou os estragos da tempestade, revisou cada sistema e deixou o tanque cheinho!",
+          "render_lines": [
+            "A equipe da Terra entrou em ação:",
+            "consertou os estragos da tempestade,",
+            "revisou cada sistema",
+            "e deixou o tanque cheinho!"
+          ],
+          "font_size_viewbox": 17.9,
+          "edit_source_svg": "overlays/CH01_P03_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[upbeat] A equipe da Terra entrou em ação: consertou os estragos da tempestade, revisou cada sistema e deixou o tanque cheinho!"
+        },
+        "es": {
+          "display_text": "Los terrícolas se pusieron a trabajar: repararon los daños de la tormenta, revisaron todos los sistemas ¡y llenaron el tanque hasta el tope!",
+          "voice_spoken_text": "Los terrícolas se pusieron a trabajar: repararon los daños de la tormenta, revisaron todos los sistemas ¡y llenaron el tanque hasta el tope!",
+          "render_lines": [
+            "Los terrícolas se pusieron a trabajar:",
+            "repararon los daños de la tormenta,",
+            "revisaron todos los sistemas",
+            "¡y llenaron el tanque hasta el tope!"
+          ],
+          "font_size_viewbox": 17.5,
+          "edit_source_svg": "overlays/CH01_P03_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[upbeat] Los terrícolas se pusieron a trabajar: repararon los daños de la tormenta, revisaron todos los sistemas ¡y llenaron el tanque hasta el tope!"
+        },
+        "fr": {
+          "display_text": "Les Terriens se sont mis au travail : ils ont réparé les dégâts de la tempête, vérifié tous les systèmes et rempli les réservoirs à ras bord !",
+          "voice_spoken_text": "Les Terriens se sont mis au travail : ils ont réparé les dégâts de la tempête, vérifié tous les systèmes et rempli les réservoirs à ras bord !",
+          "render_lines": [
+            "Les Terriens se sont mis au travail :",
+            "ils ont réparé les dégâts de la tempête,",
+            "vérifié tous les systèmes",
+            "et rempli les réservoirs à ras bord !"
+          ],
+          "font_size_viewbox": 17.3,
+          "edit_source_svg": "overlays/CH01_P03_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[upbeat] Les Terriens se sont mis au travail : ils ont réparé les dégâts de la tempête, vérifié tous les systèmes et rempli les réservoirs à ras bord !"
+        },
+        "de": {
+          "display_text": "Auf der Erde ging es sofort los: Sie reparierten die Sturmschäden, prüften alle Systeme und tankten das Schiff randvoll!",
+          "voice_spoken_text": "Auf der Erde ging es sofort los: Sie reparierten die Sturmschäden, prüften alle Systeme und tankten das Schiff randvoll!",
+          "render_lines": [
+            "Auf der Erde ging es sofort los:",
+            "Sie reparierten die Sturmschäden,",
+            "prüften alle Systeme",
+            "und tankten das Schiff randvoll!"
+          ],
+          "font_size_viewbox": 17.8,
+          "edit_source_svg": "overlays/CH01_P03_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[upbeat] Auf der Erde ging es sofort los: Sie reparierten die Sturmschäden, prüften alle Systeme und tankten das Schiff randvoll!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P03_L007",
+      "page_id": "CH01_P03",
+      "frame_id": "CH01_P03_F04",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_cream_rect",
+      "performance": {
+        "emotion": "renewed_courage_and_motion",
+        "intensity": 0.73,
+        "pace": "building_to_launch",
+        "volume": "medium",
+        "pause_after_ms": 450,
+        "tone_ru": "Облегчение, благодарность, азарт нового старта.",
+        "arc_ru": "«Корабль снова готов!» — улыбнуться, «поблагодарил» — тепло. После «двигатели…» короткая кинематографическая пауза, «и вперёд!» — с энергией полёта.",
+        "acting_beats": [
+          "облегчение",
+          "благодарность",
+          "ожидание-старта",
+          "рывок-вперёд"
+        ],
+        "tts_tags_en": "[excited]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "И вот — корабль снова готов! Мика поблагодарил землян, запустил двигатели… и вперёд!",
+          "voice_spoken_text": "И вот — корабль снова готов! Мика поблагодарил землян, запустил двигатели… и вперёд!",
+          "render_lines": [
+            "И вот — корабль снова готов!",
+            "Мика поблагодарил землян,",
+            "запустил двигатели… и вперёд!"
+          ],
+          "font_size_viewbox": 20,
+          "edit_source_svg": "overlays/CH01_P03_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] И вот — корабль снова готов! Мика поблагодарил землян, запустил двигатели… и вперёд!"
+        },
+        "en": {
+          "display_text": "Before long, the ship was ready! Mika thanked the Earth crew, fired up the engines… and took off!",
+          "voice_spoken_text": "Before long, the ship was ready! Mika thanked the Earth crew, fired up the engines… and took off!",
+          "render_lines": [
+            "Before long, the ship was ready!",
+            "Mika thanked the Earth crew,",
+            "fired up the engines… and took off!"
+          ],
+          "font_size_viewbox": 19.4,
+          "edit_source_svg": "overlays/CH01_P03_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Before long, the ship was ready! Mika thanked the Earth crew, fired up the engines… and took off!"
+        },
+        "pt_BR": {
+          "display_text": "Logo a nave estava novinha em folha! Mika agradeceu ao pessoal da Terra, ligou os motores… e partiu!",
+          "voice_spoken_text": "Logo a nave estava novinha em folha! Mika agradeceu ao pessoal da Terra, ligou os motores… e partiu!",
+          "render_lines": [
+            "Logo a nave estava novinha em folha!",
+            "Mika agradeceu ao pessoal da Terra,",
+            "ligou os motores… e partiu!"
+          ],
+          "font_size_viewbox": 18.6,
+          "edit_source_svg": "overlays/CH01_P03_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Logo a nave estava novinha em folha! Mika agradeceu ao pessoal da Terra, ligou os motores… e partiu!"
+        },
+        "es": {
+          "display_text": "¡Pronto la nave quedó lista! Mika dio las gracias, encendió los motores… ¡y despegó!",
+          "voice_spoken_text": "¡Pronto la nave quedó lista! Mika dio las gracias, encendió los motores… ¡y despegó!",
+          "render_lines": [
+            "¡Pronto la nave quedó lista!",
+            "Mika dio las gracias,",
+            "encendió los motores… ¡y despegó!"
+          ],
+          "font_size_viewbox": 19.2,
+          "edit_source_svg": "overlays/CH01_P03_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] ¡Pronto la nave quedó lista! Mika dio las gracias, encendió los motores… ¡y despegó!"
+        },
+        "fr": {
+          "display_text": "Enfin, le vaisseau était prêt ! Mika remercia les Terriens, alluma les moteurs… et décolla !",
+          "voice_spoken_text": "Enfin, le vaisseau était prêt ! Mika remercia les Terriens, alluma les moteurs… et décolla !",
+          "render_lines": [
+            "Enfin, le vaisseau était prêt !",
+            "Mika remercia les Terriens,",
+            "alluma les moteurs… et décolla !"
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P03_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Enfin, le vaisseau était prêt ! Mika remercia les Terriens, alluma les moteurs… et décolla !"
+        },
+        "de": {
+          "display_text": "Bald war das Schiff wieder startklar! Mika bedankte sich herzlich, startete die Triebwerke… und hob ab!",
+          "voice_spoken_text": "Bald war das Schiff wieder startklar! Mika bedankte sich herzlich, startete die Triebwerke… und hob ab!",
+          "render_lines": [
+            "Bald war das Schiff wieder startklar!",
+            "Mika bedankte sich herzlich,",
+            "startete die Triebwerke… und hob ab!"
+          ],
+          "font_size_viewbox": 18.3,
+          "edit_source_svg": "overlays/CH01_P03_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Bald war das Schiff wieder startklar! Mika bedankte sich herzlich, startete die Triebwerke… und hob ab!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P03_L008",
+      "page_id": "CH01_P03",
+      "frame_id": "CH01_P03_F05",
+      "speaker_id": "CHR_008",
+      "kind": "ship_system_hud",
+      "bubble_id": "nav_hud_neon_navy",
+      "performance": {
+        "emotion": "bright_confident_navigation_confirmation",
+        "intensity": 0.62,
+        "pace": "crisp_with_optimistic_emphasis",
+        "volume": "clear_bright",
+        "pause_after_ms": 900,
+        "tone_ru": "Корабельный компьютер подтверждает маршрут. Чётко, чуть игриво, без роботизированной монотонности.",
+        "arc_ru": "На «Курс проложен» уверенная констатация; «Марс!» ярко и чуть торжественно.",
+        "acting_beats": [
+          "подтверждение-расчёта",
+          "цель-на-экране",
+          "новая-цель"
+        ],
+        "voice_direction_ru": "На картинке — короткий HUD, для голоса используем отдельный естественный сценарий без чтения слова «Навигация».",
+        "tts_tags_en": "[cheerful]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "НАВИГАЦИЯ. КУРС: МАРС!",
+          "voice_spoken_text": "Курс проложен. Направление — Марс!",
+          "render_lines": [
+            "КУРС:",
+            "МАРС!"
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P03_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] Курс проложен. Направление — Марс!"
+        },
+        "en": {
+          "display_text": "NAVIGATION. COURSE: MARS!",
+          "voice_spoken_text": "Course plotted. Destination: Mars!",
+          "render_lines": [
+            "COURSE:",
+            "MARS!"
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P03_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] Course plotted. Destination: Mars!"
+        },
+        "pt_BR": {
+          "display_text": "NAVEGAÇÃO. ROTA: MARTE!",
+          "voice_spoken_text": "Rota traçada. Destino: Marte!",
+          "render_lines": [
+            "ROTA:",
+            "MARTE!"
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P03_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] Rota traçada. Destino: Marte!"
+        },
+        "es": {
+          "display_text": "NAVEGACIÓN. RUMBO: ¡MARTE!",
+          "voice_spoken_text": "Ruta calculada. ¡Rumbo a Marte!",
+          "render_lines": [
+            "RUMBO:",
+            "¡MARTE!"
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P03_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] Ruta calculada. ¡Rumbo a Marte!"
+        },
+        "fr": {
+          "display_text": "NAVIGATION. CAP : MARS !",
+          "voice_spoken_text": "Trajet calculé. Direction : Mars !",
+          "render_lines": [
+            "CAP :",
+            "MARS !"
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P03_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] Trajet calculé. Direction : Mars !"
+        },
+        "de": {
+          "display_text": "NAVIGATION. KURS: MARS!",
+          "voice_spoken_text": "Route berechnet. Kurs auf den Mars!",
+          "render_lines": [
+            "KURS:",
+            "MARS!"
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P03_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[cheerful] Route berechnet. Kurs auf den Mars!"
+        }
+      }
+    }
+  ]
+}

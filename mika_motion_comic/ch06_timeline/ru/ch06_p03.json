@@ -1,0 +1,251 @@
+{
+  "schema_version": 3,
+  "page_id": "CH06_P03",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch06_p03_languages/ch06_p03_ru.webp",
+  "native_scene_panels": [
+    "p63_network",
+    "p63_civilizations",
+    "p63_storm",
+    "p63_gate",
+    "p63_hole"
+  ],
+  "panel_bounds": {
+    "p63_network": [
+      0.028646,
+      0.020239,
+      0.941406,
+      0.334867
+    ],
+    "p63_civilizations": [
+      0.028646,
+      0.378105,
+      0.516927,
+      0.270469
+    ],
+    "p63_storm": [
+      0.578125,
+      0.378105,
+      0.391927,
+      0.270469
+    ],
+    "p63_gate": [
+      0.028646,
+      0.678013,
+      0.53125,
+      0.301748
+    ],
+    "p63_hole": [
+      0.605469,
+      0.678013,
+      0.364583,
+      0.301748
+    ]
+  },
+  "lines": [
+    {
+      "panel_id": "p63_network",
+      "camera_target": [
+        0.499349,
+        0.187672,
+        0.39514306
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.020239,
+        0.941406,
+        0.334867
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L001",
+      "frame_id": 1,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Но затем мы обнаружили странные природные аномалии.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P03_L001_ru.mp3",
+      "audio_duration_s": 3.970612,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7c8b4d9795afaba90b5d7053e5cdceff3a17402a9c4d8dca8f1532540d55c88d"
+    },
+    {
+      "panel_id": "p63_network",
+      "camera_target": [
+        0.499349,
+        0.187672,
+        0.39514306
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.020239,
+        0.941406,
+        0.334867
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L002",
+      "frame_id": 1,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Чтобы понять, как они устроены, нам пришлось ещё глубже изучать мироздание.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P03_L002_ru.mp3",
+      "audio_duration_s": 5.250612,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f1328ae1dcc40f83e54f077b1534f144ffae2aae264b864c967c026031ed6033"
+    },
+    {
+      "panel_id": "p63_civilizations",
+      "camera_target": [
+        0.287109,
+        0.513339,
+        0.31915342
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.378105,
+        0.516927,
+        0.270469
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L003",
+      "frame_id": 2,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Во время исследования одной из аномалий мы повстречали твоих знакомых — магнитных существ.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P03_L003_ru.mp3",
+      "audio_duration_s": 5.642449,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "628ef1148d9693fa7a7b955e57591e51b178b1846003324346666d97ba5d0c72"
+    },
+    {
+      "panel_id": "p63_storm",
+      "camera_target": [
+        0.774089,
+        0.513339,
+        0.31915342
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.578125,
+        0.378105,
+        0.391927,
+        0.270469
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L004",
+      "frame_id": 3,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "А дальше, в глубинах космоса, мы обнаружили удивительный артефакт.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P03_L004_ru.mp3",
+      "audio_duration_s": 5.407347,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "64f1c90a96314e84d99ee01fe1aa22457e6e226fc1f54ffcb7fd5b1482c602df"
+    },
+    {
+      "panel_id": "p63_storm",
+      "camera_target": [
+        0.774089,
+        0.513339,
+        0.31915342
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.578125,
+        0.378105,
+        0.391927,
+        0.270469
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L005",
+      "frame_id": 3,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Он оказался центром множества аномальных зон.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P03_L005_ru.mp3",
+      "audio_duration_s": 3.474286,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "5a2e23fa10d49688b0ad6c7a400ee835f839e3dc40664bc226ec924022be6c32"
+    },
+    {
+      "panel_id": "p63_gate",
+      "camera_target": [
+        0.294271,
+        0.828887,
+        0.35606264
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028646,
+        0.678013,
+        0.53125,
+        0.301748
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L006",
+      "frame_id": 4,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Мы сделали изучение этого сложного артефакта целью своего существования и построили вокруг него станцию «Последние врата».",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P03_L006_ru.mp3",
+      "audio_duration_s": 8.280816,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b2746b1d30c11f6f361225441ca6f484ac65eacc543576e36d29c93ed49650db"
+    },
+    {
+      "panel_id": "p63_hole",
+      "camera_target": [
+        0.78776,
+        0.828887,
+        0.35606264
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.605469,
+        0.678013,
+        0.364583,
+        0.301748
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L007",
+      "frame_id": 5,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Не так давно до нас дошёл странный сигнал — эхо страшных событий, происходивших где-то далеко.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P03_L007_ru.mp3",
+      "audio_duration_s": 6.530612,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "69c87aece296c90c1cedb9bb732b02f70ee7fbcc02c5002d7ed4b4ce9fed1ee5"
+    }
+  ]
+}

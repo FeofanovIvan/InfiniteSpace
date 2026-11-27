@@ -1,0 +1,330 @@
+{
+  "schema_version": 3,
+  "page_id": "CH05_P01",
+  "locale": "fr",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch05_p01_languages/ch05_p01_fr.webp",
+  "native_scene_panels": [
+    "p51_cabin_alarm",
+    "p51_ship_lost",
+    "p51_gravity_world",
+    "p51_mika_frightened",
+    "p51_lizard_frightened",
+    "p51_pyramid_landing",
+    "p51_magnetic_creatures"
+  ],
+  "panel_bounds": {
+    "p51_cabin_alarm": [
+      0.023,
+      0.019,
+      0.953,
+      0.294
+    ],
+    "p51_ship_lost": [
+      0.024,
+      0.333,
+      0.535,
+      0.184
+    ],
+    "p51_gravity_world": [
+      0.604,
+      0.327,
+      0.371,
+      0.198
+    ],
+    "p51_mika_frightened": [
+      0.025,
+      0.539,
+      0.276,
+      0.19
+    ],
+    "p51_lizard_frightened": [
+      0.34,
+      0.541,
+      0.29,
+      0.186
+    ],
+    "p51_pyramid_landing": [
+      0.67,
+      0.546,
+      0.305,
+      0.178
+    ],
+    "p51_magnetic_creatures": [
+      0.024,
+      0.748,
+      0.952,
+      0.232
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH05_P01_L001",
+      "frame_id": "CH05_P01_F01",
+      "panel_id": "p51_cabin_alarm",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Dans l'espace profond, les amis comprirent que personne ne savait où aller ensuite.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/fr/CH05_P01_L001_fr.mp3",
+      "audio_duration_s": 4.989,
+      "camera_target": [
+        0.5,
+        0.165,
+        0.285
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2ae02d70727614615e1761d9e5232aa739e334eb13d39c861d61f5d12d305ce1"
+    },
+    {
+      "line_id": "CH05_P01_L002",
+      "frame_id": "CH05_P01_F01",
+      "panel_id": "p51_cabin_alarm",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Bubble ! Où devons-nous aller ? Montre-nous la route !",
+      "audio_path": "res://mika_motion_comic/ch05_clips/fr/CH05_P01_L002_fr.mp3",
+      "audio_duration_s": 3.239,
+      "camera_target": [
+        0.23,
+        0.216,
+        0.187
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "26716c4b015bae5e550bfaaee6d1792c48e405faf69fea902186a7b630baaf21"
+    },
+    {
+      "line_id": "CH05_P01_L003",
+      "frame_id": "CH05_P01_F01",
+      "panel_id": "p51_cabin_alarm",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Ces étoiles nous sont totalement inconnues...",
+      "audio_path": "res://mika_motion_comic/ch05_clips/fr/CH05_P01_L003_fr.mp3",
+      "audio_duration_s": 2.926,
+      "camera_target": [
+        0.29,
+        0.118,
+        0.175
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "3464bc33c3753145ee9053736ec7fbcf1f089fbb8851076e08e94daf6e5cb5ea"
+    },
+    {
+      "line_id": "CH05_P01_L004",
+      "frame_id": "CH05_P01_F01",
+      "panel_id": "p51_cabin_alarm",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Qu'allons-nous faire ?!",
+      "audio_path": "res://mika_motion_comic/ch05_clips/fr/CH05_P01_L004_fr.mp3",
+      "audio_duration_s": 1.567,
+      "camera_target": [
+        0.81,
+        0.164,
+        0.209
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "07e7e49d12e5589a185eeb48ba4ee278f4e48bbbed54e2472739b84a946620fe"
+    },
+    {
+      "line_id": "CH05_P01_L005",
+      "frame_id": "CH05_P01_F01",
+      "panel_id": "p51_cabin_alarm",
+      "speaker_id": "CHR_014",
+      "kind": "sfx",
+      "spoken_text": "Bi-bip !",
+      "audio_path": "res://mika_motion_comic/ch05_clips/sfx/CH05_P01_L005.mp3",
+      "audio_duration_s": 0.94,
+      "camera_target": [
+        0.5,
+        0.238,
+        0.15
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "sfx",
+      "sha256": "8e29d57c81789a696bd43b46c507968441662cca948b2e1ba66a45c586c4fd17"
+    },
+    {
+      "line_id": "CH05_P01_L006",
+      "frame_id": "CH05_P01_F02",
+      "panel_id": "p51_ship_lost",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Une force soudaine attira le vaisseau vers des étoiles inconnues. Devant eux apparut une brillante planète rouge.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/fr/CH05_P01_L006_fr.mp3",
+      "audio_duration_s": 6.922,
+      "camera_target": [
+        0.285,
+        0.428,
+        0.184
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "0e63e0779f9ed6bf0ea8cb6b6fd5d9b18e0773f1ce2d03b556168f20052391c0"
+    },
+    {
+      "line_id": "CH05_P01_L007",
+      "frame_id": "CH05_P01_F03",
+      "panel_id": "p51_mika_frightened",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Que se passe-t-il ?!",
+      "audio_path": "res://mika_motion_comic/ch05_clips/fr/CH05_P01_L007_fr.mp3",
+      "audio_duration_s": 1.228,
+      "camera_target": [
+        0.163,
+        0.609,
+        0.189
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7f64a572557600e362b08f4665eca7c5859159cf1efee25d77e680f4ccca72f5"
+    },
+    {
+      "line_id": "CH05_P01_L008",
+      "frame_id": "CH05_P01_F03",
+      "panel_id": "p51_lizard_frightened",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Qu'est-ce qui nous attire ?!",
+      "audio_path": "res://mika_motion_comic/ch05_clips/fr/CH05_P01_L008_fr.mp3",
+      "audio_duration_s": 1.489,
+      "camera_target": [
+        0.486,
+        0.598,
+        0.184
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9249241bb5246e7a40532dda600a0c24128d221164fcf01c6a8c72a4133bf52e"
+    },
+    {
+      "line_id": "CH05_P01_L009",
+      "frame_id": "CH05_P01_F04",
+      "panel_id": "p51_pyramid_landing",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Le vaisseau se posa en douceur sur une pyramide noire en lévitation.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/fr/CH05_P01_L009_fr.mp3",
+      "audio_duration_s": 4.206,
+      "camera_target": [
+        0.823,
+        0.636,
+        0.176
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "aa8ba5e376e2f4ecddf4f6aaef7f0002f67a7abbd173b19cf173f29f8dc8d2ee"
+    },
+    {
+      "line_id": "CH05_P01_L010",
+      "frame_id": "CH05_P01_F05",
+      "panel_id": "p51_magnetic_creatures",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Les portes s'ouvrirent. Mika entra dans l'obscurité, où l'attendaient d'étranges créatures et des sons effrayants...",
+      "audio_path": "res://mika_motion_comic/ch05_clips/fr/CH05_P01_L010_fr.mp3",
+      "audio_duration_s": 7.549,
+      "camera_target": [
+        0.5,
+        0.86,
+        0.226
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fe1aef4cb61901c41deba6afd27d45b102ae2dd3e2028747c710ace419a14dca"
+    },
+    {
+      "line_id": "CH05_P01_L011",
+      "frame_id": "CH05_P01_F05",
+      "panel_id": "p51_magnetic_creatures",
+      "speaker_id": "SFX_MAGNETIC_UNINTELLIGIBLE",
+      "kind": "sfx",
+      "spoken_text": "Chhh...",
+      "audio_path": "res://mika_motion_comic/ch05_clips/sfx/CH05_P01_L011.mp3",
+      "audio_duration_s": 0.888,
+      "camera_target": [
+        0.21,
+        0.865,
+        0.19
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "sfx",
+      "sha256": "17c78d46ae0d414c07e98931a005b8c7c02e9bf6badda4778b0da1548e25e36f"
+    },
+    {
+      "line_id": "CH05_P01_L012",
+      "frame_id": "CH05_P01_F05",
+      "panel_id": "p51_magnetic_creatures",
+      "speaker_id": "SFX_MAGNETIC_UNINTELLIGIBLE",
+      "kind": "sfx",
+      "spoken_text": "Krrr...",
+      "audio_path": "res://mika_motion_comic/ch05_clips/sfx/CH05_P01_L012.mp3",
+      "audio_duration_s": 0.758,
+      "camera_target": [
+        0.8,
+        0.87,
+        0.19
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "sfx",
+      "sha256": "d6b5c1d9097781332a5ac038dbc2c24a3f7ff66393d800ef2ed35f68812d5dd6"
+    }
+  ],
+  "silent_native_panels": [
+    "p51_gravity_world"
+  ],
+  "note": "L006 stays whole on lost ship; red planet remains original silent native shot."
+}

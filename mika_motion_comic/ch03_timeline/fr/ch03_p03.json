@@ -1,0 +1,219 @@
+{
+  "schema_version": 3,
+  "page_id": "CH03_P03",
+  "locale": "fr",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch03_p03_languages/ch03_p03_fr.webp",
+  "native_scene_panels": [
+    "p33_cela_bubble",
+    "p33_mika_encounter",
+    "p33_lotus_flower",
+    "p33_lotus_archive"
+  ],
+  "panel_bounds": {
+    "p33_cela_bubble": [
+      0.031,
+      0.03,
+      0.937,
+      0.304
+    ],
+    "p33_mika_encounter": [
+      0.031,
+      0.352,
+      0.48,
+      0.246
+    ],
+    "p33_lotus_flower": [
+      0.54,
+      0.35,
+      0.428,
+      0.251
+    ],
+    "p33_lotus_archive": [
+      0.031,
+      0.63,
+      0.937,
+      0.34
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH03_P03_L001",
+      "frame_id": "CH03_P03_F01",
+      "panel_id": "p33_cela_bubble",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika ignorait pourquoi ces cristaux étaient si précieux. À l’arrivée des vaisseaux d’Okea, les êtres de phase ont retenu le lézard.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P03_L001_fr.mp3",
+      "audio_duration_s": 7.706,
+      "camera_target": [
+        0.41,
+        0.182,
+        0.3
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7ec337bdb7952dc21a3b3ffcb84c9980a5d9a97e3b1d0bcd43dae3dc2b2e16a1"
+    },
+    {
+      "line_id": "CH03_P03_L002",
+      "frame_id": "CH03_P03_F01",
+      "panel_id": "p33_cela_bubble",
+      "speaker_id": "CHR_026",
+      "kind": "dialogue",
+      "spoken_text": "On te tient !",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P03_L002_fr.mp3",
+      "audio_duration_s": 1.306,
+      "camera_target": [
+        0.743,
+        0.145,
+        0.218
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "6c23f3af021200696c512236bb876ca6215ef8f60e92a1957ba2e47b1e684f1b"
+    },
+    {
+      "line_id": "CH03_P03_L003",
+      "frame_id": "CH03_P03_F01",
+      "panel_id": "p33_cela_bubble",
+      "speaker_id": "CHR_026",
+      "kind": "dialogue",
+      "spoken_text": "On t’avait prévenu !",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P03_L003_fr.mp3",
+      "audio_duration_s": 1.724,
+      "camera_target": [
+        0.754,
+        0.188,
+        0.205
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4e749822db4535b39f8e12d39dc195a010b511b0dccb4e4a28b133e14f681eb7"
+    },
+    {
+      "line_id": "CH03_P03_L004",
+      "frame_id": "CH03_P03_F02",
+      "panel_id": "p33_cela_bubble",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Que se passe-t-il ?!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P03_L004_fr.mp3",
+      "audio_duration_s": 1.228,
+      "camera_target": [
+        0.397,
+        0.263,
+        0.147
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "568907f227e3251ae7e49eedfed23f5d3618e6788a138f94196f1812995496dc"
+    },
+    {
+      "line_id": "CH03_P03_L005",
+      "frame_id": "CH03_P03_F02",
+      "panel_id": "p33_mika_encounter",
+      "speaker_id": "CHR_027",
+      "kind": "dialogue",
+      "spoken_text": "Tu devrais visiter les Archives vivantes. Tu y trouveras peut-être des réponses.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P03_L005_fr.mp3",
+      "audio_duration_s": 4.989,
+      "camera_target": [
+        0.333,
+        0.436,
+        0.182
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "5c71a0860389f0e626d5efbbea2870ffa5d9d61fb4c6716cf03cdb5562591ccd"
+    },
+    {
+      "line_id": "CH03_P03_L006",
+      "frame_id": "CH03_P03_F02",
+      "panel_id": "p33_mika_encounter",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Mais que s’est-il passé ?",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P03_L006_fr.mp3",
+      "audio_duration_s": 1.802,
+      "camera_target": [
+        0.22,
+        0.52,
+        0.187
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c612b68ac1bf8aff8b5f2e758128e1f7f38c360cb6b99bab40e0f70bbe90d9f0"
+    },
+    {
+      "line_id": "CH03_P03_L007",
+      "frame_id": "CH03_P03_F03",
+      "panel_id": "p33_lotus_flower",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Les Archives vivantes ressemblaient à une fleur de lumière, gardienne de savoirs anciens.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P03_L007_fr.mp3",
+      "audio_duration_s": 5.407,
+      "camera_target": [
+        0.756,
+        0.51,
+        0.17
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "962c93bbd1c684f8a75eb004761e25d03ed8ee8e7aa318058f8201f09f2b9bf8"
+    },
+    {
+      "line_id": "CH03_P03_L008",
+      "frame_id": "CH03_P03_F04",
+      "panel_id": "p33_lotus_archive",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika arriva aux Archives vivantes et gagna la grande salle. On l’y attendait déjà.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P03_L008_fr.mp3",
+      "audio_duration_s": 5.564,
+      "camera_target": [
+        0.5,
+        0.805,
+        0.334
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "af15109ad3847742f83c7a085fc7eab4d82352719a63c8998e5bfd8415185362"
+    }
+  ],
+  "display_only": [],
+  "direction_note": "L004 source frame F02, actual approved artwork F01; playback on p33_cela_bubble. L001 non-RU supplied audio manifest retains longer narration than approved artwork; audio and artwork preserved."
+}

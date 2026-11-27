@@ -1,0 +1,43 @@
+# CH01/P01 · English · one utterance per stable ID
+# DRAFT: assign speaker voice IDs before production. TTS tags are candidates,
+# and must be verified against the selected speech model.
+
+## CH01_P01_L001 / frame 1 / speaker CHR_004
+# emotion=wonder intensity=0.22 pace=slow
+[softly] [curious] Somewhere in the depths of space…
+
+## CH01_P01_L002 / frame 2 / speaker CHR_002
+# emotion=calling intensity=0.65 pace=brisk
+[calling out] Mika!
+
+## CH01_P01_L003 / frame 3 / speaker CHR_003
+# emotion=controlled_alarm intensity=0.58 pace=brisk_clear
+[urgent] Breaking news! An anomalous storm has reached the planet!
+
+## CH01_P01_L004 / frame 4 / speaker CHR_003
+# emotion=warning intensity=0.72 pace=measured
+[serious] It changes the physical properties of objects!
+
+## CH01_P01_L005 / frame 5 / speaker CHR_003
+# emotion=commanding_urgency intensity=0.82 pace=fast_articulate
+[urgently] Planetwide evacuation! Head to the nearest spaceport now!
+
+## CH01_P01_L006 / frame 6 / speaker CHR_001
+# emotion=anxious_confusion intensity=0.68 pace=quick_broken
+[nervous] What do we do?!
+
+## CH01_P01_L007 / frame 6 / speaker CHR_002
+# emotion=protective_urgency intensity=0.8 pace=fast_decisive
+[determined] Run! To the ships!
+
+## CH01_P01_L008 / frame 7 / speaker CHR_004
+# emotion=relief_to_dread intensity=0.48 pace=measured
+[softly] [serious] Mika escaped the planet, but the storm was already engulfing it.
+
+## CH01_P01_L009 / frame 8 / speaker CHR_004
+# emotion=ominous_reveal intensity=0.58 pace=slow_weighted
+[ominous] Even in open space, the storm caught up with his ship.
+
+## CH01_P01_L010 / frame 9 / speaker CHR_001
+# emotion=terror intensity=0.94 pace=sudden_0_8_to_1_2_seconds
+[shouts] Aaaah!

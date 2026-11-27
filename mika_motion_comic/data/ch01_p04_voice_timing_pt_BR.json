@@ -1,0 +1,118 @@
+{
+  "schema": "mika_ch01_p04_voice_timing_v1",
+  "page_id": "CH01_P04",
+  "locale": "pt_BR",
+  "audio_path": "res://mika_motion_comic/audio/ch01_p04_pt_BR_voice_master.mp3",
+  "duration_seconds": 34.152,
+  "status": "preliminary_boundaries_from_audio_pauses_needs_godot_playback_review",
+  "frame_map": {
+    "p04_mars_landing": [
+      "CH01_P04_L001"
+    ],
+    "p04_mika_walk": [
+      "CH01_P04_L002"
+    ],
+    "p04_reception": [
+      "CH01_P04_L003",
+      "CH01_P04_L004"
+    ],
+    "p04_elevator": [
+      "CH01_P04_L005"
+    ],
+    "p04_ai_core": [
+      "CH01_P04_L006"
+    ],
+    "p04_mika_orb_close": [
+      "CH01_P04_L007",
+      "CH01_P04_L008"
+    ]
+  },
+  "playback_groups": [
+    {
+      "trigger": "mars_arrival_panels",
+      "panels": [
+        "p04_mars_landing",
+        "p04_mika_walk",
+        "p04_reception"
+      ],
+      "voice_in_s": 0.0,
+      "voice_out_s": 16.91
+    },
+    {
+      "trigger": "mars_story_after_word_panels",
+      "panels": [
+        "p04_elevator",
+        "p04_ai_core",
+        "p04_mika_orb_close"
+      ],
+      "voice_in_s": 17.05,
+      "voice_out_s": 34.152
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P04_L001",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_mars_landing",
+      "start_s": 0.0,
+      "end_s": 6.58,
+      "text": "Marte. A nave de Mika pousou no porto espacial do Centro Central de Dados da Inteligência Artificial."
+    },
+    {
+      "line_id": "CH01_P04_L002",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_mika_walk",
+      "start_s": 7.06,
+      "end_s": 10.78,
+      "text": "O Planeta Vermelho recebeu Mika com uma tempestade de areia!"
+    },
+    {
+      "line_id": "CH01_P04_L003",
+      "speaker_id": "CHR_001",
+      "panel_id": "p04_reception",
+      "start_s": 11.28,
+      "end_s": 13.63,
+      "text": "Com licença… Posso ver a IA?"
+    },
+    {
+      "line_id": "CH01_P04_L004",
+      "speaker_id": "CHR_012",
+      "panel_id": "p04_reception",
+      "start_s": 14.11,
+      "end_s": 16.79,
+      "text": "Claro! Mas antes… umas fichas."
+    },
+    {
+      "line_id": "CH01_P04_L005",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_elevator",
+      "start_s": 17.05,
+      "end_s": 23.51,
+      "text": "Nem no futuro a papelada dá uma trégua! Depois de preencher tudo, Mika desceu pelo elevador."
+    },
+    {
+      "line_id": "CH01_P04_L006",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_ai_core",
+      "start_s": 24.03,
+      "end_s": 29.76,
+      "text": "No coração de Marte, havia um salão imenso. Uma ponte levava a uma esfera…"
+    },
+    {
+      "line_id": "CH01_P04_L007",
+      "speaker_id": "CHR_013",
+      "panel_id": "p04_mika_orb_close",
+      "start_s": 30.41,
+      "end_s": 31.06,
+      "text": "Mika…"
+    },
+    {
+      "line_id": "CH01_P04_L008",
+      "speaker_id": "CHR_001",
+      "panel_id": "p04_mika_orb_close",
+      "start_s": 31.59,
+      "end_s": 33.71,
+      "text": "Você… sabe meu nome?!"
+    }
+  ]
+}

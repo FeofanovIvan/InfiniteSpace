@@ -1,0 +1,379 @@
+{
+  "schema_version": 2,
+  "page_id": "CH01_P03",
+  "locale": "de",
+  "sync_model": "one_audio_clip_per_line__camera_transition_then_play__no_global_master_clock",
+  "image_path": "res://mika_motion_comic/assets/pages/ch01_p03_languages/ch01_p03_de.webp",
+  "native_scene_panels": [
+    "p03_puzzle_reveal",
+    "p03_mika_upset",
+    "p03_ship_refuel",
+    "p03_earth_departure",
+    "p03_mars_destination"
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P03_L001",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Hallo! Entschuldigung… Können Sie mir sagen, wo ich gelandet bin?",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P03_L001_de.mp3",
+      "audio_duration_s": 4.839,
+      "source_master": "CH01_P03_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 0,
+      "source_cut_out_s": 4.839,
+      "bubble_box_normalized": [
+        0.04282,
+        0.03906,
+        0.29972,
+        0.10449
+      ],
+      "camera_target": [
+        0.31,
+        0.146,
+        0.244
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "hold"
+    },
+    {
+      "line_id": "CH01_P03_L002",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_011",
+      "kind": "dialogue",
+      "spoken_text": "Hallo, willkommen! Du bist am Raumhafen der Erde. Was ist denn passiert?",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P03_L002_de.mp3",
+      "audio_duration_s": 5.283,
+      "source_master": "CH01_P03_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 4.839,
+      "source_cut_out_s": 10.122,
+      "bubble_box_normalized": [
+        0.50691,
+        0.05859,
+        0.29834,
+        0.07812
+      ],
+      "camera_target": [
+        0.704,
+        0.145,
+        0.244
+      ],
+      "transition_before_s": 0.34,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P03_L003",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Ein Sturm hat mich hergeweht… Jetzt weiß ich nicht mehr, wie ich nach Hause komme.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P03_L003_de.mp3",
+      "audio_duration_s": 5.158,
+      "source_master": "CH01_P03_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 10.122,
+      "source_cut_out_s": 15.28,
+      "bubble_box_normalized": [
+        0.2721,
+        0.15332,
+        0.32044,
+        0.08105
+      ],
+      "camera_target": [
+        0.315,
+        0.199,
+        0.245
+      ],
+      "transition_before_s": 0.34,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P03_L004",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_011",
+      "kind": "dialogue",
+      "spoken_text": "Wow! Was für eine Geschichte! Wir machen dein Schiff wieder flott und tanken es voll. Dann flieg zum Datenzentrum auf dem Mars. Dort hilft dir eine KI bei der Heimreise!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P03_L004_de.mp3",
+      "audio_duration_s": 10.86,
+      "source_master": "CH01_P03_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 15.28,
+      "source_cut_out_s": 26.14,
+      "bubble_box_normalized": [
+        0.50967,
+        0.18848,
+        0.45028,
+        0.13379
+      ],
+      "camera_target": [
+        0.728,
+        0.21,
+        0.246
+      ],
+      "transition_before_s": 0.34,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P03_L005",
+      "frame_id": "CH01_P03_F02",
+      "panel_id": "p03_mika_upset",
+      "speaker_id": "CHR_001",
+      "kind": "thought_sigh",
+      "spoken_text": "Ach… Was, wenn ich nie mehr nach Hause finde?",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P03_L005_de.mp3",
+      "audio_duration_s": 4.796,
+      "source_master": "CH01_P03_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 26.14,
+      "source_cut_out_s": 30.936,
+      "bubble_box_normalized": [
+        0.04144,
+        0.36426,
+        0.28453,
+        0.10938
+      ],
+      "camera_target": [
+        0.213,
+        0.426,
+        0.15
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut"
+    },
+    {
+      "line_id": "CH01_P03_L006",
+      "frame_id": "CH01_P03_F03",
+      "panel_id": "p03_ship_refuel",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Auf der Erde ging es sofort los: Sie reparierten die Sturmschäden, prüften alle Systeme und tankten das Schiff randvoll!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P03_L006_de.mp3",
+      "audio_duration_s": 7.749,
+      "source_master": "CH01_P03_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 30.936,
+      "source_cut_out_s": 38.685,
+      "bubble_box_normalized": [
+        0.6768,
+        0.34961,
+        0.29144,
+        0.08496
+      ],
+      "camera_target": [
+        0.71,
+        0.443,
+        0.198
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P03_L007",
+      "frame_id": "CH01_P03_F04",
+      "panel_id": "p03_earth_departure",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Bald war das Schiff wieder startklar! Mika bedankte sich herzlich, startete die Triebwerke… und hob ab!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P03_L007_de.mp3",
+      "audio_duration_s": 7.029,
+      "source_master": "CH01_P03_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 38.685,
+      "source_cut_out_s": 45.714,
+      "bubble_box_normalized": [
+        0.04282,
+        0.90625,
+        0.32459,
+        0.06445
+      ],
+      "camera_target": [
+        0.335,
+        0.856,
+        0.228
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut"
+    },
+    {
+      "line_id": "CH01_P03_L008",
+      "frame_id": "CH01_P03_F05",
+      "panel_id": "p03_mars_destination",
+      "speaker_id": "CHR_008",
+      "kind": "ship_system_hud",
+      "spoken_text": "Route berechnet. Kurs auf den Mars!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/de/CH01_P03_L008_de.mp3",
+      "audio_duration_s": 3.236,
+      "source_master": "CH01_P03_de_VOICE_MASTER.mp3",
+      "source_cut_in_s": 45.714,
+      "source_cut_out_s": 48.95,
+      "bubble_box_normalized": [
+        0.70994,
+        0.78125,
+        0.1616,
+        0.07031
+      ],
+      "camera_target": [
+        0.843,
+        0.824,
+        0.099
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan"
+    }
+  ],
+  "audio_master_duration_s": 48.95,
+  "verified_source_svg": "MIKA_CH01_P03_NEBULA_6LANG_v3/chapter_01/page_03/CH01_P03_overlays/CH01_P03_de.svg",
+  "superseded_crop_boundary_review_before_asr_fix": [
+    {
+      "index": 1,
+      "nominal_s": 6.68,
+      "cut_s": 6.635,
+      "silence_s": [
+        6.35,
+        6.7
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 2,
+      "nominal_s": 12.76,
+      "cut_s": 12.705,
+      "silence_s": [
+        12.05,
+        12.77
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 3,
+      "nominal_s": 21.19,
+      "cut_s": 21.125,
+      "silence_s": [
+        20.82,
+        21.19
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 4,
+      "nominal_s": 31.2,
+      "cut_s": 31.135,
+      "silence_s": [
+        30.64,
+        31.2
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 5,
+      "nominal_s": 33.4,
+      "cut_s": 33.355,
+      "silence_s": [
+        33.03,
+        33.42
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 6,
+      "nominal_s": 41.32,
+      "cut_s": 41.255,
+      "silence_s": [
+        40.85,
+        41.32
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 7,
+      "nominal_s": 46.0,
+      "cut_s": 45.965,
+      "silence_s": [
+        45.4,
+        46.03
+      ],
+      "method": "detected_silence"
+    }
+  ],
+  "verified_cut_boundaries_s": [
+    4.839,
+    10.122,
+    15.28,
+    26.14,
+    30.936,
+    38.685,
+    45.714
+  ],
+  "integration_note": "native_gameplay_stops_preserved__next_clip_waits_for_camera",
+  "quality": "p03_resume_asr_screened__human_listening_pending",
+  "panel_bounds": {
+    "p03_puzzle_reveal": [
+      0.024,
+      0.018,
+      0.952,
+      0.31
+    ],
+    "p03_mika_upset": [
+      0.025,
+      0.345,
+      0.375,
+      0.375
+    ],
+    "p03_ship_refuel": [
+      0.41,
+      0.345,
+      0.563,
+      0.375
+    ],
+    "p03_earth_departure": [
+      0.027,
+      0.734,
+      0.665,
+      0.247
+    ],
+    "p03_mars_destination": [
+      0.704,
+      0.74,
+      0.271,
+      0.243
+    ]
+  },
+  "v22_correction": "Re-cut boundary between Mika and spaceport employee at actual speaker-change pause",
+  "crop_boundary_review": [
+    {
+      "index": 1,
+      "cut_s": 4.839,
+      "method": "existing_clips_asr_screened"
+    },
+    {
+      "index": 2,
+      "cut_s": 10.122,
+      "method": "existing_clips_asr_screened"
+    },
+    {
+      "index": 3,
+      "cut_s": 15.28,
+      "method": "existing_clips_asr_screened"
+    },
+    {
+      "index": 4,
+      "cut_s": 26.14,
+      "method": "existing_clips_asr_screened"
+    },
+    {
+      "index": 5,
+      "cut_s": 30.936,
+      "method": "existing_clips_asr_screened"
+    },
+    {
+      "index": 6,
+      "cut_s": 38.685,
+      "method": "existing_clips_asr_screened"
+    },
+    {
+      "index": 7,
+      "cut_s": 45.714,
+      "method": "existing_clips_asr_screened"
+    }
+  ]
+}

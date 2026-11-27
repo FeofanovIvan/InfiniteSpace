@@ -1,0 +1,204 @@
+{
+  "schema_version": 2,
+  "page_id": "CH01_P01",
+  "visual_version": "NEBULA_6LANG_v3",
+  "duration_seconds": 32.04,
+  "audio_locale": "pt_BR",
+  "timeline_source": "Measured speech and silence intervals of the user supplied 48 kHz mono MP3 (ffmpeg silencedetect -37 dB, >=160 ms); approximate until listening in Godot",
+  "shots": [
+    {
+      "frame_id": "CH01_P01_F01",
+      "line_ids": [
+        "CH01_P01_L001"
+      ],
+      "start_s": 0,
+      "speech_end_s": 3.082,
+      "transition_start_s": 2.725,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.304,
+        0.141,
+        0.248
+      ],
+      "camera_end": [
+        0.313,
+        0.145,
+        0.242
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F02",
+      "line_ids": [
+        "CH01_P01_L002"
+      ],
+      "start_s": 3.605,
+      "speech_end_s": 4.327,
+      "transition_start_s": 4.237,
+      "transition_to_next": "dissolve",
+      "camera_start": [
+        0.733,
+        0.167,
+        0.222
+      ],
+      "camera_end": [
+        0.739,
+        0.168,
+        0.216
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F03",
+      "line_ids": [
+        "CH01_P01_L003"
+      ],
+      "start_s": 4.804,
+      "speech_end_s": 8.526,
+      "transition_start_s": 8.033,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.242,
+        0.374,
+        0.19
+      ],
+      "camera_end": [
+        0.243,
+        0.38,
+        0.193
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F04",
+      "line_ids": [
+        "CH01_P01_L004"
+      ],
+      "start_s": 8.913,
+      "speech_end_s": 11.92,
+      "transition_start_s": 11.552,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.59,
+        0.358,
+        0.128
+      ],
+      "camera_end": [
+        0.59,
+        0.36,
+        0.123
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F05",
+      "line_ids": [
+        "CH01_P01_L005"
+      ],
+      "start_s": 12.432,
+      "speech_end_s": 16.56,
+      "transition_start_s": 16.47,
+      "transition_to_next": "dissolve",
+      "camera_start": [
+        0.812,
+        0.447,
+        0.145
+      ],
+      "camera_end": [
+        0.809,
+        0.45,
+        0.139
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F06",
+      "line_ids": [
+        "CH01_P01_L006",
+        "CH01_P01_L007"
+      ],
+      "start_s": 17.07,
+      "speech_end_s": 20.629,
+      "transition_start_s": 20.186,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.272,
+        0.619,
+        0.222
+      ],
+      "camera_end": [
+        0.274,
+        0.624,
+        0.219
+      ],
+      "line_segments_s": [
+        {
+          "id": "CH01_P01_L006",
+          "start_s": 17.07,
+          "end_s": 18.366
+        },
+        {
+          "id": "CH01_P01_L007",
+          "start_s": 18.729,
+          "end_s": 20.629
+        }
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F07",
+      "line_ids": [
+        "CH01_P01_L008"
+      ],
+      "start_s": 21.066,
+      "speech_end_s": 25.057,
+      "transition_start_s": 24.967,
+      "transition_to_next": "dissolve",
+      "camera_start": [
+        0.746,
+        0.61,
+        0.204
+      ],
+      "camera_end": [
+        0.748,
+        0.613,
+        0.2
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F08",
+      "line_ids": [
+        "CH01_P01_L009"
+      ],
+      "start_s": 25.526,
+      "speech_end_s": 29.268,
+      "transition_start_s": 28.844,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.279,
+        0.823,
+        0.221
+      ],
+      "camera_end": [
+        0.279,
+        0.872,
+        0.22
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F09",
+      "line_ids": [
+        "CH01_P01_L010"
+      ],
+      "start_s": 29.724,
+      "speech_end_s": 31.493,
+      "transition_start_s": 32.04,
+      "transition_to_next": "end",
+      "camera_start": [
+        0.751,
+        0.859,
+        0.24
+      ],
+      "camera_end": [
+        0.749,
+        0.862,
+        0.23
+      ]
+    }
+  ],
+  "notes": "One finished page; nine visual shots, ten recorded lines. F06 contains L006 and L007. Horizontal pans begin before the next phrase; row cuts dissolve. Camera framing matches RU/EN."
+}

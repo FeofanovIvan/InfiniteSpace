@@ -5,7 +5,12 @@ signal closed
 signal travel_requested(region_id: String, travel_direction: Vector2)
 
 const CATALOG_PATH: String = "res://atlas/world_atlas.json"
+# MIKA_CH06_CROSSROADS_GATE_V1
+const CROSSROADS_NAMES: Script = preload("res://scripts/MIKACrossroadsNames.gd")
 const NEON_CLOSE_GLYPH: Script = preload("res://simulator_ui/neon_close_glyph.gd")
+const StorySubscriptionGate: Script = preload("res://scripts/StorySubscriptionGate.gd")
+const StoryGalaxyFog: Script = preload("res://scripts/StoryGalaxyFog.gd")
+const StoryProgress: Script = preload("res://scripts/StoryProgress.gd")
 ## v84: hide hyperspace connections and Crossroads semicircle; neon X.
 const SUN_TEXTURES: Array[Texture2D] = [
 	preload("res://assets/atlas/suns/sun_0.png"),
@@ -40,6 +45,8 @@ var _current: String = "mw"
 var _buttons: Array[TextureButton] = []
 var _halos: Array[TextureRect] = []
 var _labels: Array[Label] = []
+var _story_fog: Array[Control] = []
+var _story_fog_labels: Array[Label] = []
 var _positions: Array[Vector2] = []
 var _stars: Array[Vector2] = []
 var _node_size: float = 74.0
@@ -48,6 +55,25 @@ var _title: Label
 var _footer: Label
 var _scale_factor: float = 1.0
 var _time: float = 0.0
+var _story_lmc_lesson: bool = false
+var _story_destination_hint: String = ""
+
+
+func set_story_lmc_lesson(active: bool) -> void:
+	_story_lmc_lesson = active
+	if is_instance_valid(_close):
+		_close.visible = not active
+		_close.disabled = active
+	if not _buttons.is_empty():
+		_reflow()
+
+
+func set_story_destination_hint(region_id: String) -> void:
+	# Unlike the first hyperspace lesson, this is a NON-BLOCKING pulse.
+	# The existing subscription fog still governs all undiscovered galaxies.
+	_story_destination_hint = region_id
+	if not _buttons.is_empty():
+		_reflow()
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -113,6 +139,23 @@ func _ready() -> void:
 	_close.tooltip_text = "Back to flight"
 	_close.pressed.connect(hide_map)
 	add_child(_close)
+	for i in range(_buttons.size()):
+		var mist: Control = StoryGalaxyFog.new() as Control
+		mist.name = "StoryLockedGalaxyMist_" + str(_systems[i]["id"])
+		mist.set("cloud_seed", i)
+		mist.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		add_child(mist)
+		_story_fog.append(mist)
+		var locked_label: Label = Label.new()
+		locked_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		locked_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		locked_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		locked_label.add_theme_color_override("font_color", Color("b6cee0"))
+		locked_label.add_theme_color_override("font_shadow_color", Color("081327"))
+		locked_label.add_theme_constant_override("shadow_offset_x", 1)
+		locked_label.add_theme_constant_override("shadow_offset_y", 2)
+		mist.add_child(locked_label)
+		_story_fog_labels.append(locked_label)
 	resized.connect(_reflow)
 	MobileLocale.language_changed.connect(_refresh_locale)
 	_refresh_locale(MobileLocale.language)
@@ -140,19 +183,35 @@ func _style_neon_close(button: Button) -> void:
 	button.add_child(glyph)
 	glyph.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
+# Discovery is permanent. A billing or tutorial restriction is NOT fog.
+func _region_discovered(region_id: String) -> bool:
+	if region_id == "mw" or region_id == _current:
+		return true
+	if StoryProgress.is_region_unlocked(region_id):
+		return true
+	# Preserve the existing Free World entitlement behaviour (including Crossroads).
+	return StorySubscriptionGate.can_open_region(region_id)
+
+
 func _refresh_locale(_new_locale: String) -> void:
 	if _title != null:
 		_title.text = MobileLocale.t("map_title")
 	if _footer != null:
-		_footer.text = MobileLocale.t("map_footer")
+		_footer.text = StorySubscriptionGate.word("fog") if not _region_discovered("lmc") else MobileLocale.t("map_footer")
 	if _close != null:
 		_close.tooltip_text = MobileLocale.t("back_to_flight")
+	for label in _story_fog_labels:
+		label.text = StorySubscriptionGate.word("locked")
 
 func _process(delta: float) -> void:
 	if not visible:
 		return
 	_time += delta
 	for i in range(_buttons.size()):
+		if (_story_lmc_lesson and str(_systems[i].get("id", "")) == "lmc") or (not _story_destination_hint.is_empty() and str(_systems[i].get("id", "")) == _story_destination_hint):
+			var pulse: float = 0.5 + 0.5 * sin(_time * 6.9)
+			_halos[i].modulate.a = lerpf(0.54, 1.0, pulse)
+			_buttons[i].modulate = Color(1.0, lerpf(0.70, 1.0, pulse), lerpf(0.40, 1.0, pulse), 1.0)
 		if i < _buttons.size() - 1:
 			_buttons[i].rotation = _time * (0.16 + float(i) * 0.03)
 			_halos[i].rotation = -_time * (0.05 + float(i) * 0.012)
@@ -164,9 +223,12 @@ func open_map(view: Vector2, from_region: String = "mw") -> void:
 	_current = from_region
 	size = view
 	visible = true
+	_refresh_locale(str(MobileLocale.language))
 	_reflow()
 
 func hide_map() -> void:
+	if _story_lmc_lesson:
+		return
 	visible = false
 	closed.emit()
 
@@ -174,9 +236,15 @@ func _travel_to(i: int) -> void:
 	if i < 0 or i >= _systems.size():
 		return
 	var id: String = str(_systems[i]["id"])
+	if _story_lmc_lesson and id != "lmc":
+		return
 	if id == _current:
 		hide_map()
 		return
+	if not _region_discovered(id):
+		return
+	# Main.gd still checks can_open_region and shows the subscription notice.
+	# A discovered destination must not silently disappear behind story fog.
 	var from_pos: Vector2 = POSITIONS[0]
 	for j in range(_systems.size()):
 		if str(_systems[j]["id"]) == _current:
@@ -210,8 +278,30 @@ func _reflow() -> void:
 		_labels[i].size = Vector2(236.0 * _scale_factor, 25.0)
 		_labels[i].add_theme_font_size_override("font_size", maxi(11, int(15.0 * _scale_factor)))
 		var selected: bool = str(_systems[i]["id"]) == _current
-		_buttons[i].modulate = Color(1.0, 1.0, 1.0, 1.0) if selected else Color(0.92, 0.96, 1.0, 0.92)
-		_labels[i].add_theme_color_override("font_color", Color(1.0, 0.88, 0.52) if selected else Color(0.82, 0.92, 1.0))
+		var system_id: String = str(_systems[i]["id"])
+		if system_id == "crossroads":
+			_labels[i].text = CROSSROADS_NAMES.display_name(str(MobileLocale.language))
+		var locked: bool = not _region_discovered(system_id)
+		# The first hyperspace lesson still requires LMC, but it never hides
+		# galaxies already discovered in another run.
+		var lesson_restricted: bool = _story_lmc_lesson and system_id != "lmc"
+		_buttons[i].disabled = locked or lesson_restricted
+		var destination_name: String = str(_labels[i].text) if system_id == "crossroads" else str(_systems[i]["name_en"])
+		if not locked and not selected and not StorySubscriptionGate.can_open_region(system_id):
+			destination_name += "\n" + StorySubscriptionGate.word("galaxy")
+		_buttons[i].tooltip_text = destination_name
+		_buttons[i].modulate = Color(0.30, 0.39, 0.56, 0.34) if locked else (Color(1.0, 1.0, 1.0, 1.0) if selected else Color(0.92, 0.96, 1.0, 0.92))
+		_labels[i].add_theme_color_override("font_color", Color(0.47, 0.57, 0.69) if locked else (Color(1.0, 0.88, 0.52) if selected else Color(0.82, 0.92, 1.0)))
+		if i < _story_fog.size():
+			var mist: Control = _story_fog[i]
+			mist.visible = locked
+			var mist_side: float = _node_size * 2.65
+			mist.size = Vector2.ONE * mist_side
+			mist.position = pos - Vector2.ONE * mist_side * 0.5
+			var fog_label: Label = _story_fog_labels[i]
+			fog_label.position = Vector2(0.0, mist_side * 0.52)
+			fog_label.size = Vector2(mist_side, 32.0)
+			fog_label.add_theme_font_size_override("font_size", maxi(10, int(12.0 * _scale_factor)))
 	_title.position = Vector2(0.0, maxf(safe.position.y, view.y * 0.035))
 	_title.size = Vector2(view.x, 32.0)
 	_footer.position = Vector2(0.0, safe.end.y - 34.0)
@@ -232,6 +322,8 @@ func _draw() -> void:
 			draw_arc(_positions[i], _node_size * 0.44, 0.0, TAU, 70, Color(1.0, 0.82, 0.38), 2.2, true)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if _story_lmc_lesson:
+		return
 	if visible and event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		hide_map()
 		get_viewport().set_input_as_handled()

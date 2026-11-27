@@ -1,0 +1,251 @@
+{
+  "schema_version": 3,
+  "page_id": "CH06_P03",
+  "locale": "fr",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch06_p03_languages/ch06_p03_fr.webp",
+  "native_scene_panels": [
+    "p63_network",
+    "p63_civilizations",
+    "p63_storm",
+    "p63_gate",
+    "p63_hole"
+  ],
+  "panel_bounds": {
+    "p63_network": [
+      0.028646,
+      0.020239,
+      0.941406,
+      0.334867
+    ],
+    "p63_civilizations": [
+      0.028646,
+      0.378105,
+      0.516927,
+      0.270469
+    ],
+    "p63_storm": [
+      0.578125,
+      0.378105,
+      0.391927,
+      0.270469
+    ],
+    "p63_gate": [
+      0.028646,
+      0.678013,
+      0.53125,
+      0.301748
+    ],
+    "p63_hole": [
+      0.605469,
+      0.678013,
+      0.364583,
+      0.301748
+    ]
+  },
+  "lines": [
+    {
+      "panel_id": "p63_network",
+      "camera_target": [
+        0.499349,
+        0.187672,
+        0.39514306
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.020239,
+        0.941406,
+        0.334867
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L001",
+      "frame_id": 1,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Mais nous avons ensuite découvert d’étranges anomalies naturelles.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/fr/CH06_P03_L001_fr.mp3",
+      "audio_duration_s": 3.866122,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "94dc4ea2b66f2be15913582cbee31261c45c4481c0c468458c98538d1d298d7c"
+    },
+    {
+      "panel_id": "p63_network",
+      "camera_target": [
+        0.499349,
+        0.187672,
+        0.39514306
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.020239,
+        0.941406,
+        0.334867
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L002",
+      "frame_id": 1,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Pour comprendre comment elles fonctionnaient, nous avons dû étudier la nature de l’Univers encore plus profondément.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/fr/CH06_P03_L002_fr.mp3",
+      "audio_duration_s": 6.269388,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "3a24aed69a322da370407f042b42d32d0857637840390ac30eab1aeab5148d97"
+    },
+    {
+      "panel_id": "p63_civilizations",
+      "camera_target": [
+        0.287109,
+        0.513339,
+        0.31915342
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.378105,
+        0.516927,
+        0.270469
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L003",
+      "frame_id": 2,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "En étudiant l’une de ces anomalies, nous avons rencontré ces êtres magnétiques que tu connais déjà.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/fr/CH06_P03_L003_fr.mp3",
+      "audio_duration_s": 5.720816,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "50672a5a61fe44f2b2ef9c989cdb7feb1ab2e1b96cfb6fb0384345521221d5d6"
+    },
+    {
+      "panel_id": "p63_storm",
+      "camera_target": [
+        0.774089,
+        0.513339,
+        0.31915342
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.578125,
+        0.378105,
+        0.391927,
+        0.270469
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L004",
+      "frame_id": 3,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Et plus loin, dans les profondeurs de l’espace, nous avons découvert un artefacte étonnant.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/fr/CH06_P03_L004_fr.mp3",
+      "audio_duration_s": 6.034286,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "0cde873b24a8587071826db3e2b95d970dc418618a4e79f2c1a176c40f0ea9cf"
+    },
+    {
+      "panel_id": "p63_storm",
+      "camera_target": [
+        0.774089,
+        0.513339,
+        0.31915342
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.578125,
+        0.378105,
+        0.391927,
+        0.270469
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L005",
+      "frame_id": 3,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Il s’est révélé être le centre de nombreuses zones anormales.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/fr/CH06_P03_L005_fr.mp3",
+      "audio_duration_s": 3.63102,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a76286bfb42c489f67fc31b3af9bd60205a12100efeef8d6eb9b81f755f9e512"
+    },
+    {
+      "panel_id": "p63_gate",
+      "camera_target": [
+        0.294271,
+        0.828887,
+        0.35606264
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028646,
+        0.678013,
+        0.53125,
+        0.301748
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L006",
+      "frame_id": 4,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Nous avons fait de l’étude de cet artefact complexe le but de notre existence et construit autour de lui une station appelée « Les Dernières Portes ».",
+      "audio_path": "res://mika_motion_comic/ch06_clips/fr/CH06_P03_L006_fr.mp3",
+      "audio_duration_s": 8.124082,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4e273a797334dfed7e7d08e63ee5c7f1bb963a4aed59f519a2cd208616195e17"
+    },
+    {
+      "panel_id": "p63_hole",
+      "camera_target": [
+        0.78776,
+        0.828887,
+        0.35606264
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.605469,
+        0.678013,
+        0.364583,
+        0.301748
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P03_L007",
+      "frame_id": 5,
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Il n’y a pas si longtemps, un étrange signal nous est parvenu — l’écho de terribles événements qui se produisaient quelque part au loin.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/fr/CH06_P03_L007_fr.mp3",
+      "audio_duration_s": 7.157551,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "6ab22f84dc02c17519e4f934e8c0e32a4e5d61ca63daeb0820cb242032dbd73a"
+    }
+  ]
+}

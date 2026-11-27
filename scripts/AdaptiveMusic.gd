@@ -23,7 +23,9 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_players["flight"] = _make_player("FlightActionMusic", ACTION_STREAM)
 	_players["calm"] = _make_player("PlanetCalmMusic", CALM_STREAM)
-	set_context("flight", true)
+	# Main selects the music context once play becomes interactive. Loading the
+	# story or simulator must never start the flight track prematurely.
+	set_context("silent", true)
 
 
 func _make_player(player_name: String, source: AudioStream) -> AudioStreamPlayer:

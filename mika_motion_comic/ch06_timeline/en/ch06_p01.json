@@ -1,0 +1,216 @@
+{
+  "schema_version": 3,
+  "page_id": "CH06_P01",
+  "locale": "en",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch06_p01_languages/ch06_p01_en.webp",
+  "native_scene_panels": [
+    "p61_cabin",
+    "p61_tunnel",
+    "p61_planet",
+    "p61_city",
+    "p61_meeting",
+    "p61_chair"
+  ],
+  "panel_bounds": {
+    "p61_cabin": [
+      0.022135,
+      0.012879,
+      0.954427,
+      0.25299
+    ],
+    "p61_tunnel": [
+      0.022135,
+      0.279669,
+      0.454427,
+      0.148114
+    ],
+    "p61_planet": [
+      0.539062,
+      0.278749,
+      0.4375,
+      0.152714
+    ],
+    "p61_city": [
+      0.023438,
+      0.448942,
+      0.953125,
+      0.326587
+    ],
+    "p61_meeting": [
+      0.023438,
+      0.795768,
+      0.4375,
+      0.188592
+    ],
+    "p61_chair": [
+      0.510417,
+      0.794848,
+      0.466146,
+      0.189512
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH06_P01_L001",
+      "frame_id": "CH06_P01_F01",
+      "panel_id": "p61_cabin",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "After our magnetic friend opened the passage, Mika steered the ship into the darkness of space.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/en/CH06_P01_L001_en.mp3",
+      "audio_duration_s": 6.034286,
+      "camera_target": [
+        0.502604,
+        0.128795,
+        0.29852819999999997
+      ],
+      "shot_type": "wide",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "5d4b1190790a26ee46b85c70839e018dd16a24d17b6606084a225e8409984e99"
+    },
+    {
+      "line_id": "CH06_P01_L002",
+      "frame_id": "CH06_P01_F01",
+      "panel_id": "p61_cabin",
+      "speaker_id": "CHR_035",
+      "kind": "dialogue",
+      "spoken_text": "That way!",
+      "audio_path": "res://mika_motion_comic/ch06_clips/en/CH06_P01_L002_en.mp3",
+      "audio_duration_s": 1.149388,
+      "camera_target": [
+        0.505,
+        0.205,
+        0.17
+      ],
+      "shot_type": "speaker",
+      "transition_before_s": 0.45,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "65c5d9c268c1470cad600385faae07fb07ede90f9df05aa5264c3d9e798a6093"
+    },
+    {
+      "line_id": "CH06_P01_L003",
+      "frame_id": "CH06_P01_F02",
+      "panel_id": "p61_tunnel",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika’s ship shot into the tunnel through space.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/en/CH06_P01_L003_en.mp3",
+      "audio_duration_s": 3.239184,
+      "camera_target": [
+        0.251302,
+        0.353266,
+        0.17477452
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f884aa55f44b80e56a59f13894c2c1b6f2f6fedb69c9b9676c3beb5505694445"
+    },
+    {
+      "line_id": "CH06_P01_L004",
+      "frame_id": "CH06_P01_F03",
+      "panel_id": "p61_planet",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Beyond the tunnel, an enormous pink planet awaited them.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/en/CH06_P01_L004_en.mp3",
+      "audio_duration_s": 4.675918,
+      "camera_target": [
+        0.746094,
+        0.354186,
+        0.18020251999999998
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "ea6b86b3599fb3b5d6c296fe79bca47a7791fe681b1a6a96584159248b70e440"
+    },
+    {
+      "line_id": "CH06_P01_L005",
+      "frame_id": "CH06_P01_F04",
+      "panel_id": "p61_city",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "The world of the neural beings was unlike anything they had seen before.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/en/CH06_P01_L005_en.mp3",
+      "audio_duration_s": 4.597551,
+      "camera_target": [
+        0.501302,
+        0.607176,
+        0.38537266
+      ],
+      "shot_type": "wide",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "375274a0a910b4ad806b9e326702b5fd7b10d72220c63340bfa1a4d14e692a2a"
+    },
+    {
+      "line_id": "CH06_P01_L006",
+      "frame_id": "CH06_P01_F05",
+      "panel_id": "p61_meeting",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Old friends met again after many years. Mika couldn’t understand what they were saying, but it was clear they were happy to see each other.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/en/CH06_P01_L006_en.mp3",
+      "audio_duration_s": 8.515918,
+      "camera_target": [
+        0.240885,
+        0.883165,
+        0.22253856
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d01427f5dbe6177f6240b0166db031e63de5a9ccffe570359972c57d376b6904"
+    },
+    {
+      "line_id": "CH06_P01_L007",
+      "frame_id": "CH06_P01_F06",
+      "panel_id": "p61_chair",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika used their simulator to enter a telepathic trance.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/en/CH06_P01_L007_en.mp3",
+      "audio_duration_s": 3.970612,
+      "camera_target": [
+        0.723958,
+        0.883165,
+        0.22362416000000002
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "0590da565fa06565a445f75494da35d13ec01fab6920a5553f0ceb323624d3b1"
+    }
+  ]
+}

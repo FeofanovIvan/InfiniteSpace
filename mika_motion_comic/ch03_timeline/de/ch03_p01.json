@@ -1,0 +1,337 @@
+{
+  "schema_version": 3,
+  "page_id": "CH03_P01",
+  "locale": "de",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch03_p01_languages/ch03_p01_de.webp",
+  "native_scene_panels": [
+    "p31_professor_sandwich",
+    "p31_fungus_and_professor",
+    "p31_okea_city",
+    "p31_okea_meeting",
+    "p31_okea_observes",
+    "p31_okea_lizard_sad",
+    "p31_okea_lizard_talks",
+    "p31_okea_to_cela"
+  ],
+  "panel_bounds": {
+    "p31_professor_sandwich": [
+      0.031,
+      0.043,
+      0.384,
+      0.238
+    ],
+    "p31_fungus_and_professor": [
+      0.449,
+      0.043,
+      0.518,
+      0.238
+    ],
+    "p31_okea_city": [
+      0.031,
+      0.296,
+      0.441,
+      0.232
+    ],
+    "p31_okea_meeting": [
+      0.495,
+      0.296,
+      0.473,
+      0.233
+    ],
+    "p31_okea_observes": [
+      0.031,
+      0.545,
+      0.268,
+      0.236
+    ],
+    "p31_okea_lizard_sad": [
+      0.325,
+      0.545,
+      0.249,
+      0.236
+    ],
+    "p31_okea_lizard_talks": [
+      0.592,
+      0.545,
+      0.376,
+      0.233
+    ],
+    "p31_okea_to_cela": [
+      0.031,
+      0.795,
+      0.936,
+      0.158
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH03_P01_L001",
+      "frame_id": "CH03_P01_F01",
+      "panel_id": "p31_professor_sandwich",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Zwischen der Großen und der Kleinen Magellanschen Wolke …",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L001_de.mp3",
+      "audio_duration_s": 3.631,
+      "camera_target": [
+        0.24,
+        0.166,
+        0.235
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "6ab4f7d357bc13f37e7677e0a7a7fbeac743d8cc926173590959cb1d481bc5b7"
+    },
+    {
+      "line_id": "CH03_P01_L002",
+      "frame_id": "CH03_P01_F02",
+      "panel_id": "p31_fungus_and_professor",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Erwischt! Du hast meinen Burger gegessen!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L002_de.mp3",
+      "audio_duration_s": 3.318,
+      "camera_target": [
+        0.845,
+        0.156,
+        0.138
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "54388429f7cd5de96cb50d1396cc196ccc0576115d9312ded8a17af5baa1b6ef"
+    },
+    {
+      "line_id": "CH03_P01_L003",
+      "frame_id": "CH03_P01_F02",
+      "panel_id": "p31_fungus_and_professor",
+      "speaker_id": "CHR_023",
+      "kind": "dialogue",
+      "spoken_text": "Ich war’s nicht!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L003_de.mp3",
+      "audio_duration_s": 1.646,
+      "camera_target": [
+        0.526,
+        0.176,
+        0.138
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "6737beeb5007b03bb4303d2b43cb126fc0e04914b673fbfcdf336d0cfc55a045"
+    },
+    {
+      "line_id": "CH03_P01_L005",
+      "frame_id": "CH03_P01_F03",
+      "panel_id": "p31_okea_city",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Auf Okea glänzten prächtige Städte voller seltsamer Wesen.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L005_de.mp3",
+      "audio_duration_s": 4.519,
+      "camera_target": [
+        0.25,
+        0.392,
+        0.231
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4b9b08d217c7076c917967f1135d2a3d82f4277c9512f19d4702950ee71dc578"
+    },
+    {
+      "line_id": "CH03_P01_L007",
+      "frame_id": "CH03_P01_F04",
+      "panel_id": "p31_okea_meeting",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Was für eine tolle Welt!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L007_de.mp3",
+      "audio_duration_s": 2.429,
+      "camera_target": [
+        0.59,
+        0.412,
+        0.125
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d536628489fa8304554113d117cf41ffa1f4ef49428bf8fe96c01850cba5ed8b"
+    },
+    {
+      "line_id": "CH03_P01_L008",
+      "frame_id": "CH03_P01_F04",
+      "panel_id": "p31_okea_meeting",
+      "speaker_id": "CHR_024",
+      "kind": "dialogue",
+      "spoken_text": "Soll ich dir unsere Welt zeigen?",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L008_de.mp3",
+      "audio_duration_s": 1.959,
+      "camera_target": [
+        0.865,
+        0.415,
+        0.125
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d2a8ca269317cdaf2817b38a123f017ceab3727dd2dc99b747f65e888d21e784"
+    },
+    {
+      "line_id": "CH03_P01_L009",
+      "frame_id": "CH03_P01_F05",
+      "panel_id": "p31_okea_observes",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika bat die Ältesten von Okea um Hilfe. Doch sie konnten — oder wollten — ihm nicht helfen.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L009_de.mp3",
+      "audio_duration_s": 6.687,
+      "camera_target": [
+        0.171,
+        0.663,
+        0.224
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "ff2461cb5f8a4f576b687dc6b3a13543e668442babeb709cace784530893284a"
+    },
+    {
+      "line_id": "CH03_P01_L011",
+      "frame_id": "CH03_P01_F06",
+      "panel_id": "p31_okea_lizard_sad",
+      "speaker_id": "CHR_001",
+      "kind": "thought",
+      "spoken_text": "Was mache ich denn jetzt?..",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L011_de.mp3",
+      "audio_duration_s": 2.038,
+      "camera_target": [
+        0.524,
+        0.686,
+        0.195
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "bdec5f5e64f2e95ded8816eca87f86a4a63c91629adf4471593507da3741e3cf"
+    },
+    {
+      "line_id": "CH03_P01_L012",
+      "frame_id": "CH03_P01_F06",
+      "panel_id": "p31_okea_lizard_sad",
+      "speaker_id": "CHR_025",
+      "kind": "dialogue",
+      "spoken_text": "Ich hörte, du brauchst Hilfe.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L012_de.mp3",
+      "audio_duration_s": 2.194,
+      "camera_target": [
+        0.414,
+        0.622,
+        0.19
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7a657eb669be81d7a40cc5faddfa32f01890e1a02e10363ebffe127d77c97174"
+    },
+    {
+      "line_id": "CH03_P01_L013",
+      "frame_id": "CH03_P01_F07",
+      "panel_id": "p31_okea_lizard_talks",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Ja, unbedingt!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L013_de.mp3",
+      "audio_duration_s": 1.881,
+      "camera_target": [
+        0.651,
+        0.655,
+        0.104
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "af60b8541a2c8b98e3232a0a3c3ec4fcc3ae3d91204283c21e63912e99fc71e9"
+    },
+    {
+      "line_id": "CH03_P01_L014",
+      "frame_id": "CH03_P01_F07",
+      "panel_id": "p31_okea_lizard_talks",
+      "speaker_id": "CHR_025",
+      "kind": "dialogue",
+      "spoken_text": "Auf Cela gibt es uraltes Wissen. Vielleicht hilft es dir!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L014_de.mp3",
+      "audio_duration_s": 3.971,
+      "camera_target": [
+        0.855,
+        0.645,
+        0.105
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9e011014e6b0a59877baa08ffc4e26d748b4ac8d6b6a7f438d50b8862ec0bb9e"
+    },
+    {
+      "line_id": "CH03_P01_L015",
+      "frame_id": "CH03_P01_F08",
+      "panel_id": "p31_okea_to_cela",
+      "speaker_id": "CHR_004",
+      "kind": "destination_narration",
+      "spoken_text": "Nächster Halt: Cela — und eine Spur in die Vergangenheit.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/de/CH03_P01_L015_de.mp3",
+      "audio_duration_s": 4.206,
+      "camera_target": [
+        0.5,
+        0.872,
+        0.157
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "ee869d12080a40ec8e52ad6fcad3985ab56ec2f25d3c8d1781d4130553cb61a0"
+    }
+  ],
+  "display_only": [
+    "CH03_P01_L004",
+    "CH03_P01_L006"
+  ]
+}

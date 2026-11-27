@@ -1,0 +1,296 @@
+{
+  "schema_version": 3,
+  "page_id": "CH02_P04",
+  "locale": "de",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch02_p04_languages/ch02_p04_de.webp",
+  "native_scene_panels": [
+    "p24_station_exterior",
+    "p24_fungal_garden",
+    "p24_factory",
+    "p24_reclaimed_city",
+    "p24_fungus_portrait",
+    "p24_meteor",
+    "p24_mycelium_net",
+    "p24_mika_smiles",
+    "p24_professor_and_fungus"
+  ],
+  "panel_bounds": {
+    "p24_station_exterior": [
+      0.021,
+      0.015,
+      0.96,
+      0.125
+    ],
+    "p24_fungal_garden": [
+      0.024,
+      0.158,
+      0.548,
+      0.229
+    ],
+    "p24_factory": [
+      0.607,
+      0.159,
+      0.367,
+      0.103
+    ],
+    "p24_reclaimed_city": [
+      0.609,
+      0.273,
+      0.366,
+      0.121
+    ],
+    "p24_fungus_portrait": [
+      0.022,
+      0.413,
+      0.299,
+      0.319
+    ],
+    "p24_meteor": [
+      0.349,
+      0.414,
+      0.302,
+      0.115
+    ],
+    "p24_mycelium_net": [
+      0.349,
+      0.545,
+      0.302,
+      0.189
+    ],
+    "p24_mika_smiles": [
+      0.682,
+      0.418,
+      0.293,
+      0.307
+    ],
+    "p24_professor_and_fungus": [
+      0.024,
+      0.752,
+      0.952,
+      0.23
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH02_P04_L001",
+      "frame_id": "CH02_P04_F01",
+      "panel_id": "p24_station_exterior",
+      "speaker_id": "CHR_004",
+      "kind": "intro",
+      "spoken_text": "Die Station Tarantel ist ein lebendes Forschungsschiff der Pilzzivilisation.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P04_L001_de.mp3",
+      "audio_duration_s": 4.911,
+      "camera_target": [
+        0.5,
+        0.074,
+        0.123
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b1637bb159039bb09b330459f8ed1a5a5324763f5bbae07979b93c1957233fc6"
+    },
+    {
+      "line_id": "CH02_P04_L002",
+      "frame_id": "CH02_P04_F02",
+      "panel_id": "p24_fungal_garden",
+      "speaker_id": "CHR_023",
+      "kind": "station_greeting",
+      "spoken_text": "Hallo, Mika! Meine Freunde haben mir viel von dir erzählt. Vielleicht hilft dir unsere Geschichte, Antworten zu finden.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P04_L002_de.mp3",
+      "audio_duration_s": 7.811,
+      "camera_target": [
+        0.3,
+        0.28,
+        0.218
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "aba8b49cd93148ba18baed2794eb8f136d71eb5b1a28208a8eba388d55dd0df7"
+    },
+    {
+      "line_id": "CH02_P04_L003",
+      "frame_id": "CH02_P04_F03",
+      "panel_id": "p24_factory",
+      "speaker_id": "CHR_023",
+      "kind": "old_civilization",
+      "spoken_text": "Vor langer Zeit blühte auf Molia eine große Zivilisation.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P04_L003_de.mp3",
+      "audio_duration_s": 4.833,
+      "camera_target": [
+        0.792,
+        0.211,
+        0.1
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b7506855f2acabd2b70c79e3620e400af2ea8cd89e0b4f2f325bd81c43531cfd"
+    },
+    {
+      "line_id": "CH02_P04_L004",
+      "frame_id": "CH02_P04_F04",
+      "panel_id": "p24_reclaimed_city",
+      "speaker_id": "CHR_023",
+      "kind": "ecological_collapse",
+      "spoken_text": "Doch ihr maßloser Hunger nach Rohstoffen und Berge von Abfällen zerstörten ihre Welt.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P04_L004_de.mp3",
+      "audio_duration_s": 5.486,
+      "camera_target": [
+        0.791,
+        0.332,
+        0.118
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "66065a762332936d9dd30c18bd16dd452667c212a96e1ee7265c40a0ae082aec"
+    },
+    {
+      "line_id": "CH02_P04_L005",
+      "frame_id": "CH02_P04_F05",
+      "panel_id": "p24_fungus_portrait",
+      "speaker_id": "CHR_023",
+      "kind": "silence",
+      "spoken_text": "Der Planet wurde still. Es schien, als wäre alles Leben für immer verschwunden…",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P04_L005_de.mp3",
+      "audio_duration_s": 6.113,
+      "camera_target": [
+        0.17,
+        0.488,
+        0.117
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "91e43a5a5dd381d749cc46c9ea34d7acc33357308a4bb9b5f46053a12501cfb0"
+    },
+    {
+      "line_id": "CH02_P04_L006",
+      "frame_id": "CH02_P04_F06",
+      "panel_id": "p24_meteor",
+      "speaker_id": "CHR_023",
+      "kind": "meteor_ancestors",
+      "spoken_text": "Später brachte ein Meteorit unsere fernen Vorfahren hierher.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P04_L006_de.mp3",
+      "audio_duration_s": 4.519,
+      "camera_target": [
+        0.505,
+        0.46,
+        0.11
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "28773252f5de55dc4227d2f375f7bff305beda0b18488dea9ba96843cdca04c2"
+    },
+    {
+      "line_id": "CH02_P04_L007",
+      "frame_id": "CH02_P04_F07",
+      "panel_id": "p24_mycelium_net",
+      "speaker_id": "CHR_023",
+      "kind": "network_origin",
+      "spoken_text": "Sie schlossen sich zu einem riesigen intelligenten Netz zusammen. So entstand unser Volk.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P04_L007_de.mp3",
+      "audio_duration_s": 6.191,
+      "camera_target": [
+        0.501,
+        0.612,
+        0.14
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "93440fdb497ef0f844dc5b9d989e89c3db13ec7378c22c932096a74095877a9e"
+    },
+    {
+      "line_id": "CH02_P04_L008",
+      "frame_id": "CH02_P04_F08",
+      "panel_id": "p24_mika_smiles",
+      "speaker_id": "CHR_023",
+      "kind": "new_companion",
+      "spoken_text": "Ich schicke einen Teil von mir mit dir. Gemeinsam können wir das Geheimnis des Sturms lüften.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P04_L008_de.mp3",
+      "audio_duration_s": 5.564,
+      "camera_target": [
+        0.817,
+        0.557,
+        0.113
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "1c410574418afea1b9b75457880412c8d9834529302c4545f03de318a54bafd9"
+    },
+    {
+      "line_id": "CH02_P04_L009",
+      "frame_id": "CH02_P04_F08",
+      "panel_id": "p24_mika_smiles",
+      "speaker_id": "CHR_001",
+      "kind": "mika_thanks",
+      "spoken_text": "Danke! Wohin geht’s jetzt?",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P04_L009_de.mp3",
+      "audio_duration_s": 2.273,
+      "camera_target": [
+        0.817,
+        0.565,
+        0.113
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "53e5d4bde52ebefb44e9982cd2633820e61b8e029c3b51e4920e9ab01f87b2d0"
+    },
+    {
+      "line_id": "CH02_P04_L010",
+      "frame_id": "CH02_P04_F09",
+      "panel_id": "p24_professor_and_fungus",
+      "speaker_id": "CHR_004",
+      "kind": "destination_narration",
+      "spoken_text": "Tarantel zeigte den Weg zur Kleinen Magellanschen Wolke. Mit einem neuen Freund an Bord war die Crew bereit für neue Abenteuer!",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P04_L010_de.mp3",
+      "audio_duration_s": 8.124,
+      "camera_target": [
+        0.505,
+        0.862,
+        0.228
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "738645eee434c7af5fddc0d6b6cbc4133e0f67df68bca26fb1746b1675b9b949"
+    }
+  ]
+}

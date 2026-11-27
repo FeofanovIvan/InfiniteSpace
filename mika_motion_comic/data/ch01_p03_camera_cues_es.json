@@ -1,0 +1,39 @@
+{
+  "page_id": "CH01_P03",
+  "locale": "es",
+  "revision": "POST_PUZZLE_CAMERA_BEFORE_SPEECH_V1_3",
+  "method": "calibrated_ffmpeg_20ms_RMS_38dB_threshold_v1_4",
+  "dialogue": [
+    {
+      "start_s": 5.62,
+      "end_s": 5.95,
+      "mode": "pan"
+    },
+    {
+      "start_s": 11.71,
+      "end_s": 12.27,
+      "mode": "pan"
+    },
+    {
+      "start_s": 20.38,
+      "end_s": 20.67,
+      "mode": "pan"
+    }
+  ],
+  "thought_cut": {
+    "start_s": 32.16,
+    "end_s": 32.53,
+    "mode": "pan"
+  },
+  "refuel_pan": {
+    "start_s": 34.52,
+    "end_s": 34.69,
+    "mode": "pan"
+  },
+  "mars_pan": {
+    "start_s": 44.78,
+    "end_s": 45.29,
+    "mode": "pan"
+  },
+  "camera_note": "Every shot/pan uses a measured silent interval, not only the line JSON start. End before audible voice onset; short pauses use a short glide."
+}

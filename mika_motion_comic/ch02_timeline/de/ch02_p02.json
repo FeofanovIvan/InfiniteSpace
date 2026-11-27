@@ -1,0 +1,211 @@
+{
+  "schema_version": 3,
+  "page_id": "CH02_P02",
+  "locale": "de",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch02_p02_languages/ch02_p02_de.webp",
+  "native_scene_panels": [
+    "p22_fungal_conversation",
+    "p22_mika_calls_bubble",
+    "p22_planet_departure"
+  ],
+  "panel_bounds": {
+    "p22_fungal_conversation": [
+      0.025,
+      0.018,
+      0.95,
+      0.293
+    ],
+    "p22_mika_calls_bubble": [
+      0.025,
+      0.345,
+      0.95,
+      0.369
+    ],
+    "p22_planet_departure": [
+      0.025,
+      0.743,
+      0.95,
+      0.229
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH02_P02_L001",
+      "frame_id": "CH02_P02_F01",
+      "panel_id": "p22_fungal_conversation",
+      "speaker_id": "CHR_004",
+      "kind": "narration_intro",
+      "spoken_text": "Die Bewohner luden Mika in die Halle der Erinnerungen — hier teilen die Kolonien Geschichten und Wissen.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P02_L001_de.mp3",
+      "audio_duration_s": 6.24,
+      "camera_target": [
+        0.48,
+        0.166,
+        0.29
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8c07d3dfe170661cc15acadc162fe59a5aaee77bf27781c6533c60bae8fef369"
+    },
+    {
+      "line_id": "CH02_P02_L002",
+      "frame_id": "CH02_P02_F01",
+      "panel_id": "p22_fungal_conversation",
+      "speaker_id": "CHR_001",
+      "kind": "speech_earnest_request",
+      "spoken_text": "Ich suche den Weg nach Hause. Und will verstehen, wo ich gelandet bin. Könnt ihr mir helfen?",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P02_L002_de.mp3",
+      "audio_duration_s": 5.6,
+      "camera_target": [
+        0.255,
+        0.17,
+        0.185
+      ],
+      "transition_before_s": 0.36,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d372899e6f8d00a504f72b067c556a5232289d899c67e1ca5f3449f5673bec31"
+    },
+    {
+      "line_id": "CH02_P02_L003",
+      "frame_id": "CH02_P02_F01",
+      "panel_id": "p22_fungal_conversation",
+      "speaker_id": "CHR_022",
+      "kind": "speech_thoughtful_advice",
+      "spoken_text": "Flieg zuerst nach Molia, unserer alten Heimat. Dort laufen gerade spannende Forschungen.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P02_L003_de.mp3",
+      "audio_duration_s": 5.84,
+      "camera_target": [
+        0.72,
+        0.15,
+        0.205
+      ],
+      "transition_before_s": 0.36,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8076d8ba4ee9d1e593d014a2bb78b92873d28edce62d23c9aabac583b9d7988c"
+    },
+    {
+      "line_id": "CH02_P02_L004",
+      "frame_id": "CH02_P02_F01",
+      "panel_id": "p22_fungal_conversation",
+      "speaker_id": "CHR_001",
+      "kind": "speech_curiosity",
+      "spoken_text": "Was erforschen sie?",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P02_L004_de.mp3",
+      "audio_duration_s": 1.6,
+      "camera_target": [
+        0.3,
+        0.185,
+        0.235
+      ],
+      "transition_before_s": 0.36,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "034278d6ebcc1956294be71590a6386b0be74ed501879f6e225ba0ace7e53e27"
+    },
+    {
+      "line_id": "CH02_P02_L005",
+      "frame_id": "CH02_P02_F01",
+      "panel_id": "p22_fungal_conversation",
+      "speaker_id": "CHR_022",
+      "kind": "speech_mysterious_reassurance",
+      "spoken_text": "Finde es selbst heraus! Erfahre mehr über uns — vielleicht zeigt dir unsere Geschichte den Weg.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P02_L005_de.mp3",
+      "audio_duration_s": 5.6,
+      "camera_target": [
+        0.68,
+        0.17,
+        0.275
+      ],
+      "transition_before_s": 0.36,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "ed264ca880a9a2aa15a8d7f90ff0f9d64d440db289246f4e00551932e89c4849"
+    },
+    {
+      "line_id": "CH02_P02_L006",
+      "frame_id": "CH02_P02_F02",
+      "panel_id": "p22_mika_calls_bubble",
+      "speaker_id": "CHR_001",
+      "kind": "speech_shout_offscreen",
+      "spoken_text": "BUBBLE!",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P02_L006_de.mp3",
+      "audio_duration_s": 1.04,
+      "camera_target": [
+        0.3,
+        0.49,
+        0.27
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "685b433834a9f8de6bb35ead0e1f3a3911e83f093855d8b90853f2f0c2b4a486"
+    },
+    {
+      "line_id": "CH02_P02_L007",
+      "frame_id": "CH02_P02_F02",
+      "panel_id": "p22_mika_calls_bubble",
+      "speaker_id": "CHR_022",
+      "kind": "speech_soothing_reassurance",
+      "spoken_text": "Keine Sorge! Unsere Leute helfen Bubble, zum Schiff zurückzufinden.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P02_L007_de.mp3",
+      "audio_duration_s": 4.48,
+      "camera_target": [
+        0.73,
+        0.565,
+        0.25
+      ],
+      "transition_before_s": 0.36,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "eec35ef068bd1cf18198809e51fedc1b0c6e7baee0855ffc690e39cd06818458"
+    },
+    {
+      "line_id": "CH02_P02_L008",
+      "frame_id": "CH02_P02_F03",
+      "panel_id": "p22_planet_departure",
+      "speaker_id": "CHR_004",
+      "kind": "narration_departure",
+      "spoken_text": "Bubble kam wohlbehalten zum Schiff zurück. Und gemeinsam ging’s weiter nach Molia!",
+      "audio_path": "res://mika_motion_comic/ch02_clips/de/CH02_P02_L008_de.mp3",
+      "audio_duration_s": 5.12,
+      "camera_target": [
+        0.66,
+        0.855,
+        0.225
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "71df3484c9ee1d5b02ecc1d17edfd8e1f409cab9b7368aaac8bd5f7c80830bcd"
+    }
+  ],
+  "display_only": "KURS: MOLIA URSPRUNGSPLANET"
+}

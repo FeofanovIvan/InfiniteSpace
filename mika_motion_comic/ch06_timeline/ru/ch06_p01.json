@@ -1,0 +1,216 @@
+{
+  "schema_version": 3,
+  "page_id": "CH06_P01",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch06_p01_languages/ch06_p01_ru.webp",
+  "native_scene_panels": [
+    "p61_cabin",
+    "p61_tunnel",
+    "p61_planet",
+    "p61_city",
+    "p61_meeting",
+    "p61_chair"
+  ],
+  "panel_bounds": {
+    "p61_cabin": [
+      0.022135,
+      0.012879,
+      0.954427,
+      0.25299
+    ],
+    "p61_tunnel": [
+      0.022135,
+      0.279669,
+      0.454427,
+      0.148114
+    ],
+    "p61_planet": [
+      0.539062,
+      0.278749,
+      0.4375,
+      0.152714
+    ],
+    "p61_city": [
+      0.023438,
+      0.448942,
+      0.953125,
+      0.326587
+    ],
+    "p61_meeting": [
+      0.023438,
+      0.795768,
+      0.4375,
+      0.188592
+    ],
+    "p61_chair": [
+      0.510417,
+      0.794848,
+      0.466146,
+      0.189512
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH06_P01_L001",
+      "frame_id": "CH06_P01_F01",
+      "panel_id": "p61_cabin",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "После того как магнитный друг открыл проход, Мика направил корабль в чёрное пространство.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P01_L001_ru.mp3",
+      "audio_duration_s": 5.877551,
+      "camera_target": [
+        0.502604,
+        0.128795,
+        0.29852819999999997
+      ],
+      "shot_type": "wide",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "31412745e782ceaef52495617b8f85b7260d1f08857c9752b7f2f46316ab48e5"
+    },
+    {
+      "line_id": "CH06_P01_L002",
+      "frame_id": "CH06_P01_F01",
+      "panel_id": "p61_cabin",
+      "speaker_id": "CHR_035",
+      "kind": "dialogue",
+      "spoken_text": "Нам туда!",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P01_L002_ru.mp3",
+      "audio_duration_s": 1.149388,
+      "camera_target": [
+        0.505,
+        0.205,
+        0.17
+      ],
+      "shot_type": "speaker",
+      "transition_before_s": 0.45,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "0c21b30fa69ecd9c77bee166d8937fee7a44505806b97b270cabaf50243051f1"
+    },
+    {
+      "line_id": "CH06_P01_L003",
+      "frame_id": "CH06_P01_F02",
+      "panel_id": "p61_tunnel",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Корабль Мики влетел в пространственный туннель.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P01_L003_ru.mp3",
+      "audio_duration_s": 3.082449,
+      "camera_target": [
+        0.251302,
+        0.353266,
+        0.17477452
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4ff07b3650b647c8df676f33fe2bbb457e885cfbb82f66773eda973801bc719f"
+    },
+    {
+      "line_id": "CH06_P01_L004",
+      "frame_id": "CH06_P01_F03",
+      "panel_id": "p61_planet",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "За туннелем их ждала огромная розовая планета.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P01_L004_ru.mp3",
+      "audio_duration_s": 3.970612,
+      "camera_target": [
+        0.746094,
+        0.354186,
+        0.18020251999999998
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a21ef846d5cac2be507a779f0b74a00d84295d312ca2acc718fdbf9669b6c4df"
+    },
+    {
+      "line_id": "CH06_P01_L005",
+      "frame_id": "CH06_P01_F04",
+      "panel_id": "p61_city",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Мир нейронных существ сильно отличался от всего, что они видели раньше.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P01_L005_ru.mp3",
+      "audio_duration_s": 4.989388,
+      "camera_target": [
+        0.501302,
+        0.607176,
+        0.38537266
+      ],
+      "shot_type": "wide",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "0319d1ac1171c2c078b4513f4aeadfb3392b570e515efce606129a7088969670"
+    },
+    {
+      "line_id": "CH06_P01_L006",
+      "frame_id": "CH06_P01_F05",
+      "panel_id": "p61_meeting",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Старые знакомые встретились спустя много лет. Мика не понимал, о чём они говорили, но было ясно: они рады друг другу.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P01_L006_ru.mp3",
+      "audio_duration_s": 8.594286,
+      "camera_target": [
+        0.240885,
+        0.883165,
+        0.22253856
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2f78c6e3eaa53dae49651bf6e9da4d2b81ad7acc0fc85764910a2551695556ee"
+    },
+    {
+      "line_id": "CH06_P01_L007",
+      "frame_id": "CH06_P01_F06",
+      "panel_id": "p61_chair",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Мика воспользовался их симулятором, чтобы погрузиться в телепатический транс.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P01_L007_ru.mp3",
+      "audio_duration_s": 4.91102,
+      "camera_target": [
+        0.723958,
+        0.883165,
+        0.22362416000000002
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "36071b2434c913175d918d8c795a58ad54cb6b7337969a49a3e089aaa6120ac2"
+    }
+  ]
+}

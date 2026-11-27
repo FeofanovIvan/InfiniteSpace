@@ -1,0 +1,92 @@
+{
+  "p81_palace": {
+    "page": 1,
+    "bounds": [
+      0.0286,
+      0.02,
+      0.9429,
+      0.209
+    ],
+    "focus": [
+      0.66,
+      0.133
+    ],
+    "seconds": 6.0,
+    "description": "Palace and ship"
+  },
+  "p81_mika": {
+    "page": 1,
+    "bounds": [
+      0.0286,
+      0.2384,
+      0.464,
+      0.263
+    ],
+    "focus": [
+      0.268,
+      0.34
+    ],
+    "seconds": 5.0,
+    "description": "Mika enters"
+  },
+  "p81_bubble": {
+    "page": 1,
+    "bounds": [
+      0.507,
+      0.2384,
+      0.464,
+      0.263
+    ],
+    "focus": [
+      0.765,
+      0.366
+    ],
+    "seconds": 5.0,
+    "description": "Bubble"
+  },
+  "p81_friends": {
+    "page": 1,
+    "bounds": [
+      0.0286,
+      0.51,
+      0.9429,
+      0.219
+    ],
+    "focus": [
+      0.5,
+      0.615
+    ],
+    "seconds": 8.0,
+    "description": "Six companions"
+  },
+  "p81_lizard": {
+    "page": 1,
+    "bounds": [
+      0.0286,
+      0.7387,
+      0.464,
+      0.2411
+    ],
+    "focus": [
+      0.27,
+      0.842
+    ],
+    "seconds": 5.0,
+    "description": "Lizard speaks"
+  },
+  "p81_reply": {
+    "page": 1,
+    "bounds": [
+      0.507,
+      0.7387,
+      0.464,
+      0.2411
+    ],
+    "focus": [
+      0.745,
+      0.843
+    ],
+    "seconds": 6.0,
+    "description": "Mika replies"
+  }
+}

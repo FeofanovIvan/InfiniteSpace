@@ -1,0 +1,808 @@
+{
+  "schema_version": "3.1",
+  "project": "MIKA Infinite Space",
+  "page_id": "CH01_P02",
+  "revision": 2,
+  "approval_status": "russian_visual_approved_other_languages_localization_draft_pending_review",
+  "style": "NEBULA",
+  "master_size_px": [
+    2480,
+    3508
+  ],
+  "source_pdf": "1-2(2).pdf",
+  "background": "background.jpg",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "godot_locale_aliases": {
+    "ru_RU": "ru",
+    "en_US": "en",
+    "en_GB": "en",
+    "pt_BR": "pt_BR",
+    "pt-BR": "pt_BR",
+    "es_ES": "es",
+    "fr_FR": "fr",
+    "de_DE": "de"
+  },
+  "overlays_png": {
+    "ru": "overlays/CH01_P02_ru.png",
+    "en": "overlays/CH01_P02_en.png",
+    "pt_BR": "overlays/CH01_P02_pt_BR.png",
+    "es": "overlays/CH01_P02_es.png",
+    "fr": "overlays/CH01_P02_fr.png",
+    "de": "overlays/CH01_P02_de.png"
+  },
+  "overlays_svg": {
+    "ru": "overlays/CH01_P02_ru.svg",
+    "en": "overlays/CH01_P02_en.svg",
+    "pt_BR": "overlays/CH01_P02_pt_BR.svg",
+    "es": "overlays/CH01_P02_es.svg",
+    "fr": "overlays/CH01_P02_fr.svg",
+    "de": "overlays/CH01_P02_de.svg"
+  },
+  "previews": {
+    "ru": "previews/CH01_P02_ru_preview.jpg",
+    "en": "previews/CH01_P02_en_preview.jpg",
+    "pt_BR": "previews/CH01_P02_pt_BR_preview.jpg",
+    "es": "previews/CH01_P02_es_preview.jpg",
+    "fr": "previews/CH01_P02_fr_preview.jpg",
+    "de": "previews/CH01_P02_de_preview.jpg"
+  },
+  "speaker_ids": [
+    "CHR_001",
+    "CHR_004"
+  ],
+  "playback_profiles": {
+    "full_reading": {
+      "line_ids": [
+        "CH01_P02_L001",
+        "CH01_P02_L002",
+        "CH01_P02_L003",
+        "CH01_P02_L004",
+        "CH01_P02_L005",
+        "CH01_P02_L006"
+      ],
+      "description_ru": "Все пять авторских/речевых фрагментов плюс мысль Мики."
+    },
+    "without_internal_thought": {
+      "line_ids": [
+        "CH01_P02_L001",
+        "CH01_P02_L002",
+        "CH01_P02_L003",
+        "CH01_P02_L004",
+        "CH01_P02_L005"
+      ],
+      "description_ru": "Мысль Мики показана на экране, но не произносится."
+    }
+  },
+  "visual_only_elements": [
+    {
+      "ui_id": "CH01_P02_UI_TRANSLATOR",
+      "frame_id": "CH01_P02_F03",
+      "kind": "translation_hud",
+      "audio_required": false,
+      "note_ru": "Декоративный интерфейс переводчика с RU/EN/PT/ES/FR/DE и китайским языком, не отдельный персонаж и не голос."
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P02_L001",
+      "frame_id": "CH01_P02_F01",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_small",
+      "bubble_box_px": [
+        117,
+        117,
+        818,
+        259
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Напряжение после шторма, затем осторожная надежда",
+        "emotion": "cautious_hope",
+        "intensity": 0.55,
+        "pace": "medium",
+        "volume": "medium",
+        "pause_after_ms": 450,
+        "arc_ru": "Начать чуть тише и напряжённее; на слове «туннель» дать удивление, к концу — решительность.",
+        "tts_tags_en": "[thoughtful]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Среди вихрей шторма Мика заметил сияющий туннель. Не зная, куда он ведёт, он направил корабль к свету.",
+          "voice_spoken_text": "Среди вихрей шторма Мика заметил сияющий туннель. Не зная, куда он ведёт, он направил корабль к свету.",
+          "render_lines": [
+            "Среди вихрей шторма",
+            "Мика заметил сияющий туннель.",
+            "Не зная, куда он ведёт,",
+            "он направил корабль к свету."
+          ],
+          "font_size_px": 33,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Среди вихрей шторма Мика заметил сияющий туннель. Не зная, куда он ведёт, он направил корабль к свету."
+        },
+        "en": {
+          "display_text": "Through the swirling storm, Mika spotted a glowing tunnel. Unsure where it led, Mika steered toward the light.",
+          "voice_spoken_text": "Through the swirling storm, Mika spotted a glowing tunnel. Unsure where it led, Mika steered toward the light.",
+          "render_lines": [
+            "Through the swirling storm,",
+            "Mika spotted a glowing tunnel.",
+            "Unsure where it led,",
+            "Mika steered toward the light."
+          ],
+          "font_size_px": 33,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Through the swirling storm, Mika spotted a glowing tunnel. Unsure where it led, Mika steered toward the light."
+        },
+        "pt_BR": {
+          "display_text": "Entre os redemoinhos da tempestade, Mika avistou um túnel luminoso. Sem saber aonde ele levava, guiou a nave em direção à luz.",
+          "voice_spoken_text": "Entre os redemoinhos da tempestade, Mika avistou um túnel luminoso. Sem saber aonde ele levava, guiou a nave em direção à luz.",
+          "render_lines": [
+            "Entre os redemoinhos da tempestade,",
+            "Mika avistou um túnel luminoso.",
+            "Sem saber aonde ele levava,",
+            "guiou a nave em direção à luz."
+          ],
+          "font_size_px": 30,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Entre os redemoinhos da tempestade, Mika avistou um túnel luminoso. Sem saber aonde ele levava, guiou a nave em direção à luz."
+        },
+        "es": {
+          "display_text": "Entre los remolinos de la tormenta, Mika vio un túnel brillante. Sin saber adónde llevaba, dirigió su nave hacia la luz.",
+          "voice_spoken_text": "Entre los remolinos de la tormenta, Mika vio un túnel brillante. Sin saber adónde llevaba, dirigió su nave hacia la luz.",
+          "render_lines": [
+            "Entre los remolinos de la tormenta,",
+            "Mika vio un túnel brillante.",
+            "Sin saber adónde llevaba,",
+            "dirigió su nave hacia la luz."
+          ],
+          "font_size_px": 31,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Entre los remolinos de la tormenta, Mika vio un túnel brillante. Sin saber adónde llevaba, dirigió su nave hacia la luz."
+        },
+        "fr": {
+          "display_text": "Au cœur de la tempête, Mika aperçut un tunnel lumineux. Sans savoir où il menait, il mit le cap vers la lumière.",
+          "voice_spoken_text": "Au cœur de la tempête, Mika aperçut un tunnel lumineux. Sans savoir où il menait, il mit le cap vers la lumière.",
+          "render_lines": [
+            "Au cœur de la tempête,",
+            "Mika aperçut un tunnel lumineux.",
+            "Sans savoir où il menait,",
+            "il mit le cap vers la lumière."
+          ],
+          "font_size_px": 33,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Au cœur de la tempête, Mika aperçut un tunnel lumineux. Sans savoir où il menait, il mit le cap vers la lumière."
+        },
+        "de": {
+          "display_text": "Mitten im tosenden Sturm entdeckte Mika einen Lichttunnel. Ohne zu wissen, wohin er führte, steuerte Mika auf das Licht zu.",
+          "voice_spoken_text": "Mitten im tosenden Sturm entdeckte Mika einen Lichttunnel. Ohne zu wissen, wohin er führte, steuerte Mika auf das Licht zu.",
+          "render_lines": [
+            "Mitten im tosenden Sturm",
+            "entdeckte Mika einen Lichttunnel.",
+            "Ohne zu wissen, wohin er führte,",
+            "steuerte Mika auf das Licht zu."
+          ],
+          "font_size_px": 32,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Mitten im tosenden Sturm entdeckte Mika einen Lichttunnel. Ohne zu wissen, wohin er führte, steuerte Mika auf das Licht zu."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P02_L002",
+      "frame_id": "CH01_P02_F02",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_small",
+      "bubble_box_px": [
+        670,
+        1152,
+        488,
+        151
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Облегчение и первый восторг от нового мира",
+        "emotion": "wonder_relief",
+        "intensity": 0.47,
+        "pace": "measured",
+        "volume": "medium",
+        "pause_after_ms": 320,
+        "arc_ru": "Небольшой светлый подъём на «голубая планета».",
+        "tts_tags_en": "[curious]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "За иллюминатором показалась маленькая голубая планета.",
+          "voice_spoken_text": "За иллюминатором показалась маленькая голубая планета.",
+          "render_lines": [
+            "За иллюминатором",
+            "показалась маленькая",
+            "голубая планета."
+          ],
+          "font_size_px": 29,
+          "line_height_px": 38,
+          "edit_source_svg": "overlays/CH01_P02_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] За иллюминатором показалась маленькая голубая планета."
+        },
+        "en": {
+          "display_text": "Beyond the cockpit window, a little blue planet came into view.",
+          "voice_spoken_text": "Beyond the cockpit window, a little blue planet came into view.",
+          "render_lines": [
+            "Beyond the cockpit window,",
+            "a little blue planet",
+            "came into view."
+          ],
+          "font_size_px": 28,
+          "line_height_px": 38,
+          "edit_source_svg": "overlays/CH01_P02_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Beyond the cockpit window, a little blue planet came into view."
+        },
+        "pt_BR": {
+          "display_text": "Pela janela da cabine, surgiu um pequeno planeta azul.",
+          "voice_spoken_text": "Pela janela da cabine, surgiu um pequeno planeta azul.",
+          "render_lines": [
+            "Pela janela da cabine,",
+            "surgiu um pequeno",
+            "planeta azul."
+          ],
+          "font_size_px": 29,
+          "line_height_px": 38,
+          "edit_source_svg": "overlays/CH01_P02_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Pela janela da cabine, surgiu um pequeno planeta azul."
+        },
+        "es": {
+          "display_text": "Por la ventanilla, apareció un pequeño planeta azul.",
+          "voice_spoken_text": "Por la ventanilla, apareció un pequeño planeta azul.",
+          "render_lines": [
+            "Por la ventanilla,",
+            "apareció un pequeño",
+            "planeta azul."
+          ],
+          "font_size_px": 29,
+          "line_height_px": 38,
+          "edit_source_svg": "overlays/CH01_P02_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Por la ventanilla, apareció un pequeño planeta azul."
+        },
+        "fr": {
+          "display_text": "Derrière le hublot, apparut une petite planète bleue.",
+          "voice_spoken_text": "Derrière le hublot, apparut une petite planète bleue.",
+          "render_lines": [
+            "Derrière le hublot,",
+            "apparut une petite",
+            "planète bleue."
+          ],
+          "font_size_px": 29,
+          "line_height_px": 38,
+          "edit_source_svg": "overlays/CH01_P02_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Derrière le hublot, apparut une petite planète bleue."
+        },
+        "de": {
+          "display_text": "Hinter dem Sichtfenster tauchte ein kleiner blauer Planet auf.",
+          "voice_spoken_text": "Hinter dem Sichtfenster tauchte ein kleiner blauer Planet auf.",
+          "render_lines": [
+            "Hinter dem Sichtfenster",
+            "tauchte ein kleiner",
+            "blauer Planet auf."
+          ],
+          "font_size_px": 28,
+          "line_height_px": 38,
+          "edit_source_svg": "overlays/CH01_P02_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Hinter dem Sichtfenster tauchte ein kleiner blauer Planet auf."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P02_L003",
+      "frame_id": "CH01_P02_F02",
+      "speaker_id": "CHR_001",
+      "kind": "speech",
+      "bubble_id": "speech_exclamation_yellow",
+      "bubble_box_px": [
+        603,
+        1385,
+        490,
+        248
+      ],
+      "speaker_anchor_px": [
+        600,
+        1628
+      ],
+      "performance": {
+        "tone_ru": "Искреннее радостное удивление",
+        "emotion": "surprise_joy",
+        "intensity": 0.82,
+        "pace": "brisk",
+        "volume": "bright",
+        "pause_after_ms": 320,
+        "arc_ru": "Быстрый вдох, короткое радостное восклицание, без крика паники.",
+        "tts_tags_en": "[excited]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Планета!",
+          "voice_spoken_text": "Планета!",
+          "render_lines": [
+            "Планета!"
+          ],
+          "font_size_px": 45,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Планета!"
+        },
+        "en": {
+          "display_text": "A planet!",
+          "voice_spoken_text": "A planet!",
+          "render_lines": [
+            "A planet!"
+          ],
+          "font_size_px": 45,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] A planet!"
+        },
+        "pt_BR": {
+          "display_text": "Um planeta!",
+          "voice_spoken_text": "Um planeta!",
+          "render_lines": [
+            "Um planeta!"
+          ],
+          "font_size_px": 40,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Um planeta!"
+        },
+        "es": {
+          "display_text": "¡Un planeta!",
+          "voice_spoken_text": "¡Un planeta!",
+          "render_lines": [
+            "¡Un planeta!"
+          ],
+          "font_size_px": 41,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] ¡Un planeta!"
+        },
+        "fr": {
+          "display_text": "Une planète !",
+          "voice_spoken_text": "Une planète !",
+          "render_lines": [
+            "Une planète !"
+          ],
+          "font_size_px": 38,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Une planète !"
+        },
+        "de": {
+          "display_text": "Ein Planet!",
+          "voice_spoken_text": "Ein Planet!",
+          "render_lines": [
+            "Ein Planet!"
+          ],
+          "font_size_px": 42,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[excited] Ein Planet!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P02_L004",
+      "frame_id": "CH01_P02_F03",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_small",
+      "bubble_box_px": [
+        2065,
+        1198,
+        332,
+        260
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Спокойная исследовательская заинтересованность",
+        "emotion": "focused_curiosity",
+        "intensity": 0.42,
+        "pace": "medium",
+        "volume": "medium",
+        "pause_after_ms": 420,
+        "arc_ru": "Повествовать лёгким, ясным тоном; сохранить ощущение загадки.",
+        "tts_tags_en": "[curious]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Мика настроил симулятор. Теперь он собирал сведения о жителях, языках и жизни на новой планете.",
+          "voice_spoken_text": "Мика настроил симулятор. Теперь он собирал сведения о жителях, языках и жизни на новой планете.",
+          "render_lines": [
+            "Мика настроил",
+            "симулятор. Теперь",
+            "он собирал сведения",
+            "о жителях, языках",
+            "и жизни на новой",
+            "планете."
+          ],
+          "font_size_px": 25,
+          "line_height_px": 36,
+          "edit_source_svg": "overlays/CH01_P02_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Мика настроил симулятор. Теперь он собирал сведения о жителях, языках и жизни на новой планете."
+        },
+        "en": {
+          "display_text": "Mika tuned the ship's simulator. Now it was gathering clues about the planet’s people, languages, and way of life.",
+          "voice_spoken_text": "Mika tuned the ship's simulator. Now it was gathering clues about the planet’s people, languages, and way of life.",
+          "render_lines": [
+            "Mika tuned the ship's",
+            "simulator. Now it",
+            "was gathering clues",
+            "about the planet’s",
+            "people, languages,",
+            "and way of life."
+          ],
+          "font_size_px": 24,
+          "line_height_px": 36,
+          "edit_source_svg": "overlays/CH01_P02_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Mika tuned the ship's simulator. Now it was gathering clues about the planet’s people, languages, and way of life."
+        },
+        "pt_BR": {
+          "display_text": "Mika ajustou o simulador. Agora ele reunia informações sobre os habitantes, os idiomas e a vida no novo planeta.",
+          "voice_spoken_text": "Mika ajustou o simulador. Agora ele reunia informações sobre os habitantes, os idiomas e a vida no novo planeta.",
+          "render_lines": [
+            "Mika ajustou o",
+            "simulador. Agora ele",
+            "reunia informações",
+            "sobre os habitantes,",
+            "os idiomas e a vida",
+            "no novo planeta."
+          ],
+          "font_size_px": 24,
+          "line_height_px": 36,
+          "edit_source_svg": "overlays/CH01_P02_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Mika ajustou o simulador. Agora ele reunia informações sobre os habitantes, os idiomas e a vida no novo planeta."
+        },
+        "es": {
+          "display_text": "Mika ajustó el simulador. Ahora reunía datos sobre sus habitantes, sus idiomas y la vida en el nuevo planeta.",
+          "voice_spoken_text": "Mika ajustó el simulador. Ahora reunía datos sobre sus habitantes, sus idiomas y la vida en el nuevo planeta.",
+          "render_lines": [
+            "Mika ajustó el",
+            "simulador. Ahora",
+            "reunía datos sobre",
+            "sus habitantes,",
+            "sus idiomas y la vida",
+            "en el nuevo planeta."
+          ],
+          "font_size_px": 24,
+          "line_height_px": 36,
+          "edit_source_svg": "overlays/CH01_P02_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Mika ajustó el simulador. Ahora reunía datos sobre sus habitantes, sus idiomas y la vida en el nuevo planeta."
+        },
+        "fr": {
+          "display_text": "Mika régla son simulateur. Celui-ci cherchait des infos sur les habitants, les langues et la vie de cette planète.",
+          "voice_spoken_text": "Mika régla son simulateur. Celui-ci cherchait des infos sur les habitants, les langues et la vie de cette planète.",
+          "render_lines": [
+            "Mika régla son",
+            "simulateur. Celui-ci",
+            "cherchait des infos",
+            "sur les habitants,",
+            "les langues et la vie",
+            "de cette planète."
+          ],
+          "font_size_px": 24,
+          "line_height_px": 36,
+          "edit_source_svg": "overlays/CH01_P02_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Mika régla son simulateur. Celui-ci cherchait des infos sur les habitants, les langues et la vie de cette planète."
+        },
+        "de": {
+          "display_text": "Mika stellte den Simulator ein. Nun suchte er Infos über die Bewohner, ihre Sprachen und das Leben auf dem Planeten.",
+          "voice_spoken_text": "Mika stellte den Simulator ein. Nun suchte er Infos über die Bewohner, ihre Sprachen und das Leben auf dem Planeten.",
+          "render_lines": [
+            "Mika stellte den",
+            "Simulator ein. Nun",
+            "suchte er Infos über",
+            "die Bewohner, ihre",
+            "Sprachen und das",
+            "Leben auf dem Planeten."
+          ],
+          "font_size_px": 24,
+          "line_height_px": 36,
+          "edit_source_svg": "overlays/CH01_P02_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[curious] Mika stellte den Simulator ein. Nun suchte er Infos über die Bewohner, ihre Sprachen und das Leben auf dem Planeten."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P02_L005",
+      "frame_id": "CH01_P02_F04",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_small",
+      "bubble_box_px": [
+        108,
+        2212,
+        1008,
+        195
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Решимость и надежда наконец получить ответы",
+        "emotion": "purposeful_hope",
+        "intensity": 0.49,
+        "pace": "medium",
+        "volume": "medium",
+        "pause_after_ms": 600,
+        "arc_ru": "Увереннее на выборе курса; небольшой вопросительный оттенок в финале.",
+        "tts_tags_en": "[thoughtful]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Симулятор нашёл ближайший космопорт. Мика взял курс на посадку: там он надеялся узнать, куда попал.",
+          "voice_spoken_text": "Симулятор нашёл ближайший космопорт. Мика взял курс на посадку: там он надеялся узнать, куда попал.",
+          "render_lines": [
+            "Симулятор нашёл ближайший космопорт.",
+            "Мика взял курс на посадку:",
+            "там он надеялся узнать, куда попал."
+          ],
+          "font_size_px": 34,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Симулятор нашёл ближайший космопорт. Мика взял курс на посадку: там он надеялся узнать, куда попал."
+        },
+        "en": {
+          "display_text": "The simulator located the nearest spaceport. Mika set a course to land: maybe there, he’d find out where he was.",
+          "voice_spoken_text": "The simulator located the nearest spaceport. Mika set a course to land: maybe there, he’d find out where he was.",
+          "render_lines": [
+            "The simulator located the nearest spaceport.",
+            "Mika set a course to land:",
+            "maybe there, he’d find out where he was."
+          ],
+          "font_size_px": 33,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] The simulator located the nearest spaceport. Mika set a course to land: maybe there, he’d find out where he was."
+        },
+        "pt_BR": {
+          "display_text": "O simulador achou o porto espacial mais próximo. Mika traçou a rota para pousar: talvez ali descobrisse onde estava.",
+          "voice_spoken_text": "O simulador achou o porto espacial mais próximo. Mika traçou a rota para pousar: talvez ali descobrisse onde estava.",
+          "render_lines": [
+            "O simulador achou o porto espacial mais próximo.",
+            "Mika traçou a rota para pousar:",
+            "talvez ali descobrisse onde estava."
+          ],
+          "font_size_px": 31,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] O simulador achou o porto espacial mais próximo. Mika traçou a rota para pousar: talvez ali descobrisse onde estava."
+        },
+        "es": {
+          "display_text": "El simulador halló un puerto espacial cercano. Mika puso rumbo al aterrizaje: quizá allí sabría dónde estaba.",
+          "voice_spoken_text": "El simulador halló un puerto espacial cercano. Mika puso rumbo al aterrizaje: quizá allí sabría dónde estaba.",
+          "render_lines": [
+            "El simulador halló un puerto espacial cercano.",
+            "Mika puso rumbo al aterrizaje:",
+            "quizá allí sabría dónde estaba."
+          ],
+          "font_size_px": 32,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] El simulador halló un puerto espacial cercano. Mika puso rumbo al aterrizaje: quizá allí sabría dónde estaba."
+        },
+        "fr": {
+          "display_text": "Le simulateur repéra le spatioport le plus proche. Mika mit le cap sur la piste : peut-être y apprendrait-il où il était.",
+          "voice_spoken_text": "Le simulateur repéra le spatioport le plus proche. Mika mit le cap sur la piste : peut-être y apprendrait-il où il était.",
+          "render_lines": [
+            "Le simulateur repéra le spatioport le plus proche.",
+            "Mika mit le cap sur la piste :",
+            "peut-être y apprendrait-il où il était."
+          ],
+          "font_size_px": 32,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Le simulateur repéra le spatioport le plus proche. Mika mit le cap sur la piste : peut-être y apprendrait-il où il était."
+        },
+        "de": {
+          "display_text": "Der Simulator fand den nächsten Raumhafen. Mika nahm Kurs auf die Landung: Dort hoffte er zu erfahren, wo er war.",
+          "voice_spoken_text": "Der Simulator fand den nächsten Raumhafen. Mika nahm Kurs auf die Landung: Dort hoffte er zu erfahren, wo er war.",
+          "render_lines": [
+            "Der Simulator fand den nächsten Raumhafen.",
+            "Mika nahm Kurs auf die Landung:",
+            "Dort hoffte er zu erfahren, wo er war."
+          ],
+          "font_size_px": 33,
+          "line_height_px": 50,
+          "edit_source_svg": "overlays/CH01_P02_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Der Simulator fand den nächsten Raumhafen. Mika nahm Kurs auf die Landung: Dort hoffte er zu erfahren, wo er war."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P02_L006",
+      "frame_id": "CH01_P02_F05",
+      "speaker_id": "CHR_001",
+      "kind": "thought",
+      "bubble_id": "thought_lilac",
+      "bubble_box_px": [
+        1608,
+        2192,
+        699,
+        384
+      ],
+      "speaker_anchor_px": [
+        2036,
+        2567
+      ],
+      "performance": {
+        "tone_ru": "Лёгкая растерянность, смешанная с любопытством",
+        "emotion": "curious_uncertainty",
+        "intensity": 0.4,
+        "pace": "soft",
+        "volume": "soft",
+        "pause_after_ms": 750,
+        "arc_ru": "Это внутренняя мысль: сказать негромко, с паузой после «Хм», почти шёпотом; озвучивать только при утверждении полного чтения.",
+        "tts_tags_en": "[thoughtful]",
+        "voice_optional": true
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Хм… И куда же мне теперь идти?",
+          "voice_spoken_text": "Хм… И куда же мне теперь идти?",
+          "render_lines": [
+            "Хм… И куда же",
+            "мне теперь идти?"
+          ],
+          "font_size_px": 39,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P02_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Хм… И куда же мне теперь идти?"
+        },
+        "en": {
+          "display_text": "Hmm… Where should I go now?",
+          "voice_spoken_text": "Hmm… Where should I go now?",
+          "render_lines": [
+            "Hmm… Where should",
+            "I go now?"
+          ],
+          "font_size_px": 39,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P02_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Hmm… Where should I go now?"
+        },
+        "pt_BR": {
+          "display_text": "Hum… Para onde eu vou agora?",
+          "voice_spoken_text": "Hum… Para onde eu vou agora?",
+          "render_lines": [
+            "Hum… Para onde",
+            "eu vou agora?"
+          ],
+          "font_size_px": 39,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P02_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Hum… Para onde eu vou agora?"
+        },
+        "es": {
+          "display_text": "Mmm… ¿Y ahora adónde voy?",
+          "voice_spoken_text": "Mmm… ¿Y ahora adónde voy?",
+          "render_lines": [
+            "Mmm… ¿Y ahora",
+            "adónde voy?"
+          ],
+          "font_size_px": 39,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P02_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Mmm… ¿Y ahora adónde voy?"
+        },
+        "fr": {
+          "display_text": "Hmm… Et maintenant, où dois-je aller ?",
+          "voice_spoken_text": "Hmm… Et maintenant, où dois-je aller ?",
+          "render_lines": [
+            "Hmm… Et maintenant,",
+            "où dois-je aller ?"
+          ],
+          "font_size_px": 37,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P02_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Hmm… Et maintenant, où dois-je aller ?"
+        },
+        "de": {
+          "display_text": "Hm… Wohin soll ich jetzt gehen?",
+          "voice_spoken_text": "Hm… Wohin soll ich jetzt gehen?",
+          "render_lines": [
+            "Hm… Wohin soll",
+            "ich jetzt gehen?"
+          ],
+          "font_size_px": 39,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P02_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[thoughtful] Hm… Wohin soll ich jetzt gehen?"
+        }
+      }
+    }
+  ]
+}

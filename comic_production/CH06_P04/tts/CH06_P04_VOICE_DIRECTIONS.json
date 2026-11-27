@@ -1,0 +1,19 @@
+{
+  "status": "TEXTS_READY_NO_AUDIO",
+  "actors": {
+    "CHR_038": "Neural narrator, separate from author; exclamation L004 too",
+    "CHR_001": "Mika, one question",
+    "CHR_004": "Story author for scene descriptions"
+  },
+  "actor_count": 3,
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "tts_takes_added": 18,
+  "no_extra_takes_for_display_segments": true
+}

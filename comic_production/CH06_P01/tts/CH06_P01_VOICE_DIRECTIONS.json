@@ -1,0 +1,21 @@
+{
+  "voice_model": "ElevenLabs Creator; model and actual voice ID to be confirmed when recording",
+  "generation_status": "NOT_GENERATED",
+  "directions": {
+    "CHR_004": "Narrator: warm wonder, steady quiet anticipation, friendly narrative distance; make space and neural world feel unfamiliar, not frightening.",
+    "CHR_035": "Magnetic companion: concise, certain, friendly pointing of direction; same canonical voice, no robotic monotone."
+  },
+  "line_ids": [
+    "CH06_P01_L001",
+    "CH06_P01_L002",
+    "CH06_P01_L003",
+    "CH06_P01_L004",
+    "CH06_P01_L005",
+    "CH06_P01_L006",
+    "CH06_P01_L007"
+  ],
+  "voice_slots_preserved": true,
+  "no_new_voices": true,
+  "visual_sfx_only": 3,
+  "notes": "Read only the seven spoken lines. Never read SVG SFX glyphs/ids. Narrator and companion remain different characters. Keep one stable voice per character/language."
+}

@@ -1,0 +1,276 @@
+{
+  "schema_version": 3,
+  "page_id": "CH03_P02",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch03_p02_languages/ch03_p02_ru.webp",
+  "native_scene_panels": [
+    "p32_cela_temple",
+    "p32_cela_cave",
+    "p32_cela_crystals",
+    "p32_mika_surprised",
+    "p32_professor_calls",
+    "p32_lotus_route"
+  ],
+  "panel_bounds": {
+    "p32_cela_temple": [
+      0.031,
+      0.032,
+      0.936,
+      0.269
+    ],
+    "p32_cela_cave": [
+      0.031,
+      0.327,
+      0.441,
+      0.174
+    ],
+    "p32_cela_crystals": [
+      0.514,
+      0.324,
+      0.452,
+      0.176
+    ],
+    "p32_mika_surprised": [
+      0.031,
+      0.519,
+      0.44,
+      0.189
+    ],
+    "p32_professor_calls": [
+      0.52,
+      0.515,
+      0.448,
+      0.19
+    ],
+    "p32_lotus_route": [
+      0.031,
+      0.729,
+      0.937,
+      0.237
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH03_P02_L001",
+      "frame_id": "CH03_P02_F01",
+      "panel_id": "p32_cela_temple",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Корабль Мики достиг Целы — планеты древних пещер и загадочных кристаллов.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P02_L001_ru.mp3",
+      "audio_duration_s": 5.564,
+      "camera_target": [
+        0.34,
+        0.169,
+        0.263
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9a8c3ac75970a0aebfa65f6a5ee26a51364c2a02862fa084a8f9663a302a4511"
+    },
+    {
+      "line_id": "CH03_P02_L002",
+      "frame_id": "CH03_P02_F01",
+      "panel_id": "p32_cela_temple",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Что это за пещеры?",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P02_L002_ru.mp3",
+      "audio_duration_s": 1.881,
+      "camera_target": [
+        0.674,
+        0.226,
+        0.155
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8c99a01942a05a05ca26610a1c449e2ecf227fea8d0e67a18a0d47b006ffa1e6"
+    },
+    {
+      "line_id": "CH03_P02_L003",
+      "frame_id": "CH03_P02_F01",
+      "panel_id": "p32_cela_temple",
+      "speaker_id": "CHR_025",
+      "kind": "dialogue",
+      "spoken_text": "Это древние сооружения фазовой цивилизации. Пойдём, покажу!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P02_L003_ru.mp3",
+      "audio_duration_s": 4.362,
+      "camera_target": [
+        0.81,
+        0.225,
+        0.157
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "0baa83d7305b205ae5f543ec69ebd9947c7a2efa1c872637504d959349f5a61b"
+    },
+    {
+      "line_id": "CH03_P02_L004",
+      "frame_id": "CH03_P02_F02",
+      "panel_id": "p32_cela_cave",
+      "speaker_id": "CHR_025",
+      "kind": "dialogue",
+      "spoken_text": "Смотри! Древние рисунки и надписи. Может, найдёшь подсказку!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P02_L004_ru.mp3",
+      "audio_duration_s": 4.676,
+      "camera_target": [
+        0.214,
+        0.399,
+        0.174
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "0c32de06100ab3caf4f159b17acedfe4f0f357ea8a3e29845dbb46ed6ff3a218"
+    },
+    {
+      "line_id": "CH03_P02_L005",
+      "frame_id": "CH03_P02_F02",
+      "panel_id": "p32_cela_cave",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Что это?..",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P02_L005_ru.mp3",
+      "audio_duration_s": 1.411,
+      "camera_target": [
+        0.318,
+        0.438,
+        0.144
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a384d0cd822a750cf9a317b9585374374dfa6436b639243a28438be7fcf815cf"
+    },
+    {
+      "line_id": "CH03_P02_L006",
+      "frame_id": "CH03_P02_F03",
+      "panel_id": "p32_cela_crystals",
+      "speaker_id": "CHR_025",
+      "kind": "dialogue",
+      "spoken_text": "А я пока займусь кристаллами!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P02_L006_ru.mp3",
+      "audio_duration_s": 2.508,
+      "camera_target": [
+        0.727,
+        0.407,
+        0.175
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "164b889a475bacca8a277838add28c8121afeb73acd8e291024059ff5b0b2c7c"
+    },
+    {
+      "line_id": "CH03_P02_L007",
+      "frame_id": "CH03_P02_F04",
+      "panel_id": "p32_mika_surprised",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "СТОЙ!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P02_L007_ru.mp3",
+      "audio_duration_s": 1.071,
+      "camera_target": [
+        0.235,
+        0.613,
+        0.187
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "356e57995ecf82ee3768cc859bbc3b34248f84f0b6072c348ed6dbfa4037f5f5"
+    },
+    {
+      "line_id": "CH03_P02_L008",
+      "frame_id": "CH03_P02_F04",
+      "panel_id": "p32_mika_surprised",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "НЕ НАДО!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P02_L008_ru.mp3",
+      "audio_duration_s": 1.149,
+      "camera_target": [
+        0.235,
+        0.613,
+        0.187
+      ],
+      "transition_before_s": 0,
+      "transition_style": "hold",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b4dd98ed81eb8260e37273d32888ba846c85eabd82f2558e27d5dc966ec879dd"
+    },
+    {
+      "line_id": "CH03_P02_L009",
+      "frame_id": "CH03_P02_F05",
+      "panel_id": "p32_professor_calls",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Услышав крик Мики, профессор сразу послал сигнал тревоги на Окею.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P02_L009_ru.mp3",
+      "audio_duration_s": 4.519,
+      "camera_target": [
+        0.762,
+        0.601,
+        0.188
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "3ab6358aa6425d811c324b88375adf37e63c8148f173a055729757eec2339d49"
+    },
+    {
+      "line_id": "CH03_P02_L010",
+      "frame_id": "CH03_P02_F06",
+      "panel_id": "p32_lotus_route",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "С Океи немедленно вылетел отряд кораблей.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P02_L010_ru.mp3",
+      "audio_duration_s": 3.239,
+      "camera_target": [
+        0.445,
+        0.847,
+        0.234
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7d363fb7d142fb7d87f429de1c5edd122afc4e4151ab52657e7171d088000341"
+    }
+  ],
+  "display_only": []
+}

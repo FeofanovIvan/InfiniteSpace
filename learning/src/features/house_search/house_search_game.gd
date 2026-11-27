@@ -1,7 +1,12 @@
 extends Node
 
+signal story_fossils_completed
+
 const DESIGN_SIZE := Vector2(1536.0, 864.0)
 const TARGET_COUNT := 5
+# Outside Story this stays the native five-fossil round. Set to three only
+# before _ready() when opened from the Archeon teaching Planet Hub.
+var story_required_fossils: int = 0
 const ROUND_ITEM_COUNT := 10
 const NON_KITCHEN_COUNT := 6
 const DOOR_X := 768.0
@@ -174,6 +179,9 @@ var closed_door_texture: Texture2D = preload("res://learning/assets/house_search
 var open_door_texture: Texture2D = preload("res://learning/assets/house_search/door_open.png")
 var item_visual_size_cache := {}
 
+func _required_fossils() -> int:
+	return clampi(story_required_fossils, 1, TARGET_COUNT) if story_required_fossils > 0 else TARGET_COUNT
+
 
 func _ready() -> void:
 	if OS.is_debug_build() and OS.get_cmdline_user_args().has("--house-spawn-self-test"):
@@ -266,6 +274,8 @@ func _process(_delta: float) -> void:
 	use_control.visible = not transitioning and not round_completed
 
 func _unhandled_input(event: InputEvent) -> void:
+	if story_required_fossils > 0:
+		return
 	if event.is_action_pressed("ui_cancel"):
 		_exit_to_city()
 	elif event is InputEventKey and event.pressed and (event.keycode == KEY_E or event.keycode == KEY_SPACE):
@@ -399,7 +409,7 @@ func _create_goal_ui() -> void:
 	found_strip.position = Vector2(178, 54)
 	found_strip.add_theme_constant_override("separation", 10)
 	ui_root.add_child(found_strip)
-	for index in range(TARGET_COUNT):
+	for index in range(_required_fossils()):
 		var slot := TextureRect.new()
 		slot.custom_minimum_size = Vector2(68, 68)
 		slot.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -613,7 +623,7 @@ func _start_round() -> void:
 		push_error("House search expected %d items, spawned %d" % [ROUND_ITEM_COUNT, spawned_items.size()])
 	target_queue.assign(spawned_items)
 	target_queue.shuffle()
-	while target_queue.size() > TARGET_COUNT:
+	while target_queue.size() > _required_fossils():
 		target_queue.pop_back()
 	_show_next_target()
 	_create_debug_spawn_markers()
@@ -888,7 +898,7 @@ func _try_collect(item: HouseSearchItem) -> void:
 	SFX.play_2d(CORRECT_SOUND, player.global_position, -4.0)
 	if found_voice:
 		SFX.play_voice_2d(found_voice, player.global_position, 1.0)
-	if score >= TARGET_COUNT:
+	if score >= _required_fossils():
 		round_completed = true
 		goal_icon.texture_normal = null
 		player.clear_touch_direction()
@@ -900,7 +910,10 @@ func _try_collect(item: HouseSearchItem) -> void:
 		SFX.play_praise(player.global_position, 0.0)
 		await get_tree().create_timer(0.8).timeout
 		if is_inside_tree():
-			SFX.transition_to_scene(GameState.main_scene_path)
+			if story_required_fossils > 0:
+				story_fossils_completed.emit()
+			else:
+				SFX.transition_to_scene(GameState.main_scene_path)
 		return
 	player.input_enabled = true
 	transitioning = false
@@ -972,6 +985,8 @@ func _change_floor() -> void:
 	transitioning = false
 
 func _exit_to_city() -> void:
+	if story_required_fossils > 0:
+		return
 	if transitioning:
 		return
 	if is_instance_valid(_host_back):

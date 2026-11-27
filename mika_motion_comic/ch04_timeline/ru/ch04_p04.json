@@ -1,0 +1,180 @@
+{
+  "schema_version": 3,
+  "page_id": "CH04_P04",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch04_p04_languages/ch04_p04_ru.webp",
+  "native_scene_panels": [
+    "p44_professor_studies_fossil",
+    "p44_professor_realization",
+    "p44_dinosaur_dna",
+    "p44_ancient_dinosaurs",
+    "p44_ancient_meteorite"
+  ],
+  "panel_bounds": {
+    "p44_professor_studies_fossil": [
+      0.024,
+      0.018,
+      0.952,
+      0.305
+    ],
+    "p44_professor_realization": [
+      0.024,
+      0.337,
+      0.395,
+      0.17
+    ],
+    "p44_dinosaur_dna": [
+      0.44,
+      0.333,
+      0.535,
+      0.174
+    ],
+    "p44_ancient_dinosaurs": [
+      0.024,
+      0.523,
+      0.952,
+      0.262
+    ],
+    "p44_ancient_meteorite": [
+      0.024,
+      0.797,
+      0.952,
+      0.191
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH04_P04_L001",
+      "frame_id": "CH04_P04_F01",
+      "panel_id": "p44_professor_studies_fossil",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Во время полёта профессор решил изучить образцы, полученные на Археоне.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P04_L001_ru.mp3",
+      "audio_duration_s": 5.068,
+      "camera_target": [
+        0.43,
+        0.17,
+        0.29
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "971bcd6c07aa40b9813db748df592fa7086766353db9693c987893d73b48e903"
+    },
+    {
+      "line_id": "CH04_P04_L002",
+      "frame_id": "CH04_P04_F01",
+      "panel_id": "p44_professor_studies_fossil",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Что там?",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P04_L002_ru.mp3",
+      "audio_duration_s": 1.071,
+      "camera_target": [
+        0.245,
+        0.198,
+        0.225
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2d91fd9410be5e81c98fafdc06cfb1ce5ba1c4915c8c829d0d9dd2267444cf78"
+    },
+    {
+      "line_id": "CH04_P04_L003",
+      "frame_id": "CH04_P04_F02",
+      "panel_id": "p44_professor_realization",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Кажется, я знаю, откуда они!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P04_L003_ru.mp3",
+      "audio_duration_s": 2.351,
+      "camera_target": [
+        0.216,
+        0.435,
+        0.155
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f1768148b44b6d6247fb28ac61187aae86a6a706c53ab4dea7485379dcb6d338"
+    },
+    {
+      "line_id": "CH04_P04_L004",
+      "frame_id": "CH04_P04_F03",
+      "panel_id": "p44_dinosaur_dna",
+      "speaker_id": "CHR_015",
+      "kind": "science_explanation",
+      "spoken_text": "Их ДНК удивительно похожа на ДНК древних земных рептилий!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P04_L004_ru.mp3",
+      "audio_duration_s": 4.989,
+      "camera_target": [
+        0.71,
+        0.419,
+        0.166
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e0f694e44c0998edb1d4c07ab2d170f0fa228feb41cca92fae7f07943302b96f"
+    },
+    {
+      "line_id": "CH04_P04_L005",
+      "frame_id": "CH04_P04_F04",
+      "panel_id": "p44_ancient_dinosaurs",
+      "speaker_id": "CHR_015",
+      "kind": "flashback_explanation",
+      "spoken_text": "65–70 миллионов лет назад Землю населяли гигантские ящероподобные существа — динозавры.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P04_L005_ru.mp3",
+      "audio_duration_s": 8.829,
+      "camera_target": [
+        0.42,
+        0.653,
+        0.255
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a4a4c5cf58bdc9471aa01e4fededbc4528bad14c05d8633cc15f5130c86d3abe"
+    },
+    {
+      "line_id": "CH04_P04_L006",
+      "frame_id": "CH04_P04_F05",
+      "panel_id": "p44_ancient_meteorite",
+      "speaker_id": "CHR_015",
+      "kind": "flashback_explanation",
+      "spoken_text": "Но около 66 миллионов лет назад удар огромного астероида изменил всё. Большинство динозавров исчезло, и открылись новые пути эволюции млекопитающих, а позднее — человека.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P04_L006_ru.mp3",
+      "audio_duration_s": 14.106,
+      "camera_target": [
+        0.48,
+        0.894,
+        0.185
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b340a2c985f75d7a32bf9670808fe571a147fcd026a7bc40a3b9e0b603fdf493"
+    }
+  ]
+}

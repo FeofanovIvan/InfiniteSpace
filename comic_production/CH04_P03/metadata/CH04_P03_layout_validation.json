@@ -1,0 +1,600 @@
+{
+  "en": [
+    {
+      "id": "CH04_P03_L001",
+      "lines": 4,
+      "font_px": 32,
+      "max_line_px": 656.8,
+      "available_width_px": 666.0,
+      "bottom_px": 304.5,
+      "bounding_bottom_px": 349
+    },
+    {
+      "id": "CH04_P03_L002",
+      "lines": 1,
+      "font_px": 35,
+      "max_line_px": 339.9,
+      "available_width_px": 342.0,
+      "bottom_px": 811.9,
+      "bounding_bottom_px": 866
+    },
+    {
+      "id": "CH04_P03_L003",
+      "lines": 3,
+      "font_px": 39,
+      "max_line_px": 772.9,
+      "available_width_px": 794.0,
+      "bottom_px": 881.4,
+      "bounding_bottom_px": 906
+    },
+    {
+      "id": "CH04_P03_L004",
+      "lines": 2,
+      "font_px": 37,
+      "max_line_px": 984.0,
+      "available_width_px": 1032.0,
+      "bottom_px": 1775.9,
+      "bounding_bottom_px": 1804
+    },
+    {
+      "id": "CH04_P03_L005",
+      "lines": 2,
+      "font_px": 34,
+      "max_line_px": 317.8,
+      "available_width_px": 382.0,
+      "bottom_px": 1255.3,
+      "bounding_bottom_px": 1319
+    },
+    {
+      "id": "CH04_P03_L006",
+      "lines": 2,
+      "font_px": 34,
+      "max_line_px": 373.4,
+      "available_width_px": 387.0,
+      "bottom_px": 1604.3,
+      "bounding_bottom_px": 1669
+    },
+    {
+      "id": "CH04_P03_L007",
+      "lines": 2,
+      "font_px": 33,
+      "max_line_px": 862.5,
+      "available_width_px": 992.0,
+      "bottom_px": 1129.9,
+      "bounding_bottom_px": 1152
+    },
+    {
+      "id": "CH04_P03_L008",
+      "lines": 4,
+      "font_px": 39,
+      "max_line_px": 1093.8,
+      "available_width_px": 1107.0,
+      "bottom_px": 2143.0,
+      "bounding_bottom_px": 2166
+    },
+    {
+      "id": "CH04_P03_L009",
+      "lines": 1,
+      "font_px": 31,
+      "max_line_px": 994.9,
+      "available_width_px": 1003.0,
+      "bottom_px": 3354.6,
+      "bounding_bottom_px": 3399
+    },
+    {
+      "id": "CH04_P03_L010",
+      "lines": 3,
+      "font_px": 37,
+      "max_line_px": 714.8,
+      "available_width_px": 764.0,
+      "bottom_px": 2948.5,
+      "bounding_bottom_px": 2973
+    }
+  ],
+  "pt_BR": [
+    {
+      "id": "CH04_P03_L001",
+      "lines": 4,
+      "font_px": 30,
+      "max_line_px": 657.7,
+      "available_width_px": 666.0,
+      "bottom_px": 292.2,
+      "bounding_bottom_px": 349
+    },
+    {
+      "id": "CH04_P03_L002",
+      "lines": 1,
+      "font_px": 33,
+      "max_line_px": 336.5,
+      "available_width_px": 342.0,
+      "bottom_px": 807.9,
+      "bounding_bottom_px": 866
+    },
+    {
+      "id": "CH04_P03_L003",
+      "lines": 3,
+      "font_px": 37,
+      "max_line_px": 774.7,
+      "available_width_px": 794.0,
+      "bottom_px": 872.9,
+      "bounding_bottom_px": 906
+    },
+    {
+      "id": "CH04_P03_L004",
+      "lines": 2,
+      "font_px": 37,
+      "max_line_px": 1014.5,
+      "available_width_px": 1032.0,
+      "bottom_px": 1775.9,
+      "bounding_bottom_px": 1804
+    },
+    {
+      "id": "CH04_P03_L005",
+      "lines": 3,
+      "font_px": 34,
+      "max_line_px": 358.8,
+      "available_width_px": 382.0,
+      "bottom_px": 1296.8,
+      "bounding_bottom_px": 1319
+    },
+    {
+      "id": "CH04_P03_L006",
+      "lines": 3,
+      "font_px": 34,
+      "max_line_px": 360.4,
+      "available_width_px": 387.0,
+      "bottom_px": 1645.8,
+      "bounding_bottom_px": 1669
+    },
+    {
+      "id": "CH04_P03_L007",
+      "lines": 2,
+      "font_px": 33,
+      "max_line_px": 984.9,
+      "available_width_px": 992.0,
+      "bottom_px": 1129.9,
+      "bounding_bottom_px": 1152
+    },
+    {
+      "id": "CH04_P03_L008",
+      "lines": 4,
+      "font_px": 39,
+      "max_line_px": 1078.5,
+      "available_width_px": 1107.0,
+      "bottom_px": 2143.0,
+      "bounding_bottom_px": 2166
+    },
+    {
+      "id": "CH04_P03_L009",
+      "lines": 1,
+      "font_px": 33,
+      "max_line_px": 976.9,
+      "available_width_px": 1003.0,
+      "bottom_px": 3359.0,
+      "bounding_bottom_px": 3399
+    },
+    {
+      "id": "CH04_P03_L010",
+      "lines": 3,
+      "font_px": 37,
+      "max_line_px": 679.2,
+      "available_width_px": 764.0,
+      "bottom_px": 2948.5,
+      "bounding_bottom_px": 2973
+    }
+  ],
+  "es": [
+    {
+      "id": "CH04_P03_L001",
+      "lines": 4,
+      "font_px": 32,
+      "max_line_px": 655.5,
+      "available_width_px": 666.0,
+      "bottom_px": 304.5,
+      "bounding_bottom_px": 349
+    },
+    {
+      "id": "CH04_P03_L002",
+      "lines": 1,
+      "font_px": 35,
+      "max_line_px": 333.5,
+      "available_width_px": 342.0,
+      "bottom_px": 811.9,
+      "bounding_bottom_px": 866
+    },
+    {
+      "id": "CH04_P03_L003",
+      "lines": 3,
+      "font_px": 39,
+      "max_line_px": 768.7,
+      "available_width_px": 794.0,
+      "bottom_px": 881.4,
+      "bounding_bottom_px": 906
+    },
+    {
+      "id": "CH04_P03_L004",
+      "lines": 2,
+      "font_px": 37,
+      "max_line_px": 967.9,
+      "available_width_px": 1032.0,
+      "bottom_px": 1775.9,
+      "bounding_bottom_px": 1804
+    },
+    {
+      "id": "CH04_P03_L005",
+      "lines": 3,
+      "font_px": 34,
+      "max_line_px": 323.8,
+      "available_width_px": 382.0,
+      "bottom_px": 1296.8,
+      "bounding_bottom_px": 1319
+    },
+    {
+      "id": "CH04_P03_L006",
+      "lines": 3,
+      "font_px": 34,
+      "max_line_px": 362.9,
+      "available_width_px": 387.0,
+      "bottom_px": 1645.8,
+      "bounding_bottom_px": 1669
+    },
+    {
+      "id": "CH04_P03_L007",
+      "lines": 2,
+      "font_px": 33,
+      "max_line_px": 937.5,
+      "available_width_px": 992.0,
+      "bottom_px": 1129.9,
+      "bounding_bottom_px": 1152
+    },
+    {
+      "id": "CH04_P03_L008",
+      "lines": 4,
+      "font_px": 39,
+      "max_line_px": 1087.4,
+      "available_width_px": 1107.0,
+      "bottom_px": 2143.0,
+      "bounding_bottom_px": 2166
+    },
+    {
+      "id": "CH04_P03_L009",
+      "lines": 1,
+      "font_px": 33,
+      "max_line_px": 978.2,
+      "available_width_px": 1003.0,
+      "bottom_px": 3359.0,
+      "bounding_bottom_px": 3399
+    },
+    {
+      "id": "CH04_P03_L010",
+      "lines": 3,
+      "font_px": 37,
+      "max_line_px": 752.8,
+      "available_width_px": 764.0,
+      "bottom_px": 2948.5,
+      "bounding_bottom_px": 2973
+    }
+  ],
+  "fr": [
+    {
+      "id": "CH04_P03_L001",
+      "lines": 4,
+      "font_px": 31,
+      "max_line_px": 661.7,
+      "available_width_px": 666.0,
+      "bottom_px": 298.4,
+      "bounding_bottom_px": 349
+    },
+    {
+      "id": "CH04_P03_L002",
+      "lines": 1,
+      "font_px": 42,
+      "max_line_px": 338.8,
+      "available_width_px": 342.0,
+      "bottom_px": 825.8,
+      "bounding_bottom_px": 866
+    },
+    {
+      "id": "CH04_P03_L003",
+      "lines": 3,
+      "font_px": 39,
+      "max_line_px": 743.7,
+      "available_width_px": 794.0,
+      "bottom_px": 881.4,
+      "bounding_bottom_px": 906
+    },
+    {
+      "id": "CH04_P03_L004",
+      "lines": 2,
+      "font_px": 37,
+      "max_line_px": 970.4,
+      "available_width_px": 1032.0,
+      "bottom_px": 1775.9,
+      "bounding_bottom_px": 1804
+    },
+    {
+      "id": "CH04_P03_L005",
+      "lines": 2,
+      "font_px": 34,
+      "max_line_px": 335.3,
+      "available_width_px": 382.0,
+      "bottom_px": 1255.3,
+      "bounding_bottom_px": 1319
+    },
+    {
+      "id": "CH04_P03_L006",
+      "lines": 3,
+      "font_px": 34,
+      "max_line_px": 380.8,
+      "available_width_px": 387.0,
+      "bottom_px": 1645.8,
+      "bounding_bottom_px": 1669
+    },
+    {
+      "id": "CH04_P03_L007",
+      "lines": 2,
+      "font_px": 33,
+      "max_line_px": 831.4,
+      "available_width_px": 992.0,
+      "bottom_px": 1129.9,
+      "bounding_bottom_px": 1152
+    },
+    {
+      "id": "CH04_P03_L008",
+      "lines": 4,
+      "font_px": 39,
+      "max_line_px": 1086.1,
+      "available_width_px": 1107.0,
+      "bottom_px": 2143.0,
+      "bounding_bottom_px": 2166
+    },
+    {
+      "id": "CH04_P03_L009",
+      "lines": 1,
+      "font_px": 29,
+      "max_line_px": 996.6,
+      "available_width_px": 1003.0,
+      "bottom_px": 3350.2,
+      "bounding_bottom_px": 3399
+    },
+    {
+      "id": "CH04_P03_L010",
+      "lines": 3,
+      "font_px": 37,
+      "max_line_px": 714.0,
+      "available_width_px": 764.0,
+      "bottom_px": 2948.5,
+      "bounding_bottom_px": 2973
+    }
+  ],
+  "de": [
+    {
+      "id": "CH04_P03_L001",
+      "lines": 5,
+      "font_px": 30,
+      "max_line_px": 663.4,
+      "available_width_px": 666.0,
+      "bottom_px": 328.8,
+      "bounding_bottom_px": 349
+    },
+    {
+      "id": "CH04_P03_L002",
+      "lines": 2,
+      "font_px": 32,
+      "max_line_px": 319.0,
+      "available_width_px": 342.0,
+      "bottom_px": 844.9,
+      "bounding_bottom_px": 866
+    },
+    {
+      "id": "CH04_P03_L003",
+      "lines": 3,
+      "font_px": 39,
+      "max_line_px": 724.2,
+      "available_width_px": 794.0,
+      "bottom_px": 881.4,
+      "bounding_bottom_px": 906
+    },
+    {
+      "id": "CH04_P03_L004",
+      "lines": 2,
+      "font_px": 37,
+      "max_line_px": 979.9,
+      "available_width_px": 1032.0,
+      "bottom_px": 1775.9,
+      "bounding_bottom_px": 1804
+    },
+    {
+      "id": "CH04_P03_L005",
+      "lines": 2,
+      "font_px": 34,
+      "max_line_px": 359.2,
+      "available_width_px": 382.0,
+      "bottom_px": 1255.3,
+      "bounding_bottom_px": 1319
+    },
+    {
+      "id": "CH04_P03_L006",
+      "lines": 3,
+      "font_px": 34,
+      "max_line_px": 382.0,
+      "available_width_px": 387.0,
+      "bottom_px": 1645.8,
+      "bounding_bottom_px": 1669
+    },
+    {
+      "id": "CH04_P03_L007",
+      "lines": 2,
+      "font_px": 33,
+      "max_line_px": 946.4,
+      "available_width_px": 992.0,
+      "bottom_px": 1129.9,
+      "bounding_bottom_px": 1152
+    },
+    {
+      "id": "CH04_P03_L008",
+      "lines": 4,
+      "font_px": 37,
+      "max_line_px": 1107.0,
+      "available_width_px": 1107.0,
+      "bottom_px": 2132.1,
+      "bounding_bottom_px": 2166
+    },
+    {
+      "id": "CH04_P03_L009",
+      "lines": 1,
+      "font_px": 34,
+      "max_line_px": 971.8,
+      "available_width_px": 1003.0,
+      "bottom_px": 3361.3,
+      "bounding_bottom_px": 3399
+    },
+    {
+      "id": "CH04_P03_L010",
+      "lines": 3,
+      "font_px": 37,
+      "max_line_px": 758.7,
+      "available_width_px": 764.0,
+      "bottom_px": 2948.5,
+      "bounding_bottom_px": 2973
+    }
+  ],
+  "ru": [
+    {
+      "id": "CH04_P03_L001",
+      "speaker": "Рассказчик",
+      "font_px": 32,
+      "lines": [
+        "Мика вкратце рассказал ящеру,",
+        "что случилось с его родной",
+        "планетой, и о совете марсианского",
+        "ИИ: искать ответы в прошлом."
+      ],
+      "widest_line_px": 655,
+      "available_width_px": 658,
+      "block_h_px": 242,
+      "text_total_h_px": 156
+    },
+    {
+      "id": "CH04_P03_L002",
+      "speaker": "Мика",
+      "font_px": 43,
+      "lines": [
+        "И вот мы тут!"
+      ],
+      "widest_line_px": 334,
+      "available_width_px": 334,
+      "block_h_px": 124,
+      "text_total_h_px": 53
+    },
+    {
+      "id": "CH04_P03_L003",
+      "speaker": "Ящер-пират",
+      "font_px": 39,
+      "lines": [
+        "Думаю, вам стоит отправиться на",
+        "Археон. Там ты узнаешь немного",
+        "больше о нашем прошлом."
+      ],
+      "widest_line_px": 762,
+      "available_width_px": 786,
+      "block_h_px": 187,
+      "text_total_h_px": 144
+    },
+    {
+      "id": "CH04_P03_L004",
+      "speaker": "Рассказчик",
+      "font_px": 37,
+      "lines": [
+        "Корабль Мики приземлился на Археоне,",
+        "неподалёку от археологического лагеря."
+      ],
+      "widest_line_px": 895,
+      "available_width_px": 1024,
+      "block_h_px": 141,
+      "text_total_h_px": 92
+    },
+    {
+      "id": "CH04_P03_L005",
+      "speaker": "Ящер-пират",
+      "font_px": 34,
+      "lines": [
+        "Уверен, ты",
+        "сможешь нам",
+        "помочь!"
+      ],
+      "widest_line_px": 272,
+      "available_width_px": 374,
+      "block_h_px": 164,
+      "text_total_h_px": 126
+    },
+    {
+      "id": "CH04_P03_L006",
+      "speaker": "Профессор-археолог",
+      "font_px": 34,
+      "lines": [
+        "Даже не знаю…",
+        "чем я могу вам",
+        "помочь."
+      ],
+      "widest_line_px": 314,
+      "available_width_px": 379,
+      "block_h_px": 166,
+      "text_total_h_px": 126
+    },
+    {
+      "id": "CH04_P03_L007",
+      "speaker": "Рассказчик",
+      "font_px": 33,
+      "lines": [
+        "Ящер отвёл Мику к своему знакомому —",
+        "профессору археологии."
+      ],
+      "widest_line_px": 783,
+      "available_width_px": 984,
+      "block_h_px": 120,
+      "text_total_h_px": 82
+    },
+    {
+      "id": "CH04_P03_L008",
+      "speaker": "Рассказчик",
+      "font_px": 39,
+      "lines": [
+        "Археолог предоставил друзьям образцы и",
+        "посоветовал найти своего коллегу в музее на",
+        "Руне. Возможно, тот знает больше и поможет",
+        "продолжить поиски."
+      ],
+      "widest_line_px": 1049,
+      "available_width_px": 1099,
+      "block_h_px": 231,
+      "text_total_h_px": 192
+    },
+    {
+      "id": "CH04_P03_L009",
+      "speaker": "Бортовая навигация",
+      "font_px": 34,
+      "lines": [
+        "НОВАЯ ЦЕЛЬ: РУНА — АРХЕОЛОГИЧЕСКИЙ МУЗЕЙ"
+      ],
+      "widest_line_px": 990,
+      "available_width_px": 995,
+      "block_h_px": 113,
+      "text_total_h_px": 42
+    },
+    {
+      "id": "CH04_P03_L010",
+      "speaker": "Рассказчик",
+      "font_px": 37,
+      "lines": [
+        "Цель была выбрана — и дружная",
+        "компания снова отправилась в",
+        "путь!"
+      ],
+      "widest_line_px": 725,
+      "available_width_px": 756,
+      "block_h_px": 178,
+      "text_total_h_px": 138
+    }
+  ]
+}

@@ -1,0 +1,811 @@
+{
+  "source_ru_unchanged": true,
+  "font_family": "DejaVu Sans",
+  "six_language_layouts": [
+    {
+      "language": "ru",
+      "line_id": "CH06_P01_L001",
+      "approved_ru_unchanged": true,
+      "font_size": 39,
+      "lines": [
+        "После того как",
+        "магнитный друг",
+        "открыл проход, Мика",
+        "направил корабль в",
+        "чёрное пространство."
+      ],
+      "box": [
+        490,
+        45,
+        618,
+        325
+      ]
+    },
+    {
+      "language": "ru",
+      "line_id": "CH06_P01_L002",
+      "approved_ru_unchanged": true,
+      "font_size": 49,
+      "lines": [
+        "Нам туда!"
+      ],
+      "box": [
+        1423,
+        482,
+        390,
+        150
+      ]
+    },
+    {
+      "language": "ru",
+      "line_id": "CH06_P01_L003",
+      "approved_ru_unchanged": true,
+      "font_size": 39,
+      "lines": [
+        "Корабль Мики влетел в",
+        "пространственный туннель."
+      ],
+      "box": [
+        68,
+        1009,
+        820,
+        174
+      ]
+    },
+    {
+      "language": "ru",
+      "line_id": "CH06_P01_L004",
+      "approved_ru_unchanged": true,
+      "font_size": 37,
+      "lines": [
+        "За туннелем их",
+        "ждала огромная",
+        "розовая планета."
+      ],
+      "box": [
+        1290,
+        1002,
+        540,
+        197
+      ]
+    },
+    {
+      "language": "ru",
+      "line_id": "CH06_P01_L005",
+      "approved_ru_unchanged": true,
+      "font_size": 36,
+      "lines": [
+        "Мир нейронных существ сильно отличался от",
+        "всего, что они видели раньше."
+      ],
+      "box": [
+        1245,
+        2498,
+        1137,
+        182
+      ]
+    },
+    {
+      "language": "ru",
+      "line_id": "CH06_P01_L006",
+      "approved_ru_unchanged": true,
+      "font_size": 32,
+      "lines": [
+        "Старые знакомые встретились спустя много лет. Мика",
+        "не понимал, о чём они говорили, но было ясно: они",
+        "рады друг другу."
+      ],
+      "box": [
+        53,
+        3253,
+        1103,
+        195
+      ]
+    },
+    {
+      "language": "ru",
+      "line_id": "CH06_P01_L007",
+      "approved_ru_unchanged": true,
+      "font_size": 33,
+      "lines": [
+        "Мика воспользовался их симулятором,",
+        "чтобы погрузиться в телепатический транс."
+      ],
+      "box": [
+        1290,
+        3290,
+        1080,
+        158
+      ]
+    },
+    {
+      "language": "en",
+      "line_id": "CH06_P01_L001",
+      "font_size": 39,
+      "lines": [
+        "After our magnetic",
+        "friend opened the",
+        "passage, Mika steered",
+        "the ship into the",
+        "darkness of space."
+      ],
+      "max_line_width": 496.1,
+      "allowed_width": 542,
+      "box": [
+        490,
+        45,
+        618,
+        325
+      ],
+      "margin_bottom": 56.5,
+      "fits": true
+    },
+    {
+      "language": "en",
+      "line_id": "CH06_P01_L002",
+      "font_size": 49,
+      "lines": [
+        "That way!"
+      ],
+      "max_line_width": 273.0,
+      "allowed_width": 338,
+      "box": [
+        1423,
+        482,
+        390,
+        150
+      ],
+      "margin_bottom": 58.5,
+      "fits": true
+    },
+    {
+      "language": "en",
+      "line_id": "CH06_P01_L003",
+      "font_size": 39,
+      "lines": [
+        "Mika’s ship shot into the tunnel",
+        "through space."
+      ],
+      "max_line_width": 700.3,
+      "allowed_width": 744,
+      "box": [
+        68,
+        1009,
+        820,
+        174
+      ],
+      "margin_bottom": 53.4,
+      "fits": true
+    },
+    {
+      "language": "en",
+      "line_id": "CH06_P01_L004",
+      "font_size": 37,
+      "lines": [
+        "Beyond the tunnel, an",
+        "enormous pink planet",
+        "awaited them."
+      ],
+      "max_line_width": 463.3,
+      "allowed_width": 464,
+      "box": [
+        1290,
+        1002,
+        540,
+        197
+      ],
+      "margin_bottom": 43.7,
+      "fits": true
+    },
+    {
+      "language": "en",
+      "line_id": "CH06_P01_L005",
+      "font_size": 36,
+      "lines": [
+        "The world of the neural beings was unlike anything",
+        "they had seen before."
+      ],
+      "max_line_width": 1044.0,
+      "allowed_width": 1061,
+      "box": [
+        1245,
+        2498,
+        1137,
+        182
+      ],
+      "margin_bottom": 59.9,
+      "fits": true
+    },
+    {
+      "language": "en",
+      "line_id": "CH06_P01_L006",
+      "font_size": 32,
+      "lines": [
+        "Old friends met again after many years. Mika couldn’t",
+        "understand what they were saying, but it was clear they",
+        "were happy to see each other."
+      ],
+      "max_line_width": 1022.9,
+      "allowed_width": 1027,
+      "box": [
+        53,
+        3253,
+        1103,
+        195
+      ],
+      "margin_bottom": 50.1,
+      "fits": true
+    },
+    {
+      "language": "en",
+      "line_id": "CH06_P01_L007",
+      "font_size": 33,
+      "lines": [
+        "Mika used their simulator to enter a telepathic",
+        "trance."
+      ],
+      "max_line_width": 873.2,
+      "allowed_width": 1004,
+      "box": [
+        1290,
+        3290,
+        1080,
+        158
+      ],
+      "margin_bottom": 51.1,
+      "fits": true
+    },
+    {
+      "language": "pt_BR",
+      "line_id": "CH06_P01_L001",
+      "font_size": 39,
+      "lines": [
+        "Depois que o amigo",
+        "magnético abriu a",
+        "passagem, Mika",
+        "conduziu a nave para a",
+        "escuridão do espaço."
+      ],
+      "max_line_width": 509.9,
+      "allowed_width": 542,
+      "box": [
+        490,
+        45,
+        618,
+        325
+      ],
+      "margin_bottom": 56.5,
+      "fits": true
+    },
+    {
+      "language": "pt_BR",
+      "line_id": "CH06_P01_L002",
+      "font_size": 49,
+      "lines": [
+        "É por ali!"
+      ],
+      "max_line_width": 249.5,
+      "allowed_width": 338,
+      "box": [
+        1423,
+        482,
+        390,
+        150
+      ],
+      "margin_bottom": 58.5,
+      "fits": true
+    },
+    {
+      "language": "pt_BR",
+      "line_id": "CH06_P01_L003",
+      "font_size": 39,
+      "lines": [
+        "A nave de Mika disparou para",
+        "dentro do túnel espacial."
+      ],
+      "max_line_width": 655.2,
+      "allowed_width": 744,
+      "box": [
+        68,
+        1009,
+        820,
+        174
+      ],
+      "margin_bottom": 53.4,
+      "fits": true
+    },
+    {
+      "language": "pt_BR",
+      "line_id": "CH06_P01_L004",
+      "font_size": 36,
+      "lines": [
+        "Do outro lado do",
+        "túnel, um imenso",
+        "planeta cor-de-rosa os",
+        "esperava."
+      ],
+      "max_line_width": 457.3,
+      "allowed_width": 464,
+      "box": [
+        1290,
+        1002,
+        540,
+        197
+      ],
+      "margin_bottom": 15.6,
+      "fits": true
+    },
+    {
+      "language": "pt_BR",
+      "line_id": "CH06_P01_L005",
+      "font_size": 36,
+      "lines": [
+        "O mundo dos seres neurais era diferente de tudo o",
+        "que já tinham visto."
+      ],
+      "max_line_width": 1037.8,
+      "allowed_width": 1061,
+      "box": [
+        1245,
+        2498,
+        1137,
+        182
+      ],
+      "margin_bottom": 59.9,
+      "fits": true
+    },
+    {
+      "language": "pt_BR",
+      "line_id": "CH06_P01_L006",
+      "font_size": 32,
+      "lines": [
+        "Depois de tantos anos, velhos amigos se",
+        "reencontraram. Mika não entendia o que diziam, mas",
+        "dava para ver que estavam felizes em se rever."
+      ],
+      "max_line_width": 964.9,
+      "allowed_width": 1027,
+      "box": [
+        53,
+        3253,
+        1103,
+        195
+      ],
+      "margin_bottom": 50.1,
+      "fits": true
+    },
+    {
+      "language": "pt_BR",
+      "line_id": "CH06_P01_L007",
+      "font_size": 33,
+      "lines": [
+        "Mika usou o simulador deles para entrar em um",
+        "transe telepático."
+      ],
+      "max_line_width": 892.1,
+      "allowed_width": 1004,
+      "box": [
+        1290,
+        3290,
+        1080,
+        158
+      ],
+      "margin_bottom": 51.1,
+      "fits": true
+    },
+    {
+      "language": "es",
+      "line_id": "CH06_P01_L001",
+      "font_size": 39,
+      "lines": [
+        "Cuando el amigo",
+        "magnético abrió el",
+        "paso, Mika dirigió la",
+        "nave hacia la oscuridad",
+        "del espacio."
+      ],
+      "max_line_width": 518.9,
+      "allowed_width": 542,
+      "box": [
+        490,
+        45,
+        618,
+        325
+      ],
+      "margin_bottom": 56.5,
+      "fits": true
+    },
+    {
+      "language": "es",
+      "line_id": "CH06_P01_L002",
+      "font_size": 49,
+      "lines": [
+        "¡Por ahí!"
+      ],
+      "max_line_width": 240.2,
+      "allowed_width": 338,
+      "box": [
+        1423,
+        482,
+        390,
+        150
+      ],
+      "margin_bottom": 58.5,
+      "fits": true
+    },
+    {
+      "language": "es",
+      "line_id": "CH06_P01_L003",
+      "font_size": 39,
+      "lines": [
+        "La nave de Mika se lanzó al túnel",
+        "espacial."
+      ],
+      "max_line_width": 731.3,
+      "allowed_width": 744,
+      "box": [
+        68,
+        1009,
+        820,
+        174
+      ],
+      "margin_bottom": 53.4,
+      "fits": true
+    },
+    {
+      "language": "es",
+      "line_id": "CH06_P01_L004",
+      "font_size": 37,
+      "lines": [
+        "Al otro lado del túnel",
+        "los esperaba un",
+        "enorme planeta rosa."
+      ],
+      "max_line_width": 447.5,
+      "allowed_width": 464,
+      "box": [
+        1290,
+        1002,
+        540,
+        197
+      ],
+      "margin_bottom": 43.7,
+      "fits": true
+    },
+    {
+      "language": "es",
+      "line_id": "CH06_P01_L005",
+      "font_size": 36,
+      "lines": [
+        "El mundo de los seres neuronales era muy distinto",
+        "de todo lo que habían visto antes."
+      ],
+      "max_line_width": 1030.6,
+      "allowed_width": 1061,
+      "box": [
+        1245,
+        2498,
+        1137,
+        182
+      ],
+      "margin_bottom": 59.9,
+      "fits": true
+    },
+    {
+      "language": "es",
+      "line_id": "CH06_P01_L006",
+      "font_size": 32,
+      "lines": [
+        "Viejos amigos se reencontraron después de muchos",
+        "años. Mika no entendía lo que decían, pero estaba claro",
+        "que se alegraban de verse."
+      ],
+      "max_line_width": 1013.2,
+      "allowed_width": 1027,
+      "box": [
+        53,
+        3253,
+        1103,
+        195
+      ],
+      "margin_bottom": 50.1,
+      "fits": true
+    },
+    {
+      "language": "es",
+      "line_id": "CH06_P01_L007",
+      "font_size": 33,
+      "lines": [
+        "Mika utilizó su simulador para sumergirse en un",
+        "trance telepático."
+      ],
+      "max_line_width": 898.7,
+      "allowed_width": 1004,
+      "box": [
+        1290,
+        3290,
+        1080,
+        158
+      ],
+      "margin_bottom": 51.1,
+      "fits": true
+    },
+    {
+      "language": "fr",
+      "line_id": "CH06_P01_L001",
+      "font_size": 39,
+      "lines": [
+        "Une fois le passage",
+        "ouvert par leur ami",
+        "magnétique, Mika",
+        "dirigea son vaisseau",
+        "vers les ténèbres de",
+        "l’espace."
+      ],
+      "max_line_width": 451.6,
+      "allowed_width": 542,
+      "box": [
+        490,
+        45,
+        618,
+        325
+      ],
+      "margin_bottom": 20.0,
+      "fits": true
+    },
+    {
+      "language": "fr",
+      "line_id": "CH06_P01_L002",
+      "font_size": 46,
+      "lines": [
+        "C’est par là !"
+      ],
+      "max_line_width": 336.0,
+      "allowed_width": 338,
+      "box": [
+        1423,
+        482,
+        390,
+        150
+      ],
+      "margin_bottom": 58.5,
+      "fits": true
+    },
+    {
+      "language": "fr",
+      "line_id": "CH06_P01_L003",
+      "font_size": 39,
+      "lines": [
+        "Le vaisseau de Mika s’engouffra",
+        "dans le tunnel spatial."
+      ],
+      "max_line_width": 708.4,
+      "allowed_width": 744,
+      "box": [
+        68,
+        1009,
+        820,
+        174
+      ],
+      "margin_bottom": 53.4,
+      "fits": true
+    },
+    {
+      "language": "fr",
+      "line_id": "CH06_P01_L004",
+      "font_size": 37,
+      "lines": [
+        "Au bout du tunnel,",
+        "une immense planète",
+        "rose les attendait."
+      ],
+      "max_line_width": 450.2,
+      "allowed_width": 464,
+      "box": [
+        1290,
+        1002,
+        540,
+        197
+      ],
+      "margin_bottom": 43.7,
+      "fits": true
+    },
+    {
+      "language": "fr",
+      "line_id": "CH06_P01_L005",
+      "font_size": 36,
+      "lines": [
+        "Le monde des êtres neuronaux ne ressemblait à",
+        "rien de ce qu’ils avaient vu auparavant."
+      ],
+      "max_line_width": 980.1,
+      "allowed_width": 1061,
+      "box": [
+        1245,
+        2498,
+        1137,
+        182
+      ],
+      "margin_bottom": 59.9,
+      "fits": true
+    },
+    {
+      "language": "fr",
+      "line_id": "CH06_P01_L006",
+      "font_size": 32,
+      "lines": [
+        "De vieux amis se retrouvaient après tant d’années. Mika",
+        "ne comprenait pas ce qu’ils se disaient, mais leur joie",
+        "de se revoir ne faisait aucun doute."
+      ],
+      "max_line_width": 1025.1,
+      "allowed_width": 1027,
+      "box": [
+        53,
+        3253,
+        1103,
+        195
+      ],
+      "margin_bottom": 50.1,
+      "fits": true
+    },
+    {
+      "language": "fr",
+      "line_id": "CH06_P01_L007",
+      "font_size": 33,
+      "lines": [
+        "Mika utilisa leur simulateur pour entrer dans une",
+        "transe télépathique."
+      ],
+      "max_line_width": 918.8,
+      "allowed_width": 1004,
+      "box": [
+        1290,
+        3290,
+        1080,
+        158
+      ],
+      "margin_bottom": 51.1,
+      "fits": true
+    },
+    {
+      "language": "de",
+      "line_id": "CH06_P01_L001",
+      "font_size": 39,
+      "lines": [
+        "Nachdem ihr",
+        "magnetischer Freund",
+        "den Durchgang geöffnet",
+        "hatte, steuerte Mika",
+        "das Raumschiff in die",
+        "Dunkelheit des Alls."
+      ],
+      "max_line_width": 535.1,
+      "allowed_width": 542,
+      "box": [
+        490,
+        45,
+        618,
+        325
+      ],
+      "margin_bottom": 20.0,
+      "fits": true
+    },
+    {
+      "language": "de",
+      "line_id": "CH06_P01_L002",
+      "font_size": 49,
+      "lines": [
+        "Da lang!"
+      ],
+      "max_line_width": 233.0,
+      "allowed_width": 338,
+      "box": [
+        1423,
+        482,
+        390,
+        150
+      ],
+      "margin_bottom": 58.5,
+      "fits": true
+    },
+    {
+      "language": "de",
+      "line_id": "CH06_P01_L003",
+      "font_size": 39,
+      "lines": [
+        "Mikas Raumschiff schoss in den",
+        "Raumtunnel."
+      ],
+      "max_line_width": 696.4,
+      "allowed_width": 744,
+      "box": [
+        68,
+        1009,
+        820,
+        174
+      ],
+      "margin_bottom": 53.4,
+      "fits": true
+    },
+    {
+      "language": "de",
+      "line_id": "CH06_P01_L004",
+      "font_size": 36,
+      "lines": [
+        "Hinter dem Tunnel",
+        "erwartete sie ein",
+        "riesiger rosafarbener",
+        "Planet."
+      ],
+      "max_line_width": 432.6,
+      "allowed_width": 464,
+      "box": [
+        1290,
+        1002,
+        540,
+        197
+      ],
+      "margin_bottom": 15.6,
+      "fits": true
+    },
+    {
+      "language": "de",
+      "line_id": "CH06_P01_L005",
+      "font_size": 36,
+      "lines": [
+        "Die Welt der Neuronenwesen war anders als alles,",
+        "was sie bisher gesehen hatten."
+      ],
+      "max_line_width": 1023.3,
+      "allowed_width": 1061,
+      "box": [
+        1245,
+        2498,
+        1137,
+        182
+      ],
+      "margin_bottom": 59.9,
+      "fits": true
+    },
+    {
+      "language": "de",
+      "line_id": "CH06_P01_L006",
+      "font_size": 32,
+      "lines": [
+        "Nach vielen Jahren trafen sich alte Freunde wieder. Mika",
+        "verstand nicht, was sie sagten, doch ihre Freude über",
+        "das Wiedersehen war deutlich."
+      ],
+      "max_line_width": 1020.6,
+      "allowed_width": 1027,
+      "box": [
+        53,
+        3253,
+        1103,
+        195
+      ],
+      "margin_bottom": 50.1,
+      "fits": true
+    },
+    {
+      "language": "de",
+      "line_id": "CH06_P01_L007",
+      "font_size": 33,
+      "lines": [
+        "Mika nutzte ihren Simulator, um in eine telepathische",
+        "Trance einzutauchen."
+      ],
+      "max_line_width": 1000.5,
+      "allowed_width": 1004,
+      "box": [
+        1290,
+        3290,
+        1080,
+        158
+      ],
+      "margin_bottom": 51.1,
+      "fits": true
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "ru": [
+    "Нарисуй мир Мики",
+    "Мы не можем показать физический мир Мики: законы физики нашего мира не позволяют нам его изобразить.\n\nНо ты можешь придумать, каким он будет, и нарисовать его так, как захочешь.",
+    "Дальше",
+    "Сохранить",
+    "Хочешь сохранить рисунок и весь комикс?",
+    "Да",
+    "Нет",
+    "В этом обновлении сохранение рисунка ещё недоступно."
+  ],
+  "en": [
+    "Draw Mika's world",
+    "We cannot show Mika's physical world: the laws of physics in our world do not allow us to depict it.\n\nBut you can imagine what it is like and draw it any way you want.",
+    "Next",
+    "Save",
+    "Would you like to save your drawing and the whole comic?",
+    "Yes",
+    "No",
+    "Saving drawings is not available in this update yet."
+  ],
+  "pt_BR": [
+    "Desenhe o mundo de Mika",
+    "Não podemos mostrar o mundo físico de Mika: as leis da física do nosso mundo não nos permitem representá-lo.\n\nMas você pode imaginar como ele é e desenhá-lo do jeito que quiser.",
+    "Avançar",
+    "Salvar",
+    "Você quer salvar seu desenho e a história em quadrinhos inteira?",
+    "Sim",
+    "Não",
+    "Ainda não é possível salvar desenhos nesta atualização."
+  ],
+  "es": [
+    "Dibuja el mundo de Mika",
+    "No podemos mostrar el mundo físico de Mika: las leyes de la física de nuestro mundo no nos permiten representarlo.\n\nPero tú puedes imaginar cómo es y dibujarlo como quieras.",
+    "Siguiente",
+    "Guardar",
+    "¿Quieres guardar tu dibujo y el cómic completo?",
+    "Sí",
+    "No",
+    "En esta actualización aún no se pueden guardar los dibujos."
+  ],
+  "fr": [
+    "Dessine le monde de Mika",
+    "Nous ne pouvons pas montrer le monde physique de Mika : les lois de la physique de notre monde ne nous permettent pas de le représenter.\n\nMais tu peux imaginer à quoi il ressemble et le dessiner comme tu veux.",
+    "Suivant",
+    "Enregistrer",
+    "Veux-tu enregistrer ton dessin et toute la bande dessinée ?",
+    "Oui",
+    "Non",
+    "L’enregistrement des dessins n’est pas encore disponible dans cette mise à jour."
+  ],
+  "de": [
+    "Zeichne Mikas Welt",
+    "Wir können Mikas physische Welt nicht zeigen: Die Naturgesetze unserer Welt erlauben es uns nicht, sie darzustellen.\n\nAber du kannst dir vorstellen, wie sie aussieht, und sie so zeichnen, wie du möchtest.",
+    "Weiter",
+    "Speichern",
+    "Möchtest du deine Zeichnung und den ganzen Comic speichern?",
+    "Ja",
+    "Nein",
+    "Das Speichern von Zeichnungen ist in diesem Update noch nicht verfügbar."
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "page_id": "CH01_P02",
+  "version": "preflight-0.1",
+  "source": "MIKA_Global_Production_Registry.json",
+  "frame_order": [
+    "wormhole",
+    "earth_view",
+    "simulator",
+    "earth_approach",
+    "earth_spaceport"
+  ],
+  "line_order": [
+    {
+      "id": "CH01_P02_L001",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "panel_id": "wormhole",
+      "localized": {
+        "ru": {
+          "display_text": "Среди вихрей шторма Мика заметил сияющий туннель. Не зная, куда он ведёт, он направил корабль к свету.",
+          "voice_spoken_text": "Среди вихрей шторма Мика заметил сияющий туннель. Не зная, куда он ведёт, он направил корабль к свету."
+        },
+        "en": {
+          "display_text": "Through the swirling storm, Mika spotted a glowing tunnel. Unsure where it led, Mika steered toward the light.",
+          "voice_spoken_text": "Through the swirling storm, Mika spotted a glowing tunnel. Unsure where it led, Mika steered toward the light."
+        },
+        "pt_BR": {
+          "display_text": "Entre os redemoinhos da tempestade, Mika avistou um túnel luminoso. Sem saber aonde ele levava, guiou a nave em direção à luz.",
+          "voice_spoken_text": "Entre os redemoinhos da tempestade, Mika avistou um túnel luminoso. Sem saber aonde ele levava, guiou a nave em direção à luz."
+        },
+        "es": {
+          "display_text": "Entre los remolinos de la tormenta, Mika vio un túnel brillante. Sin saber adónde llevaba, dirigió su nave hacia la luz.",
+          "voice_spoken_text": "Entre los remolinos de la tormenta, Mika vio un túnel brillante. Sin saber adónde llevaba, dirigió su nave hacia la luz."
+        },
+        "fr": {
+          "display_text": "Au cœur de la tempête, Mika aperçut un tunnel lumineux. Sans savoir où il menait, il mit le cap vers la lumière.",
+          "voice_spoken_text": "Au cœur de la tempête, Mika aperçut un tunnel lumineux. Sans savoir où il menait, il mit le cap vers la lumière."
+        },
+        "de": {
+          "display_text": "Mitten im tosenden Sturm entdeckte Mika einen Lichttunnel. Ohne zu wissen, wohin er führte, steuerte Mika auf das Licht zu.",
+          "voice_spoken_text": "Mitten im tosenden Sturm entdeckte Mika einen Lichttunnel. Ohne zu wissen, wohin er führte, steuerte Mika auf das Licht zu."
+        }
+      }
+    },
+    {
+      "id": "CH01_P02_L002",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "panel_id": "earth_view",
+      "localized": {
+        "ru": {
+          "display_text": "За иллюминатором показалась маленькая голубая планета.",
+          "voice_spoken_text": "За иллюминатором показалась маленькая голубая планета."
+        },
+        "en": {
+          "display_text": "Beyond the cockpit window, a little blue planet came into view.",
+          "voice_spoken_text": "Beyond the cockpit window, a little blue planet came into view."
+        },
+        "pt_BR": {
+          "display_text": "Pela janela da cabine, surgiu um pequeno planeta azul.",
+          "voice_spoken_text": "Pela janela da cabine, surgiu um pequeno planeta azul."
+        },
+        "es": {
+          "display_text": "Por la ventanilla, apareció un pequeño planeta azul.",
+          "voice_spoken_text": "Por la ventanilla, apareció un pequeño planeta azul."
+        },
+        "fr": {
+          "display_text": "Derrière le hublot, apparut une petite planète bleue.",
+          "voice_spoken_text": "Derrière le hublot, apparut une petite planète bleue."
+        },
+        "de": {
+          "display_text": "Hinter dem Sichtfenster tauchte ein kleiner blauer Planet auf.",
+          "voice_spoken_text": "Hinter dem Sichtfenster tauchte ein kleiner blauer Planet auf."
+        }
+      }
+    },
+    {
+      "id": "CH01_P02_L003",
+      "speaker_id": "CHR_001",
+      "kind": "speech",
+      "panel_id": "earth_view",
+      "localized": {
+        "ru": {
+          "display_text": "Планета!",
+          "voice_spoken_text": "Планета!"
+        },
+        "en": {
+          "display_text": "A planet!",
+          "voice_spoken_text": "A planet!"
+        },
+        "pt_BR": {
+          "display_text": "Um planeta!",
+          "voice_spoken_text": "Um planeta!"
+        },
+        "es": {
+          "display_text": "¡Un planeta!",
+          "voice_spoken_text": "¡Un planeta!"
+        },
+        "fr": {
+          "display_text": "Une planète !",
+          "voice_spoken_text": "Une planète !"
+        },
+        "de": {
+          "display_text": "Ein Planet!",
+          "voice_spoken_text": "Ein Planet!"
+        }
+      }
+    },
+    {
+      "id": "CH01_P02_L004",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "panel_id": "simulator",
+      "localized": {
+        "ru": {
+          "display_text": "Мика настроил симулятор. Теперь он собирал сведения о жителях, языках и жизни на новой планете.",
+          "voice_spoken_text": "Мика настроил симулятор. Теперь он собирал сведения о жителях, языках и жизни на новой планете."
+        },
+        "en": {
+          "display_text": "Mika tuned the ship's simulator. Now it was gathering clues about the planet’s people, languages, and way of life.",
+          "voice_spoken_text": "Mika tuned the ship's simulator. Now it was gathering clues about the planet’s people, languages, and way of life."
+        },
+        "pt_BR": {
+          "display_text": "Mika ajustou o simulador. Agora ele reunia informações sobre os habitantes, os idiomas e a vida no novo planeta.",
+          "voice_spoken_text": "Mika ajustou o simulador. Agora ele reunia informações sobre os habitantes, os idiomas e a vida no novo planeta."
+        },
+        "es": {
+          "display_text": "Mika ajustó el simulador. Ahora reunía datos sobre sus habitantes, sus idiomas y la vida en el nuevo planeta.",
+          "voice_spoken_text": "Mika ajustó el simulador. Ahora reunía datos sobre sus habitantes, sus idiomas y la vida en el nuevo planeta."
+        },
+        "fr": {
+          "display_text": "Mika régla son simulateur. Celui-ci cherchait des infos sur les habitants, les langues et la vie de cette planète.",
+          "voice_spoken_text": "Mika régla son simulateur. Celui-ci cherchait des infos sur les habitants, les langues et la vie de cette planète."
+        },
+        "de": {
+          "display_text": "Mika stellte den Simulator ein. Nun suchte er Infos über die Bewohner, ihre Sprachen und das Leben auf dem Planeten.",
+          "voice_spoken_text": "Mika stellte den Simulator ein. Nun suchte er Infos über die Bewohner, ihre Sprachen und das Leben auf dem Planeten."
+        }
+      }
+    },
+    {
+      "id": "CH01_P02_L005",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "panel_id": "earth_approach",
+      "localized": {
+        "ru": {
+          "display_text": "Симулятор нашёл ближайший космопорт. Мика взял курс на посадку: там он надеялся узнать, куда попал.",
+          "voice_spoken_text": "Симулятор нашёл ближайший космопорт. Мика взял курс на посадку: там он надеялся узнать, куда попал."
+        },
+        "en": {
+          "display_text": "The simulator located the nearest spaceport. Mika set a course to land: maybe there, he’d find out where he was.",
+          "voice_spoken_text": "The simulator located the nearest spaceport. Mika set a course to land: maybe there, he’d find out where he was."
+        },
+        "pt_BR": {
+          "display_text": "O simulador achou o porto espacial mais próximo. Mika traçou a rota para pousar: talvez ali descobrisse onde estava.",
+          "voice_spoken_text": "O simulador achou o porto espacial mais próximo. Mika traçou a rota para pousar: talvez ali descobrisse onde estava."
+        },
+        "es": {
+          "display_text": "El simulador halló un puerto espacial cercano. Mika puso rumbo al aterrizaje: quizá allí sabría dónde estaba.",
+          "voice_spoken_text": "El simulador halló un puerto espacial cercano. Mika puso rumbo al aterrizaje: quizá allí sabría dónde estaba."
+        },
+        "fr": {
+          "display_text": "Le simulateur repéra le spatioport le plus proche. Mika mit le cap sur la piste : peut-être y apprendrait-il où il était.",
+          "voice_spoken_text": "Le simulateur repéra le spatioport le plus proche. Mika mit le cap sur la piste : peut-être y apprendrait-il où il était."
+        },
+        "de": {
+          "display_text": "Der Simulator fand den nächsten Raumhafen. Mika nahm Kurs auf die Landung: Dort hoffte er zu erfahren, wo er war.",
+          "voice_spoken_text": "Der Simulator fand den nächsten Raumhafen. Mika nahm Kurs auf die Landung: Dort hoffte er zu erfahren, wo er war."
+        }
+      }
+    },
+    {
+      "id": "CH01_P02_L006",
+      "speaker_id": "CHR_001",
+      "kind": "thought",
+      "panel_id": "earth_spaceport",
+      "localized": {
+        "ru": {
+          "display_text": "Хм… И куда же мне теперь идти?",
+          "voice_spoken_text": "Хм… И куда же мне теперь идти?"
+        },
+        "en": {
+          "display_text": "Hmm… Where should I go now?",
+          "voice_spoken_text": "Hmm… Where should I go now?"
+        },
+        "pt_BR": {
+          "display_text": "Hum… Para onde eu vou agora?",
+          "voice_spoken_text": "Hum… Para onde eu vou agora?"
+        },
+        "es": {
+          "display_text": "Mmm… ¿Y ahora adónde voy?",
+          "voice_spoken_text": "Mmm… ¿Y ahora adónde voy?"
+        },
+        "fr": {
+          "display_text": "Hmm… Et maintenant, où dois-je aller ?",
+          "voice_spoken_text": "Hmm… Et maintenant, où dois-je aller ?"
+        },
+        "de": {
+          "display_text": "Hm… Wohin soll ich jetzt gehen?",
+          "voice_spoken_text": "Hm… Wohin soll ich jetzt gehen?"
+        }
+      }
+    }
+  ]
+}

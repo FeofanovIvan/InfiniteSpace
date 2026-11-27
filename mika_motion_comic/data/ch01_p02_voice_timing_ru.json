@@ -1,0 +1,85 @@
+{
+  "page_id": "CH01_P02",
+  "locale": "ru",
+  "audio_path": "res://mika_motion_comic/audio/ch01_p02_ru_voice_master.mp3",
+  "duration_seconds": 29.928,
+  "status": "preliminary_timing_from_audio_pauses_not_yet_verified_in_game",
+  "time_basis": "seconds_from_start_of_full_master_recording",
+  "lines": [
+    {
+      "line_id": "CH01_P02_L001",
+      "speaker_id": "CHR_004",
+      "panel_id": "wormhole",
+      "start_s": 0.0,
+      "end_s": 7.68,
+      "text": "Среди вихрей шторма Мика заметил сияющий туннель. Не зная, куда он ведёт, он направил корабль к свету."
+    },
+    {
+      "line_id": "CH01_P02_L002",
+      "speaker_id": "CHR_004",
+      "panel_id": "earth_view",
+      "start_s": 7.68,
+      "end_s": 11.6,
+      "text": "За иллюминатором показалась маленькая голубая планета."
+    },
+    {
+      "line_id": "CH01_P02_L003",
+      "speaker_id": "CHR_001",
+      "panel_id": "earth_view",
+      "start_s": 11.6,
+      "end_s": 12.88,
+      "text": "Планета!"
+    },
+    {
+      "line_id": "CH01_P02_L004",
+      "speaker_id": "CHR_004",
+      "panel_id": "simulator",
+      "start_s": 12.88,
+      "end_s": 19.6,
+      "text": "Мика настроил симулятор. Теперь он собирал сведения о жителях, языках и жизни на новой планете."
+    },
+    {
+      "line_id": "CH01_P02_L005",
+      "speaker_id": "CHR_004",
+      "panel_id": "earth_approach",
+      "start_s": 19.6,
+      "end_s": 26.5,
+      "text": "Симулятор нашёл ближайший космопорт. Мика взял курс на посадку: там он надеялся узнать, куда попал."
+    },
+    {
+      "line_id": "CH01_P02_L006",
+      "speaker_id": "CHR_001",
+      "panel_id": "earth_spaceport",
+      "start_s": 26.5,
+      "end_s": 29.928,
+      "text": "Хм… И куда же мне теперь идти?"
+    }
+  ],
+  "story_blocks": [
+    {
+      "trigger": "wormhole_panel",
+      "first_line_id": "CH01_P02_L001",
+      "last_line_id": "CH01_P02_L001",
+      "audio_in_s": 0.0,
+      "audio_out_s": 7.68,
+      "stop_audio_when_scene_ends": true
+    },
+    {
+      "trigger": "earth_view_panels",
+      "first_line_id": "CH01_P02_L002",
+      "last_line_id": "CH01_P02_L004",
+      "audio_in_s": 7.68,
+      "audio_out_s": 19.6,
+      "stop_audio_when_scene_ends": true
+    },
+    {
+      "trigger": "earth_landing_panels",
+      "first_line_id": "CH01_P02_L005",
+      "last_line_id": "CH01_P02_L006",
+      "audio_in_s": 19.6,
+      "audio_out_s": 29.928,
+      "stop_audio_when_scene_ends": true
+    }
+  ],
+  "preserve_existing_gameplay_between_blocks": true
+}

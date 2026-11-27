@@ -1,0 +1,216 @@
+{
+  "schema_version": 3,
+  "page_id": "CH06_P01",
+  "locale": "pt_BR",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch06_p01_languages/ch06_p01_pt_BR.webp",
+  "native_scene_panels": [
+    "p61_cabin",
+    "p61_tunnel",
+    "p61_planet",
+    "p61_city",
+    "p61_meeting",
+    "p61_chair"
+  ],
+  "panel_bounds": {
+    "p61_cabin": [
+      0.022135,
+      0.012879,
+      0.954427,
+      0.25299
+    ],
+    "p61_tunnel": [
+      0.022135,
+      0.279669,
+      0.454427,
+      0.148114
+    ],
+    "p61_planet": [
+      0.539062,
+      0.278749,
+      0.4375,
+      0.152714
+    ],
+    "p61_city": [
+      0.023438,
+      0.448942,
+      0.953125,
+      0.326587
+    ],
+    "p61_meeting": [
+      0.023438,
+      0.795768,
+      0.4375,
+      0.188592
+    ],
+    "p61_chair": [
+      0.510417,
+      0.794848,
+      0.466146,
+      0.189512
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH06_P01_L001",
+      "frame_id": "CH06_P01_F01",
+      "panel_id": "p61_cabin",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Depois que o amigo magnético abriu a passagem, Mika conduziu a nave para a escuridão do espaço.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/pt_BR/CH06_P01_L001_pt_BR.mp3",
+      "audio_duration_s": 6.19102,
+      "camera_target": [
+        0.502604,
+        0.128795,
+        0.29852819999999997
+      ],
+      "shot_type": "wide",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "10e66e9936d8b7a4ab3d1b5f36f83d4e48e8fcd8a383a228aff3fc109c42c8a2"
+    },
+    {
+      "line_id": "CH06_P01_L002",
+      "frame_id": "CH06_P01_F01",
+      "panel_id": "p61_cabin",
+      "speaker_id": "CHR_035",
+      "kind": "dialogue",
+      "spoken_text": "É por ali!",
+      "audio_path": "res://mika_motion_comic/ch06_clips/pt_BR/CH06_P01_L002_pt_BR.mp3",
+      "audio_duration_s": 1.07102,
+      "camera_target": [
+        0.505,
+        0.205,
+        0.17
+      ],
+      "shot_type": "speaker",
+      "transition_before_s": 0.45,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f2be62a873888aa4dc5b44bfb992d602bfdb85a794a97bb881c087da53267b01"
+    },
+    {
+      "line_id": "CH06_P01_L003",
+      "frame_id": "CH06_P01_F02",
+      "panel_id": "p61_tunnel",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "A nave de Mika disparou para dentro do túnel espacial.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/pt_BR/CH06_P01_L003_pt_BR.mp3",
+      "audio_duration_s": 3.709388,
+      "camera_target": [
+        0.251302,
+        0.353266,
+        0.17477452
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d09b0c7c6a882076159f5a097a7807ecfb0f16f5d9dc856ef9b4752c3f913277"
+    },
+    {
+      "line_id": "CH06_P01_L004",
+      "frame_id": "CH06_P01_F03",
+      "panel_id": "p61_planet",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Do outro lado do túnel, um imenso planeta cor-de-rosa os esperava.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/pt_BR/CH06_P01_L004_pt_BR.mp3",
+      "audio_duration_s": 4.989388,
+      "camera_target": [
+        0.746094,
+        0.354186,
+        0.18020251999999998
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9a6988f5508a7d474d66009ce9a43fbc1e255bd7a660eee987b02835ba105a44"
+    },
+    {
+      "line_id": "CH06_P01_L005",
+      "frame_id": "CH06_P01_F04",
+      "panel_id": "p61_city",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "O mundo dos seres neurais era diferente de tudo o que já tinham visto.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/pt_BR/CH06_P01_L005_pt_BR.mp3",
+      "audio_duration_s": 4.519184,
+      "camera_target": [
+        0.501302,
+        0.607176,
+        0.38537266
+      ],
+      "shot_type": "wide",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "aab5bfd5f086518f7e258a5de541f7893974eacb5b6c14d706dc611b232bd76a"
+    },
+    {
+      "line_id": "CH06_P01_L006",
+      "frame_id": "CH06_P01_F05",
+      "panel_id": "p61_meeting",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Depois de tantos anos, velhos amigos se reencontraram. Mika não entendia o que diziam, mas dava para ver que estavam felizes em se rever.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/pt_BR/CH06_P01_L006_pt_BR.mp3",
+      "audio_duration_s": 9.482449,
+      "camera_target": [
+        0.240885,
+        0.883165,
+        0.22253856
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "1007f4f9803bf7474d3ebc6395f581ab38c8e0500d5d1c5aa1df8cf6d4b01742"
+    },
+    {
+      "line_id": "CH06_P01_L007",
+      "frame_id": "CH06_P01_F06",
+      "panel_id": "p61_chair",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika usou o simulador deles para entrar em um transe telepático.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/pt_BR/CH06_P01_L007_pt_BR.mp3",
+      "audio_duration_s": 4.675918,
+      "camera_target": [
+        0.723958,
+        0.883165,
+        0.22362416000000002
+      ],
+      "shot_type": "scene",
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "63e6c04b2b7fb6cd48163f6b4d81ed95e0f4bba5a87fb00d41066a36394990a9"
+    }
+  ]
+}

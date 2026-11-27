@@ -1,0 +1,1296 @@
+{
+  "schema_version": "3.0",
+  "project": "MIKA Infinite Space",
+  "page_id": "CH01_P01",
+  "revision": 3,
+  "approval_status": "localization_draft_pending_review",
+  "style": "NEBULA",
+  "master_size_px": [
+    2480,
+    3508
+  ],
+  "background": "background.jpg",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "godot_locale_aliases": {
+    "ru_RU": "ru",
+    "en_US": "en",
+    "en_GB": "en",
+    "pt_BR": "pt_BR",
+    "pt-BR": "pt_BR",
+    "es_ES": "es",
+    "fr_FR": "fr",
+    "de_DE": "de"
+  },
+  "overlays_png": {
+    "ru": "overlays/CH01_P01_ru.png",
+    "en": "overlays/CH01_P01_en.png",
+    "pt_BR": "overlays/CH01_P01_pt_BR.png",
+    "es": "overlays/CH01_P01_es.png",
+    "fr": "overlays/CH01_P01_fr.png",
+    "de": "overlays/CH01_P01_de.png"
+  },
+  "overlays_svg": {
+    "ru": "overlays/CH01_P01_ru.svg",
+    "en": "overlays/CH01_P01_en.svg",
+    "pt_BR": "overlays/CH01_P01_pt_BR.svg",
+    "es": "overlays/CH01_P01_es.svg",
+    "fr": "overlays/CH01_P01_fr.svg",
+    "de": "overlays/CH01_P01_de.svg"
+  },
+  "previews": {
+    "ru": "previews/CH01_P01_ru_preview.jpg",
+    "en": "previews/CH01_P01_en_preview.jpg",
+    "pt_BR": "previews/CH01_P01_pt_BR_preview.jpg",
+    "es": "previews/CH01_P01_es_preview.jpg",
+    "fr": "previews/CH01_P01_fr_preview.jpg",
+    "de": "previews/CH01_P01_de_preview.jpg"
+  },
+  "speaker_ids": [
+    "CHR_001",
+    "CHR_002",
+    "CHR_003",
+    "CHR_004"
+  ],
+  "playback_profiles": {
+    "full_reading": {
+      "line_ids": [
+        "CH01_P01_L001",
+        "CH01_P01_L002",
+        "CH01_P01_L003",
+        "CH01_P01_L004",
+        "CH01_P01_L005",
+        "CH01_P01_L006",
+        "CH01_P01_L007",
+        "CH01_P01_L008",
+        "CH01_P01_L009",
+        "CH01_P01_L010"
+      ],
+      "description_ru": "Произносить все десять текстовых блоков."
+    },
+    "dialogue_plus_alerts": {
+      "line_ids": [
+        "CH01_P01_L002",
+        "CH01_P01_L003",
+        "CH01_P01_L004",
+        "CH01_P01_L005",
+        "CH01_P01_L006",
+        "CH01_P01_L007",
+        "CH01_P01_L010"
+      ],
+      "description_ru": "Рассказчик выключен; звучат диалоги, новости и крик."
+    }
+  },
+  "lines": [
+    {
+      "line_id": "CH01_P01_L001",
+      "frame_id": "CH01_P01_F01",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_small",
+      "bubble_box_px": [
+        73,
+        63,
+        1230,
+        387
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Тихое восхищение и предчувствие приключения",
+        "emotion": "wonder",
+        "intensity": 0.22,
+        "pace": "slow",
+        "volume": "soft",
+        "pitch": "medium_low",
+        "pause_after_ms": 550,
+        "arc_ru": "Начать очень тепло, мягко выделить глубину космоса; закончить с недосказанностью.",
+        "beats": [
+          "gentle_entrance",
+          "quiet_awe",
+          "open_ending"
+        ],
+        "tts_tags_en": "[softly] [curious]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Где-то в глубинах космоса…",
+          "voice_spoken_text": "Где-то в глубинах космоса…",
+          "render_lines": [
+            "Где-то в глубинах",
+            "космоса…"
+          ],
+          "font_size_px": 54,
+          "line_height_px": 70,
+          "edit_source_svg": "overlays/CH01_P01_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [curious] Где-то в глубинах космоса…"
+        },
+        "en": {
+          "display_text": "Somewhere in the depths of space…",
+          "voice_spoken_text": "Somewhere in the depths of space…",
+          "render_lines": [
+            "Somewhere in the",
+            "depths of space…"
+          ],
+          "font_size_px": 54,
+          "line_height_px": 70,
+          "edit_source_svg": "overlays/CH01_P01_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [curious] Somewhere in the depths of space…"
+        },
+        "pt_BR": {
+          "display_text": "Em algum lugar, no espaço profundo…",
+          "voice_spoken_text": "Em algum lugar, no espaço profundo…",
+          "render_lines": [
+            "Em algum lugar,",
+            "no espaço profundo…"
+          ],
+          "font_size_px": 54,
+          "line_height_px": 70,
+          "edit_source_svg": "overlays/CH01_P01_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [curious] Em algum lugar, no espaço profundo…"
+        },
+        "es": {
+          "display_text": "En algún rincón del espacio…",
+          "voice_spoken_text": "En algún rincón del espacio…",
+          "render_lines": [
+            "En algún rincón",
+            "del espacio…"
+          ],
+          "font_size_px": 54,
+          "line_height_px": 70,
+          "edit_source_svg": "overlays/CH01_P01_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [curious] En algún rincón del espacio…"
+        },
+        "fr": {
+          "display_text": "Quelque part, aux confins de l’espace…",
+          "voice_spoken_text": "Quelque part, aux confins de l’espace…",
+          "render_lines": [
+            "Quelque part, aux confins",
+            "de l’espace…"
+          ],
+          "font_size_px": 54,
+          "line_height_px": 70,
+          "edit_source_svg": "overlays/CH01_P01_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [curious] Quelque part, aux confins de l’espace…"
+        },
+        "de": {
+          "display_text": "Irgendwo in den Tiefen des Weltraums…",
+          "voice_spoken_text": "Irgendwo in den Tiefen des Weltraums…",
+          "render_lines": [
+            "Irgendwo in den Tiefen",
+            "des Weltraums…"
+          ],
+          "font_size_px": 54,
+          "line_height_px": 70,
+          "edit_source_svg": "overlays/CH01_P01_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [curious] Irgendwo in den Tiefen des Weltraums…"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P01_L002",
+      "frame_id": "CH01_P01_F02",
+      "speaker_id": "CHR_002",
+      "kind": "dialogue",
+      "bubble_id": "speech_left",
+      "bubble_box_px": [
+        1687,
+        707,
+        682,
+        251
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Зов друга из-за кадра, пока без паники",
+        "emotion": "calling",
+        "intensity": 0.65,
+        "pace": "brisk",
+        "volume": "raised",
+        "pitch": "medium_high",
+        "pause_after_ms": 200,
+        "arc_ru": "Короткое громкое обращение с небольшим подъёмом в конце. Голос CHR_002 — тот же, что в кадре 6.",
+        "beats": [
+          "attention_call",
+          "expect_reply"
+        ],
+        "tts_tags_en": "[calling out]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Мика!",
+          "voice_spoken_text": "Мика!",
+          "render_lines": [
+            "Мика!"
+          ],
+          "font_size_px": 75,
+          "line_height_px": 82,
+          "edit_source_svg": "overlays/CH01_P01_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calling out] Мика!"
+        },
+        "en": {
+          "display_text": "Mika!",
+          "voice_spoken_text": "Mika!",
+          "render_lines": [
+            "Mika!"
+          ],
+          "font_size_px": 75,
+          "line_height_px": 82,
+          "edit_source_svg": "overlays/CH01_P01_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calling out] Mika!"
+        },
+        "pt_BR": {
+          "display_text": "Mika!",
+          "voice_spoken_text": "Mika!",
+          "render_lines": [
+            "Mika!"
+          ],
+          "font_size_px": 75,
+          "line_height_px": 82,
+          "edit_source_svg": "overlays/CH01_P01_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calling out] Mika!"
+        },
+        "es": {
+          "display_text": "¡Mika!",
+          "voice_spoken_text": "¡Mika!",
+          "render_lines": [
+            "¡Mika!"
+          ],
+          "font_size_px": 75,
+          "line_height_px": 82,
+          "edit_source_svg": "overlays/CH01_P01_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calling out] ¡Mika!"
+        },
+        "fr": {
+          "display_text": "Mika !",
+          "voice_spoken_text": "Mika !",
+          "render_lines": [
+            "Mika !"
+          ],
+          "font_size_px": 75,
+          "line_height_px": 82,
+          "edit_source_svg": "overlays/CH01_P01_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calling out] Mika !"
+        },
+        "de": {
+          "display_text": "Mika!",
+          "voice_spoken_text": "Mika!",
+          "render_lines": [
+            "Mika!"
+          ],
+          "font_size_px": 75,
+          "line_height_px": 82,
+          "edit_source_svg": "overlays/CH01_P01_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[calling out] Mika!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P01_L003",
+      "frame_id": "CH01_P01_F03",
+      "speaker_id": "CHR_003",
+      "kind": "broadcast",
+      "bubble_id": "tech_info",
+      "bubble_box_px": [
+        120,
+        1003,
+        965,
+        305
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Официальная срочная новость; тревога под контролем",
+        "emotion": "controlled_alarm",
+        "intensity": 0.58,
+        "pace": "brisk_clear",
+        "volume": "firm",
+        "pitch": "medium",
+        "pause_after_ms": 180,
+        "arc_ru": "Первую фразу произнести как сигнал тревоги; затем перейти к точному факту о шторме.",
+        "beats": [
+          "breaking_alert",
+          "objective_report",
+          "urgent_final_word"
+        ],
+        "tts_tags_en": "[urgent]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Экстренное сообщение! Аномальный шторм достиг планеты!",
+          "voice_spoken_text": "Экстренное сообщение! Аномальный шторм достиг планеты!",
+          "render_lines": [
+            "ЭКСТРЕННОЕ СООБЩЕНИЕ!",
+            "Аномальный шторм",
+            "достиг планеты!"
+          ],
+          "font_size_px": 39,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgent] Экстренное сообщение! Аномальный шторм достиг планеты!"
+        },
+        "en": {
+          "display_text": "Breaking news! An anomalous storm has reached the planet!",
+          "voice_spoken_text": "Breaking news! An anomalous storm has reached the planet!",
+          "render_lines": [
+            "BREAKING NEWS!",
+            "An anomalous storm",
+            "has reached the planet!"
+          ],
+          "font_size_px": 39,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgent] Breaking news! An anomalous storm has reached the planet!"
+        },
+        "pt_BR": {
+          "display_text": "Alerta urgente! Uma tempestade anômala atingiu o planeta!",
+          "voice_spoken_text": "Alerta urgente! Uma tempestade anômala atingiu o planeta!",
+          "render_lines": [
+            "ALERTA URGENTE!",
+            "Uma tempestade anômala",
+            "atingiu o planeta!"
+          ],
+          "font_size_px": 39,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgent] Alerta urgente! Uma tempestade anômala atingiu o planeta!"
+        },
+        "es": {
+          "display_text": "¡Alerta urgente! ¡Una tormenta anómala llegó al planeta!",
+          "voice_spoken_text": "¡Alerta urgente! ¡Una tormenta anómala llegó al planeta!",
+          "render_lines": [
+            "¡ALERTA URGENTE!",
+            "¡Una tormenta anómala",
+            "llegó al planeta!"
+          ],
+          "font_size_px": 39,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgent] ¡Alerta urgente! ¡Una tormenta anómala llegó al planeta!"
+        },
+        "fr": {
+          "display_text": "Alerte urgente ! Une tempête anormale a atteint la planète !",
+          "voice_spoken_text": "Alerte urgente ! Une tempête anormale a atteint la planète !",
+          "render_lines": [
+            "ALERTE URGENTE !",
+            "Une tempête anormale",
+            "a atteint la planète !"
+          ],
+          "font_size_px": 39,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgent] Alerte urgente ! Une tempête anormale a atteint la planète !"
+        },
+        "de": {
+          "display_text": "Eilmeldung! Ein anomaler Sturm hat den Planeten erreicht!",
+          "voice_spoken_text": "Eilmeldung! Ein anomaler Sturm hat den Planeten erreicht!",
+          "render_lines": [
+            "EILMELDUNG!",
+            "Ein anomaler Sturm",
+            "hat den Planeten erreicht!"
+          ],
+          "font_size_px": 39,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgent] Eilmeldung! Ein anomaler Sturm hat den Planeten erreicht!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P01_L004",
+      "frame_id": "CH01_P01_F04",
+      "speaker_id": "CHR_003",
+      "kind": "broadcast",
+      "bubble_id": "alert",
+      "bubble_box_px": [
+        1171,
+        1028,
+        591,
+        281
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Опасное открытие: шторм изменяет саму материю",
+        "emotion": "warning",
+        "intensity": 0.72,
+        "pace": "measured",
+        "volume": "firm",
+        "pitch": "slightly_lower",
+        "pause_after_ms": 160,
+        "arc_ru": "Не кричать; выделить смысл изменения физических свойств объектов. Интонация серьёзнее, чем в предыдущем сообщении.",
+        "beats": [
+          "ominous_fact",
+          "stress_anomaly"
+        ],
+        "tts_tags_en": "[serious]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Он меняет физические свойства объектов!",
+          "voice_spoken_text": "Он меняет физические свойства объектов!",
+          "render_lines": [
+            "Он меняет",
+            "физические свойства",
+            "объектов!"
+          ],
+          "font_size_px": 31,
+          "line_height_px": 44,
+          "edit_source_svg": "overlays/CH01_P01_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[serious] Он меняет физические свойства объектов!"
+        },
+        "en": {
+          "display_text": "It changes the physical properties of objects!",
+          "voice_spoken_text": "It changes the physical properties of objects!",
+          "render_lines": [
+            "It changes",
+            "the physical properties",
+            "of objects!"
+          ],
+          "font_size_px": 31,
+          "line_height_px": 44,
+          "edit_source_svg": "overlays/CH01_P01_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[serious] It changes the physical properties of objects!"
+        },
+        "pt_BR": {
+          "display_text": "Ela altera as propriedades físicas dos objetos!",
+          "voice_spoken_text": "Ela altera as propriedades físicas dos objetos!",
+          "render_lines": [
+            "Ela altera",
+            "as propriedades físicas",
+            "dos objetos!"
+          ],
+          "font_size_px": 31,
+          "line_height_px": 44,
+          "edit_source_svg": "overlays/CH01_P01_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[serious] Ela altera as propriedades físicas dos objetos!"
+        },
+        "es": {
+          "display_text": "¡Altera las propiedades físicas de los objetos!",
+          "voice_spoken_text": "¡Altera las propiedades físicas de los objetos!",
+          "render_lines": [
+            "¡Altera",
+            "las propiedades físicas",
+            "de los objetos!"
+          ],
+          "font_size_px": 31,
+          "line_height_px": 44,
+          "edit_source_svg": "overlays/CH01_P01_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[serious] ¡Altera las propiedades físicas de los objetos!"
+        },
+        "fr": {
+          "display_text": "Elle modifie les propriétés physiques des objets !",
+          "voice_spoken_text": "Elle modifie les propriétés physiques des objets !",
+          "render_lines": [
+            "Elle modifie",
+            "les propriétés physiques",
+            "des objets !"
+          ],
+          "font_size_px": 31,
+          "line_height_px": 44,
+          "edit_source_svg": "overlays/CH01_P01_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[serious] Elle modifie les propriétés physiques des objets !"
+        },
+        "de": {
+          "display_text": "Er verändert die physikalischen Eigenschaften von Objekten!",
+          "voice_spoken_text": "Er verändert die physikalischen Eigenschaften von Objekten!",
+          "render_lines": [
+            "Er verändert",
+            "physikalische Eigenschaften",
+            "von Objekten!"
+          ],
+          "font_size_px": 28.69,
+          "line_height_px": 40.72,
+          "edit_source_svg": "overlays/CH01_P01_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[serious] Er verändert die physikalischen Eigenschaften von Objekten!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P01_L005",
+      "frame_id": "CH01_P01_F05",
+      "speaker_id": "CHR_003",
+      "kind": "broadcast",
+      "bubble_id": "narrator",
+      "bubble_box_px": [
+        1825,
+        1370,
+        582,
+        410
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Экстренный приказ об эвакуации",
+        "emotion": "commanding_urgency",
+        "intensity": 0.82,
+        "pace": "fast_articulate",
+        "volume": "projected",
+        "pitch": "medium_high",
+        "pause_after_ms": 190,
+        "arc_ru": "На объявлении эвакуации короткий сильный акцент. Указание направления — быстро и предельно чётко, без истерики.",
+        "beats": [
+          "evacuation_order",
+          "clear_action_instruction"
+        ],
+        "tts_tags_en": "[urgently]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Всеобщая эвакуация! Срочно следуйте к ближайшим космопортам!",
+          "voice_spoken_text": "Всеобщая эвакуация! Срочно следуйте к ближайшим космопортам!",
+          "render_lines": [
+            "Всеобщая эвакуация!",
+            "Срочно следуйте",
+            "к ближайшим",
+            "космопортам!"
+          ],
+          "font_size_px": 34,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgently] Всеобщая эвакуация! Срочно следуйте к ближайшим космопортам!"
+        },
+        "en": {
+          "display_text": "Planetwide evacuation! Head to the nearest spaceport now!",
+          "voice_spoken_text": "Planetwide evacuation! Head to the nearest spaceport now!",
+          "render_lines": [
+            "Planetwide evacuation!",
+            "Head to the nearest",
+            "spaceport now!"
+          ],
+          "font_size_px": 34,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgently] Planetwide evacuation! Head to the nearest spaceport now!"
+        },
+        "pt_BR": {
+          "display_text": "Evacuação geral! Vão agora para o espaçoporto mais próximo!",
+          "voice_spoken_text": "Evacuação geral! Vão agora para o espaçoporto mais próximo!",
+          "render_lines": [
+            "Evacuação geral!",
+            "Vão agora para",
+            "o espaçoporto",
+            "mais próximo!"
+          ],
+          "font_size_px": 34,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgently] Evacuação geral! Vão agora para o espaçoporto mais próximo!"
+        },
+        "es": {
+          "display_text": "¡Evacuación general! ¡Vayan al puerto espacial más cercano!",
+          "voice_spoken_text": "¡Evacuación general! ¡Vayan al puerto espacial más cercano!",
+          "render_lines": [
+            "¡Evacuación general!",
+            "¡Vayan al puerto",
+            "espacial más cercano!"
+          ],
+          "font_size_px": 34,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgently] ¡Evacuación general! ¡Vayan al puerto espacial más cercano!"
+        },
+        "fr": {
+          "display_text": "Évacuation générale ! Rejoignez vite le spatioport le plus proche !",
+          "voice_spoken_text": "Évacuation générale ! Rejoignez vite le spatioport le plus proche !",
+          "render_lines": [
+            "Évacuation générale !",
+            "Rejoignez vite",
+            "le spatioport le plus",
+            "proche !"
+          ],
+          "font_size_px": 34,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgently] Évacuation générale ! Rejoignez vite le spatioport le plus proche !"
+        },
+        "de": {
+          "display_text": "Evakuierung für alle! Sofort zum nächsten Raumhafen!",
+          "voice_spoken_text": "Evakuierung für alle! Sofort zum nächsten Raumhafen!",
+          "render_lines": [
+            "Evakuierung für alle!",
+            "Sofort zum nächsten",
+            "Raumhafen!"
+          ],
+          "font_size_px": 34,
+          "line_height_px": 48,
+          "edit_source_svg": "overlays/CH01_P01_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[urgently] Evakuierung für alle! Sofort zum nächsten Raumhafen!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P01_L006",
+      "frame_id": "CH01_P01_F06",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "bubble_id": "speech_top_mika",
+      "bubble_box_px": [
+        95,
+        2280,
+        537,
+        183
+      ],
+      "speaker_anchor_px": [
+        535,
+        2293
+      ],
+      "performance": {
+        "tone_ru": "Растерянность Мики перерастает в страх",
+        "emotion": "anxious_confusion",
+        "intensity": 0.68,
+        "pace": "quick_broken",
+        "volume": "raised",
+        "pitch": "rising",
+        "pause_after_ms": 80,
+        "arc_ru": "В начале вопрос будто ищет опору; последнее слово чуть выше, с дрожью, но разборчиво.",
+        "beats": [
+          "search_for_answer",
+          "fear_rises"
+        ],
+        "tts_tags_en": "[nervous]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Что нам делать?!",
+          "voice_spoken_text": "Что нам делать?!",
+          "render_lines": [
+            "Что нам",
+            "делать?!"
+          ],
+          "font_size_px": 47,
+          "line_height_px": 55,
+          "edit_source_svg": "overlays/CH01_P01_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] Что нам делать?!"
+        },
+        "en": {
+          "display_text": "What do we do?!",
+          "voice_spoken_text": "What do we do?!",
+          "render_lines": [
+            "What do",
+            "we do?!"
+          ],
+          "font_size_px": 47,
+          "line_height_px": 55,
+          "edit_source_svg": "overlays/CH01_P01_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] What do we do?!"
+        },
+        "pt_BR": {
+          "display_text": "O que a gente faz?!",
+          "voice_spoken_text": "O que a gente faz?!",
+          "render_lines": [
+            "O que a gente",
+            "faz?!"
+          ],
+          "font_size_px": 47,
+          "line_height_px": 55,
+          "edit_source_svg": "overlays/CH01_P01_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] O que a gente faz?!"
+        },
+        "es": {
+          "display_text": "¿Qué hacemos?!",
+          "voice_spoken_text": "¿Qué hacemos?!",
+          "render_lines": [
+            "¿Qué",
+            "hacemos?!"
+          ],
+          "font_size_px": 47,
+          "line_height_px": 55,
+          "edit_source_svg": "overlays/CH01_P01_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] ¿Qué hacemos?!"
+        },
+        "fr": {
+          "display_text": "Qu’est-ce qu’on fait ?!",
+          "voice_spoken_text": "Qu’est-ce qu’on fait ?!",
+          "render_lines": [
+            "Qu’est-ce",
+            "qu’on fait ?!"
+          ],
+          "font_size_px": 47,
+          "line_height_px": 55,
+          "edit_source_svg": "overlays/CH01_P01_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] Qu’est-ce qu’on fait ?!"
+        },
+        "de": {
+          "display_text": "Was machen wir?!",
+          "voice_spoken_text": "Was machen wir?!",
+          "render_lines": [
+            "Was machen",
+            "wir?!"
+          ],
+          "font_size_px": 47,
+          "line_height_px": 55,
+          "edit_source_svg": "overlays/CH01_P01_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[nervous] Was machen wir?!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P01_L007",
+      "frame_id": "CH01_P01_F06",
+      "speaker_id": "CHR_002",
+      "kind": "dialogue",
+      "bubble_id": "speech_top_friend",
+      "bubble_box_px": [
+        658,
+        2240,
+        553,
+        222
+      ],
+      "speaker_anchor_px": [
+        885,
+        2245
+      ],
+      "performance": {
+        "tone_ru": "Решительность и забота: друг берёт инициативу",
+        "emotion": "protective_urgency",
+        "intensity": 0.8,
+        "pace": "fast_decisive",
+        "volume": "raised",
+        "pitch": "stable",
+        "pause_after_ms": 160,
+        "arc_ru": "Первое слово — резкий импульс к действию; вторую часть произнести указанием пути. Не превращать в истошный крик.",
+        "beats": [
+          "decisive_start",
+          "point_to_escape"
+        ],
+        "tts_tags_en": "[determined]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Бежим! К кораблям!",
+          "voice_spoken_text": "Бежим! К кораблям!",
+          "render_lines": [
+            "Бежим!",
+            "К кораблям!"
+          ],
+          "font_size_px": 46,
+          "line_height_px": 54,
+          "edit_source_svg": "overlays/CH01_P01_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[determined] Бежим! К кораблям!"
+        },
+        "en": {
+          "display_text": "Run! To the ships!",
+          "voice_spoken_text": "Run! To the ships!",
+          "render_lines": [
+            "Run!",
+            "To the ships!"
+          ],
+          "font_size_px": 46,
+          "line_height_px": 54,
+          "edit_source_svg": "overlays/CH01_P01_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[determined] Run! To the ships!"
+        },
+        "pt_BR": {
+          "display_text": "Vamos! Para as naves!",
+          "voice_spoken_text": "Vamos! Para as naves!",
+          "render_lines": [
+            "Vamos!",
+            "Para as naves!"
+          ],
+          "font_size_px": 46,
+          "line_height_px": 54,
+          "edit_source_svg": "overlays/CH01_P01_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[determined] Vamos! Para as naves!"
+        },
+        "es": {
+          "display_text": "¡Vamos! ¡A las naves!",
+          "voice_spoken_text": "¡Vamos! ¡A las naves!",
+          "render_lines": [
+            "¡Vamos!",
+            "¡A las naves!"
+          ],
+          "font_size_px": 46,
+          "line_height_px": 54,
+          "edit_source_svg": "overlays/CH01_P01_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[determined] ¡Vamos! ¡A las naves!"
+        },
+        "fr": {
+          "display_text": "Vite ! Aux vaisseaux !",
+          "voice_spoken_text": "Vite ! Aux vaisseaux !",
+          "render_lines": [
+            "Vite !",
+            "Aux vaisseaux !"
+          ],
+          "font_size_px": 46,
+          "line_height_px": 54,
+          "edit_source_svg": "overlays/CH01_P01_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[determined] Vite ! Aux vaisseaux !"
+        },
+        "de": {
+          "display_text": "Los! Zu den Raumschiffen!",
+          "voice_spoken_text": "Los! Zu den Raumschiffen!",
+          "render_lines": [
+            "Los! Zu den",
+            "Raumschiffen!"
+          ],
+          "font_size_px": 46,
+          "line_height_px": 54,
+          "edit_source_svg": "overlays/CH01_P01_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[determined] Los! Zu den Raumschiffen!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P01_L008",
+      "frame_id": "CH01_P01_F07",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator",
+      "bubble_box_px": [
+        1825,
+        1799,
+        582,
+        415
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Мгновение облегчения сменяется тревожным предчувствием",
+        "emotion": "relief_to_dread",
+        "intensity": 0.48,
+        "pace": "measured",
+        "volume": "medium_soft",
+        "pitch": "descending",
+        "pause_after_ms": 280,
+        "arc_ru": "Первые слова — облегчение, перед «но» сделать микропаузу; далее голос становится темнее.",
+        "beats": [
+          "brief_relief",
+          "micro_pause_before_contrast",
+          "approaching_threat"
+        ],
+        "tts_tags_en": "[softly] [serious]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Мика успел покинуть планету, но шторм уже окутывал её.",
+          "voice_spoken_text": "Мика успел покинуть планету, но шторм уже окутывал её.",
+          "render_lines": [
+            "Мика успел",
+            "покинуть планету,",
+            "но шторм уже",
+            "окутывал её."
+          ],
+          "font_size_px": 34,
+          "line_height_px": 46,
+          "edit_source_svg": "overlays/CH01_P01_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [serious] Мика успел покинуть планету, но шторм уже окутывал её."
+        },
+        "en": {
+          "display_text": "Mika escaped the planet, but the storm was already engulfing it.",
+          "voice_spoken_text": "Mika escaped the planet, but the storm was already engulfing it.",
+          "render_lines": [
+            "Mika escaped",
+            "the planet,",
+            "but the storm was",
+            "engulfing it."
+          ],
+          "font_size_px": 34,
+          "line_height_px": 46,
+          "edit_source_svg": "overlays/CH01_P01_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [serious] Mika escaped the planet, but the storm was already engulfing it."
+        },
+        "pt_BR": {
+          "display_text": "Mika deixou o planeta a tempo, mas a tempestade já o envolvia.",
+          "voice_spoken_text": "Mika deixou o planeta a tempo, mas a tempestade já o envolvia.",
+          "render_lines": [
+            "Mika deixou",
+            "o planeta a tempo,",
+            "mas a tempestade",
+            "já o envolvia."
+          ],
+          "font_size_px": 34,
+          "line_height_px": 46,
+          "edit_source_svg": "overlays/CH01_P01_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [serious] Mika deixou o planeta a tempo, mas a tempestade já o envolvia."
+        },
+        "es": {
+          "display_text": "Mika logró salir del planeta, pero la tormenta ya lo envolvía.",
+          "voice_spoken_text": "Mika logró salir del planeta, pero la tormenta ya lo envolvía.",
+          "render_lines": [
+            "Mika logró",
+            "salir del planeta,",
+            "pero la tormenta",
+            "ya lo envolvía."
+          ],
+          "font_size_px": 34,
+          "line_height_px": 46,
+          "edit_source_svg": "overlays/CH01_P01_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [serious] Mika logró salir del planeta, pero la tormenta ya lo envolvía."
+        },
+        "fr": {
+          "display_text": "Mika avait quitté la planète, mais la tempête l’enveloppait déjà.",
+          "voice_spoken_text": "Mika avait quitté la planète, mais la tempête l’enveloppait déjà.",
+          "render_lines": [
+            "Mika avait quitté",
+            "la planète,",
+            "mais la tempête",
+            "l’enveloppait déjà."
+          ],
+          "font_size_px": 34,
+          "line_height_px": 46,
+          "edit_source_svg": "overlays/CH01_P01_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [serious] Mika avait quitté la planète, mais la tempête l’enveloppait déjà."
+        },
+        "de": {
+          "display_text": "Mika entkam, doch der Sturm hüllte den Planeten bereits ein.",
+          "voice_spoken_text": "Mika entkam, doch der Sturm hüllte den Planeten bereits ein.",
+          "render_lines": [
+            "Mika entkam,",
+            "doch der Sturm",
+            "hüllte den Planeten",
+            "bereits ein."
+          ],
+          "font_size_px": 34,
+          "line_height_px": 46,
+          "edit_source_svg": "overlays/CH01_P01_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[softly] [serious] Mika entkam, doch der Sturm hüllte den Planeten bereits ein."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P01_L009",
+      "frame_id": "CH01_P01_F08",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator",
+      "bubble_box_px": [
+        82,
+        2500,
+        1058,
+        430
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Тихое драматическое осознание: спасения нет",
+        "emotion": "ominous_reveal",
+        "intensity": 0.58,
+        "pace": "slow_weighted",
+        "volume": "soft_firm",
+        "pitch": "low",
+        "pause_after_ms": 180,
+        "arc_ru": "Подчеркнуть неожиданность «даже в открытом космосе»; последние слова произнести весомо и медленнее.",
+        "beats": [
+          "impossibility",
+          "threat_catches_up"
+        ],
+        "tts_tags_en": "[ominous]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Даже в открытом космосе буря настигла его корабль.",
+          "voice_spoken_text": "Даже в открытом космосе буря настигла его корабль.",
+          "render_lines": [
+            "Даже в открытом космосе",
+            "буря настигла",
+            "его корабль."
+          ],
+          "font_size_px": 45,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P01_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[ominous] Даже в открытом космосе буря настигла его корабль."
+        },
+        "en": {
+          "display_text": "Even in open space, the storm caught up with his ship.",
+          "voice_spoken_text": "Even in open space, the storm caught up with his ship.",
+          "render_lines": [
+            "Even in open space,",
+            "the storm caught",
+            "up with his ship."
+          ],
+          "font_size_px": 45,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P01_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[ominous] Even in open space, the storm caught up with his ship."
+        },
+        "pt_BR": {
+          "display_text": "Até no espaço aberto, a tempestade alcançou a nave de Mika.",
+          "voice_spoken_text": "Até no espaço aberto, a tempestade alcançou a nave de Mika.",
+          "render_lines": [
+            "Até no espaço aberto,",
+            "a tempestade alcançou",
+            "a nave de Mika."
+          ],
+          "font_size_px": 45,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P01_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[ominous] Até no espaço aberto, a tempestade alcançou a nave de Mika."
+        },
+        "es": {
+          "display_text": "Incluso en pleno espacio, la tormenta alcanzó su nave.",
+          "voice_spoken_text": "Incluso en pleno espacio, la tormenta alcanzó su nave.",
+          "render_lines": [
+            "Incluso en pleno espacio,",
+            "la tormenta alcanzó",
+            "su nave."
+          ],
+          "font_size_px": 45,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P01_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[ominous] Incluso en pleno espacio, la tormenta alcanzó su nave."
+        },
+        "fr": {
+          "display_text": "Même dans l’espace, la tempête rattrapa son vaisseau.",
+          "voice_spoken_text": "Même dans l’espace, la tempête rattrapa son vaisseau.",
+          "render_lines": [
+            "Même dans l’espace,",
+            "la tempête rattrapa",
+            "son vaisseau."
+          ],
+          "font_size_px": 45,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P01_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[ominous] Même dans l’espace, la tempête rattrapa son vaisseau."
+        },
+        "de": {
+          "display_text": "Selbst im freien All holte der Sturm sein Raumschiff ein.",
+          "voice_spoken_text": "Selbst im freien All holte der Sturm sein Raumschiff ein.",
+          "render_lines": [
+            "Selbst im freien All",
+            "holte der Sturm",
+            "sein Raumschiff ein."
+          ],
+          "font_size_px": 45,
+          "line_height_px": 65,
+          "edit_source_svg": "overlays/CH01_P01_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[ominous] Selbst im freien All holte der Sturm sein Raumschiff ein."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P01_L010",
+      "frame_id": "CH01_P01_F09",
+      "speaker_id": "CHR_001",
+      "kind": "shout",
+      "bubble_id": "burst_speech",
+      "bubble_box_px": [
+        1508,
+        3121,
+        612,
+        296
+      ],
+      "speaker_anchor_px": null,
+      "performance": {
+        "tone_ru": "Короткий неподдельный крик ужаса Мики",
+        "emotion": "terror",
+        "intensity": 0.94,
+        "pace": "sudden_0_8_to_1_2_seconds",
+        "volume": "shout",
+        "pitch": "high_rising",
+        "pause_after_ms": 0,
+        "arc_ru": "Резкое начало, естественный срыв высоты в середине, обрыв в конце. Не делать комедийным и не растягивать на несколько секунд.",
+        "beats": [
+          "shock",
+          "short_scream",
+          "hard_cut"
+        ],
+        "tts_tags_en": "[shouts]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "А-а-а!",
+          "voice_spoken_text": "А-а-а!",
+          "render_lines": [
+            "А-а-а!"
+          ],
+          "font_size_px": 82,
+          "line_height_px": 86,
+          "edit_source_svg": "overlays/CH01_P01_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shouts] А-а-а!"
+        },
+        "en": {
+          "display_text": "Aaaah!",
+          "voice_spoken_text": "Aaaah!",
+          "render_lines": [
+            "Aaaah!"
+          ],
+          "font_size_px": 82,
+          "line_height_px": 86,
+          "edit_source_svg": "overlays/CH01_P01_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shouts] Aaaah!"
+        },
+        "pt_BR": {
+          "display_text": "Aaaah!",
+          "voice_spoken_text": "Aaaah!",
+          "render_lines": [
+            "Aaaah!"
+          ],
+          "font_size_px": 82,
+          "line_height_px": 86,
+          "edit_source_svg": "overlays/CH01_P01_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shouts] Aaaah!"
+        },
+        "es": {
+          "display_text": "¡Aaaah!",
+          "voice_spoken_text": "¡Aaaah!",
+          "render_lines": [
+            "¡Aaaah!"
+          ],
+          "font_size_px": 82,
+          "line_height_px": 86,
+          "edit_source_svg": "overlays/CH01_P01_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shouts] ¡Aaaah!"
+        },
+        "fr": {
+          "display_text": "Aaaah !",
+          "voice_spoken_text": "Aaaah !",
+          "render_lines": [
+            "Aaaah !"
+          ],
+          "font_size_px": 82,
+          "line_height_px": 86,
+          "edit_source_svg": "overlays/CH01_P01_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shouts] Aaaah !"
+        },
+        "de": {
+          "display_text": "Aaaah!",
+          "voice_spoken_text": "Aaaah!",
+          "render_lines": [
+            "Aaaah!"
+          ],
+          "font_size_px": 82,
+          "line_height_px": 86,
+          "edit_source_svg": "overlays/CH01_P01_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shouts] Aaaah!"
+        }
+      }
+    }
+  ],
+  "ambient_audio": [
+    {
+      "id": "CH01_P01_SFX001",
+      "frame_id": "CH01_P01_F03",
+      "type": "crowd_distress",
+      "spoken_words": null,
+      "notes_ru": "Тихая неразборчивая тревожная толпа в фоне, без дополнительных придуманых реплик."
+    },
+    {
+      "id": "CH01_P01_SFX002",
+      "frame_id": "CH01_P01_F08",
+      "type": "cosmic_storm",
+      "spoken_words": null,
+      "notes_ru": "Шторм и удары по кораблю, приглушить на время голоса рассказчика."
+    }
+  ],
+  "notes_ru": "Тексты локализованы по смыслу и длине. Голоса ещё не назначены. CHR_002 — друг из кадров 2 и 6. CHR_005 — устаревший alias."
+}

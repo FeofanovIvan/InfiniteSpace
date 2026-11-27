@@ -1,0 +1,11 @@
+{
+  "voice_model": "ElevenLabs Creator - model to be confirmed at recording",
+  "generation_status": "NOT_GENERATED",
+  "directions": {
+    "CHR_037": "Central Archive: measured and clear, warm technology voice, thoughtful discovery and hope; not the Mars AI",
+    "CHR_035": "Magnetic companion: warm, steady, personal promise to accompany the crew",
+    "CHR_001": "Mika: sincere relief and warm gratitude",
+    "CHR_004": "Narrator: calm sense of wonder, hopeful transition to the next galaxy"
+  },
+  "notes": "Use one stable voice per character/language; no new voices added; IDs are for alignment and do not need to be read aloud."
+}

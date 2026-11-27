@@ -1,0 +1,128 @@
+{
+  "page_id": "CH05_P04",
+  "source_pdf": "5-4(2).pdf",
+  "status": "RU_APPROVED_SIX_LANG_PREPARED",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "story_continuity_note": "Магнитное существо CHR_035 лично присоединяется к экипажу и летит с ними в следующую галактику.",
+  "lines": [
+    {
+      "line_id": "CH05_P04_L001",
+      "frame": 1,
+      "speaker_id": "CHR_037",
+      "type": "archive",
+      "emotion_ru": "спокойно, восхищённо; архив показывает сеть связанных миров",
+      "translations": {
+        "ru": "Мы обнаружили огромные гравитационные туннели и научились связывать их между собой.",
+        "en": "We discovered vast gravitational tunnels and learned to connect them to one another.",
+        "pt_BR": "Descobrimos enormes túneis gravitacionais e aprendemos a conectá-los entre si.",
+        "es": "Descubrimos enormes túneles gravitatorios y aprendimos a conectarlos entre sí.",
+        "fr": "Nous avons découvert d’immenses tunnels gravitationnels et appris à les relier entre eux.",
+        "de": "Wir entdeckten riesige Gravitationstunnel und lernten, sie miteinander zu verbinden."
+      },
+      "elevenlabs_generated": false
+    },
+    {
+      "line_id": "CH05_P04_L002",
+      "frame": 2,
+      "speaker_id": "CHR_037",
+      "type": "archive",
+      "emotion_ru": "мягкое воспоминание, благодарность",
+      "translations": {
+        "ru": "Когда мы давным-давно прибыли в этот мир, местные существа помогли нам освоиться. Мы до сих пор поддерживаем с ними связь.",
+        "en": "Long ago, when we arrived in this world, its inhabitants helped us settle in. We still keep in touch with them.",
+        "pt_BR": "Há muito tempo, quando chegamos a este mundo, seus habitantes nos ajudaram a nos adaptar. Ainda mantemos contato com eles.",
+        "es": "Hace muchísimo tiempo, cuando llegamos a este mundo, sus habitantes nos ayudaron a adaptarnos. Todavía seguimos en contacto con ellos.",
+        "fr": "Il y a très longtemps, quand nous sommes arrivés dans ce monde, ses habitants nous ont aidés à nous adapter. Nous sommes toujours en contact avec eux.",
+        "de": "Als wir vor langer Zeit in diese Welt kamen, halfen uns ihre Bewohner, uns hier zurechtzufinden. Bis heute stehen wir mit ihnen in Kontakt."
+      },
+      "elevenlabs_generated": false
+    },
+    {
+      "line_id": "CH05_P04_L003",
+      "frame": 3,
+      "speaker_id": "CHR_037",
+      "type": "archive",
+      "emotion_ru": "сдержанное напряжение; загадочный сигнал",
+      "translations": {
+        "ru": "Недавно мы получили от них сигнал: они попросили открыть туннель из твоего мира в наш.",
+        "en": "Recently, they sent us a signal asking us to open a tunnel from your world to ours.",
+        "pt_BR": "Recentemente, recebemos um sinal deles: pediram que abríssemos um túnel do seu mundo para o nosso.",
+        "es": "Hace poco nos enviaron una señal: nos pidieron abrir un túnel desde tu mundo hasta el nuestro.",
+        "fr": "Récemment, ils nous ont envoyé un signal pour nous demander d’ouvrir un tunnel entre ton monde et le nôtre.",
+        "de": "Vor Kurzem erhielten wir ihr Signal: Sie baten uns, einen Tunnel von deiner Welt in unsere zu öffnen."
+      },
+      "elevenlabs_generated": false
+    },
+    {
+      "line_id": "CH05_P04_L004",
+      "frame": 4,
+      "speaker_id": "CHR_037",
+      "type": "archive",
+      "emotion_ru": "пауза перед открытием; тихое удивление",
+      "translations": {
+        "ru": "Мы открыли проход и стали ждать, к чему это приведёт. А вскоре появился ты.",
+        "en": "We opened the passage and waited to see what would happen. And then you appeared.",
+        "pt_BR": "Abrimos a passagem e esperamos para ver o que aconteceria. E então você apareceu.",
+        "es": "Abrimos el paso y esperamos a ver qué ocurría. Y entonces apareciste tú.",
+        "fr": "Nous avons ouvert le passage, puis attendu de voir ce qui se produirait. Et c’est alors que tu es apparu.",
+        "de": "Wir öffneten den Durchgang und warteten ab, was geschehen würde. Dann bist du aufgetaucht."
+      },
+      "elevenlabs_generated": false
+    },
+    {
+      "line_id": "CH05_P04_L005",
+      "frame": 5,
+      "speaker_id": "CHR_035",
+      "type": "magnet",
+      "emotion_ru": "доброжелательная твёрдость; ясно сообщает, что сам полетит с экипажем Мики",
+      "translations": {
+        "ru": "Мы решили: я полечу с вами и помогу добраться до этих существ. Они подскажут, зачем спасли тебя.",
+        "en": "We decided: I will travel with you and help you reach these beings. They can tell us why they saved you.",
+        "pt_BR": "Decidimos: vou viajar com vocês e ajudá-los a chegar até esses seres. Eles poderão explicar por que salvaram você.",
+        "es": "Lo hemos decidido: viajaré con ustedes y los ayudaré a llegar hasta esos seres. Podrán explicar por qué te salvaron.",
+        "fr": "Nous avons décidé que je partirais avec vous pour vous aider à les rejoindre. Ils pourront expliquer pourquoi ils t’ont sauvé.",
+        "de": "Wir haben beschlossen: Ich fliege mit euch und helfe euch, diese Wesen zu finden. Sie können uns erklären, warum sie dich gerettet haben."
+      },
+      "elevenlabs_generated": false
+    },
+    {
+      "line_id": "CH05_P04_L006",
+      "frame": 5,
+      "speaker_id": "CHR_001",
+      "type": "mika",
+      "emotion_ru": "облегчение и благодарность",
+      "translations": {
+        "ru": "Спасибо!",
+        "en": "Thank you!",
+        "pt_BR": "Obrigado!",
+        "es": "¡Gracias!",
+        "fr": "Merci !",
+        "de": "Danke!"
+      },
+      "elevenlabs_generated": false
+    },
+    {
+      "line_id": "CH05_P04_L007",
+      "frame": 6,
+      "speaker_id": "CHR_004",
+      "type": "narrator",
+      "emotion_ru": "доверие, надежда, ожидание новой тайны",
+      "translations": {
+        "ru": "Магнитный друг полетел с экипажем и указал путь в неизвестную Мике часть космоса — к его спасителям.",
+        "en": "Our magnetic friend joined the crew and guided the ship into a part of space Mika had never seen, toward those who had saved him.",
+        "pt_BR": "Nosso amigo magnético se juntou à tripulação e guiou a nave por uma região do espaço desconhecida para Mika, rumo àqueles que o salvaram.",
+        "es": "Nuestro amigo magnético se unió a la tripulación y guio la nave hacia una región del espacio desconocida para Mika, rumbo a sus salvadores.",
+        "fr": "Notre ami magnétique a rejoint l’équipage et guidé le vaisseau vers une région de l’espace inconnue de Mika, à la rencontre de ses sauveurs.",
+        "de": "Unser magnetischer Freund schloss sich der Besatzung an und führte das Raumschiff in einen Teil des Alls, den Mika nicht kannte — auf dem Weg zu seinen Rettern."
+      },
+      "elevenlabs_generated": false
+    }
+  ]
+}

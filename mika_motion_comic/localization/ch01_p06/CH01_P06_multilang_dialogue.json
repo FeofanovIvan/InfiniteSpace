@@ -1,0 +1,1846 @@
+{
+  "schema_version": "3.3",
+  "project": "MIKA Infinite Space",
+  "page_id": "CH01_P06",
+  "revision": 6,
+  "approval_status": "ru_art_approved_six_localizations_adapted_native_review_recommended",
+  "style": "NEBULA",
+  "master_size_px": [
+    2480,
+    3508
+  ],
+  "source_pdf": "1-6(1).pdf",
+  "background": "background.jpg",
+  "source_frame_count": 9,
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "godot_locale_aliases": {
+    "ru_RU": "ru",
+    "en_US": "en",
+    "en_GB": "en",
+    "pt_BR": "pt_BR",
+    "pt-BR": "pt_BR",
+    "pt_PT": "pt_BR",
+    "es_ES": "es",
+    "es_MX": "es",
+    "fr_FR": "fr",
+    "de_DE": "de"
+  },
+  "overlays_png": {
+    "ru": "overlays/CH01_P06_ru.png",
+    "en": "overlays/CH01_P06_en.png",
+    "pt_BR": "overlays/CH01_P06_pt_BR.png",
+    "es": "overlays/CH01_P06_es.png",
+    "fr": "overlays/CH01_P06_fr.png",
+    "de": "overlays/CH01_P06_de.png"
+  },
+  "overlays_svg": {
+    "ru": "overlays/CH01_P06_ru.svg",
+    "en": "overlays/CH01_P06_en.svg",
+    "pt_BR": "overlays/CH01_P06_pt_BR.svg",
+    "es": "overlays/CH01_P06_es.svg",
+    "fr": "overlays/CH01_P06_fr.svg",
+    "de": "overlays/CH01_P06_de.svg"
+  },
+  "previews": {
+    "ru": "previews/CH01_P06_ru_preview.jpg",
+    "en": "previews/CH01_P06_en_preview.jpg",
+    "pt_BR": "previews/CH01_P06_pt_BR_preview.jpg",
+    "es": "previews/CH01_P06_es_preview.jpg",
+    "fr": "previews/CH01_P06_fr_preview.jpg",
+    "de": "previews/CH01_P06_de_preview.jpg"
+  },
+  "speaker_ids": [
+    "CHR_013",
+    "CHR_001",
+    "CHR_014",
+    "CHR_004"
+  ],
+  "new_cast": [
+    {
+      "id": "CHR_014",
+      "key": "BUBBLE",
+      "name_ru": "Баббл",
+      "role": "Живой искусственно созданный питомец-помощник с навигационным интеллектом; потребляет много энергии, нуждается в заботе и имеет настоящие физиологические реакции, включая газообразные продукты жизнедеятельности.",
+      "current_audio_mode": "procedural_nonverbal_sfx",
+      "voice_selection": "DEFERRED_NOT_NEEDED_FOR_BEEPS",
+      "godot_sfx_slot": "SFX_CHR_014_BUBBLE_BEEPS",
+      "additional_gas_sfx_slot": "SFX_CH01_P06_F07_GAS",
+      "elevenlabs_cost_policy": "Начальные электронные бипы генерировать как эффекты, без расхода символов ElevenLabs и без выделения шести озвучивающих голосов. Собственный голос понадобится только при появлении полноценных реплик.",
+      "design_ru": "Крошечное радостное существо-облачко: озорное, ласковое, любопытное; звучит как короткие мелодичные сигналы, а не механический навигатор. Его комическая «газовая» физиология должна оставаться безобидной, музыкально-пружинистой и смешной для детей."
+    }
+  ],
+  "reading_order_line_ids": [
+    "CH01_P06_L001",
+    "CH01_P06_L002",
+    "CH01_P06_L003",
+    "CH01_P06_L004",
+    "CH01_P06_L005",
+    "CH01_P06_L006",
+    "CH01_P06_L007",
+    "CH01_P06_L008",
+    "CH01_P06_L009",
+    "CH01_P06_L010",
+    "CH01_P06_L011",
+    "CH01_P06_L012",
+    "CH01_P06_L013",
+    "CH01_P06_L014"
+  ],
+  "sound_effects": [
+    {
+      "sfx_id": "SFX_CH01_P06_BUBBLE_BEEPS",
+      "line_id": "CH01_P06_L007",
+      "frame_id": "CH01_P06_F05",
+      "speaker_id": "CHR_014",
+      "text_by_locale": {
+        "ru": "БИП-БИП! БИ-ИП!",
+        "en": "BEEP-BEEP! BEE-EEP!",
+        "pt_BR": "BIP-BIP! BIIIIIP!",
+        "es": "¡BIP-BIP! ¡BIIIIP!",
+        "fr": "BIP-BIP ! BII-IP !",
+        "de": "PIEP-PIEP! PIIIEP!"
+      },
+      "audio_file": "SFX_CH01_P06_BUBBLE_BEEPS.wav",
+      "status": "NOT_GENERATED",
+      "audio_mode": "procedural_nonverbal_sfx",
+      "language_independent_audio": true
+    },
+    {
+      "sfx_id": "SFX_CH01_P06_F07_GAS",
+      "line_id": null,
+      "frame_id": "CH01_P06_F07",
+      "speaker_id": "CHR_014",
+      "text_by_locale": {
+        "ru": "ПФ-Ф!",
+        "en": "PFFT!",
+        "pt_BR": "PFF!",
+        "es": "¡PFF!",
+        "fr": "PFF !",
+        "de": "PFF!"
+      },
+      "audio_file": "SFX_CH01_P06_F07_GAS.wav",
+      "status": "NOT_GENERATED",
+      "audio_mode": "procedural_nonverbal_sfx",
+      "language_independent_audio": true,
+      "direction_ru": "Без грубого реализма: короткое мультяшное «пф-ф», смешное и безобидное."
+    }
+  ],
+  "playback_profiles": {
+    "full_narrated": {
+      "line_ids": [
+        "CH01_P06_L001",
+        "CH01_P06_L002",
+        "CH01_P06_L003",
+        "CH01_P06_L004",
+        "CH01_P06_L005",
+        "CH01_P06_L006",
+        "CH01_P06_L008",
+        "CH01_P06_L009",
+        "CH01_P06_L010",
+        "CH01_P06_L011",
+        "CH01_P06_L012",
+        "CH01_P06_L013",
+        "CH01_P06_L014"
+      ],
+      "sfx_ids": [
+        "SFX_CH01_P06_BUBBLE_BEEPS",
+        "SFX_CH01_P06_F07_GAS"
+      ],
+      "description_ru": "Все диалоги ИИ и Мики, авторские подписи и общие неречевые звуки Баббла."
+    },
+    "character_voices_only": {
+      "line_ids": [
+        "CH01_P06_L001",
+        "CH01_P06_L002",
+        "CH01_P06_L003",
+        "CH01_P06_L004",
+        "CH01_P06_L005",
+        "CH01_P06_L006",
+        "CH01_P06_L008",
+        "CH01_P06_L010"
+      ],
+      "sfx_ids": [
+        "SFX_CH01_P06_BUBBLE_BEEPS",
+        "SFX_CH01_P06_F07_GAS"
+      ],
+      "description_ru": "Мика и Центральный ИИ звучат; подписи автора остаются для самостоятельного чтения."
+    },
+    "sfx_only": {
+      "line_ids": [],
+      "sfx_ids": [
+        "SFX_CH01_P06_BUBBLE_BEEPS",
+        "SFX_CH01_P06_F07_GAS"
+      ],
+      "description_ru": "Только два звуковых эффекта Баббла: приветствие и комический газ."
+    }
+  },
+  "art_direction_ru": "Кадр с голографическими галактиками: две панели ИИ с гипотезой и конкретной целью — Большим Магеллановым Облаком. Следующий кадр — подарок и «Правда?!». Лифт — большой аппетит Баббла. Побег — газы, а не проказы. Финал — верфь Каллисто. Геометрия утверждённого русского SVG неизменна.",
+  "narrative_guardrails_ru": [
+    "Нельзя представлять причину, протяжённость и дальность шторма как окончательно доказанные: ИИ высказывает гипотезу.",
+    "«Нет эха» относится лишь к доступному области наблюдений ИИ, а не ко всей Вселенной.",
+    "Маршрут продолжается через орбитальную верфь Каллисто к Большому Магелланову Облаку, где Мика может расспросить жителей о шторме. «Ответы о будущем в прошлом» — намеренная загадка для дальнейшего сюжета.",
+    "Баббл — живое искусственно созданное существо, а не просто девайс. Он потребляет много энергии и выделяет газы. В кадре погони Мика не гонится за проказником, а убегает от неприятного запаха из лифта.",
+    "О необходимости заботы и физиологических особенностях Баббла Центральный ИИ не предупреждает Мику. Читателю это раскрывает рассказчик с доброй, немного озорной иронией.",
+    "Каллисто — спутник Юпитера. Называть место «Орбитальная верфь Каллисто», не придумывать неподтверждённых официальных названий базы."
+  ],
+  "scene_arcs_ru": [
+    {
+      "frames": [
+        1,
+        2
+      ],
+      "arc": "От сдержанной научной догадки к признанию неизвестности: у ИИ нет всех ответов."
+    },
+    {
+      "frames": [
+        3
+      ],
+      "arc": "ИИ не видит отголосков бури и предлагает поискать ответы в Большом Магеллановом Облаке. Загадочный намёк: будущее связано с прошлым."
+    },
+    {
+      "frames": [
+        4
+      ],
+      "arc": "Вместо длинной лекции — короткий неожиданный подарок от ИИ. Мика счастливо удивлён."
+    },
+    {
+      "frames": [
+        5,
+        6
+      ],
+      "arc": "Неожиданный жизнерадостный писк → изумление → встреча с Бабблом. В лифте узнаём о его ненасытном расходе энергии."
+    },
+    {
+      "frames": [
+        7
+      ],
+      "arc": "Комический физиологический сюрприз: после еды Баббл выпускает газ, а Мика, зажимая нос, удирает к шаттлу. За искусственным живым помощником нужен уход."
+    },
+    {
+      "frames": [
+        8,
+        9
+      ],
+      "arc": "Два новых друга улетают; крупный приключенческий анонс — верфь Каллисто и модернизация для прыжков."
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P06_L001",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F01",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "bubble_id": "mars_ai_neon_navy_hud",
+      "reading_order": 1,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "cautious_scientific_hypothesis",
+        "intensity": 0.57,
+        "pace": "clear_reflective",
+        "volume": "steady_soft",
+        "pause_after_ms": 330,
+        "tone_ru": "Мудрый и доброжелательный ИИ осторожно объясняет, что причина шторма пока остаётся гипотезой.",
+        "arc_ru": "Сделать лёгкий смысловой акцент на «Похоже» и три перечисления произнести ритмично, без лекционной сухости.",
+        "acting_beats": [
+          "внимательное-изучение",
+          "осторожная-гипотеза",
+          "ощущение-тайны"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[thoughtfully]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Похоже, шторм вызвали гравитационные, магнитные и пространственные аномалии.",
+          "voice_spoken_text": "Похоже, шторм вызвали гравитационные, магнитные и пространственные аномалии.",
+          "render_lines": [
+            "Похоже, шторм вызвали",
+            "гравитационные, магнитные",
+            "и пространственные аномалии."
+          ],
+          "font_size_viewbox": 21.7,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[thoughtfully] Похоже, шторм вызвали гравитационные, магнитные и пространственные аномалии."
+        },
+        "en": {
+          "display_text": "It looks like the storm came from gravitational, magnetic, and spatial anomalies.",
+          "voice_spoken_text": "It looks like the storm came from gravitational, magnetic, and spatial anomalies.",
+          "render_lines": [
+            "It looks like the storm",
+            "came from gravitational,",
+            "magnetic, and spatial",
+            "anomalies."
+          ],
+          "font_size_viewbox": 18.8,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[thoughtfully] It looks like the storm came from gravitational, magnetic, and spatial anomalies."
+        },
+        "pt_BR": {
+          "display_text": "Pelo visto, o temporal veio de anomalias gravitacionais, magnéticas e espaciais.",
+          "voice_spoken_text": "Pelo visto, o temporal veio de anomalias gravitacionais, magnéticas e espaciais.",
+          "render_lines": [
+            "Pelo visto, o temporal",
+            "veio de anomalias",
+            "gravitacionais, magnéticas",
+            "e espaciais."
+          ],
+          "font_size_viewbox": 18.3,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[thoughtfully] Pelo visto, o temporal veio de anomalias gravitacionais, magnéticas e espaciais."
+        },
+        "es": {
+          "display_text": "Parece que la tormenta nació de anomalías gravitacionales, magnéticas y espaciales.",
+          "voice_spoken_text": "Parece que la tormenta nació de anomalías gravitacionales, magnéticas y espaciales.",
+          "render_lines": [
+            "Parece que la tormenta",
+            "nació de anomalías",
+            "gravitacionales, magnéticas",
+            "y espaciales."
+          ],
+          "font_size_viewbox": 18.5,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[thoughtfully] Parece que la tormenta nació de anomalías gravitacionales, magnéticas y espaciales."
+        },
+        "fr": {
+          "display_text": "On dirait que la tempête est née d’anomalies gravitationnelles, magnétiques et spatiales.",
+          "voice_spoken_text": "On dirait que la tempête est née d’anomalies gravitationnelles, magnétiques et spatiales.",
+          "render_lines": [
+            "On dirait que la tempête",
+            "est née d’anomalies",
+            "gravitationnelles,",
+            "magnétiques et spatiales."
+          ],
+          "font_size_viewbox": 18.3,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[thoughtfully] On dirait que la tempête est née d’anomalies gravitationnelles, magnétiques et spatiales."
+        },
+        "de": {
+          "display_text": "Vermutlich lösten Gravitations-, Magnet- und Raumanomalien den Sturm aus.",
+          "voice_spoken_text": "Vermutlich lösten Gravitations-, Magnet- und Raumanomalien den Sturm aus.",
+          "render_lines": [
+            "Vermutlich lösten",
+            "Gravitations-, Magnet-",
+            "und Raumanomalien",
+            "den Sturm aus."
+          ],
+          "font_size_viewbox": 18.7,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[thoughtfully] Vermutlich lösten Gravitations-, Magnet- und Raumanomalien den Sturm aus."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L002",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F02",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "bubble_id": "mars_ai_neon_navy_hud",
+      "reading_order": 2,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "grave_candid_uncertainty",
+        "intensity": 0.64,
+        "pace": "measured_with_emphasis",
+        "volume": "low_warm",
+        "pause_after_ms": 420,
+        "tone_ru": "Масштаб возможной беды огромен, но ИИ честно признаёт границы своих знаний.",
+        "arc_ru": "«Всю галактику» произнести с тихим удивлением. После точки — заметная пауза, а «неизвестен» без ложной уверенности.",
+        "acting_beats": [
+          "предположение-о-масштабе",
+          "неприятная-пауза",
+          "честный-ответ"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[concerned]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Буря могла охватить не только твой мир, но и всю галактику. Её точный масштаб нам пока неизвестен.",
+          "voice_spoken_text": "Буря могла охватить не только твой мир, но и всю галактику. Её точный масштаб нам пока неизвестен.",
+          "render_lines": [
+            "Буря могла охватить",
+            "не только твой мир,",
+            "но и всю галактику.",
+            "Её точный масштаб",
+            "нам пока неизвестен."
+          ],
+          "font_size_viewbox": 18.9,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[concerned] Буря могла охватить не только твой мир, но и всю галактику. Её точный масштаб нам пока неизвестен."
+        },
+        "en": {
+          "display_text": "It may have spread beyond your world— perhaps across the entire galaxy. We can’t tell how far.",
+          "voice_spoken_text": "It may have spread beyond your world— perhaps across the entire galaxy. We can’t tell how far.",
+          "render_lines": [
+            "It may have spread",
+            "beyond your world—",
+            "perhaps across the",
+            "entire galaxy.",
+            "We can’t tell how far."
+          ],
+          "font_size_viewbox": 18.6,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[concerned] It may have spread beyond your world— perhaps across the entire galaxy. We can’t tell how far."
+        },
+        "pt_BR": {
+          "display_text": "Ele pode ter atingido muito mais que seu lar: talvez a galáxia inteira. Ainda não sabemos até onde chegou.",
+          "voice_spoken_text": "Ele pode ter atingido muito mais que seu lar: talvez a galáxia inteira. Ainda não sabemos até onde chegou.",
+          "render_lines": [
+            "Ele pode ter atingido",
+            "muito mais que seu lar:",
+            "talvez a galáxia inteira.",
+            "Ainda não sabemos",
+            "até onde chegou."
+          ],
+          "font_size_viewbox": 18,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[concerned] Ele pode ter atingido muito mais que seu lar: talvez a galáxia inteira. Ainda não sabemos até onde chegou."
+        },
+        "es": {
+          "display_text": "Tal vez alcanzó mucho más que tu mundo: ¡quizá toda la galaxia! Aún no sabemos qué tan lejos llegó.",
+          "voice_spoken_text": "Tal vez alcanzó mucho más que tu mundo: ¡quizá toda la galaxia! Aún no sabemos qué tan lejos llegó.",
+          "render_lines": [
+            "Tal vez alcanzó",
+            "mucho más que tu mundo:",
+            "¡quizá toda la galaxia!",
+            "Aún no sabemos",
+            "qué tan lejos llegó."
+          ],
+          "font_size_viewbox": 18.1,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[concerned] Tal vez alcanzó mucho más que tu mundo: ¡quizá toda la galaxia! Aún no sabemos qué tan lejos llegó."
+        },
+        "fr": {
+          "display_text": "Elle a peut-être frappé bien au-delà de chez toi, voire toute la galaxie. Mais son étendue exacte reste inconnue.",
+          "voice_spoken_text": "Elle a peut-être frappé bien au-delà de chez toi, voire toute la galaxie. Mais son étendue exacte reste inconnue.",
+          "render_lines": [
+            "Elle a peut-être frappé",
+            "bien au-delà de chez toi,",
+            "voire toute la galaxie.",
+            "Mais son étendue exacte",
+            "reste inconnue."
+          ],
+          "font_size_viewbox": 17.7,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[concerned] Elle a peut-être frappé bien au-delà de chez toi, voire toute la galaxie. Mais son étendue exacte reste inconnue."
+        },
+        "de": {
+          "display_text": "Er könnte nicht nur deine Welt, sondern die ganze Galaxie erfasst haben. Wie weit genau, wissen wir nicht.",
+          "voice_spoken_text": "Er könnte nicht nur deine Welt, sondern die ganze Galaxie erfasst haben. Wie weit genau, wissen wir nicht.",
+          "render_lines": [
+            "Er könnte nicht nur",
+            "deine Welt, sondern",
+            "die ganze Galaxie",
+            "erfasst haben. Wie weit",
+            "genau, wissen wir nicht."
+          ],
+          "font_size_viewbox": 17.8,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[concerned] Er könnte nicht nur deine Welt, sondern die ganze Galaxie erfasst haben. Wie weit genau, wissen wir nicht."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L003",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F03",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "bubble_id": "mars_ai_neon_navy_hud",
+      "reading_order": 3,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "mysterious_absence_of_evidence",
+        "intensity": 0.53,
+        "pace": "slow_pondering",
+        "volume": "soft_wonder",
+        "pause_after_ms": 660,
+        "tone_ru": "Неожиданное противоречие: данных нет, следовательно путь поиска открыт.",
+        "arc_ru": "Слово «Но» отделить паузой. «Нет даже отголоска» произнести тише, будто на приборе погас последний сигнал.",
+        "acting_beats": [
+          "проверка-сигналов",
+          "необъяснимое-отсутствие",
+          "тихий-вывод"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[mysteriously]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Но в той части Вселенной, которую я могу изучить, нет даже отголоска этой бури…",
+          "voice_spoken_text": "Но в той части Вселенной, которую я могу изучить, нет даже отголоска этой бури…",
+          "render_lines": [
+            "Но в той части",
+            "Вселенной, которую",
+            "я могу изучить,",
+            "нет даже отголоска",
+            "этой бури…"
+          ],
+          "font_size_viewbox": 19.5,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[mysteriously] Но в той части Вселенной, которую я могу изучить, нет даже отголоска этой бури…"
+        },
+        "en": {
+          "display_text": "But in the part of the universe I can observe, there isn’t even an echo of that storm…",
+          "voice_spoken_text": "But in the part of the universe I can observe, there isn’t even an echo of that storm…",
+          "render_lines": [
+            "But in the part of",
+            "the universe I can",
+            "observe, there isn’t",
+            "even an echo",
+            "of that storm…"
+          ],
+          "font_size_viewbox": 19.1,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[mysteriously] But in the part of the universe I can observe, there isn’t even an echo of that storm…"
+        },
+        "pt_BR": {
+          "display_text": "Mas, na parte do universo que consigo observar, não encontro nem um eco dessa tempestade…",
+          "voice_spoken_text": "Mas, na parte do universo que consigo observar, não encontro nem um eco dessa tempestade…",
+          "render_lines": [
+            "Mas, na parte do",
+            "universo que consigo",
+            "observar, não encontro",
+            "nem um eco",
+            "dessa tempestade…"
+          ],
+          "font_size_viewbox": 18.7,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[mysteriously] Mas, na parte do universo que consigo observar, não encontro nem um eco dessa tempestade…"
+        },
+        "es": {
+          "display_text": "Pero en la parte del universo que puedo observar, no hay ni un eco de esa tormenta…",
+          "voice_spoken_text": "Pero en la parte del universo que puedo observar, no hay ni un eco de esa tormenta…",
+          "render_lines": [
+            "Pero en la parte",
+            "del universo que puedo",
+            "observar, no hay ni",
+            "un eco de esa",
+            "tormenta…"
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[mysteriously] Pero en la parte del universo que puedo observar, no hay ni un eco de esa tormenta…"
+        },
+        "fr": {
+          "display_text": "Mais dans la partie de l’Univers que je peux observer, pas le moindre écho de cette tempête…",
+          "voice_spoken_text": "Mais dans la partie de l’Univers que je peux observer, pas le moindre écho de cette tempête…",
+          "render_lines": [
+            "Mais dans la partie",
+            "de l’Univers que je",
+            "peux observer,",
+            "pas le moindre écho",
+            "de cette tempête…"
+          ],
+          "font_size_viewbox": 19.2,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[mysteriously] Mais dans la partie de l’Univers que je peux observer, pas le moindre écho de cette tempête…"
+        },
+        "de": {
+          "display_text": "Doch in dem Teil des Universums, den ich untersuchen kann, finde ich nicht einmal ein Echo des Sturms…",
+          "voice_spoken_text": "Doch in dem Teil des Universums, den ich untersuchen kann, finde ich nicht einmal ein Echo des Sturms…",
+          "render_lines": [
+            "Doch in dem Teil",
+            "des Universums, den",
+            "ich untersuchen kann,",
+            "finde ich nicht einmal",
+            "ein Echo des Sturms…"
+          ],
+          "font_size_viewbox": 18.6,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[mysteriously] Doch in dem Teil des Universums, den ich untersuchen kann, finde ich nicht einmal ein Echo des Sturms…"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L004",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F03",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "bubble_id": "mars_ai_neon_navy_hud",
+      "reading_order": 4,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "hopeful_cryptic_direction",
+        "intensity": 0.71,
+        "pace": "encouraging_then_mysterious",
+        "volume": "warm_bright_to_low",
+        "pause_after_ms": 780,
+        "tone_ru": "ИИ предлагает Мике конкретную точку маршрута. В финале звучит намёк, который приобретёт смысл лишь в дальнейшем путешествии.",
+        "arc_ru": "«Большого Магелланова Облака» произнести ясно и любопытно. После «Расспроси его жителей» пауза, затем полушёпотом: «А вдруг ответы о будущем спрятаны в прошлом?..»",
+        "acting_beats": [
+          "указать-галактику",
+          "дать-надежду",
+          "посеять-загадку"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[intrigued]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Попробуй добраться до Большого Магелланова Облака. Расспроси его жителей. А вдруг ответы о будущем спрятаны в прошлом?..",
+          "voice_spoken_text": "Попробуй добраться до Большого Магелланова Облака. Расспроси его жителей. А вдруг ответы о будущем спрятаны в прошлом?..",
+          "render_lines": [
+            "Попробуй добраться",
+            "до Большого",
+            "Магелланова Облака.",
+            "Расспроси его жителей.",
+            "А вдруг ответы",
+            "о будущем спрятаны",
+            "в прошлом?.."
+          ],
+          "font_size_viewbox": 18.4,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[intrigued] Попробуй добраться до Большого Магелланова Облака. Расспроси его жителей. А вдруг ответы о будущем спрятаны в прошлом?.."
+        },
+        "en": {
+          "display_text": "Try reaching the Large Magellanic Cloud. Ask the people there what they know. Who knows? The answers to tomorrow may hide in yesterday…",
+          "voice_spoken_text": "Try reaching the Large Magellanic Cloud. Ask the people there what they know. Who knows? The answers to tomorrow may hide in yesterday…",
+          "render_lines": [
+            "Try reaching the",
+            "Large Magellanic Cloud.",
+            "Ask the people there",
+            "what they know.",
+            "Who knows? The answers",
+            "to tomorrow may hide",
+            "in yesterday…"
+          ],
+          "font_size_viewbox": 17.2,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[intrigued] Try reaching the Large Magellanic Cloud. Ask the people there what they know. Who knows? The answers to tomorrow may hide in yesterday…"
+        },
+        "pt_BR": {
+          "display_text": "Vá até a Grande Nuvem de Magalhães. Converse com quem mora por lá. Vai saber… Talvez as respostas do futuro estejam no passado.",
+          "voice_spoken_text": "Vá até a Grande Nuvem de Magalhães. Converse com quem mora por lá. Vai saber… Talvez as respostas do futuro estejam no passado.",
+          "render_lines": [
+            "Vá até a Grande",
+            "Nuvem de Magalhães.",
+            "Converse com quem",
+            "mora por lá.",
+            "Vai saber… Talvez",
+            "as respostas do futuro",
+            "estejam no passado."
+          ],
+          "font_size_viewbox": 17.1,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[intrigued] Vá até a Grande Nuvem de Magalhães. Converse com quem mora por lá. Vai saber… Talvez as respostas do futuro estejam no passado."
+        },
+        "es": {
+          "display_text": "Ve a la Gran Nube de Magallanes. Pregunta a quienes viven allí. Quizá… las respuestas sobre el futuro estén en el pasado.",
+          "voice_spoken_text": "Ve a la Gran Nube de Magallanes. Pregunta a quienes viven allí. Quizá… las respuestas sobre el futuro estén en el pasado.",
+          "render_lines": [
+            "Ve a la Gran Nube",
+            "de Magallanes.",
+            "Pregunta a quienes",
+            "viven allí. Quizá…",
+            "las respuestas",
+            "sobre el futuro",
+            "estén en el pasado."
+          ],
+          "font_size_viewbox": 17.9,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[intrigued] Ve a la Gran Nube de Magallanes. Pregunta a quienes viven allí. Quizá… las respuestas sobre el futuro estén en el pasado."
+        },
+        "fr": {
+          "display_text": "Va dans le Grand Nuage de Magellan. Interroge ceux qui y vivent. Qui sait… Les réponses pour l’avenir se cachent peut-être dans le passé.",
+          "voice_spoken_text": "Va dans le Grand Nuage de Magellan. Interroge ceux qui y vivent. Qui sait… Les réponses pour l’avenir se cachent peut-être dans le passé.",
+          "render_lines": [
+            "Va dans le Grand",
+            "Nuage de Magellan.",
+            "Interroge ceux qui",
+            "y vivent. Qui sait…",
+            "Les réponses pour",
+            "l’avenir se cachent",
+            "peut-être dans le passé."
+          ],
+          "font_size_viewbox": 17,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[intrigued] Va dans le Grand Nuage de Magellan. Interroge ceux qui y vivent. Qui sait… Les réponses pour l’avenir se cachent peut-être dans le passé."
+        },
+        "de": {
+          "display_text": "Flieg zur Großen Magellanschen Wolke. Frag dort nach dem Sturm. Und wer weiß… Vielleicht liegt der Schlüssel zur Zukunft in der Vergangenheit.",
+          "voice_spoken_text": "Flieg zur Großen Magellanschen Wolke. Frag dort nach dem Sturm. Und wer weiß… Vielleicht liegt der Schlüssel zur Zukunft in der Vergangenheit.",
+          "render_lines": [
+            "Flieg zur Großen",
+            "Magellanschen Wolke.",
+            "Frag dort nach dem Sturm.",
+            "Und wer weiß…",
+            "Vielleicht liegt",
+            "der Schlüssel zur Zukunft",
+            "in der Vergangenheit."
+          ],
+          "font_size_viewbox": 17,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[intrigued] Flieg zur Großen Magellanschen Wolke. Frag dort nach dem Sturm. Und wer weiß… Vielleicht liegt der Schlüssel zur Zukunft in der Vergangenheit."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L005",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F04",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "bubble_id": "mars_ai_neon_navy_hud",
+      "reading_order": 5,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "warm_playful_surprise",
+        "intensity": 0.72,
+        "pace": "gentle_setup_emphatic_reveal",
+        "volume": "smiling_even",
+        "pause_after_ms": 350,
+        "tone_ru": "После загадочного прогноза ИИ смягчает тон, словно взрослый приготовил малышу приятный сюрприз.",
+        "arc_ru": "С лёгкой хитринкой и маленькой паузой перед «подарок!». Без объяснений — подарок должен остаться интригой.",
+        "acting_beats": [
+          "смягчиться",
+          "загадочная-улыбка",
+          "объявить-подарок"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[cheerfully]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "А у меня для тебя есть подарок!",
+          "voice_spoken_text": "А у меня для тебя есть подарок!",
+          "render_lines": [
+            "А у меня для тебя",
+            "есть подарок!"
+          ],
+          "font_size_viewbox": 22.5,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[cheerfully] А у меня для тебя есть подарок!"
+        },
+        "en": {
+          "display_text": "And I have a gift for you!",
+          "voice_spoken_text": "And I have a gift for you!",
+          "render_lines": [
+            "And I have",
+            "a gift for you!"
+          ],
+          "font_size_viewbox": 22.4,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[cheerfully] And I have a gift for you!"
+        },
+        "pt_BR": {
+          "display_text": "Ah, e tenho um presente pra você!",
+          "voice_spoken_text": "Ah, e tenho um presente pra você!",
+          "render_lines": [
+            "Ah, e tenho um",
+            "presente pra você!"
+          ],
+          "font_size_viewbox": 21,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[cheerfully] Ah, e tenho um presente pra você!"
+        },
+        "es": {
+          "display_text": "Y tengo un regalo para ti.",
+          "voice_spoken_text": "Y tengo un regalo para ti.",
+          "render_lines": [
+            "Y tengo un regalo",
+            "para ti."
+          ],
+          "font_size_viewbox": 21.5,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[cheerfully] Y tengo un regalo para ti."
+        },
+        "fr": {
+          "display_text": "Et j’ai un cadeau pour toi !",
+          "voice_spoken_text": "Et j’ai un cadeau pour toi !",
+          "render_lines": [
+            "Et j’ai un cadeau",
+            "pour toi !"
+          ],
+          "font_size_viewbox": 21.8,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[cheerfully] Et j’ai un cadeau pour toi !"
+        },
+        "de": {
+          "display_text": "Und ich habe ein Geschenk für dich!",
+          "voice_spoken_text": "Und ich habe ein Geschenk für dich!",
+          "render_lines": [
+            "Und ich habe ein",
+            "Geschenk für dich!"
+          ],
+          "font_size_viewbox": 21.2,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[cheerfully] Und ich habe ein Geschenk für dich!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L006",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F04",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue_delighted_question",
+      "bubble_id": "mika_speech_amber_tail",
+      "reading_order": 6,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "sudden_childlike_delight",
+        "intensity": 0.81,
+        "pace": "quick_bouncy",
+        "volume": "medium_bright",
+        "pause_after_ms": 300,
+        "tone_ru": "Мика оживает и улыбается — любопытство на секунду побеждает тревогу о доме.",
+        "arc_ru": "Быстрый вдох и удивлённо-радостное «Правда?!» на одном подъёме интонации.",
+        "acting_beats": [
+          "улыбка",
+          "оживление",
+          "счастливое-удивление"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[excited]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Правда?!",
+          "voice_spoken_text": "Правда?!",
+          "render_lines": [
+            "Правда?!"
+          ],
+          "font_size_viewbox": 29.6,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] Правда?!"
+        },
+        "en": {
+          "display_text": "Really?!",
+          "voice_spoken_text": "Really?!",
+          "render_lines": [
+            "Really?!"
+          ],
+          "font_size_viewbox": 29.2,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] Really?!"
+        },
+        "pt_BR": {
+          "display_text": "É sério?!",
+          "voice_spoken_text": "É sério?!",
+          "render_lines": [
+            "É sério?!"
+          ],
+          "font_size_viewbox": 27.5,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] É sério?!"
+        },
+        "es": {
+          "display_text": "¿En serio?!",
+          "voice_spoken_text": "¿En serio?!",
+          "render_lines": [
+            "¿En serio?!"
+          ],
+          "font_size_viewbox": 26,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] ¿En serio?!"
+        },
+        "fr": {
+          "display_text": "Vraiment ?!",
+          "voice_spoken_text": "Vraiment ?!",
+          "render_lines": [
+            "Vraiment ?!"
+          ],
+          "font_size_viewbox": 24.3,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] Vraiment ?!"
+        },
+        "de": {
+          "display_text": "Wirklich?!",
+          "voice_spoken_text": "Wirklich?!",
+          "render_lines": [
+            "Wirklich?!"
+          ],
+          "font_size_viewbox": 26,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] Wirklich?!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L007",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F05",
+      "speaker_id": "CHR_014",
+      "kind": "nonverbal_offscreen_sfx",
+      "bubble_id": "bubble_magenta_soundburst",
+      "reading_order": 7,
+      "audio_generation_mode": "procedural_sfx_preferred",
+      "performance": {
+        "emotion": "eager_hello_musical_bloops",
+        "intensity": 0.93,
+        "pace": "three_short_chirps_one_long",
+        "volume": "bright_poppy",
+        "pause_after_ms": 190,
+        "tone_ru": "Это не человеческая речь и не роботический монотонный сигнал; Баббл будто радостно здоровается.",
+        "arc_ru": "Два коротких высоких тона и один чуть тянущийся, с весёлым подъёмом; можно синтезировать звуковыми эффектами Godot и повторно использовать на всех языках.",
+        "acting_beats": [
+          "внезапно-появиться",
+          "поздороваться",
+          "встряхнуть-воздух"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": null,
+        "voice_optional": true
+      },
+      "localized": {
+        "ru": {
+          "display_text": "БИП-БИП! БИ-ИП!",
+          "voice_spoken_text": "Бип-бип! Би-и-ип!",
+          "render_lines": [
+            "БИП-БИП!",
+            "БИ-ИП!"
+          ],
+          "font_size_viewbox": 22.7,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": null
+        },
+        "en": {
+          "display_text": "BEEP-BEEP! BEE-EEP!",
+          "voice_spoken_text": "BEEP-BEEP! BEE-EEP!",
+          "render_lines": [
+            "BEEP-BEEP!",
+            "BEE-EEP!"
+          ],
+          "font_size_viewbox": 20.5,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": null
+        },
+        "pt_BR": {
+          "display_text": "BIP-BIP! BIIIIIP!",
+          "voice_spoken_text": "BIP-BIP! BIIIIIP!",
+          "render_lines": [
+            "BIP-BIP!",
+            "BIIIIIP!"
+          ],
+          "font_size_viewbox": 21.5,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": null
+        },
+        "es": {
+          "display_text": "¡BIP-BIP! ¡BIIIIP!",
+          "voice_spoken_text": "¡BIP-BIP! ¡BIIIIP!",
+          "render_lines": [
+            "¡BIP-BIP!",
+            "¡BIIIIP!"
+          ],
+          "font_size_viewbox": 21,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": null
+        },
+        "fr": {
+          "display_text": "BIP-BIP ! BII-IP !",
+          "voice_spoken_text": "BIP-BIP ! BII-IP !",
+          "render_lines": [
+            "BIP-BIP !",
+            "BII-IP !"
+          ],
+          "font_size_viewbox": 21.2,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": null
+        },
+        "de": {
+          "display_text": "PIEP-PIEP! PIIIEP!",
+          "voice_spoken_text": "PIEP-PIEP! PIIIEP!",
+          "render_lines": [
+            "PIEP-PIEP!",
+            "PIIIEP!"
+          ],
+          "font_size_viewbox": 20.3,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": null
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L008",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F05",
+      "speaker_id": "CHR_001",
+      "kind": "speech_question_surprise",
+      "bubble_id": "mika_speech_amber_tail",
+      "reading_order": 8,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "startled_comic_disbelief",
+        "intensity": 0.83,
+        "pace": "staccato_then_fast",
+        "volume": "medium_high",
+        "pause_after_ms": 290,
+        "tone_ru": "Мика услышал неожиданный писк из ниоткуда и удивился, но не испугался по-настоящему.",
+        "arc_ru": "Резкое «А?!» с удивлением, «Что это?!» — быстрее, чуть смешнее, не превращая в панический крик.",
+        "acting_beats": [
+          "вздрагивание",
+          "оглянуться",
+          "растерянный-вопрос"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[surprised]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "А?! Что это?!",
+          "voice_spoken_text": "А?! Что это?!",
+          "render_lines": [
+            "А?!",
+            "Что это?!"
+          ],
+          "font_size_viewbox": 26,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[surprised] А?! Что это?!"
+        },
+        "en": {
+          "display_text": "Huh?! What’s that?!",
+          "voice_spoken_text": "Huh?! What’s that?!",
+          "render_lines": [
+            "Huh?!",
+            "What’s that?!"
+          ],
+          "font_size_viewbox": 23.5,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[surprised] Huh?! What’s that?!"
+        },
+        "pt_BR": {
+          "display_text": "Hã?! Que é isso?!",
+          "voice_spoken_text": "Hã?! Que é isso?!",
+          "render_lines": [
+            "Hã?!",
+            "Que é isso?!"
+          ],
+          "font_size_viewbox": 23.1,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[surprised] Hã?! Que é isso?!"
+        },
+        "es": {
+          "display_text": "¿Eh?! ¿Qué es eso?!",
+          "voice_spoken_text": "¿Eh?! ¿Qué es eso?!",
+          "render_lines": [
+            "¿Eh?!",
+            "¿Qué es eso?!"
+          ],
+          "font_size_viewbox": 23.2,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[surprised] ¿Eh?! ¿Qué es eso?!"
+        },
+        "fr": {
+          "display_text": "Hein ?! C’est quoi ?!",
+          "voice_spoken_text": "Hein ?! C’est quoi ?!",
+          "render_lines": [
+            "Hein ?!",
+            "C’est quoi ?!"
+          ],
+          "font_size_viewbox": 22.4,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[surprised] Hein ?! C’est quoi ?!"
+        },
+        "de": {
+          "display_text": "Hä?! Was ist das?!",
+          "voice_spoken_text": "Hä?! Was ist das?!",
+          "render_lines": [
+            "Hä?!",
+            "Was ist das?!"
+          ],
+          "font_size_viewbox": 22.8,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[surprised] Hä?! Was ist das?!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L009",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F06",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_cream_rect_violet",
+      "reading_order": 9,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "affectionate_foreshadowing_appetite",
+        "intensity": 0.59,
+        "pace": "warm_then_playful_hint",
+        "volume": "warm",
+        "pause_after_ms": 370,
+        "tone_ru": "Рассказчик представит Баббла как живое, хотя и искусственно созданное существо, и с улыбкой заметит его большой аппетит к энергии.",
+        "arc_ru": "«Живой» подчеркнуть ласково, на «очень много!» поднять интонацию, предвкушая маленькую неприятность в лифте.",
+        "acting_beats": [
+          "знакомство",
+          "заметить-аппетит",
+          "интрига-последствий"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[playfully]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Баббл — живой помощник с ИИ. А энергии ему нужно очень много!",
+          "voice_spoken_text": "Баббл — живой помощник с искусственным интеллектом. А энергии ему нужно очень много!",
+          "render_lines": [
+            "Баббл — живой",
+            "помощник с ИИ.",
+            "А энергии ему",
+            "нужно очень много!"
+          ],
+          "font_size_viewbox": 18,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[playfully] Баббл — живой помощник с искусственным интеллектом. А энергии ему нужно очень много!"
+        },
+        "en": {
+          "display_text": "Bubble is a living AI companion. And boy, does he need lots of energy!",
+          "voice_spoken_text": "Bubble is a living AI companion. And boy, does he need lots of energy!",
+          "render_lines": [
+            "Bubble is a living",
+            "AI companion.",
+            "And boy, does he",
+            "need lots of energy!"
+          ],
+          "font_size_viewbox": 17.6,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[playfully] Bubble is a living AI companion. And boy, does he need lots of energy!"
+        },
+        "pt_BR": {
+          "display_text": "Bubble é um ser vivo com IA. E precisa de muita, mas muita energia!",
+          "voice_spoken_text": "Bubble é um ser vivo com IA. E precisa de muita, mas muita energia!",
+          "render_lines": [
+            "Bubble é um ser vivo",
+            "com IA. E precisa",
+            "de muita, mas muita",
+            "energia!"
+          ],
+          "font_size_viewbox": 17.5,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[playfully] Bubble é um ser vivo com IA. E precisa de muita, mas muita energia!"
+        },
+        "es": {
+          "display_text": "Bubble está vivo: es un ayudante con IA. Y necesita muchísima energía!",
+          "voice_spoken_text": "Bubble está vivo: es un ayudante con IA. Y necesita muchísima energía!",
+          "render_lines": [
+            "Bubble está vivo:",
+            "es un ayudante con IA.",
+            "Y necesita muchísima",
+            "energía!"
+          ],
+          "font_size_viewbox": 17.4,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[playfully] Bubble está vivo: es un ayudante con IA. Y necesita muchísima energía!"
+        },
+        "fr": {
+          "display_text": "Bubble est un être vivant, doté d’une IA. Et il a besoin de beaucoup d’énergie !",
+          "voice_spoken_text": "Bubble est un être vivant, doté d’une IA. Et il a besoin de beaucoup d’énergie !",
+          "render_lines": [
+            "Bubble est un être",
+            "vivant, doté d’une IA.",
+            "Et il a besoin de",
+            "beaucoup d’énergie !"
+          ],
+          "font_size_viewbox": 17.1,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[playfully] Bubble est un être vivant, doté d’une IA. Et il a besoin de beaucoup d’énergie !"
+        },
+        "de": {
+          "display_text": "Bubble ist ein lebendiger KI-Helfer. Und er braucht jede Menge Energie!",
+          "voice_spoken_text": "Bubble ist ein lebendiger KI-Helfer. Und er braucht jede Menge Energie!",
+          "render_lines": [
+            "Bubble ist ein",
+            "lebendiger KI-Helfer.",
+            "Und er braucht",
+            "jede Menge Energie!"
+          ],
+          "font_size_viewbox": 17.5,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[playfully] Bubble ist ein lebendiger KI-Helfer. Und er braucht jede Menge Energie!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L010",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F07",
+      "speaker_id": "CHR_001",
+      "kind": "speech_panic",
+      "bubble_id": "mika_starburst_speech_magenta",
+      "reading_order": 10,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "comic_stinky_surprise",
+        "intensity": 0.89,
+        "pace": "sudden_yelp_then_flee",
+        "volume": "medium_loud",
+        "pause_after_ms": 230,
+        "tone_ru": "Мика не догоняет Баббла: он выбегает из лифта от сильного запаха, стараясь не обидеть своего нового друга.",
+        "arc_ru": "«Фу-у» с коротким комичным отвращением и выдохом; «Баббл!» как недоумённый укор; «Я подожду тебя в шаттле!» выпалить быстро на бегу.",
+        "acting_beats": [
+          "ощутить-запах",
+          "прижать-нос",
+          "спешно-выбежать-из-лифта"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[disgusted]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Фу-у, Баббл! Я подожду тебя в шаттле!",
+          "voice_spoken_text": "Фу-у, Баббл! Я подожду тебя в шаттле!",
+          "render_lines": [
+            "Фу-у, Баббл!",
+            "Я подожду тебя",
+            "в шаттле!"
+          ],
+          "font_size_viewbox": 19.7,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[disgusted] Фу-у, Баббл! Я подожду тебя в шаттле!"
+        },
+        "en": {
+          "display_text": "Eww, Bubble! I’ll wait for you on the ship!",
+          "voice_spoken_text": "Eww, Bubble! I’ll wait for you on the ship!",
+          "render_lines": [
+            "Eww, Bubble!",
+            "I’ll wait for you",
+            "on the ship!"
+          ],
+          "font_size_viewbox": 18,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[disgusted] Eww, Bubble! I’ll wait for you on the ship!"
+        },
+        "pt_BR": {
+          "display_text": "Eca, Bubble! Te espero lá na nave!",
+          "voice_spoken_text": "Eca, Bubble! Te espero lá na nave!",
+          "render_lines": [
+            "Eca, Bubble!",
+            "Te espero lá",
+            "na nave!"
+          ],
+          "font_size_viewbox": 18.6,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[disgusted] Eca, Bubble! Te espero lá na nave!"
+        },
+        "es": {
+          "display_text": "¡Puaj, Bubble! ¡Te espero en la nave!",
+          "voice_spoken_text": "¡Puaj, Bubble! ¡Te espero en la nave!",
+          "render_lines": [
+            "¡Puaj, Bubble!",
+            "¡Te espero",
+            "en la nave!"
+          ],
+          "font_size_viewbox": 18,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[disgusted] ¡Puaj, Bubble! ¡Te espero en la nave!"
+        },
+        "fr": {
+          "display_text": "Beurk, Bubble ! Je t’attends au vaisseau !",
+          "voice_spoken_text": "Beurk, Bubble ! Je t’attends au vaisseau !",
+          "render_lines": [
+            "Beurk, Bubble !",
+            "Je t’attends",
+            "au vaisseau !"
+          ],
+          "font_size_viewbox": 17.7,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[disgusted] Beurk, Bubble ! Je t’attends au vaisseau !"
+        },
+        "de": {
+          "display_text": "Igitt, Bubble! Ich warte im Shuttle!",
+          "voice_spoken_text": "Igitt, Bubble! Ich warte im Shuttle!",
+          "render_lines": [
+            "Igitt, Bubble!",
+            "Ich warte",
+            "im Shuttle!"
+          ],
+          "font_size_viewbox": 18.2,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[disgusted] Igitt, Bubble! Ich warte im Shuttle!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L011",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F07",
+      "speaker_id": "CHR_004",
+      "kind": "narration_comic_reveal",
+      "bubble_id": "narrator_cream_rect_orange_comic",
+      "reading_order": 11,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "affectionate_biological_comic_reveal",
+        "intensity": 0.75,
+        "pace": "setup_pause_light_punchline",
+        "volume": "smiling_warm",
+        "pause_after_ms": 480,
+        "tone_ru": "Добрая детская шутка: даже искусственному живому питомцу нужна забота, а переработанная энергия иногда выходит в форме газа. ИИ действительно забыл об этом предупредить.",
+        "arc_ru": "«Забыл предупредить» сказать чуть заговорщически, после «нужен уход…» дать паузу на шум газов; финальную «слабости!» произнести с улыбкой и без грубой насмешки.",
+        "acting_beats": [
+          "комическое-открытие",
+          "газовое-пф-ф",
+          "улыбка-рассказчика"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[lightly amused]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Но ИИ забыл предупредить: Бабблу нужен уход… И, как у всякого живого, у него есть слабости!",
+          "voice_spoken_text": "Но ИИ забыл предупредить: Бабблу нужен уход… И, как у всякого живого существа, у него есть свои слабости!",
+          "render_lines": [
+            "Но ИИ забыл предупредить:",
+            "Бабблу нужен уход…",
+            "И, как у всякого живого, у него есть слабости!"
+          ],
+          "font_size_viewbox": 19.1,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[lightly amused] Но ИИ забыл предупредить: Бабблу нужен уход… И, как у всякого живого существа, у него есть свои слабости!"
+        },
+        "en": {
+          "display_text": "But the AI forgot to mention: Bubble needs looking after… Like any living thing, he has his quirks!",
+          "voice_spoken_text": "But the AI forgot to mention: Bubble needs looking after… Like any living thing, he has his quirks!",
+          "render_lines": [
+            "But the AI forgot to mention:",
+            "Bubble needs looking after…",
+            "Like any living thing, he has his quirks!"
+          ],
+          "font_size_viewbox": 18.5,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[lightly amused] But the AI forgot to mention: Bubble needs looking after… Like any living thing, he has his quirks!"
+        },
+        "pt_BR": {
+          "display_text": "Mas a IA esqueceu de avisar: Bubble precisa de cuidados… E, como todo ser vivo, tem seus probleminhas!",
+          "voice_spoken_text": "Mas a IA esqueceu de avisar: Bubble precisa de cuidados… E, como todo ser vivo, tem seus probleminhas!",
+          "render_lines": [
+            "Mas a IA esqueceu de avisar:",
+            "Bubble precisa de cuidados…",
+            "E, como todo ser vivo, tem seus probleminhas!"
+          ],
+          "font_size_viewbox": 18.2,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[lightly amused] Mas a IA esqueceu de avisar: Bubble precisa de cuidados… E, como todo ser vivo, tem seus probleminhas!"
+        },
+        "es": {
+          "display_text": "Pero la IA olvidó decirlo: Bubble necesita cuidados… ¡Y, como todo ser vivo, tiene sus debilidades!",
+          "voice_spoken_text": "Pero la IA olvidó decirlo: Bubble necesita cuidados… ¡Y, como todo ser vivo, tiene sus debilidades!",
+          "render_lines": [
+            "Pero la IA olvidó decirlo:",
+            "Bubble necesita cuidados…",
+            "¡Y, como todo ser vivo, tiene sus debilidades!"
+          ],
+          "font_size_viewbox": 17.5,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[lightly amused] Pero la IA olvidó decirlo: Bubble necesita cuidados… ¡Y, como todo ser vivo, tiene sus debilidades!"
+        },
+        "fr": {
+          "display_text": "Mais l’IA a oublié un détail : Il faut s’occuper de Bubble… Et comme tout être vivant, il a ses faiblesses !",
+          "voice_spoken_text": "Mais l’IA a oublié un détail : Il faut s’occuper de Bubble… Et comme tout être vivant, il a ses faiblesses !",
+          "render_lines": [
+            "Mais l’IA a oublié un détail :",
+            "Il faut s’occuper de Bubble…",
+            "Et comme tout être vivant, il a ses faiblesses !"
+          ],
+          "font_size_viewbox": 17.5,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[lightly amused] Mais l’IA a oublié un détail : Il faut s’occuper de Bubble… Et comme tout être vivant, il a ses faiblesses !"
+        },
+        "de": {
+          "display_text": "Doch die KI vergaß zu sagen: Bubble braucht Fürsorge… Und wie jedes Lebewesen hat er Schwächen!",
+          "voice_spoken_text": "Doch die KI vergaß zu sagen: Bubble braucht Fürsorge… Und wie jedes Lebewesen hat er Schwächen!",
+          "render_lines": [
+            "Doch die KI vergaß zu sagen:",
+            "Bubble braucht Fürsorge…",
+            "Und wie jedes Lebewesen hat er Schwächen!"
+          ],
+          "font_size_viewbox": 17.4,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[lightly amused] Doch die KI vergaß zu sagen: Bubble braucht Fürsorge… Und wie jedes Lebewesen hat er Schwächen!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L012",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F08",
+      "speaker_id": "CHR_004",
+      "kind": "narration_adventure",
+      "bubble_id": "narrator_cream_rect_cyan_adventure",
+      "reading_order": 12,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "joyful_adventure_launch",
+        "intensity": 0.77,
+        "pace": "brisk_cinematic",
+        "volume": "bright_clear",
+        "pause_after_ms": 420,
+        "tone_ru": "История подхватывает приключенческую энергию, без пафоса взрослого трейлера.",
+        "arc_ru": "«Наши друзья» тепло, «отправились в путь!» — радостный подъём, ощущение скорости за иллюминатором.",
+        "acting_beats": [
+          "разгон",
+          "взлёт-надежды",
+          "вперёд"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[excited]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "И вот наши друзья отправились в путь!",
+          "voice_spoken_text": "И вот наши друзья отправились в путь!",
+          "render_lines": [
+            "И вот наши друзья",
+            "отправились в путь!"
+          ],
+          "font_size_viewbox": 20.5,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] И вот наши друзья отправились в путь!"
+        },
+        "en": {
+          "display_text": "And so our friends set off on their journey!",
+          "voice_spoken_text": "And so our friends set off on their journey!",
+          "render_lines": [
+            "And so our friends",
+            "set off on their journey!"
+          ],
+          "font_size_viewbox": 19.7,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] And so our friends set off on their journey!"
+        },
+        "pt_BR": {
+          "display_text": "E lá foram os dois rumo a novas aventuras!",
+          "voice_spoken_text": "E lá foram os dois rumo a novas aventuras!",
+          "render_lines": [
+            "E lá foram os dois",
+            "rumo a novas aventuras!"
+          ],
+          "font_size_viewbox": 19.1,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] E lá foram os dois rumo a novas aventuras!"
+        },
+        "es": {
+          "display_text": "Y así nuestros amigos partieron a la aventura!",
+          "voice_spoken_text": "Y así nuestros amigos partieron a la aventura!",
+          "render_lines": [
+            "Y así nuestros amigos",
+            "partieron a la aventura!"
+          ],
+          "font_size_viewbox": 19.2,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] Y así nuestros amigos partieron a la aventura!"
+        },
+        "fr": {
+          "display_text": "Et voilà nos deux amis repartis à l’aventure !",
+          "voice_spoken_text": "Et voilà nos deux amis repartis à l’aventure !",
+          "render_lines": [
+            "Et voilà nos deux amis",
+            "repartis à l’aventure !"
+          ],
+          "font_size_viewbox": 19.1,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] Et voilà nos deux amis repartis à l’aventure !"
+        },
+        "de": {
+          "display_text": "Und schon ging die Reise der beiden los!",
+          "voice_spoken_text": "Und schon ging die Reise der beiden los!",
+          "render_lines": [
+            "Und schon ging die",
+            "Reise der beiden los!"
+          ],
+          "font_size_viewbox": 18.7,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[excited] Und schon ging die Reise der beiden los!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L013",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F09",
+      "speaker_id": "CHR_004",
+      "kind": "narration_destination_title",
+      "bubble_id": "author_destination_indigo_title",
+      "reading_order": 13,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "wonder_announcement",
+        "intensity": 0.8,
+        "pace": "spacious_exciting",
+        "volume": "warm_resonant",
+        "pause_after_ms": 400,
+        "tone_ru": "Величественный общий план, но повествование остаётся детским и живым.",
+        "arc_ru": "Небольшая театральная пауза перед «Каллисто!», чтобы станция открылась во всей красоте.",
+        "acting_beats": [
+          "появление-станции",
+          "узнавание-цели",
+          "радость-прибытия"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[with wonder]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "СЛЕДУЮЩАЯ ОСТАНОВКА: ОРБИТАЛЬНАЯ ВЕРФЬ КАЛЛИСТО!",
+          "voice_spoken_text": "Следующая остановка — орбитальная верфь Каллисто!",
+          "render_lines": [
+            "СЛЕДУЮЩАЯ ОСТАНОВКА:",
+            "ОРБИТАЛЬНАЯ ВЕРФЬ",
+            "КАЛЛИСТО!"
+          ],
+          "font_size_viewbox": 25.9,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[with wonder] Следующая остановка — орбитальная верфь Каллисто!"
+        },
+        "en": {
+          "display_text": "NEXT STOP: CALLISTO ORBITAL SHIPYARD!",
+          "voice_spoken_text": "NEXT STOP: CALLISTO ORBITAL SHIPYARD!",
+          "render_lines": [
+            "NEXT STOP:",
+            "CALLISTO ORBITAL",
+            "SHIPYARD!"
+          ],
+          "font_size_viewbox": 24.1,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[with wonder] NEXT STOP: CALLISTO ORBITAL SHIPYARD!"
+        },
+        "pt_BR": {
+          "display_text": "PRÓXIMA PARADA: ESTALEIRO ORBITAL DE CALISTO!",
+          "voice_spoken_text": "PRÓXIMA PARADA: ESTALEIRO ORBITAL DE CALISTO!",
+          "render_lines": [
+            "PRÓXIMA PARADA:",
+            "ESTALEIRO ORBITAL",
+            "DE CALISTO!"
+          ],
+          "font_size_viewbox": 23.2,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[with wonder] PRÓXIMA PARADA: ESTALEIRO ORBITAL DE CALISTO!"
+        },
+        "es": {
+          "display_text": "PRÓXIMA PARADA: ASTILLERO ORBITAL DE CALISTO!",
+          "voice_spoken_text": "PRÓXIMA PARADA: ASTILLERO ORBITAL DE CALISTO!",
+          "render_lines": [
+            "PRÓXIMA PARADA:",
+            "ASTILLERO ORBITAL",
+            "DE CALISTO!"
+          ],
+          "font_size_viewbox": 23.1,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[with wonder] PRÓXIMA PARADA: ASTILLERO ORBITAL DE CALISTO!"
+        },
+        "fr": {
+          "display_text": "PROCHAIN ARRÊT : CHANTIER SPATIAL DE CALLISTO !",
+          "voice_spoken_text": "PROCHAIN ARRÊT : CHANTIER SPATIAL DE CALLISTO !",
+          "render_lines": [
+            "PROCHAIN ARRÊT :",
+            "CHANTIER SPATIAL",
+            "DE CALLISTO !"
+          ],
+          "font_size_viewbox": 23,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[with wonder] PROCHAIN ARRÊT : CHANTIER SPATIAL DE CALLISTO !"
+        },
+        "de": {
+          "display_text": "NÄCHSTER HALT: ORBITALE WERFT KALLISTO!",
+          "voice_spoken_text": "NÄCHSTER HALT: ORBITALE WERFT KALLISTO!",
+          "render_lines": [
+            "NÄCHSTER HALT:",
+            "ORBITALE WERFT",
+            "KALLISTO!"
+          ],
+          "font_size_viewbox": 24,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[with wonder] NÄCHSTER HALT: ORBITALE WERFT KALLISTO!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P06_L014",
+      "page_id": "CH01_P06",
+      "frame_id": "CH01_P06_F09",
+      "speaker_id": "CHR_004",
+      "kind": "narration_objective",
+      "bubble_id": "narrator_cream_rect_orange_objective",
+      "reading_order": 14,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "purposeful_anticipation",
+        "intensity": 0.7,
+        "pace": "confident_forward_looking",
+        "volume": "warm_clear",
+        "pause_after_ms": 950,
+        "tone_ru": "Главное обещание следующей части: мастерская, улучшение корабля, путешествие за пределы знакомой галактики.",
+        "arc_ru": "Подчеркнуть «модернизируют», немного замедлить «межгалактических прыжков» и оставить интригующую финальную паузу.",
+        "acting_beats": [
+          "новая-цель",
+          "обещание-будущего",
+          "переход-в-следующую-сцену"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[optimistically]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Здесь корабль Мики модернизируют для межгалактических прыжков!",
+          "voice_spoken_text": "Здесь корабль Мики модернизируют для межгалактических прыжков!",
+          "render_lines": [
+            "Здесь корабль Мики",
+            "модернизируют для",
+            "межгалактических",
+            "прыжков!"
+          ],
+          "font_size_viewbox": 20.5,
+          "edit_source_svg": "overlays/CH01_P06_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[optimistically] Здесь корабль Мики модернизируют для межгалактических прыжков!"
+        },
+        "en": {
+          "display_text": "Here, Mika’s ship will be upgraded for intergalactic jumps!",
+          "voice_spoken_text": "Here, Mika’s ship will be upgraded for intergalactic jumps!",
+          "render_lines": [
+            "Here, Mika’s ship",
+            "will be upgraded",
+            "for intergalactic",
+            "jumps!"
+          ],
+          "font_size_viewbox": 20.1,
+          "edit_source_svg": "overlays/CH01_P06_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[optimistically] Here, Mika’s ship will be upgraded for intergalactic jumps!"
+        },
+        "pt_BR": {
+          "display_text": "Ali, a nave de Mika será preparada para saltos entre galáxias!",
+          "voice_spoken_text": "Ali, a nave de Mika será preparada para saltos entre galáxias!",
+          "render_lines": [
+            "Ali, a nave de Mika",
+            "será preparada para",
+            "saltos entre",
+            "galáxias!"
+          ],
+          "font_size_viewbox": 19.9,
+          "edit_source_svg": "overlays/CH01_P06_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[optimistically] Ali, a nave de Mika será preparada para saltos entre galáxias!"
+        },
+        "es": {
+          "display_text": "Aquí modernizarán la nave de Mika para dar saltos entre galaxias.",
+          "voice_spoken_text": "Aquí modernizarán la nave de Mika para dar saltos entre galaxias.",
+          "render_lines": [
+            "Aquí modernizarán",
+            "la nave de Mika",
+            "para dar saltos",
+            "entre galaxias."
+          ],
+          "font_size_viewbox": 20.1,
+          "edit_source_svg": "overlays/CH01_P06_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[optimistically] Aquí modernizarán la nave de Mika para dar saltos entre galaxias."
+        },
+        "fr": {
+          "display_text": "Ici, le vaisseau de Mika sera adapté aux sauts entre les galaxies !",
+          "voice_spoken_text": "Ici, le vaisseau de Mika sera adapté aux sauts entre les galaxies !",
+          "render_lines": [
+            "Ici, le vaisseau",
+            "de Mika sera adapté",
+            "aux sauts entre",
+            "les galaxies !"
+          ],
+          "font_size_viewbox": 20,
+          "edit_source_svg": "overlays/CH01_P06_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[optimistically] Ici, le vaisseau de Mika sera adapté aux sauts entre les galaxies !"
+        },
+        "de": {
+          "display_text": "Hier wird Mikas Raumschiff für Sprünge zwischen Galaxien aufgerüstet!",
+          "voice_spoken_text": "Hier wird Mikas Raumschiff für Sprünge zwischen Galaxien aufgerüstet!",
+          "render_lines": [
+            "Hier wird Mikas",
+            "Raumschiff für",
+            "Sprünge zwischen",
+            "Galaxien aufgerüstet!"
+          ],
+          "font_size_viewbox": 19.2,
+          "edit_source_svg": "overlays/CH01_P06_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED",
+          "tts_candidate_input": "[optimistically] Hier wird Mikas Raumschiff für Sprünge zwischen Galaxien aufgerüstet!"
+        }
+      }
+    }
+  ]
+}

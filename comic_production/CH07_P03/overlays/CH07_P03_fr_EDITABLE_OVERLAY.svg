@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<title>MIKA CH07 P03 — русский черновик v2 / режиссёрская раскладка NEBULA</title>
+<desc>Утверждённые исходные кадры неизменны. Один голос CHR_040, разный ритм и смысловые цветовые акценты. Никаких новых изображений.</desc>
+<g id="CH07_P03_L001_visual_0" data-line-id="CH07_P03_L001" data-speaker="CHR_040" data-kind="dialogue" data-style="laugh" data-visual-part="0">
+<rect x="67" y="218" width="190" height="85" rx="30" fill="#1F283F" opacity=".10"/>
+<rect x="62" y="212" width="190" height="85" rx="30" fill="#FFEBAC" fill-opacity=".96" stroke="#E4A34C" stroke-width="4.5"/>
+<circle cx="232" cy="231" r="7" fill="#F3A65D"/>
+<text x="86" y="261.58" font-family="DejaVu Sans" font-weight="700" font-size="34" fill="#7A4B20">Ha-ha !</text></g>
+<g id="CH07_P03_L001_visual_1" data-line-id="CH07_P03_L001" data-speaker="CHR_040" data-kind="dialogue" data-style="green" data-visual-part="1">
+<rect x="71" y="319" width="270" height="264" rx="29" fill="#1F283F" opacity=".10"/>
+<rect x="66" y="313" width="270" height="264" rx="29" fill="#DAF9EB" fill-opacity=".96" stroke="#3E9D81" stroke-width="4.5"/>
+<rect x="83" y="326" width="42" height="5" rx="2.5" fill="#37BE89"/>
+<circle cx="315" cy="330" r="5.5" fill="#35B38F"/>
+<text x="96" y="372.23" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#214E44">Bien sûr que</text><text x="96" y="407.61" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#214E44">non, Mika.</text><text x="96" y="442.99" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#214E44">Tu es arrivé</text><text x="96" y="478.37" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#214E44">jusqu’à moi</text><text x="96" y="513.75" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#214E44">parce que...</text></g>
+<g id="CH07_P03_L002" data-line-id="CH07_P03_L002" data-speaker="CHR_040" data-kind="dialogue_offscreen" data-style="flower" data-visual-part="0">
+<rect x="1255" y="181" width="365" height="272" rx="29" fill="#1F283F" opacity=".10"/>
+<rect x="1250" y="175" width="365" height="272" rx="29" fill="#F5F0FF" fill-opacity=".96" stroke="#7C64B0" stroke-width="4.5"/>
+<rect x="1267" y="188" width="42" height="5" rx="2.5" fill="#C766C6"/>
+<circle cx="1594" cy="192" r="5.5" fill="#35B38F"/>
+<text x="1280" y="235.10" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#403A66">Tu l’as compris :</text><text x="1280" y="271.70" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#403A66">la vie trouve</text><text x="1280" y="308.30" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#403A66">toujours un</text><text x="1280" y="344.90" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#403A66">moyen de se</text><text x="1280" y="381.50" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#403A66">frayer un chemin.</text></g>
+<g id="CH07_P03_L003" data-line-id="CH07_P03_L003" data-speaker="CHR_040" data-kind="dialogue_offscreen" data-style="earth" data-visual-part="0">
+<rect x="87" y="1032" width="519" height="165" rx="22" fill="#1F283F" opacity=".10"/>
+<rect x="82" y="1026" width="519" height="165" rx="22" fill="#FFF6E8" fill-opacity=".96" stroke="#C8914A" stroke-width="4.5"/>
+<rect x="99" y="1039" width="42" height="5" rx="2.5" fill="#F0A13C"/>
+<circle cx="580" cy="1043" r="5.5" fill="#35B38F"/>
+<text x="106" y="1075.23" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#6D4931">Sur Terre, les formes de vie</text><text x="106" y="1110.61" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#6D4931">dominantes se sont</text><text x="106" y="1145.99" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#6D4931">succédé.</text></g>
+<g id="CH07_P03_L004" data-line-id="CH07_P03_L004" data-speaker="CHR_040" data-kind="dialogue_offscreen" data-style="rebirth" data-visual-part="0">
+<rect x="624" y="1032" width="569" height="165" rx="22" fill="#1F283F" opacity=".10"/>
+<rect x="619" y="1026" width="569" height="165" rx="22" fill="#FFF0F5" fill-opacity=".96" stroke="#C67A9A" stroke-width="4.5"/>
+<rect x="636" y="1039" width="42" height="5" rx="2.5" fill="#D17EB9"/>
+<circle cx="1167" cy="1043" r="5.5" fill="#35B38F"/>
+<text x="643" y="1074.36" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#694458">Dans un monde où la vie s’était</text><text x="643" y="1108.52" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#694458">presque éteinte, une nouvelle</text><text x="643" y="1142.68" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#694458">est née sur les ruines.</text></g>
+<g id="CH07_P03_L005" data-line-id="CH07_P03_L005" data-speaker="CHR_040" data-kind="dialogue_offscreen" data-style="crystal" data-visual-part="0">
+<rect x="1232" y="1032" width="543" height="165" rx="22" fill="#1F283F" opacity=".10"/>
+<rect x="1227" y="1026" width="543" height="165" rx="22" fill="#E9F9FF" fill-opacity=".96" stroke="#5EA9BA" stroke-width="4.5"/>
+<rect x="1244" y="1039" width="42" height="5" rx="2.5" fill="#44C8E5"/>
+<circle cx="1749" cy="1043" r="5.5" fill="#35B38F"/>
+<text x="1251" y="1073.49" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#285E68">Même dans de froides</text><text x="1251" y="1106.43" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#285E68">structures de pierre, la vie a pu</text><text x="1251" y="1139.37" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#285E68">commencer à étinceler.</text></g>
+<g id="CH07_P03_L006" data-line-id="CH07_P03_L006" data-speaker="CHR_040" data-kind="dialogue_offscreen" data-style="symbiosis" data-visual-part="0">
+<rect x="1799" y="1032" width="569" height="165" rx="22" fill="#1F283F" opacity=".10"/>
+<rect x="1794" y="1026" width="569" height="165" rx="22" fill="#F0F9E4" fill-opacity=".96" stroke="#8FA95D" stroke-width="4.5"/>
+<rect x="1811" y="1039" width="42" height="5" rx="2.5" fill="#96C659"/>
+<circle cx="2342" cy="1043" r="5.5" fill="#35B38F"/>
+<text x="1818" y="1075.23" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#4B6739">Et parfois, différentes formes</text><text x="1818" y="1110.61" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#4B6739">de vie s’unissent.</text></g>
+<g id="CH07_P03_L007" data-line-id="CH07_P03_L007" data-speaker="CHR_040" data-kind="dialogue_offscreen" data-style="magnetic" data-visual-part="0">
+<rect x="89" y="1793" width="950" height="184" rx="29" fill="#1F283F" opacity=".10"/>
+<rect x="84" y="1787" width="950" height="184" rx="29" fill="#FFF5E6" fill-opacity=".96" stroke="#B77749" stroke-width="4.5"/>
+<rect x="101" y="1800" width="42" height="5" rx="2.5" fill="#ED8B35"/>
+<circle cx="1013" cy="1804" r="5.5" fill="#35B38F"/>
+<text x="114" y="1847.10" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#71452D">Mais l’anomalie qui est arrivée aux êtres</text><text x="114" y="1883.70" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#71452D">magnétiques ne leur est pas arrivée à eux seuls.</text></g>
+<g id="CH07_P03_L008" data-line-id="CH07_P03_L008" data-speaker="CHR_040" data-kind="dialogue_offscreen" data-style="reveal" data-visual-part="0">
+<rect x="1557" y="2322" width="790" height="154" rx="29" fill="#1F283F" opacity=".10"/>
+<rect x="1552" y="2316" width="790" height="154" rx="29" fill="#F1FAF3" fill-opacity=".96" stroke="#50A185" stroke-width="4.5"/>
+<rect x="1569" y="2329" width="42" height="5" rx="2.5" fill="#E2A340"/>
+<circle cx="2321" cy="2333" r="5.5" fill="#35B38F"/>
+<text x="1582" y="2376.10" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#285749">Toi et les habitants magnétiques venez</text><text x="1582" y="2412.70" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#285749">d’un seul et même monde.</text></g>
+<g id="CH07_P03_L009" data-line-id="CH07_P03_L009" data-speaker="CHR_040" data-kind="dialogue_offscreen" data-style="time" data-visual-part="0">
+<rect x="90" y="2609" width="898" height="149" rx="29" fill="#1F283F" opacity=".10"/>
+<rect x="85" y="2603" width="898" height="149" rx="29" fill="#F0EBFC" fill-opacity=".96" stroke="#8870B8" stroke-width="4.5"/>
+<rect x="102" y="2616" width="42" height="5" rx="2.5" fill="#8D83E2"/>
+<circle cx="962" cy="2620" r="5.5" fill="#35B38F"/>
+<text x="115" y="2660.49" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#40365D">Mais l’écho des événements de votre monde ne nous</text><text x="115" y="2693.43" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#40365D">est parvenu que des millions d’années plus tard.</text></g>
+<g id="CH07_P03_L010" data-line-id="CH07_P03_L010" data-speaker="CHR_040" data-kind="dialogue_offscreen" data-style="signal" data-visual-part="0">
+<rect x="1077" y="2596" width="1280" height="239" rx="39" fill="#1F283F" opacity=".10"/>
+<rect x="1072" y="2590" width="1280" height="239" rx="39" fill="#EAEFFA" fill-opacity=".96" stroke="#6D86B8" stroke-width="4.5"/>
+<rect x="1089" y="2603" width="42" height="5" rx="2.5" fill="#31B4D6"/>
+<circle cx="2331" cy="2607" r="5.5" fill="#35B38F"/>
+<path d="M2266 2812 Q2283 2794 2300 2812 T2334 2812" fill="none" stroke="#31B4D6" stroke-width="3" opacity=".7"/>
+<text x="1102" y="2651.84" font-family="DejaVu Sans" font-weight="700" font-size="32" fill="#2F4267">Et ce n’est que maintenant que les habitants neuronaux ont pu</text><text x="1102" y="2690.88" font-family="DejaVu Sans" font-weight="700" font-size="32" fill="#2F4267">envoyer un signal au peuple magnétique pour qu’ils créent un</text><text x="1102" y="2729.92" font-family="DejaVu Sans" font-weight="700" font-size="32" fill="#2F4267">canal qui t’a permis d’être sauvé en traversant le temps et</text><text x="1102" y="2768.96" font-family="DejaVu Sans" font-weight="700" font-size="32" fill="#2F4267">l’espace.</text></g>
+</svg>

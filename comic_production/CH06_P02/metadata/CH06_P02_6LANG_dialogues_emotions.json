@@ -1,0 +1,218 @@
+{
+  "page_id": "CH06_P02",
+  "source_pdf": "6-2(1).pdf",
+  "source_pdf_sha256": "21dc30798d1e9be91b3b9f4c46f1205e14723ba89e07beb1b202235334038094",
+  "date": "2026-11-26",
+  "status": "SIX_LANG_PREPARED",
+  "approved_ru_draft": "v5",
+  "ru_svg_preserved": true,
+  "background_unchanged": true,
+  "image_generation": false,
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "new_voice": {
+    "id": "CHR_038",
+    "key": "NEURON_TELEPATHIC_NARRATOR",
+    "name": "Голос нейронных существ",
+    "role": "Закадровый голос нейронных существ; говорит с Микой через телепатический симулятор",
+    "status": "AWAITING_AUDITION",
+    "style": "NEBULA turquoise speech_left/right; without character attachment; no thought clouds; not CHR_004",
+    "voice_brief_ru": "Отдельный узнаваемый мягкий, живой, ясный голос нейронных существ, спокойная интеллектуальная интонация, без пугающего роботизма. Уверенно объясняет научные закономерности, уважая любопытство Мики. Голос не является автором/общим рассказчиком CHR_004."
+  },
+  "audio_generated": false,
+  "lines": [
+    {
+      "line_id": "CH06_P02_L001",
+      "frame": "1 / верхний левый",
+      "speaker_id": "CHR_038",
+      "speaker_name": "Голос нейронных существ",
+      "emotion_ru": "приветствие, спокойная радость",
+      "kind": "telepathic_narration",
+      "translations": {
+        "ru": "Здравствуй, Мика! Мы рады, что ты добрался до нас. Я хочу немного рассказать тебе о нас и о том, что случилось.",
+        "en": "Hello, Mika! We're glad you made it here. I'd like to tell you a little about us and what happened.",
+        "pt_BR": "Olá, Mika! Que bom que você chegou até nós. Quero te contar um pouco sobre nós e o que aconteceu.",
+        "es": "¡Hola, Mika! Nos alegra que hayas llegado hasta aquí. Quiero contarte un poco sobre nosotros y lo que pasó.",
+        "fr": "Bonjour, Mika ! Nous sommes heureux que tu sois arrivé jusqu’à nous. Je voudrais te raconter un peu qui nous sommes et ce qui s’est passé.",
+        "de": "Hallo, Mika! Schön, dass du es zu uns geschafft hast. Ich möchte dir kurz von uns erzählen und davon, was geschehen ist."
+      },
+      "tts_required": true,
+      "display_segments": null
+    },
+    {
+      "line_id": "CH06_P02_L002",
+      "frame": "1 / верхний левый",
+      "speaker_id": "CHR_038",
+      "speaker_name": "Голос нейронных существ",
+      "emotion_ru": "воспоминание, зарождение интереса к небу",
+      "kind": "telepathic_narration",
+      "translations": {
+        "ru": "Когда мы впервые взглянули на небо, мы начали замечать закономерности.",
+        "en": "When we first looked up at the sky, we began to notice patterns.",
+        "pt_BR": "Quando olhamos para o céu pela primeira vez, começamos a perceber padrões.",
+        "es": "Cuando miramos al cielo por primera vez, empezamos a descubrir patrones.",
+        "fr": "Quand nous avons levé les yeux vers le ciel pour la première fois, nous avons commencé à voir des régularités.",
+        "de": "Als wir zum ersten Mal zum Himmel blickten, erkannten wir erste Muster."
+      },
+      "tts_required": true,
+      "display_segments": null
+    },
+    {
+      "line_id": "CH06_P02_L003",
+      "frame": "2 / верхний правый",
+      "speaker_id": "CHR_038",
+      "speaker_name": "Голос нейронных существ",
+      "emotion_ru": "вдохновение, первые достижения",
+      "kind": "telepathic_narration",
+      "translations": {
+        "ru": "Мы построили космические корабли.",
+        "en": "We built spaceships.",
+        "pt_BR": "Construímos naves espaciais.",
+        "es": "Construimos naves espaciales.",
+        "fr": "Nous avons construit des vaisseaux spatiaux.",
+        "de": "Wir bauten Raumschiffe."
+      },
+      "tts_required": true,
+      "display_segments": null
+    },
+    {
+      "line_id": "CH06_P02_L004",
+      "frame": "3 / средний левый",
+      "speaker_id": "CHR_038",
+      "speaker_name": "Голос нейронных существ",
+      "emotion_ru": "увлечённое воспоминание, путешествия",
+      "kind": "telepathic_narration",
+      "translations": {
+        "ru": "И начали бороздить известную нам Вселенную.",
+        "en": "And began exploring the universe as we knew it.",
+        "pt_BR": "E começamos a explorar o Universo que conhecíamos.",
+        "es": "Y empezamos a recorrer el universo que conocíamos.",
+        "fr": "Et nous avons commencé à parcourir l’Univers tel que nous le connaissions.",
+        "de": "Und begannen, das uns bekannte Universum zu durchstreifen."
+      },
+      "tts_required": true,
+      "display_segments": null
+    },
+    {
+      "line_id": "CH06_P02_L005",
+      "frame": "4 / средние центральный и правый",
+      "speaker_id": "CHR_038",
+      "speaker_name": "Голос нейронных существ",
+      "emotion_ru": "тихое осознание масштабов космоса",
+      "kind": "telepathic_narration",
+      "translations": {
+        "ru": "Мы научились предвидеть появление и смерть галактик.",
+        "en": "We learned to foresee the birth and death of galaxies.",
+        "pt_BR": "Aprendemos a prever o nascimento e a morte das galáxias.",
+        "es": "Aprendimos a prever el nacimiento y la muerte de las galaxias.",
+        "fr": "Nous avons appris à prévoir la naissance et la mort des galaxies.",
+        "de": "Wir lernten, die Entstehung und das Ende von Galaxien vorherzusehen."
+      },
+      "tts_required": true,
+      "display_segments": null
+    },
+    {
+      "line_id": "CH06_P02_L006",
+      "frame": "5 / Мика",
+      "speaker_id": "CHR_001",
+      "speaker_name": "Мика",
+      "emotion_ru": "радостное потрясение, любопытство",
+      "kind": "dialogue",
+      "translations": {
+        "ru": "Значит, вы умеете предсказывать будущее?",
+        "en": "So you can predict the future?",
+        "pt_BR": "Então vocês conseguem prever o futuro?",
+        "es": "¿O sea que pueden predecir el futuro?",
+        "fr": "Alors, vous pouvez prédire l’avenir ?",
+        "de": "Also könnt ihr die Zukunft vorhersagen?"
+      },
+      "tts_required": true,
+      "display_segments": null
+    },
+    {
+      "line_id": "CH06_P02_L007",
+      "frame": "6 / часы и рассвет",
+      "speaker_id": "CHR_038",
+      "speaker_name": "Голос нейронных существ",
+      "emotion_ru": "терпеливое объяснение через знакомый пример",
+      "kind": "telepathic_narration",
+      "translations": {
+        "ru": "Так же, как ты можешь предсказать, через сколько наступит рассвет, если знаешь, который сейчас час и во сколько взойдёт солнце.",
+        "en": "Just as you can work out how long until sunrise if you know the time now and when the Sun will rise.",
+        "pt_BR": "Assim como você pode prever quanto falta para amanhecer se souber que horas são e a que horas o Sol vai nascer.",
+        "es": "Igual que tú puedes calcular cuánto falta para el amanecer si sabes qué hora es y a qué hora saldrá el Sol.",
+        "fr": "Comme toi, tu peux prévoir dans combien de temps le Soleil se lèvera si tu connais l’heure actuelle et celle du lever du Soleil.",
+        "de": "So wie du ausrechnen kannst, wie lange es bis zum Sonnenaufgang dauert, wenn du die Uhrzeit und den Zeitpunkt des Sonnenaufgangs kennst."
+      },
+      "tts_required": true,
+      "display_segments": null
+    },
+    {
+      "line_id": "CH06_P02_L008",
+      "frame": "7 / нижняя полоса, четыре изображения",
+      "speaker_id": "CHR_038",
+      "speaker_name": "Голос нейронных существ",
+      "emotion_ru": "спокойная научная уверенность",
+      "kind": "telepathic_narration",
+      "translations": {
+        "ru": "Мы научились рассчитывать рождение планет, солнечные затмения, движение планет, пролёты астероидов.",
+        "en": "We learned to calculate the birth of planets, solar eclipses, the movement of planets, and passing asteroids.",
+        "pt_BR": "Aprendemos a calcular o nascimento de planetas, os eclipses solares, o movimento dos planetas e a passagem de asteroides.",
+        "es": "Aprendimos a calcular el nacimiento de planetas, los eclipses solares, el movimiento de los planetas y el paso de asteroides.",
+        "fr": "Nous avons appris à calculer la naissance des planètes, les éclipses solaires, le mouvement des planètes et le passage des astéroïdes.",
+        "de": "Wir lernten, die Entstehung von Planeten, Sonnenfinsternisse, die Bewegung der Planeten und Vorbeiflüge von Asteroiden zu berechnen."
+      },
+      "tts_required": true,
+      "display_segments": {
+        "ru": [
+          "Мы научились рассчитывать:",
+          "рождение планет",
+          "солнечные затмения",
+          "движение планет",
+          "пролёты астероидов"
+        ],
+        "en": [
+          "We learned to calculate:",
+          "the birth of planets",
+          "solar eclipses",
+          "the movement of planets",
+          "passing asteroids"
+        ],
+        "pt_BR": [
+          "Aprendemos a calcular:",
+          "nascimento de planetas",
+          "eclipses solares",
+          "movimento dos planetas",
+          "passagem de asteroides"
+        ],
+        "es": [
+          "Aprendimos a calcular:",
+          "nacimiento de planetas",
+          "eclipses solares",
+          "movimiento de planetas",
+          "paso de asteroides"
+        ],
+        "fr": [
+          "Nous avons appris à calculer :",
+          "naissance des planètes",
+          "éclipses solaires",
+          "mouvement des planètes",
+          "passage des astéroïdes"
+        ],
+        "de": [
+          "Wir lernten zu berechnen:",
+          "Entstehung von Planeten",
+          "Sonnenfinsternisse",
+          "Planetenbewegungen",
+          "Asteroidenvorbeiflüge"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<title>MIKA CH07 P01 — русский черновик v1, 6 кадров</title>
+<desc>Векторные облачка NEBULA поверх исходного PDF, без генерации или изменения иллюстрации. Автор CHR_004, Мика CHR_001. У облачков Мики нет стрелок через лицо.</desc>
+<g id="CH07_P01_L001" data-line-id="CH07_P01_L001" data-speaker="CHR_004" data-kind="narration" data-style="nebula-author-tech">
+<rect x="100" y="107" width="1190" height="162" rx="19" fill="#061021" opacity=".25"/>
+<rect x="95" y="100" width="1190" height="162" rx="19" fill="#132D4E" fill-opacity=".94" stroke="#55D3E1" stroke-width="5"/>
+<path d="M115 119 h52" stroke="#F6A64B" stroke-width="5.5" stroke-linecap="round"/>
+<text x="126" y="179.97" font-family="DejaVu Sans" font-weight="700" font-size="39" fill="#FFFFFF">After leaving the portal, Mika’s ship was caught in</text><text x="126" y="227.16" font-family="DejaVu Sans" font-weight="700" font-size="39" fill="#FFFFFF">a terrifying storm.</text></g>
+<g id="CH07_P01_L002" data-line-id="CH07_P01_L002" data-speaker="CHR_001" data-kind="dialogue" data-style="nebula-mika-white">
+<rect x="525" y="1098" width="545" height="148" rx="44" fill="#253456" opacity=".14"/>
+<rect x="520" y="1090" width="545" height="148" rx="44" fill="#FFFDF9" fill-opacity=".99" stroke="#253456" stroke-width="5"/>
+<path d="M548 1109 h44" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="1034" cy="1109" r="5.5" fill="#36DDE8"/>
+<text x="552" y="1162.01" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">I hope the ship holds</text><text x="552" y="1206.78" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">together!</text></g>
+<g id="CH07_P01_L003" data-line-id="CH07_P01_L003" data-speaker="CHR_004" data-kind="narration" data-style="nebula-author-tech">
+<rect x="1195" y="1567" width="900" height="145" rx="19" fill="#061021" opacity=".25"/>
+<rect x="1190" y="1560" width="900" height="145" rx="19" fill="#132D4E" fill-opacity=".94" stroke="#55D3E1" stroke-width="5"/>
+<path d="M1210 1579 h52" stroke="#F6A64B" stroke-width="5.5" stroke-linecap="round"/>
+<text x="1221" y="1632.55" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#FFFFFF">After a while, the ship finally escaped the</text><text x="1221" y="1674.9" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#FFFFFF">storm.</text></g>
+<g id="CH07_P01_L004" data-line-id="CH07_P01_L004" data-speaker="CHR_001" data-kind="dialogue" data-style="nebula-mika-white">
+<rect x="740" y="2268" width="550" height="155" rx="44" fill="#253456" opacity=".14"/>
+<rect x="735" y="2260" width="550" height="155" rx="44" fill="#FFFDF9" fill-opacity=".99" stroke="#253456" stroke-width="5"/>
+<path d="M763 2279 h44" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="1254" cy="2279" r="5.5" fill="#36DDE8"/>
+<text x="767" y="2335.51" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">I think we need to go</text><text x="767" y="2380.28" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">there.</text></g>
+<g id="CH07_P01_L005" data-line-id="CH07_P01_L005" data-speaker="CHR_004" data-kind="narration" data-style="nebula-author-tech">
+<rect x="99" y="3233" width="1218" height="182" rx="19" fill="#061021" opacity=".25"/>
+<rect x="94" y="3226" width="1218" height="182" rx="19" fill="#132D4E" fill-opacity=".94" stroke="#55D3E1" stroke-width="5"/>
+<path d="M114 3245 h52" stroke="#F6A64B" stroke-width="5.5" stroke-linecap="round"/>
+<text x="125" y="3317.59" font-family="DejaVu Sans" font-weight="700" font-size="33" fill="#FFFFFF">As they approached, they saw a strange glowing planet that</text><text x="125" y="3357.52" font-family="DejaVu Sans" font-weight="700" font-size="33" fill="#FFFFFF">changed shape and released enormous amounts of plasma.</text></g>
+<g id="CH07_P01_L006" data-line-id="CH07_P01_L006" data-speaker="CHR_004" data-kind="narration" data-style="nebula-author-tech">
+<rect x="1395" y="3228" width="1010" height="182" rx="19" fill="#061021" opacity=".25"/>
+<rect x="1390" y="3221" width="1010" height="182" rx="19" fill="#132D4E" fill-opacity=".94" stroke="#55D3E1" stroke-width="5"/>
+<path d="M1410 3240 h52" stroke="#F6A64B" stroke-width="5.5" stroke-linecap="round"/>
+<text x="1421" y="3312.59" font-family="DejaVu Sans" font-weight="700" font-size="33" fill="#FFFFFF">Mika drifted off to sleep. In his dream, he met a</text><text x="1421" y="3352.52" font-family="DejaVu Sans" font-weight="700" font-size="33" fill="#FFFFFF">strange being that looked remarkably like him.</text></g>
+</svg>

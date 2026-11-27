@@ -1,0 +1,276 @@
+{
+  "schema_version": 3,
+  "page_id": "CH03_P02",
+  "locale": "es",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch03_p02_languages/ch03_p02_es.webp",
+  "native_scene_panels": [
+    "p32_cela_temple",
+    "p32_cela_cave",
+    "p32_cela_crystals",
+    "p32_mika_surprised",
+    "p32_professor_calls",
+    "p32_lotus_route"
+  ],
+  "panel_bounds": {
+    "p32_cela_temple": [
+      0.031,
+      0.032,
+      0.936,
+      0.269
+    ],
+    "p32_cela_cave": [
+      0.031,
+      0.327,
+      0.441,
+      0.174
+    ],
+    "p32_cela_crystals": [
+      0.514,
+      0.324,
+      0.452,
+      0.176
+    ],
+    "p32_mika_surprised": [
+      0.031,
+      0.519,
+      0.44,
+      0.189
+    ],
+    "p32_professor_calls": [
+      0.52,
+      0.515,
+      0.448,
+      0.19
+    ],
+    "p32_lotus_route": [
+      0.031,
+      0.729,
+      0.937,
+      0.237
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH03_P02_L001",
+      "frame_id": "CH03_P02_F01",
+      "panel_id": "p32_cela_temple",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "La nave de Mika llegó a Cela, un planeta de cuevas antiguas y cristales misteriosos.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/es/CH03_P02_L001_es.mp3",
+      "audio_duration_s": 6.113,
+      "camera_target": [
+        0.34,
+        0.169,
+        0.263
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e9aa6a4785c31b2142ae51dfe70682bd2794f5da0eff02c5005cfa57ef42a6a0"
+    },
+    {
+      "line_id": "CH03_P02_L002",
+      "frame_id": "CH03_P02_F01",
+      "panel_id": "p32_cela_temple",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "¿Qué son estas cuevas?",
+      "audio_path": "res://mika_motion_comic/ch03_clips/es/CH03_P02_L002_es.mp3",
+      "audio_duration_s": 1.724,
+      "camera_target": [
+        0.674,
+        0.226,
+        0.155
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e3c49ee0e54fd9a18276f8620f247731a117b2c08bbd71e064128b9e565b68b4"
+    },
+    {
+      "line_id": "CH03_P02_L003",
+      "frame_id": "CH03_P02_F01",
+      "panel_id": "p32_cela_temple",
+      "speaker_id": "CHR_025",
+      "kind": "dialogue",
+      "spoken_text": "Son construcciones antiguas de los seres de fase. ¡Ven, te enseñaré!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/es/CH03_P02_L003_es.mp3",
+      "audio_duration_s": 4.519,
+      "camera_target": [
+        0.81,
+        0.225,
+        0.157
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "dc594c76193fe2dbefcbfd71ce47c54a4df60f12b9a8674e951a2d93721adeba"
+    },
+    {
+      "line_id": "CH03_P02_L004",
+      "frame_id": "CH03_P02_F02",
+      "panel_id": "p32_cela_cave",
+      "speaker_id": "CHR_025",
+      "kind": "dialogue",
+      "spoken_text": "¡Mira! Pinturas e inscripciones antiguas. ¡Quizá encuentres una pista!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/es/CH03_P02_L004_es.mp3",
+      "audio_duration_s": 4.989,
+      "camera_target": [
+        0.214,
+        0.399,
+        0.174
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c0416136e9d360b03cd1d2c6fa3bfd90489a7fc79cad8bcd1bb7854da05c6551"
+    },
+    {
+      "line_id": "CH03_P02_L005",
+      "frame_id": "CH03_P02_F02",
+      "panel_id": "p32_cela_cave",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "¿Y esto?..",
+      "audio_path": "res://mika_motion_comic/ch03_clips/es/CH03_P02_L005_es.mp3",
+      "audio_duration_s": 1.306,
+      "camera_target": [
+        0.318,
+        0.438,
+        0.144
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "0885d27e80faa51f76280add2cdb4aa55ae11ae7d120815d7557fc214820d1f2"
+    },
+    {
+      "line_id": "CH03_P02_L006",
+      "frame_id": "CH03_P02_F03",
+      "panel_id": "p32_cela_crystals",
+      "speaker_id": "CHR_025",
+      "kind": "dialogue",
+      "spoken_text": "¡Yo echaré un vistazo a los cristales!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/es/CH03_P02_L006_es.mp3",
+      "audio_duration_s": 2.429,
+      "camera_target": [
+        0.727,
+        0.407,
+        0.175
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4e6af4a98ce55ff152c3b713a7134b0ddca76c1988dff3ea7a652cbfe2f30290"
+    },
+    {
+      "line_id": "CH03_P02_L007",
+      "frame_id": "CH03_P02_F04",
+      "panel_id": "p32_mika_surprised",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "¡ALTO!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/es/CH03_P02_L007_es.mp3",
+      "audio_duration_s": 0.993,
+      "camera_target": [
+        0.235,
+        0.613,
+        0.187
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b8c41c6311886a1c2f12a10b4ce98dad2c6ff3ea443f7b89b8299ab7d74b9108"
+    },
+    {
+      "line_id": "CH03_P02_L008",
+      "frame_id": "CH03_P02_F04",
+      "panel_id": "p32_mika_surprised",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "¡NO LO HAGAS!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/es/CH03_P02_L008_es.mp3",
+      "audio_duration_s": 1.228,
+      "camera_target": [
+        0.235,
+        0.613,
+        0.187
+      ],
+      "transition_before_s": 0,
+      "transition_style": "hold",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9e02d29a6cc2109f19d361127117646cac462e01eaf188d02a5c61df3af17a2e"
+    },
+    {
+      "line_id": "CH03_P02_L009",
+      "frame_id": "CH03_P02_F05",
+      "panel_id": "p32_professor_calls",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Al oír el grito de Mika, el profesor envió una señal de alarma a Okea.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/es/CH03_P02_L009_es.mp3",
+      "audio_duration_s": 4.284,
+      "camera_target": [
+        0.762,
+        0.601,
+        0.188
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "66f5328608428b56310264ea0736533feb9a77a8f9ee6d51db279cadafbe82ef"
+    },
+    {
+      "line_id": "CH03_P02_L010",
+      "frame_id": "CH03_P02_F06",
+      "panel_id": "p32_lotus_route",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Una escuadrilla de naves despegó enseguida de Okea.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/es/CH03_P02_L010_es.mp3",
+      "audio_duration_s": 3.474,
+      "camera_target": [
+        0.445,
+        0.847,
+        0.234
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a629171e6dc66ad37acbc4a9746eac74d995bdff182af317ac785ae7390bdabe"
+    }
+  ],
+  "display_only": []
+}

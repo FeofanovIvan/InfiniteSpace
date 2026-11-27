@@ -3,6 +3,7 @@ extends Control
 ## Destinations appear in ONE scrollable row; counts differ by system.
 ## The strip scrolls horizontally on narrow mobile screens.
 signal target_selected(target_id: String)
+signal story_catalog_opened
 
 const TRIGGER_SIZE: float = 94.0
 const TILE_SIZE: float = 64.0
@@ -40,6 +41,39 @@ var _rail_width: float = PREFERRED_WIDTH - TRIGGER_SIZE - RAIL_GAP
 var _available_width: float = PREFERRED_WIDTH
 var _shown_width: float = 0.0
 var _mouse_dragging: bool = false
+var _story_guide_step: String = ""
+var _story_guide_tween: Tween
+var _story_station_scroll_pending: bool = false
+var _story_input_locked: bool = false
+
+# MIKA_NAVIGATION_PULSE_V1 — one native guide for all story destinations.
+const STORY_TILE_GUIDES: Array[String] = ["station", "talos", "molly", "okea", "cela", "lotus", "archeon", "runa", "ch06_lentis", "ch06_gate", "ch07_living_world"]
+const STORY_OPEN_GUIDES: Array[String] = ["open", "mars_open", "station_open", "talos_open", "molly_open", "okea_open", "cela_open", "lotus_open", "archeon_open", "runa_open", "ch06_lentis_open", "ch06_gate_open", "ch07_living_world_open"]
+const STORY_GUIDE_TARGETS: Dictionary = {
+	"earth": "Earth", "mars": "Mars", "talos": "lmc_p02", "molly": "lmc_p03",
+	"okea": "smc_p01", "cela": "smc_p02", "lotus": "st_smc",
+	"archeon": "ngc6822_p01", "runa": "ngc6822_p06",
+	"ch06_lentis": "m33_p04", "ch06_gate": "st_m33", "ch07_living_world": "crossroads_core"
+}
+const STORY_PULSE_MIN_SCALE: float = 0.86
+const STORY_PULSE_HALF_SECONDS: float = 0.50
+
+
+func set_story_input_locked(locked: bool) -> void:
+	# The child's navigation lesson must keep the real picker visible.
+	# Disable its actual click targets rather than hiding the UI.
+	_story_input_locked = locked
+	if is_instance_valid(_trigger):
+		_trigger.disabled = locked
+	for id in _tiles:
+		var tile: Button = _tiles[id] as Button
+		if is_instance_valid(tile):
+			tile.disabled = locked or (_story_guide_step == "earth" and str(id) != "Earth") or (_story_guide_step == "mars" and str(id) != "Mars")
+	if locked:
+		_open = false
+		if is_instance_valid(_rail):
+			_rail.hide()
+	modulate = Color(0.70, 0.79, 0.91, 0.67) if locked else Color.WHITE
 
 
 func _ready() -> void:
@@ -121,6 +155,14 @@ func _process(delta: float) -> void:
 		_shown_width = lerpf(_shown_width, desired, 1.0 - exp(-17.0 * delta))
 	if not is_equal_approx(previous_width, _shown_width):
 		_update_geometry()
+	if _story_station_scroll_pending and _open and _shown_width >= _rail_width - 0.5:
+		# The shipyard is last in the full catalogue. On narrow phones it can
+		# otherwise pulse outside the visible portion of the horizontal strip.
+		_story_station_scroll_pending = false
+		var focus_id: String = _story_guide_target(_story_guide_step)
+		var station_tile: Control = _tiles.get(focus_id) as Control
+		if is_instance_valid(station_tile):
+			_scroll.scroll_horizontal = maxi(0, roundi(station_tile.position.x + station_tile.size.x + RAIL_PADDING - _scroll.size.x))
 
 
 func set_available_width(available_width: float) -> void:
@@ -146,18 +188,95 @@ func _update_geometry() -> void:
 
 
 func _toggle_menu() -> void:
+	if _story_input_locked:
+		return
+	if ["earth", "mars"].has(_story_guide_step) and _open:
+		# While learning navigation, keep the full catalogue visible.
+		return
 	_open = not _open
 	if _open:
 		_rail.visible = true
 		_scroll.scroll_horizontal = 0
+		if STORY_OPEN_GUIDES.has(_story_guide_step):
+			story_catalog_opened.emit()
+	elif STORY_TILE_GUIDES.has(_story_guide_step):
+		# Closing a non-blocking story hint returns the pulse to the native button.
+		set_story_navigation_guide(_story_guide_step + "_open")
 
 
 func _choose(id: String) -> void:
+	if _story_input_locked:
+		return
+	if ["open", "mars_open"].has(_story_guide_step):
+		return
+	if _story_guide_step == "earth" and id != "Earth":
+		return
+	if _story_guide_step == "mars" and id != "Mars":
+		return
 	_preview_target = id
 	_trigger.icon = _target_previews[id]
 	_open = false
 	_update_selection()
 	target_selected.emit(id)
+
+
+func set_story_navigation_guide(step: String) -> void:
+	# An input-only Story lesson: original picture catalogue stays complete.
+	_story_guide_step = step
+	_story_station_scroll_pending = STORY_TILE_GUIDES.has(step)
+	if _story_guide_tween != null and _story_guide_tween.is_valid():
+		_story_guide_tween.kill()
+	_story_guide_tween = null
+	if is_instance_valid(_trigger):
+		_trigger.modulate = Color.WHITE
+		_trigger.scale = Vector2.ONE
+	for key in _tiles:
+		var tile: Button = _tiles[key] as Button
+		if is_instance_valid(tile):
+			tile.disabled = _story_input_locked or (step == "earth" and str(key) != "Earth") or (step == "mars" and str(key) != "Mars")
+			tile.modulate = Color.WHITE
+			tile.scale = Vector2.ONE
+	if step.is_empty():
+		_open = false
+		return
+	var guide_open: bool = STORY_OPEN_GUIDES.has(step)
+	if guide_open:
+		_open = false
+	else:
+		_open = true
+		_rail.visible = true
+		_scroll.scroll_horizontal = 0
+	var focus_id: String = _story_guide_target(step)
+	var focus: Button = _trigger if guide_open else (_tiles.get(focus_id) as Button)
+	if not is_instance_valid(focus):
+		push_warning("MIKA: " + focus_id + " is unavailable in the current navigation catalogue")
+		return
+	# Pulse the real native button around its centre. Never exceed its normal
+	# dimensions, so the horizontal ScrollContainer cannot clip the animation.
+	focus.pivot_offset = focus.size * 0.5
+	_story_guide_tween = create_tween().set_loops()
+	_story_guide_tween.tween_property(focus, "scale", Vector2.ONE * STORY_PULSE_MIN_SCALE, STORY_PULSE_HALF_SECONDS).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_story_guide_tween.tween_property(focus, "scale", Vector2.ONE, STORY_PULSE_HALF_SECONDS).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+
+
+func _story_guide_target(step: String) -> String:
+	if step == "station":
+		return _story_station_id()
+	return str(STORY_GUIDE_TARGETS.get(step, ""))
+
+
+func clear_story_late_route_guide() -> void:
+	# Existing late-chapter cleanup must not cancel an Earth/Mars or other guide.
+	if _story_guide_step.begins_with("ch06_") or _story_guide_step.begins_with("ch07_"):
+		set_story_navigation_guide("")
+
+
+func _story_station_id() -> String:
+	# The MW hub's station is st_mw; other regions can have a different ID.
+	for candidate in _target_ids:
+		if candidate.begins_with("st_") or candidate == "EarthStation":
+			return candidate
+	return ""
 
 
 func _update_selection() -> void:
@@ -193,6 +312,10 @@ func _refresh_locale(_new_locale: String) -> void:
 			tile.tooltip_text = _hint(id)
 
 func _hint(id: String) -> String:
+	if id == "smc_p01":
+		# The first Chapter 3 destination is named in the actual SMC atlas.
+		# Its native navigation tile keeps the same six-language localization.
+		return "Окея" if str(MobileLocale.language) == "ru" else "Okea"
 	if id == "crossroads_core":
 		var translated: Dictionary = {
 			"ru":"Живая планета", "en":"Living World", "fr":"Planète vivante",
@@ -282,6 +405,8 @@ func set_region_destinations(region_id: String, planets: Array, station: Variant
 	_open = false
 	_update_selection()
 	set_available_width(_available_width)
+	if not _story_guide_step.is_empty():
+		set_story_navigation_guide(_story_guide_step)
 
 
 func _v1042_living_world_icon() -> Texture2D:

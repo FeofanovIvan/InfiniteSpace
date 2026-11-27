@@ -1,0 +1,425 @@
+{
+  "schema_version": 3,
+  "page_id": "CH01_P06",
+  "locale": "en",
+  "sync_model": "finite_state_camera_first_then_individual_voice",
+  "image_path": "res://mika_motion_comic/assets/pages/ch01_p06_languages/ch01_p06_en.webp",
+  "native_scene_panels": [
+    "p06_pink_vortex",
+    "p06_mika_thinks",
+    "p06_galaxies_in_orb",
+    "p06_mika_smiles",
+    "p06_orb_whole",
+    "p06_bubble_elevator",
+    "p06_mika_bubble_runs",
+    "p06_ship_departure",
+    "p06_station_destination"
+  ],
+  "panel_bounds": {
+    "p06_pink_vortex": [
+      0.029,
+      0.025,
+      0.379,
+      0.171
+    ],
+    "p06_mika_thinks": [
+      0.432,
+      0.025,
+      0.537,
+      0.171
+    ],
+    "p06_galaxies_in_orb": [
+      0.029,
+      0.215,
+      0.577,
+      0.163
+    ],
+    "p06_mika_smiles": [
+      0.629,
+      0.215,
+      0.339,
+      0.163
+    ],
+    "p06_orb_whole": [
+      0.029,
+      0.398,
+      0.577,
+      0.19
+    ],
+    "p06_bubble_elevator": [
+      0.629,
+      0.398,
+      0.339,
+      0.19
+    ],
+    "p06_mika_bubble_runs": [
+      0.029,
+      0.61,
+      0.432,
+      0.179
+    ],
+    "p06_ship_departure": [
+      0.482,
+      0.61,
+      0.487,
+      0.179
+    ],
+    "p06_station_destination": [
+      0.029,
+      0.809,
+      0.941,
+      0.162
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH01_P06_L001",
+      "frame_id": "CH01_P06_F01",
+      "panel_id": "p06_pink_vortex",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "spoken_text": "It looks like the storm came from gravitational, magnetic, and spatial anomalies.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L001_en.mp3",
+      "audio_duration_s": 6.0343,
+      "camera_target": [
+        0.219,
+        0.089,
+        0.15
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Вихрь и планета"
+    },
+    {
+      "line_id": "CH01_P06_L002",
+      "frame_id": "CH01_P06_F02",
+      "panel_id": "p06_mika_thinks",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "spoken_text": "It may have spread beyond your world— perhaps across the entire galaxy. We can’t tell how far.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L002_en.mp3",
+      "audio_duration_s": 6.9224,
+      "camera_target": [
+        0.66,
+        0.124,
+        0.165
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Лицо Мики и сфера ИИ"
+    },
+    {
+      "line_id": "CH01_P06_L003",
+      "frame_id": "CH01_P06_F03",
+      "panel_id": "p06_galaxies_in_orb",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "spoken_text": "But in the part of the universe I can observe, there isn’t even an echo of that storm…",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L003_en.mp3",
+      "audio_duration_s": 5.9559,
+      "camera_target": [
+        0.26,
+        0.299,
+        0.158
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика и карта галактик слева"
+    },
+    {
+      "line_id": "CH01_P06_L004",
+      "frame_id": "CH01_P06_F03",
+      "panel_id": "p06_galaxies_in_orb",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "spoken_text": "Try reaching the Large Magellanic Cloud. Ask the people there what they know. Who knows? The answers to tomorrow may hide in yesterday…",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L004_en.mp3",
+      "audio_duration_s": 9.4041,
+      "camera_target": [
+        0.385,
+        0.3,
+        0.158
+      ],
+      "transition_before_s": 0.26,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика и карта галактик справа"
+    },
+    {
+      "line_id": "CH01_P06_L005",
+      "frame_id": "CH01_P06_F04",
+      "panel_id": "p06_mika_smiles",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "spoken_text": "And I have a gift for you!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L005_en.mp3",
+      "audio_duration_s": 2.0376,
+      "camera_target": [
+        0.805,
+        0.284,
+        0.155
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика слушает ИИ"
+    },
+    {
+      "line_id": "CH01_P06_L006",
+      "frame_id": "CH01_P06_F04",
+      "panel_id": "p06_mika_smiles",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue_delighted_question",
+      "spoken_text": "Really?!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L006_en.mp3",
+      "audio_duration_s": 1.071,
+      "camera_target": [
+        0.775,
+        0.32,
+        0.155
+      ],
+      "transition_before_s": 0.26,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Радостное лицо Мики"
+    },
+    {
+      "line_id": "CH01_P06_L007",
+      "frame_id": "CH01_P06_F05",
+      "panel_id": "p06_orb_whole",
+      "speaker_id": "CHR_014",
+      "kind": "nonverbal_offscreen_sfx",
+      "spoken_text": "BEEP-BEEP! BEE-EEP!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L007_en.mp3",
+      "audio_duration_s": 0.9404,
+      "camera_target": [
+        0.337,
+        0.482,
+        0.186
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Сфера и источник сигнала"
+    },
+    {
+      "line_id": "CH01_P06_L008",
+      "frame_id": "CH01_P06_F05",
+      "panel_id": "p06_orb_whole",
+      "speaker_id": "CHR_001",
+      "kind": "speech_question_surprise",
+      "spoken_text": "Huh?! What’s that?!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L008_en.mp3",
+      "audio_duration_s": 1.8024,
+      "camera_target": [
+        0.315,
+        0.527,
+        0.17
+      ],
+      "transition_before_s": 0.26,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика реагирует на сигнал"
+    },
+    {
+      "line_id": "CH01_P06_L009",
+      "frame_id": "CH01_P06_F06",
+      "panel_id": "p06_bubble_elevator",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Bubble is a living AI companion. And boy, does he need lots of energy!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L009_en.mp3",
+      "audio_duration_s": 5.4857,
+      "camera_target": [
+        0.799,
+        0.466,
+        0.18
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика и Баббл в лифте"
+    },
+    {
+      "line_id": "SFX_CH01_P06_F07_GAS",
+      "frame_id": "CH01_P06_F07",
+      "panel_id": "p06_mika_bubble_runs",
+      "speaker_id": "CHR_014",
+      "kind": "nonverbal_sfx",
+      "spoken_text": "",
+      "audio_path": "res://mika_motion_comic/ch01_clips/shared/SFX_CH01_P06_F07_GAS.mp3",
+      "audio_duration_s": 0.418,
+      "camera_target": [
+        0.247,
+        0.671,
+        0.17
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Комический сигнал Баббла перед реакцией Мики"
+    },
+    {
+      "line_id": "CH01_P06_L010",
+      "frame_id": "CH01_P06_F07",
+      "panel_id": "p06_mika_bubble_runs",
+      "speaker_id": "CHR_001",
+      "kind": "speech_panic",
+      "spoken_text": "Eww, Bubble! I’ll wait for you on the ship!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L010_en.mp3",
+      "audio_duration_s": 3.7094,
+      "camera_target": [
+        0.247,
+        0.671,
+        0.17
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "hold",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика и Баббл: комическая реакция"
+    },
+    {
+      "line_id": "CH01_P06_L011",
+      "frame_id": "CH01_P06_F07",
+      "panel_id": "p06_mika_bubble_runs",
+      "speaker_id": "CHR_004",
+      "kind": "narration_comic_reveal",
+      "spoken_text": "But the AI forgot to mention: Bubble needs looking after… Like any living thing, he has his quirks!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L011_en.mp3",
+      "audio_duration_s": 6.8441,
+      "camera_target": [
+        0.244,
+        0.687,
+        0.175
+      ],
+      "transition_before_s": 0.26,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Мика и Баббл, подпись вторична"
+    },
+    {
+      "line_id": "CH01_P06_L012",
+      "frame_id": "CH01_P06_F08",
+      "panel_id": "p06_ship_departure",
+      "speaker_id": "CHR_004",
+      "kind": "narration_adventure",
+      "spoken_text": "And so our friends set off on their journey!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L012_en.mp3",
+      "audio_duration_s": 2.9257,
+      "camera_target": [
+        0.724,
+        0.685,
+        0.173
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Корабль в полёте"
+    },
+    {
+      "line_id": "CH01_P06_L013",
+      "frame_id": "CH01_P06_F09",
+      "panel_id": "p06_station_destination",
+      "speaker_id": "CHR_004",
+      "kind": "narration_destination_title",
+      "spoken_text": "NEXT STOP: CALLISTO ORBITAL SHIPYARD!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L013_en.mp3",
+      "audio_duration_s": 3.7878,
+      "camera_target": [
+        0.363,
+        0.885,
+        0.159
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Станция и направление"
+    },
+    {
+      "line_id": "CH01_P06_L014",
+      "frame_id": "CH01_P06_F09",
+      "panel_id": "p06_station_destination",
+      "speaker_id": "CHR_004",
+      "kind": "narration_objective",
+      "spoken_text": "Here, Mika’s ship will be upgraded for intergalactic jumps!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/en/CH01_P06_L014_en.mp3",
+      "audio_duration_s": 4.2841,
+      "camera_target": [
+        0.635,
+        0.893,
+        0.159
+      ],
+      "transition_before_s": 0.26,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "transition_sfx_volume_db": -6.0,
+      "direction_note": "Станция и цель модернизации"
+    }
+  ],
+  "registry_line_ids": [
+    "CH01_P06_L001",
+    "CH01_P06_L002",
+    "CH01_P06_L003",
+    "CH01_P06_L004",
+    "CH01_P06_L005",
+    "CH01_P06_L006",
+    "CH01_P06_L007",
+    "CH01_P06_L008",
+    "CH01_P06_L009",
+    "CH01_P06_L010",
+    "CH01_P06_L011",
+    "CH01_P06_L012",
+    "CH01_P06_L013",
+    "CH01_P06_L014"
+  ],
+  "extra_sfx_events": [
+    "SFX_CH01_P06_F07_GAS"
+  ]
+}

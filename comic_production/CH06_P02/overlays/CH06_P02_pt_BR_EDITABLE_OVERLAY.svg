@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<title>MIKA CH06 P02 — русский NEBULA SVG v5: без дублей, безопасные отступы</title>
+<desc>Никакой генерации изображений. Бирюзовая закадровая речь нейронных существ, белая речь Мики. Подписи космических явлений видимы по одному разу.</desc>
+<g id="CH06_P02_L001" data-speaker="CHR_038" data-kind="telepathic_narration" data-shape="nebula-speech-left" data-voice-mode="offscreen">
+<path d="M626 270 Q600 270 600 296 V534 Q600 560 626 560 H693 L670 587 L737 560 H1179 Q1205 560 1205 534 V296 Q1205 270 1179 270 Z" fill="#4ED0DB" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M630 286 h57" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="1177" cy="286" r="5.5" fill="#36DDE8"/>
+<text x="630" y="338.92" font-family="DejaVu Sans" font-weight="700" font-size="34" fill="#18344A">Olá, Mika! Que bom que</text><text x="630" y="381.42" font-family="DejaVu Sans" font-weight="700" font-size="34" fill="#18344A">você chegou até nós. Quero</text><text x="630" y="423.92" font-family="DejaVu Sans" font-weight="700" font-size="34" fill="#18344A">te contar um pouco sobre</text><text x="630" y="466.42" font-family="DejaVu Sans" font-weight="700" font-size="34" fill="#18344A">nós e o que aconteceu.</text></g>
+<g id="CH06_P02_L002" data-speaker="CHR_038" data-kind="telepathic_narration" data-shape="nebula-speech-right" data-voice-mode="offscreen">
+<path d="M551 605 Q525 605 525 631 V767 Q525 793 551 793 H1075 L1145 820 L1125 793 H1189 Q1215 793 1215 767 V631 Q1215 605 1189 605 Z" fill="#4ED0DB" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M555 621 h57" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="1187" cy="621" r="5.5" fill="#36DDE8"/>
+<text x="555" y="673.04" font-family="DejaVu Sans" font-weight="700" font-size="33" fill="#18344A">Quando olhamos para o céu pela</text><text x="555" y="714.29" font-family="DejaVu Sans" font-weight="700" font-size="33" fill="#18344A">primeira vez, começamos a</text><text x="555" y="755.54" font-family="DejaVu Sans" font-weight="700" font-size="33" fill="#18344A">perceber padrões.</text></g>
+<g id="CH06_P02_L003" data-speaker="CHR_038" data-kind="telepathic_narration" data-shape="nebula-speech-right" data-voice-mode="offscreen">
+<path d="M1414 105 Q1388 105 1388 131 V251 Q1388 277 1414 277 H2155 L2225 304 L2205 277 H2269 Q2295 277 2295 251 V131 Q2295 105 2269 105 Z" fill="#4ED0DB" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M1418 121 h57" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="2267" cy="121" r="5.5" fill="#36DDE8"/>
+<text x="1418" y="182.72" font-family="DejaVu Sans" font-weight="700" font-size="44" fill="#18344A">Construímos naves espaciais.</text></g>
+<g id="CH06_P02_L004" data-speaker="CHR_038" data-kind="telepathic_narration" data-shape="nebula-speech-left" data-voice-mode="offscreen">
+<path d="M116 1032 Q90 1032 90 1058 V1175 Q90 1201 116 1201 H183 L160 1228 L227 1201 H779 Q805 1201 805 1175 V1058 Q805 1032 779 1032 Z" fill="#4ED0DB" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M120 1048 h57" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="777" cy="1048" r="5.5" fill="#36DDE8"/>
+<text x="120" y="1106.2" font-family="DejaVu Sans" font-weight="700" font-size="40" fill="#18344A">E começamos a explorar o</text><text x="120" y="1156.2" font-family="DejaVu Sans" font-weight="700" font-size="40" fill="#18344A">Universo que conhecíamos.</text></g>
+<g id="CH06_P02_L005" data-speaker="CHR_038" data-kind="telepathic_narration" data-shape="nebula-speech-right" data-voice-mode="offscreen">
+<path d="M1056 1466 Q1030 1466 1030 1492 V1615 Q1030 1641 1056 1641 H2115 L2185 1668 L2165 1641 H2229 Q2255 1641 2255 1615 V1492 Q2255 1466 2229 1466 Z" fill="#4ED0DB" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M1060 1482 h57" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="2227" cy="1482" r="5.5" fill="#36DDE8"/>
+<text x="1060" y="1539.32" font-family="DejaVu Sans" font-weight="700" font-size="39" fill="#18344A">Aprendemos a prever o nascimento e a morte das</text><text x="1060" y="1588.07" font-family="DejaVu Sans" font-weight="700" font-size="39" fill="#18344A">galáxias.</text></g>
+<g id="CH06_P02_L006" data-speaker="CHR_001" data-kind="dialogue" data-shape="nebula-speech-left" data-voice-mode="offscreen">
+<path d="M838 1802 Q812 1802 812 1828 V1971 Q812 1997 838 1997 H905 L882 2024 L949 1997 H1406 Q1432 1997 1432 1971 V1828 Q1432 1802 1406 1802 Z" fill="#FFFDF9" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M842 1818 h57" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="1404" cy="1818" r="5.5" fill="#36DDE8"/>
+<text x="842" y="1873.56" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">Então vocês conseguem</text><text x="842" y="1919.81" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">prever o futuro?</text></g>
+<g id="CH06_P02_L007" data-speaker="CHR_038" data-kind="telepathic_narration" data-shape="nebula-speech-right" data-voice-mode="offscreen">
+<path d="M1296 2483 Q1270 2483 1270 2509 V2654 Q1270 2680 1296 2680 H2260 L2330 2707 L2310 2680 H2374 Q2400 2680 2400 2654 V2509 Q2400 2483 2374 2483 Z" fill="#4ED0DB" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M1300 2499 h57" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="2372" cy="2499" r="5.5" fill="#36DDE8"/>
+<text x="1300" y="2552.8" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#18344A">Assim como você pode prever quanto falta para</text><text x="1300" y="2596.55" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#18344A">amanhecer se souber que horas são e a que horas o</text><text x="1300" y="2640.3" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#18344A">Sol vai nascer.</text></g>
+<g id="CH06_P02_L008" data-speaker="CHR_038" data-kind="telepathic_narration" data-tts-segments="1" data-display-segments="5">
+<g id="CH06_P02_L008_lead" data-speaker="CHR_038" data-kind="telepathic_narration" data-shape="nebula-speech-right" data-voice-mode="offscreen">
+<path d="M841 2780 Q815 2780 815 2806 V2841 Q815 2867 841 2867 H1521 L1591 2894 L1571 2867 H1635 Q1661 2867 1661 2841 V2806 Q1661 2780 1635 2780 Z" fill="#4ED0DB" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M845 2796 h57" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="1633" cy="2796" r="5.5" fill="#36DDE8"/>
+<text x="841" y="2838.2" font-family="DejaVu Sans" font-weight="700" font-size="40" fill="#18344A">Aprendemos a calcular:</text></g>
+<g id="CH06_P02_L008_visual_1" data-label="nascimento de planetas">
+<rect x="73" y="3318" width="500" height="87" rx="15" fill="#4ED0DB" stroke="#253456" stroke-width="4"/>
+<text x="323.0" y="3375" text-anchor="middle" font-family="DejaVu Sans" font-size="32" font-weight="700" fill="#18344A">nascimento de planetas</text></g>
+<g id="CH06_P02_L008_visual_2" data-label="eclipses solares">
+<rect x="646" y="3318" width="539" height="87" rx="15" fill="#4ED0DB" stroke="#253456" stroke-width="4"/>
+<text x="915.5" y="3375" text-anchor="middle" font-family="DejaVu Sans" font-size="32" font-weight="700" fill="#18344A">eclipses solares</text></g>
+<g id="CH06_P02_L008_visual_3" data-label="movimento dos planetas">
+<rect x="1340" y="3318" width="523" height="87" rx="15" fill="#4ED0DB" stroke="#253456" stroke-width="4"/>
+<text x="1601.5" y="3375" text-anchor="middle" font-family="DejaVu Sans" font-size="32" font-weight="700" fill="#18344A">movimento dos planetas</text></g>
+<g id="CH06_P02_L008_visual_4" data-label="passagem de asteroides">
+<rect x="1940" y="3318" width="467" height="87" rx="15" fill="#4ED0DB" stroke="#253456" stroke-width="4"/>
+<text x="2173.5" y="3375" text-anchor="middle" font-family="DejaVu Sans" font-size="31" font-weight="700" fill="#18344A">passagem de asteroides</text></g>
+</g>
+</svg>

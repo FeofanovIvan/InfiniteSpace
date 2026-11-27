@@ -1,0 +1,296 @@
+{
+  "schema_version": 3,
+  "page_id": "CH02_P04",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch02_p04_languages/ch02_p04_ru.webp",
+  "native_scene_panels": [
+    "p24_station_exterior",
+    "p24_fungal_garden",
+    "p24_factory",
+    "p24_reclaimed_city",
+    "p24_fungus_portrait",
+    "p24_meteor",
+    "p24_mycelium_net",
+    "p24_mika_smiles",
+    "p24_professor_and_fungus"
+  ],
+  "panel_bounds": {
+    "p24_station_exterior": [
+      0.021,
+      0.015,
+      0.96,
+      0.125
+    ],
+    "p24_fungal_garden": [
+      0.024,
+      0.158,
+      0.548,
+      0.229
+    ],
+    "p24_factory": [
+      0.607,
+      0.159,
+      0.367,
+      0.103
+    ],
+    "p24_reclaimed_city": [
+      0.609,
+      0.273,
+      0.366,
+      0.121
+    ],
+    "p24_fungus_portrait": [
+      0.022,
+      0.413,
+      0.299,
+      0.319
+    ],
+    "p24_meteor": [
+      0.349,
+      0.414,
+      0.302,
+      0.115
+    ],
+    "p24_mycelium_net": [
+      0.349,
+      0.545,
+      0.302,
+      0.189
+    ],
+    "p24_mika_smiles": [
+      0.682,
+      0.418,
+      0.293,
+      0.307
+    ],
+    "p24_professor_and_fungus": [
+      0.024,
+      0.752,
+      0.952,
+      0.23
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH02_P04_L001",
+      "frame_id": "CH02_P04_F01",
+      "panel_id": "p24_station_exterior",
+      "speaker_id": "CHR_004",
+      "kind": "intro",
+      "spoken_text": "Станция «Тарантул» — живой корабль-лаборатория грибной цивилизации.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P04_L001_ru.mp3",
+      "audio_duration_s": 4.911,
+      "camera_target": [
+        0.5,
+        0.074,
+        0.123
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "3faa29f39351cf9f5203f2f01ea6d2443f648585001106c3058ae0acd6fc8342"
+    },
+    {
+      "line_id": "CH02_P04_L002",
+      "frame_id": "CH02_P04_F02",
+      "panel_id": "p24_fungal_garden",
+      "speaker_id": "CHR_023",
+      "kind": "station_greeting",
+      "spoken_text": "Привет, Мика! Мои друзья много рассказывали о тебе. Возможно, наша история поможет тебе найти ответы.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P04_L002_ru.mp3",
+      "audio_duration_s": 7.471,
+      "camera_target": [
+        0.3,
+        0.28,
+        0.218
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fd52239779257726d3bc6285c79ce0f31504daa158647093660e98159a68bb33"
+    },
+    {
+      "line_id": "CH02_P04_L003",
+      "frame_id": "CH02_P04_F03",
+      "panel_id": "p24_factory",
+      "speaker_id": "CHR_023",
+      "kind": "old_civilization",
+      "spoken_text": "Когда-то на Молии процветала великая цивилизация.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P04_L003_ru.mp3",
+      "audio_duration_s": 4.206,
+      "camera_target": [
+        0.792,
+        0.211,
+        0.1
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "719e8368f4e4774aa78788f7083fe19f62bb4ccbd95a4204f42ebd9e8deeb8de"
+    },
+    {
+      "line_id": "CH02_P04_L004",
+      "frame_id": "CH02_P04_F04",
+      "panel_id": "p24_reclaimed_city",
+      "speaker_id": "CHR_023",
+      "kind": "ecological_collapse",
+      "spoken_text": "Но жажда ресурсов и горы отходов погубили её мир.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P04_L004_ru.mp3",
+      "audio_duration_s": 4.362,
+      "camera_target": [
+        0.791,
+        0.332,
+        0.118
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a556ce940dbdb22eab589ff1d5c49cbb6de6973d62b5d8631b64315e25423d4c"
+    },
+    {
+      "line_id": "CH02_P04_L005",
+      "frame_id": "CH02_P04_F05",
+      "panel_id": "p24_fungus_portrait",
+      "speaker_id": "CHR_023",
+      "kind": "silence",
+      "spoken_text": "Планета опустела. Казалось, жизнь на ней исчезла навсегда…",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P04_L005_ru.mp3",
+      "audio_duration_s": 5.251,
+      "camera_target": [
+        0.17,
+        0.488,
+        0.117
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "38d7a33534ea0e71365040a60f1ceda6db8914cd3864c210034713eb82734975"
+    },
+    {
+      "line_id": "CH02_P04_L006",
+      "frame_id": "CH02_P04_F06",
+      "panel_id": "p24_meteor",
+      "speaker_id": "CHR_023",
+      "kind": "meteor_ancestors",
+      "spoken_text": "Позже метеорит принёс сюда наших далёких предков.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P04_L006_ru.mp3",
+      "audio_duration_s": 3.971,
+      "camera_target": [
+        0.505,
+        0.46,
+        0.11
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d1df7855bd25219e6669f2a67a689397d09c60901c0f00b8bda163b47e61e728"
+    },
+    {
+      "line_id": "CH02_P04_L007",
+      "frame_id": "CH02_P04_F07",
+      "panel_id": "p24_mycelium_net",
+      "speaker_id": "CHR_023",
+      "kind": "network_origin",
+      "spoken_text": "Они объединились в единую разумную сеть. Так родился наш народ.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P04_L007_ru.mp3",
+      "audio_duration_s": 5.329,
+      "camera_target": [
+        0.501,
+        0.612,
+        0.14
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "83fbbb01b5605a6b052010e939c95b8f06f68f0a23eb0ee04b2872e6c359cba0"
+    },
+    {
+      "line_id": "CH02_P04_L008",
+      "frame_id": "CH02_P04_F08",
+      "panel_id": "p24_mika_smiles",
+      "speaker_id": "CHR_023",
+      "kind": "new_companion",
+      "spoken_text": "Я отправлю с тобой часть себя. Вместе мы попробуем раскрыть тайну шторма.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P04_L008_ru.mp3",
+      "audio_duration_s": 5.486,
+      "camera_target": [
+        0.817,
+        0.557,
+        0.113
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f55ff13e0c2f8c7a6e66c401b20299915840cf5b68bab529d9c100a2b7d38756"
+    },
+    {
+      "line_id": "CH02_P04_L009",
+      "frame_id": "CH02_P04_F08",
+      "panel_id": "p24_mika_smiles",
+      "speaker_id": "CHR_001",
+      "kind": "mika_thanks",
+      "spoken_text": "Спасибо! Куда теперь?",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P04_L009_ru.mp3",
+      "audio_duration_s": 2.273,
+      "camera_target": [
+        0.817,
+        0.565,
+        0.113
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f2eb8765a88654d081a9a68254328e730bf62815bf2d56a349260a256a61d500"
+    },
+    {
+      "line_id": "CH02_P04_L010",
+      "frame_id": "CH02_P04_F09",
+      "panel_id": "p24_professor_and_fungus",
+      "speaker_id": "CHR_004",
+      "kind": "destination_narration",
+      "spoken_text": "«Тарантул» указал путь в Малое Магелланово Облако. Команда пополнилась и была готова к новым приключениям!",
+      "audio_path": "res://mika_motion_comic/ch02_clips/ru/CH02_P04_L010_ru.mp3",
+      "audio_duration_s": 7.471,
+      "camera_target": [
+        0.505,
+        0.862,
+        0.228
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e141123b38ce9095b201b4beff92388053f848a7f0696e5d8d728911d33e8045"
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "schema_version": "1.1",
+  "page_id": "CH05_P01",
+  "model_id": "eleven_v4",
+  "source_sha256": "f6af59b6d20de869d9dd7703e5f8fa84e2cd05331eabe60a5c3896fad6625a36",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "grouping": "ONE_REGISTERED_SPEAKER_LINE_PER_MP3",
+  "policy": "9 spoken lines per language, 3 shared nonverbal SFX; no voice recasting",
+  "lines": [
+    {
+      "line_id": "CH05_P01_L001",
+      "frame_id": "CH05_P01_F01",
+      "reading_order": 1,
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "audio_mode": "tts_required",
+      "emotion_ru": "растерянность команды",
+      "emotion_tag": "[uneasy]",
+      "localized": {
+        "ru": "В глубоком космосе друзья поняли: никто не знает, куда лететь дальше.",
+        "en": "In deep space, the friends realized that no one knew where to fly next.",
+        "pt_BR": "No espaço profundo, os amigos perceberam: ninguém sabia para onde voar agora.",
+        "es": "En el espacio profundo, los amigos comprendieron: nadie sabía adónde debían volar.",
+        "fr": "Dans l'espace profond, les amis comprirent que personne ne savait où aller ensuite.",
+        "de": "Im tiefen All merkten die Freunde: Niemand wusste, wohin sie als Nächstes fliegen sollten."
+      }
+    },
+    {
+      "line_id": "CH05_P01_L002",
+      "frame_id": "CH05_P01_F01",
+      "reading_order": 2,
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "kind": "dialogue",
+      "audio_mode": "tts_required",
+      "emotion_ru": "настойчиво к Баблу",
+      "emotion_tag": "[urgently]",
+      "localized": {
+        "ru": "Бабл! Куда нам лететь? Покажи маршрут!",
+        "en": "Bubble! Where should we go? Show us the route!",
+        "pt_BR": "Bubble! Para onde vamos? Mostre a rota!",
+        "es": "¡Bubble! ¿Adónde vamos? ¡Muéstranos la ruta!",
+        "fr": "Bubble ! Où devons-nous aller ? Montre-nous la route !",
+        "de": "Bubble! Wohin sollen wir fliegen? Zeig uns den Kurs!"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L003",
+      "frame_id": "CH05_P01_F01",
+      "reading_order": 3,
+      "speaker_id": "CHR_031",
+      "role": "pirate_lizard",
+      "kind": "dialogue",
+      "audio_mode": "tts_required",
+      "emotion_ru": "сомнение",
+      "emotion_tag": "[uncertain]",
+      "localized": {
+        "ru": "Звёзды совсем незнакомые…",
+        "en": "These stars are completely unfamiliar...",
+        "pt_BR": "Essas estrelas são totalmente desconhecidas...",
+        "es": "Estas estrellas son completamente desconocidas...",
+        "fr": "Ces étoiles nous sont totalement inconnues...",
+        "de": "Diese Sterne sind völlig unbekannt..."
+      }
+    },
+    {
+      "line_id": "CH05_P01_L004",
+      "frame_id": "CH05_P01_F01",
+      "reading_order": 4,
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "dialogue",
+      "audio_mode": "tts_required",
+      "emotion_ru": "тревога",
+      "emotion_tag": "[worried]",
+      "localized": {
+        "ru": "Что же нам делать?!",
+        "en": "What are we going to do?!",
+        "pt_BR": "O que vamos fazer?!",
+        "es": "¿Qué vamos a hacer?!",
+        "fr": "Qu'allons-nous faire ?!",
+        "de": "Was sollen wir tun?!"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L005",
+      "frame_id": "CH05_P01_F01",
+      "reading_order": 5,
+      "speaker_id": "CHR_014",
+      "role": "bubble_sfx",
+      "kind": "sfx",
+      "audio_mode": "shared_sfx",
+      "emotion_ru": "ответ Бабла, электронный сигнал",
+      "emotion_tag": "",
+      "localized": {
+        "ru": "Би-бип!",
+        "en": "Beep-beep!",
+        "pt_BR": "Bi-bip!",
+        "es": "¡Bi-bip!",
+        "fr": "Bi-bip !",
+        "de": "Bi-biep!"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L006",
+      "frame_id": "CH05_P01_F02",
+      "reading_order": 6,
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "audio_mode": "tts_required",
+      "emotion_ru": "внезапное притяжение",
+      "emotion_tag": "[tense]",
+      "localized": {
+        "ru": "Неожиданная сила потянула корабль к незнакомым звёздам. Впереди показалась яркая красная планета.",
+        "en": "A sudden force pulled the ship toward unknown stars. Ahead, a bright red planet appeared.",
+        "pt_BR": "Uma força inesperada puxou a nave para estrelas desconhecidas. À frente surgiu um planeta vermelho e brilhante.",
+        "es": "Una fuerza inesperada arrastró la nave hacia estrellas desconocidas. Delante apareció un brillante planeta rojo.",
+        "fr": "Une force soudaine attira le vaisseau vers des étoiles inconnues. Devant eux apparut une brillante planète rouge.",
+        "de": "Eine unerwartete Kraft zog das Schiff zu unbekannten Sternen. Vor ihnen erschien ein leuchtend roter Planet."
+      }
+    },
+    {
+      "line_id": "CH05_P01_L007",
+      "frame_id": "CH05_P01_F03",
+      "reading_order": 7,
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "kind": "dialogue",
+      "audio_mode": "tts_required",
+      "emotion_ru": "испуганно",
+      "emotion_tag": "[alarmed]",
+      "localized": {
+        "ru": "Что происходит?!",
+        "en": "What is happening?!",
+        "pt_BR": "O que está acontecendo?!",
+        "es": "¡¿Qué está pasando?!",
+        "fr": "Que se passe-t-il ?!",
+        "de": "Was passiert hier?!"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L008",
+      "frame_id": "CH05_P01_F03",
+      "reading_order": 8,
+      "speaker_id": "CHR_031",
+      "role": "pirate_lizard",
+      "kind": "dialogue",
+      "audio_mode": "tts_required",
+      "emotion_ru": "паника",
+      "emotion_tag": "[panicked]",
+      "localized": {
+        "ru": "Куда нас затягивает?!",
+        "en": "What is pulling us in?!",
+        "pt_BR": "O que está nos puxando?!",
+        "es": "¡¿Qué nos está atrayendo?!",
+        "fr": "Qu'est-ce qui nous attire ?!",
+        "de": "Was zieht uns hinein?!"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L009",
+      "frame_id": "CH05_P01_F04",
+      "reading_order": 9,
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "audio_mode": "tts_required",
+      "emotion_ru": "напряжённая посадка",
+      "emotion_tag": "[relieved]",
+      "localized": {
+        "ru": "Корабль плавно сел на чёрную парящую пирамиду.",
+        "en": "The ship gently landed on a black floating pyramid.",
+        "pt_BR": "A nave pousou suavemente numa pirâmide negra flutuante.",
+        "es": "La nave aterrizó suavemente sobre una pirámide negra flotante.",
+        "fr": "Le vaisseau se posa en douceur sur une pyramide noire en lévitation.",
+        "de": "Das Schiff landete sanft auf einer schwarzen schwebenden Pyramide."
+      }
+    },
+    {
+      "line_id": "CH05_P01_L010",
+      "frame_id": "CH05_P01_F05",
+      "reading_order": 10,
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "audio_mode": "tts_required",
+      "emotion_ru": "тревожное описание",
+      "emotion_tag": "[ominously]",
+      "localized": {
+        "ru": "Двери раскрылись. Мика шагнул в темноту, где его встретили странные существа и пугающие звуки…",
+        "en": "The doors opened. Mika stepped into the dark, where strange creatures and frightening sounds awaited him...",
+        "pt_BR": "As portas se abriram. Mika entrou na escuridão, onde criaturas estranhas e sons assustadores o aguardavam...",
+        "es": "Las puertas se abrieron. Mika entró en la oscuridad, donde lo esperaban criaturas extrañas y sonidos inquietantes...",
+        "fr": "Les portes s'ouvrirent. Mika entra dans l'obscurité, où l'attendaient d'étranges créatures et des sons effrayants...",
+        "de": "Die Türen öffneten sich. Mika trat in die Dunkelheit, wo ihn seltsame Wesen und unheimliche Geräusche erwarteten..."
+      }
+    },
+    {
+      "line_id": "CH05_P01_L011",
+      "frame_id": "CH05_P01_F05",
+      "reading_order": 11,
+      "speaker_id": "SFX_MAGNETIC_UNINTELLIGIBLE",
+      "role": "magnetic_sfx",
+      "kind": "sfx",
+      "audio_mode": "shared_sfx",
+      "emotion_ru": "шипение",
+      "emotion_tag": "",
+      "localized": {
+        "ru": "Ш-ш-ш…",
+        "en": "Shhh...",
+        "pt_BR": "Xiiiii...",
+        "es": "Shhh...",
+        "fr": "Chhh...",
+        "de": "Schsch..."
+      }
+    },
+    {
+      "line_id": "CH05_P01_L012",
+      "frame_id": "CH05_P01_F05",
+      "reading_order": 12,
+      "speaker_id": "SFX_MAGNETIC_UNINTELLIGIBLE",
+      "role": "magnetic_sfx",
+      "kind": "sfx",
+      "audio_mode": "shared_sfx",
+      "emotion_ru": "непонятное бульканье",
+      "emotion_tag": "",
+      "localized": {
+        "ru": "Кр-р-р…",
+        "en": "Krrr...",
+        "pt_BR": "Crrr...",
+        "es": "Crrr...",
+        "fr": "Krrr...",
+        "de": "Krrr..."
+      }
+    }
+  ]
+}

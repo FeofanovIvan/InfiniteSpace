@@ -1,0 +1,329 @@
+{
+  "schema_version": 3,
+  "page_id": "CH06_P04",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch06_p04_languages/ch06_p04_ru.webp",
+  "native_scene_panels": [
+    "p64_council",
+    "p64_mika",
+    "p64_route",
+    "p64_wake",
+    "p64_cockpit",
+    "p64_talk",
+    "p64_worlds",
+    "p64_portal"
+  ],
+  "panel_bounds": {
+    "p64_council": [
+      0.028646,
+      0.020239,
+      0.941406,
+      0.118675
+    ],
+    "p64_mika": [
+      0.028646,
+      0.156394,
+      0.428385,
+      0.216191
+    ],
+    "p64_route": [
+      0.509115,
+      0.156394,
+      0.460938,
+      0.220791
+    ],
+    "p64_wake": [
+      0.028646,
+      0.392824,
+      0.428385,
+      0.224471
+    ],
+    "p64_cockpit": [
+      0.519531,
+      0.393744,
+      0.450521,
+      0.223551
+    ],
+    "p64_talk": [
+      0.028646,
+      0.637534,
+      0.427083,
+      0.217111
+    ],
+    "p64_worlds": [
+      0.520833,
+      0.637534,
+      0.449219,
+      0.217111
+    ],
+    "p64_portal": [
+      0.028646,
+      0.875805,
+      0.941406,
+      0.103956
+    ]
+  },
+  "lines": [
+    {
+      "panel_id": "p64_council",
+      "camera_target": [
+        0.499349,
+        0.079577,
+        0.1400365
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.020239,
+        0.941406,
+        0.118675
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L001",
+      "frame_id": "1",
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Мы попросили магнитных друзей открыть портал между нашим миром и миром, откуда пришло это эхо.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P04_L001_ru.mp3",
+      "audio_duration_s": 6.19102,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "cb2ed390da8601689194123db58e5c07a8224c6ce6a08ba08262d61cc2d5d64c"
+    },
+    {
+      "panel_id": "p64_mika",
+      "camera_target": [
+        0.236979,
+        0.25759,
+        0.25510538
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028646,
+        0.156394,
+        0.428385,
+        0.216191
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L002",
+      "frame_id": "2",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Значит, вы меня спасли?",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P04_L002_ru.mp3",
+      "audio_duration_s": 2.35102,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "dd1719fde8143092382c733dc7197f216ee6e256f0ad99a3e1b4175b461749d2"
+    },
+    {
+      "panel_id": "p64_route",
+      "camera_target": [
+        0.739583,
+        0.266789,
+        0.26053338
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.509115,
+        0.156394,
+        0.460938,
+        0.220791
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L003",
+      "frame_id": "3",
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Не совсем так. Попробуй отправиться к «Последним вратам». Там ты найдёшь больше ответов.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P04_L003_ru.mp3",
+      "audio_duration_s": 6.034286,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4d9c82a26e5ac4b5f78000e82f47ca3c10b20aa427959e8ecd2e3ba29b65bb2b"
+    },
+    {
+      "panel_id": "p64_route",
+      "camera_target": [
+        0.739583,
+        0.266789,
+        0.26053338
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.509115,
+        0.156394,
+        0.460938,
+        0.220791
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L004",
+      "frame_id": "3",
+      "speaker_id": "CHR_038",
+      "kind": "exclamation",
+      "spoken_text": "Удачи!",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P04_L004_ru.mp3",
+      "audio_duration_s": 1.306122,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "33a634b089c8b0d198d7bc043c7a9099f7ae99005ae4f500bbd74297dc7fa369"
+    },
+    {
+      "panel_id": "p64_wake",
+      "camera_target": [
+        0.222656,
+        0.482981,
+        0.26487578
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028646,
+        0.392824,
+        0.428385,
+        0.224471
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L005",
+      "frame_id": "4, 5",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Мика открыл глаза и понял, куда лететь. Он попрощался с командой и вместе с новым другом отправился к Перекрёстку миров.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P04_L005_ru.mp3",
+      "audio_duration_s": 8.359184,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "677e3c855c321b99c20127c8b90319e617b0a49c11cf91df03bb5cff2d6df47f"
+    },
+    {
+      "panel_id": "p64_cockpit",
+      "camera_target": [
+        0.744792,
+        0.50552,
+        0.26379018
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.519531,
+        0.393744,
+        0.450521,
+        0.223551
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_VIS_05",
+      "frame_id": "5",
+      "kind": "visual_hold",
+      "speaker_id": "",
+      "spoken_text": "",
+      "audio_path": "",
+      "audio_duration_s": 0.0,
+      "audio_kind": "silent",
+      "visual_hold_s": 2.2
+    },
+    {
+      "panel_id": "p64_talk",
+      "camera_target": [
+        0.242188,
+        0.74609,
+        0.25619097999999996
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.637534,
+        0.427083,
+        0.217111
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L006",
+      "frame_id": "6",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "У Перекрёстка миров нейронный друг вновь связался с Микой. Чтобы воспользоваться артефактом, нужно разгадать ребус.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P04_L006_ru.mp3",
+      "audio_duration_s": 7.314286,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "43305a5970762db4fcdf3abd2ba4e3aea6d310cd8a9e4399d958063bcd0bbc98"
+    },
+    {
+      "panel_id": "p64_worlds",
+      "camera_target": [
+        0.745443,
+        0.74609,
+        0.25619097999999996
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.520833,
+        0.637534,
+        0.449219,
+        0.217111
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L007",
+      "frame_id": "7",
+      "speaker_id": "CHR_038",
+      "kind": "offscreen_neuron_speech",
+      "spoken_text": "Мы и сами не знаем, куда приведёт артефакт. Я отправлюсь с тобой. Изучать неизведанное — наша цель.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P04_L007_ru.mp3",
+      "audio_duration_s": 6.922449,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "db0181047142d11400b6428f783786d8629dfd75ff9e6bc97e399b8200ddee9e"
+    },
+    {
+      "panel_id": "p64_portal",
+      "camera_target": [
+        0.499349,
+        0.927783,
+        0.12266808
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.875805,
+        0.941406,
+        0.103956
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P04_L008",
+      "frame_id": "8",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Впереди открылся проход, и Мика направил свой звёздолёт в него.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P04_L008_ru.mp3",
+      "audio_duration_s": 4.440816,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b84d441f72002819d7f2e5e108531b3044ec127ad592bb46c321892c0375a4af"
+    }
+  ]
+}

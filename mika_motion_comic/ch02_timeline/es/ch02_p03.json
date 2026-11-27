@@ -1,0 +1,224 @@
+{
+  "schema_version": 3,
+  "page_id": "CH02_P03",
+  "locale": "es",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch02_p03_languages/ch02_p03_es.webp",
+  "native_scene_panels": [
+    "p23_molly_orbit",
+    "p23_ruins_meeting",
+    "p23_mika_talks",
+    "p23_plant_tutorial",
+    "p23_loading_ship"
+  ],
+  "panel_bounds": {
+    "p23_molly_orbit": [
+      0.027,
+      0.019,
+      0.359,
+      0.255
+    ],
+    "p23_ruins_meeting": [
+      0.409,
+      0.02,
+      0.562,
+      0.255
+    ],
+    "p23_mika_talks": [
+      0.025,
+      0.301,
+      0.411,
+      0.255
+    ],
+    "p23_plant_tutorial": [
+      0.452,
+      0.301,
+      0.528,
+      0.255
+    ],
+    "p23_loading_ship": [
+      0.026,
+      0.59,
+      0.948,
+      0.387
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH02_P03_L001",
+      "frame_id": "CH02_P03_F01",
+      "panel_id": "p23_molly_orbit",
+      "speaker_id": "CHR_004",
+      "kind": "narration_arrival",
+      "spoken_text": "Próxima parada: Molia. Cuna de las antiguas colonias de hongos. Hoy, un mundo dedicado a la ciencia.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/es/CH02_P03_L001_es.mp3",
+      "audio_duration_s": 7.6,
+      "camera_target": [
+        0.205,
+        0.153,
+        0.141
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fb0fd4394ca193704c823f5d432b1cf294f4957f20dfa8e2a2e9e111cc6c5bed"
+    },
+    {
+      "line_id": "CH02_P03_L002",
+      "frame_id": "CH02_P03_F02",
+      "panel_id": "p23_ruins_meeting",
+      "speaker_id": "CHR_004",
+      "kind": "narration_welcome",
+      "spoken_text": "Recibieron a Mika con mucho cariño. Tras oír su historia, le enseñaron las ruinas de una ciudad antigua.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/es/CH02_P03_L002_es.mp3",
+      "audio_duration_s": 7.44,
+      "camera_target": [
+        0.69,
+        0.168,
+        0.215
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e452e83504ced3040f178c1bc6714a1cdaee9a99b982cd66688210d68dc990a0"
+    },
+    {
+      "line_id": "CH02_P03_L003",
+      "frame_id": "CH02_P03_F02",
+      "panel_id": "p23_ruins_meeting",
+      "speaker_id": "CHR_022",
+      "kind": "speech_ancient_ruins",
+      "spoken_text": "Aquí vivió toda una civilización. Ahora solo quedan estas ruinas.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/es/CH02_P03_L003_es.mp3",
+      "audio_duration_s": 5.2,
+      "camera_target": [
+        0.765,
+        0.201,
+        0.165
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b1039a72bbf93757d5d1f99f27c1a81e6f8cfd5f397dd602a65ee003c704f8fd"
+    },
+    {
+      "line_id": "CH02_P03_L004",
+      "frame_id": "CH02_P03_F03",
+      "panel_id": "p23_mika_talks",
+      "speaker_id": "CHR_001",
+      "kind": "speech_surprised_question",
+      "spoken_text": "¿Y qué les pasó?",
+      "audio_path": "res://mika_motion_comic/ch02_clips/es/CH02_P03_L004_es.mp3",
+      "audio_duration_s": 1.52,
+      "camera_target": [
+        0.15,
+        0.415,
+        0.102
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "dd33bc7abeac7700f30126026425e5f2645012a827995af39ac1a7bedcf1f1ce"
+    },
+    {
+      "line_id": "CH02_P03_L005",
+      "frame_id": "CH02_P03_F03",
+      "panel_id": "p23_mika_talks",
+      "speaker_id": "CHR_022",
+      "kind": "speech_mysterious_guidance",
+      "spoken_text": "Busca las respuestas en la nave Tarántula.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/es/CH02_P03_L005_es.mp3",
+      "audio_duration_s": 2.88,
+      "camera_target": [
+        0.315,
+        0.425,
+        0.102
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4c4aba30a0e9523b2711bacee9671dfe8362acb4555814cc55ae142b2d92affc"
+    },
+    {
+      "line_id": "CH02_P03_L006",
+      "frame_id": "CH02_P03_F04",
+      "panel_id": "p23_plant_tutorial",
+      "speaker_id": "CHR_022",
+      "kind": "speech_ecology_invitation",
+      "spoken_text": "¡Mira! Estamos devolviéndole la vida a Molia y recuperando su ecosistema. ¿Te gustaría cultivar una flor aquí?",
+      "audio_path": "res://mika_motion_comic/ch02_clips/es/CH02_P03_L006_es.mp3",
+      "audio_duration_s": 6.88,
+      "camera_target": [
+        0.735,
+        0.43,
+        0.156
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2119b282a5de83c9d6b4ff5d644ab9b8b75fbfa3c23b58098661eaf44ce4727d"
+    },
+    {
+      "line_id": "CH02_P03_L007",
+      "frame_id": "CH02_P03_F04",
+      "panel_id": "p23_plant_tutorial",
+      "speaker_id": "CHR_001",
+      "kind": "speech_happy_agreement",
+      "spoken_text": "¡Claro!",
+      "audio_path": "res://mika_motion_comic/ch02_clips/es/CH02_P03_L007_es.mp3",
+      "audio_duration_s": 1.12,
+      "camera_target": [
+        0.565,
+        0.452,
+        0.12
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "818fb5fc37725df64f8e05a5273bae011cf9c6cd99d31418232107212462cf27"
+    },
+    {
+      "line_id": "CH02_P03_L008",
+      "frame_id": "CH02_P03_F05",
+      "panel_id": "p23_loading_ship",
+      "speaker_id": "CHR_004",
+      "kind": "narration_samples_departure",
+      "spoken_text": "Mika descubrió cómo los científicos revivían Molia, recogió muestras de su pasado y partió en busca de respuestas a bordo de la Tarántula.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/es/CH02_P03_L008_es.mp3",
+      "audio_duration_s": 9.12,
+      "camera_target": [
+        0.51,
+        0.772,
+        0.36
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e145f35f682727fc99e805acd4cbae4c796a334999173f7dc192fb48fe379316"
+    }
+  ]
+}

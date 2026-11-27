@@ -1,0 +1,18 @@
+{
+  "status": "TEXTS_READY_NO_AUDIO",
+  "actors": {
+    "CHR_001": "Mika, concern in the storm and curious pointing after it",
+    "CHR_004": "Story narrator, tense then relieved and quietly mysterious"
+  },
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "tts_takes_added": 12,
+  "no_new_cast": true,
+  "audio_generated": false
+}

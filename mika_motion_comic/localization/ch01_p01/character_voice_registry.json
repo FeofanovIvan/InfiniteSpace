@@ -1,0 +1,451 @@
+{
+  "schema_version": "3.0",
+  "project": "MIKA Infinite Space",
+  "source": "CH01_P01_multilang_dialogue.json",
+  "notes_ru": "Никаких внешних voice_id пока не назначено. Подтверждено: кадры 2 и 6 озвучивает один друг CHR_002. CHR_005 — архивный alias; отдельный голос не создавать.",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "characters": [
+    {
+      "id": "CHR_001",
+      "speaker_key": "MIKA",
+      "name_ru": "Мика",
+      "status": "appears_on_page_01",
+      "voice_brief_ru": "Юный, светлый и живой голос без чрезмерной мультяшности. Любопытство легко переходит в тревогу; ясная дикция, широкий, но естественный диапазон эмоций.",
+      "voice_design_prompt_en": "A youthful, bright, curious gender-neutral animated character voice, expressive and warm, clear pronunciation, naturally moving from wonder to alarm, never shrill or caricatured.",
+      "voices": {
+        "ru": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "en": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "pt_BR": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "es": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "fr": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "de": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        }
+      },
+      "approval_status": "proposed"
+    },
+    {
+      "id": "CHR_002",
+      "speaker_key": "FRIEND",
+      "name_ru": "Друг Мики",
+      "status": "appears_on_page_01_and_calls_from_offscreen_name_pending",
+      "voice_brief_ru": "Друг Мики — спокойнее и увереннее самого Мики, молодой голос с тёплой интонацией. В опасности говорит коротко и решительно. Имя уточним.",
+      "voice_design_prompt_en": "A friendly young companion voice, warm, grounded and reassuring, slightly calmer than the lead character, capable of clear urgency under pressure.",
+      "voices": {
+        "ru": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "en": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "pt_BR": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "es": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "fr": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "de": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        }
+      },
+      "approval_status": "proposed"
+    },
+    {
+      "id": "CHR_003",
+      "speaker_key": "BROADCASTER",
+      "name_ru": "Диктор экстренных новостей",
+      "status": "appears_on_page_01",
+      "voice_brief_ru": "Ясный взрослый голос экстренных новостей, нейтральный и достоверный. Напряжение нарастает, но речь разборчива; без паники и металлического робота.",
+      "voice_design_prompt_en": "An adult emergency news broadcaster with precise, authoritative diction and controlled urgency, credible and articulate, slightly tense but not panicked, not robotic.",
+      "voices": {
+        "ru": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "en": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "pt_BR": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "es": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "fr": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "de": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        }
+      },
+      "approval_status": "proposed"
+    },
+    {
+      "id": "CHR_004",
+      "speaker_key": "NARRATOR",
+      "name_ru": "Рассказчик",
+      "status": "appears_on_page_01",
+      "voice_brief_ru": "Тёплый, кинематографичный, немного загадочный рассказчик. Начало — мягкое удивление, финал — нарастающая тревога без переигрывания.",
+      "voice_design_prompt_en": "A warm, cinematic story narrator, gentle and wonder-filled at first, capable of growing ominous and restrained, with elegant phrasing and subtle emotional dynamics.",
+      "voices": {
+        "ru": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "en": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "pt_BR": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "es": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "fr": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "de": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        }
+      },
+      "approval_status": "proposed"
+    },
+    {
+      "id": "CHR_005",
+      "speaker_key": "OFFSCREEN_CALLER",
+      "name_ru": "Устаревший временный ID: голос из-за кадра",
+      "status": "retired_alias_do_not_cast",
+      "alias_of": "CHR_002",
+      "voice_brief_ru": "Подтверждено: в кадре 2 Мику зовёт друг CHR_002. Не создавать отдельный голос этому временному ID.",
+      "voice_design_prompt_en": "Retired alias: the offscreen caller is the friend (CHR_002). Never cast a separate voice.",
+      "voices": {},
+      "approval_status": "proposed"
+    },
+    {
+      "id": "CHR_006",
+      "speaker_key": "PROFESSOR",
+      "name_ru": "Профессор",
+      "status": "planned_not_in_page_01",
+      "voice_brief_ru": "Взрослый учёный, добрый, немного чудаковатый, говорит увлечённо и быстро, но понятен детям. Характер будет уточнён по сценам.",
+      "voice_design_prompt_en": "A kind, eccentric mature scientist, enthusiastic and inventive, gently humorous, expressive but clearly articulated for children.",
+      "voices": {
+        "ru": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "en": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "pt_BR": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "es": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "fr": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "de": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        }
+      },
+      "approval_status": "proposed"
+    },
+    {
+      "id": "CHR_007",
+      "speaker_key": "BUBBLE",
+      "name_ru": "Баббл",
+      "status": "planned_not_in_page_01_voice_optional",
+      "voice_brief_ru": "Питомец Баббл. Пока не решено, есть ли у него членораздельная речь: информационные панели могут читать рассказчик либо отдельный голос Баббла.",
+      "voice_design_prompt_en": "Voice casting postponed until the story confirms whether the Bubble pet speaks full dialogue or uses expressive nonverbal sounds.",
+      "voices": {
+        "ru": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "en": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "pt_BR": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "es": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "fr": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "de": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        }
+      },
+      "approval_status": "proposed"
+    },
+    {
+      "id": "CHR_008",
+      "speaker_key": "SHIP_SYSTEM",
+      "name_ru": "Бортовая система",
+      "status": "planned_not_in_page_01",
+      "voice_brief_ru": "Спокойный технологичный голос, дружелюбная дикция, отличается от диктора новостей.",
+      "voice_design_prompt_en": "A calm, clear, friendly spaceship computer voice, subtly synthetic without harsh robotic effects.",
+      "voices": {
+        "ru": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "en": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "pt_BR": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "es": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "fr": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "de": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        }
+      },
+      "approval_status": "proposed"
+    },
+    {
+      "id": "CHR_009",
+      "speaker_key": "NAVIGATION",
+      "name_ru": "Навигация",
+      "status": "planned_not_in_page_01",
+      "voice_brief_ru": "Чёткие короткие навигационные сообщения. Позже решим, отдельный это голос или бортовая система.",
+      "voice_design_prompt_en": "A concise, composed navigation guidance voice; may share the spaceship system voice if approved.",
+      "voices": {
+        "ru": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "en": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "pt_BR": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "es": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "fr": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        },
+        "de": {
+          "provider": "elevenlabs",
+          "provider_voice_id": null,
+          "voice_display_name": null,
+          "model_id": "eleven_v4",
+          "casting_status": "unassigned"
+        }
+      },
+      "approval_status": "proposed"
+    }
+  ]
+}

@@ -1,0 +1,434 @@
+{
+  "schema_version": 3,
+  "page_id": "CH06_P02",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch06_p02_languages/ch06_p02_ru.webp",
+  "native_scene_panels": [
+    "p62_ancient",
+    "p62_blueprint",
+    "p62_station",
+    "p62_burst",
+    "p62_hole",
+    "p62_mika",
+    "p62_clocks",
+    "p62_galaxy",
+    "p62_eclipse",
+    "p62_planets",
+    "p62_meteor"
+  ],
+  "panel_bounds": {
+    "p62_ancient": [
+      0.028646,
+      0.020239,
+      0.449219,
+      0.220791
+    ],
+    "p62_blueprint": [
+      0.532552,
+      0.020239,
+      0.4375,
+      0.220791
+    ],
+    "p62_station": [
+      0.028646,
+      0.25391,
+      0.315104,
+      0.218031
+    ],
+    "p62_burst": [
+      0.389323,
+      0.25391,
+      0.269531,
+      0.218031
+    ],
+    "p62_hole": [
+      0.707031,
+      0.25391,
+      0.263021,
+      0.218031
+    ],
+    "p62_mika": [
+      0.026042,
+      0.485741,
+      0.367188,
+      0.327507
+    ],
+    "p62_clocks": [
+      0.398438,
+      0.49678,
+      0.570312,
+      0.316467
+    ],
+    "p62_galaxy": [
+      0.028646,
+      0.826127,
+      0.21875,
+      0.154554
+    ],
+    "p62_eclipse": [
+      0.273438,
+      0.826127,
+      0.229167,
+      0.154554
+    ],
+    "p62_planets": [
+      0.53776,
+      0.826127,
+      0.217448,
+      0.154554
+    ],
+    "p62_meteor": [
+      0.792969,
+      0.826127,
+      0.177083,
+      0.154554
+    ]
+  },
+  "lines": [
+    {
+      "panel_id": "p62_ancient",
+      "camera_target": [
+        0.253255,
+        0.130635,
+        0.26053338
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028646,
+        0.020239,
+        0.449219,
+        0.220791
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_L001",
+      "frame_id": "1 / верхний левый",
+      "speaker_id": "CHR_038",
+      "kind": "telepathic_narration",
+      "spoken_text": "Здравствуй, Мика! Мы рады, что ты добрался до нас. Я хочу немного рассказать тебе о нас и о том, что случилось.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P02_L001_ru.mp3",
+      "audio_duration_s": 7.157551,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f9f2a4b3cc47fbf97a87eb6e02ea4ae8e02496abd3160bcfc3620943dee7cc86"
+    },
+    {
+      "panel_id": "p62_ancient",
+      "camera_target": [
+        0.253255,
+        0.130635,
+        0.26053338
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028646,
+        0.020239,
+        0.449219,
+        0.220791
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_L002",
+      "frame_id": "1 / верхний левый",
+      "speaker_id": "CHR_038",
+      "kind": "telepathic_narration",
+      "spoken_text": "Когда мы впервые взглянули на небо, мы начали замечать закономерности.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P02_L002_ru.mp3",
+      "audio_duration_s": 4.832653,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fa7793266d10a7baa63735ce6918b5c639ad9d834f7a4020bcea05b178c58163"
+    },
+    {
+      "panel_id": "p62_blueprint",
+      "camera_target": [
+        0.751302,
+        0.130635,
+        0.26053338
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.532552,
+        0.020239,
+        0.4375,
+        0.220791
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_L003",
+      "frame_id": "2 / верхний правый",
+      "speaker_id": "CHR_038",
+      "kind": "telepathic_narration",
+      "spoken_text": "Мы построили космические корабли.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P02_L003_ru.mp3",
+      "audio_duration_s": 2.76898,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7ec63335a2ff438a7cf245c44fd70326fc0e16c286a570b36958e4b6f71be5a5"
+    },
+    {
+      "panel_id": "p62_station",
+      "camera_target": [
+        0.186198,
+        0.362925,
+        0.25727658
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.028646,
+        0.25391,
+        0.315104,
+        0.218031
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_L004",
+      "frame_id": "3 / средний левый",
+      "speaker_id": "CHR_038",
+      "kind": "telepathic_narration",
+      "spoken_text": "И начали бороздить известную нам Вселенную.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P02_L004_ru.mp3",
+      "audio_duration_s": 3.239184,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8aeac346ef5ad8bdcd0d0b91c5bbacb8f98e860363a0af60d39f4fb3e20567fa"
+    },
+    {
+      "panel_id": "p62_burst",
+      "camera_target": [
+        0.6796875,
+        0.3629255,
+        0.218031
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.389323,
+        0.25391,
+        0.5807289999999999,
+        0.218031
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_L005",
+      "frame_id": "4 / средние центральный и правый",
+      "speaker_id": "CHR_038",
+      "kind": "telepathic_narration",
+      "spoken_text": "Мы научились предвидеть появление и смерть галактик.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P02_L005_ru.mp3",
+      "audio_duration_s": 3.787755,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d8f586ad403d484fc1eece19ee30dee175b142e9c72dcb82d4a5d333ad6247a2"
+    },
+    {
+      "panel_id": "p62_hole",
+      "camera_target": [
+        0.838542,
+        0.362925,
+        0.25727658
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.707031,
+        0.25391,
+        0.263021,
+        0.218031
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_VIS_05",
+      "frame_id": "5",
+      "kind": "visual_hold",
+      "speaker_id": "",
+      "spoken_text": "",
+      "audio_path": "",
+      "audio_duration_s": 0.0,
+      "audio_kind": "silent",
+      "visual_hold_s": 2.2
+    },
+    {
+      "panel_id": "p62_mika",
+      "camera_target": [
+        0.196615,
+        0.620975,
+        0.38645826
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.026042,
+        0.485741,
+        0.367188,
+        0.327507
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_L006",
+      "frame_id": "5 / Мика",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Значит, вы умеете предсказывать будущее?",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P02_L006_ru.mp3",
+      "audio_duration_s": 3.239184,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "023aed45e817fccf320616b8e2ffb0e7f1b9d9d4766f5fca1a19cbe58c618fd3"
+    },
+    {
+      "panel_id": "p62_clocks",
+      "camera_target": [
+        0.686198,
+        0.627415,
+        0.37343106
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.398438,
+        0.49678,
+        0.570312,
+        0.316467
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_L007",
+      "frame_id": "6 / часы и рассвет",
+      "speaker_id": "CHR_038",
+      "kind": "telepathic_narration",
+      "spoken_text": "Так же, как ты можешь предсказать, через сколько наступит рассвет, если знаешь, который сейчас час и во сколько взойдёт солнце.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P02_L007_ru.mp3",
+      "audio_duration_s": 7.88898,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "86fc90c234b75f084f3c8ec930816f55cbf86aaafad3eba571254590b2c34b8d"
+    },
+    {
+      "panel_id": "p62_galaxy",
+      "camera_target": [
+        0.49934900000000004,
+        0.903404,
+        0.154554
+      ],
+      "shot_type": "wide",
+      "visual_bounds": [
+        0.028646,
+        0.826127,
+        0.9414060000000001,
+        0.154554
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_L008",
+      "frame_id": "7 / нижняя полоса, четыре изображения",
+      "speaker_id": "CHR_038",
+      "kind": "telepathic_narration",
+      "spoken_text": "Мы научились рассчитывать рождение планет, солнечные затмения, движение планет, пролёты астероидов.",
+      "audio_path": "res://mika_motion_comic/ch06_clips/ru/CH06_P02_L008_ru.mp3",
+      "audio_duration_s": 6.530612,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "26579f07b994638ce77d5b2e774eba3ea18d6c9d4d8f407ab404aa82cb931850"
+    },
+    {
+      "panel_id": "p62_eclipse",
+      "camera_target": [
+        0.388021,
+        0.903404,
+        0.18237372
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.273438,
+        0.826127,
+        0.229167,
+        0.154554
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_VIS_09",
+      "frame_id": "9",
+      "kind": "visual_hold",
+      "speaker_id": "",
+      "spoken_text": "",
+      "audio_path": "",
+      "audio_duration_s": 0.0,
+      "audio_kind": "silent",
+      "visual_hold_s": 2.2
+    },
+    {
+      "panel_id": "p62_planets",
+      "camera_target": [
+        0.646484,
+        0.903404,
+        0.18237372
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.53776,
+        0.826127,
+        0.217448,
+        0.154554
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_VIS_10",
+      "frame_id": "10",
+      "kind": "visual_hold",
+      "speaker_id": "",
+      "spoken_text": "",
+      "audio_path": "",
+      "audio_duration_s": 0.0,
+      "audio_kind": "silent",
+      "visual_hold_s": 2.2
+    },
+    {
+      "panel_id": "p62_meteor",
+      "camera_target": [
+        0.88151,
+        0.903404,
+        0.18237372
+      ],
+      "shot_type": "scene",
+      "visual_bounds": [
+        0.792969,
+        0.826127,
+        0.177083,
+        0.154554
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH06_P02_VIS_11",
+      "frame_id": "11",
+      "kind": "visual_hold",
+      "speaker_id": "",
+      "spoken_text": "",
+      "audio_path": "",
+      "audio_duration_s": 0.0,
+      "audio_kind": "silent",
+      "visual_hold_s": 2.2
+    }
+  ]
+}

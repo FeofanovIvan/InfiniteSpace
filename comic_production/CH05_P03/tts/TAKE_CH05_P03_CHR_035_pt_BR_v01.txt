@@ -1,0 +1,1 @@
+[warmly] Este é o Arquivo Central. Configure-o do seu jeito e ele mostrará tudo o que você precisa saber.

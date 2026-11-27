@@ -1,0 +1,254 @@
+{
+  "README.md": {
+    "sha256": "9bc8b84818b8ffd49863977800f6f04af22cf76ded9e46424ca6c0bab5a51d1a",
+    "bytes": 1826
+  },
+  "source/4-3(1).pdf": {
+    "sha256": "01ba73322f4382247f0da11109e26a5adef4cc1417434c1f6a68b371d5a18dc9",
+    "bytes": 5815355
+  },
+  "tts/TAKE_CH04_P03_CHR_032_es_v01.txt": {
+    "sha256": "69c59428a3388ae984f1c8b7ba6d836becca09379e2517265d0e67ad027582fd",
+    "bytes": 65
+  },
+  "tts/TAKE_CH04_P03_CHR_032_ru_v01.txt": {
+    "sha256": "aa1982127d9934cc003d15d8b238d79a1789f0d8310ad3c8293ee8b3bb88f4a3",
+    "bytes": 81
+  },
+  "tts/TAKE_CH04_P03_CHR_031_en_v01.txt": {
+    "sha256": "75d7605e92ea71f1fbfe2047f89c770d788c178de8c498291501f6d48cf8a847",
+    "bytes": 171
+  },
+  "tts/TAKE_CH04_P03_CHR_031_pt_BR_v01.txt": {
+    "sha256": "865bbe47a04c915b69ed067230a47632d9623c2c330cb3fd5d316476ee06fcd5",
+    "bytes": 205
+  },
+  "tts/TAKE_CH04_P03_CHR_001_de_v01.txt": {
+    "sha256": "66ade733af5d2ac63b62ece30c43d9547718104f88a7d6d819f2fed04828aa86",
+    "bytes": 34
+  },
+  "tts/TAKE_CH04_P03_CHR_008_en_v01.txt": {
+    "sha256": "dcaf6437786546912a6ef86617b86bbb4b941cbddcd4fc48332f9feaed06738a",
+    "bytes": 82
+  },
+  "tts/TAKE_CH04_P03_CHR_004_pt_BR_v01.txt": {
+    "sha256": "9de777b0a4c25e3e643c6dc0503d340c38a1d76e1bd37a05cf7ae0d2460a637e",
+    "bytes": 717
+  },
+  "tts/TAKE_CH04_P03_CHR_032_fr_v01.txt": {
+    "sha256": "2e60b1f69f13a169134878995e5c48bca2f52f2a0780f4589534a3274810c716",
+    "bytes": 74
+  },
+  "tts/TAKE_CH04_P03_CHR_001_fr_v01.txt": {
+    "sha256": "0069a6188ac69b38061fdf230c63a4ae41ab3c79d48198ff70939c457f9718f6",
+    "bytes": 26
+  },
+  "tts/TAKE_CH04_P03_CHR_032_en_v01.txt": {
+    "sha256": "432a00f9477fd3d5bb37f10d19cd70e76d96a1271dec0ff47d748896a18d1a3a",
+    "bytes": 56
+  },
+  "tts/TAKE_CH04_P03_CHR_032_pt_BR_v01.txt": {
+    "sha256": "651c7fac1b0fe1ccef84e70690b61336f0cb8aca00c6e15f1cd92bd41f662ea2",
+    "bytes": 56
+  },
+  "tts/TAKE_CH04_P03_CHR_004_de_v01.txt": {
+    "sha256": "6e591e8b10bcf2143e6b02890ae647dc1f17e64147afc3509fc0e9313fd71787",
+    "bytes": 770
+  },
+  "tts/TAKE_CH04_P03_CHR_008_es_v01.txt": {
+    "sha256": "5ff7056c44bf614adf80af9178cfc6d85ae32661e229f0e37f7ffd491ff1528c",
+    "bytes": 80
+  },
+  "tts/TAKE_CH04_P03_CHR_008_de_v01.txt": {
+    "sha256": "fbcebf38b6cf384e573c0b8a10399f0d21d5b0fa0ce6b0f503e4fb1e901a7051",
+    "bytes": 78
+  },
+  "tts/TAKE_CH04_P03_CHR_001_en_v01.txt": {
+    "sha256": "e8d0adf94f87f0afb582d4ab49cfa64099ed2afc79114ef96a0a1f68be63a885",
+    "bytes": 26
+  },
+  "tts/TAKE_CH04_P03_CHR_004_en_v01.txt": {
+    "sha256": "43d776d0370a68543422fec49fd38214461391ca3b59736d7a5e4fc7cca9a858",
+    "bytes": 703
+  },
+  "tts/TAKE_CH04_P03_CHR_001_es_v01.txt": {
+    "sha256": "dd6b276de02f25df3e75b2fa7d5aa8a0b943831378ff5808bbae296e3d0867ce",
+    "bytes": 28
+  },
+  "tts/TAKE_CH04_P03_CHR_008_pt_BR_v01.txt": {
+    "sha256": "d01fe54692f272e8c946705dd588fa696249699a89ae1b093b4c2e5af1c81144",
+    "bytes": 80
+  },
+  "tts/TAKE_CH04_P03_CHR_008_ru_v01.txt": {
+    "sha256": "71bdffd55a5462ace3210bada4a4ae3ca06c52683dab0c0020db4ae070c014fc",
+    "bytes": 109
+  },
+  "tts/TAKE_CH04_P03_CHR_004_es_v01.txt": {
+    "sha256": "6dd451eea60a9bfd4ba35772a0b39b8c479afc198b6360c795593e32c29c635a",
+    "bytes": 724
+  },
+  "tts/TAKE_CH04_P03_CHR_032_de_v01.txt": {
+    "sha256": "d8e4c0c5922326a5bc03561aa7bd6ef52f885621af6895b211ca860ee1cbed58",
+    "bytes": 77
+  },
+  "tts/TAKE_CH04_P03_CHR_008_fr_v01.txt": {
+    "sha256": "29c325c34485ece54782b088271ce379f58f3534d766ec04564b61f2955139b7",
+    "bytes": 88
+  },
+  "tts/TAKE_CH04_P03_CHR_031_fr_v01.txt": {
+    "sha256": "d3968eae84d4158488bf97c259d0cf27f0f6153eea491c24c9a6eb3f7cdcccc2",
+    "bytes": 183
+  },
+  "tts/TAKE_CH04_P03_CHR_001_pt_BR_v01.txt": {
+    "sha256": "af6a8343c481f546d3b7fb0f4ec0df69b989f0539fa6d99c1a221e0c65278f86",
+    "bytes": 29
+  },
+  "tts/TAKE_CH04_P03_CHR_031_de_v01.txt": {
+    "sha256": "0377f004595d52d4b0ec6fbe224572e81eb1252867c1bcd979275873b2346dc1",
+    "bytes": 184
+  },
+  "tts/TAKE_CH04_P03_CHR_031_ru_v01.txt": {
+    "sha256": "d9124893e984b06d2a4d3319311801e9cafe2310d7171150cb3e396b8ade07e1",
+    "bytes": 266
+  },
+  "tts/TAKE_CH04_P03_CHR_004_fr_v01.txt": {
+    "sha256": "2bfccc3a66610c42f6d553650420f9c51e70868b32d865f9f42cae51d26c94fe",
+    "bytes": 808
+  },
+  "tts/TAKE_CH04_P03_CHR_031_es_v01.txt": {
+    "sha256": "3f7984e3b2627b9c022196bb297017dedc641a99f4d14ff3f745b15075e0986a",
+    "bytes": 186
+  },
+  "tts/TAKE_CH04_P03_CHR_004_ru_v01.txt": {
+    "sha256": "a754e0c1f42fb430b2a3193b490a4755580d7b81de20e6dcc953bd6beaa171e5",
+    "bytes": 1020
+  },
+  "tts/TAKE_CH04_P03_CHR_001_ru_v01.txt": {
+    "sha256": "606f6d4f80c949097dbebf214a27e40e4e43997c5b6e7fc1eb6bf5214cc4e2ea",
+    "bytes": 32
+  },
+  "metadata/CH04_P03_full_script_translations_emotions.json": {
+    "sha256": "0bf0ad449774cf67446f49022004e2f2c32ca2797aeec5ab05ba03295b77b502",
+    "bytes": 10036
+  },
+  "metadata/CH04_P03_6LANG_TRANSLATIONS.md": {
+    "sha256": "27ced7233b00ce7f7cd4e7c77df5bb3f93f8a4b06e44cf53be46e301272ca247",
+    "bytes": 7042
+  },
+  "metadata/CH04_P03_layout_validation.json": {
+    "sha256": "04d69271810e28f2f970c95b8dac15cbe81f9debd17efc317d0bef22ecbd936f",
+    "bytes": 14262
+  },
+  "overlays/CH04_P03_fr_TRANSPARENT_OVERLAY.png": {
+    "sha256": "246989edbb6c221aa45a33ade88fe957f708baf4c270959ef3d670a45a8e2aac",
+    "bytes": 264341
+  },
+  "overlays/CH04_P03_pt_BR_TRANSPARENT_OVERLAY.png": {
+    "sha256": "d5def18448c870a4250fdf002dad36a5283b87bde4d5d5de4936d4ea8beaea06",
+    "bytes": 265320
+  },
+  "overlays/CH04_P03_en_EDITABLE_OVERLAY.svg": {
+    "sha256": "a4cfbd41face8986a448476c15e8fdb2269512857dccdcfc87164b1ccc906069",
+    "bytes": 8237
+  },
+  "overlays/CH04_P03_pt_BR_EDITABLE_OVERLAY.svg": {
+    "sha256": "4a62bcede11875f66c55df2a364e6061e29e009bd167a496bab036b4288c4731",
+    "bytes": 8538
+  },
+  "overlays/CH04_P03_ru_TRANSPARENT_OVERLAY.png": {
+    "sha256": "3a82bbf7840e052f563123e9f3452dee068d518dbc5afc15230313ef60535d3e",
+    "bytes": 256658
+  },
+  "overlays/CH04_P03_de_EDITABLE_OVERLAY.svg": {
+    "sha256": "1505d3440e4d6bd6a2a1460648965a1e30e09962d1a850d7c3e52a2ed84bea00",
+    "bytes": 8716
+  },
+  "overlays/CH04_P03_fr_EDITABLE_OVERLAY.svg": {
+    "sha256": "d599936ce235e8c79c5e090a3005aefe468325f6ea0e320dd83de039a3d4fd1e",
+    "bytes": 8504
+  },
+  "overlays/CH04_P03_es_EDITABLE_OVERLAY.svg": {
+    "sha256": "56420b4a62a70c58b6b0821e49f03f0000ee062a09a5c64b84fe5e350831af7f",
+    "bytes": 8534
+  },
+  "overlays/CH04_P03_de_TRANSPARENT_OVERLAY.png": {
+    "sha256": "97f6d65e799586b096700a7ca71b396909b9b61ccc35db6224ffe1cbac727a69",
+    "bytes": 264225
+  },
+  "overlays/CH04_P03_es_TRANSPARENT_OVERLAY.png": {
+    "sha256": "576e7036a20636931136d9c1f6e9430db1f61b6cdacf896d1151a5e74f359943",
+    "bytes": 271091
+  },
+  "overlays/CH04_P03_en_TRANSPARENT_OVERLAY.png": {
+    "sha256": "d607faeb7e8c223e26d7589a8e6d5370df8c0391e900219bfb19230974cfcbe9",
+    "bytes": 250233
+  },
+  "overlays/CH04_P03_ru_EDITABLE_OVERLAY.svg": {
+    "sha256": "e0adad9187e840f3b7b01c7bc36605adc6600db3af572cc16bc3c2a11e68fd31",
+    "bytes": 8959
+  },
+  "previews/CH04_P03_pt_BR_PDF_WITH_VECTOR_OVERLAY.pdf": {
+    "sha256": "332b05004290d43e8583746a85e9add60d624f84cd3bc99524fa6f6eba8668fe",
+    "bytes": 5804896
+  },
+  "previews/CH04_P03_fr_FULL_PREVIEW.jpg": {
+    "sha256": "101da1343da5f9857fc9bddec9b41d63ed975ddc999e452bca4fcb1129f7ce17",
+    "bytes": 2158745
+  },
+  "previews/CH04_P03_es_FULL_PREVIEW.jpg": {
+    "sha256": "95d1742b16b3be3e3644537c908eeafa53fa1b8b82a6f2d310e1726cddfdf8e2",
+    "bytes": 2147549
+  },
+  "previews/CH04_P03_de_PDF_WITH_VECTOR_OVERLAY.pdf": {
+    "sha256": "8fbb5efd8be3297f815c2ab905526a2c311649545da01f47256b3047ecd97f5c",
+    "bytes": 5805477
+  },
+  "previews/CH04_P03_ru_FULL_PREVIEW.jpg": {
+    "sha256": "6dab00be6e12d431dcaa108bde8e0bd7d41295461f66cd4837580c437b39da32",
+    "bytes": 2125873
+  },
+  "previews/CH04_P03_de_FULL_PREVIEW.jpg": {
+    "sha256": "7bbb74c81a9d78c3ebffae43ae6b688b1f3843db6153c63840b783c703256ffc",
+    "bytes": 2168412
+  },
+  "previews/CH04_P03_es_PDF_WITH_VECTOR_OVERLAY.pdf": {
+    "sha256": "0399b2f0bb1b6b35cbcb5ea2e9fe8e0589d61bd15ce83bc8e1071b49e36fc3d3",
+    "bytes": 5805312
+  },
+  "previews/CH04_P03_ru_PDF_WITH_VECTOR_OVERLAY.pdf": {
+    "sha256": "ba8d7b2d3ef07bff6982e750814d7f9a7ca374e169259233dd5a7981ff6b50b0",
+    "bytes": 5808671
+  },
+  "previews/CH04_P03_en_PDF_WITH_VECTOR_OVERLAY.pdf": {
+    "sha256": "d1fcd98e30504d711f775c9193de03d1b5d0e1f1f60ca351e2b775dc94f304a5",
+    "bytes": 5805341
+  },
+  "previews/CH04_P03_fr_PDF_WITH_VECTOR_OVERLAY.pdf": {
+    "sha256": "f31dd43a390e6fc58dc29ded75713628a72b4a8e1445c5371f65543aafc3aa2b",
+    "bytes": 5805346
+  },
+  "previews/CH04_P03_6LANG_CONTACT.jpg": {
+    "sha256": "61f8d38eb27b8e38c5ab91f18030523c10b32da38187d1d55f68d05882f88652",
+    "bytes": 1723563
+  },
+  "previews/CH04_P03_en_FULL_PREVIEW.jpg": {
+    "sha256": "e4bc3c3fa0948fbab62d43b1a72b9a728c7069aaaf3b58d8be9e8b2f03788f9c",
+    "bytes": 2133154
+  },
+  "previews/CH04_P03_pt_BR_FULL_PREVIEW.jpg": {
+    "sha256": "67338803d4af9faf48ac2de8c6b626738d09c437941e589e71e70642fc8463cd",
+    "bytes": 2150827
+  },
+  "registry/MIKA_Global_Production_Registry.json": {
+    "sha256": "a1889f09121261637c3c7c6016cff4e0125b1404dac6c173f09c9a11128f97d7",
+    "bytes": 1571454
+  },
+  "registry/MIKA_Global_Production_Registry.xlsx": {
+    "sha256": "b0f7819ae2f4273f51e7341e3767bc742ceee6ae524f4d06138a2e66a6fbdc01",
+    "bytes": 278714
+  },
+  "godot/CH04_P03_resources.json": {
+    "sha256": "6a4a03c90fa7e5d4a72bf56ae1a4bea86f5ac18fb740e7dc724e01e7066443f5",
+    "bytes": 1525
+  }
+}

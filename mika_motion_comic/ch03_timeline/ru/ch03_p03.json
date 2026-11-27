@@ -1,0 +1,219 @@
+{
+  "schema_version": 3,
+  "page_id": "CH03_P03",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch03_p03_languages/ch03_p03_ru.webp",
+  "native_scene_panels": [
+    "p33_cela_bubble",
+    "p33_mika_encounter",
+    "p33_lotus_flower",
+    "p33_lotus_archive"
+  ],
+  "panel_bounds": {
+    "p33_cela_bubble": [
+      0.031,
+      0.03,
+      0.937,
+      0.304
+    ],
+    "p33_mika_encounter": [
+      0.031,
+      0.352,
+      0.48,
+      0.246
+    ],
+    "p33_lotus_flower": [
+      0.54,
+      0.35,
+      0.428,
+      0.251
+    ],
+    "p33_lotus_archive": [
+      0.031,
+      0.63,
+      0.937,
+      0.34
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH03_P03_L001",
+      "frame_id": "CH03_P03_F01",
+      "panel_id": "p33_cela_bubble",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Когда с Океи прибыли звездолёты, фазовые существа задержали ящера.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P03_L001_ru.mp3",
+      "audio_duration_s": 4.989,
+      "camera_target": [
+        0.41,
+        0.182,
+        0.3
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9371da3d4a257c3567e2f7b81813d4fc9efc75d6b064ba840d06c6ed5b278ffa"
+    },
+    {
+      "line_id": "CH03_P03_L002",
+      "frame_id": "CH03_P03_F01",
+      "panel_id": "p33_cela_bubble",
+      "speaker_id": "CHR_026",
+      "kind": "dialogue",
+      "spoken_text": "Ну вот и попался!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P03_L002_ru.mp3",
+      "audio_duration_s": 1.959,
+      "camera_target": [
+        0.743,
+        0.145,
+        0.218
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4734cd823c4c0cad5395479f8dfa3b6eb558dfaf2c4016f1c5e4d58ffb255f2c"
+    },
+    {
+      "line_id": "CH03_P03_L003",
+      "frame_id": "CH03_P03_F01",
+      "panel_id": "p33_cela_bubble",
+      "speaker_id": "CHR_026",
+      "kind": "dialogue",
+      "spoken_text": "Мы предупреждали!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P03_L003_ru.mp3",
+      "audio_duration_s": 1.881,
+      "camera_target": [
+        0.754,
+        0.188,
+        0.205
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "eabdd63e0310346f249cbe6e29ceb1411aec047e0dc2f5e72955ba1b92a13d1e"
+    },
+    {
+      "line_id": "CH03_P03_L004",
+      "frame_id": "CH03_P03_F02",
+      "panel_id": "p33_cela_bubble",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Что происходит?!",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P03_L004_ru.mp3",
+      "audio_duration_s": 1.802,
+      "camera_target": [
+        0.397,
+        0.263,
+        0.147
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4e1da1cff703635b88323fc3596df8c44bb8cb19b53fbebcd0d03b33c11a0237"
+    },
+    {
+      "line_id": "CH03_P03_L005",
+      "frame_id": "CH03_P03_F02",
+      "panel_id": "p33_mika_encounter",
+      "speaker_id": "CHR_027",
+      "kind": "dialogue",
+      "spoken_text": "Тебе стоит побывать в Живом архиве. Там ты найдёшь ответы.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P03_L005_ru.mp3",
+      "audio_duration_s": 3.971,
+      "camera_target": [
+        0.333,
+        0.436,
+        0.182
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d509f8efadf9b6cbfdbdb28dfbfa07520db701686542a6fa35e1b8839b9dceb5"
+    },
+    {
+      "line_id": "CH03_P03_L006",
+      "frame_id": "CH03_P03_F02",
+      "panel_id": "p33_mika_encounter",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Но что случилось?",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P03_L006_ru.mp3",
+      "audio_duration_s": 1.881,
+      "camera_target": [
+        0.22,
+        0.52,
+        0.187
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8a99cb2cbaefc85b3e47df4afd27c7a9ff3a7de1551a96412fed6668122e1d6d"
+    },
+    {
+      "line_id": "CH03_P03_L007",
+      "frame_id": "CH03_P03_F03",
+      "panel_id": "p33_lotus_flower",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Живой архив — похожая на сияющий цветок станция, хранящая знания древних поколений.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P03_L007_ru.mp3",
+      "audio_duration_s": 6.687,
+      "camera_target": [
+        0.756,
+        0.51,
+        0.17
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "0d1864c88dd8513ecde1be13942535dbb6261fd1293e33df6c1932f72e827378"
+    },
+    {
+      "line_id": "CH03_P03_L008",
+      "frame_id": "CH03_P03_F04",
+      "panel_id": "p33_lotus_archive",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Мика прибыл в Живой архив и направился в центральный зал. Там его уже ждали.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/ru/CH03_P03_L008_ru.mp3",
+      "audio_duration_s": 5.407,
+      "camera_target": [
+        0.5,
+        0.805,
+        0.334
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "42368c841549a397a27a357ded0ec910411572cce7d03aa61429d1fa3aa406ef"
+    }
+  ],
+  "display_only": [],
+  "direction_note": "L004 source frame F02, actual approved artwork F01; playback on p33_cela_bubble. L001 non-RU supplied audio manifest retains longer narration than approved artwork; audio and artwork preserved."
+}

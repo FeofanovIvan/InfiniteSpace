@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<title>MIKA CH06 P03 — русский черновик v1. NEBULA offscreen speech</title>
+<desc>Только векторные речевые облака поверх оригинального PDF; никакой перерисовки. Картотека NEBULA: speech_left / speech_right.</desc>
+<g id="CH06_P03_L001" data-speaker="CHR_038" data-kind="offscreen_neuron_speech" data-shape="nebula-speech-left" data-voice-mode="offscreen">
+<path d="M127 990 Q100 990 100 1017 V1148 Q100 1175 127 1175 H206 L182 1202 L253 1175 H1103 Q1130 1175 1130 1148 V1017 Q1130 990 1103 990 Z" fill="#4ED0DB" fill-opacity="0.97" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M132 1007 h58" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="1100" cy="1007" r="5.6" fill="#36DDE8"/>
+<text x="133" y="1065.08" font-family="DejaVu Sans" font-weight="700" font-size="41" fill="#18344A">Но затем мы обнаружили странные</text>
+<text x="133" y="1116.33" font-family="DejaVu Sans" font-weight="700" font-size="41" fill="#18344A">природные аномалии.</text>
+</g>
+<g id="CH06_P03_L002" data-speaker="CHR_038" data-kind="offscreen_neuron_speech" data-shape="nebula-speech-right" data-voice-mode="offscreen">
+<path d="M1207 990 Q1180 990 1180 1017 V1148 Q1180 1175 1207 1175 H2214 L2293 1202 L2272 1175 H2343 Q2370 1175 2370 1148 V1017 Q2370 990 2343 990 Z" fill="#4ED0DB" fill-opacity="0.97" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M1212 1007 h58" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="2340" cy="1007" r="5.6" fill="#36DDE8"/>
+<text x="1213" y="1063.32" font-family="DejaVu Sans" font-weight="700" font-size="39" fill="#18344A">Чтобы понять, как они устроены, нам пришлось</text>
+<text x="1213" y="1112.07" font-family="DejaVu Sans" font-weight="700" font-size="39" fill="#18344A">ещё глубже изучать мироздание.</text>
+</g>
+<g id="CH06_P03_L003" data-speaker="CHR_038" data-kind="offscreen_neuron_speech" data-shape="nebula-speech-left" data-voice-mode="offscreen">
+<path d="M122 1985 Q95 1985 95 2012 V2148 Q95 2175 122 2175 H201 L177 2202 L248 2175 H1263 Q1290 2175 1290 2148 V2012 Q1290 1985 1263 1985 Z" fill="#4ED0DB" fill-opacity="0.97" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M127 2002 h58" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="1260" cy="2002" r="5.6" fill="#36DDE8"/>
+<text x="128" y="2056.56" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">Во время исследования одной из аномалий мы</text>
+<text x="128" y="2102.81" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">повстречали твоих знакомых — магнитных</text>
+<text x="128" y="2149.06" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">существ.</text>
+</g>
+<g id="CH06_P03_L004" data-speaker="CHR_038" data-kind="offscreen_neuron_speech" data-shape="nebula-speech-right" data-voice-mode="offscreen">
+<path d="M1467 1330 Q1440 1330 1440 1357 V1487 Q1440 1514 1467 1514 H2209 L2288 1541 L2267 1514 H2338 Q2365 1514 2365 1487 V1357 Q2365 1330 2338 1330 Z" fill="#4ED0DB" fill-opacity="0.97" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M1472 1347 h58" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="2335" cy="1347" r="5.6" fill="#36DDE8"/>
+<text x="1473" y="1400.68" font-family="DejaVu Sans" font-weight="700" font-size="36" fill="#18344A">А дальше, в глубинах космоса, мы</text>
+<text x="1473" y="1445.68" font-family="DejaVu Sans" font-weight="700" font-size="36" fill="#18344A">обнаружили удивительный артефакт.</text>
+</g>
+<g id="CH06_P03_L005" data-speaker="CHR_038" data-kind="offscreen_neuron_speech" data-shape="nebula-speech-left" data-voice-mode="offscreen">
+<path d="M1547 2002 Q1520 2002 1520 2029 V2140 Q1520 2167 1547 2167 H1626 L1602 2194 L1673 2167 H2337 Q2364 2167 2364 2140 V2029 Q2364 2002 2337 2002 Z" fill="#4ED0DB" fill-opacity="0.97" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M1552 2019 h58" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="2334" cy="2019" r="5.6" fill="#36DDE8"/>
+<text x="1553" y="2073.56" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">Он оказался центром множества</text>
+<text x="1553" y="2119.81" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">аномальных зон.</text>
+</g>
+<g id="CH06_P03_L006" data-speaker="CHR_038" data-kind="offscreen_neuron_speech" data-shape="nebula-speech-left" data-voice-mode="offscreen">
+<path d="M137 3206 Q110 3206 110 3233 V3361 Q110 3388 137 3388 H216 L192 3415 L263 3388 H1323 Q1350 3388 1350 3361 V3233 Q1350 3206 1323 3206 Z" fill="#4ED0DB" fill-opacity="0.97" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M142 3223 h58" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="1320" cy="3223" r="5.6" fill="#36DDE8"/>
+<text x="143" y="3274.92" font-family="DejaVu Sans" font-weight="700" font-size="34" fill="#18344A">Мы сделали изучение этого сложного артефакта целью</text>
+<text x="143" y="3317.42" font-family="DejaVu Sans" font-weight="700" font-size="34" fill="#18344A">своего существования и построили вокруг него станцию</text>
+<text x="143" y="3359.92" font-family="DejaVu Sans" font-weight="700" font-size="34" fill="#18344A">«Последние врата».</text>
+</g>
+<g id="CH06_P03_L007" data-speaker="CHR_038" data-kind="offscreen_neuron_speech" data-shape="nebula-speech-right" data-voice-mode="offscreen">
+<path d="M1497 3194 Q1470 3194 1470 3221 V3362 Q1470 3389 1497 3389 H2214 L2293 3416 L2272 3389 H2343 Q2370 3389 2370 3362 V3221 Q2370 3194 2343 3194 Z" fill="#4ED0DB" fill-opacity="0.97" stroke="#253456" stroke-width="5.5" stroke-linejoin="round"/>
+<path d="M1502 3211 h58" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="2340" cy="3211" r="5.6" fill="#36DDE8"/>
+<text x="1503" y="3263.80" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#18344A">Не так давно до нас дошёл странный</text>
+<text x="1503" y="3307.55" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#18344A">сигнал — эхо страшных событий,</text>
+<text x="1503" y="3351.30" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#18344A">происходивших где-то далеко.</text>
+</g>
+</svg>

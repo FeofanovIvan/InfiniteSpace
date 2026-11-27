@@ -1,0 +1,979 @@
+{
+  "page": "CH07_P01",
+  "checks": [
+    {
+      "lang": "ru",
+      "line_id": "CH07_P01_L001",
+      "font_size": 39,
+      "visual_lines": [
+        "После выхода из портала корабль Мики попал в",
+        "страшный шторм."
+      ],
+      "text_width_px": 1106.0,
+      "available_width_px": 1128,
+      "text_height_px": 88.5,
+      "available_height_px": 97,
+      "internal_padding_px": {
+        "left": 31,
+        "right": 31,
+        "top": 45,
+        "bottom": 20
+      },
+      "fit": "PASS",
+      "approved_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH07_P01_L002",
+      "font_size": 37,
+      "visual_lines": [
+        "Надеюсь, корабль",
+        "выдержит!"
+      ],
+      "text_width_px": 397.4,
+      "available_width_px": 483,
+      "text_height_px": 84.4,
+      "available_height_px": 90,
+      "internal_padding_px": {
+        "left": 32,
+        "right": 30,
+        "top": 37,
+        "bottom": 21
+      },
+      "fit": "PASS",
+      "approved_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH07_P01_L003",
+      "font_size": 35,
+      "visual_lines": [
+        "Через некоторое время корабль",
+        "выбрался из шторма."
+      ],
+      "text_width_px": 661.3,
+      "available_width_px": 838,
+      "text_height_px": 79.5,
+      "available_height_px": 80,
+      "internal_padding_px": {
+        "left": 31,
+        "right": 31,
+        "top": 45,
+        "bottom": 20
+      },
+      "fit": "PASS",
+      "approved_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH07_P01_L004",
+      "font_size": 37,
+      "visual_lines": [
+        "Наверное, нам нужно",
+        "туда."
+      ],
+      "text_width_px": 465.1,
+      "available_width_px": 488,
+      "text_height_px": 84.4,
+      "available_height_px": 97,
+      "internal_padding_px": {
+        "left": 32,
+        "right": 30,
+        "top": 37,
+        "bottom": 21
+      },
+      "fit": "PASS",
+      "approved_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH07_P01_L005",
+      "font_size": 33,
+      "visual_lines": [
+        "Приблизившись к точке, они увидели странную",
+        "светящуюся планету. Она меняла форму и излучала",
+        "огромное количество плазмы."
+      ],
+      "text_width_px": 1013.3,
+      "available_width_px": 1156,
+      "text_height_px": 114.8,
+      "available_height_px": 117,
+      "internal_padding_px": {
+        "left": 31,
+        "right": 31,
+        "top": 45,
+        "bottom": 20
+      },
+      "fit": "PASS",
+      "approved_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH07_P01_L006",
+      "font_size": 33,
+      "visual_lines": [
+        "Мика погрузился в сон. Там он встретил",
+        "странное существо, удивительно похожее на",
+        "него самого."
+      ],
+      "text_width_px": 875.3,
+      "available_width_px": 948,
+      "text_height_px": 114.8,
+      "available_height_px": 117,
+      "internal_padding_px": {
+        "left": 31,
+        "right": 31,
+        "top": 45,
+        "bottom": 20
+      },
+      "fit": "PASS",
+      "approved_unchanged": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P01_L001",
+      "kind": "narration",
+      "text": "After leaving the portal, Mika’s ship was caught in a terrifying storm.",
+      "font_size": 39,
+      "lines": [
+        "After leaving the portal, Mika’s ship was caught in",
+        "a terrifying storm."
+      ],
+      "text_width": 1113.67,
+      "text_height": 87.36,
+      "available_width": 1128,
+      "available_height": 109,
+      "box": [
+        95,
+        100,
+        1190,
+        162
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P01_L002",
+      "kind": "dialogue",
+      "text": "I hope the ship holds together!",
+      "font_size": 37,
+      "lines": [
+        "I hope the ship holds",
+        "together!"
+      ],
+      "text_width": 438.22,
+      "text_height": 82.88,
+      "available_width": 481,
+      "available_height": 96,
+      "box": [
+        520,
+        1090,
+        545,
+        148
+      ],
+      "padding": [
+        32,
+        32,
+        34,
+        18
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P01_L003",
+      "kind": "narration",
+      "text": "After a while, the ship finally escaped the storm.",
+      "font_size": 35,
+      "lines": [
+        "After a while, the ship finally escaped the",
+        "storm."
+      ],
+      "text_width": 824.92,
+      "text_height": 78.4,
+      "available_width": 838,
+      "available_height": 92,
+      "box": [
+        1190,
+        1560,
+        900,
+        145
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P01_L004",
+      "kind": "dialogue",
+      "text": "I think we need to go there.",
+      "font_size": 37,
+      "lines": [
+        "I think we need to go",
+        "there."
+      ],
+      "text_width": 443.12,
+      "text_height": 82.88,
+      "available_width": 486,
+      "available_height": 103,
+      "box": [
+        735,
+        2260,
+        550,
+        155
+      ],
+      "padding": [
+        32,
+        32,
+        34,
+        18
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P01_L005",
+      "kind": "narration",
+      "text": "As they approached, they saw a strange glowing planet that changed shape and released enormous amounts of plasma.",
+      "font_size": 33,
+      "lines": [
+        "As they approached, they saw a strange glowing planet that",
+        "changed shape and released enormous amounts of plasma."
+      ],
+      "text_width": 1128.06,
+      "text_height": 73.92,
+      "available_width": 1156,
+      "available_height": 129,
+      "box": [
+        94,
+        3226,
+        1218,
+        182
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P01_L006",
+      "kind": "narration",
+      "text": "Mika drifted off to sleep. In his dream, he met a strange being that looked remarkably like him.",
+      "font_size": 33,
+      "lines": [
+        "Mika drifted off to sleep. In his dream, he met a",
+        "strange being that looked remarkably like him."
+      ],
+      "text_width": 892.69,
+      "text_height": 73.92,
+      "available_width": 948,
+      "available_height": 129,
+      "box": [
+        1390,
+        3221,
+        1010,
+        182
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P01_L001",
+      "kind": "narration",
+      "text": "Ao sair do portal, a nave de Mika foi atingida por uma tempestade assustadora.",
+      "font_size": 39,
+      "lines": [
+        "Ao sair do portal, a nave de Mika foi atingida por",
+        "uma tempestade assustadora."
+      ],
+      "text_width": 1080.52,
+      "text_height": 87.36,
+      "available_width": 1128,
+      "available_height": 109,
+      "box": [
+        95,
+        100,
+        1190,
+        162
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P01_L002",
+      "kind": "dialogue",
+      "text": "Tomara que a nave aguente!",
+      "font_size": 37,
+      "lines": [
+        "Tomara que a nave",
+        "aguente!"
+      ],
+      "text_width": 394.53,
+      "text_height": 82.88,
+      "available_width": 481,
+      "available_height": 96,
+      "box": [
+        520,
+        1090,
+        545,
+        148
+      ],
+      "padding": [
+        32,
+        32,
+        34,
+        18
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P01_L003",
+      "kind": "narration",
+      "text": "Depois de algum tempo, a nave conseguiu sair da tempestade.",
+      "font_size": 35,
+      "lines": [
+        "Depois de algum tempo, a nave conseguiu",
+        "sair da tempestade."
+      ],
+      "text_width": 837.89,
+      "text_height": 78.4,
+      "available_width": 838,
+      "available_height": 92,
+      "box": [
+        1190,
+        1560,
+        900,
+        145
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P01_L004",
+      "kind": "dialogue",
+      "text": "Acho que precisamos ir até lá.",
+      "font_size": 37,
+      "lines": [
+        "Acho que precisamos",
+        "ir até lá."
+      ],
+      "text_width": 443.44,
+      "text_height": 82.88,
+      "available_width": 486,
+      "available_height": 103,
+      "box": [
+        735,
+        2260,
+        550,
+        155
+      ],
+      "padding": [
+        32,
+        32,
+        34,
+        18
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P01_L005",
+      "kind": "narration",
+      "text": "Ao se aproximarem, viram um planeta luminoso e estranho, que mudava de forma e liberava uma enorme quantidade de plasma.",
+      "font_size": 33,
+      "lines": [
+        "Ao se aproximarem, viram um planeta luminoso e estranho,",
+        "que mudava de forma e liberava uma enorme quantidade de",
+        "plasma."
+      ],
+      "text_width": 1129.34,
+      "text_height": 113.85,
+      "available_width": 1156,
+      "available_height": 129,
+      "box": [
+        94,
+        3226,
+        1218,
+        182
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P01_L006",
+      "kind": "narration",
+      "text": "Mika adormeceu. Em seu sonho, encontrou um ser estranho que se parecia muito com ele.",
+      "font_size": 33,
+      "lines": [
+        "Mika adormeceu. Em seu sonho, encontrou um ser",
+        "estranho que se parecia muito com ele."
+      ],
+      "text_width": 941.34,
+      "text_height": 73.92,
+      "available_width": 948,
+      "available_height": 129,
+      "box": [
+        1390,
+        3221,
+        1010,
+        182
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P01_L001",
+      "kind": "narration",
+      "text": "Al salir del portal, la nave de Mika quedó atrapada en una tormenta aterradora.",
+      "font_size": 39,
+      "lines": [
+        "Al salir del portal, la nave de Mika quedó atrapada",
+        "en una tormenta aterradora."
+      ],
+      "text_width": 1116.41,
+      "text_height": 87.36,
+      "available_width": 1128,
+      "available_height": 109,
+      "box": [
+        95,
+        100,
+        1190,
+        162
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P01_L002",
+      "kind": "dialogue",
+      "text": "¡Espero que la nave resista!",
+      "font_size": 37,
+      "lines": [
+        "¡Espero que la nave",
+        "resista!"
+      ],
+      "text_width": 414.16,
+      "text_height": 82.88,
+      "available_width": 481,
+      "available_height": 96,
+      "box": [
+        520,
+        1090,
+        545,
+        148
+      ],
+      "padding": [
+        32,
+        32,
+        34,
+        18
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P01_L003",
+      "kind": "narration",
+      "text": "Al cabo de un rato, la nave logró salir de la tormenta.",
+      "font_size": 35,
+      "lines": [
+        "Al cabo de un rato, la nave logró salir de",
+        "la tormenta."
+      ],
+      "text_width": 803.47,
+      "text_height": 78.4,
+      "available_width": 838,
+      "available_height": 92,
+      "box": [
+        1190,
+        1560,
+        900,
+        145
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P01_L004",
+      "kind": "dialogue",
+      "text": "Creo que tenemos que ir allí.",
+      "font_size": 37,
+      "lines": [
+        "Creo que tenemos que",
+        "ir allí."
+      ],
+      "text_width": 470.59,
+      "text_height": 82.88,
+      "available_width": 486,
+      "available_height": 103,
+      "box": [
+        735,
+        2260,
+        550,
+        155
+      ],
+      "padding": [
+        32,
+        32,
+        34,
+        18
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P01_L005",
+      "kind": "narration",
+      "text": "Al acercarse, vieron un extraño planeta luminoso que cambiaba de forma y desprendía enormes cantidades de plasma.",
+      "font_size": 33,
+      "lines": [
+        "Al acercarse, vieron un extraño planeta luminoso que",
+        "cambiaba de forma y desprendía enormes cantidades de",
+        "plasma."
+      ],
+      "text_width": 1057.0,
+      "text_height": 113.85,
+      "available_width": 1156,
+      "available_height": 129,
+      "box": [
+        94,
+        3226,
+        1218,
+        182
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P01_L006",
+      "kind": "narration",
+      "text": "Mika se quedó dormido. En sueños conoció a un ser extraño que se parecía muchísimo a él.",
+      "font_size": 33,
+      "lines": [
+        "Mika se quedó dormido. En sueños conoció a un",
+        "ser extraño que se parecía muchísimo a él."
+      ],
+      "text_width": 893.77,
+      "text_height": 73.92,
+      "available_width": 948,
+      "available_height": 129,
+      "box": [
+        1390,
+        3221,
+        1010,
+        182
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P01_L001",
+      "kind": "narration",
+      "text": "À la sortie du portail, le vaisseau de Mika fut pris dans une terrible tempête.",
+      "font_size": 39,
+      "lines": [
+        "À la sortie du portail, le vaisseau de Mika fut pris",
+        "dans une terrible tempête."
+      ],
+      "text_width": 1087.38,
+      "text_height": 87.36,
+      "available_width": 1128,
+      "available_height": 109,
+      "box": [
+        95,
+        100,
+        1190,
+        162
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P01_L002",
+      "kind": "dialogue",
+      "text": "Pourvu que le vaisseau résiste !",
+      "font_size": 37,
+      "lines": [
+        "Pourvu que le",
+        "vaisseau résiste !"
+      ],
+      "text_width": 367.69,
+      "text_height": 82.88,
+      "available_width": 481,
+      "available_height": 96,
+      "box": [
+        520,
+        1090,
+        545,
+        148
+      ],
+      "padding": [
+        32,
+        32,
+        34,
+        18
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P01_L003",
+      "kind": "narration",
+      "text": "Au bout d’un moment, le vaisseau sortit enfin de la tempête.",
+      "font_size": 35,
+      "lines": [
+        "Au bout d’un moment, le vaisseau sortit",
+        "enfin de la tempête."
+      ],
+      "text_width": 795.47,
+      "text_height": 78.4,
+      "available_width": 838,
+      "available_height": 92,
+      "box": [
+        1190,
+        1560,
+        900,
+        145
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P01_L004",
+      "kind": "dialogue",
+      "text": "Je crois qu’il faut aller là-bas.",
+      "font_size": 37,
+      "lines": [
+        "Je crois qu’il faut aller",
+        "là-bas."
+      ],
+      "text_width": 461.72,
+      "text_height": 82.88,
+      "available_width": 486,
+      "available_height": 103,
+      "box": [
+        735,
+        2260,
+        550,
+        155
+      ],
+      "padding": [
+        32,
+        32,
+        34,
+        18
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P01_L005",
+      "kind": "narration",
+      "text": "En s’approchant, ils découvrirent une étrange planète lumineuse qui changeait de forme et émettait d’immenses quantités de plasma.",
+      "font_size": 33,
+      "lines": [
+        "En s’approchant, ils découvrirent une étrange planète",
+        "lumineuse qui changeait de forme et émettait d’immenses",
+        "quantités de plasma."
+      ],
+      "text_width": 1093.0,
+      "text_height": 113.85,
+      "available_width": 1156,
+      "available_height": 129,
+      "box": [
+        94,
+        3226,
+        1218,
+        182
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P01_L006",
+      "kind": "narration",
+      "text": "Mika s’endormit. Dans son rêve, il rencontra un être étrange qui lui ressemblait étonnamment.",
+      "font_size": 33,
+      "lines": [
+        "Mika s’endormit. Dans son rêve, il rencontra un",
+        "être étrange qui lui ressemblait étonnamment."
+      ],
+      "text_width": 888.94,
+      "text_height": 73.92,
+      "available_width": 948,
+      "available_height": 129,
+      "box": [
+        1390,
+        3221,
+        1010,
+        182
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P01_L001",
+      "kind": "narration",
+      "text": "Kaum hatte Mikas Schiff das Portal verlassen, geriet es in einen gewaltigen Sturm.",
+      "font_size": 39,
+      "lines": [
+        "Kaum hatte Mikas Schiff das Portal verlassen,",
+        "geriet es in einen gewaltigen Sturm."
+      ],
+      "text_width": 1012.48,
+      "text_height": 87.36,
+      "available_width": 1128,
+      "available_height": 109,
+      "box": [
+        95,
+        100,
+        1190,
+        162
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P01_L002",
+      "kind": "dialogue",
+      "text": "Hoffentlich hält das Schiff durch!",
+      "font_size": 37,
+      "lines": [
+        "Hoffentlich hält das",
+        "Schiff durch!"
+      ],
+      "text_width": 410.05,
+      "text_height": 82.88,
+      "available_width": 481,
+      "available_height": 96,
+      "box": [
+        520,
+        1090,
+        545,
+        148
+      ],
+      "padding": [
+        32,
+        32,
+        34,
+        18
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P01_L003",
+      "kind": "narration",
+      "text": "Nach einiger Zeit entkam das Schiff endlich dem Sturm.",
+      "font_size": 35,
+      "lines": [
+        "Nach einiger Zeit entkam das Schiff",
+        "endlich dem Sturm."
+      ],
+      "text_width": 705.58,
+      "text_height": 78.4,
+      "available_width": 838,
+      "available_height": 92,
+      "box": [
+        1190,
+        1560,
+        900,
+        145
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P01_L004",
+      "kind": "dialogue",
+      "text": "Ich glaube, wir müssen dorthin.",
+      "font_size": 37,
+      "lines": [
+        "Ich glaube, wir müssen",
+        "dorthin."
+      ],
+      "text_width": 482.28,
+      "text_height": 82.88,
+      "available_width": 486,
+      "available_height": 103,
+      "box": [
+        735,
+        2260,
+        550,
+        155
+      ],
+      "padding": [
+        32,
+        32,
+        34,
+        18
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P01_L005",
+      "kind": "narration",
+      "text": "Als sie näher kamen, sahen sie einen seltsam leuchtenden Planeten. Er veränderte seine Form und stieß riesige Mengen Plasma aus.",
+      "font_size": 33,
+      "lines": [
+        "Als sie näher kamen, sahen sie einen seltsam leuchtenden",
+        "Planeten. Er veränderte seine Form und stieß riesige Mengen",
+        "Plasma aus."
+      ],
+      "text_width": 1147.27,
+      "text_height": 113.85,
+      "available_width": 1156,
+      "available_height": 129,
+      "box": [
+        94,
+        3226,
+        1218,
+        182
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P01_L006",
+      "kind": "narration",
+      "text": "Mika schlief ein. Im Traum begegnete er einem seltsamen Wesen, das ihm verblüffend ähnlich sah.",
+      "font_size": 33,
+      "lines": [
+        "Mika schlief ein. Im Traum begegnete er einem",
+        "seltsamen Wesen, das ihm verblüffend ähnlich",
+        "sah."
+      ],
+      "text_width": 874.81,
+      "text_height": 113.85,
+      "available_width": 948,
+      "available_height": 129,
+      "box": [
+        1390,
+        3221,
+        1010,
+        182
+      ],
+      "padding": [
+        31,
+        31,
+        36,
+        17
+      ],
+      "fits": true
+    }
+  ],
+  "approved_ru_unchanged": true
+}

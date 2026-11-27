@@ -1,0 +1,180 @@
+{
+  "schema_version": 3,
+  "page_id": "CH04_P04",
+  "locale": "pt_BR",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch04_p04_languages/ch04_p04_pt_BR.webp",
+  "native_scene_panels": [
+    "p44_professor_studies_fossil",
+    "p44_professor_realization",
+    "p44_dinosaur_dna",
+    "p44_ancient_dinosaurs",
+    "p44_ancient_meteorite"
+  ],
+  "panel_bounds": {
+    "p44_professor_studies_fossil": [
+      0.024,
+      0.018,
+      0.952,
+      0.305
+    ],
+    "p44_professor_realization": [
+      0.024,
+      0.337,
+      0.395,
+      0.17
+    ],
+    "p44_dinosaur_dna": [
+      0.44,
+      0.333,
+      0.535,
+      0.174
+    ],
+    "p44_ancient_dinosaurs": [
+      0.024,
+      0.523,
+      0.952,
+      0.262
+    ],
+    "p44_ancient_meteorite": [
+      0.024,
+      0.797,
+      0.952,
+      0.191
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH04_P04_L001",
+      "frame_id": "CH04_P04_F01",
+      "panel_id": "p44_professor_studies_fossil",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Durante a viagem, o professor decidiu examinar as amostras coletadas em Archeon.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P04_L001_pt_BR.mp3",
+      "audio_duration_s": 5.068,
+      "camera_target": [
+        0.43,
+        0.17,
+        0.29
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d21d9cecde7c711d7e5e6366022b62981d6d1778f20746ff838572b975a58a0c"
+    },
+    {
+      "line_id": "CH04_P04_L002",
+      "frame_id": "CH04_P04_F01",
+      "panel_id": "p44_professor_studies_fossil",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "O que foi?",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P04_L002_pt_BR.mp3",
+      "audio_duration_s": 1.071,
+      "camera_target": [
+        0.245,
+        0.198,
+        0.225
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "ef7759fb1975a4c9daafcf20c1ec7797e54b89cdad6e6c35b7cef89400a35a74"
+    },
+    {
+      "line_id": "CH04_P04_L003",
+      "frame_id": "CH04_P04_F02",
+      "panel_id": "p44_professor_realization",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Acho que já sei de onde eles vieram!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P04_L003_pt_BR.mp3",
+      "audio_duration_s": 2.586,
+      "camera_target": [
+        0.216,
+        0.435,
+        0.155
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "57b850b29e39e225cd4cae3370cc732eddfdfc6b5d10735f8775d805edc6d1f4"
+    },
+    {
+      "line_id": "CH04_P04_L004",
+      "frame_id": "CH04_P04_F03",
+      "panel_id": "p44_dinosaur_dna",
+      "speaker_id": "CHR_015",
+      "kind": "science_explanation",
+      "spoken_text": "O DNA deles é surpreendentemente parecido com o de antigos répteis da Terra!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P04_L004_pt_BR.mp3",
+      "audio_duration_s": 5.486,
+      "camera_target": [
+        0.71,
+        0.419,
+        0.166
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c877a3db77581ff04e1b8e14dff39e48eba4479234c110699a93d960ca8ce7de"
+    },
+    {
+      "line_id": "CH04_P04_L005",
+      "frame_id": "CH04_P04_F04",
+      "panel_id": "p44_ancient_dinosaurs",
+      "speaker_id": "CHR_015",
+      "kind": "flashback_explanation",
+      "spoken_text": "Há 65 a 70 milhões de anos, a Terra era habitada por enormes criaturas semelhantes a lagartos: os dinossauros.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P04_L005_pt_BR.mp3",
+      "audio_duration_s": 9.169,
+      "camera_target": [
+        0.42,
+        0.653,
+        0.255
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "edb7b72bd79b941e70adba2458269d475fcb1e007e052b767769edbc6cf943af"
+    },
+    {
+      "line_id": "CH04_P04_L006",
+      "frame_id": "CH04_P04_F05",
+      "panel_id": "p44_ancient_meteorite",
+      "speaker_id": "CHR_015",
+      "kind": "flashback_explanation",
+      "spoken_text": "Mas, há cerca de 66 milhões de anos, o impacto de um asteroide gigantesco mudou tudo. A maioria dos dinossauros desapareceu, abrindo novos caminhos para a evolução dos mamíferos e, muito depois, dos humanos.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/pt_BR/CH04_P04_L006_pt_BR.mp3",
+      "audio_duration_s": 15.491,
+      "camera_target": [
+        0.48,
+        0.894,
+        0.185
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "9074efab50da06c31a21220508517ca67e6e8c151b03b3a97aebf9fa960af4a8"
+    }
+  ]
+}

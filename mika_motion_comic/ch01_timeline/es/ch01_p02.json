@@ -1,0 +1,292 @@
+{
+  "schema_version": 3,
+  "page_id": "CH01_P02",
+  "locale": "es",
+  "sync_model": "finite_state_camera_first_then_transition_effect_then_individual_voice",
+  "image_path": "res://mika_motion_comic/assets/pages/ch01_p02_languages/ch01_p02_es.webp",
+  "native_scene_panels": [
+    "wormhole",
+    "earth_view",
+    "simulator",
+    "earth_approach",
+    "earth_spaceport"
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P02_L001",
+      "frame_id": "CH01_P02_F01",
+      "panel_id": "wormhole",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Entre los remolinos de la tormenta, Mika vio un túnel brillante. Sin saber adónde llevaba, dirigió su nave hacia la luz.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/es/CH01_P02_L001_es.mp3",
+      "audio_duration_s": 8.515,
+      "source_master": "CH01_P02_es_VOICE_MASTER.mp3",
+      "source_cut_in_s": 0.0,
+      "source_cut_out_s": 8.515,
+      "bubble_box_normalized": [
+        0.04718,
+        0.03335,
+        0.32984,
+        0.07383
+      ],
+      "camera_target": [
+        0.43,
+        0.165,
+        0.311
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "hold",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": ""
+    },
+    {
+      "line_id": "CH01_P02_L002",
+      "frame_id": "CH01_P02_F02",
+      "panel_id": "earth_view",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Por la ventanilla, apareció un pequeño planeta azul.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/es/CH01_P02_L002_es.mp3",
+      "audio_duration_s": 3.96,
+      "source_master": "CH01_P02_es_VOICE_MASTER.mp3",
+      "source_cut_in_s": 8.515,
+      "source_cut_out_s": 12.475,
+      "bubble_box_normalized": [
+        0.27016,
+        0.32839,
+        0.19677,
+        0.04304
+      ],
+      "camera_target": [
+        0.245,
+        0.393,
+        0.19
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": ""
+    },
+    {
+      "line_id": "CH01_P02_L003",
+      "frame_id": "CH01_P02_F02",
+      "panel_id": "earth_view",
+      "speaker_id": "CHR_001",
+      "kind": "speech",
+      "spoken_text": "¡Un planeta!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/es/CH01_P02_L003_es.mp3",
+      "audio_duration_s": 1.32,
+      "source_master": "CH01_P02_es_VOICE_MASTER.mp3",
+      "source_cut_in_s": 12.475,
+      "source_cut_out_s": 13.795,
+      "bubble_box_normalized": [
+        0.24315,
+        0.39481,
+        0.19758,
+        0.0707
+      ],
+      "camera_target": [
+        0.245,
+        0.393,
+        0.19
+      ],
+      "transition_before_s": 0.34,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": "res://mika_motion_comic/ch01_camera_sfx/CH01_P02_L003_camera.mp3"
+    },
+    {
+      "line_id": "CH01_P02_L004",
+      "frame_id": "CH01_P02_F03",
+      "panel_id": "simulator",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika ajustó el simulador. Ahora reunía datos sobre sus habitantes, sus idiomas y la vida en el nuevo planeta.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/es/CH01_P02_L004_es.mp3",
+      "audio_duration_s": 7.45,
+      "source_master": "CH01_P02_es_VOICE_MASTER.mp3",
+      "source_cut_in_s": 13.795,
+      "source_cut_out_s": 21.245,
+      "bubble_box_normalized": [
+        0.83266,
+        0.34151,
+        0.13387,
+        0.07412
+      ],
+      "camera_target": [
+        0.754,
+        0.393,
+        0.19
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": "res://mika_motion_comic/ch01_camera_sfx/CH01_P02_L004_camera.mp3"
+    },
+    {
+      "line_id": "CH01_P02_L005",
+      "frame_id": "CH01_P02_F04",
+      "panel_id": "earth_approach",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "El simulador halló un puerto espacial cercano. Mika puso rumbo al aterrizaje: quizá allí sabría dónde estaba.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/es/CH01_P02_L005_es.mp3",
+      "audio_duration_s": 7.45,
+      "source_master": "CH01_P02_es_VOICE_MASTER.mp3",
+      "source_cut_in_s": 21.245,
+      "source_cut_out_s": 28.695,
+      "bubble_box_normalized": [
+        0.04355,
+        0.63056,
+        0.40645,
+        0.05559
+      ],
+      "camera_target": [
+        0.257,
+        0.716,
+        0.185
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": ""
+    },
+    {
+      "line_id": "CH01_P02_L006",
+      "frame_id": "CH01_P02_F05",
+      "panel_id": "earth_spaceport",
+      "speaker_id": "CHR_001",
+      "kind": "thought",
+      "spoken_text": "Mmm… ¿Y ahora adónde voy?",
+      "audio_path": "res://mika_motion_comic/ch01_clips/es/CH01_P02_L006_es.mp3",
+      "audio_duration_s": 2.985,
+      "source_master": "CH01_P02_es_VOICE_MASTER.mp3",
+      "source_cut_in_s": 28.695,
+      "source_cut_out_s": 31.68,
+      "bubble_box_normalized": [
+        0.64839,
+        0.62486,
+        0.28185,
+        0.10946
+      ],
+      "camera_target": [
+        0.747,
+        0.708,
+        0.185
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": "res://mika_motion_comic/ch01_camera_sfx/CH01_P02_L006_camera.mp3"
+    }
+  ],
+  "audio_master_duration_s": 31.68,
+  "verified_source_svg": "chapter_01/page_02/CH01_P02_overlays/CH01_P02_es.svg",
+  "crop_boundary_review": [
+    {
+      "index": 1,
+      "nominal_s": 8.42,
+      "cut_s": 8.515,
+      "silence_s": [
+        8.07,
+        8.58
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 2,
+      "nominal_s": 12.26,
+      "cut_s": 12.475,
+      "silence_s": [
+        11.97,
+        12.54
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 3,
+      "nominal_s": 13.64,
+      "cut_s": 13.795,
+      "silence_s": [
+        13.45,
+        13.86
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 4,
+      "nominal_s": 21.08,
+      "cut_s": 21.245,
+      "silence_s": [
+        20.83,
+        21.31
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 5,
+      "nominal_s": 28.46,
+      "cut_s": 28.695,
+      "silence_s": [
+        28.16,
+        28.76
+      ],
+      "method": "detected_silence"
+    }
+  ],
+  "integration_note": "native_gameplay_stops_preserved__next_clip_waits_for_camera",
+  "quality": "automatic_silence_cuts_needs_listening_review",
+  "panel_bounds": {
+    "wormhole": [
+      0.01,
+      0.015,
+      0.97,
+      0.312
+    ],
+    "earth_view": [
+      0.019,
+      0.31,
+      0.485,
+      0.305
+    ],
+    "simulator": [
+      0.496,
+      0.31,
+      0.485,
+      0.305
+    ],
+    "earth_approach": [
+      0.019,
+      0.605,
+      0.486,
+      0.38
+    ],
+    "earth_spaceport": [
+      0.495,
+      0.605,
+      0.486,
+      0.38
+    ]
+  },
+  "runtime_contract": [
+    "line_selected",
+    "camera_motion",
+    "frame_render_confirmed",
+    "camera_sfx",
+    "voice_play_until_finished",
+    "next_line_or_panel"
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "schema_version": 3,
+  "page_id": "CH03_P04",
+  "locale": "fr",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch03_p04_languages/ch03_p04_fr.webp",
+  "native_scene_panels": [
+    "p34_lotus_council",
+    "p34_liquid_phase",
+    "p34_crystal_phase",
+    "p34_phase_cavern",
+    "p34_new_hero",
+    "p34_ship_departure"
+  ],
+  "panel_bounds": {
+    "p34_lotus_council": [
+      0.029,
+      0.027,
+      0.942,
+      0.222
+    ],
+    "p34_liquid_phase": [
+      0.029,
+      0.257,
+      0.942,
+      0.184
+    ],
+    "p34_crystal_phase": [
+      0.029,
+      0.257,
+      0.942,
+      0.184
+    ],
+    "p34_phase_cavern": [
+      0.249,
+      0.455,
+      0.491,
+      0.191
+    ],
+    "p34_new_hero": [
+      0.029,
+      0.657,
+      0.365,
+      0.313
+    ],
+    "p34_ship_departure": [
+      0.414,
+      0.657,
+      0.557,
+      0.313
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH03_P04_L001",
+      "frame_id": "CH03_P04_F00",
+      "panel_id": "p34_lotus_council",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "L’un des dirigeants de la station « Archives vivantes » invita Mika et ses compagnons à entrer, puis commença son récit.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L001_fr.mp3",
+      "audio_duration_s": 7.158,
+      "camera_target": [
+        0.47,
+        0.136,
+        0.214
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "ef20e2f95f04310f2e250699581f0525ed4adce74fdf3f75dcc2b67dac6d094e"
+    },
+    {
+      "line_id": "CH03_P04_L003",
+      "frame_id": "CH03_P04_F01",
+      "panel_id": "p34_lotus_council",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Ce n’est pas par hasard que nous nous appelons les Êtres de Phase. Notre vie traverse trois états.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L003_fr.mp3",
+      "audio_duration_s": 5.486,
+      "camera_target": [
+        0.76,
+        0.135,
+        0.158
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "4da1908c3dd2c1938cd3a85280b4529699b82236f3e0e29634fa5b275f26470f"
+    },
+    {
+      "line_id": "CH03_P04_L002",
+      "frame_id": "CH03_P04_F00",
+      "panel_id": "p34_lotus_council",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Comme l’eau ?",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L002_fr.mp3",
+      "audio_duration_s": 1.071,
+      "camera_target": [
+        0.49,
+        0.131,
+        0.155
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "95e0c68c33c173184c463d45ba02bc112a4f3995d653f078bff52f9ba7cac9a6"
+    },
+    {
+      "line_id": "CH03_P04_L004",
+      "frame_id": "CH03_P04_F02",
+      "panel_id": "p34_liquid_phase",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Pas exactement. Nous naissons dans un état plus gazeux : nos molécules sont très éloignées les unes des autres.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L004_fr.mp3",
+      "audio_duration_s": 6.426,
+      "camera_target": [
+        0.255,
+        0.347,
+        0.165
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b976335b5bec22579e64ebfa36ad5ee9f9f910a161dd1adaa25aede9dd941473"
+    },
+    {
+      "line_id": "CH03_P04_L005",
+      "frame_id": "CH03_P04_F03",
+      "panel_id": "p34_crystal_phase",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Avec le temps, nous devenons plus denses et prenons une forme liquide ou gélatineuse. Puis, à la fin de la vie, nous nous cristallisons.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L005_fr.mp3",
+      "audio_duration_s": 8.124,
+      "camera_target": [
+        0.735,
+        0.348,
+        0.165
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7dfbaf0367187ee0b44feddd9db9a49c5c0b38a638a3cb76d48673a7f4e13475"
+    },
+    {
+      "line_id": "CH03_P04_L006",
+      "frame_id": "CH03_P04_F04",
+      "panel_id": "p34_phase_cavern",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Selon l’une de nos théories, nous viendrions d’anciens cristaux cosmiques que l’on trouve même sur les astéroïdes.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L006_fr.mp3",
+      "audio_duration_s": 5.721,
+      "camera_target": [
+        0.49,
+        0.545,
+        0.18
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e80d18bdd00f4813e5671c2e1247009835dc724b2276592b025bcb496550b18f"
+    },
+    {
+      "line_id": "CH03_P04_L007",
+      "frame_id": "CH03_P04_F04",
+      "panel_id": "p34_phase_cavern",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "C’est peut-être devenu notre malheur. D’autres races pensent que les cristaux laissés après nous valent autant que ceux qui sont extraits dans l’espace.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L007_fr.mp3",
+      "audio_duration_s": 8.202,
+      "camera_target": [
+        0.5,
+        0.545,
+        0.18
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "752b9e574cd6b85d020cd0ecac2b28c4f976c4d44d376993752a9104a262f1c4"
+    },
+    {
+      "line_id": "CH03_P04_L008",
+      "frame_id": "CH03_P04_F04",
+      "panel_id": "p34_phase_cavern",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Mais pour nous, ils sont la mémoire de nos ancêtres.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L008_fr.mp3",
+      "audio_duration_s": 3.474,
+      "camera_target": [
+        0.5,
+        0.535,
+        0.18
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b3fc0f8209f2d74abced52018268c0ab0a15acd74a444e604ab5890658a14787"
+    },
+    {
+      "line_id": "CH03_P04_L009",
+      "frame_id": "CH03_P04_F05",
+      "panel_id": "p34_new_hero",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Et je tiens à vous remercier d’avoir aidé à arrêter le lézard.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L009_fr.mp3",
+      "audio_duration_s": 3.239,
+      "camera_target": [
+        0.22,
+        0.752,
+        0.141
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7e6b2bd083df17636e26af6cfe391e720c50dbb05469077f5c313d62d7ba4bf1"
+    },
+    {
+      "line_id": "CH03_P04_L010",
+      "frame_id": "CH03_P04_F06",
+      "panel_id": "p34_new_hero",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Je voudrais vous présenter mon fils, le prince de notre peuple. Je vous propose qu’il voyage avec vous.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L010_fr.mp3",
+      "audio_duration_s": 5.878,
+      "camera_target": [
+        0.21,
+        0.776,
+        0.142
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "17865b157343ce0a7133c7261645674ac3eb9ec713db60f56d369c20b01cee6d"
+    },
+    {
+      "line_id": "CH03_P04_L011",
+      "frame_id": "CH03_P04_F07",
+      "panel_id": "p34_ship_departure",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Je ne peux pas répondre à tes questions sur ta planète natale, Mika. Mais je vous aiderai à poursuivre votre route — vers la galaxie de Barnard.",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L011_fr.mp3",
+      "audio_duration_s": 7.889,
+      "camera_target": [
+        0.69,
+        0.805,
+        0.218
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "39eab88b63e6869bd9564309d82f830b64acc266103c15f646f9f4e01b140159"
+    },
+    {
+      "line_id": "CH03_P04_L012",
+      "frame_id": "CH03_P04_F07",
+      "panel_id": "p34_ship_departure",
+      "speaker_id": "CHR_028",
+      "kind": "dialogue",
+      "spoken_text": "Mais sois prudent : il y a beaucoup de pirates là-bas !",
+      "audio_path": "res://mika_motion_comic/ch03_clips/fr/CH03_P04_L012_fr.mp3",
+      "audio_duration_s": 3.396,
+      "camera_target": [
+        0.69,
+        0.846,
+        0.218
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "1f2f607f89f6bc2246e30a5bf4906258af816105909a36359e6ca5b4fe0b6a40"
+    }
+  ]
+}

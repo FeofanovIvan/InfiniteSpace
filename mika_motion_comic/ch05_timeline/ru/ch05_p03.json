@@ -1,0 +1,181 @@
+{
+  "schema_version": 3,
+  "page_id": "CH05_P03",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch05_p03_languages/ch05_p03_ru.webp",
+  "native_scene_panels": [
+    "p53_archive_hall",
+    "p53_mika_console",
+    "p53_volcanic_city",
+    "p53_evacuating_ships",
+    "p53_gravity_anomaly"
+  ],
+  "panel_bounds": {
+    "p53_archive_hall": [
+      0.018,
+      0.014,
+      0.56,
+      0.317
+    ],
+    "p53_mika_console": [
+      0.595,
+      0.014,
+      0.386,
+      0.317
+    ],
+    "p53_volcanic_city": [
+      0.018,
+      0.345,
+      0.497,
+      0.251
+    ],
+    "p53_evacuating_ships": [
+      0.537,
+      0.345,
+      0.444,
+      0.251
+    ],
+    "p53_gravity_anomaly": [
+      0.018,
+      0.611,
+      0.963,
+      0.375
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH05_P03_L001",
+      "frame_id": "CH05_P03_F01",
+      "panel_id": "p53_archive_hall",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Что это?",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P03_L001_ru.mp3",
+      "audio_duration_s": 1.228,
+      "camera_target": [
+        0.21,
+        0.215,
+        0.174
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "7ec41ab2b69f348c3481658d139b59f07aaf45c4e86f9a8e59be2952be66ce8a"
+    },
+    {
+      "line_id": "CH05_P03_L002",
+      "frame_id": "CH05_P03_F01",
+      "panel_id": "p53_archive_hall",
+      "speaker_id": "CHR_035",
+      "kind": "dialogue",
+      "spoken_text": "Это центральный архив. Настрой его под себя — и он выдаст всю необходимую информацию.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P03_L002_ru.mp3",
+      "audio_duration_s": 5.878,
+      "camera_target": [
+        0.392,
+        0.244,
+        0.149
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "96473e0658ed92dd53eeabb636a146e49c77dc573e216128a46b450462453153"
+    },
+    {
+      "line_id": "CH05_P03_L003",
+      "frame_id": "CH05_P03_F02",
+      "panel_id": "p53_mika_console",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Мика начал настраивать архив. Над пультом замелькали странные изображения, и зазвучал голос.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P03_L003_ru.mp3",
+      "audio_duration_s": 6.687,
+      "camera_target": [
+        0.785,
+        0.173,
+        0.147
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "02457b5fbc384f3f49240f516c334745ca1ccb5b253152a85b1cb5efe2b846da"
+    },
+    {
+      "line_id": "CH05_P03_L004",
+      "frame_id": "CH05_P03_F03",
+      "panel_id": "p53_volcanic_city",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Когда-то мы выглядели немного иначе и жили в другом мире.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P03_L004_ru.mp3",
+      "audio_duration_s": 4.441,
+      "camera_target": [
+        0.265,
+        0.478,
+        0.196
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "f63ded7683823b684fa0541de3fbb6d881d92697a670f445f7373b51df6db31a"
+    },
+    {
+      "line_id": "CH05_P03_L005",
+      "frame_id": "CH05_P03_F04",
+      "panel_id": "p53_evacuating_ships",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "Но нас тоже настиг шторм. Нам пришлось эвакуироваться.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P03_L005_ru.mp3",
+      "audio_duration_s": 4.049,
+      "camera_target": [
+        0.759,
+        0.474,
+        0.174
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "69d45c3ea81a77b62e10ed4c90caeea23933ccbd38efd983e9bbd33be0218d15"
+    },
+    {
+      "line_id": "CH05_P03_L006",
+      "frame_id": "CH05_P03_F05",
+      "panel_id": "p53_gravity_anomaly",
+      "speaker_id": "CHR_037",
+      "kind": "archive_narration",
+      "spoken_text": "К тому времени мы уже изучили гравитационные аномалии и научились проходить сквозь них. Так мы смогли покинуть прежний мир.",
+      "audio_path": "res://mika_motion_comic/ch05_clips/ru/CH05_P03_L006_ru.mp3",
+      "audio_duration_s": 7.889,
+      "camera_target": [
+        0.5,
+        0.798,
+        0.33
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c45d38edda133a703b20e75a7669bfd2e27a04a1be3c893f8ad73b05403d9a2b"
+    }
+  ],
+  "note": "Native ball task after F02, resume F03-F05 and existing P04 sequence."
+}

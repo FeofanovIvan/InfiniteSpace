@@ -1,0 +1,781 @@
+{
+  "source_svg": "CH04_P02_ru_EDITABLE_OVERLAY.svg",
+  "ru_exact_copy": true,
+  "non_ru": {
+    "en": [
+      {
+        "id": "L001",
+        "font": 29,
+        "lines": 1,
+        "max_width": 1573.2,
+        "available_width": 2245.0,
+        "box_h": 85.0,
+        "text_h": 33.6
+      },
+      {
+        "id": "L002",
+        "font": 38,
+        "lines": 1,
+        "max_width": 187.9,
+        "available_width": 214.0,
+        "box_h": 107.0,
+        "text_h": 46.4
+      },
+      {
+        "id": "L003",
+        "font": 29,
+        "lines": 2,
+        "max_width": 291.2,
+        "available_width": 320.0,
+        "box_h": 132.0,
+        "text_h": 70.8
+      },
+      {
+        "id": "L004",
+        "font": 31,
+        "lines": 1,
+        "max_width": 187.6,
+        "available_width": 224.0,
+        "box_h": 99.0,
+        "text_h": 37.8
+      },
+      {
+        "id": "L005",
+        "font": 26,
+        "lines": 1,
+        "max_width": 117.4,
+        "available_width": 191.0,
+        "box_h": 92.0,
+        "text_h": 31.7
+      },
+      {
+        "id": "L006",
+        "font": 36,
+        "lines": 2,
+        "max_width": 226.3,
+        "available_width": 258.0,
+        "box_h": 181.0,
+        "text_h": 87.8
+      },
+      {
+        "id": "L007",
+        "font": 26,
+        "lines": 1,
+        "max_width": 1063.9,
+        "available_width": 1085.0,
+        "box_h": 118.0,
+        "text_h": 31.7
+      },
+      {
+        "id": "L008",
+        "font": 33,
+        "lines": 2,
+        "max_width": 244.0,
+        "available_width": 308.0,
+        "box_h": 141.0,
+        "text_h": 80.5
+      },
+      {
+        "id": "L009",
+        "font": 35,
+        "lines": 2,
+        "max_width": 179.7,
+        "available_width": 295.0,
+        "box_h": 147.0,
+        "text_h": 85.4
+      },
+      {
+        "id": "L010",
+        "font": 31,
+        "lines": 2,
+        "max_width": 278.0,
+        "available_width": 344.0,
+        "box_h": 138.0,
+        "text_h": 75.6
+      },
+      {
+        "id": "L011",
+        "font": 32,
+        "lines": 3,
+        "max_width": 419.0,
+        "available_width": 444.0,
+        "box_h": 178.0,
+        "text_h": 117.1
+      },
+      {
+        "id": "L012_a",
+        "font": 36,
+        "lines": 2,
+        "max_width": 323.8,
+        "available_width": 379.0,
+        "box_h": 155.0,
+        "text_h": 87.8
+      },
+      {
+        "id": "L012_b",
+        "font": 34,
+        "lines": 2,
+        "max_width": 278.2,
+        "available_width": 322.0,
+        "box_h": 213.0,
+        "text_h": 83.0
+      },
+      {
+        "id": "L013",
+        "font": 33,
+        "lines": 1,
+        "max_width": 228.2,
+        "available_width": 243.0,
+        "box_h": 101.0,
+        "text_h": 40.3
+      },
+      {
+        "id": "L015",
+        "font": 33,
+        "lines": 2,
+        "max_width": 1546.5,
+        "available_width": 1560.0,
+        "box_h": 194.0,
+        "text_h": 80.5
+      },
+      {
+        "id": "L014",
+        "font": 34,
+        "lines": 2,
+        "max_width": 553.6,
+        "available_width": 585.0,
+        "box_h": 179.0,
+        "text_h": 83.0
+      },
+      {
+        "id": "L016",
+        "font": 47,
+        "lines": 2,
+        "max_width": 2136.8,
+        "available_width": 2240.0,
+        "box_h": 177.0,
+        "text_h": 114.7
+      }
+    ],
+    "pt_BR": [
+      {
+        "id": "L001",
+        "font": 29,
+        "lines": 1,
+        "max_width": 1827.8,
+        "available_width": 2245.0,
+        "box_h": 85.0,
+        "text_h": 33.6
+      },
+      {
+        "id": "L002",
+        "font": 23,
+        "lines": 1,
+        "max_width": 207.3,
+        "available_width": 214.0,
+        "box_h": 107.0,
+        "text_h": 28.1
+      },
+      {
+        "id": "L003",
+        "font": 29,
+        "lines": 2,
+        "max_width": 287.5,
+        "available_width": 320.0,
+        "box_h": 132.0,
+        "text_h": 70.8
+      },
+      {
+        "id": "L004",
+        "font": 31,
+        "lines": 1,
+        "max_width": 187.6,
+        "available_width": 224.0,
+        "box_h": 99.0,
+        "text_h": 37.8
+      },
+      {
+        "id": "L005",
+        "font": 26,
+        "lines": 1,
+        "max_width": 117.4,
+        "available_width": 191.0,
+        "box_h": 92.0,
+        "text_h": 31.7
+      },
+      {
+        "id": "L006",
+        "font": 31,
+        "lines": 3,
+        "max_width": 253.3,
+        "available_width": 258.0,
+        "box_h": 181.0,
+        "text_h": 113.5
+      },
+      {
+        "id": "L007",
+        "font": 28,
+        "lines": 1,
+        "max_width": 1072.8,
+        "available_width": 1085.0,
+        "box_h": 118.0,
+        "text_h": 34.2
+      },
+      {
+        "id": "L008",
+        "font": 33,
+        "lines": 2,
+        "max_width": 243.8,
+        "available_width": 308.0,
+        "box_h": 141.0,
+        "text_h": 80.5
+      },
+      {
+        "id": "L009",
+        "font": 34,
+        "lines": 2,
+        "max_width": 290.5,
+        "available_width": 295.0,
+        "box_h": 147.0,
+        "text_h": 83.0
+      },
+      {
+        "id": "L010",
+        "font": 31,
+        "lines": 2,
+        "max_width": 267.5,
+        "available_width": 344.0,
+        "box_h": 138.0,
+        "text_h": 75.6
+      },
+      {
+        "id": "L011",
+        "font": 32,
+        "lines": 3,
+        "max_width": 392.8,
+        "available_width": 444.0,
+        "box_h": 178.0,
+        "text_h": 117.1
+      },
+      {
+        "id": "L012_a",
+        "font": 36,
+        "lines": 2,
+        "max_width": 352.1,
+        "available_width": 379.0,
+        "box_h": 155.0,
+        "text_h": 87.8
+      },
+      {
+        "id": "L012_b",
+        "font": 34,
+        "lines": 3,
+        "max_width": 316.1,
+        "available_width": 322.0,
+        "box_h": 213.0,
+        "text_h": 124.4
+      },
+      {
+        "id": "L013",
+        "font": 33,
+        "lines": 1,
+        "max_width": 228.2,
+        "available_width": 243.0,
+        "box_h": 101.0,
+        "text_h": 40.3
+      },
+      {
+        "id": "L015",
+        "font": 33,
+        "lines": 2,
+        "max_width": 1531.6,
+        "available_width": 1560.0,
+        "box_h": 194.0,
+        "text_h": 80.5
+      },
+      {
+        "id": "L014",
+        "font": 34,
+        "lines": 2,
+        "max_width": 568.3,
+        "available_width": 585.0,
+        "box_h": 179.0,
+        "text_h": 83.0
+      },
+      {
+        "id": "L016",
+        "font": 47,
+        "lines": 2,
+        "max_width": 2150.3,
+        "available_width": 2240.0,
+        "box_h": 177.0,
+        "text_h": 114.7
+      }
+    ],
+    "es": [
+      {
+        "id": "L001",
+        "font": 29,
+        "lines": 1,
+        "max_width": 1986.5,
+        "available_width": 2245.0,
+        "box_h": 85.0,
+        "text_h": 33.6
+      },
+      {
+        "id": "L002",
+        "font": 38,
+        "lines": 1,
+        "max_width": 182.0,
+        "available_width": 214.0,
+        "box_h": 107.0,
+        "text_h": 46.4
+      },
+      {
+        "id": "L003",
+        "font": 29,
+        "lines": 2,
+        "max_width": 235.0,
+        "available_width": 320.0,
+        "box_h": 132.0,
+        "text_h": 70.8
+      },
+      {
+        "id": "L004",
+        "font": 31,
+        "lines": 1,
+        "max_width": 187.6,
+        "available_width": 224.0,
+        "box_h": 99.0,
+        "text_h": 37.8
+      },
+      {
+        "id": "L005",
+        "font": 26,
+        "lines": 1,
+        "max_width": 117.4,
+        "available_width": 191.0,
+        "box_h": 92.0,
+        "text_h": 31.7
+      },
+      {
+        "id": "L006",
+        "font": 33,
+        "lines": 3,
+        "max_width": 241.1,
+        "available_width": 258.0,
+        "box_h": 181.0,
+        "text_h": 120.8
+      },
+      {
+        "id": "L007",
+        "font": 30,
+        "lines": 1,
+        "max_width": 1075.7,
+        "available_width": 1085.0,
+        "box_h": 118.0,
+        "text_h": 36.6
+      },
+      {
+        "id": "L008",
+        "font": 33,
+        "lines": 2,
+        "max_width": 210.6,
+        "available_width": 308.0,
+        "box_h": 141.0,
+        "text_h": 80.5
+      },
+      {
+        "id": "L009",
+        "font": 35,
+        "lines": 2,
+        "max_width": 234.9,
+        "available_width": 295.0,
+        "box_h": 147.0,
+        "text_h": 85.4
+      },
+      {
+        "id": "L010",
+        "font": 31,
+        "lines": 2,
+        "max_width": 221.5,
+        "available_width": 344.0,
+        "box_h": 138.0,
+        "text_h": 75.6
+      },
+      {
+        "id": "L011",
+        "font": 32,
+        "lines": 3,
+        "max_width": 415.2,
+        "available_width": 444.0,
+        "box_h": 178.0,
+        "text_h": 117.1
+      },
+      {
+        "id": "L012_a",
+        "font": 36,
+        "lines": 2,
+        "max_width": 367.5,
+        "available_width": 379.0,
+        "box_h": 155.0,
+        "text_h": 87.8
+      },
+      {
+        "id": "L012_b",
+        "font": 34,
+        "lines": 3,
+        "max_width": 273.1,
+        "available_width": 322.0,
+        "box_h": 213.0,
+        "text_h": 124.4
+      },
+      {
+        "id": "L013",
+        "font": 33,
+        "lines": 1,
+        "max_width": 228.2,
+        "available_width": 243.0,
+        "box_h": 101.0,
+        "text_h": 40.3
+      },
+      {
+        "id": "L015",
+        "font": 33,
+        "lines": 2,
+        "max_width": 1498.4,
+        "available_width": 1560.0,
+        "box_h": 194.0,
+        "text_h": 80.5
+      },
+      {
+        "id": "L014",
+        "font": 34,
+        "lines": 2,
+        "max_width": 571.1,
+        "available_width": 585.0,
+        "box_h": 179.0,
+        "text_h": 83.0
+      },
+      {
+        "id": "L016",
+        "font": 47,
+        "lines": 2,
+        "max_width": 2062.4,
+        "available_width": 2240.0,
+        "box_h": 177.0,
+        "text_h": 114.7
+      }
+    ],
+    "fr": [
+      {
+        "id": "L001",
+        "font": 29,
+        "lines": 1,
+        "max_width": 1971.5,
+        "available_width": 2245.0,
+        "box_h": 85.0,
+        "text_h": 33.6
+      },
+      {
+        "id": "L002",
+        "font": 28,
+        "lines": 1,
+        "max_width": 211.7,
+        "available_width": 214.0,
+        "box_h": 107.0,
+        "text_h": 34.2
+      },
+      {
+        "id": "L003",
+        "font": 29,
+        "lines": 2,
+        "max_width": 227.8,
+        "available_width": 320.0,
+        "box_h": 132.0,
+        "text_h": 70.8
+      },
+      {
+        "id": "L004",
+        "font": 31,
+        "lines": 1,
+        "max_width": 187.6,
+        "available_width": 224.0,
+        "box_h": 99.0,
+        "text_h": 37.8
+      },
+      {
+        "id": "L005",
+        "font": 26,
+        "lines": 1,
+        "max_width": 117.4,
+        "available_width": 191.0,
+        "box_h": 92.0,
+        "text_h": 31.7
+      },
+      {
+        "id": "L006",
+        "font": 33,
+        "lines": 3,
+        "max_width": 236.8,
+        "available_width": 258.0,
+        "box_h": 181.0,
+        "text_h": 120.8
+      },
+      {
+        "id": "L007",
+        "font": 26,
+        "lines": 1,
+        "max_width": 1056.5,
+        "available_width": 1085.0,
+        "box_h": 118.0,
+        "text_h": 31.7
+      },
+      {
+        "id": "L008",
+        "font": 33,
+        "lines": 2,
+        "max_width": 299.4,
+        "available_width": 308.0,
+        "box_h": 141.0,
+        "text_h": 80.5
+      },
+      {
+        "id": "L009",
+        "font": 35,
+        "lines": 2,
+        "max_width": 246.9,
+        "available_width": 295.0,
+        "box_h": 147.0,
+        "text_h": 85.4
+      },
+      {
+        "id": "L010",
+        "font": 31,
+        "lines": 2,
+        "max_width": 318.4,
+        "available_width": 344.0,
+        "box_h": 138.0,
+        "text_h": 75.6
+      },
+      {
+        "id": "L011",
+        "font": 34,
+        "lines": 2,
+        "max_width": 438.0,
+        "available_width": 444.0,
+        "box_h": 178.0,
+        "text_h": 83.0
+      },
+      {
+        "id": "L012_a",
+        "font": 36,
+        "lines": 2,
+        "max_width": 338.4,
+        "available_width": 379.0,
+        "box_h": 155.0,
+        "text_h": 87.8
+      },
+      {
+        "id": "L012_b",
+        "font": 34,
+        "lines": 3,
+        "max_width": 301.3,
+        "available_width": 322.0,
+        "box_h": 213.0,
+        "text_h": 124.4
+      },
+      {
+        "id": "L013",
+        "font": 33,
+        "lines": 1,
+        "max_width": 228.2,
+        "available_width": 243.0,
+        "box_h": 101.0,
+        "text_h": 40.3
+      },
+      {
+        "id": "L015",
+        "font": 33,
+        "lines": 2,
+        "max_width": 1511.3,
+        "available_width": 1560.0,
+        "box_h": 194.0,
+        "text_h": 80.5
+      },
+      {
+        "id": "L014",
+        "font": 34,
+        "lines": 2,
+        "max_width": 582.0,
+        "available_width": 585.0,
+        "box_h": 179.0,
+        "text_h": 83.0
+      },
+      {
+        "id": "L016",
+        "font": 47,
+        "lines": 2,
+        "max_width": 2224.0,
+        "available_width": 2240.0,
+        "box_h": 177.0,
+        "text_h": 114.7
+      }
+    ],
+    "de": [
+      {
+        "id": "L001",
+        "font": 29,
+        "lines": 1,
+        "max_width": 1648.5,
+        "available_width": 2245.0,
+        "box_h": 85.0,
+        "text_h": 33.6
+      },
+      {
+        "id": "L002",
+        "font": 38,
+        "lines": 1,
+        "max_width": 193.0,
+        "available_width": 214.0,
+        "box_h": 107.0,
+        "text_h": 46.4
+      },
+      {
+        "id": "L003",
+        "font": 29,
+        "lines": 2,
+        "max_width": 263.0,
+        "available_width": 320.0,
+        "box_h": 132.0,
+        "text_h": 70.8
+      },
+      {
+        "id": "L004",
+        "font": 31,
+        "lines": 1,
+        "max_width": 187.6,
+        "available_width": 224.0,
+        "box_h": 99.0,
+        "text_h": 37.8
+      },
+      {
+        "id": "L005",
+        "font": 26,
+        "lines": 1,
+        "max_width": 117.4,
+        "available_width": 191.0,
+        "box_h": 92.0,
+        "text_h": 31.7
+      },
+      {
+        "id": "L006",
+        "font": 33,
+        "lines": 3,
+        "max_width": 222.4,
+        "available_width": 258.0,
+        "box_h": 181.0,
+        "text_h": 120.8
+      },
+      {
+        "id": "L007",
+        "font": 27,
+        "lines": 1,
+        "max_width": 1061.6,
+        "available_width": 1085.0,
+        "box_h": 118.0,
+        "text_h": 32.9
+      },
+      {
+        "id": "L008",
+        "font": 33,
+        "lines": 2,
+        "max_width": 270.2,
+        "available_width": 308.0,
+        "box_h": 141.0,
+        "text_h": 80.5
+      },
+      {
+        "id": "L009",
+        "font": 35,
+        "lines": 2,
+        "max_width": 281.5,
+        "available_width": 295.0,
+        "box_h": 147.0,
+        "text_h": 85.4
+      },
+      {
+        "id": "L010",
+        "font": 31,
+        "lines": 2,
+        "max_width": 297.0,
+        "available_width": 344.0,
+        "box_h": 138.0,
+        "text_h": 75.6
+      },
+      {
+        "id": "L011",
+        "font": 32,
+        "lines": 3,
+        "max_width": 432.8,
+        "available_width": 444.0,
+        "box_h": 178.0,
+        "text_h": 117.1
+      },
+      {
+        "id": "L012_a",
+        "font": 36,
+        "lines": 2,
+        "max_width": 362.0,
+        "available_width": 379.0,
+        "box_h": 155.0,
+        "text_h": 87.8
+      },
+      {
+        "id": "L012_b",
+        "font": 34,
+        "lines": 3,
+        "max_width": 292.5,
+        "available_width": 322.0,
+        "box_h": 213.0,
+        "text_h": 124.4
+      },
+      {
+        "id": "L013",
+        "font": 33,
+        "lines": 1,
+        "max_width": 228.2,
+        "available_width": 243.0,
+        "box_h": 101.0,
+        "text_h": 40.3
+      },
+      {
+        "id": "L015",
+        "font": 33,
+        "lines": 2,
+        "max_width": 1550.5,
+        "available_width": 1560.0,
+        "box_h": 194.0,
+        "text_h": 80.5
+      },
+      {
+        "id": "L014",
+        "font": 34,
+        "lines": 2,
+        "max_width": 557.5,
+        "available_width": 585.0,
+        "box_h": 179.0,
+        "text_h": 83.0
+      },
+      {
+        "id": "L016",
+        "font": 47,
+        "lines": 2,
+        "max_width": 2227.3,
+        "available_width": 2240.0,
+        "box_h": 177.0,
+        "text_h": 114.7
+      }
+    ]
+  }
+}

@@ -1,0 +1,1450 @@
+{
+  "schema_version": "3.4",
+  "project": "MIKA Infinite Space",
+  "page_id": "CH02_P01",
+  "revision": 8,
+  "approval_status": "russian_scene_approved_with_last_panel_corrections_six_localizations_prepared",
+  "source_pdf": "2-1(1).pdf",
+  "frame_count": 5,
+  "style": "NEBULA",
+  "master_size_px": [
+    2480,
+    3508
+  ],
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "godot_locale_aliases": {
+    "ru_RU": "ru",
+    "en_US": "en",
+    "en_GB": "en",
+    "pt-BR": "pt_BR",
+    "pt_BR": "pt_BR",
+    "pt_PT": "pt_BR",
+    "es_ES": "es",
+    "es_MX": "es",
+    "fr_FR": "fr",
+    "de_DE": "de"
+  },
+  "background": "background.jpg",
+  "overlays_png": {
+    "ru": "overlays/CH02_P01_ru.png",
+    "en": "overlays/CH02_P01_en.png",
+    "pt_BR": "overlays/CH02_P01_pt_BR.png",
+    "es": "overlays/CH02_P01_es.png",
+    "fr": "overlays/CH02_P01_fr.png",
+    "de": "overlays/CH02_P01_de.png"
+  },
+  "overlays_svg": {
+    "ru": "overlays/CH02_P01_ru.svg",
+    "en": "overlays/CH02_P01_en.svg",
+    "pt_BR": "overlays/CH02_P01_pt_BR.svg",
+    "es": "overlays/CH02_P01_es.svg",
+    "fr": "overlays/CH02_P01_fr.svg",
+    "de": "overlays/CH02_P01_de.svg"
+  },
+  "previews": {
+    "ru": "previews/CH02_P01_ru_preview.jpg",
+    "en": "previews/CH02_P01_en_preview.jpg",
+    "pt_BR": "previews/CH02_P01_pt_BR_preview.jpg",
+    "es": "previews/CH02_P01_es_preview.jpg",
+    "fr": "previews/CH02_P01_fr_preview.jpg",
+    "de": "previews/CH02_P01_de_preview.jpg"
+  },
+  "speaker_ids": [
+    "CHR_014",
+    "CHR_001",
+    "CHR_015",
+    "CHR_004",
+    "CHR_022"
+  ],
+  "new_cast": [
+    {
+      "id": "CHR_022",
+      "name_ru": "Неизвестная разумная грибная колония",
+      "status": "NEW_CANDIDATE",
+      "note_ru": "Представитель местной симбиотической цивилизации; пока виден как часть живой архитектуры. Говорит с шипящими помехами до настройки переводчика."
+    }
+  ],
+  "reading_order_line_ids": [
+    "CH02_P01_L001",
+    "CH02_P01_L002",
+    "CH02_P01_L003",
+    "CH02_P01_L004",
+    "CH02_P01_L005",
+    "CH02_P01_L006",
+    "CH02_P01_L007",
+    "CH02_P01_L009",
+    "CH02_P01_L010",
+    "CH02_P01_L011",
+    "CH02_P01_L008"
+  ],
+  "sound_effects": [
+    {
+      "id": "SFX_CH02_P01_F04_HISS",
+      "frame_id": "CH02_P01_F04",
+      "line_id": null,
+      "type": "ambient_rustle",
+      "language_independent_audio": true,
+      "texts": {
+        "ru": "Ш-Ш-Ш…",
+        "en": "SH-SH-SH…",
+        "pt_BR": "SH-SH-SH…",
+        "es": "SH-SH-SH…",
+        "fr": "CH-CH-CH…",
+        "de": "SCH-SCH…"
+      }
+    },
+    {
+      "id": "SFX_CH02_P01_F05_HISS_1",
+      "frame_id": "CH02_P01_F05",
+      "line_id": "CH02_P01_L006",
+      "type": "first_contact",
+      "language_independent_audio": true,
+      "texts": {
+        "ru": "Ш-ш-ш…",
+        "en": "Sh-sh-sh…",
+        "pt_BR": "Shhh…",
+        "es": "Shhh…",
+        "fr": "Chhh…",
+        "de": "Sch-sch-sch…"
+      },
+      "status": "NOT_GENERATED",
+      "audio_mode": "nonverbal_sfx_not_elevenlabs"
+    },
+    {
+      "id": "SFX_CH02_P01_F05_HISS_2",
+      "frame_id": "CH02_P01_F05",
+      "line_id": "CH02_P01_L009",
+      "type": "second_attempt",
+      "language_independent_audio": true,
+      "texts": {
+        "ru": "Хр-р-ш-ш…",
+        "en": "Khrr-sh-sh…",
+        "pt_BR": "Khrr-shhh…",
+        "es": "Jrrr-shhh…",
+        "fr": "Krrr-chhh…",
+        "de": "Krrr-schsch…"
+      },
+      "status": "NOT_GENERATED",
+      "audio_mode": "nonverbal_sfx_not_elevenlabs"
+    },
+    {
+      "id": "SFX_CH02_P01_F05_HISS_3",
+      "frame_id": "CH02_P01_F05",
+      "line_id": "CH02_P01_L011",
+      "type": "signal_clearing",
+      "language_independent_audio": true,
+      "texts": {
+        "ru": "Ш-ш…",
+        "en": "Shh…",
+        "pt_BR": "Shh…",
+        "es": "Shh…",
+        "fr": "Chh…",
+        "de": "Schh…"
+      },
+      "status": "NOT_GENERATED",
+      "audio_mode": "nonverbal_sfx_not_elevenlabs"
+    }
+  ],
+  "localization_notes": {
+    "ru": "Профессор использует узнаваемое в России слово «мухомор». Другие языки используют естественные шутки про большой или подозрительный гриб.",
+    "en": "Toadstool is a whimsical fairy-tale mushroom word; the professor fears the whole mushroom city.",
+    "pt_BR": "Cogumelão suspeito is a playful Brazilian Portuguese exaggeration with a little mock distrust.",
+    "es": "Hongo gigante is neutral international Spanish; ni loco puts the joke in the professor’s indignant reaction.",
+    "fr": "Gros champignon gives French children a playful, visually specific image; the refusal carries the punchline.",
+    "de": "Riesenpilz is an easy, natural image for children; setze ich keinen Fuß is a German idiomatic refusal."
+  },
+  "lore": {
+    "galaxy": "Большое Магелланово Облако",
+    "central_world": "Талосе",
+    "dominant_lifeform": "разумные грибные колонии",
+    "population_unit": "independent_conscious_colony",
+    "suggested_colony_count": 28400,
+    "canonical_status": "PENDING_LORE_CONFIRMATION",
+    "rule_ru": "Одна разумная грибная колония — одно сознание независимо от числа тел."
+  },
+  "playback_profiles": {
+    "full_narrated": {
+      "line_ids": [
+        "CH02_P01_L001",
+        "CH02_P01_L002",
+        "CH02_P01_L003",
+        "CH02_P01_L004",
+        "CH02_P01_L005",
+        "CH02_P01_L007",
+        "CH02_P01_L010",
+        "CH02_P01_L008"
+      ],
+      "sfx_ids": [
+        "SFX_CH02_P01_F04_HISS",
+        "SFX_CH02_P01_F05_HISS_1",
+        "SFX_CH02_P01_F05_HISS_2",
+        "SFX_CH02_P01_F05_HISS_3"
+      ],
+      "note_ru": "ИИ-справка Баббла, рассказчик, Мика, профессор, первое понятное слово плесени. Шипение — отдельные SFX."
+    },
+    "characters_only": {
+      "line_ids": [
+        "CH02_P01_L001",
+        "CH02_P01_L002",
+        "CH02_P01_L003",
+        "CH02_P01_L007",
+        "CH02_P01_L010",
+        "CH02_P01_L008"
+      ],
+      "sfx_ids": [
+        "SFX_CH02_P01_F04_HISS",
+        "SFX_CH02_P01_F05_HISS_1",
+        "SFX_CH02_P01_F05_HISS_2",
+        "SFX_CH02_P01_F05_HISS_3"
+      ],
+      "note_ru": "Без закадрового рассказчика; экранный текст автора остаётся."
+    },
+    "sfx_only": {
+      "line_ids": [],
+      "sfx_ids": [
+        "SFX_CH02_P01_F04_HISS",
+        "SFX_CH02_P01_F05_HISS_1",
+        "SFX_CH02_P01_F05_HISS_2",
+        "SFX_CH02_P01_F05_HISS_3"
+      ]
+    }
+  },
+  "lines": [
+    {
+      "line_id": "CH02_P01_L001",
+      "page_id": "CH02_P01",
+      "frame_id": "CH02_P01_F01",
+      "speaker_id": "CHR_014",
+      "kind": "bubble_connected_ai_information",
+      "reading_order": 1,
+      "svg_text_id": null,
+      "svg_text_ids": [
+        "TXT_CH02_P01_L001_HEAD",
+        "TXT_CH02_P01_L001_GALAXY_LABEL",
+        "TXT_CH02_P01_L001_GALAXY_1",
+        "TXT_CH02_P01_L001_GALAXY_2",
+        "TXT_CH02_P01_L001_LIFE_LABEL",
+        "TXT_CH02_P01_L001_LIFE",
+        "TXT_CH02_P01_L001_WORLD_LABEL",
+        "TXT_CH02_P01_L001_WORLD",
+        "TXT_CH02_P01_L001_POP_LABEL",
+        "TXT_CH02_P01_L001_POP",
+        "TXT_CH02_P01_L001_NOTE_1",
+        "TXT_CH02_P01_L001_NOTE_2"
+      ],
+      "audio_generation_mode": "connected_ai_tts_tentative",
+      "performance": {
+        "emotion": "calm_neutral_ai_discovery",
+        "intensity": 0.43,
+        "direction_ru": "Ровный, дружелюбный цифровой справочник: чёткое перечисление фактов с тёплой ноткой любопытства. Не имитировать писк Баббла.",
+        "voice_optional": false,
+        "tts_tags_en": "[informative]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Большое Магелланово Облако. Доминирующая форма жизни — разумные грибные колонии. Центральный мир — Талосе. Население: около 28 400 разумных колоний. Одна колония — одно самостоятельное сознание, независимо от количества тел.",
+          "voice_spoken_text": "Большое Магелланово Облако. Основная разумная форма жизни — грибные колонии. Центральный мир — Талосе. Население планеты: около двадцати восьми тысяч четырёхсот разумных колоний. Каждая колония считается одним сознанием, даже если состоит из множества тел.",
+          "render_lines": [
+            "БАББЛ · ИИ-СПРАВКА",
+            "ГАЛАКТИКА",
+            "БОЛЬШОЕ МАГЕЛЛАНОВО",
+            "ОБЛАКО",
+            "ДОМИНИРУЮЩАЯ ФОРМА ЖИЗНИ",
+            "РАЗУМНЫЕ ГРИБНЫЕ КОЛОНИИ",
+            "ЦЕНТРАЛЬНЫЙ МИР",
+            "ТАЛОСЕ",
+            "НАСЕЛЕНИЕ",
+            "≈ 28 400 КОЛОНИЙ",
+            "1 колония = 1 сознание;",
+            "число тел в подсчёт не входит."
+          ],
+          "svg_text_id": null,
+          "svg_text_ids": [
+            "TXT_CH02_P01_L001_HEAD",
+            "TXT_CH02_P01_L001_GALAXY_LABEL",
+            "TXT_CH02_P01_L001_GALAXY_1",
+            "TXT_CH02_P01_L001_GALAXY_2",
+            "TXT_CH02_P01_L001_LIFE_LABEL",
+            "TXT_CH02_P01_L001_LIFE",
+            "TXT_CH02_P01_L001_WORLD_LABEL",
+            "TXT_CH02_P01_L001_WORLD",
+            "TXT_CH02_P01_L001_POP_LABEL",
+            "TXT_CH02_P01_L001_POP",
+            "TXT_CH02_P01_L001_NOTE_1",
+            "TXT_CH02_P01_L001_NOTE_2"
+          ],
+          "font_size_viewbox": null,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "en": {
+          "display_text": "BUBBLE · AI BRIEF GALAXY LARGE MAGELLANIC CLOUD DOMINANT INTELLIGENT LIFE SENTIENT FUNGAL COLONIES MAIN WORLD TALOSE POPULATION ≈ 28,400 COLONIES 1 colony = 1 mind; body count doesn’t matter.",
+          "voice_spoken_text": "The Large Magellanic Cloud. Dominant intelligent life: sentient fungal colonies. Main world: Talose. Population: approximately twenty-eight thousand four hundred colonies. Every colony counts as one independent mind, no matter how many bodies it contains.",
+          "render_lines": [
+            "BUBBLE · AI BRIEF",
+            "GALAXY",
+            "LARGE MAGELLANIC",
+            "CLOUD",
+            "DOMINANT INTELLIGENT LIFE",
+            "SENTIENT FUNGAL COLONIES",
+            "MAIN WORLD",
+            "TALOSE",
+            "POPULATION",
+            "≈ 28,400 COLONIES",
+            "1 colony = 1 mind;",
+            "body count doesn’t matter."
+          ],
+          "svg_text_id": null,
+          "svg_text_ids": [
+            "TXT_CH02_P01_L001_HEAD",
+            "TXT_CH02_P01_L001_GALAXY_LABEL",
+            "TXT_CH02_P01_L001_GALAXY_1",
+            "TXT_CH02_P01_L001_GALAXY_2",
+            "TXT_CH02_P01_L001_LIFE_LABEL",
+            "TXT_CH02_P01_L001_LIFE",
+            "TXT_CH02_P01_L001_WORLD_LABEL",
+            "TXT_CH02_P01_L001_WORLD",
+            "TXT_CH02_P01_L001_POP_LABEL",
+            "TXT_CH02_P01_L001_POP",
+            "TXT_CH02_P01_L001_NOTE_1",
+            "TXT_CH02_P01_L001_NOTE_2"
+          ],
+          "font_size_viewbox": null,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "pt_BR": {
+          "display_text": "BUBBLE · DADOS DE IA GALÁXIA GRANDE NUVEM DE MAGALHÃES VIDA INTELIGENTE DOMINANTE COLÔNIAS DE FUNGOS MUNDO CENTRAL TALOSE POPULAÇÃO ≈ 28.400 COLÔNIAS 1 colônia = 1 consciência; número de corpos não conta.",
+          "voice_spoken_text": "Grande Nuvem de Magalhães. Forma de vida inteligente predominante: colônias de fungos conscientes. Mundo principal: Talose. População: cerca de vinte e oito mil e quatrocentas colônias. Cada colônia conta como uma consciência, independentemente do número de corpos.",
+          "render_lines": [
+            "BUBBLE · DADOS DE IA",
+            "GALÁXIA",
+            "GRANDE NUVEM",
+            "DE MAGALHÃES",
+            "VIDA INTELIGENTE DOMINANTE",
+            "COLÔNIAS DE FUNGOS",
+            "MUNDO CENTRAL",
+            "TALOSE",
+            "POPULAÇÃO",
+            "≈ 28.400 COLÔNIAS",
+            "1 colônia = 1 consciência;",
+            "número de corpos não conta."
+          ],
+          "svg_text_id": null,
+          "svg_text_ids": [
+            "TXT_CH02_P01_L001_HEAD",
+            "TXT_CH02_P01_L001_GALAXY_LABEL",
+            "TXT_CH02_P01_L001_GALAXY_1",
+            "TXT_CH02_P01_L001_GALAXY_2",
+            "TXT_CH02_P01_L001_LIFE_LABEL",
+            "TXT_CH02_P01_L001_LIFE",
+            "TXT_CH02_P01_L001_WORLD_LABEL",
+            "TXT_CH02_P01_L001_WORLD",
+            "TXT_CH02_P01_L001_POP_LABEL",
+            "TXT_CH02_P01_L001_POP",
+            "TXT_CH02_P01_L001_NOTE_1",
+            "TXT_CH02_P01_L001_NOTE_2"
+          ],
+          "font_size_viewbox": null,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "es": {
+          "display_text": "BUBBLE · INFORME DE IA GALAXIA GRAN NUBE DE MAGALLANES VIDA INTELIGENTE DOMINANTE COLONIAS DE HONGOS MUNDO CENTRAL TALOSE POBLACIÓN ≈ 28.400 COLONIAS 1 colonia = 1 conciencia; no se cuentan los cuerpos.",
+          "voice_spoken_text": "Gran Nube de Magallanes. Forma de vida inteligente predominante: colonias de hongos conscientes. Mundo principal: Talose. Población: aproximadamente veintiocho mil cuatrocientas colonias. Cada colonia se cuenta como una conciencia, aunque tenga muchos cuerpos.",
+          "render_lines": [
+            "BUBBLE · INFORME DE IA",
+            "GALAXIA",
+            "GRAN NUBE",
+            "DE MAGALLANES",
+            "VIDA INTELIGENTE DOMINANTE",
+            "COLONIAS DE HONGOS",
+            "MUNDO CENTRAL",
+            "TALOSE",
+            "POBLACIÓN",
+            "≈ 28.400 COLONIAS",
+            "1 colonia = 1 conciencia;",
+            "no se cuentan los cuerpos."
+          ],
+          "svg_text_id": null,
+          "svg_text_ids": [
+            "TXT_CH02_P01_L001_HEAD",
+            "TXT_CH02_P01_L001_GALAXY_LABEL",
+            "TXT_CH02_P01_L001_GALAXY_1",
+            "TXT_CH02_P01_L001_GALAXY_2",
+            "TXT_CH02_P01_L001_LIFE_LABEL",
+            "TXT_CH02_P01_L001_LIFE",
+            "TXT_CH02_P01_L001_WORLD_LABEL",
+            "TXT_CH02_P01_L001_WORLD",
+            "TXT_CH02_P01_L001_POP_LABEL",
+            "TXT_CH02_P01_L001_POP",
+            "TXT_CH02_P01_L001_NOTE_1",
+            "TXT_CH02_P01_L001_NOTE_2"
+          ],
+          "font_size_viewbox": null,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "fr": {
+          "display_text": "BUBBLE · RAPPORT IA GALAXIE GRAND NUAGE DE MAGELLAN VIE INTELLIGENTE DOMINANTE COLONIES DE CHAMPIGNONS MONDE PRINCIPAL TALOSE POPULATION ≈ 28 400 COLONIES 1 colonie = 1 conscience ; on ne compte pas les corps.",
+          "voice_spoken_text": "Grand Nuage de Magellan. Forme de vie intelligente dominante : des colonies de champignons conscients. Monde principal : Talose. Population : environ vingt-huit mille quatre cents colonies. Chaque colonie compte pour une conscience, quel que soit le nombre de corps.",
+          "render_lines": [
+            "BUBBLE · RAPPORT IA",
+            "GALAXIE",
+            "GRAND NUAGE",
+            "DE MAGELLAN",
+            "VIE INTELLIGENTE DOMINANTE",
+            "COLONIES DE CHAMPIGNONS",
+            "MONDE PRINCIPAL",
+            "TALOSE",
+            "POPULATION",
+            "≈ 28 400 COLONIES",
+            "1 colonie = 1 conscience ;",
+            "on ne compte pas les corps."
+          ],
+          "svg_text_id": null,
+          "svg_text_ids": [
+            "TXT_CH02_P01_L001_HEAD",
+            "TXT_CH02_P01_L001_GALAXY_LABEL",
+            "TXT_CH02_P01_L001_GALAXY_1",
+            "TXT_CH02_P01_L001_GALAXY_2",
+            "TXT_CH02_P01_L001_LIFE_LABEL",
+            "TXT_CH02_P01_L001_LIFE",
+            "TXT_CH02_P01_L001_WORLD_LABEL",
+            "TXT_CH02_P01_L001_WORLD",
+            "TXT_CH02_P01_L001_POP_LABEL",
+            "TXT_CH02_P01_L001_POP",
+            "TXT_CH02_P01_L001_NOTE_1",
+            "TXT_CH02_P01_L001_NOTE_2"
+          ],
+          "font_size_viewbox": null,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "de": {
+          "display_text": "BUBBLE · KI-DATEN GALAXIE GROSSE MAGELLANSCHE WOLKE VORHERRSCHENDE LEBENSFORM DENKENDE PILZKOLONIEN ZENTRALER PLANET TALOSE BEVÖLKERUNG ≈ 28.400 KOLONIEN 1 Kolonie = 1 Bewusstsein; Körperanzahl zählt nicht.",
+          "voice_spoken_text": "Die Große Magellansche Wolke. Vorherrschende intelligente Lebensform: denkende Pilzkolonien. Zentraler Planet: Talose. Bevölkerung: rund achtundzwanzigtausendvierhundert Kolonien. Jede Kolonie zählt als ein eigenständiges Bewusstsein, unabhängig von der Zahl ihrer Körper.",
+          "render_lines": [
+            "BUBBLE · KI-DATEN",
+            "GALAXIE",
+            "GROSSE MAGELLANSCHE",
+            "WOLKE",
+            "VORHERRSCHENDE LEBENSFORM",
+            "DENKENDE PILZKOLONIEN",
+            "ZENTRALER PLANET",
+            "TALOSE",
+            "BEVÖLKERUNG",
+            "≈ 28.400 KOLONIEN",
+            "1 Kolonie = 1 Bewusstsein;",
+            "Körperanzahl zählt nicht."
+          ],
+          "svg_text_id": null,
+          "svg_text_ids": [
+            "TXT_CH02_P01_L001_HEAD",
+            "TXT_CH02_P01_L001_GALAXY_LABEL",
+            "TXT_CH02_P01_L001_GALAXY_1",
+            "TXT_CH02_P01_L001_GALAXY_2",
+            "TXT_CH02_P01_L001_LIFE_LABEL",
+            "TXT_CH02_P01_L001_LIFE",
+            "TXT_CH02_P01_L001_WORLD_LABEL",
+            "TXT_CH02_P01_L001_WORLD",
+            "TXT_CH02_P01_L001_POP_LABEL",
+            "TXT_CH02_P01_L001_POP",
+            "TXT_CH02_P01_L001_NOTE_1",
+            "TXT_CH02_P01_L001_NOTE_2"
+          ],
+          "font_size_viewbox": null,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        }
+      }
+    },
+    {
+      "line_id": "CH02_P01_L002",
+      "page_id": "CH02_P01",
+      "frame_id": "CH02_P01_F01",
+      "speaker_id": "CHR_001",
+      "kind": "speech_curious_decision",
+      "reading_order": 2,
+      "svg_text_id": "TXT_CH02_P01_L002",
+      "svg_text_ids": null,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "curious_adventurous",
+        "intensity": 0.68,
+        "direction_ru": "С искренним интересом и лёгкой улыбкой: Мика принимает решение исследовать мир.",
+        "voice_optional": false,
+        "tts_tags_en": "[curiously]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Думаю, нам стоит туда заглянуть!",
+          "voice_spoken_text": "Думаю, нам стоит туда заглянуть!",
+          "render_lines": [
+            "Думаю, нам стоит",
+            "туда заглянуть!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L002",
+          "svg_text_ids": null,
+          "font_size_viewbox": 23.2,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "en": {
+          "display_text": "I think we should check it out!",
+          "voice_spoken_text": "I think we should check it out!",
+          "render_lines": [
+            "I think we should",
+            "check it out!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L002",
+          "svg_text_ids": null,
+          "font_size_viewbox": 22.2,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "pt_BR": {
+          "display_text": "Acho que vale a pena dar uma olhada!",
+          "voice_spoken_text": "Acho que vale a pena dar uma olhada!",
+          "render_lines": [
+            "Acho que vale a pena",
+            "dar uma olhada!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L002",
+          "svg_text_ids": null,
+          "font_size_viewbox": 21.3,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "es": {
+          "display_text": "¡Creo que deberíamos echar un vistazo!",
+          "voice_spoken_text": "¡Creo que deberíamos echar un vistazo!",
+          "render_lines": [
+            "¡Creo que deberíamos",
+            "echar un vistazo!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L002",
+          "svg_text_ids": null,
+          "font_size_viewbox": 20.5,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "fr": {
+          "display_text": "Je crois qu’on devrait aller voir ça !",
+          "voice_spoken_text": "Je crois qu’on devrait aller voir ça !",
+          "render_lines": [
+            "Je crois qu’on devrait",
+            "aller voir ça !"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L002",
+          "svg_text_ids": null,
+          "font_size_viewbox": 21,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "de": {
+          "display_text": "Ich finde, wir sollten uns das mal ansehen!",
+          "voice_spoken_text": "Ich finde, wir sollten uns das mal ansehen!",
+          "render_lines": [
+            "Ich finde, wir sollten",
+            "uns das mal ansehen!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L002",
+          "svg_text_ids": null,
+          "font_size_viewbox": 19.9,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        }
+      }
+    },
+    {
+      "line_id": "CH02_P01_L003",
+      "page_id": "CH02_P01",
+      "frame_id": "CH02_P01_F02",
+      "speaker_id": "CHR_015",
+      "kind": "speech_comic_reluctance",
+      "reading_order": 3,
+      "svg_text_id": "TXT_CH02_P01_L003",
+      "svg_text_ids": null,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "pompous_disdain_with_fear",
+        "intensity": 0.81,
+        "direction_ru": "С профессорским апломбом, но с плохо скрываемой брезгливой опаской. «Гигантский мухомор» — местная шутка, адаптировать по языку.",
+        "voice_optional": false,
+        "tts_tags_en": "[disgusted, jokingly]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "А я, пожалуй, останусь на корабле! Не полезу на этот гигантский мухомор!",
+          "voice_spoken_text": "А я, пожалуй, останусь на корабле! Не полезу на этот гигантский мухомор!",
+          "render_lines": [
+            "А я, пожалуй,",
+            "останусь на корабле!",
+            "Не полезу на этот",
+            "гигантский мухомор!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L003",
+          "svg_text_ids": null,
+          "font_size_viewbox": 17.8,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "en": {
+          "display_text": "Me? I’ll stay right here on the ship! No way I’m setting foot on that giant toadstool!",
+          "voice_spoken_text": "Me? I’ll stay right here on the ship! No way I’m setting foot on that giant toadstool!",
+          "render_lines": [
+            "Me? I’ll stay",
+            "right here on the ship!",
+            "No way I’m setting foot",
+            "on that giant toadstool!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L003",
+          "svg_text_ids": null,
+          "font_size_viewbox": 17,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "pt_BR": {
+          "display_text": "Eu? Vou ficar aqui na nave, obrigado! Não ponho os pés nesse cogumelão suspeito!",
+          "voice_spoken_text": "Eu? Vou ficar aqui na nave, obrigado! Não ponho os pés nesse cogumelão suspeito!",
+          "render_lines": [
+            "Eu? Vou ficar",
+            "aqui na nave, obrigado!",
+            "Não ponho os pés",
+            "nesse cogumelão suspeito!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L003",
+          "svg_text_ids": null,
+          "font_size_viewbox": 16.4,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "es": {
+          "display_text": "¿Yo? Me quedo en la nave, ¡gracias! ¡Ni loco pongo un pie en ese hongo gigante!",
+          "voice_spoken_text": "¿Yo? Me quedo en la nave, ¡gracias! ¡Ni loco pongo un pie en ese hongo gigante!",
+          "render_lines": [
+            "¿Yo? Me quedo",
+            "en la nave, ¡gracias!",
+            "¡Ni loco pongo un pie",
+            "en ese hongo gigante!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L003",
+          "svg_text_ids": null,
+          "font_size_viewbox": 16.4,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "fr": {
+          "display_text": "Moi ? Je reste à bord du vaisseau ! Hors de question de grimper sur ce gros champignon !",
+          "voice_spoken_text": "Moi ? Je reste à bord du vaisseau ! Hors de question de grimper sur ce gros champignon !",
+          "render_lines": [
+            "Moi ? Je reste",
+            "à bord du vaisseau !",
+            "Hors de question de",
+            "grimper sur ce gros champignon !"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L003",
+          "svg_text_ids": null,
+          "font_size_viewbox": 15,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "de": {
+          "display_text": "Ich? Ich bleibe lieber im Raumschiff! Auf diesen Riesenpilz setze ich keinen Fuß!",
+          "voice_spoken_text": "Ich? Ich bleibe lieber im Raumschiff! Auf diesen Riesenpilz setze ich keinen Fuß!",
+          "render_lines": [
+            "Ich? Ich bleibe",
+            "lieber im Raumschiff!",
+            "Auf diesen Riesenpilz",
+            "setze ich keinen Fuß!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L003",
+          "svg_text_ids": null,
+          "font_size_viewbox": 16.4,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        }
+      }
+    },
+    {
+      "line_id": "CH02_P01_L004",
+      "page_id": "CH02_P01",
+      "frame_id": "CH02_P01_F03",
+      "speaker_id": "CHR_004",
+      "kind": "narration_city_title",
+      "reading_order": 4,
+      "svg_text_id": "TXT_CH02_P01_L004",
+      "svg_text_ids": null,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "wonder_biological_city",
+        "intensity": 0.66,
+        "direction_ru": "Удивлённый, восхищённый рассказчик; дать воздуху после названия планеты.",
+        "voice_optional": false,
+        "tts_tags_en": "[in awe]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "ТАЛОСЕ · ЦЕНТРАЛЬНЫЙ ГОРОД Здесь улицы и дома не строят — их выращивают. Весь город похож на один живой организм.",
+          "voice_spoken_text": "Талосе. Центральный город. Здесь улицы и дома не строят — их выращивают. Весь город похож на один живой организм.",
+          "render_lines": [
+            "ТАЛОСЕ · ЦЕНТРАЛЬНЫЙ ГОРОД",
+            "Здесь улицы и дома не строят — их выращивают.",
+            "Весь город похож на один живой организм."
+          ],
+          "svg_text_id": "TXT_CH02_P01_L004",
+          "svg_text_ids": null,
+          "font_size_viewbox": 19.9,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "en": {
+          "display_text": "TALOSE · CENTRAL CITY Here, streets and homes aren’t built — they grow. The whole city is one living organism.",
+          "voice_spoken_text": "Talose. The central city. Here, streets and homes are grown, not built. The whole city seems to be one living organism.",
+          "render_lines": [
+            "TALOSE · CENTRAL CITY",
+            "Here, streets and homes aren’t built — they grow.",
+            "The whole city is one living organism."
+          ],
+          "svg_text_id": "TXT_CH02_P01_L004",
+          "svg_text_ids": null,
+          "font_size_viewbox": 19,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "pt_BR": {
+          "display_text": "TALOSE · CIDADE CENTRAL Aqui, ruas e casas não são construídas: crescem. A cidade inteira parece um ser vivo.",
+          "voice_spoken_text": "Talose. A cidade central. Aqui, as ruas e as casas são cultivadas em vez de construídas. A cidade inteira parece um único ser vivo.",
+          "render_lines": [
+            "TALOSE · CIDADE CENTRAL",
+            "Aqui, ruas e casas não são construídas: crescem.",
+            "A cidade inteira parece um ser vivo."
+          ],
+          "svg_text_id": "TXT_CH02_P01_L004",
+          "svg_text_ids": null,
+          "font_size_viewbox": 18.4,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "es": {
+          "display_text": "TALOSE · CIUDAD CENTRAL Aquí las calles y casas no se construyen: crecen. Toda la ciudad parece un ser vivo.",
+          "voice_spoken_text": "Talose. La ciudad central. Aquí las calles y las casas se cultivan en lugar de construirse. Toda la ciudad parece un solo ser vivo.",
+          "render_lines": [
+            "TALOSE · CIUDAD CENTRAL",
+            "Aquí las calles y casas no se construyen: crecen.",
+            "Toda la ciudad parece un ser vivo."
+          ],
+          "svg_text_id": "TXT_CH02_P01_L004",
+          "svg_text_ids": null,
+          "font_size_viewbox": 18.6,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "fr": {
+          "display_text": "TALOSE · CITÉ CENTRALE Ici, les rues et les maisons poussent au lieu d’être bâties. La ville entière forme un seul être vivant.",
+          "voice_spoken_text": "Talose. La cité centrale. Ici, les rues et les maisons poussent au lieu d’être bâties. Toute la ville forme un seul organisme vivant.",
+          "render_lines": [
+            "TALOSE · CITÉ CENTRALE",
+            "Ici, les rues et les maisons poussent au lieu d’être bâties.",
+            "La ville entière forme un seul être vivant."
+          ],
+          "svg_text_id": "TXT_CH02_P01_L004",
+          "svg_text_ids": null,
+          "font_size_viewbox": 18.1,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "de": {
+          "display_text": "TALOSE · ZENTRALSTADT Hier wachsen Straßen und Häuser, statt gebaut zu werden. Die ganze Stadt ist ein lebender Organismus.",
+          "voice_spoken_text": "Talose. Die Zentralstadt. Hier werden Straßen und Häuser nicht gebaut, sondern wachsen. Die ganze Stadt ist ein lebender Organismus.",
+          "render_lines": [
+            "TALOSE · ZENTRALSTADT",
+            "Hier wachsen Straßen und Häuser, statt gebaut zu werden.",
+            "Die ganze Stadt ist ein lebender Organismus."
+          ],
+          "svg_text_id": "TXT_CH02_P01_L004",
+          "svg_text_ids": null,
+          "font_size_viewbox": 18.4,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        }
+      }
+    },
+    {
+      "line_id": "CH02_P01_L005",
+      "page_id": "CH02_P01",
+      "frame_id": "CH02_P01_F04",
+      "speaker_id": "CHR_004",
+      "kind": "narration_suspense",
+      "reading_order": 5,
+      "svg_text_id": "TXT_CH02_P01_L005",
+      "svg_text_ids": null,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "loneliness_to_sudden_intrigue",
+        "intensity": 0.61,
+        "direction_ru": "Начать загадочно и тихо, затем слегка ускориться на неожиданном шорохе.",
+        "voice_optional": false,
+        "tts_tags_en": "[mysteriously]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Мика бродил по живым улочкам, но не встретил ни души… И вдруг — странный шорох!",
+          "voice_spoken_text": "Мика бродил по живым улочкам, но не встретил ни души… И вдруг — странный шорох!",
+          "render_lines": [
+            "Мика бродил по живым",
+            "улочкам, но не встретил",
+            "ни души… И вдруг —",
+            "странный шорох!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L005",
+          "svg_text_ids": null,
+          "font_size_viewbox": 18.1,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "en": {
+          "display_text": "Mika wandered through the living streets, but there was nobody… Then came a strange rustle!",
+          "voice_spoken_text": "Mika wandered through the living streets but could not find a soul. Then he heard a strange rustling sound.",
+          "render_lines": [
+            "Mika wandered through",
+            "the living streets, but",
+            "there was nobody…",
+            "Then came a strange rustle!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L005",
+          "svg_text_ids": null,
+          "font_size_viewbox": 17.5,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "pt_BR": {
+          "display_text": "Mika andou pelas ruas vivas, mas não encontrou ninguém… Até que ouviu um ruído esquisito!",
+          "voice_spoken_text": "Mika caminhava pelas ruas vivas, mas não encontrava ninguém. Até que ouviu um barulho esquisito.",
+          "render_lines": [
+            "Mika andou pelas ruas",
+            "vivas, mas não encontrou",
+            "ninguém… Até que ouviu",
+            "um ruído esquisito!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L005",
+          "svg_text_ids": null,
+          "font_size_viewbox": 17,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "es": {
+          "display_text": "Mika recorrió las calles vivas sin encontrar a nadie… Y entonces oyó un ruido muy extraño.",
+          "voice_spoken_text": "Mika recorrió las calles vivas sin encontrar a nadie. De pronto, escuchó un ruido muy extraño.",
+          "render_lines": [
+            "Mika recorrió las calles",
+            "vivas sin encontrar a nadie…",
+            "Y entonces oyó",
+            "un ruido muy extraño."
+          ],
+          "svg_text_id": "TXT_CH02_P01_L005",
+          "svg_text_ids": null,
+          "font_size_viewbox": 16.9,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "fr": {
+          "display_text": "Mika parcourait les rues vivantes, mais ne voyait personne… Soudain, un étrange bruissement !",
+          "voice_spoken_text": "Mika errait dans les rues vivantes sans rencontrer personne. Soudain, il entendit un étrange bruissement.",
+          "render_lines": [
+            "Mika parcourait les rues",
+            "vivantes, mais ne voyait",
+            "personne… Soudain,",
+            "un étrange bruissement !"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L005",
+          "svg_text_ids": null,
+          "font_size_viewbox": 16.8,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "de": {
+          "display_text": "Mika lief durch die lebenden Gassen, doch niemand war da… Da raschelte es plötzlich!",
+          "voice_spoken_text": "Mika streifte durch die lebenden Gassen, aber niemand war zu sehen. Plötzlich hörte er ein seltsames Rascheln.",
+          "render_lines": [
+            "Mika lief durch die",
+            "lebenden Gassen,",
+            "doch niemand war da…",
+            "Da raschelte es plötzlich!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L005",
+          "svg_text_ids": null,
+          "font_size_viewbox": 17,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        }
+      }
+    },
+    {
+      "line_id": "CH02_P01_L006",
+      "page_id": "CH02_P01",
+      "frame_id": "CH02_P01_F05",
+      "speaker_id": "CHR_022",
+      "kind": "sfx_hiss_first",
+      "reading_order": 6,
+      "svg_text_id": "TXT_CH02_P01_L006",
+      "svg_text_ids": null,
+      "audio_generation_mode": "nonverbal_sfx",
+      "performance": {
+        "emotion": "cautious_unintelligible_hiss",
+        "intensity": 0.6,
+        "direction_ru": "Непонятный шорох/шипение живой колонии, не человеческая речь. Звуковой эффект без TTS.",
+        "voice_optional": true,
+        "tts_tags_en": ""
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Ш-ш-ш…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Ш-ш-ш…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L006",
+          "svg_text_ids": null,
+          "font_size_viewbox": 22.4,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "en": {
+          "display_text": "Sh-sh-sh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Sh-sh-sh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L006",
+          "svg_text_ids": null,
+          "font_size_viewbox": 22,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "pt_BR": {
+          "display_text": "Shhh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Shhh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L006",
+          "svg_text_ids": null,
+          "font_size_viewbox": 22,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "es": {
+          "display_text": "Shhh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Shhh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L006",
+          "svg_text_ids": null,
+          "font_size_viewbox": 22,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "fr": {
+          "display_text": "Chhh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Chhh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L006",
+          "svg_text_ids": null,
+          "font_size_viewbox": 22,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "de": {
+          "display_text": "Sch-sch-sch…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Sch-sch-sch…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L006",
+          "svg_text_ids": null,
+          "font_size_viewbox": 20.5,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        }
+      }
+    },
+    {
+      "line_id": "CH02_P01_L007",
+      "page_id": "CH02_P01",
+      "frame_id": "CH02_P01_F05",
+      "speaker_id": "CHR_001",
+      "kind": "speech_quick_reassurance",
+      "reading_order": 7,
+      "svg_text_id": "TXT_CH02_P01_L007",
+      "svg_text_ids": null,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "startled_but_curious",
+        "intensity": 0.77,
+        "direction_ru": "Мика насторожился, но спрашивает без агрессии, будто встретил неизвестного гостя.",
+        "voice_optional": false,
+        "tts_tags_en": "[startled]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Кто ты?",
+          "voice_spoken_text": "Кто ты?",
+          "render_lines": [
+            "Кто ты?"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L007",
+          "svg_text_ids": null,
+          "font_size_viewbox": 24.3,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "en": {
+          "display_text": "Who are you?",
+          "voice_spoken_text": "Who are you?",
+          "render_lines": [
+            "Who are you?"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L007",
+          "svg_text_ids": null,
+          "font_size_viewbox": 22.7,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "pt_BR": {
+          "display_text": "Quem é você?",
+          "voice_spoken_text": "Quem é você?",
+          "render_lines": [
+            "Quem é você?"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L007",
+          "svg_text_ids": null,
+          "font_size_viewbox": 22.1,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "es": {
+          "display_text": "¿Quién eres?",
+          "voice_spoken_text": "¿Quién eres?",
+          "render_lines": [
+            "¿Quién eres?"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L007",
+          "svg_text_ids": null,
+          "font_size_viewbox": 22,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "fr": {
+          "display_text": "Qui es-tu ?",
+          "voice_spoken_text": "Qui es-tu ?",
+          "render_lines": [
+            "Qui es-tu ?"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L007",
+          "svg_text_ids": null,
+          "font_size_viewbox": 21.4,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "de": {
+          "display_text": "Wer bist du?",
+          "voice_spoken_text": "Wer bist du?",
+          "render_lines": [
+            "Wer bist du?"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L007",
+          "svg_text_ids": null,
+          "font_size_viewbox": 21.6,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        }
+      }
+    },
+    {
+      "line_id": "CH02_P01_L009",
+      "page_id": "CH02_P01",
+      "frame_id": "CH02_P01_F05",
+      "speaker_id": "CHR_022",
+      "kind": "sfx_hiss_second",
+      "reading_order": 8,
+      "svg_text_id": "TXT_CH02_P01_L009",
+      "svg_text_ids": null,
+      "audio_generation_mode": "nonverbal_sfx",
+      "performance": {
+        "emotion": "unintelligible_attempt_to_answer",
+        "intensity": 0.55,
+        "direction_ru": "Вторая попытка грибной колонии заговорить. Звуковой эффект с иной текстурой, чем первый шорох.",
+        "voice_optional": true,
+        "tts_tags_en": ""
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Хр-р-ш-ш…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Хр-р-ш-ш…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L009",
+          "svg_text_ids": null,
+          "font_size_viewbox": 21,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "en": {
+          "display_text": "Khrr-sh-sh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Khrr-sh-sh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L009",
+          "svg_text_ids": null,
+          "font_size_viewbox": 19.3,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "pt_BR": {
+          "display_text": "Khrr-shhh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Khrr-shhh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L009",
+          "svg_text_ids": null,
+          "font_size_viewbox": 18.9,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "es": {
+          "display_text": "Jrrr-shhh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Jrrr-shhh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L009",
+          "svg_text_ids": null,
+          "font_size_viewbox": 18.9,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "fr": {
+          "display_text": "Krrr-chhh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Krrr-chhh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L009",
+          "svg_text_ids": null,
+          "font_size_viewbox": 18.5,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "de": {
+          "display_text": "Krrr-schsch…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Krrr-schsch…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L009",
+          "svg_text_ids": null,
+          "font_size_viewbox": 17.5,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        }
+      }
+    },
+    {
+      "line_id": "CH02_P01_L010",
+      "page_id": "CH02_P01",
+      "frame_id": "CH02_P01_F05",
+      "speaker_id": "CHR_001",
+      "kind": "speech_setup_simulator",
+      "reading_order": 9,
+      "svg_text_id": "TXT_CH02_P01_L010",
+      "svg_text_ids": null,
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "quick_problem_solving",
+        "intensity": 0.74,
+        "direction_ru": "На ходу соображает, что дело в языке. Чуть взволнован, но мгновенно действует. Говорит о многофункциональном симуляторе, не о специальном переводчике.",
+        "voice_optional": false,
+        "tts_tags_en": "[quickly]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Погоди, я настрою симулятор!",
+          "voice_spoken_text": "Погоди, я настрою симулятор!",
+          "render_lines": [
+            "Погоди, я настрою",
+            "симулятор!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L010",
+          "svg_text_ids": null,
+          "font_size_viewbox": 21.5,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "en": {
+          "display_text": "Wait! I’ll set up the simulator!",
+          "voice_spoken_text": "Wait! I’ll set up the simulator!",
+          "render_lines": [
+            "Wait! I’ll set up",
+            "the simulator!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L010",
+          "svg_text_ids": null,
+          "font_size_viewbox": 21,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "pt_BR": {
+          "display_text": "Espera! Vou ajustar o simulador!",
+          "voice_spoken_text": "Espera! Vou ajustar o simulador!",
+          "render_lines": [
+            "Espera! Vou ajustar",
+            "o simulador!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L010",
+          "svg_text_ids": null,
+          "font_size_viewbox": 20.6,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "es": {
+          "display_text": "¡Espera! Voy a ajustar el simulador.",
+          "voice_spoken_text": "¡Espera! Voy a ajustar el simulador.",
+          "render_lines": [
+            "¡Espera! Voy a ajustar",
+            "el simulador."
+          ],
+          "svg_text_id": "TXT_CH02_P01_L010",
+          "svg_text_ids": null,
+          "font_size_viewbox": 20.6,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "fr": {
+          "display_text": "Attends ! Je vais régler le simulateur !",
+          "voice_spoken_text": "Attends ! Je vais régler le simulateur !",
+          "render_lines": [
+            "Attends ! Je vais régler",
+            "le simulateur !"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L010",
+          "svg_text_ids": null,
+          "font_size_viewbox": 20.6,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "de": {
+          "display_text": "Warte! Ich stelle den Simulator ein!",
+          "voice_spoken_text": "Warte! Ich stelle den Simulator ein!",
+          "render_lines": [
+            "Warte! Ich stelle",
+            "den Simulator ein!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L010",
+          "svg_text_ids": null,
+          "font_size_viewbox": 21,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        }
+      }
+    },
+    {
+      "line_id": "CH02_P01_L011",
+      "page_id": "CH02_P01",
+      "frame_id": "CH02_P01_F05",
+      "speaker_id": "CHR_022",
+      "kind": "sfx_hiss_translating",
+      "reading_order": 10,
+      "svg_text_id": "TXT_CH02_P01_L011",
+      "svg_text_ids": null,
+      "audio_generation_mode": "nonverbal_sfx",
+      "performance": {
+        "emotion": "translation_signal_clearing",
+        "intensity": 0.34,
+        "direction_ru": "Последние остатки шипения перед первым понятным словом. Плавно исчезают, затем сразу чистая реплика.",
+        "voice_optional": true,
+        "tts_tags_en": ""
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Ш-ш…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Ш-ш…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L011",
+          "svg_text_ids": null,
+          "font_size_viewbox": 18,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "en": {
+          "display_text": "Shh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Shh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L011",
+          "svg_text_ids": null,
+          "font_size_viewbox": 17.8,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "pt_BR": {
+          "display_text": "Shh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Shh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L011",
+          "svg_text_ids": null,
+          "font_size_viewbox": 17.8,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "es": {
+          "display_text": "Shh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Shh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L011",
+          "svg_text_ids": null,
+          "font_size_viewbox": 18,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "fr": {
+          "display_text": "Chh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Chh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L011",
+          "svg_text_ids": null,
+          "font_size_viewbox": 18,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "de": {
+          "display_text": "Schh…",
+          "voice_spoken_text": null,
+          "render_lines": [
+            "Schh…"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L011",
+          "svg_text_ids": null,
+          "font_size_viewbox": 17.6,
+          "audio_status": "NONVERBAL_SFX_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        }
+      }
+    },
+    {
+      "line_id": "CH02_P01_L008",
+      "page_id": "CH02_P01",
+      "frame_id": "CH02_P01_F05",
+      "speaker_id": "CHR_022",
+      "kind": "speech_translated_greeting",
+      "reading_order": 11,
+      "svg_text_id": "TXT_CH02_P01_L008",
+      "svg_text_ids": null,
+      "audio_generation_mode": "fungal_tts_clear_translated",
+      "performance": {
+        "emotion": "tentative_friendly_breakthrough",
+        "intensity": 0.61,
+        "direction_ru": "Слово наконец прозвучало ясно, почти робко и доброжелательно. После помех — маленькое чудо понимания.",
+        "voice_optional": false,
+        "tts_tags_en": "[gently]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Привет!",
+          "voice_spoken_text": "Привет!",
+          "render_lines": [
+            "Привет!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L008",
+          "svg_text_ids": null,
+          "font_size_viewbox": 27.6,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "en": {
+          "display_text": "Hello!",
+          "voice_spoken_text": "Hello!",
+          "render_lines": [
+            "Hello!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L008",
+          "svg_text_ids": null,
+          "font_size_viewbox": 27.8,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "pt_BR": {
+          "display_text": "Oi!",
+          "voice_spoken_text": "Oi!",
+          "render_lines": [
+            "Oi!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L008",
+          "svg_text_ids": null,
+          "font_size_viewbox": 28.4,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "es": {
+          "display_text": "¡Hola!",
+          "voice_spoken_text": "¡Hola!",
+          "render_lines": [
+            "¡Hola!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L008",
+          "svg_text_ids": null,
+          "font_size_viewbox": 28,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "fr": {
+          "display_text": "Salut !",
+          "voice_spoken_text": "Salut !",
+          "render_lines": [
+            "Salut !"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L008",
+          "svg_text_ids": null,
+          "font_size_viewbox": 28,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        },
+        "de": {
+          "display_text": "Hallo!",
+          "voice_spoken_text": "Hallo!",
+          "render_lines": [
+            "Hallo!"
+          ],
+          "svg_text_id": "TXT_CH02_P01_L008",
+          "svg_text_ids": null,
+          "font_size_viewbox": 28,
+          "audio_status": "TTS_NOT_GENERATED",
+          "voice_audio_asset_path": null
+        }
+      }
+    }
+  ]
+}

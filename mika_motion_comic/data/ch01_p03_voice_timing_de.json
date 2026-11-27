@@ -1,0 +1,121 @@
+{
+  "page_id": "CH01_P03",
+  "locale": "de",
+  "audio_path": "res://mika_motion_comic/audio/ch01_p03_de_voice_master.mp3",
+  "duration_seconds": 48.984,
+  "segmentation_status": "preliminary_from_audio_pauses_verify_per_line_in_Godot",
+  "panel_ids": [
+    "p03_puzzle_reveal",
+    "p03_mika_upset",
+    "p03_ship_refuel",
+    "p03_earth_departure",
+    "p03_mars_destination"
+  ],
+  "story_blocks": [
+    {
+      "trigger": "earth_after_puzzle_panels",
+      "frame_ids": [
+        "p03_puzzle_reveal",
+        "p03_mika_upset",
+        "p03_ship_refuel"
+      ],
+      "first_line": "CH01_P03_L001",
+      "last_line": "CH01_P03_L006",
+      "start_s": 0,
+      "end_s": 41.32
+    },
+    {
+      "trigger": "earth_departure_panels",
+      "frame_ids": [
+        "p03_earth_departure",
+        "p03_mars_destination"
+      ],
+      "first_line": "CH01_P03_L007",
+      "last_line": "CH01_P03_L008",
+      "start_s": 41.32,
+      "end_s": 48.984
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P03_L001",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "start_s": 0.0,
+      "end_s": 6.68,
+      "text": "Hallo! Entschuldigung… Können Sie mir sagen, wo ich gelandet bin?"
+    },
+    {
+      "line_id": "CH01_P03_L002",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_011",
+      "kind": "dialogue",
+      "start_s": 6.68,
+      "end_s": 12.76,
+      "text": "Hallo, willkommen! Du bist am Raumhafen der Erde. Was ist denn passiert?"
+    },
+    {
+      "line_id": "CH01_P03_L003",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "start_s": 12.76,
+      "end_s": 21.19,
+      "text": "Ein Sturm hat mich hergeweht… Jetzt weiß ich nicht mehr, wie ich nach Hause komme."
+    },
+    {
+      "line_id": "CH01_P03_L004",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_011",
+      "kind": "dialogue",
+      "start_s": 21.19,
+      "end_s": 31.2,
+      "text": "Wow! Was für eine Geschichte! Wir machen dein Schiff wieder flott und tanken es voll. Dann flieg zum Datenzentrum auf dem Mars. Dort hilft dir eine KI bei der Heimreise!"
+    },
+    {
+      "line_id": "CH01_P03_L005",
+      "frame_id": "CH01_P03_F02",
+      "panel_id": "p03_mika_upset",
+      "speaker_id": "CHR_001",
+      "kind": "thought_sigh",
+      "start_s": 31.2,
+      "end_s": 33.4,
+      "text": "Ach… Was, wenn ich nie mehr nach Hause finde?"
+    },
+    {
+      "line_id": "CH01_P03_L006",
+      "frame_id": "CH01_P03_F03",
+      "panel_id": "p03_ship_refuel",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "start_s": 33.4,
+      "end_s": 41.32,
+      "text": "Auf der Erde ging es sofort los: Sie reparierten die Sturmschäden, prüften alle Systeme und tankten das Schiff randvoll!"
+    },
+    {
+      "line_id": "CH01_P03_L007",
+      "frame_id": "CH01_P03_F04",
+      "panel_id": "p03_earth_departure",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "start_s": 41.32,
+      "end_s": 46.0,
+      "text": "Bald war das Schiff wieder startklar! Mika bedankte sich herzlich, startete die Triebwerke… und hob ab!"
+    },
+    {
+      "line_id": "CH01_P03_L008",
+      "frame_id": "CH01_P03_F05",
+      "panel_id": "p03_mars_destination",
+      "speaker_id": "CHR_008",
+      "kind": "ship_system_hud",
+      "start_s": 46.0,
+      "end_s": 48.984,
+      "text": "Route berechnet. Kurs auf den Mars!"
+    }
+  ]
+}

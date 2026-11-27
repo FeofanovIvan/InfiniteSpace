@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<title>MIKA CH07 P02 — RU Draft v2, balanced compact labels</title>
+<desc>Only editable SVG labels over unchanged original artwork. Two speakers, no crossing-arrow tails, short independent pictogram labels.</desc>
+<g id="CH07_P02_L001" data-layout-style="green" data-role="CHR_040">
+<rect x="804" y="91" width="795" height="215" rx="48" fill="#15243E" opacity=".11"/>
+<rect x="800" y="85" width="795" height="215" rx="48" fill="#D6F8ED" fill-opacity="0.97" stroke="#318C77" stroke-width="5"/>
+<circle cx="1568" cy="108" r="5" fill="#5BB9C6"/>
+<text x="832" y="142.05" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#174C41">Não se preocupe. Sou o mesmo</text><text x="832" y="184.05" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#174C41">planeta. Só fica mais fácil para você</text><text x="832" y="226.05" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#174C41">me entender quando me pareço com</text><text x="832" y="268.05" font-family="DejaVu Sans" font-weight="700" font-size="35" fill="#174C41">você.</text></g>
+<g id="CH07_P02_L002" data-layout-style="green" data-role="CHR_040">
+<rect x="889" y="965" width="610" height="154" rx="48" fill="#15243E" opacity=".11"/>
+<rect x="885" y="959" width="610" height="154" rx="48" fill="#D6F8ED" fill-opacity="0.97" stroke="#318C77" stroke-width="5"/>
+<circle cx="1468" cy="982" r="5" fill="#5BB9C6"/>
+<text x="917" y="1028.36" font-family="DejaVu Sans" font-weight="700" font-size="32" fill="#174C41">Conte como você resolveu o</text><text x="917" y="1066.76" font-family="DejaVu Sans" font-weight="700" font-size="32" fill="#174C41">enigma e chegou até mim.</text></g>
+<g id="CH07_P02_L003" data-layout-style="mika" data-role="CHR_001">
+<rect x="754" y="1218" width="735" height="105" rx="46" fill="#15243E" opacity=".11"/>
+<rect x="750" y="1212" width="735" height="105" rx="46" fill="#FFFDF9" fill-opacity="0.97" stroke="#274C72" stroke-width="5"/>
+<text x="782" y="1274.74" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#19364F">Comecei a pensar nos padrões.</text></g>
+<g id="CH07_P02_L004_visual_a" data-layout-style="label" data-role="CHR_001">
+<rect x="74" y="1822" width="460" height="124" rx="24" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D7E6" stroke-width="2.6"/>
+<text x="95" y="1876.71" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">Um meteorito caiu na</text><text x="95" y="1909.11" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">Terra.</text></g>
+<g id="CH07_P02_L004_visual_b" data-layout-style="label" data-role="CHR_001">
+<rect x="545" y="1822" width="555" height="124" rx="24" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D7E6" stroke-width="2.6"/>
+<text x="566" y="1876.71" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">Outro caiu no mundo dos fungos,</text><text x="566" y="1909.11" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">antes da civilização.</text></g>
+<g id="CH07_P02_L005_visual_a" data-layout-style="label" data-role="CHR_001">
+<rect x="1220" y="1814" width="535" height="130" rx="24" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D7E6" stroke-width="2.6"/>
+<text x="1241" y="1871.71" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">Os seres de fase surgiram dos</text><text x="1241" y="1904.11" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">meteoritos.</text></g>
+<g id="CH07_P02_L005_visual_b" data-layout-style="label" data-role="CHR_001">
+<rect x="1802" y="1814" width="565" height="130" rx="24" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D7E6" stroke-width="2.6"/>
+<text x="1823" y="1871.71" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">Um asteroide mudou a atmosfera.</text><text x="1823" y="1904.11" font-family="DejaVu Sans" font-weight="700" font-size="27" fill="#19364F">Os lagartos viraram simbiontes.</text></g>
+<g id="CH07_P02_L006" data-layout-style="mika" data-role="CHR_001">
+<rect x="79" y="2007" width="455" height="148" rx="46" fill="#15243E" opacity=".11"/>
+<rect x="75" y="2001" width="455" height="148" rx="46" fill="#FFFDF9" fill-opacity="0.97" stroke="#274C72" stroke-width="5"/>
+<text x="107" y="2050.77" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">Os seres magnéticos</text><text x="107" y="2085.57" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">sabem controlar</text><text x="107" y="2120.37" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">asteroides.</text></g>
+<g id="CH07_P02_L007" data-layout-style="mika" data-role="CHR_001">
+<rect x="1276" y="2007" width="470" height="148" rx="46" fill="#15243E" opacity=".11"/>
+<rect x="1272" y="2001" width="470" height="148" rx="46" fill="#FFFDF9" fill-opacity="0.97" stroke="#274C72" stroke-width="5"/>
+<text x="1304" y="2068.17" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">E abrir portais entre</text><text x="1304" y="2102.97" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">regiões do espaço.</text></g>
+<g id="CH07_P02_L008" data-layout-style="label" data-role="CHR_001">
+<rect x="93" y="3365" width="780" height="112" rx="24" fill="#FFFFFF" fill-opacity="0.9" stroke="#C8D7E6" stroke-width="2.6"/>
+<text x="114" y="3413.17" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">Os seres neurais sabem onde e quando as</text><text x="114" y="3447.97" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#19364F">coisas vão acontecer.</text></g>
+<g id="CH07_P02_L009" data-layout-style="mika" data-role="CHR_001">
+<rect x="2018" y="2794" width="398" height="194" rx="46" fill="#15243E" opacity=".11"/>
+<rect x="2014" y="2788" width="398" height="194" rx="46" fill="#FFFDF9" fill-opacity="0.97" stroke="#274C72" stroke-width="5"/>
+<text x="2046" y="2861.64" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#19364F">Então é possível</text><text x="2046" y="2895.24" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#19364F">controlar a vida no</text><text x="2046" y="2928.84" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#19364F">Universo.</text></g>
+</svg>

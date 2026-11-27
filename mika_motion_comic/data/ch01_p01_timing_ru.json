@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "page_id": "CH01_P01",
+  "visual_version": "NEBULA_6LANG_v3",
+  "duration_seconds": 30.504,
+  "audio_locale": "ru",
+  "timeline_source": "Russian MP3 silence intervals; review by ear in Godot",
+  "shots": [
+    {
+      "frame_id": "CH01_P01_F01",
+      "line_ids": [
+        "CH01_P01_L001"
+      ],
+      "start_s": 0.0,
+      "speech_end_s": 2.296,
+      "transition_start_s": 2.25,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.304,
+        0.141,
+        0.248
+      ],
+      "camera_end": [
+        0.313,
+        0.145,
+        0.242
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F02",
+      "line_ids": [
+        "CH01_P01_L002"
+      ],
+      "start_s": 2.876,
+      "speech_end_s": 3.627,
+      "transition_start_s": 3.66,
+      "transition_to_next": "dissolve",
+      "camera_start": [
+        0.733,
+        0.167,
+        0.222
+      ],
+      "camera_end": [
+        0.739,
+        0.168,
+        0.216
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F03",
+      "line_ids": [
+        "CH01_P01_L003"
+      ],
+      "start_s": 4.023,
+      "speech_end_s": 7.443,
+      "transition_start_s": 7.32,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.242,
+        0.374,
+        0.19
+      ],
+      "camera_end": [
+        0.243,
+        0.38,
+        0.193
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F04",
+      "line_ids": [
+        "CH01_P01_L004"
+      ],
+      "start_s": 7.891,
+      "speech_end_s": 10.513,
+      "transition_start_s": 10.41,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.59,
+        0.358,
+        0.128
+      ],
+      "camera_end": [
+        0.59,
+        0.36,
+        0.123
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F05",
+      "line_ids": [
+        "CH01_P01_L005"
+      ],
+      "start_s": 10.95,
+      "speech_end_s": 15.543,
+      "transition_start_s": 15.56,
+      "transition_to_next": "dissolve",
+      "camera_start": [
+        0.812,
+        0.447,
+        0.145
+      ],
+      "camera_end": [
+        0.809,
+        0.45,
+        0.139
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F06",
+      "line_ids": [
+        "CH01_P01_L006",
+        "CH01_P01_L007"
+      ],
+      "start_s": 16.022,
+      "speech_end_s": 19.434,
+      "transition_start_s": 19.46,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.272,
+        0.619,
+        0.222
+      ],
+      "camera_end": [
+        0.274,
+        0.624,
+        0.219
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F07",
+      "line_ids": [
+        "CH01_P01_L008"
+      ],
+      "start_s": 20.035,
+      "speech_end_s": 23.908,
+      "transition_start_s": 23.92,
+      "transition_to_next": "dissolve",
+      "camera_start": [
+        0.746,
+        0.61,
+        0.204
+      ],
+      "camera_end": [
+        0.748,
+        0.613,
+        0.2
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F08",
+      "line_ids": [
+        "CH01_P01_L009"
+      ],
+      "start_s": 24.341,
+      "speech_end_s": 27.628,
+      "transition_start_s": 27.64,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.279,
+        0.823,
+        0.221
+      ],
+      "camera_end": [
+        0.279,
+        0.872,
+        0.22
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F09",
+      "line_ids": [
+        "CH01_P01_L010"
+      ],
+      "start_s": 28.16,
+      "speech_end_s": 30.018,
+      "transition_start_s": 30.504,
+      "transition_to_next": "end",
+      "camera_start": [
+        0.751,
+        0.859,
+        0.24
+      ],
+      "camera_end": [
+        0.749,
+        0.862,
+        0.23
+      ]
+    }
+  ],
+  "notes": "F06 includes two spoken lines. Pan for same row. Dissolve for row changes. Timing for non-Russian audio is preliminary until recordings are supplied."
+}

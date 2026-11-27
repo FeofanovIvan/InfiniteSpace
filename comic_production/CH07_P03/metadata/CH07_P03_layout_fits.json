@@ -1,0 +1,2176 @@
+{
+  "page_id": "CH07_P03",
+  "checks": [
+    {
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_0",
+      "part": 0,
+      "frame": "1 — зелёное существо",
+      "style": "laugh",
+      "kind": "laugh",
+      "text": "Ха-ха!",
+      "box": [
+        62,
+        212,
+        190,
+        85
+      ],
+      "font_size": 35,
+      "lines": [
+        "Ха-ха!"
+      ],
+      "largest_line_width": 127.31,
+      "available_width": 142,
+      "text_height": 38.5,
+      "available_height": 50,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 20,
+        "bottom": 15
+      },
+      "fits": true,
+      "lang": "ru"
+    },
+    {
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_1",
+      "part": 1,
+      "frame": "1 — зелёное существо",
+      "style": "green",
+      "kind": "speech",
+      "text": "Конечно же нет, Мика. Ты попал ко мне потому, что…",
+      "box": [
+        66,
+        313,
+        270,
+        264
+      ],
+      "font_size": 29,
+      "lines": [
+        "Конечно же",
+        "нет, Мика.",
+        "Ты попал ко",
+        "мне потому,",
+        "что…"
+      ],
+      "largest_line_width": 206.58,
+      "available_width": 208,
+      "text_height": 173.42,
+      "available_height": 207,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true,
+      "lang": "ru"
+    },
+    {
+      "line_id": "CH07_P03_L002",
+      "display_id": "CH07_P03_L002",
+      "part": 0,
+      "frame": "2 — цветок среди камней",
+      "style": "flower",
+      "kind": "speech",
+      "text": "Ты разгадал: жизнь всегда найдёт возможность пробиться.",
+      "box": [
+        1250,
+        175,
+        365,
+        272
+      ],
+      "font_size": 33,
+      "lines": [
+        "Ты разгадал:",
+        "жизнь всегда",
+        "найдёт",
+        "возможность",
+        "пробиться."
+      ],
+      "largest_line_width": 259.27,
+      "available_width": 303,
+      "text_height": 197.34,
+      "available_height": 215,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true,
+      "lang": "ru"
+    },
+    {
+      "line_id": "CH07_P03_L003",
+      "display_id": "CH07_P03_L003",
+      "part": 0,
+      "frame": "3A — Земля",
+      "style": "earth",
+      "kind": "mini",
+      "text": "На Земле господствующие формы жизни сменяли друг друга.",
+      "box": [
+        82,
+        1026,
+        519,
+        165
+      ],
+      "font_size": 29,
+      "lines": [
+        "На Земле господствующие",
+        "формы жизни сменяли",
+        "друг друга."
+      ],
+      "largest_line_width": 456.05,
+      "available_width": 471,
+      "text_height": 102.66,
+      "available_height": 123,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true,
+      "lang": "ru"
+    },
+    {
+      "line_id": "CH07_P03_L004",
+      "display_id": "CH07_P03_L004",
+      "part": 0,
+      "frame": "3B — мир плесени",
+      "style": "rebirth",
+      "kind": "mini",
+      "text": "В мире, где жизнь почти угасла, на руинах возникла новая.",
+      "box": [
+        619,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 28,
+      "lines": [
+        "В мире, где жизнь почти",
+        "угасла, на руинах возникла",
+        "новая."
+      ],
+      "largest_line_width": 450.7,
+      "available_width": 521,
+      "text_height": 99.12,
+      "available_height": 123,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true,
+      "lang": "ru"
+    },
+    {
+      "line_id": "CH07_P03_L005",
+      "display_id": "CH07_P03_L005",
+      "part": 0,
+      "frame": "3C — фазовые существа",
+      "style": "crystal",
+      "kind": "mini",
+      "text": "Даже в холодных каменных структурах могла заискриться жизнь.",
+      "box": [
+        1227,
+        1026,
+        543,
+        165
+      ],
+      "font_size": 27,
+      "lines": [
+        "Даже в холодных каменных",
+        "структурах могла заискриться",
+        "жизнь."
+      ],
+      "largest_line_width": 478.14,
+      "available_width": 495,
+      "text_height": 95.58,
+      "available_height": 123,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true,
+      "lang": "ru"
+    },
+    {
+      "line_id": "CH07_P03_L006",
+      "display_id": "CH07_P03_L006",
+      "part": 0,
+      "frame": "3D — симбиоз",
+      "style": "symbiosis",
+      "kind": "mini",
+      "text": "А иногда разные формы жизни объединяются.",
+      "box": [
+        1794,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 29,
+      "lines": [
+        "А иногда разные формы",
+        "жизни объединяются."
+      ],
+      "largest_line_width": 413.61,
+      "available_width": 521,
+      "text_height": 67.28,
+      "available_height": 123,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true,
+      "lang": "ru"
+    },
+    {
+      "line_id": "CH07_P03_L007",
+      "display_id": "CH07_P03_L007",
+      "part": 0,
+      "frame": "4 — магнитный мир",
+      "style": "magnetic",
+      "kind": "speech",
+      "text": "Но та аномалия, которая произошла с магнитными существами, произошла не только с ними.",
+      "box": [
+        84,
+        1787,
+        950,
+        184
+      ],
+      "font_size": 30,
+      "lines": [
+        "Но та аномалия, которая произошла с",
+        "магнитными существами, произошла не только с",
+        "ними."
+      ],
+      "largest_line_width": 862.06,
+      "available_width": 888,
+      "text_height": 106.2,
+      "available_height": 127,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true,
+      "lang": "ru"
+    },
+    {
+      "line_id": "CH07_P03_L008",
+      "display_id": "CH07_P03_L008",
+      "part": 0,
+      "frame": "5 — Мика и магнитное существо",
+      "style": "reveal",
+      "kind": "speech",
+      "text": "Вы и магнитные жители — из одного и того же мира.",
+      "box": [
+        1552,
+        2316,
+        790,
+        154
+      ],
+      "font_size": 30,
+      "lines": [
+        "Вы и магнитные жители — из одного и",
+        "того же мира."
+      ],
+      "largest_line_width": 675.38,
+      "available_width": 728,
+      "text_height": 69.6,
+      "available_height": 97,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true,
+      "lang": "ru"
+    },
+    {
+      "line_id": "CH07_P03_L009",
+      "display_id": "CH07_P03_L009",
+      "part": 0,
+      "frame": "6A — эхо прошлого",
+      "style": "time",
+      "kind": "speech",
+      "text": "Но эхо событий вашего мира дошло до нас лишь спустя миллионы лет.",
+      "box": [
+        85,
+        2603,
+        898,
+        149
+      ],
+      "font_size": 32,
+      "lines": [
+        "Но эхо событий вашего мира дошло до нас",
+        "лишь спустя миллионы лет."
+      ],
+      "largest_line_width": 811.02,
+      "available_width": 836,
+      "text_height": 74.24,
+      "available_height": 92,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true,
+      "lang": "ru"
+    },
+    {
+      "line_id": "CH07_P03_L010",
+      "display_id": "CH07_P03_L010",
+      "part": 0,
+      "frame": "6B — осознание нейронных существ",
+      "style": "signal",
+      "kind": "climax",
+      "text": "И только сейчас нейронные жители смогли отправить сигнал магнитным людям, чтобы они создали канал, который позволил тебе спастись, пройдя сквозь время и пространство.",
+      "box": [
+        1072,
+        2590,
+        1280,
+        239
+      ],
+      "font_size": 32,
+      "lines": [
+        "И только сейчас нейронные жители смогли отправить сигнал",
+        "магнитным людям, чтобы они создали канал, который позволил",
+        "тебе спастись, пройдя сквозь время и пространство."
+      ],
+      "largest_line_width": 1210.45,
+      "available_width": 1218,
+      "text_height": 113.28,
+      "available_height": 182,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true,
+      "lang": "ru"
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_0",
+      "part": 0,
+      "frame": "1 — зелёное существо",
+      "style": "laugh",
+      "kind": "laugh",
+      "text": "Ha-ha!",
+      "box": [
+        62,
+        212,
+        190,
+        85
+      ],
+      "font_size": 35,
+      "lines": [
+        "Ha-ha!"
+      ],
+      "text_max_width_px": 131.97,
+      "available_width_px": 142.0,
+      "text_height_px": 36.75,
+      "available_height_px": 50.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 20,
+        "bottom": 15
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_1",
+      "part": 1,
+      "frame": "1 — зелёное существо",
+      "style": "green",
+      "kind": "speech",
+      "text": "Of course not, Mika. You came to me because...",
+      "box": [
+        66,
+        313,
+        270,
+        264
+      ],
+      "font_size": 29,
+      "lines": [
+        "Of course",
+        "not, Mika.",
+        "You came to",
+        "me",
+        "because..."
+      ],
+      "text_max_width_px": 199.52,
+      "available_width_px": 208.0,
+      "text_height_px": 171.97,
+      "available_height_px": 207.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P03_L002",
+      "display_id": "CH07_P03_L002",
+      "part": 0,
+      "frame": "2 — цветок среди камней",
+      "style": "flower",
+      "kind": "speech",
+      "text": "You figured it out: life will always find a way to break through.",
+      "box": [
+        1250,
+        175,
+        365,
+        272
+      ],
+      "font_size": 33,
+      "lines": [
+        "You figured it",
+        "out: life will",
+        "always find a",
+        "way to break",
+        "through."
+      ],
+      "text_max_width_px": 250.95,
+      "available_width_px": 303.0,
+      "text_height_px": 195.69,
+      "available_height_px": 215.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P03_L003",
+      "display_id": "CH07_P03_L003",
+      "part": 0,
+      "frame": "3A — Земля",
+      "style": "earth",
+      "kind": "mini",
+      "text": "On Earth, dominant forms of life replaced one another.",
+      "box": [
+        82,
+        1026,
+        519,
+        165
+      ],
+      "font_size": 29,
+      "lines": [
+        "On Earth, dominant forms of",
+        "life replaced one another."
+      ],
+      "text_max_width_px": 467.25,
+      "available_width_px": 471.0,
+      "text_height_px": 65.83,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P03_L004",
+      "display_id": "CH07_P03_L004",
+      "part": 0,
+      "frame": "3B — мир плесени",
+      "style": "rebirth",
+      "kind": "mini",
+      "text": "In a world where life had nearly faded away, new life arose from the ruins.",
+      "box": [
+        619,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 28,
+      "lines": [
+        "In a world where life had nearly",
+        "faded away, new life arose from",
+        "the ruins."
+      ],
+      "text_max_width_px": 505.58,
+      "available_width_px": 521.0,
+      "text_height_px": 97.72,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P03_L005",
+      "display_id": "CH07_P03_L005",
+      "part": 0,
+      "frame": "3C — фазовые существа",
+      "style": "crystal",
+      "kind": "mini",
+      "text": "Even in cold, stony structures, life could begin to sparkle.",
+      "box": [
+        1227,
+        1026,
+        543,
+        165
+      ],
+      "font_size": 27,
+      "lines": [
+        "Even in cold, stony structures,",
+        "life could begin to sparkle."
+      ],
+      "text_max_width_px": 464.97,
+      "available_width_px": 495.0,
+      "text_height_px": 61.29,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P03_L006",
+      "display_id": "CH07_P03_L006",
+      "part": 0,
+      "frame": "3D — симбиоз",
+      "style": "symbiosis",
+      "kind": "mini",
+      "text": "And sometimes different forms of life join together.",
+      "box": [
+        1794,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 29,
+      "lines": [
+        "And sometimes different forms",
+        "of life join together."
+      ],
+      "text_max_width_px": 508.8,
+      "available_width_px": 521.0,
+      "text_height_px": 65.83,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P03_L007",
+      "display_id": "CH07_P03_L007",
+      "part": 0,
+      "frame": "4 — магнитный мир",
+      "style": "magnetic",
+      "kind": "speech",
+      "text": "But the anomaly that happened to the magnetic beings did not happen only to them.",
+      "box": [
+        84,
+        1787,
+        950,
+        184
+      ],
+      "font_size": 30,
+      "lines": [
+        "But the anomaly that happened to the magnetic",
+        "beings did not happen only to them."
+      ],
+      "text_max_width_px": 817.7,
+      "available_width_px": 888.0,
+      "text_height_px": 68.1,
+      "available_height_px": 127.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P03_L008",
+      "display_id": "CH07_P03_L008",
+      "part": 0,
+      "frame": "5 — Мика и магнитное существо",
+      "style": "reveal",
+      "kind": "speech",
+      "text": "You and the magnetic inhabitants come from the very same world.",
+      "box": [
+        1552,
+        2316,
+        790,
+        154
+      ],
+      "font_size": 30,
+      "lines": [
+        "You and the magnetic inhabitants come",
+        "from the very same world."
+      ],
+      "text_max_width_px": 672.5,
+      "available_width_px": 728.0,
+      "text_height_px": 68.1,
+      "available_height_px": 97.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P03_L009",
+      "display_id": "CH07_P03_L009",
+      "part": 0,
+      "frame": "6A — эхо прошлого",
+      "style": "time",
+      "kind": "speech",
+      "text": "But the echo of the events in your world reached us only millions of years later.",
+      "box": [
+        85,
+        2603,
+        898,
+        149
+      ],
+      "font_size": 32,
+      "lines": [
+        "But the echo of the events in your world",
+        "reached us only millions of years later."
+      ],
+      "text_max_width_px": 730.25,
+      "available_width_px": 836.0,
+      "text_height_px": 72.64,
+      "available_height_px": 92.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH07_P03_L010",
+      "display_id": "CH07_P03_L010",
+      "part": 0,
+      "frame": "6B — осознание нейронных существ",
+      "style": "signal",
+      "kind": "climax",
+      "text": "And only now were the neuron dwellers able to send a signal to the magnetic people so they could create a channel that allowed you to be saved by passing through time and space.",
+      "box": [
+        1072,
+        2590,
+        1280,
+        239
+      ],
+      "font_size": 32,
+      "lines": [
+        "And only now were the neuron dwellers able to send a signal to",
+        "the magnetic people so they could create a channel that allowed",
+        "you to be saved by passing through time and space."
+      ],
+      "text_max_width_px": 1173.08,
+      "available_width_px": 1218.0,
+      "text_height_px": 111.68,
+      "available_height_px": 182.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_0",
+      "part": 0,
+      "frame": "1 — зелёное существо",
+      "style": "laugh",
+      "kind": "laugh",
+      "text": "Ha, ha!",
+      "box": [
+        62,
+        212,
+        190,
+        85
+      ],
+      "font_size": 34,
+      "lines": [
+        "Ha, ha!"
+      ],
+      "text_max_width_px": 138.8,
+      "available_width_px": 142.0,
+      "text_height_px": 35.7,
+      "available_height_px": 50.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 20,
+        "bottom": 15
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_1",
+      "part": 1,
+      "frame": "1 — зелёное существо",
+      "style": "green",
+      "kind": "speech",
+      "text": "Claro que não, Mika. Você chegou até mim porque...",
+      "box": [
+        66,
+        313,
+        270,
+        264
+      ],
+      "font_size": 29,
+      "lines": [
+        "Claro que",
+        "não, Mika.",
+        "Você chegou",
+        "até mim",
+        "porque..."
+      ],
+      "text_max_width_px": 206.56,
+      "available_width_px": 208.0,
+      "text_height_px": 171.97,
+      "available_height_px": 207.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P03_L002",
+      "display_id": "CH07_P03_L002",
+      "part": 0,
+      "frame": "2 — цветок среди камней",
+      "style": "flower",
+      "kind": "speech",
+      "text": "Você descobriu: a vida sempre encontra um jeito de abrir caminho.",
+      "box": [
+        1250,
+        175,
+        365,
+        272
+      ],
+      "font_size": 33,
+      "lines": [
+        "Você descobriu:",
+        "a vida sempre",
+        "encontra um",
+        "jeito de abrir",
+        "caminho."
+      ],
+      "text_max_width_px": 295.64,
+      "available_width_px": 303.0,
+      "text_height_px": 195.69,
+      "available_height_px": 215.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P03_L003",
+      "display_id": "CH07_P03_L003",
+      "part": 0,
+      "frame": "3A — Земля",
+      "style": "earth",
+      "kind": "mini",
+      "text": "Na Terra, as formas de vida dominantes foram se substituindo.",
+      "box": [
+        82,
+        1026,
+        519,
+        165
+      ],
+      "font_size": 29,
+      "lines": [
+        "Na Terra, as formas de vida",
+        "dominantes foram se",
+        "substituindo."
+      ],
+      "text_max_width_px": 449.39,
+      "available_width_px": 471.0,
+      "text_height_px": 101.21,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P03_L004",
+      "display_id": "CH07_P03_L004",
+      "part": 0,
+      "frame": "3B — мир плесени",
+      "style": "rebirth",
+      "kind": "mini",
+      "text": "Num mundo onde a vida quase se apagou, uma nova surgiu sobre as ruínas.",
+      "box": [
+        619,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 28,
+      "lines": [
+        "Num mundo onde a vida quase",
+        "se apagou, uma nova surgiu",
+        "sobre as ruínas."
+      ],
+      "text_max_width_px": 488.03,
+      "available_width_px": 521.0,
+      "text_height_px": 97.72,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P03_L005",
+      "display_id": "CH07_P03_L005",
+      "part": 0,
+      "frame": "3C — фазовые существа",
+      "style": "crystal",
+      "kind": "mini",
+      "text": "Até em estruturas frias e rochosas a vida pôde começar a cintilar.",
+      "box": [
+        1227,
+        1026,
+        543,
+        165
+      ],
+      "font_size": 27,
+      "lines": [
+        "Até em estruturas frias e",
+        "rochosas a vida pôde começar a",
+        "cintilar."
+      ],
+      "text_max_width_px": 487.91,
+      "available_width_px": 495.0,
+      "text_height_px": 94.23,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P03_L006",
+      "display_id": "CH07_P03_L006",
+      "part": 0,
+      "frame": "3D — симбиоз",
+      "style": "symbiosis",
+      "kind": "mini",
+      "text": "E às vezes diferentes formas de vida se unem.",
+      "box": [
+        1794,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 29,
+      "lines": [
+        "E às vezes diferentes formas",
+        "de vida se unem."
+      ],
+      "text_max_width_px": 471.67,
+      "available_width_px": 521.0,
+      "text_height_px": 65.83,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P03_L007",
+      "display_id": "CH07_P03_L007",
+      "part": 0,
+      "frame": "4 — магнитный мир",
+      "style": "magnetic",
+      "kind": "speech",
+      "text": "Mas a anomalia que aconteceu com os seres magnéticos não aconteceu só com eles.",
+      "box": [
+        84,
+        1787,
+        950,
+        184
+      ],
+      "font_size": 30,
+      "lines": [
+        "Mas a anomalia que aconteceu com os seres",
+        "magnéticos não aconteceu só com eles."
+      ],
+      "text_max_width_px": 752.5,
+      "available_width_px": 888.0,
+      "text_height_px": 68.1,
+      "available_height_px": 127.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P03_L008",
+      "display_id": "CH07_P03_L008",
+      "part": 0,
+      "frame": "5 — Мика и магнитное существо",
+      "style": "reveal",
+      "kind": "speech",
+      "text": "Você e os habitantes magnéticos vêm do mesmo mundo.",
+      "box": [
+        1552,
+        2316,
+        790,
+        154
+      ],
+      "font_size": 30,
+      "lines": [
+        "Você e os habitantes magnéticos vêm do",
+        "mesmo mundo."
+      ],
+      "text_max_width_px": 692.42,
+      "available_width_px": 728.0,
+      "text_height_px": 68.1,
+      "available_height_px": 97.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P03_L009",
+      "display_id": "CH07_P03_L009",
+      "part": 0,
+      "frame": "6A — эхо прошлого",
+      "style": "time",
+      "kind": "speech",
+      "text": "Mas o eco dos acontecimentos do seu mundo chegou até nós apenas milhões de anos depois.",
+      "box": [
+        85,
+        2603,
+        898,
+        149
+      ],
+      "font_size": 30,
+      "lines": [
+        "Mas o eco dos acontecimentos do seu mundo",
+        "chegou até nós apenas milhões de anos depois."
+      ],
+      "text_max_width_px": 809.59,
+      "available_width_px": 836.0,
+      "text_height_px": 68.1,
+      "available_height_px": 92.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH07_P03_L010",
+      "display_id": "CH07_P03_L010",
+      "part": 0,
+      "frame": "6B — осознание нейронных существ",
+      "style": "signal",
+      "kind": "climax",
+      "text": "E só agora os habitantes neurais conseguiram enviar um sinal ao povo magnético para que eles criassem um canal que permitiu que você fosse salvo, atravessando o tempo e o espaço.",
+      "box": [
+        1072,
+        2590,
+        1280,
+        239
+      ],
+      "font_size": 32,
+      "lines": [
+        "E só agora os habitantes neurais conseguiram enviar um sinal ao",
+        "povo magnético para que eles criassem um canal que permitiu que",
+        "você fosse salvo, atravessando o tempo e o espaço."
+      ],
+      "text_max_width_px": 1212.39,
+      "available_width_px": 1218.0,
+      "text_height_px": 111.68,
+      "available_height_px": 182.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_0",
+      "part": 0,
+      "frame": "1 — зелёное существо",
+      "style": "laugh",
+      "kind": "laugh",
+      "text": "Ja, ja.",
+      "box": [
+        62,
+        212,
+        190,
+        85
+      ],
+      "font_size": 35,
+      "lines": [
+        "Ja, ja."
+      ],
+      "text_max_width_px": 111.05,
+      "available_width_px": 142.0,
+      "text_height_px": 36.75,
+      "available_height_px": 50.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 20,
+        "bottom": 15
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_1",
+      "part": 1,
+      "frame": "1 — зелёное существо",
+      "style": "green",
+      "kind": "speech",
+      "text": "Claro que no, Mika. Llegaste hasta mí porque...",
+      "box": [
+        66,
+        313,
+        270,
+        264
+      ],
+      "font_size": 29,
+      "lines": [
+        "Claro que",
+        "no, Mika.",
+        "Llegaste",
+        "hasta mí",
+        "porque..."
+      ],
+      "text_max_width_px": 156.17,
+      "available_width_px": 208.0,
+      "text_height_px": 171.97,
+      "available_height_px": 207.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P03_L002",
+      "display_id": "CH07_P03_L002",
+      "part": 0,
+      "frame": "2 — цветок среди камней",
+      "style": "flower",
+      "kind": "speech",
+      "text": "Lo entendiste: la vida siempre encuentra una forma de abrirse camino.",
+      "box": [
+        1250,
+        175,
+        365,
+        272
+      ],
+      "font_size": 33,
+      "lines": [
+        "Lo entendiste:",
+        "la vida siempre",
+        "encuentra una",
+        "forma de",
+        "abrirse camino."
+      ],
+      "text_max_width_px": 289.5,
+      "available_width_px": 303.0,
+      "text_height_px": 195.69,
+      "available_height_px": 215.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P03_L003",
+      "display_id": "CH07_P03_L003",
+      "part": 0,
+      "frame": "3A — Земля",
+      "style": "earth",
+      "kind": "mini",
+      "text": "En la Tierra, las formas de vida dominantes fueron sustituyéndose unas a otras.",
+      "box": [
+        82,
+        1026,
+        519,
+        165
+      ],
+      "font_size": 28,
+      "lines": [
+        "En la Tierra, las formas de",
+        "vida dominantes fueron",
+        "sustituyéndose unas a otras."
+      ],
+      "text_max_width_px": 457.92,
+      "available_width_px": 471.0,
+      "text_height_px": 97.72,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P03_L004",
+      "display_id": "CH07_P03_L004",
+      "part": 0,
+      "frame": "3B — мир плесени",
+      "style": "rebirth",
+      "kind": "mini",
+      "text": "En un mundo donde la vida casi se extinguió, una nueva surgió sobre las ruinas.",
+      "box": [
+        619,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 28,
+      "lines": [
+        "En un mundo donde la vida casi",
+        "se extinguió, una nueva surgió",
+        "sobre las ruinas."
+      ],
+      "text_max_width_px": 501.03,
+      "available_width_px": 521.0,
+      "text_height_px": 97.72,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P03_L005",
+      "display_id": "CH07_P03_L005",
+      "part": 0,
+      "frame": "3C — фазовые существа",
+      "style": "crystal",
+      "kind": "mini",
+      "text": "Incluso en estructuras frías y pétreas pudo chispear una nueva vida.",
+      "box": [
+        1227,
+        1026,
+        543,
+        165
+      ],
+      "font_size": 27,
+      "lines": [
+        "Incluso en estructuras frías y",
+        "pétreas pudo chispear una",
+        "nueva vida."
+      ],
+      "text_max_width_px": 445.28,
+      "available_width_px": 495.0,
+      "text_height_px": 94.23,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P03_L006",
+      "display_id": "CH07_P03_L006",
+      "part": 0,
+      "frame": "3D — симбиоз",
+      "style": "symbiosis",
+      "kind": "mini",
+      "text": "Y a veces distintas formas de vida se unen.",
+      "box": [
+        1794,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 29,
+      "lines": [
+        "Y a veces distintas formas de",
+        "vida se unen."
+      ],
+      "text_max_width_px": 481.14,
+      "available_width_px": 521.0,
+      "text_height_px": 65.83,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P03_L007",
+      "display_id": "CH07_P03_L007",
+      "part": 0,
+      "frame": "4 — магнитный мир",
+      "style": "magnetic",
+      "kind": "speech",
+      "text": "Pero la anomalía que ocurrió con los seres magnéticos no ocurrió solo con ellos.",
+      "box": [
+        84,
+        1787,
+        950,
+        184
+      ],
+      "font_size": 30,
+      "lines": [
+        "Pero la anomalía que ocurrió con los seres",
+        "magnéticos no ocurrió solo con ellos."
+      ],
+      "text_max_width_px": 718.98,
+      "available_width_px": 888.0,
+      "text_height_px": 68.1,
+      "available_height_px": 127.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P03_L008",
+      "display_id": "CH07_P03_L008",
+      "part": 0,
+      "frame": "5 — Мика и магнитное существо",
+      "style": "reveal",
+      "kind": "speech",
+      "text": "Tú y los habitantes magnéticos provienen del mismo mundo.",
+      "box": [
+        1552,
+        2316,
+        790,
+        154
+      ],
+      "font_size": 30,
+      "lines": [
+        "Tú y los habitantes magnéticos provienen",
+        "del mismo mundo."
+      ],
+      "text_max_width_px": 706.58,
+      "available_width_px": 728.0,
+      "text_height_px": 68.1,
+      "available_height_px": 97.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P03_L009",
+      "display_id": "CH07_P03_L009",
+      "part": 0,
+      "frame": "6A — эхо прошлого",
+      "style": "time",
+      "kind": "speech",
+      "text": "Pero el eco de los acontecimientos de vuestro mundo nos llegó solo millones de años después.",
+      "box": [
+        85,
+        2603,
+        898,
+        149
+      ],
+      "font_size": 30,
+      "lines": [
+        "Pero el eco de los acontecimientos de vuestro",
+        "mundo nos llegó solo millones de años después."
+      ],
+      "text_max_width_px": 817.56,
+      "available_width_px": 836.0,
+      "text_height_px": 68.1,
+      "available_height_px": 92.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH07_P03_L010",
+      "display_id": "CH07_P03_L010",
+      "part": 0,
+      "frame": "6B — осознание нейронных существ",
+      "style": "signal",
+      "kind": "climax",
+      "text": "Y solo ahora los habitantes neuronales pudieron enviar una señal a la gente magnética para que crearan un canal que te permitió salvarte, atravesando el tiempo y el espacio.",
+      "box": [
+        1072,
+        2590,
+        1280,
+        239
+      ],
+      "font_size": 32,
+      "lines": [
+        "Y solo ahora los habitantes neuronales pudieron enviar una señal",
+        "a la gente magnética para que crearan un canal que te permitió",
+        "salvarte, atravesando el tiempo y el espacio."
+      ],
+      "text_max_width_px": 1187.0,
+      "available_width_px": 1218.0,
+      "text_height_px": 111.68,
+      "available_height_px": 182.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_0",
+      "part": 0,
+      "frame": "1 — зелёное существо",
+      "style": "laugh",
+      "kind": "laugh",
+      "text": "Ha-ha !",
+      "box": [
+        62,
+        212,
+        190,
+        85
+      ],
+      "font_size": 34,
+      "lines": [
+        "Ha-ha !"
+      ],
+      "text_max_width_px": 139.98,
+      "available_width_px": 142.0,
+      "text_height_px": 35.7,
+      "available_height_px": 50.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 20,
+        "bottom": 15
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_1",
+      "part": 1,
+      "frame": "1 — зелёное существо",
+      "style": "green",
+      "kind": "speech",
+      "text": "Bien sûr que non, Mika. Tu es arrivé jusqu’à moi parce que...",
+      "box": [
+        66,
+        313,
+        270,
+        264
+      ],
+      "font_size": 29,
+      "lines": [
+        "Bien sûr que",
+        "non, Mika.",
+        "Tu es arrivé",
+        "jusqu’à moi",
+        "parce que..."
+      ],
+      "text_max_width_px": 205.83,
+      "available_width_px": 208.0,
+      "text_height_px": 171.97,
+      "available_height_px": 207.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P03_L002",
+      "display_id": "CH07_P03_L002",
+      "part": 0,
+      "frame": "2 — цветок среди камней",
+      "style": "flower",
+      "kind": "speech",
+      "text": "Tu l’as compris : la vie trouve toujours un moyen de se frayer un chemin.",
+      "box": [
+        1250,
+        175,
+        365,
+        272
+      ],
+      "font_size": 30,
+      "lines": [
+        "Tu l’as compris :",
+        "la vie trouve",
+        "toujours un",
+        "moyen de se",
+        "frayer un chemin."
+      ],
+      "text_max_width_px": 299.25,
+      "available_width_px": 303.0,
+      "text_height_px": 177.9,
+      "available_height_px": 215.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P03_L003",
+      "display_id": "CH07_P03_L003",
+      "part": 0,
+      "frame": "3A — Земля",
+      "style": "earth",
+      "kind": "mini",
+      "text": "Sur Terre, les formes de vie dominantes se sont succédé.",
+      "box": [
+        82,
+        1026,
+        519,
+        165
+      ],
+      "font_size": 29,
+      "lines": [
+        "Sur Terre, les formes de vie",
+        "dominantes se sont",
+        "succédé."
+      ],
+      "text_max_width_px": 451.0,
+      "available_width_px": 471.0,
+      "text_height_px": 101.21,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P03_L004",
+      "display_id": "CH07_P03_L004",
+      "part": 0,
+      "frame": "3B — мир плесени",
+      "style": "rebirth",
+      "kind": "mini",
+      "text": "Dans un monde où la vie s’était presque éteinte, une nouvelle est née sur les ruines.",
+      "box": [
+        619,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 28,
+      "lines": [
+        "Dans un monde où la vie s’était",
+        "presque éteinte, une nouvelle",
+        "est née sur les ruines."
+      ],
+      "text_max_width_px": 500.55,
+      "available_width_px": 521.0,
+      "text_height_px": 97.72,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P03_L005",
+      "display_id": "CH07_P03_L005",
+      "part": 0,
+      "frame": "3C — фазовые существа",
+      "style": "crystal",
+      "kind": "mini",
+      "text": "Même dans de froides structures de pierre, la vie a pu commencer à étinceler.",
+      "box": [
+        1227,
+        1026,
+        543,
+        165
+      ],
+      "font_size": 27,
+      "lines": [
+        "Même dans de froides",
+        "structures de pierre, la vie a pu",
+        "commencer à étinceler."
+      ],
+      "text_max_width_px": 482.89,
+      "available_width_px": 495.0,
+      "text_height_px": 94.23,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P03_L006",
+      "display_id": "CH07_P03_L006",
+      "part": 0,
+      "frame": "3D — симбиоз",
+      "style": "symbiosis",
+      "kind": "mini",
+      "text": "Et parfois, différentes formes de vie s’unissent.",
+      "box": [
+        1794,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 29,
+      "lines": [
+        "Et parfois, différentes formes",
+        "de vie s’unissent."
+      ],
+      "text_max_width_px": 482.58,
+      "available_width_px": 521.0,
+      "text_height_px": 65.83,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P03_L007",
+      "display_id": "CH07_P03_L007",
+      "part": 0,
+      "frame": "4 — магнитный мир",
+      "style": "magnetic",
+      "kind": "speech",
+      "text": "Mais l’anomalie qui est arrivée aux êtres magnétiques ne leur est pas arrivée à eux seuls.",
+      "box": [
+        84,
+        1787,
+        950,
+        184
+      ],
+      "font_size": 30,
+      "lines": [
+        "Mais l’anomalie qui est arrivée aux êtres",
+        "magnétiques ne leur est pas arrivée à eux seuls."
+      ],
+      "text_max_width_px": 825.22,
+      "available_width_px": 888.0,
+      "text_height_px": 68.1,
+      "available_height_px": 127.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P03_L008",
+      "display_id": "CH07_P03_L008",
+      "part": 0,
+      "frame": "5 — Мика и магнитное существо",
+      "style": "reveal",
+      "kind": "speech",
+      "text": "Toi et les habitants magnétiques venez d’un seul et même monde.",
+      "box": [
+        1552,
+        2316,
+        790,
+        154
+      ],
+      "font_size": 30,
+      "lines": [
+        "Toi et les habitants magnétiques venez",
+        "d’un seul et même monde."
+      ],
+      "text_max_width_px": 663.67,
+      "available_width_px": 728.0,
+      "text_height_px": 68.1,
+      "available_height_px": 97.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P03_L009",
+      "display_id": "CH07_P03_L009",
+      "part": 0,
+      "frame": "6A — эхо прошлого",
+      "style": "time",
+      "kind": "speech",
+      "text": "Mais l’écho des événements de votre monde ne nous est parvenu que des millions d’années plus tard.",
+      "box": [
+        85,
+        2603,
+        898,
+        149
+      ],
+      "font_size": 27,
+      "lines": [
+        "Mais l’écho des événements de votre monde ne nous",
+        "est parvenu que des millions d’années plus tard."
+      ],
+      "text_max_width_px": 809.83,
+      "available_width_px": 836.0,
+      "text_height_px": 61.29,
+      "available_height_px": 92.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH07_P03_L010",
+      "display_id": "CH07_P03_L010",
+      "part": 0,
+      "frame": "6B — осознание нейронных существ",
+      "style": "signal",
+      "kind": "climax",
+      "text": "Et ce n’est que maintenant que les habitants neuronaux ont pu envoyer un signal au peuple magnétique pour qu’ils créent un canal qui t’a permis d’être sauvé en traversant le temps et l’espace.",
+      "box": [
+        1072,
+        2590,
+        1280,
+        239
+      ],
+      "font_size": 32,
+      "lines": [
+        "Et ce n’est que maintenant que les habitants neuronaux ont pu",
+        "envoyer un signal au peuple magnétique pour qu’ils créent un",
+        "canal qui t’a permis d’être sauvé en traversant le temps et",
+        "l’espace."
+      ],
+      "text_max_width_px": 1145.7,
+      "available_width_px": 1218.0,
+      "text_height_px": 150.72,
+      "available_height_px": 182.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_0",
+      "part": 0,
+      "frame": "1 — зелёное существо",
+      "style": "laugh",
+      "kind": "laugh",
+      "text": "Ha, ha!",
+      "box": [
+        62,
+        212,
+        190,
+        85
+      ],
+      "font_size": 34,
+      "lines": [
+        "Ha, ha!"
+      ],
+      "text_max_width_px": 138.8,
+      "available_width_px": 142.0,
+      "text_height_px": 35.7,
+      "available_height_px": 50.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 20,
+        "bottom": 15
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P03_L001",
+      "display_id": "CH07_P03_L001_visual_1",
+      "part": 1,
+      "frame": "1 — зелёное существо",
+      "style": "green",
+      "kind": "speech",
+      "text": "Natürlich nicht, Mika. Du bist zu mir gelangt, weil...",
+      "box": [
+        66,
+        313,
+        270,
+        264
+      ],
+      "font_size": 29,
+      "lines": [
+        "Natürlich",
+        "nicht, Mika.",
+        "Du bist zu",
+        "mir gelangt,",
+        "weil..."
+      ],
+      "text_max_width_px": 200.77,
+      "available_width_px": 208.0,
+      "text_height_px": 171.97,
+      "available_height_px": 207.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P03_L002",
+      "display_id": "CH07_P03_L002",
+      "part": 0,
+      "frame": "2 — цветок среди камней",
+      "style": "flower",
+      "kind": "speech",
+      "text": "Du hast es erkannt: Das Leben findet immer einen Weg, sich durchzusetzen.",
+      "box": [
+        1250,
+        175,
+        365,
+        272
+      ],
+      "font_size": 30,
+      "lines": [
+        "Du hast es",
+        "erkannt: Das",
+        "Leben findet",
+        "immer einen",
+        "Weg, sich",
+        "durchzusetzen."
+      ],
+      "text_max_width_px": 258.7,
+      "available_width_px": 303.0,
+      "text_height_px": 214.5,
+      "available_height_px": 215.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P03_L003",
+      "display_id": "CH07_P03_L003",
+      "part": 0,
+      "frame": "3A — Земля",
+      "style": "earth",
+      "kind": "mini",
+      "text": "Auf der Erde lösten die dominierenden Lebensformen einander ab.",
+      "box": [
+        82,
+        1026,
+        519,
+        165
+      ],
+      "font_size": 29,
+      "lines": [
+        "Auf der Erde lösten die",
+        "dominierenden",
+        "Lebensformen einander ab."
+      ],
+      "text_max_width_px": 450.58,
+      "available_width_px": 471.0,
+      "text_height_px": 101.21,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P03_L004",
+      "display_id": "CH07_P03_L004",
+      "part": 0,
+      "frame": "3B — мир плесени",
+      "style": "rebirth",
+      "kind": "mini",
+      "text": "In einer Welt, in der das Leben fast erloschen war, entstand auf den Ruinen neues Leben.",
+      "box": [
+        619,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 28,
+      "lines": [
+        "In einer Welt, in der das Leben",
+        "fast erloschen war, entstand auf",
+        "den Ruinen neues Leben."
+      ],
+      "text_max_width_px": 511.27,
+      "available_width_px": 521.0,
+      "text_height_px": 97.72,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P03_L005",
+      "display_id": "CH07_P03_L005",
+      "part": 0,
+      "frame": "3C — фазовые существа",
+      "style": "crystal",
+      "kind": "mini",
+      "text": "Selbst in kalten steinernen Strukturen konnte neues Leben aufleuchten.",
+      "box": [
+        1227,
+        1026,
+        543,
+        165
+      ],
+      "font_size": 27,
+      "lines": [
+        "Selbst in kalten steinernen",
+        "Strukturen konnte neues Leben",
+        "aufleuchten."
+      ],
+      "text_max_width_px": 482.98,
+      "available_width_px": 495.0,
+      "text_height_px": 94.23,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P03_L006",
+      "display_id": "CH07_P03_L006",
+      "part": 0,
+      "frame": "3D — симбиоз",
+      "style": "symbiosis",
+      "kind": "mini",
+      "text": "Und manchmal verbinden sich unterschiedliche Lebensformen.",
+      "box": [
+        1794,
+        1026,
+        569,
+        165
+      ],
+      "font_size": 29,
+      "lines": [
+        "Und manchmal verbinden sich",
+        "unterschiedliche",
+        "Lebensformen."
+      ],
+      "text_max_width_px": 493.53,
+      "available_width_px": 521.0,
+      "text_height_px": 101.21,
+      "available_height_px": 123.0,
+      "safe_padding": {
+        "left": 24,
+        "right": 24,
+        "top": 24,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P03_L007",
+      "display_id": "CH07_P03_L007",
+      "part": 0,
+      "frame": "4 — магнитный мир",
+      "style": "magnetic",
+      "kind": "speech",
+      "text": "Doch die Anomalie, die den magnetischen Wesen widerfuhr, betraf nicht nur sie allein.",
+      "box": [
+        84,
+        1787,
+        950,
+        184
+      ],
+      "font_size": 30,
+      "lines": [
+        "Doch die Anomalie, die den magnetischen Wesen",
+        "widerfuhr, betraf nicht nur sie allein."
+      ],
+      "text_max_width_px": 833.59,
+      "available_width_px": 888.0,
+      "text_height_px": 68.1,
+      "available_height_px": 127.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P03_L008",
+      "display_id": "CH07_P03_L008",
+      "part": 0,
+      "frame": "5 — Мика и магнитное существо",
+      "style": "reveal",
+      "kind": "speech",
+      "text": "Du und die magnetischen Bewohner seid aus ein und derselben Welt.",
+      "box": [
+        1552,
+        2316,
+        790,
+        154
+      ],
+      "font_size": 30,
+      "lines": [
+        "Du und die magnetischen Bewohner seid",
+        "aus ein und derselben Welt."
+      ],
+      "text_max_width_px": 692.09,
+      "available_width_px": 728.0,
+      "text_height_px": 68.1,
+      "available_height_px": 97.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P03_L009",
+      "display_id": "CH07_P03_L009",
+      "part": 0,
+      "frame": "6A — эхо прошлого",
+      "style": "time",
+      "kind": "speech",
+      "text": "Doch das Echo der Ereignisse eurer Welt erreichte uns erst Millionen Jahre später.",
+      "box": [
+        85,
+        2603,
+        898,
+        149
+      ],
+      "font_size": 32,
+      "lines": [
+        "Doch das Echo der Ereignisse eurer Welt",
+        "erreichte uns erst Millionen Jahre später."
+      ],
+      "text_max_width_px": 739.48,
+      "available_width_px": 836.0,
+      "text_height_px": 72.64,
+      "available_height_px": 92.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH07_P03_L010",
+      "display_id": "CH07_P03_L010",
+      "part": 0,
+      "frame": "6B — осознание нейронных существ",
+      "style": "signal",
+      "kind": "climax",
+      "text": "Und erst jetzt konnten die Neuronenwesen den magnetischen Bewohnern ein Signal senden, damit sie einen Kanal erschufen, der dich retten konnte, indem du Zeit und Raum durchquertest.",
+      "box": [
+        1072,
+        2590,
+        1280,
+        239
+      ],
+      "font_size": 32,
+      "lines": [
+        "Und erst jetzt konnten die Neuronenwesen den magnetischen",
+        "Bewohnern ein Signal senden, damit sie einen Kanal erschufen,",
+        "der dich retten konnte, indem du Zeit und Raum durchquertest."
+      ],
+      "text_max_width_px": 1155.25,
+      "available_width_px": 1218.0,
+      "text_height_px": 111.68,
+      "available_height_px": 182.0,
+      "safe_padding": {
+        "left": 30,
+        "right": 32,
+        "top": 34,
+        "bottom": 23
+      },
+      "fits": true
+    }
+  ],
+  "visual_blocks_count": 11,
+  "spoken_lines_count": 10,
+  "no_duplicate_audio_for_split_line": true
+}

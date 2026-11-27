@@ -1,0 +1,180 @@
+{
+  "schema_version": 3,
+  "page_id": "CH04_P04",
+  "locale": "de",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch04_p04_languages/ch04_p04_de.webp",
+  "native_scene_panels": [
+    "p44_professor_studies_fossil",
+    "p44_professor_realization",
+    "p44_dinosaur_dna",
+    "p44_ancient_dinosaurs",
+    "p44_ancient_meteorite"
+  ],
+  "panel_bounds": {
+    "p44_professor_studies_fossil": [
+      0.024,
+      0.018,
+      0.952,
+      0.305
+    ],
+    "p44_professor_realization": [
+      0.024,
+      0.337,
+      0.395,
+      0.17
+    ],
+    "p44_dinosaur_dna": [
+      0.44,
+      0.333,
+      0.535,
+      0.174
+    ],
+    "p44_ancient_dinosaurs": [
+      0.024,
+      0.523,
+      0.952,
+      0.262
+    ],
+    "p44_ancient_meteorite": [
+      0.024,
+      0.797,
+      0.952,
+      0.191
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH04_P04_L001",
+      "frame_id": "CH04_P04_F01",
+      "panel_id": "p44_professor_studies_fossil",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Während des Flugs untersuchte der Professor die Proben, die sie auf Archeon gesammelt hatten.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P04_L001_de.mp3",
+      "audio_duration_s": 5.329,
+      "camera_target": [
+        0.43,
+        0.17,
+        0.29
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "44aaa7da426965e9a07e586d1cf49f4804729be04482ca55d49f0565fad757c7"
+    },
+    {
+      "line_id": "CH04_P04_L002",
+      "frame_id": "CH04_P04_F01",
+      "panel_id": "p44_professor_studies_fossil",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Was ist los?",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P04_L002_de.mp3",
+      "audio_duration_s": 1.411,
+      "camera_target": [
+        0.245,
+        0.198,
+        0.225
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e3b8542e182342d549caeaac23c8d9d8dd241f37a89a13325ac3fd205eef723d"
+    },
+    {
+      "line_id": "CH04_P04_L003",
+      "frame_id": "CH04_P04_F02",
+      "panel_id": "p44_professor_realization",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Ich glaube, ich weiß, woher sie stammen!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P04_L003_de.mp3",
+      "audio_duration_s": 2.586,
+      "camera_target": [
+        0.216,
+        0.435,
+        0.155
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "37fd573aecfd6111094179ce777ee34c14839b7330cc1e07cfde134f8fe6c08d"
+    },
+    {
+      "line_id": "CH04_P04_L004",
+      "frame_id": "CH04_P04_F03",
+      "panel_id": "p44_dinosaur_dna",
+      "speaker_id": "CHR_015",
+      "kind": "science_explanation",
+      "spoken_text": "Ihre DNA ähnelt verblüffend stark der urzeitlicher Reptilien von der Erde!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P04_L004_de.mp3",
+      "audio_duration_s": 5.329,
+      "camera_target": [
+        0.71,
+        0.419,
+        0.166
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "08d4061902f423719970bff59fb64dc98abf102afa3da873faebd4844b94f30c"
+    },
+    {
+      "line_id": "CH04_P04_L005",
+      "frame_id": "CH04_P04_F04",
+      "panel_id": "p44_ancient_dinosaurs",
+      "speaker_id": "CHR_015",
+      "kind": "flashback_explanation",
+      "spoken_text": "Vor 65 bis 70 Millionen Jahren lebten auf der Erde riesige echsenartige Wesen: die Dinosaurier.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P04_L005_de.mp3",
+      "audio_duration_s": 8.046,
+      "camera_target": [
+        0.42,
+        0.653,
+        0.255
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "682c7a6480ad46aebcf2e781d9e6e08bd61192c79ca8d5cf03a540486317ff6c"
+    },
+    {
+      "line_id": "CH04_P04_L006",
+      "frame_id": "CH04_P04_F05",
+      "panel_id": "p44_ancient_meteorite",
+      "speaker_id": "CHR_015",
+      "kind": "flashback_explanation",
+      "spoken_text": "Doch vor etwa 66 Millionen Jahren veränderte ein gewaltiger Asteroideneinschlag alles. Die meisten Dinosaurier starben aus. Das eröffnete neue Wege für die Evolution der Säugetiere und viel später der Menschen.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P04_L006_de.mp3",
+      "audio_duration_s": 14.681,
+      "camera_target": [
+        0.48,
+        0.894,
+        0.185
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "23c25912d422e431440f09ae67ce7ad115fed8e8d6afaf2b96432305f7f26de9"
+    }
+  ]
+}

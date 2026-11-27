@@ -1,0 +1,290 @@
+{
+  "schema_version": 3,
+  "page_id": "CH02_P01",
+  "locale": "fr",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch02_p01_languages/ch02_p01_fr.webp",
+  "native_scene_panels": [
+    "p21_flight_cabin",
+    "p21_professor_door",
+    "p21_ocean_city",
+    "p21_mika_enters",
+    "p21_mika_meets_fungus"
+  ],
+  "panel_bounds": {
+    "p21_flight_cabin": [
+      0.026,
+      0.018,
+      0.666,
+      0.276
+    ],
+    "p21_professor_door": [
+      0.737,
+      0.019,
+      0.237,
+      0.276
+    ],
+    "p21_ocean_city": [
+      0.026,
+      0.31,
+      0.665,
+      0.307
+    ],
+    "p21_mika_enters": [
+      0.731,
+      0.31,
+      0.246,
+      0.312
+    ],
+    "p21_mika_meets_fungus": [
+      0.025,
+      0.638,
+      0.949,
+      0.338
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH02_P01_L001",
+      "frame_id": "CH02_P01_F01",
+      "panel_id": "p21_flight_cabin",
+      "speaker_id": "CHR_014",
+      "kind": "bubble_connected_ai_information",
+      "spoken_text": "Grand Nuage de Magellan. Forme de vie intelligente dominante : des colonies de champignons conscients. Monde principal : Talose. Population : environ vingt-huit mille quatre cents colonies. Chaque colonie compte pour une conscience, quel que soit le nombre de corps.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P01_L001_fr.mp3",
+      "audio_duration_s": 15.44,
+      "camera_target": [
+        0.348,
+        0.125,
+        0.253
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2af50fc7f08b1f4aaecafa55baabea4e578f5474ff834b530fad9a0e8d0562ab"
+    },
+    {
+      "line_id": "CH02_P01_L002",
+      "frame_id": "CH02_P01_F01",
+      "panel_id": "p21_flight_cabin",
+      "speaker_id": "CHR_001",
+      "kind": "speech_curious_decision",
+      "spoken_text": "Je crois qu’on devrait aller voir ça !",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P01_L002_fr.mp3",
+      "audio_duration_s": 2.16,
+      "camera_target": [
+        0.245,
+        0.198,
+        0.17
+      ],
+      "transition_before_s": 0.32,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8dcbfac94afbde74b37287573780aaba67f6f5ef263626b486be7984b45226be"
+    },
+    {
+      "line_id": "CH02_P01_L003",
+      "frame_id": "CH02_P01_F02",
+      "panel_id": "p21_professor_door",
+      "speaker_id": "CHR_015",
+      "kind": "speech_comic_reluctance",
+      "spoken_text": "Moi ? Je reste à bord du vaisseau ! Hors de question de grimper sur ce gros champignon !",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P01_L003_fr.mp3",
+      "audio_duration_s": 5.84,
+      "camera_target": [
+        0.855,
+        0.115,
+        0.096
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "c463b35efd6918d39bccfd0b7294d9e95a2f3f83c61508d73eaae9ccaaabb971"
+    },
+    {
+      "line_id": "CH02_P01_L004",
+      "frame_id": "CH02_P01_F03",
+      "panel_id": "p21_ocean_city",
+      "speaker_id": "CHR_004",
+      "kind": "narration_city_title",
+      "spoken_text": "Talose. La cité centrale. Ici, les rues et les maisons poussent au lieu d’être bâties. Toute la ville forme un seul organisme vivant.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P01_L004_fr.mp3",
+      "audio_duration_s": 9.52,
+      "camera_target": [
+        0.354,
+        0.43,
+        0.258
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e80cdf7ccf8659fb261dbcde104154d619b37cb6a80410c5a7b6a71e9ef90a4a"
+    },
+    {
+      "line_id": "CH02_P01_L005",
+      "frame_id": "CH02_P01_F04",
+      "panel_id": "p21_mika_enters",
+      "speaker_id": "CHR_004",
+      "kind": "narration_suspense",
+      "spoken_text": "Mika errait dans les rues vivantes sans rencontrer personne. Soudain, il entendit un étrange bruissement.",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P01_L005_fr.mp3",
+      "audio_duration_s": 6.88,
+      "camera_target": [
+        0.851,
+        0.47,
+        0.1
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "5bb40fb49debeba89614a9526e52755972cd5763c3145767456e9dcc61d1e8b0"
+    },
+    {
+      "line_id": "CH02_P01_L006",
+      "frame_id": "CH02_P01_F05",
+      "panel_id": "p21_mika_meets_fungus",
+      "speaker_id": "CHR_022",
+      "kind": "sfx_hiss_first",
+      "spoken_text": "Chhh…",
+      "audio_path": "res://mika_motion_comic/ch02_clips/sfx/CH02_P01_L006_FUNGAL_HISS_1.mp3",
+      "audio_duration_s": 0.56,
+      "camera_target": [
+        0.73,
+        0.721,
+        0.173
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "shared_sfx",
+      "sha256": "811b01100e7f8a5f61ddd4bcca3617095e29db72c2606dca0e9118a453a8f280"
+    },
+    {
+      "line_id": "CH02_P01_L007",
+      "frame_id": "CH02_P01_F05",
+      "panel_id": "p21_mika_meets_fungus",
+      "speaker_id": "CHR_001",
+      "kind": "speech_quick_reassurance",
+      "spoken_text": "Qui es-tu ?",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P01_L007_fr.mp3",
+      "audio_duration_s": 1.44,
+      "camera_target": [
+        0.27,
+        0.779,
+        0.19
+      ],
+      "transition_before_s": 0.32,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "596af12f9e09c4578165ff4e2bdc863c95fc6daf8166c083de96f86093cc5df8"
+    },
+    {
+      "line_id": "CH02_P01_L009",
+      "frame_id": "CH02_P01_F05",
+      "panel_id": "p21_mika_meets_fungus",
+      "speaker_id": "CHR_022",
+      "kind": "sfx_hiss_second",
+      "spoken_text": "Krrr-chhh…",
+      "audio_path": "res://mika_motion_comic/ch02_clips/sfx/CH02_P01_L009_FUNGAL_HISS_2.mp3",
+      "audio_duration_s": 0.64,
+      "camera_target": [
+        0.771,
+        0.79,
+        0.17
+      ],
+      "transition_before_s": 0.32,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "shared_sfx",
+      "sha256": "536ab5c329c545c4051f9f2f21630ea4124475d102c48bd06cee99f26f03a13c"
+    },
+    {
+      "line_id": "CH02_P01_L010",
+      "frame_id": "CH02_P01_F05",
+      "panel_id": "p21_mika_meets_fungus",
+      "speaker_id": "CHR_001",
+      "kind": "speech_setup_simulator",
+      "spoken_text": "Attends ! Je vais régler le simulateur !",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P01_L010_fr.mp3",
+      "audio_duration_s": 2.08,
+      "camera_target": [
+        0.32,
+        0.818,
+        0.205
+      ],
+      "transition_before_s": 0.32,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "54e4786959b0fb3df22f84f93a067446738cd51f8bbc2346b13672b790facc36"
+    },
+    {
+      "line_id": "CH02_P01_L011",
+      "frame_id": "CH02_P01_F05",
+      "panel_id": "p21_mika_meets_fungus",
+      "speaker_id": "CHR_022",
+      "kind": "sfx_hiss_translating",
+      "spoken_text": "Chh…",
+      "audio_path": "res://mika_motion_comic/ch02_clips/sfx/CH02_P01_L011_FUNGAL_HISS_TRANSLATION.mp3",
+      "audio_duration_s": 0.72,
+      "camera_target": [
+        0.783,
+        0.862,
+        0.145
+      ],
+      "transition_before_s": 0.18,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "shared_sfx",
+      "sha256": "0305eca361f674cc74e7ec1eaad18573e7c902b6d7f7b8f54f7864dd8d7bfb53"
+    },
+    {
+      "line_id": "CH02_P01_L008",
+      "frame_id": "CH02_P01_F05",
+      "panel_id": "p21_mika_meets_fungus",
+      "speaker_id": "CHR_022",
+      "kind": "speech_translated_greeting",
+      "spoken_text": "Salut !",
+      "audio_path": "res://mika_motion_comic/ch02_clips/fr/CH02_P01_L008_fr.mp3",
+      "audio_duration_s": 1.36,
+      "camera_target": [
+        0.782,
+        0.895,
+        0.15
+      ],
+      "transition_before_s": 0.18,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "aa54241868b4cf709ea6e9a871c872e257618507d34ee82207d39ad727209cec"
+    }
+  ]
+}

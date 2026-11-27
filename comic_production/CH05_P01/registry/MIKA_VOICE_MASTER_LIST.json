@@ -1,0 +1,3748 @@
+{
+  "schema_version": "MIKA_VOICE_MASTER_1.0",
+  "project": "MIKA / Infinite Space",
+  "updated_on": "2026-11-24",
+  "source_global_registry": "source/MIKA_Global_Production_Registry_ORIGINAL.json",
+  "languages": [
+    {
+      "code": "ru",
+      "name": "Русский",
+      "elevenlabs_language_code": "ru",
+      "godot_locale": "ru"
+    },
+    {
+      "code": "en",
+      "name": "English",
+      "elevenlabs_language_code": "en",
+      "godot_locale": "en"
+    },
+    {
+      "code": "pt_BR",
+      "name": "Português (Brasil)",
+      "elevenlabs_language_code": "pt",
+      "godot_locale": "pt_BR"
+    },
+    {
+      "code": "es",
+      "name": "Español",
+      "elevenlabs_language_code": "es",
+      "godot_locale": "es"
+    },
+    {
+      "code": "fr",
+      "name": "Français",
+      "elevenlabs_language_code": "fr",
+      "godot_locale": "fr"
+    },
+    {
+      "code": "de",
+      "name": "Deutsch",
+      "elevenlabs_language_code": "de",
+      "godot_locale": "de"
+    }
+  ],
+  "production_policy": {
+    "one_take_per_line": true,
+    "master_model": "eleven_v4",
+    "audio_only_this_chat": true,
+    "visuals_handled_in_godot_other_chat": true,
+    "preserve_line_ids_and_localized_text": true,
+    "fast_montage_no_extra_lines": true,
+    "api_key_source": "existing local v10 private key; no key stored in registry",
+    "no_new_custom_voices": true,
+    "voice_continuity": "mika from P01 v5, narrator George, mars_ai_core from P04 locked casting; same ID for all six languages",
+    "phrase_audio_format": "ONE_MP3_PER_ORIGINAL_LINE_PER_LANGUAGE",
+    "P06_Bubble_L007": "original procedural nonverbal SFX; not a TTS voice",
+    "P06_no_new_voice_ids": true,
+    "CH02_P01": "8 обязательных речевых фраз на язык; 3 неречевых сигнала грибной колонии; профессор сохраняет voice_id из CH01_P07.",
+    "CH02_P02": "8 речевых фраз на язык, CH02_P02_L009 только визуальный HUD; использовать Мику, рассказчика George и голос грибной колонии из CH02_P01",
+    "CH02_P03": "8 оригинальных речевых фраз × 6 языков; Мика, George и грибная колония CHR_022. Голоса строго наследуются из CH02_P02 (или CH02_P01, если P02 не запускалась). Никакого Voice Design и новых реплик.",
+    "CH02_P04": "10 оригинальных речевых реплик × 6 языков; Мика и рассказчик George наследуются без изменений; разум живой станции «Тарантул» CHR_023 получает один доступный библиотечный голос и закрепляется на будущие страницы. Один MP3 на зарегистрированную реплику. Без Voice Design и дополнительных текстов.",
+    "CH03_P01": {
+      "one_line_one_mp3": true,
+      "mika_thought_L011_is_spoken": true,
+      "two_display_only_HUD_ids": [
+        "CH03_P01_L004",
+        "CH03_P01_L006"
+      ],
+      "inherited_voices_locked": [
+        "CHR_001",
+        "CHR_004",
+        "CHR_015",
+        "CHR_023"
+      ],
+      "new_library_voices_locked_on_first_run": [
+        "CHR_024",
+        "CHR_025"
+      ],
+      "no_Secret_in_ZIP": true
+    },
+    "CH03_P02": {
+      "one_line_one_mp3": true,
+      "all_lines_spoken": true,
+      "no_new_voice_selection": true,
+      "inherit_cast_from_CH03_P01": [
+        "CHR_001",
+        "CHR_004",
+        "CHR_025"
+      ],
+      "L007_L008_separate_mp3_consecutive": true,
+      "key_not_bundled": true
+    },
+    "CH03_P03": {
+      "one_line_one_mp3": true,
+      "all_lines_spoken": true,
+      "inherited_voices_locked": [
+        "CHR_001",
+        "CHR_004"
+      ],
+      "new_library_voices_locked_once": [
+        "CHR_026",
+        "CHR_027"
+      ],
+      "new_voice_design": false,
+      "key_not_bundled": true,
+      "five_source_clip_mismatches_L001_use_unique_lines_localized": true
+    },
+    "CH04_P01": "7 обязательных реплик × 6 языков; одно общее неречевое событие L004; четыре роли; профессор наследуется из CH01_P07 без нового кастинга; неизвестный радиоголос выбирается единожды; одна реплика персонажа=один MP3.",
+    "CH04_P02": "13 речевых реплик × 6 языков; 3 общих неречевых эффекта L004/L005/L013; наследуем Мику, рассказчика George, профессора Bill из предыдущих страниц; новый голос ящера-пирата CHR_031 выбирается единожды и закрепляется; L015 произносится ПЕРЕД L014 по исходному reading order.",
+    "CH03_P04": {
+      "languages": [
+        "ru",
+        "en",
+        "pt_BR",
+        "es",
+        "fr",
+        "de"
+      ],
+      "format": "ONE_MP3_PER_SPEAKER_UTTERANCE",
+      "speaker_lock": {
+        "L001": "CHR_004",
+        "L002": "CHR_015",
+        "L003-L012": "CHR_028"
+      },
+      "source_sha256": "f6af59b6d20de869d9dd7703e5f8fa84e2cd05331eabe60a5c3896fad6625a36",
+      "narrator_must_not_voice_leader": true
+    },
+    "CH04_P03": "10 речевых реплик × 6 языков = 60 MP3. Мика/George сохраняются, ящер-пират строго CH04_P02, навигация строго River CH01_P03, новый профессор Археона CHR_032 — отдельный от Bill CHR_015.",
+    "CH04_P04": "6 реплик × 6 языков; все TTS; профессор CHR_015 из CH01_P07 (Bill); Мика из P01 v5; narrator George; без нового кастинга; 1 ID=1 MP3",
+    "CH05_P01": "9 речевых реплик × 6 языков; 3 общих неречевых SFX; Мика, George, Bill, ящер-пират — только закреплённый voice_id; 1 ID=1 аудиоклип."
+  },
+  "voices": {
+    "CHR_001": {
+      "role": "mika",
+      "source": "RU_v5/output/ru/created_voices.json",
+      "voice_id": null,
+      "name": "Мика — сохранённый голос v5",
+      "status": "approved_continuity"
+    },
+    "CHR_004": {
+      "role": "narrator",
+      "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+      "name": "George",
+      "status": "approved_continuity"
+    },
+    "CHR_002": {
+      "role": "friend",
+      "source": "RU_v5/output/ru/created_voices.json",
+      "voice_id": null,
+      "name": "Друг Мики — сохранённый голос v5",
+      "status": "approved_continuity"
+    },
+    "CHR_008": {
+      "role": "ship_navigation",
+      "voice_id": "SAz9YHcvj6GT2YYXdXww",
+      "name": "River — Relaxed, Neutral, Informative",
+      "status": "LOCKED_CH01_P03"
+    },
+    "CHR_011": {
+      "role": "earth_help_desk",
+      "voice_id": null,
+      "name": "Elise",
+      "status": "selected_for_P03_id_in_local_P03_package"
+    },
+    "CHR_012": {
+      "role": "mars_clerk",
+      "voice_id": null,
+      "name": "Сотрудник бюро Марса",
+      "status": "resolve_first_generate_and_lock"
+    },
+    "CHR_013": {
+      "role": "mars_ai_core",
+      "voice_id": null,
+      "name": "Центральный ИИ Марса",
+      "status": "resolve_first_generate_and_lock"
+    },
+    "CHR_014": {
+      "role": "bubble_sfx",
+      "voice_id": null,
+      "name": "Баббл: электронные сигналы, не речь",
+      "status": "nonverbal_sfx_only"
+    },
+    "CHR_015": {
+      "role": "professor",
+      "voice_id": null,
+      "name": "Профессор верфи Каллисто",
+      "status": "select_once_from_accessible_elevenlabs_library_and_lock"
+    },
+    "CHR_016": {
+      "role": "engineer_1",
+      "voice_id": null,
+      "name": "Инженер №1",
+      "status": "select_once_from_accessible_elevenlabs_library_and_lock"
+    },
+    "CHR_017": {
+      "role": "engineer_2",
+      "voice_id": null,
+      "name": "Инженер №2",
+      "status": "select_once_from_accessible_elevenlabs_library_and_lock"
+    },
+    "CHR_018": {
+      "role": "service_staff",
+      "voice_id": null,
+      "name": "Сотрудница сервиса",
+      "status": "select_once_from_accessible_elevenlabs_library_and_lock"
+    },
+    "CHR_023": {
+      "role": "tarantula_station",
+      "voice_id": null,
+      "name": "Разум станции «Тарантул» / её отделившаяся часть",
+      "source": "Global registry CHR_023; accessible ElevenLabs Library will be selected once",
+      "status": "AWAITING_FIRST_LIBRARY_CAST",
+      "voice_brief": "Тёплый, спокойный, немного таинственный синтетически-органический тембр без пугающих эффектов."
+    },
+    "CHR_024": {
+      "role": "phase_host",
+      "name": "Житель Океи / фазовый проводник",
+      "voice_id": null,
+      "status": "CAST_ONCE_FROM_ACCESSIBLE_VOICES_AND_LOCK",
+      "voice_brief": "Лёгкий, плавный, воздушный, доброжелательный голос фазовой расы"
+    },
+    "CHR_025": {
+      "role": "lizard_guide",
+      "name": "Ящер-проводник",
+      "voice_id": null,
+      "status": "CAST_ONCE_FROM_ACCESSIBLE_VOICES_AND_LOCK",
+      "voice_brief": "Тёплый, чуть шероховатый голос доброжелательного ящера"
+    },
+    "CHR_026": {
+      "role": "phase_crystal_guard",
+      "name": "Фазовый страж кристаллов",
+      "voice_id": null,
+      "status": "CAST_ONCE_FROM_ACCESSIBLE_VOICES_AND_LOCK"
+    },
+    "CHR_027": {
+      "role": "phase_archive_envoy",
+      "name": "Посланник Живого архива",
+      "voice_id": null,
+      "status": "CAST_ONCE_FROM_ACCESSIBLE_VOICES_AND_LOCK"
+    },
+    "CHR_030": {
+      "role": "unknown_attacker_radio",
+      "name": "Голос неизвестного корабля",
+      "voice_id": null,
+      "status": "SELECT_ONCE_AND_LOCK_CH04_P01"
+    },
+    "CHR_031": {
+      "role": "pirate_lizard",
+      "name": "Ящер-пират станции «Голова Титана»",
+      "voice_id": null,
+      "status": "SELECT_ONCE_AND_LOCK_CH04_P02"
+    },
+    "CHR_028": {
+      "role": "phase_archive_leader",
+      "name": "Предводитель Живого архива",
+      "voice_id": null,
+      "status": "TO_CAST_ONCE_CH03_P04",
+      "voice_brief": "Мудрый, спокойно-авторитетный, выразительный фазовый предводитель; не голос рассказчика"
+    },
+    "CHR_032": {
+      "role": "archeon_archaeologist",
+      "name": "Профессор археологии Археона",
+      "voice_id": null,
+      "status": "SELECT_ONCE_AND_LOCK_CH04_P03",
+      "distinct_from": "CHR_015"
+    }
+  },
+  "pages": {
+    "CH01_P01": {
+      "status_by_language": {
+        "ru": "approved_draft_v5",
+        "en": "confirmed_generated_10_clips",
+        "pt_BR": "prior_work_unverified_in_this_package",
+        "es": "prior_work_unverified_in_this_package",
+        "fr": "prior_work_unverified_in_this_package",
+        "de": "prior_work_unverified_in_this_package"
+      },
+      "lines_per_language": 10,
+      "note": "Prior package state, this ZIP does not verify local MP3."
+    },
+    "CH01_P02": {
+      "status_by_language": {
+        "ru": "prior_work_unverified_in_this_package",
+        "en": "prior_work_unverified_in_this_package",
+        "pt_BR": "prior_work_unverified_in_this_package",
+        "es": "prior_work_unverified_in_this_package",
+        "fr": "prior_work_unverified_in_this_package",
+        "de": "prior_work_unverified_in_this_package"
+      },
+      "lines_per_language": 6,
+      "note": "Prior package state, this ZIP does not verify local MP3."
+    },
+    "CH01_P03": {
+      "status_by_language": {
+        "ru": "confirmed_generated_by_user_48_clips",
+        "en": "confirmed_generated_by_user_48_clips",
+        "pt_BR": "confirmed_generated_by_user_48_clips",
+        "es": "confirmed_generated_by_user_48_clips",
+        "fr": "confirmed_generated_by_user_48_clips",
+        "de": "confirmed_generated_by_user_48_clips"
+      },
+      "lines_per_language": 8,
+      "note": "P03: 48 tracks user-confirmed; P04: prepared 48 tracks; earlier page states may need syncing from Mac local outputs."
+    },
+    "CH01_P04": {
+      "status_by_language": {
+        "ru": "ready_not_generated",
+        "en": "ready_not_generated",
+        "pt_BR": "ready_not_generated",
+        "es": "ready_not_generated",
+        "fr": "ready_not_generated",
+        "de": "ready_not_generated"
+      },
+      "lines_per_language": 8,
+      "note": "P03: 48 tracks user-confirmed; P04: prepared 48 tracks; earlier page states may need syncing from Mac local outputs."
+    },
+    "CH01_P05": {
+      "status_by_language": {
+        "ru": "VERIFIED_BY_UPLOADED_60_MP3_PACKAGE",
+        "en": "VERIFIED_BY_UPLOADED_60_MP3_PACKAGE",
+        "pt_BR": "VERIFIED_BY_UPLOADED_60_MP3_PACKAGE",
+        "es": "VERIFIED_BY_UPLOADED_60_MP3_PACKAGE",
+        "fr": "VERIFIED_BY_UPLOADED_60_MP3_PACKAGE",
+        "de": "VERIFIED_BY_UPLOADED_60_MP3_PACKAGE"
+      },
+      "lines_per_language": 10,
+      "note": "Готовый CH01_P05_6LANG_PHRASES.zip проверен, 60 MP3 и manifest.json."
+    },
+    "CH01_P06": {
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      },
+      "lines_per_language": 14,
+      "tts_lines_per_language": 13,
+      "nonverbal_lines_per_language": 1,
+      "note": "P06 L007 Bubble beep procedural, same audio across languages. Gas sound from original SFX record added once as a shared optional effect."
+    },
+    "CH01_P07": {
+      "status_by_language": {
+        "ru": "BUILDER_PREPARED_NOT_GENERATED",
+        "en": "BUILDER_PREPARED_NOT_GENERATED",
+        "pt_BR": "BUILDER_PREPARED_NOT_GENERATED",
+        "es": "BUILDER_PREPARED_NOT_GENERATED",
+        "fr": "BUILDER_PREPARED_NOT_GENERATED",
+        "de": "BUILDER_PREPARED_NOT_GENERATED"
+      },
+      "source_registry_lines": 17,
+      "required_tts_per_language": 12,
+      "optional_speech_per_language": 4,
+      "display_only_per_language": 1,
+      "notes": "Из 17 исходных ID озвучиваются 12 обязательных, 4 факультативных оставлены в master, L017 HUD без речи. Отдельный общий SFX искр."
+    },
+    "CH02_P01": {
+      "status_by_language": {
+        "ru": "BUILDER_PREPARED_NOT_GENERATED",
+        "en": "BUILDER_PREPARED_NOT_GENERATED",
+        "pt_BR": "BUILDER_PREPARED_NOT_GENERATED",
+        "es": "BUILDER_PREPARED_NOT_GENERATED",
+        "fr": "BUILDER_PREPARED_NOT_GENERATED",
+        "de": "BUILDER_PREPARED_NOT_GENERATED"
+      },
+      "source_registry_lines": 11,
+      "required_tts_per_language": 8,
+      "optional_sfx_per_language": 3,
+      "notes": "Начало главы 2: Мика, профессор, рассказчик, Баббл-информатор и грибная колония Талосе. Сигналы L006/L009/L011 не синтезируются речевой моделью."
+    },
+    "CH02_P02": {
+      "status_by_language": {
+        "ru": "BUILDER_PREPARED_NOT_GENERATED",
+        "en": "BUILDER_PREPARED_NOT_GENERATED",
+        "pt_BR": "BUILDER_PREPARED_NOT_GENERATED",
+        "es": "BUILDER_PREPARED_NOT_GENERATED",
+        "fr": "BUILDER_PREPARED_NOT_GENERATED",
+        "de": "BUILDER_PREPARED_NOT_GENERATED"
+      },
+      "source_registry_lines": 9,
+      "required_tts_per_language": 8,
+      "display_only_per_language": 1,
+      "source_page": "MIKA_Global_Production_Registry_ORIGINAL.json",
+      "notes": "Зал памяти Талосе, совет посетить Молию, зов Баббла, отлет. Грибная колония продолжает кастинг CH02_P01."
+    },
+    "CH02_P03": {
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      },
+      "lines_per_language": 8,
+      "note": "Молия, древние руины, восстановление природы, направление к кораблю «Тарантул». Источник: оригинальный реестр NEBULA."
+    },
+    "CH02_P04": {
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      },
+      "lines_per_language": 10,
+      "note": "Финал главы 2: живой корабль-лаборатория «Тарантул», падение старой цивилизации Молии, зарождение грибной сети, новый спутник и курс в Малое Магелланово Облако. Источник: глобальный реестр NEBULA."
+    },
+    "CH03_P01": {
+      "status": "BUILDER_PREPARED_AUDIO_PENDING",
+      "spoken_lines_per_language": 12,
+      "display_only_lines": 2,
+      "languages": [
+        "ru",
+        "en",
+        "pt_BR",
+        "es",
+        "fr",
+        "de"
+      ],
+      "status_by_language": {
+        "ru": "0/12_PENDING",
+        "en": "0/12_PENDING",
+        "pt_BR": "0/12_PENDING",
+        "es": "0/12_PENDING",
+        "fr": "0/12_PENDING",
+        "de": "0/12_PENDING"
+      },
+      "final_package": "CH03_P01_6LANG_PHRASES.zip"
+    },
+    "CH03_P02": {
+      "status": "BUILDER_PREPARED_AUDIO_PENDING",
+      "spoken_lines_per_language": 10,
+      "display_only_lines": 0,
+      "languages": [
+        "ru",
+        "en",
+        "pt_BR",
+        "es",
+        "fr",
+        "de"
+      ],
+      "status_by_language": {
+        "ru": "0/10_PENDING",
+        "en": "0/10_PENDING",
+        "pt_BR": "0/10_PENDING",
+        "es": "0/10_PENDING",
+        "fr": "0/10_PENDING",
+        "de": "0/10_PENDING"
+      },
+      "final_package": "CH03_P02_6LANG_PHRASES.zip"
+    },
+    "CH03_P03": {
+      "status": "BUILDER_PREPARED_AUDIO_PENDING",
+      "spoken_lines_per_language": 8,
+      "display_only_lines": 0,
+      "languages": [
+        "ru",
+        "en",
+        "pt_BR",
+        "es",
+        "fr",
+        "de"
+      ],
+      "status_by_language": {
+        "ru": "0/8_PENDING",
+        "en": "0/8_PENDING",
+        "pt_BR": "0/8_PENDING",
+        "es": "0/8_PENDING",
+        "fr": "0/8_PENDING",
+        "de": "0/8_PENDING"
+      },
+      "final_package": "CH03_P03_6LANG_PHRASES.zip"
+    },
+    "CH04_P01": {
+      "status": "BUILDER_PREPARED_AUDIO_PENDING",
+      "spoken_lines_per_language": 7,
+      "nonverbal_effects": 1,
+      "languages": [
+        "ru",
+        "en",
+        "pt_BR",
+        "es",
+        "fr",
+        "de"
+      ],
+      "status_by_language": {
+        "ru": "0/7_PENDING",
+        "en": "0/7_PENDING",
+        "pt_BR": "0/7_PENDING",
+        "es": "0/7_PENDING",
+        "fr": "0/7_PENDING",
+        "de": "0/7_PENDING"
+      },
+      "final_package": "CH04_P01_6LANG_PHRASES.zip"
+    },
+    "CH04_P02": {
+      "status": "BUILDER_PREPARED_AUDIO_PENDING",
+      "spoken_lines_per_language": 13,
+      "nonverbal_effects": 3,
+      "languages": [
+        "ru",
+        "en",
+        "pt_BR",
+        "es",
+        "fr",
+        "de"
+      ],
+      "status_by_language": {
+        "ru": "0/13_PENDING",
+        "en": "0/13_PENDING",
+        "pt_BR": "0/13_PENDING",
+        "es": "0/13_PENDING",
+        "fr": "0/13_PENDING",
+        "de": "0/13_PENDING"
+      },
+      "final_package": "CH04_P02_6LANG_PHRASES.zip",
+      "line_order": [
+        "CH04_P02_L001",
+        "CH04_P02_L002",
+        "CH04_P02_L003",
+        "CH04_P02_L004",
+        "CH04_P02_L005",
+        "CH04_P02_L006",
+        "CH04_P02_L007",
+        "CH04_P02_L008",
+        "CH04_P02_L009",
+        "CH04_P02_L010",
+        "CH04_P02_L011",
+        "CH04_P02_L012",
+        "CH04_P02_L013",
+        "CH04_P02_L015",
+        "CH04_P02_L014",
+        "CH04_P02_L016"
+      ]
+    },
+    "CH03_P04": {
+      "status": "BUILDER_PREPARED_AUDIO_PENDING",
+      "spoken_lines_per_language": 12,
+      "languages": [
+        "ru",
+        "en",
+        "pt_BR",
+        "es",
+        "fr",
+        "de"
+      ],
+      "status_by_language": {
+        "ru": "0/12_PENDING",
+        "en": "0/12_PENDING",
+        "pt_BR": "0/12_PENDING",
+        "es": "0/12_PENDING",
+        "fr": "0/12_PENDING",
+        "de": "0/12_PENDING"
+      },
+      "final_package": "CH03_P04_6LANG_PHRASES.zip"
+    },
+    "CH04_P03": {
+      "status": "BUILDER_PREPARED_AUDIO_PENDING",
+      "spoken_lines_per_language": 10,
+      "languages": [
+        "ru",
+        "en",
+        "pt_BR",
+        "es",
+        "fr",
+        "de"
+      ],
+      "status_by_language": {
+        "ru": "0/10_PENDING",
+        "en": "0/10_PENDING",
+        "pt_BR": "0/10_PENDING",
+        "es": "0/10_PENDING",
+        "fr": "0/10_PENDING",
+        "de": "0/10_PENDING"
+      },
+      "final_package": "CH04_P03_6LANG_PHRASES.zip",
+      "line_order": [
+        "CH04_P03_L001",
+        "CH04_P03_L002",
+        "CH04_P03_L003",
+        "CH04_P03_L004",
+        "CH04_P03_L005",
+        "CH04_P03_L006",
+        "CH04_P03_L007",
+        "CH04_P03_L008",
+        "CH04_P03_L009",
+        "CH04_P03_L010"
+      ]
+    },
+    "CH04_P04": {
+      "status": "BUILDER_PREPARED_AUDIO_PENDING",
+      "spoken_lines_per_language": 6,
+      "languages": [
+        "ru",
+        "en",
+        "pt_BR",
+        "es",
+        "fr",
+        "de"
+      ],
+      "status_by_language": {
+        "ru": "0/6_PENDING",
+        "en": "0/6_PENDING",
+        "pt_BR": "0/6_PENDING",
+        "es": "0/6_PENDING",
+        "fr": "0/6_PENDING",
+        "de": "0/6_PENDING"
+      },
+      "final_package": "CH04_P04_6LANG_PHRASES.zip",
+      "line_order": [
+        "CH04_P04_L001",
+        "CH04_P04_L002",
+        "CH04_P04_L003",
+        "CH04_P04_L004",
+        "CH04_P04_L005",
+        "CH04_P04_L006"
+      ]
+    },
+    "CH05_P01": {
+      "status": "BUILDER_PREPARED",
+      "speech_lines": 9,
+      "sfx_lines": 3,
+      "languages": [
+        "ru",
+        "en",
+        "pt_BR",
+        "es",
+        "fr",
+        "de"
+      ],
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      },
+      "final_package": "CH05_P01_6LANG_PHRASES.zip",
+      "source_registry_sha256": "f6af59b6d20de869d9dd7703e5f8fa84e2cd05331eabe60a5c3896fad6625a36"
+    }
+  },
+  "p04_lines": [
+    {
+      "line_id": "CH01_P04_L001",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "tag": "[curious]",
+      "emotion_key": "arrival_expectation",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P04_L002",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "tag": "[surprised]",
+      "emotion_key": "windswept_surprise",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P04_L003",
+      "role": "mika",
+      "character_id": "CHR_001",
+      "tag": "[hopeful]",
+      "emotion_key": "careful_hoping_for_help",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P04_L004",
+      "role": "mars_clerk",
+      "character_id": "CHR_012",
+      "tag": "[cheerful]",
+      "emotion_key": "obliviously_cheerful_bureaucracy",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P04_L005",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "tag": "[amused]",
+      "emotion_key": "gentle_irony_then_progress",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P04_L006",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "tag": "[in awe]",
+      "emotion_key": "quiet_cosmic_awe",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P04_L007",
+      "role": "mars_ai_core",
+      "character_id": "CHR_013",
+      "tag": "[calmly]",
+      "emotion_key": "calm_knowing_mystery",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P04_L008",
+      "role": "mika",
+      "character_id": "CHR_001",
+      "tag": "[surprised]",
+      "emotion_key": "astonished_but_hopeful",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    }
+  ],
+  "p05_lines": [
+    {
+      "line_id": "CH01_P05_L001",
+      "character_id": "CHR_013",
+      "role": "mars_ai_core",
+      "emotion_key": "gentle_playful_reveal",
+      "tag": "[lightly amused]",
+      "status_by_language": {
+        "ru": "MISSING",
+        "en": "MISSING",
+        "pt_BR": "MISSING",
+        "es": "MISSING",
+        "fr": "MISSING",
+        "de": "MISSING"
+      }
+    },
+    {
+      "line_id": "CH01_P05_L002",
+      "character_id": "CHR_001",
+      "role": "mika",
+      "emotion_key": "cautious_urgent_hope",
+      "tag": "[hopeful]",
+      "status_by_language": {
+        "ru": "MISSING",
+        "en": "MISSING",
+        "pt_BR": "MISSING",
+        "es": "MISSING",
+        "fr": "MISSING",
+        "de": "MISSING"
+      }
+    },
+    {
+      "line_id": "CH01_P05_L003",
+      "character_id": "CHR_013",
+      "role": "mars_ai_core",
+      "emotion_key": "compassionate_invitation",
+      "tag": "[gently]",
+      "status_by_language": {
+        "ru": "MISSING",
+        "en": "MISSING",
+        "pt_BR": "MISSING",
+        "es": "MISSING",
+        "fr": "MISSING",
+        "de": "MISSING"
+      }
+    },
+    {
+      "line_id": "CH01_P05_L005",
+      "character_id": "CHR_004",
+      "role": "narrator",
+      "emotion_key": "tender_reflection",
+      "tag": "[warmly]",
+      "status_by_language": {
+        "ru": "MISSING",
+        "en": "MISSING",
+        "pt_BR": "MISSING",
+        "es": "MISSING",
+        "fr": "MISSING",
+        "de": "MISSING"
+      }
+    },
+    {
+      "line_id": "CH01_P05_L004",
+      "character_id": "CHR_001",
+      "role": "mika",
+      "emotion_key": "delighted_nostalgia",
+      "tag": "[fondly]",
+      "status_by_language": {
+        "ru": "MISSING",
+        "en": "MISSING",
+        "pt_BR": "MISSING",
+        "es": "MISSING",
+        "fr": "MISSING",
+        "de": "MISSING"
+      }
+    },
+    {
+      "line_id": "CH01_P05_L006",
+      "character_id": "CHR_001",
+      "role": "mika",
+      "emotion_key": "memory_turns_dark",
+      "tag": "[shaken]",
+      "status_by_language": {
+        "ru": "MISSING",
+        "en": "MISSING",
+        "pt_BR": "MISSING",
+        "es": "MISSING",
+        "fr": "MISSING",
+        "de": "MISSING"
+      }
+    },
+    {
+      "line_id": "CH01_P05_L007",
+      "character_id": "CHR_004",
+      "role": "narrator",
+      "emotion_key": "sudden_catastrophe",
+      "tag": "[alarmed]",
+      "status_by_language": {
+        "ru": "MISSING",
+        "en": "MISSING",
+        "pt_BR": "MISSING",
+        "es": "MISSING",
+        "fr": "MISSING",
+        "de": "MISSING"
+      }
+    },
+    {
+      "line_id": "CH01_P05_L008",
+      "character_id": "CHR_004",
+      "role": "narrator",
+      "emotion_key": "urgent_evacuate",
+      "tag": "[urgently]",
+      "status_by_language": {
+        "ru": "MISSING",
+        "en": "MISSING",
+        "pt_BR": "MISSING",
+        "es": "MISSING",
+        "fr": "MISSING",
+        "de": "MISSING"
+      }
+    },
+    {
+      "line_id": "CH01_P05_L009",
+      "character_id": "CHR_001",
+      "role": "mika",
+      "emotion_key": "quiet_lost_sadness",
+      "tag": "[sadly]",
+      "status_by_language": {
+        "ru": "MISSING",
+        "en": "MISSING",
+        "pt_BR": "MISSING",
+        "es": "MISSING",
+        "fr": "MISSING",
+        "de": "MISSING"
+      }
+    },
+    {
+      "line_id": "CH01_P05_L010",
+      "character_id": "CHR_001",
+      "role": "mika",
+      "emotion_key": "vulnerable_fierce_hope",
+      "tag": "[hopeful]",
+      "status_by_language": {
+        "ru": "MISSING",
+        "en": "MISSING",
+        "pt_BR": "MISSING",
+        "es": "MISSING",
+        "fr": "MISSING",
+        "de": "MISSING"
+      }
+    }
+  ],
+  "p06_lines": [
+    {
+      "line_id": "CH01_P06_L001",
+      "character_id": "CHR_013",
+      "role": "mars_ai_core",
+      "kind": "ai_core_voice",
+      "emotion_key": "cautious_scientific_hypothesis",
+      "tag": "[thoughtfully]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L002",
+      "character_id": "CHR_013",
+      "role": "mars_ai_core",
+      "kind": "ai_core_voice",
+      "emotion_key": "grave_candid_uncertainty",
+      "tag": "[concerned]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L003",
+      "character_id": "CHR_013",
+      "role": "mars_ai_core",
+      "kind": "ai_core_voice",
+      "emotion_key": "mysterious_absence_of_evidence",
+      "tag": "[mysteriously]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L004",
+      "character_id": "CHR_013",
+      "role": "mars_ai_core",
+      "kind": "ai_core_voice",
+      "emotion_key": "hopeful_cryptic_direction",
+      "tag": "[intrigued]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L005",
+      "character_id": "CHR_013",
+      "role": "mars_ai_core",
+      "kind": "ai_core_voice",
+      "emotion_key": "warm_playful_surprise",
+      "tag": "[cheerfully]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L006",
+      "character_id": "CHR_001",
+      "role": "mika",
+      "kind": "dialogue_delighted_question",
+      "emotion_key": "sudden_childlike_delight",
+      "tag": "[excited]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L007",
+      "character_id": "CHR_014",
+      "role": "bubble_sfx",
+      "kind": "nonverbal_offscreen_sfx",
+      "emotion_key": "eager_hello_musical_bloops",
+      "tag": "",
+      "is_nonverbal": true,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L008",
+      "character_id": "CHR_001",
+      "role": "mika",
+      "kind": "speech_question_surprise",
+      "emotion_key": "startled_comic_disbelief",
+      "tag": "[surprised]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L009",
+      "character_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "emotion_key": "affectionate_foreshadowing_appetite",
+      "tag": "[playfully]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L010",
+      "character_id": "CHR_001",
+      "role": "mika",
+      "kind": "speech_panic",
+      "emotion_key": "comic_stinky_surprise",
+      "tag": "[disgusted]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L011",
+      "character_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration_comic_reveal",
+      "emotion_key": "affectionate_biological_comic_reveal",
+      "tag": "[lightly amused]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L012",
+      "character_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration_adventure",
+      "emotion_key": "joyful_adventure_launch",
+      "tag": "[excited]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L013",
+      "character_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration_destination_title",
+      "emotion_key": "wonder_announcement",
+      "tag": "[with wonder]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P06_L014",
+      "character_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration_objective",
+      "emotion_key": "purposeful_anticipation",
+      "tag": "[optimistically]",
+      "is_nonverbal": false,
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    }
+  ],
+  "p07_lines": [
+    {
+      "line_id": "CH01_P07_L001",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "emotion_key": "busy_hopeful_arrival",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L002",
+      "speaker_id": "CHR_016",
+      "role": "engineer_1",
+      "audio_mode": "tts_required",
+      "emotion_key": "technical_concern",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L003",
+      "speaker_id": "CHR_017",
+      "role": "engineer_2",
+      "audio_mode": "tts_required",
+      "emotion_key": "amused_disbelief",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L004",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "emotion_key": "urgent_childlike_protest",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L005",
+      "speaker_id": "CHR_018",
+      "role": "service_staff",
+      "audio_mode": "tts_required",
+      "emotion_key": "kind_honest_refusal",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L006",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "emotion_key": "quiet_loneliness",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L007",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "audio_mode": "tts_required",
+      "emotion_key": "sudden_cheerful_confidence",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L008",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "emotion_key": "loving_ironic_introduction",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L009",
+      "speaker_id": "CHR_019",
+      "role": "ambient_1",
+      "audio_mode": "voice_optional",
+      "emotion_key": "skeptical_whisper",
+      "status_by_language": {
+        "ru": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "en": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "pt_BR": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "es": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "fr": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "de": "SOURCE_OPTIONAL_NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L010",
+      "speaker_id": "CHR_020",
+      "role": "ambient_2",
+      "audio_mode": "voice_optional",
+      "emotion_key": "weary_comic_whisper",
+      "status_by_language": {
+        "ru": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "en": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "pt_BR": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "es": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "fr": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "de": "SOURCE_OPTIONAL_NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L011",
+      "speaker_id": "CHR_021",
+      "role": "ambient_3",
+      "audio_mode": "voice_optional",
+      "emotion_key": "dry_friendly_sarcasm",
+      "status_by_language": {
+        "ru": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "en": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "pt_BR": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "es": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "fr": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "de": "SOURCE_OPTIONAL_NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L012",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "audio_mode": "tts_required",
+      "emotion_key": "enthusiastic_science_wordplay",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L013",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "emotion_key": "comic_bewilderment",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L014",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "voice_optional",
+      "emotion_key": "wary_hope_thought",
+      "status_by_language": {
+        "ru": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "en": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "pt_BR": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "es": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "fr": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "de": "SOURCE_OPTIONAL_NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L015",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "emotion_key": "relieved_triumph",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L016",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "emotion_key": "practical_adventure_preparation",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH01_P07_L017",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "display_only",
+      "emotion_key": "optimistic_next_destination",
+      "status_by_language": {
+        "ru": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "en": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "pt_BR": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "es": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "fr": "SOURCE_OPTIONAL_NOT_GENERATED",
+        "de": "SOURCE_OPTIONAL_NOT_GENERATED"
+      }
+    }
+  ],
+  "ch02_p01_lines": [
+    {
+      "line_id": "CH02_P01_L001",
+      "character_id": "CHR_014",
+      "role": "bubble_info",
+      "audio_mode": "tts_required",
+      "emotion": "calm_neutral_ai_discovery",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P01_L002",
+      "character_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "emotion": "curious_adventurous",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P01_L003",
+      "character_id": "CHR_015",
+      "role": "professor",
+      "audio_mode": "tts_required",
+      "emotion": "pompous_disdain_with_fear",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P01_L004",
+      "character_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "emotion": "wonder_biological_city",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P01_L005",
+      "character_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "emotion": "loneliness_to_sudden_intrigue",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P01_L006",
+      "character_id": "CHR_022",
+      "role": "fungal_contact",
+      "audio_mode": "sfx_optional",
+      "emotion": "cautious_unintelligible_hiss",
+      "status_by_language": {
+        "ru": "NONVERBAL_SFX_OPTIONAL",
+        "en": "NONVERBAL_SFX_OPTIONAL",
+        "pt_BR": "NONVERBAL_SFX_OPTIONAL",
+        "es": "NONVERBAL_SFX_OPTIONAL",
+        "fr": "NONVERBAL_SFX_OPTIONAL",
+        "de": "NONVERBAL_SFX_OPTIONAL"
+      }
+    },
+    {
+      "line_id": "CH02_P01_L007",
+      "character_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "emotion": "startled_but_curious",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P01_L009",
+      "character_id": "CHR_022",
+      "role": "fungal_contact",
+      "audio_mode": "sfx_optional",
+      "emotion": "unintelligible_attempt_to_answer",
+      "status_by_language": {
+        "ru": "NONVERBAL_SFX_OPTIONAL",
+        "en": "NONVERBAL_SFX_OPTIONAL",
+        "pt_BR": "NONVERBAL_SFX_OPTIONAL",
+        "es": "NONVERBAL_SFX_OPTIONAL",
+        "fr": "NONVERBAL_SFX_OPTIONAL",
+        "de": "NONVERBAL_SFX_OPTIONAL"
+      }
+    },
+    {
+      "line_id": "CH02_P01_L010",
+      "character_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "emotion": "quick_problem_solving",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P01_L011",
+      "character_id": "CHR_022",
+      "role": "fungal_contact",
+      "audio_mode": "sfx_optional",
+      "emotion": "translation_signal_clearing",
+      "status_by_language": {
+        "ru": "NONVERBAL_SFX_OPTIONAL",
+        "en": "NONVERBAL_SFX_OPTIONAL",
+        "pt_BR": "NONVERBAL_SFX_OPTIONAL",
+        "es": "NONVERBAL_SFX_OPTIONAL",
+        "fr": "NONVERBAL_SFX_OPTIONAL",
+        "de": "NONVERBAL_SFX_OPTIONAL"
+      }
+    },
+    {
+      "line_id": "CH02_P01_L008",
+      "character_id": "CHR_022",
+      "role": "fungal_contact",
+      "audio_mode": "tts_required",
+      "emotion": "tentative_friendly_breakthrough",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    }
+  ],
+  "ch02_p02_lines": [
+    {
+      "line_id": "CH02_P02_L001",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[warmly]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P02_L002",
+      "role": "mika",
+      "character_id": "CHR_001",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[concerned]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P02_L003",
+      "role": "fungal_contact",
+      "character_id": "CHR_022",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[thoughtfully]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P02_L004",
+      "role": "mika",
+      "character_id": "CHR_001",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[curious]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P02_L005",
+      "role": "fungal_contact",
+      "character_id": "CHR_022",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[encouraging]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P02_L006",
+      "role": "mika",
+      "character_id": "CHR_001",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[shouts]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P02_L007",
+      "role": "fungal_contact",
+      "character_id": "CHR_022",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[reassuring]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P02_L008",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[cheerfully]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P02_L009",
+      "role": "ship_navigation",
+      "character_id": "CHR_008",
+      "audio_mode": "display_only",
+      "emotion_tag": "",
+      "status_by_language": {
+        "ru": "DISPLAY_ONLY",
+        "en": "DISPLAY_ONLY",
+        "pt_BR": "DISPLAY_ONLY",
+        "es": "DISPLAY_ONLY",
+        "fr": "DISPLAY_ONLY",
+        "de": "DISPLAY_ONLY"
+      }
+    }
+  ],
+  "ch02_p03_lines": [
+    {
+      "line_id": "CH02_P03_L001",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[warmly]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P03_L002",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[gently]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P03_L003",
+      "role": "fungal_contact",
+      "character_id": "CHR_022",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[wistfully]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P03_L004",
+      "role": "mika",
+      "character_id": "CHR_001",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[curious]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P03_L005",
+      "role": "fungal_contact",
+      "character_id": "CHR_022",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[thoughtfully]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P03_L006",
+      "role": "fungal_contact",
+      "character_id": "CHR_022",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[hopeful]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P03_L007",
+      "role": "mika",
+      "character_id": "CHR_001",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[excited]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P03_L008",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[warmly]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    }
+  ],
+  "ch02_p04_lines": [
+    {
+      "line_id": "CH02_P04_L001",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[warmly]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P04_L002",
+      "role": "tarantula_station",
+      "character_id": "CHR_023",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[gently]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P04_L003",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[thoughtfully]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P04_L004",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[serious]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P04_L005",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[sadly]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P04_L006",
+      "role": "tarantula_station",
+      "character_id": "CHR_023",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[thoughtfully]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P04_L007",
+      "role": "tarantula_station",
+      "character_id": "CHR_023",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[warmly]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P04_L008",
+      "role": "tarantula_station",
+      "character_id": "CHR_023",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[determined]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P04_L009",
+      "role": "mika",
+      "character_id": "CHR_001",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[excited]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH02_P04_L010",
+      "role": "narrator",
+      "character_id": "CHR_004",
+      "audio_mode": "tts_required",
+      "emotion_tag": "[warmly]",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    }
+  ],
+  "ch03_p01_lines": [
+    {
+      "line_id": "CH03_P01_L001",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[softly]",
+      "localized": {
+        "ru": "Где-то между Большим и Малым Магеллановыми Облаками…",
+        "en": "Somewhere between the Large and Small Magellanic Clouds…",
+        "pt_BR": "Entre a Grande e a Pequena Nuvem de Magalhães…",
+        "es": "Entre la Gran y la Pequeña Nube de Magallanes…",
+        "fr": "Entre le Grand et le Petit Nuage de Magellan…",
+        "de": "Zwischen der Großen und der Kleinen Magellanschen Wolke …"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L002",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[indignant]",
+      "localized": {
+        "ru": "Я знаю! Это ты съел мой бургер!",
+        "en": "I knew it! You ate my burger!",
+        "pt_BR": "Eu sabia! Você comeu meu hambúrguer!",
+        "es": "¡Lo sabía! ¡Te comiste mi hamburguesa!",
+        "fr": "Je le savais ! Tu as mangé mon burger !",
+        "de": "Erwischt! Du hast meinen Burger gegessen!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L003",
+      "speaker_id": "CHR_023",
+      "role": "tarantula_companion",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[innocently]",
+      "localized": {
+        "ru": "Это не я!",
+        "en": "Wasn’t me!",
+        "pt_BR": "Não fui eu!",
+        "es": "¡Yo no fui!",
+        "fr": "C’est pas moi !",
+        "de": "Ich war’s nicht!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L004",
+      "speaker_id": "CHR_008",
+      "role": "ship_system_ui",
+      "audio_mode": "display_only",
+      "source_voice_optional": false,
+      "emotion_tag": "[neutral]",
+      "localized": {
+        "ru": "Курс на планету Окея",
+        "en": "COURSE SET: OKEA",
+        "pt_BR": "ROTA: PLANETA OKEA",
+        "es": "RUMBO A OKEA",
+        "fr": "CAP SUR OKEA",
+        "de": "KURS AUF OKEA"
+      },
+      "status_by_language": {
+        "ru": "DISPLAY_ONLY",
+        "en": "DISPLAY_ONLY",
+        "pt_BR": "DISPLAY_ONLY",
+        "es": "DISPLAY_ONLY",
+        "fr": "DISPLAY_ONLY",
+        "de": "DISPLAY_ONLY"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L005",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[warmly]",
+      "localized": {
+        "ru": "Окея сияла изящными городами, полными удивительных форм жизни.",
+        "en": "Okea shone with graceful cities and wondrous life.",
+        "pt_BR": "Okea brilhava com cidades encantadoras e seres incríveis.",
+        "es": "Okea brillaba con bellas ciudades y seres asombrosos.",
+        "fr": "Okea brillait de belles cités et d’êtres merveilleux.",
+        "de": "Auf Okea glänzten prächtige Städte voller seltsamer Wesen."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L006",
+      "speaker_id": "CHR_008",
+      "role": "ship_system_ui",
+      "audio_mode": "display_only",
+      "source_voice_optional": false,
+      "emotion_tag": "[neutral]",
+      "localized": {
+        "ru": "Симулятор. Новая форма жизни.",
+        "en": "SIMULATOR · NEW LIFE FORM",
+        "pt_BR": "SIMULADOR · NOVA FORMA DE VIDA",
+        "es": "SIMULADOR · NUEVA FORMA DE VIDA",
+        "fr": "SIMULATEUR · NOUVELLE FORME DE VIE",
+        "de": "SIMULATOR · NEUE LEBENSFORM"
+      },
+      "status_by_language": {
+        "ru": "DISPLAY_ONLY",
+        "en": "DISPLAY_ONLY",
+        "pt_BR": "DISPLAY_ONLY",
+        "es": "DISPLAY_ONLY",
+        "fr": "DISPLAY_ONLY",
+        "de": "DISPLAY_ONLY"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L007",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[amazed]",
+      "localized": {
+        "ru": "Какой удивительный у вас мир!",
+        "en": "What an amazing world!",
+        "pt_BR": "Que mundo incrível!",
+        "es": "¡Qué mundo tan increíble!",
+        "fr": "Quel monde incroyable !",
+        "de": "Was für eine tolle Welt!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L008",
+      "speaker_id": "CHR_024",
+      "role": "phase_host",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[friendly]",
+      "localized": {
+        "ru": "Хочешь, покажу, как здесь всё устроено?",
+        "en": "Want me to show you around?",
+        "pt_BR": "Quer ver como tudo funciona?",
+        "es": "¿Quieres que te enseñe cómo vivimos?",
+        "fr": "Tu veux que je te fasse visiter ?",
+        "de": "Soll ich dir unsere Welt zeigen?"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L009",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[thoughtfully]",
+      "localized": {
+        "ru": "Мика обратился за помощью к старейшинам Океи. Но они не смогли — или не захотели — ему помочь.",
+        "en": "Mika asked Okea’s elders for help. But they couldn’t — or wouldn’t — help him.",
+        "pt_BR": "Mika pediu ajuda aos anciãos de Okea. Mas eles não puderam — ou não quiseram — ajudar.",
+        "es": "Mika pidió ayuda a los ancianos de Okea. Pero no pudieron — o no quisieron — ayudarlo.",
+        "fr": "Mika demanda de l’aide aux anciens d’Okea. Mais ils ne purent — ou ne voulurent — l’aider.",
+        "de": "Mika bat die Ältesten von Okea um Hilfe. Doch sie konnten — oder wollten — ihm nicht helfen."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L011",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "source_voice_optional": true,
+      "emotion_tag": "[sadly]",
+      "localized": {
+        "ru": "Что же мне теперь делать?..",
+        "en": "What do I do now?..",
+        "pt_BR": "E agora, o que eu faço?..",
+        "es": "¿Y ahora qué hago?..",
+        "fr": "Et maintenant, je fais quoi ?..",
+        "de": "Was mache ich denn jetzt?.."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L012",
+      "speaker_id": "CHR_025",
+      "role": "lizard_guide",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[kindly]",
+      "localized": {
+        "ru": "Слышал, тебе нужна помощь.",
+        "en": "Heard you could use some help.",
+        "pt_BR": "Ouvi dizer que você precisa de ajuda.",
+        "es": "Oí que necesitas ayuda.",
+        "fr": "J’ai entendu que tu avais besoin d’aide.",
+        "de": "Ich hörte, du brauchst Hilfe."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L013",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[brightly]",
+      "localized": {
+        "ru": "Да! Конечно!",
+        "en": "Yes! Please!",
+        "pt_BR": "Sim! Claro!",
+        "es": "¡Sí, claro!",
+        "fr": "Oh oui !",
+        "de": "Ja, unbedingt!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L014",
+      "speaker_id": "CHR_025",
+      "role": "lizard_guide",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[reassuringly]",
+      "localized": {
+        "ru": "На Целе хранят древние знания. Возможно, они помогут!",
+        "en": "Cela holds ancient knowledge. Maybe it can help you!",
+        "pt_BR": "Em Cela há conhecimentos antigos. Talvez ajudem você!",
+        "es": "En Cela guardan saberes muy antiguos. ¡Quizá te sirvan!",
+        "fr": "Sur Cela, on garde des savoirs très anciens. Ils pourraient t’aider !",
+        "de": "Auf Cela gibt es uraltes Wissen. Vielleicht hilft es dir!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P01_L015",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[optimistically]",
+      "localized": {
+        "ru": "Друзья взяли курс на Целу — за следующей подсказкой о прошлом.",
+        "en": "The friends set course for Cela — another clue to the past.",
+        "pt_BR": "A turma partiu para Cela, atrás de outra pista do passado.",
+        "es": "Rumbo a Cela, tras otra pista escondida en el pasado.",
+        "fr": "En route pour Cela, sur la piste d’un passé oublié !",
+        "de": "Nächster Halt: Cela — und eine Spur in die Vergangenheit."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    }
+  ],
+  "ch03_p02_lines": [
+    {
+      "line_id": "CH03_P02_L001",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[with wonder]",
+      "localized": {
+        "ru": "Корабль Мики достиг Целы — планеты древних пещер и загадочных кристаллов.",
+        "en": "Mika’s ship reached Cela, a planet of ancient caves and mysterious crystals.",
+        "pt_BR": "A nave de Mika chegou a Cela, um planeta de cavernas antigas e cristais misteriosos.",
+        "es": "La nave de Mika llegó a Cela, un planeta de cuevas antiguas y cristales misteriosos.",
+        "fr": "Le vaisseau de Mika arriva sur Cela, planète de grottes anciennes et de cristaux mystérieux.",
+        "de": "Mikas Schiff landete auf Cela, einem Planeten voller uralter Höhlen und rätselhafter Kristalle."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P02_L002",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[curiously]",
+      "localized": {
+        "ru": "Что это за пещеры?",
+        "en": "What are these caves?",
+        "pt_BR": "Que cavernas são essas?",
+        "es": "¿Qué son estas cuevas?",
+        "fr": "C’est quoi, ces grottes ?",
+        "de": "Was sind das für Höhlen?"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P02_L003",
+      "speaker_id": "CHR_025",
+      "role": "lizard_guide",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[warmly]",
+      "localized": {
+        "ru": "Это древние сооружения фазовой цивилизации. Пойдём, покажу!",
+        "en": "They’re ancient structures built by the phase beings. Come on, I’ll show you!",
+        "pt_BR": "São construções antigas dos seres de fase. Vem, vou te mostrar!",
+        "es": "Son construcciones antiguas de los seres de fase. ¡Ven, te enseñaré!",
+        "fr": "Ce sont des vestiges des êtres de phase. Viens, je vais te montrer !",
+        "de": "Das sind uralte Bauwerke der Phasenwesen. Komm, ich zeige sie dir!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P02_L004",
+      "speaker_id": "CHR_025",
+      "role": "lizard_guide",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[encouragingly]",
+      "localized": {
+        "ru": "Смотри! Древние рисунки и надписи. Может, найдёшь подсказку!",
+        "en": "Look! Old paintings and inscriptions. You might find a clue!",
+        "pt_BR": "Olha só! Pinturas e inscrições antigas. Vai que você acha uma pista!",
+        "es": "¡Mira! Pinturas e inscripciones antiguas. ¡Quizá encuentres una pista!",
+        "fr": "Regarde ! De vieux dessins et des inscriptions. Tu y trouveras peut-être un indice !",
+        "de": "Schau! Alte Bilder und Inschriften. Vielleicht findest du einen Hinweis!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P02_L005",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[puzzled]",
+      "localized": {
+        "ru": "Что это?..",
+        "en": "What’s this?..",
+        "pt_BR": "O que é isso?..",
+        "es": "¿Y esto?..",
+        "fr": "Qu’est-ce que c’est ?..",
+        "de": "Was ist das?.."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P02_L006",
+      "speaker_id": "CHR_025",
+      "role": "lizard_guide",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[lighthearted]",
+      "localized": {
+        "ru": "А я пока займусь кристаллами!",
+        "en": "I’ll take a look at these crystals!",
+        "pt_BR": "Enquanto isso, vou dar uma olhada nos cristais!",
+        "es": "¡Yo echaré un vistazo a los cristales!",
+        "fr": "Pendant ce temps, je vais voir ces cristaux !",
+        "de": "Ich sehe mir mal die Kristalle an!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P02_L007",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[shouts]",
+      "localized": {
+        "ru": "СТОЙ!",
+        "en": "STOP!",
+        "pt_BR": "PARA!",
+        "es": "¡ALTO!",
+        "fr": "ARRÊTE !",
+        "de": "HALT!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P02_L008",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[urgently]",
+      "localized": {
+        "ru": "НЕ НАДО!",
+        "en": "DON’T!",
+        "pt_BR": "NÃO FAZ ISSO!",
+        "es": "¡NO LO HAGAS!",
+        "fr": "NE FAIS PAS ÇA !",
+        "de": "LASS DAS!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P02_L009",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[urgently]",
+      "localized": {
+        "ru": "Услышав крик Мики, профессор сразу послал сигнал тревоги на Окею.",
+        "en": "Hearing Mika’s scream, the professor immediately sent an emergency signal to Okea.",
+        "pt_BR": "Ao ouvir o grito de Mika, o professor enviou um sinal de alerta para Okea.",
+        "es": "Al oír el grito de Mika, el profesor envió una señal de alarma a Okea.",
+        "fr": "En entendant Mika crier, le professeur envoya aussitôt une alerte vers Okea.",
+        "de": "Als der Professor Mikas Schrei hörte, schickte er sofort einen Notruf nach Okea."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P02_L010",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[with suspense]",
+      "localized": {
+        "ru": "С Океи немедленно вылетел отряд кораблей.",
+        "en": "A squadron of ships immediately took off from Okea.",
+        "pt_BR": "Uma esquadrilha de naves decolou imediatamente de Okea.",
+        "es": "Una escuadrilla de naves despegó enseguida de Okea.",
+        "fr": "Une escadrille de vaisseaux décolla aussitôt d’Okea.",
+        "de": "Sofort startete eine Raumschiffstaffel von Okea."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    }
+  ],
+  "ch03_p03_lines": [
+    {
+      "line_id": "CH03_P03_L001",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[with concern]",
+      "localized": {
+        "ru": "Когда с Океи прибыли звездолёты, фазовые существа задержали ящера.",
+        "en": "Mika still didn’t know why the crystals mattered so much. When ships arrived from Okea, the phase beings detained the lizard.",
+        "pt_BR": "Mika ainda não entendia por que os cristais eram tão importantes. Quando as naves de Okea chegaram, os seres de fase detiveram o lagarto.",
+        "es": "Mika aún no entendía por qué esos cristales eran tan importantes. Al llegar las naves de Okea, los seres de fase retuvieron al lagarto.",
+        "fr": "Mika ignorait pourquoi ces cristaux étaient si précieux. À l’arrivée des vaisseaux d’Okea, les êtres de phase ont retenu le lézard.",
+        "de": "Mika verstand noch nicht, warum die Kristalle so wichtig waren. Als die Schiffe von Okea eintrafen, hielten die Phasenwesen den Echsenmann fest."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P03_L002",
+      "speaker_id": "CHR_026",
+      "role": "phase_crystal_guard",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[firmly]",
+      "localized": {
+        "ru": "Ну вот и попался!",
+        "en": "Caught you!",
+        "pt_BR": "Agora te pegamos!",
+        "es": "¡Te atrapamos!",
+        "fr": "On te tient !",
+        "de": "Erwischt!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P03_L003",
+      "speaker_id": "CHR_026",
+      "role": "phase_crystal_guard",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[reproachfully]",
+      "localized": {
+        "ru": "Мы предупреждали!",
+        "en": "We warned you!",
+        "pt_BR": "A gente avisou!",
+        "es": "¡Te lo advertimos!",
+        "fr": "On t’avait prévenu !",
+        "de": "Wir warnten dich!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P03_L004",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[confused]",
+      "localized": {
+        "ru": "Что происходит?!",
+        "en": "What’s going on?!",
+        "pt_BR": "O que houve?!",
+        "es": "¿Qué pasa?!",
+        "fr": "Que se passe-t-il ?!",
+        "de": "Was ist los?!"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P03_L005",
+      "speaker_id": "CHR_027",
+      "role": "phase_archive_envoy",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[gently]",
+      "localized": {
+        "ru": "Тебе стоит побывать в Живом архиве. Там ты найдёшь ответы.",
+        "en": "You should visit the Living Archive. You may find your answers there.",
+        "pt_BR": "Você devia visitar o Arquivo Vivo. Talvez encontre suas respostas lá.",
+        "es": "Deberías visitar el Archivo Viviente. Quizá allí encuentres respuestas.",
+        "fr": "Tu devrais visiter les Archives vivantes. Tu y trouveras peut-être des réponses.",
+        "de": "Du solltest das Lebende Archiv besuchen. Vielleicht findest du dort Antworten."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P03_L006",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[puzzled]",
+      "localized": {
+        "ru": "Но что случилось?",
+        "en": "But what happened?",
+        "pt_BR": "Mas o que aconteceu?",
+        "es": "¿Pero qué pasó?",
+        "fr": "Mais que s’est-il passé ?",
+        "de": "Aber was ist passiert?"
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P03_L007",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[with wonder]",
+      "localized": {
+        "ru": "Живой архив — похожая на сияющий цветок станция, хранящая знания древних поколений.",
+        "en": "The Living Archive looked like a glowing flower. Inside it lay the wisdom of ages.",
+        "pt_BR": "O Arquivo Vivo parecia uma flor brilhante e guardava o saber de muitas gerações.",
+        "es": "El Archivo Viviente parecía una flor luminosa y guardaba el saber de muchas generaciones.",
+        "fr": "Les Archives vivantes ressemblaient à une fleur de lumière, gardienne de savoirs anciens.",
+        "de": "Das Lebende Archiv sah aus wie eine leuchtende Blüte und bewahrte uraltes Wissen."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P03_L008",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "source_voice_optional": false,
+      "emotion_tag": "[with anticipation]",
+      "localized": {
+        "ru": "Мика прибыл в Живой архив и направился в центральный зал. Там его уже ждали.",
+        "en": "Mika arrived at the Living Archive and entered its central hall. Someone was already waiting.",
+        "pt_BR": "Mika chegou ao Arquivo Vivo e seguiu até o salão central. Alguém já estava à sua espera.",
+        "es": "Mika llegó al Archivo Viviente y entró en la sala central. Allí ya lo estaban esperando.",
+        "fr": "Mika arriva aux Archives vivantes et gagna la grande salle. On l’y attendait déjà.",
+        "de": "Mika erreichte das Lebende Archiv und betrat die große Halle. Dort wurde er bereits erwartet."
+      },
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    }
+  ],
+  "ch04_p01_lines": [
+    {
+      "line_id": "CH04_P01_L001",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "thought",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P01_L002",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "dialogue",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P01_L003",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "shout",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P01_L004",
+      "speaker_id": "CHR_029",
+      "role": "phase_bath_sfx",
+      "kind": "nonverbal_sfx",
+      "audio_mode": "nonverbal_sfx",
+      "status_by_language": {
+        "ru": "SHARED_SFX",
+        "en": "SHARED_SFX",
+        "pt_BR": "SHARED_SFX",
+        "es": "SHARED_SFX",
+        "fr": "SHARED_SFX",
+        "de": "SHARED_SFX"
+      }
+    },
+    {
+      "line_id": "CH04_P01_L005",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P01_L006",
+      "speaker_id": "CHR_030",
+      "role": "unknown_attacker_radio",
+      "kind": "radio_signal",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P01_L007",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "dialogue",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P01_L008",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "kind": "dialogue",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    }
+  ],
+  "ch04_p02_lines": [
+    {
+      "line_id": "CH04_P02_L001",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "reading_order": 1,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L002",
+      "speaker_id": "CHR_031",
+      "role": "pirate_lizard",
+      "kind": "dialogue",
+      "reading_order": 2,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L003",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "dialogue",
+      "reading_order": 3,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L004",
+      "speaker_id": "CHR_023",
+      "role": "fungal_sfx",
+      "kind": "nonverbal_sfx",
+      "reading_order": 4,
+      "audio_mode": "nonverbal_sfx",
+      "status_by_language": {
+        "ru": "SHARED_SFX",
+        "en": "SHARED_SFX",
+        "pt_BR": "SHARED_SFX",
+        "es": "SHARED_SFX",
+        "fr": "SHARED_SFX",
+        "de": "SHARED_SFX"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L005",
+      "speaker_id": "CHR_029",
+      "role": "phase_sfx",
+      "kind": "nonverbal_sfx",
+      "reading_order": 5,
+      "audio_mode": "nonverbal_sfx",
+      "status_by_language": {
+        "ru": "SHARED_SFX",
+        "en": "SHARED_SFX",
+        "pt_BR": "SHARED_SFX",
+        "es": "SHARED_SFX",
+        "fr": "SHARED_SFX",
+        "de": "SHARED_SFX"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L006",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "kind": "inner_monologue",
+      "reading_order": 6,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L007",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "reading_order": 7,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L008",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "kind": "dialogue",
+      "reading_order": 8,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L009",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "dialogue",
+      "reading_order": 9,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L010",
+      "speaker_id": "CHR_031",
+      "role": "pirate_lizard",
+      "kind": "dialogue",
+      "reading_order": 10,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L011",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "kind": "dialogue",
+      "reading_order": 11,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L012",
+      "speaker_id": "CHR_031",
+      "role": "pirate_lizard",
+      "kind": "dialogue",
+      "reading_order": 12,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L013",
+      "speaker_id": "CHR_029",
+      "role": "phase_sfx",
+      "kind": "nonverbal_sfx",
+      "reading_order": 13,
+      "audio_mode": "nonverbal_sfx",
+      "status_by_language": {
+        "ru": "SHARED_SFX",
+        "en": "SHARED_SFX",
+        "pt_BR": "SHARED_SFX",
+        "es": "SHARED_SFX",
+        "fr": "SHARED_SFX",
+        "de": "SHARED_SFX"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L015",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "kind": "interpreted_dialogue",
+      "reading_order": 14,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L014",
+      "speaker_id": "CHR_031",
+      "role": "pirate_lizard",
+      "kind": "dialogue",
+      "reading_order": 15,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P02_L016",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "reading_order": 16,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    }
+  ],
+  "ch03_p04_lines": [
+    {
+      "line_id": "CH03_P04_L001",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P04_L002",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P04_L003",
+      "speaker_id": "CHR_028",
+      "role": "phase_archive_leader",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P04_L004",
+      "speaker_id": "CHR_028",
+      "role": "phase_archive_leader",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P04_L005",
+      "speaker_id": "CHR_028",
+      "role": "phase_archive_leader",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P04_L006",
+      "speaker_id": "CHR_028",
+      "role": "phase_archive_leader",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P04_L007",
+      "speaker_id": "CHR_028",
+      "role": "phase_archive_leader",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P04_L008",
+      "speaker_id": "CHR_028",
+      "role": "phase_archive_leader",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P04_L009",
+      "speaker_id": "CHR_028",
+      "role": "phase_archive_leader",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P04_L010",
+      "speaker_id": "CHR_028",
+      "role": "phase_archive_leader",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P04_L011",
+      "speaker_id": "CHR_028",
+      "role": "phase_archive_leader",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH03_P04_L012",
+      "speaker_id": "CHR_028",
+      "role": "phase_archive_leader",
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    }
+  ],
+  "ch04_p03_lines": [
+    {
+      "line_id": "CH04_P03_L001",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "reading_order": 1,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P03_L002",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "kind": "dialogue",
+      "reading_order": 2,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P03_L003",
+      "speaker_id": "CHR_031",
+      "role": "pirate_lizard",
+      "kind": "dialogue",
+      "reading_order": 3,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P03_L004",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "reading_order": 4,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P03_L005",
+      "speaker_id": "CHR_031",
+      "role": "pirate_lizard",
+      "kind": "dialogue",
+      "reading_order": 5,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P03_L006",
+      "speaker_id": "CHR_032",
+      "role": "archeon_archaeologist",
+      "kind": "dialogue",
+      "reading_order": 6,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P03_L007",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "reading_order": 7,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P03_L008",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "reading_order": 8,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P03_L009",
+      "speaker_id": "CHR_008",
+      "role": "ship_navigation",
+      "kind": "navigation",
+      "reading_order": 9,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P03_L010",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "reading_order": 10,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    }
+  ],
+  "ch04_p04_lines": [
+    {
+      "line_id": "CH04_P04_L001",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "reading_order": 1,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P04_L002",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "kind": "dialogue",
+      "reading_order": 2,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P04_L003",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "dialogue",
+      "reading_order": 3,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P04_L004",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "science_explanation",
+      "reading_order": 4,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P04_L005",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "flashback_explanation",
+      "reading_order": 5,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    },
+    {
+      "line_id": "CH04_P04_L006",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "flashback_explanation",
+      "reading_order": 6,
+      "audio_mode": "tts_required",
+      "status_by_language": {
+        "ru": "PENDING",
+        "en": "PENDING",
+        "pt_BR": "PENDING",
+        "es": "PENDING",
+        "fr": "PENDING",
+        "de": "PENDING"
+      }
+    }
+  ],
+  "ch05_p01_lines": [
+    {
+      "line_id": "CH05_P01_L001",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L002",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "kind": "dialogue",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L003",
+      "speaker_id": "CHR_031",
+      "role": "pirate_lizard",
+      "kind": "dialogue",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L004",
+      "speaker_id": "CHR_015",
+      "role": "professor",
+      "kind": "dialogue",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L005",
+      "speaker_id": "CHR_014",
+      "role": "bubble_sfx",
+      "kind": "sfx",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L006",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L007",
+      "speaker_id": "CHR_001",
+      "role": "mika",
+      "kind": "dialogue",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L008",
+      "speaker_id": "CHR_031",
+      "role": "pirate_lizard",
+      "kind": "dialogue",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L009",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L010",
+      "speaker_id": "CHR_004",
+      "role": "narrator",
+      "kind": "narration",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L011",
+      "speaker_id": "SFX_MAGNETIC_UNINTELLIGIBLE",
+      "role": "magnetic_sfx",
+      "kind": "sfx",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    },
+    {
+      "line_id": "CH05_P01_L012",
+      "speaker_id": "SFX_MAGNETIC_UNINTELLIGIBLE",
+      "role": "magnetic_sfx",
+      "kind": "sfx",
+      "status_by_language": {
+        "ru": "NOT_GENERATED",
+        "en": "NOT_GENERATED",
+        "pt_BR": "NOT_GENERATED",
+        "es": "NOT_GENERATED",
+        "fr": "NOT_GENERATED",
+        "de": "NOT_GENERATED"
+      }
+    }
+  ]
+}

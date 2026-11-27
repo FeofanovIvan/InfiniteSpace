@@ -1,0 +1,424 @@
+{
+  "schema_version": 3,
+  "page_id": "CH01_P01",
+  "locale": "pt_BR",
+  "sync_model": "finite_state_camera_first_then_transition_effect_then_individual_voice",
+  "image_path": "res://mika_motion_comic/assets/pages/ch01_p01_languages/ch01_p01_pt_BR.webp",
+  "native_scene_panels": [
+    "intro_f01",
+    "intro_f02",
+    "intro_f03",
+    "intro_f04",
+    "intro_f05",
+    "intro_f06",
+    "intro_f07",
+    "intro_f08",
+    "intro_f09"
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P01_L001",
+      "frame_id": "CH01_P01_F01",
+      "panel_id": "intro_f01",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Em algum lugar, no espaço profundo…",
+      "audio_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P01_L001_pt_BR.mp3",
+      "audio_duration_s": 3.545,
+      "source_master": "CH01_P01_pt_BR_VOICE_MASTER.mp3",
+      "source_cut_in_s": 0.0,
+      "source_cut_out_s": 3.545,
+      "bubble_box_normalized": [
+        0.02944,
+        0.01796,
+        0.49597,
+        0.11032
+      ],
+      "camera_target": [
+        0.304,
+        0.141,
+        0.248
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "hold",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": ""
+    },
+    {
+      "line_id": "CH01_P01_L002",
+      "frame_id": "CH01_P01_F02",
+      "panel_id": "intro_f02",
+      "speaker_id": "CHR_002",
+      "kind": "dialogue",
+      "spoken_text": "Mika!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P01_L002_pt_BR.mp3",
+      "audio_duration_s": 1.19,
+      "source_master": "CH01_P01_pt_BR_VOICE_MASTER.mp3",
+      "source_cut_in_s": 3.545,
+      "source_cut_out_s": 4.735,
+      "bubble_box_normalized": [
+        0.68024,
+        0.20154,
+        0.275,
+        0.07155
+      ],
+      "camera_target": [
+        0.733,
+        0.167,
+        0.222
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": "res://mika_motion_comic/ch01_camera_sfx/CH01_P01_L002_camera.mp3"
+    },
+    {
+      "line_id": "CH01_P01_L003",
+      "frame_id": "CH01_P01_F03",
+      "panel_id": "intro_f03",
+      "speaker_id": "CHR_003",
+      "kind": "broadcast",
+      "spoken_text": "Alerta urgente! Uma tempestade anômala atingiu o planeta!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P01_L003_pt_BR.mp3",
+      "audio_duration_s": 4.13,
+      "source_master": "CH01_P01_pt_BR_VOICE_MASTER.mp3",
+      "source_cut_in_s": 4.735,
+      "source_cut_out_s": 8.865,
+      "bubble_box_normalized": [
+        0.04839,
+        0.28592,
+        0.38911,
+        0.08694
+      ],
+      "camera_target": [
+        0.242,
+        0.374,
+        0.19
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": ""
+    },
+    {
+      "line_id": "CH01_P01_L004",
+      "frame_id": "CH01_P01_F04",
+      "panel_id": "intro_f04",
+      "speaker_id": "CHR_003",
+      "kind": "broadcast",
+      "spoken_text": "Ela altera as propriedades físicas dos objetos!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P01_L004_pt_BR.mp3",
+      "audio_duration_s": 3.52,
+      "source_master": "CH01_P01_pt_BR_VOICE_MASTER.mp3",
+      "source_cut_in_s": 8.865,
+      "source_cut_out_s": 12.385,
+      "bubble_box_normalized": [
+        0.47218,
+        0.29304,
+        0.23831,
+        0.0801
+      ],
+      "camera_target": [
+        0.59,
+        0.358,
+        0.128
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": "res://mika_motion_comic/ch01_camera_sfx/CH01_P01_L004_camera.mp3"
+    },
+    {
+      "line_id": "CH01_P01_L005",
+      "frame_id": "CH01_P01_F05",
+      "panel_id": "intro_f05",
+      "speaker_id": "CHR_003",
+      "kind": "broadcast",
+      "spoken_text": "Evacuação geral! Vão agora para o espaçoporto mais próximo!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P01_L005_pt_BR.mp3",
+      "audio_duration_s": 4.77,
+      "source_master": "CH01_P01_pt_BR_VOICE_MASTER.mp3",
+      "source_cut_in_s": 12.385,
+      "source_cut_out_s": 17.155,
+      "bubble_box_normalized": [
+        0.73589,
+        0.39054,
+        0.23468,
+        0.11688
+      ],
+      "camera_target": [
+        0.812,
+        0.447,
+        0.145
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": "res://mika_motion_comic/ch01_camera_sfx/CH01_P01_L005_camera.mp3"
+    },
+    {
+      "line_id": "CH01_P01_L006",
+      "frame_id": "CH01_P01_F06",
+      "panel_id": "intro_f06",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "O que a gente faz?!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P01_L006_pt_BR.mp3",
+      "audio_duration_s": 1.53,
+      "source_master": "CH01_P01_pt_BR_VOICE_MASTER.mp3",
+      "source_cut_in_s": 17.155,
+      "source_cut_out_s": 18.685,
+      "bubble_box_normalized": [
+        0.03831,
+        0.64994,
+        0.21653,
+        0.05217
+      ],
+      "camera_target": [
+        0.272,
+        0.619,
+        0.222
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": ""
+    },
+    {
+      "line_id": "CH01_P01_L007",
+      "frame_id": "CH01_P01_F06",
+      "panel_id": "intro_f06",
+      "speaker_id": "CHR_002",
+      "kind": "dialogue",
+      "spoken_text": "Vamos! Para as naves!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P01_L007_pt_BR.mp3",
+      "audio_duration_s": 2.33,
+      "source_master": "CH01_P01_pt_BR_VOICE_MASTER.mp3",
+      "source_cut_in_s": 18.685,
+      "source_cut_out_s": 21.015,
+      "bubble_box_normalized": [
+        0.26532,
+        0.63854,
+        0.22298,
+        0.06328
+      ],
+      "camera_target": [
+        0.272,
+        0.619,
+        0.222
+      ],
+      "transition_before_s": 0.34,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": "res://mika_motion_comic/ch01_camera_sfx/CH01_P01_L007_camera.mp3"
+    },
+    {
+      "line_id": "CH01_P01_L008",
+      "frame_id": "CH01_P01_F07",
+      "panel_id": "intro_f07",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika deixou o planeta a tempo, mas a tempestade já o envolvia.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P01_L008_pt_BR.mp3",
+      "audio_duration_s": 4.45,
+      "source_master": "CH01_P01_pt_BR_VOICE_MASTER.mp3",
+      "source_cut_in_s": 21.015,
+      "source_cut_out_s": 25.465,
+      "bubble_box_normalized": [
+        0.73589,
+        0.51283,
+        0.23468,
+        0.1183
+      ],
+      "camera_target": [
+        0.746,
+        0.61,
+        0.204
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": "res://mika_motion_comic/ch01_camera_sfx/CH01_P01_L008_camera.mp3"
+    },
+    {
+      "line_id": "CH01_P01_L009",
+      "frame_id": "CH01_P01_F08",
+      "panel_id": "intro_f08",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Até no espaço aberto, a tempestade alcançou a nave de Mika.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P01_L009_pt_BR.mp3",
+      "audio_duration_s": 4.2,
+      "source_master": "CH01_P01_pt_BR_VOICE_MASTER.mp3",
+      "source_cut_in_s": 25.465,
+      "source_cut_out_s": 29.665,
+      "bubble_box_normalized": [
+        0.03306,
+        0.71266,
+        0.42661,
+        0.12258
+      ],
+      "camera_target": [
+        0.279,
+        0.823,
+        0.221
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": ""
+    },
+    {
+      "line_id": "CH01_P01_L010",
+      "frame_id": "CH01_P01_F09",
+      "panel_id": "intro_f09",
+      "speaker_id": "CHR_001",
+      "kind": "shout",
+      "spoken_text": "Aaaah!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P01_L010_pt_BR.mp3",
+      "audio_duration_s": 2.375,
+      "source_master": "CH01_P01_pt_BR_VOICE_MASTER.mp3",
+      "source_cut_in_s": 29.665,
+      "source_cut_out_s": 32.04,
+      "bubble_box_normalized": [
+        0.60806,
+        0.88968,
+        0.24677,
+        0.08438
+      ],
+      "camera_target": [
+        0.751,
+        0.859,
+        0.24
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_volume_db": -6.0,
+      "transition_sfx_path": "res://mika_motion_comic/ch01_camera_sfx/CH01_P01_L010_camera.mp3"
+    }
+  ],
+  "audio_master_duration_s": 32.04,
+  "verified_source_svg": "MIKA_CH01_P01_NEBULA_6LANG_v3/chapter_01/page_01/CH01_P01_overlays/CH01_P01_pt_BR.svg",
+  "crop_boundary_review": [
+    {
+      "index": 1,
+      "nominal_s": 3.605,
+      "cut_s": 3.545,
+      "silence_s": [
+        3.01,
+        3.61
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 2,
+      "nominal_s": 4.804,
+      "cut_s": 4.735,
+      "silence_s": [
+        4.28,
+        4.8
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 3,
+      "nominal_s": 8.913,
+      "cut_s": 8.865,
+      "silence_s": [
+        8.48,
+        8.93
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 4,
+      "nominal_s": 12.432,
+      "cut_s": 12.385,
+      "silence_s": [
+        11.9,
+        12.45
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 5,
+      "nominal_s": 17.07,
+      "cut_s": 17.155,
+      "silence_s": [
+        16.49,
+        17.22
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 6,
+      "nominal_s": 18.75,
+      "cut_s": 18.685,
+      "silence_s": [
+        18.34,
+        18.75
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 7,
+      "nominal_s": 21.066,
+      "cut_s": 21.015,
+      "silence_s": [
+        20.61,
+        21.08
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 8,
+      "nominal_s": 25.526,
+      "cut_s": 25.465,
+      "silence_s": [
+        25.02,
+        25.53
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 9,
+      "nominal_s": 29.724,
+      "cut_s": 29.665,
+      "silence_s": [
+        29.24,
+        29.73
+      ],
+      "method": "detected_silence"
+    }
+  ],
+  "integration_note": "native_gameplay_stops_preserved__next_clip_waits_for_camera",
+  "quality": "automatic_silence_cuts_needs_listening_review",
+  "runtime_contract": [
+    "line_selected",
+    "camera_motion",
+    "frame_render_confirmed",
+    "camera_sfx",
+    "voice_play_until_finished",
+    "next_line_or_panel"
+  ]
+}

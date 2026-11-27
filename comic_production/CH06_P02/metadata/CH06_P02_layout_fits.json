@@ -1,0 +1,1736 @@
+{
+  "source_ru_svg_unchanged": true,
+  "font": "DejaVu Sans Bold",
+  "all_fits": true,
+  "fits": [
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L001",
+      "text": "Здравствуй, Мика! Мы рады, что ты добрался до нас. Я хочу немного рассказать тебе о нас и о том, что случилось.",
+      "box": {
+        "x": 600,
+        "y": 270,
+        "w": 605,
+        "h": 290
+      },
+      "side": "left",
+      "font": 34,
+      "lines": [
+        "Здравствуй, Мика! Мы",
+        "рады, что ты добрался до",
+        "нас. Я хочу немного",
+        "рассказать тебе о нас и о",
+        "том, что случилось."
+      ],
+      "safe_pad": {
+        "left": 30,
+        "right": 30,
+        "top": 39,
+        "bottom": 23
+      },
+      "largest_line_width": 522.2,
+      "usable_width": 545,
+      "text_block_height": 206.7,
+      "usable_height": 228,
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L002",
+      "text": "Когда мы впервые взглянули на небо, мы начали замечать закономерности.",
+      "box": {
+        "x": 525,
+        "y": 605,
+        "w": 690,
+        "h": 188
+      },
+      "side": "right",
+      "font": 33,
+      "lines": [
+        "Когда мы впервые взглянули на",
+        "небо, мы начали замечать",
+        "закономерности."
+      ],
+      "safe_pad": {
+        "left": 30,
+        "right": 30,
+        "top": 39,
+        "bottom": 23
+      },
+      "largest_line_width": 620.7,
+      "usable_width": 630,
+      "text_block_height": 118.1,
+      "usable_height": 126,
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L003",
+      "text": "Мы построили космические корабли.",
+      "box": {
+        "x": 1388,
+        "y": 105,
+        "w": 907,
+        "h": 172
+      },
+      "side": "right",
+      "font": 44,
+      "lines": [
+        "Мы построили космические",
+        "корабли."
+      ],
+      "safe_pad": {
+        "left": 30,
+        "right": 30,
+        "top": 39,
+        "bottom": 23
+      },
+      "largest_line_width": 711.7,
+      "usable_width": 847,
+      "text_block_height": 102.5,
+      "usable_height": 110,
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L004",
+      "text": "И начали бороздить известную нам Вселенную.",
+      "box": {
+        "x": 90,
+        "y": 1032,
+        "w": 715,
+        "h": 169
+      },
+      "side": "left",
+      "font": 40,
+      "lines": [
+        "И начали бороздить",
+        "известную нам Вселенную."
+      ],
+      "safe_pad": {
+        "left": 30,
+        "right": 30,
+        "top": 39,
+        "bottom": 23
+      },
+      "largest_line_width": 631.6,
+      "usable_width": 655,
+      "text_block_height": 93.2,
+      "usable_height": 107,
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L005",
+      "text": "Мы научились предвидеть появление и смерть галактик.",
+      "box": {
+        "x": 1030,
+        "y": 1466,
+        "w": 1225,
+        "h": 175
+      },
+      "side": "right",
+      "font": 39,
+      "lines": [
+        "Мы научились предвидеть появление и смерть",
+        "галактик."
+      ],
+      "safe_pad": {
+        "left": 30,
+        "right": 30,
+        "top": 39,
+        "bottom": 23
+      },
+      "largest_line_width": 1071.7,
+      "usable_width": 1165,
+      "text_block_height": 90.9,
+      "usable_height": 113,
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L006",
+      "text": "Значит, вы умеете предсказывать будущее?",
+      "box": {
+        "x": 812,
+        "y": 1802,
+        "w": 620,
+        "h": 195
+      },
+      "side": "left",
+      "font": 37,
+      "lines": [
+        "Значит, вы умеете",
+        "предсказывать будущее?"
+      ],
+      "safe_pad": {
+        "left": 30,
+        "right": 30,
+        "top": 39,
+        "bottom": 23
+      },
+      "largest_line_width": 556.6,
+      "usable_width": 560,
+      "text_block_height": 86.2,
+      "usable_height": 133,
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L007",
+      "text": "Так же, как ты можешь предсказать, через сколько наступит рассвет, если знаешь, который сейчас час и во сколько взойдёт солнце.",
+      "box": {
+        "x": 1270,
+        "y": 2483,
+        "w": 1130,
+        "h": 197
+      },
+      "side": "right",
+      "font": 35,
+      "lines": [
+        "Так же, как ты можешь предсказать, через",
+        "сколько наступит рассвет, если знаешь, который",
+        "сейчас час и во сколько взойдёт солнце."
+      ],
+      "safe_pad": {
+        "left": 30,
+        "right": 30,
+        "top": 39,
+        "bottom": 23
+      },
+      "largest_line_width": 1007.8,
+      "usable_width": 1070,
+      "text_block_height": 125.3,
+      "usable_height": 135,
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L008_lead",
+      "text": "Мы научились рассчитывать:",
+      "box": {
+        "x": 815,
+        "y": 2780,
+        "w": 846,
+        "h": 87
+      },
+      "side": "right",
+      "font": 40,
+      "lines": [
+        "Мы научились рассчитывать:"
+      ],
+      "safe_pad": {
+        "left": 26,
+        "right": 26,
+        "top": 23,
+        "bottom": 13
+      },
+      "largest_line_width": 681.1,
+      "usable_width": 794,
+      "text_block_height": 43.2,
+      "usable_height": 51,
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L008_visual_1",
+      "text": "рождение планет",
+      "font": 32,
+      "box": {
+        "x": 73,
+        "y": 3318,
+        "w": 500,
+        "h": 87
+      },
+      "largest_line_width": 331.2,
+      "usable_width": 468,
+      "safe_pad": {
+        "left": 16,
+        "right": 16,
+        "top": 19,
+        "bottom": 14
+      },
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L008_visual_2",
+      "text": "солнечные затмения",
+      "font": 32,
+      "box": {
+        "x": 646,
+        "y": 3318,
+        "w": 539,
+        "h": 87
+      },
+      "largest_line_width": 385.7,
+      "usable_width": 507,
+      "safe_pad": {
+        "left": 16,
+        "right": 16,
+        "top": 19,
+        "bottom": 14
+      },
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L008_visual_3",
+      "text": "движение планет",
+      "font": 32,
+      "box": {
+        "x": 1340,
+        "y": 3318,
+        "w": 523,
+        "h": 87
+      },
+      "largest_line_width": 328.9,
+      "usable_width": 491,
+      "safe_pad": {
+        "left": 16,
+        "right": 16,
+        "top": 19,
+        "bottom": 14
+      },
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "ru",
+      "id": "CH06_P02_L008_visual_4",
+      "text": "пролёты астероидов",
+      "font": 32,
+      "box": {
+        "x": 1940,
+        "y": 3318,
+        "w": 467,
+        "h": 87
+      },
+      "largest_line_width": 387.0,
+      "usable_width": 435,
+      "safe_pad": {
+        "left": 16,
+        "right": 16,
+        "top": 19,
+        "bottom": 14
+      },
+      "unchanged_from_approved_v5": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L001",
+      "font_size": 34,
+      "lines": [
+        "Hello, Mika! We're glad you",
+        "made it here. I'd like to tell",
+        "you a little about us and",
+        "what happened."
+      ],
+      "text_height": 164.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 545,
+      "max_line_width": 527.6,
+      "available_height": 228,
+      "box": [
+        600,
+        270,
+        605,
+        290
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L002",
+      "font_size": 33,
+      "lines": [
+        "When we first looked up at the",
+        "sky, we began to notice patterns."
+      ],
+      "text_height": 76.9,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 630,
+      "max_line_width": 624.2,
+      "available_height": 126,
+      "box": [
+        525,
+        605,
+        690,
+        188
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L003",
+      "font_size": 44,
+      "lines": [
+        "We built spaceships."
+      ],
+      "text_height": 47.5,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 847,
+      "max_line_width": 511.8,
+      "available_height": 110,
+      "box": [
+        1388,
+        105,
+        907,
+        172
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L004",
+      "font_size": 40,
+      "lines": [
+        "And began exploring the",
+        "universe as we knew it."
+      ],
+      "text_height": 93.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 655,
+      "max_line_width": 557.8,
+      "available_height": 107,
+      "box": [
+        90,
+        1032,
+        715,
+        169
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L005",
+      "font_size": 39,
+      "lines": [
+        "We learned to foresee the birth and death of",
+        "galaxies."
+      ],
+      "text_height": 90.9,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1165,
+      "max_line_width": 987.9,
+      "available_height": 113,
+      "box": [
+        1030,
+        1466,
+        1225,
+        175
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L006",
+      "font_size": 37,
+      "lines": [
+        "So you can predict the",
+        "future?"
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 560,
+      "max_line_width": 470.5,
+      "available_height": 133,
+      "box": [
+        812,
+        1802,
+        620,
+        195
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L007",
+      "font_size": 35,
+      "lines": [
+        "Just as you can work out how long until sunrise if you",
+        "know the time now and when the Sun will rise."
+      ],
+      "text_height": 81.6,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1070,
+      "max_line_width": 1059.1,
+      "available_height": 135,
+      "box": [
+        1270,
+        2483,
+        1130,
+        197
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L008_lead",
+      "display_only": true,
+      "font_size": 40,
+      "lines": [
+        "We learned to calculate:"
+      ],
+      "text_height": 43.2,
+      "pad": [
+        26,
+        26,
+        23,
+        13
+      ],
+      "available_width": 794,
+      "max_line_width": 549.6,
+      "available_height": 51,
+      "box": [
+        815,
+        2780,
+        846,
+        87
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L008_visual_1",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        73.0,
+        3318.0,
+        500.0,
+        87.0
+      ],
+      "max_line_width": 351.1,
+      "available_width": 472.0,
+      "fits": true,
+      "lines": [
+        "the birth of planets"
+      ]
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L008_visual_2",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        646.0,
+        3318.0,
+        539.0,
+        87.0
+      ],
+      "max_line_width": 245.8,
+      "available_width": 511.0,
+      "fits": true,
+      "lines": [
+        "solar eclipses"
+      ]
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L008_visual_3",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        1340.0,
+        3318.0,
+        523.0,
+        87.0
+      ],
+      "max_line_width": 454.4,
+      "available_width": 495.0,
+      "fits": true,
+      "lines": [
+        "the movement of planets"
+      ]
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P02_L008_visual_4",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        1940.0,
+        3318.0,
+        467.0,
+        87.0
+      ],
+      "max_line_width": 318.7,
+      "available_width": 439.0,
+      "fits": true,
+      "lines": [
+        "passing asteroids"
+      ]
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L001",
+      "font_size": 34,
+      "lines": [
+        "Olá, Mika! Que bom que",
+        "você chegou até nós. Quero",
+        "te contar um pouco sobre",
+        "nós e o que aconteceu."
+      ],
+      "text_height": 164.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 545,
+      "max_line_width": 534.7,
+      "available_height": 228,
+      "box": [
+        600,
+        270,
+        605,
+        290
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L002",
+      "font_size": 33,
+      "lines": [
+        "Quando olhamos para o céu pela",
+        "primeira vez, começamos a",
+        "perceber padrões."
+      ],
+      "text_height": 118.1,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 630,
+      "max_line_width": 609.6,
+      "available_height": 126,
+      "box": [
+        525,
+        605,
+        690,
+        188
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L003",
+      "font_size": 44,
+      "lines": [
+        "Construímos naves espaciais."
+      ],
+      "text_height": 47.5,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 847,
+      "max_line_width": 733.9,
+      "available_height": 110,
+      "box": [
+        1388,
+        105,
+        907,
+        172
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L004",
+      "font_size": 40,
+      "lines": [
+        "E começamos a explorar o",
+        "Universo que conhecíamos."
+      ],
+      "text_height": 93.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 655,
+      "max_line_width": 618.9,
+      "available_height": 107,
+      "box": [
+        90,
+        1032,
+        715,
+        169
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L005",
+      "font_size": 39,
+      "lines": [
+        "Aprendemos a prever o nascimento e a morte das",
+        "galáxias."
+      ],
+      "text_height": 90.9,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1165,
+      "max_line_width": 1099.1,
+      "available_height": 113,
+      "box": [
+        1030,
+        1466,
+        1225,
+        175
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L006",
+      "font_size": 37,
+      "lines": [
+        "Então vocês conseguem",
+        "prever o futuro?"
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 560,
+      "max_line_width": 501.3,
+      "available_height": 133,
+      "box": [
+        812,
+        1802,
+        620,
+        195
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L007",
+      "font_size": 35,
+      "lines": [
+        "Assim como você pode prever quanto falta para",
+        "amanhecer se souber que horas são e a que horas o",
+        "Sol vai nascer."
+      ],
+      "text_height": 125.3,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1070,
+      "max_line_width": 1030.0,
+      "available_height": 135,
+      "box": [
+        1270,
+        2483,
+        1130,
+        197
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L008_lead",
+      "display_only": true,
+      "font_size": 40,
+      "lines": [
+        "Aprendemos a calcular:"
+      ],
+      "text_height": 43.2,
+      "pad": [
+        26,
+        26,
+        23,
+        13
+      ],
+      "available_width": 794,
+      "max_line_width": 531.6,
+      "available_height": 51,
+      "box": [
+        815,
+        2780,
+        846,
+        87
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L008_visual_1",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        73.0,
+        3318.0,
+        500.0,
+        87.0
+      ],
+      "max_line_width": 431.2,
+      "available_width": 472.0,
+      "fits": true,
+      "lines": [
+        "nascimento de planetas"
+      ]
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L008_visual_2",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        646.0,
+        3318.0,
+        539.0,
+        87.0
+      ],
+      "max_line_width": 286.6,
+      "available_width": 511.0,
+      "fits": true,
+      "lines": [
+        "eclipses solares"
+      ]
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L008_visual_3",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        1340.0,
+        3318.0,
+        523.0,
+        87.0
+      ],
+      "max_line_width": 444.4,
+      "available_width": 495.0,
+      "fits": true,
+      "lines": [
+        "movimento dos planetas"
+      ]
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P02_L008_visual_4",
+      "display_only": true,
+      "font_size": 31,
+      "box": [
+        1940.0,
+        3318.0,
+        467.0,
+        87.0
+      ],
+      "max_line_width": 425.4,
+      "available_width": 439.0,
+      "fits": true,
+      "lines": [
+        "passagem de asteroides"
+      ]
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L001",
+      "font_size": 34,
+      "lines": [
+        "¡Hola, Mika! Nos alegra que",
+        "hayas llegado hasta aquí.",
+        "Quiero contarte un poco",
+        "sobre nosotros y lo que",
+        "pasó."
+      ],
+      "text_height": 206.7,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 545,
+      "max_line_width": 534.1,
+      "available_height": 228,
+      "box": [
+        600,
+        270,
+        605,
+        290
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L002",
+      "font_size": 33,
+      "lines": [
+        "Cuando miramos al cielo por",
+        "primera vez, empezamos a",
+        "descubrir patrones."
+      ],
+      "text_height": 118.1,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 630,
+      "max_line_width": 530.1,
+      "available_height": 126,
+      "box": [
+        525,
+        605,
+        690,
+        188
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L003",
+      "font_size": 44,
+      "lines": [
+        "Construimos naves espaciales."
+      ],
+      "text_height": 47.5,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 847,
+      "max_line_width": 763.7,
+      "available_height": 110,
+      "box": [
+        1388,
+        105,
+        907,
+        172
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L004",
+      "font_size": 40,
+      "lines": [
+        "Y empezamos a recorrer el",
+        "universo que conocíamos."
+      ],
+      "text_height": 93.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 655,
+      "max_line_width": 604.7,
+      "available_height": 107,
+      "box": [
+        90,
+        1032,
+        715,
+        169
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L005",
+      "font_size": 39,
+      "lines": [
+        "Aprendimos a prever el nacimiento y la muerte de",
+        "las galaxias."
+      ],
+      "text_height": 90.9,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1165,
+      "max_line_width": 1105.9,
+      "available_height": 113,
+      "box": [
+        1030,
+        1466,
+        1225,
+        175
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L006",
+      "font_size": 37,
+      "lines": [
+        "¿O sea que pueden",
+        "predecir el futuro?"
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 560,
+      "max_line_width": 397.4,
+      "available_height": 133,
+      "box": [
+        812,
+        1802,
+        620,
+        195
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L007",
+      "font_size": 35,
+      "lines": [
+        "Igual que tú puedes calcular cuánto falta para el",
+        "amanecer si sabes qué hora es y a qué hora saldrá el",
+        "Sol."
+      ],
+      "text_height": 125.3,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1070,
+      "max_line_width": 1051.3,
+      "available_height": 135,
+      "box": [
+        1270,
+        2483,
+        1130,
+        197
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L008_lead",
+      "display_only": true,
+      "font_size": 40,
+      "lines": [
+        "Aprendimos a calcular:"
+      ],
+      "text_height": 43.2,
+      "pad": [
+        26,
+        26,
+        23,
+        13
+      ],
+      "available_width": 794,
+      "max_line_width": 518.2,
+      "available_height": 51,
+      "box": [
+        815,
+        2780,
+        846,
+        87
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L008_visual_1",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        73.0,
+        3318.0,
+        500.0,
+        87.0
+      ],
+      "max_line_width": 423.2,
+      "available_width": 472.0,
+      "fits": true,
+      "lines": [
+        "nacimiento de planetas"
+      ]
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L008_visual_2",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        646.0,
+        3318.0,
+        539.0,
+        87.0
+      ],
+      "max_line_width": 286.6,
+      "available_width": 511.0,
+      "fits": true,
+      "lines": [
+        "eclipses solares"
+      ]
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L008_visual_3",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        1340.0,
+        3318.0,
+        523.0,
+        87.0
+      ],
+      "max_line_width": 436.0,
+      "available_width": 495.0,
+      "fits": true,
+      "lines": [
+        "movimiento de planetas"
+      ]
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P02_L008_visual_4",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        1940.0,
+        3318.0,
+        467.0,
+        87.0
+      ],
+      "max_line_width": 342.5,
+      "available_width": 439.0,
+      "fits": true,
+      "lines": [
+        "paso de asteroides"
+      ]
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L001",
+      "font_size": 32,
+      "lines": [
+        "Bonjour, Mika ! Nous sommes",
+        "heureux que tu sois arrivé",
+        "jusqu’à nous. Je voudrais te",
+        "raconter un peu qui nous",
+        "sommes et ce qui s’est passé."
+      ],
+      "text_height": 194.6,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 545,
+      "max_line_width": 542.2,
+      "available_height": 228,
+      "box": [
+        600,
+        270,
+        605,
+        290
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L002",
+      "font_size": 28,
+      "lines": [
+        "Quand nous avons levé les yeux vers le",
+        "ciel pour la première fois, nous avons",
+        "commencé à voir des régularités."
+      ],
+      "text_height": 100.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 630,
+      "max_line_width": 622.2,
+      "available_height": 126,
+      "box": [
+        525,
+        605,
+        690,
+        188
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L003",
+      "font_size": 44,
+      "lines": [
+        "Nous avons construit des",
+        "vaisseaux spatiaux."
+      ],
+      "text_height": 102.5,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 847,
+      "max_line_width": 628.2,
+      "available_height": 110,
+      "box": [
+        1388,
+        105,
+        907,
+        172
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L004",
+      "font_size": 30,
+      "lines": [
+        "Et nous avons commencé à parcourir",
+        "l’Univers tel que nous le connaissions."
+      ],
+      "text_height": 69.9,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 655,
+      "max_line_width": 651.2,
+      "available_height": 107,
+      "box": [
+        90,
+        1032,
+        715,
+        169
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L005",
+      "font_size": 39,
+      "lines": [
+        "Nous avons appris à prévoir la naissance et la mort",
+        "des galaxies."
+      ],
+      "text_height": 90.9,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1165,
+      "max_line_width": 1132.2,
+      "available_height": 113,
+      "box": [
+        1030,
+        1466,
+        1225,
+        175
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L006",
+      "font_size": 37,
+      "lines": [
+        "Alors, vous pouvez prédire",
+        "l’avenir ?"
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 560,
+      "max_line_width": 559.0,
+      "available_height": 133,
+      "box": [
+        812,
+        1802,
+        620,
+        195
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L007",
+      "font_size": 35,
+      "lines": [
+        "Comme toi, tu peux prévoir dans combien de temps",
+        "le Soleil se lèvera si tu connais l’heure actuelle et",
+        "celle du lever du Soleil."
+      ],
+      "text_height": 125.3,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1070,
+      "max_line_width": 1023.1,
+      "available_height": 135,
+      "box": [
+        1270,
+        2483,
+        1130,
+        197
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L008_lead",
+      "display_only": true,
+      "font_size": 40,
+      "lines": [
+        "Nous avons appris à calculer :"
+      ],
+      "text_height": 43.2,
+      "pad": [
+        26,
+        26,
+        23,
+        13
+      ],
+      "available_width": 794,
+      "max_line_width": 677.5,
+      "available_height": 51,
+      "box": [
+        815,
+        2780,
+        846,
+        87
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L008_visual_1",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        73.0,
+        3318.0,
+        500.0,
+        87.0
+      ],
+      "max_line_width": 420.4,
+      "available_width": 472.0,
+      "fits": true,
+      "lines": [
+        "naissance des planètes"
+      ]
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L008_visual_2",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        646.0,
+        3318.0,
+        539.0,
+        87.0
+      ],
+      "max_line_width": 297.5,
+      "available_width": 511.0,
+      "fits": true,
+      "lines": [
+        "éclipses solaires"
+      ]
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L008_visual_3",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        1340.0,
+        3318.0,
+        523.0,
+        87.0
+      ],
+      "max_line_width": 455.7,
+      "available_width": 495.0,
+      "fits": true,
+      "lines": [
+        "mouvement des planètes"
+      ]
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P02_L008_visual_4",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        1940.0,
+        3318.0,
+        467.0,
+        87.0
+      ],
+      "max_line_width": 424.8,
+      "available_width": 439.0,
+      "fits": true,
+      "lines": [
+        "passage des astéroïdes"
+      ]
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L001",
+      "font_size": 34,
+      "lines": [
+        "Hallo, Mika! Schön, dass du",
+        "es zu uns geschafft hast.",
+        "Ich möchte dir kurz von uns",
+        "erzählen und davon, was",
+        "geschehen ist."
+      ],
+      "text_height": 206.7,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 545,
+      "max_line_width": 533.2,
+      "available_height": 228,
+      "box": [
+        600,
+        270,
+        605,
+        290
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L002",
+      "font_size": 33,
+      "lines": [
+        "Als wir zum ersten Mal zum",
+        "Himmel blickten, erkannten wir",
+        "erste Muster."
+      ],
+      "text_height": 118.1,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 630,
+      "max_line_width": 587.4,
+      "available_height": 126,
+      "box": [
+        525,
+        605,
+        690,
+        188
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L003",
+      "font_size": 44,
+      "lines": [
+        "Wir bauten Raumschiffe."
+      ],
+      "text_height": 47.5,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 847,
+      "max_line_width": 612.3,
+      "available_height": 110,
+      "box": [
+        1388,
+        105,
+        907,
+        172
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L004",
+      "font_size": 34,
+      "lines": [
+        "Und begannen, das uns bekannte",
+        "Universum zu durchstreifen."
+      ],
+      "text_height": 79.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 655,
+      "max_line_width": 643.6,
+      "available_height": 107,
+      "box": [
+        90,
+        1032,
+        715,
+        169
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L005",
+      "font_size": 39,
+      "lines": [
+        "Wir lernten, die Entstehung und das Ende von",
+        "Galaxien vorherzusehen."
+      ],
+      "text_height": 90.9,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1165,
+      "max_line_width": 1015.2,
+      "available_height": 113,
+      "box": [
+        1030,
+        1466,
+        1225,
+        175
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L006",
+      "font_size": 37,
+      "lines": [
+        "Also könnt ihr die Zukunft",
+        "vorhersagen?"
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 560,
+      "max_line_width": 545.5,
+      "available_height": 133,
+      "box": [
+        812,
+        1802,
+        620,
+        195
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L007",
+      "font_size": 35,
+      "lines": [
+        "So wie du ausrechnen kannst, wie lange es bis zum",
+        "Sonnenaufgang dauert, wenn du die Uhrzeit und den",
+        "Zeitpunkt des Sonnenaufgangs kennst."
+      ],
+      "text_height": 125.3,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1070,
+      "max_line_width": 1048.8,
+      "available_height": 135,
+      "box": [
+        1270,
+        2483,
+        1130,
+        197
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L008_lead",
+      "display_only": true,
+      "font_size": 40,
+      "lines": [
+        "Wir lernten zu berechnen:"
+      ],
+      "text_height": 43.2,
+      "pad": [
+        26,
+        26,
+        23,
+        13
+      ],
+      "available_width": 794,
+      "max_line_width": 589.8,
+      "available_height": 51,
+      "box": [
+        815,
+        2780,
+        846,
+        87
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L008_visual_1",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        73.0,
+        3318.0,
+        500.0,
+        87.0
+      ],
+      "max_line_width": 455.4,
+      "available_width": 472.0,
+      "fits": true,
+      "lines": [
+        "Entstehung von Planeten"
+      ]
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L008_visual_2",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        646.0,
+        3318.0,
+        539.0,
+        87.0
+      ],
+      "max_line_width": 347.0,
+      "available_width": 511.0,
+      "fits": true,
+      "lines": [
+        "Sonnenfinsternisse"
+      ]
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L008_visual_3",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        1340.0,
+        3318.0,
+        523.0,
+        87.0
+      ],
+      "max_line_width": 392.0,
+      "available_width": 495.0,
+      "fits": true,
+      "lines": [
+        "Planetenbewegungen"
+      ]
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P02_L008_visual_4",
+      "display_only": true,
+      "font_size": 32,
+      "box": [
+        1940.0,
+        3318.0,
+        467.0,
+        87.0
+      ],
+      "max_line_width": 402.2,
+      "available_width": 439.0,
+      "fits": true,
+      "lines": [
+        "Asteroidenvorbeiflüge"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,666 @@
+{
+  "schema_version": "1.0",
+  "project": "MIKA / Infinite Space",
+  "page_id": "CH05_P03",
+  "page_title_ru": "Центральный архив: воспоминания о прошлом",
+  "source_pdf": "5-3(1).pdf",
+  "approved_source": "CH05_P03_NEBULA_RU_LAYOUT_v2",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "display_title": {
+    "id": "CH05_P03_T001",
+    "tts_required": false,
+    "translations": {
+      "ru": "ЦЕНТРАЛЬНЫЙ АРХИВ",
+      "en": "CENTRAL ARCHIVE",
+      "pt_BR": "ARQUIVO CENTRAL",
+      "es": "ARCHIVO CENTRAL",
+      "fr": "ARCHIVES CENTRALES",
+      "de": "ZENTRALARCHIV"
+    }
+  },
+  "lines": [
+    {
+      "line_id": "CH05_P03_L001",
+      "page_id": "CH05_P03",
+      "frame_id": "CH05_P03_F01",
+      "character_id": "CHR_001",
+      "element_type": "dialogue",
+      "emotion": "с искренним любопытством, краткий вопрос",
+      "tts_required": true,
+      "translations": {
+        "ru": "Что это?",
+        "en": "What is this?",
+        "pt_BR": "O que é isso?",
+        "es": "¿Qué es esto?",
+        "fr": "Qu’est-ce que c’est ?",
+        "de": "Was ist das?"
+      }
+    },
+    {
+      "line_id": "CH05_P03_L002",
+      "page_id": "CH05_P03",
+      "frame_id": "CH05_P03_F01",
+      "character_id": "CHR_035",
+      "element_type": "dialogue",
+      "emotion": "доброжелательно, уверенно и объясняюще",
+      "tts_required": true,
+      "translations": {
+        "ru": "Это центральный архив. Настрой его под себя — и он выдаст всю необходимую информацию.",
+        "en": "This is the Central Archive. Set it up for yourself, and it will give you everything you need to know.",
+        "pt_BR": "Este é o Arquivo Central. Configure-o do seu jeito e ele mostrará tudo o que você precisa saber.",
+        "es": "Este es el Archivo Central. Ajústalo a tu medida y te dará toda la información que necesites.",
+        "fr": "Voici les Archives centrales. Personnalise-les, et elles te donneront toutes les informations dont tu as besoin.",
+        "de": "Das ist das Zentralarchiv. Richte es für dich ein, dann liefert es dir alle Informationen, die du brauchst."
+      }
+    },
+    {
+      "line_id": "CH05_P03_L003",
+      "page_id": "CH05_P03",
+      "frame_id": "CH05_P03_F02",
+      "character_id": "CHR_004",
+      "element_type": "narration",
+      "emotion": "от удивления к вниманию, мягкая интрига",
+      "tts_required": true,
+      "translations": {
+        "ru": "Мика начал настраивать архив. Над пультом замелькали странные изображения, и зазвучал голос.",
+        "en": "Mika began setting up the archive. Strange images flickered above the controls, and a voice began to speak.",
+        "pt_BR": "Mika começou a configurar o arquivo. Imagens estranhas surgiram sobre o painel, e uma voz começou a falar.",
+        "es": "Mika comenzó a configurar el archivo. Sobre el panel aparecieron imágenes extrañas y empezó a sonar una voz.",
+        "fr": "Mika commença à régler les archives. D’étranges images surgirent au-dessus du pupitre, puis une voix retentit.",
+        "de": "Mika begann, das Archiv einzustellen. Über dem Pult erschienen seltsame Bilder, und eine Stimme erklang."
+      }
+    },
+    {
+      "line_id": "CH05_P03_L004",
+      "page_id": "CH05_P03",
+      "frame_id": "CH05_P03_F03",
+      "character_id": "CHR_037",
+      "element_type": "archive_narration",
+      "emotion": "ровный синтетический голос с оттенком воспоминания и лёгкой ностальгии",
+      "tts_required": true,
+      "translations": {
+        "ru": "Когда-то мы выглядели немного иначе и жили в другом мире.",
+        "en": "We once looked a little different and lived in another world.",
+        "pt_BR": "Antigamente, éramos um pouco diferentes e vivíamos em outro mundo.",
+        "es": "Hace tiempo teníamos un aspecto algo distinto y vivíamos en otro mundo.",
+        "fr": "Autrefois, nous avions un aspect un peu différent et vivions dans un autre monde.",
+        "de": "Früher sahen wir etwas anders aus und lebten in einer anderen Welt."
+      }
+    },
+    {
+      "line_id": "CH05_P03_L005",
+      "page_id": "CH05_P03",
+      "frame_id": "CH05_P03_F04",
+      "character_id": "CHR_037",
+      "element_type": "archive_narration",
+      "emotion": "сдержанная грусть из-за шторма и вынужденной эвакуации",
+      "tts_required": true,
+      "translations": {
+        "ru": "Но нас тоже настиг шторм. Нам пришлось эвакуироваться.",
+        "en": "But the storm reached us, too. We had to evacuate.",
+        "pt_BR": "Mas a tempestade também nos alcançou. Tivemos que fugir.",
+        "es": "Pero la tormenta también llegó hasta nosotros. Tuvimos que evacuar.",
+        "fr": "Mais la tempête nous a rattrapés, nous aussi. Nous avons dû évacuer.",
+        "de": "Doch der Sturm erreichte auch uns. Wir mussten fliehen."
+      }
+    },
+    {
+      "line_id": "CH05_P03_L006",
+      "page_id": "CH05_P03",
+      "frame_id": "CH05_P03_F05",
+      "character_id": "CHR_037",
+      "element_type": "archive_narration",
+      "emotion": "ясное объяснение, постепенно с надеждой и решимостью",
+      "tts_required": true,
+      "translations": {
+        "ru": "К тому времени мы уже изучили гравитационные аномалии и научились проходить сквозь них. Так мы смогли покинуть прежний мир.",
+        "en": "By then, we had studied gravitational anomalies and learned to travel through them. That was how we left our old world.",
+        "pt_BR": "Naquela época, já estudávamos anomalias gravitacionais e sabíamos atravessá-las. Foi assim que deixamos nosso antigo mundo.",
+        "es": "Por entonces ya habíamos estudiado las anomalías gravitatorias y aprendido a atravesarlas. Así pudimos dejar nuestro antiguo mundo.",
+        "fr": "À cette époque, nous avions déjà étudié les anomalies gravitationnelles et appris à les traverser. C’est ainsi que nous avons quitté notre ancien monde.",
+        "de": "Damals hatten wir Gravitationsanomalien bereits erforscht und gelernt, sie zu durchqueren. So konnten wir unsere alte Welt verlassen."
+      }
+    }
+  ],
+  "layout_checks": {
+    "ru": [
+      {
+        "id": "CH05_P03_T001",
+        "source": "approved Russian SVG v2; exact bytes preserved"
+      },
+      {
+        "id": "CH05_P03_L001",
+        "source": "approved Russian SVG v2; exact bytes preserved"
+      },
+      {
+        "id": "CH05_P03_L002",
+        "source": "approved Russian SVG v2; exact bytes preserved"
+      },
+      {
+        "id": "CH05_P03_L003",
+        "source": "approved Russian SVG v2; exact bytes preserved"
+      },
+      {
+        "id": "CH05_P03_L004",
+        "source": "approved Russian SVG v2; exact bytes preserved"
+      },
+      {
+        "id": "CH05_P03_L005",
+        "source": "approved Russian SVG v2; exact bytes preserved"
+      },
+      {
+        "id": "CH05_P03_L006",
+        "source": "approved Russian SVG v2; exact bytes preserved"
+      }
+    ],
+    "en": [
+      {
+        "id": "CH05_P03_T001",
+        "font_px": 35,
+        "line_count": 1,
+        "max_line_width_px": 364,
+        "inner_width_px": 511.0,
+        "box": [
+          74.0,
+          79.0,
+          545.0,
+          88.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L001",
+        "font_px": 35,
+        "line_count": 1,
+        "max_line_width_px": 256,
+        "inner_width_px": 256.0,
+        "box": [
+          91.0,
+          967.0,
+          290.0,
+          102.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L002",
+        "font_px": 32,
+        "line_count": 6,
+        "max_line_width_px": 336,
+        "inner_width_px": 361.0,
+        "box": [
+          1044.0,
+          818.0,
+          395.0,
+          284.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L003",
+        "font_px": 32,
+        "line_count": 5,
+        "max_line_width_px": 447,
+        "inner_width_px": 465.0,
+        "box": [
+          1849.0,
+          91.0,
+          510.0,
+          248.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L004",
+        "font_px": 35,
+        "line_count": 2,
+        "max_line_width_px": 1046,
+        "inner_width_px": 1063.0,
+        "box": [
+          75.0,
+          1904.0,
+          1115.0,
+          171.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L005",
+        "font_px": 35,
+        "line_count": 2,
+        "max_line_width_px": 818,
+        "inner_width_px": 975.0,
+        "box": [
+          1369.0,
+          1904.0,
+          1027.0,
+          171.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L006",
+        "font_px": 34,
+        "line_count": 3,
+        "max_line_width_px": 1031,
+        "inner_width_px": 1058.0,
+        "box": [
+          99.0,
+          3096.0,
+          1110.0,
+          231.0
+        ],
+        "fit": true
+      }
+    ],
+    "pt_BR": [
+      {
+        "id": "CH05_P03_T001",
+        "font_px": 35,
+        "line_count": 1,
+        "max_line_width_px": 373,
+        "inner_width_px": 511.0,
+        "box": [
+          74.0,
+          79.0,
+          545.0,
+          88.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L001",
+        "font_px": 34,
+        "line_count": 1,
+        "max_line_width_px": 254,
+        "inner_width_px": 256.0,
+        "box": [
+          91.0,
+          967.0,
+          290.0,
+          102.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L002",
+        "font_px": 32,
+        "line_count": 6,
+        "max_line_width_px": 357,
+        "inner_width_px": 361.0,
+        "box": [
+          1044.0,
+          818.0,
+          395.0,
+          284.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L003",
+        "font_px": 31,
+        "line_count": 5,
+        "max_line_width_px": 460,
+        "inner_width_px": 465.0,
+        "box": [
+          1849.0,
+          91.0,
+          510.0,
+          248.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L004",
+        "font_px": 35,
+        "line_count": 2,
+        "max_line_width_px": 882,
+        "inner_width_px": 1063.0,
+        "box": [
+          75.0,
+          1904.0,
+          1115.0,
+          171.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L005",
+        "font_px": 35,
+        "line_count": 2,
+        "max_line_width_px": 819,
+        "inner_width_px": 975.0,
+        "box": [
+          1369.0,
+          1904.0,
+          1027.0,
+          171.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L006",
+        "font_px": 34,
+        "line_count": 3,
+        "max_line_width_px": 1055,
+        "inner_width_px": 1058.0,
+        "box": [
+          99.0,
+          3096.0,
+          1110.0,
+          231.0
+        ],
+        "fit": true
+      }
+    ],
+    "es": [
+      {
+        "id": "CH05_P03_T001",
+        "font_px": 35,
+        "line_count": 1,
+        "max_line_width_px": 370,
+        "inner_width_px": 511.0,
+        "box": [
+          74.0,
+          79.0,
+          545.0,
+          88.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L001",
+        "font_px": 32,
+        "line_count": 1,
+        "max_line_width_px": 250,
+        "inner_width_px": 256.0,
+        "box": [
+          91.0,
+          967.0,
+          290.0,
+          102.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L002",
+        "font_px": 32,
+        "line_count": 5,
+        "max_line_width_px": 356,
+        "inner_width_px": 361.0,
+        "box": [
+          1044.0,
+          818.0,
+          395.0,
+          284.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L003",
+        "font_px": 30,
+        "line_count": 5,
+        "max_line_width_px": 457,
+        "inner_width_px": 465.0,
+        "box": [
+          1849.0,
+          91.0,
+          510.0,
+          248.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L004",
+        "font_px": 35,
+        "line_count": 2,
+        "max_line_width_px": 968,
+        "inner_width_px": 1063.0,
+        "box": [
+          75.0,
+          1904.0,
+          1115.0,
+          171.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L005",
+        "font_px": 35,
+        "line_count": 2,
+        "max_line_width_px": 938,
+        "inner_width_px": 975.0,
+        "box": [
+          1369.0,
+          1904.0,
+          1027.0,
+          171.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L006",
+        "font_px": 34,
+        "line_count": 3,
+        "max_line_width_px": 1033,
+        "inner_width_px": 1058.0,
+        "box": [
+          99.0,
+          3096.0,
+          1110.0,
+          231.0
+        ],
+        "fit": true
+      }
+    ],
+    "fr": [
+      {
+        "id": "CH05_P03_T001",
+        "font_px": 35,
+        "line_count": 1,
+        "max_line_width_px": 439,
+        "inner_width_px": 511.0,
+        "box": [
+          74.0,
+          79.0,
+          545.0,
+          88.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L001",
+        "font_px": 30,
+        "line_count": 2,
+        "max_line_width_px": 235,
+        "inner_width_px": 256.0,
+        "box": [
+          91.0,
+          967.0,
+          290.0,
+          102.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L002",
+        "font_px": 30,
+        "line_count": 7,
+        "max_line_width_px": 350,
+        "inner_width_px": 361.0,
+        "box": [
+          1044.0,
+          818.0,
+          395.0,
+          284.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L003",
+        "font_px": 32,
+        "line_count": 5,
+        "max_line_width_px": 442,
+        "inner_width_px": 465.0,
+        "box": [
+          1849.0,
+          91.0,
+          510.0,
+          248.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L004",
+        "font_px": 35,
+        "line_count": 2,
+        "max_line_width_px": 1032,
+        "inner_width_px": 1063.0,
+        "box": [
+          75.0,
+          1904.0,
+          1115.0,
+          171.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L005",
+        "font_px": 35,
+        "line_count": 2,
+        "max_line_width_px": 905,
+        "inner_width_px": 975.0,
+        "box": [
+          1369.0,
+          1904.0,
+          1027.0,
+          171.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L006",
+        "font_px": 34,
+        "line_count": 3,
+        "max_line_width_px": 1047,
+        "inner_width_px": 1058.0,
+        "box": [
+          99.0,
+          3096.0,
+          1110.0,
+          231.0
+        ],
+        "fit": true
+      }
+    ],
+    "de": [
+      {
+        "id": "CH05_P03_T001",
+        "font_px": 35,
+        "line_count": 1,
+        "max_line_width_px": 328,
+        "inner_width_px": 511.0,
+        "box": [
+          74.0,
+          79.0,
+          545.0,
+          88.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L001",
+        "font_px": 36,
+        "line_count": 1,
+        "max_line_width_px": 253,
+        "inner_width_px": 256.0,
+        "box": [
+          91.0,
+          967.0,
+          290.0,
+          102.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L002",
+        "font_px": 30,
+        "line_count": 6,
+        "max_line_width_px": 354,
+        "inner_width_px": 361.0,
+        "box": [
+          1044.0,
+          818.0,
+          395.0,
+          284.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L003",
+        "font_px": 32,
+        "line_count": 5,
+        "max_line_width_px": 456,
+        "inner_width_px": 465.0,
+        "box": [
+          1849.0,
+          91.0,
+          510.0,
+          248.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L004",
+        "font_px": 35,
+        "line_count": 2,
+        "max_line_width_px": 967,
+        "inner_width_px": 1063.0,
+        "box": [
+          75.0,
+          1904.0,
+          1115.0,
+          171.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L005",
+        "font_px": 35,
+        "line_count": 2,
+        "max_line_width_px": 965,
+        "inner_width_px": 975.0,
+        "box": [
+          1369.0,
+          1904.0,
+          1027.0,
+          171.0
+        ],
+        "fit": true
+      },
+      {
+        "id": "CH05_P03_L006",
+        "font_px": 34,
+        "line_count": 3,
+        "max_line_width_px": 1046,
+        "inner_width_px": 1058.0,
+        "box": [
+          99.0,
+          3096.0,
+          1110.0,
+          231.0
+        ],
+        "fit": true
+      }
+    ]
+  },
+  "voice_status": "NOT_GENERATED",
+  "master_policy": "continue page-separated until entire comic is scripted; consolidate later by character-language"
+}

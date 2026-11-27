@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<!-- Fully editable NEBULA captions, transparent overlay. Original PDF is deliberately not embedded. -->
+<g id="CH04_P03_L001" data-panel="01" data-speaker="Рассказчик">
+<rect x="86" y="113" width="722" height="242" rx="23" fill="#14112B" opacity="0.17"/>
+<rect x="82" y="107" width="722" height="242" rx="23" fill="#FFF9F0" stroke="#9979C8" stroke-width="5"/>
+<rect x="110" y="124" width="80" height="8" rx="4" fill="#EBA157"/>
+<text x="114" y="175.25" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="30" fill="#34264C">Mika contou ao lagarto, em poucas</text><text x="114" y="211.85" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="30" fill="#34264C">palavras, o que aconteceu com seu</text><text x="114" y="248.45" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="30" fill="#34264C">planeta natal e o conselho da IA de</text><text x="114" y="285.05" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="30" fill="#34264C">Marte: procurar respostas no passado.</text></g>
+<g id="CH04_P03_L002" data-panel="01" data-speaker="Мика">
+<rect x="819" y="748" width="398" height="124" rx="23" fill="#14112B" opacity="0.17"/>
+<rect x="815" y="742" width="398" height="124" rx="23" fill="#F1E8FF" stroke="#A46DD5" stroke-width="5"/>
+<rect x="843" y="759" width="80" height="8" rx="4" fill="#AC8EF0"/>
+<polygon points="817,806 760,812 817,838" fill="#F1E8FF" stroke="#A46DD5" stroke-width="5" stroke-linejoin="round"/>
+<line x1="817" y1="806" x2="817" y2="838" stroke="#F1E8FF" stroke-width="9"/>
+<text x="847" y="799.94" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="33" fill="#3C245F">E cá estamos nós!</text></g>
+<g id="CH04_P03_L003" data-panel="01" data-speaker="Ящер-пират">
+<rect x="1429" y="725" width="850" height="187" rx="23" fill="#14112B" opacity="0.17"/>
+<rect x="1425" y="719" width="850" height="187" rx="23" fill="#FFE8C4" stroke="#D99638" stroke-width="5"/>
+<rect x="1453" y="736" width="80" height="8" rx="4" fill="#E4A24B"/>
+<polygon points="1790,720 1890,615 1926,720" fill="#FFE8C4" stroke="#D99638" stroke-width="5" stroke-linejoin="round"/>
+<line x1="1790" y1="720" x2="1926" y2="720" stroke="#FFE8C4" stroke-width="9"/>
+<text x="1457" y="773.84" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="37" fill="#472B3E">Acho que vocês deveriam visitar</text><text x="1457" y="818.94" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="37" fill="#472B3E">Archeon. Lá, você pode descobrir um</text><text x="1457" y="864.04" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="37" fill="#472B3E">pouco mais sobre a nossa história.</text></g>
+<g id="CH04_P03_L004" data-panel="02" data-speaker="Рассказчик">
+<rect x="95" y="1669" width="1088" height="141" rx="23" fill="#14112B" opacity="0.17"/>
+<rect x="91" y="1663" width="1088" height="141" rx="23" fill="#FFF9F0" stroke="#9979C8" stroke-width="5"/>
+<rect x="119" y="1680" width="80" height="8" rx="4" fill="#EBA157"/>
+<text x="123" y="1721.90" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="37" fill="#34264C">A nave de Mika pousou em Archeon, pertinho de</text><text x="123" y="1767.00" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="37" fill="#34264C">um acampamento arqueológico.</text></g>
+<g id="CH04_P03_L005" data-panel="03" data-speaker="Ящер-пират">
+<rect x="1325" y="1161" width="438" height="164" rx="23" fill="#14112B" opacity="0.17"/>
+<rect x="1321" y="1155" width="438" height="164" rx="23" fill="#FFE8C4" stroke="#D99638" stroke-width="5"/>
+<rect x="1349" y="1172" width="80" height="8" rx="4" fill="#E4A24B"/>
+<polygon points="1757,1221 1835,1400 1757,1262" fill="#FFE8C4" stroke="#D99638" stroke-width="5" stroke-linejoin="round"/>
+<line x1="1757" y1="1221" x2="1757" y2="1262" stroke="#FFE8C4" stroke-width="9"/>
+<text x="1353" y="1205.60" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="34" fill="#472B3E">Tenho certeza de</text><text x="1353" y="1247.10" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="34" fill="#472B3E">que você pode nos</text><text x="1353" y="1288.60" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="34" fill="#472B3E">ajudar!</text></g>
+<g id="CH04_P03_L006" data-panel="03" data-speaker="Профессор-археолог">
+<rect x="1957" y="1509" width="443" height="166" rx="23" fill="#14112B" opacity="0.17"/>
+<rect x="1953" y="1503" width="443" height="166" rx="23" fill="#E9F8F4" stroke="#5CAFA8" stroke-width="5"/>
+<rect x="1981" y="1520" width="80" height="8" rx="4" fill="#89D7BA"/>
+<polygon points="2143,1504 2238,1390 2214,1504" fill="#E9F8F4" stroke="#5CAFA8" stroke-width="5" stroke-linejoin="round"/>
+<line x1="2143" y1="1504" x2="2214" y2="1504" stroke="#E9F8F4" stroke-width="9"/>
+<text x="1985" y="1554.60" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="34" fill="#244D54">Bem… nem sei</text><text x="1985" y="1596.10" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="34" fill="#244D54">como posso ajudar</text><text x="1985" y="1637.60" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="34" fill="#244D54">vocês.</text></g>
+<g id="CH04_P03_L007" data-panel="03" data-speaker="Рассказчик">
+<rect x="1357" y="1038" width="1048" height="120" rx="23" fill="#14112B" opacity="0.17"/>
+<rect x="1353" y="1032" width="1048" height="120" rx="23" fill="#FFF9F0" stroke="#9979C8" stroke-width="5"/>
+<rect x="1381" y="1049" width="80" height="8" rx="4" fill="#EBA157"/>
+<text x="1385" y="1081.70" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="33" fill="#34264C">O lagarto levou Mika para conhecer um velho amigo:</text><text x="1385" y="1122.00" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="33" fill="#34264C">um professor de arqueologia.</text></g>
+<g id="CH04_P03_L008" data-panel="04" data-speaker="Рассказчик">
+<rect x="99" y="1941" width="1163" height="231" rx="23" fill="#14112B" opacity="0.17"/>
+<rect x="95" y="1935" width="1163" height="231" rx="23" fill="#FFF9F0" stroke="#9979C8" stroke-width="5"/>
+<rect x="123" y="1952" width="80" height="8" rx="4" fill="#EBA157"/>
+<text x="127" y="1990.80" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="39" fill="#34264C">O arqueólogo entregou algumas amostras aos</text><text x="127" y="2038.40" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="39" fill="#34264C">amigos e sugeriu que procurassem um colega no</text><text x="127" y="2086.00" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="39" fill="#34264C">museu de Runa. Talvez ele soubesse mais e</text><text x="127" y="2133.60" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="39" fill="#34264C">pudesse ajudá-los a continuar a busca.</text></g>
+<g id="CH04_P03_L009" data-panel="05" data-speaker="Бортовая навигация">
+<rect x="198" y="3292" width="1059" height="113" rx="23" fill="#14112B" opacity="0.17"/>
+<rect x="194" y="3286" width="1059" height="113" rx="23" fill="#112D50" stroke="#2AD4E5" stroke-width="5"/>
+<rect x="222" y="3303" width="80" height="8" rx="4" fill="#F6B45B"/>
+<text x="226" y="3351.13" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="33" fill="#FFFFFF">PRÓXIMO DESTINO: RUNA — MUSEU ARQUEOLÓGICO</text></g>
+<g id="CH04_P03_L010" data-panel="06" data-speaker="Рассказчик">
+<rect x="1526" y="2801" width="820" height="178" rx="23" fill="#14112B" opacity="0.17"/>
+<rect x="1522" y="2795" width="820" height="178" rx="23" fill="#FEF7EA" stroke="#9F75C9" stroke-width="5"/>
+<rect x="1550" y="2812" width="80" height="8" rx="4" fill="#F0AA50"/>
+<text x="1554" y="2849.40" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="37" fill="#34264C">Com o destino escolhido, nossos</text><text x="1554" y="2894.50" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="37" fill="#34264C">amigos partiram para mais uma</text><text x="1554" y="2939.60" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="37" fill="#34264C">etapa da aventura!</text></g>
+</svg>

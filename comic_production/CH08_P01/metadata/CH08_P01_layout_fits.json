@@ -1,0 +1,1145 @@
+{
+  "page_id": "CH08_P01",
+  "status": "PASS",
+  "checks": [
+    {
+      "lang": "ru",
+      "line_id": "CH08_P01_L001",
+      "text": "Корабль Мики вернулся на планету нейронных существ в галактике Треугольник.",
+      "frame": "01 — прибытие",
+      "box": [
+        108,
+        92,
+        1110,
+        173
+      ],
+      "font_size": 38,
+      "lines": [
+        "Корабль Мики вернулся на планету",
+        "нейронных существ в галактике Треугольник."
+      ],
+      "available_width_px": 1031,
+      "text_max_width_px": 1023.58,
+      "available_height_px": 126,
+      "text_height_px": 88.92,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true,
+      "note": "top-left sky, away from ship",
+      "approved_original_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH08_P01_L002",
+      "text": "Дверь в зал открылась.",
+      "frame": "02 — открытая дверь",
+      "box": [
+        103,
+        866,
+        575,
+        125
+      ],
+      "font_size": 35,
+      "lines": [
+        "Дверь в зал открылась."
+      ],
+      "available_width_px": 496,
+      "text_max_width_px": 482.78,
+      "available_height_px": 78,
+      "text_height_px": 37.8,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true,
+      "note": "second row left, door arch above Mika",
+      "approved_original_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH08_P01_L003",
+      "text": "Привет!",
+      "frame": "02 — Мика",
+      "box": [
+        115,
+        1222,
+        405,
+        134
+      ],
+      "font_size": 48,
+      "lines": [
+        "Привет!"
+      ],
+      "available_width_px": 337,
+      "text_max_width_px": 220.83,
+      "available_height_px": 89,
+      "text_height_px": 51.84,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true,
+      "note": "left of Mika, no long tail",
+      "approved_original_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH08_P01_L004",
+      "text": "Бип-бип!",
+      "frame": "03 — Баббл",
+      "box": [
+        1334,
+        876,
+        425,
+        134
+      ],
+      "font_size": 49,
+      "lines": [
+        "Бип-бип!"
+      ],
+      "available_width_px": 357,
+      "text_max_width_px": 250.62,
+      "available_height_px": 89,
+      "text_height_px": 52.92,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true,
+      "note": "upper-left of Bubble, away from body",
+      "approved_original_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH08_P01_L005",
+      "text": "Вся компания была в сборе и ждала возвращения Мики.",
+      "frame": "04 — компания",
+      "box": [
+        625,
+        2398,
+        1270,
+        132
+      ],
+      "font_size": 36,
+      "lines": [
+        "Вся компания была в сборе и ждала возвращения",
+        "Мики."
+      ],
+      "available_width_px": 1191,
+      "text_max_width_px": 1056.94,
+      "available_height_px": 85,
+      "text_height_px": 84.24,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true,
+      "note": "at feet/bottom of group portrait, faces clear",
+      "approved_original_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH08_P01_L006",
+      "text": "А что касается друзей… Мне кажется, кто-то обещал слетать в Малое Магелланово Облако!",
+      "frame": "05 — ящер",
+      "box": [
+        142,
+        3194,
+        1035,
+        195
+      ],
+      "font_size": 38,
+      "lines": [
+        "А что касается друзей… Мне кажется,",
+        "кто-то обещал слетать в Малое",
+        "Магелланово Облако!"
+      ],
+      "available_width_px": 967,
+      "text_max_width_px": 847.53,
+      "available_height_px": 150,
+      "text_height_px": 136.8,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true,
+      "note": "lower jacket of lizard, face and mouth open",
+      "approved_original_unchanged": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH08_P01_L007",
+      "text": "Ну что, друзья, в путь!",
+      "frame": "06 — Мика",
+      "box": [
+        1554,
+        3248,
+        770,
+        141
+      ],
+      "font_size": 43,
+      "lines": [
+        "Ну что, друзья, в путь!"
+      ],
+      "available_width_px": 702,
+      "text_max_width_px": 570.53,
+      "available_height_px": 96,
+      "text_height_px": 46.44,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true,
+      "note": "low in Mika panel, face and raised hand clear",
+      "approved_original_unchanged": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH08_P01_L001",
+      "text": "Mika’s ship returned to the neuron beings’ planet in the Triangulum Galaxy.",
+      "box": [
+        108,
+        92,
+        1110,
+        173
+      ],
+      "font_size": 38,
+      "lines": [
+        "Mika’s ship returned to the neuron beings’",
+        "planet in the Triangulum Galaxy."
+      ],
+      "available_width_px": 1031,
+      "text_max_width_px": 920.92,
+      "available_height_px": 126,
+      "text_height_px": 88.92,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH08_P01_L002",
+      "text": "The door to the hall opened.",
+      "box": [
+        103,
+        866,
+        575,
+        125
+      ],
+      "font_size": 33,
+      "lines": [
+        "The door to the hall",
+        "opened."
+      ],
+      "available_width_px": 496,
+      "text_max_width_px": 368.08,
+      "available_height_px": 78,
+      "text_height_px": 77.22,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH08_P01_L003",
+      "text": "Hi!",
+      "box": [
+        115,
+        1222,
+        405,
+        134
+      ],
+      "font_size": 48,
+      "lines": [
+        "Hi!"
+      ],
+      "available_width_px": 337,
+      "text_max_width_px": 78.52,
+      "available_height_px": 89,
+      "text_height_px": 51.84,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH08_P01_L004",
+      "text": "Beep-beep!",
+      "box": [
+        1334,
+        876,
+        425,
+        134
+      ],
+      "font_size": 49,
+      "lines": [
+        "Beep-beep!"
+      ],
+      "available_width_px": 357,
+      "text_max_width_px": 318.2,
+      "available_height_px": 89,
+      "text_height_px": 52.92,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH08_P01_L005",
+      "text": "The whole crew was together, waiting for Mika to return.",
+      "box": [
+        625,
+        2398,
+        1270,
+        132
+      ],
+      "font_size": 36,
+      "lines": [
+        "The whole crew was together, waiting for Mika to return."
+      ],
+      "available_width_px": 1191,
+      "text_max_width_px": 1158.42,
+      "available_height_px": 85,
+      "text_height_px": 38.88,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH08_P01_L006",
+      "text": "Speaking of friends… I think someone promised a trip to the Small Magellanic Cloud!",
+      "box": [
+        142,
+        3194,
+        1035,
+        195
+      ],
+      "font_size": 38,
+      "lines": [
+        "Speaking of friends… I think someone",
+        "promised a trip to the Small Magellanic",
+        "Cloud!"
+      ],
+      "available_width_px": 967,
+      "text_max_width_px": 847.12,
+      "available_height_px": 150,
+      "text_height_px": 136.8,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH08_P01_L007",
+      "text": "Well then, friends, let’s go!",
+      "box": [
+        1554,
+        3248,
+        770,
+        141
+      ],
+      "font_size": 43,
+      "lines": [
+        "Well then, friends, let’s go!"
+      ],
+      "available_width_px": 702,
+      "text_max_width_px": 665.09,
+      "available_height_px": 96,
+      "text_height_px": 46.44,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH08_P01_L001",
+      "text": "A nave de Mika voltou ao planeta dos seres neurais, na galáxia do Triângulo.",
+      "box": [
+        108,
+        92,
+        1110,
+        173
+      ],
+      "font_size": 38,
+      "lines": [
+        "A nave de Mika voltou ao planeta dos seres",
+        "neurais, na galáxia do Triângulo."
+      ],
+      "available_width_px": 1031,
+      "text_max_width_px": 934.16,
+      "available_height_px": 126,
+      "text_height_px": 88.92,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH08_P01_L002",
+      "text": "A porta do salão se abriu.",
+      "box": [
+        103,
+        866,
+        575,
+        125
+      ],
+      "font_size": 34,
+      "lines": [
+        "A porta do salão se abriu."
+      ],
+      "available_width_px": 496,
+      "text_max_width_px": 494.14,
+      "available_height_px": 78,
+      "text_height_px": 36.72,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH08_P01_L003",
+      "text": "Oi!",
+      "box": [
+        115,
+        1222,
+        405,
+        134
+      ],
+      "font_size": 48,
+      "lines": [
+        "Oi!"
+      ],
+      "available_width_px": 337,
+      "text_max_width_px": 79.16,
+      "available_height_px": 89,
+      "text_height_px": 51.84,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH08_P01_L004",
+      "text": "Bip-bip!",
+      "box": [
+        1334,
+        876,
+        425,
+        134
+      ],
+      "font_size": 49,
+      "lines": [
+        "Bip-bip!"
+      ],
+      "available_width_px": 357,
+      "text_max_width_px": 218.86,
+      "available_height_px": 89,
+      "text_height_px": 52.92,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH08_P01_L005",
+      "text": "Toda a turma estava reunida, esperando a volta de Mika.",
+      "box": [
+        625,
+        2398,
+        1270,
+        132
+      ],
+      "font_size": 36,
+      "lines": [
+        "Toda a turma estava reunida, esperando a volta de Mika."
+      ],
+      "available_width_px": 1191,
+      "text_max_width_px": 1159.47,
+      "available_height_px": 85,
+      "text_height_px": 38.88,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH08_P01_L006",
+      "text": "Falando em amigos… Acho que alguém prometeu uma viagem à Pequena Nuvem de Magalhães!",
+      "box": [
+        142,
+        3194,
+        1035,
+        195
+      ],
+      "font_size": 38,
+      "lines": [
+        "Falando em amigos… Acho que alguém",
+        "prometeu uma viagem à Pequena Nuvem de",
+        "Magalhães!"
+      ],
+      "available_width_px": 967,
+      "text_max_width_px": 949.97,
+      "available_height_px": 150,
+      "text_height_px": 136.8,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH08_P01_L007",
+      "text": "Então, amigos, vamos nessa!",
+      "box": [
+        1554,
+        3248,
+        770,
+        141
+      ],
+      "font_size": 42,
+      "lines": [
+        "Então, amigos, vamos nessa!"
+      ],
+      "available_width_px": 702,
+      "text_max_width_px": 691.31,
+      "available_height_px": 96,
+      "text_height_px": 45.36,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH08_P01_L001",
+      "text": "La nave de Mika regresó al planeta de los seres neuronales, en la galaxia del Triángulo.",
+      "box": [
+        108,
+        92,
+        1110,
+        173
+      ],
+      "font_size": 38,
+      "lines": [
+        "La nave de Mika regresó al planeta de los seres",
+        "neuronales, en la galaxia del Triángulo."
+      ],
+      "available_width_px": 1031,
+      "text_max_width_px": 1023.27,
+      "available_height_px": 126,
+      "text_height_px": 88.92,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH08_P01_L002",
+      "text": "La puerta de la sala se abrió.",
+      "box": [
+        103,
+        866,
+        575,
+        125
+      ],
+      "font_size": 33,
+      "lines": [
+        "La puerta de la sala se",
+        "abrió."
+      ],
+      "available_width_px": 496,
+      "text_max_width_px": 421.62,
+      "available_height_px": 78,
+      "text_height_px": 77.22,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH08_P01_L003",
+      "text": "¡Hola!",
+      "box": [
+        115,
+        1222,
+        405,
+        134
+      ],
+      "font_size": 48,
+      "lines": [
+        "¡Hola!"
+      ],
+      "available_width_px": 337,
+      "text_max_width_px": 165.78,
+      "available_height_px": 89,
+      "text_height_px": 51.84,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH08_P01_L004",
+      "text": "¡Bip-bip!",
+      "box": [
+        1334,
+        876,
+        425,
+        134
+      ],
+      "font_size": 49,
+      "lines": [
+        "¡Bip-bip!"
+      ],
+      "available_width_px": 357,
+      "text_max_width_px": 241.2,
+      "available_height_px": 89,
+      "text_height_px": 52.92,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH08_P01_L005",
+      "text": "Todo el grupo estaba reunido, esperando el regreso de Mika.",
+      "box": [
+        625,
+        2398,
+        1270,
+        132
+      ],
+      "font_size": 36,
+      "lines": [
+        "Todo el grupo estaba reunido, esperando el regreso de",
+        "Mika."
+      ],
+      "available_width_px": 1191,
+      "text_max_width_px": 1116.44,
+      "available_height_px": 85,
+      "text_height_px": 84.24,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH08_P01_L006",
+      "text": "Hablando de amigos… ¡Creo que alguien prometió viajar a la Pequeña Nube de Magallanes!",
+      "box": [
+        142,
+        3194,
+        1035,
+        195
+      ],
+      "font_size": 38,
+      "lines": [
+        "Hablando de amigos… ¡Creo que alguien",
+        "prometió viajar a la Pequeña Nube de",
+        "Magallanes!"
+      ],
+      "available_width_px": 967,
+      "text_max_width_px": 869.62,
+      "available_height_px": 150,
+      "text_height_px": 136.8,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH08_P01_L007",
+      "text": "Bueno, amigos, ¡en marcha!",
+      "box": [
+        1554,
+        3248,
+        770,
+        141
+      ],
+      "font_size": 43,
+      "lines": [
+        "Bueno, amigos, ¡en marcha!"
+      ],
+      "available_width_px": 702,
+      "text_max_width_px": 683.88,
+      "available_height_px": 96,
+      "text_height_px": 46.44,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH08_P01_L001",
+      "text": "Le vaisseau de Mika revint sur la planète des êtres neuronaux, dans la galaxie du Triangle.",
+      "box": [
+        108,
+        92,
+        1110,
+        173
+      ],
+      "font_size": 38,
+      "lines": [
+        "Le vaisseau de Mika revint sur la planète des",
+        "êtres neuronaux, dans la galaxie du Triangle."
+      ],
+      "available_width_px": 1031,
+      "text_max_width_px": 970.77,
+      "available_height_px": 126,
+      "text_height_px": 88.92,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH08_P01_L002",
+      "text": "La porte de la grande salle s’ouvrit.",
+      "box": [
+        103,
+        866,
+        575,
+        125
+      ],
+      "font_size": 33,
+      "lines": [
+        "La porte de la grande",
+        "salle s’ouvrit."
+      ],
+      "available_width_px": 496,
+      "text_max_width_px": 401.22,
+      "available_height_px": 78,
+      "text_height_px": 77.22,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH08_P01_L003",
+      "text": "Salut !",
+      "box": [
+        115,
+        1222,
+        405,
+        134
+      ],
+      "font_size": 48,
+      "lines": [
+        "Salut !"
+      ],
+      "available_width_px": 337,
+      "text_max_width_px": 179.16,
+      "available_height_px": 89,
+      "text_height_px": 51.84,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH08_P01_L004",
+      "text": "Bip-bip !",
+      "box": [
+        1334,
+        876,
+        425,
+        134
+      ],
+      "font_size": 49,
+      "lines": [
+        "Bip-bip !"
+      ],
+      "available_width_px": 357,
+      "text_max_width_px": 235.92,
+      "available_height_px": 89,
+      "text_height_px": 52.92,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH08_P01_L005",
+      "text": "Toute la bande était réunie et attendait le retour de Mika.",
+      "box": [
+        625,
+        2398,
+        1270,
+        132
+      ],
+      "font_size": 36,
+      "lines": [
+        "Toute la bande était réunie et attendait le retour de Mika."
+      ],
+      "available_width_px": 1191,
+      "text_max_width_px": 1179.75,
+      "available_height_px": 85,
+      "text_height_px": 38.88,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH08_P01_L006",
+      "text": "En parlant d’amis… Je crois que quelqu’un avait promis un voyage jusqu’au Petit Nuage de Magellan !",
+      "box": [
+        142,
+        3194,
+        1035,
+        195
+      ],
+      "font_size": 38,
+      "lines": [
+        "En parlant d’amis… Je crois que quelqu’un",
+        "avait promis un voyage jusqu’au Petit Nuage",
+        "de Magellan !"
+      ],
+      "available_width_px": 967,
+      "text_max_width_px": 966.81,
+      "available_height_px": 150,
+      "text_height_px": 136.8,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH08_P01_L007",
+      "text": "Alors, les amis, en route !",
+      "box": [
+        1554,
+        3248,
+        770,
+        141
+      ],
+      "font_size": 43,
+      "lines": [
+        "Alors, les amis, en route !"
+      ],
+      "available_width_px": 702,
+      "text_max_width_px": 625.95,
+      "available_height_px": 96,
+      "text_height_px": 46.44,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH08_P01_L001",
+      "text": "Mikas Raumschiff kehrte zum Planeten der Neuronenwesen in der Dreiecksgalaxie zurück.",
+      "box": [
+        108,
+        92,
+        1110,
+        173
+      ],
+      "font_size": 38,
+      "lines": [
+        "Mikas Raumschiff kehrte zum Planeten der",
+        "Neuronenwesen in der Dreiecksgalaxie zurück."
+      ],
+      "available_width_px": 1031,
+      "text_max_width_px": 1007.62,
+      "available_height_px": 126,
+      "text_height_px": 88.92,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH08_P01_L002",
+      "text": "Die Tür zum Saal öffnete sich.",
+      "box": [
+        103,
+        866,
+        575,
+        125
+      ],
+      "font_size": 33,
+      "lines": [
+        "Die Tür zum Saal öffnete",
+        "sich."
+      ],
+      "available_width_px": 496,
+      "text_max_width_px": 456.31,
+      "available_height_px": 78,
+      "text_height_px": 77.22,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH08_P01_L003",
+      "text": "Hallo!",
+      "box": [
+        115,
+        1222,
+        405,
+        134
+      ],
+      "font_size": 48,
+      "lines": [
+        "Hallo!"
+      ],
+      "available_width_px": 337,
+      "text_max_width_px": 160.34,
+      "available_height_px": 89,
+      "text_height_px": 51.84,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH08_P01_L004",
+      "text": "Piep-piep!",
+      "box": [
+        1334,
+        876,
+        425,
+        134
+      ],
+      "font_size": 49,
+      "lines": [
+        "Piep-piep!"
+      ],
+      "available_width_px": 357,
+      "text_max_width_px": 283.89,
+      "available_height_px": 89,
+      "text_height_px": 52.92,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH08_P01_L005",
+      "text": "Die ganze Gruppe war versammelt und wartete auf Mikas Rückkehr.",
+      "box": [
+        625,
+        2398,
+        1270,
+        132
+      ],
+      "font_size": 36,
+      "lines": [
+        "Die ganze Gruppe war versammelt und wartete auf Mikas",
+        "Rückkehr."
+      ],
+      "available_width_px": 1191,
+      "text_max_width_px": 1171.5,
+      "available_height_px": 85,
+      "text_height_px": 84.24,
+      "safe_padding": {
+        "left": 40,
+        "right": 39,
+        "top": 29,
+        "bottom": 18
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH08_P01_L006",
+      "text": "Apropos Freunde … Ich glaube, jemand hat einen Flug zur Kleinen Magellanschen Wolke versprochen!",
+      "box": [
+        142,
+        3194,
+        1035,
+        195
+      ],
+      "font_size": 38,
+      "lines": [
+        "Apropos Freunde … Ich glaube, jemand hat",
+        "einen Flug zur Kleinen Magellanschen Wolke",
+        "versprochen!"
+      ],
+      "available_width_px": 967,
+      "text_max_width_px": 957.02,
+      "available_height_px": 150,
+      "text_height_px": 136.8,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH08_P01_L007",
+      "text": "Na dann, Freunde, auf geht’s!",
+      "box": [
+        1554,
+        3248,
+        770,
+        141
+      ],
+      "font_size": 41,
+      "lines": [
+        "Na dann, Freunde, auf geht’s!"
+      ],
+      "available_width_px": 702,
+      "text_max_width_px": 693.92,
+      "available_height_px": 96,
+      "text_height_px": 44.28,
+      "safe_padding": {
+        "left": 34,
+        "right": 34,
+        "top": 25,
+        "bottom": 20
+      },
+      "fits": true
+    }
+  ],
+  "count": 42
+}

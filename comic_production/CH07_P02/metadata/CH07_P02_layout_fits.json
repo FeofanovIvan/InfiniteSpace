@@ -1,0 +1,2014 @@
+{
+  "page_id": "CH07_P02",
+  "status": "PASS",
+  "checks": [
+    {
+      "lang": "ru",
+      "display_id": "CH07_P02_L001",
+      "line_id": "CH07_P02_L001",
+      "speaker_id": "CHR_040",
+      "text": "Не волнуйся. Я — та же планета, но тебе удобнее воспринимать меня, если я похож на тебя.",
+      "style": "green",
+      "box": [
+        800,
+        85,
+        795,
+        215
+      ],
+      "font_size": 35,
+      "lines": [
+        "Не волнуйся. Я — та же планета, но",
+        "тебе удобнее воспринимать меня,",
+        "если я похож на тебя."
+      ],
+      "measured_width": 729.5,
+      "available_width": 731,
+      "measured_height": 119.0,
+      "available_height": 167,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "ru",
+      "display_id": "CH07_P02_L002",
+      "line_id": "CH07_P02_L002",
+      "speaker_id": "CHR_040",
+      "text": "Расскажи мне, как ты собрал ребус и попал ко мне.",
+      "style": "green",
+      "box": [
+        885,
+        959,
+        610,
+        154
+      ],
+      "font_size": 31,
+      "lines": [
+        "Расскажи мне, как ты собрал",
+        "ребус и попал ко мне."
+      ],
+      "measured_width": 533.8,
+      "available_width": 546,
+      "measured_height": 68.2,
+      "available_height": 106,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "ru",
+      "display_id": "CH07_P02_L003",
+      "line_id": "CH07_P02_L003",
+      "speaker_id": "CHR_001",
+      "text": "Я начал размышлять о закономерностях.",
+      "style": "mika",
+      "box": [
+        750,
+        1212,
+        735,
+        105
+      ],
+      "font_size": 27,
+      "lines": [
+        "Я начал размышлять о закономерностях."
+      ],
+      "measured_width": 650.2,
+      "available_width": 671,
+      "measured_height": 27.0,
+      "available_height": 57,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "ru",
+      "display_id": "CH07_P02_L004_visual_a",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "На Землю упал метеорит.",
+      "style": "label",
+      "box": [
+        74,
+        1822,
+        460,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "На Землю упал метеорит."
+      ],
+      "measured_width": 405.9,
+      "available_width": 418,
+      "measured_height": 27.0,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "ru",
+      "display_id": "CH07_P02_L004_visual_b",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "И на мир плесени — ещё до появления цивилизации.",
+      "style": "label",
+      "box": [
+        545,
+        1822,
+        555,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "И на мир плесени — ещё до",
+        "появления цивилизации."
+      ],
+      "measured_width": 438.7,
+      "available_width": 513,
+      "measured_height": 59.4,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "ru",
+      "display_id": "CH07_P02_L005_visual_a",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "Из метеоритов появилась жизнь фазовых существ.",
+      "style": "label",
+      "box": [
+        1220,
+        1814,
+        535,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "Из метеоритов появилась",
+        "жизнь фазовых существ."
+      ],
+      "measured_width": 401.2,
+      "available_width": 493,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "ru",
+      "display_id": "CH07_P02_L005_visual_b",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "Астероид изменил атмосферу. Ящеры стали симбиотами.",
+      "style": "label",
+      "box": [
+        1802,
+        1814,
+        565,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "Астероид изменил атмосферу.",
+        "Ящеры стали симбиотами."
+      ],
+      "measured_width": 483.4,
+      "available_width": 523,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "ru",
+      "display_id": "CH07_P02_L006",
+      "line_id": "CH07_P02_L006",
+      "speaker_id": "CHR_001",
+      "text": "Магнитные существа умеют управлять астероидами.",
+      "style": "mika",
+      "box": [
+        75,
+        2001,
+        455,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "Магнитные существа",
+        "умеют управлять",
+        "астероидами."
+      ],
+      "measured_width": 356.5,
+      "available_width": 391,
+      "measured_height": 98.6,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "ru",
+      "display_id": "CH07_P02_L007",
+      "line_id": "CH07_P02_L007",
+      "speaker_id": "CHR_001",
+      "text": "И открывать порталы между пространствами.",
+      "style": "mika",
+      "box": [
+        1272,
+        2001,
+        470,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "И открывать порталы",
+        "между",
+        "пространствами."
+      ],
+      "measured_width": 365.5,
+      "available_width": 406,
+      "measured_height": 98.6,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "ru",
+      "display_id": "CH07_P02_L008",
+      "line_id": "CH07_P02_L008",
+      "speaker_id": "CHR_001",
+      "text": "Нейронные существа знают, где и когда что-то произойдёт.",
+      "style": "label",
+      "box": [
+        93,
+        3365,
+        780,
+        112
+      ],
+      "font_size": 29,
+      "lines": [
+        "Нейронные существа знают, где и когда",
+        "что-то произойдёт."
+      ],
+      "measured_width": 689.9,
+      "available_width": 738,
+      "measured_height": 63.8,
+      "available_height": 84,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "ru",
+      "display_id": "CH07_P02_L009",
+      "line_id": "CH07_P02_L009",
+      "speaker_id": "CHR_001",
+      "text": "Значит, жизнью во Вселенной можно управлять.",
+      "style": "mika",
+      "box": [
+        2014,
+        2788,
+        398,
+        194
+      ],
+      "font_size": 28,
+      "lines": [
+        "Значит, жизнью во",
+        "Вселенной можно",
+        "управлять."
+      ],
+      "measured_width": 308.3,
+      "available_width": 334,
+      "measured_height": 95.2,
+      "available_height": 146,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "display_id": "CH07_P02_L001",
+      "line_id": "CH07_P02_L001",
+      "speaker_id": "CHR_040",
+      "text": "Don't worry. I'm still the same planet. It's just easier for you to understand me when I look like you.",
+      "style": "green",
+      "box": [
+        800,
+        85,
+        795,
+        215
+      ],
+      "font_size": 35,
+      "lines": [
+        "Don't worry. I'm still the same",
+        "planet. It's just easier for you to",
+        "understand me when I look like you."
+      ],
+      "measured_width": 717.8,
+      "available_width": 731,
+      "measured_height": 119.0,
+      "available_height": 167,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "display_id": "CH07_P02_L002",
+      "line_id": "CH07_P02_L002",
+      "speaker_id": "CHR_040",
+      "text": "Tell me how you solved the puzzle and found your way to me.",
+      "style": "green",
+      "box": [
+        885,
+        959,
+        610,
+        154
+      ],
+      "font_size": 31,
+      "lines": [
+        "Tell me how you solved the",
+        "puzzle and found your way to",
+        "me."
+      ],
+      "measured_width": 516.0,
+      "available_width": 546,
+      "measured_height": 105.4,
+      "available_height": 106,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "display_id": "CH07_P02_L003",
+      "line_id": "CH07_P02_L003",
+      "speaker_id": "CHR_001",
+      "text": "I began thinking about patterns.",
+      "style": "mika",
+      "box": [
+        750,
+        1212,
+        735,
+        105
+      ],
+      "font_size": 28,
+      "lines": [
+        "I began thinking about patterns."
+      ],
+      "measured_width": 515.7,
+      "available_width": 671,
+      "measured_height": 28.0,
+      "available_height": 57,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "display_id": "CH07_P02_L004_visual_a",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "A meteorite fell to Earth.",
+      "style": "label",
+      "box": [
+        74,
+        1822,
+        460,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "A meteorite fell to Earth."
+      ],
+      "measured_width": 380.9,
+      "available_width": 418,
+      "measured_height": 27.0,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "display_id": "CH07_P02_L004_visual_b",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "Another hit the mold world, before civilization.",
+      "style": "label",
+      "box": [
+        545,
+        1822,
+        555,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "Another hit the mold world,",
+        "before civilization."
+      ],
+      "measured_width": 422.7,
+      "available_width": 513,
+      "measured_height": 59.4,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "display_id": "CH07_P02_L005_visual_a",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "The phase beings arose from meteorites.",
+      "style": "label",
+      "box": [
+        1220,
+        1814,
+        535,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "The phase beings arose from",
+        "meteorites."
+      ],
+      "measured_width": 442.5,
+      "available_width": 493,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "display_id": "CH07_P02_L005_visual_b",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "An asteroid changed the air. The lizards became symbiotic.",
+      "style": "label",
+      "box": [
+        1802,
+        1814,
+        565,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "An asteroid changed the air. The",
+        "lizards became symbiotic."
+      ],
+      "measured_width": 496.3,
+      "available_width": 523,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "display_id": "CH07_P02_L006",
+      "line_id": "CH07_P02_L006",
+      "speaker_id": "CHR_001",
+      "text": "The magnetic beings can control asteroids.",
+      "style": "mika",
+      "box": [
+        75,
+        2001,
+        455,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "The magnetic beings",
+        "can control asteroids."
+      ],
+      "measured_width": 356.9,
+      "available_width": 391,
+      "measured_height": 63.8,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "display_id": "CH07_P02_L007",
+      "line_id": "CH07_P02_L007",
+      "speaker_id": "CHR_001",
+      "text": "And open portals through space.",
+      "style": "mika",
+      "box": [
+        1272,
+        2001,
+        470,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "And open portals",
+        "through space."
+      ],
+      "measured_width": 280.6,
+      "available_width": 406,
+      "measured_height": 63.8,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "display_id": "CH07_P02_L008",
+      "line_id": "CH07_P02_L008",
+      "speaker_id": "CHR_001",
+      "text": "The neuron beings know where and when things will happen.",
+      "style": "label",
+      "box": [
+        93,
+        3365,
+        780,
+        112
+      ],
+      "font_size": 29,
+      "lines": [
+        "The neuron beings know where and when",
+        "things will happen."
+      ],
+      "measured_width": 682.0,
+      "available_width": 738,
+      "measured_height": 63.8,
+      "available_height": 84,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "display_id": "CH07_P02_L009",
+      "line_id": "CH07_P02_L009",
+      "speaker_id": "CHR_001",
+      "text": "So life in the universe can be controlled.",
+      "style": "mika",
+      "box": [
+        2014,
+        2788,
+        398,
+        194
+      ],
+      "font_size": 28,
+      "lines": [
+        "So life in the",
+        "universe can be",
+        "controlled."
+      ],
+      "measured_width": 250.1,
+      "available_width": 334,
+      "measured_height": 95.2,
+      "available_height": 146,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "display_id": "CH07_P02_L001",
+      "line_id": "CH07_P02_L001",
+      "speaker_id": "CHR_040",
+      "text": "Não se preocupe. Sou o mesmo planeta. Só fica mais fácil para você me entender quando me pareço com você.",
+      "style": "green",
+      "box": [
+        800,
+        85,
+        795,
+        215
+      ],
+      "font_size": 35,
+      "lines": [
+        "Não se preocupe. Sou o mesmo",
+        "planeta. Só fica mais fácil para você",
+        "me entender quando me pareço com",
+        "você."
+      ],
+      "measured_width": 724.8,
+      "available_width": 731,
+      "measured_height": 161.0,
+      "available_height": 167,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "display_id": "CH07_P02_L002",
+      "line_id": "CH07_P02_L002",
+      "speaker_id": "CHR_040",
+      "text": "Conte como você resolveu o enigma e chegou até mim.",
+      "style": "green",
+      "box": [
+        885,
+        959,
+        610,
+        154
+      ],
+      "font_size": 32,
+      "lines": [
+        "Conte como você resolveu o",
+        "enigma e chegou até mim."
+      ],
+      "measured_width": 506.4,
+      "available_width": 546,
+      "measured_height": 70.4,
+      "available_height": 106,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "display_id": "CH07_P02_L003",
+      "line_id": "CH07_P02_L003",
+      "speaker_id": "CHR_001",
+      "text": "Comecei a pensar nos padrões.",
+      "style": "mika",
+      "box": [
+        750,
+        1212,
+        735,
+        105
+      ],
+      "font_size": 28,
+      "lines": [
+        "Comecei a pensar nos padrões."
+      ],
+      "measured_width": 493.5,
+      "available_width": 671,
+      "measured_height": 28.0,
+      "available_height": 57,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "display_id": "CH07_P02_L004_visual_a",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "Um meteorito caiu na Terra.",
+      "style": "label",
+      "box": [
+        74,
+        1822,
+        460,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "Um meteorito caiu na",
+        "Terra."
+      ],
+      "measured_width": 328.6,
+      "available_width": 418,
+      "measured_height": 59.4,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "display_id": "CH07_P02_L004_visual_b",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "Outro caiu no mundo dos fungos, antes da civilização.",
+      "style": "label",
+      "box": [
+        545,
+        1822,
+        555,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "Outro caiu no mundo dos fungos,",
+        "antes da civilização."
+      ],
+      "measured_width": 507.2,
+      "available_width": 513,
+      "measured_height": 59.4,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "display_id": "CH07_P02_L005_visual_a",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "Os seres de fase surgiram dos meteoritos.",
+      "style": "label",
+      "box": [
+        1220,
+        1814,
+        535,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "Os seres de fase surgiram dos",
+        "meteoritos."
+      ],
+      "measured_width": 461.0,
+      "available_width": 493,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "display_id": "CH07_P02_L005_visual_b",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "Um asteroide mudou a atmosfera. Os lagartos viraram simbiontes.",
+      "style": "label",
+      "box": [
+        1802,
+        1814,
+        565,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "Um asteroide mudou a atmosfera.",
+        "Os lagartos viraram simbiontes."
+      ],
+      "measured_width": 520.4,
+      "available_width": 523,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "display_id": "CH07_P02_L006",
+      "line_id": "CH07_P02_L006",
+      "speaker_id": "CHR_001",
+      "text": "Os seres magnéticos sabem controlar asteroides.",
+      "style": "mika",
+      "box": [
+        75,
+        2001,
+        455,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "Os seres magnéticos",
+        "sabem controlar",
+        "asteroides."
+      ],
+      "measured_width": 339.3,
+      "available_width": 391,
+      "measured_height": 98.6,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "display_id": "CH07_P02_L007",
+      "line_id": "CH07_P02_L007",
+      "speaker_id": "CHR_001",
+      "text": "E abrir portais entre regiões do espaço.",
+      "style": "mika",
+      "box": [
+        1272,
+        2001,
+        470,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "E abrir portais entre",
+        "regiões do espaço."
+      ],
+      "measured_width": 332.7,
+      "available_width": 406,
+      "measured_height": 63.8,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "display_id": "CH07_P02_L008",
+      "line_id": "CH07_P02_L008",
+      "speaker_id": "CHR_001",
+      "text": "Os seres neurais sabem onde e quando as coisas vão acontecer.",
+      "style": "label",
+      "box": [
+        93,
+        3365,
+        780,
+        112
+      ],
+      "font_size": 29,
+      "lines": [
+        "Os seres neurais sabem onde e quando as",
+        "coisas vão acontecer."
+      ],
+      "measured_width": 690.0,
+      "available_width": 738,
+      "measured_height": 63.8,
+      "available_height": 84,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "display_id": "CH07_P02_L009",
+      "line_id": "CH07_P02_L009",
+      "speaker_id": "CHR_001",
+      "text": "Então é possível controlar a vida no Universo.",
+      "style": "mika",
+      "box": [
+        2014,
+        2788,
+        398,
+        194
+      ],
+      "font_size": 28,
+      "lines": [
+        "Então é possível",
+        "controlar a vida no",
+        "Universo."
+      ],
+      "measured_width": 298.6,
+      "available_width": 334,
+      "measured_height": 95.2,
+      "available_height": 146,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "display_id": "CH07_P02_L001",
+      "line_id": "CH07_P02_L001",
+      "speaker_id": "CHR_040",
+      "text": "No te preocupes. Soy el mismo planeta. Solo te resulta más fácil entenderme si me parezco a ti.",
+      "style": "green",
+      "box": [
+        800,
+        85,
+        795,
+        215
+      ],
+      "font_size": 35,
+      "lines": [
+        "No te preocupes. Soy el mismo",
+        "planeta. Solo te resulta más fácil",
+        "entenderme si me parezco a ti."
+      ],
+      "measured_width": 653.3,
+      "available_width": 731,
+      "measured_height": 119.0,
+      "available_height": 167,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "display_id": "CH07_P02_L002",
+      "line_id": "CH07_P02_L002",
+      "speaker_id": "CHR_040",
+      "text": "Cuéntame cómo resolviste el acertijo y llegaste hasta mí.",
+      "style": "green",
+      "box": [
+        885,
+        959,
+        610,
+        154
+      ],
+      "font_size": 32,
+      "lines": [
+        "Cuéntame cómo resolviste el",
+        "acertijo y llegaste hasta mí."
+      ],
+      "measured_width": 522.4,
+      "available_width": 546,
+      "measured_height": 70.4,
+      "available_height": 106,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "display_id": "CH07_P02_L003",
+      "line_id": "CH07_P02_L003",
+      "speaker_id": "CHR_001",
+      "text": "Empecé a pensar en los patrones.",
+      "style": "mika",
+      "box": [
+        750,
+        1212,
+        735,
+        105
+      ],
+      "font_size": 28,
+      "lines": [
+        "Empecé a pensar en los patrones."
+      ],
+      "measured_width": 534.9,
+      "available_width": 671,
+      "measured_height": 28.0,
+      "available_height": 57,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "display_id": "CH07_P02_L004_visual_a",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "Un meteorito cayó en la Tierra.",
+      "style": "label",
+      "box": [
+        74,
+        1822,
+        460,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "Un meteorito cayó en la",
+        "Tierra."
+      ],
+      "measured_width": 363.5,
+      "available_width": 418,
+      "measured_height": 59.4,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "display_id": "CH07_P02_L004_visual_b",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "Otro en el mundo del moho, antes de su civilización.",
+      "style": "label",
+      "box": [
+        545,
+        1822,
+        555,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "Otro en el mundo del moho,",
+        "antes de su civilización."
+      ],
+      "measured_width": 425.9,
+      "available_width": 513,
+      "measured_height": 59.4,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "display_id": "CH07_P02_L005_visual_a",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "Los seres de fase surgieron de meteoritos.",
+      "style": "label",
+      "box": [
+        1220,
+        1814,
+        535,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "Los seres de fase surgieron de",
+        "meteoritos."
+      ],
+      "measured_width": 467.2,
+      "available_width": 493,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "display_id": "CH07_P02_L005_visual_b",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "Un asteroide cambió el aire. Los lagartos se volvieron simbiontes.",
+      "style": "label",
+      "box": [
+        1802,
+        1814,
+        565,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "Un asteroide cambió el aire. Los",
+        "lagartos se volvieron simbiontes."
+      ],
+      "measured_width": 507.5,
+      "available_width": 523,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "display_id": "CH07_P02_L006",
+      "line_id": "CH07_P02_L006",
+      "speaker_id": "CHR_001",
+      "text": "Los seres magnéticos pueden controlar asteroides.",
+      "style": "mika",
+      "box": [
+        75,
+        2001,
+        455,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "Los seres magnéticos",
+        "pueden controlar",
+        "asteroides."
+      ],
+      "measured_width": 353.1,
+      "available_width": 391,
+      "measured_height": 98.6,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "display_id": "CH07_P02_L007",
+      "line_id": "CH07_P02_L007",
+      "speaker_id": "CHR_001",
+      "text": "Y abrir portales entre regiones del espacio.",
+      "style": "mika",
+      "box": [
+        1272,
+        2001,
+        470,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "Y abrir portales entre",
+        "regiones del espacio."
+      ],
+      "measured_width": 353.6,
+      "available_width": 406,
+      "measured_height": 63.8,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "display_id": "CH07_P02_L008",
+      "line_id": "CH07_P02_L008",
+      "speaker_id": "CHR_001",
+      "text": "Los seres neuronales saben dónde y cuándo ocurrirán las cosas.",
+      "style": "label",
+      "box": [
+        93,
+        3365,
+        780,
+        112
+      ],
+      "font_size": 29,
+      "lines": [
+        "Los seres neuronales saben dónde y cuándo",
+        "ocurrirán las cosas."
+      ],
+      "measured_width": 724.0,
+      "available_width": 738,
+      "measured_height": 63.8,
+      "available_height": 84,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "display_id": "CH07_P02_L009",
+      "line_id": "CH07_P02_L009",
+      "speaker_id": "CHR_001",
+      "text": "Entonces se puede controlar la vida en el universo.",
+      "style": "mika",
+      "box": [
+        2014,
+        2788,
+        398,
+        194
+      ],
+      "font_size": 28,
+      "lines": [
+        "Entonces se puede",
+        "controlar la vida en",
+        "el universo."
+      ],
+      "measured_width": 307.9,
+      "available_width": 334,
+      "measured_height": 95.2,
+      "available_height": 146,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "display_id": "CH07_P02_L001",
+      "line_id": "CH07_P02_L001",
+      "speaker_id": "CHR_040",
+      "text": "Ne t’inquiète pas. Je suis toujours la même planète. Il t’est simplement plus facile de me comprendre si je te ressemble.",
+      "style": "green",
+      "box": [
+        800,
+        85,
+        795,
+        215
+      ],
+      "font_size": 35,
+      "lines": [
+        "Ne t’inquiète pas. Je suis toujours la",
+        "même planète. Il t’est simplement",
+        "plus facile de me comprendre si je",
+        "te ressemble."
+      ],
+      "measured_width": 717.8,
+      "available_width": 731,
+      "measured_height": 161.0,
+      "available_height": 167,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "display_id": "CH07_P02_L002",
+      "line_id": "CH07_P02_L002",
+      "speaker_id": "CHR_040",
+      "text": "Raconte-moi comment tu as résolu l’énigme pour arriver jusqu’à moi.",
+      "style": "green",
+      "box": [
+        885,
+        959,
+        610,
+        154
+      ],
+      "font_size": 31,
+      "lines": [
+        "Raconte-moi comment tu as",
+        "résolu l’énigme pour arriver",
+        "jusqu’à moi."
+      ],
+      "measured_width": 492.2,
+      "available_width": 546,
+      "measured_height": 105.4,
+      "available_height": 106,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "display_id": "CH07_P02_L003",
+      "line_id": "CH07_P02_L003",
+      "speaker_id": "CHR_001",
+      "text": "J’ai commencé à réfléchir aux régularités.",
+      "style": "mika",
+      "box": [
+        750,
+        1212,
+        735,
+        105
+      ],
+      "font_size": 28,
+      "lines": [
+        "J’ai commencé à réfléchir aux régularités."
+      ],
+      "measured_width": 659.6,
+      "available_width": 671,
+      "measured_height": 28.0,
+      "available_height": 57,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "display_id": "CH07_P02_L004_visual_a",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "Une météorite est tombée sur Terre.",
+      "style": "label",
+      "box": [
+        74,
+        1822,
+        460,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "Une météorite est tombée",
+        "sur Terre."
+      ],
+      "measured_width": 400.5,
+      "available_width": 418,
+      "measured_height": 59.4,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "display_id": "CH07_P02_L004_visual_b",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "Une autre dans le monde des moisissures, avant toute civilisation.",
+      "style": "label",
+      "box": [
+        545,
+        1822,
+        555,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "Une autre dans le monde des",
+        "moisissures, avant toute",
+        "civilisation."
+      ],
+      "measured_width": 446.1,
+      "available_width": 513,
+      "measured_height": 91.8,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "display_id": "CH07_P02_L005_visual_a",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "Les êtres de phase sont nés des météorites.",
+      "style": "label",
+      "box": [
+        1220,
+        1814,
+        535,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "Les êtres de phase sont nés des",
+        "météorites."
+      ],
+      "measured_width": 489.8,
+      "available_width": 493,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "display_id": "CH07_P02_L005_visual_b",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "Un astéroïde a changé l’air. Les lézards sont devenus symbiotes.",
+      "style": "label",
+      "box": [
+        1802,
+        1814,
+        565,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "Un astéroïde a changé l’air. Les",
+        "lézards sont devenus symbiotes."
+      ],
+      "measured_width": 499.7,
+      "available_width": 523,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "display_id": "CH07_P02_L006",
+      "line_id": "CH07_P02_L006",
+      "speaker_id": "CHR_001",
+      "text": "Les êtres magnétiques savent contrôler les astéroïdes.",
+      "style": "mika",
+      "box": [
+        75,
+        2001,
+        455,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "Les êtres magnétiques",
+        "savent contrôler les",
+        "astéroïdes."
+      ],
+      "measured_width": 373.4,
+      "available_width": 391,
+      "measured_height": 98.6,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "display_id": "CH07_P02_L007",
+      "line_id": "CH07_P02_L007",
+      "speaker_id": "CHR_001",
+      "text": "Et ouvrir des portails à travers l’espace.",
+      "style": "mika",
+      "box": [
+        1272,
+        2001,
+        470,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "Et ouvrir des portails à",
+        "travers l’espace."
+      ],
+      "measured_width": 374.9,
+      "available_width": 406,
+      "measured_height": 63.8,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "display_id": "CH07_P02_L008",
+      "line_id": "CH07_P02_L008",
+      "speaker_id": "CHR_001",
+      "text": "Les êtres neuronaux savent où et quand les événements se produiront.",
+      "style": "label",
+      "box": [
+        93,
+        3365,
+        780,
+        112
+      ],
+      "font_size": 29,
+      "lines": [
+        "Les êtres neuronaux savent où et quand les",
+        "événements se produiront."
+      ],
+      "measured_width": 718.8,
+      "available_width": 738,
+      "measured_height": 63.8,
+      "available_height": 84,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "display_id": "CH07_P02_L009",
+      "line_id": "CH07_P02_L009",
+      "speaker_id": "CHR_001",
+      "text": "Alors, on peut contrôler la vie dans l’Univers.",
+      "style": "mika",
+      "box": [
+        2014,
+        2788,
+        398,
+        194
+      ],
+      "font_size": 28,
+      "lines": [
+        "Alors, on peut",
+        "contrôler la vie dans",
+        "l’Univers."
+      ],
+      "measured_width": 324.7,
+      "available_width": 334,
+      "measured_height": 95.2,
+      "available_height": 146,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "display_id": "CH07_P02_L001",
+      "line_id": "CH07_P02_L001",
+      "speaker_id": "CHR_040",
+      "text": "Keine Sorge. Ich bin noch derselbe Planet. Du verstehst mich nur leichter, wenn ich dir ähnlich sehe.",
+      "style": "green",
+      "box": [
+        800,
+        85,
+        795,
+        215
+      ],
+      "font_size": 35,
+      "lines": [
+        "Keine Sorge. Ich bin noch derselbe",
+        "Planet. Du verstehst mich nur",
+        "leichter, wenn ich dir ähnlich sehe."
+      ],
+      "measured_width": 687.8,
+      "available_width": 731,
+      "measured_height": 119.0,
+      "available_height": 167,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "display_id": "CH07_P02_L002",
+      "line_id": "CH07_P02_L002",
+      "speaker_id": "CHR_040",
+      "text": "Erzähl mir, wie du das Rätsel gelöst und den Weg zu mir gefunden hast.",
+      "style": "green",
+      "box": [
+        885,
+        959,
+        610,
+        154
+      ],
+      "font_size": 31,
+      "lines": [
+        "Erzähl mir, wie du das Rätsel",
+        "gelöst und den Weg zu mir",
+        "gefunden hast."
+      ],
+      "measured_width": 503.3,
+      "available_width": 546,
+      "measured_height": 105.4,
+      "available_height": 106,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "display_id": "CH07_P02_L003",
+      "line_id": "CH07_P02_L003",
+      "speaker_id": "CHR_001",
+      "text": "Ich dachte über Zusammenhänge nach.",
+      "style": "mika",
+      "box": [
+        750,
+        1212,
+        735,
+        105
+      ],
+      "font_size": 28,
+      "lines": [
+        "Ich dachte über Zusammenhänge nach."
+      ],
+      "measured_width": 623.4,
+      "available_width": 671,
+      "measured_height": 28.0,
+      "available_height": 57,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "display_id": "CH07_P02_L004_visual_a",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "Ein Meteorit fiel auf die Erde.",
+      "style": "label",
+      "box": [
+        74,
+        1822,
+        460,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "Ein Meteorit fiel auf die",
+        "Erde."
+      ],
+      "measured_width": 358.6,
+      "available_width": 418,
+      "measured_height": 59.4,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "display_id": "CH07_P02_L004_visual_b",
+      "line_id": "CH07_P02_L004",
+      "speaker_id": "CHR_001",
+      "text": "Ein weiterer traf die Schimmelwelt vor ihrer Zivilisation.",
+      "style": "label",
+      "box": [
+        545,
+        1822,
+        555,
+        124
+      ],
+      "font_size": 27,
+      "lines": [
+        "Ein weiterer traf die",
+        "Schimmelwelt vor ihrer",
+        "Zivilisation."
+      ],
+      "measured_width": 354.8,
+      "available_width": 513,
+      "measured_height": 91.8,
+      "available_height": 96,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "display_id": "CH07_P02_L005_visual_a",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "Die Phasenwesen entstanden aus Meteoriten.",
+      "style": "label",
+      "box": [
+        1220,
+        1814,
+        535,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "Die Phasenwesen entstanden",
+        "aus Meteoriten."
+      ],
+      "measured_width": 450.2,
+      "available_width": 493,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "display_id": "CH07_P02_L005_visual_b",
+      "line_id": "CH07_P02_L005",
+      "speaker_id": "CHR_001",
+      "text": "Ein Asteroid änderte die Luft. Die Echsen wurden Symbionten.",
+      "style": "label",
+      "box": [
+        1802,
+        1814,
+        565,
+        130
+      ],
+      "font_size": 27,
+      "lines": [
+        "Ein Asteroid änderte die Luft. Die",
+        "Echsen wurden Symbionten."
+      ],
+      "measured_width": 510.4,
+      "available_width": 523,
+      "measured_height": 59.4,
+      "available_height": 102,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "display_id": "CH07_P02_L006",
+      "line_id": "CH07_P02_L006",
+      "speaker_id": "CHR_001",
+      "text": "Magnetische Wesen können Asteroiden steuern.",
+      "style": "mika",
+      "box": [
+        75,
+        2001,
+        455,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "Magnetische Wesen",
+        "können Asteroiden",
+        "steuern."
+      ],
+      "measured_width": 326.4,
+      "available_width": 391,
+      "measured_height": 98.6,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "display_id": "CH07_P02_L007",
+      "line_id": "CH07_P02_L007",
+      "speaker_id": "CHR_001",
+      "text": "Und Portale durch den Raum öffnen.",
+      "style": "mika",
+      "box": [
+        1272,
+        2001,
+        470,
+        148
+      ],
+      "font_size": 29,
+      "lines": [
+        "Und Portale durch den",
+        "Raum öffnen."
+      ],
+      "measured_width": 368.3,
+      "available_width": 406,
+      "measured_height": 63.8,
+      "available_height": 100,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "display_id": "CH07_P02_L008",
+      "line_id": "CH07_P02_L008",
+      "speaker_id": "CHR_001",
+      "text": "Die Neuronenwesen wissen, wo und wann etwas geschehen wird.",
+      "style": "label",
+      "box": [
+        93,
+        3365,
+        780,
+        112
+      ],
+      "font_size": 29,
+      "lines": [
+        "Die Neuronenwesen wissen, wo und wann",
+        "etwas geschehen wird."
+      ],
+      "measured_width": 687.0,
+      "available_width": 738,
+      "measured_height": 63.8,
+      "available_height": 84,
+      "padding": [
+        21,
+        21,
+        14,
+        14
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "display_id": "CH07_P02_L009",
+      "line_id": "CH07_P02_L009",
+      "speaker_id": "CHR_001",
+      "text": "Also lässt sich das Leben im Universum steuern.",
+      "style": "mika",
+      "box": [
+        2014,
+        2788,
+        398,
+        194
+      ],
+      "font_size": 28,
+      "lines": [
+        "Also lässt sich das",
+        "Leben im Universum",
+        "steuern."
+      ],
+      "measured_width": 323.2,
+      "available_width": 334,
+      "measured_height": 95.2,
+      "available_height": 146,
+      "padding": [
+        32,
+        32,
+        25,
+        23
+      ],
+      "fits": true
+    }
+  ],
+  "last_line_original_overflow": "339 px > 289 px",
+  "last_line_corrected": {
+    "width_px": 398,
+    "box": [
+      2014,
+      2788,
+      398,
+      194
+    ]
+  },
+  "note": "PIL font-width measurements, safe SVG padding, 11 display elements × 6 languages"
+}

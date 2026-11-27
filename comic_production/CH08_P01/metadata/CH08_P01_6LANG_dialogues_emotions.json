@@ -1,0 +1,382 @@
+{
+  "page_id": "CH08_P01",
+  "version": "v34",
+  "status": "COMPLETE_6LANG",
+  "date": "2026-11-26",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "source_artwork_changed": false,
+  "image_generated": false,
+  "global_registry_updated": true,
+  "audio_generated": false,
+  "planet_name_status": "UNCONFIRMED_IN_PROJECT_SOURCES",
+  "planet_name_ru": "планета нейронных существ в галактике Треугольник",
+  "speakers": [
+    {
+      "id": "CHR_004",
+      "role": "Автор",
+      "color_style": "narration"
+    },
+    {
+      "id": "CHR_001",
+      "role": "Мика",
+      "color_style": "mika"
+    },
+    {
+      "id": "CHR_014",
+      "role": "Баббл",
+      "color_style": "bubble_sfx",
+      "voice_type": "nonverbal_vocalization"
+    },
+    {
+      "id": "CHR_031",
+      "role": "Ящер — бывший пленитель, помог компании в CH04_P02",
+      "color_style": "lizard"
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH08_P01_L001",
+      "frame": "01 — прибытие",
+      "speaker_id": "CHR_004",
+      "speaker": "Автор",
+      "kind": "narration",
+      "emotion": "спокойное возвращение, завершение странствия",
+      "tts_required": true,
+      "audio_action": null,
+      "overlay_box": {
+        "x": 108,
+        "y": 92,
+        "width": 1110,
+        "height": 173,
+        "font_size": 38,
+        "visual_lines": 2,
+        "style": "narration",
+        "placement": "top-left sky, away from ship"
+      },
+      "translations": {
+        "ru": "Корабль Мики вернулся на планету нейронных существ в галактике Треугольник.",
+        "en": "Mika’s ship returned to the neuron beings’ planet in the Triangulum Galaxy.",
+        "pt_BR": "A nave de Mika voltou ao planeta dos seres neurais, na galáxia do Triângulo.",
+        "es": "La nave de Mika regresó al planeta de los seres neuronales, en la galaxia del Triángulo.",
+        "fr": "Le vaisseau de Mika revint sur la planète des êtres neuronaux, dans la galaxie du Triangle.",
+        "de": "Mikas Raumschiff kehrte zum Planeten der Neuronenwesen in der Dreiecksgalaxie zurück."
+      },
+      "display_segments": {
+        "ru": [
+          "Корабль Мики вернулся на планету нейронных существ в галактике Треугольник."
+        ],
+        "en": [
+          "Mika’s ship returned to the neuron beings’ planet in the Triangulum Galaxy."
+        ],
+        "pt_BR": [
+          "A nave de Mika voltou ao planeta dos seres neurais, na galáxia do Triângulo."
+        ],
+        "es": [
+          "La nave de Mika regresó al planeta de los seres neuronales, en la galaxia del Triángulo."
+        ],
+        "fr": [
+          "Le vaisseau de Mika revint sur la planète des êtres neuronaux, dans la galaxie du Triangle."
+        ],
+        "de": [
+          "Mikas Raumschiff kehrte zum Planeten der Neuronenwesen in der Dreiecksgalaxie zurück."
+        ]
+      }
+    },
+    {
+      "line_id": "CH08_P01_L002",
+      "frame": "02 — открытая дверь",
+      "speaker_id": "CHR_004",
+      "speaker": "Автор",
+      "kind": "narration",
+      "emotion": "пауза перед встречей",
+      "tts_required": true,
+      "audio_action": null,
+      "overlay_box": {
+        "x": 103,
+        "y": 866,
+        "width": 575,
+        "height": 125,
+        "font_size": 35,
+        "visual_lines": 1,
+        "style": "narration",
+        "placement": "second row left, door arch above Mika"
+      },
+      "translations": {
+        "ru": "Дверь в зал открылась.",
+        "en": "The door to the hall opened.",
+        "pt_BR": "A porta do salão se abriu.",
+        "es": "La puerta de la sala se abrió.",
+        "fr": "La porte de la grande salle s’ouvrit.",
+        "de": "Die Tür zum Saal öffnete sich."
+      },
+      "display_segments": {
+        "ru": [
+          "Дверь в зал открылась."
+        ],
+        "en": [
+          "The door to the hall opened."
+        ],
+        "pt_BR": [
+          "A porta do salão se abriu."
+        ],
+        "es": [
+          "La puerta de la sala se abrió."
+        ],
+        "fr": [
+          "La porte de la grande salle s’ouvrit."
+        ],
+        "de": [
+          "Die Tür zum Saal öffnete sich."
+        ]
+      }
+    },
+    {
+      "line_id": "CH08_P01_L003",
+      "frame": "02 — Мика",
+      "speaker_id": "CHR_001",
+      "speaker": "Мика",
+      "kind": "dialogue",
+      "emotion": "радостное приветствие",
+      "tts_required": true,
+      "audio_action": null,
+      "overlay_box": {
+        "x": 115,
+        "y": 1222,
+        "width": 405,
+        "height": 134,
+        "font_size": 48,
+        "visual_lines": 1,
+        "style": "mika",
+        "placement": "left of Mika, no long tail"
+      },
+      "translations": {
+        "ru": "Привет!",
+        "en": "Hi!",
+        "pt_BR": "Oi!",
+        "es": "¡Hola!",
+        "fr": "Salut !",
+        "de": "Hallo!"
+      },
+      "display_segments": {
+        "ru": [
+          "Привет!"
+        ],
+        "en": [
+          "Hi!"
+        ],
+        "pt_BR": [
+          "Oi!"
+        ],
+        "es": [
+          "¡Hola!"
+        ],
+        "fr": [
+          "Salut !"
+        ],
+        "de": [
+          "Hallo!"
+        ]
+      }
+    },
+    {
+      "line_id": "CH08_P01_L004",
+      "frame": "03 — Баббл",
+      "speaker_id": "CHR_014",
+      "speaker": "Баббл",
+      "kind": "nonverbal_vocal_sfx",
+      "emotion": "узнал Мику; радостный электронный отклик",
+      "tts_required": false,
+      "audio_action": "SFX_RECORD_OR_DESIGN",
+      "overlay_box": {
+        "x": 1334,
+        "y": 876,
+        "width": 425,
+        "height": 134,
+        "font_size": 49,
+        "visual_lines": 1,
+        "style": "bubble_sfx",
+        "placement": "upper-left of Bubble, away from body"
+      },
+      "translations": {
+        "ru": "Бип-бип!",
+        "en": "Beep-beep!",
+        "pt_BR": "Bip-bip!",
+        "es": "¡Bip-bip!",
+        "fr": "Bip-bip !",
+        "de": "Piep-piep!"
+      },
+      "display_segments": {
+        "ru": [
+          "Бип-бип!"
+        ],
+        "en": [
+          "Beep-beep!"
+        ],
+        "pt_BR": [
+          "Bip-bip!"
+        ],
+        "es": [
+          "¡Bip-bip!"
+        ],
+        "fr": [
+          "Bip-bip !"
+        ],
+        "de": [
+          "Piep-piep!"
+        ]
+      }
+    },
+    {
+      "line_id": "CH08_P01_L005",
+      "frame": "04 — компания",
+      "speaker_id": "CHR_004",
+      "speaker": "Автор",
+      "kind": "narration",
+      "emotion": "радостное воссоединение",
+      "tts_required": true,
+      "audio_action": null,
+      "overlay_box": {
+        "x": 625,
+        "y": 2398,
+        "width": 1270,
+        "height": 132,
+        "font_size": 36,
+        "visual_lines": 2,
+        "style": "narration",
+        "placement": "at feet/bottom of group portrait, faces clear"
+      },
+      "translations": {
+        "ru": "Вся компания была в сборе и ждала возвращения Мики.",
+        "en": "The whole crew was together, waiting for Mika to return.",
+        "pt_BR": "Toda a turma estava reunida, esperando a volta de Mika.",
+        "es": "Todo el grupo estaba reunido, esperando el regreso de Mika.",
+        "fr": "Toute la bande était réunie et attendait le retour de Mika.",
+        "de": "Die ganze Gruppe war versammelt und wartete auf Mikas Rückkehr."
+      },
+      "display_segments": {
+        "ru": [
+          "Вся компания была в сборе и ждала возвращения Мики."
+        ],
+        "en": [
+          "The whole crew was together, waiting for Mika to return."
+        ],
+        "pt_BR": [
+          "Toda a turma estava reunida, esperando a volta de Mika."
+        ],
+        "es": [
+          "Todo el grupo estaba reunido, esperando el regreso de Mika."
+        ],
+        "fr": [
+          "Toute la bande était réunie et attendait le retour de Mika."
+        ],
+        "de": [
+          "Die ganze Gruppe war versammelt und wartete auf Mikas Rückkehr."
+        ]
+      }
+    },
+    {
+      "line_id": "CH08_P01_L006",
+      "frame": "05 — ящер",
+      "speaker_id": "CHR_031",
+      "speaker": "Ящер — знакомый Мики",
+      "kind": "dialogue",
+      "emotion": "добродушно напоминает о прежнем обещании; лёгкая ирония",
+      "tts_required": true,
+      "audio_action": null,
+      "overlay_box": {
+        "x": 142,
+        "y": 3194,
+        "width": 1035,
+        "height": 195,
+        "font_size": 38,
+        "visual_lines": 3,
+        "style": "lizard",
+        "placement": "lower jacket of lizard, face and mouth open"
+      },
+      "translations": {
+        "ru": "А что касается друзей… Мне кажется, кто-то обещал слетать в Малое Магелланово Облако!",
+        "en": "Speaking of friends… I think someone promised a trip to the Small Magellanic Cloud!",
+        "pt_BR": "Falando em amigos… Acho que alguém prometeu uma viagem à Pequena Nuvem de Magalhães!",
+        "es": "Hablando de amigos… ¡Creo que alguien prometió viajar a la Pequeña Nube de Magallanes!",
+        "fr": "En parlant d’amis… Je crois que quelqu’un avait promis un voyage jusqu’au Petit Nuage de Magellan !",
+        "de": "Apropos Freunde … Ich glaube, jemand hat einen Flug zur Kleinen Magellanschen Wolke versprochen!"
+      },
+      "display_segments": {
+        "ru": [
+          "А что касается друзей… Мне кажется, кто-то обещал слетать в Малое Магелланово Облако!"
+        ],
+        "en": [
+          "Speaking of friends… I think someone promised a trip to the Small Magellanic Cloud!"
+        ],
+        "pt_BR": [
+          "Falando em amigos… Acho que alguém prometeu uma viagem à Pequena Nuvem de Magalhães!"
+        ],
+        "es": [
+          "Hablando de amigos… ¡Creo que alguien prometió viajar a la Pequeña Nube de Magallanes!"
+        ],
+        "fr": [
+          "En parlant d’amis… Je crois que quelqu’un avait promis un voyage jusqu’au Petit Nuage de Magellan !"
+        ],
+        "de": [
+          "Apropos Freunde … Ich glaube, jemand hat einen Flug zur Kleinen Magellanschen Wolke versprochen!"
+        ]
+      }
+    },
+    {
+      "line_id": "CH08_P01_L007",
+      "frame": "06 — Мика",
+      "speaker_id": "CHR_001",
+      "speaker": "Мика",
+      "kind": "dialogue",
+      "emotion": "радостная решимость; приглашает всю компанию",
+      "tts_required": true,
+      "audio_action": null,
+      "overlay_box": {
+        "x": 1554,
+        "y": 3248,
+        "width": 770,
+        "height": 141,
+        "font_size": 43,
+        "visual_lines": 1,
+        "style": "mika",
+        "placement": "low in Mika panel, face and raised hand clear"
+      },
+      "translations": {
+        "ru": "Ну что, друзья, в путь!",
+        "en": "Well then, friends, let’s go!",
+        "pt_BR": "Então, amigos, vamos nessa!",
+        "es": "Bueno, amigos, ¡en marcha!",
+        "fr": "Alors, les amis, en route !",
+        "de": "Na dann, Freunde, auf geht’s!"
+      },
+      "display_segments": {
+        "ru": [
+          "Ну что, друзья, в путь!"
+        ],
+        "en": [
+          "Well then, friends, let’s go!"
+        ],
+        "pt_BR": [
+          "Então, amigos, vamos nessa!"
+        ],
+        "es": [
+          "Bueno, amigos, ¡en marcha!"
+        ],
+        "fr": [
+          "Alors, les amis, en route !"
+        ],
+        "de": [
+          "Na dann, Freunde, auf geht’s!"
+        ]
+      }
+    }
+  ],
+  "production_note_ru": "CH08_P01_L004 — невербальный отклик Баббла: 6 экранных надписей; не создавать 6 речевых TTS-клипов и не включать в мастер-тексты."
+}

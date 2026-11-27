@@ -1,0 +1,1269 @@
+{
+  "schema_version": "3.2",
+  "project": "MIKA Infinite Space",
+  "page_id": "CH01_P05",
+  "revision": 5,
+  "approval_status": "ru_art_approved_six_localizations_adapted_native_review_recommended",
+  "style": "NEBULA",
+  "master_size_px": [
+    2480,
+    3508
+  ],
+  "source_pdf": "1-5(1).pdf",
+  "background": "background.jpg",
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "godot_locale_aliases": {
+    "ru_RU": "ru",
+    "en_US": "en",
+    "en_GB": "en",
+    "pt_BR": "pt_BR",
+    "pt-BR": "pt_BR",
+    "pt_PT": "pt_BR",
+    "es_ES": "es",
+    "es_MX": "es",
+    "fr_FR": "fr",
+    "de_DE": "de"
+  },
+  "overlays_png": {
+    "ru": "overlays/CH01_P05_ru.png",
+    "en": "overlays/CH01_P05_en.png",
+    "pt_BR": "overlays/CH01_P05_pt_BR.png",
+    "es": "overlays/CH01_P05_es.png",
+    "fr": "overlays/CH01_P05_fr.png",
+    "de": "overlays/CH01_P05_de.png"
+  },
+  "overlays_svg": {
+    "ru": "overlays/CH01_P05_ru.svg",
+    "en": "overlays/CH01_P05_en.svg",
+    "pt_BR": "overlays/CH01_P05_pt_BR.svg",
+    "es": "overlays/CH01_P05_es.svg",
+    "fr": "overlays/CH01_P05_fr.svg",
+    "de": "overlays/CH01_P05_de.svg"
+  },
+  "previews": {
+    "ru": "previews/CH01_P05_ru_preview.jpg",
+    "en": "previews/CH01_P05_en_preview.jpg",
+    "pt_BR": "previews/CH01_P05_pt_BR_preview.jpg",
+    "es": "previews/CH01_P05_es_preview.jpg",
+    "fr": "previews/CH01_P05_fr_preview.jpg",
+    "de": "previews/CH01_P05_de_preview.jpg"
+  },
+  "speaker_ids": [
+    "CHR_013",
+    "CHR_001",
+    "CHR_004"
+  ],
+  "new_cast": [],
+  "reading_order_line_ids": [
+    "CH01_P05_L001",
+    "CH01_P05_L002",
+    "CH01_P05_L003",
+    "CH01_P05_L005",
+    "CH01_P05_L004",
+    "CH01_P05_L006",
+    "CH01_P05_L007",
+    "CH01_P05_L008",
+    "CH01_P05_L009",
+    "CH01_P05_L010"
+  ],
+  "playback_profiles": {
+    "full_reading": {
+      "line_ids": [
+        "CH01_P05_L001",
+        "CH01_P05_L002",
+        "CH01_P05_L003",
+        "CH01_P05_L005",
+        "CH01_P05_L004",
+        "CH01_P05_L006",
+        "CH01_P05_L007",
+        "CH01_P05_L008",
+        "CH01_P05_L009",
+        "CH01_P05_L010"
+      ],
+      "description_ru": "Герои, ИИ и все авторские фразы в порядке появления на странице."
+    },
+    "spoken_only": {
+      "line_ids": [
+        "CH01_P05_L001",
+        "CH01_P05_L002",
+        "CH01_P05_L003",
+        "CH01_P05_L004",
+        "CH01_P05_L006",
+        "CH01_P05_L007",
+        "CH01_P05_L008",
+        "CH01_P05_L009",
+        "CH01_P05_L010"
+      ],
+      "description_ru": "Говорят только Мика и ИИ; надписи автора читает ребёнок."
+    },
+    "soft_memory": {
+      "line_ids": [
+        "CH01_P05_L001",
+        "CH01_P05_L002",
+        "CH01_P05_L003",
+        "CH01_P05_L005",
+        "CH01_P05_L004",
+        "CH01_P05_L006",
+        "CH01_P05_L008",
+        "CH01_P05_L009",
+        "CH01_P05_L010"
+      ],
+      "description_ru": "Восклицание Мики о шторме — только текст и SFX без отдельной озвучки в этом альтернативном профиле."
+    }
+  },
+  "art_direction_ru": "Авторская подпись перемещена в правый нижний угол кадра, где Мика зажмурился, не на панораму родного мира. Русская версия согласована; остальные переводы занимают только одобренные области.",
+  "narrative_guardrail_ru": "В начале раскрывается шутка, почему ИИ знает имя Мики: он сам указал его в анкете на предыдущей странице. ИИ на этой странице ещё не сообщает, что произошло с планетой; он только выслушивает рассказ. Финал — вопрос Мики о судьбе дома и пути назад.",
+  "scene_arcs_ru": [
+    {
+      "frames": [
+        1
+      ],
+      "arc": "Лёгкая шутка про анкету → просьба о помощи → мудрый и внимательный вопрос ИИ"
+    },
+    {
+      "frames": [
+        2
+      ],
+      "arc": "Светлая ностальгия, восторг от родного мира и парящих городов"
+    },
+    {
+      "frames": [
+        3,
+        4,
+        5
+      ],
+      "arc": "Мика запинается → внезапный шторм → изменение физических свойств и эвакуация"
+    },
+    {
+      "frames": [
+        6,
+        7
+      ],
+      "arc": "Тихая печаль → робкая, но сильная надежда вернуться домой"
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P05_L001",
+      "page_id": "CH01_P05",
+      "frame_id": "CH01_P05_F01",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "bubble_id": "mars_ai_neon_navy_hud",
+      "reading_order": 1,
+      "performance": {
+        "emotion": "gentle_playful_reveal",
+        "intensity": 0.58,
+        "pace": "bright_then_matter_of_fact",
+        "volume": "warm_even",
+        "pause_after_ms": 380,
+        "tone_ru": "Добродушная, совершенно логичная шутка. ИИ не дразнит Мику, просто констатирует очевидное.",
+        "arc_ru": "«Конечно!» с улыбкой и короткой паузой. На «анкете» маленький комический акцент — мягкий, не саркастический.",
+        "acting_beats": [
+          "встреча",
+          "радостное-объяснение",
+          "тихая-улыбка"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[lightly amused]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Конечно! Ты же сам указал имя в анкете!",
+          "voice_spoken_text": "Конечно! Ты же сам указал своё имя в анкете!",
+          "render_lines": [
+            "Конечно!",
+            "Ты же сам указал",
+            "имя в анкете!"
+          ],
+          "font_size_viewbox": 21.9,
+          "edit_source_svg": "overlays/CH01_P05_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[lightly amused] Конечно! Ты же сам указал своё имя в анкете!"
+        },
+        "en": {
+          "display_text": "Of course! You wrote your name on the form!",
+          "voice_spoken_text": "Of course! You wrote your name on the form!",
+          "render_lines": [
+            "Of course!",
+            "You wrote your name",
+            "on the form!"
+          ],
+          "font_size_viewbox": 20.5,
+          "edit_source_svg": "overlays/CH01_P05_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[lightly amused] Of course! You wrote your name on the form!"
+        },
+        "pt_BR": {
+          "display_text": "Claro! Você mesmo escreveu seu nome na ficha!",
+          "voice_spoken_text": "Claro! Você mesmo escreveu seu nome na ficha!",
+          "render_lines": [
+            "Claro!",
+            "Você mesmo escreveu",
+            "seu nome na ficha!"
+          ],
+          "font_size_viewbox": 20,
+          "edit_source_svg": "overlays/CH01_P05_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[lightly amused] Claro! Você mesmo escreveu seu nome na ficha!"
+        },
+        "es": {
+          "display_text": "¡Claro! Tú mismo pusiste tu nombre en la ficha.",
+          "voice_spoken_text": "¡Claro! Tú mismo pusiste tu nombre en la ficha.",
+          "render_lines": [
+            "¡Claro!",
+            "Tú mismo pusiste",
+            "tu nombre en la ficha."
+          ],
+          "font_size_viewbox": 20.1,
+          "edit_source_svg": "overlays/CH01_P05_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[lightly amused] ¡Claro! Tú mismo pusiste tu nombre en la ficha."
+        },
+        "fr": {
+          "display_text": "Bien sûr ! Tu l’as écrit toi-même sur le formulaire !",
+          "voice_spoken_text": "Bien sûr ! Tu l’as écrit toi-même sur le formulaire !",
+          "render_lines": [
+            "Bien sûr !",
+            "Tu l’as écrit toi-même",
+            "sur le formulaire !"
+          ],
+          "font_size_viewbox": 20,
+          "edit_source_svg": "overlays/CH01_P05_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[lightly amused] Bien sûr ! Tu l’as écrit toi-même sur le formulaire !"
+        },
+        "de": {
+          "display_text": "Na klar! Du hast deinen Namen ins Formular geschrieben!",
+          "voice_spoken_text": "Na klar! Du hast deinen Namen ins Formular geschrieben!",
+          "render_lines": [
+            "Na klar!",
+            "Du hast deinen Namen",
+            "ins Formular geschrieben!"
+          ],
+          "font_size_viewbox": 18.9,
+          "edit_source_svg": "overlays/CH01_P05_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[lightly amused] Na klar! Du hast deinen Namen ins Formular geschrieben!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P05_L002",
+      "page_id": "CH01_P05",
+      "frame_id": "CH01_P05_F01",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "bubble_id": "mika_speech_amber_tail",
+      "reading_order": 2,
+      "performance": {
+        "emotion": "cautious_urgent_hope",
+        "intensity": 0.67,
+        "pace": "hesitant_then_eager",
+        "volume": "soft_to_medium",
+        "pause_after_ms": 350,
+        "tone_ru": "Мика торопится с важным вопросом и с надеждой смотрит на ИИ.",
+        "arc_ru": "На «моим домом» голос немного сжимается, на «дорогу назад?» поднимается с искренней надеждой.",
+        "acting_beats": [
+          "робкая-просьба",
+          "тревога-о-доме",
+          "надежда-на-помощь"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[hopeful]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Поможешь мне понять, что стало с моим домом, и найти дорогу назад?",
+          "voice_spoken_text": "Поможешь мне понять, что стало с моим домом, и найти дорогу назад?",
+          "render_lines": [
+            "Поможешь мне понять,",
+            "что стало с моим домом,",
+            "и найти дорогу назад?"
+          ],
+          "font_size_viewbox": 20.1,
+          "edit_source_svg": "overlays/CH01_P05_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Поможешь мне понять, что стало с моим домом, и найти дорогу назад?"
+        },
+        "en": {
+          "display_text": "Can you help me find out what happened to my home and find a way back?",
+          "voice_spoken_text": "Can you help me find out what happened to my home and find a way back?",
+          "render_lines": [
+            "Can you help me find out",
+            "what happened to my home",
+            "and find a way back?"
+          ],
+          "font_size_viewbox": 19.1,
+          "edit_source_svg": "overlays/CH01_P05_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Can you help me find out what happened to my home and find a way back?"
+        },
+        "pt_BR": {
+          "display_text": "Pode me ajudar a saber o que houve com meu lar e como voltar pra casa?",
+          "voice_spoken_text": "Pode me ajudar a saber o que houve com meu lar e como voltar pra casa?",
+          "render_lines": [
+            "Pode me ajudar a saber",
+            "o que houve com meu lar",
+            "e como voltar pra casa?"
+          ],
+          "font_size_viewbox": 18.8,
+          "edit_source_svg": "overlays/CH01_P05_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Pode me ajudar a saber o que houve com meu lar e como voltar pra casa?"
+        },
+        "es": {
+          "display_text": "¿Me ayudas a descubrir qué pasó con mi hogar y cómo regresar?",
+          "voice_spoken_text": "¿Me ayudas a descubrir qué pasó con mi hogar y cómo regresar?",
+          "render_lines": [
+            "¿Me ayudas a descubrir",
+            "qué pasó con mi hogar",
+            "y cómo regresar?"
+          ],
+          "font_size_viewbox": 18.9,
+          "edit_source_svg": "overlays/CH01_P05_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] ¿Me ayudas a descubrir qué pasó con mi hogar y cómo regresar?"
+        },
+        "fr": {
+          "display_text": "Tu peux m’aider à savoir ce qui est arrivé chez moi et comment rentrer ?",
+          "voice_spoken_text": "Tu peux m’aider à savoir ce qui est arrivé chez moi et comment rentrer ?",
+          "render_lines": [
+            "Tu peux m’aider à savoir",
+            "ce qui est arrivé chez moi",
+            "et comment rentrer ?"
+          ],
+          "font_size_viewbox": 18.5,
+          "edit_source_svg": "overlays/CH01_P05_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Tu peux m’aider à savoir ce qui est arrivé chez moi et comment rentrer ?"
+        },
+        "de": {
+          "display_text": "Hilfst du mir herauszufinden, was mit meiner Heimat ist, und den Rückweg zu finden?",
+          "voice_spoken_text": "Hilfst du mir herauszufinden, was mit meiner Heimat ist, und den Rückweg zu finden?",
+          "render_lines": [
+            "Hilfst du mir herauszufinden,",
+            "was mit meiner Heimat ist,",
+            "und den Rückweg zu finden?"
+          ],
+          "font_size_viewbox": 17.1,
+          "edit_source_svg": "overlays/CH01_P05_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Hilfst du mir herauszufinden, was mit meiner Heimat ist, und den Rückweg zu finden?"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P05_L003",
+      "page_id": "CH01_P05",
+      "frame_id": "CH01_P05_F01",
+      "speaker_id": "CHR_013",
+      "kind": "ai_core_voice",
+      "bubble_id": "mars_ai_neon_navy_hud",
+      "reading_order": 3,
+      "performance": {
+        "emotion": "compassionate_invitation",
+        "intensity": 0.44,
+        "pace": "calm_and_unhurried",
+        "volume": "gentle",
+        "pause_after_ms": 650,
+        "tone_ru": "ИИ терпеливо предлагает Мике вспомнить дом: слушает, не перебивает и не выдаёт готового ответа.",
+        "arc_ru": "Чуть теплее на «твоём доме», пауза между предложениями, затем мягкий вопрос.",
+        "acting_beats": [
+          "внимание",
+          "доверие",
+          "приглашение-к-рассказу"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[gently]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Расскажи мне о своём доме. Каким он был?",
+          "voice_spoken_text": "Расскажи мне о своём доме. Каким он был?",
+          "render_lines": [
+            "Расскажи мне о своём доме.",
+            "Каким он был?"
+          ],
+          "font_size_viewbox": 21.3,
+          "edit_source_svg": "overlays/CH01_P05_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[gently] Расскажи мне о своём доме. Каким он был?"
+        },
+        "en": {
+          "display_text": "Tell me about your home. What was it like?",
+          "voice_spoken_text": "Tell me about your home. What was it like?",
+          "render_lines": [
+            "Tell me about your home.",
+            "What was it like?"
+          ],
+          "font_size_viewbox": 21.1,
+          "edit_source_svg": "overlays/CH01_P05_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[gently] Tell me about your home. What was it like?"
+        },
+        "pt_BR": {
+          "display_text": "Me conta sobre seu lar. Como era lá?",
+          "voice_spoken_text": "Me conta sobre seu lar. Como era lá?",
+          "render_lines": [
+            "Me conta sobre seu lar.",
+            "Como era lá?"
+          ],
+          "font_size_viewbox": 21,
+          "edit_source_svg": "overlays/CH01_P05_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[gently] Me conta sobre seu lar. Como era lá?"
+        },
+        "es": {
+          "display_text": "Cuéntame de tu hogar. ¿Cómo era?",
+          "voice_spoken_text": "Cuéntame de tu hogar. ¿Cómo era?",
+          "render_lines": [
+            "Cuéntame de tu hogar.",
+            "¿Cómo era?"
+          ],
+          "font_size_viewbox": 21,
+          "edit_source_svg": "overlays/CH01_P05_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[gently] Cuéntame de tu hogar. ¿Cómo era?"
+        },
+        "fr": {
+          "display_text": "Parle-moi de chez toi. Comment était ton monde ?",
+          "voice_spoken_text": "Parle-moi de chez toi. Comment était ton monde ?",
+          "render_lines": [
+            "Parle-moi de chez toi.",
+            "Comment était ton monde ?"
+          ],
+          "font_size_viewbox": 20.5,
+          "edit_source_svg": "overlays/CH01_P05_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[gently] Parle-moi de chez toi. Comment était ton monde ?"
+        },
+        "de": {
+          "display_text": "Erzähl mir von zu Hause. Wie war es dort?",
+          "voice_spoken_text": "Erzähl mir von zu Hause. Wie war es dort?",
+          "render_lines": [
+            "Erzähl mir von zu Hause.",
+            "Wie war es dort?"
+          ],
+          "font_size_viewbox": 19.8,
+          "edit_source_svg": "overlays/CH01_P05_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[gently] Erzähl mir von zu Hause. Wie war es dort?"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P05_L005",
+      "page_id": "CH01_P05",
+      "frame_id": "CH01_P05_F02",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "bubble_id": "narrator_cream_rect",
+      "reading_order": 4,
+      "performance": {
+        "emotion": "tender_reflection",
+        "intensity": 0.43,
+        "pace": "soft_lyrical",
+        "volume": "warm_soft",
+        "pause_after_ms": 620,
+        "tone_ru": "Автор говорит с нежностью, словно зритель на мгновение заглянул в доброе воспоминание Мики.",
+        "arc_ru": "После «прикрыл глаза» маленькая пауза. В конце «родной мир…» почти шёпотом, с теплом.",
+        "acting_beats": [
+          "тихий-вдох",
+          "счастливое-воспоминание",
+          "замирание"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[warmly]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Мика прикрыл глаза. Перед ним снова ожил его родной мир…",
+          "voice_spoken_text": "Мика прикрыл глаза. Перед ним снова ожил его родной мир…",
+          "render_lines": [
+            "Мика прикрыл",
+            "глаза. Перед ним",
+            "снова ожил его",
+            "родной мир…"
+          ],
+          "font_size_viewbox": 16,
+          "edit_source_svg": "overlays/CH01_P05_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] Мика прикрыл глаза. Перед ним снова ожил его родной мир…"
+        },
+        "en": {
+          "display_text": "Mika closed his eyes. His home came alive again before him…",
+          "voice_spoken_text": "Mika closed his eyes. His home came alive again before him…",
+          "render_lines": [
+            "Mika closed his",
+            "eyes. His home",
+            "came alive again",
+            "before him…"
+          ],
+          "font_size_viewbox": 16,
+          "edit_source_svg": "overlays/CH01_P05_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] Mika closed his eyes. His home came alive again before him…"
+        },
+        "pt_BR": {
+          "display_text": "Mika fechou os olhos. Seu mundo voltou a ganhar vida diante dele…",
+          "voice_spoken_text": "Mika fechou os olhos. Seu mundo voltou a ganhar vida diante dele…",
+          "render_lines": [
+            "Mika fechou os",
+            "olhos. Seu mundo",
+            "voltou a ganhar",
+            "vida diante dele…"
+          ],
+          "font_size_viewbox": 15.4,
+          "edit_source_svg": "overlays/CH01_P05_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] Mika fechou os olhos. Seu mundo voltou a ganhar vida diante dele…"
+        },
+        "es": {
+          "display_text": "Mika cerró los ojos. Su mundo volvió a cobrar vida ante él…",
+          "voice_spoken_text": "Mika cerró los ojos. Su mundo volvió a cobrar vida ante él…",
+          "render_lines": [
+            "Mika cerró los",
+            "ojos. Su mundo",
+            "volvió a cobrar",
+            "vida ante él…"
+          ],
+          "font_size_viewbox": 15.6,
+          "edit_source_svg": "overlays/CH01_P05_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] Mika cerró los ojos. Su mundo volvió a cobrar vida ante él…"
+        },
+        "fr": {
+          "display_text": "Mika ferma les yeux. Son monde reprenait vie devant lui…",
+          "voice_spoken_text": "Mika ferma les yeux. Son monde reprenait vie devant lui…",
+          "render_lines": [
+            "Mika ferma les",
+            "yeux. Son monde",
+            "reprenait vie",
+            "devant lui…"
+          ],
+          "font_size_viewbox": 15.8,
+          "edit_source_svg": "overlays/CH01_P05_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] Mika ferma les yeux. Son monde reprenait vie devant lui…"
+        },
+        "de": {
+          "display_text": "Mika schloss die Augen. Seine Heimat erwachte vor ihm erneut…",
+          "voice_spoken_text": "Mika schloss die Augen. Seine Heimat erwachte vor ihm erneut…",
+          "render_lines": [
+            "Mika schloss",
+            "die Augen. Seine",
+            "Heimat erwachte",
+            "vor ihm erneut…"
+          ],
+          "font_size_viewbox": 15.2,
+          "edit_source_svg": "overlays/CH01_P05_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[warmly] Mika schloss die Augen. Seine Heimat erwachte vor ihm erneut…"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P05_L004",
+      "page_id": "CH01_P05",
+      "frame_id": "CH01_P05_F02",
+      "speaker_id": "CHR_001",
+      "kind": "speech_recollection",
+      "bubble_id": "mika_speech_amber_memory_tail",
+      "reading_order": 5,
+      "performance": {
+        "emotion": "delighted_nostalgia",
+        "intensity": 0.77,
+        "pace": "bright_dreamy",
+        "volume": "joyful",
+        "pause_after_ms": 480,
+        "tone_ru": "Мика сияет от воспоминаний: родной газовый гигант и города в облаках кажутся ему самым прекрасным местом во Вселенной.",
+        "arc_ru": "На «розовом газовом гиганте» — удивление и любовь, на «парили над облаками!» — лёгкий взлёт голоса.",
+        "acting_beats": [
+          "улыбка",
+          "восторг-от-дома",
+          "полёт-городов"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[fondly]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Мы жили на огромном розовом газовом гиганте. А наши города парили над облаками!",
+          "voice_spoken_text": "Мы жили на огромном розовом газовом гиганте. А наши города парили над облаками!",
+          "render_lines": [
+            "Мы жили на огромном",
+            "розовом газовом",
+            "гиганте. А наши города",
+            "парили над облаками!"
+          ],
+          "font_size_viewbox": 19.2,
+          "edit_source_svg": "overlays/CH01_P05_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[fondly] Мы жили на огромном розовом газовом гиганте. А наши города парили над облаками!"
+        },
+        "en": {
+          "display_text": "We lived on a huge pink gas giant. Our cities floated above the clouds!",
+          "voice_spoken_text": "We lived on a huge pink gas giant. Our cities floated above the clouds!",
+          "render_lines": [
+            "We lived on a huge",
+            "pink gas giant.",
+            "Our cities floated",
+            "above the clouds!"
+          ],
+          "font_size_viewbox": 19.3,
+          "edit_source_svg": "overlays/CH01_P05_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[fondly] We lived on a huge pink gas giant. Our cities floated above the clouds!"
+        },
+        "pt_BR": {
+          "display_text": "A gente vivia num gigante gasoso rosa. Nossas cidades flutuavam acima das nuvens!",
+          "voice_spoken_text": "A gente vivia num gigante gasoso rosa. Nossas cidades flutuavam acima das nuvens!",
+          "render_lines": [
+            "A gente vivia num",
+            "gigante gasoso rosa.",
+            "Nossas cidades flutuavam",
+            "acima das nuvens!"
+          ],
+          "font_size_viewbox": 18,
+          "edit_source_svg": "overlays/CH01_P05_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[fondly] A gente vivia num gigante gasoso rosa. Nossas cidades flutuavam acima das nuvens!"
+        },
+        "es": {
+          "display_text": "Vivíamos en un gran gigante gaseoso rosa. Nuestras ciudades flotaban sobre las nubes!",
+          "voice_spoken_text": "Vivíamos en un gran gigante gaseoso rosa. Nuestras ciudades flotaban sobre las nubes!",
+          "render_lines": [
+            "Vivíamos en un gran",
+            "gigante gaseoso rosa.",
+            "Nuestras ciudades flotaban",
+            "sobre las nubes!"
+          ],
+          "font_size_viewbox": 17.8,
+          "edit_source_svg": "overlays/CH01_P05_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[fondly] Vivíamos en un gran gigante gaseoso rosa. Nuestras ciudades flotaban sobre las nubes!"
+        },
+        "fr": {
+          "display_text": "On vivait sur une géante gazeuse rose. Nos villes flottaient au-dessus des nuages !",
+          "voice_spoken_text": "On vivait sur une géante gazeuse rose. Nos villes flottaient au-dessus des nuages !",
+          "render_lines": [
+            "On vivait sur une",
+            "géante gazeuse rose.",
+            "Nos villes flottaient",
+            "au-dessus des nuages !"
+          ],
+          "font_size_viewbox": 18.3,
+          "edit_source_svg": "overlays/CH01_P05_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[fondly] On vivait sur une géante gazeuse rose. Nos villes flottaient au-dessus des nuages !"
+        },
+        "de": {
+          "display_text": "Wir lebten auf einem riesigen rosa Gasplaneten. Unsere Städte schwebten über den Wolken!",
+          "voice_spoken_text": "Wir lebten auf einem riesigen rosa Gasplaneten. Unsere Städte schwebten über den Wolken!",
+          "render_lines": [
+            "Wir lebten auf einem",
+            "riesigen rosa Gasplaneten.",
+            "Unsere Städte schwebten",
+            "über den Wolken!"
+          ],
+          "font_size_viewbox": 18,
+          "edit_source_svg": "overlays/CH01_P05_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[fondly] Wir lebten auf einem riesigen rosa Gasplaneten. Unsere Städte schwebten über den Wolken!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P05_L006",
+      "page_id": "CH01_P05",
+      "frame_id": "CH01_P05_F03",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "bubble_id": "mika_speech_amber_tail",
+      "reading_order": 6,
+      "performance": {
+        "emotion": "memory_turns_dark",
+        "intensity": 0.65,
+        "pace": "hesitation_long_pause",
+        "volume": "suddenly_quiet",
+        "pause_after_ms": 850,
+        "tone_ru": "Улыбка исчезает. Мика замолкает, потому что дальше вспоминать страшно.",
+        "arc_ru": "«Но» с резким падением тона, «потом» тише и медленнее. Пауза — как перед неприятным воспоминанием.",
+        "acting_beats": [
+          "улыбка-гаснет",
+          "замирание",
+          "нежелание-вспоминать"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[shaken]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Но потом…",
+          "voice_spoken_text": "Но потом…",
+          "render_lines": [
+            "Но потом…"
+          ],
+          "font_size_viewbox": 24.2,
+          "edit_source_svg": "overlays/CH01_P05_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shaken] Но потом…"
+        },
+        "en": {
+          "display_text": "But then…",
+          "voice_spoken_text": "But then…",
+          "render_lines": [
+            "But then…"
+          ],
+          "font_size_viewbox": 24.2,
+          "edit_source_svg": "overlays/CH01_P05_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shaken] But then…"
+        },
+        "pt_BR": {
+          "display_text": "Mas aí…",
+          "voice_spoken_text": "Mas aí…",
+          "render_lines": [
+            "Mas aí…"
+          ],
+          "font_size_viewbox": 24,
+          "edit_source_svg": "overlays/CH01_P05_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shaken] Mas aí…"
+        },
+        "es": {
+          "display_text": "Pero entonces…",
+          "voice_spoken_text": "Pero entonces…",
+          "render_lines": [
+            "Pero entonces…"
+          ],
+          "font_size_viewbox": 18.1,
+          "edit_source_svg": "overlays/CH01_P05_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shaken] Pero entonces…"
+        },
+        "fr": {
+          "display_text": "Mais un jour…",
+          "voice_spoken_text": "Mais un jour…",
+          "render_lines": [
+            "Mais un jour…"
+          ],
+          "font_size_viewbox": 19.8,
+          "edit_source_svg": "overlays/CH01_P05_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shaken] Mais un jour…"
+        },
+        "de": {
+          "display_text": "Aber dann…",
+          "voice_spoken_text": "Aber dann…",
+          "render_lines": [
+            "Aber dann…"
+          ],
+          "font_size_viewbox": 22.6,
+          "edit_source_svg": "overlays/CH01_P05_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[shaken] Aber dann…"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P05_L007",
+      "page_id": "CH01_P05",
+      "frame_id": "CH01_P05_F04",
+      "speaker_id": "CHR_001",
+      "kind": "speech_recollection",
+      "bubble_id": "author_storm_impact_yellow_magenta",
+      "reading_order": 7,
+      "performance": {
+        "emotion": "sudden_catastrophe",
+        "intensity": 0.86,
+        "pace": "short_cinematic_punch",
+        "volume": "bright_emphatic",
+        "pause_after_ms": 310,
+        "tone_ru": "Не превращать в страшилку. Это внезапный поворот истории: энергичный контраст с нежным воспоминанием.",
+        "arc_ru": "«И вдруг…» напряжённо, затем «грянул шторм!» резко и ярко. Оставить короткое эхо тишины.",
+        "acting_beats": [
+          "нарастание",
+          "резкий-удар",
+          "шок"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[alarmed]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "И ВДРУГ… ГРЯНУЛ ШТОРМ!",
+          "voice_spoken_text": "И вдруг… грянул шторм!",
+          "render_lines": [
+            "И ВДРУГ…",
+            "ГРЯНУЛ ШТОРМ!"
+          ],
+          "font_size_viewbox": 24,
+          "edit_source_svg": "overlays/CH01_P05_ru.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P05_L007_ru.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[alarmed] И вдруг… грянул шторм!"
+        },
+        "en": {
+          "display_text": "AND THEN… A STORM STRUCK!",
+          "voice_spoken_text": "AND THEN… A STORM STRUCK!",
+          "render_lines": [
+            "AND THEN…",
+            "A STORM STRUCK!"
+          ],
+          "font_size_viewbox": 23.7,
+          "edit_source_svg": "overlays/CH01_P05_en.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/en/CH01_P05_L007_en.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[alarmed] AND THEN… A STORM STRUCK!"
+        },
+        "pt_BR": {
+          "display_text": "DE REPENTE… VEIO O TEMPORAL!",
+          "voice_spoken_text": "DE REPENTE… VEIO O TEMPORAL!",
+          "render_lines": [
+            "DE REPENTE…",
+            "VEIO O TEMPORAL!"
+          ],
+          "font_size_viewbox": 23,
+          "edit_source_svg": "overlays/CH01_P05_pt_BR.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P05_L007_pt_BR.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[alarmed] DE REPENTE… VEIO O TEMPORAL!"
+        },
+        "es": {
+          "display_text": "Y DE PRONTO… ¡LLEGÓ LA TORMENTA!",
+          "voice_spoken_text": "Y DE PRONTO… ¡LLEGÓ LA TORMENTA!",
+          "render_lines": [
+            "Y DE PRONTO…",
+            "¡LLEGÓ LA TORMENTA!"
+          ],
+          "font_size_viewbox": 22.6,
+          "edit_source_svg": "overlays/CH01_P05_es.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/es/CH01_P05_L007_es.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[alarmed] Y DE PRONTO… ¡LLEGÓ LA TORMENTA!"
+        },
+        "fr": {
+          "display_text": "ET SOUDAIN… LA TEMPÊTE ÉCLATA !",
+          "voice_spoken_text": "ET SOUDAIN… LA TEMPÊTE ÉCLATA !",
+          "render_lines": [
+            "ET SOUDAIN…",
+            "LA TEMPÊTE ÉCLATA !"
+          ],
+          "font_size_viewbox": 22.3,
+          "edit_source_svg": "overlays/CH01_P05_fr.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P05_L007_fr.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[alarmed] ET SOUDAIN… LA TEMPÊTE ÉCLATA !"
+        },
+        "de": {
+          "display_text": "PLÖTZLICH… EIN STURM BRACH LOS!",
+          "voice_spoken_text": "PLÖTZLICH… EIN STURM BRACH LOS!",
+          "render_lines": [
+            "PLÖTZLICH…",
+            "EIN STURM BRACH LOS!"
+          ],
+          "font_size_viewbox": 22.2,
+          "edit_source_svg": "overlays/CH01_P05_de.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L007_de.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[alarmed] PLÖTZLICH… EIN STURM BRACH LOS!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P05_L008",
+      "page_id": "CH01_P05",
+      "frame_id": "CH01_P05_F05",
+      "speaker_id": "CHR_001",
+      "kind": "speech_recollection",
+      "bubble_id": "narrator_cream_rect_orange_urgent",
+      "reading_order": 8,
+      "performance": {
+        "emotion": "urgent_evacuate",
+        "intensity": 0.75,
+        "pace": "accelerating_clear",
+        "volume": "urgent_but_not_screaming",
+        "pause_after_ms": 500,
+        "tone_ru": "Мир стал вести себя неправильно: стены и города будто плавятся. Автор быстро сообщает об эвакуации.",
+        "arc_ru": "«Мир менялся» тревожно, «теряли форму» с удивлением, «срочная эвакуация» энергично и очень отчётливо.",
+        "acting_beats": [
+          "растерянность",
+          "искажение-зданий",
+          "приказ-улетать"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[urgently]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Мир менялся. Города теряли форму. Началась срочная эвакуация!",
+          "voice_spoken_text": "Мир менялся. Города теряли форму. Началась срочная эвакуация!",
+          "render_lines": [
+            "Мир менялся.",
+            "Города теряли форму.",
+            "Началась срочная",
+            "эвакуация!"
+          ],
+          "font_size_viewbox": 17.2,
+          "edit_source_svg": "overlays/CH01_P05_ru.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P05_L008_ru.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[urgently] Мир менялся. Города теряли форму. Началась срочная эвакуация!"
+        },
+        "en": {
+          "display_text": "Everything changed. Cities twisted out of shape. Everyone had to evacuate!",
+          "voice_spoken_text": "Everything changed. Cities twisted out of shape. Everyone had to evacuate!",
+          "render_lines": [
+            "Everything changed.",
+            "Cities twisted out",
+            "of shape. Everyone",
+            "had to evacuate!"
+          ],
+          "font_size_viewbox": 16.6,
+          "edit_source_svg": "overlays/CH01_P05_en.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/en/CH01_P05_L008_en.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[urgently] Everything changed. Cities twisted out of shape. Everyone had to evacuate!"
+        },
+        "pt_BR": {
+          "display_text": "Tudo mudava. As cidades se deformavam. Era hora de evacuar!",
+          "voice_spoken_text": "Tudo mudava. As cidades se deformavam. Era hora de evacuar!",
+          "render_lines": [
+            "Tudo mudava.",
+            "As cidades se",
+            "deformavam. Era",
+            "hora de evacuar!"
+          ],
+          "font_size_viewbox": 16.9,
+          "edit_source_svg": "overlays/CH01_P05_pt_BR.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P05_L008_pt_BR.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[urgently] Tudo mudava. As cidades se deformavam. Era hora de evacuar!"
+        },
+        "es": {
+          "display_text": "Todo cambiaba. Las ciudades se deformaban. ¡Había que evacuar!",
+          "voice_spoken_text": "Todo cambiaba. Las ciudades se deformaban. ¡Había que evacuar!",
+          "render_lines": [
+            "Todo cambiaba.",
+            "Las ciudades se",
+            "deformaban. ¡Había",
+            "que evacuar!"
+          ],
+          "font_size_viewbox": 16,
+          "edit_source_svg": "overlays/CH01_P05_es.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/es/CH01_P05_L008_es.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[urgently] Todo cambiaba. Las ciudades se deformaban. ¡Había que evacuar!"
+        },
+        "fr": {
+          "display_text": "Tout changeait. Les villes se déformaient. Il fallait évacuer !",
+          "voice_spoken_text": "Tout changeait. Les villes se déformaient. Il fallait évacuer !",
+          "render_lines": [
+            "Tout changeait.",
+            "Les villes se",
+            "déformaient. Il fallait",
+            "évacuer !"
+          ],
+          "font_size_viewbox": 15.7,
+          "edit_source_svg": "overlays/CH01_P05_fr.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P05_L008_fr.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[urgently] Tout changeait. Les villes se déformaient. Il fallait évacuer !"
+        },
+        "de": {
+          "display_text": "Alles veränderte sich. Städte verloren ihre Form. Alle mussten fliehen!",
+          "voice_spoken_text": "Alles veränderte sich. Städte verloren ihre Form. Alle mussten fliehen!",
+          "render_lines": [
+            "Alles veränderte sich.",
+            "Städte verloren",
+            "ihre Form. Alle",
+            "mussten fliehen!"
+          ],
+          "font_size_viewbox": 15.4,
+          "edit_source_svg": "overlays/CH01_P05_de.svg",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/de/CH01_P05_L008_de.mp3",
+          "voice_status": "generated",
+          "tts_candidate_input": "[urgently] Alles veränderte sich. Städte verloren ihre Form. Alle mussten fliehen!"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P05_L009",
+      "page_id": "CH01_P05",
+      "frame_id": "CH01_P05_F06",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "bubble_id": "mika_speech_amber_tail_sad_violet_trim",
+      "reading_order": 9,
+      "performance": {
+        "emotion": "quiet_lost_sadness",
+        "intensity": 0.53,
+        "pace": "slow_with_sigh",
+        "volume": "soft",
+        "pause_after_ms": 670,
+        "tone_ru": "Нежная грусть без безысходности. Мика жив, но не знает, что стало с его близкими и домом.",
+        "arc_ru": "На «улететь…» замедлиться и слегка выдохнуть. «И вот я здесь» чуть тише, не жалобно.",
+        "acting_beats": [
+          "облегчение-от-спасения",
+          "боль-расставания",
+          "тихая-пауза"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[sadly]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Я успел улететь… И вот я здесь.",
+          "voice_spoken_text": "Я успел улететь… И вот я здесь.",
+          "render_lines": [
+            "Я успел улететь…",
+            "И вот я здесь."
+          ],
+          "font_size_viewbox": 22.4,
+          "edit_source_svg": "overlays/CH01_P05_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sadly] Я успел улететь… И вот я здесь."
+        },
+        "en": {
+          "display_text": "I got away… And now I’m here.",
+          "voice_spoken_text": "I got away… And now I’m here.",
+          "render_lines": [
+            "I got away…",
+            "And now I’m here."
+          ],
+          "font_size_viewbox": 22.2,
+          "edit_source_svg": "overlays/CH01_P05_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sadly] I got away… And now I’m here."
+        },
+        "pt_BR": {
+          "display_text": "Consegui escapar… E agora estou aqui.",
+          "voice_spoken_text": "Consegui escapar… E agora estou aqui.",
+          "render_lines": [
+            "Consegui escapar…",
+            "E agora estou aqui."
+          ],
+          "font_size_viewbox": 19.6,
+          "edit_source_svg": "overlays/CH01_P05_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sadly] Consegui escapar… E agora estou aqui."
+        },
+        "es": {
+          "display_text": "Logré escapar… Y aquí estoy.",
+          "voice_spoken_text": "Logré escapar… Y aquí estoy.",
+          "render_lines": [
+            "Logré escapar…",
+            "Y aquí estoy."
+          ],
+          "font_size_viewbox": 21,
+          "edit_source_svg": "overlays/CH01_P05_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sadly] Logré escapar… Y aquí estoy."
+        },
+        "fr": {
+          "display_text": "J’ai réussi à fuir… Et me voilà ici.",
+          "voice_spoken_text": "J’ai réussi à fuir… Et me voilà ici.",
+          "render_lines": [
+            "J’ai réussi à fuir…",
+            "Et me voilà ici."
+          ],
+          "font_size_viewbox": 19.2,
+          "edit_source_svg": "overlays/CH01_P05_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sadly] J’ai réussi à fuir… Et me voilà ici."
+        },
+        "de": {
+          "display_text": "Ich konnte fliehen… Und jetzt bin ich hier.",
+          "voice_spoken_text": "Ich konnte fliehen… Und jetzt bin ich hier.",
+          "render_lines": [
+            "Ich konnte fliehen…",
+            "Und jetzt bin ich hier."
+          ],
+          "font_size_viewbox": 18,
+          "edit_source_svg": "overlays/CH01_P05_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[sadly] Ich konnte fliehen… Und jetzt bin ich hier."
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P05_L010",
+      "page_id": "CH01_P05",
+      "frame_id": "CH01_P05_F07",
+      "speaker_id": "CHR_001",
+      "kind": "speech_question",
+      "bubble_id": "mika_speech_amber_tail_hopeful_question",
+      "reading_order": 10,
+      "performance": {
+        "emotion": "vulnerable_fierce_hope",
+        "intensity": 0.78,
+        "pace": "hesitant_then_earnest_question",
+        "volume": "soft_to_clear",
+        "pause_after_ms": 1150,
+        "tone_ru": "Мика снова собирается с силами. Вопрос о доме уже не любопытство — это самое важное для него.",
+        "arc_ru": "«Теперь скажи» тихо, с паузой. «Что случилось» напряжённее. На «как вернуться домой?» — искренняя просьба, а не требование, и долгий финальный выдох.",
+        "acting_beats": [
+          "попросить-ответ",
+          "страх-правды",
+          "надежда-на-возвращение",
+          "финальный-вопрос"
+        ],
+        "voice_direction_ru": "",
+        "tts_tags_en": "[hopeful]",
+        "voice_optional": false
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Теперь скажи… Что случилось с моим миром? И как вернуться домой?",
+          "voice_spoken_text": "Теперь скажи… Что случилось с моим миром? И как вернуться домой?",
+          "render_lines": [
+            "Теперь скажи…",
+            "Что случилось",
+            "с моим миром?",
+            "И как вернуться домой?"
+          ],
+          "font_size_viewbox": 20.8,
+          "edit_source_svg": "overlays/CH01_P05_ru.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Теперь скажи… Что случилось с моим миром? И как вернуться домой?"
+        },
+        "en": {
+          "display_text": "Please, tell me… What happened to my world? How do I get home?",
+          "voice_spoken_text": "Please, tell me… What happened to my world? How do I get home?",
+          "render_lines": [
+            "Please, tell me…",
+            "What happened",
+            "to my world?",
+            "How do I get home?"
+          ],
+          "font_size_viewbox": 20.2,
+          "edit_source_svg": "overlays/CH01_P05_en.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Please, tell me… What happened to my world? How do I get home?"
+        },
+        "pt_BR": {
+          "display_text": "Agora me diz… O que aconteceu com meu mundo? Como volto pra casa?",
+          "voice_spoken_text": "Agora me diz… O que aconteceu com meu mundo? Como volto pra casa?",
+          "render_lines": [
+            "Agora me diz…",
+            "O que aconteceu",
+            "com meu mundo?",
+            "Como volto pra casa?"
+          ],
+          "font_size_viewbox": 19.6,
+          "edit_source_svg": "overlays/CH01_P05_pt_BR.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Agora me diz… O que aconteceu com meu mundo? Como volto pra casa?"
+        },
+        "es": {
+          "display_text": "Dime, por favor… ¿Qué le pasó a mi mundo? ¿Cómo regreso a casa?",
+          "voice_spoken_text": "Dime, por favor… ¿Qué le pasó a mi mundo? ¿Cómo regreso a casa?",
+          "render_lines": [
+            "Dime, por favor…",
+            "¿Qué le pasó",
+            "a mi mundo?",
+            "¿Cómo regreso a casa?"
+          ],
+          "font_size_viewbox": 19,
+          "edit_source_svg": "overlays/CH01_P05_es.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Dime, por favor… ¿Qué le pasó a mi mundo? ¿Cómo regreso a casa?"
+        },
+        "fr": {
+          "display_text": "Dis-moi… Qu’est-il arrivé à mon monde ? Comment rentrer ?",
+          "voice_spoken_text": "Dis-moi… Qu’est-il arrivé à mon monde ? Comment rentrer ?",
+          "render_lines": [
+            "Dis-moi…",
+            "Qu’est-il arrivé",
+            "à mon monde ?",
+            "Comment rentrer ?"
+          ],
+          "font_size_viewbox": 19.8,
+          "edit_source_svg": "overlays/CH01_P05_fr.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Dis-moi… Qu’est-il arrivé à mon monde ? Comment rentrer ?"
+        },
+        "de": {
+          "display_text": "Sag mir bitte… Was ist mit meiner Welt passiert? Wie komme ich heim?",
+          "voice_spoken_text": "Sag mir bitte… Was ist mit meiner Welt passiert? Wie komme ich heim?",
+          "render_lines": [
+            "Sag mir bitte…",
+            "Was ist mit",
+            "meiner Welt passiert?",
+            "Wie komme ich heim?"
+          ],
+          "font_size_viewbox": 18.1,
+          "edit_source_svg": "overlays/CH01_P05_de.svg",
+          "voice_audio_asset_path": null,
+          "voice_status": "not_generated",
+          "tts_candidate_input": "[hopeful] Sag mir bitte… Was ist mit meiner Welt passiert? Wie komme ich heim?"
+        }
+      }
+    }
+  ]
+}

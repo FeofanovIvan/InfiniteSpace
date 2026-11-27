@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+
+<g id="CH04_P05_L001" data-speaker="CHR_004" data-kind="narration">
+<rect x="779" y="85" width="588" height="188" rx="27" fill="#1C1738" opacity="0.19" />
+<rect x="775" y="78" width="588" height="188" rx="27" fill="#FFF9F0" stroke="#9474C3" stroke-width="6" />
+<rect x="809" y="95" width="75" height="8" rx="4" fill="#EEA04C" />
+<text x="813.00" fill="#33284D" font-family="DejaVu Sans, Arial, sans-serif" font-size="32" font-weight="700" y="143.20">Finalmente, nossos amigos</text><text x="813.00" fill="#33284D" font-family="DejaVu Sans, Arial, sans-serif" font-size="32" font-weight="700" y="183.84">chegaram ao museu</text><text x="813.00" fill="#33284D" font-family="DejaVu Sans, Arial, sans-serif" font-size="32" font-weight="700" y="224.48">arqueológico de Runa.</text></g>
+<g id="CH04_P05_L002" data-speaker="CHR_004" data-kind="narration">
+<rect x="1462" y="95" width="564" height="147" rx="27" fill="#1C1738" opacity="0.19" />
+<rect x="1458" y="88" width="564" height="147" rx="27" fill="#FFF9F0" stroke="#9474C3" stroke-width="6" />
+<rect x="1492" y="105" width="75" height="8" rx="4" fill="#EEA04C" />
+<text x="1496.00" fill="#33284D" font-family="DejaVu Sans, Arial, sans-serif" font-size="31" font-weight="700" y="153.28">O professor decidiu</text><text x="1496.00" fill="#33284D" font-family="DejaVu Sans, Arial, sans-serif" font-size="31" font-weight="700" y="192.66">acompanhar Mika na visita.</text></g>
+<g id="CH04_P05_L003" data-speaker="CHR_015" data-kind="speech">
+<path d="M 2101 300 L 2135 362 L 2165 300" fill="#FFF0C6" stroke="#D69A38" stroke-width="5" stroke-linejoin="round" />
+<rect x="2074" y="103" width="374" height="205" rx="27" fill="#1C1738" opacity="0.19" />
+<rect x="2070" y="96" width="374" height="205" rx="27" fill="#FFF0C6" stroke="#D69A38" stroke-width="6" />
+<rect x="2104" y="113" width="75" height="8" rx="4" fill="#F3B657" />
+<text x="2099.00" fill="#382643" font-family="DejaVu Sans, Arial, sans-serif" font-size="26" font-weight="700" y="158.59">Mika, olha só! Parece</text><text x="2099.00" fill="#382643" font-family="DejaVu Sans, Arial, sans-serif" font-size="26" font-weight="700" y="191.61">o crânio de um</text><text x="2099.00" fill="#382643" font-family="DejaVu Sans, Arial, sans-serif" font-size="26" font-weight="700" y="224.63">pequeno dinossauro</text><text x="2099.00" fill="#382643" font-family="DejaVu Sans, Arial, sans-serif" font-size="26" font-weight="700" y="257.65">carnívoro!</text></g>
+<g id="CH04_P05_L004" data-speaker="CHR_001" data-kind="speech">
+<path d="M 1595 857 L 1745 785 L 1655 857" fill="#F1E8FF" stroke="#A87BD6" stroke-width="5" stroke-linejoin="round" />
+<rect x="1464" y="863" width="220" height="96" rx="27" fill="#1C1738" opacity="0.19" />
+<rect x="1460" y="856" width="220" height="96" rx="27" fill="#F1E8FF" stroke="#A87BD6" stroke-width="6" />
+<rect x="1494" y="873" width="75" height="8" rx="4" fill="#C390E7" />
+<text x="1498.00" fill="#34234F" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" y="913.99">Uau!</text></g>
+<g id="CH04_P05_L005" data-speaker="CHR_004" data-kind="narration">
+<rect x="82" y="1092" width="652" height="104" rx="27" fill="#1C1738" opacity="0.19" />
+<rect x="78" y="1085" width="652" height="104" rx="27" fill="#FFF9F0" stroke="#9474C3" stroke-width="6" />
+<rect x="112" y="1102" width="75" height="8" rx="4" fill="#EEA04C" />
+<text x="116.00" fill="#33284D" font-family="DejaVu Sans, Arial, sans-serif" font-size="25" font-weight="700" y="1146.25">Quando dois professores se encontram…</text></g>
+<g id="CH04_P05_L006" data-speaker="CHR_033" data-kind="speech">
+<path d="M 530 1839 L 560 1730 L 590 1839" fill="#E5FAFA" stroke="#37B8C5" stroke-width="5" stroke-linejoin="round" />
+<rect x="129" y="1845" width="805" height="140" rx="27" fill="#1C1738" opacity="0.19" />
+<rect x="125" y="1838" width="805" height="140" rx="27" fill="#E5FAFA" stroke="#37B8C5" stroke-width="6" />
+<rect x="159" y="1855" width="75" height="8" rx="4" fill="#F3AD56" />
+<text x="163.00" fill="#173A4B" font-family="DejaVu Sans, Arial, sans-serif" font-size="39" font-weight="700" y="1922.43">Prazer em conhecê-lo, colega!</text></g>
+<g id="CH04_P05_L007" data-speaker="CHR_004" data-kind="narration">
+<rect x="1456" y="1119" width="970" height="128" rx="27" fill="#1C1738" opacity="0.19" />
+<rect x="1452" y="1112" width="970" height="128" rx="27" fill="#FFF9F0" stroke="#9474C3" stroke-width="6" />
+<rect x="1486" y="1129" width="75" height="8" rx="4" fill="#EEA04C" />
+<text x="1490.00" fill="#33284D" font-family="DejaVu Sans, Arial, sans-serif" font-size="33" font-weight="700" y="1188.21">…a conversa quase sempre vira uma discussão!</text></g>
+<g id="CH04_P05_L008" data-speaker="CHR_004" data-kind="narration">
+<rect x="66" y="2077" width="2360" height="123" rx="27" fill="#1C1738" opacity="0.19" />
+<rect x="62" y="2070" width="2360" height="123" rx="27" fill="#F1ECFA" stroke="#A27BC7" stroke-width="6" />
+<rect x="96" y="2087" width="75" height="8" rx="4" fill="#31C4D8" />
+<text x="110.00" fill="#342549" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" y="2124.34">Os cientistas levantaram uma hipótese: o asteroide talvez não tenha encerrado aquela antiga linhagem evolutiva. Vestígios de vida da Terra podem</text><text x="110.00" fill="#342549" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" y="2158.63">ter chegado a outra galáxia, se misturado a espécies locais e dado origem a um híbrido incomum — o ancestral dos lagartos.</text></g>
+<g id="CH04_P05_L009" data-speaker="CHR_004" data-kind="narration">
+<rect x="79" y="2599" width="1275" height="96" rx="27" fill="#1C1738" opacity="0.19" />
+<rect x="75" y="2592" width="1275" height="96" rx="27" fill="#FFF9F0" stroke="#9474C3" stroke-width="6" />
+<rect x="109" y="2609" width="75" height="8" rx="4" fill="#EEA04C" />
+<text x="113.00" fill="#33284D" font-family="DejaVu Sans, Arial, sans-serif" font-size="35" font-weight="700" y="2652.95">Por incrível que pareça, os cientistas chegaram a um acordo!</text></g>
+<g id="CH04_P05_L010" data-speaker="CHR_033" data-kind="speech">
+<rect x="1974" y="2517" width="475" height="264" rx="22" fill="#1C1738" opacity="0.19" />
+<rect x="1970" y="2510" width="475" height="264" rx="22" fill="#123458" stroke="#24BEDD" stroke-width="6" />
+<rect x="2003" y="2527" width="75" height="8" rx="4" fill="#F2A64D" />
+<text x="2000.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="700" y="2576.90">Nas escavações,</text><text x="2000.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="700" y="2615.00">encontramos vestígios</text><text x="2000.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="700" y="2653.10">de um povo antigo.</text><text x="2000.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="700" y="2691.20">Parece que ele sabia</text><text x="2000.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="30" font-weight="700" y="2729.30">controlar a gravidade!</text></g>
+<g id="CH04_P05_L011" data-speaker="CHR_033" data-kind="speech">
+<rect x="1418" y="3175" width="400" height="247" rx="27" fill="#1C1738" opacity="0.19" />
+<rect x="1414" y="3168" width="400" height="247" rx="27" fill="#123458" stroke="#24BEDD" stroke-width="6" />
+<rect x="1448" y="3185" width="75" height="8" rx="4" fill="#F2A64D" />
+<text x="1443.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" y="3232.91">Talvez o</text><text x="1443.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" y="3267.20">conhecimento desse</text><text x="1443.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" y="3301.49">povo ajude você a</text><text x="1443.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" y="3335.78">desvendar o mistério</text><text x="1443.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="27" font-weight="700" y="3370.07">da tempestade, Mika.</text></g>
+<g id="CH04_P05_L012" data-speaker="CHR_008" data-kind="system">
+<rect x="2074" y="3292" width="379" height="153" rx="27" fill="#1C1738" opacity="0.19" />
+<rect x="2070" y="3285" width="379" height="153" rx="27" fill="#10305C" stroke="#3DE6F4" stroke-width="6" />
+<rect x="2104" y="3302" width="75" height="8" rx="4" fill="#F8B857" />
+<text x="2095.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="35" font-weight="700" y="3352.22">NOVO DESTINO:</text><text x="2095.00" fill="#FFFFFF" font-family="DejaVu Sans, Arial, sans-serif" font-size="35" font-weight="700" y="3396.67">ANDRÔMEDA</text></g>
+</svg>

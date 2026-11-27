@@ -1,0 +1,327 @@
+{
+  "schema_version": 3,
+  "page_id": "CH04_P05",
+  "locale": "fr",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch04_p05_languages/ch04_p05_fr.webp",
+  "native_scene_panels": [
+    "p45_ruins_entrance",
+    "p45_museum_walk",
+    "p45_professor_handshake",
+    "p45_evolution_display",
+    "p45_white_evolution",
+    "p45_scientists_farewell",
+    "p45_shadow_of_origin"
+  ],
+  "panel_bounds": {
+    "p45_ruins_entrance": [
+      0.023,
+      0.024,
+      0.524,
+      0.233
+    ],
+    "p45_museum_walk": [
+      0.575,
+      0.019,
+      0.4,
+      0.263
+    ],
+    "p45_professor_handshake": [
+      0.024,
+      0.304,
+      0.502,
+      0.268
+    ],
+    "p45_evolution_display": [
+      0.542,
+      0.314,
+      0.433,
+      0.255
+    ],
+    "p45_white_evolution": [
+      0.024,
+      0.589,
+      0.952,
+      0.127
+    ],
+    "p45_scientists_farewell": [
+      0.024,
+      0.735,
+      0.522,
+      0.247
+    ],
+    "p45_shadow_of_origin": [
+      0.57,
+      0.739,
+      0.405,
+      0.243
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH04_P05_L001",
+      "frame_id": "CH04_P05_F01",
+      "panel_id": "p45_ruins_entrance",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Enfin, nos amis arrivèrent au musée archéologique de Runa.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L001_fr.mp3",
+      "audio_duration_s": 3.971,
+      "camera_target": [
+        0.284,
+        0.153,
+        0.23
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "3e51b7d3de719611d0b962a4f139daa4982b184e5c6858e49996853faee3c41f"
+    },
+    {
+      "line_id": "CH04_P05_L002",
+      "frame_id": "CH04_P05_F02",
+      "panel_id": "p45_museum_walk",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Le professeur décida d’accompagner Mika pour la visite.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L002_fr.mp3",
+      "audio_duration_s": 3.318,
+      "camera_target": [
+        0.75,
+        0.158,
+        0.158
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "bd227160e6443fbeb99dd0ca2ef1d930bf6b20dbb6ed869217ee3d43e00c3040"
+    },
+    {
+      "line_id": "CH04_P05_L003",
+      "frame_id": "CH04_P05_F02",
+      "panel_id": "p45_museum_walk",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Mika, regarde ! On dirait le crâne d’un petit dinosaure carnivore !",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L003_fr.mp3",
+      "audio_duration_s": 4.911,
+      "camera_target": [
+        0.822,
+        0.123,
+        0.147
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "95b529f7de07473b7ffdb893848d2bff5cc638f405b174ebbe1e0211cac86d59"
+    },
+    {
+      "line_id": "CH04_P05_L004",
+      "frame_id": "CH04_P05_F02",
+      "panel_id": "p45_museum_walk",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Waouh !",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L004_fr.mp3",
+      "audio_duration_s": 1.306,
+      "camera_target": [
+        0.685,
+        0.161,
+        0.146
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d06f9c2a0b2dd171a198a386e16ffb4ef9b49b19731817ba65ae4578507c0314"
+    },
+    {
+      "line_id": "CH04_P05_L005",
+      "frame_id": "CH04_P05_F03",
+      "panel_id": "p45_professor_handshake",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Quand deux professeurs se rencontrent…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L005_fr.mp3",
+      "audio_duration_s": 2.586,
+      "camera_target": [
+        0.267,
+        0.378,
+        0.199
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d06d749eb61b58693608a0e8ee2afc9b039cba5318c63dc229017e68aea5a8ec"
+    },
+    {
+      "line_id": "CH04_P05_L006",
+      "frame_id": "CH04_P05_F03",
+      "panel_id": "p45_professor_handshake",
+      "speaker_id": "CHR_033",
+      "kind": "dialogue",
+      "spoken_text": "Ravi de vous rencontrer, cher collègue !",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L006_fr.mp3",
+      "audio_duration_s": 2.351,
+      "camera_target": [
+        0.188,
+        0.379,
+        0.19
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "1857e9591fc35f4612b4742f074f65a443d9db8ab7c37e7adc6483a899ae7038"
+    },
+    {
+      "line_id": "CH04_P05_L007",
+      "frame_id": "CH04_P05_F04",
+      "panel_id": "p45_evolution_display",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "…la discussion tourne vite au débat !",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L007_fr.mp3",
+      "audio_duration_s": 2.769,
+      "camera_target": [
+        0.75,
+        0.392,
+        0.171
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "548c1e2b46c3e5af2d6e14eb2eb0598bfcf0897bc44148153be104d0610cbbe7"
+    },
+    {
+      "line_id": "CH04_P05_L008",
+      "frame_id": "CH04_P05_F05",
+      "panel_id": "p45_white_evolution",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Les chercheurs avancèrent une hypothèse : l’astéroïde n’avait peut-être pas mis fin à cette ancienne lignée. Des traces de vie terrestre auraient pu atteindre une autre galaxie, se mêler aux espèces locales et donner naissance à un hybride étonnant : l’ancêtre des lézards.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L008_fr.mp3",
+      "audio_duration_s": 15.151,
+      "camera_target": [
+        0.5,
+        0.655,
+        0.126
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e29f0b115223091cdec0e79c0c4187a308c45cf0147f192953baefc11b6c41f5"
+    },
+    {
+      "line_id": "CH04_P05_L009",
+      "frame_id": "CH04_P05_F06",
+      "panel_id": "p45_scientists_farewell",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Pour une fois, les chercheurs parvinrent à se mettre d’accord !",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L009_fr.mp3",
+      "audio_duration_s": 4.127,
+      "camera_target": [
+        0.28,
+        0.841,
+        0.208
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "17be56933f28d3bdbf6a51b704a1f7e21dcf644f0926704a2caedb735a038e13"
+    },
+    {
+      "line_id": "CH04_P05_L010",
+      "frame_id": "CH04_P05_F07",
+      "panel_id": "p45_shadow_of_origin",
+      "speaker_id": "CHR_033",
+      "kind": "dialogue",
+      "spoken_text": "Nos fouilles ont révélé les traces d’un peuple ancien. Il aurait su maîtriser la gravité !",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L010_fr.mp3",
+      "audio_duration_s": 5.564,
+      "camera_target": [
+        0.79,
+        0.804,
+        0.16
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "01543aae832e72bd9e1203c31aa7bbc635d7e9442c2aca3faeeda628b9c743c9"
+    },
+    {
+      "line_id": "CH04_P05_L011",
+      "frame_id": "CH04_P05_F07",
+      "panel_id": "p45_shadow_of_origin",
+      "speaker_id": "CHR_033",
+      "kind": "dialogue",
+      "spoken_text": "Peut-être que son savoir t’aidera à percer le mystère de la tempête, Mika.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L011_fr.mp3",
+      "audio_duration_s": 4.284,
+      "camera_target": [
+        0.766,
+        0.84,
+        0.16
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "6c5652a908c48b7e47fd4d386ca013bafc7eef0d8c6cf51c5b4482bffc990632"
+    },
+    {
+      "line_id": "CH04_P05_L012",
+      "frame_id": "CH04_P05_F07",
+      "panel_id": "p45_shadow_of_origin",
+      "speaker_id": "CHR_008",
+      "kind": "system",
+      "spoken_text": "NOUVEAU CAP : ANDROMÈDE",
+      "audio_path": "res://mika_motion_comic/ch04_clips/fr/CH04_P05_L012_fr.mp3",
+      "audio_duration_s": 2.194,
+      "camera_target": [
+        0.842,
+        0.928,
+        0.12
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "0f6d033331d4343f87fa0b700977c59e660724764f3ebecf1fab63dcfdb060b0"
+    }
+  ],
+  "note": "Original Runa arrival and post-evolution sequences; fixed art-first camera, same six languages."
+}

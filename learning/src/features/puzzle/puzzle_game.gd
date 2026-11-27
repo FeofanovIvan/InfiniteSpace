@@ -1,4 +1,7 @@
 extends Node2D
+## The existing puzzle can be constrained to one picture by a Story host.
+signal story_puzzle_completed(puzzle_key: String)
+@export var story_mission_key: String = ""
 const PIECES_DIR := "res://learning/assets/puzzle/pieces"
 const INFO_PANEL_TEXTURE := "res://learning/assets/puzzle/ui/info_panel.png"
 const TRAY_STRIP_TEXTURE := "res://learning/assets/puzzle/ui/tray_strip.png"
@@ -35,6 +38,7 @@ const PUZZLES: Array[Dictionary] = [
 	{"key": "safari",         "name": "Safari",            "rows": 3, "cols": 4},
 	{"key": "tractor",        "name": "Tractor",           "rows": 3, "cols": 4},
 	{"key": "puppy",          "name": "Puppy",             "rows": 3, "cols": 5},
+	{"key": "spaceport_mission", "name": "Spaceport Mission", "rows": 3, "cols": 4},
 ]
 const PIECE_SCRIPT := preload("res://learning/src/features/puzzle/puzzle_piece.gd")
 const SLOT_SCRIPT := preload("res://learning/src/features/puzzle/puzzle_slot.gd")
@@ -80,7 +84,21 @@ func _ready() -> void:
 	voice_player.bus = "VOICE"
 	add_child(voice_player)
 	_build_ui()
-	current_puzzle_idx = randi() % PUZZLES.size()
+	if not story_mission_key.is_empty():
+		current_puzzle_idx = -1
+		for index in range(PUZZLES.size()):
+			if str(PUZZLES[index].get("key", "")) == story_mission_key:
+				current_puzzle_idx = index
+				break
+		if current_puzzle_idx < 0:
+			push_error("Story puzzle missing from original catalogue: " + story_mission_key)
+			return
+		nav_prev.hide()
+		nav_next.hide()
+		exit_button.hide()
+	else:
+		# Developer preview only; normal in-game choice stays randomized.
+		current_puzzle_idx = PUZZLES.size() - 1 if OS.get_cmdline_user_args().has("--mika-spaceport-puzzle-preview") else randi() % PUZZLES.size()
 	get_viewport().size_changed.connect(_layout)
 	_load_puzzle(current_puzzle_idx)
 	call_deferred("_play_instruction")
@@ -221,6 +239,8 @@ func _make_hit_button() -> Button:
 	)
 	return btn
 func _on_exit_pressed() -> void:
+	if not story_mission_key.is_empty():
+		return
 	SFX.transition_to_scene(back_scene_path)
 func _fit_by_width(img_size: Vector2, zone: Rect2) -> Rect2:
 	if img_size.x <= 0.0 or img_size.y <= 0.0:
@@ -357,9 +377,13 @@ func _place_hit_button(btn: Button, zone: Rect2) -> void:
 	if glow:
 		glow.size = zone.size
 func _on_nav_prev() -> void:
+	if not story_mission_key.is_empty():
+		return
 	var idx: int = (current_puzzle_idx - 1 + PUZZLES.size()) % PUZZLES.size()
 	_load_puzzle(idx)
 func _on_nav_next() -> void:
+	if not story_mission_key.is_empty():
+		return
 	var idx: int = (current_puzzle_idx + 1) % PUZZLES.size()
 	_load_puzzle(idx)
 func _pick_random_puzzle_excluding(exclude_idx: int) -> int:
@@ -369,6 +393,19 @@ func _pick_random_puzzle_excluding(exclude_idx: int) -> int:
 	while idx == exclude_idx:
 		idx = randi() % PUZZLES.size()
 	return idx
+
+
+func _spaceport_texture(path: String) -> Texture2D:
+	# The extra picture also works when launched directly from Terminal before
+	# Godot has imported these new image files. All previous puzzles use load().
+	if path.contains("spaceport_mission") and FileAccess.file_exists(path):
+		var picture: Image = Image.new()
+		var data: PackedByteArray = FileAccess.get_file_as_bytes(path)
+		var result: Error = picture.load_jpg_from_buffer(data) if path.ends_with(".jpg") else picture.load_png_from_buffer(data)
+		if result == OK:
+			return ImageTexture.create_from_image(picture)
+	return load(path) as Texture2D
+
 func _load_puzzle(puzzle_idx: int) -> void:
 	for slot in slots:
 		if is_instance_valid(slot):
@@ -385,7 +422,7 @@ func _load_puzzle(puzzle_idx: int) -> void:
 	current_rows = int(data["rows"])
 	current_cols = int(data["cols"])
 	var full_tex_path := "res://learning/assets/puzzle/%s.jpg" % key
-	var full_tex: Texture2D = load(full_tex_path)
+	var full_tex: Texture2D = _spaceport_texture(full_tex_path)
 	if full_tex == null:
 		return
 	current_aspect = float(full_tex.get_width()) / float(full_tex.get_height())
@@ -393,14 +430,14 @@ func _load_puzzle(puzzle_idx: int) -> void:
 	var core_h_px: float = float(full_tex.get_height()) / float(current_rows)
 	preview_pic.texture = full_tex
 	var seams_path := "%s/%s/seams.png" % [PIECES_DIR, key]
-	if ResourceLoader.exists(seams_path):
-		seams_pic.texture = load(seams_path)
+	if ResourceLoader.exists(seams_path) or FileAccess.file_exists(seams_path):
+		seams_pic.texture = _spaceport_texture(seams_path)
 	var first_piece_tex: Texture2D = null
 	for row in range(current_rows):
 		for col in range(current_cols):
 			var idx: int = row * current_cols + col
 			var piece_path := "%s/%s/%d_%d.png" % [PIECES_DIR, key, row, col]
-			var piece_tex: Texture2D = load(piece_path)
+			var piece_tex: Texture2D = _spaceport_texture(piece_path)
 			if piece_tex == null:
 				continue
 			if first_piece_tex == null:
@@ -421,7 +458,7 @@ func _load_puzzle(puzzle_idx: int) -> void:
 		var row: int = id / current_cols
 		var col: int = id % current_cols
 		var piece_path := "%s/%s/%d_%d.png" % [PIECES_DIR, key, row, col]
-		var piece_tex: Texture2D = load(piece_path)
+		var piece_tex: Texture2D = _spaceport_texture(piece_path)
 		if piece_tex == null:
 			continue
 		var piece := TextureRect.new()
@@ -483,9 +520,13 @@ func _on_puzzle_complete() -> void:
 	tw.tween_property(board_area, "scale", Vector2.ONE, 0.18) \
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	tw.tween_interval(1.1)
-	tw.tween_callback(func():
-		_load_puzzle(_pick_random_puzzle_excluding(current_puzzle_idx))
-	)
+	if story_mission_key == key:
+		# The Story host returns to the real Planet Hub for the Launch lesson.
+		tw.tween_callback(func() -> void: story_puzzle_completed.emit(key))
+	else:
+		tw.tween_callback(func():
+			_load_puzzle(_pick_random_puzzle_excluding(current_puzzle_idx))
+		)
 func _on_arrow_left() -> void:
 	_scroll_tray_by(-260.0)
 func _on_arrow_right() -> void:

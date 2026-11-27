@@ -1,0 +1,258 @@
+{
+  "schema_version": 3,
+  "page_id": "CH08_P01",
+  "locale": "en",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch08_p01_languages/ch08_p01_en.webp",
+  "native_scene_panels": [
+    "p81_palace",
+    "p81_mika",
+    "p81_bubble",
+    "p81_friends",
+    "p81_lizard",
+    "p81_reply"
+  ],
+  "panel_bounds": {
+    "p81_palace": [
+      0.0286,
+      0.02,
+      0.9429,
+      0.209
+    ],
+    "p81_mika": [
+      0.0286,
+      0.2384,
+      0.464,
+      0.263
+    ],
+    "p81_bubble": [
+      0.507,
+      0.2384,
+      0.464,
+      0.263
+    ],
+    "p81_friends": [
+      0.0286,
+      0.51,
+      0.9429,
+      0.219
+    ],
+    "p81_lizard": [
+      0.0286,
+      0.7387,
+      0.464,
+      0.2411
+    ],
+    "p81_reply": [
+      0.507,
+      0.7387,
+      0.464,
+      0.2411
+    ]
+  },
+  "lines": [
+    {
+      "panel_id": "p81_palace",
+      "camera_target": [
+        0.66,
+        0.133,
+        0.209
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.0286,
+        0.02,
+        0.9429,
+        0.209
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L001",
+      "frame_id": "01 — прибытие",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Mika’s ship returned to the neuron beings’ planet in the Triangulum Galaxy.",
+      "audio_path": "res://mika_motion_comic/ch08_clips/en/CH08_P01_L001_en.mp3",
+      "audio_duration_s": 4.754286,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "e13647c99125985f2894b7fe8c05e4bc684bde6f470cfb87f68aaa5338be3193"
+    },
+    {
+      "panel_id": "p81_mika",
+      "camera_target": [
+        0.268,
+        0.34,
+        0.263
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.0286,
+        0.2384,
+        0.464,
+        0.263
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L002",
+      "frame_id": "02 — открытая дверь",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "The door to the hall opened.",
+      "audio_path": "res://mika_motion_comic/ch08_clips/en/CH08_P01_L002_en.mp3",
+      "audio_duration_s": 2.194286,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a630ae3d3df4395bf17ffd7a494404cdd7f7a0cd9923198d2970e6c749d40e2f"
+    },
+    {
+      "panel_id": "p81_mika",
+      "camera_target": [
+        0.268,
+        0.34,
+        0.263
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.0286,
+        0.2384,
+        0.464,
+        0.263
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L003",
+      "frame_id": "02 — Мика",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Hi!",
+      "audio_path": "res://mika_motion_comic/ch08_clips/en/CH08_P01_L003_en.mp3",
+      "audio_duration_s": 1.07102,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a552e0e946bb79203a8e8bded50fecedea4bb9066a29379f80c421afbfe16c70"
+    },
+    {
+      "panel_id": "p81_bubble",
+      "camera_target": [
+        0.765,
+        0.366,
+        0.263
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.507,
+        0.2384,
+        0.464,
+        0.263
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L004",
+      "frame_id": "03 — Баббл",
+      "speaker_id": "CHR_014",
+      "kind": "nonverbal_vocal_sfx",
+      "spoken_text": "Beep-beep!",
+      "audio_path": "res://mika_motion_comic/ch08_clips/shared_sfx/CH08_P01_L004_BUBBLE_BEEP_BEEP.mp3",
+      "audio_duration_s": 0.757551,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fe6df445a7b7247d44e834d20d821b9b1cb62d58e004d06597df5ec7428c86af"
+    },
+    {
+      "panel_id": "p81_friends",
+      "camera_target": [
+        0.5,
+        0.615,
+        0.219
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.0286,
+        0.51,
+        0.9429,
+        0.219
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L005",
+      "frame_id": "04 — компания",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "The whole crew was together, waiting for Mika to return.",
+      "audio_path": "res://mika_motion_comic/ch08_clips/en/CH08_P01_L005_en.mp3",
+      "audio_duration_s": 4.04898,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8d4dce29f44ded07e595afa041be6bcb4f7182332b2f23596a0982b72830a992"
+    },
+    {
+      "panel_id": "p81_lizard",
+      "camera_target": [
+        0.27,
+        0.842,
+        0.2411
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.0286,
+        0.7387,
+        0.464,
+        0.2411
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L006",
+      "frame_id": "05 — ящер",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Speaking of friends… I think someone promised a trip to the Small Magellanic Cloud!",
+      "audio_path": "res://mika_motion_comic/ch08_clips/en/CH08_P01_L006_en.mp3",
+      "audio_duration_s": 5.564082,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "028ac6fa287ee6e2182eff7830897ffda60251eea5a59d24af70149849629c32"
+    },
+    {
+      "panel_id": "p81_reply",
+      "camera_target": [
+        0.745,
+        0.843,
+        0.2411
+      ],
+      "shot_type": "native",
+      "visual_bounds": [
+        0.507,
+        0.7387,
+        0.464,
+        0.2411
+      ],
+      "transition_before_s": 1.1,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "line_id": "CH08_P01_L007",
+      "frame_id": "06 — Мика",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Well then, friends, let’s go!",
+      "audio_path": "res://mika_motion_comic/ch08_clips/en/CH08_P01_L007_en.mp3",
+      "audio_duration_s": 2.429388,
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a795f840979ff55cd0f3fe02ab4f3b883300696d83ccb72ba7dd65e50a9a5f69"
+    }
+  ]
+}

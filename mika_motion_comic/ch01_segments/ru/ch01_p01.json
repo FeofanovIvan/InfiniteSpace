@@ -1,0 +1,376 @@
+{
+  "schema_version": 2,
+  "page_id": "CH01_P01",
+  "locale": "ru",
+  "sync_model": "one_audio_clip_per_line__camera_transition_then_play__no_global_master_clock",
+  "image_path": "res://mika_motion_comic/assets/pages/ch01_p01_languages/ch01_p01_ru.webp",
+  "native_scene_panels": [
+    "intro_f01",
+    "intro_f02",
+    "intro_f03",
+    "intro_f04",
+    "intro_f05",
+    "intro_f06",
+    "intro_f07",
+    "intro_f08",
+    "intro_f09"
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P01_L001",
+      "frame_id": "CH01_P01_F01",
+      "panel_id": "intro_f01",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Где-то в глубинах космоса…",
+      "audio_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P01_L001_ru.mp3",
+      "audio_duration_s": 2.815,
+      "source_master": "CH01_P01_RU_VOICE_MASTER.mp3",
+      "source_cut_in_s": 0.0,
+      "source_cut_out_s": 2.815,
+      "bubble_box_normalized": [
+        0.02944,
+        0.01796,
+        0.49597,
+        0.11032
+      ],
+      "camera_target": [
+        0.304,
+        0.141,
+        0.248
+      ],
+      "transition_before_s": 0.0,
+      "transition_style": "hold"
+    },
+    {
+      "line_id": "CH01_P01_L002",
+      "frame_id": "CH01_P01_F02",
+      "panel_id": "intro_f02",
+      "speaker_id": "CHR_002",
+      "kind": "dialogue",
+      "spoken_text": "Мика!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P01_L002_ru.mp3",
+      "audio_duration_s": 1.18,
+      "source_master": "CH01_P01_RU_VOICE_MASTER.mp3",
+      "source_cut_in_s": 2.815,
+      "source_cut_out_s": 3.995,
+      "bubble_box_normalized": [
+        0.68024,
+        0.20154,
+        0.275,
+        0.07155
+      ],
+      "camera_target": [
+        0.733,
+        0.167,
+        0.222
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P01_L003",
+      "frame_id": "CH01_P01_F03",
+      "panel_id": "intro_f03",
+      "speaker_id": "CHR_003",
+      "kind": "broadcast",
+      "spoken_text": "Экстренное сообщение! Аномальный шторм достиг планеты!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P01_L003_ru.mp3",
+      "audio_duration_s": 3.85,
+      "source_master": "CH01_P01_RU_VOICE_MASTER.mp3",
+      "source_cut_in_s": 3.995,
+      "source_cut_out_s": 7.845,
+      "bubble_box_normalized": [
+        0.04839,
+        0.28592,
+        0.38911,
+        0.08694
+      ],
+      "camera_target": [
+        0.242,
+        0.374,
+        0.19
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut"
+    },
+    {
+      "line_id": "CH01_P01_L004",
+      "frame_id": "CH01_P01_F04",
+      "panel_id": "intro_f04",
+      "speaker_id": "CHR_003",
+      "kind": "broadcast",
+      "spoken_text": "Он меняет физические свойства объектов!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P01_L004_ru.mp3",
+      "audio_duration_s": 3.05,
+      "source_master": "CH01_P01_RU_VOICE_MASTER.mp3",
+      "source_cut_in_s": 7.845,
+      "source_cut_out_s": 10.895,
+      "bubble_box_normalized": [
+        0.47218,
+        0.29304,
+        0.23831,
+        0.0801
+      ],
+      "camera_target": [
+        0.59,
+        0.358,
+        0.128
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P01_L005",
+      "frame_id": "CH01_P01_F05",
+      "panel_id": "intro_f05",
+      "speaker_id": "CHR_003",
+      "kind": "broadcast",
+      "spoken_text": "Всеобщая эвакуация! Срочно следуйте к ближайшим космопортам!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P01_L005_ru.mp3",
+      "audio_duration_s": 5.12,
+      "source_master": "CH01_P01_RU_VOICE_MASTER.mp3",
+      "source_cut_in_s": 10.895,
+      "source_cut_out_s": 16.015,
+      "bubble_box_normalized": [
+        0.73589,
+        0.39054,
+        0.23468,
+        0.11688
+      ],
+      "camera_target": [
+        0.812,
+        0.447,
+        0.145
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P01_L006",
+      "frame_id": "CH01_P01_F06",
+      "panel_id": "intro_f06",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Что нам делать?!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P01_L006_ru.mp3",
+      "audio_duration_s": 1.51,
+      "source_master": "CH01_P01_RU_VOICE_MASTER.mp3",
+      "source_cut_in_s": 16.015,
+      "source_cut_out_s": 17.525,
+      "bubble_box_normalized": [
+        0.03831,
+        0.64994,
+        0.21653,
+        0.05217
+      ],
+      "camera_target": [
+        0.272,
+        0.619,
+        0.222
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut"
+    },
+    {
+      "line_id": "CH01_P01_L007",
+      "frame_id": "CH01_P01_F06",
+      "panel_id": "intro_f06",
+      "speaker_id": "CHR_002",
+      "kind": "dialogue",
+      "spoken_text": "Бежим! К кораблям!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P01_L007_ru.mp3",
+      "audio_duration_s": 2.46,
+      "source_master": "CH01_P01_RU_VOICE_MASTER.mp3",
+      "source_cut_in_s": 17.525,
+      "source_cut_out_s": 19.985,
+      "bubble_box_normalized": [
+        0.26532,
+        0.63854,
+        0.22298,
+        0.06328
+      ],
+      "camera_target": [
+        0.272,
+        0.619,
+        0.222
+      ],
+      "transition_before_s": 0.34,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P01_L008",
+      "frame_id": "CH01_P01_F07",
+      "panel_id": "intro_f07",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Мика успел покинуть планету, но шторм уже окутывал её.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P01_L008_ru.mp3",
+      "audio_duration_s": 4.29,
+      "source_master": "CH01_P01_RU_VOICE_MASTER.mp3",
+      "source_cut_in_s": 19.985,
+      "source_cut_out_s": 24.275,
+      "bubble_box_normalized": [
+        0.73589,
+        0.51283,
+        0.23468,
+        0.1183
+      ],
+      "camera_target": [
+        0.746,
+        0.61,
+        0.204
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan"
+    },
+    {
+      "line_id": "CH01_P01_L009",
+      "frame_id": "CH01_P01_F08",
+      "panel_id": "intro_f08",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Даже в открытом космосе буря настигла его корабль.",
+      "audio_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P01_L009_ru.mp3",
+      "audio_duration_s": 3.82,
+      "source_master": "CH01_P01_RU_VOICE_MASTER.mp3",
+      "source_cut_in_s": 24.275,
+      "source_cut_out_s": 28.095,
+      "bubble_box_normalized": [
+        0.03306,
+        0.71266,
+        0.42661,
+        0.12258
+      ],
+      "camera_target": [
+        0.279,
+        0.823,
+        0.221
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "cut"
+    },
+    {
+      "line_id": "CH01_P01_L010",
+      "frame_id": "CH01_P01_F09",
+      "panel_id": "intro_f09",
+      "speaker_id": "CHR_001",
+      "kind": "shout",
+      "spoken_text": "А-а-а!",
+      "audio_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P01_L010_ru.mp3",
+      "audio_duration_s": 2.409,
+      "source_master": "CH01_P01_RU_VOICE_MASTER.mp3",
+      "source_cut_in_s": 28.095,
+      "source_cut_out_s": 30.504,
+      "bubble_box_normalized": [
+        0.60806,
+        0.88968,
+        0.24677,
+        0.08438
+      ],
+      "camera_target": [
+        0.751,
+        0.859,
+        0.24
+      ],
+      "transition_before_s": 0.62,
+      "transition_style": "pan"
+    }
+  ],
+  "audio_master_duration_s": 30.504,
+  "verified_source_svg": "MIKA_CH01_P01_NEBULA_6LANG_v3/chapter_01/page_01/CH01_P01_overlays/CH01_P01_ru.svg",
+  "crop_boundary_review": [
+    {
+      "index": 1,
+      "nominal_s": 2.876,
+      "cut_s": 2.815,
+      "silence_s": [
+        2.25,
+        2.88
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 2,
+      "nominal_s": 4.023,
+      "cut_s": 3.995,
+      "silence_s": [
+        3.58,
+        4.06
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 3,
+      "nominal_s": 7.891,
+      "cut_s": 7.845,
+      "silence_s": [
+        7.41,
+        7.91
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 4,
+      "nominal_s": 10.95,
+      "cut_s": 10.895,
+      "silence_s": [
+        10.4,
+        10.96
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 5,
+      "nominal_s": 16.022,
+      "cut_s": 16.015,
+      "silence_s": [
+        15.53,
+        16.08
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 6,
+      "nominal_s": 17.59,
+      "cut_s": 17.525,
+      "silence_s": [
+        17.21,
+        17.59
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 7,
+      "nominal_s": 20.035,
+      "cut_s": 19.985,
+      "silence_s": [
+        19.43,
+        20.05
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 8,
+      "nominal_s": 24.341,
+      "cut_s": 24.275,
+      "silence_s": [
+        23.88,
+        24.34
+      ],
+      "method": "detected_silence"
+    },
+    {
+      "index": 9,
+      "nominal_s": 28.16,
+      "cut_s": 28.095,
+      "silence_s": [
+        27.58,
+        28.16
+      ],
+      "method": "detected_silence"
+    }
+  ],
+  "integration_note": "native_gameplay_stops_preserved__next_clip_waits_for_camera",
+  "quality": "automatic_silence_cuts_needs_listening_review"
+}

@@ -1,0 +1,121 @@
+{
+  "page_id": "CH01_P03",
+  "locale": "pt_BR",
+  "audio_path": "res://mika_motion_comic/audio/ch01_p03_pt_BR_voice_master.mp3",
+  "duration_seconds": 50.256,
+  "segmentation_status": "preliminary_from_audio_pauses_verify_per_line_in_Godot",
+  "panel_ids": [
+    "p03_puzzle_reveal",
+    "p03_mika_upset",
+    "p03_ship_refuel",
+    "p03_earth_departure",
+    "p03_mars_destination"
+  ],
+  "story_blocks": [
+    {
+      "trigger": "earth_after_puzzle_panels",
+      "frame_ids": [
+        "p03_puzzle_reveal",
+        "p03_mika_upset",
+        "p03_ship_refuel"
+      ],
+      "first_line": "CH01_P03_L001",
+      "last_line": "CH01_P03_L006",
+      "start_s": 0,
+      "end_s": 42.45
+    },
+    {
+      "trigger": "earth_departure_panels",
+      "frame_ids": [
+        "p03_earth_departure",
+        "p03_mars_destination"
+      ],
+      "first_line": "CH01_P03_L007",
+      "last_line": "CH01_P03_L008",
+      "start_s": 42.45,
+      "end_s": 50.256
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P03_L001",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "start_s": 0.0,
+      "end_s": 5.67,
+      "text": "Olá! Com licença… Você pode me dizer onde eu vim parar?"
+    },
+    {
+      "line_id": "CH01_P03_L002",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_011",
+      "kind": "dialogue",
+      "start_s": 5.67,
+      "end_s": 13.03,
+      "text": "Olá! Seja bem-vindo! Este é o porto espacial da Terra. O que houve?"
+    },
+    {
+      "line_id": "CH01_P03_L003",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "start_s": 13.03,
+      "end_s": 20.67,
+      "text": "Uma tempestade me trouxe aqui… E agora eu não faço ideia de como voltar pra casa."
+    },
+    {
+      "line_id": "CH01_P03_L004",
+      "frame_id": "CH01_P03_F01",
+      "panel_id": "p03_puzzle_reveal",
+      "speaker_id": "CHR_011",
+      "kind": "dialogue",
+      "start_s": 20.67,
+      "end_s": 31.71,
+      "text": "Nossa! Que história! Vamos consertar e abastecer sua nave. Depois, siga para Marte. Lá, no Centro de Dados, tem uma IA que pode te ajudar a voltar pra casa!"
+    },
+    {
+      "line_id": "CH01_P03_L005",
+      "frame_id": "CH01_P03_F02",
+      "panel_id": "p03_mika_upset",
+      "speaker_id": "CHR_001",
+      "kind": "thought_sigh",
+      "start_s": 31.71,
+      "end_s": 35.96,
+      "text": "Poxa… E se eu nunca achar o caminho de casa?"
+    },
+    {
+      "line_id": "CH01_P03_L006",
+      "frame_id": "CH01_P03_F03",
+      "panel_id": "p03_ship_refuel",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "start_s": 35.96,
+      "end_s": 42.45,
+      "text": "A equipe da Terra entrou em ação: consertou os estragos da tempestade, revisou cada sistema e deixou o tanque cheinho!"
+    },
+    {
+      "line_id": "CH01_P03_L007",
+      "frame_id": "CH01_P03_F04",
+      "panel_id": "p03_earth_departure",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "start_s": 42.45,
+      "end_s": 48.33,
+      "text": "Logo a nave estava novinha em folha! Mika agradeceu ao pessoal da Terra, ligou os motores… e partiu!"
+    },
+    {
+      "line_id": "CH01_P03_L008",
+      "frame_id": "CH01_P03_F05",
+      "panel_id": "p03_mars_destination",
+      "speaker_id": "CHR_008",
+      "kind": "ship_system_hud",
+      "start_s": 48.33,
+      "end_s": 50.256,
+      "text": "Rota traçada. Destino: Marte!"
+    }
+  ]
+}

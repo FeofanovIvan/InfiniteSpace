@@ -1,0 +1,1087 @@
+{
+  "page_id": "CH06_P03",
+  "checks": [
+    {
+      "lang": "ru",
+      "line_id": "CH06_P03_L001",
+      "frame": 1,
+      "font_size": 41,
+      "lines": [
+        "Но затем мы обнаружили странные",
+        "природные аномалии."
+      ],
+      "text_width": 850.6,
+      "available_width": 962,
+      "text_height": 95.5,
+      "available_height": 128,
+      "safe_padding": {
+        "left": 33,
+        "right": 35,
+        "top": 39,
+        "bottom": 18
+      },
+      "pass": true,
+      "unchanged_from_approved_v1": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH06_P03_L002",
+      "frame": 1,
+      "font_size": 39,
+      "lines": [
+        "Чтобы понять, как они устроены, нам пришлось",
+        "ещё глубже изучать мироздание."
+      ],
+      "text_width": 1094.3,
+      "available_width": 1122,
+      "text_height": 90.9,
+      "available_height": 128,
+      "safe_padding": {
+        "left": 33,
+        "right": 35,
+        "top": 39,
+        "bottom": 18
+      },
+      "pass": true,
+      "unchanged_from_approved_v1": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH06_P03_L003",
+      "frame": 2,
+      "font_size": 37,
+      "lines": [
+        "Во время исследования одной из аномалий мы",
+        "повстречали твоих знакомых — магнитных",
+        "существ."
+      ],
+      "text_width": 1014.2,
+      "available_width": 1127,
+      "text_height": 132.5,
+      "available_height": 133,
+      "safe_padding": {
+        "left": 33,
+        "right": 35,
+        "top": 39,
+        "bottom": 18
+      },
+      "pass": true,
+      "unchanged_from_approved_v1": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH06_P03_L004",
+      "frame": 3,
+      "font_size": 36,
+      "lines": [
+        "А дальше, в глубинах космоса, мы",
+        "обнаружили удивительный артефакт."
+      ],
+      "text_width": 803.2,
+      "available_width": 857,
+      "text_height": 83.9,
+      "available_height": 127,
+      "safe_padding": {
+        "left": 33,
+        "right": 35,
+        "top": 39,
+        "bottom": 18
+      },
+      "pass": true,
+      "unchanged_from_approved_v1": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH06_P03_L005",
+      "frame": 3,
+      "font_size": 37,
+      "lines": [
+        "Он оказался центром множества",
+        "аномальных зон."
+      ],
+      "text_width": 707.0,
+      "available_width": 776,
+      "text_height": 86.2,
+      "available_height": 108,
+      "safe_padding": {
+        "left": 33,
+        "right": 35,
+        "top": 39,
+        "bottom": 18
+      },
+      "pass": true,
+      "unchanged_from_approved_v1": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH06_P03_L006",
+      "frame": 4,
+      "font_size": 34,
+      "lines": [
+        "Мы сделали изучение этого сложного артефакта целью",
+        "своего существования и построили вокруг него станцию",
+        "«Последние врата»."
+      ],
+      "text_width": 1120.6,
+      "available_width": 1172,
+      "text_height": 121.7,
+      "available_height": 125,
+      "safe_padding": {
+        "left": 33,
+        "right": 35,
+        "top": 39,
+        "bottom": 18
+      },
+      "pass": true,
+      "unchanged_from_approved_v1": true
+    },
+    {
+      "lang": "ru",
+      "line_id": "CH06_P03_L007",
+      "frame": 5,
+      "font_size": 35,
+      "lines": [
+        "Не так давно до нас дошёл странный",
+        "сигнал — эхо страшных событий,",
+        "происходивших где-то далеко."
+      ],
+      "text_width": 770.1,
+      "available_width": 832,
+      "text_height": 125.3,
+      "available_height": 138,
+      "safe_padding": {
+        "left": 33,
+        "right": 35,
+        "top": 39,
+        "bottom": 18
+      },
+      "pass": true,
+      "unchanged_from_approved_v1": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P03_L001",
+      "font_size": 41,
+      "lines": [
+        "But then we discovered strange natural",
+        "anomalies."
+      ],
+      "text_height": 95.5,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 970,
+      "max_line_width": 920.9,
+      "available_height": 123,
+      "box": [
+        100,
+        990,
+        1030,
+        185
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P03_L002",
+      "font_size": 39,
+      "lines": [
+        "To understand how they worked, we had to study",
+        "the nature of the universe even more deeply."
+      ],
+      "text_height": 90.9,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1130,
+      "max_line_width": 1087.8,
+      "available_height": 123,
+      "box": [
+        1180,
+        990,
+        1190,
+        185
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P03_L003",
+      "font_size": 37,
+      "lines": [
+        "While investigating one of these anomalies, we met",
+        "your familiar magnetic beings."
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1135,
+      "max_line_width": 1085.1,
+      "available_height": 128,
+      "box": [
+        95,
+        1985,
+        1195,
+        190
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P03_L004",
+      "font_size": 36,
+      "lines": [
+        "And farther on, in the depths of space, we",
+        "discovered an astonishing artifact."
+      ],
+      "text_height": 83.9,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 865,
+      "max_line_width": 860.7,
+      "available_height": 122,
+      "box": [
+        1440,
+        1330,
+        925,
+        184
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P03_L005",
+      "font_size": 37,
+      "lines": [
+        "It turned out to be the center of",
+        "many anomalous zones."
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 784,
+      "max_line_width": 671.0,
+      "available_height": 103,
+      "box": [
+        1520,
+        2002,
+        844,
+        165
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P03_L006",
+      "font_size": 33,
+      "lines": [
+        "We made the study of this complex artifact the purpose of our",
+        "existence and built a station around it called “The Last",
+        "Gates.”"
+      ],
+      "text_height": 118.1,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1180,
+      "max_line_width": 1165.3,
+      "available_height": 120,
+      "box": [
+        110,
+        3206,
+        1240,
+        182
+      ],
+      "fits": true
+    },
+    {
+      "lang": "en",
+      "line_id": "CH06_P03_L007",
+      "font_size": 35,
+      "lines": [
+        "Not long ago, a strange signal reached us",
+        "— an echo of terrible events happening",
+        "somewhere far away."
+      ],
+      "text_height": 125.3,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 840,
+      "max_line_width": 826.5,
+      "available_height": 133,
+      "box": [
+        1470,
+        3194,
+        900,
+        195
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P03_L001",
+      "font_size": 41,
+      "lines": [
+        "Mas depois descobrimos estranhas",
+        "anomalias naturais."
+      ],
+      "text_height": 95.5,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 970,
+      "max_line_width": 811.9,
+      "available_height": 123,
+      "box": [
+        100,
+        990,
+        1030,
+        185
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P03_L002",
+      "font_size": 34,
+      "lines": [
+        "Para entender como elas funcionavam, tivemos de",
+        "estudar a natureza do Universo ainda mais",
+        "profundamente."
+      ],
+      "text_height": 121.7,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1130,
+      "max_line_width": 971.4,
+      "available_height": 123,
+      "box": [
+        1180,
+        990,
+        1190,
+        185
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P03_L003",
+      "font_size": 37,
+      "lines": [
+        "Ao investigar uma dessas anomalias, encontramos",
+        "aqueles seres magnéticos que você já conhece."
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1135,
+      "max_line_width": 1059.9,
+      "available_height": 128,
+      "box": [
+        95,
+        1985,
+        1195,
+        190
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P03_L004",
+      "font_size": 34,
+      "lines": [
+        "E mais adiante, nas profundezas do espaço,",
+        "descobrimos um artefato surpreendente."
+      ],
+      "text_height": 79.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 865,
+      "max_line_width": 843.0,
+      "available_height": 122,
+      "box": [
+        1440,
+        1330,
+        925,
+        184
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P03_L005",
+      "font_size": 37,
+      "lines": [
+        "Ele se revelou o centro de muitas",
+        "zonas anômalas."
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 784,
+      "max_line_width": 698.4,
+      "available_height": 103,
+      "box": [
+        1520,
+        2002,
+        844,
+        165
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P03_L006",
+      "font_size": 33,
+      "lines": [
+        "Transformamos o estudo desse artefato complexo no propósito",
+        "da nossa existência e construímos ao seu redor uma estação",
+        "chamada “Os Últimos Portais”."
+      ],
+      "text_height": 118.1,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1180,
+      "max_line_width": 1179.7,
+      "available_height": 120,
+      "box": [
+        110,
+        3206,
+        1240,
+        182
+      ],
+      "fits": true
+    },
+    {
+      "lang": "pt_BR",
+      "line_id": "CH06_P03_L007",
+      "font_size": 28,
+      "lines": [
+        "Há pouco tempo, chegou até nós um sinal estranho",
+        "— o eco de acontecimentos terríveis que estavam",
+        "ocorrendo em algum lugar muito distante."
+      ],
+      "text_height": 100.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 840,
+      "max_line_width": 813.3,
+      "available_height": 133,
+      "box": [
+        1470,
+        3194,
+        900,
+        195
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P03_L001",
+      "font_size": 41,
+      "lines": [
+        "Pero entonces descubrimos extrañas",
+        "anomalías naturales."
+      ],
+      "text_height": 95.5,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 970,
+      "max_line_width": 856.5,
+      "available_height": 123,
+      "box": [
+        100,
+        990,
+        1030,
+        185
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P03_L002",
+      "font_size": 37,
+      "lines": [
+        "Para entender cómo funcionaban, tuvimos que",
+        "estudiar la naturaleza del universo aún más a fondo."
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1130,
+      "max_line_width": 1103.6,
+      "available_height": 123,
+      "box": [
+        1180,
+        990,
+        1190,
+        185
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P03_L003",
+      "font_size": 35,
+      "lines": [
+        "Mientras investigábamos una de esas anomalías, nos",
+        "encontramos con esos seres magnéticos que tú ya",
+        "conoces."
+      ],
+      "text_height": 125.3,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1135,
+      "max_line_width": 1054.3,
+      "available_height": 128,
+      "box": [
+        95,
+        1985,
+        1195,
+        190
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P03_L004",
+      "font_size": 34,
+      "lines": [
+        "Y más adelante, en las profundidades del",
+        "espacio, descubrimos un artefacto",
+        "asombroso."
+      ],
+      "text_height": 121.7,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 865,
+      "max_line_width": 795.4,
+      "available_height": 122,
+      "box": [
+        1440,
+        1330,
+        925,
+        184
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P03_L005",
+      "font_size": 37,
+      "lines": [
+        "Resultó ser el centro de muchas",
+        "zonas anómalas."
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 784,
+      "max_line_width": 671.7,
+      "available_height": 103,
+      "box": [
+        1520,
+        2002,
+        844,
+        165
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P03_L006",
+      "font_size": 33,
+      "lines": [
+        "Convertimos el estudio de este complejo artefacto en el",
+        "propósito de nuestra existencia y construimos a su alrededor",
+        "una estación llamada «Las Últimas Puertas»."
+      ],
+      "text_height": 118.1,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1180,
+      "max_line_width": 1145.6,
+      "available_height": 120,
+      "box": [
+        110,
+        3206,
+        1240,
+        182
+      ],
+      "fits": true
+    },
+    {
+      "lang": "es",
+      "line_id": "CH06_P03_L007",
+      "font_size": 31,
+      "lines": [
+        "No hace mucho, llegó hasta nosotros una señal",
+        "extraña: el eco de terribles acontecimientos",
+        "que estaban ocurriendo en algún lugar lejano."
+      ],
+      "text_height": 111.0,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 840,
+      "max_line_width": 827.1,
+      "available_height": 133,
+      "box": [
+        1470,
+        3194,
+        900,
+        195
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P03_L001",
+      "font_size": 41,
+      "lines": [
+        "Mais nous avons ensuite découvert",
+        "d’étranges anomalies naturelles."
+      ],
+      "text_height": 95.5,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 970,
+      "max_line_width": 816.4,
+      "available_height": 123,
+      "box": [
+        100,
+        990,
+        1030,
+        185
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P03_L002",
+      "font_size": 34,
+      "lines": [
+        "Pour comprendre comment elles fonctionnaient, nous",
+        "avons dû étudier la nature de l’Univers encore plus",
+        "profondément."
+      ],
+      "text_height": 121.7,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1130,
+      "max_line_width": 1032.7,
+      "available_height": 123,
+      "box": [
+        1180,
+        990,
+        1190,
+        185
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P03_L003",
+      "font_size": 37,
+      "lines": [
+        "En étudiant l’une de ces anomalies, nous avons",
+        "rencontré ces êtres magnétiques que tu connais déjà."
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1135,
+      "max_line_width": 1128.5,
+      "available_height": 128,
+      "box": [
+        95,
+        1985,
+        1195,
+        190
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P03_L004",
+      "font_size": 34,
+      "lines": [
+        "Et plus loin, dans les profondeurs de",
+        "l’espace, nous avons découvert un artefacte",
+        "étonnant."
+      ],
+      "text_height": 121.7,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 865,
+      "max_line_width": 853.4,
+      "available_height": 122,
+      "box": [
+        1440,
+        1330,
+        925,
+        184
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P03_L005",
+      "font_size": 37,
+      "lines": [
+        "Il s’est révélé être le centre de",
+        "nombreuses zones anormales."
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 784,
+      "max_line_width": 644.8,
+      "available_height": 103,
+      "box": [
+        1520,
+        2002,
+        844,
+        165
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P03_L006",
+      "font_size": 33,
+      "lines": [
+        "Nous avons fait de l’étude de cet artefact complexe le but de",
+        "notre existence et construit autour de lui une station appelée",
+        "« Les Dernières Portes »."
+      ],
+      "text_height": 118.1,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1180,
+      "max_line_width": 1152.8,
+      "available_height": 120,
+      "box": [
+        110,
+        3206,
+        1240,
+        182
+      ],
+      "fits": true
+    },
+    {
+      "lang": "fr",
+      "line_id": "CH06_P03_L007",
+      "font_size": 30,
+      "lines": [
+        "Il n’y a pas si longtemps, un étrange signal nous",
+        "est parvenu — l’écho de terribles événements",
+        "qui se produisaient quelque part au loin."
+      ],
+      "text_height": 107.4,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 840,
+      "max_line_width": 824.4,
+      "available_height": 133,
+      "box": [
+        1470,
+        3194,
+        900,
+        195
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P03_L001",
+      "font_size": 41,
+      "lines": [
+        "Doch dann entdeckten wir seltsame",
+        "natürliche Anomalien."
+      ],
+      "text_height": 95.5,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 970,
+      "max_line_width": 830.7,
+      "available_height": 123,
+      "box": [
+        100,
+        990,
+        1030,
+        185
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P03_L002",
+      "font_size": 37,
+      "lines": [
+        "Um zu verstehen, wie sie funktionierten, mussten wir",
+        "die Natur des Universums noch tiefer erforschen."
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1130,
+      "max_line_width": 1120.4,
+      "available_height": 123,
+      "box": [
+        1180,
+        990,
+        1190,
+        185
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P03_L003",
+      "font_size": 36,
+      "lines": [
+        "Bei der Untersuchung einer dieser Anomalien trafen",
+        "wir auf jene magnetischen Wesen, die du schon kennst."
+      ],
+      "text_height": 83.9,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1135,
+      "max_line_width": 1133.2,
+      "available_height": 128,
+      "box": [
+        95,
+        1985,
+        1195,
+        190
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P03_L004",
+      "font_size": 36,
+      "lines": [
+        "Und noch weiter, in den Tiefen des Alls,",
+        "entdeckten wir ein erstaunliches Artefakt."
+      ],
+      "text_height": 83.9,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 865,
+      "max_line_width": 861.7,
+      "available_height": 122,
+      "box": [
+        1440,
+        1330,
+        925,
+        184
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P03_L005",
+      "font_size": 37,
+      "lines": [
+        "Es erwies sich als Zentrum vieler",
+        "anomaler Zonen."
+      ],
+      "text_height": 86.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 784,
+      "max_line_width": 688.7,
+      "available_height": 103,
+      "box": [
+        1520,
+        2002,
+        844,
+        165
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P03_L006",
+      "font_size": 33,
+      "lines": [
+        "Wir machten die Erforschung dieses komplexen Artefakts zum",
+        "Ziel unserer Existenz und errichteten darum eine Station mit",
+        "dem Namen „Die Letzten Tore“."
+      ],
+      "text_height": 118.1,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 1180,
+      "max_line_width": 1161.2,
+      "available_height": 120,
+      "box": [
+        110,
+        3206,
+        1240,
+        182
+      ],
+      "fits": true
+    },
+    {
+      "lang": "de",
+      "line_id": "CH06_P03_L007",
+      "font_size": 28,
+      "lines": [
+        "Vor nicht allzu langer Zeit erreichte uns ein",
+        "seltsames Signal — ein Echo schrecklicher",
+        "Ereignisse, die irgendwo in weiter Ferne geschahen."
+      ],
+      "text_height": 100.2,
+      "pad": [
+        30,
+        30,
+        39,
+        23
+      ],
+      "available_width": 840,
+      "max_line_width": 829.2,
+      "available_height": 133,
+      "box": [
+        1470,
+        3194,
+        900,
+        195
+      ],
+      "fits": true
+    }
+  ]
+}

@@ -1,0 +1,1819 @@
+{
+  "schema_version": "3.3",
+  "project": "MIKA Infinite Space",
+  "page_id": "CH01_P07",
+  "revision": 7,
+  "approval_status": "ru_approved_six_localizations_adapted_native_review_recommended",
+  "style": "NEBULA",
+  "master_size_px": [
+    2480,
+    3508
+  ],
+  "source_pdf": "1-7(1).pdf",
+  "source_frame_count": 7,
+  "languages": [
+    "ru",
+    "en",
+    "pt_BR",
+    "es",
+    "fr",
+    "de"
+  ],
+  "godot_locale_aliases": {
+    "ru_RU": "ru",
+    "en_US": "en",
+    "en_GB": "en",
+    "pt_BR": "pt_BR",
+    "pt-BR": "pt_BR",
+    "pt_PT": "pt_BR",
+    "es_ES": "es",
+    "es_MX": "es",
+    "fr_FR": "fr",
+    "de_DE": "de"
+  },
+  "background": "background.jpg",
+  "overlays_png": {
+    "ru": "overlays/CH01_P07_ru.png",
+    "en": "overlays/CH01_P07_en.png",
+    "pt_BR": "overlays/CH01_P07_pt_BR.png",
+    "es": "overlays/CH01_P07_es.png",
+    "fr": "overlays/CH01_P07_fr.png",
+    "de": "overlays/CH01_P07_de.png"
+  },
+  "overlays_svg": {
+    "ru": "overlays/CH01_P07_ru.svg",
+    "en": "overlays/CH01_P07_en.svg",
+    "pt_BR": "overlays/CH01_P07_pt_BR.svg",
+    "es": "overlays/CH01_P07_es.svg",
+    "fr": "overlays/CH01_P07_fr.svg",
+    "de": "overlays/CH01_P07_de.svg"
+  },
+  "previews": {
+    "ru": "previews/CH01_P07_ru_preview.jpg",
+    "en": "previews/CH01_P07_en_preview.jpg",
+    "pt_BR": "previews/CH01_P07_pt_BR_preview.jpg",
+    "es": "previews/CH01_P07_es_preview.jpg",
+    "fr": "previews/CH01_P07_fr_preview.jpg",
+    "de": "previews/CH01_P07_de_preview.jpg"
+  },
+  "speaker_ids": [
+    "CHR_004",
+    "CHR_016",
+    "CHR_017",
+    "CHR_001",
+    "CHR_018",
+    "CHR_015",
+    "CHR_019",
+    "CHR_020",
+    "CHR_021"
+  ],
+  "new_cast": [
+    {
+      "id": "CHR_015",
+      "name_ru": "Профессор верфи Каллисто",
+      "status": "NEW_CORE",
+      "identity": "Обаятельный непонятый изобретатель; шустрый ум, рассеянность, радость открытий; впоследствии летит с Микой."
+    },
+    {
+      "id": "CHR_016",
+      "name_ru": "Инженер №1",
+      "status": "NEW_EPISODIC",
+      "identity": "Грамотный инженер, профессиональное недоумение."
+    },
+    {
+      "id": "CHR_017",
+      "name_ru": "Инженер №2",
+      "status": "NEW_EPISODIC",
+      "identity": "Коллега-инженер, доброжелательный технический скептик."
+    },
+    {
+      "id": "CHR_018",
+      "name_ru": "Сотрудница сервиса",
+      "status": "NEW_EPISODIC",
+      "identity": "Эмпатичная, но вынуждена отказать по объективным техническим причинам."
+    },
+    {
+      "id": "CHR_019",
+      "name_ru": "Посетитель А (за кадром)",
+      "status": "AMBIENT_OPTIONAL"
+    },
+    {
+      "id": "CHR_020",
+      "name_ru": "Посетитель Б (за кадром)",
+      "status": "AMBIENT_OPTIONAL"
+    },
+    {
+      "id": "CHR_021",
+      "name_ru": "Посетитель В (за кадром)",
+      "status": "AMBIENT_OPTIONAL"
+    }
+  ],
+  "reading_order_line_ids": [
+    "CH01_P07_L001",
+    "CH01_P07_L002",
+    "CH01_P07_L003",
+    "CH01_P07_L004",
+    "CH01_P07_L005",
+    "CH01_P07_L006",
+    "CH01_P07_L007",
+    "CH01_P07_L008",
+    "CH01_P07_L009",
+    "CH01_P07_L010",
+    "CH01_P07_L011",
+    "CH01_P07_L012",
+    "CH01_P07_L013",
+    "CH01_P07_L014",
+    "CH01_P07_L015",
+    "CH01_P07_L016",
+    "CH01_P07_L017"
+  ],
+  "sound_effects": [
+    {
+      "sfx_id": "SFX_CH01_P07_F06_SPARKS",
+      "frame_id": "CH01_P07_F06",
+      "speaker_id": "CHR_015",
+      "text_by_locale": {
+        "ru": "БЗЗ-Т!",
+        "en": "BZZT!",
+        "pt_BR": "BZZT!",
+        "es": "¡BZZT!",
+        "fr": "BZZT !",
+        "de": "BZZT!"
+      },
+      "audio_file": "SFX_CH01_P07_F06_SPARKS.wav",
+      "status": "NOT_GENERATED",
+      "audio_mode": "procedural_nonverbal_sfx",
+      "language_independent_audio": true,
+      "direction_ru": "Лёгкое мультяшное искрение при модернизации корабля."
+    }
+  ],
+  "playback_profiles": {
+    "full_narrated": {
+      "line_ids": [
+        "CH01_P07_L001",
+        "CH01_P07_L002",
+        "CH01_P07_L003",
+        "CH01_P07_L004",
+        "CH01_P07_L005",
+        "CH01_P07_L006",
+        "CH01_P07_L007",
+        "CH01_P07_L008",
+        "CH01_P07_L012",
+        "CH01_P07_L013",
+        "CH01_P07_L014",
+        "CH01_P07_L015",
+        "CH01_P07_L016"
+      ],
+      "sfx_ids": [
+        "SFX_CH01_P07_F06_SPARKS"
+      ],
+      "description_ru": "Полный диалог, слова автора, профессор и сотрудники станции, мысль Мики; три реплики посетителей остаются на экране."
+    },
+    "characters_only": {
+      "line_ids": [
+        "CH01_P07_L002",
+        "CH01_P07_L003",
+        "CH01_P07_L004",
+        "CH01_P07_L005",
+        "CH01_P07_L007",
+        "CH01_P07_L012",
+        "CH01_P07_L013",
+        "CH01_P07_L014"
+      ],
+      "sfx_ids": [
+        "SFX_CH01_P07_F06_SPARKS"
+      ],
+      "description_ru": "Только голоса Мики, профессора и сотрудников. Авторские подписи читаются самостоятельно."
+    },
+    "sfx_only": {
+      "line_ids": [],
+      "sfx_ids": [
+        "SFX_CH01_P07_F06_SPARKS"
+      ],
+      "description_ru": "Только комический звук ремонта."
+    }
+  },
+  "narrative_guardrails_ru": [
+    "Callisto orbital shipyard is the canonical station name, not Kalistro.",
+    "Staff are unable to upgrade the craft with their standard means; the professor offers an unconventional solution.",
+    "Professor boards ship with Mika and Bubble at page end.",
+    "The characters restock supplies before departure; this connects to the game mechanics without listing individual items or using icons.",
+    "Large Magellanic Cloud remains final destination; English built-in screen label gets masked by localized SVG.",
+    "Secondary cafeteria visitors are offscreen optional voices to keep future ElevenLabs spending controlled."
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P07_L001",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F01",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "reading_order": 1,
+      "svg_text_id": "TXT_CH01_P07_L001",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "busy_hopeful_arrival",
+        "intensity": 0.56,
+        "direction_ru": "С удивлением и бодрой надеждой. Прозрачное введение к работе инженеров.",
+        "voice_optional": false,
+        "tts_tags_en": "[warmly]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Прибыв на верфь Каллисто, Мика доверил корабль специалистам.",
+          "voice_spoken_text": "Прибыв на верфь Каллисто, Мика доверил корабль специалистам.",
+          "render_lines": [
+            "Прибыв на верфь",
+            "Каллисто, Мика доверил",
+            "корабль специалистам."
+          ],
+          "font_size_viewbox": 15,
+          "svg_text_id": "TXT_CH01_P07_L001",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "At Callisto Shipyard, Mika trusted the experts with his little ship.",
+          "voice_spoken_text": "At Callisto Shipyard, Mika trusted the experts with his little ship.",
+          "render_lines": [
+            "At Callisto Shipyard,",
+            "Mika trusted the experts",
+            "with his little ship."
+          ],
+          "font_size_viewbox": 15,
+          "svg_text_id": "TXT_CH01_P07_L001",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "No estaleiro de Calisto, Mika deixou sua nave nas mãos dos técnicos.",
+          "voice_spoken_text": "No estaleiro de Calisto, Mika deixou sua nave nas mãos dos técnicos.",
+          "render_lines": [
+            "No estaleiro de Calisto,",
+            "Mika deixou sua nave",
+            "nas mãos dos técnicos."
+          ],
+          "font_size_viewbox": 14.3,
+          "svg_text_id": "TXT_CH01_P07_L001",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "En el astillero de Calisto, Mika dejó su nave en manos de expertos.",
+          "voice_spoken_text": "En el astillero de Calisto, Mika dejó su nave en manos de expertos.",
+          "render_lines": [
+            "En el astillero de Calisto,",
+            "Mika dejó su nave",
+            "en manos de expertos."
+          ],
+          "font_size_viewbox": 14.1,
+          "svg_text_id": "TXT_CH01_P07_L001",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Au chantier de Callisto, Mika confia son vaisseau aux spécialistes.",
+          "voice_spoken_text": "Au chantier de Callisto, Mika confia son vaisseau aux spécialistes.",
+          "render_lines": [
+            "Au chantier de Callisto,",
+            "Mika confia son vaisseau",
+            "aux spécialistes."
+          ],
+          "font_size_viewbox": 14.6,
+          "svg_text_id": "TXT_CH01_P07_L001",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Auf Kallistos Werft gab Mika sein Schiff in Expertenhände.",
+          "voice_spoken_text": "Auf Kallistos Werft gab Mika sein Schiff in Expertenhände.",
+          "render_lines": [
+            "Auf Kallistos Werft",
+            "gab Mika sein Schiff",
+            "in Expertenhände."
+          ],
+          "font_size_viewbox": 14.8,
+          "svg_text_id": "TXT_CH01_P07_L001",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L002",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F01",
+      "speaker_id": "CHR_016",
+      "kind": "speech_engineer",
+      "reading_order": 2,
+      "svg_text_id": "TXT_CH01_P07_L002",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "technical_concern",
+        "intensity": 0.63,
+        "direction_ru": "Инженер уверен, но начинает сомневаться и чешет затылок.",
+        "voice_optional": false,
+        "tts_tags_en": "[concerned]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Корпус крепкий… Но волновой двигатель для таких прыжков слаб!",
+          "voice_spoken_text": "Корпус крепкий… Но волновой двигатель для таких прыжков слаб!",
+          "render_lines": [
+            "Корпус крепкий…",
+            "Но волновой двигатель",
+            "для таких прыжков слаб!"
+          ],
+          "font_size_viewbox": 17.1,
+          "svg_text_id": "TXT_CH01_P07_L002",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "The hull is sound… But this wave engine is too weak for that jump!",
+          "voice_spoken_text": "The hull is sound… But this wave engine is too weak for that jump!",
+          "render_lines": [
+            "The hull is sound…",
+            "But this wave engine",
+            "is too weak for that jump!"
+          ],
+          "font_size_viewbox": 16.5,
+          "svg_text_id": "TXT_CH01_P07_L002",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "O casco está ótimo… Mas o motor de ondas não aguenta esse salto!",
+          "voice_spoken_text": "O casco está ótimo… Mas o motor de ondas não aguenta esse salto!",
+          "render_lines": [
+            "O casco está ótimo…",
+            "Mas o motor de ondas",
+            "não aguenta esse salto!"
+          ],
+          "font_size_viewbox": 16.4,
+          "svg_text_id": "TXT_CH01_P07_L002",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "El casco está bien… Pero este motor de ondas no soporta ese salto.",
+          "voice_spoken_text": "El casco está bien… Pero este motor de ondas no soporta ese salto.",
+          "render_lines": [
+            "El casco está bien…",
+            "Pero este motor de ondas",
+            "no soporta ese salto."
+          ],
+          "font_size_viewbox": 16.4,
+          "svg_text_id": "TXT_CH01_P07_L002",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "La coque est solide… Mais ce moteur à ondes ne tiendra pas le saut !",
+          "voice_spoken_text": "La coque est solide… Mais ce moteur à ondes ne tiendra pas le saut !",
+          "render_lines": [
+            "La coque est solide…",
+            "Mais ce moteur à ondes",
+            "ne tiendra pas le saut !"
+          ],
+          "font_size_viewbox": 16,
+          "svg_text_id": "TXT_CH01_P07_L002",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Die Hülle ist stabil… Aber dieser Wellenantrieb schafft so einen Sprung nie!",
+          "voice_spoken_text": "Die Hülle ist stabil… Aber dieser Wellenantrieb schafft so einen Sprung nie!",
+          "render_lines": [
+            "Die Hülle ist stabil…",
+            "Aber dieser Wellenantrieb",
+            "schafft so einen Sprung nie!"
+          ],
+          "font_size_viewbox": 15.7,
+          "svg_text_id": "TXT_CH01_P07_L002",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L003",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F01",
+      "speaker_id": "CHR_017",
+      "kind": "speech_engineer",
+      "reading_order": 3,
+      "svg_text_id": "TXT_CH01_P07_L003",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "amused_disbelief",
+        "intensity": 0.72,
+        "direction_ru": "Коллега удивлён по-настоящему; лёгкая детская ирония.",
+        "voice_optional": false,
+        "tts_tags_en": "[surprised]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Как он вообще пережил ту космическую бурю?!",
+          "voice_spoken_text": "Как он вообще пережил ту космическую бурю?!",
+          "render_lines": [
+            "Как он вообще пережил",
+            "ту космическую бурю?!"
+          ],
+          "font_size_viewbox": 17,
+          "svg_text_id": "TXT_CH01_P07_L003",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "How did it even survive that cosmic storm?!",
+          "voice_spoken_text": "How did it even survive that cosmic storm?!",
+          "render_lines": [
+            "How did it even survive",
+            "that cosmic storm?!"
+          ],
+          "font_size_viewbox": 16.8,
+          "svg_text_id": "TXT_CH01_P07_L003",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Como ela sobreviveu àquela tempestade?!",
+          "voice_spoken_text": "Como ela sobreviveu àquela tempestade?!",
+          "render_lines": [
+            "Como ela sobreviveu",
+            "àquela tempestade?!"
+          ],
+          "font_size_viewbox": 16.8,
+          "svg_text_id": "TXT_CH01_P07_L003",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "¿Cómo sobrevivió a esa tormenta cósmica?!",
+          "voice_spoken_text": "¿Cómo sobrevivió a esa tormenta cósmica?!",
+          "render_lines": [
+            "¿Cómo sobrevivió",
+            "a esa tormenta cósmica?!"
+          ],
+          "font_size_viewbox": 16.5,
+          "svg_text_id": "TXT_CH01_P07_L003",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Comment a-t-il survécu à cette tempête cosmique ?!",
+          "voice_spoken_text": "Comment a-t-il survécu à cette tempête cosmique ?!",
+          "render_lines": [
+            "Comment a-t-il survécu",
+            "à cette tempête cosmique ?!"
+          ],
+          "font_size_viewbox": 16.6,
+          "svg_text_id": "TXT_CH01_P07_L003",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Wie hat es nur diesen Sturm überlebt?!",
+          "voice_spoken_text": "Wie hat es nur diesen Sturm überlebt?!",
+          "render_lines": [
+            "Wie hat es nur",
+            "diesen Sturm überlebt?!"
+          ],
+          "font_size_viewbox": 16.4,
+          "svg_text_id": "TXT_CH01_P07_L003",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L004",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F02",
+      "speaker_id": "CHR_001",
+      "kind": "speech_pleading",
+      "reading_order": 4,
+      "svg_text_id": "TXT_CH01_P07_L004",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "urgent_childlike_protest",
+        "intensity": 0.83,
+        "direction_ru": "Растерянное возмущение: он слышит запрет, но очень хочет домой.",
+        "voice_optional": false,
+        "tts_tags_en": "[worried]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Почему мне нельзя лететь дальше? Мне же нужно в другую галактику!",
+          "voice_spoken_text": "Почему мне нельзя лететь дальше? Мне же нужно в другую галактику!",
+          "render_lines": [
+            "Почему мне нельзя",
+            "лететь дальше? Мне же",
+            "нужно в другую галактику!"
+          ],
+          "font_size_viewbox": 17.25,
+          "svg_text_id": "TXT_CH01_P07_L004",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "Why can’t I go on? I need to reach another galaxy!",
+          "voice_spoken_text": "Why can’t I go on? I need to reach another galaxy!",
+          "render_lines": [
+            "Why can’t I go on?",
+            "I need to reach",
+            "another galaxy!"
+          ],
+          "font_size_viewbox": 18,
+          "svg_text_id": "TXT_CH01_P07_L004",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Por que não posso seguir? Eu preciso chegar a outra galáxia!",
+          "voice_spoken_text": "Por que não posso seguir? Eu preciso chegar a outra galáxia!",
+          "render_lines": [
+            "Por que não posso seguir?",
+            "Eu preciso chegar",
+            "a outra galáxia!"
+          ],
+          "font_size_viewbox": 16.5,
+          "svg_text_id": "TXT_CH01_P07_L004",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "¿Por qué no puedo seguir? ¡Necesito llegar a otra galaxia!",
+          "voice_spoken_text": "¿Por qué no puedo seguir? ¡Necesito llegar a otra galaxia!",
+          "render_lines": [
+            "¿Por qué no puedo seguir?",
+            "¡Necesito llegar",
+            "a otra galaxia!"
+          ],
+          "font_size_viewbox": 16.5,
+          "svg_text_id": "TXT_CH01_P07_L004",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Pourquoi je dois rester ? Je dois atteindre une autre galaxie !",
+          "voice_spoken_text": "Pourquoi je dois rester ? Je dois atteindre une autre galaxie !",
+          "render_lines": [
+            "Pourquoi je dois rester ?",
+            "Je dois atteindre",
+            "une autre galaxie !"
+          ],
+          "font_size_viewbox": 16.7,
+          "svg_text_id": "TXT_CH01_P07_L004",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Warum darf ich nicht weiter? Ich muss doch in eine andere Galaxie!",
+          "voice_spoken_text": "Warum darf ich nicht weiter? Ich muss doch in eine andere Galaxie!",
+          "render_lines": [
+            "Warum darf ich nicht weiter?",
+            "Ich muss doch in",
+            "eine andere Galaxie!"
+          ],
+          "font_size_viewbox": 16,
+          "svg_text_id": "TXT_CH01_P07_L004",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L005",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F02",
+      "speaker_id": "CHR_018",
+      "kind": "speech_service",
+      "reading_order": 5,
+      "svg_text_id": "TXT_CH01_P07_L005",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "kind_honest_refusal",
+        "intensity": 0.57,
+        "direction_ru": "Тепло, с сожалением; не унижает героя и не обвиняет инженеров.",
+        "voice_optional": false,
+        "tts_tags_en": "[gently]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Прости, Мика. Твой корабль не выдержит такого прыжка. Мы всё проверили… но здесь бессильны.",
+          "voice_spoken_text": "Прости, Мика. Твой корабль не выдержит такого прыжка. Мы всё проверили… но здесь бессильны.",
+          "render_lines": [
+            "Прости, Мика. Твой корабль",
+            "не выдержит такого прыжка.",
+            "Мы всё проверили…",
+            "но здесь бессильны."
+          ],
+          "font_size_viewbox": 17.4,
+          "svg_text_id": "TXT_CH01_P07_L005",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "I’m sorry, Mika. Your ship wouldn’t survive that jump. We checked everything… but we can’t fix it here.",
+          "voice_spoken_text": "I’m sorry, Mika. Your ship wouldn’t survive that jump. We checked everything… but we can’t fix it here.",
+          "render_lines": [
+            "I’m sorry, Mika. Your ship",
+            "wouldn’t survive that jump.",
+            "We checked everything…",
+            "but we can’t fix it here."
+          ],
+          "font_size_viewbox": 16.3,
+          "svg_text_id": "TXT_CH01_P07_L005",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Sinto muito, Mika. Sua nave não aguentaria esse salto. Testamos de tudo… mas não dá pra ajudar.",
+          "voice_spoken_text": "Sinto muito, Mika. Sua nave não aguentaria esse salto. Testamos de tudo… mas não dá pra ajudar.",
+          "render_lines": [
+            "Sinto muito, Mika. Sua nave",
+            "não aguentaria esse salto.",
+            "Testamos de tudo…",
+            "mas não dá pra ajudar."
+          ],
+          "font_size_viewbox": 15.9,
+          "svg_text_id": "TXT_CH01_P07_L005",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "Lo siento, Mika. Tu nave no resistiría ese salto. Lo revisamos todo… aquí no podemos ayudarte.",
+          "voice_spoken_text": "Lo siento, Mika. Tu nave no resistiría ese salto. Lo revisamos todo… aquí no podemos ayudarte.",
+          "render_lines": [
+            "Lo siento, Mika. Tu nave",
+            "no resistiría ese salto.",
+            "Lo revisamos todo…",
+            "aquí no podemos ayudarte."
+          ],
+          "font_size_viewbox": 16,
+          "svg_text_id": "TXT_CH01_P07_L005",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Désolée, Mika. Ton vaisseau ne tiendra pas ce saut. On a tout vérifié… on ne peut rien y faire.",
+          "voice_spoken_text": "Désolée, Mika. Ton vaisseau ne tiendra pas ce saut. On a tout vérifié… on ne peut rien y faire.",
+          "render_lines": [
+            "Désolée, Mika. Ton vaisseau",
+            "ne tiendra pas ce saut.",
+            "On a tout vérifié…",
+            "on ne peut rien y faire."
+          ],
+          "font_size_viewbox": 16.2,
+          "svg_text_id": "TXT_CH01_P07_L005",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Tut mir leid, Mika. Dein Schiff hält diesen Sprung nicht aus. Wir haben alles geprüft… hier können wir nicht helfen.",
+          "voice_spoken_text": "Tut mir leid, Mika. Dein Schiff hält diesen Sprung nicht aus. Wir haben alles geprüft… hier können wir nicht helfen.",
+          "render_lines": [
+            "Tut mir leid, Mika. Dein Schiff",
+            "hält diesen Sprung nicht aus.",
+            "Wir haben alles geprüft…",
+            "hier können wir nicht helfen."
+          ],
+          "font_size_viewbox": 15.5,
+          "svg_text_id": "TXT_CH01_P07_L005",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L006",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F03",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "reading_order": 6,
+      "svg_text_id": "TXT_CH01_P07_L006",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "quiet_loneliness",
+        "intensity": 0.37,
+        "direction_ru": "Очень мягко и чуть печально, оставить воздух перед следующим голосом.",
+        "voice_optional": false,
+        "tts_tags_en": "[sadly]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Мика совсем приуныл. Неужели дорога домой закончится здесь?..",
+          "voice_spoken_text": "Мика совсем приуныл. Неужели дорога домой закончится здесь?..",
+          "render_lines": [
+            "Мика совсем приуныл.",
+            "Неужели дорога домой",
+            "закончится здесь?.."
+          ],
+          "font_size_viewbox": 18.4,
+          "svg_text_id": "TXT_CH01_P07_L006",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "Mika’s heart sank. Could his journey home really end right here?..",
+          "voice_spoken_text": "Mika’s heart sank. Could his journey home really end right here?..",
+          "render_lines": [
+            "Mika’s heart sank.",
+            "Could his journey home",
+            "really end right here?.."
+          ],
+          "font_size_viewbox": 18.2,
+          "svg_text_id": "TXT_CH01_P07_L006",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Mika ficou arrasado. Será que o caminho de volta terminava ali mesmo?..",
+          "voice_spoken_text": "Mika ficou arrasado. Será que o caminho de volta terminava ali mesmo?..",
+          "render_lines": [
+            "Mika ficou arrasado.",
+            "Será que o caminho de volta",
+            "terminava ali mesmo?.."
+          ],
+          "font_size_viewbox": 17.5,
+          "svg_text_id": "TXT_CH01_P07_L006",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "Mika se desanimó. ¿De verdad el camino a casa terminaría allí?..",
+          "voice_spoken_text": "Mika se desanimó. ¿De verdad el camino a casa terminaría allí?..",
+          "render_lines": [
+            "Mika se desanimó.",
+            "¿De verdad el camino a casa",
+            "terminaría allí?.."
+          ],
+          "font_size_viewbox": 17.3,
+          "svg_text_id": "TXT_CH01_P07_L006",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Mika perdit courage. Et si son voyage vers la maison s’arrêtait ici?..",
+          "voice_spoken_text": "Mika perdit courage. Et si son voyage vers la maison s’arrêtait ici?..",
+          "render_lines": [
+            "Mika perdit courage.",
+            "Et si son voyage vers la maison",
+            "s’arrêtait ici?.."
+          ],
+          "font_size_viewbox": 16.3,
+          "svg_text_id": "TXT_CH01_P07_L006",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Mika war ganz bedrückt. War seine Reise nach Hause hier etwa zu Ende?..",
+          "voice_spoken_text": "Mika war ganz bedrückt. War seine Reise nach Hause hier etwa zu Ende?..",
+          "render_lines": [
+            "Mika war ganz bedrückt.",
+            "War seine Reise nach Hause",
+            "hier etwa zu Ende?.."
+          ],
+          "font_size_viewbox": 17.4,
+          "svg_text_id": "TXT_CH01_P07_L006",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L007",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F03",
+      "speaker_id": "CHR_015",
+      "kind": "speech_offscreen",
+      "reading_order": 7,
+      "svg_text_id": "TXT_CH01_P07_L007",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "sudden_cheerful_confidence",
+        "intensity": 0.81,
+        "direction_ru": "Бодрый голос с правой стороны кадра, до появления профессора.",
+        "voice_optional": false,
+        "tts_tags_en": "[cheerfully]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Эй, юный путешественник! Кажется, я знаю, как тебе помочь!",
+          "voice_spoken_text": "Эй, юный путешественник! Кажется, я знаю, как тебе помочь!",
+          "render_lines": [
+            "Эй, юный путешественник!",
+            "Кажется, я знаю,",
+            "как тебе помочь!"
+          ],
+          "font_size_viewbox": 18.1,
+          "svg_text_id": "TXT_CH01_P07_L007",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "Hey, young traveler! I think I know how to help you!",
+          "voice_spoken_text": "Hey, young traveler! I think I know how to help you!",
+          "render_lines": [
+            "Hey, young traveler!",
+            "I think I know",
+            "how to help you!"
+          ],
+          "font_size_viewbox": 18.1,
+          "svg_text_id": "TXT_CH01_P07_L007",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Ei, jovem viajante! Acho que eu sei como te ajudar!",
+          "voice_spoken_text": "Ei, jovem viajante! Acho que eu sei como te ajudar!",
+          "render_lines": [
+            "Ei, jovem viajante!",
+            "Acho que eu sei",
+            "como te ajudar!"
+          ],
+          "font_size_viewbox": 18.1,
+          "svg_text_id": "TXT_CH01_P07_L007",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "¡Eh, joven viajero! Creo que sé cómo ayudarte!",
+          "voice_spoken_text": "¡Eh, joven viajero! Creo que sé cómo ayudarte!",
+          "render_lines": [
+            "¡Eh, joven viajero!",
+            "Creo que sé",
+            "cómo ayudarte!"
+          ],
+          "font_size_viewbox": 18,
+          "svg_text_id": "TXT_CH01_P07_L007",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Hé, jeune voyageur ! Je crois savoir comment t’aider !",
+          "voice_spoken_text": "Hé, jeune voyageur ! Je crois savoir comment t’aider !",
+          "render_lines": [
+            "Hé, jeune voyageur !",
+            "Je crois savoir",
+            "comment t’aider !"
+          ],
+          "font_size_viewbox": 18,
+          "svg_text_id": "TXT_CH01_P07_L007",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "He, junger Reisender! Ich glaube, ich weiß, wie ich dir helfen kann!",
+          "voice_spoken_text": "He, junger Reisender! Ich glaube, ich weiß, wie ich dir helfen kann!",
+          "render_lines": [
+            "He, junger Reisender!",
+            "Ich glaube, ich weiß,",
+            "wie ich dir helfen kann!"
+          ],
+          "font_size_viewbox": 16.9,
+          "svg_text_id": "TXT_CH01_P07_L007",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L008",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F04",
+      "speaker_id": "CHR_004",
+      "kind": "narration_intro",
+      "reading_order": 8,
+      "svg_text_id": "TXT_CH01_P07_L008",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "loving_ironic_introduction",
+        "intensity": 0.66,
+        "direction_ru": "Рассказчик с улыбкой: «непризнанный» звучит как тонкая шутка.",
+        "voice_optional": false,
+        "tts_tags_en": "[playfully]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Профессор — непризнанный гений верфи Каллисто.",
+          "voice_spoken_text": "Профессор — непризнанный гений верфи Каллисто.",
+          "render_lines": [
+            "Профессор — непризнанный",
+            "гений верфи Каллисто."
+          ],
+          "font_size_viewbox": 16.9,
+          "svg_text_id": "TXT_CH01_P07_L008",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "The professor: Callisto’s brilliant but unsung genius.",
+          "voice_spoken_text": "The professor: Callisto’s brilliant but unsung genius.",
+          "render_lines": [
+            "The professor: Callisto’s",
+            "brilliant but unsung genius."
+          ],
+          "font_size_viewbox": 16,
+          "svg_text_id": "TXT_CH01_P07_L008",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Era o professor: um gênio incompreendido de Calisto.",
+          "voice_spoken_text": "Era o professor: um gênio incompreendido de Calisto.",
+          "render_lines": [
+            "Era o professor: um gênio",
+            "incompreendido de Calisto."
+          ],
+          "font_size_viewbox": 15.9,
+          "svg_text_id": "TXT_CH01_P07_L008",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "El profesor: un genio incomprendido de Calisto.",
+          "voice_spoken_text": "El profesor: un genio incomprendido de Calisto.",
+          "render_lines": [
+            "El profesor: un genio",
+            "incomprendido de Calisto."
+          ],
+          "font_size_viewbox": 16.2,
+          "svg_text_id": "TXT_CH01_P07_L008",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Le professeur : un génie méconnu de Callisto.",
+          "voice_spoken_text": "Le professeur : un génie méconnu de Callisto.",
+          "render_lines": [
+            "Le professeur : un génie",
+            "méconnu de Callisto."
+          ],
+          "font_size_viewbox": 16.2,
+          "svg_text_id": "TXT_CH01_P07_L008",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Der Professor: das verkannte Genie von Kallisto.",
+          "voice_spoken_text": "Der Professor: das verkannte Genie von Kallisto.",
+          "render_lines": [
+            "Der Professor: das",
+            "verkannte Genie von Kallisto."
+          ],
+          "font_size_viewbox": 16.4,
+          "svg_text_id": "TXT_CH01_P07_L008",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L009",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F04",
+      "speaker_id": "CHR_019",
+      "kind": "speech_ambient_whisper",
+      "reading_order": 9,
+      "svg_text_id": "TXT_CH01_P07_L009",
+      "audio_generation_mode": "optional_background_tts",
+      "performance": {
+        "emotion": "skeptical_whisper",
+        "intensity": 0.43,
+        "direction_ru": "Реплика посетителя вне кадра, тихо, удивлённо; озвучивание необязательно.",
+        "voice_optional": true,
+        "tts_tags_en": "[quietly]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Кто его сюда пустил?",
+          "voice_spoken_text": "Кто его сюда пустил?",
+          "render_lines": [
+            "Кто его сюда",
+            "пустил?"
+          ],
+          "font_size_viewbox": 15.6,
+          "svg_text_id": "TXT_CH01_P07_L009",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "Who let him in? Seriously?",
+          "voice_spoken_text": "Who let him in? Seriously?",
+          "render_lines": [
+            "Who let him in?",
+            "Seriously?"
+          ],
+          "font_size_viewbox": 14.5,
+          "svg_text_id": "TXT_CH01_P07_L009",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Quem deixou ele entrar?",
+          "voice_spoken_text": "Quem deixou ele entrar?",
+          "render_lines": [
+            "Quem deixou",
+            "ele entrar?"
+          ],
+          "font_size_viewbox": 15.1,
+          "svg_text_id": "TXT_CH01_P07_L009",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "¿Quién lo dejó entrar?",
+          "voice_spoken_text": "¿Quién lo dejó entrar?",
+          "render_lines": [
+            "¿Quién lo dejó",
+            "entrar?"
+          ],
+          "font_size_viewbox": 15.3,
+          "svg_text_id": "TXT_CH01_P07_L009",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Qui l’a laissé entrer ?",
+          "voice_spoken_text": "Qui l’a laissé entrer ?",
+          "render_lines": [
+            "Qui l’a laissé",
+            "entrer ?"
+          ],
+          "font_size_viewbox": 15.1,
+          "svg_text_id": "TXT_CH01_P07_L009",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Wer ließ ihn denn rein?",
+          "voice_spoken_text": "Wer ließ ihn denn rein?",
+          "render_lines": [
+            "Wer ließ ihn",
+            "denn rein?"
+          ],
+          "font_size_viewbox": 15,
+          "svg_text_id": "TXT_CH01_P07_L009",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L010",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F04",
+      "speaker_id": "CHR_020",
+      "kind": "speech_ambient_whisper",
+      "reading_order": 10,
+      "svg_text_id": "TXT_CH01_P07_L010",
+      "audio_generation_mode": "optional_background_tts",
+      "performance": {
+        "emotion": "weary_comic_whisper",
+        "intensity": 0.43,
+        "direction_ru": "Второй посетитель закатывает глаза, но без настоящей злости.",
+        "voice_optional": true,
+        "tts_tags_en": "[exasperated]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Опять он!..",
+          "voice_spoken_text": "Опять он!..",
+          "render_lines": [
+            "Опять он!.."
+          ],
+          "font_size_viewbox": 16.2,
+          "svg_text_id": "TXT_CH01_P07_L010",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "Not him again…",
+          "voice_spoken_text": "Not him again…",
+          "render_lines": [
+            "Not him again…"
+          ],
+          "font_size_viewbox": 14.6,
+          "svg_text_id": "TXT_CH01_P07_L010",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Lá vem ele…",
+          "voice_spoken_text": "Lá vem ele…",
+          "render_lines": [
+            "Lá vem ele…"
+          ],
+          "font_size_viewbox": 15.7,
+          "svg_text_id": "TXT_CH01_P07_L010",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "¡Otra vez!..",
+          "voice_spoken_text": "¡Otra vez!..",
+          "render_lines": [
+            "¡Otra vez!.."
+          ],
+          "font_size_viewbox": 16.2,
+          "svg_text_id": "TXT_CH01_P07_L010",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Encore lui…",
+          "voice_spoken_text": "Encore lui…",
+          "render_lines": [
+            "Encore lui…"
+          ],
+          "font_size_viewbox": 15.8,
+          "svg_text_id": "TXT_CH01_P07_L010",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Schon wieder…",
+          "voice_spoken_text": "Schon wieder…",
+          "render_lines": [
+            "Schon wieder…"
+          ],
+          "font_size_viewbox": 14.2,
+          "svg_text_id": "TXT_CH01_P07_L010",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L011",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F04",
+      "speaker_id": "CHR_021",
+      "kind": "speech_ambient_whisper",
+      "reading_order": 11,
+      "svg_text_id": "TXT_CH01_P07_L011",
+      "audio_generation_mode": "optional_background_tts",
+      "performance": {
+        "emotion": "dry_friendly_sarcasm",
+        "intensity": 0.53,
+        "direction_ru": "Третий голос за столиком, комедийная сухость; озвучивание необязательно.",
+        "voice_optional": true,
+        "tts_tags_en": "[dryly]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "А я думал, это приличное место…",
+          "voice_spoken_text": "А я думал, это приличное место…",
+          "render_lines": [
+            "А я думал,",
+            "это приличное",
+            "место…"
+          ],
+          "font_size_viewbox": 14.4,
+          "svg_text_id": "TXT_CH01_P07_L011",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "And I thought this was a nice place…",
+          "voice_spoken_text": "And I thought this was a nice place…",
+          "render_lines": [
+            "And I thought",
+            "this was a",
+            "nice place…"
+          ],
+          "font_size_viewbox": 14.7,
+          "svg_text_id": "TXT_CH01_P07_L011",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "E eu achando que aqui era um lugar sério…",
+          "voice_spoken_text": "E eu achando que aqui era um lugar sério…",
+          "render_lines": [
+            "E eu achando",
+            "que aqui era",
+            "um lugar sério…"
+          ],
+          "font_size_viewbox": 13.7,
+          "svg_text_id": "TXT_CH01_P07_L011",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "Y yo pensaba que este era un lugar serio…",
+          "voice_spoken_text": "Y yo pensaba que este era un lugar serio…",
+          "render_lines": [
+            "Y yo pensaba",
+            "que este era",
+            "un lugar serio…"
+          ],
+          "font_size_viewbox": 14.2,
+          "svg_text_id": "TXT_CH01_P07_L011",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Et moi qui croyais cet endroit chic…",
+          "voice_spoken_text": "Et moi qui croyais cet endroit chic…",
+          "render_lines": [
+            "Et moi qui",
+            "croyais cet",
+            "endroit chic…"
+          ],
+          "font_size_viewbox": 14.2,
+          "svg_text_id": "TXT_CH01_P07_L011",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Ich dachte, das hier sei ein feiner Ort…",
+          "voice_spoken_text": "Ich dachte, das hier sei ein feiner Ort…",
+          "render_lines": [
+            "Ich dachte,",
+            "das hier sei",
+            "ein feiner Ort…"
+          ],
+          "font_size_viewbox": 14.1,
+          "svg_text_id": "TXT_CH01_P07_L011",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L012",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F05",
+      "speaker_id": "CHR_015",
+      "kind": "speech_inventor",
+      "reading_order": 12,
+      "svg_text_id": "TXT_CH01_P07_L012",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "enthusiastic_science_wordplay",
+        "intensity": 0.9,
+        "direction_ru": "Энергичная изобретательская скороговорка с радостной паузой перед выводом.",
+        "voice_optional": false,
+        "tts_tags_en": "[excited]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Добавим к волновому ядру квантовый фазосдвигатель. Он согнёт пространство — и мы перескочим в другую галактику!",
+          "voice_spoken_text": "Добавим к волновому ядру квантовый фазосдвигатель. Он согнёт пространство — и мы перескочим в другую галактику!",
+          "render_lines": [
+            "Добавим к волновому ядру",
+            "квантовый фазосдвигатель.",
+            "Он согнёт пространство —",
+            "и мы перескочим",
+            "в другую галактику!"
+          ],
+          "font_size_viewbox": 19,
+          "svg_text_id": "TXT_CH01_P07_L012",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "Add a quantum phase shifter to the wave core. It’ll bend space itself— and we’ll hop straight into another galaxy!",
+          "voice_spoken_text": "Add a quantum phase shifter to the wave core. It’ll bend space itself— and we’ll hop straight into another galaxy!",
+          "render_lines": [
+            "Add a quantum phase shifter",
+            "to the wave core.",
+            "It’ll bend space itself—",
+            "and we’ll hop straight",
+            "into another galaxy!"
+          ],
+          "font_size_viewbox": 17.6,
+          "svg_text_id": "TXT_CH01_P07_L012",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Vamos acoplar um deslocador quântico de fase ao núcleo de ondas. Dobramos o espaço… e pulamos de galáxia!",
+          "voice_spoken_text": "Vamos acoplar um deslocador quântico de fase ao núcleo de ondas. Dobramos o espaço… e pulamos de galáxia!",
+          "render_lines": [
+            "Vamos acoplar um",
+            "deslocador quântico de fase",
+            "ao núcleo de ondas.",
+            "Dobramos o espaço…",
+            "e pulamos de galáxia!"
+          ],
+          "font_size_viewbox": 17.6,
+          "svg_text_id": "TXT_CH01_P07_L012",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "Pondremos un desfasador cuántico en el núcleo de ondas. Doblará el espacio… ¡y daremos un salto hasta otra galaxia!",
+          "voice_spoken_text": "Pondremos un desfasador cuántico en el núcleo de ondas. Doblará el espacio… ¡y daremos un salto hasta otra galaxia!",
+          "render_lines": [
+            "Pondremos un desfasador",
+            "cuántico en el núcleo de ondas.",
+            "Doblará el espacio…",
+            "¡y daremos un salto",
+            "hasta otra galaxia!"
+          ],
+          "font_size_viewbox": 17.4,
+          "svg_text_id": "TXT_CH01_P07_L012",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Ajoutons un déphaseur quantique au cœur ondulatoire. Il va plier l’espace… et hop ! Nous filerons dans une autre galaxie !",
+          "voice_spoken_text": "Ajoutons un déphaseur quantique au cœur ondulatoire. Il va plier l’espace… et hop ! Nous filerons dans une autre galaxie !",
+          "render_lines": [
+            "Ajoutons un déphaseur",
+            "quantique au cœur ondulatoire.",
+            "Il va plier l’espace…",
+            "et hop ! Nous filerons",
+            "dans une autre galaxie !"
+          ],
+          "font_size_viewbox": 17,
+          "svg_text_id": "TXT_CH01_P07_L012",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Wir koppeln einen Quanten- Phasenschieber an den Wellenkern. Er krümmt den Raum – und zack! Ab in die nächste Galaxie!",
+          "voice_spoken_text": "Wir koppeln einen Quanten- Phasenschieber an den Wellenkern. Er krümmt den Raum – und zack! Ab in die nächste Galaxie!",
+          "render_lines": [
+            "Wir koppeln einen Quanten-",
+            "Phasenschieber an den",
+            "Wellenkern. Er krümmt",
+            "den Raum – und zack!",
+            "Ab in die nächste Galaxie!"
+          ],
+          "font_size_viewbox": 17.6,
+          "svg_text_id": "TXT_CH01_P07_L012",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L013",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F05",
+      "speaker_id": "CHR_001",
+      "kind": "speech_bewildered",
+      "reading_order": 13,
+      "svg_text_id": "TXT_CH01_P07_L013",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "comic_bewilderment",
+        "intensity": 0.61,
+        "direction_ru": "Доброе, искреннее непонимание: как будто слов слишком много.",
+        "voice_optional": false,
+        "tts_tags_en": "[confused]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Э-э… чего?",
+          "voice_spoken_text": "Э-э… чего?",
+          "render_lines": [
+            "Э-э… чего?"
+          ],
+          "font_size_viewbox": 20,
+          "svg_text_id": "TXT_CH01_P07_L013",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "Uh… what?",
+          "voice_spoken_text": "Uh… what?",
+          "render_lines": [
+            "Uh… what?"
+          ],
+          "font_size_viewbox": 20,
+          "svg_text_id": "TXT_CH01_P07_L013",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Hã… como é?",
+          "voice_spoken_text": "Hã… como é?",
+          "render_lines": [
+            "Hã… como é?"
+          ],
+          "font_size_viewbox": 18.6,
+          "svg_text_id": "TXT_CH01_P07_L013",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "Eh… ¿qué?",
+          "voice_spoken_text": "Eh… ¿qué?",
+          "render_lines": [
+            "Eh… ¿qué?"
+          ],
+          "font_size_viewbox": 20,
+          "svg_text_id": "TXT_CH01_P07_L013",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Euh… quoi ?",
+          "voice_spoken_text": "Euh… quoi ?",
+          "render_lines": [
+            "Euh… quoi ?"
+          ],
+          "font_size_viewbox": 18.4,
+          "svg_text_id": "TXT_CH01_P07_L013",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Äh… bitte?",
+          "voice_spoken_text": "Äh… bitte?",
+          "render_lines": [
+            "Äh… bitte?"
+          ],
+          "font_size_viewbox": 19.3,
+          "svg_text_id": "TXT_CH01_P07_L013",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L014",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F06",
+      "speaker_id": "CHR_001",
+      "kind": "thought",
+      "reading_order": 14,
+      "svg_text_id": "TXT_CH01_P07_L014",
+      "audio_generation_mode": "elevenlabs_generated_clip",
+      "performance": {
+        "emotion": "wary_hope_thought",
+        "intensity": 0.54,
+        "direction_ru": "Тихая внутренняя мысль, немного тревоги и немного веры.",
+        "voice_optional": false,
+        "tts_tags_en": "[hesitantly]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Надеюсь, он и правда знает, что делает… Может, обойдётся?",
+          "voice_spoken_text": "Надеюсь, он и правда знает, что делает… Может, обойдётся?",
+          "render_lines": [
+            "Надеюсь, он и правда",
+            "знает, что делает…",
+            "Может, обойдётся?"
+          ],
+          "font_size_viewbox": 18.2,
+          "svg_text_id": "TXT_CH01_P07_L014",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/ru/CH01_P07_L014_ru.mp3",
+          "voice_status": "GENERATED"
+        },
+        "en": {
+          "display_text": "I hope he really knows what he’s doing… Fingers crossed!",
+          "voice_spoken_text": "I hope he really knows what he’s doing… Fingers crossed!",
+          "render_lines": [
+            "I hope he really",
+            "knows what he’s doing…",
+            "Fingers crossed!"
+          ],
+          "font_size_viewbox": 18,
+          "svg_text_id": "TXT_CH01_P07_L014",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/en/CH01_P07_L014_en.mp3",
+          "voice_status": "GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Tomara que ele saiba mesmo o que faz… Vai dar tudo certo?",
+          "voice_spoken_text": "Tomara que ele saiba mesmo o que faz… Vai dar tudo certo?",
+          "render_lines": [
+            "Tomara que ele",
+            "saiba mesmo o que faz…",
+            "Vai dar tudo certo?"
+          ],
+          "font_size_viewbox": 17.8,
+          "svg_text_id": "TXT_CH01_P07_L014",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/pt_BR/CH01_P07_L014_pt_BR.mp3",
+          "voice_status": "GENERATED"
+        },
+        "es": {
+          "display_text": "Ojalá de verdad sepa lo que está haciendo… ¡Cruzo los dedos!",
+          "voice_spoken_text": "Ojalá de verdad sepa lo que está haciendo… ¡Cruzo los dedos!",
+          "render_lines": [
+            "Ojalá de verdad sepa",
+            "lo que está haciendo…",
+            "¡Cruzo los dedos!"
+          ],
+          "font_size_viewbox": 17.4,
+          "svg_text_id": "TXT_CH01_P07_L014",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/es/CH01_P07_L014_es.mp3",
+          "voice_status": "GENERATED"
+        },
+        "fr": {
+          "display_text": "J’espère qu’il sait vraiment ce qu’il fait… On croise les doigts !",
+          "voice_spoken_text": "J’espère qu’il sait vraiment ce qu’il fait… On croise les doigts !",
+          "render_lines": [
+            "J’espère qu’il sait",
+            "vraiment ce qu’il fait…",
+            "On croise les doigts !"
+          ],
+          "font_size_viewbox": 17.2,
+          "svg_text_id": "TXT_CH01_P07_L014",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/fr/CH01_P07_L014_fr.mp3",
+          "voice_status": "GENERATED"
+        },
+        "de": {
+          "display_text": "Hoffentlich weiß er wirklich, was er tut… Das wird schon, oder?",
+          "voice_spoken_text": "Hoffentlich weiß er wirklich, was er tut… Das wird schon, oder?",
+          "render_lines": [
+            "Hoffentlich weiß er",
+            "wirklich, was er tut…",
+            "Das wird schon, oder?"
+          ],
+          "font_size_viewbox": 17.3,
+          "svg_text_id": "TXT_CH01_P07_L014",
+          "voice_audio_asset_path": "res://mika_motion_comic/ch01_clips/de/CH01_P07_L014_de.mp3",
+          "voice_status": "GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L015",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F07",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "reading_order": 15,
+      "svg_text_id": "TXT_CH01_P07_L015",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "relieved_triumph",
+        "intensity": 0.83,
+        "direction_ru": "Свершилось! Тёплая гордость и легкая комическая развязка.",
+        "voice_optional": false,
+        "tts_tags_en": "[triumphantly]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "После долгих проб, споров и россыпи искр корабль наконец удалось модернизировать!",
+          "voice_spoken_text": "После долгих проб, споров и россыпи искр корабль наконец удалось модернизировать!",
+          "render_lines": [
+            "После долгих проб, споров и россыпи искр",
+            "корабль наконец удалось модернизировать!"
+          ],
+          "font_size_viewbox": 21,
+          "svg_text_id": "TXT_CH01_P07_L015",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "After days of trials, doubts and flying sparks, they finally upgraded Mika’s ship!",
+          "voice_spoken_text": "After days of trials, doubts and flying sparks, they finally upgraded Mika’s ship!",
+          "render_lines": [
+            "After days of trials, doubts and flying sparks,",
+            "they finally upgraded Mika’s ship!"
+          ],
+          "font_size_viewbox": 18.8,
+          "svg_text_id": "TXT_CH01_P07_L015",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Depois de testes, dúvidas e muitas faíscas, a nave enfim ficou pronta para o salto!",
+          "voice_spoken_text": "Depois de testes, dúvidas e muitas faíscas, a nave enfim ficou pronta para o salto!",
+          "render_lines": [
+            "Depois de testes, dúvidas e muitas faíscas,",
+            "a nave enfim ficou pronta para o salto!"
+          ],
+          "font_size_viewbox": 18.3,
+          "svg_text_id": "TXT_CH01_P07_L015",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "Tras pruebas, dudas y un montón de chispas, ¡por fin modernizaron la nave!",
+          "voice_spoken_text": "Tras pruebas, dudas y un montón de chispas, ¡por fin modernizaron la nave!",
+          "render_lines": [
+            "Tras pruebas, dudas y un montón de chispas,",
+            "¡por fin modernizaron la nave!"
+          ],
+          "font_size_viewbox": 18.3,
+          "svg_text_id": "TXT_CH01_P07_L015",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Après des essais, des doutes et des étincelles, le vaisseau fut enfin prêt pour le grand saut !",
+          "voice_spoken_text": "Après des essais, des doutes et des étincelles, le vaisseau fut enfin prêt pour le grand saut !",
+          "render_lines": [
+            "Après des essais, des doutes et des étincelles,",
+            "le vaisseau fut enfin prêt pour le grand saut !"
+          ],
+          "font_size_viewbox": 17.7,
+          "svg_text_id": "TXT_CH01_P07_L015",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Nach vielen Tests, Zweifeln und Funken war das Raumschiff endlich startklar!",
+          "voice_spoken_text": "Nach vielen Tests, Zweifeln und Funken war das Raumschiff endlich startklar!",
+          "render_lines": [
+            "Nach vielen Tests, Zweifeln und Funken",
+            "war das Raumschiff endlich startklar!"
+          ],
+          "font_size_viewbox": 18.1,
+          "svg_text_id": "TXT_CH01_P07_L015",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L016",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F07",
+      "speaker_id": "CHR_004",
+      "kind": "narration_supplies",
+      "reading_order": 16,
+      "svg_text_id": "TXT_CH01_P07_L016",
+      "audio_generation_mode": "elevenlabs_future_tts",
+      "performance": {
+        "emotion": "practical_adventure_preparation",
+        "intensity": 0.69,
+        "direction_ru": "Тёплое завершение главы. Запасы важны для игрового сюжета, но без перечисления и пиктограмм.",
+        "voice_optional": false,
+        "tts_tags_en": "[hopefully]"
+      },
+      "localized": {
+        "ru": {
+          "display_text": "Перед стартом друзья пополнили запасы и отправились в путь. Впереди их ждало долгое путешествие!",
+          "voice_spoken_text": "Перед стартом друзья пополнили запасы и отправились в путь. Впереди их ждало долгое путешествие!",
+          "render_lines": [
+            "Перед стартом друзья пополнили запасы",
+            "и отправились в путь. Впереди их ждало",
+            "долгое путешествие!"
+          ],
+          "font_size_viewbox": 19.2,
+          "svg_text_id": "TXT_CH01_P07_L016",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "en": {
+          "display_text": "Before takeoff, our friends restocked and set off. A long journey was waiting for them!",
+          "voice_spoken_text": "Before takeoff, our friends restocked and set off. A long journey was waiting for them!",
+          "render_lines": [
+            "Before takeoff, our friends restocked",
+            "and set off. A long journey",
+            "was waiting for them!"
+          ],
+          "font_size_viewbox": 18.3,
+          "svg_text_id": "TXT_CH01_P07_L016",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "pt_BR": {
+          "display_text": "Antes de partir, os amigos reabasteceram a nave e seguiram viagem. Uma longa jornada os esperava!",
+          "voice_spoken_text": "Antes de partir, os amigos reabasteceram a nave e seguiram viagem. Uma longa jornada os esperava!",
+          "render_lines": [
+            "Antes de partir, os amigos",
+            "reabasteceram a nave e seguiram viagem.",
+            "Uma longa jornada os esperava!"
+          ],
+          "font_size_viewbox": 17.1,
+          "svg_text_id": "TXT_CH01_P07_L016",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "es": {
+          "display_text": "Antes de partir, nuestros amigos repusieron sus provisiones y salieron. ¡Les esperaba un largo viaje!",
+          "voice_spoken_text": "Antes de partir, nuestros amigos repusieron sus provisiones y salieron. ¡Les esperaba un largo viaje!",
+          "render_lines": [
+            "Antes de partir, nuestros amigos",
+            "repusieron sus provisiones y salieron.",
+            "¡Les esperaba un largo viaje!"
+          ],
+          "font_size_viewbox": 17,
+          "svg_text_id": "TXT_CH01_P07_L016",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "fr": {
+          "display_text": "Avant le départ, nos amis ont refait leurs réserves et pris la route. Un long voyage les attendait !",
+          "voice_spoken_text": "Avant le départ, nos amis ont refait leurs réserves et pris la route. Un long voyage les attendait !",
+          "render_lines": [
+            "Avant le départ, nos amis ont",
+            "refait leurs réserves et pris la route.",
+            "Un long voyage les attendait !"
+          ],
+          "font_size_viewbox": 17.7,
+          "svg_text_id": "TXT_CH01_P07_L016",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        },
+        "de": {
+          "display_text": "Vor dem Start füllten die Freunde ihre Vorräte auf und brachen auf. Eine lange Reise lag vor ihnen!",
+          "voice_spoken_text": "Vor dem Start füllten die Freunde ihre Vorräte auf und brachen auf. Eine lange Reise lag vor ihnen!",
+          "render_lines": [
+            "Vor dem Start füllten die Freunde",
+            "ihre Vorräte auf und brachen auf.",
+            "Eine lange Reise lag vor ihnen!"
+          ],
+          "font_size_viewbox": 17.4,
+          "svg_text_id": "TXT_CH01_P07_L016",
+          "voice_audio_asset_path": null,
+          "voice_status": "NOT_GENERATED"
+        }
+      }
+    },
+    {
+      "line_id": "CH01_P07_L017",
+      "page_id": "CH01_P07",
+      "frame_id": "CH01_P07_F07",
+      "speaker_id": "CHR_004",
+      "kind": "hud_destination",
+      "reading_order": 17,
+      "svg_text_id": "TXT_CH01_P07_L017",
+      "audio_generation_mode": "visual_only",
+      "performance": {
+        "emotion": "optimistic_next_destination",
+        "intensity": 0.78,
+        "direction_ru": "Надпись на бортовом навигаторе, перекрывает английский текст исходного рисунка. Озвучивание факультативно.",
+        "voice_optional": true,
+        "tts_tags_en": ""
+      },
+      "localized": {
+        "ru": {
+          "display_text": "КУРС: БОЛЬШОЕ МАГЕЛЛАНОВО ОБЛАКО",
+          "voice_spoken_text": "КУРС: БОЛЬШОЕ МАГЕЛЛАНОВО ОБЛАКО",
+          "render_lines": [
+            "КУРС: БОЛЬШОЕ",
+            "МАГЕЛЛАНОВО ОБЛАКО"
+          ],
+          "font_size_viewbox": 17.6,
+          "svg_text_id": "TXT_CH01_P07_L017",
+          "voice_audio_asset_path": null,
+          "voice_status": "NO_AUDIO_VISUAL_UI"
+        },
+        "en": {
+          "display_text": "COURSE: LARGE MAGELLANIC CLOUD",
+          "voice_spoken_text": "COURSE: LARGE MAGELLANIC CLOUD",
+          "render_lines": [
+            "COURSE: LARGE",
+            "MAGELLANIC CLOUD"
+          ],
+          "font_size_viewbox": 17.6,
+          "svg_text_id": "TXT_CH01_P07_L017",
+          "voice_audio_asset_path": null,
+          "voice_status": "NO_AUDIO_VISUAL_UI"
+        },
+        "pt_BR": {
+          "display_text": "ROTA: GRANDE NUVEM DE MAGALHÃES",
+          "voice_spoken_text": "ROTA: GRANDE NUVEM DE MAGALHÃES",
+          "render_lines": [
+            "ROTA: GRANDE NUVEM",
+            "DE MAGALHÃES"
+          ],
+          "font_size_viewbox": 16.8,
+          "svg_text_id": "TXT_CH01_P07_L017",
+          "voice_audio_asset_path": null,
+          "voice_status": "NO_AUDIO_VISUAL_UI"
+        },
+        "es": {
+          "display_text": "RUMBO: GRAN NUBE DE MAGALLANES",
+          "voice_spoken_text": "RUMBO: GRAN NUBE DE MAGALLANES",
+          "render_lines": [
+            "RUMBO: GRAN NUBE",
+            "DE MAGALLANES"
+          ],
+          "font_size_viewbox": 17.4,
+          "svg_text_id": "TXT_CH01_P07_L017",
+          "voice_audio_asset_path": null,
+          "voice_status": "NO_AUDIO_VISUAL_UI"
+        },
+        "fr": {
+          "display_text": "CAP : GRAND NUAGE DE MAGELLAN",
+          "voice_spoken_text": "CAP : GRAND NUAGE DE MAGELLAN",
+          "render_lines": [
+            "CAP : GRAND NUAGE",
+            "DE MAGELLAN"
+          ],
+          "font_size_viewbox": 17.5,
+          "svg_text_id": "TXT_CH01_P07_L017",
+          "voice_audio_asset_path": null,
+          "voice_status": "NO_AUDIO_VISUAL_UI"
+        },
+        "de": {
+          "display_text": "KURS: GROSSE MAGELLANSCHE WOLKE",
+          "voice_spoken_text": "KURS: GROSSE MAGELLANSCHE WOLKE",
+          "render_lines": [
+            "KURS: GROSSE",
+            "MAGELLANSCHE WOLKE"
+          ],
+          "font_size_viewbox": 16.7,
+          "svg_text_id": "TXT_CH01_P07_L017",
+          "voice_audio_asset_path": null,
+          "voice_status": "NO_AUDIO_VISUAL_UI"
+        }
+      }
+    }
+  ]
+}

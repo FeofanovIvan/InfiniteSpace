@@ -1,0 +1,56 @@
+{
+  "one_audio_line_id": "CH06_P02_L008",
+  "speech_text": {
+    "ru": "Мы научились рассчитывать рождение планет, солнечные затмения, движение планет, пролёты астероидов.",
+    "en": "We learned to calculate the birth of planets, solar eclipses, the movement of planets, and passing asteroids.",
+    "pt_BR": "Aprendemos a calcular o nascimento de planetas, os eclipses solares, o movimento dos planetas e a passagem de asteroides.",
+    "es": "Aprendimos a calcular el nacimiento de planetas, los eclipses solares, el movimiento de los planetas y el paso de asteroides.",
+    "fr": "Nous avons appris à calculer la naissance des planètes, les éclipses solaires, le mouvement des planètes et le passage des astéroïdes.",
+    "de": "Wir lernten, die Entstehung von Planeten, Sonnenfinsternisse, die Bewegung der Planeten und Vorbeiflüge von Asteroiden zu berechnen."
+  },
+  "display_segments": {
+    "ru": [
+      "Мы научились рассчитывать:",
+      "рождение планет",
+      "солнечные затмения",
+      "движение планет",
+      "пролёты астероидов"
+    ],
+    "en": [
+      "We learned to calculate:",
+      "the birth of planets",
+      "solar eclipses",
+      "the movement of planets",
+      "passing asteroids"
+    ],
+    "pt_BR": [
+      "Aprendemos a calcular:",
+      "nascimento de planetas",
+      "eclipses solares",
+      "movimento dos planetas",
+      "passagem de asteroides"
+    ],
+    "es": [
+      "Aprendimos a calcular:",
+      "nacimiento de planetas",
+      "eclipses solares",
+      "movimiento de planetas",
+      "paso de asteroides"
+    ],
+    "fr": [
+      "Nous avons appris à calculer :",
+      "naissance des planètes",
+      "éclipses solaires",
+      "mouvement des planètes",
+      "passage des astéroïdes"
+    ],
+    "de": [
+      "Wir lernten zu berechnen:",
+      "Entstehung von Planeten",
+      "Sonnenfinsternisse",
+      "Planetenbewegungen",
+      "Asteroidenvorbeiflüge"
+    ]
+  },
+  "note_ru": "На странице вступление + 4 подписи, без повторов; для TTS один цельный фрагмент на язык."
+}

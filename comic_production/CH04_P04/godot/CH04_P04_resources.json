@@ -1,0 +1,22 @@
+{
+  "page_id": "CH04_P04",
+  "original_source_pdf": "source/4-4(1).pdf",
+  "overlay_size": [
+    2480,
+    3508
+  ],
+  "languages": {
+    "ru": "ru",
+    "en": "en",
+    "pt_BR": "pt_BR",
+    "es": "es",
+    "fr": "fr",
+    "de": "de"
+  },
+  "overlay_svg_template": "overlays/CH04_P04_{lang}_EDITABLE_OVERLAY.svg",
+  "overlay_png_template": "overlays/CH04_P04_{lang}_TRANSPARENT_OVERLAY.png",
+  "previews_template": "previews/CH04_P04_{lang}_FULL_PREVIEW.jpg",
+  "metadata_path": "metadata/CH04_P04_full_script_translations_emotions.json",
+  "clip_id_example": "CH04_P04_L001_ru",
+  "render_note": "Use a separate original page texture and one selected language overlay; PNG has alpha, SVG has no embedded artwork."
+}

@@ -1,0 +1,407 @@
+{
+  "schema_version": 3,
+  "page_id": "CH04_P02",
+  "locale": "ru",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch04_p02_languages/ch04_p02_ru.webp",
+  "native_scene_panels": [
+    "p42_pirates_capture",
+    "p42_station_prison",
+    "p42_lizard_interrogates",
+    "p42_lizard_changes_mind",
+    "p42_phase_in_cage",
+    "p42_run_to_ship"
+  ],
+  "panel_bounds": {
+    "p42_pirates_capture": [
+      0.03,
+      0.029,
+      0.939,
+      0.238
+    ],
+    "p42_station_prison": [
+      0.029,
+      0.282,
+      0.467,
+      0.19
+    ],
+    "p42_lizard_interrogates": [
+      0.514,
+      0.282,
+      0.456,
+      0.19
+    ],
+    "p42_lizard_changes_mind": [
+      0.029,
+      0.485,
+      0.467,
+      0.193
+    ],
+    "p42_phase_in_cage": [
+      0.514,
+      0.485,
+      0.456,
+      0.193
+    ],
+    "p42_run_to_ship": [
+      0.029,
+      0.69,
+      0.941,
+      0.279
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH04_P02_L001",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "В корабль ворвались рослые ящеры. Настойчиво, но весьма вежливо они предложили всей компании пройти в клетку.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L001_ru.mp3",
+      "audio_duration_s": 7.889,
+      "camera_target": [
+        0.51,
+        0.15,
+        0.233
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8c58204fb8de76850843eea8f746186d261198a856f443bbf92e69be98eb07be"
+    },
+    {
+      "line_id": "CH04_P02_L002",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Прошу.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L002_ru.mp3",
+      "audio_duration_s": 0.993,
+      "camera_target": [
+        0.76,
+        0.164,
+        0.184
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "ab6417caadc0b136f025e04105bec706288bd5c34c78e189c8dc0f64a36ebaaa"
+    },
+    {
+      "line_id": "CH04_P02_L003",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Что с нами будет?!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L003_ru.mp3",
+      "audio_duration_s": 1.802,
+      "camera_target": [
+        0.13,
+        0.165,
+        0.172
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "b91d15a739ba35ba44bf8d2a00fff6c15123ace82402eea3489cefc972953331"
+    },
+    {
+      "line_id": "CH04_P02_L004",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_023",
+      "kind": "nonverbal_sfx",
+      "spoken_text": "Буль-буль…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/shared_sfx/SFX_CH04_P02_F01_FUNGAL_BUBBLES.mp3",
+      "audio_duration_s": 1.2,
+      "camera_target": [
+        0.25,
+        0.145,
+        0.165
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "shared_sfx",
+      "sha256": "7dd874b10debe4c245963df96f0056ddfe4ed75f8b5ed0289d59e074ea70dcbe"
+    },
+    {
+      "line_id": "CH04_P02_L005",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_029",
+      "kind": "nonverbal_sfx",
+      "spoken_text": "Ш-ш-ш…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/shared_sfx/SFX_CH04_P02_F01_PHASE_HISS.mp3",
+      "audio_duration_s": 1.008,
+      "camera_target": [
+        0.38,
+        0.153,
+        0.165
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "shared_sfx",
+      "sha256": "e7d94455573eef3af35c7ba7f838ad4eb5223019f7fbc7520eb079bbd9598139"
+    },
+    {
+      "line_id": "CH04_P02_L006",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_001",
+      "kind": "inner_monologue",
+      "spoken_text": "Я никогда не попаду домой…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L006_ru.mp3",
+      "audio_duration_s": 2.429,
+      "camera_target": [
+        0.46,
+        0.202,
+        0.174
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "55cca2643d53978cde0f1fa328000d389d73bfd563bbf53009ab3b741ddd0e81"
+    },
+    {
+      "line_id": "CH04_P02_L007",
+      "frame_id": "CH04_P02_F02",
+      "panel_id": "p42_station_prison",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Всех перевезли на пиратскую станцию «Голова Титана» и оставили под охраной.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L007_ru.mp3",
+      "audio_duration_s": 4.911,
+      "camera_target": [
+        0.263,
+        0.381,
+        0.185
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "da33ea8be3cccfa79c83a305e4059446b48098c4885932aefa11ba73034e2533"
+    },
+    {
+      "line_id": "CH04_P02_L008",
+      "frame_id": "CH04_P02_F02",
+      "panel_id": "p42_station_prison",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Что же будем делать?",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L008_ru.mp3",
+      "audio_duration_s": 1.959,
+      "camera_target": [
+        0.24,
+        0.404,
+        0.152
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2999d58915c066a6ff3299a655597fcd9944f18c1b6d305a95f546f0932c778c"
+    },
+    {
+      "line_id": "CH04_P02_L009",
+      "frame_id": "CH04_P02_F02",
+      "panel_id": "p42_station_prison",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Надо что-то придумать…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L009_ru.mp3",
+      "audio_duration_s": 2.116,
+      "camera_target": [
+        0.34,
+        0.397,
+        0.151
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "49a440cfe44f7b7b121380a779eb53adaf5f5a3888027fd4bee65b0f469bbd4f"
+    },
+    {
+      "line_id": "CH04_P02_L010",
+      "frame_id": "CH04_P02_F03",
+      "panel_id": "p42_lizard_interrogates",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Ну как, вам здесь удобно?",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L010_ru.mp3",
+      "audio_duration_s": 2.194,
+      "camera_target": [
+        0.8,
+        0.365,
+        0.128
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "a5d03cbdbbed5989ec3078003fa65a224b27424cb1b442b8e3404e98d6a67f63"
+    },
+    {
+      "line_id": "CH04_P02_L011",
+      "frame_id": "CH04_P02_F03",
+      "panel_id": "p42_lizard_interrogates",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Ты такой же, как тот из Малого Магелланова Облака!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L011_ru.mp3",
+      "audio_duration_s": 3.318,
+      "camera_target": [
+        0.59,
+        0.374,
+        0.125
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "5b64c58912769b9a235081303f5deeeb528a191b9a45dada33204d9f17c4fb23"
+    },
+    {
+      "line_id": "CH04_P02_L012",
+      "frame_id": "CH04_P02_F04",
+      "panel_id": "p42_lizard_changes_mind",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Саргон?! Что с ним случилось? Он говорил, что у него есть план, как разбогатеть!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L012_ru.mp3",
+      "audio_duration_s": 5.329,
+      "camera_target": [
+        0.27,
+        0.574,
+        0.18
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2206fa089d9be2a0657a9bca8335df7348a6fc03e00058ae3a7c0c4c67c672eb"
+    },
+    {
+      "line_id": "CH04_P02_L013",
+      "frame_id": "CH04_P02_F05",
+      "panel_id": "p42_phase_in_cage",
+      "speaker_id": "CHR_029",
+      "kind": "nonverbal_sfx",
+      "spoken_text": "Шу-у… Буль…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/shared_sfx/SFX_CH04_P02_F05_PHASE_WHOOSH_BUBBLE.mp3",
+      "audio_duration_s": 1.416,
+      "camera_target": [
+        0.58,
+        0.576,
+        0.151
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "shared_sfx",
+      "sha256": "c3e929a714eef99d6d012e9030c58c2f75753c2b966275b37be712ad20b93b93"
+    },
+    {
+      "line_id": "CH04_P02_L015",
+      "frame_id": "CH04_P02_F05",
+      "panel_id": "p42_phase_in_cage",
+      "speaker_id": "CHR_001",
+      "kind": "interpreted_dialogue",
+      "spoken_text": "Наш друг говорит: Саргон сейчас под стражей. Если ты поможешь нам выбраться, он попробует договориться, чтобы Саргона отпустили.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L015_ru.mp3",
+      "audio_duration_s": 8.359,
+      "camera_target": [
+        0.67,
+        0.597,
+        0.167
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "fbb8330e0f1934f456dc675d12422adf281ca2763d646e4d15693f6482c3b711"
+    },
+    {
+      "line_id": "CH04_P02_L014",
+      "frame_id": "CH04_P02_F05",
+      "panel_id": "p42_phase_in_cage",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Я согласен. Но сначала надо перекусить!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L014_ru.mp3",
+      "audio_duration_s": 3.553,
+      "camera_target": [
+        0.83,
+        0.569,
+        0.142
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "8e1b6300836319af7bfad0fec8d0185ec71397d15cb26189f985bc8249b7b30f"
+    },
+    {
+      "line_id": "CH04_P02_L016",
+      "frame_id": "CH04_P02_F06",
+      "panel_id": "p42_run_to_ship",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "После небольшого перекуса ящер помог нашим друзьям сбежать из заточения. Вскоре вся компания добралась до звездолёта.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/ru/CH04_P02_L016_ru.mp3",
+      "audio_duration_s": 7.811,
+      "camera_target": [
+        0.53,
+        0.85,
+        0.235
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "ec5d02801dec17dc2593931550e032b391f31982797f221d3f90e4742f6d34db"
+    }
+  ]
+}

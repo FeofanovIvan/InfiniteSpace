@@ -1,0 +1,118 @@
+{
+  "schema": "mika_ch01_p04_voice_timing_v1",
+  "page_id": "CH01_P04",
+  "locale": "ru",
+  "audio_path": "res://mika_motion_comic/audio/ch01_p04_ru_voice_master.mp3",
+  "duration_seconds": 33.672,
+  "status": "preliminary_boundaries_from_audio_pauses_needs_godot_playback_review",
+  "frame_map": {
+    "p04_mars_landing": [
+      "CH01_P04_L001"
+    ],
+    "p04_mika_walk": [
+      "CH01_P04_L002"
+    ],
+    "p04_reception": [
+      "CH01_P04_L003",
+      "CH01_P04_L004"
+    ],
+    "p04_elevator": [
+      "CH01_P04_L005"
+    ],
+    "p04_ai_core": [
+      "CH01_P04_L006"
+    ],
+    "p04_mika_orb_close": [
+      "CH01_P04_L007",
+      "CH01_P04_L008"
+    ]
+  },
+  "playback_groups": [
+    {
+      "trigger": "mars_arrival_panels",
+      "panels": [
+        "p04_mars_landing",
+        "p04_mika_walk",
+        "p04_reception"
+      ],
+      "voice_in_s": 0.0,
+      "voice_out_s": 16.67
+    },
+    {
+      "trigger": "mars_story_after_word_panels",
+      "panels": [
+        "p04_elevator",
+        "p04_ai_core",
+        "p04_mika_orb_close"
+      ],
+      "voice_in_s": 16.93,
+      "voice_out_s": 33.672
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "CH01_P04_L001",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_mars_landing",
+      "start_s": 0.0,
+      "end_s": 6.69,
+      "text": "Марс. Корабль Мики приземлился у космопорта Центрального дата-центра искусственного интеллекта."
+    },
+    {
+      "line_id": "CH01_P04_L002",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_mika_walk",
+      "start_s": 7.15,
+      "end_s": 10.04,
+      "text": "Красная планета встретила Мику песчаной бурей!"
+    },
+    {
+      "line_id": "CH01_P04_L003",
+      "speaker_id": "CHR_001",
+      "panel_id": "p04_reception",
+      "start_s": 10.55,
+      "end_s": 13.06,
+      "text": "Простите… Можно к ИИ?"
+    },
+    {
+      "line_id": "CH01_P04_L004",
+      "speaker_id": "CHR_012",
+      "panel_id": "p04_reception",
+      "start_s": 13.56,
+      "end_s": 16.55,
+      "text": "Конечно! Но сначала… пара анкет."
+    },
+    {
+      "line_id": "CH01_P04_L005",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_elevator",
+      "start_s": 16.93,
+      "end_s": 23.67,
+      "text": "Даже в будущем от бумажек никуда не деться! Заполнив анкеты, Мика долго ехал на лифте вниз."
+    },
+    {
+      "line_id": "CH01_P04_L006",
+      "speaker_id": "CHR_004",
+      "panel_id": "p04_ai_core",
+      "start_s": 24.16,
+      "end_s": 29.45,
+      "text": "В сердце Марса открылся огромный зал. Мост вёл к сияющей сфере…"
+    },
+    {
+      "line_id": "CH01_P04_L007",
+      "speaker_id": "CHR_013",
+      "panel_id": "p04_mika_orb_close",
+      "start_s": 30.06,
+      "end_s": 30.66,
+      "text": "Мика…"
+    },
+    {
+      "line_id": "CH01_P04_L008",
+      "speaker_id": "CHR_001",
+      "panel_id": "p04_mika_orb_close",
+      "start_s": 31.25,
+      "end_s": 33.24,
+      "text": "Ты… знаешь моё имя?!"
+    }
+  ]
+}

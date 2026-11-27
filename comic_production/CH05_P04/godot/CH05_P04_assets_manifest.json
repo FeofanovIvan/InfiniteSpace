@@ -1,0 +1,51 @@
+{
+  "page_id": "CH05_P04",
+  "background_pdf": "source/5-4(2).pdf",
+  "pixel_size": [
+    2480,
+    3508
+  ],
+  "languages": {
+    "ru": {
+      "overlay_png": "overlays/CH05_P04_ru_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH05_P04_ru_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH05_P04_ru_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "en": {
+      "overlay_png": "overlays/CH05_P04_en_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH05_P04_en_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH05_P04_en_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "pt_BR": {
+      "overlay_png": "overlays/CH05_P04_pt_BR_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH05_P04_pt_BR_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH05_P04_pt_BR_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "es": {
+      "overlay_png": "overlays/CH05_P04_es_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH05_P04_es_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH05_P04_es_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "fr": {
+      "overlay_png": "overlays/CH05_P04_fr_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH05_P04_fr_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH05_P04_fr_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "de": {
+      "overlay_png": "overlays/CH05_P04_de_TRANSPARENT_OVERLAY.png",
+      "overlay_svg": "overlays/CH05_P04_de_EDITABLE_OVERLAY.svg",
+      "preview_pdf": "previews/CH05_P04_de_PDF_WITH_VECTOR_OVERLAY.pdf"
+    }
+  },
+  "audio_line_ids": [
+    "CH05_P04_L001",
+    "CH05_P04_L002",
+    "CH05_P04_L003",
+    "CH05_P04_L004",
+    "CH05_P04_L005",
+    "CH05_P04_L006",
+    "CH05_P04_L007"
+  ],
+  "magnetic_companion_character_id": "CHR_035",
+  "scene_transition": "magnetic companion travels with the crew"
+}

@@ -1,0 +1,264 @@
+{
+  "approved_ru_svg_unchanged": true,
+  "target_size_px": [
+    2480,
+    3508
+  ],
+  "source_pdf_unchanged_sha256": "c256776a63164354a401ab7f04e85e5bbb2d1a51fb074fa4566823264df50c54",
+  "languages": {
+    "ru": {
+      "source": "approved SVG copied byte-for-byte",
+      "approved_svg_sha256": "9156aa1ec81e4d726208d82e7452a58c61185da89e8634d67521af14da5b41a8"
+    },
+    "en": {
+      "L001": {
+        "font_size": 29,
+        "line_count": 2,
+        "max_line_width_px": 712,
+        "available_width_px": 733,
+        "bottom_px": 206,
+        "allowed_bottom_px": 242
+      },
+      "L002": {
+        "font_size": 45,
+        "line_count": 1,
+        "max_line_width_px": 270,
+        "available_width_px": 391,
+        "bottom_px": 998,
+        "allowed_bottom_px": 1020
+      },
+      "L003": {
+        "font_size": 41,
+        "line_count": 2,
+        "max_line_width_px": 590,
+        "available_width_px": 623,
+        "bottom_px": 1691,
+        "allowed_bottom_px": 1719
+      },
+      "L004": {
+        "font_size": 34,
+        "line_count": 2,
+        "max_line_width_px": 624,
+        "available_width_px": 700,
+        "bottom_px": 1717.6,
+        "allowed_bottom_px": 1741
+      },
+      "L005": {
+        "font_size": 34,
+        "line_count": 2,
+        "max_line_width_px": 798,
+        "available_width_px": 1032,
+        "bottom_px": 2000.6,
+        "allowed_bottom_px": 2023
+      },
+      "L006": {
+        "font_size": 33,
+        "line_count": 5,
+        "max_line_width_px": 770,
+        "available_width_px": 772,
+        "bottom_px": 3116.7,
+        "allowed_bottom_px": 3134
+      }
+    },
+    "pt_BR": {
+      "L001": {
+        "font_size": 28,
+        "line_count": 2,
+        "max_line_width_px": 720,
+        "available_width_px": 733,
+        "bottom_px": 206,
+        "allowed_bottom_px": 242
+      },
+      "L002": {
+        "font_size": 45,
+        "line_count": 1,
+        "max_line_width_px": 256,
+        "available_width_px": 391,
+        "bottom_px": 998,
+        "allowed_bottom_px": 1020
+      },
+      "L003": {
+        "font_size": 41,
+        "line_count": 2,
+        "max_line_width_px": 551,
+        "available_width_px": 623,
+        "bottom_px": 1691,
+        "allowed_bottom_px": 1719
+      },
+      "L004": {
+        "font_size": 28,
+        "line_count": 2,
+        "max_line_width_px": 691,
+        "available_width_px": 700,
+        "bottom_px": 1717.6,
+        "allowed_bottom_px": 1741
+      },
+      "L005": {
+        "font_size": 30,
+        "line_count": 2,
+        "max_line_width_px": 1003,
+        "available_width_px": 1032,
+        "bottom_px": 2000.6,
+        "allowed_bottom_px": 2023
+      },
+      "L006": {
+        "font_size": 29,
+        "line_count": 5,
+        "max_line_width_px": 758,
+        "available_width_px": 772,
+        "bottom_px": 3116.7,
+        "allowed_bottom_px": 3134
+      }
+    },
+    "es": {
+      "L001": {
+        "font_size": 29,
+        "line_count": 2,
+        "max_line_width_px": 732,
+        "available_width_px": 733,
+        "bottom_px": 206,
+        "allowed_bottom_px": 242
+      },
+      "L002": {
+        "font_size": 45,
+        "line_count": 1,
+        "max_line_width_px": 288,
+        "available_width_px": 391,
+        "bottom_px": 998,
+        "allowed_bottom_px": 1020
+      },
+      "L003": {
+        "font_size": 41,
+        "line_count": 2,
+        "max_line_width_px": 590,
+        "available_width_px": 623,
+        "bottom_px": 1691,
+        "allowed_bottom_px": 1719
+      },
+      "L004": {
+        "font_size": 34,
+        "line_count": 2,
+        "max_line_width_px": 680,
+        "available_width_px": 700,
+        "bottom_px": 1717.6,
+        "allowed_bottom_px": 1741
+      },
+      "L005": {
+        "font_size": 31,
+        "line_count": 2,
+        "max_line_width_px": 1029,
+        "available_width_px": 1032,
+        "bottom_px": 2000.6,
+        "allowed_bottom_px": 2023
+      },
+      "L006": {
+        "font_size": 28,
+        "line_count": 5,
+        "max_line_width_px": 752,
+        "available_width_px": 772,
+        "bottom_px": 3116.7,
+        "allowed_bottom_px": 3134
+      }
+    },
+    "fr": {
+      "L001": {
+        "font_size": 26,
+        "line_count": 2,
+        "max_line_width_px": 712,
+        "available_width_px": 733,
+        "bottom_px": 206,
+        "allowed_bottom_px": 242
+      },
+      "L002": {
+        "font_size": 45,
+        "line_count": 1,
+        "max_line_width_px": 294,
+        "available_width_px": 391,
+        "bottom_px": 998,
+        "allowed_bottom_px": 1020
+      },
+      "L003": {
+        "font_size": 41,
+        "line_count": 2,
+        "max_line_width_px": 510,
+        "available_width_px": 623,
+        "bottom_px": 1691,
+        "allowed_bottom_px": 1719
+      },
+      "L004": {
+        "font_size": 33,
+        "line_count": 2,
+        "max_line_width_px": 685,
+        "available_width_px": 700,
+        "bottom_px": 1717.6,
+        "allowed_bottom_px": 1741
+      },
+      "L005": {
+        "font_size": 28,
+        "line_count": 2,
+        "max_line_width_px": 1008,
+        "available_width_px": 1032,
+        "bottom_px": 2000.6,
+        "allowed_bottom_px": 2023
+      },
+      "L006": {
+        "font_size": 28,
+        "line_count": 5,
+        "max_line_width_px": 771,
+        "available_width_px": 772,
+        "bottom_px": 3116.7,
+        "allowed_bottom_px": 3134
+      }
+    },
+    "de": {
+      "L001": {
+        "font_size": 26,
+        "line_count": 2,
+        "max_line_width_px": 729,
+        "available_width_px": 733,
+        "bottom_px": 206,
+        "allowed_bottom_px": 242
+      },
+      "L002": {
+        "font_size": 45,
+        "line_count": 1,
+        "max_line_width_px": 299,
+        "available_width_px": 391,
+        "bottom_px": 998,
+        "allowed_bottom_px": 1020
+      },
+      "L003": {
+        "font_size": 41,
+        "line_count": 2,
+        "max_line_width_px": 477,
+        "available_width_px": 623,
+        "bottom_px": 1691,
+        "allowed_bottom_px": 1719
+      },
+      "L004": {
+        "font_size": 32,
+        "line_count": 2,
+        "max_line_width_px": 683,
+        "available_width_px": 700,
+        "bottom_px": 1717.6,
+        "allowed_bottom_px": 1741
+      },
+      "L005": {
+        "font_size": 34,
+        "line_count": 2,
+        "max_line_width_px": 957,
+        "available_width_px": 1032,
+        "bottom_px": 2000.6,
+        "allowed_bottom_px": 2023
+      },
+      "L006": {
+        "font_size": 29,
+        "line_count": 5,
+        "max_line_width_px": 752,
+        "available_width_px": 772,
+        "bottom_px": 3116.7,
+        "allowed_bottom_px": 3134
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "page_id": "CH04_P03",
+  "base_pdf": "source/4-3(1).pdf",
+  "page_pixel_size": [
+    2480,
+    3508
+  ],
+  "place_names": {
+    "excavations": {
+      "ru": "Археон",
+      "latin": "Archeon"
+    },
+    "museum": {
+      "ru": "Руна",
+      "latin": "Runa"
+    }
+  },
+  "language_assets": {
+    "ru": {
+      "svg": "overlays/CH04_P03_ru_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH04_P03_ru_TRANSPARENT_OVERLAY.png",
+      "source_png_has_alpha": true
+    },
+    "en": {
+      "svg": "overlays/CH04_P03_en_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH04_P03_en_TRANSPARENT_OVERLAY.png",
+      "source_png_has_alpha": true
+    },
+    "pt_BR": {
+      "svg": "overlays/CH04_P03_pt_BR_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH04_P03_pt_BR_TRANSPARENT_OVERLAY.png",
+      "source_png_has_alpha": true
+    },
+    "es": {
+      "svg": "overlays/CH04_P03_es_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH04_P03_es_TRANSPARENT_OVERLAY.png",
+      "source_png_has_alpha": true
+    },
+    "fr": {
+      "svg": "overlays/CH04_P03_fr_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH04_P03_fr_TRANSPARENT_OVERLAY.png",
+      "source_png_has_alpha": true
+    },
+    "de": {
+      "svg": "overlays/CH04_P03_de_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH04_P03_de_TRANSPARENT_OVERLAY.png",
+      "source_png_has_alpha": true
+    }
+  },
+  "audio_clip_pattern": "<Line ID>_<language>.mp3",
+  "tts_status": "NOT_GENERATED",
+  "font_note": "SVG text objects are editable DejaVu Sans; no font files bundled."
+}

@@ -1,0 +1,70 @@
+{
+  "page_id": "CH07_P02",
+  "source_pdf": "source/7-2(1).pdf",
+  "canvas_px": [
+    2480,
+    3508
+  ],
+  "languages": {
+    "ru": {
+      "svg": "overlays/CH07_P02_ru_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH07_P02_ru_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH07_P02_ru_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "en": {
+      "svg": "overlays/CH07_P02_en_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH07_P02_en_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH07_P02_en_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "pt_BR": {
+      "svg": "overlays/CH07_P02_pt_BR_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH07_P02_pt_BR_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH07_P02_pt_BR_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "es": {
+      "svg": "overlays/CH07_P02_es_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH07_P02_es_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH07_P02_es_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "fr": {
+      "svg": "overlays/CH07_P02_fr_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH07_P02_fr_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH07_P02_fr_PDF_WITH_VECTOR_OVERLAY.pdf"
+    },
+    "de": {
+      "svg": "overlays/CH07_P02_de_EDITABLE_OVERLAY.svg",
+      "png": "overlays/CH07_P02_de_TRANSPARENT_OVERLAY.png",
+      "pdf": "previews/CH07_P02_de_PDF_WITH_VECTOR_OVERLAY.pdf"
+    }
+  },
+  "line_ids": [
+    "CH07_P02_L001",
+    "CH07_P02_L002",
+    "CH07_P02_L003",
+    "CH07_P02_L004",
+    "CH07_P02_L005",
+    "CH07_P02_L006",
+    "CH07_P02_L007",
+    "CH07_P02_L008",
+    "CH07_P02_L009"
+  ],
+  "display_units": [
+    "CH07_P02_L001",
+    "CH07_P02_L002",
+    "CH07_P02_L003",
+    "CH07_P02_L004_visual_a",
+    "CH07_P02_L004_visual_b",
+    "CH07_P02_L005_visual_a",
+    "CH07_P02_L005_visual_b",
+    "CH07_P02_L006",
+    "CH07_P02_L007",
+    "CH07_P02_L008",
+    "CH07_P02_L009"
+  ],
+  "speaker_ids": [
+    "CHR_040",
+    "CHR_001"
+  ],
+  "audio_lines": 9,
+  "artwork_unchanged": true
+}

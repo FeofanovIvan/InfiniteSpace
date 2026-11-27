@@ -1,0 +1,407 @@
+{
+  "schema_version": 3,
+  "page_id": "CH04_P02",
+  "locale": "de",
+  "sync_model": "finite_state_camera_first_then_individual_audio",
+  "image_path": "res://mika_motion_comic/assets/pages/ch04_p02_languages/ch04_p02_de.webp",
+  "native_scene_panels": [
+    "p42_pirates_capture",
+    "p42_station_prison",
+    "p42_lizard_interrogates",
+    "p42_lizard_changes_mind",
+    "p42_phase_in_cage",
+    "p42_run_to_ship"
+  ],
+  "panel_bounds": {
+    "p42_pirates_capture": [
+      0.03,
+      0.029,
+      0.939,
+      0.238
+    ],
+    "p42_station_prison": [
+      0.029,
+      0.282,
+      0.467,
+      0.19
+    ],
+    "p42_lizard_interrogates": [
+      0.514,
+      0.282,
+      0.456,
+      0.19
+    ],
+    "p42_lizard_changes_mind": [
+      0.029,
+      0.485,
+      0.467,
+      0.193
+    ],
+    "p42_phase_in_cage": [
+      0.514,
+      0.485,
+      0.456,
+      0.193
+    ],
+    "p42_run_to_ship": [
+      0.029,
+      0.69,
+      0.941,
+      0.279
+    ]
+  },
+  "lines": [
+    {
+      "line_id": "CH04_P02_L001",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Große echsenartige Wesen stürmten das Schiff. Bestimmt, aber erstaunlich höflich, führten sie alle in einen Käfig.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L001_de.mp3",
+      "audio_duration_s": 8.124,
+      "camera_target": [
+        0.51,
+        0.15,
+        0.233
+      ],
+      "transition_before_s": 0,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "5240f80c57e059d7c29f7808dde095900d9c4d8bc8205a7838831bd35a49edd4"
+    },
+    {
+      "line_id": "CH04_P02_L002",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Bitte sehr.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L002_de.mp3",
+      "audio_duration_s": 1.149,
+      "camera_target": [
+        0.76,
+        0.164,
+        0.184
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "3924fc558c76203c9fb4c64deef1584ce5f727647f71aaf871467f2efa01a34e"
+    },
+    {
+      "line_id": "CH04_P02_L003",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Was wird jetzt aus uns?!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L003_de.mp3",
+      "audio_duration_s": 2.038,
+      "camera_target": [
+        0.13,
+        0.165,
+        0.172
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2347a44850bd02aaad6e2322fc91738ccba36a2032db51241abf1c9c19ba5ba6"
+    },
+    {
+      "line_id": "CH04_P02_L004",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_023",
+      "kind": "nonverbal_sfx",
+      "spoken_text": "Буль-буль…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/shared_sfx/SFX_CH04_P02_F01_FUNGAL_BUBBLES.mp3",
+      "audio_duration_s": 1.2,
+      "camera_target": [
+        0.25,
+        0.145,
+        0.165
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "shared_sfx",
+      "sha256": "7dd874b10debe4c245963df96f0056ddfe4ed75f8b5ed0289d59e074ea70dcbe"
+    },
+    {
+      "line_id": "CH04_P02_L005",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_029",
+      "kind": "nonverbal_sfx",
+      "spoken_text": "Ш-ш-ш…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/shared_sfx/SFX_CH04_P02_F01_PHASE_HISS.mp3",
+      "audio_duration_s": 1.008,
+      "camera_target": [
+        0.38,
+        0.153,
+        0.165
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "shared_sfx",
+      "sha256": "e7d94455573eef3af35c7ba7f838ad4eb5223019f7fbc7520eb079bbd9598139"
+    },
+    {
+      "line_id": "CH04_P02_L006",
+      "frame_id": "CH04_P02_F01",
+      "panel_id": "p42_pirates_capture",
+      "speaker_id": "CHR_001",
+      "kind": "inner_monologue",
+      "spoken_text": "Ich werde nie nach Hause kommen…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L006_de.mp3",
+      "audio_duration_s": 2.273,
+      "camera_target": [
+        0.46,
+        0.202,
+        0.174
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "cf48ca417d1747aa19d1e6b4190051d89cf61bc4ac4d74093e355f210df547fa"
+    },
+    {
+      "line_id": "CH04_P02_L007",
+      "frame_id": "CH04_P02_F02",
+      "panel_id": "p42_station_prison",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Sie brachten alle zur Piratenstation Titanenkopf und hielten sie dort gefangen.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L007_de.mp3",
+      "audio_duration_s": 4.989,
+      "camera_target": [
+        0.263,
+        0.381,
+        0.185
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "de2023d369367f78974c51daac2526506f07ea48cde79c417cfff48764609792"
+    },
+    {
+      "line_id": "CH04_P02_L008",
+      "frame_id": "CH04_P02_F02",
+      "panel_id": "p42_station_prison",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Was machen wir jetzt?",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L008_de.mp3",
+      "audio_duration_s": 1.802,
+      "camera_target": [
+        0.24,
+        0.404,
+        0.152
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "93884e575284d2801a528df5ad946ac5b79784f6afdceadd0c44967215762210"
+    },
+    {
+      "line_id": "CH04_P02_L009",
+      "frame_id": "CH04_P02_F02",
+      "panel_id": "p42_station_prison",
+      "speaker_id": "CHR_015",
+      "kind": "dialogue",
+      "spoken_text": "Uns muss etwas einfallen…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L009_de.mp3",
+      "audio_duration_s": 2.429,
+      "camera_target": [
+        0.34,
+        0.397,
+        0.151
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "982d24ee24913b94751a07a55c5372fc751d200a660e4fda14518dcb582dca8e"
+    },
+    {
+      "line_id": "CH04_P02_L010",
+      "frame_id": "CH04_P02_F03",
+      "panel_id": "p42_lizard_interrogates",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Na, habt ihr es hier bequem?",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L010_de.mp3",
+      "audio_duration_s": 2.351,
+      "camera_target": [
+        0.8,
+        0.365,
+        0.128
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "6c5a66be857e730ff9fa6cd5c7748b159b93465e03a339d01ae96eb01c8af27e"
+    },
+    {
+      "line_id": "CH04_P02_L011",
+      "frame_id": "CH04_P02_F03",
+      "panel_id": "p42_lizard_interrogates",
+      "speaker_id": "CHR_001",
+      "kind": "dialogue",
+      "spoken_text": "Du bist genau wie der aus der Kleinen Magellanschen Wolke!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L011_de.mp3",
+      "audio_duration_s": 3.396,
+      "camera_target": [
+        0.59,
+        0.374,
+        0.125
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "cf546d2fdb959001273fcc27eae897da8fba8c7c9f587fd9be985c6a9ac89a4a"
+    },
+    {
+      "line_id": "CH04_P02_L012",
+      "frame_id": "CH04_P02_F04",
+      "panel_id": "p42_lizard_changes_mind",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Sargon?! Was ist mit ihm passiert? Er sagte, er hätte einen Plan, reich zu werden!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L012_de.mp3",
+      "audio_duration_s": 5.486,
+      "camera_target": [
+        0.27,
+        0.574,
+        0.18
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "2ba9153a9381401b44668a5ccfb82010eb7fd62a0c4332caa6663818f19c481a"
+    },
+    {
+      "line_id": "CH04_P02_L013",
+      "frame_id": "CH04_P02_F05",
+      "panel_id": "p42_phase_in_cage",
+      "speaker_id": "CHR_029",
+      "kind": "nonverbal_sfx",
+      "spoken_text": "Шу-у… Буль…",
+      "audio_path": "res://mika_motion_comic/ch04_clips/shared_sfx/SFX_CH04_P02_F05_PHASE_WHOOSH_BUBBLE.mp3",
+      "audio_duration_s": 1.416,
+      "camera_target": [
+        0.58,
+        0.576,
+        0.151
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "shared_sfx",
+      "sha256": "c3e929a714eef99d6d012e9030c58c2f75753c2b966275b37be712ad20b93b93"
+    },
+    {
+      "line_id": "CH04_P02_L015",
+      "frame_id": "CH04_P02_F05",
+      "panel_id": "p42_phase_in_cage",
+      "speaker_id": "CHR_001",
+      "kind": "interpreted_dialogue",
+      "spoken_text": "Unser Freund sagt, Sargon wird festgehalten. Hilfst du uns bei der Flucht, versucht er, Sargons Freilassung zu erreichen.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L015_de.mp3",
+      "audio_duration_s": 7.001,
+      "camera_target": [
+        0.67,
+        0.597,
+        0.167
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "6e6306245902c7857d661640000f3c081cab71cc04182053bcba05319d09037f"
+    },
+    {
+      "line_id": "CH04_P02_L014",
+      "frame_id": "CH04_P02_F05",
+      "panel_id": "p42_phase_in_cage",
+      "speaker_id": "CHR_031",
+      "kind": "dialogue",
+      "spoken_text": "Einverstanden! Aber zuerst muss ich etwas essen!",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L014_de.mp3",
+      "audio_duration_s": 3.474,
+      "camera_target": [
+        0.83,
+        0.569,
+        0.142
+      ],
+      "transition_before_s": 0.25,
+      "transition_style": "pan",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "5c572f6a98028f6ff0fc7a4803d59bd18d7aba0d3dd748ab6344ae0a37b4fd21"
+    },
+    {
+      "line_id": "CH04_P02_L016",
+      "frame_id": "CH04_P02_F06",
+      "panel_id": "p42_run_to_ship",
+      "speaker_id": "CHR_004",
+      "kind": "narration",
+      "spoken_text": "Nach einem kleinen Imbiss half die Echse unseren Freunden bei der Flucht. Bald erreichten alle ihr Raumschiff.",
+      "audio_path": "res://mika_motion_comic/ch04_clips/de/CH04_P02_L016_de.mp3",
+      "audio_duration_s": 6.348,
+      "camera_target": [
+        0.53,
+        0.85,
+        0.235
+      ],
+      "transition_before_s": 0.4,
+      "transition_style": "cut",
+      "camera_visible_lead_s": 0.12,
+      "transition_sfx_path": "",
+      "voice_start_rule": "after_camera_presented_and_sfx_finished",
+      "audio_kind": "voice",
+      "sha256": "d7fd4b0330155b0d6559daecd5a375d0550b329b0460a885ef8048095adf4173"
+    }
+  ]
+}

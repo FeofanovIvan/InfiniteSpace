@@ -1,0 +1,204 @@
+{
+  "schema_version": 2,
+  "page_id": "CH01_P01",
+  "visual_version": "NEBULA_6LANG_v3",
+  "duration_seconds": 29.784,
+  "audio_locale": "en",
+  "timeline_source": "English master MP3 measured speech/pause boundaries, approximate ±0.06 s; manual Godot listening check pending",
+  "shots": [
+    {
+      "frame_id": "CH01_P01_F01",
+      "line_ids": [
+        "CH01_P01_L001"
+      ],
+      "start_s": 0.0,
+      "speech_end_s": 2.564,
+      "transition_start_s": 2.47,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.304,
+        0.141,
+        0.248
+      ],
+      "camera_end": [
+        0.313,
+        0.145,
+        0.242
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F02",
+      "line_ids": [
+        "CH01_P01_L002"
+      ],
+      "start_s": 3.12,
+      "speech_end_s": 3.908,
+      "transition_start_s": 3.85,
+      "transition_to_next": "dissolve",
+      "camera_start": [
+        0.733,
+        0.167,
+        0.222
+      ],
+      "camera_end": [
+        0.739,
+        0.168,
+        0.216
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F03",
+      "line_ids": [
+        "CH01_P01_L003"
+      ],
+      "start_s": 4.318,
+      "speech_end_s": 7.838,
+      "transition_start_s": 7.425,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.242,
+        0.374,
+        0.19
+      ],
+      "camera_end": [
+        0.243,
+        0.38,
+        0.193
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F04",
+      "line_ids": [
+        "CH01_P01_L004"
+      ],
+      "start_s": 8.084,
+      "speech_end_s": 10.916,
+      "transition_start_s": 10.52,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.59,
+        0.358,
+        0.128
+      ],
+      "camera_end": [
+        0.59,
+        0.36,
+        0.123
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F05",
+      "line_ids": [
+        "CH01_P01_L005"
+      ],
+      "start_s": 11.171,
+      "speech_end_s": 15.154,
+      "transition_start_s": 15.12,
+      "transition_to_next": "dissolve",
+      "camera_start": [
+        0.812,
+        0.447,
+        0.145
+      ],
+      "camera_end": [
+        0.809,
+        0.45,
+        0.139
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F06",
+      "line_ids": [
+        "CH01_P01_L006",
+        "CH01_P01_L007"
+      ],
+      "start_s": 15.697,
+      "speech_end_s": 18.997,
+      "transition_start_s": 18.76,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.272,
+        0.619,
+        0.222
+      ],
+      "camera_end": [
+        0.274,
+        0.624,
+        0.219
+      ],
+      "line_segments_s": [
+        {
+          "id": "CH01_P01_L006",
+          "start_s": 15.697,
+          "end_s": 16.869
+        },
+        {
+          "id": "CH01_P01_L007",
+          "start_s": 17.299,
+          "end_s": 18.997
+        }
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F07",
+      "line_ids": [
+        "CH01_P01_L008"
+      ],
+      "start_s": 19.427,
+      "speech_end_s": 23.378,
+      "transition_start_s": 23.285,
+      "transition_to_next": "dissolve",
+      "camera_start": [
+        0.746,
+        0.61,
+        0.204
+      ],
+      "camera_end": [
+        0.748,
+        0.613,
+        0.2
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F08",
+      "line_ids": [
+        "CH01_P01_L009"
+      ],
+      "start_s": 23.848,
+      "speech_end_s": 27.098,
+      "transition_start_s": 26.905,
+      "transition_to_next": "pan",
+      "camera_start": [
+        0.279,
+        0.823,
+        0.221
+      ],
+      "camera_end": [
+        0.279,
+        0.872,
+        0.22
+      ]
+    },
+    {
+      "frame_id": "CH01_P01_F09",
+      "line_ids": [
+        "CH01_P01_L010"
+      ],
+      "start_s": 27.551,
+      "speech_end_s": 29.241,
+      "transition_start_s": 29.784,
+      "transition_to_next": "end",
+      "camera_start": [
+        0.751,
+        0.859,
+        0.24
+      ],
+      "camera_end": [
+        0.749,
+        0.862,
+        0.23
+      ]
+    }
+  ],
+  "notes": "Nine frames and ten spoken lines; F06 has lines L006 and L007. EN uses its own audio clock. Camera geometry copied from the approved RU shot plan."
+}

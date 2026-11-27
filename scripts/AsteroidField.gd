@@ -99,6 +99,71 @@ func start_magnet_capture(center: Vector2) -> bool:
 	return true
 
 
+func spawn_story_mars_asteroid(center: Vector2) -> void:
+	# One native asteroid uses the same sprite, contacts and shatter mechanics.
+	# Steering makes its lesson collision deterministic even while Mars moves.
+	for rock in _asteroids:
+		if bool(rock.get("story_mars", false)):
+			return
+	_asteroids.append({
+		"world": center + Vector2(470.0, -190.0),
+		"velocity": Vector2.ZERO,
+		"size": 78.0,
+		"type": 3,  # violet mineral rock: its fragments refill fuel
+		"angle": 0.0,
+		"spin": -1.35,
+		"turn": 0.0,
+		"phase": 0.0,
+		"speed": 1100.0,
+		"age": 0.0,
+		"story_mars": true
+	})
+	queue_redraw()
+
+
+func force_story_mars_impact(center: Vector2) -> void:
+	# Safety net for an unusually short autopilot route or frame stutter.
+	for i in range(_asteroids.size() - 1, -1, -1):
+		if bool(_asteroids[i].get("story_mars", false)):
+			var rock: Dictionary = _asteroids[i]
+			_asteroids.remove_at(i)
+			rock["world"] = center + Vector2(12.0, -9.0)
+			_shatter(rock, "Player")
+			return
+
+
+func spawn_story_mars_crystals(center: Vector2) -> void:
+	# Use ORIGINAL violet pieces and the ORIGINAL magnet pickup. The lesson
+	# needs more than a natural 3-6-piece shatter to refill from ~10 to 50.
+	for i in range(22):
+		if _debris.size() >= MAX_DEBRIS:
+			break
+		var direction: Vector2 = Vector2.from_angle(TAU * float(i) / 22.0)
+		_debris.append({
+			"world": center + direction * float(40 + (i % 5) * 11),
+			"velocity": Vector2.ZERO,
+			"size": 29.0,
+			"kind": 3,
+			"shape": i % SHAPES.size(),
+			"rotation": TAU * float(i) / 22.0,
+			"spin": 0.0,
+			"collectible": true,
+			"story_mars_crystal": true
+		})
+	queue_redraw()
+
+
+func clear_story_mars_objects() -> void:
+	# Remove ONLY tutorial objects; other space debris belongs to the player.
+	for i in range(_asteroids.size() - 1, -1, -1):
+		if bool(_asteroids[i].get("story_mars", false)):
+			_asteroids.remove_at(i)
+	for i in range(_debris.size() - 1, -1, -1):
+		if bool(_debris[i].get("story_mars_crystal", false)):
+			_debris.remove_at(i)
+	queue_redraw()
+
+
 func _advance_magnet(delta: float) -> void:
 	if _magnet_timer <= 0.0:
 		return
@@ -238,7 +303,13 @@ func _physics_process(delta: float) -> void:
 	for i in range(_asteroids.size() - 1, -1, -1):
 		var asteroid: Dictionary = _asteroids[i]
 		var position: Vector2 = Vector2(asteroid["world"])
-		if bool(asteroid.get("flyby", false)):
+		if bool(asteroid.get("story_mars", false)):
+			var to_ship: Vector2 = _ship_world - position
+			var direction: Vector2 = to_ship.normalized() if to_ship.length_squared() > 0.01 else Vector2.LEFT
+			var scripted_velocity: Vector2 = direction * float(asteroid["speed"])
+			asteroid["velocity"] = scripted_velocity
+			position += scripted_velocity * delta
+		elif bool(asteroid.get("flyby", false)):
 			var flyby_age: float = float(asteroid["age"]) + delta
 			var duration: float = float(asteroid["flyby_duration"])
 			if flyby_age >= duration:
@@ -258,6 +329,9 @@ func _physics_process(delta: float) -> void:
 		asteroid["age"] = float(asteroid["age"]) + delta
 		var rock_radius: float = float(asteroid["size"]) * 0.40
 		var target: String = _find_contact(position, rock_radius, bodies)
+		if bool(asteroid.get("story_mars", false)) and target != "Player":
+			# A nearby planet cannot steal the one guaranteed teaching impact.
+			target = ""
 		if target != "":
 			_shatter(asteroid, target)
 			_asteroids.remove_at(i)
@@ -349,6 +423,8 @@ func _shatter(asteroid: Dictionary, target: String) -> void:
 			"collectible": source_id != 1
 		})
 	_total_impacts += 1
+	if bool(asteroid.get("story_mars", false)) and target == "Player":
+		spawn_story_mars_crystals(_ship_world)
 	asteroid_impact.emit(source_id, target, burst_point)
 
 

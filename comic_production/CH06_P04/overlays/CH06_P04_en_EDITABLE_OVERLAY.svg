@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<title>MIKA CH06 P04 - RU layout redo v2: panel-separated captions</title>
+<desc>Vector-only overlay, no image generation. No diagonal tail over Mika face. Seven illustrated bands preserved.</desc>
+<g id="CH06_P04_L001" data-line-id="CH06_P04_L001" data-speaker="CHR_038" data-kind="neuron" data-display-part="1">
+<path d="M293 65 Q270 65 270 88 V202 Q270 225 293 225 H2040 L2111 250 L2089 225 H2177 Q2200 225 2200 202 V88 Q2200 65 2177 65 Z" fill="#4ED0DB" fill-opacity=".96" stroke="#253456" stroke-width="5.2" stroke-linejoin="round"/>
+<path d="M297 82 h52" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="2175" cy="82" r="5.5" fill="#36DDE8"/>
+<text x="297" y="139.16" font-family="DejaVu Sans" font-weight="700" font-size="41" fill="#18344A">We asked our magnetic friends to open a portal between our world and the</text><text x="297" y="189.18" font-family="DejaVu Sans" font-weight="700" font-size="41" fill="#18344A">world where the echo came from.</text></g>
+<g id="CH06_P04_L002" data-line-id="CH06_P04_L002" data-speaker="CHR_001" data-kind="mika" data-display-part="1">
+<rect x="780" y="593" width="382" height="142" rx="45" fill="#253456" opacity=".12"/>
+<rect x="775" y="585" width="382" height="142" rx="45" fill="#FFFDF9" stroke="#253456" stroke-width="5.5"/>
+<circle cx="797" cy="606" r="6" fill="#36DDE8"/>
+<text x="803" y="650.14" font-family="DejaVu Sans" font-weight="700" font-size="39" fill="#18344A">So you saved</text><text x="803" y="697.72" font-family="DejaVu Sans" font-weight="700" font-size="39" fill="#18344A">me?</text></g>
+<g id="CH06_P04_L003_part_1" data-line-id="CH06_P04_L003" data-speaker="CHR_038" data-kind="neuron" data-display-part="1">
+<path d="M1308 558 Q1285 558 1285 581 V647 Q1285 670 1308 670 H1395 L1373 695 L1445 670 H1762 Q1785 670 1785 647 V581 Q1785 558 1762 558 Z" fill="#4ED0DB" fill-opacity=".96" stroke="#253456" stroke-width="5.2" stroke-linejoin="round"/>
+<path d="M1312 575 h52" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="1760" cy="575" r="5.5" fill="#36DDE8"/>
+<text x="1312" y="631.69" font-family="DejaVu Sans" font-weight="700" font-size="37" fill="#18344A">Not quite.</text></g>
+<g id="CH06_P04_L003_part_2" data-line-id="CH06_P04_L003" data-speaker="CHR_038" data-kind="neuron" data-display-part="2">
+<path d="M1293 1108 Q1270 1108 1270 1131 V1261 Q1270 1284 1293 1284 H1886 L1957 1309 L1935 1284 H2023 Q2046 1284 2046 1261 V1131 Q2046 1108 2023 1108 Z" fill="#4ED0DB" fill-opacity=".96" stroke="#253456" stroke-width="5.2" stroke-linejoin="round"/>
+<path d="M1297 1125 h52" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="2021" cy="1125" r="5.5" fill="#36DDE8"/>
+<text x="1297" y="1192.08" font-family="DejaVu Sans" font-weight="700" font-size="33" fill="#18344A">Try going to the Last Gates. You’ll find</text><text x="1297" y="1232.34" font-family="DejaVu Sans" font-weight="700" font-size="33" fill="#18344A">more answers there.</text></g>
+<g id="CH06_P04_L004" data-speaker="CHR_038" data-kind="exclamation" data-variant="NEBULA yellow burst">
+<polygon points="2224.5,1154.0 2245.9,1168.5 2276.8,1162.6 2282.9,1181.8 2315.0,1186.0 2304.2,1204.7 2329.0,1218.0 2304.2,1231.3 2315.0,1250.0 2282.9,1254.2 2276.8,1273.4 2245.9,1267.5 2224.5,1282.0 2203.1,1267.5 2172.2,1273.4 2166.1,1254.2 2134.0,1250.0 2144.8,1231.3 2120.0,1218.0 2144.8,1204.7 2134.0,1186.0 2166.1,1181.8 2172.2,1162.6 2203.1,1168.5" fill="#FFE176" stroke="#9F4C20" stroke-width="6" stroke-linejoin="round"/>
+<text x="2224.5" y="1211.18" text-anchor="middle" font-family="DejaVu Sans" font-weight="700" font-size="31" fill="#7B2D15">Good</text><text x="2224.5" y="1245.28" text-anchor="middle" font-family="DejaVu Sans" font-weight="700" font-size="31" fill="#7B2D15">luck!</text></g>
+<g id="CH06_P04_L005_part_1" data-line-id="CH06_P04_L005" data-speaker="CHR_004" data-kind="narrator" data-display-part="1">
+<rect x="835" y="1698" width="340" height="179" rx="17" fill="#061021" opacity=".18"/>
+<rect x="830" y="1692" width="340" height="179" rx="17" fill="#132D4E" fill-opacity=".90" stroke="#55D3E1" stroke-width="4.5"/>
+<path d="M849 1708 h43" stroke="#F6A64B" stroke-width="6" stroke-linecap="round"/>
+<text x="853" y="1761.3" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#FFFFFF">Mika opened his</text><text x="853" y="1797.6" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#FFFFFF">eyes and knew</text><text x="853" y="1833.9" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#FFFFFF">where to go.</text></g>
+<g id="CH06_P04_L005_part_2" data-line-id="CH06_P04_L005" data-speaker="CHR_004" data-kind="narrator" data-display-part="2">
+<rect x="1255" y="2012" width="850" height="125" rx="17" fill="#061021" opacity=".18"/>
+<rect x="1250" y="2006" width="850" height="125" rx="17" fill="#132D4E" fill-opacity=".90" stroke="#55D3E1" stroke-width="4.5"/>
+<path d="M1269 2022 h43" stroke="#F6A64B" stroke-width="6" stroke-linecap="round"/>
+<text x="1273" y="2066.45" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#FFFFFF">He said goodbye to the crew and set off for the</text><text x="1273" y="2102.75" font-family="DejaVu Sans" font-weight="700" font-size="30" fill="#FFFFFF">Crossroads of Worlds with his new friend.</text></g>
+<g id="CH06_P04_L006_part_1" data-line-id="CH06_P04_L006" data-speaker="CHR_004" data-kind="narrator" data-display-part="1">
+<rect x="96" y="2204" width="770" height="120" rx="17" fill="#061021" opacity=".18"/>
+<rect x="91" y="2198" width="770" height="120" rx="17" fill="#132D4E" fill-opacity=".90" stroke="#55D3E1" stroke-width="4.5"/>
+<path d="M110 2214 h43" stroke="#F6A64B" stroke-width="6" stroke-linecap="round"/>
+<text x="114" y="2255.48" font-family="DejaVu Sans" font-weight="700" font-size="32" fill="#FFFFFF">At the Crossroads of Worlds, his neuron</text><text x="114" y="2294.2" font-family="DejaVu Sans" font-weight="700" font-size="32" fill="#FFFFFF">friend contacted Mika again.</text></g>
+<g id="CH06_P04_L006_part_2" data-line-id="CH06_P04_L006" data-speaker="CHR_004" data-kind="narrator" data-display-part="2">
+<rect x="645" y="2698" width="525" height="145" rx="17" fill="#061021" opacity=".18"/>
+<rect x="640" y="2692" width="525" height="145" rx="17" fill="#132D4E" fill-opacity=".90" stroke="#55D3E1" stroke-width="4.5"/>
+<path d="M659 2708 h43" stroke="#F6A64B" stroke-width="6" stroke-linecap="round"/>
+<text x="663" y="2762.68" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#FFFFFF">To use the artifact, he had to</text><text x="663" y="2797.78" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#FFFFFF">solve a puzzle.</text></g>
+<g id="CH06_P04_L007_part_1" data-line-id="CH06_P04_L007" data-speaker="CHR_038" data-kind="neuron" data-display-part="1">
+<path d="M1269 2688 Q1246 2688 1246 2711 V2808 Q1246 2831 1269 2831 H1356 L1334 2856 L1406 2831 H1703 Q1726 2831 1726 2808 V2711 Q1726 2688 1703 2688 Z" fill="#4ED0DB" fill-opacity=".96" stroke="#253456" stroke-width="5.2" stroke-linejoin="round"/>
+<path d="M1273 2705 h52" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="1701" cy="2705" r="5.5" fill="#36DDE8"/>
+<text x="1273" y="2756.78" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#18344A">Even we don’t know where</text><text x="1273" y="2790.94" font-family="DejaVu Sans" font-weight="700" font-size="28" fill="#18344A">the artifact leads.</text></g>
+<g id="CH06_P04_L007_part_2" data-line-id="CH06_P04_L007" data-speaker="CHR_038" data-kind="neuron" data-display-part="2">
+<path d="M2075 2639 Q2052 2639 2052 2662 V2810 Q2052 2833 2075 2833 H2234 L2305 2858 L2283 2833 H2371 Q2394 2833 2394 2810 V2662 Q2394 2639 2371 2639 Z" fill="#4ED0DB" fill-opacity=".96" stroke="#253456" stroke-width="5.2" stroke-linejoin="round"/>
+<path d="M2079 2656 h52" stroke="#835FDB" stroke-width="3" stroke-linecap="round"/>
+<circle cx="2369" cy="2656" r="5.5" fill="#36DDE8"/>
+<text x="2079" y="2697.66" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#18344A">I’ll come with</text><text x="2079" y="2733.04" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#18344A">you. Exploring</text><text x="2079" y="2768.42" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#18344A">the unknown is</text><text x="2079" y="2803.8" font-family="DejaVu Sans" font-weight="700" font-size="29" fill="#18344A">our purpose.</text></g>
+<g id="CH06_P04_L008" data-line-id="CH06_P04_L008" data-speaker="CHR_004" data-kind="narrator" data-display-part="1">
+<rect x="105" y="3002" width="950" height="112" rx="17" fill="#061021" opacity=".18"/>
+<rect x="100" y="2996" width="950" height="112" rx="17" fill="#132D4E" fill-opacity=".90" stroke="#55D3E1" stroke-width="4.5"/>
+<path d="M119 3012 h43" stroke="#F6A64B" stroke-width="6" stroke-linecap="round"/>
+<text x="123" y="3049.24" font-family="DejaVu Sans" font-weight="700" font-size="33" fill="#FFFFFF">A passage opened ahead, and Mika steered his</text><text x="123" y="3089.17" font-family="DejaVu Sans" font-weight="700" font-size="33" fill="#FFFFFF">starship into it.</text></g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="3508" viewBox="0 0 2480 3508">
+<title>MIKA — CH08 P01 NEBULA RU draft v1</title>
+<desc>Векторные облачка над исходным PDF 8-1(1).pdf; без генерации иллюстраций. Баббл издаёт звук, не человеческую речь.</desc>
+<g id="CH08_P01_L001" data-role="CHR_004" data-kind="narration" data-nebula-style="narration">
+<rect x="115" y="101" width="1110" height="173" rx="29" fill="#15213A" opacity=".20"/>
+<rect x="108" y="92" width="1110" height="173" rx="29" fill="#162A4E" fill-opacity="0.94" stroke="#70DFF4" stroke-width="5.2"/>
+<path d="M132 110 h60" fill="none" stroke="#FFA83A" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1187" cy="115" r="6" fill="#FFA83A"/>
+<text font-family="DejaVu Sans" font-weight="700" fill="#FFFFFF" x="148" y="167.86" font-size="38">Mikas Raumschiff kehrte zum Planeten der</text><text font-family="DejaVu Sans" font-weight="700" fill="#FFFFFF" x="148" y="215.74" font-size="38">Neuronenwesen in der Dreiecksgalaxie zurück.</text></g>
+<g id="CH08_P01_L002" data-role="CHR_004" data-kind="narration" data-nebula-style="narration">
+<rect x="110" y="875" width="575" height="125" rx="29" fill="#15213A" opacity=".20"/>
+<rect x="103" y="866" width="575" height="125" rx="29" fill="#162A4E" fill-opacity="0.94" stroke="#70DFF4" stroke-width="5.2"/>
+<path d="M127 884 h60" fill="none" stroke="#FFA83A" stroke-width="5" stroke-linecap="round"/>
+<circle cx="647" cy="889" r="6" fill="#FFA83A"/>
+<text font-family="DejaVu Sans" font-weight="700" fill="#FFFFFF" x="143" y="919.26" font-size="33">Die Tür zum Saal öffnete</text><text font-family="DejaVu Sans" font-weight="700" fill="#FFFFFF" x="143" y="960.84" font-size="33">sich.</text></g>
+<g id="CH08_P01_L003" data-role="CHR_001" data-kind="dialogue" data-nebula-style="mika">
+<rect x="122" y="1231" width="405" height="134" rx="45" fill="#15213A" opacity=".20"/>
+<rect x="115" y="1222" width="405" height="134" rx="45" fill="#FEFCFF" fill-opacity="0.97" stroke="#365C9D" stroke-width="5.2"/>
+<path d="M139 1240 h60" fill="none" stroke="#F6A63E" stroke-width="5" stroke-linecap="round"/>
+<circle cx="489" cy="1245" r="6" fill="#F6A63E"/>
+<text font-family="DejaVu Sans" font-weight="700" fill="#173760" x="149" y="1305.80" font-size="48">Hallo!</text></g>
+<g id="CH08_P01_L004" data-role="CHR_014" data-kind="nonverbal_vocal_sfx" data-nebula-style="bubble_sfx">
+<rect x="1341" y="885" width="425" height="134" rx="47" fill="#15213A" opacity=".20"/>
+<rect x="1334" y="876" width="425" height="134" rx="47" fill="#FFF2A9" fill-opacity="0.97" stroke="#DF8D3A" stroke-width="5.2"/>
+<path d="M1358 894 h60" fill="none" stroke="#FC9C36" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1725" cy="907" r="9" fill="#59D7EC"/><circle cx="1705" cy="907" r="5" fill="#E5A5FF"/>
+<path d="M1654,985 q13,-12 26,0 t26,0" fill="none" stroke="#38A9CC" stroke-width="4" opacity=".80"/>
+<text font-family="DejaVu Sans" font-weight="700" fill="#774A24" x="1368" y="960.15" font-size="49">Piep-piep!</text></g>
+<g id="CH08_P01_L005" data-role="CHR_004" data-kind="narration" data-nebula-style="narration">
+<rect x="632" y="2407" width="1270" height="132" rx="29" fill="#15213A" opacity=".20"/>
+<rect x="625" y="2398" width="1270" height="132" rx="29" fill="#162A4E" fill-opacity="0.94" stroke="#70DFF4" stroke-width="5.2"/>
+<path d="M649 2416 h60" fill="none" stroke="#FFA83A" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1864" cy="2421" r="6" fill="#FFA83A"/>
+<text font-family="DejaVu Sans" font-weight="700" fill="#FFFFFF" x="665" y="2453.92" font-size="36">Die ganze Gruppe war versammelt und wartete auf Mikas</text><text font-family="DejaVu Sans" font-weight="700" fill="#FFFFFF" x="665" y="2499.28" font-size="36">Rückkehr.</text></g>
+<g id="CH08_P01_L006" data-role="CHR_031" data-kind="dialogue" data-nebula-style="lizard">
+<rect x="149" y="3203" width="1035" height="195" rx="39" fill="#15213A" opacity=".20"/>
+<rect x="142" y="3194" width="1035" height="195" rx="39" fill="#FFF0DB" fill-opacity="0.96" stroke="#B7783D" stroke-width="5.2"/>
+<path d="M166 3212 h60" fill="none" stroke="#F9B54A" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1146" cy="3217" r="6" fill="#F9B54A"/>
+<text font-family="DejaVu Sans" font-weight="700" fill="#59361B" x="176" y="3256.92" font-size="38">Apropos Freunde … Ich glaube, jemand hat</text><text font-family="DejaVu Sans" font-weight="700" fill="#59361B" x="176" y="3304.80" font-size="38">einen Flug zur Kleinen Magellanschen Wolke</text><text font-family="DejaVu Sans" font-weight="700" fill="#59361B" x="176" y="3352.68" font-size="38">versprochen!</text></g>
+<g id="CH08_P01_L007" data-role="CHR_001" data-kind="dialogue" data-nebula-style="mika">
+<rect x="1561" y="3257" width="770" height="141" rx="45" fill="#15213A" opacity=".20"/>
+<rect x="1554" y="3248" width="770" height="141" rx="45" fill="#FEFCFF" fill-opacity="0.97" stroke="#365C9D" stroke-width="5.2"/>
+<path d="M1578 3266 h60" fill="none" stroke="#F6A63E" stroke-width="5" stroke-linecap="round"/>
+<circle cx="2293" cy="3271" r="6" fill="#F6A63E"/>
+<text font-family="DejaVu Sans" font-weight="700" fill="#173760" x="1588" y="3332.85" font-size="41">Na dann, Freunde, auf geht’s!</text></g>
+</svg>
